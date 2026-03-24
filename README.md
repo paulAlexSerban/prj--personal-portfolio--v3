@@ -1,3 +1,2 @@
-# Personal Portfolio (v2)
-
-> Short name: prj-pp-v2
+# Personal Portfolio (v3)
+> Repo: https://github.com/paulAlexSerban/prj--personal-portfolio--v3

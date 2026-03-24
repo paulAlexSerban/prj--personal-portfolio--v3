@@ -1,17 +1,11 @@
 {
-    "name": "@prj-pp-v2/core",
+    "name": "@prj--personal-portfolio--v3/core",
     "version": "0.0.1",
     "keywords": [],
-    "repository": "https://github.com/paulAlexSerban/prj--personal-portfolio--v2.git",
+    "repository": "https://github.com/paulAlexSerban/prj--personal-portfolio--v3.git",
     "author": "Paul Serban <paul.alex.serban@gmail.com>",
     "license": "MIT",
     "scripts": {
-        "/////": "TEST",
-        "test": "lerna run test --parallel",
-        "////": "DEVELOP",
-        "develop:base-ssg-service": "lerna run --scope @prj-pp-v2/base-ssg-service develop",
-        "///": "BUILD",
-        "build:base-ssg-service": "lerna run --scope @prj-pp-v2/base-ssg-service build",
         "//": "FORMATS",
         "formats:check": "yarn prettier --check .",
         "formats:write": "yarn prettier --write .",
@@ -26,29 +20,11 @@
         "commitizen": "^4.3.1",
         "cz-conventional-changelog": "^3.3.0",
         "husky": "^9.1.6",
-        "lerna": "^8.1.8",
         "prettier": "^3.3.3",
         "typescript": "^5.7.3"
     },
     "devDependencies": {},
     "private": true,
-    "workspaces": {
-        "packages": [
-            "assets/*",
-            "assets/**/*",
-            "backend/*",
-            "backend/**/*",
-            "database/*",
-            "frontend/*",
-            "frontend/**/*",
-            "shared/*",
-            "shared/**/*",
-            "tools/*"
-        ],
-        "nohoist": [
-            "**/normalize-scss"
-        ]
-    },
     "husky": {
         "hooks": {
             "prepare-commit-msg": "exec < /dev/tty && npx cz --hook || true",
