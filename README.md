@@ -6,7 +6,7 @@
 
 Statically generated personal portfolio website coupled with a software engineering blog that doubles as as a learning platform.
 Raw content lives in a separate Git repository as MDX files.
-A concent-pipeline parses MDX files into SQLite databases, which are then managed via Directus CMS.
+A concent-pipeline parses MDX files into SQLite databases, which are then managed via headless CMS.
 Flashcard quizes (Anki style spaced repetition) are surfaced as a blog widget, a standalone web app, and a cross-platofrm mobile app.
 
 > [!warning] IMPORTANT
@@ -27,7 +27,7 @@ Flashcard quizes (Anki style spaced repetition) are surfaced as a blog widget, a
 
 - **Out of Scope (v0.1)**
     - Flashcard Quiz Mobile App (cross-platform, React Native)
-    - Directus CMS as content management UI for SQLite content
+    - A headless CMS as content management UI for SQLite content
     - SQLite -> MDX sync (round-trip : DB-edited entities unlock MDX editing capabilities)
     - User accounts and authentication (all user state is client-side only, stored in local storage)
     - Real-time content updates (content is updated via the MDX -> SQLite pipeline, not real-time)
