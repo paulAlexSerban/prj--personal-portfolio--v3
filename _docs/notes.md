@@ -1,4 +1,5 @@
 # Notes
+
 - semantical versioning
 - git hub actions
 - docker & docker compose

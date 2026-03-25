@@ -1,6 +1,6 @@
 # Backend
 
--   server-side code written with Node.js and Express.js
+- server-side code written with Node.js and Express.js
 
 ## API vs Service vs Middleware
 
@@ -8,24 +8,24 @@ Here are the bullet points to differentiate between API, service, and middleware
 
 ### API (Application Programming Interface)
 
--   **Interface for Interaction**: APIs are interfaces through which different software components communicate with each other. In a microservice architecture, APIs enable microservices to interact with each other and with external clients.
--   **Data Exchange Format**: They define the way data is exchanged between services, often using formats like JSON or XML.
--   **Protocol and Endpoint Definition**: APIs specify the protocols (such as HTTP/HTTPS) and endpoints for access, ensuring standardized interaction.
--   **Contract Between Services**: Serve as a contract between services, detailing available operations, input/output data structures, and error handling mechanisms.
+- **Interface for Interaction**: APIs are interfaces through which different software components communicate with each other. In a microservice architecture, APIs enable microservices to interact with each other and with external clients.
+- **Data Exchange Format**: They define the way data is exchanged between services, often using formats like JSON or XML.
+- **Protocol and Endpoint Definition**: APIs specify the protocols (such as HTTP/HTTPS) and endpoints for access, ensuring standardized interaction.
+- **Contract Between Services**: Serve as a contract between services, detailing available operations, input/output data structures, and error handling mechanisms.
 
 ### Service
 
--   **Independent Component**: A service in a microservice architecture is an independent, self-contained component that performs a specific business function or process.
--   **Deployable Unit**: Each service is a deployable unit, meaning it can be developed, deployed, and scaled independently of other services.
--   **Own Data Management**: Typically, each service manages its own data and database, ensuring data encapsulation and independence.
--   **Inter-service Communication**: Services often communicate with each other through APIs but can also use other methods like messaging queues.
+- **Independent Component**: A service in a microservice architecture is an independent, self-contained component that performs a specific business function or process.
+- **Deployable Unit**: Each service is a deployable unit, meaning it can be developed, deployed, and scaled independently of other services.
+- **Own Data Management**: Typically, each service manages its own data and database, ensuring data encapsulation and independence.
+- **Inter-service Communication**: Services often communicate with each other through APIs but can also use other methods like messaging queues.
 
 ### Middleware
 
--   **Facilitates Communication**: Middleware is software that provides common services and capabilities to applications outside of what's offered by the operating system.
--   **Data Transformation and Routing**: It handles data transformation, message queuing, and routing between services, often working behind the scenes.
--   **Connects Heterogeneous Systems**: Middleware can connect different systems and services, facilitating communication and data exchange between diverse and disparate components of a microservice architecture.
--   **Supports Cross-Cutting Concerns**: Often used to address cross-cutting concerns like security, logging, and transaction management, providing a layer where shared functionalities can be implemented.
+- **Facilitates Communication**: Middleware is software that provides common services and capabilities to applications outside of what's offered by the operating system.
+- **Data Transformation and Routing**: It handles data transformation, message queuing, and routing between services, often working behind the scenes.
+- **Connects Heterogeneous Systems**: Middleware can connect different systems and services, facilitating communication and data exchange between diverse and disparate components of a microservice architecture.
+- **Supports Cross-Cutting Concerns**: Often used to address cross-cutting concerns like security, logging, and transaction management, providing a layer where shared functionalities can be implemented.
 
 In a microservice architecture, these components play distinct yet complementary roles, with APIs enabling interaction, services focusing on business functionalities, and middleware providing the glue and common functionalities across services.
 

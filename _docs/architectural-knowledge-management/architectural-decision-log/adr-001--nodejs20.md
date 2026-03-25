@@ -1,6 +1,7 @@
 # ADR-001: Choosing Node.js 20.18 (LTS) for Server-Side Technology
 
 ## Status
+
 Accepted
 
 ## Context
@@ -23,18 +24,16 @@ The project will use **Node.js 20.18 (LTS)** as the primary server-side runtime 
 ## Alternatives Considered
 
 1. **Node.js 18.x (LTS)**
-
-   - Pros: Another long-term supported version with stability and ecosystem support.
-   - Cons: Node.js 20.x offers more up-to-date features, optimizations, and improvements.
+    - Pros: Another long-term supported version with stability and ecosystem support.
+    - Cons: Node.js 20.x offers more up-to-date features, optimizations, and improvements.
 
 2. **Python (Flask/Django)**
-
-   - Pros: Python is a widely used backend language with popular web frameworks like Flask and Django.
-   - Cons: Not as performant in handling asynchronous, non-blocking I/O as Node.js, making it less suited for real-time or highly concurrent tasks.
+    - Pros: Python is a widely used backend language with popular web frameworks like Flask and Django.
+    - Cons: Not as performant in handling asynchronous, non-blocking I/O as Node.js, making it less suited for real-time or highly concurrent tasks.
 
 3. **Ruby on Rails**
-   - Pros: Rails offers a mature ecosystem and convention-over-configuration philosophy for web applications.
-   - Cons: Ruby has less concurrency handling compared to Node.js and is slower in terms of performance for backend tasks.
+    - Pros: Rails offers a mature ecosystem and convention-over-configuration philosophy for web applications.
+    - Cons: Ruby has less concurrency handling compared to Node.js and is slower in terms of performance for backend tasks.
 
 ## Consequences
 

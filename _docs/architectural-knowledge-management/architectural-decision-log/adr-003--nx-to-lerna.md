@@ -1,6 +1,7 @@
 # ADR-003: Transitioning from Nx to Lerna for Monorepo Management
 
 ## Status
+
 Accepted
 
 ## Context
@@ -16,27 +17,26 @@ Furthermore, while Nx provides advanced features suited for large and complex mo
 ### Nx
 
 - **Pros**:
-
-  - **Task Orchestration**: Nx can run tasks in parallel, manage dependencies between projects, and only rebuild affected projects, which is useful for large, complex monorepos.
-  - **Dependency Graph**: It automatically generates a dependency graph to visualize and manage relationships between projects.
-  - **Caching**: Nx caches build results, tests, and linting to speed up repeated operations.
-  - **Integrated Framework Support**: Out-of-the-box support for popular frameworks like React, Angular, and Next.js.
-  - **Scalability**: Ideal for large, enterprise-scale monorepos with multiple interconnected projects.
+    - **Task Orchestration**: Nx can run tasks in parallel, manage dependencies between projects, and only rebuild affected projects, which is useful for large, complex monorepos.
+    - **Dependency Graph**: It automatically generates a dependency graph to visualize and manage relationships between projects.
+    - **Caching**: Nx caches build results, tests, and linting to speed up repeated operations.
+    - **Integrated Framework Support**: Out-of-the-box support for popular frameworks like React, Angular, and Next.js.
+    - **Scalability**: Ideal for large, enterprise-scale monorepos with multiple interconnected projects.
 
 - **Cons**:
-  - **Complexity**: Nx introduces a steeper learning curve and more complexity, particularly for developers who are not familiar with its advanced features.
-  - **Overhead**: For smaller projects or teams, Nx’s advanced features can feel like over-engineering and add unnecessary overhead to the project setup.
+    - **Complexity**: Nx introduces a steeper learning curve and more complexity, particularly for developers who are not familiar with its advanced features.
+    - **Overhead**: For smaller projects or teams, Nx’s advanced features can feel like over-engineering and add unnecessary overhead to the project setup.
 
 ### Lerna
 
 - **Pros**:
-  - **Simplicity**: Lerna offers a more straightforward approach to managing a monorepo, focusing on publishing and managing versioned packages without the overhead of task orchestration and caching.
-  - **Familiarity**: The development team has extensive experience working with Lerna, which reduces the learning curve and allows for more efficient workflows.
-  - **Dependency Management**: Lerna handles inter-package dependencies well and is simpler to set up compared to Nx. It allows shared dependencies across multiple projects in the monorepo.
-  - **Lerna with Yarn Workspaces**: Combining Lerna with Yarn Workspaces provides similar functionality for managing shared dependencies across projects, which works efficiently for the current scope of the portfolio project.
+    - **Simplicity**: Lerna offers a more straightforward approach to managing a monorepo, focusing on publishing and managing versioned packages without the overhead of task orchestration and caching.
+    - **Familiarity**: The development team has extensive experience working with Lerna, which reduces the learning curve and allows for more efficient workflows.
+    - **Dependency Management**: Lerna handles inter-package dependencies well and is simpler to set up compared to Nx. It allows shared dependencies across multiple projects in the monorepo.
+    - **Lerna with Yarn Workspaces**: Combining Lerna with Yarn Workspaces provides similar functionality for managing shared dependencies across projects, which works efficiently for the current scope of the portfolio project.
 - **Cons**:
-  - **Lacks Advanced Orchestration**: Lerna doesn’t provide the same level of task orchestration and dependency graph capabilities as Nx.
-  - **Less Focus on Build Optimization**: While Lerna is suitable for managing dependencies and versioning, it lacks features like caching and task parallelization out of the box, making it less ideal for very large monorepos.
+    - **Lacks Advanced Orchestration**: Lerna doesn’t provide the same level of task orchestration and dependency graph capabilities as Nx.
+    - **Less Focus on Build Optimization**: While Lerna is suitable for managing dependencies and versioning, it lacks features like caching and task parallelization out of the box, making it less ideal for very large monorepos.
 
 ### Why Transition to Lerna?
 
@@ -53,18 +53,16 @@ The project will transition from **Nx** to **Lerna** for managing the monorepo. 
 ## Alternatives Considered
 
 1. **Stick with Nx**
-
-   - Pros: Retain the advanced features of task orchestration, caching, and dependency graphs.
-   - Cons: Steeper learning curve and unnecessary complexity for a project that doesn’t fully leverage Nx’s advanced capabilities. The development team is not as familiar with Nx, which could slow down development and increase the maintenance burden.
+    - Pros: Retain the advanced features of task orchestration, caching, and dependency graphs.
+    - Cons: Steeper learning curve and unnecessary complexity for a project that doesn’t fully leverage Nx’s advanced capabilities. The development team is not as familiar with Nx, which could slow down development and increase the maintenance burden.
 
 2. **TurboRepo + pnpm**
-
-   - Pros: TurboRepo provides task orchestration and caching similar to Nx, while pnpm is a performant package manager.
-   - Cons: TurboRepo is a newer tool with less adoption and fewer built-in integrations than Lerna. The team would also need to learn both TurboRepo and pnpm, adding to the overhead.
+    - Pros: TurboRepo provides task orchestration and caching similar to Nx, while pnpm is a performant package manager.
+    - Cons: TurboRepo is a newer tool with less adoption and fewer built-in integrations than Lerna. The team would also need to learn both TurboRepo and pnpm, adding to the overhead.
 
 3. **Continue Using Yarn Workspaces Alone**
-   - Pros: Yarn Workspaces are already part of the project and simplify dependency management across projects in a monorepo.
-   - Cons: Yarn Workspaces alone don’t offer versioning, publishing, or package management features, making it less suited for managing a growing monorepo.
+    - Pros: Yarn Workspaces are already part of the project and simplify dependency management across projects in a monorepo.
+    - Cons: Yarn Workspaces alone don’t offer versioning, publishing, or package management features, making it less suited for managing a growing monorepo.
 
 ## Consequences
 
