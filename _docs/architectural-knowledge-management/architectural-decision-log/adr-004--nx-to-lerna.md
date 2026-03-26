@@ -1,7 +1,5 @@
 # ADR-004: Monorepo Management
-
 ## Status: Accepted
-
 ## Context
 
 Initially, the personal portfolio project adopted **Nx** for managing the monorepo, primarily due to its advanced features such as task orchestration, dependency graph visualization, and caching mechanisms. However, upon further evaluation, it has been decided to transition from Nx to **Lerna** for monorepo management.

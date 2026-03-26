@@ -1,0 +1,1 @@
+| **Quiz UI**              | React + Vite   | Component model matches widget + SPA + Capacitor target; Vite for fast builds   

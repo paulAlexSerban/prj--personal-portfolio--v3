@@ -1,6 +1,5 @@
 # ADR-002: JS Runtime
 ## Status: Approved
-
 ## Context
 The project requires a server-side runtime to handle the build system, API routes, and any server-side logic needed for the portfolio website. The runtime should be well-supported, performant, and compatible with the chosen programming language (TypeScript) and frameworks.
 

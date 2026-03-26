@@ -49,6 +49,7 @@ Flashcard quizes (Anki style spaced repetition) are surfaced as a blog widget, a
 - `_docs/` - documentation (project management, architectural knowledge management, etc.)
 - `assets/` - tools for processing and managing static assets (e.g., images, icons, fonts, etc.)
 - `backend/` - backend services (e.g., API, CMS, content pipeline, etc.)
+- `content/` - live content sync with remote repo and test contenti in MDX format (e.g., blog posts, project case studies, book notes, etc.)
 - `database/` - database schemas, migrations, seed data, etc.
 - `frontend/` - frontend applications (e.g., main website, quiz web app, etc.)
 - `infrastructure/` - infrastructure as code (IaC) for deployment, hosting, etc.

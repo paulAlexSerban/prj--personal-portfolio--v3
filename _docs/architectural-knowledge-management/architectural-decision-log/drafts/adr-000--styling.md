@@ -1,0 +1,1 @@
+**Styling**           | Tailwind CSS + shadcn/ui    | Utility-first; accessible component primitives; consistent design system   

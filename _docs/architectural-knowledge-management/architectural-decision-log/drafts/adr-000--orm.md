@@ -1,0 +1,1 @@
+| **ORM**               | Drizzle ORM         | TypeScript-first schema; built-in Drizzle Studio; lightweight query layer 

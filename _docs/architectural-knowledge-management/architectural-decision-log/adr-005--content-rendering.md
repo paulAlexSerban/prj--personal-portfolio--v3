@@ -1,8 +1,5 @@
 # ADR-005: Content Rendering Architecture
-
-## Status
-Accepted
-
+## Status: Accepted
 ## Context
 
 The portfolio project needs an architecture that can deliver fast, secure, and scalable web experiences. The application is primarily content-driven and requires high performance, global scalability, and a streamlined deployment process.

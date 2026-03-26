@@ -1,6 +1,5 @@
 # ADR-003: Monorepo Setup
 ## Status: Accepted
-
 ## Context
 
 The personal portfolio project is expected to grow over time, with multiple components working together, including:

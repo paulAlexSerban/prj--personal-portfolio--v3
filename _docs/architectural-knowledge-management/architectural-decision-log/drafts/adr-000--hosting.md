@@ -1,0 +1,1 @@
+| **Hosting**           | Cloudflare Pages            | Global CDN; zero cold starts for static assets; generous free tier  |
