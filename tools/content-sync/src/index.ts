@@ -2,9 +2,9 @@ import path from 'path';
 import fs from 'fs';
 import dotenv from 'dotenv';
 import { taskManager, type Task } from '@prj--personal-portfolio--v3/shared--taskManager';
-import cleanRepoDir from './helpers/cleanRepoDir';
-import clonePrivateRepo from './helpers/clonePrivateRepo';
-import cleanupUnnecessary from './helpers/cleanupUnnecessary';
+import cleanRepoDir from './helpers/cleanRepoDir.ts';
+import clonePrivateRepo from './helpers/clonePrivateRepo.ts';
+import cleanupUnnecessary from './helpers/cleanupUnnecessary.ts';
 
 dotenv.config({
     path: '../../.env',
@@ -45,6 +45,11 @@ const tasks: Task[] = [
         name: 'Clone Private Repository',
         action: () => clonePrivateRepo(CONTENT_REPO_URL!, TARGET_DIR, GITHUB_TOKEN!),
         dependsOn: ['Clean Repository Directory'],
+    },
+    {
+        name: 'Remove Unnecessary Repository Files',
+        action: () => cleanupUnnecessary(path.join(TARGET_DIR, ), ['content']),
+        dependsOn: ['Clone Private Repository'],
     },
     {
         name: 'Remove Unnecessary Content Files',

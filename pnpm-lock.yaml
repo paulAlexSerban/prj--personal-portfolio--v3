@@ -57,6 +57,9 @@ importers:
       '@prj--personal-portfolio--v3/shared--taskManager':
         specifier: workspace:*
         version: link:../../shared/taskManager
+      '@prj--personal-portfolio--v3/tools--content-sync':
+        specifier: workspace:*
+        version: link:../content-sync
       '@types/node':
         specifier: ^25.9.1
         version: 25.9.1

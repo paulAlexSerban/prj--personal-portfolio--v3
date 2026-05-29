@@ -174,5 +174,61 @@ describe('taskManager', () => {
 
             assert.strictEqual(downstream.mock.callCount(), 0);
         });
+
+        it('stores task results for access after execute', async () => {
+            const executor = taskManager().init([
+                {
+                    name: 'A',
+                    dependsOn: [],
+                    action: () => ({ value: 42 }),
+                },
+            ]);
+
+            await executor.execute();
+
+            assert.deepStrictEqual(executor.getResult<{ value: number }>('A'), { value: 42 });
+        });
+
+        it('passes dependency results to downstream tasks via context', async () => {
+            let downstreamResult: number | undefined;
+
+            await taskManager()
+                .init([
+                    {
+                        name: 'A',
+                        dependsOn: [],
+                        action: () => 10,
+                    },
+                    {
+                        name: 'B',
+                        dependsOn: ['A'],
+                        action: (context) => {
+                            downstreamResult = context.getResult<number>('A') * 2;
+                        },
+                    },
+                ])
+                .execute();
+
+            assert.strictEqual(downstreamResult, 20);
+        });
+
+        it('prevents tasks from accessing results of non-dependencies', async () => {
+            await assert.rejects(
+                taskManager()
+                    .init([
+                        { name: 'A', dependsOn: [], action: () => 1 },
+                        { name: 'B', dependsOn: [], action: () => 2 },
+                        {
+                            name: 'C',
+                            dependsOn: ['B'],
+                            action: (context) => {
+                                context.getResult<number>('A');
+                            },
+                        },
+                    ])
+                    .execute(),
+                /not a dependency/,
+            );
+        });
     });
 });
