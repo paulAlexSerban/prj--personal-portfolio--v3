@@ -7,35 +7,23 @@
     "license": "MIT",
     "scripts": {
         "//": "FORMATS",
-        "formats:check": "yarn prettier --check .",
-        "formats:write": "yarn prettier --write .",
+        "formats:check": "pnpm prettier --check .",
+        "formats:write": "pnpm prettier --write .",
         "/": "GIT",
-        "commit": "yarn git-cz",
+        "commit": "pnpm git-cz",
         "prepare": "husky"
     },
-    "dependencies": {},
     "devDependencies": {
         "@commitlint/cli": "^21.0.1",
         "@commitlint/config-conventional": "^21.0.1",
-        "@types/node": "^25.9.1",
         "commitizen": "^4.3.1",
-        "cz-conventional-changelog": "^3.3.0",
-        "dotenv": "^17.4.2",
-        "husky": "^9.1.7",
-        "prettier": "^3.8.3",
-        "ts-node": "^10.9.2",
-        "typescript": "^6.0.3"
+        "prettier": "^3.8.3"
     },
     "private": true,
     "husky": {
         "hooks": {
             "prepare-commit-msg": "exec < /dev/tty && npx cz --hook || true",
             "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-        }
-    },
-    "config": {
-        "commitizen": {
-            "path": "./node_modules/cz-conventional-changelog"
         }
     }
 }
