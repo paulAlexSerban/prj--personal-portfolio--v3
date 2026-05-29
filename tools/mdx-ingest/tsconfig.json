@@ -17,13 +17,5 @@
     "include": ["src/**/*.ts", "src/**/*.js"],
     "exclude": ["node_modules"],
     "references": [{ "path": "../../shared/taskManager" }],
-    "ts-node": {
-        "esm": true,
-        "experimentalSpecifierResolution": "node",
-        "compilerOptions": {
-            "module": "ESNext",
-            "moduleResolution": "bundler"
-        }
-    },
     "extends": "../../tsconfig.base.json"
 }
