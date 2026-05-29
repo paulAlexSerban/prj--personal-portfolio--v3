@@ -13,18 +13,19 @@
         "commit": "yarn git-cz",
         "prepare": "husky"
     },
-    "dependencies": {
-        "@commitlint/cli": "^20.5.0",
-        "@commitlint/config-conventional": "^20.5.0",
-        "@types/node": "^25.5.0",
+    "dependencies": {},
+    "devDependencies": {
+        "@commitlint/cli": "^21.0.1",
+        "@commitlint/config-conventional": "^21.0.1",
+        "@types/node": "^25.9.1",
         "commitizen": "^4.3.1",
         "cz-conventional-changelog": "^3.3.0",
-        "dotenv": "^17.3.1",
+        "dotenv": "^17.4.2",
         "husky": "^9.1.7",
-        "prettier": "^3.8.1",
-        "typescript": "^6.0.2"
+        "prettier": "^3.8.3",
+        "ts-node": "^10.9.2",
+        "typescript": "^6.0.3"
     },
-    "devDependencies": {},
     "private": true,
     "husky": {
         "hooks": {
