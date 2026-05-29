@@ -2,6 +2,9 @@ import path from 'path';
 import fs from 'fs';
 import dotenv from 'dotenv';
 import { taskManager, type Task } from './helpers/taskManager';
+import cleanRepoDir from './helpers/cleanRepoDir';
+import clonePrivateRepo from './helpers/clonePrivateRepo';
+import cleanupUnnecessary from './helpers/cleanupUnnecessary';
 
 dotenv.config({
     path: '../../.env',
@@ -28,16 +31,24 @@ const setup = () => {
 };
 
 const tasks: Task[] = [
-    { name: 'Setup Environment', action: setup, dependsOn: [] },
-    { name: 'Clean Repository Directory', action: () => console.log('Clean Repository Directory'), dependsOn: ['Setup Environment'] },
+    {
+        name: 'Setup Environment',
+        action: setup,
+        dependsOn: [],
+    },
+    {
+        name: 'Clean Repository Directory',
+        action: () => cleanRepoDir(TARGET_DIR),
+        dependsOn: ['Setup Environment'],
+    },
     {
         name: 'Clone Private Repository',
-        action: () => console.log('Clone Private Repository'),
+        action: () => clonePrivateRepo(CONTENT_REPO_URL!, TARGET_DIR, GITHUB_TOKEN!),
         dependsOn: ['Clean Repository Directory'],
     },
     {
-        name: 'Remove Unnecessary Files',
-        action: () => console.log('Remove Unnecessary Files'),
+        name: 'Remove Unnecessary Content Files',
+        action: () => cleanupUnnecessary(path.join(TARGET_DIR, 'content'), ['publish']),
         dependsOn: ['Clone Private Repository'],
     },
 ];

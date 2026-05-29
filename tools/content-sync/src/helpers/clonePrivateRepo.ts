@@ -1,6 +1,6 @@
-const { execSync } = require('child_process');
+import { execSync } from 'child_process';
 
-function clonePrivateRepo(repoUrl, targetDir, token) {
+function clonePrivateRepo(repoUrl: string, targetDir: string, token: string) {
     const authenticatedUrl = repoUrl.replace('https://github.com/', `https://${token}@github.com/`);
 
     try {
@@ -14,4 +14,4 @@ function clonePrivateRepo(repoUrl, targetDir, token) {
     }
 }
 
-module.exports = clonePrivateRepo;
+export default clonePrivateRepo;
