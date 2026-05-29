@@ -5,6 +5,7 @@
     "repository": "https://github.com/paulAlexSerban/prj--personal-portfolio--v3.git",
     "author": "Paul Serban <paul.alex.serban@gmail.com>",
     "license": "MIT",
+    "packageManager": "pnpm@11.4.0",
     "scripts": {
         "//": "FORMATS",
         "formats:check": "pnpm prettier --check .",
