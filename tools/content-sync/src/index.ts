@@ -1,6 +1,7 @@
 import path from 'path';
 import fs from 'fs';
 import dotenv from 'dotenv';
+import { taskManager, type Task } from './helpers/taskManager';
 
 dotenv.config({
     path: '../../.env',
@@ -26,32 +27,24 @@ const setup = () => {
     }
 };
 
-const tasks = [{ name: 'Setup Environment', action: setup, dependsOn: [] }];
+const tasks: Task[] = [
+    { name: 'Setup Environment', action: setup, dependsOn: [] },
+    { name: 'Clean Repository Directory', action: () => console.log('Clean Repository Directory'), dependsOn: ['Setup Environment'] },
+    {
+        name: 'Clone Private Repository',
+        action: () => console.log('Clone Private Repository'),
+        dependsOn: ['Clean Repository Directory'],
+    },
+    {
+        name: 'Remove Unnecessary Files',
+        action: () => console.log('Remove Unnecessary Files'),
+        dependsOn: ['Clone Private Repository'],
+    },
+];
 
-const executionManager = () => {
-    const init = (tasks) => {
-        const order = [];
-        const visited = new Set();
-
-        const visit = (task) => {
-            if (visited.has(task.name)) return;
-            visited.add(task.name);
-            task.dependsOn.forEach((dep) => {
-                const depTask = tasks.find((t) => t.name === dep);
-                if (depTask) visit(depTask);
-            });
-            order.push(task);
-        };
-
-        tasks.forEach(visit);
-        return order;
-    };
-
-    return {
-        init,
-    };
+const main = async () => {
+    const executor = taskManager().init(tasks);
+    await executor.execute();
 };
-
-const main = () => {};
 
 main();

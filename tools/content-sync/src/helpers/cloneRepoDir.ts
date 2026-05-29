@@ -1,6 +1,6 @@
-const { execSync } = require('child_process');
+import { execSync } from 'child_process';
 
-function cleanRepoDir(targetDir) {
+function cleanRepoDir(targetDir: string) {
     try {
         execSync(`rm -rf ${targetDir}`, { stdio: 'inherit' });
         console.log(`Cleaned existing directory: ${targetDir}`);
@@ -10,4 +10,4 @@ function cleanRepoDir(targetDir) {
     }
 }
 
-module.exports = cleanRepoDir;
+export default cleanRepoDir;

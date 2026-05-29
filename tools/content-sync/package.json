@@ -6,7 +6,7 @@
     "license": "MIT",
     "packageManager": "pnpm@11.4.0",
     "scripts": {
-        "start": "ts-node src/index.ts"
+        "start": "node --loader ts-node/esm src/index.ts"
     },
     "dependencies": {
         "@types/node": "^25.9.1",

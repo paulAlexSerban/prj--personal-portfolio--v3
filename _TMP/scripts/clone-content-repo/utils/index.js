@@ -1,4 +1,4 @@
-const cleanRepoDir = require('./cloneRepoDir');
+const cleanRepoDir = require('../../../../tools/content-sync/src/helpers/cloneRepoDir');
 const clonePrivateRepo = require('./clonePrivateRepo');
 const removeFiles = require('./removeFiles');
 const getExecutionOrder = require('./getExecutionOrder');
