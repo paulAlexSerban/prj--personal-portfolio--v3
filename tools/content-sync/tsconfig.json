@@ -14,8 +14,9 @@
         "composite": true,
         "declaration": true
     },
-    "include": ["**/*.ts", "**/*.js"],
+    "include": ["src/**/*.ts", "src/**/*.js"],
     "exclude": ["node_modules"],
+    "references": [{ "path": "../../shared/taskManager" }],
     "ts-node": {
         "esm": true,
         "experimentalSpecifierResolution": "node",

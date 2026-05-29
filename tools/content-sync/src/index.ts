@@ -1,7 +1,7 @@
 import path from 'path';
 import fs from 'fs';
 import dotenv from 'dotenv';
-import { taskManager, type Task } from './helpers/taskManager';
+import { taskManager, type Task } from '@prj--personal-portfolio--v3/shared--taskManager';
 import cleanRepoDir from './helpers/cleanRepoDir';
 import clonePrivateRepo from './helpers/clonePrivateRepo';
 import cleanupUnnecessary from './helpers/cleanupUnnecessary';

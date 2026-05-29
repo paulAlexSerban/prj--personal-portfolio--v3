@@ -6,9 +6,11 @@
     "license": "MIT",
     "packageManager": "pnpm@11.4.0",
     "scripts": {
-        "start": "node --loader ts-node/esm src/index.ts"
+        "start": "node --loader ts-node/esm src/index.ts",
+        "typecheck": "tsc -b"
     },
     "dependencies": {
+        "@prj--personal-portfolio--v3/shared--taskManager": "workspace:*",
         "@types/node": "^25.9.1",
         "dotenv": "^17.4.2",
         "ts-node": "^10.9.2",
