@@ -1,12 +1,14 @@
 {
     "name": "@prj--personal-portfolio--v3/core",
     "version": "0.0.1",
+    "type": "module",
     "keywords": [],
     "repository": "https://github.com/paulAlexSerban/prj--personal-portfolio--v3.git",
     "author": "Paul Serban <paul.alex.serban@gmail.com>",
     "license": "MIT",
     "packageManager": "pnpm@11.4.0",
     "scripts": {
+        "start": "pnpm -r start",
         "//": "FORMATS",
         "formats:check": "pnpm prettier --check .",
         "formats:write": "pnpm prettier --write .",

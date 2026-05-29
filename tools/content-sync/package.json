@@ -2,10 +2,15 @@
     "name": "@prj--personal-portfolio--v3/content-sync",
     "version": "1.0.0",
     "main": "index.js",
+    "type": "module",
     "license": "MIT",
     "packageManager": "pnpm@11.4.0",
+    "scripts": {
+        "start": "ts-node src/index.ts"
+    },
     "dependencies": {
         "@types/node": "^25.9.1",
+        "dotenv": "^17.4.2",
         "ts-node": "^10.9.2",
         "typescript": "^6.0.3"
     }

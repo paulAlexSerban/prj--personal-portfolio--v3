@@ -1,0 +1,28 @@
+{
+    "compilerOptions": {
+        "lib": ["ES2022"],
+        "allowImportingTsExtensions": true,
+        "resolveJsonModule": true,
+        "allowJs": true,
+        "checkJs": false,
+        "noEmit": true,
+        "allowSyntheticDefaultImports": true,
+        "sourceMap": false,
+        "types": ["node"],
+        "outDir": "dist",
+        "rootDir": "src",
+        "composite": true,
+        "declaration": true
+    },
+    "include": ["**/*.ts", "**/*.js"],
+    "exclude": ["node_modules"],
+    "ts-node": {
+        "esm": true,
+        "experimentalSpecifierResolution": "node",
+        "compilerOptions": {
+            "module": "ESNext",
+            "moduleResolution": "bundler"
+        }
+    },
+    "extends": "../../tsconfig.base.json"
+}
