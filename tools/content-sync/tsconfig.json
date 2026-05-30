@@ -16,6 +16,6 @@
     },
     "include": ["src/**/*.ts", "src/**/*.js"],
     "exclude": ["node_modules"],
-    "references": [{ "path": "../../shared/taskManager" }],
+    "references": [{ "path": "../../shared/task-manager" }],
     "extends": "../../tsconfig.base.json"
 }
