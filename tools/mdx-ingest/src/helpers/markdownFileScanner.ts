@@ -39,7 +39,7 @@ export const markdownFilesScanner =
     ({
         baseDir,
         sourceFolders,
-        typePattern = /^(projects|coursework|posts|booknotes|snippets)$/,
+        typePattern = /^(projects|coursework|posts|booknotes|snippets|questions)$/,
     }: DirectoryPath) =>
     async (): Promise<ScannedDirectory[]> => {
         const result: ScannedDirectory[] = [];

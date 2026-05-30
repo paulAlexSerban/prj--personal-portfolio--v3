@@ -8,15 +8,22 @@
     "types": "./dist/index.d.ts",
     "type": "module",
     "license": "MIT",
-    "packageManager": "pnpm@11.4.0",
+    "packageManager": "pnpm@11.5.0",
     "scripts": {
         "start": "node --experimental-strip-types src/index.ts",
+        "start:dry-run": "node --experimental-strip-types src/index.ts --dry-run",
         "typecheck": "tsc -b"
     },
     "dependencies": {
-        "@prj--personal-portfolio--v3/shared--taskManager": "workspace:*",
+        "@prj--personal-portfolio--v3/shared--db": "workspace:*",
+        "@prj--personal-portfolio--v3/shared--db-schema": "workspace:*",
+        "@prj--personal-portfolio--v3/shared--task-manager": "workspace:*",
         "@prj--personal-portfolio--v3/tools--content-sync": "workspace:*",
         "@types/node": "^25.9.1",
-        "typescript": "^6.0.3"
+        "better-sqlite3": "^12.10.0",
+        "drizzle-orm": "^0.45.2",
+        "gray-matter": "^4.0.3",
+        "typescript": "^6.0.3",
+        "ulidx": "^2.4.1"
     }
 }
