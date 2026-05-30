@@ -1,0 +1,28 @@
+{
+  "name": "@prj--personal-portfolio--v3/shared--db",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "exports": { ".": "./index.ts" },
+  "types": "./dist/index.d.ts",
+  "license": "MIT",
+  "packageManager": "pnpm@11.5.0",
+  "type": "module",
+  "scripts": {
+    "build": "tsc -b",
+    "typecheck": "tsc -b",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate",
+    "db:studio": "drizzle-kit studio"
+  },
+  "dependencies": {
+    "@prj--personal-portfolio--v3/shared--db-schema": "workspace:*",
+    "better-sqlite3": "^12.10.0",
+    "drizzle-orm": "^0.45.2"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/node": "^25.9.1",
+    "drizzle-kit": "^0.31.10",
+    "typescript": "^6.0.3"
+  }
+}
