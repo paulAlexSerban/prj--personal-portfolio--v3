@@ -2,58 +2,57 @@ name: Ingest Content
 
 on:
     workflow_dispatch:
-    push:
+    workflow_run:
+        workflows:
+            - CI
+        types:
+            - completed
         branches:
             - main
 
+concurrency:
+    group: ingest-content-${{ github.ref }}
+    cancel-in-progress: true
+
+permissions:
+    contents: read
+
 jobs:
-    clone-and-ingest-content:
+    ingest:
+        if: >-
+            github.event_name == 'workflow_dispatch' ||
+            github.event.workflow_run.conclusion == 'success'
         runs-on: ubuntu-latest
+        timeout-minutes: 30
 
         steps:
-            - name: Checkout this repository
+            - name: Checkout repository
               uses: actions/checkout@v4
-
-            - name: Setup Node.js
-              uses: actions/setup-node@v4
               with:
-                  node-version-file: '.nvmrc'
+                  ref: ${{ github.event.workflow_run.head_sha || github.sha }}
 
-            - name: Install dependencies
-              run: |
-                  npm i -g pnpm
-                  pnpm install
+            - name: Setup monorepo
+              uses: ./.github/actions/setup-monorepo
 
-            - name: formats
-              run: |
-                  pnpm formats:check
+            - name: Apply database migrations
+              run: pnpm db:migrate
 
-            - name: Typecheck
-              run: |
-                  pnpm typecheck
-
-            - name: Test
-              run: |
-                  pnpm test
-
-            - name: Generate DB Migrations
-              run: |
-                  pnpm db:generate
-
-            - name: Migrate DB
-              run: |
-                  pnpm db:migrate
-
-            - name: Clone and Ingest Content
+            - name: Dry-run content ingest
               env:
                   GITHUB_TOKEN: ${{ secrets.CONTENT_REPO_TOKEN }}
                   CONTENT_REPO_GIT_URL: https://github.com/paulAlexSerban/content--paulserban.eu.git
-              run: |
-                  pnpm start
+              run: pnpm start:dry-run
 
-            - name: 'Upload ingested content artifact'
-              uses: actions/upload-artifact@v7
+            - name: Clone and ingest content
+              env:
+                  GITHUB_TOKEN: ${{ secrets.CONTENT_REPO_TOKEN }}
+                  CONTENT_REPO_GIT_URL: https://github.com/paulAlexSerban/content--paulserban.eu.git
+              run: pnpm start
+
+            - name: Upload content database artifact
+              uses: actions/upload-artifact@v4
               with:
-                  name: ingested-content-${{ github.run_number }}-${{ github.run_id }}
-                  path: './database/output'
+                  name: content-db-${{ github.run_number }}-${{ github.run_id }}
+                  path: database/output/
                   retention-days: 30
+                  if-no-files-found: error

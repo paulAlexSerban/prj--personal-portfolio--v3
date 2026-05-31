@@ -1,0 +1,38 @@
+name: CI
+
+on:
+    push:
+        branches:
+            - main
+    pull_request:
+
+concurrency:
+    group: ci-${{ github.workflow }}-${{ github.ref }}
+    cancel-in-progress: true
+
+permissions:
+    contents: read
+
+jobs:
+    quality:
+        runs-on: ubuntu-latest
+        timeout-minutes: 15
+
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v4
+
+            - name: Setup monorepo
+              uses: ./.github/actions/setup-monorepo
+
+            - name: Check formatting
+              run: pnpm formats:check
+
+            - name: Typecheck
+              run: pnpm typecheck
+
+            - name: Test
+              run: pnpm test
+
+            - name: Apply database migrations
+              run: pnpm db:migrate
