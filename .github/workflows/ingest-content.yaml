@@ -37,12 +37,6 @@ jobs:
             - name: Apply database migrations
               run: pnpm db:migrate
 
-            - name: Dry-run content ingest
-              env:
-                  GITHUB_TOKEN: ${{ secrets.CONTENT_REPO_TOKEN }}
-                  CONTENT_REPO_GIT_URL: https://github.com/paulAlexSerban/content--paulserban.eu.git
-              run: pnpm start:dry-run
-
             - name: Clone and ingest content
               env:
                   GITHUB_TOKEN: ${{ secrets.CONTENT_REPO_TOKEN }}
