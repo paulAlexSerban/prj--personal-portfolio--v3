@@ -12,7 +12,7 @@ content repo (private Git)  →  content-sync  →  content/live/
                              mdx-ingest                          json-ingest
                                     └─────────────────┬─────────────────┘
                                                       ↓
-                                            database/content.db
+                                            database/output/content.db
 ```
 
 Run **content-sync** before **mdx-ingest** and **json-ingest** locally and in CI.

@@ -22,7 +22,7 @@ Two Git repos: this **application monorepo** and a private **content repo** (`co
 ```
 content repo (MDX)  →  tools/content-sync  →  content/live/
                                                     ↓
-                                             tools/mdx-ingest  →  database/content.db
+                                             tools/mdx-ingest  →  database/output/content.db
                                                                         ↓
                                                              frontend SSG (Astro) at build time
                                                              + static JSON for quiz/mobile (planned)

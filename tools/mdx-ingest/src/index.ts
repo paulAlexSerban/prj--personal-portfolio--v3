@@ -8,7 +8,7 @@ import { normalise, type NormalisedRows } from './helpers/normalise.ts';
 import { upsertRecords } from './helpers/upsertRecords.ts';
 
 const CONTENT_DIR = path.resolve(process.env['CONTENT_DIR'] ?? '../../content/live/content/publish');
-const DATABASE_PATH = path.resolve(process.env['DATABASE_PATH'] ?? '../../database/content.db');
+const DATABASE_PATH = path.resolve(process.env['DATABASE_PATH'] ?? '../../database/output/content.db');
 const MIGRATIONS_DIR = path.resolve(process.env['MIGRATIONS_DIR'] ?? '../../database/migrations');
 
 const scanMarkdownFiles = markdownFilesScanner({ baseDir: CONTENT_DIR });

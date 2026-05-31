@@ -9,6 +9,6 @@
         "emitDeclarationOnly": true,
         "types": ["node"]
     },
-    "include": ["index.ts", "src/**/*.ts"],
+    "include": ["index.ts", "drizzle.config.ts", "src/**/*.ts"],
     "references": [{ "path": "../db-schema" }]
 }

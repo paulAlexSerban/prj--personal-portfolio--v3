@@ -130,15 +130,4 @@ dist
 .pnp.*
 content/live
 
-database/*.db
-database/*.db-journal
-database/*.db-trace
-database/*.db-wal
-database/*.db-shm
-database/*.db-lock
-database/*.db-lock-wal
-database/*.db-lock-shm
-database/*.db-lock-trace
-database/*.db-lock-wal
-database/*.db-lock-shm
-database/*.db-lock-trace
+database/output/*

@@ -159,7 +159,7 @@ tags:
 ### Build-Time Data Flow
 
 ```
-database/content.db (SQLite)
+database/output/content.db (SQLite)
     │
     └── SSG build engine (drizzle query at build time)
           ├── Generates HTML pages:

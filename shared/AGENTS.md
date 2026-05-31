@@ -21,7 +21,7 @@ Schema (`db-schema`) is separated from runtime (`db`) so the frontend can import
     - `src/connection.ts` — `openConnection`, `closeConnection`, `DrizzleDb` type
     - `src/migrate.ts` — `runMigrations(db, migrationsFolder)`
     - `src/upsert.ts` — `upsertWithLockCheck`
-    - `drizzle.config.ts` — Drizzle Kit config (schema → `database/migrations/`, db → `database/content.db`)
+    - `drizzle.config.ts` — Drizzle Kit config (schema → `database/migrations/`, db → `database/output/content.db`)
 - **API**:
     - `openConnection(dbPath)` — better-sqlite3 + Drizzle, WAL + FK pragmas
     - `runMigrations(db, migrationsFolder)` — applies `database/migrations/` via drizzle migrator

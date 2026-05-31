@@ -9,7 +9,7 @@ TypeScript pnpm monorepo for a portfolio, blog, and flashcard-quiz platform (JAM
     1. `tools/content-sync` clones content
     2. `tools/mdx-ingest` parses MDX
     3. `tools/json-ingest` parses JSON
-    4. upserts into `database/content.db` (SQLite).
+    4. upserts into `database/output/content.db` (SQLite).
 - **Build-time reads**: the frontend SSG (Astro) queries `content.db` at build time; MDX body is stored as text, compiled at build.
 - **Shared layer**: Drizzle schema (`shared/db-schema`), DB runtime (`shared/db`), and a dependency-aware task runner (`shared/task-manager`).
 - **Docs**: product requirements, ADRs, and implementation plans live in `_docs/`.
