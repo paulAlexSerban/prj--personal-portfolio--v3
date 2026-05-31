@@ -1,0 +1,64 @@
+name: Ingest Content
+
+on:
+    workflow_dispatch:
+    push:
+        branches:
+            - main
+
+env:
+    NODE_VERSION: 24.15.0
+    REPO_NAME: prj--personal-portfolio--v3
+    BASE_URL: https://paulalexserban.github.io
+
+jobs:
+    clone-and-process:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout this repository
+              uses: actions/checkout@v4
+
+            - name: Setup Node.js
+              uses: actions/setup-node@v4
+              with:
+                  node-version-file: '.nvmrc'
+
+            - name: Install dependencies
+              run: |
+                  npm i -g pnpm
+                  pnpm install
+
+            - name: formats
+              run: |
+                  pnpm formats:check
+
+            - name: Typecheck
+              run: |
+                  pnpm typecheck
+
+            - name: Test
+              run: |
+                  pnpm test
+
+            - name: Generate DB Migrations
+              run: |
+                  pnpm db:generate
+
+            - name: Migrate DB
+              run: |
+                  pnpm db:migrate
+
+            - name: Clone and Ingest Content
+              env:
+                  GITHUB_TOKEN: ${{ secrets.CONTENT_REPO_TOKEN }}
+                  CONTENT_REPO_URL: https://github.com/paulAlexSerban/content--paulserban.eu.git
+              run: |
+                  pnpm start
+
+            - name: 'Upload ingested content artifact'
+              uses: actions/upload-artifact@v7
+              with:
+                  name: ingested-content-${{ github.run_number }}-${{ github.run_id }}
+                  path: './database/output'
+                  retention-days: 30

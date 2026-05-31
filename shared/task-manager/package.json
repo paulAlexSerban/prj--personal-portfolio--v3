@@ -1,0 +1,20 @@
+{
+    "name": "@prj--personal-portfolio--v3/shared--task-manager",
+    "version": "1.0.0",
+    "type": "module",
+    "license": "MIT",
+    "packageManager": "pnpm@11.5.0",
+    "exports": {
+        ".": "./index.ts"
+    },
+    "types": "./dist/index.d.ts",
+    "scripts": {
+        "build": "tsc -b",
+        "test": "node --experimental-strip-types --test index.test.ts",
+        "typecheck": "tsc -b"
+    },
+    "dependencies": {
+        "@types/node": "^25.9.1",
+        "typescript": "^6.0.3"
+    }
+}
