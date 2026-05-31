@@ -21,8 +21,7 @@ if (!fs.existsSync(migrationsDir)) {
 }
 
 /** Drizzle Kit expects paths relative to cwd, not absolute paths. */
-const toRelativeConfigPath = (p: string): string =>
-    path.isAbsolute(p) ? path.relative(configDir, p) : p;
+const toRelativeConfigPath = (p: string): string => (path.isAbsolute(p) ? path.relative(configDir, p) : p);
 
 export default defineConfig({
     dialect: 'sqlite',
