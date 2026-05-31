@@ -47,7 +47,7 @@ jobs:
             - name: Clone and Ingest Content
               env:
                   GITHUB_TOKEN: ${{ secrets.CONTENT_REPO_TOKEN }}
-                  CONTENT_REPO_URL: https://github.com/paulAlexSerban/content--paulserban.eu.git
+                  CONTENT_REPO_GIT_URL: https://github.com/paulAlexSerban/content--paulserban.eu.git
               run: |
                   pnpm start
 
