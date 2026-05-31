@@ -44,7 +44,7 @@ const computeExecutionLevels = (tasks: Task<unknown>[]): Task<unknown>[][] => {
                               throw new Error(`Task "${taskName}" depends on unknown task "${dep}"`);
                           }
                           return getLevel(dep) + 1;
-                      }),
+                      })
                   );
 
         visiting.delete(taskName);
@@ -101,7 +101,7 @@ export const taskManager = (): TaskManager => {
                     const result = await task.action(createContext(task));
                     results.set(task.name, result);
                     console.log(`Completed task: ${task.name}`);
-                }),
+                })
             );
         }
     };

@@ -36,11 +36,7 @@ const collectMarkdownFiles = async (dir: string, rootDir = dir): Promise<string[
 };
 
 export const markdownFilesScanner =
-    ({
-        baseDir,
-        sourceFolders,
-        typePattern = /^(projects|coursework|posts|booknotes|snippets|questions)$/,
-    }: DirectoryPath) =>
+    ({ baseDir, sourceFolders, typePattern = /^(projects|coursework|posts|booknotes|snippets|questions)$/ }: DirectoryPath) =>
     async (): Promise<ScannedDirectory[]> => {
         const result: ScannedDirectory[] = [];
         const entries = await fs.readdir(baseDir, { withFileTypes: true });

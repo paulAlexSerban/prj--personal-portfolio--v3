@@ -36,11 +36,7 @@ const collectJsonFiles = async (dir: string, rootDir = dir): Promise<string[]> =
 };
 
 export const jsonFilesScanner =
-    ({
-        baseDir,
-        sourceFolders,
-        typePattern = /^(profile|skills|pages)$/,
-    }: DirectoryPath) =>
+    ({ baseDir, sourceFolders, typePattern = /^(profile|skills|pages)$/ }: DirectoryPath) =>
     async (): Promise<ScannedDirectory[]> => {
         const result: ScannedDirectory[] = [];
         const entries = await fs.readdir(baseDir, { withFileTypes: true });

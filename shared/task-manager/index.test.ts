@@ -20,10 +20,7 @@ describe('taskManager', () => {
         it('throws when a task depends on an unknown task', () => {
             const manager = taskManager();
 
-            assert.throws(
-                () => manager.init([{ name: 'A', dependsOn: ['Missing'], action: () => {} }]),
-                /Task "A" depends on unknown task "Missing"/,
-            );
+            assert.throws(() => manager.init([{ name: 'A', dependsOn: ['Missing'], action: () => {} }]), /Task "A" depends on unknown task "Missing"/);
         });
 
         it('throws when tasks have a circular dependency', () => {
@@ -35,7 +32,7 @@ describe('taskManager', () => {
                         { name: 'A', dependsOn: ['B'], action: () => {} },
                         { name: 'B', dependsOn: ['A'], action: () => {} },
                     ]),
-                /Circular dependency detected involving task: A/,
+                /Circular dependency detected involving task: A/
             );
         });
     });
@@ -87,12 +84,7 @@ describe('taskManager', () => {
             });
 
             await taskManager()
-                .init([
-                    track('A', []),
-                    track('B', ['A']),
-                    track('C', ['A']),
-                    track('D', ['B', 'C'], 5),
-                ])
+                .init([track('A', []), track('B', ['A']), track('C', ['A']), track('D', ['B', 'C'], 5)])
                 .execute();
 
             assert.strictEqual(maxConcurrent, 2);
@@ -110,12 +102,7 @@ describe('taskManager', () => {
             });
 
             await taskManager()
-                .init([
-                    track('A', []),
-                    track('B', ['A']),
-                    track('C', ['A']),
-                    track('D', ['B', 'C']),
-                ])
+                .init([track('A', []), track('B', ['A']), track('C', ['A']), track('D', ['B', 'C'])])
                 .execute();
 
             assert.ok(order.indexOf('A') < order.indexOf('B'));
@@ -149,7 +136,7 @@ describe('taskManager', () => {
                         },
                     ])
                     .execute(),
-                /task failed/,
+                /task failed/
             );
         });
 
@@ -169,7 +156,7 @@ describe('taskManager', () => {
                         { name: 'B', dependsOn: ['A'], action: downstream },
                     ])
                     .execute(),
-                /task failed/,
+                /task failed/
             );
 
             assert.strictEqual(downstream.mock.callCount(), 0);
@@ -227,7 +214,7 @@ describe('taskManager', () => {
                         },
                     ])
                     .execute(),
-                /not a dependency/,
+                /not a dependency/
             );
         });
     });

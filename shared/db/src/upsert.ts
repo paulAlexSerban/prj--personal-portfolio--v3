@@ -19,17 +19,12 @@ type RowWithSlug = Record<string, unknown> & {
 // even though the base SQLiteTable type doesn't declare them.
 type TableColumns = Record<string, ReturnType<typeof getTableColumns>[string]>;
 
-export const upsertWithLockCheck = (
-    db: DrizzleDb,
-    table: SQLiteTable,
-    row: RowWithSlug,
-    options?: { dryRun?: boolean; syncSource?: string },
-): UpsertResult => {
+export const upsertWithLockCheck = (db: DrizzleDb, table: SQLiteTable, row: RowWithSlug, options?: { dryRun?: boolean; syncSource?: string }): UpsertResult => {
     const cols = getTableColumns(table) as TableColumns;
     const syncSource = options?.syncSource ?? 'mdx';
 
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-    const slugCol   = cols['slug']!;
+    const slugCol = cols['slug']!;
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     const lockedCol = cols['locked']!;
 

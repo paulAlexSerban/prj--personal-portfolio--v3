@@ -4,21 +4,25 @@ TypeScript pnpm monorepo for a portfolio, blog, and flashcard-quiz platform (JAM
 
 ## Architecture
 
-- **Two repos**: this app monorepo + a separate private content repo (`content--paulserban.eu`) with MDX under `content/publish`.
-- **Content pipeline**: `tools/content-sync` clones content → `tools/mdx-ingest` parses MDX → `tools/json-ingest` parses JSON → upserts into `database/content.db` (SQLite).
+- **Two repos**: this app monorepo + a separate private content repo (`content--paulserban.eu`) with MDX and JSON under `content/publish`.
+- **Content pipeline**:
+    1. `tools/content-sync` clones content
+    2. `tools/mdx-ingest` parses MDX
+    3. `tools/json-ingest` parses JSON
+    4. upserts into `database/content.db` (SQLite).
 - **Build-time reads**: the frontend SSG (Astro) queries `content.db` at build time; MDX body is stored as text, compiled at build.
 - **Shared layer**: Drizzle schema (`shared/db-schema`), DB runtime (`shared/db`), and a dependency-aware task runner (`shared/task-manager`).
 - **Docs**: product requirements, ADRs, and implementation plans live in `_docs/`.
 
 ## Key directories
 
-| Path | Role |
-|------|------|
-| `_docs/` | PRDs, architecture docs, ADRs, plans — see `_docs/AGENTS.md` |
-| `database/` | SQLite file + Drizzle migration SQL — see `database/AGENTS.md` |
-| `shared/` | Reusable packages (schema, DB, task manager) — see `shared/AGENTS.md` |
-| `tools/` | Content sync and MDX ingest CLIs — see `tools/AGENTS.md` |
-| `frontend/`, `backend/` | App surfaces (add `AGENTS.md` when those areas grow) |
+| Path                    | Role                                                                  |
+| ----------------------- | --------------------------------------------------------------------- |
+| `_docs/`                | PRDs, architecture docs, ADRs, plans — see `_docs/AGENTS.md`          |
+| `database/`             | SQLite file + Drizzle migration SQL — see `database/AGENTS.md`        |
+| `shared/`               | Reusable packages (schema, DB, task manager) — see `shared/AGENTS.md` |
+| `tools/`                | Content sync and MDX ingest CLIs — see `tools/AGENTS.md`              |
+| `frontend/`, `backend/` | App surfaces (add `AGENTS.md` when those areas grow)                  |
 
 ## Common commands
 

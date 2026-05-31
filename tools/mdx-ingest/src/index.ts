@@ -7,7 +7,7 @@ import { validateParsedFiles, type ValidationResult } from './helpers/validatePa
 import { normalise, type NormalisedRows } from './helpers/normalise.ts';
 import { upsertRecords } from './helpers/upsertRecords.ts';
 
-const CONTENT_DIR   = path.resolve(process.env['CONTENT_DIR']   ?? '../../content/live/content/publish');
+const CONTENT_DIR = path.resolve(process.env['CONTENT_DIR'] ?? '../../content/live/content/publish');
 const DATABASE_PATH = path.resolve(process.env['DATABASE_PATH'] ?? '../../database/content.db');
 const MIGRATIONS_DIR = path.resolve(process.env['MIGRATIONS_DIR'] ?? '../../database/migrations');
 
@@ -37,7 +37,7 @@ const tasks: Task<unknown>[] = [
     {
         name: 'Open DB Connection',
         action: () => openConnection(DATABASE_PATH),
-        dependsOn: [],          // runs in parallel with the parse chain
+        dependsOn: [], // runs in parallel with the parse chain
     },
     {
         name: 'Run Migrations',
@@ -48,8 +48,8 @@ const tasks: Task<unknown>[] = [
         name: 'Upsert Records',
         action: (ctx) =>
             upsertRecords({
-                db:     ctx.getResult<DrizzleDb>('Open DB Connection'),
-                rows:   ctx.getResult<NormalisedRows>('Normalise to DB Rows'),
+                db: ctx.getResult<DrizzleDb>('Open DB Connection'),
+                rows: ctx.getResult<NormalisedRows>('Normalise to DB Rows'),
                 dryRun: process.argv.includes('--dry-run'),
             }),
         dependsOn: ['Run Migrations', 'Normalise to DB Rows', 'Open DB Connection'],

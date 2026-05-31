@@ -12,18 +12,18 @@ import { upsertWithLockCheck, type UpsertResult, type DrizzleDb } from '@prj--pe
 import type { NormalisedRows } from './normalise.ts';
 
 export type UpsertSummary = {
-    inserted:       number;
-    updated:        number;
-    skipped:        number;
-    tags:           number;
-    contentLinks:   number;
-    questionLinks:  number;
+    inserted: number;
+    updated: number;
+    skipped: number;
+    tags: number;
+    contentLinks: number;
+    questionLinks: number;
     questionsSkipped: number;
 };
 
 type UpsertRecordsOptions = {
-    db:     DrizzleDb;
-    rows:   NormalisedRows;
+    db: DrizzleDb;
+    rows: NormalisedRows;
     dryRun?: boolean;
 };
 
@@ -34,21 +34,13 @@ const upsertTags = (db: DrizzleDb, rows: NormalisedRows, dryRun: boolean): numbe
     }
 
     for (const tag of rows.tags) {
-        db.insert(tagsTable)
-            .values(tag)
-            .onConflictDoNothing()
-            .run();
+        db.insert(tagsTable).values(tag).onConflictDoNothing().run();
     }
 
     return rows.tags.length;
 };
 
-const syncContentTags = (
-    db: DrizzleDb,
-    upsertedSlugs: Set<string>,
-    rows: NormalisedRows,
-    dryRun: boolean,
-): number => {
+const syncContentTags = (db: DrizzleDb, upsertedSlugs: Set<string>, rows: NormalisedRows, dryRun: boolean): number => {
     const links = rows.contentTags.filter((l) => upsertedSlugs.has(l.content_slug));
 
     if (dryRun) {
@@ -69,12 +61,7 @@ const syncContentTags = (
     return links.length;
 };
 
-const syncQuestionTags = (
-    db: DrizzleDb,
-    upsertedQuestionSlugs: Set<string>,
-    rows: NormalisedRows,
-    dryRun: boolean,
-): number => {
+const syncQuestionTags = (db: DrizzleDb, upsertedQuestionSlugs: Set<string>, rows: NormalisedRows, dryRun: boolean): number => {
     const links = rows.questionTags.filter((l) => upsertedQuestionSlugs.has(l.question_slug));
 
     if (dryRun) {
@@ -98,11 +85,7 @@ const syncQuestionTags = (
 const loadExistingPostSlugs = (db: DrizzleDb, slugs: string[]): Set<string> => {
     if (slugs.length === 0) return new Set();
 
-    const rows = db
-        .select({ slug: postsTable.slug })
-        .from(postsTable)
-        .where(inArray(postsTable.slug, slugs))
-        .all();
+    const rows = db.select({ slug: postsTable.slug }).from(postsTable).where(inArray(postsTable.slug, slugs)).all();
 
     return new Set(rows.map((r) => r.slug));
 };
@@ -123,17 +106,15 @@ export const upsertRecords = (options: UpsertRecordsOptions): UpsertSummary => {
         contentResults.push(upsertWithLockCheck(db, courseworkTable, row, { dryRun }));
     }
 
-    const upsertedContentSlugs = new Set(
-        contentResults.filter((r) => r.outcome !== 'skipped').map((r) => r.slug),
-    );
+    const upsertedContentSlugs = new Set(contentResults.filter((r) => r.outcome !== 'skipped').map((r) => r.slug));
 
-    const tagCount        = upsertTags(db, rows, dryRun);
+    const tagCount = upsertTags(db, rows, dryRun);
     const contentLinkCount = syncContentTags(db, upsertedContentSlugs, rows, dryRun);
 
     // Questions require parent post to exist (FK on post_slug)
     const parentSlugs = [...new Set(rows.questions.map((q) => q.post_slug))];
     const existingPostSlugs = dryRun
-        ? new Set(parentSlugs)   // assume all parents exist in dry-run
+        ? new Set(parentSlugs) // assume all parents exist in dry-run
         : loadExistingPostSlugs(db, parentSlugs);
 
     let questionsSkipped = 0;
@@ -147,9 +128,7 @@ export const upsertRecords = (options: UpsertRecordsOptions): UpsertSummary => {
         questionResults.push(upsertWithLockCheck(db, questionsTable, row, { dryRun }));
     }
 
-    const upsertedQuestionSlugs = new Set(
-        questionResults.filter((r) => r.outcome !== 'skipped').map((r) => r.slug),
-    );
+    const upsertedQuestionSlugs = new Set(questionResults.filter((r) => r.outcome !== 'skipped').map((r) => r.slug));
 
     const questionLinkCount = syncQuestionTags(db, upsertedQuestionSlugs, rows, dryRun);
 
@@ -169,9 +148,9 @@ export const upsertRecords = (options: UpsertRecordsOptions): UpsertSummary => {
 
     console.log(
         `[upsert] inserted=${summary.inserted}  updated=${summary.updated}  skipped=${summary.skipped}  ` +
-        `tags=${summary.tags}  contentLinks=${summary.contentLinks}  questionLinks=${summary.questionLinks}` +
-        (questionsSkipped > 0 ? `  questionsSkipped=${questionsSkipped}` : '') +
-        (dryRun ? '  (dry-run)' : ''),
+            `tags=${summary.tags}  contentLinks=${summary.contentLinks}  questionLinks=${summary.questionLinks}` +
+            (questionsSkipped > 0 ? `  questionsSkipped=${questionsSkipped}` : '') +
+            (dryRun ? '  (dry-run)' : '')
     );
 
     return summary;

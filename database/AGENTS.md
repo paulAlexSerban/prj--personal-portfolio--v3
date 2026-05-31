@@ -12,36 +12,36 @@ Runtime SQLite artifact and versioned schema migrations for portfolio content. T
 
 ## Contents
 
-| Path | Purpose |
-|------|---------|
-| `content.db` | Build artifact — queryable content store (WAL sidecar files `*.db-wal`, `*.db-shm` may appear locally) |
-| `migrations/*.sql` | Applied migration scripts |
-| `migrations/meta/` | Drizzle journal and snapshots — **do not edit by hand** |
+| Path               | Purpose                                                                                                |
+| ------------------ | ------------------------------------------------------------------------------------------------------ |
+| `content.db`       | Build artifact — queryable content store (WAL sidecar files `*.db-wal`, `*.db-shm` may appear locally) |
+| `migrations/*.sql` | Applied migration scripts                                                                              |
+| `migrations/meta/` | Drizzle journal and snapshots — **do not edit by hand**                                                |
 
 ## Data model
 
 ### Content tables
 
-| Table | Purpose | Key fields |
-|-------|---------|------------|
-| `posts` | Blog posts, book notes, snippets | `type`, `slug` (unique), `body` (raw MDX), `status`, `sync_source`, `locked` |
-| `projects` | Portfolio projects | `repo_url`, `demo_url`, `priority`, `pinned` |
-| `coursework` | Course / learning projects | `section`, `repo_url`, `priority` |
-| `questions` | Flashcards | `post_slug` → FK to `posts.slug`, `front`, `back` |
-| `pages` | JSON-authored static pages | `body` (serialised JSON payload), `status` |
+| Table        | Purpose                          | Key fields                                                                   |
+| ------------ | -------------------------------- | ---------------------------------------------------------------------------- |
+| `posts`      | Blog posts, book notes, snippets | `type`, `slug` (unique), `body` (raw MDX), `status`, `sync_source`, `locked` |
+| `projects`   | Portfolio projects               | `repo_url`, `demo_url`, `priority`, `pinned`                                 |
+| `coursework` | Course / learning projects       | `section`, `repo_url`, `priority`                                            |
+| `questions`  | Flashcards                       | `post_slug` → FK to `posts.slug`, `front`, `back`                            |
+| `pages`      | JSON-authored static pages       | `body` (serialised JSON payload), `status`                                   |
 
 ### Site tables (json-ingest)
 
-| Table | Purpose |
-|-------|---------|
-| `profile` | Author bio, links, photo (singleton, slug `profile`) |
-| `skills` | Skill list with `category`, `sort_order`, unique `slug` |
+| Table     | Purpose                                                 |
+| --------- | ------------------------------------------------------- |
+| `profile` | Author bio, links, photo (singleton, slug `profile`)    |
+| `skills`  | Skill list with `category`, `sort_order`, unique `slug` |
 
 ### Taxonomy
 
-| Table | Purpose |
-|-------|---------|
-| `tags` | Normalised tag names (`name`, `slug` unique) |
+| Table          | Purpose                                                    |
+| -------------- | ---------------------------------------------------------- |
+| `tags`         | Normalised tag names (`name`, `slug` unique)               |
 | `content_tags` | Many-to-many: `content_slug` + `tag_slug` + `content_type` |
 
 ### Sync metadata (on applicable tables)
@@ -53,11 +53,11 @@ Runtime SQLite artifact and versioned schema migrations for portfolio content. T
 
 ## Migration history
 
-| Migration | Change |
-|-----------|--------|
-| `0000_chilly_firestar.sql` | Initial tables; tags stored as JSON text columns on content rows |
-| `0001_cynical_molecule_man.sql` | Adds `tags` + `content_tags`; drops `tags` columns from content tables |
-| `0002_vengeful_paper_doll.sql` | Adds `pages`; adds `slug` to `profile` and `skills`; defaults `sync_source` to `json` for site tables |
+| Migration                       | Change                                                                                                |
+| ------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| `0000_chilly_firestar.sql`      | Initial tables; tags stored as JSON text columns on content rows                                      |
+| `0001_cynical_molecule_man.sql` | Adds `tags` + `content_tags`; drops `tags` columns from content tables                                |
+| `0002_vengeful_paper_doll.sql`  | Adds `pages`; adds `slug` to `profile` and `skills`; defaults `sync_source` to `json` for site tables |
 
 ## Workflow
 

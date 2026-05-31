@@ -8,20 +8,17 @@
     "license": "MIT",
     "packageManager": "pnpm@11.5.0",
     "scripts": {
-        "build": "pnpm -r build",
-        "db:generate": "pnpm -r db:generate",
+        "commit": "pnpm git-cz",
         "db:migrate": "pnpm -r db:migrate",
+        "db:generate": "pnpm -r db:generate",
         "db:studio": "pnpm -r db:studio",
-        "start:dry-run": "pnpm -r start:dry-run",
-        "start": "pnpm -r start",
-        "typecheck": "pnpm -r typecheck",
-        "test": "pnpm -r test",
-        "//": "FORMATS",
         "formats:check": "pnpm prettier --check .",
         "formats:write": "pnpm prettier --write .",
-        "/": "GIT",
-        "commit": "pnpm git-cz",
-        "prepare": "husky"
+        "prepare": "husky",
+        "start:dry-run": "pnpm -r start:dry-run",
+        "start": "pnpm -r start",
+        "test": "pnpm -r test",
+        "typecheck": "pnpm -r typecheck"
     },
     "devDependencies": {
         "@commitlint/cli": "^21.0.1",

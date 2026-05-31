@@ -48,7 +48,7 @@ const tasks: Task[] = [
     },
     {
         name: 'Remove Unnecessary Repository Files',
-        action: () => cleanupUnnecessary(path.join(TARGET_DIR, ), ['content']),
+        action: () => cleanupUnnecessary(path.join(TARGET_DIR), ['content']),
         dependsOn: ['Clone Private Repository'],
     },
     {

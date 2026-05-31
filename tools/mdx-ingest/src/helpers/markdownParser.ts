@@ -22,8 +22,7 @@ const CONTENT_TYPE_MAP: Record<string, ContentType> = {
     questions: 'question',
 };
 
-const deriveSlug = (filePath: string): string =>
-    path.basename(filePath).replace(/\.(mdx?|md)$/, '');
+const deriveSlug = (filePath: string): string => path.basename(filePath).replace(/\.(mdx?|md)$/, '');
 
 export const markdownParser = async (scannedDirectories: ScannedDirectory[]): Promise<ParsedFile[]> => {
     const result: ParsedFile[] = [];

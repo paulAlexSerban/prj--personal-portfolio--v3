@@ -53,14 +53,14 @@ Scan → Parse → Validate → Normalise ──┐
 Open DB → Run Migrations ─────────────┘
 ```
 
-| Task | Helper | Responsibility |
-|------|--------|----------------|
-| Scan Markdown Files | `markdownFileScanner.ts` | Walk `content/live/content/publish/` subfolders |
-| Parse Markdown Files | `markdownParser.ts` | `gray-matter` frontmatter + body |
-| Validate Parsed Files | `validateParsedFiles.ts` | Required frontmatter per content type; skips invalid files |
-| Normalise to DB Rows | `normalise.ts` | Map to `$inferInsert` rows, ULIDs, tag extraction |
-| Open DB / Run Migrations | `shared--db` | Connect + apply `database/migrations/` |
-| Upsert Records | `upsertRecords.ts` | Per-table upsert, tag sync, respects `locked` |
+| Task                     | Helper                   | Responsibility                                             |
+| ------------------------ | ------------------------ | ---------------------------------------------------------- |
+| Scan Markdown Files      | `markdownFileScanner.ts` | Walk `content/live/content/publish/` subfolders            |
+| Parse Markdown Files     | `markdownParser.ts`      | `gray-matter` frontmatter + body                           |
+| Validate Parsed Files    | `validateParsedFiles.ts` | Required frontmatter per content type; skips invalid files |
+| Normalise to DB Rows     | `normalise.ts`           | Map to `$inferInsert` rows, ULIDs, tag extraction          |
+| Open DB / Run Migrations | `shared--db`             | Connect + apply `database/migrations/`                     |
+| Upsert Records           | `upsertRecords.ts`       | Per-table upsert, tag sync, respects `locked`              |
 
 **Env overrides**: `CONTENT_DIR`, `DATABASE_PATH`, `MIGRATIONS_DIR` (defaults relative to monorepo root).
 
@@ -71,15 +71,15 @@ pnpm --filter @prj--personal-portfolio--v3/tools--mdx-ingest start:dry-run   # n
 
 ### MDX folder → table mapping
 
-| `publish/` folder | Parser type | DB target |
-|-------------------|-------------|-----------|
-| `posts/` | `post` | `posts` (`type = 'post'`) |
-| `booknotes/` | `booknote` | `posts` (`type = 'book-note'`) |
-| `snippets/` | `snippet` | `posts` (`type = 'snippet'`) |
-| `projects/` | `project` | `projects` |
-| `coursework/` | `coursework` | `coursework` |
-| `questions/` | `question` | `questions` |
-| `pages/` | — | handled by `json-ingest` |
+| `publish/` folder | Parser type  | DB target                      |
+| ----------------- | ------------ | ------------------------------ |
+| `posts/`          | `post`       | `posts` (`type = 'post'`)      |
+| `booknotes/`      | `booknote`   | `posts` (`type = 'book-note'`) |
+| `snippets/`       | `snippet`    | `posts` (`type = 'snippet'`)   |
+| `projects/`       | `project`    | `projects`                     |
+| `coursework/`     | `coursework` | `coursework`                   |
+| `questions/`      | `question`   | `questions`                    |
+| `pages/`          | —            | handled by `json-ingest`       |
 
 ### MDX validation
 
@@ -116,14 +116,14 @@ Scan → Parse → Validate → Normalise ──┐
 Open DB → Run Migrations ─────────────┘
 ```
 
-| Task | Helper | Responsibility |
-|------|--------|----------------|
-| Scan JSON Files | `jsonFileScanner.ts` | Walk `profile/`, `skills/`, `pages/` under `publish/` |
-| Parse JSON Files | `jsonParser.ts` | Parse JSON; skills file may be array or `{ "skills": [...] }` |
-| Validate Parsed Files | `validateParsedFiles.ts` | Required fields per content type |
-| Normalise to DB Rows | `normalise.ts` | Map to `$inferInsert` rows, ULIDs |
-| Open DB / Run Migrations | `shared--db` | Connect + apply migrations |
-| Upsert Records | `upsertRecords.ts` | Upsert with `sync_source: 'json'`, respects `locked` |
+| Task                     | Helper                   | Responsibility                                                |
+| ------------------------ | ------------------------ | ------------------------------------------------------------- |
+| Scan JSON Files          | `jsonFileScanner.ts`     | Walk `profile/`, `skills/`, `pages/` under `publish/`         |
+| Parse JSON Files         | `jsonParser.ts`          | Parse JSON; skills file may be array or `{ "skills": [...] }` |
+| Validate Parsed Files    | `validateParsedFiles.ts` | Required fields per content type                              |
+| Normalise to DB Rows     | `normalise.ts`           | Map to `$inferInsert` rows, ULIDs                             |
+| Open DB / Run Migrations | `shared--db`             | Connect + apply migrations                                    |
+| Upsert Records           | `upsertRecords.ts`       | Upsert with `sync_source: 'json'`, respects `locked`          |
 
 **Env overrides**: `CONTENT_DIR`, `DATABASE_PATH`, `MIGRATIONS_DIR`.
 
@@ -134,11 +134,11 @@ pnpm --filter @prj--personal-portfolio--v3/tools--json-ingest start:dry-run
 
 ### JSON folder → table mapping
 
-| `publish/` folder | File shape | DB target |
-|-------------------|------------|-----------|
-| `profile/` | `{ name, headline, bio, ... }` | `profile` (singleton slug `profile`) |
-| `skills/` | array or `{ skills: [...] }` with `{ name, category, sort_order? }` | `skills` (slug from kebab-case name) |
-| `pages/` | `{ title, status, slug?, ... }` per file | `pages` (slug from filename or `slug` field; extra fields in `body` JSON) |
+| `publish/` folder | File shape                                                          | DB target                                                                 |
+| ----------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| `profile/`        | `{ name, headline, bio, ... }`                                      | `profile` (singleton slug `profile`)                                      |
+| `skills/`         | array or `{ skills: [...] }` with `{ name, category, sort_order? }` | `skills` (slug from kebab-case name)                                      |
+| `pages/`          | `{ title, status, slug?, ... }` per file                            | `pages` (slug from filename or `slug` field; extra fields in `body` JSON) |
 
 ### JSON validation
 

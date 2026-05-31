@@ -24,8 +24,7 @@ const toSlug = (value: string): string =>
         .replace(/[^a-z0-9]+/g, '-')
         .replace(/^-+|-+$/g, '');
 
-const deriveSlugFromPath = (filePath: string): string =>
-    path.basename(filePath).replace(/\.json$/, '');
+const deriveSlugFromPath = (filePath: string): string => path.basename(filePath).replace(/\.json$/, '');
 
 const parseJsonFile = async (filePath: string, contentType: JsonContentType): Promise<ParsedFile[]> => {
     const raw = await fs.readFile(filePath, 'utf-8');
@@ -50,16 +49,9 @@ const parseJsonFile = async (filePath: string, contentType: JsonContentType): Pr
         });
     }
 
-    const data = (typeof parsed === 'object' && parsed !== null && !Array.isArray(parsed)
-        ? parsed
-        : {}) as Record<string, unknown>;
+    const data = (typeof parsed === 'object' && parsed !== null && !Array.isArray(parsed) ? parsed : {}) as Record<string, unknown>;
 
-    const slug =
-        contentType === 'profile'
-            ? 'profile'
-            : typeof data['slug'] === 'string' && data['slug'].length > 0
-              ? data['slug']
-              : deriveSlugFromPath(filePath);
+    const slug = contentType === 'profile' ? 'profile' : typeof data['slug'] === 'string' && data['slug'].length > 0 ? data['slug'] : deriveSlugFromPath(filePath);
 
     return [{ slug, contentType, data, filePath }];
 };

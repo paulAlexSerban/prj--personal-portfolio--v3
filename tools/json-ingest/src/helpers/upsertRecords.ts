@@ -1,20 +1,16 @@
-import {
-    profile as profileTable,
-    skills as skillsTable,
-    pages as pagesTable,
-} from '@prj--personal-portfolio--v3/shared--db-schema';
+import { profile as profileTable, skills as skillsTable, pages as pagesTable } from '@prj--personal-portfolio--v3/shared--db-schema';
 import { upsertWithLockCheck, type UpsertResult, type DrizzleDb } from '@prj--personal-portfolio--v3/shared--db';
 import type { NormalisedRows } from './normalise.ts';
 
 export type UpsertSummary = {
     inserted: number;
-    updated:  number;
-    skipped:  number;
+    updated: number;
+    skipped: number;
 };
 
 type UpsertRecordsOptions = {
-    db:     DrizzleDb;
-    rows:   NormalisedRows;
+    db: DrizzleDb;
+    rows: NormalisedRows;
     dryRun?: boolean;
 };
 
@@ -41,10 +37,7 @@ export const upsertRecords = (options: UpsertRecordsOptions): UpsertSummary => {
         summary[r.outcome]++;
     }
 
-    console.log(
-        `[upsert] inserted=${summary.inserted}  updated=${summary.updated}  skipped=${summary.skipped}` +
-        (dryRun ? '  (dry-run)' : ''),
-    );
+    console.log(`[upsert] inserted=${summary.inserted}  updated=${summary.updated}  skipped=${summary.skipped}` + (dryRun ? '  (dry-run)' : ''));
 
     return summary;
 };

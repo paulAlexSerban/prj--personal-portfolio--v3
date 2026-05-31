@@ -14,12 +14,11 @@ export type ValidationResult = {
 
 const REQUIRED_FIELDS: Record<JsonContentType, string[]> = {
     profile: ['name', 'headline', 'bio'],
-    skill:   ['name', 'category'],
-    page:    ['title', 'status'],
+    skill: ['name', 'category'],
+    page: ['title', 'status'],
 };
 
-const isMissing = (value: unknown): boolean =>
-    value === undefined || value === null || value === '';
+const isMissing = (value: unknown): boolean => value === undefined || value === null || value === '';
 
 export const validateParsedFiles = (files: ParsedFile[]): ValidationResult => {
     const valid: ParsedFile[] = [];

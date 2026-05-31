@@ -54,6 +54,7 @@ Feature-level PRDs live under `product/` (blog, portfolio, quiz widget/web/mobil
 | `adr-004--nx-to-lerna.md`          | pnpm workspace (current)      |
 | `adr-005--content-rendering.md`    | JAMStack / SSG                |
 | `adr-006--ssg-w-mdx/`              | Astro + MDX rendering         |
+| `adr-007--db-tooling.md`           | Drizzle ORM for SQLite        |
 
 Many topics remain in `drafts/` (database engine, ORM, CMS, CI/CD, spaced repetition, client state, etc.) — treat drafts as proposals, not settled decisions.
 

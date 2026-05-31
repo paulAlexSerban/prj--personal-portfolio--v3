@@ -12,22 +12,20 @@ import type {
 import type { ParsedFile } from './markdownParser.ts';
 
 export type NormalisedRows = {
-    posts:        NewPostRow[];
-    projects:     NewProjectRow[];
-    coursework:   NewCourseworkRow[];
-    questions:    NewQuestionRow[];
-    tags:         NewTagRow[];
-    contentTags:  NewContentTagRow[];
+    posts: NewPostRow[];
+    projects: NewProjectRow[];
+    coursework: NewCourseworkRow[];
+    questions: NewQuestionRow[];
+    tags: NewTagRow[];
+    contentTags: NewContentTagRow[];
     questionTags: NewQuestionTagRow[];
 };
 
 // ── Utilities ─────────────────────────────────────────────────────────────────
 
-const str = (v: unknown): string | undefined =>
-    typeof v === 'string' && v.length > 0 ? v : undefined;
+const str = (v: unknown): string | undefined => (typeof v === 'string' && v.length > 0 ? v : undefined);
 
-const bool = (v: unknown): boolean =>
-    v === true || v === 'true' || v === 1;
+const bool = (v: unknown): boolean => v === true || v === 'true' || v === 1;
 
 const now = (): Date => new Date();
 
@@ -41,17 +39,12 @@ const toTagSlug = (name: string): string =>
 // ── Tag extraction ────────────────────────────────────────────────────────────
 
 type TagAccumulator = {
-    tagMap:       Map<string, NewTagRow>;
+    tagMap: Map<string, NewTagRow>;
     contentLinks: NewContentTagRow[];
     questionLinks: NewQuestionTagRow[];
 };
 
-const collectContentTags = (
-    acc: TagAccumulator,
-    rawTags: unknown,
-    contentSlug: string,
-    contentType: ContentType,
-): void => {
+const collectContentTags = (acc: TagAccumulator, rawTags: unknown, contentSlug: string, contentType: ContentType): void => {
     if (!Array.isArray(rawTags)) return;
 
     for (const raw of rawTags) {
@@ -68,11 +61,7 @@ const collectContentTags = (
     }
 };
 
-const collectQuestionTags = (
-    acc: TagAccumulator,
-    rawTags: unknown,
-    questionSlug: string,
-): void => {
+const collectQuestionTags = (acc: TagAccumulator, rawTags: unknown, questionSlug: string): void => {
     if (!Array.isArray(rawTags)) return;
 
     for (const raw of rawTags) {
@@ -94,61 +83,61 @@ const collectQuestionTags = (
 const normalisePost = (file: ParsedFile, type: 'post' | 'book-note' | 'snippet'): NewPostRow => {
     const fm = file.frontmatter;
     return {
-        id:          ulid(),
-        slug:        file.slug,
+        id: ulid(),
+        slug: file.slug,
         type,
-        title:       str(fm['title']) ?? file.slug,
-        body:        file.body,
-        subheading:  str(fm['subheading']),
-        excerpt:     str(fm['excerpt']),
-        author:      str(fm['author']),
-        date:        str(fm['date']),
-        pinned:      bool(fm['pinned']),
-        status:      str(fm['status']) ?? 'draft',
+        title: str(fm['title']) ?? file.slug,
+        body: file.body,
+        subheading: str(fm['subheading']),
+        excerpt: str(fm['excerpt']),
+        author: str(fm['author']),
+        date: str(fm['date']),
+        pinned: bool(fm['pinned']),
+        status: str(fm['status']) ?? 'draft',
         sync_source: 'mdx',
-        locked:      false,
+        locked: false,
         published_at: str(fm['date']) ? new Date(str(fm['date'])!) : undefined,
-        updated_at:  now(),
+        updated_at: now(),
     };
 };
 
 const normaliseProject = (file: ParsedFile): NewProjectRow => {
     const fm = file.frontmatter;
     return {
-        id:          ulid(),
-        slug:        file.slug,
-        title:       str(fm['title']) ?? file.slug,
-        body:        file.body,
-        subheading:  str(fm['subheading']),
-        excerpt:     str(fm['excerpt']),
-        repo_url:    str(fm['repo_url']),
-        demo_url:    str(fm['demo_url']),
-        status:      str(fm['status']) ?? 'draft',
-        pinned:      bool(fm['pinned']),
-        priority:    typeof fm['priority'] === 'number' ? fm['priority'] : 0,
+        id: ulid(),
+        slug: file.slug,
+        title: str(fm['title']) ?? file.slug,
+        body: file.body,
+        subheading: str(fm['subheading']),
+        excerpt: str(fm['excerpt']),
+        repo_url: str(fm['repo_url']),
+        demo_url: str(fm['demo_url']),
+        status: str(fm['status']) ?? 'draft',
+        pinned: bool(fm['pinned']),
+        priority: typeof fm['priority'] === 'number' ? fm['priority'] : 0,
         sync_source: 'mdx',
-        locked:      false,
-        updated_at:  now(),
+        locked: false,
+        updated_at: now(),
     };
 };
 
 const normaliseCoursework = (file: ParsedFile): NewCourseworkRow => {
     const fm = file.frontmatter;
     return {
-        id:          ulid(),
-        slug:        file.slug,
-        title:       str(fm['title']) ?? file.slug,
-        body:        file.body,
-        subheading:  str(fm['subheading']),
-        excerpt:     str(fm['excerpt']),
-        repo_url:    str(fm['repo_url']),
-        status:      str(fm['status']) ?? 'draft',
-        pinned:      bool(fm['pinned']),
-        priority:    typeof fm['priority'] === 'number' ? fm['priority'] : 0,
-        section:     str(fm['section']),
+        id: ulid(),
+        slug: file.slug,
+        title: str(fm['title']) ?? file.slug,
+        body: file.body,
+        subheading: str(fm['subheading']),
+        excerpt: str(fm['excerpt']),
+        repo_url: str(fm['repo_url']),
+        status: str(fm['status']) ?? 'draft',
+        pinned: bool(fm['pinned']),
+        priority: typeof fm['priority'] === 'number' ? fm['priority'] : 0,
+        section: str(fm['section']),
         sync_source: 'mdx',
-        locked:      false,
-        updated_at:  now(),
+        locked: false,
+        updated_at: now(),
     };
 };
 
@@ -164,16 +153,16 @@ const normaliseQuestion = (file: ParsedFile): NewQuestionRow | null => {
     const post_slug = parts.slice(0, -1).join('--');
 
     return {
-        id:          ulid(),
-        slug:        file.slug,
+        id: ulid(),
+        slug: file.slug,
         post_slug,
-        front:       str(fm['question']) ?? '',
-        back:        file.body.trim(),
-        status:      str(fm['status']) ?? 'draft',
+        front: str(fm['question']) ?? '',
+        back: file.body.trim(),
+        status: str(fm['status']) ?? 'draft',
         sync_source: 'mdx',
-        locked:      false,
-        created_at:  now(),
-        updated_at:  now(),
+        locked: false,
+        created_at: now(),
+        updated_at: now(),
     };
 };
 
@@ -181,8 +170,13 @@ const normaliseQuestion = (file: ParsedFile): NewQuestionRow | null => {
 
 export const normalise = (files: ParsedFile[]): NormalisedRows => {
     const rows: NormalisedRows = {
-        posts: [], projects: [], coursework: [], questions: [],
-        tags: [], contentTags: [], questionTags: [],
+        posts: [],
+        projects: [],
+        coursework: [],
+        questions: [],
+        tags: [],
+        contentTags: [],
+        questionTags: [],
     };
 
     const acc: TagAccumulator = { tagMap: new Map(), contentLinks: [], questionLinks: [] };
@@ -225,14 +219,14 @@ export const normalise = (files: ParsedFile[]): NormalisedRows => {
         }
     }
 
-    rows.tags         = Array.from(acc.tagMap.values());
-    rows.contentTags  = acc.contentLinks;
+    rows.tags = Array.from(acc.tagMap.values());
+    rows.contentTags = acc.contentLinks;
     rows.questionTags = acc.questionLinks;
 
     console.log(
         `[normalise] posts=${rows.posts.length}  projects=${rows.projects.length}  ` +
-        `coursework=${rows.coursework.length}  questions=${rows.questions.length}  ` +
-        `tags=${rows.tags.length}  contentLinks=${rows.contentTags.length}  questionLinks=${rows.questionTags.length}`,
+            `coursework=${rows.coursework.length}  questions=${rows.questions.length}  ` +
+            `tags=${rows.tags.length}  contentLinks=${rows.contentTags.length}  questionLinks=${rows.questionTags.length}`
     );
 
     return rows;

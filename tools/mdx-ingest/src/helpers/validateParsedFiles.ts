@@ -13,16 +13,15 @@ export type ValidationResult = {
 };
 
 const REQUIRED_FIELDS: Record<ContentType, string[]> = {
-    post:       ['title', 'status', 'date'],
-    booknote:   ['title', 'status', 'date'],
-    snippet:    ['title', 'status', 'date'],
-    project:    ['title', 'status'],
+    post: ['title', 'status', 'date'],
+    booknote: ['title', 'status', 'date'],
+    snippet: ['title', 'status', 'date'],
+    project: ['title', 'status'],
     coursework: ['title', 'status'],
-    question:   ['question', 'status'],
+    question: ['question', 'status'],
 };
 
-const isMissing = (value: unknown): boolean =>
-    value === undefined || value === null || value === '';
+const isMissing = (value: unknown): boolean => value === undefined || value === null || value === '';
 
 export const validateParsedFiles = (files: ParsedFile[]): ValidationResult => {
     const valid: ParsedFile[] = [];

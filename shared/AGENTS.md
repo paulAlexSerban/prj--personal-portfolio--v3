@@ -18,14 +18,14 @@ Schema (`db-schema`) is separated from runtime (`db`) so the frontend can import
 
 - **Role**: SQLite runtime — connection, migrations, upsert helper.
 - **Files**:
-  - `src/connection.ts` — `openConnection`, `closeConnection`, `DrizzleDb` type
-  - `src/migrate.ts` — `runMigrations(db, migrationsFolder)`
-  - `src/upsert.ts` — `upsertWithLockCheck`
-  - `drizzle.config.ts` — Drizzle Kit config (schema → `database/migrations/`, db → `database/content.db`)
+    - `src/connection.ts` — `openConnection`, `closeConnection`, `DrizzleDb` type
+    - `src/migrate.ts` — `runMigrations(db, migrationsFolder)`
+    - `src/upsert.ts` — `upsertWithLockCheck`
+    - `drizzle.config.ts` — Drizzle Kit config (schema → `database/migrations/`, db → `database/content.db`)
 - **API**:
-  - `openConnection(dbPath)` — better-sqlite3 + Drizzle, WAL + FK pragmas
-  - `runMigrations(db, migrationsFolder)` — applies `database/migrations/` via drizzle migrator
-  - `upsertWithLockCheck(db, table, row, { dryRun?, syncSource? })` — insert or update by `slug`; skips `locked` rows; sets `sync_source` (default `'mdx'`) and `locked: false` on write
+    - `openConnection(dbPath)` — better-sqlite3 + Drizzle, WAL + FK pragmas
+    - `runMigrations(db, migrationsFolder)` — applies `database/migrations/` via drizzle migrator
+    - `upsertWithLockCheck(db, table, row, { dryRun?, syncSource? })` — insert or update by `slug`; skips `locked` rows; sets `sync_source` (default `'mdx'`) and `locked: false` on write
 - **Scripts**: `db:generate`, `db:migrate`, `db:studio` (Drizzle Kit).
 
 ### `@prj--personal-portfolio--v3/shared--task-manager` (`shared/task-manager/`)
