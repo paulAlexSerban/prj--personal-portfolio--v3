@@ -1,21 +1,12 @@
 {
+    "extends": "../../tsconfig.base.json",
     "compilerOptions": {
-        "lib": ["ES2022"],
-        "allowImportingTsExtensions": true,
-        "resolveJsonModule": true,
-        "allowJs": true,
-        "checkJs": false,
-        "noEmit": true,
-        "allowSyntheticDefaultImports": true,
-        "sourceMap": false,
-        "types": ["node"],
-        "outDir": "dist",
         "rootDir": "src",
+        "outDir": "dist",
         "composite": true,
-        "declaration": true
+        "noEmit": true,
+        "types": ["node"]
     },
-    "include": ["src/**/*.ts", "src/**/*.js"],
-    "exclude": ["node_modules"],
-    "references": [{ "path": "../../shared/task-manager" }],
-    "extends": "../../tsconfig.base.json"
+    "include": ["src/**/*.ts"],
+    "references": [{ "path": "../../shared/db-schema" }, { "path": "../../shared/db" }, { "path": "../../shared/task-manager" }]
 }

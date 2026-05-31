@@ -1,5 +1,5 @@
-import fs from 'fs/promises';
-import path from 'path';
+import fs from 'node:fs/promises';
+import path from 'node:path';
 import type { ScannedDirectory } from './jsonFileScanner.ts';
 
 export type JsonContentType = 'profile' | 'skill' | 'page';

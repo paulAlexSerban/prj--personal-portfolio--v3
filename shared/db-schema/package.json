@@ -1,11 +1,12 @@
 {
     "name": "@prj--personal-portfolio--v3/shared--db-schema",
     "version": "1.0.0",
-    "main": "index.ts",
     "exports": {
-        ".": "./index.ts"
+        ".": {
+            "types": "./dist/index.d.ts",
+            "import": "./index.ts"
+        }
     },
-    "types": "./dist/index.d.ts",
     "type": "module",
     "scripts": {
         "typecheck": "tsc -b"

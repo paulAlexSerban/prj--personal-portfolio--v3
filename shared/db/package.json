@@ -1,11 +1,12 @@
 {
     "name": "@prj--personal-portfolio--v3/shared--db",
     "version": "1.0.0",
-    "main": "index.ts",
     "exports": {
-        ".": "./index.ts"
+        ".": {
+            "types": "./dist/index.d.ts",
+            "import": "./index.ts"
+        }
     },
-    "types": "./dist/index.d.ts",
     "license": "MIT",
     "packageManager": "pnpm@11.5.0",
     "type": "module",

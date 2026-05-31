@@ -1,11 +1,6 @@
 {
     "name": "@prj--personal-portfolio--v3/tools--content-sync",
     "version": "1.0.0",
-    "main": "index.ts",
-    "exports": {
-        ".": "./index.ts"
-    },
-    "types": "./dist/index.d.ts",
     "type": "module",
     "license": "MIT",
     "packageManager": "pnpm@11.5.0",

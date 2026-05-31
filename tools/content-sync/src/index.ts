@@ -1,5 +1,5 @@
-import path from 'path';
-import fs from 'fs';
+import fs from 'node:fs';
+import path from 'node:path';
 import dotenv from 'dotenv';
 import { taskManager, type Task } from '@prj--personal-portfolio--v3/shared--task-manager';
 import cleanRepoDir from './helpers/cleanRepoDir.ts';

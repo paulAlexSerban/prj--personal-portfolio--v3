@@ -1,8 +1,11 @@
 {
     "files": [],
     "references": [
-        {
-            "path": "./tools/content-sync"
-        }
+        { "path": "./shared/db-schema" },
+        { "path": "./shared/task-manager" },
+        { "path": "./shared/db" },
+        { "path": "./tools/content-sync" },
+        { "path": "./tools/mdx-ingest" },
+        { "path": "./tools/json-ingest" }
     ]
 }

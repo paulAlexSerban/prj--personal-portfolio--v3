@@ -1,4 +1,4 @@
-import path from 'path';
+import path from 'node:path';
 import { taskManager, type Task } from '@prj--personal-portfolio--v3/shared--task-manager';
 import { openConnection, runMigrations, type DrizzleDb } from '@prj--personal-portfolio--v3/shared--db';
 import { jsonFilesScanner, type ScannedDirectory } from './helpers/jsonFileScanner.ts';

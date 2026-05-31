@@ -1,4 +1,4 @@
-import { execSync } from 'child_process';
+import { execSync } from 'node:child_process';
 
 function clonePrivateRepo(repoUrl: string, targetDir: string, token: string) {
     const authenticatedUrl = repoUrl.replace('https://github.com/', `https://${token}@github.com/`);

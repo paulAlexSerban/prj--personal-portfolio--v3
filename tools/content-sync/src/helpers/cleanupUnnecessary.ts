@@ -1,6 +1,6 @@
-import { execSync } from 'child_process';
-import path from 'path';
-import fs from 'fs';
+import { execSync } from 'node:child_process';
+import fs from 'node:fs';
+import path from 'node:path';
 
 const cleanupUnnecessary = (targetDir: string, exceptions: string[] = []): void => {
     const items = fs.readdirSync(targetDir);

@@ -5,9 +5,11 @@
     "license": "MIT",
     "packageManager": "pnpm@11.5.0",
     "exports": {
-        ".": "./index.ts"
+        ".": {
+            "types": "./dist/index.d.ts",
+            "import": "./index.ts"
+        }
     },
-    "types": "./dist/index.d.ts",
     "scripts": {
         "build": "tsc -b",
         "test": "node --experimental-strip-types --test index.test.ts",
