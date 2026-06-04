@@ -17,6 +17,22 @@ content repo (private Git)  →  content-sync  →  content/live/
 
 Run **content-sync** before **mdx-ingest** and **json-ingest** locally and in CI.
 
+## Question content model (ingest perspective)
+
+All questions are **MDX only** — see [`types-of-questions.md`](../_docs/01%20spikes/types-of-questions.md) and [`migrating-question-mdx-content.md`](../_docs/01%20spikes/migrating-question-mdx-content.md).
+
+| Axis                 | Field             | Ingest today                                                      |
+| -------------------- | ----------------- | ----------------------------------------------------------------- |
+| How the user answers | `answer_format`   | Not stored — defaults to `free_text`                              |
+| What is tested       | `cognitive_style` | Not stored — optional frontmatter ignored until schema Phase 1    |
+| Grading              | `grading_mode`    | `auto` (MC/MS/TF frontmatter) or `self` (`free_text` body reveal) |
+
+- **`mdx-ingest`:** `publish/questions/*.mdx` → `questions.front` + `questions.back` (raw MDX body; **not** compiled to HTML in ingest).
+- **`json-ingest`:** does **not** handle questions — only `profile/`, `skills/`, `pages/`.
+- **Quiz delivery:** SSG may export `/data/questions/{post-slug}.json` at build time from the DB; that is not an authoring format.
+
+---
+
 ## `@prj--personal-portfolio--v3/tools--content-sync` (`tools/content-sync/`)
 
 Clones the private MDX content repository into the monorepo.
@@ -40,6 +56,8 @@ pnpm --filter @prj--personal-portfolio--v3/tools--content-sync start
 ```
 
 **Helpers**: `cleanRepoDir.ts`, `clonePrivateRepo.ts`, `cleanupUnnecessary.ts`.
+
+---
 
 ## `@prj--personal-portfolio--v3/tools--mdx-ingest` (`tools/mdx-ingest/`)
 
@@ -89,20 +107,39 @@ Required frontmatter (missing → file skipped with warning):
 - project / coursework: `title`, `status`
 - question: `question`, `status`
 
+Optional frontmatter (safe to author now; normaliser ignores until Phase 1+): `answer_format`, `cognitive_style`, `difficulty`, `concept`, `options`, `correct_option_keys`, `answer` (T/F).
+
+Structured types: options in **frontmatter**; explanation (JSX/images) in **body**.
+
 ### Question conventions
 
-- Filename: `{post-slug}--{uid}.mdx` → `post_slug` = everything before the last `--`.
-- Body holds answer/explanation; `front` comes from frontmatter `question`.
+- Filename: `{post-slug}--{uid}.mdx` → `post_slug` = everything before the last `--` (see draft ADR cross-surface FK).
+- `front` ← frontmatter `question` (future alias: `stem`).
+- `back` ← MDX body (answer + explanation); maps to `answer_format: free_text`, `grading_mode: self` in the content model.
+- Parent post must exist in `posts` before the question upserts (FK); otherwise skipped with warning.
+- Tags: `question_tags` junction; same delete-and-replace pattern as `content_tags`.
+
+### Scanner
+
+`markdownFileScanner.ts` default `typePattern` includes `questions`:
+
+```typescript
+/^(projects|coursework|posts|booknotes|snippets|questions)$/
+```
 
 ### Tag handling (mdx upsert)
 
 1. Upsert content rows via `upsertWithLockCheck` (skips `locked`).
 2. Insert tags with `onConflictDoNothing`.
-3. For each upserted slug: delete existing `content_tags`, re-insert current links.
+3. For each upserted slug: delete existing `content_tags` or `question_tags`, re-insert current links.
 
-### Known gap (mdx)
+### Planned (not implemented)
 
-The default scanner regex in `markdownFileScanner.ts` matches `projects|coursework|posts|booknotes|snippets` but **not `questions`**. Extend the pattern before questions are ingested.
+- Persist `answer_format`, `cognitive_style`, `difficulty`, `grading_mode` on `questions`.
+- Parse `options` / `correct_option_keys` into `question_options` table.
+- Keep storing full MDX body for explanation compilation at build/quiz render time.
+
+---
 
 ## `@prj--personal-portfolio--v3/tools--json-ingest` (`tools/json-ingest/`)
 
@@ -118,7 +155,7 @@ Open DB → Run Migrations ─────────────┘
 
 | Task                     | Helper                   | Responsibility                                                |
 | ------------------------ | ------------------------ | ------------------------------------------------------------- |
-| Scan JSON Files          | `jsonFileScanner.ts`     | Walk `profile/`, `skills/`, `pages/` under `publish/`         |
+| Scan JSON Files          | `jsonFileScanner.ts`     | Walk configured folders under `publish/`                      |
 | Parse JSON Files         | `jsonParser.ts`          | Parse JSON; skills file may be array or `{ "skills": [...] }` |
 | Validate Parsed Files    | `validateParsedFiles.ts` | Required fields per content type                              |
 | Normalise to DB Rows     | `normalise.ts`           | Map to `$inferInsert` rows, ULIDs                             |
@@ -132,7 +169,7 @@ pnpm --filter @prj--personal-portfolio--v3/tools--json-ingest start
 pnpm --filter @prj--personal-portfolio--v3/tools--json-ingest start:dry-run
 ```
 
-### JSON folder → table mapping
+### JSON folder → table mapping (today)
 
 | `publish/` folder | File shape                                                          | DB target                                                                 |
 | ----------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------------- |
@@ -148,14 +185,19 @@ Required fields (missing → skipped with warning):
 - skill: `name`, `category`
 - page: `title`, `status`
 
+---
+
 ## Agent notes
 
 - Keep pipeline steps as named tasks in `src/index.ts`; logic stays in `src/helpers/`.
 - Both ingest tools depend on `tools--content-sync` — sync content first.
-- `profile`, `skills`, and `pages` are written by **json-ingest**; MDX types by **mdx-ingest**.
+- `profile`, `skills`, and `pages` are written by **json-ingest**; MDX content types by **mdx-ingest**.
+- All question types (including MC/TF) are authored as **MDX**; extend **mdx-ingest** only — never json-ingest for questions.
 - Do not serialise MDX to HTML in mdx-ingest.
 
 ## Related docs
 
-- `_docs/02 plans/mdx-ingest-pipeline.md` — MDX pipeline plan
+- `_docs/01 spikes/types-of-questions.md` — `answer_format` + `cognitive_style`
+- `_docs/01 spikes/migrating-question-mdx-content.md` — what authors change in MDX
+- `_docs/02 plans/question-types-implementation-plan.md` — schema and ingest phases
 - `shared/AGENTS.md`, `database/AGENTS.md` — schema and migration workflow

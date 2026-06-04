@@ -16,3 +16,7 @@ A lazily loaded UI component embedded in each blog post page. Allows readers to 
 | WGT-08 | The widget MUST be closeable via a close button and the Escape key without losing session progress         | Must Have   |
 | WGT-09 | The widget SHOULD display a session summary screen when all due cards have been reviewed                   | Should Have |
 | WGT-10 | The widget SHOULD show a badge on the trigger icon indicating the number of cards due for the current post | Should Have |
+| WGT-11 | The widget MUST support auto-graded questions (`grading_mode: auto`) and self-graded free-text questions (`grading_mode: self`) per the spaced repetition PRD | Must Have |
+| WGT-12 | After the review step (selection or reveal), the widget MUST show the Again / Hard / Good / Easy controls for every question type | Must Have |
+
+Question formats and grading modes: [`types-of-questions.md`](../01%20spikes/types-of-questions.md). SM-2 behaviour: [spaced repetition PRD](./01%20prd%20-%20feature%20requirements%20-%20spaced%20repetition%20behavior.md).

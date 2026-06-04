@@ -18,3 +18,6 @@ A standalone web application providing the full quiz experience across all of th
 | WEB-10 | The web app MUST function offline as a PWA                                                                             | Must Have   |
 | WEB-11 | The web app SHOULD support a "study all due cards" mode across all added study sets                                    | Should Have |
 | WEB-12 | The web app COULD allow the user to reset all progress for a given post or globally                                    | Could Have  |
+| WEB-13 | The web app MUST support auto-graded and self-graded question flows per the spaced repetition PRD (SR-08–SR-11)           | Must Have   |
+
+Question formats: [`types-of-questions.md`](../01%20spikes/types-of-questions.md). SM-2: [spaced repetition PRD](./01%20prd%20-%20feature%20requirements%20-%20spaced%20repetition%20behavior.md).
