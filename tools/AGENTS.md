@@ -124,7 +124,7 @@ Structured types: options in **frontmatter**; explanation (JSX/images) in **body
 `markdownFileScanner.ts` default `typePattern` includes `questions`:
 
 ```typescript
-/^(projects|coursework|posts|booknotes|snippets|questions)$/
+/^(projects|coursework|posts|booknotes|snippets|questions)$/;
 ```
 
 ### Tag handling (mdx upsert)
