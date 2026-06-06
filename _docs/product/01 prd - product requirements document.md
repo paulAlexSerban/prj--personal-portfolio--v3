@@ -350,7 +350,7 @@ Requirements use MoSCoW prioritisation:
 | ----- | ------------------------------------------------------------------------------------------------------------------- | ------ | ---------------------- | ---- |
 | OQ-1  | Will the database file be committed to the app repo as a build artifact, or stored and pulled as a CI artifact?     | Author | Before CI setup        |
 | OQ-2  | What is the hosting target for the CMS? (Railway / Fly.io / self-managed VPS)                                       | Author | Before CMS setup       |
-| OQ-3  | Does question MDX use only frontmatter fields (`front`, `back`) or is the MDX body also rendered as answer content? | Author | Before pipeline build  |
+| OQ-3  | ~~Does question MDX use only frontmatter fields (`front`, `back`) or is the MDX body also rendered as answer content?~~ **Resolved:** frontmatter → stem + structured fields; MDX body → answer/explanation (compiled at build for display). All question types are MDX. See [migrating-question-mdx-content.md](../01%20spikes/migrating-question-mdx-content.md). | Author | Done |
 | OQ-4  | Should the quiz widget appear on book-note and snippet pages, or only on posts?                                     | Author | Before blog build      |
 | OQ-5  | Should the mobile app bundle all question data at build time (fully offline) or fetch on first launch?              | Author | Before mobile build    |
 | OQ-6  | Should a failed Lighthouse performance budget gate and block the CI deploy?                                         | Author | Before CI setup        |
@@ -370,6 +370,9 @@ Requirements use MoSCoW prioritisation:
 | **SM-2**                | SuperMemo 2 algorithm. The spaced repetition algorithm used by Anki to schedule card reviews.                                            |
 | **Spaced Repetition**   | A learning technique where cards are reviewed at increasing intervals based on the quality of recall.                                    |
 | **Card State**          | The per-question record tracking spaced repetition parameters: ease, interval, repetition count, and next due date.                      |
+| **Answer format**       | How the user answers (`multiple_choice`, `multiple_select`, `true_false`, `free_text`). See [types-of-questions](../01%20spikes/types-of-questions.md). |
+| **Cognitive style**     | What kind of thinking is tested (`factual_recall`, `comprehension`, etc.); orthogonal to answer format.                                  |
+| **Grading mode**        | `auto` (client scores selection) or `self` (reveal model answer, then SM-2 rating). LLM grading planned for `free_text` in a later release. |
 | **Study Set**           | The collection of post slugs a user has added to their quiz deck.                                                                        |
 | **Slug**                | A URL-safe string identifier for a content entity. Derived from the filename. Must be unique and immutable after publication.            |
 | **Featured (Project)**  | A flag on a project entry that controls whether it appears in the home page preview and sorts first on the portfolio page.               |

@@ -14,14 +14,15 @@ The conent repository is the primary authoring interface. The author writes MDX 
 | CA-06 | The pipeline MUST validate the question filename convention and warn on violations during ingest                                                                                      | Should Have |
 | CA-07 | Content SHOULD support optional tags (array of strings) on posts, book-notes, snippets, and projects                                                                                  | Should Have |
 | CA-08 | Posts and book-notes SHOULD support an optional excerpt field                                                                                                                         | Should Have |
+| CA-09 | All quiz questions MUST be authored as MDX under `questions/`; structured fields (options, T/F answer) in frontmatter; explanations in the MDX body (JSX/images supported)            | Must Have   |
 
 ## Content Types and Minimum Required Fields
 
-| Content Type | Required Fields                                                             |
-| ------------ | --------------------------------------------------------------------------- |
-| Post         | title, subheading, excerpt, tags, date, author, content                     |
-| Book Note    | title, subheading, excerpt, tags, date, author, content                     |
-| Snippet      | title, subheading, excerpt, tags, date, author, content                     |
-| Project      | title, subheading, excerpt, tags, date, author, gitRepo, demoUrl, caseStudy |
-| Question     | question, tags, date, author, content                                       |
-| Home         | title, subheading, content                                                  |
+| Content Type | Required Fields                                                                                                                                                                                                                                                                                                                                       |
+| ------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Post         | title, subheading, excerpt, tags, date, author, content                                                                                                                                                                                                                                                                                               |
+| Book Note    | title, subheading, excerpt, tags, date, author, content                                                                                                                                                                                                                                                                                               |
+| Snippet      | title, subheading, excerpt, tags, date, author, content                                                                                                                                                                                                                                                                                               |
+| Project      | title, subheading, excerpt, tags, date, author, gitRepo, demoUrl, caseStudy                                                                                                                                                                                                                                                                           |
+| Question     | `question`, `status` (required); `answer_format`, `cognitive_style`, `difficulty`, options/T-F fields per format — see [migrating-question-mdx-content.md](../01%20spikes/migrating-question-mdx-content.md) and [types-of-questions.md](../01%20spikes/types-of-questions.md). All questions are `.mdx`; explanations use the MDX body (JSX/images). |
+| Home         | title, subheading, content                                                                                                                                                                                                                                                                                                                            |

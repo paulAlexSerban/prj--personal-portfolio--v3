@@ -157,7 +157,8 @@ tags:
 
 ## SSG Build
 ### Build-Time Data Flow
-
+Source: MDX + JSON -> SQLite DB
+Output: HTML pages + JSON data files
 ```
 database/output/content.db (SQLite)
     │
