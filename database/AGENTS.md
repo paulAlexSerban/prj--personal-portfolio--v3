@@ -22,14 +22,14 @@ Runtime SQLite artifact and versioned schema migrations for portfolio content. T
 
 ### Content tables
 
-| Table        | Purpose                          | Key fields                                                                   |
-| ------------ | -------------------------------- | ---------------------------------------------------------------------------- |
-| `posts`      | Blog posts, book notes, snippets | `type`, `slug` (unique), `body` (raw MDX), `status`, `sync_source`, `locked` |
-| `projects`   | Portfolio projects               | `repo_url`, `demo_url`, `priority`, `pinned`                                 |
-| `coursework` | Course / learning projects       | `section`, `repo_url`, `priority`                                            |
-| `questions`  | Quiz cards (MDX-authored)        | `post_slug` → FK; `answer_format`, `cognitive_style`, `stem`, `payload`, `front`/`back` (legacy mirrors) |
-| `question_options` | MC / multi-select options  | FK `question_slug` → `questions.slug`; `option_key`, `label`, `is_correct`   |
-| `pages`      | JSON-authored static pages       | `body` (serialised JSON payload), `status`                                   |
+| Table              | Purpose                          | Key fields                                                                                               |
+| ------------------ | -------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| `posts`            | Blog posts, book notes, snippets | `type`, `slug` (unique), `body` (raw MDX), `status`, `sync_source`, `locked`                             |
+| `projects`         | Portfolio projects               | `repo_url`, `demo_url`, `priority`, `pinned`                                                             |
+| `coursework`       | Course / learning projects       | `section`, `repo_url`, `priority`                                                                        |
+| `questions`        | Quiz cards (MDX-authored)        | `post_slug` → FK; `answer_format`, `cognitive_style`, `stem`, `payload`, `front`/`back` (legacy mirrors) |
+| `question_options` | MC / multi-select options        | FK `question_slug` → `questions.slug`; `option_key`, `label`, `is_correct`                               |
+| `pages`            | JSON-authored static pages       | `body` (serialised JSON payload), `status`                                                               |
 
 ### Site tables (json-ingest)
 
@@ -59,7 +59,7 @@ Runtime SQLite artifact and versioned schema migrations for portfolio content. T
 | `0000_chilly_firestar.sql`      | Initial tables; tags stored as JSON text columns on content rows                                      |
 | `0001_cynical_molecule_man.sql` | Adds `tags` + `content_tags`; drops `tags` columns from content tables                                |
 | `0002_vengeful_paper_doll.sql`  | Adds `pages`; adds `slug` to `profile` and `skills`; defaults `sync_source` to `json` for site tables |
-| `0004_bitter_starhawk.sql`      | Question types: `answer_format`, `cognitive_style`, `stem`, `payload`, etc.; `question_options` table   |
+| `0004_bitter_starhawk.sql`      | Question types: `answer_format`, `cognitive_style`, `stem`, `payload`, etc.; `question_options` table |
 
 ## Workflow
 

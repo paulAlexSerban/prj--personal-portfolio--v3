@@ -21,11 +21,11 @@ Run **content-sync** before **mdx-ingest** and **json-ingest** locally and in CI
 
 All questions are **MDX only** — see [`types-of-questions.md`](../_docs/01%20spikes/types-of-questions.md) and [`migrating-question-mdx-content.md`](../_docs/01%20spikes/migrating-question-mdx-content.md).
 
-| Axis                 | Field             | Ingest today                                                      |
-| -------------------- | ----------------- | ----------------------------------------------------------------- |
-| How the user answers | `answer_format`   | Stored on `questions.answer_format`                               |
-| What is tested       | `cognitive_style` | Stored on `questions.cognitive_style`                             |
-| Grading              | `grading_mode`    | Stored; derived from `answer_format` at ingest                    |
+| Axis                 | Field             | Ingest today                                   |
+| -------------------- | ----------------- | ---------------------------------------------- |
+| How the user answers | `answer_format`   | Stored on `questions.answer_format`            |
+| What is tested       | `cognitive_style` | Stored on `questions.cognitive_style`          |
+| Grading              | `grading_mode`    | Stored; derived from `answer_format` at ingest |
 
 - **`mdx-ingest`:** `publish/questions/*.mdx` → `questions` (+ `question_options` when applicable); raw MDX body in `back` (**not** compiled to HTML in ingest).
 - **`json-ingest`:** does **not** handle questions — only `profile/`, `skills/`, `pages/`.

@@ -1,11 +1,6 @@
 import { describe, it } from 'node:test';
 import assert from 'node:assert/strict';
-import {
-    buildQuestionOptionRows,
-    buildQuestionPayload,
-    deriveGradingMode,
-    parseQuestionFrontmatter,
-} from './index.ts';
+import { buildQuestionOptionRows, buildQuestionPayload, deriveGradingMode, parseQuestionFrontmatter } from './index.ts';
 
 describe('parseQuestionFrontmatter', () => {
     it('defaults legacy frontmatter to free_text', () => {

@@ -8,10 +8,5 @@
         "types": ["node"]
     },
     "include": ["src/**/*.ts"],
-    "references": [
-        { "path": "../../shared/db-schema" },
-        { "path": "../../shared/question-contract" },
-        { "path": "../../shared/db" },
-        { "path": "../../shared/task-manager" }
-    ]
+    "references": [{ "path": "../../shared/db-schema" }, { "path": "../../shared/question-contract" }, { "path": "../../shared/db" }, { "path": "../../shared/task-manager" }]
 }

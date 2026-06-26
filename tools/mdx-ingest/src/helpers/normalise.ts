@@ -1,10 +1,5 @@
 import { ulid } from 'ulidx';
-import {
-    buildQuestionOptionRows,
-    buildQuestionPayload,
-    deriveGradingMode,
-    parseQuestionFrontmatter,
-} from '@prj--personal-portfolio--v3/shared--question-contract';
+import { buildQuestionOptionRows, buildQuestionPayload, deriveGradingMode, parseQuestionFrontmatter } from '@prj--personal-portfolio--v3/shared--question-contract';
 import type {
     NewPostRow,
     NewProjectRow,

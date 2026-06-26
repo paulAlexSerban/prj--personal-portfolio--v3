@@ -5,14 +5,7 @@ import { z } from 'zod';
 export const ANSWER_FORMATS = ['multiple_choice', 'multiple_select', 'true_false', 'free_text'] as const;
 export type AnswerFormat = (typeof ANSWER_FORMATS)[number];
 
-export const COGNITIVE_STYLES = [
-    'factual_recall',
-    'comprehension',
-    'application',
-    'scenario',
-    'open_ended',
-    'analogy',
-] as const;
+export const COGNITIVE_STYLES = ['factual_recall', 'comprehension', 'application', 'scenario', 'open_ended', 'analogy'] as const;
 export type CognitiveStyle = (typeof COGNITIVE_STYLES)[number];
 
 export const DIFFICULTIES = ['beginner', 'intermediate', 'advanced'] as const;
@@ -110,8 +103,7 @@ const applyFrontmatterDefaults = (input: Record<string, unknown>): Record<string
 
 export type ParsedQuestionFrontmatter = z.infer<typeof questionFrontmatterSchema>;
 
-export const deriveGradingMode = (answerFormat: AnswerFormat): GradingMode =>
-    answerFormat === 'free_text' ? 'self' : 'auto';
+export const deriveGradingMode = (answerFormat: AnswerFormat): GradingMode => (answerFormat === 'free_text' ? 'self' : 'auto');
 
 export type QuestionPayload = {
     concept?: string;
@@ -157,9 +149,7 @@ export const buildQuestionOptionRows = (questionSlug: string, fm: ParsedQuestion
     }));
 };
 
-export type ParseQuestionResult =
-    | { ok: true; data: ParsedQuestionFrontmatter }
-    | { ok: false; error: string };
+export type ParseQuestionResult = { ok: true; data: ParsedQuestionFrontmatter } | { ok: false; error: string };
 
 export const parseQuestionFrontmatter = (frontmatter: Record<string, unknown>): ParseQuestionResult => {
     const result = questionFrontmatterSchema.safeParse(applyFrontmatterDefaults(frontmatter));
