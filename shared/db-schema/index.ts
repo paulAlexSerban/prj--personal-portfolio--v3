@@ -125,6 +125,12 @@ export const questions = sqliteTable('questions', {
     post_slug: text('post_slug')
         .notNull()
         .references(() => posts.slug),
+    answer_format: text('answer_format').notNull().default('free_text'),
+    cognitive_style: text('cognitive_style').notNull().default('factual_recall'),
+    difficulty: text('difficulty').notNull().default('intermediate'),
+    grading_mode: text('grading_mode').notNull().default('self'),
+    stem: text('stem').notNull(),
+    payload: text('payload'),
     front: text('front').notNull(),
     back: text('back').notNull(),
     status: text('status').notNull(),
@@ -133,6 +139,23 @@ export const questions = sqliteTable('questions', {
     created_at: integer('created_at', { mode: 'timestamp' }),
     updated_at: integer('updated_at', { mode: 'timestamp' }),
 });
+
+// ── Question options (multiple_choice / multiple_select) ───────────────────────
+export const question_options = sqliteTable(
+    'question_options',
+    {
+        question_slug: text('question_slug')
+            .notNull()
+            .references(() => questions.slug, { onDelete: 'cascade' }),
+        option_key: text('option_key').notNull(),
+        sort_order: integer('sort_order').notNull(),
+        label: text('label').notNull(),
+        is_correct: integer('is_correct', { mode: 'boolean' }).notNull(),
+    },
+    (t) => ({
+        pk: primaryKey({ columns: [t.question_slug, t.option_key] }),
+    })
+);
 
 // ── Question → Tag junction ───────────────────────────────────────────────────
 export const question_tags = sqliteTable(
@@ -167,6 +190,8 @@ export type CourseworkRow = typeof coursework.$inferSelect;
 export type NewCourseworkRow = typeof coursework.$inferInsert;
 export type QuestionRow = typeof questions.$inferSelect;
 export type NewQuestionRow = typeof questions.$inferInsert;
+export type QuestionOptionRow = typeof question_options.$inferSelect;
+export type NewQuestionOptionRow = typeof question_options.$inferInsert;
 export type QuestionTagRow = typeof question_tags.$inferSelect;
 export type NewQuestionTagRow = typeof question_tags.$inferInsert;
 export type PageRow = typeof pages.$inferSelect;

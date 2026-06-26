@@ -1,3 +1,4 @@
+import { parseQuestionFrontmatter } from '@prj--personal-portfolio--v3/shared--question-contract';
 import type { ContentType, ParsedFile } from './markdownParser.ts';
 
 export type SkippedFile = {
@@ -23,6 +24,16 @@ const REQUIRED_FIELDS: Record<ContentType, string[]> = {
 
 const isMissing = (value: unknown): boolean => value === undefined || value === null || value === '';
 
+const validateQuestionFrontmatter = (file: ParsedFile): string | null => {
+    const parsed = parseQuestionFrontmatter(file.frontmatter);
+
+    if (!parsed.ok) {
+        return parsed.error;
+    }
+
+    return null;
+};
+
 export const validateParsedFiles = (files: ParsedFile[]): ValidationResult => {
     const valid: ParsedFile[] = [];
     const skipped: SkippedFile[] = [];
@@ -36,6 +47,17 @@ export const validateParsedFiles = (files: ParsedFile[]): ValidationResult => {
             console.warn(`[validateParsedFiles] Skipping "${file.filePath}": ${reason}`);
             skipped.push({ filePath: file.filePath, slug: file.slug, contentType: file.contentType, reason });
             continue;
+        }
+
+        if (file.contentType === 'question') {
+            const questionError = validateQuestionFrontmatter(file);
+
+            if (questionError) {
+                const reason = `invalid question frontmatter: ${questionError}`;
+                console.warn(`[validateParsedFiles] Skipping "${file.filePath}": ${reason}`);
+                skipped.push({ filePath: file.filePath, slug: file.slug, contentType: file.contentType, reason });
+                continue;
+            }
         }
 
         valid.push(file);

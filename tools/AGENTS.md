@@ -23,11 +23,11 @@ All questions are **MDX only** — see [`types-of-questions.md`](../_docs/01%20s
 
 | Axis                 | Field             | Ingest today                                                      |
 | -------------------- | ----------------- | ----------------------------------------------------------------- |
-| How the user answers | `answer_format`   | Not stored — defaults to `free_text`                              |
-| What is tested       | `cognitive_style` | Not stored — optional frontmatter ignored until schema Phase 1    |
-| Grading              | `grading_mode`    | `auto` (MC/MS/TF frontmatter) or `self` (`free_text` body reveal) |
+| How the user answers | `answer_format`   | Stored on `questions.answer_format`                               |
+| What is tested       | `cognitive_style` | Stored on `questions.cognitive_style`                             |
+| Grading              | `grading_mode`    | Stored; derived from `answer_format` at ingest                    |
 
-- **`mdx-ingest`:** `publish/questions/*.mdx` → `questions.front` + `questions.back` (raw MDX body; **not** compiled to HTML in ingest).
+- **`mdx-ingest`:** `publish/questions/*.mdx` → `questions` (+ `question_options` when applicable); raw MDX body in `back` (**not** compiled to HTML in ingest).
 - **`json-ingest`:** does **not** handle questions — only `profile/`, `skills/`, `pages/`.
 - **Quiz delivery:** SSG may export `/data/questions/{post-slug}.json` at build time from the DB; that is not an authoring format.
 
@@ -107,9 +107,9 @@ Required frontmatter (missing → file skipped with warning):
 - project / coursework: `title`, `status`
 - question: `question`, `status`
 
-Optional frontmatter (safe to author now; normaliser ignores until Phase 1+): `answer_format`, `cognitive_style`, `difficulty`, `concept`, `options`, `correct_option_keys`, `answer` (T/F).
+Optional frontmatter (defaults when omitted): `answer_format` (`free_text`), `cognitive_style` (`factual_recall`), `difficulty` (`intermediate`).
 
-Structured types: options in **frontmatter**; explanation (JSX/images) in **body**.
+Structured types: `options` + `correct_option_keys` in frontmatter → `question_options` table; T/F `answer` → `questions.payload`; explanation (JSX/images) in **body** → `questions.back`.
 
 ### Question conventions
 
@@ -124,7 +124,7 @@ Structured types: options in **frontmatter**; explanation (JSX/images) in **body
 `markdownFileScanner.ts` default `typePattern` includes `questions`:
 
 ```typescript
-/^(projects|coursework|posts|booknotes|snippets|questions)$/
+/^(projects|coursework|posts|booknotes|snippets|questions)$/;
 ```
 
 ### Tag handling (mdx upsert)
@@ -133,11 +133,8 @@ Structured types: options in **frontmatter**; explanation (JSX/images) in **body
 2. Insert tags with `onConflictDoNothing`.
 3. For each upserted slug: delete existing `content_tags` or `question_tags`, re-insert current links.
 
-### Planned (not implemented)
-
-- Persist `answer_format`, `cognitive_style`, `difficulty`, `grading_mode` on `questions`.
-- Parse `options` / `correct_option_keys` into `question_options` table.
-- Keep storing full MDX body for explanation compilation at build/quiz render time.
+- Validates question frontmatter via `@prj--personal-portfolio--v3/shared--question-contract`.
+- Upserts `question_options` (delete-and-replace per question slug).
 
 ---
 

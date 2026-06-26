@@ -11,7 +11,7 @@ Schema (`db-schema`) is separated from runtime (`db`) so the frontend can import
 ### `@prj--personal-portfolio--v3/shared--db-schema` (`shared/db-schema/`)
 
 - **Role**: Drizzle table definitions and inferred TypeScript types only — no Node DB drivers.
-- **Exports**: tables (`posts`, `projects`, `coursework`, `questions`, `pages`, `profile`, `skills`, `tags`, `content_tags`), row types, and `ContentType`.
+- **Exports**: tables (`posts`, `projects`, `coursework`, `questions`, `question_options`, `pages`, `profile`, `skills`, `tags`, `content_tags`), row types, and `ContentType`.
 - **Consumers**: ingest tools, Astro (types), `shared--db`.
 
 ### `@prj--personal-portfolio--v3/shared--db` (`shared/db/`)
@@ -27,6 +27,11 @@ Schema (`db-schema`) is separated from runtime (`db`) so the frontend can import
     - `runMigrations(db, migrationsFolder)` — applies `database/migrations/` via drizzle migrator
     - `upsertWithLockCheck(db, table, row, { dryRun?, syncSource? })` — insert or update by `slug`; skips `locked` rows; sets `sync_source` (default `'mdx'`) and `locked: false` on write
 - **Scripts**: `db:generate`, `db:migrate`, `db:studio` (Drizzle Kit).
+
+### `@prj--personal-portfolio--v3/shared--question-contract` (`shared/question-contract/`)
+
+- **Role**: Zod schemas and helpers for question MDX frontmatter (`answer_format`, `cognitive_style`, options, payload).
+- **Consumers**: `tools/mdx-ingest` (validate + normalise questions).
 
 ### `@prj--personal-portfolio--v3/shared--task-manager` (`shared/task-manager/`)
 

@@ -97,6 +97,250 @@ JSON source used to generate the MDX:
     { "key": "d", "label": "Topological sort on any graph" }
   ],
   "correct_option_keys": [ "b" ],
+  "tags": [ "Graph Theory", "Cycles" ],
+  "explanation": "**b** is correct: a back-edge during DFS implies a cycle."
+}
+```
+
+```mdx
+---
+question: "Which algorithm detects cycles in a directed graph?"
+status: published
+answer_format: multiple_choice
+cognitive_style: factual_recall
+difficulty: intermediate
+concept: Graph cycle detection
+options:
+  - key: a
+    label: Breadth-first search only
+  - key: b
+    label: DFS with back-edge detection
+  - key: c
+    label: Dijkstra's algorithm
+  - key: d
+    label: Topological sort on any graph
+correct_option_keys:
+  - b
+tags:
+  - Graph Theory
+  - Cycles
+---
+
+## Explanation
+
+**b** is correct: a back-edge during DFS implies a cycle.
+
+![DFS back-edge example](./images/dfs-back-edge.png)
+
+<Callout type="tip">Kahn's algorithm fails when a cycle exists — no zero-in-degree node remains.</Callout>
+```
+
+### `multiple_select`
+JSON source used to generate the MDX:
+```json
+{
+  "question": "Which statements about topological sort are true? (Select all that apply.)",
+  "status": "published",
+  "answer_format": "multiple_select",
+  "cognitive_style": "comprehension",
+  "difficulty": "advanced",
+  "concept": "Topological sort",
+  "options": [
+    { "key": "a", "label": "Requires a DAG" },
+    { "key": "b", "label": "Produces a unique ordering for every DAG" },
+    { "key": "c", "label": "Can be computed with Kahn's algorithm" },
+    { "key": "d", "label": "Runs in O(V + E) with adjacency lists" }
+  ],
+  "correct_option_keys": [ "a", "c", "d" ],
+  "tags": [ "Graph Theory", "Topological Sort" ],
+  "explanation": "**a**, **c**, **d** are correct. **b** is false: multiple valid orderings exist when parallel branches exist."
+}
+```
+
+```mdx
+---
+question: "Which statements about topological sort are true? (Select all that apply.)"
+status: published
+answer_format: multiple_select
+cognitive_style: comprehension
+difficulty: advanced
+concept: Topological sort
+options:
+  - key: a
+    label: Requires a DAG
+  - key: b
+    label: Produces a unique ordering for every DAG
+  - key: c
+    label: Can be computed with Kahn's algorithm
+  - key: d
+    label: Runs in O(V + E) with adjacency lists
+correct_option_keys:
+  - a
+  - c
+  - d
+tags:
+  - Graph Theory
+  - Topological Sort
+---
+
+## Explanation
+
+**a**, **c**, **d** are correct. **b** is false: multiple valid orderings exist when parallel branches exist.
+```
+
+### `true_false`
+
+JSON source used to generate the MDX:
+```json
+{
+  "question": "Topological sort can be applied to any directed graph.",
+  "status": "published",
+  "answer_format": "true_false",
+  "cognitive_style": "application",
+  "difficulty": "beginner",
+  "concept": "Topological sort",
+  "answer": false,
+  "tags": [ "Graph Theory", "Topological Sort" ],
+  "explanation": "False — only **DAGs** admit a topological ordering. Cyclic graphs have no topological sort.\n\nThe correct claim: topological sort applies to **directed acyclic** graphs."
+}
+```
+
+```mdx
+---
+question: "Topological sort can be applied to any directed graph."
+status: published
+answer_format: true_false
+cognitive_style: application
+difficulty: beginner
+concept: Topological sort
+answer: false
+tags:
+  - Graph Theory
+  - Topological Sort
+---
+
+## Explanation
+
+False — only **DAGs** admit a topological ordering. Cyclic graphs have no topological sort.
+
+The correct claim: topological sort applies to **directed acyclic** graphs.
+```
+
+### `free_text` — `factual_recall`
+
+JSON source used to generate the MDX:
+```json
+{
+  "question": "What is a back-edge in DFS?",
+  "status": "published",
+  "answer_format": "free_text",
+  "cognitive_style": "factual_recall",
+  "difficulty": "beginner",
+  "concept": "DFS",
+  "answer": "An edge `(u, v)` where `v` is an ancestor of `u` in the DFS tree.",
+  "explanation": "An edge `(u, v)` where `v` is an ancestor of `u` in the DFS tree.\n\nBack-edges are the standard signal for **cycle detection** in directed graphs.",
+  "tags": [ "Graph Theory", "DFS" ]
+}
+```
+
+```mdx
+---
+question: "What is a back-edge in DFS?"
+status: published
+answer_format: free_text
+cognitive_style: factual_recall
+difficulty: beginner
+concept: DFS
+tags:
+  - Graph Theory
+  - DFS
+---
+
+## Answer
+
+An edge `(u, v)` where `v` is an ancestor of `u` in the DFS tree.
+
+## Explanation
+
+Back-edges are the standard signal for **cycle detection** in directed graphs.
+```
+
+### `free_text` — `comprehension` / `application` / `scenario` / `open_ended` / `analogy`
+
+Same `answer_format: free_text`. Vary `cognitive_style` and optional frontmatter (`concepts_tested`, `concept_target`, `concept_source`). Use **Answer** + **Explanation** in the body; put diagrams and JSX in **Explanation**.
+
+JSON source used to generate the MDX:
+```json
+{
+  "question": "How would you schedule parallel tasks with dependencies?",
+  "status": "published",
+  "answer_format": "free_text",
+  "cognitive_style": "scenario",
+  "difficulty": "advanced",
+  "concepts_tested": [ "Topological sort", "Parallel execution" ],
+  "answer": "Model a task graph as a DAG, run topological sort, execute each **level** of the resulting level-order in parallel.",
+  "explanation": "Alternative: critical-path scheduling if tasks have **weights** (durations) — see the post section on…",
+  "tags": [ "Scheduling", "Parallelism" ]
+}
+```
+
+```mdx
+---
+question: "How would you schedule parallel tasks with dependencies?"
+status: published
+answer_format: free_text
+cognitive_style: scenario
+difficulty: advanced
+concepts_tested:
+  - Topological sort
+  - Parallel execution
+tags:
+  - Scheduling
+  - Parallelism
+---
+
+## Answer
+
+Model a task graph as a DAG, run topological sort, execute each **level** of the resulting level-order in parallel.
+
+## Explanation
+
+Alternative: critical-path scheduling if tasks have **weights** (durations) — see the post section on…
+
+<ComparisonTable tasks={...} />
+```
+
+---
+
+## Pipeline notes
+
+| Stage             | Behaviour                                                                                                                   |
+| ----------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| **mdx-ingest**    | Parses frontmatter + stores **raw MDX body** (no HTML compilation)                                                          |
+| **SSG / quiz UI** | Compiles explanation MDX at build or render time for rich display                                                           |
+| **Static export** | Build may emit `/data/questions/{post-slug}.json` for the quiz app — that is a **delivery** format, not an authoring format |
+
+---
+## MDX examples by `answer_format`
+
+### `multiple_choice`
+
+JSON source used to generate the MDX:
+```json
+{
+  "question": "Which algorithm detects cycles in a directed graph?",
+  "status": "published",
+  "answer_format": "multiple_choice",
+  "cognitive_style": "factual_recall",
+  "difficulty": "intermediate",
+  "concept": "Graph cycle detection",
+  "options": [
+    { "key": "a", "label": "Breadth-first search only" },
+    { "key": "b", "label": "DFS with back-edge detection" },
+    { "key": "c", "label": "Dijkstra's algorithm" },
+    { "key": "d", "label": "Topological sort on any graph" }
+  ],
+  "correct_option_keys": [ "b" ],
   "tags": [ "Graph Theory" ],
   "explanation": "**b** is correct: a back-edge during DFS implies a cycle."
 }
@@ -137,7 +381,6 @@ tags:
 ### `multiple_select`
 JSON source used to generate the MDX:
 ```json
-
 {
   "question": "Which statements about topological sort are true? (Select all that apply.)",
   "status": "published",
@@ -145,7 +388,6 @@ JSON source used to generate the MDX:
   "cognitive_style": "comprehension",
   "difficulty": "advanced",
   "concept": "Topological sort",
-}
   "options": [
     { "key": "a", "label": "Requires a DAG" },
     { "key": "b", "label": "Produces a unique ordering for every DAG" },
@@ -197,7 +439,7 @@ JSON source used to generate the MDX:
   "cognitive_style": "application",
   "difficulty": "beginner",
   "concept": "Topological sort",
-  "answer": false
+  "answer": false,
   "tags": [ "Graph Theory" ],
   "explanation": "False — only **DAGs** admit a topological ordering. Cyclic graphs have no topological sort.\n\nThe correct claim: topological sort applies to **directed acyclic** graphs."
 }
@@ -300,14 +542,6 @@ Alternative: critical-path scheduling if tasks have **weights** (durations) — 
 ---
 
 ## Pipeline notes
-
-| Stage             | Behaviour                                                                                                                   |
-| ----------------- | --------------------------------------------------------------------------------------------------------------------------- |
-| **mdx-ingest**    | Parses frontmatter + stores **raw MDX body** (no HTML compilation)                                                          |
-| **SSG / quiz UI** | Compiles explanation MDX at build or render time for rich display                                                           |
-| **Static export** | Build may emit `/data/questions/{post-slug}.json` for the quiz app — that is a **delivery** format, not an authoring format |
-
----
 
 ## Legacy `type` → canonical mapping
 

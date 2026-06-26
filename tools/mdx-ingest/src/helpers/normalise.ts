@@ -1,9 +1,16 @@
 import { ulid } from 'ulidx';
+import {
+    buildQuestionOptionRows,
+    buildQuestionPayload,
+    deriveGradingMode,
+    parseQuestionFrontmatter,
+} from '@prj--personal-portfolio--v3/shared--question-contract';
 import type {
     NewPostRow,
     NewProjectRow,
     NewCourseworkRow,
     NewQuestionRow,
+    NewQuestionOptionRow,
     NewTagRow,
     NewContentTagRow,
     NewQuestionTagRow,
@@ -16,6 +23,7 @@ export type NormalisedRows = {
     projects: NewProjectRow[];
     coursework: NewCourseworkRow[];
     questions: NewQuestionRow[];
+    questionOptions: NewQuestionOptionRow[];
     tags: NewTagRow[];
     contentTags: NewContentTagRow[];
     questionTags: NewQuestionTagRow[];
@@ -141,8 +149,12 @@ const normaliseCoursework = (file: ParsedFile): NewCourseworkRow => {
     };
 };
 
-const normaliseQuestion = (file: ParsedFile): NewQuestionRow | null => {
-    const fm = file.frontmatter;
+type NormalisedQuestion = {
+    question: NewQuestionRow;
+    options: NewQuestionOptionRow[];
+};
+
+const normaliseQuestion = (file: ParsedFile): NormalisedQuestion | null => {
     const parts = file.slug.split('--');
 
     if (parts.length < 2) {
@@ -150,19 +162,39 @@ const normaliseQuestion = (file: ParsedFile): NewQuestionRow | null => {
         return null;
     }
 
+    const parsed = parseQuestionFrontmatter(file.frontmatter);
+
+    if (!parsed.ok) {
+        console.warn(`[normalise] Question "${file.slug}": ${parsed.error}`);
+        return null;
+    }
+
+    const fm = parsed.data;
     const post_slug = parts.slice(0, -1).join('--');
+    const stem = fm.question;
+    const body = file.body.trim();
+    const grading_mode = deriveGradingMode(fm.answer_format);
 
     return {
-        id: ulid(),
-        slug: file.slug,
-        post_slug,
-        front: str(fm['question']) ?? '',
-        back: file.body.trim(),
-        status: str(fm['status']) ?? 'draft',
-        sync_source: 'mdx',
-        locked: false,
-        created_at: now(),
-        updated_at: now(),
+        question: {
+            id: ulid(),
+            slug: file.slug,
+            post_slug,
+            answer_format: fm.answer_format,
+            cognitive_style: fm.cognitive_style,
+            difficulty: fm.difficulty,
+            grading_mode,
+            stem,
+            payload: buildQuestionPayload(fm),
+            front: stem,
+            back: body,
+            status: fm.status,
+            sync_source: 'mdx',
+            locked: false,
+            created_at: now(),
+            updated_at: now(),
+        },
+        options: buildQuestionOptionRows(file.slug, fm),
     };
 };
 
@@ -174,6 +206,7 @@ export const normalise = (files: ParsedFile[]): NormalisedRows => {
         projects: [],
         coursework: [],
         questions: [],
+        questionOptions: [],
         tags: [],
         contentTags: [],
         questionTags: [],
@@ -209,9 +242,10 @@ export const normalise = (files: ParsedFile[]): NormalisedRows => {
                 break;
             }
             case 'question': {
-                const q = normaliseQuestion(file);
-                if (q) {
-                    rows.questions.push(q);
+                const result = normaliseQuestion(file);
+                if (result) {
+                    rows.questions.push(result.question);
+                    rows.questionOptions.push(...result.options);
                     collectQuestionTags(acc, file.frontmatter['tags'], file.slug);
                 }
                 break;
@@ -226,7 +260,8 @@ export const normalise = (files: ParsedFile[]): NormalisedRows => {
     console.log(
         `[normalise] posts=${rows.posts.length}  projects=${rows.projects.length}  ` +
             `coursework=${rows.coursework.length}  questions=${rows.questions.length}  ` +
-            `tags=${rows.tags.length}  contentLinks=${rows.contentTags.length}  questionLinks=${rows.questionTags.length}`
+            `questionOptions=${rows.questionOptions.length}  tags=${rows.tags.length}  ` +
+            `contentLinks=${rows.contentTags.length}  questionLinks=${rows.questionTags.length}`
     );
 
     return rows;

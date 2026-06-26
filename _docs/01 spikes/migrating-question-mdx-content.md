@@ -21,11 +21,11 @@ See also: [types-of-questions](./types-of-questions.md).
 
 If you omit `answer_format`, ingest treats the card as:
 
-| Field | Default |
-|-------|---------|
-| `answer_format` | `free_text` |
+| Field             | Default          |
+| ----------------- | ---------------- |
+| `answer_format`   | `free_text`      |
 | `cognitive_style` | `factual_recall` |
-| `grading_mode` | `self` |
+| `grading_mode`    | `self`           |
 
 ```mdx
 ---
@@ -73,10 +73,10 @@ Rich content: **bold**, lists, images, imported components.
 <Callout>Edge case: cyclic graphs have no topological sort.</Callout>
 ```
 
-| Section | Purpose |
-|---------|---------|
-| **Answer** | What the user compares against after self-graded recall |
-| **Explanation** | Deeper context; use MDX/JSX freely |
+| Section         | Purpose                                                 |
+| --------------- | ------------------------------------------------------- |
+| **Answer**      | What the user compares against after self-graded recall |
+| **Explanation** | Deeper context; use MDX/JSX freely                      |
 
 ---
 
@@ -132,11 +132,11 @@ Only **DAGs** have a topological ordering. For false statements, state the corre
 
 ## Optional frontmatter by cognitive style
 
-| `cognitive_style` | Extra frontmatter |
-|-------------------|-------------------|
-| `scenario`, `open_ended` | `concepts_tested: [ ... ]` |
-| `analogy` | `concept_target`, `concept_source` |
-| others | `concept` (single string) usually enough |
+| `cognitive_style`        | Extra frontmatter                        |
+| ------------------------ | ---------------------------------------- |
+| `scenario`, `open_ended` | `concepts_tested: [ ... ]`               |
+| `analogy`                | `concept_target`, `concept_source`       |
+| others                   | `concept` (single string) usually enough |
 
 ---
 
@@ -154,11 +154,11 @@ Only **DAGs** have a topological ordering. For false statements, state the corre
 
 ## What not to do
 
-| Avoid | Instead |
-|-------|---------|
-| `publish/questions/*.json` | One `.mdx` per card |
+| Avoid                           | Instead                     |
+| ------------------------------- | --------------------------- |
+| `publish/questions/*.json`      | One `.mdx` per card         |
 | Long explanation in frontmatter | Explanation in the MDX body |
-| Duplicate slug across files | One file per `slug` |
+| Duplicate slug across files     | One file per `slug`         |
 
 ---
 

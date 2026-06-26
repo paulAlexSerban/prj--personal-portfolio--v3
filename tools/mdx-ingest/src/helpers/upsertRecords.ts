@@ -4,6 +4,7 @@ import {
     projects as projectsTable,
     coursework as courseworkTable,
     questions as questionsTable,
+    question_options as questionOptionsTable,
     tags as tagsTable,
     content_tags as contentTagsTable,
     question_tags as questionTagsTable,
@@ -18,6 +19,7 @@ export type UpsertSummary = {
     tags: number;
     contentLinks: number;
     questionLinks: number;
+    questionOptions: number;
     questionsSkipped: number;
 };
 
@@ -82,6 +84,35 @@ const syncQuestionTags = (db: DrizzleDb, upsertedQuestionSlugs: Set<string>, row
     return links.length;
 };
 
+const syncQuestionOptions = (db: DrizzleDb, upsertedQuestionSlugs: Set<string>, rows: NormalisedRows, dryRun: boolean): number => {
+    const options = rows.questionOptions.filter((o) => upsertedQuestionSlugs.has(o.question_slug));
+
+    if (dryRun) {
+        console.log(`  [dry-run] would sync ${options.length} question option(s)`);
+        return options.length;
+    }
+
+    for (const slug of upsertedQuestionSlugs) {
+        db.delete(questionOptionsTable).where(eq(questionOptionsTable.question_slug, slug)).run();
+    }
+
+    for (const option of options) {
+        db.insert(questionOptionsTable)
+            .values(option)
+            .onConflictDoUpdate({
+                target: [questionOptionsTable.question_slug, questionOptionsTable.option_key],
+                set: {
+                    sort_order: option.sort_order,
+                    label: option.label,
+                    is_correct: option.is_correct,
+                },
+            })
+            .run();
+    }
+
+    return options.length;
+};
+
 const loadExistingPostSlugs = (db: DrizzleDb, slugs: string[]): Set<string> => {
     if (slugs.length === 0) return new Set();
 
@@ -131,6 +162,7 @@ export const upsertRecords = (options: UpsertRecordsOptions): UpsertSummary => {
     const upsertedQuestionSlugs = new Set(questionResults.filter((r) => r.outcome !== 'skipped').map((r) => r.slug));
 
     const questionLinkCount = syncQuestionTags(db, upsertedQuestionSlugs, rows, dryRun);
+    const questionOptionCount = syncQuestionOptions(db, upsertedQuestionSlugs, rows, dryRun);
 
     const summary: UpsertSummary = {
         inserted: 0,
@@ -139,6 +171,7 @@ export const upsertRecords = (options: UpsertRecordsOptions): UpsertSummary => {
         tags: tagCount,
         contentLinks: contentLinkCount,
         questionLinks: questionLinkCount,
+        questionOptions: questionOptionCount,
         questionsSkipped,
     };
 
@@ -148,7 +181,8 @@ export const upsertRecords = (options: UpsertRecordsOptions): UpsertSummary => {
 
     console.log(
         `[upsert] inserted=${summary.inserted}  updated=${summary.updated}  skipped=${summary.skipped}  ` +
-            `tags=${summary.tags}  contentLinks=${summary.contentLinks}  questionLinks=${summary.questionLinks}` +
+            `tags=${summary.tags}  contentLinks=${summary.contentLinks}  questionLinks=${summary.questionLinks}  ` +
+            `questionOptions=${summary.questionOptions}` +
             (questionsSkipped > 0 ? `  questionsSkipped=${questionsSkipped}` : '') +
             (dryRun ? '  (dry-run)' : '')
     );
