@@ -7,11 +7,11 @@ import "./styles.css";
 const rootElement = document.getElementById("root");
 
 if (!rootElement) {
-    throw new Error("Root element #root not found");
+  throw new Error("Root element #root not found");
 }
 
 createRoot(rootElement).render(
-    <StrictMode>
-        <RouterProvider router={router} />
-    </StrictMode>,
+  <StrictMode>
+    <RouterProvider router={router} />
+  </StrictMode>,
 );
