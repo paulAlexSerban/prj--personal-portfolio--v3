@@ -1,0 +1,33 @@
+{
+    "name": "@prj--personal-portfolio--v3/shared--quiz-export",
+    "version": "1.0.0",
+    "type": "module",
+    "license": "MIT",
+    "packageManager": "pnpm@11.5.0",
+    "exports": {
+        ".": {
+            "types": "./dist/index.d.ts",
+            "import": "./index.ts"
+        }
+    },
+    "scripts": {
+        "start": "node --experimental-strip-types src/cli.ts",
+        "start:dry-run": "node --experimental-strip-types src/cli.ts --dry-run",
+        "test": "vitest run",
+        "typecheck": "tsc -b"
+    },
+    "dependencies": {
+        "@prj--personal-portfolio--v3/shared--db": "workspace:*",
+        "@prj--personal-portfolio--v3/shared--db-schema": "workspace:*",
+        "@prj--personal-portfolio--v3/shared--question-contract": "workspace:*",
+        "@prj--personal-portfolio--v3/tools--mdx-ingest": "workspace:*",
+        "drizzle-orm": "^0.45.2"
+    },
+    "devDependencies": {
+        "@types/better-sqlite3": "^7.6.13",
+        "@types/node": "^25.9.1",
+        "better-sqlite3": "^12.10.0",
+        "typescript": "^6.0.3",
+        "vitest": "^3.2.4"
+    }
+}

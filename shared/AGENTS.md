@@ -33,6 +33,27 @@ Schema (`db-schema`) is separated from runtime (`db`) so the frontend can import
 - **Role**: Zod schemas and helpers for question MDX frontmatter (`answer_format`, `cognitive_style`, options, payload).
 - **Consumers**: `tools/mdx-ingest` (validate + normalise questions).
 
+### `@prj--personal-portfolio--v3/shared--quiz-export` (`shared/quiz-export/`)
+
+- **Role**: Reads `content.db` and emits static JSON consumed by the quiz web app and the offline mobile bundle.
+- **Files**:
+    - `src/contract.ts` — exported TS types: `ExportedQuestion`, `ExportedPostEntry`, `PostsIndex`, `PostQuestionsFile`, `AllQuestionsBundle`, `QuizData`.
+    - `src/export.ts` — `buildQuizData(db): Promise<QuizData>` — pure query: joins `questions` → `posts` + `question_options` (sorted by `sort_order`) + `question_tags` + `content_tags`. Filters to `status = 'published'` only.
+    - `src/write.ts` — `writeQuizJson(data, outDir)` — writes `posts.json`, `questions/<post_slug>.json`, `_all.json`.
+    - `src/cli.ts` — CLI entry; reads `DATABASE_PATH` + `QUIZ_DATA_OUT` env vars; supports `--dry-run`.
+    - `index.ts` — library re-exports for consumers (`frontend--quiz-web-app` imports types).
+- **Output** (default: `frontend/apps/quiz-web-app/public/data/`):
+    - `posts.json` — index of posts that have ≥1 published question.
+    - `questions/<post_slug>.json` — questions for a single post (lazy-loaded by the app).
+    - `_all.json` — full bundle (posts + all questions) for offline / mobile.
+- **Contract version**: all files carry `"version": 1`.
+- **Scripts**:
+    - `pnpm --filter ...shared--quiz-export start` — run export against live DB.
+    - `pnpm --filter ...shared--quiz-export start:dry-run` — report counts, write nothing.
+    - `pnpm --filter ...shared--quiz-export test` — vitest suite (10 tests, in-memory SQLite fixture).
+- **Consumers**: `frontend--quiz-web-app` (types + JSON at runtime), future mobile bundle.
+- **Depends on**: `shared--db`, `shared--db-schema`, `shared--question-contract`.
+
 ### `@prj--personal-portfolio--v3/shared--task-manager` (`shared/task-manager/`)
 
 - **Role**: Lightweight DAG task executor for CLI pipelines.
@@ -50,4 +71,5 @@ Schema (`db-schema`) is separated from runtime (`db`) so the frontend can import
 ## Related docs
 
 - Schema rationale and ingest plan: `_docs/02 plans/mdx-ingest-pipeline.md`
+- Quiz web app refactor + JSON export plan: `_docs/02 plans/quiz-web-app-refactor-plan.md`
 - Migration artifacts: `database/AGENTS.md`

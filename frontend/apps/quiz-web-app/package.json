@@ -1,0 +1,14 @@
+{
+    "name": "@prj--personal-portfolio--v3/frontend--quiz-web-app",
+    "version": "0.0.1",
+    "private": true,
+    "type": "module",
+    "packageManager": "pnpm@11.5.0",
+    "scripts": {
+        "dev": "vite",
+        "build": "tsc -b && vite build",
+        "preview": "vite preview",
+        "typecheck": "tsc -b",
+        "lint": "eslint ."
+    }
+}
