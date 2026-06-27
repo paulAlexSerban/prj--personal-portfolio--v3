@@ -387,9 +387,87 @@
 .cloze-filled {
   font-weight: 700;
 }
-.inline-math {
-  font-family: Cambria, Georgia, serif;
-}
 .md-inline {
   display: inline;
+}
+
+/* ── Math (KaTeX) ─────────────────────────────────────────────────────────── */
+/* Raw-TeX fallback shown before the lazy KaTeX chunk renders. */
+.math {
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+}
+.math-block {
+  display: block;
+}
+.md-content .katex {
+  font-size: 1.05em;
+}
+.md-content .katex-display {
+  margin: 0.7em 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.2em 0;
+}
+
+/* ── Code syntax highlighting (highlight.js) ──────────────────────────────── */
+/* The code surface is always dark (ink-black) in both themes, so tokens use a
+   light, low-saturation newsprint palette for legibility and print fidelity. */
+.md-content pre code.hljs {
+  color: var(--aged-white);
+  background: transparent;
+  padding: 0;
+}
+.md-content .hljs-comment,
+.md-content .hljs-quote {
+  color: #9a9486;
+  font-style: italic;
+}
+.md-content .hljs-keyword,
+.md-content .hljs-selector-tag,
+.md-content .hljs-literal,
+.md-content .hljs-built_in,
+.md-content .hljs-type {
+  color: #efe9dd;
+  font-weight: 700;
+}
+.md-content .hljs-string,
+.md-content .hljs-meta .hljs-string,
+.md-content .hljs-regexp,
+.md-content .hljs-addition {
+  color: #cdb69b;
+}
+.md-content .hljs-number,
+.md-content .hljs-symbol,
+.md-content .hljs-bullet,
+.md-content .hljs-link {
+  color: #b9c3c9;
+}
+.md-content .hljs-title,
+.md-content .hljs-section,
+.md-content .hljs-name,
+.md-content .hljs-selector-id,
+.md-content .hljs-selector-class {
+  color: #ffffff;
+  font-weight: 700;
+}
+.md-content .hljs-attr,
+.md-content .hljs-attribute,
+.md-content .hljs-variable,
+.md-content .hljs-template-variable,
+.md-content .hljs-params {
+  color: #d8d2c4;
+}
+.md-content .hljs-meta,
+.md-content .hljs-tag {
+  color: #8a8475;
+}
+.md-content .hljs-deletion {
+  color: #c98f8f;
+}
+.md-content .hljs-emphasis {
+  font-style: italic;
+}
+.md-content .hljs-strong {
+  font-weight: 700;
 }

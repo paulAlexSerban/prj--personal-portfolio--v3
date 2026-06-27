@@ -1,4 +1,4 @@
-import { defineConfig } from "vite";
+import { defineConfig } from "vitest/config";
 import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 import tsconfigPaths from "vite-tsconfig-paths";
@@ -38,7 +38,7 @@ export default defineConfig({
       workbox: {
         // Precache the app shell plus the study-set index for instant offline.
         globPatterns: [
-          "**/*.{js,css,html,ico,png,svg,woff,woff2}",
+          "**/*.{js,css,html,ico,png,svg,woff,woff2,ttf}",
           "data/posts.json",
           "data/tags.json",
         ],
@@ -62,5 +62,10 @@ export default defineConfig({
   ],
   server: {
     port: 5180,
+  },
+  test: {
+    // jsdom provides the `window` DOMPurify needs to initialize, plus a DOM for
+    // component/markdown rendering tests.
+    environment: "jsdom",
   },
 });

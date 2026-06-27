@@ -75,8 +75,11 @@ PWA assets are only emitted by `vite build`, not in dev.
 
 Question stems, options, and explanations/answers are authored in **Markdown**
 (headings, lists, fenced code, inline code, tables) and rendered via `CardRenderer`
-(`marked` GFM → cloze/math substitution → `DOMPurify` sanitize). Option labels use
-inline Markdown. Real math (KaTeX) and MDX are planned — see
+(`marked` GFM + math tokenizer → cloze substitution → `DOMPurify` sanitize, in
+`components/card/markdown.ts`). Option labels use inline Markdown. **Math** (`$…$`
+inline, `$$…$$` block) renders with **KaTeX** and fenced code is highlighted with
+**highlight.js** — both are lazy-loaded/code-split (`lib/richText.ts`) and precached
+for offline use. MDX is planned — see
 `_docs/02 plans/quiz-web-app-enhancements-plan.md`.
 
 The study route builds a due queue (`selectStudyQueue`) scoped to the post,
