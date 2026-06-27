@@ -93,8 +93,16 @@ then renders each card via `QuestionRenderer`, which branches on `answerFormat`:
 - `multiple_choice` / `true_false` → pick answer, auto-grade, then reveal
 - `multiple_select` → all-or-nothing auto-grade
 
-Ratings (keys `1`–`4`, Space/Enter = Good) feed the SM-2 scheduler. Ignored
-questions are excluded from every queue.
+Ratings (keys `1`–`4`, Space/Enter = Good) feed the active scheduler. Two
+algorithms are maintained and switchable at runtime in Settings:
+
+- **SM-2** (classic SuperMemo) — ease factor + growing intervals.
+- **FSRS-5** (memory model) — per-card stability/difficulty scheduled to a
+  configurable target retention.
+
+All scheduling routes through a single `Scheduler` interface
+(`algorithms/scheduler.ts`); switching migrates every card losslessly
+(SM-2 ↔ FSRS) and is reversible. Ignored questions are excluded from every queue.
 
 ## Status
 
@@ -117,5 +125,14 @@ See `_docs/02 plans/quiz-web-app-refactor-plan.md`.
 - **E5:** spaced-repetition correctness — local dates/rollover, interval fuzz + load balancing,
   per-set config/daily limits, leeches ✅
 - **E6:** MDX content pipeline — export-time compile, Callout/Figure, asset copy, fast-path HTML ✅
+- **E7:** dual scheduler — SM-2 + FSRS-5, runtime-switchable with lossless migration,
+  retention target, memory-model stats, and a back-test harness ✅
 
 See `_docs/02 plans/quiz-web-app-enhancements-plan.md`.
+
+#### FSRS back-test
+
+```bash
+pnpm exec tsx src/algorithms/backtest.ts --days 365 --cards 200 --new 10
+# → FSRS reaches ~90% retention with ~36% fewer reviews than SM-2 on the same deck
+```

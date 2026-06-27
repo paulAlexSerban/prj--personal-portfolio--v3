@@ -8,7 +8,7 @@ import { QuestionRenderer } from "@/components/study/QuestionRenderer";
 import { loadPostQuestions } from "@/data/loadQuizData";
 import { useStore } from "@/store";
 import { selectStudyQueue } from "@/store/selectors";
-import { previewInterval } from "@/algorithms/intervals";
+import { getScheduler } from "@/algorithms/scheduler";
 import { todayISO } from "@/utils/dates";
 import type { Rating } from "@/store/types";
 
@@ -66,6 +66,8 @@ export function StudySession({
   const suspendQuestion = useStore((s) => s.suspendQuestion);
   const startSession = useStore((s) => s.startSession);
   const endSession = useStore((s) => s.endSession);
+
+  const scheduler = useMemo(() => getScheduler(settings), [settings]);
 
   const [questionMap, setQuestionMap] = useState<Map<string, ExportedQuestion>>(new Map());
   const [loading, setLoading] = useState(true);
@@ -435,7 +437,7 @@ export function StudySession({
                       className="smallcaps text-[10px] text-[var(--slate)] mt-1"
                       style={{ fontFamily: "var(--font-mono)" }}
                     >
-                      {disabled ? "—" : previewInterval(currentCard, r, config)} · {r}
+                      {disabled ? "—" : scheduler.previewInterval(currentCard, r, config)} · {r}
                     </p>
                   </div>
                 );

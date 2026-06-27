@@ -1,191 +1,98 @@
 import type { CardState, StudyConfig, Rating } from "../store/types";
-import { balanceDueDate } from "./fuzz";
-import { todayISO, DEFAULT_DAY_START_HOUR } from "../utils/dates";
+import {
+  runReview,
+  scheduleLearning,
+  scheduleReviewInterval,
+  type ApplyReviewOpts,
+  type ReviewResult,
+  type ReviewStrategy,
+} from "./learning";
 
-export interface ReviewResult {
-  card: CardState;
-  previousInterval: number;
-  previousEaseFactor: number;
-}
+export type { ApplyReviewOpts, ReviewResult } from "./learning";
 
-export interface ApplyReviewOpts {
-  now?: number;
-  /** Seed for deterministic fuzz (defaults to question slug). */
-  seed?: string;
-  /** Due-date histogram for load balancing. */
-  dueCounts?: Map<string, number>;
-  dayStartHour?: number;
-  /** Override study-day ISO (defaults to computed from now + dayStartHour). */
-  today?: string;
-}
+/** SM-2 review behaviour: ease-factor + interval growth, lapses → relearning. */
+export const sm2Strategy: ReviewStrategy = {
+  graduate(card, config, easy, opts) {
+    card.cardType = "review";
+    card.repetitions = Math.max(card.repetitions, 1);
+    card.learningStep = 0;
+    card.learningDueAt = undefined;
+    card.easeFactor = card.easeFactor || config.startingEaseFactor;
+    const base = easy ? config.easyInterval : config.graduatingInterval;
+    scheduleReviewInterval(card, base, config, opts);
+  },
 
-const clamp = (v: number, lo: number, hi: number) => Math.max(lo, Math.min(hi, v));
+  relearnGraduate(card, config, opts) {
+    card.cardType = "review";
+    card.learningStep = 0;
+    card.learningDueAt = undefined;
+    const ivl = Math.max(config.minimumInterval, card.interval || config.minimumInterval);
+    scheduleReviewInterval(card, ivl, config, opts);
+  },
 
-function studyToday(opts: ApplyReviewOpts, now: number): string {
-  return opts.today ?? todayISO(0, opts.dayStartHour ?? DEFAULT_DAY_START_HOUR, now);
-}
+  review(card, rating, config, opts) {
+    const now = opts.now ?? Date.now();
+    let newEF = card.easeFactor;
+    if (rating === 1) newEF = Math.max(1.3, card.easeFactor - 0.2);
+    else if (rating === 2) newEF = Math.max(1.3, card.easeFactor - 0.15);
+    else if (rating === 4) newEF = card.easeFactor + 0.15;
 
-/** Apply a rating to a card and return the updated card. Pure function. */
+    if (rating === 1) {
+      card.lapses += 1;
+      card.cardType = "relearning";
+      card.learningStep = 0;
+      scheduleLearning(card, config.lapseSteps[0] ?? 10, now, opts);
+      const newInterval = Math.max(
+        config.minimumInterval,
+        Math.floor(card.interval * config.lapseNewInterval),
+      );
+      card.interval = Math.min(newInterval, config.maximumInterval);
+      card.easeFactor = newEF;
+      return;
+    }
+
+    let newInterval: number;
+    if (rating === 2)
+      newInterval = Math.max(
+        config.minimumInterval,
+        Math.floor(card.interval * 1.2 * config.intervalModifier),
+      );
+    else if (rating === 3)
+      newInterval = Math.max(
+        config.minimumInterval,
+        Math.floor(card.interval * newEF * config.intervalModifier),
+      );
+    else
+      newInterval = Math.max(
+        config.minimumInterval,
+        Math.floor(card.interval * newEF * config.easyBonus * config.intervalModifier),
+      );
+
+    card.easeFactor = newEF;
+    card.repetitions += 1;
+    scheduleReviewInterval(card, newInterval, config, opts);
+  },
+};
+
+/** Apply an SM-2 rating to a card and return the updated card. Pure function. */
 export function applyReview(
   card: CardState,
   rating: Rating,
   config: StudyConfig,
   opts: ApplyReviewOpts = {},
 ): ReviewResult {
-  const now = opts.now ?? Date.now();
-  const previousInterval = card.interval;
-  const previousEaseFactor = card.easeFactor;
-  const next: CardState = { ...card, updatedAt: new Date(now).toISOString() };
-  const ctx = { ...opts, now, seed: opts.seed ?? card.questionSlug };
-
-  if (card.cardType === "new" || card.cardType === "learning") {
-    handleLearning(next, rating, config, ctx, card.cardType === "new");
-  } else if (card.cardType === "relearning") {
-    handleRelearning(next, rating, config, ctx);
-  } else {
-    handleReview(next, rating, config, ctx);
-  }
-  return { card: next, previousInterval, previousEaseFactor };
+  return runReview(card, rating, config, opts, sm2Strategy);
 }
 
-function scheduleReviewInterval(
-  card: CardState,
-  baseInterval: number,
-  config: StudyConfig,
-  opts: ApplyReviewOpts,
-) {
-  const today = studyToday(opts, opts.now ?? Date.now());
-  const clamped = clamp(baseInterval, config.minimumInterval, config.maximumInterval);
-  const { interval, dueDate } = balanceDueDate({
-    baseInterval: clamped,
-    seed: opts.seed ?? card.questionSlug,
-    today,
-    minimumInterval: config.minimumInterval,
-    dueCounts: opts.dueCounts ?? new Map(),
-  });
-  card.interval = interval;
-  card.dueDate = dueDate;
-}
-
-function handleLearning(
-  card: CardState,
-  rating: Rating,
-  config: StudyConfig,
-  opts: ApplyReviewOpts,
-  isNew: boolean,
-) {
-  const now = opts.now ?? Date.now();
-  const steps = config.learningSteps;
-  if (isNew) card.cardType = "learning";
-  if (rating === 1) {
-    card.learningStep = 0;
-    scheduleLearning(card, steps[0] ?? 1, now, opts);
-    return;
-  }
-  if (rating === 4) {
-    graduate(card, config, true, opts);
-    return;
-  }
-  if (rating === 2) {
-    const cur = steps[card.learningStep] ?? 1;
-    const nxt = steps[card.learningStep + 1] ?? cur * 1.5;
-    scheduleLearning(card, (cur + nxt) / 2, now, opts);
-    return;
-  }
-  // Good
-  if (card.learningStep + 1 >= steps.length) {
-    graduate(card, config, false, opts);
-  } else {
-    card.learningStep += 1;
-    scheduleLearning(card, steps[card.learningStep], now, opts);
-  }
-}
-
-function handleRelearning(
-  card: CardState,
-  rating: Rating,
-  config: StudyConfig,
-  opts: ApplyReviewOpts,
-) {
-  const now = opts.now ?? Date.now();
-  const steps = config.lapseSteps;
-  if (rating === 1) {
-    card.learningStep = 0;
-    scheduleLearning(card, steps[0] ?? 10, now, opts);
-    return;
-  }
-  if (rating === 4 || card.learningStep + 1 >= steps.length || rating === 3) {
-    if (rating === 3 && card.learningStep + 1 < steps.length) {
-      card.learningStep += 1;
-      scheduleLearning(card, steps[card.learningStep], now, opts);
-      return;
-    }
-    // graduate back to review
-    card.cardType = "review";
-    card.learningStep = 0;
-    card.learningDueAt = undefined;
-    const ivl = Math.max(config.minimumInterval, card.interval || config.minimumInterval);
-    scheduleReviewInterval(card, ivl, config, opts);
-    return;
-  }
-  // Hard — stay
-  const cur = steps[card.learningStep] ?? 10;
-  scheduleLearning(card, cur * 1.5, now, opts);
-}
-
-function scheduleLearning(card: CardState, minutes: number, now: number, opts: ApplyReviewOpts) {
-  card.learningDueAt = now + Math.round(minutes * 60_000);
-  card.dueDate = studyToday(opts, now);
-}
-
-function graduate(card: CardState, config: StudyConfig, easy: boolean, opts: ApplyReviewOpts) {
-  card.cardType = "review";
-  card.repetitions = Math.max(card.repetitions, 1);
-  card.learningStep = 0;
-  card.learningDueAt = undefined;
-  card.easeFactor = card.easeFactor || config.startingEaseFactor;
-  const base = easy ? config.easyInterval : config.graduatingInterval;
-  scheduleReviewInterval(card, base, config, opts);
-}
-
-function handleReview(card: CardState, rating: Rating, config: StudyConfig, opts: ApplyReviewOpts) {
-  const now = opts.now ?? Date.now();
-  let newEF = card.easeFactor;
-  if (rating === 1) newEF = Math.max(1.3, card.easeFactor - 0.2);
-  else if (rating === 2) newEF = Math.max(1.3, card.easeFactor - 0.15);
-  else if (rating === 4) newEF = card.easeFactor + 0.15;
-
-  let newInterval: number;
-  if (rating === 1) {
-    card.lapses += 1;
-    card.cardType = "relearning";
-    card.learningStep = 0;
-    scheduleLearning(card, config.lapseSteps[0] ?? 10, now, opts);
-    newInterval = Math.max(
-      config.minimumInterval,
-      Math.floor(card.interval * config.lapseNewInterval),
-    );
-    card.interval = Math.min(newInterval, config.maximumInterval);
-    card.easeFactor = newEF;
-    return;
-  }
-  if (rating === 2)
-    newInterval = Math.max(
-      config.minimumInterval,
-      Math.floor(card.interval * 1.2 * config.intervalModifier),
-    );
-  else if (rating === 3)
-    newInterval = Math.max(
-      config.minimumInterval,
-      Math.floor(card.interval * newEF * config.intervalModifier),
-    );
-  else
-    newInterval = Math.max(
-      config.minimumInterval,
-      Math.floor(card.interval * newEF * config.easyBonus * config.intervalModifier),
-    );
-
-  card.easeFactor = newEF;
-  card.repetitions += 1;
-  scheduleReviewInterval(card, newInterval, config, opts);
+/**
+ * Migrate a card to SM-2 by dropping FSRS-only fields. SM-2 reads
+ * `interval` / `easeFactor`, which are preserved, so this is lossless.
+ */
+export function migrateToSm2(card: CardState): CardState {
+  if (card.fsrsStability === undefined && card.fsrsDifficulty === undefined) return card;
+  const { fsrsStability, fsrsDifficulty, fsrsLastReview, ...rest } = card;
+  void fsrsStability;
+  void fsrsDifficulty;
+  void fsrsLastReview;
+  return rest;
 }

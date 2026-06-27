@@ -15,6 +15,7 @@ import { useStore } from "@/store";
 import type { QuizState } from "@/store";
 import { getPostStats } from "@/store/selectors";
 import { resolvePostConfig } from "@/lib/postConfig";
+import { cardRetrievability } from "@/algorithms/scheduler";
 import type { PostConfigOverride } from "@/store/types";
 import { todayISO } from "@/utils/dates";
 
@@ -315,7 +316,13 @@ function SetDetailPage() {
                   <th className="p-2 text-left w-20">Type</th>
                   <th className="p-2 text-left w-20">Due</th>
                   <th className="p-2 text-left w-14">Ivl</th>
-                  <th className="p-2 text-left w-14">Ease</th>
+                  {settings.scheduler === "fsrs" ? (
+                    <th className="p-2 text-left w-14" title="Predicted retrievability">
+                      R(t)
+                    </th>
+                  ) : (
+                    <th className="p-2 text-left w-14">Ease</th>
+                  )}
                   <th className="p-2 text-left w-24">Actions</th>
                 </tr>
               </thead>
@@ -338,7 +345,13 @@ function SetDetailPage() {
                       <td className="p-2">{card?.cardType ?? "—"}</td>
                       <td className="p-2">{card?.dueDate ?? "—"}</td>
                       <td className="p-2">{card ? `${card.interval}d` : "—"}</td>
-                      <td className="p-2">{card ? card.easeFactor.toFixed(2) : "—"}</td>
+                      {settings.scheduler === "fsrs" ? (
+                        <td className="p-2">
+                          <RetrievabilityCell card={card} today={today} />
+                        </td>
+                      ) : (
+                        <td className="p-2">{card ? card.easeFactor.toFixed(2) : "—"}</td>
+                      )}
                       <td className="p-2">
                         <button
                           type="button"
@@ -426,6 +439,25 @@ function SetDetailPage() {
         onClose={() => setPreview(null)}
       />
     </PageLayout>
+  );
+}
+
+function RetrievabilityCell({
+  card,
+  today,
+}: {
+  card: import("@/store/types").CardState | undefined;
+  today: string;
+}) {
+  if (!card) return <>—</>;
+  const r = cardRetrievability(card, today);
+  if (r == null) return <>—</>;
+  const pct = Math.round(r * 100);
+  const color = r >= 0.9 ? "var(--ink-black)" : r >= 0.7 ? "var(--slate)" : "#c0392b";
+  return (
+    <span style={{ color }} title={`Predicted retrievability ${pct}%`}>
+      {pct}%
+    </span>
   );
 }
 

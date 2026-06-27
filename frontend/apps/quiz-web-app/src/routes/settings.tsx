@@ -7,7 +7,9 @@ import { toast } from "sonner";
 import { useStore } from "@/store";
 import { DEFAULT_CONFIG } from "@/store/types";
 import type { QuizState } from "@/store";
+import type { SchedulerName } from "@/store/types";
 import { applyTheme } from "@/lib/theme";
+import { DEFAULT_FSRS_PARAMS } from "@/algorithms/fsrs";
 
 export const Route = createFileRoute("/settings")({
   component: SettingsPage,
@@ -24,11 +26,23 @@ function SettingsPage() {
   const [confirmClear, setConfirmClear] = useState(false);
   const [confirmText, setConfirmText] = useState("");
   const [importMsg, setImportMsg] = useState<string | null>(null);
+  const [confirmScheduler, setConfirmScheduler] = useState<SchedulerName | null>(null);
   const fileRef = useRef<HTMLInputElement>(null);
 
   function selectTheme(t: typeof settings.theme) {
     setSettings({ theme: t });
     applyTheme(t);
+  }
+
+  function switchScheduler(target: SchedulerName) {
+    const count = Object.keys(useStore.getState().cardStates).length;
+    setSettings({ scheduler: target });
+    setConfirmScheduler(null);
+    toast.success(
+      target === "fsrs"
+        ? `Switched to FSRS — ${count} card(s) migrated (stability/difficulty seeded)`
+        : `Switched to SM-2 — ${count} card(s) migrated`,
+    );
   }
 
   function exportBackup() {
@@ -192,9 +206,102 @@ function SettingsPage() {
         </Row>
       </Section>
 
+      <Section title="Scheduler">
+        <p className="text-xs italic text-[var(--slate)] mb-4">
+          Choose the spaced-repetition algorithm. Switching migrates every card losslessly — SM-2
+          keeps interval &amp; ease, FSRS seeds stability &amp; difficulty from them. You can switch
+          back at any time.
+        </p>
+        <Row label="Algorithm">
+          <div className="flex gap-2">
+            {(
+              [
+                ["sm2", "SM-2 (classic)"],
+                ["fsrs", "FSRS-5 (memory model)"],
+              ] as [SchedulerName, string][]
+            ).map(([value, label]) => (
+              <button
+                key={value}
+                type="button"
+                onClick={() =>
+                  settings.scheduler === value ? undefined : setConfirmScheduler(value)
+                }
+                className={`border-2 border-[var(--ink-black)] px-3 py-1 text-xs smallcaps ${
+                  settings.scheduler === value
+                    ? "bg-[var(--ink-black)] text-[var(--aged-white)]"
+                    : "hover:bg-[var(--highlight)]"
+                }`}
+              >
+                {label}
+              </button>
+            ))}
+          </div>
+        </Row>
+
+        {settings.scheduler === "fsrs" && (
+          <>
+            <div className="py-2 border-b border-dotted border-[var(--column-rule)]">
+              <div className="flex items-center justify-between">
+                <span className="smallcaps text-xs text-[var(--slate)]">Target retention</span>
+                <span className="text-sm" style={{ fontFamily: "var(--font-mono)" }}>
+                  {Math.round(settings.fsrsTargetRetention * 100)}%
+                </span>
+              </div>
+              <input
+                type="range"
+                min={0.7}
+                max={0.99}
+                step={0.01}
+                value={settings.fsrsTargetRetention}
+                onChange={(e) => setSettings({ fsrsTargetRetention: Number(e.target.value) })}
+                className="w-full mt-2 accent-[var(--ink-black)]"
+              />
+              <p className="text-[11px] italic text-[var(--slate)] mt-0.5">
+                Higher retention → shorter intervals &amp; more reviews. 90% is a good default.
+              </p>
+            </div>
+            <details className="py-2 border-b border-dotted border-[var(--column-rule)]">
+              <summary className="smallcaps text-xs text-[var(--slate)] cursor-pointer">
+                Advanced: FSRS weights (19 values)
+              </summary>
+              <textarea
+                value={(settings.fsrsWeights ?? DEFAULT_FSRS_PARAMS.w).join(", ")}
+                onChange={(e) => {
+                  const parsed = e.target.value
+                    .split(/[\s,]+/)
+                    .map(Number)
+                    .filter((n) => !Number.isNaN(n));
+                  if (parsed.length === DEFAULT_FSRS_PARAMS.w.length) {
+                    setSettings({ fsrsWeights: parsed });
+                  }
+                }}
+                rows={3}
+                className="w-full mt-2 bg-transparent border-2 border-[var(--ink-black)] p-2 text-[11px]"
+                style={{ fontFamily: "var(--font-mono)" }}
+              />
+              <button
+                type="button"
+                onClick={() => {
+                  setSettings({ fsrsWeights: undefined });
+                  toast.success("FSRS weights reset to defaults");
+                }}
+                className="smallcaps text-xs underline hover:no-underline mt-1"
+              >
+                Reset weights to defaults
+              </button>
+              <p className="text-[11px] italic text-[var(--slate)] mt-1">
+                Paste optimised weights from the FSRS optimiser. Invalid input (≠ 19 numbers) is
+                ignored.
+              </p>
+            </details>
+          </>
+        )}
+      </Section>
+
       <Section title="SM-2 Scheduling">
         <p className="text-xs italic text-[var(--slate)] mb-4">
-          Global scheduling parameters. Changes apply to all future reviews.
+          Global scheduling parameters. Daily limits and learning/lapse steps apply to both
+          algorithms; ease-based fields below are used by SM-2.
         </p>
         <NumRow
           label="Daily new card limit"
@@ -333,7 +440,10 @@ function SettingsPage() {
       </Section>
 
       <Section title="About">
-        <p className="text-sm">Algorithm: SuperMemo SM-2 (1987)</p>
+        <p className="text-sm">
+          Active algorithm:{" "}
+          {settings.scheduler === "fsrs" ? "FSRS-5 (memory model)" : "SuperMemo SM-2 (1987)"}
+        </p>
         <p className="text-sm mt-1">
           <a
             className="underline"
@@ -342,6 +452,15 @@ function SettingsPage() {
             rel="noreferrer"
           >
             SM-2 reference
+          </a>
+          {" · "}
+          <a
+            className="underline"
+            href="https://github.com/open-spaced-repetition/fsrs4anki/wiki/The-Algorithm"
+            target="_blank"
+            rel="noreferrer"
+          >
+            FSRS algorithm
           </a>
         </p>
       </Section>
@@ -373,6 +492,30 @@ function SettingsPage() {
           }}
         >
           Erase Everything
+        </Stamp>
+      </Modal>
+
+      <Modal
+        open={confirmScheduler !== null}
+        onClose={() => setConfirmScheduler(null)}
+        title={confirmScheduler === "fsrs" ? "Switch to FSRS-5?" : "Switch to SM-2?"}
+      >
+        <p className="text-sm mb-3">
+          {confirmScheduler === "fsrs" ? (
+            <>
+              FSRS models memory with <b>stability</b> and <b>difficulty</b>, scheduling each card
+              to hit your target retention. Existing cards keep their progress — stability is seeded
+              from their current interval and difficulty from ease.
+            </>
+          ) : (
+            <>
+              SM-2 schedules with an <b>ease factor</b> and growing intervals. FSRS-only fields are
+              dropped; your intervals and ease are preserved, so this is lossless and reversible.
+            </>
+          )}
+        </p>
+        <Stamp onClick={() => confirmScheduler && switchScheduler(confirmScheduler)}>
+          {confirmScheduler === "fsrs" ? "Switch to FSRS" : "Switch to SM-2"}
         </Stamp>
       </Modal>
     </PageLayout>

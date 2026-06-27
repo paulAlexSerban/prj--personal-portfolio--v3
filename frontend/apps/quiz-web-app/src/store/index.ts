@@ -11,7 +11,7 @@ import type {
   StudySession,
 } from "./types";
 import { DEFAULT_CONFIG, DEFAULT_SETTINGS, createCardState, resetCardState } from "./types";
-import { applyReview } from "../algorithms/sm2";
+import { getScheduler } from "../algorithms/scheduler";
 import { buildDueCounts } from "../algorithms/fuzz";
 import { getPostDaily, resolvePostConfig } from "../lib/postConfig";
 import { todayISO, uid } from "../utils/dates";
@@ -159,11 +159,12 @@ export const useStore = create<QuizStore>()(
         const today = todayISO(0, dayStartHour);
         const dueCounts = buildDueCounts(Object.values(s.cardStates));
 
+        const scheduler = getScheduler(s.settings);
         const {
           card: updated,
           previousInterval,
           previousEaseFactor,
-        } = applyReview(card, rating, postConfig, {
+        } = scheduler.applyReview(card, rating, postConfig, {
           seed: questionSlug,
           dueCounts,
           dayStartHour,
@@ -181,6 +182,7 @@ export const useStore = create<QuizStore>()(
           previousEaseFactor,
           newEaseFactor: updated.easeFactor,
           timeTaken: timeTakenMs,
+          scheduler: scheduler.name,
         };
 
         const daily = s.daily.date === today ? s.daily : freshDaily(today);
@@ -337,7 +339,21 @@ export const useStore = create<QuizStore>()(
           return { studySessions: sessions };
         }),
 
-      setSettings: (next) => set((s) => ({ settings: { ...s.settings, ...next } })),
+      setSettings: (next) =>
+        set((s) => {
+          const merged = { ...s.settings, ...next };
+          // Switching algorithm migrates every card to the new representation
+          // (lossless: SM-2 keeps interval/ease; FSRS seeds stability/difficulty).
+          if (next.scheduler && next.scheduler !== s.settings.scheduler) {
+            const target = getScheduler(merged);
+            const cardStates: Record<string, CardState> = {};
+            for (const [slug, card] of Object.entries(s.cardStates)) {
+              cardStates[slug] = target.migrate(card, s.config);
+            }
+            return { settings: merged, cardStates };
+          }
+          return { settings: merged };
+        }),
       setConfig: (next) => set((s) => ({ config: { ...s.config, ...next } })),
 
       setPostConfig: (postSlug, override) =>

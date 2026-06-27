@@ -2,10 +2,17 @@ import { todayISO } from "../utils/dates";
 
 export type CardType = "new" | "learning" | "review" | "relearning";
 
+/** Available scheduling algorithms. */
+export type SchedulerName = "sm2" | "fsrs";
+
 /**
  * Per-question spaced-repetition state. Keyed by question slug in the store.
  * Content (stem, options, explanation) lives in the JSON data, NOT here —
- * this object only carries the SM-2 scheduling state for a single question.
+ * this object only carries the scheduling state for a single question.
+ *
+ * SM-2 uses `interval` / `easeFactor` / `repetitions`. FSRS additionally
+ * tracks `fsrsStability` / `fsrsDifficulty`; their absence means the card has
+ * never been scheduled under FSRS (migration seeds them from interval/ease).
  */
 export interface CardState {
   questionSlug: string;
@@ -18,8 +25,24 @@ export interface CardState {
   cardType: CardType;
   learningStep: number;
   learningDueAt?: number; // ms epoch for in-session learning queue
+  /** FSRS stability (S): expected days until retrievability drops to target. */
+  fsrsStability?: number;
+  /** FSRS difficulty (D) ∈ [1, 10]. */
+  fsrsDifficulty?: number;
+  /** ISO date of the last FSRS review, for retrievability R(t) computation. */
+  fsrsLastReview?: string;
   createdAt: string;
   updatedAt: string;
+}
+
+/** FSRS-5 tunable parameters. */
+export interface FsrsParams {
+  /** 19-element weight vector (FSRS-5). */
+  w: number[];
+  /** Target retrieval probability used to compute the next interval. */
+  requestedRetention: number;
+  /** Hard cap on the scheduled interval (days). */
+  maximumInterval: number;
 }
 
 export interface StudyConfig {
@@ -50,6 +73,8 @@ export interface ReviewLog {
   previousEaseFactor: number;
   newEaseFactor: number;
   timeTaken: number;
+  /** Scheduler that produced this review (for analytics / back-testing). */
+  scheduler?: SchedulerName;
 }
 
 export interface StudySession {
@@ -76,6 +101,12 @@ export interface AppSettings {
   leechThreshold: number;
   /** Action when a card becomes a leech. */
   leechAction: "suspend" | "tag";
+  /** Active scheduling algorithm. */
+  scheduler: SchedulerName;
+  /** FSRS target retrieval probability [0.7 – 0.99]. */
+  fsrsTargetRetention: number;
+  /** Optional custom FSRS weights (19 values). Falls back to defaults when unset. */
+  fsrsWeights?: number[];
 }
 
 /** Per-post overrides for pacing — unset fields inherit global config. */
@@ -122,6 +153,8 @@ export const DEFAULT_SETTINGS: AppSettings = {
   dayStartHour: 4,
   leechThreshold: 8,
   leechAction: "suspend",
+  scheduler: "sm2",
+  fsrsTargetRetention: 0.9,
 };
 
 /** Fresh SM-2 state for a question newly added to the study set. */
@@ -157,6 +190,9 @@ export function resetCardState(card: CardState, now = Date.now()): CardState {
     cardType: "new",
     learningStep: 0,
     learningDueAt: undefined,
+    fsrsStability: undefined,
+    fsrsDifficulty: undefined,
+    fsrsLastReview: undefined,
     dueDate: todayISO(0),
     updatedAt: new Date(now).toISOString(),
   };

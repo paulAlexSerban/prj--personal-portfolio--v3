@@ -5,6 +5,8 @@ import { Modal } from "@/components/ui/Modal";
 import { Stamp, stampClasses } from "@/components/ui/Stamp";
 import { useStore } from "@/store";
 import { selectDueCount, selectLeeches } from "@/store/selectors";
+import { cardRetrievability } from "@/algorithms/scheduler";
+import { predictedRetention } from "@/algorithms/fsrs";
 import { todayISO } from "@/utils/dates";
 
 export const Route = createFileRoute("/stats")({
@@ -147,6 +149,39 @@ function StatsPage() {
 
   const timeStudiedToday = todayLogs.reduce((n, l) => n + l.timeTaken, 0) / 60000;
 
+  // FSRS memory-model stats (only meaningful when cards carry stability).
+  const fsrsActive = settings.scheduler === "fsrs";
+  const fsrsCards = reviewCards.filter((c) => c.fsrsStability !== undefined);
+  const avgStability = fsrsCards.length
+    ? fsrsCards.reduce((n, c) => n + (c.fsrsStability ?? 0), 0) / fsrsCards.length
+    : 0;
+  const avgDifficulty = fsrsCards.length
+    ? fsrsCards.reduce((n, c) => n + (c.fsrsDifficulty ?? 0), 0) / fsrsCards.length
+    : 0;
+
+  const retentionCurve = useMemo(() => {
+    const out: { day: number; r: number }[] = [];
+    for (let i = 0; i <= 30; i += 2) {
+      out.push({ day: i, r: avgStability > 0 ? predictedRetention(avgStability, i) : 0 });
+    }
+    return out;
+  }, [avgStability]);
+
+  const retrievabilityBands = useMemo(() => {
+    let green = 0;
+    let amber = 0;
+    let red = 0;
+    for (const c of fsrsCards) {
+      const r = cardRetrievability(c, today);
+      if (r == null) continue;
+      if (r >= 0.9) green++;
+      else if (r >= 0.7) amber++;
+      else red++;
+    }
+    return { green, amber, red };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [cardStates, today, settings.scheduler]);
+
   if (addedPosts.length === 0) {
     return (
       <PageLayout>
@@ -221,6 +256,88 @@ function StatsPage() {
           ))}
         </div>
       </Section>
+
+      {fsrsActive && (
+        <Section title="Memory Model (FSRS)">
+          {fsrsCards.length === 0 ? (
+            <p className="text-sm italic text-[var(--slate)]">
+              No FSRS-scheduled review cards yet. Review some cards under FSRS to populate the
+              memory model.
+            </p>
+          ) : (
+            <>
+              <div
+                className="grid grid-cols-2 md:grid-cols-4 border-y-2 border-[var(--ink-black)] divide-x-2 divide-[var(--ink-black)] mb-6"
+                style={{ fontFamily: "var(--font-mono)" }}
+              >
+                <Stat label="Avg Stability" v={`${avgStability.toFixed(1)}d`} />
+                <Stat label="Avg Difficulty" v={avgDifficulty.toFixed(1)} />
+                <Stat
+                  label="Target Retention"
+                  v={`${Math.round(settings.fsrsTargetRetention * 100)}%`}
+                />
+                <Stat label="Modelled Cards" v={fsrsCards.length} />
+              </div>
+
+              <p className="smallcaps text-xs text-[var(--slate)] mb-2">
+                Predicted retention over 30 days (avg card)
+              </p>
+              <div className="flex items-end gap-1 h-24 border-b-2 border-[var(--ink-black)] mb-1">
+                {retentionCurve.map((p) => (
+                  <div
+                    key={p.day}
+                    className="flex-1 bg-[var(--ink-black)]"
+                    style={{ height: `${p.r * 100}%`, minHeight: 2 }}
+                    title={`Day ${p.day}: ${(p.r * 100).toFixed(0)}%`}
+                  />
+                ))}
+              </div>
+              <div
+                className="flex justify-between text-[10px] smallcaps text-[var(--slate)] mb-6"
+                style={{ fontFamily: "var(--font-mono)" }}
+              >
+                <span>today</span>
+                <span>+15d</span>
+                <span>+30d</span>
+              </div>
+
+              <p className="smallcaps text-xs text-[var(--slate)] mb-2">
+                Current retrievability of modelled cards
+              </p>
+              <div className="flex h-5 border-2 border-[var(--ink-black)] mb-1">
+                <div
+                  style={{
+                    width: `${(retrievabilityBands.green / Math.max(1, fsrsCards.length)) * 100}%`,
+                    background: "var(--ink-black)",
+                  }}
+                  title={`≥90%: ${retrievabilityBands.green}`}
+                />
+                <div
+                  style={{
+                    width: `${(retrievabilityBands.amber / Math.max(1, fsrsCards.length)) * 100}%`,
+                    background: "var(--column-rule)",
+                  }}
+                  title={`70–90%: ${retrievabilityBands.amber}`}
+                />
+                <div
+                  style={{
+                    width: `${(retrievabilityBands.red / Math.max(1, fsrsCards.length)) * 100}%`,
+                    background: "var(--highlight)",
+                  }}
+                  title={`<70%: ${retrievabilityBands.red}`}
+                />
+              </div>
+              <p
+                className="text-[10px] text-[var(--slate)]"
+                style={{ fontFamily: "var(--font-mono)" }}
+              >
+                strong {retrievabilityBands.green} · fading {retrievabilityBands.amber} · at-risk{" "}
+                {retrievabilityBands.red}
+              </p>
+            </>
+          )}
+        </Section>
+      )}
 
       {settings.leechThreshold > 0 && (
         <Section title={`Leeches (≥ ${settings.leechThreshold} lapses)`}>
