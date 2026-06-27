@@ -415,7 +415,8 @@ function SetDetailPage() {
 
       <Modal open={confirmReset} onClose={() => setConfirmReset(false)} title="Reset progress?">
         <p className="text-base mb-4">
-          Resets all SM-2 progress for questions in this set. Content stays in your library.
+          Resets all {settings.scheduler === "fsrs" ? "FSRS-5" : "SM-2"} progress for questions in
+          this set. Content stays in your library.
         </p>
         <div className="flex gap-3">
           <Stamp

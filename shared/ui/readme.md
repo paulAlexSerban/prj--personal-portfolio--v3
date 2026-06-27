@@ -10,10 +10,10 @@ via React islands.
 
 ### Exports
 
-| Subpath | Contents |
-| ------- | -------- |
-| `.` | All components + `cn` + `useIsMobile` (barrel) |
-| `./utils` | `cn()` helper only |
+| Subpath        | Contents                                                                |
+| -------------- | ----------------------------------------------------------------------- |
+| `.`            | All components + `cn` + `useIsMobile` (barrel)                          |
+| `./utils`      | `cn()` helper only                                                      |
 | `./styles.css` | Design tokens, base styles, component classes, `.md-content` typography |
 
 ### Contents
@@ -33,18 +33,18 @@ pnpm add @prj--personal-portfolio--v3/shared--ui
 In your global CSS entry:
 
 ```css
-@import "tailwindcss" source(none);
+@import 'tailwindcss' source(none);
 @source "../src";
 @source "../../../../shared/ui/src"; /* scan package for Tailwind classes */
-@import "tw-animate-css";
+@import 'tw-animate-css';
 @custom-variant dark (&:is(.dark *));
-@import "@prj--personal-portfolio--v3/shared--ui/styles.css";
+@import '@prj--personal-portfolio--v3/shared--ui/styles.css';
 ```
 
 In React:
 
 ```tsx
-import { Stamp, Modal, Button, cn } from "@prj--personal-portfolio--v3/shared--ui";
+import { Stamp, Modal, Button, cn } from '@prj--personal-portfolio--v3/shared--ui';
 ```
 
 ## Consumption (Astro SSG + React islands)

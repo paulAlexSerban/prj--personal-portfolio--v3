@@ -22,15 +22,15 @@ user progress (zustand + persist) ── join by question slug ──► study U
 
 ## Key directories
 
-| Path              | Role                                                                         |
-| ----------------- | ---------------------------------------------------------------------------- |
-| `src/routes/`     | File-based TanStack routes (browse, sets, study, tags, stats, settings)      |
-| `src/store/`      | Zustand store (`index.ts`), `types.ts`, `selectors.ts` — slug-keyed progress |
-| `src/algorithms/` | Schedulers + queue/intervals/fuzz (see below)                                |
+| Path              | Role                                                                                |
+| ----------------- | ----------------------------------------------------------------------------------- |
+| `src/routes/`     | File-based TanStack routes (browse, sets, study, tags, stats, settings)             |
+| `src/store/`      | Zustand store (`index.ts`), `types.ts`, `selectors.ts` — slug-keyed progress        |
+| `src/algorithms/` | Schedulers + queue/intervals/fuzz (see below)                                       |
 | `src/components/` | `card/` (markdown render), `study/`, `question/`, `layout/` (app-specific masthead) |
-| `src/data/`       | `loadQuizData.ts` — fetches `/data/*.json` (typed via export contract)       |
-| `src/lib/`        | theme, post-config, rich-text (KaTeX/highlight.js lazy loaders)              |
-| `public/data/`    | Generated JSON (do not edit by hand; regenerate via the export CLI)          |
+| `src/data/`       | `loadQuizData.ts` — fetches `/data/*.json` (typed via export contract)              |
+| `src/lib/`        | theme, post-config, rich-text (KaTeX/highlight.js lazy loaders)                     |
+| `public/data/`    | Generated JSON (do not edit by hand; regenerate via the export CLI)                 |
 
 ## Scheduling (`src/algorithms/`)
 

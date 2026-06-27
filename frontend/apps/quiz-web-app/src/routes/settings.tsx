@@ -95,7 +95,7 @@ function SettingsPage() {
 
   return (
     <PageLayout>
-      <p className="smallcaps text-sm text-[var(--slate)]">Configuration</p>
+      <p className="smallcaps text-base text-[var(--slate)]">Configuration</p>
       <h2 className="text-5xl font-bold mb-8" style={{ fontFamily: "var(--font-display)" }}>
         Settings
       </h2>
@@ -110,7 +110,7 @@ function SettingsPage() {
               key={t}
               type="button"
               onClick={() => selectTheme(t)}
-              className={`smallcaps text-sm mr-3 ${settings.theme === t ? "underline font-bold" : "hover:underline"}`}
+              className={`smallcaps text-base mr-3 ${settings.theme === t ? "underline font-bold" : "hover:underline"}`}
             >
               {t}
             </button>
@@ -199,7 +199,7 @@ function SettingsPage() {
       </Section>
 
       <Section title="Leeches">
-        <p className="text-sm italic text-[var(--slate)] mb-4">
+        <p className="text-base italic text-[var(--slate)] mb-4">
           Cards that lapse repeatedly are &ldquo;leeches&rdquo;. When lapses reach the threshold,
           the configured action is applied automatically.
         </p>
@@ -234,7 +234,7 @@ function SettingsPage() {
       </Section>
 
       <Section title="Scheduler">
-        <p className="text-sm italic text-[var(--slate)] mb-4">
+        <p className="text-base italic text-[var(--slate)] mb-4">
           Choose the spaced-repetition algorithm. Switching migrates every card losslessly — SM-2
           keeps interval &amp; ease, FSRS seeds stability &amp; difficulty from them. You can switch
           back at any time.
@@ -256,7 +256,7 @@ function SettingsPage() {
                 onClick={() =>
                   settings.scheduler === value ? undefined : setConfirmScheduler(value)
                 }
-                className={`border-2 border-[var(--ink-black)] px-3 py-1 text-sm smallcaps ${
+                className={`border-2 border-[var(--ink-black)] px-3 py-1 text-base smallcaps ${
                   settings.scheduler === value
                     ? "bg-[var(--ink-black)] text-[var(--aged-white)]"
                     : "hover:bg-[var(--highlight)]"
@@ -272,7 +272,7 @@ function SettingsPage() {
           <>
             <div className="py-2 border-b border-dotted border-[var(--column-rule)]">
               <div className="flex items-center justify-between">
-                <span className="smallcaps text-sm text-[var(--slate)]">Target retention</span>
+                <span className="smallcaps text-base text-[var(--slate)]">Target retention</span>
                 <span className="text-base" style={{ fontFamily: "var(--font-mono)" }}>
                   {Math.round(settings.fsrsTargetRetention * 100)}%
                 </span>
@@ -286,12 +286,12 @@ function SettingsPage() {
                 onChange={(e) => setSettings({ fsrsTargetRetention: Number(e.target.value) })}
                 className="w-full mt-2 accent-[var(--ink-black)]"
               />
-              <p className="text-[11px] italic text-[var(--slate)] mt-0.5">
+              <p className="text-[14px] italic text-[var(--slate)] mt-0.5">
                 Higher retention → shorter intervals &amp; more reviews. 90% is a good default.
               </p>
             </div>
             <details className="py-2 border-b border-dotted border-[var(--column-rule)]">
-              <summary className="smallcaps text-sm text-[var(--slate)] cursor-pointer">
+              <summary className="smallcaps text-base text-[var(--slate)] cursor-pointer">
                 Advanced: FSRS weights (19 values)
               </summary>
               <textarea
@@ -306,7 +306,7 @@ function SettingsPage() {
                   }
                 }}
                 rows={3}
-                className="w-full mt-2 bg-transparent border-2 border-[var(--ink-black)] p-2 text-[11px]"
+                className="w-full mt-2 bg-transparent border-2 border-[var(--ink-black)] p-2 text-[14px]"
                 style={{ fontFamily: "var(--font-mono)" }}
               />
               <button
@@ -315,11 +315,11 @@ function SettingsPage() {
                   setSettings({ fsrsWeights: undefined });
                   toast.success("FSRS weights reset to defaults");
                 }}
-                className="smallcaps text-sm underline hover:no-underline mt-1"
+                className="smallcaps text-base underline hover:no-underline mt-1"
               >
                 Reset weights to defaults
               </button>
-              <p className="text-[11px] italic text-[var(--slate)] mt-1">
+              <p className="text-[14px] italic text-[var(--slate)] mt-1">
                 Paste optimised weights from the FSRS optimiser. Invalid input (≠ 19 numbers) is
                 ignored.
               </p>
@@ -329,7 +329,7 @@ function SettingsPage() {
       </Section>
 
       <Section title="SM-2 Scheduling">
-        <p className="text-sm italic text-[var(--slate)] mb-4">
+        <p className="text-base italic text-[var(--slate)] mb-4">
           Global scheduling parameters. Daily limits and learning/lapse steps apply to both
           algorithms; ease-based fields below are used by SM-2.
         </p>
@@ -426,7 +426,7 @@ function SettingsPage() {
               setConfig({ ...DEFAULT_CONFIG });
               toast.success("Scheduling reset to defaults");
             }}
-            className="smallcaps text-sm underline hover:no-underline"
+            className="smallcaps text-base underline hover:no-underline"
           >
             Reset to defaults
           </button>
@@ -587,10 +587,10 @@ function Row({
   return (
     <div className="py-2 border-b border-dotted border-[var(--column-rule)]">
       <div className="flex items-center justify-between gap-4">
-        <span className="smallcaps text-sm text-[var(--slate)]">{label}</span>
+        <span className="smallcaps text-base text-[var(--slate)]">{label}</span>
         <div className="shrink-0">{children}</div>
       </div>
-      {hint && <p className="text-[11px] italic text-[var(--slate)] mt-0.5 max-w-prose">{hint}</p>}
+      {hint && <p className="text-[14px] italic text-[var(--slate)] mt-0.5 max-w-prose">{hint}</p>}
     </div>
   );
 }
@@ -611,7 +611,7 @@ function NumRow({
   return (
     <div className="py-2 border-b border-dotted border-[var(--column-rule)]">
       <div className="flex items-center justify-between">
-        <span className="smallcaps text-sm text-[var(--slate)]">{label}</span>
+        <span className="smallcaps text-base text-[var(--slate)]">{label}</span>
         <input
           type="number"
           step={step ?? 1}
@@ -621,7 +621,7 @@ function NumRow({
           style={{ fontFamily: "var(--font-mono)" }}
         />
       </div>
-      {hint && <p className="text-[11px] italic text-[var(--slate)] mt-0.5">{hint}</p>}
+      {hint && <p className="text-[14px] italic text-[var(--slate)] mt-0.5">{hint}</p>}
     </div>
   );
 }
@@ -631,7 +631,7 @@ function Toggle({ v, on }: { v: boolean; on: (v: boolean) => void }) {
     <button
       type="button"
       onClick={() => on(!v)}
-      className={`border-2 border-[var(--ink-black)] px-3 py-1 text-sm smallcaps ${v ? "bg-[var(--ink-black)] text-[var(--aged-white)]" : ""}`}
+      className={`border-2 border-[var(--ink-black)] px-3 py-1 text-base smallcaps ${v ? "bg-[var(--ink-black)] text-[var(--aged-white)]" : ""}`}
     >
       {v ? "On" : "Off"}
     </button>

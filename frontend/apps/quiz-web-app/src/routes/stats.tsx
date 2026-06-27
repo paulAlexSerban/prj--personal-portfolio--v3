@@ -527,8 +527,9 @@ function StatsPage() {
 
       <Modal open={confirmReset} onClose={() => setConfirmReset(false)} title="Reset all progress?">
         <p className="text-base mb-4">
-          Resets SM-2 scheduling for <b>every</b> tracked question and clears all review logs and
-          sessions. Your added sets and ignored questions are kept. This cannot be undone.
+          Resets {fsrsActive ? "FSRS-5" : "SM-2"} scheduling for <b>every</b> tracked question and
+          clears all review logs and sessions. Your added sets and ignored questions are kept. This
+          cannot be undone.
         </p>
         <div className="flex gap-3">
           <Stamp
