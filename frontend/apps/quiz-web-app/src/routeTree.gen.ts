@@ -8,211 +8,320 @@
 // You should NOT make any changes in this file as it will be overwritten.
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
-import { Route as rootRouteImport } from './routes/__root'
-import { Route as StudyRouteImport } from './routes/study'
-import { Route as StatsRouteImport } from './routes/stats'
-import { Route as SettingsRouteImport } from './routes/settings'
-import { Route as IndexRouteImport } from './routes/index'
-import { Route as SetsIndexRouteImport } from './routes/sets/index'
-import { Route as SetsPostSlugRouteImport } from './routes/sets.$postSlug'
-import { Route as SetsPostSlugIndexRouteImport } from './routes/sets.$postSlug.index'
-import { Route as SetsPostSlugStudyRouteImport } from './routes/sets.$postSlug.study'
+import { Route as rootRouteImport } from "./routes/__root";
+import { Route as StudyRouteImport } from "./routes/study";
+import { Route as StatsRouteImport } from "./routes/stats";
+import { Route as SettingsRouteImport } from "./routes/settings";
+import { Route as BrowseRouteImport } from "./routes/browse";
+import { Route as IndexRouteImport } from "./routes/index";
+import { Route as TagsIndexRouteImport } from "./routes/tags/index";
+import { Route as SetsIndexRouteImport } from "./routes/sets/index";
+import { Route as TagsTagRouteImport } from "./routes/tags.$tag";
+import { Route as SetsPostSlugRouteImport } from "./routes/sets.$postSlug";
+import { Route as TagsTagIndexRouteImport } from "./routes/tags.$tag.index";
+import { Route as SetsPostSlugIndexRouteImport } from "./routes/sets.$postSlug.index";
+import { Route as TagsTagStudyRouteImport } from "./routes/tags.$tag.study";
+import { Route as SetsPostSlugStudyRouteImport } from "./routes/sets.$postSlug.study";
 
 const StudyRoute = StudyRouteImport.update({
-  id: '/study',
-  path: '/study',
+  id: "/study",
+  path: "/study",
   getParentRoute: () => rootRouteImport,
-} as any)
+} as any);
 const StatsRoute = StatsRouteImport.update({
-  id: '/stats',
-  path: '/stats',
+  id: "/stats",
+  path: "/stats",
   getParentRoute: () => rootRouteImport,
-} as any)
+} as any);
 const SettingsRoute = SettingsRouteImport.update({
-  id: '/settings',
-  path: '/settings',
+  id: "/settings",
+  path: "/settings",
   getParentRoute: () => rootRouteImport,
-} as any)
+} as any);
+const BrowseRoute = BrowseRouteImport.update({
+  id: "/browse",
+  path: "/browse",
+  getParentRoute: () => rootRouteImport,
+} as any);
 const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+  id: "/",
+  path: "/",
   getParentRoute: () => rootRouteImport,
-} as any)
+} as any);
+const TagsIndexRoute = TagsIndexRouteImport.update({
+  id: "/tags/",
+  path: "/tags/",
+  getParentRoute: () => rootRouteImport,
+} as any);
 const SetsIndexRoute = SetsIndexRouteImport.update({
-  id: '/sets/',
-  path: '/sets/',
+  id: "/sets/",
+  path: "/sets/",
   getParentRoute: () => rootRouteImport,
-} as any)
+} as any);
+const TagsTagRoute = TagsTagRouteImport.update({
+  id: "/tags/$tag",
+  path: "/tags/$tag",
+  getParentRoute: () => rootRouteImport,
+} as any);
 const SetsPostSlugRoute = SetsPostSlugRouteImport.update({
-  id: '/sets/$postSlug',
-  path: '/sets/$postSlug',
+  id: "/sets/$postSlug",
+  path: "/sets/$postSlug",
   getParentRoute: () => rootRouteImport,
-} as any)
+} as any);
+const TagsTagIndexRoute = TagsTagIndexRouteImport.update({
+  id: "/",
+  path: "/",
+  getParentRoute: () => TagsTagRoute,
+} as any);
 const SetsPostSlugIndexRoute = SetsPostSlugIndexRouteImport.update({
-  id: '/',
-  path: '/',
+  id: "/",
+  path: "/",
   getParentRoute: () => SetsPostSlugRoute,
-} as any)
+} as any);
+const TagsTagStudyRoute = TagsTagStudyRouteImport.update({
+  id: "/study",
+  path: "/study",
+  getParentRoute: () => TagsTagRoute,
+} as any);
 const SetsPostSlugStudyRoute = SetsPostSlugStudyRouteImport.update({
-  id: '/study',
-  path: '/study',
+  id: "/study",
+  path: "/study",
   getParentRoute: () => SetsPostSlugRoute,
-} as any)
+} as any);
 
 export interface FileRoutesByFullPath {
-  '/': typeof IndexRoute
-  '/settings': typeof SettingsRoute
-  '/stats': typeof StatsRoute
-  '/study': typeof StudyRoute
-  '/sets/$postSlug': typeof SetsPostSlugRouteWithChildren
-  '/sets/': typeof SetsIndexRoute
-  '/sets/$postSlug/study': typeof SetsPostSlugStudyRoute
-  '/sets/$postSlug/': typeof SetsPostSlugIndexRoute
+  "/": typeof IndexRoute;
+  "/browse": typeof BrowseRoute;
+  "/settings": typeof SettingsRoute;
+  "/stats": typeof StatsRoute;
+  "/study": typeof StudyRoute;
+  "/sets/$postSlug": typeof SetsPostSlugRouteWithChildren;
+  "/tags/$tag": typeof TagsTagRouteWithChildren;
+  "/sets/": typeof SetsIndexRoute;
+  "/tags/": typeof TagsIndexRoute;
+  "/sets/$postSlug/study": typeof SetsPostSlugStudyRoute;
+  "/tags/$tag/study": typeof TagsTagStudyRoute;
+  "/sets/$postSlug/": typeof SetsPostSlugIndexRoute;
+  "/tags/$tag/": typeof TagsTagIndexRoute;
 }
 export interface FileRoutesByTo {
-  '/': typeof IndexRoute
-  '/settings': typeof SettingsRoute
-  '/stats': typeof StatsRoute
-  '/study': typeof StudyRoute
-  '/sets': typeof SetsIndexRoute
-  '/sets/$postSlug/study': typeof SetsPostSlugStudyRoute
-  '/sets/$postSlug': typeof SetsPostSlugIndexRoute
+  "/": typeof IndexRoute;
+  "/browse": typeof BrowseRoute;
+  "/settings": typeof SettingsRoute;
+  "/stats": typeof StatsRoute;
+  "/study": typeof StudyRoute;
+  "/sets": typeof SetsIndexRoute;
+  "/tags": typeof TagsIndexRoute;
+  "/sets/$postSlug/study": typeof SetsPostSlugStudyRoute;
+  "/tags/$tag/study": typeof TagsTagStudyRoute;
+  "/sets/$postSlug": typeof SetsPostSlugIndexRoute;
+  "/tags/$tag": typeof TagsTagIndexRoute;
 }
 export interface FileRoutesById {
-  __root__: typeof rootRouteImport
-  '/': typeof IndexRoute
-  '/settings': typeof SettingsRoute
-  '/stats': typeof StatsRoute
-  '/study': typeof StudyRoute
-  '/sets/$postSlug': typeof SetsPostSlugRouteWithChildren
-  '/sets/': typeof SetsIndexRoute
-  '/sets/$postSlug/study': typeof SetsPostSlugStudyRoute
-  '/sets/$postSlug/': typeof SetsPostSlugIndexRoute
+  __root__: typeof rootRouteImport;
+  "/": typeof IndexRoute;
+  "/browse": typeof BrowseRoute;
+  "/settings": typeof SettingsRoute;
+  "/stats": typeof StatsRoute;
+  "/study": typeof StudyRoute;
+  "/sets/$postSlug": typeof SetsPostSlugRouteWithChildren;
+  "/tags/$tag": typeof TagsTagRouteWithChildren;
+  "/sets/": typeof SetsIndexRoute;
+  "/tags/": typeof TagsIndexRoute;
+  "/sets/$postSlug/study": typeof SetsPostSlugStudyRoute;
+  "/tags/$tag/study": typeof TagsTagStudyRoute;
+  "/sets/$postSlug/": typeof SetsPostSlugIndexRoute;
+  "/tags/$tag/": typeof TagsTagIndexRoute;
 }
 export interface FileRouteTypes {
-  fileRoutesByFullPath: FileRoutesByFullPath
+  fileRoutesByFullPath: FileRoutesByFullPath;
   fullPaths:
-    | '/'
-    | '/settings'
-    | '/stats'
-    | '/study'
-    | '/sets/$postSlug'
-    | '/sets/'
-    | '/sets/$postSlug/study'
-    | '/sets/$postSlug/'
-  fileRoutesByTo: FileRoutesByTo
+    | "/"
+    | "/browse"
+    | "/settings"
+    | "/stats"
+    | "/study"
+    | "/sets/$postSlug"
+    | "/tags/$tag"
+    | "/sets/"
+    | "/tags/"
+    | "/sets/$postSlug/study"
+    | "/tags/$tag/study"
+    | "/sets/$postSlug/"
+    | "/tags/$tag/";
+  fileRoutesByTo: FileRoutesByTo;
   to:
-    | '/'
-    | '/settings'
-    | '/stats'
-    | '/study'
-    | '/sets'
-    | '/sets/$postSlug/study'
-    | '/sets/$postSlug'
+    | "/"
+    | "/browse"
+    | "/settings"
+    | "/stats"
+    | "/study"
+    | "/sets"
+    | "/tags"
+    | "/sets/$postSlug/study"
+    | "/tags/$tag/study"
+    | "/sets/$postSlug"
+    | "/tags/$tag";
   id:
-    | '__root__'
-    | '/'
-    | '/settings'
-    | '/stats'
-    | '/study'
-    | '/sets/$postSlug'
-    | '/sets/'
-    | '/sets/$postSlug/study'
-    | '/sets/$postSlug/'
-  fileRoutesById: FileRoutesById
+    | "__root__"
+    | "/"
+    | "/browse"
+    | "/settings"
+    | "/stats"
+    | "/study"
+    | "/sets/$postSlug"
+    | "/tags/$tag"
+    | "/sets/"
+    | "/tags/"
+    | "/sets/$postSlug/study"
+    | "/tags/$tag/study"
+    | "/sets/$postSlug/"
+    | "/tags/$tag/";
+  fileRoutesById: FileRoutesById;
 }
 export interface RootRouteChildren {
-  IndexRoute: typeof IndexRoute
-  SettingsRoute: typeof SettingsRoute
-  StatsRoute: typeof StatsRoute
-  StudyRoute: typeof StudyRoute
-  SetsPostSlugRoute: typeof SetsPostSlugRouteWithChildren
-  SetsIndexRoute: typeof SetsIndexRoute
+  IndexRoute: typeof IndexRoute;
+  BrowseRoute: typeof BrowseRoute;
+  SettingsRoute: typeof SettingsRoute;
+  StatsRoute: typeof StatsRoute;
+  StudyRoute: typeof StudyRoute;
+  SetsPostSlugRoute: typeof SetsPostSlugRouteWithChildren;
+  TagsTagRoute: typeof TagsTagRouteWithChildren;
+  SetsIndexRoute: typeof SetsIndexRoute;
+  TagsIndexRoute: typeof TagsIndexRoute;
 }
 
-declare module '@tanstack/react-router' {
+declare module "@tanstack/react-router" {
   interface FileRoutesByPath {
-    '/study': {
-      id: '/study'
-      path: '/study'
-      fullPath: '/study'
-      preLoaderRoute: typeof StudyRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/stats': {
-      id: '/stats'
-      path: '/stats'
-      fullPath: '/stats'
-      preLoaderRoute: typeof StatsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/settings': {
-      id: '/settings'
-      path: '/settings'
-      fullPath: '/settings'
-      preLoaderRoute: typeof SettingsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/sets/': {
-      id: '/sets/'
-      path: '/sets'
-      fullPath: '/sets/'
-      preLoaderRoute: typeof SetsIndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/sets/$postSlug': {
-      id: '/sets/$postSlug'
-      path: '/sets/$postSlug'
-      fullPath: '/sets/$postSlug'
-      preLoaderRoute: typeof SetsPostSlugRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/sets/$postSlug/': {
-      id: '/sets/$postSlug/'
-      path: '/'
-      fullPath: '/sets/$postSlug/'
-      preLoaderRoute: typeof SetsPostSlugIndexRouteImport
-      parentRoute: typeof SetsPostSlugRoute
-    }
-    '/sets/$postSlug/study': {
-      id: '/sets/$postSlug/study'
-      path: '/study'
-      fullPath: '/sets/$postSlug/study'
-      preLoaderRoute: typeof SetsPostSlugStudyRouteImport
-      parentRoute: typeof SetsPostSlugRoute
-    }
+    "/study": {
+      id: "/study";
+      path: "/study";
+      fullPath: "/study";
+      preLoaderRoute: typeof StudyRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
+    "/stats": {
+      id: "/stats";
+      path: "/stats";
+      fullPath: "/stats";
+      preLoaderRoute: typeof StatsRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
+    "/settings": {
+      id: "/settings";
+      path: "/settings";
+      fullPath: "/settings";
+      preLoaderRoute: typeof SettingsRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
+    "/browse": {
+      id: "/browse";
+      path: "/browse";
+      fullPath: "/browse";
+      preLoaderRoute: typeof BrowseRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
+    "/": {
+      id: "/";
+      path: "/";
+      fullPath: "/";
+      preLoaderRoute: typeof IndexRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
+    "/tags/": {
+      id: "/tags/";
+      path: "/tags";
+      fullPath: "/tags/";
+      preLoaderRoute: typeof TagsIndexRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
+    "/sets/": {
+      id: "/sets/";
+      path: "/sets";
+      fullPath: "/sets/";
+      preLoaderRoute: typeof SetsIndexRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
+    "/tags/$tag": {
+      id: "/tags/$tag";
+      path: "/tags/$tag";
+      fullPath: "/tags/$tag";
+      preLoaderRoute: typeof TagsTagRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
+    "/sets/$postSlug": {
+      id: "/sets/$postSlug";
+      path: "/sets/$postSlug";
+      fullPath: "/sets/$postSlug";
+      preLoaderRoute: typeof SetsPostSlugRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
+    "/tags/$tag/": {
+      id: "/tags/$tag/";
+      path: "/";
+      fullPath: "/tags/$tag/";
+      preLoaderRoute: typeof TagsTagIndexRouteImport;
+      parentRoute: typeof TagsTagRoute;
+    };
+    "/sets/$postSlug/": {
+      id: "/sets/$postSlug/";
+      path: "/";
+      fullPath: "/sets/$postSlug/";
+      preLoaderRoute: typeof SetsPostSlugIndexRouteImport;
+      parentRoute: typeof SetsPostSlugRoute;
+    };
+    "/tags/$tag/study": {
+      id: "/tags/$tag/study";
+      path: "/study";
+      fullPath: "/tags/$tag/study";
+      preLoaderRoute: typeof TagsTagStudyRouteImport;
+      parentRoute: typeof TagsTagRoute;
+    };
+    "/sets/$postSlug/study": {
+      id: "/sets/$postSlug/study";
+      path: "/study";
+      fullPath: "/sets/$postSlug/study";
+      preLoaderRoute: typeof SetsPostSlugStudyRouteImport;
+      parentRoute: typeof SetsPostSlugRoute;
+    };
   }
 }
 
 interface SetsPostSlugRouteChildren {
-  SetsPostSlugStudyRoute: typeof SetsPostSlugStudyRoute
-  SetsPostSlugIndexRoute: typeof SetsPostSlugIndexRoute
+  SetsPostSlugStudyRoute: typeof SetsPostSlugStudyRoute;
+  SetsPostSlugIndexRoute: typeof SetsPostSlugIndexRoute;
 }
 
 const SetsPostSlugRouteChildren: SetsPostSlugRouteChildren = {
   SetsPostSlugStudyRoute: SetsPostSlugStudyRoute,
   SetsPostSlugIndexRoute: SetsPostSlugIndexRoute,
+};
+
+const SetsPostSlugRouteWithChildren = SetsPostSlugRoute._addFileChildren(SetsPostSlugRouteChildren);
+
+interface TagsTagRouteChildren {
+  TagsTagStudyRoute: typeof TagsTagStudyRoute;
+  TagsTagIndexRoute: typeof TagsTagIndexRoute;
 }
 
-const SetsPostSlugRouteWithChildren = SetsPostSlugRoute._addFileChildren(
-  SetsPostSlugRouteChildren,
-)
+const TagsTagRouteChildren: TagsTagRouteChildren = {
+  TagsTagStudyRoute: TagsTagStudyRoute,
+  TagsTagIndexRoute: TagsTagIndexRoute,
+};
+
+const TagsTagRouteWithChildren = TagsTagRoute._addFileChildren(TagsTagRouteChildren);
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  BrowseRoute: BrowseRoute,
   SettingsRoute: SettingsRoute,
   StatsRoute: StatsRoute,
   StudyRoute: StudyRoute,
   SetsPostSlugRoute: SetsPostSlugRouteWithChildren,
+  TagsTagRoute: TagsTagRouteWithChildren,
   SetsIndexRoute: SetsIndexRoute,
-}
+  TagsIndexRoute: TagsIndexRoute,
+};
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
-  ._addFileTypes<FileRouteTypes>()
+  ._addFileTypes<FileRouteTypes>();

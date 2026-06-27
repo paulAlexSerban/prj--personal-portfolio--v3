@@ -9,11 +9,13 @@ function resetStore() {
       cardStates: {},
       addedPosts: [],
       ignored: {},
+      suspended: {},
       reviewLogs: [],
       studySessions: [],
       settings: initialState.settings,
       config: initialState.config,
       daily: { date: todayISO(0), new: 0, reviews: 0 },
+      lastReview: null,
     },
     false,
   );
@@ -150,6 +152,76 @@ describe("resetPost / resetAll", () => {
     expect(s.studySessions).toHaveLength(0);
     // added posts are preserved on a progress reset
     expect(s.addedPosts).toEqual(["a"]);
+  });
+
+  it("resetQuestion resets one card without touching siblings or review logs", () => {
+    const store = useStore.getState();
+    store.addPost("a", ["a--1", "a--2"]);
+    store.reviewCard("a--1", 4, 1000);
+    store.reviewCard("a--2", 4, 1000);
+
+    useStore.getState().resetQuestion("a--1");
+    const s = useStore.getState();
+    expect(s.cardStates["a--1"]!.cardType).toBe("new");
+    expect(s.cardStates["a--2"]!.cardType).not.toBe("new");
+    expect(s.reviewLogs).toHaveLength(2);
+  });
+});
+
+describe("undoLastReview", () => {
+  it("restores the exact prior card state, daily counts, and drops the log", () => {
+    const store = useStore.getState();
+    store.addPost("p", ["p--1"]);
+    const before = useStore.getState().cardStates["p--1"]!;
+    const dailyBefore = useStore.getState().daily;
+
+    store.reviewCard("p--1", 4, 1500);
+    const afterReview = useStore.getState();
+    expect(afterReview.cardStates["p--1"]).not.toEqual(before);
+    expect(afterReview.reviewLogs).toHaveLength(1);
+    expect(afterReview.daily.new).toBe(1);
+
+    const undone = useStore.getState().undoLastReview();
+    const s = useStore.getState();
+    expect(undone?.questionSlug).toBe("p--1");
+    expect(undone?.rating).toBe(4);
+    expect(s.cardStates["p--1"]).toEqual(before);
+    expect(s.daily).toEqual(dailyBefore);
+    expect(s.reviewLogs).toHaveLength(0);
+    expect(s.lastReview).toBeNull();
+  });
+
+  it("returns null and is a no-op when there is nothing to undo", () => {
+    expect(useStore.getState().undoLastReview()).toBeNull();
+  });
+
+  it("only undoes the most recent review", () => {
+    const store = useStore.getState();
+    store.addPost("p", ["p--1", "p--2"]);
+    store.reviewCard("p--1", 3, 1000);
+    store.reviewCard("p--2", 3, 1000);
+
+    useStore.getState().undoLastReview();
+    const s = useStore.getState();
+    expect(s.reviewLogs).toHaveLength(1);
+    expect(s.reviewLogs[0]!.questionSlug).toBe("p--1");
+    // second undo is now a no-op because lastReview was consumed
+    expect(useStore.getState().undoLastReview()).toBeNull();
+  });
+});
+
+describe("suspendQuestion", () => {
+  it("excludes a suspended question from the queue and unsuspend restores it", () => {
+    const store = useStore.getState();
+    store.addPost("p", ["p--1", "p--2"]);
+
+    store.suspendQuestion("p--1");
+    let queue = selectStudyQueue(useStore.getState(), { now: Date.now() });
+    expect(queue.map((c) => c.questionSlug)).toEqual(["p--2"]);
+
+    useStore.getState().unsuspendQuestion("p--1");
+    queue = selectStudyQueue(useStore.getState(), { now: Date.now() });
+    expect(queue.map((c) => c.questionSlug).sort()).toEqual(["p--1", "p--2"]);
   });
 });
 

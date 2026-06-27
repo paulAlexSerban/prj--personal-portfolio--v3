@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import type { ExportedQuestion } from "@prj--personal-portfolio--v3/shared--quiz-export/contract";
 import { CardRenderer } from "@/components/card/CardRenderer";
 import { Stamp } from "@/components/ui/Stamp";
@@ -7,6 +7,10 @@ export interface QuestionRendererProps {
   question: ExportedQuestion;
   revealed: boolean;
   onReveal: () => void;
+  /** Reported once on reveal: true/false for auto-graded, null for self-graded. */
+  onGraded?: (correct: boolean | null) => void;
+  /** Offer a retry (un-reveal) — shown for wrong auto-graded answers. */
+  onRetry?: () => void;
 }
 
 /**
@@ -17,7 +21,13 @@ export interface QuestionRendererProps {
  *
  * Mount with `key={question.slug}` so internal answer state resets per card.
  */
-export function QuestionRenderer({ question, revealed, onReveal }: QuestionRendererProps) {
+export function QuestionRenderer({
+  question,
+  revealed,
+  onReveal,
+  onGraded,
+  onRetry,
+}: QuestionRendererProps) {
   const [selectedKey, setSelectedKey] = useState<string | null>(null);
   const [selectedKeys, setSelectedKeys] = useState<Set<string>>(new Set());
   const [tfChoice, setTfChoice] = useState<boolean | null>(null);
@@ -59,6 +69,13 @@ export function QuestionRenderer({ question, revealed, onReveal }: QuestionRende
     }
   })();
 
+  // Report correctness once revealed — covers both button-submit and the
+  // keyboard reveal path owned by StudySession.
+  useEffect(() => {
+    if (revealed) onGraded?.(isCorrect);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [revealed]);
+
   function toggleMulti(key: string) {
     if (revealed) return;
     setSelectedKeys((prev) => {
@@ -68,6 +85,15 @@ export function QuestionRenderer({ question, revealed, onReveal }: QuestionRende
       return next;
     });
   }
+
+  function retry() {
+    setSelectedKey(null);
+    setSelectedKeys(new Set());
+    setTfChoice(null);
+    onRetry?.();
+  }
+
+  const showRetry = revealed && onRetry && question.gradingMode === "auto" && isCorrect === false;
 
   return (
     <div className="flex flex-col gap-6">
@@ -119,6 +145,7 @@ export function QuestionRenderer({ question, revealed, onReveal }: QuestionRende
                 : selectedKeys.has(opt.key);
             const showCorrect = revealed && opt.isCorrect;
             const showWrong = revealed && chosen && !opt.isCorrect;
+            const result = optionResult(revealed, opt.isCorrect, chosen);
             return (
               <button
                 key={opt.key}
@@ -129,10 +156,17 @@ export function QuestionRenderer({ question, revealed, onReveal }: QuestionRende
                     ? setSelectedKey(opt.key)
                     : toggleMulti(opt.key)
                 }
-                className={`text-left ${optionClass(chosen, showCorrect, showWrong)}`}
+                className={`text-left flex items-center gap-2 ${optionClass(chosen, showCorrect, showWrong)}`}
               >
-                <span className="smallcaps text-[10px] mr-2 text-[var(--slate)]">{opt.key}</span>
-                <CardRenderer html={opt.label} inline />
+                <span className="smallcaps text-[10px] text-[var(--slate)]">{opt.key}</span>
+                <span className="flex-1">
+                  <CardRenderer html={opt.label} inline />
+                </span>
+                {result && (
+                  <span className="smallcaps text-[9px] border border-current px-1 py-0.5 shrink-0">
+                    {result}
+                  </span>
+                )}
               </button>
             );
           })}
@@ -157,6 +191,7 @@ export function QuestionRenderer({ question, revealed, onReveal }: QuestionRende
         <div className="flex flex-col gap-4">
           {isCorrect !== null && (
             <div
+              role="status"
               className={`border-2 p-3 text-center smallcaps text-sm ${
                 isCorrect
                   ? "border-[var(--ink-black)] bg-[var(--highlight)]"
@@ -164,6 +199,13 @@ export function QuestionRenderer({ question, revealed, onReveal }: QuestionRende
               }`}
             >
               {isCorrect ? "Correct" : "Incorrect"}
+            </div>
+          )}
+          {showRetry && (
+            <div className="text-center">
+              <Stamp variant="ghost" onClick={retry}>
+                Try Again
+              </Stamp>
             </div>
           )}
           {question.explanation && (
@@ -181,6 +223,19 @@ export function QuestionRenderer({ question, revealed, onReveal }: QuestionRende
       )}
     </div>
   );
+}
+
+/** Per-option result tag after reveal: got it / missed / wrong. */
+function optionResult(
+  revealed: boolean,
+  isCorrect: boolean,
+  chosen: boolean,
+): "got it" | "missed" | "wrong" | null {
+  if (!revealed) return null;
+  if (isCorrect && chosen) return "got it";
+  if (isCorrect && !chosen) return "missed";
+  if (!isCorrect && chosen) return "wrong";
+  return null;
 }
 
 function optionClass(chosen: boolean, showCorrect: boolean, showWrong: boolean): string {

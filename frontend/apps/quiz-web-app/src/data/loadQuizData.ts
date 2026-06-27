@@ -1,4 +1,5 @@
 import type {
+  AllQuestionsBundle,
   ExportedPostEntry,
   ExportedQuestion,
   ExportedTagEntry,
@@ -14,6 +15,7 @@ const DATA_BASE = "/data";
 // Simple in-memory caches so repeated navigations don't re-fetch.
 let postsIndexCache: ExportedPostEntry[] | null = null;
 let tagsIndexCache: ExportedTagEntry[] | null = null;
+let allQuestionsCache: ExportedQuestion[] | null = null;
 const postQuestionsCache = new Map<string, ExportedQuestion[]>();
 const tagQuestionsCache = new Map<string, ExportedQuestion[]>();
 
@@ -55,6 +57,14 @@ export async function loadTagQuestions(tagSlug: string): Promise<ExportedQuestio
   return data.questions;
 }
 
+/** All questions across every post — used by the global browse screen. */
+export async function loadAllQuestions(): Promise<ExportedQuestion[]> {
+  if (allQuestionsCache) return allQuestionsCache;
+  const data = await fetchJson<AllQuestionsBundle>(`${DATA_BASE}/_all.json`);
+  allQuestionsCache = data.questions;
+  return data.questions;
+}
+
 /** Convenience: question slugs for a post (used by the store's additive `addPost`). */
 export async function loadPostQuestionSlugs(postSlug: string): Promise<string[]> {
   const questions = await loadPostQuestions(postSlug);
@@ -65,6 +75,7 @@ export async function loadPostQuestionSlugs(postSlug: string): Promise<string[]>
 export function clearQuizDataCache(): void {
   postsIndexCache = null;
   tagsIndexCache = null;
+  allQuestionsCache = null;
   postQuestionsCache.clear();
   tagQuestionsCache.clear();
 }

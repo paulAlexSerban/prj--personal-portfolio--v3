@@ -65,9 +65,13 @@ PWA assets are only emitted by `vite build`, not in dev.
 
 - `/` — browse posts, add/remove study sets
 - `/sets` — your study sets with per-set counts
-- `/sets/$postSlug` — set detail; 7-day forecast, SM-2 config glance, card table (ivl/ease), ignore/reset/remove
-- `/sets/$postSlug/study` — SM-2 study session for one set
+- `/sets/$postSlug` — set detail; click any row to **preview** (stem, answer, explanation, SM-2 state); ignore/reset/remove
+- `/sets/$postSlug/study` — SM-2 study session for one set; `?cram=<slug>` for single-card cram
 - `/study` — study all due cards across every added set
+- `/browse` — global question browser (search, filter by format/difficulty/tag/state, paginated)
+- `/tags` — tags from your active sets
+- `/tags/$tag` — questions for a tag; study due or cram all
+- `/tags/$tag/study` — tag-scoped study session; `?cram=1` or `?cram=<slug>`
 - `/stats` — full progress: 30-day forecast grid, 1-year heatmap, ease distribution, reviews/day, retention rate, avg interval
 - `/settings` — theme, study order, SM-2 global config, progress backup/restore, clear all data
 
@@ -102,3 +106,13 @@ questions are excluded from every queue.
 - **Phase 7:** cutover, cleanup, docs
 
 See `_docs/02 plans/quiz-web-app-refactor-plan.md`.
+
+### Enhancements (post-cutover)
+
+- **E1:** markdown → HTML rendering for stems/options/explanations ✅
+- **E2:** math (KaTeX) + code (highlight.js) fidelity, lazy-loaded/offline ✅
+- **E3:** view & practise outside study mode (preview drawer, `/browse`, tag study) ✅
+- **E4:** study-flow & feedback UX — theme on cold load, undo toasts, auto-grade locking,
+  in-session bury/suspend/ignore, mobile/a11y ✅
+
+See `_docs/02 plans/quiz-web-app-enhancements-plan.md`.

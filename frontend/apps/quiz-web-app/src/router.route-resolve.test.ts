@@ -36,4 +36,20 @@ describe("route resolution", () => {
     const ids = router.state.matches.map((m) => m.routeId);
     expect(ids).toContain("/sets/$postSlug/");
   });
+
+  it("resolves /browse and /tags routes", async () => {
+    const browseRouter = createRouter({
+      routeTree,
+      history: createMemoryHistory({ initialEntries: ["/browse"] }),
+    });
+    await browseRouter.load();
+    expect(browseRouter.state.matches.map((m) => m.routeId)).toContain("/browse");
+
+    const tagsRouter = createRouter({
+      routeTree,
+      history: createMemoryHistory({ initialEntries: ["/tags/"] }),
+    });
+    await tagsRouter.load();
+    expect(tagsRouter.state.matches.map((m) => m.routeId)).toContain("/tags/");
+  });
 });

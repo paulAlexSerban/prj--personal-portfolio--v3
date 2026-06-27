@@ -1,4 +1,5 @@
 import { Outlet, Link, createRootRoute } from "@tanstack/react-router";
+import { Toaster } from "@/components/ui/sonner";
 
 function NotFoundComponent() {
   return (
@@ -39,7 +40,12 @@ function ErrorComponent({ error }: { error: Error }) {
 }
 
 function RootComponent() {
-  return <Outlet />;
+  return (
+    <>
+      <Outlet />
+      <Toaster position="bottom-center" closeButton richColors />
+    </>
+  );
 }
 
 export const Route = createRootRoute({

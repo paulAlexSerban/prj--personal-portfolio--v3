@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { ReactNode } from "react";
+import { toast } from "sonner";
 import type { ExportedQuestion } from "@prj--personal-portfolio--v3/shared--quiz-export/contract";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { Stamp } from "@/components/ui/Stamp";
@@ -10,6 +11,8 @@ import { selectStudyQueue } from "@/store/selectors";
 import { previewInterval } from "@/algorithms/intervals";
 import { todayISO } from "@/utils/dates";
 import type { Rating } from "@/store/types";
+
+const RATING_LABELS: Record<Rating, string> = { 1: "Again", 2: "Hard", 3: "Good", 4: "Easy" };
 
 interface SessionStats {
   again: number;
@@ -22,6 +25,10 @@ interface SessionStats {
 export interface StudySessionProps {
   /** Posts whose due cards make up this session's queue. */
   postSlugs: string[];
+  /** When set, only these question slugs are eligible (tag scope, single-card cram). */
+  questionSlugs?: string[];
+  /** Cram: include scoped cards regardless of due date. Implies ignoreLimits. */
+  cram?: boolean;
   /** Top-left link/button to leave the session. */
   exitSlot: ReactNode;
   /** Actions rendered on the completion screen. */
@@ -36,20 +43,25 @@ export interface StudySessionProps {
  */
 export function StudySession({
   postSlugs,
+  questionSlugs,
+  cram = false,
   exitSlot,
   completionActions,
   completionSubtitle = "You have reached the end of today's queue.",
 }: StudySessionProps) {
-  const scopeKey = postSlugs.join(",");
+  const scopeKey = `${postSlugs.join(",")}|${questionSlugs?.join(",") ?? ""}|${cram}`;
 
   const cardStates = useStore((s) => s.cardStates);
   const ignored = useStore((s) => s.ignored);
+  const suspended = useStore((s) => s.suspended);
   const addedPosts = useStore((s) => s.addedPosts);
   const settings = useStore((s) => s.settings);
   const config = useStore((s) => s.config);
   const daily = useStore((s) => s.daily);
   const reviewCard = useStore((s) => s.reviewCard);
+  const undoLastReview = useStore((s) => s.undoLastReview);
   const ignoreQuestion = useStore((s) => s.ignoreQuestion);
+  const suspendQuestion = useStore((s) => s.suspendQuestion);
   const startSession = useStore((s) => s.startSession);
   const endSession = useStore((s) => s.endSession);
 
@@ -60,6 +72,10 @@ export function StudySession({
   const [tick, setTick] = useState(0);
   // "Study ahead": ignore today's daily new/review caps for this session.
   const [ignoreLimits, setIgnoreLimits] = useState(false);
+  // Auto-grade result for the current card (null = self-graded / not graded).
+  const [gradedCorrect, setGradedCorrect] = useState<boolean | null>(null);
+  // Session-local "bury": skip these slugs for the rest of this session only.
+  const [buried, setBuried] = useState<Set<string>>(new Set());
   const [stats, setStats] = useState<SessionStats>({
     again: 0,
     hard: 0,
@@ -115,18 +131,46 @@ export function StudySession({
   }, []);
 
   const queue = useMemo(() => {
-    const state = { addedPosts, cardStates, ignored, daily, config, settings } as Parameters<
-      typeof selectStudyQueue
-    >[0];
-    return selectStudyQueue(state, { postSlugs, now: Date.now(), ignoreLimits });
+    const state = {
+      addedPosts,
+      cardStates,
+      ignored,
+      suspended,
+      daily,
+      config,
+      settings,
+    } as Parameters<typeof selectStudyQueue>[0];
+    return selectStudyQueue(state, {
+      postSlugs,
+      questionSlugs,
+      cram,
+      now: Date.now(),
+      ignoreLimits: ignoreLimits || cram,
+    });
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [addedPosts, cardStates, ignored, daily, config, settings, scopeKey, tick, ignoreLimits]);
+  }, [
+    addedPosts,
+    cardStates,
+    ignored,
+    suspended,
+    daily,
+    config,
+    settings,
+    scopeKey,
+    tick,
+    ignoreLimits,
+    cram,
+    questionSlugs,
+  ]);
 
   // Only cards whose content is actually loaded are actionable. Cards whose
   // slugs aren't in the questionMap yet (still loading) are filtered out; once
   // loading finishes, any slug that is still missing means stale card state
-  // for content that no longer exists — those are silently skipped.
-  const actionableQueue = loading ? [] : queue.filter((c) => questionMap.has(c.questionSlug));
+  // for content that no longer exists — those are silently skipped. Session-
+  // buried slugs are also skipped for the remainder of this session.
+  const actionableQueue = loading
+    ? []
+    : queue.filter((c) => questionMap.has(c.questionSlug) && !buried.has(c.questionSlug));
 
   const currentCard = actionableQueue[0];
   const currentQuestion = currentCard ? questionMap.get(currentCard.questionSlug) : undefined;
@@ -138,9 +182,14 @@ export function StudySession({
   // can explain *why* it's empty (nothing due vs. daily limit reached).
   const scopeCounts = useMemo(() => {
     const today = todayISO(0);
-    const set = new Set(postSlugs);
+    const postSet = new Set(postSlugs);
+    const slugSet = questionSlugs?.length ? new Set(questionSlugs) : null;
     const cards = Object.values(cardStates).filter(
-      (c) => set.has(c.postSlug) && !ignored[c.questionSlug],
+      (c) =>
+        postSet.has(c.postSlug) &&
+        !ignored[c.questionSlug] &&
+        !suspended[c.questionSlug] &&
+        (!slugSet || slugSet.has(c.questionSlug)),
     );
     return {
       newTotal: cards.filter((c) => c.cardType === "new").length,
@@ -152,17 +201,23 @@ export function StudySession({
       reviewDue: cards.filter((c) => c.cardType === "review" && c.dueDate <= today).length,
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [cardStates, ignored, scopeKey, tick]);
+  }, [cardStates, ignored, suspended, scopeKey, tick]);
 
   useEffect(() => {
     setRevealed(false);
+    setGradedCorrect(null);
     startTimeRef.current = Date.now();
   }, [currentCard?.questionSlug]);
 
+  // Wrong auto-graded answers may only be rated Again/Hard — you cannot mark a
+  // card you got wrong as Good/Easy.
+  const ratingDisabled = (r: Rating): boolean => gradedCorrect === false && r >= 3;
+
   function answer(rating: Rating) {
-    if (!currentCard) return;
+    if (!currentCard || ratingDisabled(rating)) return;
     const elapsed = Date.now() - startTimeRef.current;
-    reviewCard(currentCard.questionSlug, rating, elapsed);
+    const slug = currentCard.questionSlug;
+    reviewCard(slug, rating, elapsed);
     setStats((s) => ({
       again: s.again + (rating === 1 ? 1 : 0),
       hard: s.hard + (rating === 2 ? 1 : 0),
@@ -170,6 +225,38 @@ export function StudySession({
       easy: s.easy + (rating === 4 ? 1 : 0),
       totalTime: s.totalTime + elapsed,
     }));
+    toast(`Rated ${RATING_LABELS[rating]}`, {
+      duration: 4000,
+      action: {
+        label: "Undo",
+        onClick: () => {
+          const undone = undoLastReview();
+          if (!undone) return;
+          setStats((s) => ({
+            again: s.again - (rating === 1 ? 1 : 0),
+            hard: s.hard - (rating === 2 ? 1 : 0),
+            good: s.good - (rating === 3 ? 1 : 0),
+            easy: s.easy - (rating === 4 ? 1 : 0),
+            totalTime: Math.max(0, s.totalTime - elapsed),
+          }));
+          setRevealed(true);
+          setGradedCorrect(null);
+        },
+      },
+    });
+  }
+
+  function buryCurrent() {
+    if (!currentCard) return;
+    const slug = currentCard.questionSlug;
+    setBuried((prev) => new Set(prev).add(slug));
+    toast("Buried for this session");
+  }
+
+  function suspendCurrent() {
+    if (!currentCard) return;
+    suspendQuestion(currentCard.questionSlug);
+    toast("Suspended", { description: "Excluded from queues until you unsuspend it." });
   }
 
   useEffect(() => {
@@ -187,7 +274,9 @@ export function StudySession({
       else if (e.key === "2") answer(2);
       else if (e.key === "3" || e.key === " " || e.key === "Enter") {
         e.preventDefault();
-        answer(3);
+        // Space defaults to Good, but falls back to Hard when Good is locked
+        // (wrong auto-graded answer).
+        answer(ratingDisabled(3) ? 2 : 3);
       } else if (e.key === "4") answer(4);
     };
     window.addEventListener("keydown", onKey);
@@ -238,14 +327,46 @@ export function StudySession({
         <span>
           {done + 1} / {initialTotal.current}
         </span>
-        <button
-          type="button"
-          onClick={() => ignoreQuestion(currentCard.questionSlug)}
-          className="smallcaps underline"
-          title="Exclude this question from all future sessions"
-        >
-          Ignore
-        </button>
+        <div className="flex items-center gap-3">
+          <button
+            type="button"
+            onClick={buryCurrent}
+            className="smallcaps underline"
+            title="Skip this card for the rest of this session"
+          >
+            Bury
+          </button>
+          <button
+            type="button"
+            onClick={suspendCurrent}
+            className="smallcaps underline"
+            title="Exclude from all queues until you unsuspend it"
+          >
+            Suspend
+          </button>
+          <button
+            type="button"
+            onClick={() => {
+              ignoreQuestion(currentCard.questionSlug);
+              toast("Ignored", { description: "Excluded from all future sessions." });
+            }}
+            className="smallcaps underline"
+            title="Exclude this question from all future sessions"
+          >
+            Ignore
+          </button>
+        </div>
+      </div>
+
+      {/* Screen-reader announcement for reveal + auto-grade result. */}
+      <div aria-live="polite" className="sr-only">
+        {revealed
+          ? gradedCorrect === null
+            ? "Answer revealed."
+            : gradedCorrect
+              ? "Correct."
+              : "Incorrect."
+          : ""}
       </div>
 
       <div className="border-y-2 border-[var(--ink-black)] h-1 mb-6 relative">
@@ -269,10 +390,21 @@ export function StudySession({
           question={currentQuestion}
           revealed={revealed}
           onReveal={() => setRevealed(true)}
+          onGraded={setGradedCorrect}
+          onRetry={() => {
+            setRevealed(false);
+            setGradedCorrect(null);
+            startTimeRef.current = Date.now();
+          }}
         />
 
         {revealed && (
           <div className="mt-auto pt-8">
+            {gradedCorrect === false && (
+              <p className="smallcaps text-[10px] text-[var(--slate)] mb-2 text-center">
+                Wrong answer — rate Again or Hard
+              </p>
+            )}
             <div className="grid grid-cols-4 gap-2">
               {(
                 [
@@ -281,24 +413,34 @@ export function StudySession({
                   [3, "Good"],
                   [4, "Easy"],
                 ] as [Rating, string][]
-              ).map(([r, label]) => (
-                <div key={r} className="text-center">
-                  <Stamp
-                    onClick={() => answer(r)}
-                    className="w-full"
-                    variant={r === 3 ? "solid" : "ghost"}
-                  >
-                    {label}
-                  </Stamp>
-                  <p
-                    className="smallcaps text-[10px] text-[var(--slate)] mt-1"
-                    style={{ fontFamily: "var(--font-mono)" }}
-                  >
-                    {previewInterval(currentCard, r, config)} · {r}
-                  </p>
-                </div>
-              ))}
+              ).map(([r, label]) => {
+                const disabled = ratingDisabled(r);
+                return (
+                  <div key={r} className="text-center">
+                    <Stamp
+                      onClick={() => answer(r)}
+                      disabled={disabled}
+                      className="w-full"
+                      variant={r === 3 ? "solid" : "ghost"}
+                    >
+                      {label}
+                    </Stamp>
+                    <p
+                      className="smallcaps text-[10px] text-[var(--slate)] mt-1"
+                      style={{ fontFamily: "var(--font-mono)" }}
+                    >
+                      {disabled ? "—" : previewInterval(currentCard, r, config)} · {r}
+                    </p>
+                  </div>
+                );
+              })}
             </div>
+            <p
+              className="smallcaps text-[10px] text-[var(--slate)] mt-3 text-center italic"
+              title="Content is read-only — edit in the source content repo"
+            >
+              Read-only · content edited in source
+            </p>
           </div>
         )}
       </article>

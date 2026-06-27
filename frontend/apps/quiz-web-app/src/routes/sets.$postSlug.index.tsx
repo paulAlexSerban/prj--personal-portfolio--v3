@@ -6,8 +6,10 @@ import type {
 } from "@prj--personal-portfolio--v3/shared--quiz-export/contract";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { Modal } from "@/components/ui/Modal";
+import { QuestionPreviewDrawer } from "@/components/question/QuestionPreviewDrawer";
 import { Stamp, stampClasses } from "@/components/ui/Stamp";
 import { loadPostQuestions, loadPostsIndex } from "@/data/loadQuizData";
+import { stripMarkdownPreview } from "@/lib/questionFilters";
 import { useStudySetActions } from "@/hooks/useStudySetActions";
 import { useStore } from "@/store";
 import type { QuizState } from "@/store";
@@ -38,6 +40,7 @@ function SetDetailPage() {
   const [search, setSearch] = useState("");
   const [confirmRemove, setConfirmRemove] = useState(false);
   const [confirmReset, setConfirmReset] = useState(false);
+  const [preview, setPreview] = useState<ExportedQuestion | null>(null);
 
   const isAdded = addedPosts.includes(postSlug);
 
@@ -248,7 +251,7 @@ function SetDetailPage() {
           </div>
 
           <div className="border-2 border-[var(--ink-black)] overflow-x-auto">
-            <table className="w-full text-sm" style={{ fontFamily: "var(--font-mono)" }}>
+            <table className="data-table w-full text-sm" style={{ fontFamily: "var(--font-mono)" }}>
               <thead className="border-b-2 border-[var(--ink-black)] bg-[var(--highlight)]">
                 <tr>
                   <th className="p-2 text-left">Stem</th>
@@ -267,10 +270,13 @@ function SetDetailPage() {
                   return (
                     <tr
                       key={q.slug}
-                      className={`border-b border-[var(--column-rule)] ${isIgnored ? "opacity-50" : ""}`}
+                      className={`border-b border-[var(--column-rule)] cursor-pointer hover:bg-[var(--highlight)] ${
+                        isIgnored ? "opacity-50" : ""
+                      }`}
+                      onClick={() => setPreview(q)}
                     >
                       <td className="p-2 max-w-[260px]">
-                        <span className="line-clamp-2">{stripHtml(q.stem)}</span>
+                        <span className="line-clamp-2">{stripMarkdownPreview(q.stem)}</span>
                       </td>
                       <td className="p-2 smallcaps text-[10px]">{q.answerFormat}</td>
                       <td className="p-2">{card?.cardType ?? "—"}</td>
@@ -280,9 +286,11 @@ function SetDetailPage() {
                       <td className="p-2">
                         <button
                           type="button"
-                          onClick={() =>
-                            isIgnored ? unignoreQuestion(q.slug) : ignoreQuestion(q.slug)
-                          }
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            if (isIgnored) unignoreQuestion(q.slug);
+                            else ignoreQuestion(q.slug);
+                          }}
                           className="smallcaps text-[10px] underline"
                         >
                           {isIgnored ? "Unignore" : "Ignore"}
@@ -355,10 +363,12 @@ function SetDetailPage() {
           </button>
         </div>
       </Modal>
+
+      <QuestionPreviewDrawer
+        question={preview}
+        open={preview !== null}
+        onClose={() => setPreview(null)}
+      />
     </PageLayout>
   );
-}
-
-function stripHtml(html: string): string {
-  return html.replace(/<[^>]+>/g, "");
 }

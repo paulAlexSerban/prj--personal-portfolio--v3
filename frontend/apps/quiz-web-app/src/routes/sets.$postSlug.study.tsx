@@ -4,12 +4,20 @@ import { stampClasses } from "@/components/ui/Stamp";
 import { StudySession } from "@/components/study/StudySession";
 import { useStore } from "@/store";
 
+type StudySearch = {
+  cram?: string;
+};
+
 export const Route = createFileRoute("/sets/$postSlug/study")({
+  validateSearch: (search: Record<string, unknown>): StudySearch => ({
+    cram: typeof search.cram === "string" && search.cram.length > 0 ? search.cram : undefined,
+  }),
   component: StudyPage,
 });
 
 function StudyPage() {
   const { postSlug } = Route.useParams();
+  const { cram } = Route.useSearch();
   const addedPosts = useStore((s) => s.addedPosts);
 
   if (!addedPosts.includes(postSlug)) {
@@ -23,10 +31,18 @@ function StudyPage() {
     );
   }
 
+  const isCram = Boolean(cram);
+
   return (
     <StudySession
       postSlugs={[postSlug]}
-      completionSubtitle="You have reached the end of today's queue for this set."
+      questionSlugs={cram ? [cram] : undefined}
+      cram={isCram}
+      completionSubtitle={
+        isCram
+          ? "You have finished this cram session."
+          : "You have reached the end of today's queue for this set."
+      }
       exitSlot={
         <Link to="/sets/$postSlug" params={{ postSlug }} className="smallcaps underline">
           ← End Session

@@ -6,10 +6,35 @@ import { todayISO } from "../utils/dates";
 export interface QueueScope {
   /** Restrict to these post slugs. Defaults to all added posts. */
   postSlugs?: string[];
+  /** Restrict to these question slugs (tag scope, single-card cram, etc.). */
+  questionSlugs?: string[];
+  /** Include scoped cards regardless of due date (cram / "study just this card"). */
+  cram?: boolean;
   today?: string;
   now?: number;
   /** Ignore today's new/review caps ("study ahead" / cram). */
   ignoreLimits?: boolean;
+}
+
+/** Cram ordering: learning due → new → review → everything else. */
+function sortCramQueue(cards: CardState[], now: number): CardState[] {
+  const learning = cards
+    .filter(
+      (c) =>
+        (c.cardType === "learning" || c.cardType === "relearning") && (c.learningDueAt ?? 0) <= now,
+    )
+    .sort((a, b) => (a.learningDueAt ?? 0) - (b.learningDueAt ?? 0));
+  const newC = cards.filter((c) => c.cardType === "new");
+  const review = cards.filter((c) => c.cardType === "review");
+  const rest = cards.filter(
+    (c) =>
+      !learning.includes(c) &&
+      !newC.includes(c) &&
+      !review.includes(c) &&
+      c.cardType !== "learning" &&
+      c.cardType !== "relearning",
+  );
+  return [...learning, ...newC, ...review, ...rest];
 }
 
 /**
@@ -21,9 +46,21 @@ export function selectStudyQueue(state: QuizState, scope: QueueScope = {}): Card
   const now = scope.now ?? Date.now();
   const postSet = new Set(scope.postSlugs ?? state.addedPosts);
 
-  const cards = Object.values(state.cardStates).filter(
-    (c) => postSet.has(c.postSlug) && !state.ignored[c.questionSlug],
+  let cards = Object.values(state.cardStates).filter(
+    (c) =>
+      postSet.has(c.postSlug) &&
+      !state.ignored[c.questionSlug] &&
+      !state.suspended?.[c.questionSlug],
   );
+
+  if (scope.questionSlugs?.length) {
+    const slugSet = new Set(scope.questionSlugs);
+    cards = cards.filter((c) => slugSet.has(c.questionSlug));
+  }
+
+  if (scope.cram) {
+    return sortCramQueue(cards, now);
+  }
 
   const daily = state.daily.date === today ? state.daily : { date: today, new: 0, reviews: 0 };
 

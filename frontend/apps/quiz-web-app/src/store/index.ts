@@ -35,6 +35,15 @@ const storage = createJSONStorage(() =>
     : createMemoryStorage(),
 );
 
+/** Ephemeral snapshot enabling one-step undo of the last review. Not persisted. */
+export interface LastReview {
+  questionSlug: string;
+  rating: Rating;
+  logId: string;
+  prevCard: CardState;
+  prevDaily: DailyCounts;
+}
+
 export interface QuizState {
   /** SM-2 state per question slug. */
   cardStates: Record<string, CardState>;
@@ -42,11 +51,15 @@ export interface QuizState {
   addedPosts: string[];
   /** Question slugs the user has chosen to ignore (excluded from all sessions). */
   ignored: Record<string, true>;
+  /** Question slugs temporarily suspended (excluded from queues until unsuspended). */
+  suspended: Record<string, true>;
   reviewLogs: ReviewLog[];
   studySessions: StudySession[];
   settings: AppSettings;
   config: StudyConfig;
   daily: DailyCounts;
+  /** Last review, for one-step undo. Ephemeral (not persisted). */
+  lastReview: LastReview | null;
 }
 
 export interface QuizActions {
@@ -56,11 +69,18 @@ export interface QuizActions {
   removePost: (postSlug: string) => void;
   /** Apply an SM-2 rating to a question by slug (WEB-06). */
   reviewCard: (questionSlug: string, rating: Rating, timeTakenMs: number) => void;
+  /** Revert the most recent reviewCard (restore card + daily, drop its log). */
+  undoLastReview: () => LastReview | null;
   /** Mark a question ignored — excluded from all future sessions (WEB-08). */
   ignoreQuestion: (questionSlug: string) => void;
   unignoreQuestion: (questionSlug: string) => void;
+  /** Temporarily suspend / unsuspend a question (excluded from queues). */
+  suspendQuestion: (questionSlug: string) => void;
+  unsuspendQuestion: (questionSlug: string) => void;
   /** Reset progress for one post's questions (WEB-12). */
   resetPost: (postSlug: string) => void;
+  /** Reset progress for a single question back to "new". */
+  resetQuestion: (questionSlug: string) => void;
   /** Reset all progress, logs and sessions (WEB-12). */
   resetAll: () => void;
   startSession: () => string;
@@ -79,11 +99,13 @@ export const initialState: QuizState = {
   cardStates: {},
   addedPosts: [],
   ignored: {},
+  suspended: {},
   reviewLogs: [],
   studySessions: [],
   settings: DEFAULT_SETTINGS,
   config: DEFAULT_CONFIG,
   daily: freshDaily(),
+  lastReview: null,
 };
 
 export const useStore = create<QuizStore>()(
@@ -149,7 +171,27 @@ export const useStore = create<QuizStore>()(
           cardStates: { ...s.cardStates, [questionSlug]: updated },
           reviewLogs: [...s.reviewLogs, log],
           daily: nextDaily,
+          lastReview: {
+            questionSlug,
+            rating,
+            logId: log.id,
+            prevCard: card,
+            prevDaily: daily,
+          },
         });
+      },
+
+      undoLastReview: () => {
+        const s = get();
+        const last = s.lastReview;
+        if (!last) return null;
+        set({
+          cardStates: { ...s.cardStates, [last.questionSlug]: last.prevCard },
+          reviewLogs: s.reviewLogs.filter((l) => l.id !== last.logId),
+          daily: last.prevDaily,
+          lastReview: null,
+        });
+        return last;
       },
 
       ignoreQuestion: (questionSlug) =>
@@ -162,6 +204,16 @@ export const useStore = create<QuizStore>()(
           return { ignored };
         }),
 
+      suspendQuestion: (questionSlug) =>
+        set((s) => ({ suspended: { ...s.suspended, [questionSlug]: true } })),
+
+      unsuspendQuestion: (questionSlug) =>
+        set((s) => {
+          const suspended = { ...s.suspended };
+          delete suspended[questionSlug];
+          return { suspended };
+        }),
+
       resetPost: (postSlug) =>
         set((s) => {
           const cardStates = { ...s.cardStates };
@@ -172,6 +224,18 @@ export const useStore = create<QuizStore>()(
             }
           }
           return { cardStates };
+        }),
+
+      resetQuestion: (questionSlug) =>
+        set((s) => {
+          const card = s.cardStates[questionSlug];
+          if (!card) return {};
+          return {
+            cardStates: {
+              ...s.cardStates,
+              [questionSlug]: resetCardState(card, Date.now()),
+            },
+          };
         }),
 
       resetAll: () =>
@@ -235,13 +299,20 @@ export const useStore = create<QuizStore>()(
           cardStates: snapshot.cardStates ?? s.cardStates,
           addedPosts: snapshot.addedPosts ?? s.addedPosts,
           ignored: snapshot.ignored ?? s.ignored,
+          suspended: snapshot.suspended ?? s.suspended,
           reviewLogs: snapshot.reviewLogs ?? s.reviewLogs,
           studySessions: snapshot.studySessions ?? s.studySessions,
           settings: snapshot.settings ? { ...DEFAULT_SETTINGS, ...snapshot.settings } : s.settings,
           config: snapshot.config ? { ...DEFAULT_CONFIG, ...snapshot.config } : s.config,
           daily: snapshot.daily ?? s.daily,
+          lastReview: null,
         })),
     }),
-    { name: STORAGE_KEY, storage },
+    {
+      name: STORAGE_KEY,
+      storage,
+      // `lastReview` is a transient undo buffer — never persist it.
+      partialize: ({ lastReview: _lastReview, ...rest }) => rest,
+    },
   ),
 );

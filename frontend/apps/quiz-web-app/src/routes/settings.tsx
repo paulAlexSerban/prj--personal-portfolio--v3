@@ -3,9 +3,11 @@ import { useRef, useState } from "react";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { Stamp } from "@/components/ui/Stamp";
 import { Modal } from "@/components/ui/Modal";
+import { toast } from "sonner";
 import { useStore } from "@/store";
 import { DEFAULT_CONFIG } from "@/store/types";
 import type { QuizState } from "@/store";
+import { applyTheme } from "@/lib/theme";
 
 export const Route = createFileRoute("/settings")({
   component: SettingsPage,
@@ -24,11 +26,9 @@ function SettingsPage() {
   const [importMsg, setImportMsg] = useState<string | null>(null);
   const fileRef = useRef<HTMLInputElement>(null);
 
-  function applyTheme(t: typeof settings.theme) {
+  function selectTheme(t: typeof settings.theme) {
     setSettings({ theme: t });
-    const isDark =
-      t === "dark" || (t === "system" && matchMedia("(prefers-color-scheme: dark)").matches);
-    document.documentElement.classList.toggle("dark", isDark);
+    applyTheme(t);
   }
 
   function exportBackup() {
@@ -50,6 +50,7 @@ function SettingsPage() {
     a.download = `quiz-progress-${new Date().toISOString().slice(0, 10)}.json`;
     a.click();
     URL.revokeObjectURL(url);
+    toast.success("Backup exported");
   }
 
   function handleImportFile(files: FileList | null) {
@@ -60,11 +61,16 @@ function SettingsPage() {
         const snapshot = JSON.parse(String(reader.result)) as Partial<QuizState>;
         if (typeof snapshot !== "object" || snapshot === null) throw new Error("Invalid file.");
         importState(snapshot);
+        applyTheme(useStore.getState().settings.theme);
         const postCount = snapshot.addedPosts?.length ?? 0;
         const cardCount = Object.keys(snapshot.cardStates ?? {}).length;
-        setImportMsg(`Imported: ${postCount} set(s), ${cardCount} card state(s).`);
+        const msg = `Imported: ${postCount} set(s), ${cardCount} card state(s).`;
+        setImportMsg(msg);
+        toast.success(msg);
       } catch (e) {
-        setImportMsg(`Import failed: ${(e as Error).message}`);
+        const msg = `Import failed: ${(e as Error).message}`;
+        setImportMsg(msg);
+        toast.error(msg);
       }
     };
     reader.readAsText(files[0]);
@@ -83,7 +89,7 @@ function SettingsPage() {
             <button
               key={t}
               type="button"
-              onClick={() => applyTheme(t)}
+              onClick={() => selectTheme(t)}
               className={`smallcaps text-xs mr-3 ${settings.theme === t ? "underline font-bold" : "hover:underline"}`}
             >
               {t}
@@ -225,7 +231,10 @@ function SettingsPage() {
         <div className="pt-4">
           <button
             type="button"
-            onClick={() => setConfig({ ...DEFAULT_CONFIG })}
+            onClick={() => {
+              setConfig({ ...DEFAULT_CONFIG });
+              toast.success("Scheduling reset to defaults");
+            }}
             className="smallcaps text-xs underline hover:no-underline"
           >
             Reset to defaults
@@ -317,6 +326,7 @@ function SettingsPage() {
             clearAll();
             setConfirmClear(false);
             setConfirmText("");
+            toast.success("All data erased");
           }}
         >
           Erase Everything

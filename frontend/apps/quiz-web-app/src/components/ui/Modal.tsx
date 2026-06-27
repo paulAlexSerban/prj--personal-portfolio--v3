@@ -5,11 +5,14 @@ export function Modal({
   onClose,
   title,
   children,
+  wide = false,
 }: {
   open: boolean;
   onClose: () => void;
   title?: string;
   children: React.ReactNode;
+  /** Wider panel for question preview (scrollable). */
+  wide?: boolean;
 }) {
   useEffect(() => {
     if (!open) return;
@@ -27,7 +30,9 @@ export function Modal({
       onClick={onClose}
     >
       <div
-        className="bg-[var(--aged-white)] border-[3px] border-[var(--ink-black)] max-w-lg w-full p-6 grain"
+        className={`bg-[var(--aged-white)] border-[3px] border-[var(--ink-black)] w-full p-6 grain ${
+          wide ? "max-w-3xl max-h-[90vh] overflow-y-auto" : "max-w-lg"
+        }`}
         onClick={(e) => e.stopPropagation()}
       >
         {title && (

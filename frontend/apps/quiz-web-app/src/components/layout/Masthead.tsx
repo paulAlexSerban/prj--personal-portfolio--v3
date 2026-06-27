@@ -30,9 +30,15 @@ export function Masthead() {
         <div className="rule-double mt-2" />
         <div className="flex items-center justify-between mt-2 flex-wrap gap-2">
           <p className="smallcaps text-[11px] text-[var(--slate)]">{formatDateline()}</p>
-          <nav className="flex gap-5 text-[11px] smallcaps">
+          <nav className="flex gap-5 text-[11px] smallcaps flex-wrap">
             <Link to="/" className="hover:underline">
-              Browse
+              Posts
+            </Link>
+            <Link to="/browse" className="hover:underline">
+              Questions
+            </Link>
+            <Link to="/tags" className="hover:underline">
+              Tags
             </Link>
             <Link to="/sets" className="hover:underline">
               My Sets

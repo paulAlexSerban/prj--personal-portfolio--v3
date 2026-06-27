@@ -71,71 +71,89 @@ PWA offline, and the rich stats page.
 **Exit gate (G1) — met**
 - Explanations with `##`, fenced code, lists, inline code render correctly; build/lint/tests green.
 
-**Remaining for later phases:** real math (Phase 2), code highlighting + MDX (Phase 6).
+**Remaining for later phases:** ~~real math (Phase 2), code highlighting~~ (done in Phase 2); MDX (Phase 6).
 
 ---
 
-### Phase 2 — Math + code fidelity (C2, C10 partial)
+### Phase 2 — Math + code fidelity (C2, C10 partial) — ✅ DONE
 
 **Entry gate:** G1.
 
-**Work**
-1. Real math: add **KaTeX** via `marked`-compatible extension (or `remark-math` if/when we move
-   to a remark pipeline). Replace the naive `$…$`→`<i>` with KaTeX inline + `$$…$$` block.
-   Lazy-load KaTeX so it doesn't bloat the initial bundle.
-2. Code highlighting: add a lightweight highlighter (e.g. `shiki` at build time, or
-   `highlight.js`/`prismjs` lazy at runtime) for fenced blocks; respect the newsprint theme.
-3. Decide math/highlight CSS lives in `styles.css` (printable, theme-aware).
+**Work (completed)**
+1. Real math via **KaTeX**: added a custom `marked` tokenizer extension
+   (`src/components/card/markdown.ts`) that emits inert placeholders for inline `$…$` and
+   block `$$…$$` (carrying the raw TeX as escaped text; tokenizing — not post-processing HTML —
+   so markdown never mangles `_`/`*`/`\`). A bare `$5` price is not treated as math.
+2. Code highlighting via **highlight.js** (`lib/common`, ~37 langs). `marked` keeps the
+   `language-*` class; `highlightElement` runs at runtime.
+3. **Lazy + code-split:** KaTeX + highlight.js (and KaTeX CSS) live in `src/lib/richText.ts`,
+   dynamically imported by `CardRenderer` only when content actually contains `.math`/`pre code`.
+   Verified in the chunk report: `richText.js` (~423 kB) and `richText.css` (~29 kB) are a
+   **separate chunk** — the main bundle is unchanged (~283 kB). KaTeX `.ttf`/`.woff2` fonts are
+   emitted as assets and **precached** (PWA `globPatterns` now include `ttf`) for offline math.
+4. Theme-aware token CSS in `styles.css` (highlight.js palette tuned for the dark code surface;
+   KaTeX display/inline spacing). Removed the naive `$…$`→`<i>` substitution.
+5. Test env: added `jsdom` + `test.environment` so DOMPurify can initialize; new
+   `markdown.test.ts` covers math/code placeholders, the `$5` guard, HTML-escaping, cloze, inline.
 
-**Exit gate (G2)**
-- A question with `$\\sum_{i=1}^n i$` and a ```` ```ts ```` block renders correctly and offline.
-- Bundle: KaTeX/highlighter are code-split (verify in `dist` chunk report).
+**Exit gate (G2) — met**
+- A question with `$\sum_{i=1}^n i$` and a ```` ```ts ```` block renders correctly and offline.
+- KaTeX/highlighter are code-split (confirmed in `dist` chunk report); build/lint/tests green (31).
 
 ---
 
-### Phase 3 — View & practise outside study mode (C4)
+### Phase 3 — View & practise outside study mode (C4) — ✅ DONE
 
 **Entry gate:** G1 (independent of G2).
 
-**Work**
-1. **Question preview** (no scheduling side-effects): on `/sets/$postSlug`, clicking a row
-   opens a **detail drawer/modal** rendering stem, options (with correct answer marked),
-   explanation, tags, difficulty, and the card's SM-2 state. Read-only; does **not** call `reviewCard`.
-2. **Per-question actions** from preview: ignore/unignore, reset this card, "study just this card".
-3. **Global question browser** at `/browse` (or `/questions`): search across **all** added
-   sets (and optionally all posts via `_all.json`), filter by format/difficulty/tag/state
-   (new/learning/due/suspended/ignored), paginated. Reuses the preview drawer.
-4. **Tag-based study** (data already exports `tags.json` + `tags/<tag>.json`): `/tags/$tag`
-   lists questions for a tag and offers a study session scoped to that tag.
+**Work (completed)**
+1. **Question preview** (`QuestionPreviewDrawer`): clicking a row on `/sets/$postSlug` opens a
+   wide modal with stem, options (correct marked), explanation, tags, difficulty, and SM-2 state.
+   Read-only — never calls `reviewCard`.
+2. **Per-question actions** from preview: ignore/unignore, reset this card (`resetQuestion`),
+   “Study This Card” (cram via `?cram=<slug>` on the set study route).
+3. **Global question browser** at `/browse`: search across all added sets via `_all.json`, filter
+   by format/difficulty/tag/state (new/learning/due/ignored), paginated (25/page). Reuses preview
+   drawer.
+4. **Tag-based study**: `/tags` lists tags from your sets; `/tags/$tag` lists questions;
+   `/tags/$tag/study` runs a scheduled session scoped to that tag; `?cram=1` or `?cram=<slug>`
+   for cram mode. `StudySession` extended with `questionSlugs` + `cram` queue scope.
 
-**Exit gate (G3)**
-- Can read any question's full answer/explanation without affecting its due date (assert no
-  `reviewLogs` entry added on preview).
-- Global search returns cross-set matches; tag study session runs.
+**Exit gate (G3) — met**
+- Preview is read-only (no `reviewCard`; `resetQuestion` does not append `reviewLogs`).
+- Global search/filter returns cross-set matches (`questionFilters.test.ts`); tag study uses
+  scoped queue (`study-queue.integration.test.ts` cram test); build/lint/tests green (39).
 
 ---
 
-### Phase 4 — Study-flow & feedback UX (C8, C9, C12)
+### Phase 4 — Study-flow & feedback UX (C8, C9, C12) — ✅ DONE
 
 **Entry gate:** G1.
 
-**Work**
-1. **Theme on load:** apply `settings.theme` (incl. `system` + `prefers-color-scheme` listener)
-   at app bootstrap in `main.tsx`/root, not only when toggled. Verify dark mode actually styles.
-2. **Toasts + undo:** wire `sonner`. After a rating, show a toast with **Undo** (revert the last
-   `reviewCard`: pop the `reviewLog`, restore prior `CardState`, decrement `daily`). Toasts on
-   add/remove/reset/import.
-3. **Auto-grade flow:** after submit, **disable upgrade ratings on a wrong answer** (e.g. wrong
-   MC ⇒ force Again/Hard), show the correct option(s) clearly, and for `multiple_select` show
-   per-option got-it/missed/wrong. Optional "retry" before rating.
-4. **In-session card actions:** suspend, bury-to-tomorrow, ignore, "edit not available (read-only)"
-   note, and jump to preview.
-5. **Mobile/a11y:** make tables horizontally scrollable with sticky first column; responsive
-   heatmap columns; add ARIA live region announcing reveal/correctness; focus management on reveal.
+**Work (completed)**
+1. **Theme on load:** shared `lib/theme.ts` (`applyTheme` + `initTheme`) applies `settings.theme`
+   at bootstrap in `main.tsx` (before first paint) and registers a `prefers-color-scheme` listener
+   for `system`. Settings page and backup import reuse `applyTheme`.
+2. **Toasts + undo:** `sonner` `<Toaster>` mounted in `__root.tsx`. New ephemeral `lastReview`
+   buffer + `undoLastReview` store action restores the exact prior `CardState`, prior `daily`
+   counts and drops the appended `reviewLog`; surfaced as an **Undo** action toast after each
+   rating. Toasts also on add/remove set, ignore/suspend/reset, import/export/clear.
+   (`lastReview` is excluded from persistence via `partialize`.)
+3. **Auto-grade flow:** `QuestionRenderer` reports correctness via `onGraded`; on a wrong
+   auto-graded answer `StudySession` locks Good/Easy (forces Again/Hard) and offers **Try Again**
+   (`onRetry`). MC/MS options show per-option **got it / missed / wrong** tags after reveal.
+4. **In-session card actions:** **Bury** (session-local skip), **Suspend** (persistent
+   `suspended` map, filtered from all queues, unsuspend from the preview drawer), **Ignore**, plus
+   a read-only content note.
+5. **Mobile/a11y:** `.data-table` utility (min-width + sticky first column) on the set-detail and
+   browse tables; heatmap already scrolls horizontally; `aria-live="polite"` region announces
+   reveal/correctness; reveal result block has `role="status"`.
 
-**Exit gate (G4)**
-- Undo restores exact prior schedule (unit test on the store action).
-- Dark mode works from a cold load; wrong auto-graded answers can't be rated Easy.
+**Exit gate (G4) — met**
+- Undo restores the exact prior schedule + daily counts (`store.test.ts` `undoLastReview` suite).
+- Theme applies from a cold load (`initTheme` in `main.tsx`); wrong auto-graded answers cannot be
+  rated Good/Easy (`ratingDisabled` locks r≥3); suspend filtering covered by `store.test.ts`.
+  Build/lint/tests green (44).
 
 ---
 
@@ -212,7 +230,7 @@ PWA offline, and the rich stats page.
 | Render explanations/answers Markdown→HTML        | **P1 (done)**    |
 | Future MDX                                        | P6               |
 | Real math/code fidelity                          | P2 (math/code), P6 |
-| View questions without being in study mode       | P3               |
+| View questions without being in study mode       | **P3 (done)**    |
 | UX improvements                                  | P4 (+P3, P5 UI)  |
 | SR best practices (fuzz, dates, leeches, per-set)| P5               |
 | Improved-Anki (FSRS, retention target)           | P7               |

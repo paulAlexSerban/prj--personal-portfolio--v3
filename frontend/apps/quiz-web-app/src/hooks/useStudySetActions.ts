@@ -1,4 +1,5 @@
 import { useCallback, useState } from "react";
+import { toast } from "sonner";
 import { loadPostQuestionSlugs } from "@/data/loadQuizData";
 import { useStore } from "@/store";
 
@@ -15,8 +16,11 @@ export function useStudySetActions() {
       try {
         const slugs = await loadPostQuestionSlugs(postSlug);
         addPost(postSlug, slugs);
+        toast.success("Added to your study sets", { description: `${slugs.length} questions` });
       } catch (e) {
-        setError(e instanceof Error ? e.message : "Failed to load questions");
+        const msg = e instanceof Error ? e.message : "Failed to load questions";
+        setError(msg);
+        toast.error(msg);
       } finally {
         setLoadingSlug(null);
       }
@@ -27,6 +31,7 @@ export function useStudySetActions() {
   const removeFromStudySet = useCallback(
     (postSlug: string) => {
       removePost(postSlug);
+      toast("Removed from study sets", { description: "Progress is kept if you re-add it." });
     },
     [removePost],
   );

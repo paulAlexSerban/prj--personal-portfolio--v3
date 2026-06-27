@@ -179,6 +179,21 @@
 }
 
 @layer components {
+  /* Data tables: force horizontal scroll on narrow screens and keep the first
+     column pinned so row context stays visible while scrolling. */
+  .data-table {
+    min-width: 640px;
+  }
+  .data-table th:first-child,
+  .data-table td:first-child {
+    position: sticky;
+    left: 0;
+    z-index: 1;
+    background: var(--aged-white);
+  }
+  .data-table thead th:first-child {
+    background: var(--highlight);
+  }
   .grain {
     background-image:
       radial-gradient(rgba(13, 13, 13, 0.05) 1px, transparent 1px),

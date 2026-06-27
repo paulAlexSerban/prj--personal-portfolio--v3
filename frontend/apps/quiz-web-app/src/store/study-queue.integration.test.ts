@@ -41,4 +41,14 @@ describe("/study queue (real store)", () => {
     // Ignoring caps brings back the 10 untouched "new" cards.
     expect(selectStudyQueue(s, { now: Date.now(), ignoreLimits: true }).length).toBe(10);
   });
+
+  it("cram mode returns scoped cards even when not due", () => {
+    useStore.getState().addPost(POST, SLUGS);
+    for (let i = 0; i < 20; i++) {
+      useStore.getState().reviewCard(SLUGS[i], 4, 1000);
+    }
+    const s = useStore.getState();
+    expect(selectStudyQueue(s, { questionSlugs: [SLUGS[20]], cram: true }).length).toBe(1);
+    expect(selectStudyQueue(s, { now: Date.now() }).length).toBe(0);
+  });
 });
