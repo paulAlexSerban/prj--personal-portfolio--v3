@@ -74,11 +74,7 @@ function BrowsePage() {
             prior progress.
           </p>
         </div>
-        <Link
-          to="/sets"
-          className={stampClasses("ghost", "md")}
-          title="Go to your study sets"
-        >
+        <Link to="/sets" className={stampClasses("ghost", "md")} title="Go to your study sets">
           My Sets ({addedPosts.length})
         </Link>
       </section>
@@ -97,7 +93,11 @@ function BrowsePage() {
               key={s}
               type="button"
               onClick={() => setSortBy(s)}
-              title={s === "title" ? "Sort posts alphabetically by title" : "Sort posts by number of questions"}
+              title={
+                s === "title"
+                  ? "Sort posts alphabetically by title"
+                  : "Sort posts by number of questions"
+              }
               className={`underline-offset-4 ${sortBy === s ? "underline font-bold" : "hover:underline"}`}
             >
               {s === "title" ? "Title" : "Most Questions"}

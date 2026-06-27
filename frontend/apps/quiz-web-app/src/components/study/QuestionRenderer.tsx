@@ -219,7 +219,11 @@ export function QuestionRenderer({
           )}
           {showRetry && (
             <div className="text-center">
-              <Stamp variant="ghost" onClick={retry} title="Clear your answer and attempt this card again">
+              <Stamp
+                variant="ghost"
+                onClick={retry}
+                title="Clear your answer and attempt this card again"
+              >
                 Try Again
               </Stamp>
             </div>

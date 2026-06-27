@@ -44,7 +44,11 @@ function StudyAllPage() {
           <Link to="/sets" className={stampClasses("solid", "lg")} title="Go to your study sets">
             My Sets
           </Link>
-          <Link to="/stats" className={stampClasses("ghost", "lg")} title="View your progress stats">
+          <Link
+            to="/stats"
+            className={stampClasses("ghost", "lg")}
+            title="View your progress stats"
+          >
             Progress
           </Link>
         </>

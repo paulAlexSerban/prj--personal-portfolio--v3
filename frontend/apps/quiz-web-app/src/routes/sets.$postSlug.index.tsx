@@ -172,7 +172,11 @@ function SetDetailPage() {
             >
               Begin Study
             </Link>
-            <Link to="/sets" className={stampClasses("ghost", "md")} title="Back to all your study sets">
+            <Link
+              to="/sets"
+              className={stampClasses("ghost", "md")}
+              title="Back to all your study sets"
+            >
               ← All Sets
             </Link>
             <button
@@ -351,7 +355,15 @@ function SetDetailPage() {
                       <td className="p-2 smallcaps text-[14px]">{q.answerFormat}</td>
                       <td className="p-2">{card?.cardType ?? "—"}</td>
                       {/**date fromat yy-MM-dd */}
-                      <td className="p-2">{card?.dueDate ? new Date(card.dueDate).toLocaleDateString("en-US", { year: "2-digit", month: "2-digit", day: "2-digit" }) : "—"}</td>
+                      <td className="p-2">
+                        {card?.dueDate
+                          ? new Date(card.dueDate).toLocaleDateString("en-US", {
+                              year: "2-digit",
+                              month: "2-digit",
+                              day: "2-digit",
+                            })
+                          : "—"}
+                      </td>
                       <td className="p-2">{card ? `${card.interval}d` : "—"}</td>
                       {settings.scheduler === "fsrs" ? (
                         <td className="p-2">

@@ -63,7 +63,11 @@ function StudyPage() {
           >
             Back to Set
           </Link>
-          <Link to="/sets" className={stampClasses("ghost", "lg")} title="Go to all your study sets">
+          <Link
+            to="/sets"
+            className={stampClasses("ghost", "lg")}
+            title="Go to all your study sets"
+          >
             All Sets
           </Link>
         </>
