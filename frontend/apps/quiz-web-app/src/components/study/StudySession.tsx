@@ -8,6 +8,7 @@ import { loadPostQuestions } from "@/data/loadQuizData";
 import { useStore } from "@/store";
 import { selectStudyQueue } from "@/store/selectors";
 import { previewInterval } from "@/algorithms/intervals";
+import { todayISO } from "@/utils/dates";
 import type { Rating } from "@/store/types";
 
 interface SessionStats {
@@ -57,6 +58,8 @@ export function StudySession({
   const [error, setError] = useState<string | null>(null);
   const [revealed, setRevealed] = useState(false);
   const [tick, setTick] = useState(0);
+  // "Study ahead": ignore today's daily new/review caps for this session.
+  const [ignoreLimits, setIgnoreLimits] = useState(false);
   const [stats, setStats] = useState<SessionStats>({
     again: 0,
     hard: 0,
@@ -72,15 +75,24 @@ export function StudySession({
     let cancelled = false;
     setLoading(true);
     setError(null);
-    Promise.all(postSlugs.map((slug) => loadPostQuestions(slug)))
-      .then((lists) => {
+    // allSettled: one post failing to load must not kill the whole session
+    // (critical for the global "study all" route spanning many posts).
+    Promise.allSettled(postSlugs.map((slug) => loadPostQuestions(slug)))
+      .then((results) => {
         if (cancelled) return;
         const map = new Map<string, ExportedQuestion>();
-        for (const list of lists) for (const q of list) map.set(q.slug, q);
+        const failed: string[] = [];
+        results.forEach((r, i) => {
+          if (r.status === "fulfilled") {
+            for (const q of r.value) map.set(q.slug, q);
+          } else {
+            failed.push(postSlugs[i]);
+          }
+        });
         setQuestionMap(map);
-      })
-      .catch((e) => {
-        if (!cancelled) setError(e instanceof Error ? e.message : "Failed to load questions");
+        if (failed.length === postSlugs.length) {
+          setError(`Failed to load questions for: ${failed.join(", ")}`);
+        }
       })
       .finally(() => {
         if (!cancelled) setLoading(false);
@@ -106,9 +118,9 @@ export function StudySession({
     const state = { addedPosts, cardStates, ignored, daily, config, settings } as Parameters<
       typeof selectStudyQueue
     >[0];
-    return selectStudyQueue(state, { postSlugs, now: Date.now() });
+    return selectStudyQueue(state, { postSlugs, now: Date.now(), ignoreLimits });
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [addedPosts, cardStates, ignored, daily, config, settings, scopeKey, tick]);
+  }, [addedPosts, cardStates, ignored, daily, config, settings, scopeKey, tick, ignoreLimits]);
 
   // Only cards whose content is actually loaded are actionable. Cards whose
   // slugs aren't in the questionMap yet (still loading) are filtered out; once
@@ -121,6 +133,26 @@ export function StudySession({
 
   const initialTotal = useRef(0);
   if (actionableQueue.length > initialTotal.current) initialTotal.current = actionableQueue.length;
+
+  // Raw scoped counts that ignore the daily new/review caps — so an empty queue
+  // can explain *why* it's empty (nothing due vs. daily limit reached).
+  const scopeCounts = useMemo(() => {
+    const today = todayISO(0);
+    const set = new Set(postSlugs);
+    const cards = Object.values(cardStates).filter(
+      (c) => set.has(c.postSlug) && !ignored[c.questionSlug],
+    );
+    return {
+      newTotal: cards.filter((c) => c.cardType === "new").length,
+      learningDue: cards.filter(
+        (c) =>
+          (c.cardType === "learning" || c.cardType === "relearning") &&
+          (c.learningDueAt ?? 0) <= Date.now(),
+      ).length,
+      reviewDue: cards.filter((c) => c.cardType === "review" && c.dueDate <= today).length,
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [cardStates, ignored, scopeKey, tick]);
 
   useEffect(() => {
     setRevealed(false);
@@ -180,6 +212,17 @@ export function StudySession({
   }
 
   if (!currentCard || !currentQuestion) {
+    const reviewedAny = stats.again + stats.hard + stats.good + stats.easy > 0;
+    // Distinguish "finished a session" from "nothing was due to begin with".
+    if (!reviewedAny && initialTotal.current === 0) {
+      return (
+        <NothingDue
+          counts={scopeCounts}
+          actions={completionActions}
+          onStudyAhead={ignoreLimits ? undefined : () => setIgnoreLimits(true)}
+        />
+      );
+    }
     return <SessionEnd stats={stats} subtitle={completionSubtitle} actions={completionActions} />;
   }
 
@@ -259,6 +302,71 @@ export function StudySession({
           </div>
         )}
       </article>
+    </PageLayout>
+  );
+}
+
+function NothingDue({
+  counts,
+  actions,
+  onStudyAhead,
+}: {
+  counts: { newTotal: number; learningDue: number; reviewDue: number };
+  actions: ReactNode;
+  /** When provided, offers a "study ahead" button that ignores daily caps. */
+  onStudyAhead?: () => void;
+}) {
+  const totalAvailable = counts.newTotal + counts.learningDue + counts.reviewDue;
+  // If cards exist but none made the queue, the daily new/review cap is the cause.
+  const cappedByLimit = totalAvailable > 0;
+
+  return (
+    <PageLayout>
+      <div className="text-center mb-8">
+        <p className="smallcaps text-xs text-[var(--slate)]">Nothing Queued</p>
+        <h2 className="text-6xl font-black mt-2" style={{ fontFamily: "var(--font-display)" }}>
+          All Clear
+        </h2>
+        <p className="italic mt-2 text-[var(--charcoal)]">
+          {cappedByLimit
+            ? "You've reached today's study limit for this scope. More cards unlock tomorrow, or raise the daily limits in Settings."
+            : "No cards are due right now. Add more posts or come back when reviews are scheduled."}
+        </p>
+      </div>
+
+      <div
+        className="grid grid-cols-3 border-y-2 border-[var(--ink-black)] divide-x-2 divide-[var(--ink-black)] mb-8"
+        style={{ fontFamily: "var(--font-mono)" }}
+      >
+        {(
+          [
+            ["New (untapped)", counts.newTotal],
+            ["Learning due", counts.learningDue],
+            ["Reviews due", counts.reviewDue],
+          ] as const
+        ).map(([l, n]) => (
+          <div key={l} className="p-4 text-center">
+            <p className="smallcaps text-[10px] text-[var(--slate)]">{l}</p>
+            <p className="text-3xl font-bold">{n}</p>
+          </div>
+        ))}
+      </div>
+
+      {cappedByLimit && onStudyAhead && (
+        <div className="text-center mb-6">
+          <Stamp onClick={onStudyAhead} variant="solid">
+            Study ahead ({totalAvailable})
+          </Stamp>
+          <p
+            className="smallcaps text-[10px] text-[var(--slate)] mt-2"
+            style={{ fontFamily: "var(--font-mono)" }}
+          >
+            Ignores today's limits for this session. Or raise the caps in Settings.
+          </p>
+        </div>
+      )}
+
+      <div className="text-center mt-4 flex justify-center gap-3">{actions}</div>
     </PageLayout>
   );
 }

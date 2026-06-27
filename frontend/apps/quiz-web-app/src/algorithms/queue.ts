@@ -7,6 +7,8 @@ export interface QueueOpts {
   today: string;
   now: number;
   settings: AppSettings;
+  /** When true, daily new/review caps are ignored (e.g. "study ahead"/cram). */
+  ignoreLimits?: boolean;
 }
 
 /**
@@ -15,14 +17,19 @@ export interface QueueOpts {
  * (added posts) and excluding ignored questions.
  */
 export function buildQueue(cards: CardState[], opts: QueueOpts): CardState[] {
-  const newLimit = Math.max(
-    0,
-    (opts.settings.globalNewLimit ?? opts.config.newCardsPerDay) - opts.newStudiedToday,
-  );
-  const reviewLimit = Math.max(
-    0,
-    (opts.settings.globalReviewLimit ?? opts.config.maxReviewsPerDay) - opts.reviewsStudiedToday,
-  );
+  const newLimit = opts.ignoreLimits
+    ? cards.length
+    : Math.max(
+        0,
+        (opts.settings.globalNewLimit ?? opts.config.newCardsPerDay) - opts.newStudiedToday,
+      );
+  const reviewLimit = opts.ignoreLimits
+    ? cards.length
+    : Math.max(
+        0,
+        (opts.settings.globalReviewLimit ?? opts.config.maxReviewsPerDay) -
+          opts.reviewsStudiedToday,
+      );
 
   const learning = cards
     .filter(

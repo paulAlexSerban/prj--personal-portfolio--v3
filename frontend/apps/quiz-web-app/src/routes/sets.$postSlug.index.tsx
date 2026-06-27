@@ -14,7 +14,7 @@ import type { QuizState } from "@/store";
 import { getPostStats } from "@/store/selectors";
 import { todayISO } from "@/utils/dates";
 
-export const Route = createFileRoute("/sets/$postSlug")({
+export const Route = createFileRoute("/sets/$postSlug/")({
   component: SetDetailPage,
 });
 

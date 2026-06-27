@@ -14,8 +14,9 @@ import { Route as StatsRouteImport } from './routes/stats'
 import { Route as SettingsRouteImport } from './routes/settings'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as SetsIndexRouteImport } from './routes/sets/index'
-import { Route as SetsPostSlugRouteImport } from './routes/sets/$postSlug'
-import { Route as SetsPostSlugStudyRouteImport } from './routes/sets/$postSlug.study'
+import { Route as SetsPostSlugRouteImport } from './routes/sets.$postSlug'
+import { Route as SetsPostSlugIndexRouteImport } from './routes/sets.$postSlug.index'
+import { Route as SetsPostSlugStudyRouteImport } from './routes/sets.$postSlug.study'
 
 const StudyRoute = StudyRouteImport.update({
   id: '/study',
@@ -47,6 +48,11 @@ const SetsPostSlugRoute = SetsPostSlugRouteImport.update({
   path: '/sets/$postSlug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SetsPostSlugIndexRoute = SetsPostSlugIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => SetsPostSlugRoute,
+} as any)
 const SetsPostSlugStudyRoute = SetsPostSlugStudyRouteImport.update({
   id: '/study',
   path: '/study',
@@ -61,15 +67,16 @@ export interface FileRoutesByFullPath {
   '/sets/$postSlug': typeof SetsPostSlugRouteWithChildren
   '/sets/': typeof SetsIndexRoute
   '/sets/$postSlug/study': typeof SetsPostSlugStudyRoute
+  '/sets/$postSlug/': typeof SetsPostSlugIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/settings': typeof SettingsRoute
   '/stats': typeof StatsRoute
   '/study': typeof StudyRoute
-  '/sets/$postSlug': typeof SetsPostSlugRouteWithChildren
   '/sets': typeof SetsIndexRoute
   '/sets/$postSlug/study': typeof SetsPostSlugStudyRoute
+  '/sets/$postSlug': typeof SetsPostSlugIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -80,6 +87,7 @@ export interface FileRoutesById {
   '/sets/$postSlug': typeof SetsPostSlugRouteWithChildren
   '/sets/': typeof SetsIndexRoute
   '/sets/$postSlug/study': typeof SetsPostSlugStudyRoute
+  '/sets/$postSlug/': typeof SetsPostSlugIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -91,15 +99,16 @@ export interface FileRouteTypes {
     | '/sets/$postSlug'
     | '/sets/'
     | '/sets/$postSlug/study'
+    | '/sets/$postSlug/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/settings'
     | '/stats'
     | '/study'
-    | '/sets/$postSlug'
     | '/sets'
     | '/sets/$postSlug/study'
+    | '/sets/$postSlug'
   id:
     | '__root__'
     | '/'
@@ -109,6 +118,7 @@ export interface FileRouteTypes {
     | '/sets/$postSlug'
     | '/sets/'
     | '/sets/$postSlug/study'
+    | '/sets/$postSlug/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -164,6 +174,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SetsPostSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/sets/$postSlug/': {
+      id: '/sets/$postSlug/'
+      path: '/'
+      fullPath: '/sets/$postSlug/'
+      preLoaderRoute: typeof SetsPostSlugIndexRouteImport
+      parentRoute: typeof SetsPostSlugRoute
+    }
     '/sets/$postSlug/study': {
       id: '/sets/$postSlug/study'
       path: '/study'
@@ -176,10 +193,12 @@ declare module '@tanstack/react-router' {
 
 interface SetsPostSlugRouteChildren {
   SetsPostSlugStudyRoute: typeof SetsPostSlugStudyRoute
+  SetsPostSlugIndexRoute: typeof SetsPostSlugIndexRoute
 }
 
 const SetsPostSlugRouteChildren: SetsPostSlugRouteChildren = {
   SetsPostSlugStudyRoute: SetsPostSlugStudyRoute,
+  SetsPostSlugIndexRoute: SetsPostSlugIndexRoute,
 }
 
 const SetsPostSlugRouteWithChildren = SetsPostSlugRoute._addFileChildren(

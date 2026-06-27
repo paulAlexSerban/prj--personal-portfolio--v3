@@ -8,6 +8,8 @@ export interface QueueScope {
   postSlugs?: string[];
   today?: string;
   now?: number;
+  /** Ignore today's new/review caps ("study ahead" / cram). */
+  ignoreLimits?: boolean;
 }
 
 /**
@@ -32,6 +34,7 @@ export function selectStudyQueue(state: QuizState, scope: QueueScope = {}): Card
     today,
     now,
     settings: state.settings,
+    ignoreLimits: scope.ignoreLimits,
   });
 }
 
