@@ -246,9 +246,16 @@ Output root: `frontend/apps/quiz-web-app/public/data/` (overridable via env).
 
 ---
 
-### Phase 6 — PWA / offline, study-all, reset (WEB-10,11,12)
+### Phase 6 — PWA / offline, study-all, reset (WEB-10,11,12) — ✅ DONE
 
 **Entry gate:** G5.
+
+> **Status: implemented.** `vite-plugin-pwa` (autoUpdate) precaches the app shell +
+> `posts.json`/`tags.json`; per-post/per-tag question files are runtime-cached
+> stale-while-revalidate (`quiz-data` cache). Study-all (`/study`) runs a global
+> queue across all added sets; per-post reset (`resetPost`) and global reset
+> (`resetAll`) are wired with confirm dialogs. Build pipeline documented in the
+> app `readme.md`. `vite build` emits the service worker + PWA assets.
 
 **Work**
 1. PWA: add `vite-plugin-pwa`; precache app shell + `posts.json`; runtime-cache `questions/*.json` (stale-while-revalidate); optionally preload `_all.json` for full offline (WEB-10).
@@ -265,16 +272,22 @@ Output root: `frontend/apps/quiz-web-app/public/data/` (overridable via env).
 
 ---
 
-### Phase 7 — Cutover, cleanup, docs
+### Phase 7 — Cutover, cleanup, docs — ✅ DONE
 
 **Entry gate:** G6.
 
 **Work**
-1. Remove POC `frontend/poc/ink-and-recall/` (and its nested `.git/`) once parity confirmed; or archive.
-2. Remove `frontend/poc/*` from workspace globs if added in Phase 0.
-3. Add `frontend/apps/quiz-web-app/AGENTS.md` and a real `readme.md` (currently 1 line); update `_docs/AGENTS.md` implementation-status table (quiz web app + JSON export → Implemented).
-4. Cross-link: mark **question-types plan Phase 4** satisfied by `shared/quiz-export`; update `tools/AGENTS.md` note that export now lives in `shared/`.
-5. Root scripts: ensure `pnpm -r start`/`build`/`typecheck`/`test` include new packages; document build order.
+1. Remove POC `frontend/poc/ink-and-recall/` once parity confirmed. — ✅ done (`git rm -r` of 95 tracked files — no nested `.git`/submodule — plus leftover `node_modules`).
+2. Remove `frontend/poc/*` from workspace globs. — ✅ done; `pnpm install` reports 11 workspace projects (was 12), 106 packages pruned.
+3. Add `frontend/apps/quiz-web-app/AGENTS.md` and a real `readme.md`; update `_docs/AGENTS.md` implementation-status table (quiz web app + JSON export → Implemented). — ✅ done.
+4. Cross-link: mark **question-types plan Phase 4** satisfied by `shared/quiz-export`; update `tools/AGENTS.md` note that export now lives in `shared/`. — ✅ done.
+5. Root scripts: ensure `pnpm -r start`/`build`/`typecheck`/`test` include new packages; document build order. — ✅ `pnpm -r test`/`start` cover new packages; root `tsc -b` references `shared/quiz-export` + `shared/quiz-markdown`; the app is typechecked per-filter (TS 5.x + Vite types) — documented in the app `AGENTS.md`. Build order documented in the app `readme.md`.
+
+**Exit gate (G7) — met**
+- ✅ Root `tsc -b` + app typecheck green; `pnpm -r test` green (quiz-markdown 7, quiz-export 16, app 78); app `vite build` emits PWA assets.
+- ✅ `rg -i lovable` → 0 hits in app/shared code (only this plan doc references it historically; the POC is gone).
+- ✅ App is CSR-only, zustand-managed, JSON-fed; WEB-01..13 mapped (SM-2 **and** FSRS schedulers shipped per the enhancements plan).
+- ✅ Docs/AGENTS updated (`_docs/AGENTS.md`, `tools/AGENTS.md`, new app `AGENTS.md`, question-types plan P4 cross-link).
 
 **Exit gate (G7 — definition of done)**
 - `pnpm -w typecheck` + `pnpm -w test` + `pnpm -w build` (or per-filter) green.

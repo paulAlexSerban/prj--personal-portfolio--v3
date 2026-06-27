@@ -199,7 +199,7 @@ function StatsPage() {
 
   return (
     <PageLayout>
-      <p className="smallcaps text-xs text-[var(--slate)]">Editorial Almanac</p>
+      <p className="smallcaps text-sm text-[var(--slate)]">Editorial Almanac</p>
       <h2 className="text-5xl font-bold mb-6" style={{ fontFamily: "var(--font-display)" }}>
         The Numbers
       </h2>
@@ -226,7 +226,7 @@ function StatsPage() {
             >
               <div className="smallcaps text-[9px] text-[var(--slate)]">{f.date.slice(5)}</div>
               <div
-                className="text-base font-bold"
+                className="text-lg font-bold"
                 style={{ opacity: 0.3 + 0.7 * (f.count / maxForecast) }}
               >
                 {f.count}
@@ -260,7 +260,7 @@ function StatsPage() {
       {fsrsActive && (
         <Section title="Memory Model (FSRS)">
           {fsrsCards.length === 0 ? (
-            <p className="text-sm italic text-[var(--slate)]">
+            <p className="text-base italic text-[var(--slate)]">
               No FSRS-scheduled review cards yet. Review some cards under FSRS to populate the
               memory model.
             </p>
@@ -279,7 +279,7 @@ function StatsPage() {
                 <Stat label="Modelled Cards" v={fsrsCards.length} />
               </div>
 
-              <p className="smallcaps text-xs text-[var(--slate)] mb-2">
+              <p className="smallcaps text-sm text-[var(--slate)] mb-2">
                 Predicted retention over 30 days (avg card)
               </p>
               <div className="flex items-end gap-1 h-24 border-b-2 border-[var(--ink-black)] mb-1">
@@ -301,7 +301,7 @@ function StatsPage() {
                 <span>+30d</span>
               </div>
 
-              <p className="smallcaps text-xs text-[var(--slate)] mb-2">
+              <p className="smallcaps text-sm text-[var(--slate)] mb-2">
                 Current retrievability of modelled cards
               </p>
               <div className="flex h-5 border-2 border-[var(--ink-black)] mb-1">
@@ -342,11 +342,11 @@ function StatsPage() {
       {settings.leechThreshold > 0 && (
         <Section title={`Leeches (≥ ${settings.leechThreshold} lapses)`}>
           {leeches.length === 0 ? (
-            <p className="text-sm italic text-[var(--slate)]">No leeches — keep it up.</p>
+            <p className="text-base italic text-[var(--slate)]">No leeches — keep it up.</p>
           ) : (
             <div className="border-2 border-[var(--ink-black)] overflow-x-auto">
               <table
-                className="data-table w-full text-sm"
+                className="data-table w-full text-base"
                 style={{ fontFamily: "var(--font-mono)" }}
               >
                 <thead className="border-b-2 border-[var(--ink-black)] bg-[var(--highlight)]">
@@ -407,7 +407,7 @@ function StatsPage() {
             return (
               <div key={slug}>
                 <p
-                  className="smallcaps text-xs mb-1 truncate max-w-xs"
+                  className="smallcaps text-sm mb-1 truncate max-w-xs"
                   title={slug}
                   style={{ fontFamily: "var(--font-mono)" }}
                 >
@@ -474,7 +474,7 @@ function StatsPage() {
       </Section>
 
       <Section title="True Retention">
-        <div className="flex items-center gap-4 mb-3 text-xs smallcaps">
+        <div className="flex items-center gap-4 mb-3 text-sm smallcaps">
           <span>Window:</span>
           {([30, 90, 365] as const).map((d) => (
             <button
@@ -490,7 +490,7 @@ function StatsPage() {
         <p className="text-5xl font-bold" style={{ fontFamily: "var(--font-mono)" }}>
           {retention.toFixed(1)}%
         </p>
-        <p className="smallcaps text-xs text-[var(--slate)]">
+        <p className="smallcaps text-sm text-[var(--slate)]">
           (Good + Easy) ÷ total · {windowLogs.length} reviews
         </p>
       </Section>
@@ -499,7 +499,7 @@ function StatsPage() {
         <p className="text-3xl font-bold" style={{ fontFamily: "var(--font-mono)" }}>
           {avgIvl.toFixed(1)} days
         </p>
-        <p className="smallcaps text-xs text-[var(--slate)]">
+        <p className="smallcaps text-sm text-[var(--slate)]">
           across {reviewCards.length} review cards
         </p>
       </Section>
@@ -519,14 +519,14 @@ function StatsPage() {
         <button
           type="button"
           onClick={() => setConfirmReset(true)}
-          className="stamp stamp-ghost text-sm"
+          className="stamp stamp-ghost text-base"
         >
           Reset All Progress
         </button>
       </div>
 
       <Modal open={confirmReset} onClose={() => setConfirmReset(false)} title="Reset all progress?">
-        <p className="text-sm mb-4">
+        <p className="text-base mb-4">
           Resets SM-2 scheduling for <b>every</b> tracked question and clears all review logs and
           sessions. Your added sets and ignored questions are kept. This cannot be undone.
         </p>
@@ -542,7 +542,7 @@ function StatsPage() {
           <button
             type="button"
             onClick={() => setConfirmReset(false)}
-            className="smallcaps underline text-sm"
+            className="smallcaps underline text-base"
           >
             Cancel
           </button>

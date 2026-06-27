@@ -303,7 +303,7 @@ export function StudySession({
   if (error) {
     return (
       <PageLayout>
-        <p className="text-sm border-2 border-[var(--ink-black)] p-4">{error}</p>
+        <p className="text-base border-2 border-[var(--ink-black)] p-4">{error}</p>
       </PageLayout>
     );
   }
@@ -328,7 +328,7 @@ export function StudySession({
   return (
     <PageLayout>
       <div
-        className="flex items-center justify-between mb-4 text-sm"
+        className="flex items-center justify-between mb-4 text-base"
         style={{ fontFamily: "var(--font-mono)" }}
       >
         {exitSlot}
@@ -473,7 +473,7 @@ function NothingDue({
   return (
     <PageLayout>
       <div className="text-center mb-8">
-        <p className="smallcaps text-xs text-[var(--slate)]">Nothing Queued</p>
+        <p className="smallcaps text-sm text-[var(--slate)]">Nothing Queued</p>
         <h2 className="text-6xl font-black mt-2" style={{ fontFamily: "var(--font-display)" }}>
           All Clear
         </h2>
@@ -537,7 +537,7 @@ function SessionEnd({
   return (
     <PageLayout>
       <div className="text-center mb-8">
-        <p className="smallcaps text-xs text-[var(--slate)]">Edition Complete</p>
+        <p className="smallcaps text-sm text-[var(--slate)]">Edition Complete</p>
         <h2 className="text-6xl font-black mt-2" style={{ fontFamily: "var(--font-display)" }}>
           Final Word
         </h2>
@@ -559,13 +559,13 @@ function SessionEnd({
           <div key={l} className="p-4 text-center">
             <p className="smallcaps text-[10px] text-[var(--slate)]">{l}</p>
             <p className="text-3xl font-bold">{n}</p>
-            <p className="text-xs">{pct(n)}%</p>
+            <p className="text-sm">{pct(n)}%</p>
           </div>
         ))}
       </div>
 
       <p
-        className="text-center smallcaps text-sm text-[var(--slate)]"
+        className="text-center smallcaps text-base text-[var(--slate)]"
         style={{ fontFamily: "var(--font-mono)" }}
       >
         {total} cards · {mins.toFixed(1)} min · {(total / Math.max(mins, 0.1)).toFixed(1)} cards/min

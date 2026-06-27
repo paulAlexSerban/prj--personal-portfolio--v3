@@ -91,11 +91,11 @@ function BrowsePage() {
 
   return (
     <PageLayout>
-      <p className="smallcaps text-xs text-[var(--slate)]">Question Browser</p>
+      <p className="smallcaps text-sm text-[var(--slate)]">Question Browser</p>
       <h2 className="text-4xl font-bold mb-2" style={{ fontFamily: "var(--font-display)" }}>
         All Questions
       </h2>
-      <p className="text-sm italic text-[var(--charcoal)] mb-6">
+      <p className="text-base italic text-[var(--charcoal)] mb-6">
         Search and preview across every set you&apos;ve added — no scheduling changes.
       </p>
 
@@ -109,11 +109,14 @@ function BrowsePage() {
       {loading ? (
         <p className="italic text-[var(--slate)]">Loading questions…</p>
       ) : error ? (
-        <p className="text-sm border-2 border-[var(--ink-black)] p-4">{error}</p>
+        <p className="text-base border-2 border-[var(--ink-black)] p-4">{error}</p>
       ) : (
         <>
           <div className="border-2 border-[var(--ink-black)] overflow-x-auto mb-4">
-            <table className="data-table w-full text-sm" style={{ fontFamily: "var(--font-mono)" }}>
+            <table
+              className="data-table w-full text-base"
+              style={{ fontFamily: "var(--font-mono)" }}
+            >
               <thead className="border-b-2 border-[var(--ink-black)] bg-[var(--highlight)]">
                 <tr>
                   <th className="p-2 text-left">Stem</th>
@@ -194,7 +197,7 @@ function FilterBar({
         value={filters.query}
         onChange={(e) => set({ query: e.target.value })}
         placeholder="Search stem, tags…"
-        className="col-span-2 md:col-span-2 border-2 border-[var(--ink-black)] bg-transparent px-2 py-1 text-sm"
+        className="col-span-2 md:col-span-2 border-2 border-[var(--ink-black)] bg-transparent px-2 py-1 text-base"
       />
       <SelectFilter
         value={filters.format}
@@ -217,7 +220,7 @@ function FilterBar({
       <select
         value={filters.state}
         onChange={(e) => set({ state: e.target.value as QuestionBrowseFilters["state"] })}
-        className="border-2 border-[var(--ink-black)] bg-transparent px-2 py-1 text-sm smallcaps"
+        className="border-2 border-[var(--ink-black)] bg-transparent px-2 py-1 text-base smallcaps"
       >
         <option value="all">All states</option>
         <option value="new">New</option>
@@ -247,7 +250,7 @@ function SelectFilter({
     <select
       value={value}
       onChange={(e) => onChange(e.target.value)}
-      className="border-2 border-[var(--ink-black)] bg-transparent px-2 py-1 text-sm smallcaps"
+      className="border-2 border-[var(--ink-black)] bg-transparent px-2 py-1 text-base smallcaps"
     >
       <option value="">{placeholder}</option>
       {options.map((o) => (
@@ -272,7 +275,7 @@ function Pagination({
 }) {
   return (
     <div
-      className="flex items-center justify-between text-sm"
+      className="flex items-center justify-between text-base"
       style={{ fontFamily: "var(--font-mono)" }}
     >
       <span className="smallcaps text-[10px] text-[var(--slate)]">
@@ -283,7 +286,7 @@ function Pagination({
           type="button"
           disabled={page <= 1}
           onClick={() => onPage(page - 1)}
-          className="stamp stamp-ghost text-xs disabled:opacity-40"
+          className="stamp stamp-ghost text-sm disabled:opacity-40"
         >
           ← Prev
         </button>
@@ -291,7 +294,7 @@ function Pagination({
           type="button"
           disabled={page >= pages}
           onClick={() => onPage(page + 1)}
-          className="stamp stamp-ghost text-xs disabled:opacity-40"
+          className="stamp stamp-ghost text-sm disabled:opacity-40"
         >
           Next →
         </button>

@@ -62,11 +62,11 @@ function TagDetailPage() {
 
   return (
     <PageLayout>
-      <p className="smallcaps text-xs text-[var(--slate)]">Tag</p>
+      <p className="smallcaps text-sm text-[var(--slate)]">Tag</p>
       <h2 className="text-4xl font-bold mb-2" style={{ fontFamily: "var(--font-display)" }}>
         {tag}
       </h2>
-      <p className="text-sm italic text-[var(--charcoal)] mb-6">
+      <p className="text-base italic text-[var(--charcoal)] mb-6">
         {tagMeta
           ? `${tagMeta.questionCount} in export · ${questions.length} in your sets`
           : `${questions.length} in your sets`}
@@ -99,14 +99,14 @@ function TagDetailPage() {
       {loading ? (
         <p className="italic text-[var(--slate)]">Loading…</p>
       ) : error ? (
-        <p className="text-sm border-2 border-[var(--ink-black)] p-4">{error}</p>
+        <p className="text-base border-2 border-[var(--ink-black)] p-4">{error}</p>
       ) : questions.length === 0 ? (
         <p className="italic text-[var(--slate)]">
           No questions with this tag in your active study sets.
         </p>
       ) : (
         <div className="border-2 border-[var(--ink-black)] overflow-x-auto">
-          <table className="w-full text-sm" style={{ fontFamily: "var(--font-mono)" }}>
+          <table className="w-full text-base" style={{ fontFamily: "var(--font-mono)" }}>
             <thead className="border-b-2 border-[var(--ink-black)] bg-[var(--highlight)]">
               <tr>
                 <th className="p-2 text-left">Stem</th>

@@ -71,7 +71,7 @@ function TagStudyPage() {
   if (error) {
     return (
       <PageLayout>
-        <p className="text-sm border-2 border-[var(--ink-black)] p-4">{error}</p>
+        <p className="text-base border-2 border-[var(--ink-black)] p-4">{error}</p>
       </PageLayout>
     );
   }

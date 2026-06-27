@@ -95,7 +95,7 @@ function SettingsPage() {
 
   return (
     <PageLayout>
-      <p className="smallcaps text-xs text-[var(--slate)]">Configuration</p>
+      <p className="smallcaps text-sm text-[var(--slate)]">Configuration</p>
       <h2 className="text-5xl font-bold mb-8" style={{ fontFamily: "var(--font-display)" }}>
         Settings
       </h2>
@@ -107,7 +107,7 @@ function SettingsPage() {
               key={t}
               type="button"
               onClick={() => selectTheme(t)}
-              className={`smallcaps text-xs mr-3 ${settings.theme === t ? "underline font-bold" : "hover:underline"}`}
+              className={`smallcaps text-sm mr-3 ${settings.theme === t ? "underline font-bold" : "hover:underline"}`}
             >
               {t}
             </button>
@@ -122,7 +122,7 @@ function SettingsPage() {
             onChange={(e) =>
               setSettings({ studyOrder: e.target.value as typeof settings.studyOrder })
             }
-            className="bg-transparent border-b-2 border-[var(--ink-black)] py-1 text-sm"
+            className="bg-transparent border-b-2 border-[var(--ink-black)] py-1 text-base"
           >
             <option value="mixed">Mixed</option>
             <option value="new-first">New cards first</option>
@@ -178,7 +178,7 @@ function SettingsPage() {
       </Section>
 
       <Section title="Leeches">
-        <p className="text-xs italic text-[var(--slate)] mb-4">
+        <p className="text-sm italic text-[var(--slate)] mb-4">
           Cards that lapse repeatedly are &ldquo;leeches&rdquo;. When lapses reach the threshold,
           the configured action is applied automatically.
         </p>
@@ -198,7 +198,7 @@ function SettingsPage() {
             onChange={(e) =>
               setSettings({ leechAction: e.target.value as typeof settings.leechAction })
             }
-            className="bg-transparent border-b-2 border-[var(--ink-black)] py-1 text-sm"
+            className="bg-transparent border-b-2 border-[var(--ink-black)] py-1 text-base"
           >
             <option value="suspend">Auto-suspend</option>
             <option value="tag">Tag only (stats view)</option>
@@ -207,7 +207,7 @@ function SettingsPage() {
       </Section>
 
       <Section title="Scheduler">
-        <p className="text-xs italic text-[var(--slate)] mb-4">
+        <p className="text-sm italic text-[var(--slate)] mb-4">
           Choose the spaced-repetition algorithm. Switching migrates every card losslessly — SM-2
           keeps interval &amp; ease, FSRS seeds stability &amp; difficulty from them. You can switch
           back at any time.
@@ -226,7 +226,7 @@ function SettingsPage() {
                 onClick={() =>
                   settings.scheduler === value ? undefined : setConfirmScheduler(value)
                 }
-                className={`border-2 border-[var(--ink-black)] px-3 py-1 text-xs smallcaps ${
+                className={`border-2 border-[var(--ink-black)] px-3 py-1 text-sm smallcaps ${
                   settings.scheduler === value
                     ? "bg-[var(--ink-black)] text-[var(--aged-white)]"
                     : "hover:bg-[var(--highlight)]"
@@ -242,8 +242,8 @@ function SettingsPage() {
           <>
             <div className="py-2 border-b border-dotted border-[var(--column-rule)]">
               <div className="flex items-center justify-between">
-                <span className="smallcaps text-xs text-[var(--slate)]">Target retention</span>
-                <span className="text-sm" style={{ fontFamily: "var(--font-mono)" }}>
+                <span className="smallcaps text-sm text-[var(--slate)]">Target retention</span>
+                <span className="text-base" style={{ fontFamily: "var(--font-mono)" }}>
                   {Math.round(settings.fsrsTargetRetention * 100)}%
                 </span>
               </div>
@@ -261,7 +261,7 @@ function SettingsPage() {
               </p>
             </div>
             <details className="py-2 border-b border-dotted border-[var(--column-rule)]">
-              <summary className="smallcaps text-xs text-[var(--slate)] cursor-pointer">
+              <summary className="smallcaps text-sm text-[var(--slate)] cursor-pointer">
                 Advanced: FSRS weights (19 values)
               </summary>
               <textarea
@@ -285,7 +285,7 @@ function SettingsPage() {
                   setSettings({ fsrsWeights: undefined });
                   toast.success("FSRS weights reset to defaults");
                 }}
-                className="smallcaps text-xs underline hover:no-underline mt-1"
+                className="smallcaps text-sm underline hover:no-underline mt-1"
               >
                 Reset weights to defaults
               </button>
@@ -299,7 +299,7 @@ function SettingsPage() {
       </Section>
 
       <Section title="SM-2 Scheduling">
-        <p className="text-xs italic text-[var(--slate)] mb-4">
+        <p className="text-sm italic text-[var(--slate)] mb-4">
           Global scheduling parameters. Daily limits and learning/lapse steps apply to both
           algorithms; ease-based fields below are used by SM-2.
         </p>
@@ -319,7 +319,7 @@ function SettingsPage() {
           <input
             value={config.learningSteps.join(" ")}
             onChange={(e) => setConfig({ learningSteps: parseSteps(e.target.value) })}
-            className="bg-transparent border-b-2 border-[var(--ink-black)] w-32 py-1 text-sm"
+            className="bg-transparent border-b-2 border-[var(--ink-black)] w-32 py-1 text-base"
             style={{ fontFamily: "var(--font-mono)" }}
           />
         </Row>
@@ -339,7 +339,7 @@ function SettingsPage() {
           <input
             value={config.lapseSteps.join(" ")}
             onChange={(e) => setConfig({ lapseSteps: parseSteps(e.target.value) })}
-            className="bg-transparent border-b-2 border-[var(--ink-black)] w-32 py-1 text-sm"
+            className="bg-transparent border-b-2 border-[var(--ink-black)] w-32 py-1 text-base"
             style={{ fontFamily: "var(--font-mono)" }}
           />
         </Row>
@@ -385,7 +385,7 @@ function SettingsPage() {
               setConfig({ ...DEFAULT_CONFIG });
               toast.success("Scheduling reset to defaults");
             }}
-            className="smallcaps text-xs underline hover:no-underline"
+            className="smallcaps text-sm underline hover:no-underline"
           >
             Reset to defaults
           </button>
@@ -393,7 +393,7 @@ function SettingsPage() {
       </Section>
 
       <Section title="Data">
-        <p className="text-sm italic text-[var(--slate)] mb-4">
+        <p className="text-base italic text-[var(--slate)] mb-4">
           Export saves your full progress (card states, review history, settings). Import restores
           from a previous export.
         </p>
@@ -413,7 +413,7 @@ function SettingsPage() {
           />
         </div>
         {importMsg && (
-          <p className="text-sm mb-4" style={{ fontFamily: "var(--font-mono)" }}>
+          <p className="text-base mb-4" style={{ fontFamily: "var(--font-mono)" }}>
             {importMsg}
           </p>
         )}
@@ -425,14 +425,14 @@ function SettingsPage() {
             handleImportFile(e.dataTransfer.files);
           }}
           onClick={() => fileRef.current?.click()}
-          className="border-[3px] border-dashed border-[var(--ink-black)] p-10 text-center cursor-pointer hover:bg-[var(--highlight)] text-sm smallcaps"
+          className="border-[3px] border-dashed border-[var(--ink-black)] p-10 text-center cursor-pointer hover:bg-[var(--highlight)] text-base smallcaps"
         >
           Drop backup JSON here or click to choose
         </div>
       </Section>
 
       <Section title="Danger Zone">
-        <p className="text-sm italic text-[var(--slate)] mb-4">
+        <p className="text-base italic text-[var(--slate)] mb-4">
           Permanently erases all progress, added sets, review history, and sessions. Cannot be
           undone.
         </p>
@@ -440,11 +440,11 @@ function SettingsPage() {
       </Section>
 
       <Section title="About">
-        <p className="text-sm">
+        <p className="text-base">
           Active algorithm:{" "}
           {settings.scheduler === "fsrs" ? "FSRS-5 (memory model)" : "SuperMemo SM-2 (1987)"}
         </p>
-        <p className="text-sm mt-1">
+        <p className="text-base mt-1">
           <a
             className="underline"
             href="https://super-memory.com/english/ol/sm2.htm"
@@ -473,7 +473,7 @@ function SettingsPage() {
         }}
         title="Erase all data?"
       >
-        <p className="text-sm mb-3">
+        <p className="text-base mb-3">
           Type <b>DELETE</b> to confirm. Removes all progress, sets, history and sessions.
         </p>
         <input
@@ -500,7 +500,7 @@ function SettingsPage() {
         onClose={() => setConfirmScheduler(null)}
         title={confirmScheduler === "fsrs" ? "Switch to FSRS-5?" : "Switch to SM-2?"}
       >
-        <p className="text-sm mb-3">
+        <p className="text-base mb-3">
           {confirmScheduler === "fsrs" ? (
             <>
               FSRS models memory with <b>stability</b> and <b>difficulty</b>, scheduling each card
@@ -537,7 +537,7 @@ function Section({ title, children }: { title: string; children: React.ReactNode
 function Row({ label, children }: { label: string; children: React.ReactNode }) {
   return (
     <div className="flex items-center justify-between py-2 border-b border-dotted border-[var(--column-rule)]">
-      <span className="smallcaps text-xs text-[var(--slate)]">{label}</span>
+      <span className="smallcaps text-sm text-[var(--slate)]">{label}</span>
       <div>{children}</div>
     </div>
   );
@@ -559,13 +559,13 @@ function NumRow({
   return (
     <div className="py-2 border-b border-dotted border-[var(--column-rule)]">
       <div className="flex items-center justify-between">
-        <span className="smallcaps text-xs text-[var(--slate)]">{label}</span>
+        <span className="smallcaps text-sm text-[var(--slate)]">{label}</span>
         <input
           type="number"
           step={step ?? 1}
           value={v}
           onChange={(e) => on(Number(e.target.value))}
-          className="bg-transparent border-b-2 border-[var(--ink-black)] w-24 py-0.5 text-right text-sm"
+          className="bg-transparent border-b-2 border-[var(--ink-black)] w-24 py-0.5 text-right text-base"
           style={{ fontFamily: "var(--font-mono)" }}
         />
       </div>
@@ -579,7 +579,7 @@ function Toggle({ v, on }: { v: boolean; on: (v: boolean) => void }) {
     <button
       type="button"
       onClick={() => on(!v)}
-      className={`border-2 border-[var(--ink-black)] px-3 py-1 text-xs smallcaps ${v ? "bg-[var(--ink-black)] text-[var(--aged-white)]" : ""}`}
+      className={`border-2 border-[var(--ink-black)] px-3 py-1 text-sm smallcaps ${v ? "bg-[var(--ink-black)] text-[var(--aged-white)]" : ""}`}
     >
       {v ? "On" : "Off"}
     </button>

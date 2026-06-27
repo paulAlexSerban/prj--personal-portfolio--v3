@@ -111,7 +111,7 @@ export function QuestionPreviewDrawer({
         >
           Reset Progress
         </Stamp>
-        <button type="button" onClick={onClose} className="smallcaps underline text-sm ml-auto">
+        <button type="button" onClick={onClose} className="smallcaps underline text-base ml-auto">
           Close
         </button>
       </div>
@@ -183,7 +183,7 @@ function MetaRow({
 }) {
   return (
     <dl
-      className="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm border-2 border-[var(--ink-black)] p-3"
+      className="grid grid-cols-2 md:grid-cols-4 gap-3 text-base border-2 border-[var(--ink-black)] p-3"
       style={{ fontFamily: "var(--font-mono)" }}
     >
       <MetaItem label="Format" value={question.answerFormat.replace(/_/g, " ")} />
@@ -238,7 +238,7 @@ function AnswerSection({ question }: { question: ExportedQuestion }) {
     return (
       <section>
         <p className="smallcaps text-[10px] text-[var(--slate)] mb-2">Answer</p>
-        <p className="italic text-[var(--charcoal)] text-sm">
+        <p className="italic text-[var(--charcoal)] text-base">
           Self-graded — see explanation below.
         </p>
       </section>

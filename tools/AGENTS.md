@@ -29,7 +29,7 @@ All questions are **MDX only** — see [`types-of-questions.md`](../_docs/01%20s
 
 - **`mdx-ingest`:** `publish/questions/*.mdx` → `questions` (+ `question_options` when applicable); raw MDX body in `back` (**not** compiled to HTML in ingest).
 - **`json-ingest`:** does **not** handle questions — only `profile/`, `skills/`, `pages/`.
-- **Quiz delivery:** SSG may export `/data/questions/{post-slug}.json` at build time from the DB; that is not an authoring format.
+- **Quiz delivery:** static JSON export now lives in **`shared/quiz-export`** (not `tools/`): it reads `content.db` and emits `/data/{posts,tags}.json`, `/data/questions/<post>.json`, `/data/tags/<tag>.json`, and `_all.json`, with Markdown/MDX compiled to sanitized HTML via `shared/quiz-markdown`. This is a delivery format, not an authoring format. See `shared/AGENTS.md`.
 
 ---
 

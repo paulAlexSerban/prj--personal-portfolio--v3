@@ -77,7 +77,10 @@ Many topics remain in `drafts/` (database engine, ORM, CMS, CI/CD, spaced repeti
 | `shared/db-schema`, `shared/db`, `shared/task-manager`             | **Implemented**                                                         |
 | Tags normalised to `tags` + `content_tags` (not JSON columns)      | **Implemented** — migration `0001`                                      |
 | `pages` table + `profile`/`skills` slugs                           | **Implemented** — migration `0002`                                      |
-| Astro frontend, quiz, CMS, CI/CD                                   | Planned — see drafts and PRDs                                           |
+| Build-time quiz JSON export (DB → static JSON)                     | **Implemented** — `shared/quiz-export` (satisfies question-types plan P4) |
+| Markdown/MDX compile + sanitize for quiz content                   | **Implemented** — `shared/quiz-markdown`                                |
+| Quiz web app (CSR React, SM-2 + FSRS, offline PWA)                 | **Implemented** — `frontend/apps/quiz-web-app`                          |
+| Astro frontend, CMS, CI/CD                                         | Planned — see drafts and PRDs                                           |
 
 ## When editing docs
 

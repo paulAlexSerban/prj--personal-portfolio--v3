@@ -59,7 +59,7 @@ function StudySetsPage() {
     <PageLayout>
       <section className="flex flex-wrap items-end justify-between gap-4 mb-6">
         <div>
-          <p className="smallcaps text-xs text-[var(--slate)]">Front Page · My Collection</p>
+          <p className="smallcaps text-sm text-[var(--slate)]">Front Page · My Collection</p>
           <h2 className="text-4xl font-bold" style={{ fontFamily: "var(--font-display)" }}>
             Study Sets
           </h2>
@@ -83,7 +83,7 @@ function StudySetsPage() {
       </section>
 
       {error && (
-        <div className="mb-6 border-2 border-[var(--ink-black)] bg-[var(--highlight)] p-4 text-sm">
+        <div className="mb-6 border-2 border-[var(--ink-black)] bg-[var(--highlight)] p-4 text-base">
           {error}
         </div>
       )}

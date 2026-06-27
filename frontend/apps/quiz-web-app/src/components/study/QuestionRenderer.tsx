@@ -193,7 +193,7 @@ export function QuestionRenderer({
           {isCorrect !== null && (
             <div
               role="status"
-              className={`border-2 p-3 text-center smallcaps text-sm ${
+              className={`border-2 p-3 text-center smallcaps text-base ${
                 isCorrect
                   ? "border-[var(--ink-black)] bg-[var(--highlight)]"
                   : "border-[var(--ink-black)]"

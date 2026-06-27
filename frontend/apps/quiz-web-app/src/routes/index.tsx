@@ -65,11 +65,11 @@ function BrowsePage() {
     <PageLayout>
       <section className="flex flex-wrap items-end justify-between gap-4 mb-6">
         <div>
-          <p className="smallcaps text-xs text-[var(--slate)]">Front Page · The Catalogue</p>
+          <p className="smallcaps text-sm text-[var(--slate)]">Front Page · The Catalogue</p>
           <h2 className="text-4xl font-bold" style={{ fontFamily: "var(--font-display)" }}>
             Browse Posts
           </h2>
-          <p className="mt-2 text-sm text-[var(--charcoal)] italic max-w-xl">
+          <p className="mt-2 text-base text-[var(--charcoal)] italic max-w-xl">
             Add a post to your study set — all of its flashcards join your deck without resetting
             prior progress.
           </p>
@@ -79,14 +79,14 @@ function BrowsePage() {
         </Link>
       </section>
 
-      <div className="flex flex-wrap items-center gap-4 mb-6 text-sm">
+      <div className="flex flex-wrap items-center gap-4 mb-6 text-base">
         <input
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           placeholder="Search title, slug, or tag…"
           className="border-2 border-[var(--ink-black)] bg-transparent px-3 py-2 flex-1 min-w-[200px]"
         />
-        <div className="flex items-center gap-3 text-xs smallcaps">
+        <div className="flex items-center gap-3 text-sm smallcaps">
           <span className="text-[var(--slate)]">Sort:</span>
           {(["title", "questions"] as SortBy[]).map((s) => (
             <button
@@ -102,7 +102,7 @@ function BrowsePage() {
       </div>
 
       {(loadError || error) && (
-        <div className="mb-6 border-2 border-[var(--ink-black)] bg-[var(--highlight)] p-4 text-sm">
+        <div className="mb-6 border-2 border-[var(--ink-black)] bg-[var(--highlight)] p-4 text-base">
           {loadError ?? error}
           {error && (
             <button type="button" onClick={clearError} className="ml-3 underline smallcaps">
@@ -152,7 +152,9 @@ function BrowsePage() {
                   </h3>
                 )}
                 {post.excerpt && (
-                  <p className="mt-2 text-sm text-[var(--charcoal)] line-clamp-2">{post.excerpt}</p>
+                  <p className="mt-2 text-base text-[var(--charcoal)] line-clamp-2">
+                    {post.excerpt}
+                  </p>
                 )}
                 {post.tags.length > 0 && (
                   <p className="mt-2 text-[10px] smallcaps text-[var(--slate)]">

@@ -277,19 +277,26 @@ Each phase should land with: migration (if any), ingest support, tests on valida
 
 ---
 
-### Phase 4 — Build-time JSON export (~2–3 days)
+### Phase 4 — Build-time JSON export (~2–3 days) — ✅ DONE (`shared/quiz-export`)
 
-**Not in `tools/` ingest — Astro build or small `tools/question-export` CLI**
+> **Satisfied by `shared/quiz-export`** (the export lives in `shared/`, not `tools/`,
+> per the quiz-web-app refactor plan D4). It reads `content.db` and emits
+> `/data/{posts,tags}.json`, `/data/questions/<post_slug>.json`,
+> `/data/tags/<tag_slug>.json`, and `_all.json`. Markdown/MDX is compiled to
+> sanitized HTML at export time via `shared/quiz-markdown`. Consumed by
+> `frontend/apps/quiz-web-app`. See `_docs/02 plans/quiz-web-app-refactor-plan.md`
+> (Phase 1) and `shared/AGENTS.md`.
 
-- Query `questions` + `question_options` + `question_tags`.
-- Emit `/data/questions/{post_slug}.json` matching contract consumed by quiz-ui.
-- Emit `_all.json` for mobile offline bundle (per architecture doc).
+- ✅ Query `questions` + `question_options` + `question_tags`.
+- ✅ Emit `/data/questions/{post_slug}.json` matching the shared contract.
+- ✅ Emit `_all.json` for the offline PWA / future mobile bundle.
 
 **`shared/`**
 
-- Reuse `shared--question-contract` for export shape (do not invent a third schema).
+- ✅ Reuses `shared--question-contract` types for the export shape (no third schema).
 
-**Exit criteria:** widget can load one post’s questions without reading SQLite in the browser.
+**Exit criteria:** the app loads one post’s questions without reading SQLite in the
+browser — **met**.
 
 ---
 

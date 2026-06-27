@@ -147,10 +147,10 @@ function SetDetailPage() {
       {loading ? (
         <p className="italic text-[var(--slate)]">Loading study set…</p>
       ) : error ? (
-        <p className="text-sm border-2 border-[var(--ink-black)] p-4">{error}</p>
+        <p className="text-base border-2 border-[var(--ink-black)] p-4">{error}</p>
       ) : (
         <article>
-          <p className="smallcaps text-xs text-[var(--slate)]">Study Set</p>
+          <p className="smallcaps text-sm text-[var(--slate)]">Study Set</p>
           <h2
             className="text-4xl md:text-5xl font-bold leading-tight"
             style={{ fontFamily: "var(--font-display)" }}
@@ -158,7 +158,7 @@ function SetDetailPage() {
             {meta?.title ?? postSlug}
           </h2>
           {meta?.excerpt && (
-            <p className="mt-2 text-sm text-[var(--charcoal)] italic">{meta.excerpt}</p>
+            <p className="mt-2 text-base text-[var(--charcoal)] italic">{meta.excerpt}</p>
           )}
 
           <div className="rule mt-4 mb-6" />
@@ -184,7 +184,7 @@ function SetDetailPage() {
             <button
               type="button"
               onClick={() => setConfirmRemove(true)}
-              className="stamp stamp-ghost text-sm ml-auto"
+              className="stamp stamp-ghost text-base ml-auto"
             >
               Remove from Set
             </button>
@@ -219,7 +219,7 @@ function SetDetailPage() {
               {(() => {
                 const maxF = Math.max(1, ...forecast7.map((f) => f.count));
                 return (
-                  <div style={{ fontFamily: "var(--font-mono)" }} className="text-sm">
+                  <div style={{ fontFamily: "var(--font-mono)" }} className="text-base">
                     {forecast7.map((f) => (
                       <div key={f.date} className="flex items-center gap-3 py-1">
                         <span className="w-28 smallcaps text-[var(--slate)]">{f.label}</span>
@@ -238,7 +238,7 @@ function SetDetailPage() {
                 At a Glance
               </h3>
               <div className="rule-thin mb-3" />
-              <dl className="text-sm space-y-1" style={{ fontFamily: "var(--font-mono)" }}>
+              <dl className="text-base space-y-1" style={{ fontFamily: "var(--font-mono)" }}>
                 <ConfigRow
                   label="Daily new limit"
                   value={effectiveConfig.newCardsPerDay}
@@ -303,12 +303,15 @@ function SetDetailPage() {
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               placeholder="Search stem or slug…"
-              className="border-2 border-[var(--ink-black)] bg-transparent px-2 py-1 text-sm flex-1 min-w-[180px]"
+              className="border-2 border-[var(--ink-black)] bg-transparent px-2 py-1 text-base flex-1 min-w-[180px]"
             />
           </div>
 
           <div className="border-2 border-[var(--ink-black)] overflow-x-auto">
-            <table className="data-table w-full text-sm" style={{ fontFamily: "var(--font-mono)" }}>
+            <table
+              className="data-table w-full text-base"
+              style={{ fontFamily: "var(--font-mono)" }}
+            >
               <thead className="border-b-2 border-[var(--ink-black)] bg-[var(--highlight)]">
                 <tr>
                   <th className="p-2 text-left">Stem</th>
@@ -386,7 +389,7 @@ function SetDetailPage() {
         onClose={() => setConfirmRemove(false)}
         title="Remove from study set?"
       >
-        <p className="text-sm mb-4">
+        <p className="text-base mb-4">
           Removes <b>{meta?.title ?? postSlug}</b> from your active sets. Your card progress is kept
           if you add it again later.
         </p>
@@ -403,7 +406,7 @@ function SetDetailPage() {
           <button
             type="button"
             onClick={() => setConfirmRemove(false)}
-            className="smallcaps underline text-sm"
+            className="smallcaps underline text-base"
           >
             Cancel
           </button>
@@ -411,7 +414,7 @@ function SetDetailPage() {
       </Modal>
 
       <Modal open={confirmReset} onClose={() => setConfirmReset(false)} title="Reset progress?">
-        <p className="text-sm mb-4">
+        <p className="text-base mb-4">
           Resets all SM-2 progress for questions in this set. Content stays in your library.
         </p>
         <div className="flex gap-3">
@@ -426,7 +429,7 @@ function SetDetailPage() {
           <button
             type="button"
             onClick={() => setConfirmReset(false)}
-            className="smallcaps underline text-sm"
+            className="smallcaps underline text-base"
           >
             Cancel
           </button>
@@ -513,7 +516,7 @@ function ConfigRowText({
           type="text"
           value={value}
           onChange={(e) => onChange(e.target.value)}
-          className="bg-transparent border-b border-[var(--ink-black)] w-24 text-right py-0.5 text-sm"
+          className="bg-transparent border-b border-[var(--ink-black)] w-24 text-right py-0.5 text-base"
         />
       </dd>
     </div>

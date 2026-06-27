@@ -63,11 +63,11 @@ function TagsIndexPage() {
 
   return (
     <PageLayout>
-      <p className="smallcaps text-xs text-[var(--slate)]">Tags</p>
+      <p className="smallcaps text-sm text-[var(--slate)]">Tags</p>
       <h2 className="text-4xl font-bold mb-2" style={{ fontFamily: "var(--font-display)" }}>
         By Topic
       </h2>
-      <p className="text-sm italic text-[var(--charcoal)] mb-8">
+      <p className="text-base italic text-[var(--charcoal)] mb-8">
         Tags from questions in your active study sets.
       </p>
 
@@ -83,7 +83,7 @@ function TagsIndexPage() {
       {loading ? (
         <p className="italic text-[var(--slate)]">Loading tags…</p>
       ) : error ? (
-        <p className="text-sm border-2 border-[var(--ink-black)] p-4">{error}</p>
+        <p className="text-base border-2 border-[var(--ink-black)] p-4">{error}</p>
       ) : tagCounts.length === 0 ? (
         <p className="italic text-[var(--slate)]">No tags found in your study sets.</p>
       ) : (
