@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { compileMarkdown } from "./markdown";
+import { compileContent, compileMarkdown } from "./markdown";
 
 describe("compileMarkdown — math placeholders", () => {
   it("emits an inline-math placeholder carrying the raw TeX", () => {
@@ -57,5 +57,19 @@ describe("compileMarkdown — cloze + inline mode", () => {
     const html = compileMarkdown("**bold** label", { inline: true });
     expect(html).toContain("<strong>bold</strong>");
     expect(html).not.toContain("<p>");
+  });
+});
+
+describe("compileContent — MDX + XSS", () => {
+  it("renders Callout components from MDX source", () => {
+    const html = compileContent('<Callout type="tip">Remember cycles.</Callout>');
+    expect(html).toContain("mdx-callout-tip");
+    expect(html).toContain("Remember cycles.");
+  });
+
+  it("strips hostile payloads via the shared allow-list", () => {
+    const html = compileContent("<script>alert(1)</script><img src=x onerror=alert(1)>");
+    expect(html.toLowerCase()).not.toContain("<script");
+    expect(html).not.toContain("onerror");
   });
 });

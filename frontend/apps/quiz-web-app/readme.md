@@ -116,5 +116,6 @@ See `_docs/02 plans/quiz-web-app-refactor-plan.md`.
   in-session bury/suspend/ignore, mobile/a11y ✅
 - **E5:** spaced-repetition correctness — local dates/rollover, interval fuzz + load balancing,
   per-set config/daily limits, leeches ✅
+- **E6:** MDX content pipeline — export-time compile, Callout/Figure, asset copy, fast-path HTML ✅
 
 See `_docs/02 plans/quiz-web-app-enhancements-plan.md`.

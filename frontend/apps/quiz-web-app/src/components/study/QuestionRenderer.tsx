@@ -104,6 +104,7 @@ export function QuestionRenderer({
         </p>
         <CardRenderer
           html={question.stem}
+          compiledHtml={question.stemHtml}
           reveal={revealed}
           dropcap
           className="text-2xl md:text-3xl leading-snug"
@@ -160,7 +161,7 @@ export function QuestionRenderer({
               >
                 <span className="smallcaps text-[10px] text-[var(--slate)]">{opt.key}</span>
                 <span className="flex-1">
-                  <CardRenderer html={opt.label} inline />
+                  <CardRenderer html={opt.label} compiledHtml={opt.labelHtml} inline />
                 </span>
                 {result && (
                   <span className="smallcaps text-[9px] border border-current px-1 py-0.5 shrink-0">
@@ -215,7 +216,11 @@ export function QuestionRenderer({
                 className="inkbleed text-lg md:text-xl"
                 style={{ fontFamily: "var(--font-body)" }}
               >
-                <CardRenderer html={question.explanation} reveal />
+                <CardRenderer
+                  html={question.explanation}
+                  compiledHtml={question.explanationHtml}
+                  reveal
+                />
               </div>
             </>
           )}

@@ -1,10 +1,13 @@
 import path from 'node:path';
 import { openConnection, closeConnection } from '@prj--personal-portfolio--v3/shared--db';
 import { buildQuizData } from './export.ts';
+import { compileQuizData } from './compile.ts';
 import { writeQuizJson } from './write.ts';
 
 const DATABASE_PATH = path.resolve(process.env['DATABASE_PATH'] ?? '../../database/output/content.db');
 const QUIZ_DATA_OUT = path.resolve(process.env['QUIZ_DATA_OUT'] ?? '../../frontend/apps/quiz-web-app/public/data');
+const CONTENT_DIR = path.resolve(process.env['CONTENT_DIR'] ?? '../../content/live/content/publish');
+const ASSETS_OUT = path.join(QUIZ_DATA_OUT, 'assets', 'questions');
 
 const isDryRun = process.argv.includes('--dry-run');
 
@@ -22,6 +25,12 @@ async function main() {
     } finally {
         closeConnection(db);
     }
+
+    console.log('[quiz-export] compiling MDX/markdown → HTML…');
+    data = await compileQuizData(data, {
+        contentDir: CONTENT_DIR,
+        assetsOutDir: ASSETS_OUT,
+    });
 
     const totalQuestions = [...data.questionsByPost.values()].reduce((sum, qs) => sum + qs.length, 0);
     console.log(`[quiz-export] found ${data.posts.length} posts with ${totalQuestions} published questions`);

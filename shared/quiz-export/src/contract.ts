@@ -1,10 +1,14 @@
 import type { AnswerFormat, CognitiveStyle, Difficulty, GradingMode } from '@prj--personal-portfolio--v3/shared--question-contract';
 
+export type ContentFormat = 'markdown' | 'mdx';
+
 // ── Question option (MC / multiple_select) ────────────────────────────────────
 
 export interface ExportedOption {
     key: string;
     label: string;
+    /** Export-time compiled, sanitized HTML (present after `compileQuizData`). */
+    labelHtml?: string;
     isCorrect: boolean;
     sortOrder: number;
 }
@@ -18,9 +22,15 @@ export interface ExportedQuestion {
     cognitiveStyle: CognitiveStyle;
     difficulty: Difficulty;
     gradingMode: GradingMode;
+    /** Authoring format — set by `compileQuizData`. */
+    contentFormat?: ContentFormat;
     stem: string;
-    /** Raw MDX/HTML answer body — not compiled. Stored in questions.back. */
+    /** Export-time compiled, sanitized HTML (present after `compileQuizData`). */
+    stemHtml?: string;
+    /** Raw MDX/markdown answer body — stored in questions.back. */
     explanation: string;
+    /** Export-time compiled, sanitized HTML (present after `compileQuizData`). */
+    explanationHtml?: string;
     /** Parsed JSON extras (concept, concepts_tested, analogy fields, true_false answer).
      *  null when questions.payload is null or empty. */
     payload: Record<string, unknown> | null;
@@ -52,31 +62,31 @@ export interface ExportedTagEntry {
 // ── Top-level output shapes ───────────────────────────────────────────────────
 
 export interface PostsIndex {
-    version: 1;
+    version: 2;
     generatedAt: string;
     posts: ExportedPostEntry[];
 }
 
 export interface PostQuestionsFile {
-    version: 1;
+    version: 2;
     postSlug: string;
     questions: ExportedQuestion[];
 }
 
 export interface TagsIndex {
-    version: 1;
+    version: 2;
     generatedAt: string;
     tags: ExportedTagEntry[];
 }
 
 export interface TagQuestionsFile {
-    version: 1;
+    version: 2;
     tagSlug: string;
     questions: ExportedQuestion[];
 }
 
 export interface AllQuestionsBundle {
-    version: 1;
+    version: 2;
     generatedAt: string;
     posts: ExportedPostEntry[];
     questions: ExportedQuestion[];

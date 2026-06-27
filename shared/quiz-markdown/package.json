@@ -1,0 +1,30 @@
+{
+    "name": "@prj--personal-portfolio--v3/shared--quiz-markdown",
+    "version": "1.0.0",
+    "type": "module",
+    "license": "MIT",
+    "exports": {
+        ".": {
+            "types": "./dist/index.d.ts",
+            "import": "./index.ts"
+        },
+        "./allowlist": {
+            "types": "./src/allowlist.ts",
+            "import": "./src/allowlist.ts"
+        }
+    },
+    "scripts": {
+        "test": "vitest run",
+        "typecheck": "tsc -b"
+    },
+    "dependencies": {
+        "isomorphic-dompurify": "^2.25.0",
+        "marked": "^18.0.5"
+    },
+    "devDependencies": {
+        "@types/node": "^25.9.1",
+        "jsdom": "^29.1.1",
+        "typescript": "^6.0.3",
+        "vitest": "^3.2.4"
+    }
+}

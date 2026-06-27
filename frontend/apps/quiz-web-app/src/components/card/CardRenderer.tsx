@@ -11,19 +11,25 @@ import { compileMarkdown } from "./markdown";
  */
 export function CardRenderer({
   html,
+  compiledHtml,
   reveal = true,
   dropcap = false,
   inline = false,
   className = "",
 }: {
   html: string;
+  /** Precompiled sanitized HTML from export (fast path). Falls back to client compile. */
+  compiledHtml?: string;
   reveal?: boolean;
   dropcap?: boolean;
   /** Render as inline markdown (no block <p> wrapping) — for short labels. */
   inline?: boolean;
   className?: string;
 }) {
-  const safe = useMemo(() => compileMarkdown(html, { inline, reveal }), [html, reveal, inline]);
+  const safe = useMemo(
+    () => compiledHtml ?? compileMarkdown(html, { inline, reveal }),
+    [compiledHtml, html, reveal, inline],
+  );
 
   const elRef = useRef<HTMLElement | null>(null);
   const setRef = useCallback((node: HTMLElement | null) => {

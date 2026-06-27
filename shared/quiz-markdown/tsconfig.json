@@ -8,6 +8,5 @@
         "types": ["node"]
     },
     "include": ["index.ts", "src/**/*.ts"],
-    "exclude": ["src/**/*.test.ts"],
-    "references": [{ "path": "../db-schema" }, { "path": "../db" }, { "path": "../question-contract" }, { "path": "../quiz-markdown" }]
+    "exclude": ["src/**/*.test.ts"]
 }

@@ -157,48 +157,54 @@ PWA offline, and the rich stats page.
 
 ---
 
-### Phase 5 — Spaced-repetition correctness & best practices (C3, C5, C6, C11)
+### Phase 5 — Spaced-repetition correctness & best practices (C3, C5, C6, C11) — ✅ DONE
 
 **Entry gate:** G1; ideally after G4 (undo helps testing).
 
-**Work**
-1. **Fix the day-boundary bug (C5):** make `todayISO`/date math **local-timezone** consistent
-   (compute local Y-M-D, not UTC slice). Add a configurable "next day starts at" hour (Anki's
-   rollover). Unit-test around midnight offsets.
-2. **Interval fuzz (C3):** apply Anki-style fuzz (±a few % growing with interval) in `applyReview`
-   for review-state cards so same-day cohorts spread out. Deterministic-seedable for tests.
-3. **Load balancing (C3):** when scheduling, nudge the due date within the fuzz window toward the
-   lightest day in a forward lookahead, to flatten the forecast.
-4. **Per-set config overrides (C6):** allow a post to override global `StudyConfig` (new/day,
-   reviews/day, steps). Track `daily` **per set** (and a global cap). Make the set-detail "At a
-   Glance" panel editable (writes per-set overrides), not just a mirror of global.
-5. **Leeches (C11):** when `lapses ≥ threshold`, auto-tag/suspend and surface a "Leeches" view in
-   stats; configurable threshold + action.
+**Work (completed)**
+1. **Day-boundary fix (C5):** `todayISO`/`localDateISO`/`addDaysISO` now use **local calendar**
+   math (no UTC slice). Configurable `settings.dayStartHour` (Anki rollover, default 4) wired
+   through store, selectors, and `applyReview`. Tests in `dates.test.ts`.
+2. **Interval fuzz (C3):** `algorithms/fuzz.ts` — Anki-style magnitude growing with interval,
+   deterministic seed (question slug), applied in `scheduleReviewInterval` for all review
+   scheduling (graduate + review ratings).
+3. **Load balancing (C3):** `balanceDueDate` nudges within the fuzz window toward the lightest
+   day in a 21-day lookahead using a due-date histogram from existing cards.
+4. **Per-set config overrides (C6):** `postConfigs` + `dailyByPost` in store; `setPostConfig`
+   action; queue built per-post with independent limits capped by global daily; editable
+   **At a Glance** panel on set detail (new/day, reviews/day, learning steps + studied-today).
+5. **Leeches (C11):** `settings.leechThreshold` + `leechAction` (auto-suspend or tag-only);
+   auto-suspend on lapse threshold in `reviewCard`; **Leeches** table on `/stats` with unsuspend.
 
-**Exit gate (G5)**
-- Tests: due-date correct across timezones/rollover; fuzz keeps intervals within tolerance and
-  spreads a same-day cohort; per-set limits independent; leech threshold suspends.
-- Forecast graph visibly flatter for a large same-day cohort.
+**Exit gate (G5) — met**
+- Dates/rollover tested (`dates.test.ts`); fuzz spreads cohort + load-balances (`fuzz.test.ts`);
+  per-set limits independent (`store.test.ts`); leech threshold suspends (`store.test.ts`).
+  Build/lint/tests green (59).
 
 ---
 
-### Phase 6 — MDX content pipeline (C10)
+### Phase 6 — MDX content pipeline (C10) — ✅ DONE
 
 **Entry gate:** G2 (math/highlight) so MDX inherits them.
 
-**Work**
-1. Extend `shared/quiz-export` (and the contract) to carry MDX safely, or compile MDX→HTML at
-   **export time** (preferred for a static, sandbox-friendly client) emitting sanitized HTML +
-   a small allow-list of component placeholders (callouts, figures).
-2. Frontend: render the precompiled HTML (fast path) and/or a constrained MDX runtime for the
-   approved component set. Keep DOMPurify allow-list in sync.
-3. Asset strategy for images referenced by content (copy into `public/` during export; rewrite
-   relative paths) so figures resolve offline.
-4. Update `_docs` + `shared/AGENTS.md`; cross-link the question-types plan.
+**Work (completed)**
+1. **Shared compiler** (`shared/quiz-markdown`): `compileContent()` pipeline — allow-listed MDX
+   preprocess (`<Callout>`, `<Figure>`) → `marked` (GFM + math placeholders) → cloze →
+   `isomorphic-dompurify` sanitize. Single `ALLOWED_TAGS`/`ALLOWED_ATTR` source of truth.
+2. **Export-time compile** (`shared/quiz-export/src/compile.ts`): `compileQuizData()` adds
+   `contentFormat`, `stemHtml`, `explanationHtml`, `labelHtml` to exported JSON. Contract bumped
+   to **version 2**. CLI runs compile after DB query.
+3. **Frontend fast path**: `CardRenderer` accepts `compiledHtml` — uses precompiled export HTML
+   when present, falls back to client `compileContent`. Study/preview components wired.
+4. **Asset strategy**: export copies relative images from `CONTENT_DIR/questions/<slug>.mdx` sibling
+   dirs into `public/data/assets/questions/<slug>/` and rewrites paths to
+   `/data/assets/questions/...` (offline-ready with PWA).
+5. **Docs**: `shared/AGENTS.md` updated; cross-link to `types-of-questions.md`.
 
-**Exit gate (G6)**
-- An MDX question with a callout component + image renders identically online/offline; export
-  tests cover MDX→HTML; no XSS via the allow-list (add a sanitizer test with a hostile payload).
+**Exit gate (G6) — met**
+- MDX Callout + Figure compile to sanitized HTML (`quiz-markdown` + `quiz-export` compile tests).
+- XSS hostile payload stripped (`compile.test.ts` sanitizer tests in both packages).
+- Frontend uses export HTML fast path with client fallback; build/tests green (61 app + 7 markdown + 1 export compile).
 
 ---
 

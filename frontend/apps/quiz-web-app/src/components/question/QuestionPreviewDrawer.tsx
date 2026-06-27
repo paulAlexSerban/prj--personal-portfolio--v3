@@ -144,7 +144,12 @@ function PreviewBody({
 
       <section>
         <p className="smallcaps text-[10px] text-[var(--slate)] mb-2">Stem</p>
-        <CardRenderer html={question.stem} reveal className="text-lg leading-snug" />
+        <CardRenderer
+          html={question.stem}
+          compiledHtml={question.stemHtml}
+          reveal
+          className="text-lg leading-snug"
+        />
       </section>
 
       <AnswerSection question={question} />
@@ -152,7 +157,11 @@ function PreviewBody({
       {question.explanation && (
         <section>
           <p className="smallcaps text-[10px] text-[var(--slate)] mb-2">Explanation</p>
-          <CardRenderer html={question.explanation} reveal />
+          <CardRenderer
+            html={question.explanation}
+            compiledHtml={question.explanationHtml}
+            reveal
+          />
         </section>
       )}
     </div>
@@ -266,7 +275,7 @@ function AnswerSection({ question }: { question: ExportedQuestion }) {
               }`}
             >
               <span className="smallcaps text-[10px] mr-2 text-[var(--slate)]">{opt.key}</span>
-              <CardRenderer html={opt.label} inline />
+              <CardRenderer html={opt.label} compiledHtml={opt.labelHtml} inline />
               {opt.isCorrect && (
                 <span className="smallcaps text-[10px] ml-2 text-[var(--slate)]">· correct</span>
               )}

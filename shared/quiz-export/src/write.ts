@@ -19,7 +19,7 @@ export async function writeQuizJson(data: QuizData, outDir: string): Promise<Wri
 
     // ── posts.json ────────────────────────────────────────────────────────────
     const postsIndex: PostsIndex = {
-        version: 1,
+        version: 2,
         generatedAt: data.generatedAt,
         posts: data.posts,
     };
@@ -30,7 +30,7 @@ export async function writeQuizJson(data: QuizData, outDir: string): Promise<Wri
     const questionFilePaths: string[] = [];
     for (const [postSlug, questionList] of data.questionsByPost.entries()) {
         const file: PostQuestionsFile = {
-            version: 1,
+            version: 2,
             postSlug,
             questions: questionList,
         };
@@ -43,7 +43,7 @@ export async function writeQuizJson(data: QuizData, outDir: string): Promise<Wri
     const tagEntries: ExportedTagEntry[] = [...data.questionsByTag.entries()].sort(([a], [b]) => a.localeCompare(b)).map(([slug, qs]) => ({ slug, questionCount: qs.length }));
 
     const tagsIndex: TagsIndex = {
-        version: 1,
+        version: 2,
         generatedAt: data.generatedAt,
         tags: tagEntries,
     };
@@ -54,7 +54,7 @@ export async function writeQuizJson(data: QuizData, outDir: string): Promise<Wri
     const tagFilePaths: string[] = [];
     for (const [tagSlug, questionList] of data.questionsByTag.entries()) {
         const file: TagQuestionsFile = {
-            version: 1,
+            version: 2,
             tagSlug,
             questions: questionList,
         };
@@ -65,7 +65,7 @@ export async function writeQuizJson(data: QuizData, outDir: string): Promise<Wri
 
     // ── _all.json ─────────────────────────────────────────────────────────────
     const allBundle: AllQuestionsBundle = {
-        version: 1,
+        version: 2,
         generatedAt: data.generatedAt,
         posts: data.posts,
         questions: allQuestions,

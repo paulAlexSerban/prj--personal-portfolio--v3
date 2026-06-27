@@ -108,25 +108,40 @@
 }
 
 .dark {
-  --background: var(--press-black);
-  --foreground: var(--aged-white);
-  --card: var(--charcoal);
-  --card-foreground: var(--aged-white);
-  --popover: var(--charcoal);
-  --popover-foreground: var(--aged-white);
-  --primary: var(--aged-white);
-  --primary-foreground: var(--ink-black);
-  --secondary: var(--charcoal);
-  --secondary-foreground: var(--aged-white);
-  --muted: var(--charcoal);
-  --muted-foreground: var(--column-rule);
-  --accent: var(--charcoal);
-  --accent-foreground: var(--aged-white);
-  --destructive: var(--aged-white);
-  --destructive-foreground: var(--ink-black);
-  --border: var(--slate);
-  --input: var(--slate);
-  --ring: var(--aged-white);
+  /* Invert the raw newspaper palette. The whole app styles itself with these
+     raw tokens directly (var(--ink-black), var(--aged-white), …), so the dark
+     theme has to remap the palette here — not just the semantic tokens below.
+     Names keep their slot meaning: --ink-black = "ink" (primary text/borders),
+     --aged-white = "paper" (surfaces), --newsprint = page background. */
+  --ink-black: #ece9e1; /* ink → light on dark */
+  --press-black: #ffffff;
+  --charcoal: #cfcabd; /* secondary text */
+  --slate: #968f80; /* muted text */
+  --newsprint: #14130f; /* page background */
+  --aged-white: #1e1c16; /* card / article surface */
+  --column-rule: #3d382f; /* rules / dotted borders */
+  --highlight: #2b2820; /* hover / secondary surface */
+
+  /* Semantic tokens recomputed from the inverted palette (mirrors :root). */
+  --background: var(--newsprint);
+  --foreground: var(--ink-black);
+  --card: var(--aged-white);
+  --card-foreground: var(--ink-black);
+  --popover: var(--aged-white);
+  --popover-foreground: var(--ink-black);
+  --primary: var(--ink-black);
+  --primary-foreground: var(--aged-white);
+  --secondary: var(--highlight);
+  --secondary-foreground: var(--ink-black);
+  --muted: var(--highlight);
+  --muted-foreground: var(--slate);
+  --accent: var(--highlight);
+  --accent-foreground: var(--ink-black);
+  --destructive: var(--ink-black);
+  --destructive-foreground: var(--aged-white);
+  --border: var(--column-rule);
+  --input: var(--column-rule);
+  --ring: var(--ink-black);
   --chart-1: oklch(0.488 0.243 264.376);
   --chart-2: oklch(0.696 0.17 162.48);
   --chart-3: oklch(0.769 0.188 70.08);
@@ -391,6 +406,36 @@
 .md-content img {
   max-width: 100%;
   height: auto;
+}
+
+/* MDX component placeholders (compiled at export time) */
+.md-content .mdx-callout {
+  border: 2px solid var(--ink-black);
+  border-left-width: 4px;
+  padding: 0.75em 1em;
+  margin: 0.8em 0;
+  background: var(--highlight);
+  font-size: 0.95em;
+}
+.md-content .mdx-callout-tip {
+  border-left-color: var(--slate);
+}
+.md-content .mdx-callout-warning {
+  border-left-color: var(--charcoal);
+}
+.md-content .mdx-figure {
+  margin: 1em 0;
+  text-align: center;
+}
+.md-content .mdx-figure img {
+  border: 2px solid var(--ink-black);
+  margin: 0 auto;
+}
+.md-content .mdx-figure figcaption {
+  margin-top: 0.4em;
+  font-size: 0.85em;
+  font-style: italic;
+  color: var(--slate);
 }
 
 /* Cloze deletions */
