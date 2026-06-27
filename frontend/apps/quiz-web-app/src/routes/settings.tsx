@@ -101,7 +101,10 @@ function SettingsPage() {
       </h2>
 
       <Section title="Appearance">
-        <Row label="Theme">
+        <Row
+          label="Theme"
+          hint="Colour scheme for the app. “System” follows your operating system’s light/dark preference and updates automatically when it changes."
+        >
           {(["light", "dark", "system"] as const).map((t) => (
             <button
               key={t}
@@ -116,7 +119,10 @@ function SettingsPage() {
       </Section>
 
       <Section title="Study">
-        <Row label="Study order">
+        <Row
+          label="Study order"
+          hint="How due cards are sequenced within a session. “Mixed” interleaves new and review cards; “New cards first” front-loads unseen material; “Reviews first” clears your backlog before introducing anything new. Learning-step cards always come first regardless."
+        >
           <select
             value={settings.studyOrder}
             onChange={(e) =>
@@ -129,16 +135,25 @@ function SettingsPage() {
             <option value="reviews-first">Reviews first</option>
           </select>
         </Row>
-        <Row label="Show time taken per card">
+        <Row
+          label="Show time taken per card"
+          hint="When on, the study screen displays how long you spend on each card and totals it per session. Purely informational — it doesn’t affect scheduling."
+        >
           <Toggle v={settings.showTiming} on={(v) => setSettings({ showTiming: v })} />
         </Row>
-        <Row label="Keyboard shortcuts">
+        <Row
+          label="Keyboard shortcuts"
+          hint="Enables hotkeys during study: 1–4 to rate Again/Hard/Good/Easy, Space/Enter to reveal or rate Good. Turn off if shortcuts interfere with assistive tools."
+        >
           <Toggle
             v={settings.keyboardShortcuts}
             on={(v) => setSettings({ keyboardShortcuts: v })}
           />
         </Row>
-        <Row label="Global new cards / day override">
+        <Row
+          label="Global new cards / day override"
+          hint="A hard cap on new cards introduced per day across all sets combined. Leave blank to use the per-set “Daily new card limit” below. Lower this to slow down intake and keep future review load manageable."
+        >
           <input
             type="number"
             value={settings.globalNewLimit ?? ""}
@@ -150,7 +165,10 @@ function SettingsPage() {
             style={{ fontFamily: "var(--font-mono)" }}
           />
         </Row>
-        <Row label="Global reviews / day override">
+        <Row
+          label="Global reviews / day override"
+          hint="A hard cap on review cards shown per day across all sets combined. Leave blank to use the per-set “Daily review limit” below. Any reviews beyond the cap roll over to the next day."
+        >
           <input
             type="number"
             value={settings.globalReviewLimit ?? ""}
@@ -164,7 +182,10 @@ function SettingsPage() {
             style={{ fontFamily: "var(--font-mono)" }}
           />
         </Row>
-        <Row label="Next day starts at (hour, 0–23)">
+        <Row
+          label="Next day starts at (hour, 0–23)"
+          hint="The local hour your “study day” rolls over (Anki-style). With the default 4, cards due “tomorrow” become available at 4 AM, so late-night study before then still counts as today. Raise it if you study past midnight."
+        >
           <input
             type="number"
             min={0}
@@ -182,7 +203,10 @@ function SettingsPage() {
           Cards that lapse repeatedly are &ldquo;leeches&rdquo;. When lapses reach the threshold,
           the configured action is applied automatically.
         </p>
-        <Row label="Leech threshold (lapses, 0 = off)">
+        <Row
+          label="Leech threshold (lapses, 0 = off)"
+          hint="Number of times a card may lapse (be rated “Again” from review) before it’s flagged as a leech. Lower = stricter. Set to 0 to disable leech detection entirely."
+        >
           <input
             type="number"
             min={0}
@@ -192,7 +216,10 @@ function SettingsPage() {
             style={{ fontFamily: "var(--font-mono)" }}
           />
         </Row>
-        <Row label="Leech action">
+        <Row
+          label="Leech action"
+          hint="What happens when a card hits the threshold. “Auto-suspend” removes it from study queues until you unsuspend it (from Stats or the card preview); “Tag only” keeps showing it but lists it under Leeches in Stats so you can rewrite it."
+        >
           <select
             value={settings.leechAction}
             onChange={(e) =>
@@ -212,7 +239,10 @@ function SettingsPage() {
           keeps interval &amp; ease, FSRS seeds stability &amp; difficulty from them. You can switch
           back at any time.
         </p>
-        <Row label="Algorithm">
+        <Row
+          label="Algorithm"
+          hint="SM-2 is the classic SuperMemo algorithm (simple, ease-factor based). FSRS-5 is a modern memory model that predicts forgetting per card and typically hits the same retention with fewer reviews. Switching opens a confirmation and migrates your cards without losing progress."
+        >
           <div className="flex gap-2">
             {(
               [
@@ -305,17 +335,20 @@ function SettingsPage() {
         </p>
         <NumRow
           label="Daily new card limit"
-          hint="Cards introduced per day."
+          hint="Default number of brand-new cards introduced per day for each set. Individual sets can override this; the global override above caps the total across all sets."
           v={config.newCardsPerDay}
           on={(n) => setConfig({ newCardsPerDay: n })}
         />
         <NumRow
           label="Daily review limit"
-          hint="Maximum review cards per day."
+          hint="Default maximum number of due review cards shown per day for each set. Reviews beyond this limit are deferred to following days."
           v={config.maxReviewsPerDay}
           on={(n) => setConfig({ maxReviewsPerDay: n })}
         />
-        <Row label="Learning steps (min, space-separated)">
+        <Row
+          label="Learning steps (min, space-separated)"
+          hint="Short intervals (in minutes) a new card steps through before it “graduates” to long-term review. E.g. “1 10” shows the card again after 1 min, then 10 min, then graduates. More steps = more reinforcement before scheduling in days."
+        >
           <input
             value={config.learningSteps.join(" ")}
             onChange={(e) => setConfig({ learningSteps: parseSteps(e.target.value) })}
@@ -325,17 +358,20 @@ function SettingsPage() {
         </Row>
         <NumRow
           label="Graduating interval (days)"
-          hint="Days after passing learning phase."
+          hint="The first review interval (in days) given when a card passes the last learning step with “Good”."
           v={config.graduatingInterval}
           on={(n) => setConfig({ graduatingInterval: n })}
         />
         <NumRow
           label="Easy interval (days)"
-          hint="Days when answered Easy from learning."
+          hint="The first review interval (in days) when you rate a learning card “Easy”, skipping the remaining learning steps."
           v={config.easyInterval}
           on={(n) => setConfig({ easyInterval: n })}
         />
-        <Row label="Lapse steps (min)">
+        <Row
+          label="Lapse steps (min)"
+          hint="Relearning intervals (in minutes) a card steps through after you forget it (rate “Again” from review) before it returns to long-term scheduling."
+        >
           <input
             value={config.lapseSteps.join(" ")}
             onChange={(e) => setConfig({ lapseSteps: parseSteps(e.target.value) })}
@@ -346,35 +382,40 @@ function SettingsPage() {
         <NumRow
           label="Lapse new interval (×)"
           step={0.05}
-          hint="Fraction of old interval after a lapse."
+          hint="Multiplier applied to a card’s interval after a lapse. 0 resets it (relearn from scratch); 0.5 keeps half of the previous interval once it graduates again."
           v={config.lapseNewInterval}
           on={(n) => setConfig({ lapseNewInterval: n })}
         />
         <NumRow
           label="Minimum interval (days)"
+          hint="Floor for any review interval. Cards will never be scheduled sooner than this many days apart."
           v={config.minimumInterval}
           on={(n) => setConfig({ minimumInterval: n })}
         />
         <NumRow
           label="Maximum interval (days)"
+          hint="Ceiling for any review interval. Caps how far into the future a well-known card can be pushed (default ~100 years)."
           v={config.maximumInterval}
           on={(n) => setConfig({ maximumInterval: n })}
         />
         <NumRow
           label="Easy bonus (×)"
           step={0.05}
+          hint="Extra multiplier applied to the interval when you rate a review card “Easy”, on top of normal growth. 1.3 means Easy intervals are 30% longer than Good."
           v={config.easyBonus}
           on={(n) => setConfig({ easyBonus: n })}
         />
         <NumRow
           label="Interval modifier (×)"
           step={0.05}
+          hint="Global multiplier on every review interval. Below 1 shortens all intervals (more reviews, higher retention); above 1 lengthens them. A quick way to tune overall difficulty."
           v={config.intervalModifier}
           on={(n) => setConfig({ intervalModifier: n })}
         />
         <NumRow
           label="Starting ease"
           step={0.05}
+          hint="The initial ease factor for a freshly graduated card (default 2.5 = ×2.5 interval growth on “Good”). Ease rises with Easy ratings and falls with Hard/Again."
           v={config.startingEaseFactor}
           on={(n) => setConfig({ startingEaseFactor: n })}
         />
@@ -534,11 +575,22 @@ function Section({ title, children }: { title: string; children: React.ReactNode
   );
 }
 
-function Row({ label, children }: { label: string; children: React.ReactNode }) {
+function Row({
+  label,
+  hint,
+  children,
+}: {
+  label: string;
+  hint?: string;
+  children: React.ReactNode;
+}) {
   return (
-    <div className="flex items-center justify-between py-2 border-b border-dotted border-[var(--column-rule)]">
-      <span className="smallcaps text-sm text-[var(--slate)]">{label}</span>
-      <div>{children}</div>
+    <div className="py-2 border-b border-dotted border-[var(--column-rule)]">
+      <div className="flex items-center justify-between gap-4">
+        <span className="smallcaps text-sm text-[var(--slate)]">{label}</span>
+        <div className="shrink-0">{children}</div>
+      </div>
+      {hint && <p className="text-[11px] italic text-[var(--slate)] mt-0.5 max-w-prose">{hint}</p>}
     </div>
   );
 }
