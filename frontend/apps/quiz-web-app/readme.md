@@ -73,6 +73,12 @@ PWA assets are only emitted by `vite build`, not in dev.
 
 ## Study session
 
+Question stems, options, and explanations/answers are authored in **Markdown**
+(headings, lists, fenced code, inline code, tables) and rendered via `CardRenderer`
+(`marked` GFM → cloze/math substitution → `DOMPurify` sanitize). Option labels use
+inline Markdown. Real math (KaTeX) and MDX are planned — see
+`_docs/02 plans/quiz-web-app-enhancements-plan.md`.
+
 The study route builds a due queue (`selectStudyQueue`) scoped to the post,
 then renders each card via `QuestionRenderer`, which branches on `answerFormat`:
 

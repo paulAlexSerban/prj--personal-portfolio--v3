@@ -266,3 +266,130 @@
     animation: inkbleed 0.45s ease-out;
   }
 }
+
+/* ── Markdown-rendered content (CardRenderer) ─────────────────────────────── */
+.md-content > :first-child {
+  margin-top: 0;
+}
+.md-content > :last-child {
+  margin-bottom: 0;
+}
+.md-content h1,
+.md-content h2,
+.md-content h3,
+.md-content h4 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.15;
+  margin: 1.2em 0 0.5em;
+}
+.md-content h1 {
+  font-size: 1.6em;
+}
+.md-content h2 {
+  font-size: 1.3em;
+}
+.md-content h3 {
+  font-size: 1.1em;
+}
+.md-content h4 {
+  font-size: 1em;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.md-content p {
+  margin: 0.6em 0;
+}
+.md-content ul,
+.md-content ol {
+  margin: 0.6em 0;
+  padding-left: 1.5em;
+}
+.md-content ul {
+  list-style: square;
+}
+.md-content ol {
+  list-style: decimal;
+}
+.md-content li {
+  margin: 0.25em 0;
+}
+.md-content a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.md-content blockquote {
+  border-left: 3px solid var(--ink-black);
+  margin: 0.8em 0;
+  padding: 0.2em 0 0.2em 1em;
+  font-style: italic;
+  color: var(--charcoal);
+}
+.md-content code {
+  font-family: var(--font-mono);
+  font-size: 0.88em;
+  background: var(--highlight);
+  padding: 0.1em 0.35em;
+  border: 1px solid var(--column-rule);
+}
+.md-content pre {
+  font-family: var(--font-mono);
+  font-size: 0.82em;
+  background: var(--ink-black);
+  color: var(--aged-white, #efe9dd);
+  padding: 0.9em 1.1em;
+  margin: 0.8em 0;
+  overflow-x: auto;
+  line-height: 1.5;
+}
+.md-content pre code {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  color: inherit;
+  font-size: 1em;
+}
+.md-content table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 0.8em 0;
+  font-size: 0.9em;
+}
+.md-content th,
+.md-content td {
+  border: 1px solid var(--ink-black);
+  padding: 0.4em 0.6em;
+  text-align: left;
+}
+.md-content th {
+  background: var(--highlight);
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  font-size: 0.85em;
+  letter-spacing: 0.05em;
+}
+.md-content hr {
+  border: 0;
+  border-top: 1px solid var(--column-rule);
+  margin: 1em 0;
+}
+.md-content img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Cloze deletions */
+.cloze-blank {
+  border-bottom: 2px solid var(--ink-black);
+  padding: 0 0.4em;
+  font-weight: 700;
+}
+.cloze-filled {
+  font-weight: 700;
+}
+.inline-math {
+  font-family: Cambria, Georgia, serif;
+}
+.md-inline {
+  display: inline;
+}

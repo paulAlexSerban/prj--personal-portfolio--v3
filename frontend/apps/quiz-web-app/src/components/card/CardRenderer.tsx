@@ -1,75 +1,100 @@
-function sanitize(html: string): string {
-  const ALLOWED = new Set([
-    "b",
-    "strong",
-    "i",
-    "em",
-    "u",
-    "code",
-    "br",
-    "img",
-    "p",
-    "ul",
-    "ol",
-    "li",
-  ]);
-  const tmp = document.createElement("template");
-  tmp.innerHTML = html;
-  const walk = (node: Node) => {
-    const children = Array.from(node.childNodes);
-    for (const child of children) {
-      if (child.nodeType === 1) {
-        const el = child as HTMLElement;
-        if (!ALLOWED.has(el.tagName.toLowerCase())) {
-          el.replaceWith(document.createTextNode(el.textContent ?? ""));
-          continue;
-        }
-        for (const attr of Array.from(el.attributes)) {
-          if (el.tagName.toLowerCase() === "img" && (attr.name === "src" || attr.name === "alt"))
-            continue;
-          el.removeAttribute(attr.name);
-        }
-        walk(el);
-      }
-    }
-  };
-  walk(tmp.content);
-  return tmp.innerHTML;
-}
+import { useMemo } from "react";
+import { marked } from "marked";
+import DOMPurify from "dompurify";
 
-function renderCloze(text: string, reveal: boolean): string {
-  return text.replace(/\{\{c\d+::([^}]+)\}\}/g, (_, inner) =>
-    reveal
-      ? `<b>${inner}</b>`
-      : `<span style="border-bottom:2px solid #0d0d0d;padding:0 0.4em;">[…]</span>`,
+// Tags we allow through after markdown compilation. Covers GFM output
+// (headings, lists, tables, code blocks, blockquotes) plus our cloze/math spans.
+const ALLOWED_TAGS = [
+  "h1",
+  "h2",
+  "h3",
+  "h4",
+  "h5",
+  "h6",
+  "p",
+  "br",
+  "hr",
+  "b",
+  "strong",
+  "i",
+  "em",
+  "u",
+  "del",
+  "code",
+  "pre",
+  "blockquote",
+  "ul",
+  "ol",
+  "li",
+  "a",
+  "img",
+  "span",
+  "table",
+  "thead",
+  "tbody",
+  "tr",
+  "th",
+  "td",
+];
+const ALLOWED_ATTR = ["href", "src", "alt", "title", "class", "target", "rel"];
+
+marked.setOptions({ gfm: true, breaks: false });
+
+/** Replace Anki-style cloze deletions. Hidden until `reveal`. */
+function renderCloze(html: string, reveal: boolean): string {
+  return html.replace(/\{\{c\d+::([^}]+)\}\}/g, (_, inner) =>
+    reveal ? `<b class="cloze-filled">${inner}</b>` : `<span class="cloze-blank">[…]</span>`,
   );
 }
 
-function renderMath(text: string): string {
-  return text.replace(
-    /\$([^$]+)\$/g,
-    (_, m) => `<i style="font-family:Cambria,Georgia,serif">${m}</i>`,
-  );
+/** Lightweight inline-math rendering (`$x$` → italic serif). Real KaTeX is a future phase. */
+function renderMath(html: string): string {
+  return html.replace(/\$([^$]+)\$/g, (_, m) => `<i class="inline-math">${m}</i>`);
 }
 
+/**
+ * Renders a markdown string to sanitized HTML.
+ *
+ * Content (question stems, explanations/answers) is authored as **markdown**
+ * (and will move to MDX). Pipeline: markdown → HTML (marked, GFM) → cloze/math
+ * substitution → DOMPurify sanitize. The `html` prop name is kept for API
+ * stability but the input is markdown.
+ */
 export function CardRenderer({
   html,
   reveal = true,
   dropcap = false,
+  inline = false,
   className = "",
 }: {
   html: string;
   reveal?: boolean;
   dropcap?: boolean;
+  /** Render as inline markdown (no block <p> wrapping) — for short labels. */
+  inline?: boolean;
   className?: string;
 }) {
-  let processed = renderCloze(html, reveal);
-  processed = renderMath(processed);
-  processed = sanitize(processed);
+  const safe = useMemo(() => {
+    const compiled = inline
+      ? (marked.parseInline(html ?? "", { async: false }) as string)
+      : (marked.parse(html ?? "", { async: false }) as string);
+    const withCloze = renderMath(renderCloze(compiled, reveal));
+    return DOMPurify.sanitize(withCloze, { ALLOWED_TAGS, ALLOWED_ATTR });
+  }, [html, reveal, inline]);
+
+  if (inline) {
+    return (
+      <span
+        className={`md-content md-inline ${className}`}
+        dangerouslySetInnerHTML={{ __html: safe }}
+      />
+    );
+  }
+
   return (
     <div
-      className={`${dropcap ? "dropcap" : ""} ${className}`}
-      dangerouslySetInnerHTML={{ __html: processed }}
+      className={`md-content ${dropcap ? "dropcap" : ""} ${className}`}
+      dangerouslySetInnerHTML={{ __html: safe }}
     />
   );
 }

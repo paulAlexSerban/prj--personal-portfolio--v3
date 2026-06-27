@@ -132,7 +132,7 @@ export function QuestionRenderer({ question, revealed, onReveal }: QuestionRende
                 className={`text-left ${optionClass(chosen, showCorrect, showWrong)}`}
               >
                 <span className="smallcaps text-[10px] mr-2 text-[var(--slate)]">{opt.key}</span>
-                {opt.label}
+                <CardRenderer html={opt.label} inline />
               </button>
             );
           })}
