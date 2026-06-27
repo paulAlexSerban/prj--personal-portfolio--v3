@@ -27,7 +27,7 @@ user progress (zustand + persist) ── join by question slug ──► study U
 | `src/routes/`     | File-based TanStack routes (browse, sets, study, tags, stats, settings)      |
 | `src/store/`      | Zustand store (`index.ts`), `types.ts`, `selectors.ts` — slug-keyed progress |
 | `src/algorithms/` | Schedulers + queue/intervals/fuzz (see below)                                |
-| `src/components/` | `card/` (markdown render), `study/`, `question/`, `layout/`, `ui/` (shadcn)  |
+| `src/components/` | `card/` (markdown render), `study/`, `question/`, `layout/` (app-specific masthead) |
 | `src/data/`       | `loadQuizData.ts` — fetches `/data/*.json` (typed via export contract)       |
 | `src/lib/`        | theme, post-config, rich-text (KaTeX/highlight.js lazy loaders)              |
 | `public/data/`    | Generated JSON (do not edit by hand; regenerate via the export CLI)          |
@@ -50,9 +50,8 @@ reversible (SM-2 keeps interval/ease; FSRS seeds stability/difficulty from them)
 
 ## Conventions / invariants
 
-- Use `@/` path alias for intra-app imports; use the workspace package name
-  `@prj--personal-portfolio--v3/shared--quiz-export/contract` for content types
-  (never re-declare the contract).
+- Use `@/` path alias for intra-app imports; use workspace package names for shared
+  libraries (`shared--quiz-export/contract`, `shared--ui`, `shared--quiz-markdown`).
 - Add a question to a session only through `selectStudyQueue`; it already drops
   ignored + suspended cards and applies per-set/global daily limits.
 - Markdown/MDX rendering goes through `shared--quiz-markdown` (export-time compiled
@@ -82,4 +81,4 @@ pnpm --filter @prj--personal-portfolio--v3/frontend--quiz-web-app test
 - `_docs/02 plans/quiz-web-app-refactor-plan.md` — original CSR refactor + export.
 - `_docs/02 plans/quiz-web-app-enhancements-plan.md` — markdown/MDX, SR best
   practices, dual scheduler (FSRS) enhancement phases.
-- `shared/AGENTS.md` — `quiz-export` + `quiz-markdown` packages.
+- `shared/AGENTS.md` — `quiz-export`, `quiz-markdown`, and `shared--ui` packages.

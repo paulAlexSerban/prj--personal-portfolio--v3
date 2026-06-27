@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageLayout } from "@/components/layout/PageLayout";
-import { stampClasses } from "@/components/ui/Stamp";
+import { stampClasses } from "@prj--personal-portfolio--v3/shared--ui";
 import { StudySession } from "@/components/study/StudySession";
 import { useStore } from "@/store";
 

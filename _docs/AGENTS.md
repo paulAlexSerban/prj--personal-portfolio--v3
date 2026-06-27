@@ -80,6 +80,7 @@ Many topics remain in `drafts/` (database engine, ORM, CMS, CI/CD, spaced repeti
 | Build-time quiz JSON export (DB → static JSON)                     | **Implemented** — `shared/quiz-export` (satisfies question-types plan P4) |
 | Markdown/MDX compile + sanitize for quiz content                   | **Implemented** — `shared/quiz-markdown`                                |
 | Quiz web app (CSR React, SM-2 + FSRS, offline PWA)                 | **Implemented** — `frontend/apps/quiz-web-app`                          |
+| Shared UI kit + newspaper design system                            | **Implemented** — `shared/ui` (consumed by quiz app; Astro-ready)       |
 | Astro frontend, CMS, CI/CD                                         | Planned — see drafts and PRDs                                           |
 
 ## When editing docs

@@ -3,7 +3,7 @@ import type { ReactNode } from "react";
 import { toast } from "sonner";
 import type { ExportedQuestion } from "@prj--personal-portfolio--v3/shared--quiz-export/contract";
 import { PageLayout } from "@/components/layout/PageLayout";
-import { Stamp } from "@/components/ui/Stamp";
+import { Stamp } from "@prj--personal-portfolio--v3/shared--ui";
 import { QuestionRenderer } from "@/components/study/QuestionRenderer";
 import { loadPostQuestions } from "@/data/loadQuizData";
 import { useStore } from "@/store";

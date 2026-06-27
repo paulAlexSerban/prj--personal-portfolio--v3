@@ -1,8 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
 import { PageLayout } from "@/components/layout/PageLayout";
-import { Modal } from "@/components/ui/Modal";
-import { Stamp, stampClasses } from "@/components/ui/Stamp";
+import { Modal } from "@prj--personal-portfolio--v3/shared--ui";
+import { Stamp, stampClasses } from "@prj--personal-portfolio--v3/shared--ui";
 import { useStore } from "@/store";
 import { selectDueCount, selectLeeches } from "@/store/selectors";
 import { cardRetrievability } from "@/algorithms/scheduler";

@@ -45,6 +45,23 @@ Schema (`db-schema`) is separated from runtime (`db`) so the frontend can import
 - **Scripts**: `pnpm --filter ...shared--quiz-markdown test` (7 tests).
 - **Consumers**: `shared--quiz-export` (export-time compile), `frontend--quiz-web-app` (client fallback).
 
+### `@prj--personal-portfolio--v3/shared--ui` (`shared/ui/`)
+
+- **Role**: Shared React UI kit + newspaper design system ("THE REVIEW"). Full shadcn/ui
+  component set, custom `Stamp`/`Modal`, `cn()` util, and theme CSS tokens.
+- **Exports**:
+    - `.` — barrel (all components + `cn` + `useIsMobile`)
+    - `./utils` — `cn()` only
+    - `./styles.css` — design tokens, component classes, `.md-content` typography
+- **Files**:
+    - `src/components/ui/` — shadcn/ui + `Stamp.tsx`, `Modal.tsx`
+    - `src/lib/utils.ts` — `cn()` helper
+    - `src/hooks/use-mobile.tsx` — responsive hook (Sidebar)
+    - `src/styles/theme.css` — newspaper palette + dark theme + markdown/KaTeX/hljs styles
+- **Scripts**: `pnpm --filter ...shared--ui typecheck`
+- **Consumers**: `frontend--quiz-web-app` (today); future Astro portfolio/blog via React islands.
+- **Depends on**: Radix UI, CVA, lucide-react, sonner, etc. (see `package.json`); `react`/`react-dom` as peer deps.
+
 ### `@prj--personal-portfolio--v3/shared--quiz-export` (`shared/quiz-export/`)
 
 - **Role**: Reads `content.db` and emits static JSON consumed by the quiz web app and the offline mobile bundle.

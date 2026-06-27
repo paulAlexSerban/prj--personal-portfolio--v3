@@ -3,7 +3,7 @@ import { useEffect, useMemo, useState } from "react";
 import type { ExportedQuestion } from "@prj--personal-portfolio--v3/shared--quiz-export/contract";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { QuestionPreviewDrawer } from "@/components/question/QuestionPreviewDrawer";
-import { stampClasses } from "@/components/ui/Stamp";
+import { stampClasses } from "@prj--personal-portfolio--v3/shared--ui";
 import { loadTagQuestions, loadTagsIndex } from "@/data/loadQuizData";
 import { getCardStateLabel, stripMarkdownPreview } from "@/lib/questionFilters";
 import { useStore } from "@/store";

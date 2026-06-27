@@ -1,5 +1,5 @@
 import { Outlet, Link, createRootRoute } from "@tanstack/react-router";
-import { Toaster } from "@/components/ui/sonner";
+import { Toaster } from "@prj--personal-portfolio--v3/shared--ui";
 
 function NotFoundComponent() {
   return (

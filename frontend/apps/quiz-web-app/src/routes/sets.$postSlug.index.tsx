@@ -5,9 +5,9 @@ import type {
   ExportedQuestion,
 } from "@prj--personal-portfolio--v3/shared--quiz-export/contract";
 import { PageLayout } from "@/components/layout/PageLayout";
-import { Modal } from "@/components/ui/Modal";
+import { Modal } from "@prj--personal-portfolio--v3/shared--ui";
 import { QuestionPreviewDrawer } from "@/components/question/QuestionPreviewDrawer";
-import { Stamp, stampClasses } from "@/components/ui/Stamp";
+import { Stamp, stampClasses } from "@prj--personal-portfolio--v3/shared--ui";
 import { loadPostQuestions, loadPostsIndex } from "@/data/loadQuizData";
 import { stripMarkdownPreview } from "@/lib/questionFilters";
 import { useStudySetActions } from "@/hooks/useStudySetActions";

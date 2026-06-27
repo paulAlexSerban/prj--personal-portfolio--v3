@@ -1,8 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useRef, useState } from "react";
 import { PageLayout } from "@/components/layout/PageLayout";
-import { Stamp } from "@/components/ui/Stamp";
-import { Modal } from "@/components/ui/Modal";
+import { Stamp } from "@prj--personal-portfolio--v3/shared--ui";
+import { Modal } from "@prj--personal-portfolio--v3/shared--ui";
 import { toast } from "sonner";
 import { useStore } from "@/store";
 import { DEFAULT_CONFIG } from "@/store/types";

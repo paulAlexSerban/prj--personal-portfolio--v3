@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useMemo, useState } from "react";
 import type { ExportedQuestion } from "@prj--personal-portfolio--v3/shared--quiz-export/contract";
 import { PageLayout } from "@/components/layout/PageLayout";
-import { stampClasses } from "@/components/ui/Stamp";
+import { stampClasses } from "@prj--personal-portfolio--v3/shared--ui";
 import { StudySession } from "@/components/study/StudySession";
 import { loadTagQuestions } from "@/data/loadQuizData";
 import { useStore } from "@/store";
