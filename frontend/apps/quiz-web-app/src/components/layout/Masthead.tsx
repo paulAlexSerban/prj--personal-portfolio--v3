@@ -1,7 +1,9 @@
 import { Link } from "@tanstack/react-router";
-import { formatDateline } from "@/utils/dates";
+import { dayOfYear, formatDateline, isoWeek } from "@/utils/dates";
 
 export function Masthead() {
+  const now = new Date();
+  const dateline = `Vol. ${__APP_VERSION__} · No. ${dayOfYear(now)}/${isoWeek(now)}`;
   return (
     <header className="grain border-b-[3px] border-[var(--ink-black)]">
       <div className="max-w-6xl mx-auto px-6 pt-6 pb-4">
@@ -10,7 +12,7 @@ export function Masthead() {
             className="smallcaps text-[10px] md:text-sm text-[var(--slate)]"
             style={{ fontFamily: "var(--font-mono)" }}
           >
-            Vol. I · No. {Math.floor((Date.now() / 86400000) % 999)}
+            {dateline}
           </p>
           <p
             className="smallcaps text-[10px] md:text-sm text-[var(--slate)]"

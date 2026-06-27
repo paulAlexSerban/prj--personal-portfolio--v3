@@ -72,11 +72,15 @@ function StudySetsPage() {
             </p>
           </div>
           {totalDue > 0 && (
-            <Link to="/study" className={stampClasses("solid", "md")}>
+            <Link
+              to="/study"
+              className={stampClasses("solid", "md")}
+              title={`Study all ${totalDue} due cards across every set`}
+            >
               Study All ({totalDue})
             </Link>
           )}
-          <Link to="/" className={stampClasses("ghost", "md")}>
+          <Link to="/" className={stampClasses("ghost", "md")} title="Go to the posts catalogue">
             Browse Posts
           </Link>
         </div>
@@ -99,7 +103,7 @@ function StudySetsPage() {
             Your study shelf is empty. Browse posts and add your first set.
           </p>
           <div className="mt-6">
-            <Link to="/" className={stampClasses("solid", "lg")}>
+            <Link to="/" className={stampClasses("solid", "lg")} title="Go to the posts catalogue">
               Browse Posts
             </Link>
           </div>
@@ -147,6 +151,7 @@ function StudySetsPage() {
                     to="/sets/$postSlug/study"
                     params={{ postSlug: slug }}
                     className={stampClasses("solid", "sm")}
+                    title={`Study ${due} due cards in ${meta?.title ?? slug}`}
                   >
                     Study ({due})
                   </Link>
@@ -155,6 +160,7 @@ function StudySetsPage() {
                     to="/sets/$postSlug"
                     params={{ postSlug: slug }}
                     className={stampClasses("solid", "sm")}
+                    title={`Browse questions in ${meta?.title ?? slug}`}
                   >
                     Browse
                   </Link>
@@ -163,6 +169,7 @@ function StudySetsPage() {
                   to="/sets/$postSlug"
                   params={{ postSlug: slug }}
                   className={stampClasses("ghost", "sm")}
+                  title={`View details for ${meta?.title ?? slug}`}
                 >
                   Details
                 </Link>

@@ -74,7 +74,11 @@ function BrowsePage() {
             prior progress.
           </p>
         </div>
-        <Link to="/sets" className={stampClasses("ghost", "md")}>
+        <Link
+          to="/sets"
+          className={stampClasses("ghost", "md")}
+          title="Go to your study sets"
+        >
           My Sets ({addedPosts.length})
         </Link>
       </section>
@@ -93,6 +97,7 @@ function BrowsePage() {
               key={s}
               type="button"
               onClick={() => setSortBy(s)}
+              title={s === "title" ? "Sort posts alphabetically by title" : "Sort posts by number of questions"}
               className={`underline-offset-4 ${sortBy === s ? "underline font-bold" : "hover:underline"}`}
             >
               {s === "title" ? "Title" : "Most Questions"}
@@ -105,7 +110,12 @@ function BrowsePage() {
         <div className="mb-6 border-2 border-[var(--ink-black)] bg-[var(--highlight)] p-4 text-base">
           {loadError ?? error}
           {error && (
-            <button type="button" onClick={clearError} className="ml-3 underline smallcaps">
+            <button
+              type="button"
+              onClick={clearError}
+              title="Dismiss this error message"
+              className="ml-3 underline smallcaps"
+            >
               Dismiss
             </button>
           )}
@@ -170,6 +180,7 @@ function BrowsePage() {
                         to="/sets/$postSlug"
                         params={{ postSlug: post.slug }}
                         className={stampClasses("solid", "sm")}
+                        title={`Open the ${post.title} study set`}
                       >
                         Open Set
                       </Link>
@@ -177,6 +188,7 @@ function BrowsePage() {
                         type="button"
                         disabled={isLoading}
                         onClick={() => removeFromStudySet(post.slug)}
+                        title={`Remove ${post.title} from your study sets`}
                         className={stampClasses("ghost", "sm")}
                       >
                         Remove
@@ -187,6 +199,7 @@ function BrowsePage() {
                       type="button"
                       disabled={isLoading}
                       onClick={() => addToStudySet(post.slug)}
+                      title={`Add ${post.title} to your study sets`}
                       className={stampClasses("solid", "sm")}
                     >
                       {isLoading ? "Loading…" : "Add to Study Set"}

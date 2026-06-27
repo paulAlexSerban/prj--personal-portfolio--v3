@@ -81,7 +81,7 @@ function BrowsePage() {
           <p className="italic text-[var(--charcoal)] mb-4">
             Add study sets first to browse their questions.
           </p>
-          <Link to="/" className={stampClasses("solid", "lg")}>
+          <Link to="/" className={stampClasses("solid", "lg")} title="Go to the posts catalogue">
             Browse Posts
           </Link>
         </div>
@@ -286,6 +286,7 @@ function Pagination({
           type="button"
           disabled={page <= 1}
           onClick={() => onPage(page - 1)}
+          title="Go to the previous page"
           className="stamp stamp-ghost text-sm disabled:opacity-40"
         >
           ← Prev
@@ -294,6 +295,7 @@ function Pagination({
           type="button"
           disabled={page >= pages}
           onClick={() => onPage(page + 1)}
+          title="Go to the next page"
           className="stamp stamp-ghost text-sm disabled:opacity-40"
         >
           Next →

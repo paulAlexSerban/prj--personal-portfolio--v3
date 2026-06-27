@@ -71,11 +71,17 @@ export function QuestionPreviewDrawer({
           search={studyLink.search}
           className={stampClasses("solid", "md")}
           onClick={onClose}
+          title="Study just this card in a cram session"
         >
           Study This Card
         </Link>
         <Stamp
           variant="ghost"
+          title={
+            isIgnored
+              ? "Include this question in study sessions again"
+              : "Exclude this question from all future sessions"
+          }
           onClick={() => {
             if (isIgnored) {
               unignoreQuestion(question.slug);
@@ -90,6 +96,11 @@ export function QuestionPreviewDrawer({
         </Stamp>
         <Stamp
           variant="ghost"
+          title={
+            isSuspended
+              ? "Return this card to study queues"
+              : "Exclude this card from queues until you unsuspend it"
+          }
           onClick={() => {
             if (isSuspended) {
               unsuspendQuestion(question.slug);
@@ -104,6 +115,7 @@ export function QuestionPreviewDrawer({
         </Stamp>
         <Stamp
           variant="ghost"
+          title="Reset this card's scheduling progress"
           onClick={() => {
             resetQuestion(question.slug);
             toast("Progress reset");
@@ -111,7 +123,12 @@ export function QuestionPreviewDrawer({
         >
           Reset Progress
         </Stamp>
-        <button type="button" onClick={onClose} className="smallcaps underline text-base ml-auto">
+        <button
+          type="button"
+          onClick={onClose}
+          title="Close this preview"
+          className="smallcaps underline text-base ml-auto"
+        >
           Close
         </button>
       </div>
@@ -213,9 +230,9 @@ function MetaRow({
               key={tag}
               to="/tags/$tag"
               params={{ tag }}
-              className="smallcaps text-[10px] border border-[var(--ink-black)] px-2 py-0.5 hover:bg-[var(--highlight)]"
+              className="text-[14px] border border-[var(--ink-black)] px-2 py-0.5 hover:bg-[var(--highlight)]"
             >
-              {tag}
+              {tag.toLowerCase()}
             </Link>
           ))}
         </div>
@@ -227,7 +244,7 @@ function MetaRow({
 function MetaItem({ label, value }: { label: string; value: string }) {
   return (
     <div>
-      <dt className="smallcaps text-[10px] text-[var(--slate)]">{label}</dt>
+      <dt className="smallcaps text-[12px] text-[var(--slate)]">{label}</dt>
       <dd className="font-bold capitalize">{value}</dd>
     </div>
   );

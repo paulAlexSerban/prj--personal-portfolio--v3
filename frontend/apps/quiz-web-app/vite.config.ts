@@ -1,3 +1,4 @@
+import { readFileSync } from "node:fs";
 import { defineConfig } from "vitest/config";
 import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
@@ -5,8 +6,15 @@ import tsconfigPaths from "vite-tsconfig-paths";
 import { tanstackRouter } from "@tanstack/router-plugin/vite";
 import { VitePWA } from "vite-plugin-pwa";
 
+const pkg = JSON.parse(readFileSync(new URL("./package.json", import.meta.url), "utf-8")) as {
+  version: string;
+};
+
 // Strict CSR-only Vite app — client-side rendering only.
 export default defineConfig({
+  define: {
+    __APP_VERSION__: JSON.stringify(pkg.version),
+  },
   plugins: [
     tanstackRouter({ target: "react", autoCodeSplitting: true }),
     react(),

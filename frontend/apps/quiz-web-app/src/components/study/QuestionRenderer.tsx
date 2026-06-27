@@ -124,6 +124,7 @@ export function QuestionRenderer({
                 type="button"
                 disabled={revealed}
                 onClick={() => setTfChoice(val)}
+                title={`Answer ${val ? "True" : "False"}`}
                 className={optionClass(chosen, showCorrect, showWrong)}
               >
                 {val ? "True" : "False"}
@@ -157,6 +158,11 @@ export function QuestionRenderer({
                     ? setSelectedKey(opt.key)
                     : toggleMulti(opt.key)
                 }
+                title={
+                  question.answerFormat === "multiple_choice"
+                    ? `Select option ${opt.key}`
+                    : `Toggle option ${opt.key}`
+                }
                 className={`text-left flex items-center gap-2 ${optionClass(chosen, showCorrect, showWrong)}`}
               >
                 <span className="smallcaps text-[10px] text-[var(--slate)]">{opt.key}</span>
@@ -177,7 +183,16 @@ export function QuestionRenderer({
       {/* ── Reveal / submit ──────────────────────────────────────────── */}
       {!revealed ? (
         <div className="text-center">
-          <Stamp size="lg" disabled={!canSubmit} onClick={onReveal}>
+          <Stamp
+            size="lg"
+            disabled={!canSubmit}
+            onClick={onReveal}
+            title={
+              question.answerFormat === "free_text"
+                ? "Reveal the answer and explanation"
+                : "Submit your answer and reveal the result"
+            }
+          >
             {question.answerFormat === "free_text" ? "Show Answer" : "Submit"}
           </Stamp>
           <p className="smallcaps text-[10px] text-[var(--slate)] mt-3">
@@ -204,7 +219,7 @@ export function QuestionRenderer({
           )}
           {showRetry && (
             <div className="text-center">
-              <Stamp variant="ghost" onClick={retry}>
+              <Stamp variant="ghost" onClick={retry} title="Clear your answer and attempt this card again">
                 Try Again
               </Stamp>
             </div>

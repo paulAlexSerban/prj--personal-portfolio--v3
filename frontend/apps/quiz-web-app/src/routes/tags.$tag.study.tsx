@@ -80,7 +80,12 @@ function TagStudyPage() {
     return (
       <PageLayout>
         <p className="italic mb-4">No questions in your sets for tag “{tag}”.</p>
-        <Link to="/tags/$tag" params={{ tag }} className={stampClasses("solid", "md")}>
+        <Link
+          to="/tags/$tag"
+          params={{ tag }}
+          className={stampClasses("solid", "md")}
+          title={`Back to the “${tag}” tag page`}
+        >
           Back to Tag
         </Link>
       </PageLayout>
@@ -98,16 +103,26 @@ function TagStudyPage() {
           : `You have reached the end of today's queue for tag “${tag}”.`
       }
       exitSlot={
-        <Link to="/tags/$tag" params={{ tag }} className="smallcaps underline">
+        <Link
+          to="/tags/$tag"
+          params={{ tag }}
+          className="smallcaps underline"
+          title="End this session and return to the tag page"
+        >
           ← End Session
         </Link>
       }
       completionActions={
         <>
-          <Link to="/tags/$tag" params={{ tag }} className={stampClasses("solid", "lg")}>
+          <Link
+            to="/tags/$tag"
+            params={{ tag }}
+            className={stampClasses("solid", "lg")}
+            title={`Back to the “${tag}” tag page`}
+          >
             Back to Tag
           </Link>
-          <Link to="/tags" className={stampClasses("ghost", "lg")}>
+          <Link to="/tags" className={stampClasses("ghost", "lg")} title="Go to all tags">
             All Tags
           </Link>
         </>

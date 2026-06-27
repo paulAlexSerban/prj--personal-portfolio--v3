@@ -189,7 +189,7 @@ function StatsPage() {
           <p className="italic text-[var(--charcoal)] mb-4">
             No study sets yet. Add a post to start tracking progress.
           </p>
-          <Link to="/" className={stampClasses("solid", "lg")}>
+          <Link to="/" className={stampClasses("solid", "lg")} title="Go to the posts catalogue">
             Browse Posts
           </Link>
         </div>
@@ -372,6 +372,7 @@ function StatsPage() {
                           <button
                             type="button"
                             onClick={() => unsuspendQuestion(c.questionSlug)}
+                            title="Return this card to study queues"
                             className="smallcaps text-[10px] underline"
                           >
                             Unsuspend
@@ -481,6 +482,7 @@ function StatsPage() {
               key={d}
               type="button"
               onClick={() => setRetentionWindow(d)}
+              title={`Show true retention over the last ${d} days`}
               className={retentionWindow === d ? "underline font-bold" : "hover:underline"}
             >
               {d}d
@@ -506,19 +508,24 @@ function StatsPage() {
 
       <div className="text-center flex flex-wrap justify-center gap-3 mt-12">
         {dueToday > 0 && (
-          <Link to="/study" className={stampClasses("solid", "md")}>
+          <Link
+            to="/study"
+            className={stampClasses("solid", "md")}
+            title={`Study all ${dueToday} due cards across every set`}
+          >
             Study All Due ({dueToday})
           </Link>
         )}
-        <Link to="/sets" className={stampClasses("ghost", "md")}>
+        <Link to="/sets" className={stampClasses("ghost", "md")} title="Go to your study sets">
           My Sets
         </Link>
-        <Link to="/" className={stampClasses("ghost", "md")}>
+        <Link to="/" className={stampClasses("ghost", "md")} title="Go to the posts catalogue">
           Browse
         </Link>
         <button
           type="button"
           onClick={() => setConfirmReset(true)}
+          title="Reset scheduling for every card (asks for confirmation)"
           className="stamp stamp-ghost text-base"
         >
           Reset All Progress
@@ -533,6 +540,7 @@ function StatsPage() {
         </p>
         <div className="flex gap-3">
           <Stamp
+            title="Confirm resetting scheduling for every tracked card"
             onClick={() => {
               resetAll();
               setConfirmReset(false);
@@ -543,6 +551,7 @@ function StatsPage() {
           <button
             type="button"
             onClick={() => setConfirmReset(false)}
+            title="Cancel and keep your progress"
             className="smallcaps underline text-base"
           >
             Cancel

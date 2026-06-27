@@ -110,6 +110,7 @@ function SettingsPage() {
               key={t}
               type="button"
               onClick={() => selectTheme(t)}
+              title={`Use the ${t} theme`}
               className={`smallcaps text-base mr-3 ${settings.theme === t ? "underline font-bold" : "hover:underline"}`}
             >
               {t}
@@ -256,6 +257,11 @@ function SettingsPage() {
                 onClick={() =>
                   settings.scheduler === value ? undefined : setConfirmScheduler(value)
                 }
+                title={
+                  settings.scheduler === value
+                    ? `${label} is the active algorithm`
+                    : `Switch the scheduling algorithm to ${label}`
+                }
                 className={`border-2 border-[var(--ink-black)] px-3 py-1 text-base smallcaps ${
                   settings.scheduler === value
                     ? "bg-[var(--ink-black)] text-[var(--aged-white)]"
@@ -315,6 +321,7 @@ function SettingsPage() {
                   setSettings({ fsrsWeights: undefined });
                   toast.success("FSRS weights reset to defaults");
                 }}
+                title="Restore the default FSRS weights"
                 className="smallcaps text-base underline hover:no-underline mt-1"
               >
                 Reset weights to defaults
@@ -426,6 +433,7 @@ function SettingsPage() {
               setConfig({ ...DEFAULT_CONFIG });
               toast.success("Scheduling reset to defaults");
             }}
+            title="Restore all scheduling parameters to their defaults"
             className="smallcaps text-base underline hover:no-underline"
           >
             Reset to defaults
@@ -439,10 +447,18 @@ function SettingsPage() {
           from a previous export.
         </p>
         <div className="flex gap-3 flex-wrap mb-6">
-          <Stamp variant="ghost" onClick={exportBackup}>
+          <Stamp
+            variant="ghost"
+            onClick={exportBackup}
+            title="Download a JSON backup of all your progress"
+          >
             Export Backup
           </Stamp>
-          <Stamp variant="ghost" onClick={() => fileRef.current?.click()}>
+          <Stamp
+            variant="ghost"
+            onClick={() => fileRef.current?.click()}
+            title="Restore progress from a backup JSON file"
+          >
             Import Backup
           </Stamp>
           <input
@@ -477,7 +493,12 @@ function SettingsPage() {
           Permanently erases all progress, added sets, review history, and sessions. Cannot be
           undone.
         </p>
-        <Stamp onClick={() => setConfirmClear(true)}>Clear All Data</Stamp>
+        <Stamp
+          onClick={() => setConfirmClear(true)}
+          title="Permanently erase all data (asks for confirmation)"
+        >
+          Clear All Data
+        </Stamp>
       </Section>
 
       <Section title="About">
@@ -525,6 +546,7 @@ function SettingsPage() {
         />
         <Stamp
           disabled={confirmText !== "DELETE"}
+          title="Permanently erase all progress, sets, history and sessions"
           onClick={() => {
             clearAll();
             setConfirmClear(false);
@@ -555,7 +577,14 @@ function SettingsPage() {
             </>
           )}
         </p>
-        <Stamp onClick={() => confirmScheduler && switchScheduler(confirmScheduler)}>
+        <Stamp
+          title={
+            confirmScheduler === "fsrs"
+              ? "Confirm switching to FSRS-5 and migrate all cards"
+              : "Confirm switching to SM-2 and migrate all cards"
+          }
+          onClick={() => confirmScheduler && switchScheduler(confirmScheduler)}
+        >
           {confirmScheduler === "fsrs" ? "Switch to FSRS" : "Switch to SM-2"}
         </Stamp>
       </Modal>
@@ -631,6 +660,7 @@ function Toggle({ v, on }: { v: boolean; on: (v: boolean) => void }) {
     <button
       type="button"
       onClick={() => on(!v)}
+      title={v ? "Turn this setting off" : "Turn this setting on"}
       className={`border-2 border-[var(--ink-black)] px-3 py-1 text-base smallcaps ${v ? "bg-[var(--ink-black)] text-[var(--aged-white)]" : ""}`}
     >
       {v ? "On" : "Off"}

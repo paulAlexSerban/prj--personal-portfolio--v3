@@ -24,7 +24,7 @@ function StudyPage() {
     return (
       <PageLayout>
         <p className="italic mb-4">This post is not in your study set.</p>
-        <Link to="/" className={stampClasses("solid", "md")}>
+        <Link to="/" className={stampClasses("solid", "md")} title="Go to the posts catalogue">
           Browse Posts
         </Link>
       </PageLayout>
@@ -44,16 +44,26 @@ function StudyPage() {
           : "You have reached the end of today's queue for this set."
       }
       exitSlot={
-        <Link to="/sets/$postSlug" params={{ postSlug }} className="smallcaps underline">
+        <Link
+          to="/sets/$postSlug"
+          params={{ postSlug }}
+          className="smallcaps underline"
+          title="End this session and return to the set"
+        >
           ← End Session
         </Link>
       }
       completionActions={
         <>
-          <Link to="/sets/$postSlug" params={{ postSlug }} className={stampClasses("solid", "lg")}>
+          <Link
+            to="/sets/$postSlug"
+            params={{ postSlug }}
+            className={stampClasses("solid", "lg")}
+            title="Return to this set's detail page"
+          >
             Back to Set
           </Link>
-          <Link to="/sets" className={stampClasses("ghost", "lg")}>
+          <Link to="/sets" className={stampClasses("ghost", "lg")} title="Go to all your study sets">
             All Sets
           </Link>
         </>

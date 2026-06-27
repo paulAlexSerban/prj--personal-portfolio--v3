@@ -135,7 +135,7 @@ function SetDetailPage() {
     return (
       <PageLayout>
         <p className="italic mb-4">This post is not in your study set.</p>
-        <Link to="/" className={stampClasses("solid", "md")}>
+        <Link to="/" className={stampClasses("solid", "md")} title="Go to the posts catalogue">
           Browse Posts
         </Link>
       </PageLayout>
@@ -168,15 +168,17 @@ function SetDetailPage() {
               to="/sets/$postSlug/study"
               params={{ postSlug }}
               className={stampClasses("solid", "lg")}
+              title="Start a study session for this set"
             >
               Begin Study
             </Link>
-            <Link to="/sets" className={stampClasses("ghost", "md")}>
+            <Link to="/sets" className={stampClasses("ghost", "md")} title="Back to all your study sets">
               ← All Sets
             </Link>
             <button
               type="button"
               onClick={() => setConfirmReset(true)}
+              title="Reset scheduling progress for this set"
               className={stampClasses("ghost", "md")}
             >
               Reset Progress
@@ -184,6 +186,7 @@ function SetDetailPage() {
             <button
               type="button"
               onClick={() => setConfirmRemove(true)}
+              title="Remove this post from your study sets"
               className="stamp stamp-ghost text-base ml-auto"
             >
               Remove from Set
@@ -281,6 +284,7 @@ function SetDetailPage() {
                 <button
                   type="button"
                   onClick={() => setPostConfig(postSlug, null)}
+                  title="Clear per-set overrides and use the global defaults"
                   className="smallcaps text-[10px] underline mt-2 text-[var(--slate)]"
                 >
                   Reset to global defaults
@@ -344,9 +348,10 @@ function SetDetailPage() {
                       <td className="p-2 max-w-[260px]">
                         <span className="line-clamp-2">{stripMarkdownPreview(q.stem)}</span>
                       </td>
-                      <td className="p-2 smallcaps text-[10px]">{q.answerFormat}</td>
+                      <td className="p-2 smallcaps text-[14px]">{q.answerFormat}</td>
                       <td className="p-2">{card?.cardType ?? "—"}</td>
-                      <td className="p-2">{card?.dueDate ?? "—"}</td>
+                      {/**date fromat yy-MM-dd */}
+                      <td className="p-2">{card?.dueDate ? new Date(card.dueDate).toLocaleDateString("en-US", { year: "2-digit", month: "2-digit", day: "2-digit" }) : "—"}</td>
                       <td className="p-2">{card ? `${card.interval}d` : "—"}</td>
                       {settings.scheduler === "fsrs" ? (
                         <td className="p-2">
@@ -355,7 +360,7 @@ function SetDetailPage() {
                       ) : (
                         <td className="p-2">{card ? card.easeFactor.toFixed(2) : "—"}</td>
                       )}
-                      <td className="p-2">
+                      <td className="p-2 ">
                         <button
                           type="button"
                           onClick={(e) => {
@@ -363,7 +368,12 @@ function SetDetailPage() {
                             if (isIgnored) unignoreQuestion(q.slug);
                             else ignoreQuestion(q.slug);
                           }}
-                          className="smallcaps text-[10px] underline"
+                          title={
+                            isIgnored
+                              ? "Include this question in study sessions again"
+                              : "Exclude this question from all future sessions"
+                          }
+                          className="smallcaps text-[14px] underline"
                         >
                           {isIgnored ? "Unignore" : "Ignore"}
                         </button>
@@ -395,6 +405,7 @@ function SetDetailPage() {
         </p>
         <div className="flex gap-3">
           <Stamp
+            title="Confirm removing this post from your study sets"
             onClick={() => {
               removeFromStudySet(postSlug);
               setConfirmRemove(false);
@@ -406,6 +417,7 @@ function SetDetailPage() {
           <button
             type="button"
             onClick={() => setConfirmRemove(false)}
+            title="Cancel and keep this post in your study sets"
             className="smallcaps underline text-base"
           >
             Cancel
@@ -420,6 +432,7 @@ function SetDetailPage() {
         </p>
         <div className="flex gap-3">
           <Stamp
+            title="Confirm resetting scheduling progress for this set"
             onClick={() => {
               resetPost(postSlug);
               setConfirmReset(false);
@@ -430,6 +443,7 @@ function SetDetailPage() {
           <button
             type="button"
             onClick={() => setConfirmReset(false)}
+            title="Cancel and keep your progress"
             className="smallcaps underline text-base"
           >
             Cancel

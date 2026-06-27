@@ -53,7 +53,7 @@ function TagsIndexPage() {
           <p className="italic text-[var(--charcoal)] mb-4">
             Add study sets to browse questions by tag.
           </p>
-          <Link to="/" className={stampClasses("solid", "lg")}>
+          <Link to="/" className={stampClasses("solid", "lg")} title="Go to the posts catalogue">
             Browse Posts
           </Link>
         </div>
@@ -72,10 +72,14 @@ function TagsIndexPage() {
       </p>
 
       <div className="flex gap-3 mb-8">
-        <Link to="/browse" className={stampClasses("ghost", "md")}>
+        <Link
+          to="/browse"
+          className={stampClasses("ghost", "md")}
+          title="Browse and preview all questions"
+        >
           Question Browser
         </Link>
-        <Link to="/sets" className={stampClasses("ghost", "md")}>
+        <Link to="/sets" className={stampClasses("ghost", "md")} title="Go to your study sets">
           My Sets
         </Link>
       </div>

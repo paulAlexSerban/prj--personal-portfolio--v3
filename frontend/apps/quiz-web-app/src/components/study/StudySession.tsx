@@ -13,6 +13,12 @@ import { todayISO } from "@/utils/dates";
 import type { Rating } from "@/store/types";
 
 const RATING_LABELS: Record<Rating, string> = { 1: "Again", 2: "Hard", 3: "Good", 4: "Easy" };
+const RATING_HINTS: Record<Rating, string> = {
+  1: "You forgot - reschedule this card soon (Again)",
+  2: "Recalled with difficulty - shorter interval (Hard)",
+  3: "Recalled correctly - normal interval (Good)",
+  4: "Recalled easily - longer interval (Easy)",
+};
 
 interface SessionStats {
   again: number;
@@ -174,7 +180,7 @@ export function StudySession({
   // Only cards whose content is actually loaded are actionable. Cards whose
   // slugs aren't in the questionMap yet (still loading) are filtered out; once
   // loading finishes, any slug that is still missing means stale card state
-  // for content that no longer exists — those are silently skipped. Session-
+  // for content that no longer exists - those are silently skipped. Session-
   // buried slugs are also skipped for the remainder of this session.
   const actionableQueue = loading
     ? []
@@ -186,7 +192,7 @@ export function StudySession({
   const initialTotal = useRef(0);
   if (actionableQueue.length > initialTotal.current) initialTotal.current = actionableQueue.length;
 
-  // Raw scoped counts that ignore the daily new/review caps — so an empty queue
+  // Raw scoped counts that ignore the daily new/review caps - so an empty queue
   // can explain *why* it's empty (nothing due vs. daily limit reached).
   const scopeCounts = useMemo(() => {
     const today = todayISO(0, settings.dayStartHour);
@@ -217,7 +223,7 @@ export function StudySession({
     startTimeRef.current = Date.now();
   }, [currentCard?.questionSlug]);
 
-  // Wrong auto-graded answers may only be rated Again/Hard — you cannot mark a
+  // Wrong auto-graded answers may only be rated Again/Hard - you cannot mark a
   // card you got wrong as Good/Easy.
   const ratingDisabled = (r: Rating): boolean => gradedCorrect === false && r >= 3;
 
@@ -410,7 +416,7 @@ export function StudySession({
           <div className="mt-auto pt-8">
             {gradedCorrect === false && (
               <p className="smallcaps text-[10px] text-[var(--slate)] mb-2 text-center">
-                Wrong answer — rate Again or Hard
+                Wrong answer - rate Again or Hard
               </p>
             )}
             <div className="grid grid-cols-4 gap-2">
@@ -430,6 +436,11 @@ export function StudySession({
                       disabled={disabled}
                       className="w-full"
                       variant={r === 3 ? "solid" : "ghost"}
+                      title={
+                        disabled
+                          ? "Locked - you answered incorrectly, rate Again or Hard"
+                          : RATING_HINTS[r]
+                      }
                     >
                       {label}
                     </Stamp>
@@ -437,7 +448,7 @@ export function StudySession({
                       className="smallcaps text-[10px] text-[var(--slate)] mt-1"
                       style={{ fontFamily: "var(--font-mono)" }}
                     >
-                      {disabled ? "—" : scheduler.previewInterval(currentCard, r, config)} · {r}
+                      {disabled ? "-" : scheduler.previewInterval(currentCard, r, config)} · {r}
                     </p>
                   </div>
                 );
@@ -445,7 +456,7 @@ export function StudySession({
             </div>
             <p
               className="smallcaps text-[10px] text-[var(--slate)] mt-3 text-center italic"
-              title="Content is read-only — edit in the source content repo"
+              title="Content is read-only - edit in the source content repo"
             >
               Read-only · content edited in source
             </p>
@@ -504,7 +515,11 @@ function NothingDue({
 
       {cappedByLimit && onStudyAhead && (
         <div className="text-center mb-6">
-          <Stamp onClick={onStudyAhead} variant="solid">
+          <Stamp
+            onClick={onStudyAhead}
+            variant="solid"
+            title="Ignore today's daily limits and study upcoming cards now"
+          >
             Study ahead ({totalAvailable})
           </Stamp>
           <p

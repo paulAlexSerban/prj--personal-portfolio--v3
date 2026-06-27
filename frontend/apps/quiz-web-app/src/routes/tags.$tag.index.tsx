@@ -53,7 +53,7 @@ function TagDetailPage() {
     return (
       <PageLayout>
         <p className="italic mb-4">Add study sets to browse questions by tag.</p>
-        <Link to="/" className={stampClasses("solid", "md")}>
+        <Link to="/" className={stampClasses("solid", "md")} title="Go to the posts catalogue">
           Browse Posts
         </Link>
       </PageLayout>
@@ -75,7 +75,12 @@ function TagDetailPage() {
       <div className="flex flex-wrap gap-3 mb-8">
         {questions.length > 0 && (
           <>
-            <Link to="/tags/$tag/study" params={{ tag }} className={stampClasses("solid", "lg")}>
+            <Link
+              to="/tags/$tag/study"
+              params={{ tag }}
+              className={stampClasses("solid", "lg")}
+              title={`Study due cards tagged “${tag}”`}
+            >
               Study Due
             </Link>
             <Link
@@ -83,15 +88,20 @@ function TagDetailPage() {
               params={{ tag }}
               search={{ cram: "1" }}
               className={stampClasses("ghost", "lg")}
+              title={`Cram all ${questions.length} cards tagged “${tag}”, ignoring due dates`}
             >
               Cram All ({questions.length})
             </Link>
           </>
         )}
-        <Link to="/tags" className={stampClasses("ghost", "md")}>
+        <Link to="/tags" className={stampClasses("ghost", "md")} title="Back to all tags">
           ← All Tags
         </Link>
-        <Link to="/browse" className={stampClasses("ghost", "md")}>
+        <Link
+          to="/browse"
+          className={stampClasses("ghost", "md")}
+          title="Browse and preview all questions"
+        >
           Question Browser
         </Link>
       </div>
@@ -130,7 +140,7 @@ function TagDetailPage() {
                     <td className="p-2 max-w-[320px]">
                       <span className="line-clamp-2">{stripMarkdownPreview(q.stem)}</span>
                     </td>
-                    <td className="p-2 smallcaps text-[10px]">{q.answerFormat}</td>
+                    <td className="p-2 smallcaps text-[14px]">{q.answerFormat}</td>
                     <td className="p-2 capitalize">{getCardStateLabel(card, isIgnored, today)}</td>
                     <td className="p-2 capitalize">{q.difficulty}</td>
                   </tr>

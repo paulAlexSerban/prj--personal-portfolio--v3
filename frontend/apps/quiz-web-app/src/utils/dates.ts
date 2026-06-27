@@ -41,6 +41,25 @@ export function addDaysISO(iso: string, days: number): string {
   return localDateISO(dt);
 }
 
+/** Day of the year, 1–366 (Jan 1 = 1). */
+export function dayOfYear(d = new Date()): number {
+  const start = new Date(d.getFullYear(), 0, 0);
+  return Math.floor((d.getTime() - start.getTime()) / 86400000);
+}
+
+/** ISO-8601 week number, 1–53 (weeks start Monday; week 1 holds the first Thursday). */
+export function isoWeek(d = new Date()): number {
+  const date = new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()));
+  const dayNum = (date.getUTCDay() + 6) % 7; // Mon=0 … Sun=6
+  date.setUTCDate(date.getUTCDate() - dayNum + 3); // nearest Thursday
+  const firstThursday = date.getTime();
+  date.setUTCMonth(0, 1);
+  if (date.getUTCDay() !== 4) {
+    date.setUTCMonth(0, 1 + ((4 - date.getUTCDay() + 7) % 7));
+  }
+  return 1 + Math.round((firstThursday - date.getTime()) / (7 * 86400000));
+}
+
 export function formatDateline(d = new Date()): string {
   return d.toLocaleDateString("en-US", {
     weekday: "long",
