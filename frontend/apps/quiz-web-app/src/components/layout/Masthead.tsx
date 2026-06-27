@@ -7,13 +7,13 @@ export function Masthead() {
       <div className="max-w-6xl mx-auto px-6 pt-6 pb-4">
         <div className="flex items-center justify-between gap-4">
           <p
-            className="smallcaps text-sm text-[var(--slate)]"
+            className="smallcaps text-[10px] md:text-sm text-[var(--slate)]"
             style={{ fontFamily: "var(--font-mono)" }}
           >
             Vol. I · No. {Math.floor((Date.now() / 86400000) % 999)}
           </p>
           <p
-            className="smallcaps text-sm text-[var(--slate)]"
+            className="smallcaps text-[10px] md:text-sm text-[var(--slate)]"
             style={{ fontFamily: "var(--font-mono)" }}
           >
             Spaced Repetition Edition
