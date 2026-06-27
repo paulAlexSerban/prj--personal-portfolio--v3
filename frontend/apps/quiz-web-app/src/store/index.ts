@@ -67,6 +67,10 @@ export interface QuizActions {
   endSession: (id: string) => void;
   setSettings: (s: Partial<AppSettings>) => void;
   setConfig: (c: Partial<StudyConfig>) => void;
+  /** Wipe all state (progress, added sets, logs, sessions) back to defaults. */
+  clearAll: () => void;
+  /** Overwrite state from an exported backup (used by import feature). */
+  importState: (snapshot: Partial<QuizState>) => void;
 }
 
 export type QuizStore = QuizState & QuizActions;
@@ -223,6 +227,20 @@ export const useStore = create<QuizStore>()(
 
       setSettings: (next) => set((s) => ({ settings: { ...s.settings, ...next } })),
       setConfig: (next) => set((s) => ({ config: { ...s.config, ...next } })),
+
+      clearAll: () => set({ ...initialState, daily: freshDaily() }),
+
+      importState: (snapshot) =>
+        set((s) => ({
+          cardStates: snapshot.cardStates ?? s.cardStates,
+          addedPosts: snapshot.addedPosts ?? s.addedPosts,
+          ignored: snapshot.ignored ?? s.ignored,
+          reviewLogs: snapshot.reviewLogs ?? s.reviewLogs,
+          studySessions: snapshot.studySessions ?? s.studySessions,
+          settings: snapshot.settings ? { ...DEFAULT_SETTINGS, ...snapshot.settings } : s.settings,
+          config: snapshot.config ? { ...DEFAULT_CONFIG, ...snapshot.config } : s.config,
+          daily: snapshot.daily ?? s.daily,
+        })),
     }),
     { name: STORAGE_KEY, storage },
   ),

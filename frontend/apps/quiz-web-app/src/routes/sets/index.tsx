@@ -71,6 +71,11 @@ function StudySetsPage() {
               {totalDue}
             </p>
           </div>
+          {totalDue > 0 && (
+            <Link to="/study" className={stampClasses("solid", "md")}>
+              Study All ({totalDue})
+            </Link>
+          )}
           <Link to="/" className={stampClasses("ghost", "md")}>
             Browse Posts
           </Link>
@@ -137,13 +142,23 @@ function StudySetsPage() {
                 </div>
               </div>
               <div className="mt-4 flex gap-2">
-                <Link
-                  to="/sets/$postSlug"
-                  params={{ postSlug: slug }}
-                  className={stampClasses("solid", "sm")}
-                >
-                  {due > 0 ? `Study (${due})` : "Browse"}
-                </Link>
+                {due > 0 ? (
+                  <Link
+                    to="/sets/$postSlug/study"
+                    params={{ postSlug: slug }}
+                    className={stampClasses("solid", "sm")}
+                  >
+                    Study ({due})
+                  </Link>
+                ) : (
+                  <Link
+                    to="/sets/$postSlug"
+                    params={{ postSlug: slug }}
+                    className={stampClasses("solid", "sm")}
+                  >
+                    Browse
+                  </Link>
+                )}
                 <Link
                   to="/sets/$postSlug"
                   params={{ postSlug: slug }}

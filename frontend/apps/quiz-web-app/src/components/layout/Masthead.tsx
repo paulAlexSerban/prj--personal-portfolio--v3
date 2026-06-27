@@ -37,6 +37,12 @@ export function Masthead() {
             <Link to="/sets" className="hover:underline">
               My Sets
             </Link>
+            <Link to="/stats" className="hover:underline">
+              Progress
+            </Link>
+            <Link to="/settings" className="hover:underline">
+              Settings
+            </Link>
           </nav>
         </div>
       </div>
