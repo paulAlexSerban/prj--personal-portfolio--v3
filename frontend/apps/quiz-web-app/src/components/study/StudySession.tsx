@@ -57,7 +57,9 @@ export function StudySession({
   const addedPosts = useStore((s) => s.addedPosts);
   const settings = useStore((s) => s.settings);
   const config = useStore((s) => s.config);
+  const postConfigs = useStore((s) => s.postConfigs);
   const daily = useStore((s) => s.daily);
+  const dailyByPost = useStore((s) => s.dailyByPost);
   const reviewCard = useStore((s) => s.reviewCard);
   const undoLastReview = useStore((s) => s.undoLastReview);
   const ignoreQuestion = useStore((s) => s.ignoreQuestion);
@@ -136,6 +138,8 @@ export function StudySession({
       cardStates,
       ignored,
       suspended,
+      postConfigs,
+      dailyByPost,
       daily,
       config,
       settings,
@@ -153,6 +157,8 @@ export function StudySession({
     cardStates,
     ignored,
     suspended,
+    postConfigs,
+    dailyByPost,
     daily,
     config,
     settings,
@@ -181,7 +187,7 @@ export function StudySession({
   // Raw scoped counts that ignore the daily new/review caps — so an empty queue
   // can explain *why* it's empty (nothing due vs. daily limit reached).
   const scopeCounts = useMemo(() => {
-    const today = todayISO(0);
+    const today = todayISO(0, settings.dayStartHour);
     const postSet = new Set(postSlugs);
     const slugSet = questionSlugs?.length ? new Set(questionSlugs) : null;
     const cards = Object.values(cardStates).filter(

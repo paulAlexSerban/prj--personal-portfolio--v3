@@ -37,6 +37,9 @@ function SettingsPage() {
       cardStates: state.cardStates,
       addedPosts: state.addedPosts,
       ignored: state.ignored,
+      suspended: state.suspended,
+      postConfigs: state.postConfigs,
+      dailyByPost: state.dailyByPost,
       reviewLogs: state.reviewLogs,
       studySessions: state.studySessions,
       settings: state.settings,
@@ -146,6 +149,46 @@ function SettingsPage() {
             placeholder="—"
             style={{ fontFamily: "var(--font-mono)" }}
           />
+        </Row>
+        <Row label="Next day starts at (hour, 0–23)">
+          <input
+            type="number"
+            min={0}
+            max={23}
+            value={settings.dayStartHour}
+            onChange={(e) => setSettings({ dayStartHour: Number(e.target.value) })}
+            className="bg-transparent border-b-2 border-[var(--ink-black)] w-24 py-1"
+            style={{ fontFamily: "var(--font-mono)" }}
+          />
+        </Row>
+      </Section>
+
+      <Section title="Leeches">
+        <p className="text-xs italic text-[var(--slate)] mb-4">
+          Cards that lapse repeatedly are &ldquo;leeches&rdquo;. When lapses reach the threshold,
+          the configured action is applied automatically.
+        </p>
+        <Row label="Leech threshold (lapses, 0 = off)">
+          <input
+            type="number"
+            min={0}
+            value={settings.leechThreshold}
+            onChange={(e) => setSettings({ leechThreshold: Number(e.target.value) })}
+            className="bg-transparent border-b-2 border-[var(--ink-black)] w-24 py-1"
+            style={{ fontFamily: "var(--font-mono)" }}
+          />
+        </Row>
+        <Row label="Leech action">
+          <select
+            value={settings.leechAction}
+            onChange={(e) =>
+              setSettings({ leechAction: e.target.value as typeof settings.leechAction })
+            }
+            className="bg-transparent border-b-2 border-[var(--ink-black)] py-1 text-sm"
+          >
+            <option value="suspend">Auto-suspend</option>
+            <option value="tag">Tag only (stats view)</option>
+          </select>
         </Row>
       </Section>
 

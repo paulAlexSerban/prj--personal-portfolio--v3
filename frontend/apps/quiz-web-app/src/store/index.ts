@@ -4,6 +4,7 @@ import type {
   AppSettings,
   CardState,
   DailyCounts,
+  PostConfigOverride,
   Rating,
   ReviewLog,
   StudyConfig,
@@ -11,6 +12,8 @@ import type {
 } from "./types";
 import { DEFAULT_CONFIG, DEFAULT_SETTINGS, createCardState, resetCardState } from "./types";
 import { applyReview } from "../algorithms/sm2";
+import { buildDueCounts } from "../algorithms/fuzz";
+import { getPostDaily, resolvePostConfig } from "../lib/postConfig";
 import { todayISO, uid } from "../utils/dates";
 
 const STORAGE_KEY = "quiz-web-app:v1";
@@ -42,6 +45,8 @@ export interface LastReview {
   logId: string;
   prevCard: CardState;
   prevDaily: DailyCounts;
+  prevDailyByPost: Record<string, DailyCounts>;
+  prevSuspended: Record<string, true>;
 }
 
 export interface QuizState {
@@ -53,10 +58,15 @@ export interface QuizState {
   ignored: Record<string, true>;
   /** Question slugs temporarily suspended (excluded from queues until unsuspended). */
   suspended: Record<string, true>;
+  /** Per-post scheduling overrides (new/day, reviews/day, steps). */
+  postConfigs: Record<string, PostConfigOverride>;
+  /** Per-post daily new/review counts (keyed by post slug). */
+  dailyByPost: Record<string, DailyCounts>;
   reviewLogs: ReviewLog[];
   studySessions: StudySession[];
   settings: AppSettings;
   config: StudyConfig;
+  /** Global daily new/review counts (caps total across all sets). */
   daily: DailyCounts;
   /** Last review, for one-step undo. Ephemeral (not persisted). */
   lastReview: LastReview | null;
@@ -87,6 +97,8 @@ export interface QuizActions {
   endSession: (id: string) => void;
   setSettings: (s: Partial<AppSettings>) => void;
   setConfig: (c: Partial<StudyConfig>) => void;
+  /** Set or clear per-post scheduling overrides. Pass null to remove. */
+  setPostConfig: (postSlug: string, override: PostConfigOverride | null) => void;
   /** Wipe all state (progress, added sets, logs, sessions) back to defaults. */
   clearAll: () => void;
   /** Overwrite state from an exported backup (used by import feature). */
@@ -100,6 +112,8 @@ export const initialState: QuizState = {
   addedPosts: [],
   ignored: {},
   suspended: {},
+  postConfigs: {},
+  dailyByPost: {},
   reviewLogs: [],
   studySessions: [],
   settings: DEFAULT_SETTINGS,
@@ -140,11 +154,21 @@ export const useStore = create<QuizStore>()(
         const card = s.cardStates[questionSlug];
         if (!card) return;
         const wasType = card.cardType;
+        const postConfig = resolvePostConfig(s.config, s.postConfigs[card.postSlug]);
+        const dayStartHour = s.settings.dayStartHour;
+        const today = todayISO(0, dayStartHour);
+        const dueCounts = buildDueCounts(Object.values(s.cardStates));
+
         const {
           card: updated,
           previousInterval,
           previousEaseFactor,
-        } = applyReview(card, rating, s.config);
+        } = applyReview(card, rating, postConfig, {
+          seed: questionSlug,
+          dueCounts,
+          dayStartHour,
+          today,
+        });
 
         const log: ReviewLog = {
           id: uid(),
@@ -159,24 +183,45 @@ export const useStore = create<QuizStore>()(
           timeTaken: timeTakenMs,
         };
 
-        const today = todayISO(0);
         const daily = s.daily.date === today ? s.daily : freshDaily(today);
+        const postDaily = getPostDaily(s.dailyByPost, card.postSlug, today);
         const nextDaily: DailyCounts = {
           date: today,
           new: daily.new + (wasType === "new" ? 1 : 0),
           reviews: daily.reviews + (wasType === "review" ? 1 : 0),
         };
+        const nextPostDaily: DailyCounts = {
+          date: today,
+          new: postDaily.new + (wasType === "new" ? 1 : 0),
+          reviews: postDaily.reviews + (wasType === "review" ? 1 : 0),
+        };
+
+        // Auto-leech: suspend when lapses cross the threshold.
+        const suspended = { ...s.suspended };
+        const threshold = s.settings.leechThreshold ?? 0;
+        if (
+          threshold > 0 &&
+          updated.lapses >= threshold &&
+          s.settings.leechAction === "suspend" &&
+          !suspended[questionSlug]
+        ) {
+          suspended[questionSlug] = true;
+        }
 
         set({
           cardStates: { ...s.cardStates, [questionSlug]: updated },
           reviewLogs: [...s.reviewLogs, log],
           daily: nextDaily,
+          dailyByPost: { ...s.dailyByPost, [card.postSlug]: nextPostDaily },
+          suspended,
           lastReview: {
             questionSlug,
             rating,
             logId: log.id,
             prevCard: card,
             prevDaily: daily,
+            prevDailyByPost: s.dailyByPost,
+            prevSuspended: s.suspended,
           },
         });
       },
@@ -189,6 +234,8 @@ export const useStore = create<QuizStore>()(
           cardStates: { ...s.cardStates, [last.questionSlug]: last.prevCard },
           reviewLogs: s.reviewLogs.filter((l) => l.id !== last.logId),
           daily: last.prevDaily,
+          dailyByPost: last.prevDailyByPost,
+          suspended: last.prevSuspended,
           lastReview: null,
         });
         return last;
@@ -250,6 +297,7 @@ export const useStore = create<QuizStore>()(
             reviewLogs: [],
             studySessions: [],
             daily: freshDaily(),
+            dailyByPost: {},
           };
         }),
 
@@ -292,6 +340,17 @@ export const useStore = create<QuizStore>()(
       setSettings: (next) => set((s) => ({ settings: { ...s.settings, ...next } })),
       setConfig: (next) => set((s) => ({ config: { ...s.config, ...next } })),
 
+      setPostConfig: (postSlug, override) =>
+        set((s) => {
+          const postConfigs = { ...s.postConfigs };
+          if (override === null || Object.keys(override).length === 0) {
+            delete postConfigs[postSlug];
+          } else {
+            postConfigs[postSlug] = { ...postConfigs[postSlug], ...override };
+          }
+          return { postConfigs };
+        }),
+
       clearAll: () => set({ ...initialState, daily: freshDaily() }),
 
       importState: (snapshot) =>
@@ -300,6 +359,8 @@ export const useStore = create<QuizStore>()(
           addedPosts: snapshot.addedPosts ?? s.addedPosts,
           ignored: snapshot.ignored ?? s.ignored,
           suspended: snapshot.suspended ?? s.suspended,
+          postConfigs: snapshot.postConfigs ?? s.postConfigs,
+          dailyByPost: snapshot.dailyByPost ?? s.dailyByPost,
           reviewLogs: snapshot.reviewLogs ?? s.reviewLogs,
           studySessions: snapshot.studySessions ?? s.studySessions,
           settings: snapshot.settings ? { ...DEFAULT_SETTINGS, ...snapshot.settings } : s.settings,

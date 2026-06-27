@@ -10,6 +10,8 @@ function resetStore() {
       addedPosts: [],
       ignored: {},
       suspended: {},
+      postConfigs: {},
+      dailyByPost: {},
       reviewLogs: [],
       studySessions: [],
       settings: initialState.settings,
@@ -222,6 +224,35 @@ describe("suspendQuestion", () => {
     useStore.getState().unsuspendQuestion("p--1");
     queue = selectStudyQueue(useStore.getState(), { now: Date.now() });
     expect(queue.map((c) => c.questionSlug).sort()).toEqual(["p--1", "p--2"]);
+  });
+});
+
+describe("per-set config", () => {
+  it("applies independent new-card limits per post", () => {
+    const store = useStore.getState();
+    store.addPost("a", ["a--1", "a--2", "a--3"]);
+    store.addPost("b", ["b--1", "b--2", "b--3"]);
+    store.setPostConfig("a", { newCardsPerDay: 1 });
+    store.setPostConfig("b", { newCardsPerDay: 2 });
+
+    const queue = selectStudyQueue(useStore.getState(), { now: Date.now() });
+    const newCards = queue.filter((c) => c.cardType === "new");
+    expect(newCards.filter((c) => c.postSlug === "a").length).toBe(1);
+    expect(newCards.filter((c) => c.postSlug === "b").length).toBe(2);
+  });
+});
+
+describe("leeches", () => {
+  it("auto-suspends when lapses reach the threshold", () => {
+    const store = useStore.getState();
+    store.setSettings({ leechThreshold: 1, leechAction: "suspend" });
+    store.addPost("p", ["p--1"]);
+    // Graduate to review, then lapse.
+    store.reviewCard("p--1", 4, 1000);
+    store.reviewCard("p--1", 1, 1000);
+    const s = useStore.getState();
+    expect(s.cardStates["p--1"]!.lapses).toBeGreaterThanOrEqual(1);
+    expect(s.suspended["p--1"]).toBe(true);
   });
 });
 

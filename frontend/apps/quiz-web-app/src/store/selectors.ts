@@ -1,7 +1,8 @@
 import type { CardState, PostStats } from "./types";
 import type { QuizState } from "./index";
-import { buildQueue } from "../algorithms/queue";
-import { todayISO } from "../utils/dates";
+import { buildQueue, mergePostQueues } from "../algorithms/queue";
+import { getPostDaily, resolvePostConfig } from "../lib/postConfig";
+import { todayISO, DEFAULT_DAY_START_HOUR } from "../utils/dates";
 
 export interface QueueScope {
   /** Restrict to these post slugs. Defaults to all added posts. */
@@ -39,11 +40,13 @@ function sortCramQueue(cards: CardState[], now: number): CardState[] {
 
 /**
  * Compute the due study queue from store state. Joins added posts → their
- * card states, drops ignored questions, and applies SM-2 queue ordering.
+ * card states, drops ignored/suspended questions, and applies SM-2 queue ordering
+ * with per-set and global daily limits.
  */
 export function selectStudyQueue(state: QuizState, scope: QueueScope = {}): CardState[] {
-  const today = scope.today ?? todayISO(0);
+  const dayStartHour = state.settings.dayStartHour ?? DEFAULT_DAY_START_HOUR;
   const now = scope.now ?? Date.now();
+  const today = scope.today ?? todayISO(0, dayStartHour, now);
   const postSet = new Set(scope.postSlugs ?? state.addedPosts);
 
   let cards = Object.values(state.cardStates).filter(
@@ -62,17 +65,63 @@ export function selectStudyQueue(state: QuizState, scope: QueueScope = {}): Card
     return sortCramQueue(cards, now);
   }
 
-  const daily = state.daily.date === today ? state.daily : { date: today, new: 0, reviews: 0 };
+  const globalDaily =
+    state.daily.date === today ? state.daily : { date: today, new: 0, reviews: 0 };
+  const globalNewCap = state.settings.globalNewLimit ?? state.config.newCardsPerDay;
+  const globalReviewCap = state.settings.globalReviewLimit ?? state.config.maxReviewsPerDay;
 
-  return buildQueue(cards, {
-    config: state.config,
-    newStudiedToday: daily.new,
-    reviewsStudiedToday: daily.reviews,
-    today,
-    now,
-    settings: state.settings,
-    ignoreLimits: scope.ignoreLimits,
-  });
+  let globalNewLeft = scope.ignoreLimits
+    ? Number.MAX_SAFE_INTEGER
+    : Math.max(0, globalNewCap - globalDaily.new);
+  let globalReviewLeft = scope.ignoreLimits
+    ? Number.MAX_SAFE_INTEGER
+    : Math.max(0, globalReviewCap - globalDaily.reviews);
+
+  // Group eligible cards by post and build per-set sub-queues.
+  const byPost = new Map<string, CardState[]>();
+  for (const c of cards) {
+    const list = byPost.get(c.postSlug) ?? [];
+    list.push(c);
+    byPost.set(c.postSlug, list);
+  }
+
+  const subQueues: CardState[][] = [];
+  for (const [postSlug, postCards] of byPost) {
+    const postConfig = resolvePostConfig(state.config, state.postConfigs?.[postSlug]);
+    const postDaily = getPostDaily(state.dailyByPost ?? {}, postSlug, today);
+
+    const postNewLeft = scope.ignoreLimits
+      ? Number.MAX_SAFE_INTEGER
+      : Math.max(0, postConfig.newCardsPerDay - postDaily.new);
+    const postReviewLeft = scope.ignoreLimits
+      ? Number.MAX_SAFE_INTEGER
+      : Math.max(0, postConfig.maxReviewsPerDay - postDaily.reviews);
+
+    const newBudget = Math.min(globalNewLeft, postNewLeft);
+    const reviewBudget = Math.min(globalReviewLeft, postReviewLeft);
+
+    const q = buildQueue(postCards, {
+      config: postConfig,
+      newStudiedToday: postDaily.new,
+      reviewsStudiedToday: postDaily.reviews,
+      today,
+      now,
+      settings: state.settings,
+      ignoreLimits: scope.ignoreLimits,
+      newBudget,
+      reviewBudget,
+    });
+
+    // Deduct global budget by what this sub-queue consumed.
+    const newUsed = q.filter((c) => c.cardType === "new").length;
+    const reviewUsed = q.filter((c) => c.cardType === "review").length;
+    globalNewLeft -= newUsed;
+    globalReviewLeft -= reviewUsed;
+
+    subQueues.push(q);
+  }
+
+  return mergePostQueues(subQueues, state.settings.studyOrder);
 }
 
 /** Per-post counts for the browse / study-set screens. Ignored questions are excluded from active counts. */
@@ -92,4 +141,14 @@ export function getPostStats(state: QuizState, postSlug: string, today = todayIS
 /** Total cards due across all (or scoped) added posts — for the progress screen. */
 export function selectDueCount(state: QuizState, scope: QueueScope = {}): number {
   return selectStudyQueue(state, scope).length;
+}
+
+/** Cards whose lapses meet or exceed the leech threshold. */
+export function selectLeeches(state: QuizState): CardState[] {
+  const threshold = state.settings.leechThreshold ?? 0;
+  if (threshold <= 0) return [];
+  const postSet = new Set(state.addedPosts);
+  return Object.values(state.cardStates).filter(
+    (c) => postSet.has(c.postSlug) && c.lapses >= threshold,
+  );
 }

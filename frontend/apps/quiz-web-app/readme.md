@@ -114,5 +114,7 @@ See `_docs/02 plans/quiz-web-app-refactor-plan.md`.
 - **E3:** view & practise outside study mode (preview drawer, `/browse`, tag study) ✅
 - **E4:** study-flow & feedback UX — theme on cold load, undo toasts, auto-grade locking,
   in-session bury/suspend/ignore, mobile/a11y ✅
+- **E5:** spaced-repetition correctness — local dates/rollover, interval fuzz + load balancing,
+  per-set config/daily limits, leeches ✅
 
 See `_docs/02 plans/quiz-web-app-enhancements-plan.md`.

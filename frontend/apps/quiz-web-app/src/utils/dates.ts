@@ -1,7 +1,44 @@
-export function todayISO(offset = 0): string {
-  const d = new Date();
-  d.setDate(d.getDate() + offset);
-  return d.toISOString().slice(0, 10);
+/** Default Anki-style rollover: study day starts at 4 AM local time. */
+export const DEFAULT_DAY_START_HOUR = 4;
+
+/** Format a Date as local YYYY-MM-DD (never UTC slice). */
+export function localDateISO(d = new Date()): string {
+  const y = d.getFullYear();
+  const m = String(d.getMonth() + 1).padStart(2, "0");
+  const day = String(d.getDate()).padStart(2, "0");
+  return `${y}-${m}-${day}`;
+}
+
+/**
+ * Current study-day ISO date, respecting the Anki-style rollover hour.
+ * Before `dayStartHour` local time, the study day is still "yesterday".
+ */
+export function studyDayISO(now = Date.now(), dayStartHour = DEFAULT_DAY_START_HOUR): string {
+  const d = new Date(now);
+  if (d.getHours() < dayStartHour) d.setDate(d.getDate() - 1);
+  return localDateISO(d);
+}
+
+/**
+ * Study-day ISO date offset by N days from `now`, with rollover applied first.
+ */
+export function todayISO(
+  offsetDays = 0,
+  dayStartHour: number = DEFAULT_DAY_START_HOUR,
+  now = Date.now(),
+): string {
+  const d = new Date(now);
+  if (d.getHours() < dayStartHour) d.setDate(d.getDate() - 1);
+  d.setDate(d.getDate() + offsetDays);
+  return localDateISO(d);
+}
+
+/** Add calendar days to an ISO date string (local calendar math). */
+export function addDaysISO(iso: string, days: number): string {
+  const [y, m, d] = iso.split("-").map(Number);
+  const dt = new Date(y, m - 1, d);
+  dt.setDate(dt.getDate() + days);
+  return localDateISO(dt);
 }
 
 export function formatDateline(d = new Date()): string {
@@ -13,9 +50,12 @@ export function formatDateline(d = new Date()): string {
   });
 }
 
+/** Whole calendar days between two ISO dates (b − a). */
 export function daysBetween(aISO: string, bISO: string): number {
-  const a = new Date(aISO).getTime();
-  const b = new Date(bISO).getTime();
+  const [ay, am, ad] = aISO.split("-").map(Number);
+  const [by, bm, bd] = bISO.split("-").map(Number);
+  const a = Date.UTC(ay, am - 1, ad);
+  const b = Date.UTC(by, bm - 1, bd);
   return Math.round((b - a) / 86400000);
 }
 

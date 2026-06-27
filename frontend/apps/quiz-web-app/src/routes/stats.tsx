@@ -4,7 +4,7 @@ import { PageLayout } from "@/components/layout/PageLayout";
 import { Modal } from "@/components/ui/Modal";
 import { Stamp, stampClasses } from "@/components/ui/Stamp";
 import { useStore } from "@/store";
-import { selectDueCount } from "@/store/selectors";
+import { selectDueCount, selectLeeches } from "@/store/selectors";
 import { todayISO } from "@/utils/dates";
 
 export const Route = createFileRoute("/stats")({
@@ -14,21 +14,47 @@ export const Route = createFileRoute("/stats")({
 function StatsPage() {
   const cardStates = useStore((s) => s.cardStates);
   const ignored = useStore((s) => s.ignored);
+  const suspended = useStore((s) => s.suspended);
   const addedPosts = useStore((s) => s.addedPosts);
   const settings = useStore((s) => s.settings);
   const config = useStore((s) => s.config);
   const daily = useStore((s) => s.daily);
+  const dailyByPost = useStore((s) => s.dailyByPost);
+  const postConfigs = useStore((s) => s.postConfigs);
   const reviewLogs = useStore((s) => s.reviewLogs);
+  const unsuspendQuestion = useStore((s) => s.unsuspendQuestion);
   const resetAll = useStore((s) => s.resetAll);
 
   const [confirmReset, setConfirmReset] = useState(false);
   const [retentionWindow, setRetentionWindow] = useState<30 | 90 | 365>(30);
 
-  const today = todayISO(0);
+  const storeSlice = {
+    addedPosts,
+    cardStates,
+    ignored,
+    suspended,
+    daily,
+    dailyByPost,
+    postConfigs,
+    config,
+    settings,
+    reviewLogs,
+    studySessions: [],
+    lastReview: null,
+  };
+
+  const today = todayISO(0, settings.dayStartHour);
 
   const dueToday = useMemo(
-    () => selectDueCount({ addedPosts, cardStates, ignored, daily, config, settings } as never),
-    [addedPosts, cardStates, ignored, daily, config, settings],
+    () => selectDueCount(storeSlice as never),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [addedPosts, cardStates, ignored, suspended, daily, dailyByPost, postConfigs, config, settings],
+  );
+
+  const leeches = useMemo(
+    () => selectLeeches(storeSlice as never),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [cardStates, addedPosts, settings.leechThreshold],
   );
 
   const cardArr = Object.values(cardStates);
@@ -195,6 +221,61 @@ function StatsPage() {
           ))}
         </div>
       </Section>
+
+      {settings.leechThreshold > 0 && (
+        <Section title={`Leeches (≥ ${settings.leechThreshold} lapses)`}>
+          {leeches.length === 0 ? (
+            <p className="text-sm italic text-[var(--slate)]">No leeches — keep it up.</p>
+          ) : (
+            <div className="border-2 border-[var(--ink-black)] overflow-x-auto">
+              <table
+                className="data-table w-full text-sm"
+                style={{ fontFamily: "var(--font-mono)" }}
+              >
+                <thead className="border-b-2 border-[var(--ink-black)] bg-[var(--highlight)]">
+                  <tr>
+                    <th className="p-2 text-left">Question</th>
+                    <th className="p-2 text-left w-16">Lapses</th>
+                    <th className="p-2 text-left w-20">Set</th>
+                    <th className="p-2 text-left w-24">Status</th>
+                    <th className="p-2 text-left w-24">Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {leeches.map((c) => (
+                    <tr key={c.questionSlug} className="border-b border-[var(--column-rule)]">
+                      <td className="p-2 max-w-[240px] truncate" title={c.questionSlug}>
+                        {c.questionSlug}
+                      </td>
+                      <td className="p-2 font-bold">{c.lapses}</td>
+                      <td className="p-2 smallcaps text-[10px]">{c.postSlug}</td>
+                      <td className="p-2">{suspended[c.questionSlug] ? "Suspended" : "Active"}</td>
+                      <td className="p-2">
+                        {suspended[c.questionSlug] && (
+                          <button
+                            type="button"
+                            onClick={() => unsuspendQuestion(c.questionSlug)}
+                            className="smallcaps text-[10px] underline"
+                          >
+                            Unsuspend
+                          </button>
+                        )}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          )}
+          <p className="text-[10px] italic text-[var(--slate)] mt-2">
+            Threshold and action configurable in{" "}
+            <Link to="/settings" className="underline">
+              Settings
+            </Link>
+            .
+          </p>
+        </Section>
+      )}
 
       <Section title="Card Type Distribution">
         <div className="space-y-3">

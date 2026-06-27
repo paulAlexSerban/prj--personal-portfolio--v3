@@ -70,7 +70,18 @@ export interface AppSettings {
   keyboardShortcuts: boolean;
   globalNewLimit: number | null;
   globalReviewLimit: number | null;
+  /** Hour (0–23) when the study day rolls over (Anki default: 4). */
+  dayStartHour: number;
+  /** Auto-leech when lapses reach this count (0 = disabled). */
+  leechThreshold: number;
+  /** Action when a card becomes a leech. */
+  leechAction: "suspend" | "tag";
 }
+
+/** Per-post overrides for pacing — unset fields inherit global config. */
+export type PostConfigOverride = Partial<
+  Pick<StudyConfig, "newCardsPerDay" | "maxReviewsPerDay" | "learningSteps" | "lapseSteps">
+>;
 
 export interface DailyCounts {
   date: string;
@@ -108,6 +119,9 @@ export const DEFAULT_SETTINGS: AppSettings = {
   keyboardShortcuts: true,
   globalNewLimit: null,
   globalReviewLimit: null,
+  dayStartHour: 4,
+  leechThreshold: 8,
+  leechAction: "suspend",
 };
 
 /** Fresh SM-2 state for a question newly added to the study set. */

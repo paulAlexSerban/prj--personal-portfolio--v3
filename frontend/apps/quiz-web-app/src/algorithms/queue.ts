@@ -9,6 +9,10 @@ export interface QueueOpts {
   settings: AppSettings;
   /** When true, daily new/review caps are ignored (e.g. "study ahead"/cram). */
   ignoreLimits?: boolean;
+  /** Explicit remaining new-card budget (overrides config − studied when set). */
+  newBudget?: number;
+  /** Explicit remaining review budget (overrides config − studied when set). */
+  reviewBudget?: number;
 }
 
 /**
@@ -21,14 +25,16 @@ export function buildQueue(cards: CardState[], opts: QueueOpts): CardState[] {
     ? cards.length
     : Math.max(
         0,
-        (opts.settings.globalNewLimit ?? opts.config.newCardsPerDay) - opts.newStudiedToday,
+        opts.newBudget ??
+          (opts.settings.globalNewLimit ?? opts.config.newCardsPerDay) - opts.newStudiedToday,
       );
   const reviewLimit = opts.ignoreLimits
     ? cards.length
     : Math.max(
         0,
-        (opts.settings.globalReviewLimit ?? opts.config.maxReviewsPerDay) -
-          opts.reviewsStudiedToday,
+        opts.reviewBudget ??
+          (opts.settings.globalReviewLimit ?? opts.config.maxReviewsPerDay) -
+            opts.reviewsStudiedToday,
       );
 
   const learning = cards
@@ -50,6 +56,23 @@ export function buildQueue(cards: CardState[], opts: QueueOpts): CardState[] {
   else if (order === "reviews-first") queue = [...learning, ...review, ...newC];
   else queue = [...learning, ...interleave(newC, review)];
   return queue;
+}
+
+/** Merge per-post sub-queues according to study order preference. */
+export function mergePostQueues(
+  queues: CardState[][],
+  order: AppSettings["studyOrder"],
+): CardState[] {
+  if (queues.length === 0) return [];
+  if (queues.length === 1) return queues[0];
+  const learning = queues.flatMap((q) =>
+    q.filter((c) => c.cardType === "learning" || c.cardType === "relearning"),
+  );
+  const newC = queues.flatMap((q) => q.filter((c) => c.cardType === "new"));
+  const review = queues.flatMap((q) => q.filter((c) => c.cardType === "review"));
+  if (order === "new-first") return [...learning, ...newC, ...review];
+  if (order === "reviews-first") return [...learning, ...review, ...newC];
+  return [...learning, ...interleave(newC, review)];
 }
 
 function interleave<T>(a: T[], b: T[]): T[] {

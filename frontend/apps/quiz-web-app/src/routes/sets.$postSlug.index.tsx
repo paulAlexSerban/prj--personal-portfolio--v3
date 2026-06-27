@@ -14,6 +14,8 @@ import { useStudySetActions } from "@/hooks/useStudySetActions";
 import { useStore } from "@/store";
 import type { QuizState } from "@/store";
 import { getPostStats } from "@/store/selectors";
+import { resolvePostConfig } from "@/lib/postConfig";
+import type { PostConfigOverride } from "@/store/types";
 import { todayISO } from "@/utils/dates";
 
 export const Route = createFileRoute("/sets/$postSlug/")({
@@ -28,6 +30,10 @@ function SetDetailPage() {
   const ignored = useStore((s) => s.ignored);
   const addedPosts = useStore((s) => s.addedPosts);
   const config = useStore((s) => s.config);
+  const postConfigs = useStore((s) => s.postConfigs);
+  const dailyByPost = useStore((s) => s.dailyByPost);
+  const settings = useStore((s) => s.settings);
+  const setPostConfig = useStore((s) => s.setPostConfig);
   const resetPost = useStore((s) => s.resetPost);
   const ignoreQuestion = useStore((s) => s.ignoreQuestion);
   const unignoreQuestion = useStore((s) => s.unignoreQuestion);
@@ -65,8 +71,29 @@ function SetDetailPage() {
     };
   }, [postSlug]);
 
-  const statsState = { cardStates, ignored } as QuizState;
-  const stats = getPostStats(statsState, postSlug);
+  const statsState = {
+    cardStates,
+    ignored,
+    addedPosts,
+    postConfigs,
+    dailyByPost,
+    config,
+    settings,
+    suspended: {},
+    reviewLogs: [],
+    studySessions: [],
+    daily: { date: todayISO(0, settings.dayStartHour), new: 0, reviews: 0 },
+    lastReview: null,
+  } as QuizState;
+  const stats = getPostStats(statsState, postSlug, todayISO(0, settings.dayStartHour));
+  const effectiveConfig = resolvePostConfig(config, postConfigs[postSlug]);
+  const postOverride = postConfigs[postSlug];
+  const postDaily = dailyByPost[postSlug];
+  const today = todayISO(0, settings.dayStartHour);
+
+  function updateOverride(patch: PostConfigOverride) {
+    setPostConfig(postSlug, { ...postOverride, ...patch });
+  }
 
   const forecast7 = useMemo(() => {
     const postCards = Object.values(cardStates).filter((c) => c.postSlug === postSlug);
@@ -211,28 +238,57 @@ function SetDetailPage() {
               </h3>
               <div className="rule-thin mb-3" />
               <dl className="text-sm space-y-1" style={{ fontFamily: "var(--font-mono)" }}>
-                {(
-                  [
-                    ["Daily new limit", config.newCardsPerDay],
-                    ["Daily review limit", config.maxReviewsPerDay],
-                    ["Learning steps", config.learningSteps.join(" / ") + " min"],
-                    ["Starting ease", config.startingEaseFactor.toFixed(2)],
-                    ["Max interval", `${config.maximumInterval} d`],
-                  ] as [string, string | number][]
-                ).map(([k, v]) => (
-                  <div
-                    key={k}
-                    className="flex justify-between border-b border-dotted border-[var(--column-rule)] py-1"
-                  >
-                    <dt className="smallcaps text-[var(--slate)]">{k}</dt>
-                    <dd>{v}</dd>
-                  </div>
-                ))}
+                <ConfigRow
+                  label="Daily new limit"
+                  value={effectiveConfig.newCardsPerDay}
+                  overridden={postOverride?.newCardsPerDay !== undefined}
+                  onChange={(n) => updateOverride({ newCardsPerDay: n })}
+                />
+                <ConfigRow
+                  label="Daily review limit"
+                  value={effectiveConfig.maxReviewsPerDay}
+                  overridden={postOverride?.maxReviewsPerDay !== undefined}
+                  onChange={(n) => updateOverride({ maxReviewsPerDay: n })}
+                />
+                <ConfigRowText
+                  label="Learning steps (min)"
+                  value={effectiveConfig.learningSteps.join(" ")}
+                  overridden={postOverride?.learningSteps !== undefined}
+                  onChange={(s) =>
+                    updateOverride({
+                      learningSteps: s
+                        .split(/[\s,]+/)
+                        .map(Number)
+                        .filter((x) => !Number.isNaN(x) && x > 0),
+                    })
+                  }
+                />
+                <div className="flex justify-between border-b border-dotted border-[var(--column-rule)] py-1">
+                  <dt className="smallcaps text-[var(--slate)]">Studied today</dt>
+                  <dd>
+                    {postDaily?.date === today
+                      ? `${postDaily.new} new · ${postDaily.reviews} reviews`
+                      : "0 new · 0 reviews"}
+                  </dd>
+                </div>
+                <div className="flex justify-between border-b border-dotted border-[var(--column-rule)] py-1">
+                  <dt className="smallcaps text-[var(--slate)]">Starting ease</dt>
+                  <dd>{config.startingEaseFactor.toFixed(2)}</dd>
+                </div>
               </dl>
+              {postOverride && Object.keys(postOverride).length > 0 && (
+                <button
+                  type="button"
+                  onClick={() => setPostConfig(postSlug, null)}
+                  className="smallcaps text-[10px] underline mt-2 text-[var(--slate)]"
+                >
+                  Reset to global defaults
+                </button>
+              )}
               <p className="text-[10px] italic text-[var(--slate)] mt-2">
-                Global config ·{" "}
+                Per-set overrides · global defaults in{" "}
                 <Link to="/settings" className="underline">
-                  Edit in Settings
+                  Settings
                 </Link>
               </p>
             </div>
@@ -370,5 +426,64 @@ function SetDetailPage() {
         onClose={() => setPreview(null)}
       />
     </PageLayout>
+  );
+}
+
+function ConfigRow({
+  label,
+  value,
+  overridden,
+  onChange,
+}: {
+  label: string;
+  value: number;
+  overridden?: boolean;
+  onChange: (n: number) => void;
+}) {
+  return (
+    <div className="flex justify-between items-center border-b border-dotted border-[var(--column-rule)] py-1">
+      <dt className="smallcaps text-[var(--slate)]">
+        {label}
+        {overridden && <span className="ml-1 text-[var(--ink-black)]">*</span>}
+      </dt>
+      <dd>
+        <input
+          type="number"
+          min={0}
+          value={value}
+          onChange={(e) => onChange(Number(e.target.value))}
+          className="bg-transparent border-b border-[var(--ink-black)] w-16 text-right py-0.5"
+        />
+      </dd>
+    </div>
+  );
+}
+
+function ConfigRowText({
+  label,
+  value,
+  overridden,
+  onChange,
+}: {
+  label: string;
+  value: string;
+  overridden?: boolean;
+  onChange: (s: string) => void;
+}) {
+  return (
+    <div className="flex justify-between items-center border-b border-dotted border-[var(--column-rule)] py-1">
+      <dt className="smallcaps text-[var(--slate)]">
+        {label}
+        {overridden && <span className="ml-1 text-[var(--ink-black)]">*</span>}
+      </dt>
+      <dd>
+        <input
+          type="text"
+          value={value}
+          onChange={(e) => onChange(e.target.value)}
+          className="bg-transparent border-b border-[var(--ink-black)] w-24 text-right py-0.5 text-sm"
+        />
+      </dd>
+    </div>
   );
 }
