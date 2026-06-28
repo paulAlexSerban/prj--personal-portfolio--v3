@@ -1,20 +1,42 @@
 # Quiz Web App — enhancements & "better-than-Anki" plan (phased, gated)
 
-**Status:** draft plan
-**Owner:** TBD
-**Predecessor:** [`quiz-web-app-refactor-plan.md`](./quiz-web-app-refactor-plan.md) (Phases 0–7, the CSR/zustand/JSON refactor — substantially complete)
+**Status:** ✅ all 7 phases implemented (this is now a historical record, not an open plan)
+**Predecessor:** [`quiz-web-app-refactor-plan.md`](./quiz-web-app-refactor-plan.md) (the CSR/zustand/JSON refactor)
 **App:** [`frontend/apps/quiz-web-app`](../../frontend/apps/quiz-web-app)
 
-This plan covers what comes **after** parity-with-the-POC: content rendering fidelity
-(Markdown→MDX), viewing/practising questions outside study mode, UX polish, and
+This plan covers what came **after** parity-with-the-POC: content rendering fidelity
+(Markdown → MDX), viewing/practising questions outside study mode, UX polish, and
 spaced-repetition quality improvements aimed at surpassing Anki for this content.
+
+> **What to read instead, for current behaviour:** the app
+> [`readme.md`](../../frontend/apps/quiz-web-app/readme.md) (user-facing) and
+> [`AGENTS.md`](../../frontend/apps/quiz-web-app/AGENTS.md) (architecture). This
+> file kept the *why* and the per-phase exit gates; the verbose
+> session-by-session change logs have been trimmed.
+
+## TL;DR — what shipped
+
+| Phase | Outcome |
+| --- | --- |
+| P1 | Markdown rendering (was rendered as raw HTML → literal `##`/backticks). |
+| P2 | Real math (KaTeX) + code highlighting (highlight.js), lazy-loaded & offline. |
+| P3 | View/preview/search/cram questions **outside** a study session; tag-based study. |
+| P4 | UX: theme-on-load, undo toasts, auto-grade locking, bury/suspend/ignore, a11y. |
+| P5 | SR correctness: local day boundary, interval fuzz + load balancing, per-set limits, leeches. |
+| P6 | MDX content pipeline (`shared/quiz-markdown` + export compile, asset copy). |
+| P7 | Dual scheduler: SM-2 **and** FSRS-5, runtime-switchable with lossless migration. |
 
 ---
 
-## 1. Brutally honest critique (current state)
+## 1. Brutally honest critique (the state that motivated this plan)
 
-The app builds, typechecks, lints, tests (17), and is a clean CSR + zustand + static-JSON
-architecture. It is **functional but shallow**. The biggest problems, in order of severity:
+> This is the **original** critique taken right after the refactor (17 tests, before
+> any enhancement). Every item C1–C12 below has since been addressed — see the
+> phase that fixed it. Kept verbatim because it explains *why* each phase exists.
+
+At that point the app built, typechecked, linted, tested (17), and was a clean CSR +
+zustand + static-JSON architecture — but **functional and shallow**. The biggest
+problems, in order of severity (→ fixing phase):
 
 | #   | Severity | Area            | Finding                                                                                                                                                                                                                          |
 | --- | -------- | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -31,7 +53,9 @@ architecture. It is **functional but shallow**. The biggest problems, in order o
 | C11 | Low      | Leeches         | `lapses` is tracked but never acted on. Anki auto-suspends/tags **leeches** (lapses ≥ N). We don't surface or act on them.                                                                                                       |
 | C12 | Low      | Mobile/a11y     | Wide tables overflow on mobile; stats heatmap is fixed at 53 columns; limited ARIA; reveal/rate flow is keyboard-only-friendly but not screen-reader-announced.                                                                   |
 
-What's **good** and should be preserved: clean content/progress separation (slug-keyed
+**Fixed by:** C1 → P1 · C2,C10 → P2/P6 · C4 → P3 · C8,C9,C12 → P4 · C3,C5,C6,C11 → P5 · C7 → P7.
+
+What's **good** and was preserved: clean content/progress separation (slug-keyed
 state), additive `addPost`, deterministic pure SM-2 engine + tests, the JSON contract,
 PWA offline, and the rich stats page.
 
@@ -73,31 +97,6 @@ PWA offline, and the rich stats page.
 
 **Remaining for later phases:** ~~real math (Phase 2), code highlighting~~ (done in Phase 2); MDX (Phase 6).
 
-```
-Markdown rendering — implemented & verified ✅
-The critical bug: explanations and answers are authored in Markdown (## Answer:, fenced ```js blocks, **bold**, lists, inline `code`) but CardRenderer treated the string as HTML — stripping/escaping everything, so users saw literal ## Answer: and backticks.
-
-Fixed with a real pipeline in CardRenderer: marked (GFM) → cloze/math substitution → DOMPurify sanitize (allow-listed tags/attrs). Added:
-
-inline mode (marked.parseInline) for MC/multiple-select option labels (e.g. `O(n log n)`).
-Full .md-content styling (headings, lists, fenced code blocks, tables, blockquotes, hr) plus cloze classes in styles.css.
-Verified: typecheck ✅, build ✅ (PWA 28 entries), lint ✅ (0 errors, 7 pre-existing shadcn warnings), 17/17 tests ✅.
-
-Brutally honest critique + plan
-Written to _docs/02 plans/quiz-web-app-enhancements-plan.md. The headline findings:
-
-C1 Markdown not rendered — fixed this session.
-C2 $…$ is fake math (italic serif), not KaTeX.
-C3 No interval fuzz/load-balancing → same-day cohorts all pile up on the same due date.
-C4 No way to view a question + answer outside a scheduled session (your explicit ask).
-C5 Real bug: todayISO() mixes local setDate with UTC toISOString().slice(0,10) → due dates drift by a day near midnight for non-UTC users.
-C6 Daily limits are global, not per-set; the per-set config panel is read-only.
-C7 SM-2 only — beating Anki realistically needs FSRS.
-C8/C9 sonner installed but unused, no undo, theme not applied on load, wrong auto-graded answers can still be rated Easy.
-The 7-phase gated roadmap: P1 Markdown (done) → P2 math/code fidelity → P3 view/preview/search outside study mode → P4 study-flow & feedback UX → P5 SR correctness (fuzz, date fix, per-set config, leeches) → P6 MDX pipeline → P7 FSRS scheduler (the "better than Anki" core). Each has entry/exit gates, plus a traceability table mapping your asks to phases and a "cheap wins to pull forward" list.
-
-One note: I deliberately rewrote $postSlug.tsx as a complete file rather than incremental edits, because pnpm format + TanStack's route-split transform corrupted it earlier — I verified it survived the format run this time.
-```
 ---
 
 ### Phase 2 — Math + code fidelity (C2, C10 partial) — ✅ DONE
@@ -124,33 +123,7 @@ One note: I deliberately rewrote $postSlug.tsx as a complete file rather than in
 **Exit gate (G2) — met**
 - A question with `$\sum_{i=1}^n i$` and a ```` ```ts ```` block renders correctly and offline.
 - KaTeX/highlighter are code-split (confirmed in `dist` chunk report); build/lint/tests green (31).
-```
-What changed
-Real math (KaTeX)
 
-New src/components/card/markdown.ts adds a custom marked tokenizer extension for inline $…$ and block $$…$$. It emits inert placeholders carrying the raw TeX as escaped text, so markdown never mangles _, *, or \ inside formulas. A bare $5 price is correctly not treated as math.
-KaTeX renders those placeholders at runtime.
-Code highlighting (highlight.js)
-
-marked keeps the language-* class; highlight.js (lib/common, ~37 languages) highlights fenced blocks after mount.
-Lazy + code-split (the key constraint)
-
-KaTeX + highlight.js + KaTeX CSS live in src/lib/richText.ts, dynamically imported by CardRenderer only when content actually contains .math/pre code.
-Verified in the build chunk report: richText.js (~423 kB) and richText.css (~29 kB) are a separate chunk; the main bundle is unchanged (~283 kB). KaTeX .ttf/.woff2 fonts are emitted as assets and precached (added ttf to PWA globPatterns) → math works offline.
-Theme-aware CSS
-
-styles.css gets a highlight.js token palette tuned for the dark code surface plus KaTeX display/inline spacing; removed the old naive $…$→<i> rule.
-Test infrastructure
-
-Added jsdom + test.environment in vite.config.ts (switched to vitest/config's defineConfig) so DOMPurify can initialize in tests.
-New markdown.test.ts (8 tests) covers math placeholders, the $5 guard, HTML-escaping inside TeX, fenced-code language classes, inline code, cloze reveal, and inline mode.
-Verification
-tsc -b clean, lint 0 errors (7 pre-existing shadcn warnings), 31/31 tests pass, build + PWA succeed.
-Chunk report confirms KaTeX/highlight.js are code-split out of the initial bundle.
-To see it: open a card with $\sum_{i=1}^n i$ and a ```ts block — formula renders as real math, code is syntax-highlighted on the newsprint dark surface. Docs updated (enhancements-plan.md Phase 2 marked done; app readme.md rendering section).
-
-Want me to continue with Phase 3 (view & practise questions outside study mode — the preview drawer + global browser), which is the other thing you'd directly asked for?
-```
 ---
 
 ### Phase 3 — View & practise outside study mode (C4) — ✅ DONE
@@ -174,38 +147,6 @@ Want me to continue with Phase 3 (view & practise questions outside study mode �
 - Preview is read-only (no `reviewCard`; `resetQuestion` does not append `reviewLogs`).
 - Global search/filter returns cross-set matches (`questionFilters.test.ts`); tag study uses
   scoped queue (`study-queue.integration.test.ts` cram test); build/lint/tests green (39).
-
-```
-What was built
-1. Question preview (read-only)
-QuestionPreviewDrawer — wide modal showing stem, options (correct answers highlighted), explanation, tags, difficulty, and SM-2 state (interval, ease, due, lapses).
-Does not call reviewCard — preview is purely read-only.
-Set detail (/sets/$postSlug) — click any table row to open the preview.
-2. Per-question actions from preview
-Ignore / Unignore
-Reset Progress — new resetQuestion() store action (single card, leaves reviewLogs untouched)
-Study This Card — cram session via /sets/$postSlug/study?cram=<slug>
-3. Global question browser (/browse)
-Loads _all.json, scoped to your added sets
-Search across stem, slug, explanation, tags
-Filters: format, difficulty, tag, state (new / learning / due / ignored)
-Pagination (25 per page)
-Row click → same preview drawer
-4. Tag-based study
-/tags — all tags from your active sets with counts
-/tags/$tag — question list + Study Due / Cram All
-/tags/$tag/study — scheduled session scoped to that tag; ?cram=1 or ?cram=<slug> for cram
-Infrastructure
-StudySession extended with questionSlugs + cram props
-selectStudyQueue supports tag/single-card scope and cram mode (cards included regardless of due date)
-loadAllQuestions() for the browse screen
-Nav updated: Posts, Questions, Tags, My Sets, Progress, Settings
-Try it
-Open a set → click any question row → full preview with answers
-/browse → search/filter across all your sets
-/tags → pick a tag → study or cram
-Next up is Phase 4 (theme on load, toasts + undo, auto-grade UX) if you want to continue.
-```
 
 ---
 
@@ -238,35 +179,8 @@ Next up is Phase 4 (theme on load, toasts + undo, auto-grade UX) if you want to 
   rated Good/Easy (`ratingDisabled` locks r≥3); suspend filtering covered by `store.test.ts`.
   Build/lint/tests green (44).
 
-```
-What changed
-1. Theme on cold load (C12)
-
-New src/lib/theme.ts with applyTheme() + initTheme() (handles system via a prefers-color-scheme listener).
-main.tsx applies the persisted theme before first paint, so dark mode is correct on a cold load — not just after toggling. Settings and backup-import reuse the shared helper.
-2. Toasts + undo (C9)
-
-sonner <Toaster> mounted in __root.tsx.
-Store: an ephemeral lastReview buffer + new undoLastReview() action that restores the exact prior CardState, prior daily counts, and drops the appended reviewLog. It's excluded from persistence via partialize.
-Each rating now shows an Undo action toast (also reverts session stats and re-reveals the card). Toasts also fire on add/remove set, ignore/suspend/reset, and import/export/clear.
-3. Auto-grade flow (C8)
-
-QuestionRenderer reports correctness via onGraded. On a wrong auto-graded answer, StudySession locks Good/Easy (forces Again/Hard, with a hint), and a Try Again button (onRetry) lets you retry before rating.
-MC/MS options show per-option got it / missed / wrong tags after reveal.
-4. In-session card actions
-
-Bury (session-local skip), Suspend (persistent suspended map filtered from all queues; unsuspend from the preview drawer), Ignore, plus a read-only content note.
-5. Mobile / a11y
-
-.data-table utility (min-width + sticky first column) on the set-detail and browse tables.
-aria-live="polite" region announcing reveal/correctness; reveal result block uses role="status".
-Verification
-tsc --noEmit: clean
-vitest run: 44 passed (added undoLastReview + suspendQuestion suites)
-eslint: 0 errors (only pre-existing fast-refresh warnings)
-pnpm build + PWA generation: succeeded
-One note: I implemented bury as a session-local skip (skips the card for the rest of the current session) rather than mutating the schedule to literally "tomorrow", since that avoids touching SM-2 state and is reversible — the plan's intent (get it out of today's queue) is satisfied either way.
-```
+> **Decision:** *Bury* is a session-local skip (out of today's queue) rather than
+> a schedule mutation — it avoids touching scheduler state and is reversible.
 
 ---
 
@@ -294,59 +208,12 @@ One note: I implemented bury as a session-local skip (skips the card for the res
   per-set limits independent (`store.test.ts`); leech threshold suspends (`store.test.ts`).
   Build/lint/tests green (59).
 
-```
-What changed
-1. Day-boundary fix (C5)
-todayISO, localDateISO, and addDaysISO now use local calendar math instead of toISOString().slice(0, 10).
-Added settings.dayStartHour (Anki-style rollover, default 4 AM) in Settings.
-Wired through the store, selectors, and SM-2 scheduling.
-2. Interval fuzz + load balancing (C3)
-New algorithms/fuzz.ts: Anki-style fuzz magnitude, deterministic seeding (question slug), and load balancing toward the lightest day in a 21-day lookahead.
-Integrated into sm2.ts via scheduleReviewInterval for graduation and review ratings — same-day cohorts spread across due dates.
-3. Per-set config overrides (C6)
-Store: postConfigs (overrides) + dailyByPost (per-set daily counts).
-Queue built per post with independent new/review limits, capped by global daily totals.
-Set detail At a Glance panel is now editable (new/day, reviews/day, learning steps, studied-today). Overrides marked with *, resettable to global defaults.
-4. Leeches (C11)
-Settings: leechThreshold (default 8) and leechAction (suspend or tag).
-Auto-suspend on threshold in reviewCard.
-Leeches table on /stats with unsuspend action.
-Verification
-59 tests pass (new: dates.test.ts, fuzz.test.ts; updated store/per-set/leech tests)
-Typecheck, lint, and production build all green
-Where to try it
-Settings → “Next day starts at”, Leech threshold/action
-Set detail → editable At a Glance overrides
-Stats → Leeches section (when threshold > 0)
-Phase 6 (MDX content pipeline) is next when you want to continue.
-```
-
-#### Bugfix - Theme changes
-```
-Root cause
-Theme toggling was working at the JS level — applyTheme correctly adds/removes the .dark class on <html>. The problem was entirely in the CSS:
-
-The app styles itself almost everywhere with the raw palette tokens directly: var(--ink-black), var(--aged-white), var(--newsprint), var(--slate), var(--highlight), var(--column-rule).
-The .dark block only remapped the semantic tokens (--background, --foreground, --card, …), which almost nothing in the app references.
-So flipping .dark changed only the bare <body> background and left every card, border, button, and text color on the fixed light palette → it looked "always light."
-Fix
-In src/styles.css, the .dark block now inverts the raw palette itself (keeping each token's slot meaning — --ink-black = ink/primary text, --aged-white = paper/surface, --newsprint = page background), and the semantic tokens recompute from it just like :root does:
-
-
-styles.css
-Lines 12-25
-  --ink-black: #ece9e1; /* ink → light on dark */
-  --press-black: #ffffff;
-  --charcoal: #cfcabd; /* secondary text */
-  --slate: #968f80; /* muted text */
-  --newsprint: #14130f; /* page background */
-  --aged-white: #1e1c16; /* card / article surface */
-  --column-rule: #3d382f; /* rules / dotted borders */
-  --highlight: #2b2820; /* hover / secondary surface */
-Now toggling Light / Dark / System in Settings inverts the whole newspaper theme (surfaces, text, borders, buttons, tables), and it applies correctly on cold load too.
-
-One minor cosmetic note: the subtle "grain" dot texture is drawn with a hardcoded dark rgba(13,13,13,…), so it effectively disappears on the dark background. That's harmless, but if you'd like the texture preserved in dark mode I can make those dots theme-aware as a small follow-up.
-```
+> **Follow-up bugfix (theme):** dark mode only flipped `<body>` because the app
+> styles from raw palette tokens (`--ink-black`, `--aged-white`, …) while `.dark`
+> only remapped the rarely-used semantic tokens. Fixed by having `.dark` invert
+> the **raw palette** itself in `styles.css` (each token keeps its slot meaning).
+> Known cosmetic gap: the "grain" dot texture uses a hardcoded dark `rgba`, so it
+> disappears on the dark background (harmless).
 
 ---
 
@@ -373,37 +240,10 @@ One minor cosmetic note: the subtle "grain" dot texture is drawn with a hardcode
 - XSS hostile payload stripped (`compile.test.ts` sanitizer tests in both packages).
 - Frontend uses export HTML fast path with client fallback; build/tests green (61 app + 7 markdown + 1 export compile).
 
-```
-What changed
-1. Shared compiler (shared/quiz-markdown)
-New package with a single pipeline used by both export and the app:
-
-MDX preprocess — allow-listed components only:
-<Callout type="tip">…</Callout> → <aside class="mdx-callout mdx-callout-tip">
-<Figure src="./images/…" caption="…" /> → <figure class="mdx-figure">
-Markdown — GFM + math placeholders (same as Phase 1/2)
-Sanitize — isomorphic-dompurify with shared ALLOWED_TAGS / ALLOWED_ATTR (includes aside, figure, figcaption)
-2. Export-time compile (shared/quiz-export)
-New compileQuizData() adds contentFormat, stemHtml, explanationHtml, labelHtml to each question
-JSON contract bumped to version 2
-CLI runs compile after DB query
-Assets: copies images from CONTENT_DIR/questions/<slug>.mdx sibling dirs → public/data/assets/questions/<slug>/, rewrites paths to /data/assets/questions/...
-3. Frontend fast path
-CardRenderer accepts compiledHtml — uses export HTML when present, falls back to client compile
-Study session + preview drawer wired to use stemHtml, explanationHtml, labelHtml
-CSS for .mdx-callout and .mdx-figure
-4. Tests
-shared/quiz-markdown: 7 tests (MDX Callout/Figure, XSS stripping)
-shared/quiz-export: compile integration test
-Frontend: 61 tests (+2 MDX/XSS tests)
-To get compiled content in the app
-Re-run the export so JSON includes the new HTML fields:
-
-pnpm --filter @prj--personal-portfolio--v3/shared--quiz-export start
-Requires CONTENT_DIR pointing at synced content (for image copy). Existing v1 JSON still works via the client-side fallback compiler.
-
-Phase 7 (FSRS scheduler) is next when you want to continue.
-```
+> **To get compiled content in the app**, re-run the export so JSON includes the
+> new HTML fields (needs `CONTENT_DIR` for image copy):
+> `pnpm --filter @prj--personal-portfolio--v3/shared--quiz-export start`.
+> Existing v1 JSON still works via the client-side fallback compiler.
 
 ---
 
@@ -636,32 +476,10 @@ All four are formatted the same way as SM-2 (days / months / years via `formatIn
 - `routes/stats.tsx` — Memory Model (FSRS) section: stability/difficulty, retention curve, retrievability bands.
 - `routes/sets.$postSlug.index.tsx` — per-card `R(t)` column under FSRS.
 
+> **Decision:** learning/relearning steps and daily limits are shared by both
+> algorithms (FSRS only diverges on review-state cards), so per-set config and
+> fuzz/load-balancing apply under FSRS too.
 
-```
-What I built
-Scheduler abstraction (the core ask)
-
-algorithms/learning.ts — shared learning/relearning step engine + a ReviewStrategy interface. The learning-phase logic is now common to both algorithms; schedulers only differ on review-state behaviour and graduation.
-algorithms/sm2.ts — refactored into sm2Strategy + a thin applyReview wrapper (behaviour unchanged) + migrateToSm2.
-algorithms/fsrs.ts — full FSRS-5 implementation: predictedRetention, intervalFromStability, initStability/Difficulty, nextDifficulty, nextRecallStability, nextForgetStability, the strategy, and migrateToFsrs.
-algorithms/scheduler.ts — the Scheduler interface, getScheduler(settings), and cardRetrievability. Everything routes through this.
-Dynamic switching with lossless migration
-
-store.setSettings detects an algorithm change and atomically migrates every card. SM-2→FSRS seeds stability from interval and difficulty from ease; FSRS→SM-2 drops FSRS fields and keeps interval/ease — fully reversible. reviewCard reads the active scheduler and stamps ReviewLog.scheduler.
-UI
-
-Settings → new Scheduler section: algorithm toggle (with a confirmation + migration toast), target-retention slider (70–99 %), and an advanced FSRS-weights field.
-Stats → Memory Model (FSRS) section: avg stability/difficulty, a 30-day predicted-retention curve, and a retrievability band breakdown (when FSRS is active).
-Set detail → per-card R(t) column (colour-coded) replaces the Ease column under FSRS.
-Study session → rating-button interval previews now come from the active scheduler.
-Verification
-
-algorithms/backtest.ts — a ground-truth-memory simulation. Result: FSRS hits ~90 % retention with ~36 % fewer reviews than SM-2 on the same deck, confirming the exit-gate claim.
-17 new FSRS tests (formulas, review flow, migration round-trip, idempotency, getScheduler). 78 tests pass, typecheck + production build green.
-Docs updated (enhancements plan Phase 7 marked DONE with implementation map + exit gate; readme E7 entry + back-test command).
-
-One note on a decision I made autonomously: the learning/relearning steps and daily limits are shared by both algorithms (FSRS only diverges on review-state cards), as outlined in the plan — so the existing per-set config and fuzz/load-balancing continue to apply under FSRS too.
-```
 ---
 
 ## 4. Requirement → phase traceability
@@ -687,8 +505,13 @@ One note on a decision I made autonomously: the learning/relearning steps and da
 | Date/fuzz changes shift everyone's due dates at once   | Med | Shipped P5; one-time, documented; tested                         |
 | Prettier + TanStack route-split rewriting route files  | Low | Author route files complete (not incremental); verify after fmt  |
 
-## 6. Immediate follow-ups (cheap wins, can pull forward)
+## 6. Remaining known gaps (not yet addressed)
 
-- Wire `sonner` + theme-on-load (P4 items) — small, high-perceived-value.
-- Fix `todayISO` UTC bug (P5.1) — correctness, low effort.
-- Question preview drawer on set-detail (P3.1) — directly answers the user's request.
+All P1–P7 work is shipped. Honest leftovers, none blocking:
+
+- **No FSRS parameter optimizer.** Weights are the published defaults, hand-editable
+  only; there is no per-user fitting from review history.
+- **`multiple_select` grading is all-or-nothing.** No partial credit.
+- **Dark-mode "grain" texture** uses a hardcoded `rgba`, so it disappears on dark.
+- **a11y is improved, not audited.** No formal screen-reader pass.
+- **No LLM/free-text auto-grading** (explicit non-goal).

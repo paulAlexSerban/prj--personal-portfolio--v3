@@ -66,6 +66,7 @@ Many topics remain in `drafts/` (database engine, ORM, CMS, CI/CD, spaced repeti
 | MDX ingest / DB schema | `02 plans/mdx-ingest-pipeline.md` + `shared/db-schema/index.ts`  |
 | Frontmatter contracts  | Architecture doc § MDX Frontmatter Contracts                     |
 | Build-time data flow   | Architecture doc § SSG Build                                     |
+| Quiz web app / export  | `frontend/apps/quiz-web-app/AGENTS.md` + `shared/AGENTS.md`; plans in `02 plans/quiz-web-app-*.md` |
 | Product behaviour      | Relevant file under `product/`                                   |
 
 ## Implementation status (docs vs code)

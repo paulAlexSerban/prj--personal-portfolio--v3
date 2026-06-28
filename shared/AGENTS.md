@@ -47,20 +47,25 @@ Schema (`db-schema`) is separated from runtime (`db`) so the frontend can import
 
 ### `@prj--personal-portfolio--v3/shared--ui` (`shared/ui/`)
 
-- **Role**: Shared React UI kit + newspaper design system ("THE REVIEW"). Full shadcn/ui
-  component set, custom `Stamp`/`Modal`, `cn()` util, and theme CSS tokens.
+- **Role**: React UI kit + newspaper design system ("THE REVIEW") **and** the quiz
+  presentation "blocks". Two layers: generic shadcn/ui primitives + the
+  presentation-only flashcard UI (the quiz app wires blocks via containers/hooks).
 - **Exports**:
-    - `.` — barrel (all components + `cn` + `useIsMobile`)
+    - `.` — barrel (blocks + primitives + `cn` + `useIsMobile`)
+    - `./blocks` — quiz blocks only (`CardRenderer`, `QuestionRenderer`, `StudyCard`, `QuestionPreview`, `SessionEndView`, `NothingDueView`)
     - `./utils` — `cn()` only
     - `./styles.css` — design tokens, component classes, `.md-content` typography
 - **Files**:
+    - `src/components/blocks/` — quiz blocks (pure, props-driven) + Storybook stories
     - `src/components/ui/` — shadcn/ui + `Stamp.tsx`, `Modal.tsx`
+    - `src/lib/markdown.ts` — `marked` GFM + math/cloze tokenizer (used by `CardRenderer`)
+    - `src/lib/richText.ts` — lazy/code-split KaTeX + highlight.js loaders
     - `src/lib/utils.ts` — `cn()` helper
     - `src/hooks/use-mobile.tsx` — responsive hook (Sidebar)
     - `src/styles/theme.css` — newspaper palette + dark theme + markdown/KaTeX/hljs styles
-- **Scripts**: `pnpm --filter ...shared--ui typecheck`
+- **Scripts**: `typecheck`; `storybook` / `build-storybook` (block gallery).
 - **Consumers**: `frontend--quiz-web-app` (today); future Astro portfolio/blog via React islands.
-- **Depends on**: Radix UI, CVA, lucide-react, sonner, etc. (see `package.json`); `react`/`react-dom` as peer deps.
+- **Depends on**: `shared--quiz-export` (contract types) + `shared--quiz-markdown` (compile); Radix UI, CVA, lucide-react, sonner, KaTeX, highlight.js (see `package.json`); `react`/`react-dom` as peer deps.
 
 ### `@prj--personal-portfolio--v3/shared--quiz-export` (`shared/quiz-export/`)
 

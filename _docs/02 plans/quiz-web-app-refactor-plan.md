@@ -1,8 +1,18 @@
 # Quiz Web App — refactor & data-export plan (phased, gated)
 
-**Status:** draft plan
-**Owner:** TBD
-**Inputs:**
+**Status:** ✅ complete — all phases (0–7) shipped. The POC is gone; the app is
+CSR-only, zustand-managed, and fed by `shared/quiz-export` JSON. This doc is now a
+historical record of *why* and *how*; for current behaviour read the app
+[`readme.md`](../../frontend/apps/quiz-web-app/readme.md) and
+[`AGENTS.md`](../../frontend/apps/quiz-web-app/AGENTS.md), and `shared/AGENTS.md`
+for the export module. Follow-on work lives in
+[`quiz-web-app-enhancements-plan.md`](./quiz-web-app-enhancements-plan.md).
+
+**Outcome in one line:** a Lovable SSR POC (`ink-and-recall`, bun) became a strict
+CSR React 19 app (`frontend/apps/quiz-web-app`, pnpm) plus a new
+`shared/quiz-export` package that turns `content.db` into static JSON.
+
+**Inputs (at planning time):**
 [`frontend/poc/ink-and-recall/`](../../frontend/poc/ink-and-recall) (Lovable POC),
 [`product/01 prd - feature requirements - flascard quiz web app.md`](../product/01%20prd%20-%20feature%20requirements%20-%20flascard%20quiz%20web%20app.md),
 [`02 plans/question-types-implementation-plan.md`](./question-types-implementation-plan.md) (esp. **Phase 4 — build-time JSON export**),
@@ -288,12 +298,6 @@ Output root: `frontend/apps/quiz-web-app/public/data/` (overridable via env).
 - ✅ `rg -i lovable` → 0 hits in app/shared code (only this plan doc references it historically; the POC is gone).
 - ✅ App is CSR-only, zustand-managed, JSON-fed; WEB-01..13 mapped (SM-2 **and** FSRS schedulers shipped per the enhancements plan).
 - ✅ Docs/AGENTS updated (`_docs/AGENTS.md`, `tools/AGENTS.md`, new app `AGENTS.md`, question-types plan P4 cross-link).
-
-**Exit gate (G7 — definition of done)**
-- `pnpm -w typecheck` + `pnpm -w test` + `pnpm -w build` (or per-filter) green.
-- `rg -i "lovable"` across repo (excluding archived POC) = 0 hits in app/shared code.
-- App is CSR-only (no server output), zustand-managed, JSON-fed; WEB-01..13 mapped (deferred items explicitly noted).
-- Docs/AGENTS updated.
 
 ---
 

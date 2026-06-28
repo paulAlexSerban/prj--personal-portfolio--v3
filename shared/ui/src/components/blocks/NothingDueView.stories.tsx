@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
+import React from 'react';
 import { NothingDueView } from './NothingDueView';
 import { Stamp } from '../ui/Stamp';
 

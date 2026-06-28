@@ -6,9 +6,26 @@ Standalone CSR React app for spaced-repetition flashcard study.
 
 - React 19 + Vite (strict CSR — no SSR)
 - TanStack Router (file-based routing)
-- Zustand (state — Phase 3+)
-- Tailwind CSS 4 + shadcn/ui components
+- Zustand (client-side study progress, persisted to `localStorage`)
+- UI + newspaper design system from `@prj--personal-portfolio--v3/shared--ui`
+  (Tailwind 4 + shadcn/ui primitives **and** the quiz "blocks")
 - Static quiz data from `@prj--personal-portfolio--v3/shared--quiz-export`
+
+## Architecture in one minute
+
+This app is the **orchestration layer**; the visuals are shared.
+
+- **Blocks** (the actual quiz UI — study card, question renderer, preview, end/empty
+  screens) are pure, props-driven components in `shared--ui` (`./blocks`), each with
+  a Storybook story.
+- **Hooks** (`src/hooks/`) hold the logic: read the Zustand store + JSON content,
+  build the queue, run the scheduler.
+- **Containers** (`src/containers/`) glue a hook to a block.
+- **Routes** (`src/routes/`) pick the scope (a set, a tag, everything) and mount a
+  container.
+
+So content is read-only JSON, progress is slug-keyed state in the browser, and the
+presentation is reusable. See [`AGENTS.md`](./AGENTS.md) for the full map.
 
 ## Commands
 
@@ -77,17 +94,17 @@ PWA assets are only emitted by `vite build`, not in dev.
 
 ## Study session
 
-Question stems, options, and explanations/answers are authored in **Markdown**
-(headings, lists, fenced code, inline code, tables) and rendered via `CardRenderer`
-(`marked` GFM + math tokenizer → cloze substitution → `DOMPurify` sanitize, in
-`components/card/markdown.ts`). Option labels use inline Markdown. **Math** (`$…$`
-inline, `$$…$$` block) renders with **KaTeX** and fenced code is highlighted with
-**highlight.js** — both are lazy-loaded/code-split (`lib/richText.ts`) and precached
-for offline use. MDX is planned — see
-`_docs/02 plans/quiz-web-app-enhancements-plan.md`.
+Question stems, options, and explanations/answers are authored in **Markdown/MDX**
+and rendered by the `CardRenderer` block in `shared--ui`. The compile pipeline
+(`marked` GFM + math/cloze → `DOMPurify` sanitize) lives in
+`shared--quiz-markdown`; export-time precompiled HTML is the fast path, with a
+client compile as fallback. **Math** (`$…$` inline, `$$…$$` block) renders with
+**KaTeX** and fenced code is highlighted with **highlight.js** — both lazy-loaded
+/ code-split (`shared--ui` `lib/richText.ts`) and precached for offline use.
 
-The study route builds a due queue (`selectStudyQueue`) scoped to the post,
-then renders each card via `QuestionRenderer`, which branches on `answerFormat`:
+The study container (`containers/StudySession` + `hooks/useStudySession`) builds a
+due queue (`selectStudyQueue`) scoped to the post, then renders each card with the
+`QuestionRenderer` block (from `shared--ui`), which branches on `answerFormat`:
 
 - `free_text` → reveal `explanation`, self-grade
 - `multiple_choice` / `true_false` → pick answer, auto-grade, then reveal
@@ -111,7 +128,7 @@ All scheduling routes through a single `Scheduler` interface
 - **Phase 4:** browse posts, study sets, set detail ✅
 - **Phase 5:** study session, per-format question renderer, rich stats, settings ✅
 - **Phase 6:** PWA / offline, study-all, global reset, settings, backup/restore ✅
-- **Phase 7:** cutover, cleanup, docs
+- **Phase 7:** cutover (POC removed), cleanup, docs ✅
 
 See `_docs/02 plans/quiz-web-app-refactor-plan.md`.
 
@@ -129,6 +146,11 @@ See `_docs/02 plans/quiz-web-app-refactor-plan.md`.
   retention target, memory-model stats, and a back-test harness ✅
 
 See `_docs/02 plans/quiz-web-app-enhancements-plan.md`.
+
+> **Structural follow-up (done):** the quiz UI was extracted into reusable,
+> Storybook-backed **blocks** in `shared--ui`; this app now keeps only containers,
+> hooks, routes, store, and schedulers. See the "Architecture in one minute"
+> section above and `shared/ui/readme.md`.
 
 #### FSRS back-test
 

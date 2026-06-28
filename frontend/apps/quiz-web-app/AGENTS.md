@@ -19,18 +19,31 @@ user progress (zustand + persist) ── join by question slug ──► study U
   content here. Progress is keyed by **question slug** (stable), never by uid.
 - **CSR-only.** No `server.ts`/SSR shell. `main.tsx` → `RouterProvider`; routes
   are file-based (`src/routes/*`, `routeTree.gen.ts` is generated — don't hand-edit).
+- **Presentation lives in `shared--ui`, orchestration lives here.** The quiz UI
+  "blocks" (`CardRenderer`, `QuestionRenderer`, `StudyCard`, `QuestionPreview`,
+  `SessionEndView`, `NothingDueView`) are pure, props-driven components in
+  `shared--ui` (`./blocks`, with Storybook stories). The app supplies thin
+  **containers** that read the store/data via **hooks** and pass props down. Don't
+  put store/data access in a block, and don't put presentation in a container.
 
 ## Key directories
 
-| Path              | Role                                                                                |
-| ----------------- | ----------------------------------------------------------------------------------- |
-| `src/routes/`     | File-based TanStack routes (browse, sets, study, tags, stats, settings)             |
-| `src/store/`      | Zustand store (`index.ts`), `types.ts`, `selectors.ts` — slug-keyed progress        |
-| `src/algorithms/` | Schedulers + queue/intervals/fuzz (see below)                                       |
-| `src/components/` | `card/` (markdown render), `study/`, `question/`, `layout/` (app-specific masthead) |
-| `src/data/`       | `loadQuizData.ts` — fetches `/data/*.json` (typed via export contract)              |
-| `src/lib/`        | theme, post-config, rich-text (KaTeX/highlight.js lazy loaders)                     |
-| `public/data/`    | Generated JSON (do not edit by hand; regenerate via the export CLI)                 |
+| Path                     | Role                                                                                       |
+| ------------------------ | ------------------------------------------------------------------------------------------ |
+| `src/routes/`            | File-based TanStack routes (browse, sets, study, tags, stats, settings)                    |
+| `src/containers/`        | Wire store + data + hooks to `shared--ui` blocks (`StudySession`, `QuestionPreviewDrawer`) |
+| `src/hooks/`             | Orchestration: `useStudySession`, `useQuestionPreview`, `useStudySetActions`               |
+| `src/store/`             | Zustand store (`index.ts`), `types.ts`, `selectors.ts` — slug-keyed progress               |
+| `src/algorithms/`        | Schedulers + queue/intervals/fuzz (see below)                                              |
+| `src/components/layout/` | App-specific chrome only (`Masthead`, `PageLayout`) — generic UI comes from `shared--ui`   |
+| `src/data/`              | `loadQuizData.ts` — fetches `/data/*.json` (typed via export contract)                     |
+| `src/lib/`               | App-local helpers: `theme.ts`, `postConfig.ts`, `questionFilters.ts`                       |
+| `src/utils/`             | `dates.ts` — rollover-aware local day math (`todayISO`/`studyDayISO`)                      |
+| `public/data/`           | Generated JSON (do not edit by hand; regenerate via the export CLI)                        |
+
+> Markdown/math/code rendering (`lib/markdown.ts`, `lib/richText.ts` — KaTeX +
+> highlight.js lazy loaders) lives in **`shared--ui`**, not here. Compilation goes
+> through **`shared--quiz-markdown`**.
 
 ## Scheduling (`src/algorithms/`)
 
@@ -51,12 +64,17 @@ reversible (SM-2 keeps interval/ease; FSRS seeds stability/difficulty from them)
 ## Conventions / invariants
 
 - Use `@/` path alias for intra-app imports; use workspace package names for shared
-  libraries (`shared--quiz-export/contract`, `shared--ui`, `shared--quiz-markdown`).
+  libraries (`shared--quiz-export/contract`, `shared--ui`, `shared--ui/blocks`,
+  `shared--quiz-markdown`).
+- **New quiz UI = a block in `shared--ui` + a container here.** Keep blocks pure
+  (props in, callbacks out, no store import); put store/data orchestration in a
+  `hooks/use*.ts` consumed by a `containers/*.tsx`.
 - Add a question to a session only through `selectStudyQueue`; it already drops
   ignored + suspended cards and applies per-set/global daily limits.
 - Markdown/MDX rendering goes through `shared--quiz-markdown` (export-time compiled
-  HTML is the fast path; client compile is the fallback). Keep the DOMPurify
-  allow-list in `shared--quiz-markdown`, not here.
+  HTML is the fast path; client compile is the fallback). The renderer components
+  and the DOMPurify allow-list live in `shared--ui` / `shared--quiz-markdown` — not
+  here.
 - Dates: use `utils/dates.ts` (`todayISO`/`studyDayISO` honour the rollover hour);
   never `new Date().toISOString().slice(0,10)`.
 
@@ -81,4 +99,8 @@ pnpm --filter @prj--personal-portfolio--v3/frontend--quiz-web-app test
 - `_docs/02 plans/quiz-web-app-refactor-plan.md` — original CSR refactor + export.
 - `_docs/02 plans/quiz-web-app-enhancements-plan.md` — markdown/MDX, SR best
   practices, dual scheduler (FSRS) enhancement phases.
-- `shared/AGENTS.md` — `quiz-export`, `quiz-markdown`, and `shared--ui` packages.
+- `shared/ui/readme.md` — the UI kit + **blocks** this app composes (incl. Storybook).
+- `shared/quiz-export/readme.md` — the DB → JSON contract this app consumes.
+- `shared/quiz-markdown/readme.md` — the Markdown/MDX → safe-HTML pipeline.
+- `shared/AGENTS.md` / `shared/readme.md` — all shared packages.
+- `tools/readme.md` — the content pipeline that fills `content.db` before export.
