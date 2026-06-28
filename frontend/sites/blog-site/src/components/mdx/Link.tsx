@@ -15,27 +15,14 @@ const normalizeBlogHref = (href: string, isInternal?: boolean): string => {
         return href.replace(/^\/blog\//, '/');
     }
     return href;
-}
+};
 
-const Link = ({
-    href = '#',
-    children,
-    isInternal,
-    ariaLabel,
-    className,
-    classNames,
-}: LinkProps) => {
+const Link = ({ href = '#', children, isInternal, ariaLabel, className, classNames }: LinkProps) => {
     const normalized = normalizeBlogHref(href, isInternal);
-    const external =
-        isInternal === false || /^https?:\/\//.test(normalized);
+    const external = isInternal === false || /^https?:\/\//.test(normalized);
 
     return (
-        <a
-            href={normalized}
-            aria-label={ariaLabel}
-            className={className ?? classNames}
-            {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-        >
+        <a href={normalized} aria-label={ariaLabel} className={className ?? classNames} {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}>
             {children}
         </a>
     );

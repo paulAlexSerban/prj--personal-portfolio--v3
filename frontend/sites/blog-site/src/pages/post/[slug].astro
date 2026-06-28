@@ -51,14 +51,14 @@ const canonicalUrl = new URL(`/post/${slug}/`, Astro.site).href;
     canonicalUrl={canonicalUrl}
 >
     <HeroBanner title={post.title} subheading={post.subheading ?? undefined} tags={tags} />
-    <article class="md-content post-detail">
+    <article class="md-content mt-4">
         <Content components={mdxComponents} />
     </article>
     {
         questionCount > 0 && (
             <div
                 id="quiz-widget-mount"
-                class="quiz-widget-slot"
+                class="quiz-widget-slot mt-12 min-h-16 border-2 border-dashed border-rule bg-highlight p-6"
                 data-quiz-widget
                 data-post-slug={post.slug}
             />

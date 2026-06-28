@@ -1,7 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=IM+Fell+English:ital@0;1&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap');
 
 @import 'tailwindcss' source(none);
-@source '../src';
-@source '../../../../shared/ui/src';
+@source '../../src';
+@source '../../../../../shared/ui/src';
 @import '@prj--personal-portfolio--v3/shared--ui/styles.css';
-@import './layout.css';
+
+@layer components {
+    /* Placeholder label for the empty quiz-widget mount point. Kept as CSS
+       because :empty::before with generated content has no inline utility form. */
+    .quiz-widget-slot:empty::before {
+        content: 'Quiz widget mount point';
+        color: var(--slate);
+        font-size: 0.85rem;
+        font-style: italic;
+    }
+}

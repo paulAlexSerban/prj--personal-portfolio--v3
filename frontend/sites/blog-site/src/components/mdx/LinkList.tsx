@@ -22,16 +22,13 @@ const LinkList = ({ links = [] }: LinkListProps) => {
     }
 
     return (
-        <ul className="mdx-link-list">
+        <ul className="my-4 list-none p-0">
             {links.map((link, index) => {
                 const href = normalizeBlogHref(link.href, link.isInternal);
                 const external = link.isInternal === false || /^https?:\/\//.test(href);
                 return (
-                    <li key={link.label || index}>
-                        <a
-                            href={href}
-                            {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-                        >
+                    <li key={link.label || index} className="my-[0.35em]">
+                        <a href={href} className="font-bold text-ink" {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}>
                             {link.label}
                         </a>
                     </li>

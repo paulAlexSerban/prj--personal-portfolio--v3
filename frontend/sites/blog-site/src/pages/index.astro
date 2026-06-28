@@ -39,15 +39,18 @@ const sections = [
 <BaseLayout title="Blog | Paul Serban" description="Posts, snippets, and book notes by Paul Serban.">
     {
         sections.map((section) => (
-            <section class="content-section">
-                <div class="content-section__header">
-                    <h2 class="content-section__title">{section.title}</h2>
-                    <a class="content-section__view-all" href={section.viewAllHref}>
+            <section class="mb-12">
+                <div class="mb-5 flex flex-wrap items-baseline justify-between gap-3 border-b-2 border-ink pb-2">
+                    <h2 class="m-0 font-display text-[1.75rem]">{section.title}</h2>
+                    <a
+                        class="font-bold text-ink no-underline hover:underline"
+                        href={section.viewAllHref}
+                    >
                         {section.viewAllLabel}
                     </a>
                 </div>
                 {section.items.length > 0 ? (
-                    <ul class="post-grid">
+                    <ul class="m-0 grid list-none grid-cols-[repeat(auto-fill,minmax(18rem,1fr))] gap-5 p-0">
                         {section.items.map((item) => (
                             <li>
                                 <PostCard

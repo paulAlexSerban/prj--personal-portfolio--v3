@@ -15,7 +15,7 @@ closeConnection(db);
     <HeroBanner title="Posts" subheading="Articles and long-form writing." />
     {
         items.length > 0 ? (
-            <ul class="post-grid">
+            <ul class="m-0 grid list-none grid-cols-[repeat(auto-fill,minmax(18rem,1fr))] gap-5 p-0">
                 {items.map((item) => (
                     <li>
                         <PostCard post={item} tags={tagsMap.get(item.slug) ?? []} type="post" />

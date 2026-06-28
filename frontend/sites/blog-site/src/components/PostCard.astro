@@ -23,11 +23,11 @@ function detailHref(contentType: BlogContentType, slug: string): string {
 const href = detailHref(type, post.slug);
 ---
 
-<article class="post-card">
-    <h2 class="post-card__title">
-        <a href={href}>{post.title}</a>
+<article class="flex flex-col gap-3 border-2 border-ink bg-aged p-4">
+    <h2 class="m-0 font-display text-[1.15rem] leading-[1.25]">
+        <a href={href} class="text-inherit no-underline hover:underline">{post.title}</a>
     </h2>
-    {post.date && <p class="post-card__date">{post.date}</p>}
-    {post.excerpt && <p class="post-card__excerpt">{post.excerpt}</p>}
+    {post.date && <p class="m-0 text-[0.85rem] text-slate-ink">{post.date}</p>}
+    {post.excerpt && <p class="m-0 text-[0.95rem] leading-[1.5] text-charcoal">{post.excerpt}</p>}
     <TagList tags={tags} />
 </article>

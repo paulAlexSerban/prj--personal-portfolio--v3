@@ -16,15 +16,22 @@ function isActive(href: string): boolean {
 }
 ---
 
-<header class="site-header">
-    <div class="site-header__inner">
-        <a class="site-header__brand" href="/">Paul Serban</a>
+<header class="border-b-2 border-ink bg-aged px-6 py-4">
+    <div class="mx-auto flex max-w-[72rem] flex-wrap items-center justify-between gap-4">
+        <a
+            class="font-display text-2xl font-black tracking-[-0.02em] text-ink no-underline"
+            href="/">Paul Serban</a
+        >
         <nav aria-label="Primary">
-            <ul class="site-nav">
+            <ul class="m-0 flex list-none flex-wrap gap-x-5 gap-y-2 p-0">
                 {
                     navLinks.map((link) => (
                         <li>
-                            <a href={link.href} aria-current={isActive(link.href) ? 'page' : undefined}>
+                            <a
+                                href={link.href}
+                                aria-current={isActive(link.href) ? 'page' : undefined}
+                                class="text-[0.95rem] capitalize text-slate-ink no-underline hover:font-bold hover:text-ink aria-[current=page]:font-bold aria-[current=page]:text-ink"
+                            >
                                 {link.label}
                             </a>
                         </li>

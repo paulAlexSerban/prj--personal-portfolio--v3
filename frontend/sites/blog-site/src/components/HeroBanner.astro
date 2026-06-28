@@ -12,8 +12,8 @@ interface Props {
 const { title, subheading, tags = [] } = Astro.props;
 ---
 
-<section class="hero-banner">
-    <h1 class="hero-banner__title">{title}</h1>
-    {subheading && <p class="hero-banner__subheading">{subheading}</p>}
+<section class="mb-8 border-b border-dashed border-rule pb-6">
+    <h1 class="m-0 mb-2 font-display text-[clamp(2rem,5vw,3rem)] leading-[1.1]">{title}</h1>
+    {subheading && <p class="mt-0 mb-4 text-[1.1rem] text-slate-ink">{subheading}</p>}
     {tags.length > 0 && <TagList tags={tags} />}
 </section>

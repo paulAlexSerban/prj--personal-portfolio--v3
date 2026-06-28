@@ -45,9 +45,9 @@ const sections = [
     <HeroBanner title={tagName} subheading="Archive for this tag." />
     {
         sections.map((section) => (
-            <section class="content-section">
-                <h2 class="content-section__title">{section.title}</h2>
-                <ul class="post-grid">
+            <section class="mb-12">
+                <h2 class="m-0 font-display text-[1.75rem]">{section.title}</h2>
+                <ul class="m-0 grid list-none grid-cols-[repeat(auto-fill,minmax(18rem,1fr))] gap-5 p-0">
                     {section.items.map((item) => (
                         <li>
                             <PostCard

@@ -7,14 +7,19 @@ const footerLinks = [
 ];
 ---
 
-<footer class="site-footer">
-    <div class="site-footer__inner">
+<footer class="border-t-2 border-ink bg-aged px-6 py-8">
+    <div class="mx-auto max-w-[72rem]">
         <nav aria-label="Footer">
-            <ul class="site-footer__links">
+            <ul class="m-0 flex list-none flex-wrap gap-x-6 gap-y-3 p-0">
                 {
                     footerLinks.map((link) => (
                         <li>
-                            <a href={link.href}>{link.label}</a>
+                            <a
+                                href={link.href}
+                                class="text-slate-ink no-underline hover:text-ink"
+                            >
+                                {link.label}
+                            </a>
                         </li>
                     ))
                 }
