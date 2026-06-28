@@ -30,7 +30,7 @@ const href = detailHref(type, post.slug);
 const meta = [typeLabel[type], post.date].filter(Boolean).join(' · ');
 ---
 
-<article class="card-ruled">
+<article class="card-ruled border-b border-rule pb-4">
     <p class="kicker mb-1 text-[10px]">{meta}</p>
     <h2 class="font-display text-2xl font-bold leading-tight">
         <a href={href} class="text-ink no-underline hover:underline">{post.title}</a>
@@ -38,4 +38,5 @@ const meta = [typeLabel[type], post.date].filter(Boolean).join(' · ');
     {post.excerpt && <p class="mt-2 text-base text-charcoal line-clamp-2">{post.excerpt}</p>}
     <div class="rule-thin my-4"></div>
     <TagList tags={tags} />
+    <a href={href} class="kicker mt-3 inline-block text-[10px] hover:underline">Read &rarr;</a>
 </article>

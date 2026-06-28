@@ -19,7 +19,7 @@ closeConnection(db);
     />
     {
         items.length > 0 ? (
-            <ul class="m-0 grid list-none grid-cols-[repeat(auto-fill,minmax(25rem,1fr))] gap-5 p-0">
+            <ul class="m-0 grid list-none grid-cols-[repeat(auto-fill,minmax(18rem,1fr))] gap-5 p-0">
                 {items.map((item) => (
                     <li>
                         <PostCard post={item} tags={tagsMap.get(item.slug) ?? []} type="book-note" />

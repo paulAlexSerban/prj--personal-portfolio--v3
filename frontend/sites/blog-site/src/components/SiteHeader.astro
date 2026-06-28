@@ -18,19 +18,7 @@ const year = new Date().getFullYear();
     <div class="mx-auto max-w-[72rem] px-6 pt-6 pb-4">
         <div class="flex items-center justify-between gap-4">
             <p class="kicker font-mono text-[10px] md:text-sm">paulserban.eu</p>
-            <div class="flex items-center gap-3">
-                <p class="kicker font-mono text-[10px] md:text-sm">Writing Edition</p>
-                <button
-                    id="theme-toggle"
-                    type="button"
-                    aria-label="Toggle dark mode"
-                    title="Toggle dark mode"
-                    class="kicker inline-flex items-center gap-1.5 border border-ink px-2 py-1 font-mono text-[10px] leading-none transition-colors hover:bg-ink hover:text-aged md:text-xs"
-                >
-                    <span id="theme-toggle-icon" aria-hidden="true">☾</span>
-                    <span id="theme-toggle-label">Dark</span>
-                </button>
-            </div>
+            <p class="kicker font-mono text-[10px] md:text-sm">Writing Edition</p>
         </div>
         <a href="/" class="mt-2 block text-center text-ink no-underline">
             <h1
@@ -39,23 +27,35 @@ const year = new Date().getFullYear();
                 Paul Serban
             </h1>
         </a>
-        <p class="deck mt-1 text-center">Writing, snippets &amp; book notes</p>
+        <p class="deck mt-2 text-center text-sm">Writing, snippets &amp; book notes</p>
         <div class="rule-double mt-3"></div>
         <div class="mt-2 flex flex-wrap items-center justify-between gap-2">
             <p class="kicker text-[11px]">Vol. {year}</p>
-            <nav class="flex flex-wrap gap-5 text-[11px] smallcaps" aria-label="Primary">
-                {
-                    navLinks.map((link) => (
-                        <a
-                            href={link.href}
-                            aria-current={isActive(link.href) ? 'page' : undefined}
-                            class="text-ink no-underline hover:underline aria-[current=page]:font-bold aria-[current=page]:underline"
-                        >
-                            {link.label}
-                        </a>
-                    ))
-                }
-            </nav>
+            <div class="flex flex-wrap items-center gap-5">
+                <nav class="flex flex-wrap gap-5 text-[11px] smallcaps" aria-label="Primary">
+                    {
+                        navLinks.map((link) => (
+                            <a
+                                href={link.href}
+                                aria-current={isActive(link.href) ? 'page' : undefined}
+                                class="text-ink no-underline hover:underline aria-[current=page]:font-bold aria-[current=page]:underline"
+                            >
+                                {link.label}
+                            </a>
+                        ))
+                    }
+                </nav>
+                <button
+                    id="theme-toggle"
+                    type="button"
+                    aria-label="Toggle dark mode"
+                    title="Toggle dark mode"
+                    class="kicker inline-flex items-center gap-1.5 border border-ink px-2 py-1 text-[11px] leading-none transition-colors hover:bg-ink hover:text-aged"
+                >
+                    <span id="theme-toggle-icon" aria-hidden="true">☾</span>
+                    <span id="theme-toggle-label">Dark</span>
+                </button>
+            </div>
         </div>
     </div>
 </header>
