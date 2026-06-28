@@ -1,6 +1,8 @@
 ---
+import type { BlogPostFilterItem } from '@prj--personal-portfolio--v3/shared--ui/post-filters';
+
 import HeroBanner from '../../components/HeroBanner.astro';
-import PostCard from '../../components/PostCard.astro';
+import { PostListIsland } from '../../components/PostListIsland.tsx';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { closeConnection, openDb } from '../../lib/db.ts';
 import { buildTagsMap, getPublishedByType } from '../../lib/queries/posts.ts';
@@ -9,6 +11,15 @@ const db = openDb();
 const items = getPublishedByType(db, 'snippet');
 const tagsMap = buildTagsMap(db, items);
 closeConnection(db);
+
+const posts: BlogPostFilterItem[] = items.map((item) => ({
+    title: item.title,
+    slug: item.slug,
+    excerpt: item.excerpt ?? null,
+    date: item.date ?? null,
+    type: 'snippet',
+    tags: (tagsMap.get(item.slug) ?? []).map((t) => ({ name: t.name, slug: t.slug })),
+}));
 ---
 
 <BaseLayout title="Snippets | Paul Serban" description="Code snippets and quick notes by Paul Serban.">
@@ -18,14 +29,8 @@ closeConnection(db);
         kicker="The Catalogue"
     />
     {
-        items.length > 0 ? (
-            <ul class="m-0 grid list-none grid-cols-[repeat(auto-fill,minmax(18rem,1fr))] gap-5 p-0">
-                {items.map((item) => (
-                    <li>
-                        <PostCard post={item} tags={tagsMap.get(item.slug) ?? []} type="snippet" />
-                    </li>
-                ))}
-            </ul>
+        posts.length > 0 ? (
+            <PostListIsland posts={posts} client:load />
         ) : (
             <p>No published snippets yet.</p>
         )

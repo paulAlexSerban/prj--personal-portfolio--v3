@@ -16,10 +16,15 @@
             "types": "./src/lib/utils.ts",
             "import": "./src/lib/utils.ts"
         },
+        "./post-filters": {
+            "types": "./src/lib/postFilters.ts",
+            "import": "./src/lib/postFilters.ts"
+        },
         "./styles.css": "./src/styles/theme.css"
     },
     "scripts": {
         "typecheck": "tsc -b",
+        "test": "vitest run --passWithNoTests",
         "storybook": "storybook dev -p 6006",
         "build-storybook": "storybook build"
     },
@@ -83,6 +88,7 @@
         "storybook": "^9.0.0",
         "tailwindcss": "^4.2.1",
         "typescript": "^5.8.3",
-        "vite": "^7.3.1"
+        "vite": "^7.3.1",
+        "vitest": "^3.2.4"
     }
 }

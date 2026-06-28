@@ -3,6 +3,7 @@ import { useEffect, useMemo, useState } from "react";
 import type { ExportedPostEntry } from "@prj--personal-portfolio--v3/shared--quiz-export/contract";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { stampClasses } from "@prj--personal-portfolio--v3/shared--ui";
+import { filterByQuery } from "@prj--personal-portfolio--v3/shared--ui/post-filters";
 import { loadPostsIndex } from "@/data/loadQuizData";
 import { useStudySetActions } from "@/hooks/useStudySetActions";
 import { useStore } from "@/store";
@@ -45,16 +46,7 @@ function BrowsePage() {
   const addedSet = useMemo(() => new Set(addedPosts), [addedPosts]);
 
   const rows = useMemo(() => {
-    const q = search.toLowerCase().trim();
-    let filtered = posts;
-    if (q) {
-      filtered = posts.filter(
-        (p) =>
-          p.title.toLowerCase().includes(q) ||
-          p.slug.toLowerCase().includes(q) ||
-          p.tags.some((t) => t.includes(q)),
-      );
-    }
+    const filtered = filterByQuery(posts, search, (p) => p.tags);
     const sorted = [...filtered];
     if (sortBy === "title") sorted.sort((a, b) => a.title.localeCompare(b.title));
     else sorted.sort((a, b) => b.questionCount - a.questionCount);
