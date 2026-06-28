@@ -1,0 +1,33 @@
+---
+import type { PostRow, TagRow } from '@prj--personal-portfolio--v3/shared--db-schema';
+
+import TagList from './TagList.astro';
+
+import type { BlogContentType } from '../lib/queries/posts.ts';
+
+interface Props {
+    post: PostRow;
+    tags: TagRow[];
+    type: BlogContentType;
+}
+
+const { post, tags, type } = Astro.props;
+
+function detailHref(contentType: BlogContentType, slug: string): string {
+    if (contentType === 'book-note') {
+        return `/booknote/${slug}/`;
+    }
+    return `/${contentType}/${slug}/`;
+}
+
+const href = detailHref(type, post.slug);
+---
+
+<article class="post-card">
+    <h2 class="post-card__title">
+        <a href={href}>{post.title}</a>
+    </h2>
+    {post.date && <p class="post-card__date">{post.date}</p>}
+    {post.excerpt && <p class="post-card__excerpt">{post.excerpt}</p>}
+    <TagList tags={tags} />
+</article>

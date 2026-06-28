@@ -1,0 +1,29 @@
+---
+import HeroBanner from '../../components/HeroBanner.astro';
+import PostCard from '../../components/PostCard.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { closeConnection, openDb } from '../../lib/db.ts';
+import { buildTagsMap, getPublishedByType } from '../../lib/queries/posts.ts';
+
+const db = openDb();
+const items = getPublishedByType(db, 'post');
+const tagsMap = buildTagsMap(db, items);
+closeConnection(db);
+---
+
+<BaseLayout title="Posts | Paul Serban" description="All published posts by Paul Serban.">
+    <HeroBanner title="Posts" subheading="Articles and long-form writing." />
+    {
+        items.length > 0 ? (
+            <ul class="post-grid">
+                {items.map((item) => (
+                    <li>
+                        <PostCard post={item} tags={tagsMap.get(item.slug) ?? []} type="post" />
+                    </li>
+                ))}
+            </ul>
+        ) : (
+            <p>No published posts yet.</p>
+        )
+    }
+</BaseLayout>

@@ -1,0 +1,38 @@
+{
+    "name": "@prj--personal-portfolio--v3/frontend--blog-site",
+    "version": "0.0.1",
+    "private": true,
+    "type": "module",
+    "packageManager": "pnpm@11.5.0",
+    "scripts": {
+        "dev": "astro dev",
+        "build": "astro build",
+        "preview": "astro preview",
+        "typecheck": "astro check && tsc --noEmit"
+    },
+    "dependencies": {
+        "@astrojs/mdx": "^4.3.13",
+        "@astrojs/react": "^4.4.2",
+        "@astrojs/sitemap": "^3.7.0",
+        "@prj--personal-portfolio--v3/shared--db": "workspace:*",
+        "@prj--personal-portfolio--v3/shared--db-schema": "workspace:*",
+        "@prj--personal-portfolio--v3/shared--quiz-markdown": "workspace:*",
+        "@prj--personal-portfolio--v3/shared--ui": "workspace:*",
+        "astro": "^5.16.15",
+        "better-sqlite3": "^12.10.0",
+        "drizzle-orm": "^0.45.2",
+        "isomorphic-dompurify": "^2.25.0",
+        "jsdom": "^29.1.1",
+        "marked": "^18.0.5",
+        "react": "^19.2.0",
+        "react-dom": "^19.2.0",
+        "tailwindcss": "^4.2.1"
+    },
+    "devDependencies": {
+        "@astrojs/check": "^0.9.6",
+        "@tailwindcss/vite": "^4.2.1",
+        "@types/react": "^19.2.0",
+        "@types/react-dom": "^19.2.0",
+        "typescript": "^5.8.3"
+    }
+}

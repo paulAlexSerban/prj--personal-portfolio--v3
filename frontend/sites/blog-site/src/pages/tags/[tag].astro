@@ -1,0 +1,65 @@
+---
+import HeroBanner from '../../components/HeroBanner.astro';
+import PostCard from '../../components/PostCard.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { closeConnection, openDb } from '../../lib/db.ts';
+import { buildTagsMap } from '../../lib/queries/posts.ts';
+import { getAllBlogTags, getPostsByTagAndType } from '../../lib/queries/tags.ts';
+
+export function getStaticPaths() {
+    const db = openDb();
+    const blogTags = getAllBlogTags(db);
+    closeConnection(db);
+    return blogTags.map((tag) => ({
+        params: { tag: tag.slug },
+        props: { tagName: tag.name },
+    }));
+}
+
+interface Props {
+    tagName: string;
+}
+
+const { tagName } = Astro.props;
+const tagSlug = Astro.params.tag!;
+
+const db = openDb();
+const posts = getPostsByTagAndType(db, tagSlug, 'post');
+const snippets = getPostsByTagAndType(db, tagSlug, 'snippet');
+const booknotes = getPostsByTagAndType(db, tagSlug, 'book-note');
+const tagsMap = buildTagsMap(db, [...posts, ...snippets, ...booknotes]);
+closeConnection(db);
+
+const sections = [
+    { title: 'Posts', items: posts, type: 'post' as const },
+    { title: 'Snippets', items: snippets, type: 'snippet' as const },
+    { title: 'Book Notes', items: booknotes, type: 'book-note' as const },
+].filter((section) => section.items.length > 0);
+---
+
+<BaseLayout
+    title={`${tagName} | Paul Serban`}
+    description={`Content tagged with ${tagName}.`}
+    ogTitle={`Tag: ${tagName}`}
+>
+    <HeroBanner title={tagName} subheading="Archive for this tag." />
+    {
+        sections.map((section) => (
+            <section class="content-section">
+                <h2 class="content-section__title">{section.title}</h2>
+                <ul class="post-grid">
+                    {section.items.map((item) => (
+                        <li>
+                            <PostCard
+                                post={item}
+                                tags={tagsMap.get(item.slug) ?? []}
+                                type={section.type}
+                            />
+                        </li>
+                    ))}
+                </ul>
+            </section>
+        ))
+    }
+    {sections.length === 0 && <p>No published content for this tag.</p>}
+</BaseLayout>

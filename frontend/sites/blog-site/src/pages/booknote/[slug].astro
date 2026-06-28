@@ -1,0 +1,41 @@
+---
+import { compileContent } from '@prj--personal-portfolio--v3/shared--quiz-markdown';
+
+import HeroBanner from '../../components/HeroBanner.astro';
+import MdxContent from '../../components/MdxContent.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { closeConnection, openDb } from '../../lib/db.ts';
+import { getAllSlugs, getPostBySlug, getTagsForPost } from '../../lib/queries/posts.ts';
+
+export function getStaticPaths() {
+    const db = openDb();
+    const slugs = getAllSlugs(db, 'book-note');
+    closeConnection(db);
+    return slugs.map(({ slug }) => ({ params: { slug } }));
+}
+
+const slug = Astro.params.slug!;
+const db = openDb();
+const post = getPostBySlug(db, slug);
+const tags = getTagsForPost(db, slug);
+closeConnection(db);
+
+if (!post) {
+    throw new Error(`Book note not found: ${slug}`);
+}
+
+const compiledHtml = compileContent(post.body);
+const description = post.excerpt ?? post.subheading ?? undefined;
+const canonicalUrl = new URL(`/booknote/${slug}/`, Astro.site).href;
+---
+
+<BaseLayout
+    title={`${post.title} | Paul Serban`}
+    description={description}
+    ogTitle={post.title}
+    ogDescription={description}
+    canonicalUrl={canonicalUrl}
+>
+    <HeroBanner title={post.title} subheading={post.subheading ?? undefined} tags={tags} />
+    <MdxContent html={compiledHtml} />
+</BaseLayout>

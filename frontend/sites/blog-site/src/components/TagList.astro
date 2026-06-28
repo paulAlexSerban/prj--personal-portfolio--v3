@@ -1,0 +1,21 @@
+---
+import type { TagRow } from '@prj--personal-portfolio--v3/shared--db-schema';
+
+interface Props {
+    tags: TagRow[];
+}
+
+const { tags } = Astro.props;
+---
+
+{
+    tags.length > 0 && (
+        <ul class="tag-list">
+            {tags.map((tag) => (
+                <li>
+                    <a href={`/tags/${tag.slug}/`}>{tag.name}</a>
+                </li>
+            ))}
+        </ul>
+    )
+}
