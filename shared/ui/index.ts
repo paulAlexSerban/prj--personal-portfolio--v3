@@ -1,5 +1,6 @@
 export { cn } from './src/lib/utils.ts';
 export { useIsMobile } from './src/hooks/use-mobile.tsx';
+export * from './src/components/blocks/index.ts';
 export * from './src/components/ui/accordion.tsx';
 export * from './src/components/ui/alert-dialog.tsx';
 export * from './src/components/ui/alert.tsx';

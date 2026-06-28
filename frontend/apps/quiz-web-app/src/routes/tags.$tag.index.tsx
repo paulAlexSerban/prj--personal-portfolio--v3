@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useMemo, useState } from "react";
 import type { ExportedQuestion } from "@prj--personal-portfolio--v3/shared--quiz-export/contract";
 import { PageLayout } from "@/components/layout/PageLayout";
-import { QuestionPreviewDrawer } from "@/components/question/QuestionPreviewDrawer";
+import { QuestionPreviewDrawer } from "@/containers/QuestionPreviewDrawer";
 import { stampClasses } from "@prj--personal-portfolio--v3/shared--ui";
 import { loadTagQuestions, loadTagsIndex } from "@/data/loadQuizData";
 import { getCardStateLabel, stripMarkdownPreview } from "@/lib/questionFilters";

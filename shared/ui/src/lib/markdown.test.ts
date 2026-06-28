@@ -5,7 +5,6 @@ describe("compileMarkdown — math placeholders", () => {
   it("emits an inline-math placeholder carrying the raw TeX", () => {
     const html = compileMarkdown("The sum $\\sum_{i=1}^n i$ grows.");
     expect(html).toContain('<span class="math math-inline">');
-    // TeX internals (subscripts/backslashes) are preserved, not mangled by markdown.
     expect(html).toContain("\\sum_{i=1}^n i");
     expect(html).not.toContain("<em>");
   });

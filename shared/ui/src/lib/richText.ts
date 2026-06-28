@@ -1,7 +1,6 @@
 // Heavy, lazily-loaded rich-text enhancers. CardRenderer dynamically imports
 // this module so KaTeX + highlight.js (and their CSS) are code-split out of the
 // initial bundle and only fetched when content actually contains math/code.
-// Once fetched they are precached by the PWA service worker for offline use.
 import katex from "katex";
 import "katex/dist/katex.min.css";
 import hljs from "highlight.js/lib/common";
