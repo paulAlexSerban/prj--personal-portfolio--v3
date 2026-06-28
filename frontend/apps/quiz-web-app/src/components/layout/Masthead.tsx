@@ -40,7 +40,10 @@ export function Masthead() {
         <div className="flex items-center justify-between mt-2 flex-wrap gap-2">
           <p className="kicker text-[11px]">{formatDateline()}</p>
 
-          <nav className="hidden md:flex gap-5 text-[11px] smallcaps flex-wrap" aria-label="Primary">
+          <nav
+            className="hidden md:flex gap-5 text-[11px] smallcaps flex-wrap"
+            aria-label="Primary"
+          >
             {navItems.map((item) => (
               <Link key={item.to} to={item.to} className="hover:underline">
                 {item.label}

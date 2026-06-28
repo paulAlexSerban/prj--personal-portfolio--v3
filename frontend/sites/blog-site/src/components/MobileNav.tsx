@@ -19,13 +19,7 @@ export function MobileNav({ links }: Props) {
     return (
         <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger asChild>
-                <Button
-                    type="button"
-                    variant="outline"
-                    size="icon"
-                    aria-label="Open navigation menu"
-                    className="rounded-none border-ink md:hidden"
-                >
+                <Button type="button" variant="outline" size="icon" aria-label="Open navigation menu" className="rounded-none border-ink md:hidden">
                     <Menu className="h-4 w-4" />
                 </Button>
             </SheetTrigger>
