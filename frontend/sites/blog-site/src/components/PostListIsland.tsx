@@ -17,58 +17,128 @@ const SORT_LABELS: Record<BlogSortBy, string> = {
     date: 'Newest',
 };
 
-function readPageFromUrl(): number {
-    if (typeof window === 'undefined') return 1;
-    const p = Number(new URLSearchParams(window.location.search).get('page'));
-    return Number.isInteger(p) && p > 0 ? p : 1;
+const DEFAULT_SORT: BlogSortBy = 'date';
+const SEARCH_DEBOUNCE_MS = 250;
+
+interface UrlState {
+    q: string;
+    sort: BlogSortBy;
+    page: number;
 }
 
-function writePageToUrl(page: number): void {
+function readUrlState(): UrlState {
+    if (typeof window === 'undefined') return { q: '', sort: DEFAULT_SORT, page: 1 };
+    const params = new URLSearchParams(window.location.search);
+    const sortParam = params.get('sort');
+    const pageNum = Number(params.get('page'));
+    return {
+        q: params.get('q') ?? '',
+        sort: sortParam === 'title' || sortParam === 'date' ? sortParam : DEFAULT_SORT,
+        page: Number.isInteger(pageNum) && pageNum > 0 ? pageNum : 1,
+    };
+}
+
+function writeUrlState({ q, sort, page }: UrlState): void {
     if (typeof window === 'undefined') return;
     const url = new URL(window.location.href);
-    if (page <= 1) url.searchParams.delete('page');
-    else url.searchParams.set('page', String(page));
+    const trimmed = q.trim();
+    if (trimmed) url.searchParams.set('q', trimmed);
+    else url.searchParams.delete('q');
+    if (sort !== DEFAULT_SORT) url.searchParams.set('sort', sort);
+    else url.searchParams.delete('sort');
+    if (page > 1) url.searchParams.set('page', String(page));
+    else url.searchParams.delete('page');
     window.history.replaceState({}, '', url);
 }
 
 export function PostListIsland({ posts }: Props) {
-    const [search, setSearch] = useState('');
-    const [sortBy, setSortBy] = useState<BlogSortBy>('date');
+    // `searchInput` is the live text box value; `query` is the debounced value
+    // that actually filters; `urlQuery` is what is currently persisted in the URL
+    // (only updated on Enter) and drives the "press Enter to save" hint.
+    const [searchInput, setSearchInput] = useState('');
+    const [query, setQuery] = useState('');
+    const [urlQuery, setUrlQuery] = useState('');
+    const [sortBy, setSortBy] = useState<BlogSortBy>(DEFAULT_SORT);
     const [page, setPage] = useState(1);
 
     useEffect(() => {
-        const p = readPageFromUrl();
+        const { q, sort, page: p } = readUrlState();
+        setSearchInput(q);
+        setQuery(q);
+        setUrlQuery(q.trim());
+        setSortBy(sort);
         if (p > 1) setPage(p);
     }, []);
 
+    // Live filtering: debounce the text box into `query`. URL is left untouched
+    // here — it is only written on Enter (and on sort/pagination actions).
+    // Page reset happens in the typing handler so this doesn't clobber a page
+    // restored from the URL on first load.
+    useEffect(() => {
+        const handle = setTimeout(() => setQuery(searchInput), SEARCH_DEBOUNCE_MS);
+        return () => clearTimeout(handle);
+    }, [searchInput]);
+
+    const onSearchInput = (value: string) => {
+        setSearchInput(value);
+        setPage(1);
+    };
+
+    const applySearch = () => {
+        const next = searchInput.trim();
+        setQuery(searchInput);
+        setUrlQuery(next);
+        setPage(1);
+        writeUrlState({ q: searchInput, sort: sortBy, page: 1 });
+    };
+
+    const changeSort = (s: BlogSortBy) => {
+        setSortBy(s);
+        setPage(1);
+        writeUrlState({ q: urlQuery, sort: s, page: 1 });
+    };
+
     const goToPage = (p: number) => {
         setPage(p);
-        writePageToUrl(p);
+        writeUrlState({ q: urlQuery, sort: sortBy, page: p });
     };
 
     const rows = useMemo(() => {
-        const filtered = filterByQuery(posts, search, (p) => [...p.tags.map((t) => t.name), ...p.tags.map((t) => t.slug)]);
+        const filtered = filterByQuery(posts, query, (p) => [...p.tags.map((t) => t.name), ...p.tags.map((t) => t.slug)]);
         return sortBlogPosts(filtered, sortBy);
-    }, [posts, search, sortBy]);
+    }, [posts, query, sortBy]);
 
     const pages = totalPages(rows.length, PAGE_SIZE);
     const current = clampPage(page, pages);
     const pageItems = paginate(rows, current, PAGE_SIZE);
 
+    const pendingSearch = searchInput.trim() !== urlQuery;
+
     return (
         <div>
-            <div className="mb-6 flex flex-wrap items-center gap-4 text-base">
-                <Input
-                    value={search}
-                    onChange={(e) => {
-                        setSearch(e.target.value);
-                        goToPage(1);
+            <div className="mb-6 flex flex-wrap items-start gap-4 text-base">
+                <form
+                    role="search"
+                    onSubmit={(e) => {
+                        e.preventDefault();
+                        applySearch();
                     }}
-                    placeholder="Search title, slug, or tag…"
-                    aria-label="Search posts"
-                    className="h-auto min-w-[200px] flex-1 rounded-none border-2 border-ink bg-transparent px-3 py-2 text-base shadow-none focus-visible:ring-0"
-                />
-                <div className="kicker flex items-center gap-3 text-[11px]">
+                    className="min-w-[200px] flex-1"
+                >
+                    <Input
+                        type="search"
+                        value={searchInput}
+                        onChange={(e) => onSearchInput(e.target.value)}
+                        placeholder="Search title, slug, or tag…"
+                        aria-label="Search posts"
+                        aria-describedby="post-search-hint"
+                        className="h-auto w-full rounded-none border-2 border-ink bg-transparent px-3 py-2 text-base shadow-none focus-visible:ring-0"
+                    />
+                    <p id="post-search-hint" aria-live="polite" className={cn('kicker mt-1 text-[10px]', pendingSearch ? 'font-bold text-ink' : 'text-slate-ink')}>
+                        {pendingSearch ? 'Filtering live — press Enter to save this search to the URL' : 'Search is saved to the URL (share or reload to keep it)'}
+                    </p>
+                </form>
+                <div className="kicker flex items-center gap-3 pt-2 text-[11px]">
                     <span className="text-slate-ink">Sort:</span>
                     {(['title', 'date'] as BlogSortBy[]).map((s) => (
                         <Button
@@ -76,10 +146,7 @@ export function PostListIsland({ posts }: Props) {
                             type="button"
                             variant="link"
                             size="sm"
-                            onClick={() => {
-                                setSortBy(s);
-                                goToPage(1);
-                            }}
+                            onClick={() => changeSort(s)}
                             title={s === 'title' ? 'Sort alphabetically by title' : 'Sort by newest first'}
                             className={cn(
                                 'h-auto p-0 text-[11px] uppercase tracking-wide text-ink underline-offset-4',
