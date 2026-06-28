@@ -3,8 +3,6 @@ import type { ExportedQuestion } from "@prj--personal-portfolio--v3/shared--quiz
 import {
   filterBrowseQuestions,
   getCardStateLabel,
-  paginate,
-  totalPages,
   type QuestionBrowseFilters,
 } from "./questionFilters";
 import type { CardState } from "@/store/types";
@@ -123,14 +121,5 @@ describe("getCardStateLabel", () => {
       ),
     ).toBe("due");
     expect(getCardStateLabel({ ...card, cardType: "new" }, false)).toBe("new");
-  });
-});
-
-describe("paginate", () => {
-  it("splits items into pages", () => {
-    const items = [1, 2, 3, 4, 5];
-    expect(paginate(items, 1, 2)).toEqual([1, 2]);
-    expect(paginate(items, 2, 2)).toEqual([3, 4]);
-    expect(totalPages(5, 2)).toBe(3);
   });
 });

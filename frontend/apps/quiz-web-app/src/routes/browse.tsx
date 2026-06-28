@@ -4,15 +4,14 @@ import type { ExportedQuestion } from "@prj--personal-portfolio--v3/shared--quiz
 import { PageLayout } from "@/components/layout/PageLayout";
 import { QuestionPreviewDrawer } from "@/containers/QuestionPreviewDrawer";
 import { stampClasses } from "@prj--personal-portfolio--v3/shared--ui";
+import { paginate, totalPages } from "@prj--personal-portfolio--v3/shared--ui/pagination";
 import { loadAllQuestions, loadPostsIndex } from "@/data/loadQuizData";
 import {
   EMPTY_BROWSE_FILTERS,
   collectBrowseFilterOptions,
   filterBrowseQuestions,
   getCardStateLabel,
-  paginate,
   stripMarkdownPreview,
-  totalPages,
   type QuestionBrowseFilters,
 } from "@/lib/questionFilters";
 import { useStore } from "@/store";

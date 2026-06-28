@@ -93,12 +93,3 @@ export function collectBrowseFilterOptions(questions: ExportedQuestion[]) {
     tags: [...tags].sort(),
   };
 }
-
-export function paginate<T>(items: T[], page: number, pageSize: number): T[] {
-  const start = (page - 1) * pageSize;
-  return items.slice(start, start + pageSize);
-}
-
-export function totalPages(count: number, pageSize: number): number {
-  return Math.max(1, Math.ceil(count / pageSize));
-}

@@ -20,6 +20,10 @@
             "types": "./src/lib/postFilters.ts",
             "import": "./src/lib/postFilters.ts"
         },
+        "./pagination": {
+            "types": "./src/lib/pagination.ts",
+            "import": "./src/lib/pagination.ts"
+        },
         "./styles.css": "./src/styles/theme.css"
     },
     "scripts": {
