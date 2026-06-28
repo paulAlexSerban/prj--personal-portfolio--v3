@@ -45,4 +45,4 @@ Also exports the inferred `Select`/`Insert` row types and `ContentType`.
 
 - `shared/AGENTS.md` — all shared packages.
 - `database/AGENTS.md` — migrations and the SQLite artifact.
-- `_docs/02 plans/mdx-ingest-pipeline.md` — schema rationale.
+- `_docs/02 plans/question-types-implementation-plan.md` — schema/ingest rationale.

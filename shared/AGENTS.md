@@ -107,7 +107,7 @@ Schema (`db-schema`) is separated from runtime (`db`) so the frontend can import
 
 ## Related docs
 
-- Schema rationale and ingest plan: `_docs/02 plans/mdx-ingest-pipeline.md`
+- Schema + ingest detail: `tools/AGENTS.md` + `_docs/02 plans/question-types-implementation-plan.md`
 - Quiz web app refactor + JSON export plan: `_docs/02 plans/quiz-web-app-refactor-plan.md`
 - Quiz enhancements (MDX pipeline): `_docs/02 plans/quiz-web-app-enhancements-plan.md` (Phase 6)
 - Question types + MDX authoring: `_docs/01 spikes/types-of-questions.md`

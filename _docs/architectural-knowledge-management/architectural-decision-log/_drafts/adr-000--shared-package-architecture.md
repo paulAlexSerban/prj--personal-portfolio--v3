@@ -1,35 +1,11 @@
+# (draft) Shared package architecture — SUPERSEDED
 
-Each package has a single responsibility and zero knowledge of its consumers.
+> **Superseded by [ADR-008](../adr-008--quiz-web-app-architecture.md).**
+> This draft proposed `packages/{sr-engine,quiz-ui,storage,content-client}`. None
+> were built under those names. The real shared layer is in `shared/*`:
+> `db-schema`, `db`, `question-contract`, `quiz-markdown`, `quiz-export`, `ui`,
+> `task-manager`. Kept only for provenance.
 
-```
-packages/
-├── sr-engine/
-│   ├── src/
-│   │   └── sm2.ts          # Pure SM-2 implementation
-│   ├── tests/
-│   │   └── sm2.test.ts
-│   └── package.json        # zero dependencies
-
-├── quiz-ui/
-│   ├── src/
-│   │   ├── CardFront.tsx
-│   │   ├── CardBack.tsx
-│   │   ├── RatingButtons.tsx
-│   │   ├── SessionManager.tsx
-│   │   ├── StatsScreen.tsx
-│   │   └── index.ts
-│   └── package.json        # depends on: react, sr-engine, storage
-
-├── storage/
-│   ├── src/
-│   │   ├── interface.ts    # StorageAdapter interface
-│   │   ├── local.ts        # localStorage implementation
-│   │   └── capacitor.ts    # Capacitor Preferences implementation
-│   └── package.json
-
-└── content-client/
-    ├── src/
-    │   ├── fetchQuestions.ts   # GET /data/questions/{slug}.json
-    │   └── fetchPosts.ts       # GET /data/posts.json
-    └── package.json
-```
+The authoritative description of the shared packages (role, API, dependencies) is
+[`shared/readme.md`](../../../../shared/readme.md) and
+[`shared/AGENTS.md`](../../../../shared/AGENTS.md).

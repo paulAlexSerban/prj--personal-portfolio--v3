@@ -1,198 +1,156 @@
 # Architecture Document
 ## SE Portfolio, Blog + Flashcard Quiz Platform
 
-| Field                 | Value                                       |
-| --------------------- | ------------------------------------------- |
-| **Document Version**  | 1.0                                         |
-| **Status**            | Draft                                       |
-| **Author**            | —                                           |
-| **Last Updated**      | 2026-03-25                                  |
-| **Related Documents** | [PRD v2.0](#) · [System Design Diagrams](#) |
+| Field | Value |
+| --- | --- |
+| **Status** | Living — reflects what is built today |
+| **Last Updated** | 2026-06-28 |
+| **Scope** | High-level overview. Per-area detail lives in each area's `readme.md` / `AGENTS.md`; decisions live in the ADR log. |
 
-
-
-## Technology Stack
-
-| Layer                           | Choice         | Rationale                                                                                                                                   | ADR                |
-| ------------------------------- | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------- | ------------------ |
-| **Programming Language**        | TypeScript     | Full-stack type safety across Node.js, Astro, React, and shared packages. Rich ecosystem support for all required libraries and frameworks. | ADR-001            |
-| **JS Runtime**                  | Node.js        | Ubiquitous JavaScript runtime with excellent ecosystem support for all required libraries and frameworks (FE + BE)                          | ADR-002            |
-| **Monorepo Setup & Management** | Lerna          | While Nx provides advanced, Lerna offers a simpler setup that aligns well with the project’s needs.                                         | ADR-003 -> ADR-004 |
-| **Content rendering**           | JAMStack (SSG) | Pre-rendered static pages for optimal performance and SEO                                                                                   | ADR-005            |
-| **Database**                    | SQLite         | Zero infrastructure; file-based; git-committable build artifact; Headless CMS compatible                                                    | ADR-006            |
-
-## Repository & Monorepo Structure
-
-Two Git repositories. The content repository is decoupled from the application codebase so it can be updated independently without triggering a full application build.
-
-### Content Repository (`content--paulserban.eu`)
-Contains all authored MDX files.
-
-### Application Monorepo
-```
-root/
-- _docs/
-- assets/
-- backend/
-- content/
-- database/
-- frontend/
-- infrastructure/
-- shared/
-- scripts/
-- tests/
-```
+> This document is intentionally short. It is a **map**, not a manual. For how a
+> specific package works, read its `readme.md`. For *why* a decision was made, read
+> the ADR it links to. Don't duplicate package detail here.
 
 ---
 
-## Content Repository Structure
+## 1. What this is
+
+A TypeScript pnpm monorepo for a personal **portfolio**, **blog**, and a
+**spaced-repetition flashcard quiz**. Content is authored as MDX/JSON in a separate
+private repo, ingested into a file-based SQLite database at build time, and served
+as static output (no runtime server, no accounts in v0.1).
+
+## 2. Technology stack
+
+| Layer | Choice | ADR |
+| --- | --- | --- |
+| Language | TypeScript | ADR-001 |
+| JS runtime | Node.js | ADR-002 |
+| Monorepo | **pnpm workspaces** (migrated off the original Nx/Lerna plan) | ADR-003 → ADR-004 |
+| Content rendering | JAMStack / SSG | ADR-005 |
+| SSG framework | Astro + MDX | ADR-006 |
+| Database | SQLite (file-based build artifact) | draft `database-engine` |
+| ORM / DB tooling | Drizzle (ORM + Kit + Studio) | ADR-007 |
+| Quiz web app | CSR React 19 + zustand + static JSON, PWA | **ADR-008** |
+| Spaced-repetition engine | SM-2 **and** FSRS-5, runtime-switchable | **ADR-009** |
+
+## 3. Two repositories
+
+| Repo | Holds |
+| --- | --- |
+| **Content repo** (`content--paulserban.eu`, private) | Authored MDX + JSON under `content/{publish,in-progress,backlog}`. |
+| **This application monorepo** | Pipeline, database, shared libraries, and frontend surfaces. |
+
+Decoupling content from code lets authors publish without triggering an app build,
+and lets a future CMS own rows the pipeline must not overwrite (`locked: true`).
+
+## 4. Monorepo layout
 
 ```
-content--blog_domain.eu/
-- /content
-  - /publish
-  - /backlog
-  - /in-progress
+_docs/        product, architecture, ADRs, plans   (this folder)
+content/      content/live/ — synced clone of the content repo
+database/     content.db (SQLite) + Drizzle migrations
+shared/       reusable packages (see shared/readme.md)
+tools/        content pipeline CLIs (see tools/readme.md)
+frontend/     app surfaces (apps/, sites/, poc/)
+backend/, infrastructure/, assets/   scaffolds for future work
 ```
 
-### MDX Frontmatter Contracts
+**Implemented today:** the content pipeline (`tools/*`), the shared packages
+(`shared/*`), and the quiz web app (`frontend/apps/quiz-web-app`). Other
+`frontend/` and `backend/` folders are scaffolds (see the implementation-status
+table in [`_docs/AGENTS.md`](../AGENTS.md)).
 
-**Post / Book Note**
+## 5. End-to-end data flow
+
+```
+content repo (MDX/JSON)
+  │
+  ▼  tools/content-sync        clone → content/live/
+  ▼  tools/mdx-ingest          MDX  → posts/projects/coursework/questions
+  ▼  tools/json-ingest         JSON → profile/skills/pages
+  ▼
+database/output/content.db (SQLite)
+  │
+  ├─▶ Astro SSG (build time, planned)   queries the DB → static HTML pages
+  │
+  └─▶ shared/quiz-export (build-time CLI)  queries the DB → static JSON
+            (posts.json, questions/<post>.json, tags.json, tags/<tag>.json,
+             _all.json, copied assets; Markdown/MDX compiled to safe HTML)
+                    │
+                    ▼
+        frontend/apps/quiz-web-app (CSR React PWA) fetches the JSON
+```
+
+Key point: **the quiz JSON is produced by `shared/quiz-export`, not by the Astro
+build.** They are two independent consumers of the same `content.db`.
+
+- Schema + types: [`shared/db-schema`](../../shared/db-schema/readme.md)
+- DB runtime + lock-aware upsert: [`shared/db`](../../shared/db/readme.md)
+- Question validation: [`shared/question-contract`](../../shared/question-contract/readme.md)
+- Pipeline orchestration: [`shared/task-manager`](../../shared/task-manager/readme.md)
+
+## 6. Content model & frontmatter
+
+Tables (Drizzle): `posts` (post / book-note / snippet), `projects`, `coursework`,
+`pages`, `profile`, `skills`, `questions`, `question_options`, plus `tags` +
+`content_tags` / `question_tags` junctions. Full shape: `shared/db-schema`.
+
+Frontmatter contracts (example — posts):
+
 ```yaml
 ---
 title: "Introduction to Closures"
-subheading: "A deep dive into how closures work in JavaScript."
 excerpt: "A deep dive into how closures work in JavaScript."
 date: "May 06, 2026"
-author_date: "June 01, 2026"
-status: "published"  # 'published' | 'draft' | 'archived'
-author: "Paul Serban"
-tags: 
-  - "JavaScript"
-  - "Closures"
----
-```
-**Snippet**
-```yaml
----
-title: "Debounce Hook"
-subheading: "A reusable React hook for debouncing any fast-changing value."
-excerpt: "A reusable React hook for debouncing any fast-changing value."
-date: "May 06, 2026"
-author_date: "June 01, 2026"
-status: "published"  # 'published' | 'draft' | 'archived'
-author: "Paul Serban"
-tags: 
-  - "JavaScript"
-  - "React"
+status: "published"   # published | draft | archived
+tags: ["JavaScript", "Closures"]
 ---
 ```
 
-**Project**
-```yaml
----
-title: 'React.js Playground'
-subheading: "Development setup for POCs built with React.js, JavaScript, TypeScript, Storybook, Chromatic, Jest, and Netlify."
-excerpt: "Playground and development setup for POCs, feasibility studies, and experiments to practice, learn, and test new technologies, libraries, and tools along with their integration and configuration in a React.js environment with TypeScript. it is a gallery showcasing my transition from TypeScript to JavaScript as I dive deeper into React.js and its ecosystem."
-priority: 2
-section: 'portfolio'
-repo_url: 'https://paulalexserban.github.io/wbk--reactjs-playground'
-demo_url: 'https://paulalexserban.github.io/wbk--reactjs-playground'
-status: "published"
-pinned: true
-date: 'November 10, 2023'
-tags:
-    - "React.js"
-    - "JavaScript"
-    - "TypeScript"
-    - "Monorepo"
----
-Long-form MDX description / case study content...
+Questions are authored as MDX (`{post-slug}--{uid}.mdx`); the answer/explanation is
+the MDX **body**, structured answers (`answer_format`, `options`,
+`correct_option_keys`, true/false `answer`) are frontmatter. The authoritative
+rules live in [`shared/question-contract`](../../shared/question-contract/readme.md)
+and the spike [`types-of-questions.md`](../01%20spikes/types-of-questions.md).
+
+**CMS contract:** ingest writes `sync_source` (`mdx`/`json`) and **skips rows with
+`locked: true`** (CMS-owned). See `shared/db` and `database/AGENTS.md`.
+
+## 7. Quiz delivery (implemented)
+
+The quiz is a strict **client-side-rendered** React PWA. Content is read-only JSON;
+all user progress is slug-keyed state in the browser (zustand + `localStorage`).
+Presentation is reusable: the flashcard UI lives as **blocks** in `shared/ui`
+(Storybook-backed); the app provides containers + hooks that wire blocks to the
+store. Scheduling supports **SM-2 and FSRS-5**, switchable at runtime with lossless
+migration.
+
+- Decision + rationale: **ADR-008** (architecture), **ADR-009** (scheduler).
+- How it works: [`frontend/apps/quiz-web-app/readme.md`](../../frontend/apps/quiz-web-app/readme.md) + `AGENTS.md`.
+- UI kit + blocks: [`shared/ui/readme.md`](../../shared/ui/readme.md).
+- Content compile: [`shared/quiz-markdown/readme.md`](../../shared/quiz-markdown/readme.md).
+- Build sequence: [`_docs/02 plans/quiz-web-app-refactor-plan.md`](../02%20plans/quiz-web-app-refactor-plan.md) and the enhancements plan.
+
+Future surfaces (blog quiz **widget**, **mobile** wrapper) are scaffolded but not
+built; the `_all.json` bundle keeps the offline-mobile door open.
+
+## 8. Areas still in draft
+
+CMS choice, database-engine ADR, CI/CD, deployment/hosting, caching, and the mobile
+wrapper remain **drafts** under
+[`architectural-decision-log/_drafts/`](./architectural-decision-log/_drafts/) —
+treat them as proposals, not settled decisions. The original quiz-design drafts
+(`sr-engine`/`quiz-ui`/`storage` packages, Capacitor) are **superseded by ADR-008 /
+ADR-009**; the as-built design differs (consolidated `shared/*` + one CSR app).
+
+## 9. Where to go next
+
+| You want… | Read |
+| --- | --- |
+| Agent-oriented index | [`_docs/AGENTS.md`](../AGENTS.md) |
+| Accepted decisions | `architectural-decision-log/adr-00*.md` |
+| Ingest / schema | `tools/readme.md` + `tools/AGENTS.md`, `shared/db-schema/readme.md`, `_docs/02 plans/question-types-implementation-plan.md` |
+| Quiz app | `frontend/apps/quiz-web-app/readme.md` |
+| Product behaviour | `_docs/product/*` |
 ```
-
-**Question**
-```yaml
-# Filename: dependency-resolution-and-topological-sort-building-a-task-execution-engine--a3f9b.mdx
----
-question: "Why does the article describe parallel execution of independent tasks as a feature rather than a limitation of topological sort?"
-status: "draft"
-tags:
-    - Algorithms
-    - Graph Theory
-    - Python
-    - Task Scheduling
-    - Workflow Orchestration
-    - Software Engineering
-    - Dependency Resolution
-    - Topological Sort
-    - DFS
-    - Kahn's Algorithm
-    - Parallel Execution
-    - Cycle Detection
-    - Performance Optimization
-    - Depth-First Search
-    - Graph Algorithms
-    - Scheduling Algorithms
-    - Distributed Systems
----
-
-## Answer:
-## Explanation:
-```
-
----
-
-## Data Model
-> adr-000--datamodel.md
-
-## 5. Content Pipeline
-> adr-000--content-pipeline.md
-
-## CMS & Database Tooling
-### CMS
-> adr-000--cms.md
-
-### DB Tooling
-> adr-000--db-tooling.md
-
-## SSG Build
-### Build-Time Data Flow
-Source: MDX + JSON -> SQLite DB
-Output: HTML pages + JSON data files
-```
-database/output/content.db (SQLite)
-    │
-    └── SSG build engine (drizzle query at build time)
-          ├── Generates HTML pages:
-          │     /                          ← profile + skills + featured projects + recent posts
-          │     /portfolio                 ← all projects
-          │     /posts/[slug]              ← each post (with quiz widget island)
-          │     /book-notes/[slug]
-          │     /snippets/[slug]
-          │
-          └── Generates static JSON data files:
-                /data/questions/{slug}.json    ← questions per post
-                /data/questions/_all.json      ← all questions (for mobile offline bundle)
-                /data/posts.json               ← all post metadata (for quiz app post browser)
-```
-
-## Shared Package Architecture
-> adr-000--shared-package-architecture.md
-
-
-## Spaced Repetition Engine
-> adr-000--spaced-repetition-engine.md
-
-
-## Client-Side State Schema
-> adr-000--client-side-state-schema.md
-
-
-## Quiz Delivery Targets
-> adr-000--quiz-delivery-targets.md
-
-## CI/CD Pipeline
-> adr-000--ci-cd.md
-
-## Deployment Architecture
-> adr-000--deployment-architecture.md

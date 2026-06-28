@@ -10,7 +10,7 @@ Authoritative project knowledge: product intent, architecture decisions, and imp
 | `architectural-knowledge-management/`                                     | Architecture overview, ADR index, decision log                                                    |
 | `architectural-knowledge-management/architectural-decision-log/`          | Accepted ADRs (`adr-001` …) and `drafts/` for in-progress decisions                               |
 | `architectural-knowledge-management/architectural-decision-log/*/spikes/` | Time-boxed explorations tied to an ADR                                                            |
-| `02 plans/`                                                               | Step-by-step implementation plans (e.g. MDX ingest pipeline)                                      |
+| `02 plans/`                                                               | Step-by-step implementation plans (question types, quiz web app refactor + enhancements)         |
 | `01 spikes/`                                                              | Standalone technical spikes                                                                       |
 | `00 ideas/`                                                               | Early notes and whiteboard exports                                                                |
 | `project-management/`                                                     | Release / milestone notes                                                                         |
@@ -55,15 +55,17 @@ Feature-level PRDs live under `product/` (blog, portfolio, quiz widget/web/mobil
 | `adr-005--content-rendering.md`    | JAMStack / SSG                |
 | `adr-006--ssg-w-mdx/`              | Astro + MDX rendering         |
 | `adr-007--db-tooling.md`           | Drizzle ORM for SQLite        |
+| `adr-008--quiz-web-app-architecture.md` | CSR React + static JSON + shared packages |
+| `adr-009--spaced-repetition-scheduler.md` | SM-2 + FSRS-5, runtime-switchable |
 
-Many topics remain in `drafts/` (database engine, ORM, CMS, CI/CD, spaced repetition, client state, etc.) — treat drafts as proposals, not settled decisions.
+Remaining `_drafts/` (database engine, CMS, CI/CD, hosting, caching, mobile wrapper) are proposals, not settled. The quiz-design drafts (`sr-engine`/`quiz-ui`/`storage`/`client-state`/`delivery-targets`) are **superseded by ADR-008/009** and now just point to the as-built docs.
 
 ## Key documents for agents
 
 | When working on…       | Read                                                             |
 | ---------------------- | ---------------------------------------------------------------- |
 | Overall architecture   | `architectural-knowledge-management/01 architecture document.md` |
-| MDX ingest / DB schema | `02 plans/mdx-ingest-pipeline.md` + `shared/db-schema/index.ts`  |
+| MDX ingest / DB schema | `tools/AGENTS.md` + `shared/db-schema/index.ts` + `02 plans/question-types-implementation-plan.md` |
 | Frontmatter contracts  | Architecture doc § MDX Frontmatter Contracts                     |
 | Build-time data flow   | Architecture doc § SSG Build                                     |
 | Quiz web app / export  | `frontend/apps/quiz-web-app/AGENTS.md` + `shared/AGENTS.md`; plans in `02 plans/quiz-web-app-*.md` |
@@ -88,4 +90,4 @@ Many topics remain in `drafts/` (database engine, ORM, CMS, CI/CD, spaced repeti
 
 - Record significant decisions as ADRs under `architectural-decision-log/`; keep drafts in `drafts/` until accepted.
 - Cross-link related ADRs and PRDs; the main overview is `architectural-knowledge-management/01 architecture document.md`.
-- When ingest or schema behaviour changes, update `02 plans/mdx-ingest-pipeline.md` and the relevant area `AGENTS.md` (`database/`, `shared/`, `tools/`).
+- When ingest or schema behaviour changes, update the relevant area `AGENTS.md`/`readme.md` (`database/`, `shared/`, `tools/`) and `02 plans/question-types-implementation-plan.md`.

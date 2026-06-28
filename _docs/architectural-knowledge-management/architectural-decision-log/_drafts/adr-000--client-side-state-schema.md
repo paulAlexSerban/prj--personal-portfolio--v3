@@ -1,55 +1,12 @@
-### 10.1 TypeScript Interfaces
+# (draft) Client-side state schema — SUPERSEDED
 
-```typescript
-// packages/storage/src/interface.ts
+> **Superseded by [ADR-008](../adr-008--quiz-web-app-architecture.md).**
+> This draft sketched a `packages/storage` `StorageAdapter` + a small `UserStats`
+> shape. The as-built state is a **zustand store persisted to `localStorage`**,
+> keyed by question slug, with many more fields (suspended cards, leeches, per-set
+> configs, FSRS card fields, settings). Kept only for provenance.
 
-export interface UserStats {
-  version:          number;                            // schema version for migrations
-  cardStates:       Record<string, CardState>;         // keyed by questionSlug
-  studySets:        StudySetEntry[];
-  ignoredQuestions: string[];                          // questionSlug[]
-}
-
-export interface StudySetEntry {
-  postSlug: string;
-  addedAt:  string;  // ISO 8601 datetime
-}
-```
-
-### 10.2 Storage Adapter Interface
-
-```typescript
-export interface StorageAdapter {
-  get(key: string): Promise<string | null>;
-  set(key: string, value: string): Promise<void>;
-  remove(key: string): Promise<void>;
-}
-
-// Web implementation
-export class LocalStorageAdapter implements StorageAdapter { ... }
-
-// Mobile implementation (Capacitor)
-export class CapacitorStorageAdapter implements StorageAdapter { ... }
-```
-
-### 10.3 Schema Versioning
-
-The `version` field enables forward-compatible migrations:
-
-```typescript
-const CURRENT_VERSION = 1;
-
-function migrate(raw: Partial<UserStats>): UserStats {
-  const v = raw.version ?? 0;
-  if (v < 1) { /* v0 → v1 migration */ }
-  return { ...defaults, ...raw, version: CURRENT_VERSION };
-}
-```
-
-### 10.4 Key Invariants
-
-- Removing a post from `studySets` MUST NOT remove its entries from `cardStates`.
-- `ignoredQuestions` is a soft-exclude list — `CardState` records are retained.
-- All writes are atomic per card state update; a failed write must not leave the deck in a partially updated state.
-
----
+The two invariants from this draft still hold and are enforced in the store:
+removing a post keeps its card states; ignore/suspend are soft-excludes that retain
+progress. Authoritative schema: `frontend/apps/quiz-web-app/src/store/types.ts`
+(see `AGENTS.md`).

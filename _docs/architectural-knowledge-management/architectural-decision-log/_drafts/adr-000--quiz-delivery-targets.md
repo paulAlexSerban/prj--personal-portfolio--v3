@@ -1,34 +1,12 @@
-### 11.1 Surface Comparison
+# (draft) Quiz delivery targets — SUPERSEDED
 
-| Surface      | Entry Point                             | Storage               | Offline            | Codebase                                    |
-| ------------ | --------------------------------------- | --------------------- | ------------------ | ------------------------------------------- |
-| Blog Widget  | `client:idle` Astro island on post page | localStorage          | No (fetches JSON)  | `packages/quiz-ui`                          |
-| Quiz Web App | Standalone URL                          | localStorage          | Yes (PWA)          | `apps/quiz-web`                             |
-| iOS App      | App Store                               | Capacitor Preferences | Yes (bundled JSON) | `apps/quiz-mobile` wrapping `apps/quiz-web` |
-| Android App  | Google Play                             | Capacitor Preferences | Yes (bundled JSON) | `apps/quiz-mobile` wrapping `apps/quiz-web` |
+> **Superseded by [ADR-008](../adr-008--quiz-web-app-architecture.md).**
+> This early draft assumed `packages/quiz-ui`, `apps/quiz-web`, and a Capacitor
+> `apps/quiz-mobile`. The as-built design differs: a single CSR app at
+> `frontend/apps/quiz-web-app`, UI blocks in `shared/ui`, JSON from
+> `shared/quiz-export`. Kept only for provenance.
 
-### 11.2 Capacitor Configuration
-
-```typescript
-// apps/quiz-mobile/capacitor.config.ts
-import { CapacitorConfig } from '@capacitor/cli';
-
-const config: CapacitorConfig = {
-  appId:    'eu.blog_domain.quiz',
-  appName:  'Quiz',
-  webDir:   '../quiz-web/dist',
-  plugins: {
-    Preferences: { group: 'QuizUserStats' },
-  },
-};
-export default config;
-```
-
-### 11.3 PWA Configuration (Quiz Web App)
-
-Service worker caches:
-- App shell (HTML, JS, CSS)
-- `/data/posts.json`
-- `/data/questions/*.json` (lazily cached on first fetch per post)
-
----
+**Still open (not yet built):** the blog-quiz **widget** (`frontend/apps/quiz-widget`)
+and a **mobile** wrapper (`frontend/apps/quiz-mobile-app`). The `_all.json` export
+bundle exists to keep the offline-mobile option open. Revisit Capacitor specifics
+in a fresh ADR if/when mobile is actually built.
