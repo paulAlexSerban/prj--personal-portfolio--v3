@@ -8,7 +8,7 @@ import {
 import type { DrizzleDb } from '@prj--personal-portfolio--v3/shared--db';
 import { and, eq, inArray } from 'drizzle-orm';
 
-import type { BlogContentType } from './posts.ts';
+import { publishedQuestionPostSlugs, type BlogContentType } from './posts.ts';
 
 const BLOG_CONTENT_TYPES: BlogContentType[] = ['post', 'book-note', 'snippet'];
 
@@ -21,7 +21,12 @@ export function getAllBlogTags(db: DrizzleDb): TagRow[] {
         })
         .from(tags)
         .innerJoin(content_tags, eq(content_tags.tag_slug, tags.slug))
-        .where(inArray(content_tags.content_type, BLOG_CONTENT_TYPES))
+        .where(
+            and(
+                inArray(content_tags.content_type, BLOG_CONTENT_TYPES),
+                inArray(content_tags.content_slug, publishedQuestionPostSlugs(db)),
+            ),
+        )
         .all();
 }
 
@@ -56,6 +61,7 @@ export function getPostsByTagAndType(
                 eq(content_tags.tag_slug, tagSlug),
                 eq(content_tags.content_type, type),
                 eq(posts.status, 'published'),
+                inArray(posts.slug, publishedQuestionPostSlugs(db)),
             ),
         )
         .limit(9)

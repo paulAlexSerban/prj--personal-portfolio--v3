@@ -7,7 +7,7 @@ import {
     type TagRow,
 } from '@prj--personal-portfolio--v3/shared--db-schema';
 import type { DrizzleDb } from '@prj--personal-portfolio--v3/shared--db';
-import { and, count, eq } from 'drizzle-orm';
+import { and, count, eq, inArray } from 'drizzle-orm';
 
 export type BlogContentType = 'post' | 'book-note' | 'snippet';
 
@@ -19,11 +19,30 @@ function sortByDateDesc(rows: PostRow[]): PostRow[] {
     });
 }
 
+/**
+ * Subquery of post slugs that have at least one published quiz question
+ * (questions link to a post via `questions.post_slug`, regardless of post type).
+ * The blog only renders content that carries a quiz, so callers gate every
+ * listing, detail, and tag query with `inArray(<slug column>, …)`.
+ */
+export function publishedQuestionPostSlugs(db: DrizzleDb) {
+    return db
+        .select({ slug: questions.post_slug })
+        .from(questions)
+        .where(eq(questions.status, 'published'));
+}
+
 export function getPublishedByType(db: DrizzleDb, type: BlogContentType): PostRow[] {
     const rows = db
         .select()
         .from(posts)
-        .where(and(eq(posts.type, type), eq(posts.status, 'published')))
+        .where(
+            and(
+                eq(posts.type, type),
+                eq(posts.status, 'published'),
+                inArray(posts.slug, publishedQuestionPostSlugs(db)),
+            ),
+        )
         .all();
     return sortByDateDesc(rows);
 }
@@ -37,6 +56,7 @@ export function getPinnedByType(db: DrizzleDb, type: BlogContentType): PostRow[]
                 eq(posts.type, type),
                 eq(posts.status, 'published'),
                 eq(posts.pinned, true),
+                inArray(posts.slug, publishedQuestionPostSlugs(db)),
             ),
         )
         .limit(6)
@@ -48,7 +68,7 @@ export function getAllSlugs(db: DrizzleDb, type: BlogContentType): { slug: strin
     return db
         .select({ slug: posts.slug })
         .from(posts)
-        .where(eq(posts.type, type))
+        .where(and(eq(posts.type, type), inArray(posts.slug, publishedQuestionPostSlugs(db))))
         .all();
 }
 

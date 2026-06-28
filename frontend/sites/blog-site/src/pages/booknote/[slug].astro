@@ -8,7 +8,12 @@ import HeroBanner from '../../components/HeroBanner.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { closeConnection, openDb } from '../../lib/db.ts';
 import { mdxComponents } from '../../lib/mdx-components.ts';
-import { getAllSlugs, getPostBySlug, getTagsForPost } from '../../lib/queries/posts.ts';
+import {
+    getAllSlugs,
+    getPostBySlug,
+    getQuestionCountForPost,
+    getTagsForPost,
+} from '../../lib/queries/posts.ts';
 
 export function getStaticPaths() {
     const db = openDb();
@@ -21,6 +26,7 @@ const slug = Astro.params.slug!;
 const db = openDb();
 const post = getPostBySlug(db, slug);
 const tags = getTagsForPost(db, slug);
+const questionCount = getQuestionCountForPost(db, slug);
 closeConnection(db);
 
 if (!post) {
@@ -53,4 +59,14 @@ const canonicalUrl = new URL(`/booknote/${slug}/`, Astro.site).href;
     <article class="md-content mt-4">
         <Content components={mdxComponents} />
     </article>
+    {
+        questionCount > 0 && (
+            <div
+                id="quiz-widget-mount"
+                class="quiz-widget-slot mt-12 min-h-16 border-2 border-dashed border-rule bg-highlight p-6"
+                data-quiz-widget
+                data-post-slug={post.slug}
+            />
+        )
+    }
 </BaseLayout>
