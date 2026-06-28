@@ -1,6 +1,5 @@
 ---
 const navLinks = [
-    { label: 'Blog', href: '/' },
     { label: 'Posts', href: '/post/' },
     { label: 'Snippets', href: '/snippet/' },
     { label: 'Book Notes', href: '/booknote/' },
@@ -9,35 +8,77 @@ const navLinks = [
 const pathname = Astro.url.pathname;
 
 function isActive(href: string): boolean {
-    if (href === '/') {
-        return pathname === '/' || pathname === '';
-    }
     return pathname.startsWith(href);
 }
+
+const year = new Date().getFullYear();
 ---
 
-<header class="border-b-2 border-ink bg-aged px-6 py-4">
-    <div class="mx-auto flex max-w-[72rem] flex-wrap items-center justify-between gap-4">
-        <a
-            class="font-display text-2xl font-black tracking-[-0.02em] text-ink no-underline"
-            href="/">Paul Serban</a
-        >
-        <nav aria-label="Primary">
-            <ul class="m-0 flex list-none flex-wrap gap-x-5 gap-y-2 p-0">
+<header class="grain border-b-[3px] border-ink bg-aged">
+    <div class="mx-auto max-w-[72rem] px-6 pt-6 pb-4">
+        <div class="flex items-center justify-between gap-4">
+            <p class="kicker font-mono text-[10px] md:text-sm">paulserban.eu</p>
+            <div class="flex items-center gap-3">
+                <p class="kicker font-mono text-[10px] md:text-sm">Writing Edition</p>
+                <button
+                    id="theme-toggle"
+                    type="button"
+                    aria-label="Toggle dark mode"
+                    title="Toggle dark mode"
+                    class="kicker inline-flex items-center gap-1.5 border border-ink px-2 py-1 font-mono text-[10px] leading-none transition-colors hover:bg-ink hover:text-aged md:text-xs"
+                >
+                    <span id="theme-toggle-icon" aria-hidden="true">☾</span>
+                    <span id="theme-toggle-label">Dark</span>
+                </button>
+            </div>
+        </div>
+        <a href="/" class="mt-2 block text-center text-ink no-underline">
+            <h1
+                class="font-display font-black leading-none tracking-tight text-[clamp(2.5rem,8vw,5rem)]"
+            >
+                Paul Serban
+            </h1>
+        </a>
+        <p class="deck mt-1 text-center">Writing, snippets &amp; book notes</p>
+        <div class="rule-double mt-3"></div>
+        <div class="mt-2 flex flex-wrap items-center justify-between gap-2">
+            <p class="kicker text-[11px]">Vol. {year}</p>
+            <nav class="flex flex-wrap gap-5 text-[11px] smallcaps" aria-label="Primary">
                 {
                     navLinks.map((link) => (
-                        <li>
-                            <a
-                                href={link.href}
-                                aria-current={isActive(link.href) ? 'page' : undefined}
-                                class="text-[0.95rem] capitalize text-slate-ink no-underline hover:font-bold hover:text-ink aria-[current=page]:font-bold aria-[current=page]:text-ink"
-                            >
-                                {link.label}
-                            </a>
-                        </li>
+                        <a
+                            href={link.href}
+                            aria-current={isActive(link.href) ? 'page' : undefined}
+                            class="text-ink no-underline hover:underline aria-[current=page]:font-bold aria-[current=page]:underline"
+                        >
+                            {link.label}
+                        </a>
                     ))
                 }
-            </ul>
-        </nav>
+            </nav>
+        </div>
     </div>
 </header>
+
+<script is:inline>
+    (function () {
+        var btn = document.getElementById('theme-toggle');
+        if (!btn) return;
+        var icon = document.getElementById('theme-toggle-icon');
+        var label = document.getElementById('theme-toggle-label');
+        function sync() {
+            var dark = document.documentElement.classList.contains('dark');
+            if (icon) icon.textContent = dark ? '☀' : '☾';
+            if (label) label.textContent = dark ? 'Light' : 'Dark';
+            btn.setAttribute('aria-pressed', String(dark));
+        }
+        sync();
+        btn.addEventListener('click', function () {
+            var dark = document.documentElement.classList.toggle('dark');
+            try {
+                localStorage.setItem('theme', dark ? 'dark' : 'light');
+            } catch (e) {}
+            sync();
+        });
+    })();
+</script>

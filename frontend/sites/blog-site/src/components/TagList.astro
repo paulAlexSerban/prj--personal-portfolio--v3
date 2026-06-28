@@ -6,18 +6,19 @@ interface Props {
 }
 
 const { tags } = Astro.props;
+const slicedTags = tags.slice(0, 5);
 ---
 
 {
     tags.length > 0 && (
         <ul class="m-0 flex list-none flex-wrap gap-[0.4rem] p-0">
-            {tags.map((tag) => (
+            {slicedTags.map((tag) => (
                 <li>
                     <a
                         href={`/tags/${tag.slug}/`}
-                        class="inline-block border border-rule bg-highlight px-2 py-[0.15rem] text-[0.8rem] text-ink no-underline hover:border-ink"
+                        class="inline-block px-2 py-[0.15rem] text-[0.8rem] text-ink no-underline hover:bg-highlight rounded-md"
                     >
-                        {tag.name}
+                        #{tag.name.toLowerCase()}
                     </a>
                 </li>
             ))}

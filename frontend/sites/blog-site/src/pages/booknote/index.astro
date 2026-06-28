@@ -12,10 +12,14 @@ closeConnection(db);
 ---
 
 <BaseLayout title="Book Notes | Paul Serban" description="Book notes and reading summaries by Paul Serban.">
-    <HeroBanner title="Book Notes" subheading="Notes and takeaways from books I read." />
+    <HeroBanner
+        title="Book Notes"
+        subheading="Notes and takeaways from books I read."
+        kicker="The Catalogue"
+    />
     {
         items.length > 0 ? (
-            <ul class="m-0 grid list-none grid-cols-[repeat(auto-fill,minmax(18rem,1fr))] gap-5 p-0">
+            <ul class="m-0 grid list-none grid-cols-[repeat(auto-fill,minmax(25rem,1fr))] gap-5 p-0">
                 {items.map((item) => (
                     <li>
                         <PostCard post={item} tags={tagsMap.get(item.slug) ?? []} type="book-note" />

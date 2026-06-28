@@ -26,6 +26,17 @@ const canonical = canonicalUrl ?? new URL(Astro.url.pathname, Astro.site).href;
 <!doctype html>
 <html lang="en">
     <head>
+        <script is:inline>
+            (function () {
+                try {
+                    var t = localStorage.getItem('theme');
+                    var dark =
+                        t === 'dark' ||
+                        (!t && window.matchMedia('(prefers-color-scheme: dark)').matches);
+                    document.documentElement.classList.toggle('dark', dark);
+                } catch (e) {}
+            })();
+        </script>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>{title}</title>
@@ -38,7 +49,7 @@ const canonical = canonicalUrl ?? new URL(Astro.url.pathname, Astro.site).href;
         <link rel="sitemap" href="/sitemap-index.xml" />
         <slot name="head" />
     </head>
-    <body>
+    <body class="min-h-screen bg-newsprint text-ink">
         <SiteHeader />
         <main class="mx-auto max-w-[72rem] px-6 pt-8 pb-16">
             <slot />

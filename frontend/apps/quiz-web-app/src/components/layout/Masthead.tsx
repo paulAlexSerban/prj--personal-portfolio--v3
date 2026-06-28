@@ -5,33 +5,20 @@ export function Masthead() {
   const now = new Date();
   const dateline = `Vol. ${__APP_VERSION__} · No. ${dayOfYear(now)}/${isoWeek(now)}`;
   return (
-    <header className="grain border-b-[3px] border-[var(--ink-black)]">
+    <header className="grain border-b-[3px] border-ink">
       <div className="max-w-6xl mx-auto px-6 pt-6 pb-4">
         <div className="flex items-center justify-between gap-4">
-          <p
-            className="smallcaps text-[10px] md:text-sm text-[var(--slate)]"
-            style={{ fontFamily: "var(--font-mono)" }}
-          >
-            {dateline}
-          </p>
-          <p
-            className="smallcaps text-[10px] md:text-sm text-[var(--slate)]"
-            style={{ fontFamily: "var(--font-mono)" }}
-          >
-            Spaced Repetition Edition
-          </p>
+          <p className="kicker font-mono text-[10px] md:text-sm">{dateline}</p>
+          <p className="kicker font-mono text-[10px] md:text-sm">Spaced Repetition Edition</p>
         </div>
-        <Link to="/" className="block text-center mt-1 no-underline text-[var(--ink-black)]">
-          <h1
-            className="font-black tracking-tight leading-none"
-            style={{ fontFamily: "var(--font-display)", fontSize: "clamp(3rem, 9vw, 6rem)" }}
-          >
+        <Link to="/" className="block text-center mt-1 no-underline text-ink">
+          <h1 className="font-display font-black tracking-tight leading-none text-[clamp(3rem,9vw,6rem)]">
             The Review
           </h1>
         </Link>
         <div className="rule-double mt-2" />
         <div className="flex items-center justify-between mt-2 flex-wrap gap-2">
-          <p className="smallcaps text-[11px] text-[var(--slate)]">{formatDateline()}</p>
+          <p className="kicker text-[11px]">{formatDateline()}</p>
           <nav className="flex gap-5 text-[11px] smallcaps flex-wrap">
             <Link to="/" className="hover:underline">
               Posts

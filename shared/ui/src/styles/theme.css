@@ -261,6 +261,18 @@
         font-variant: small-caps;
         letter-spacing: 0.12em;
     }
+    /* Newspaper text patterns shared by the quiz app and the blog. */
+    .kicker {
+        font-variant: small-caps;
+        letter-spacing: 0.12em;
+        @apply text-slate-ink;
+    }
+    .deck {
+        @apply italic text-charcoal;
+    }
+    .card-ruled {
+        @apply border-t-[3px] border-ink pt-4;
+    }
     .dropcap::first-letter {
         font-family: var(--font-display);
         font-weight: 900;

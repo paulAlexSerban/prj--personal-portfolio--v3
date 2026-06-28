@@ -12,10 +12,14 @@ closeConnection(db);
 ---
 
 <BaseLayout title="Snippets | Paul Serban" description="Code snippets and quick notes by Paul Serban.">
-    <HeroBanner title="Snippets" subheading="Short code notes and quick references." />
+    <HeroBanner
+        title="Snippets"
+        subheading="Short code notes and quick references."
+        kicker="The Catalogue"
+    />
     {
         items.length > 0 ? (
-            <ul class="m-0 grid list-none grid-cols-[repeat(auto-fill,minmax(18rem,1fr))] gap-5 p-0">
+            <ul class="m-0 grid list-none grid-cols-[repeat(auto-fill,minmax(25rem,1fr))] gap-5 p-0">
                 {items.map((item) => (
                     <li>
                         <PostCard post={item} tags={tagsMap.get(item.slug) ?? []} type="snippet" />

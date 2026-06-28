@@ -7,13 +7,15 @@ interface Props {
     title: string;
     subheading?: string;
     tags?: TagRow[];
+    kicker?: string;
 }
 
-const { title, subheading, tags = [] } = Astro.props;
+const { title, subheading, tags = [], kicker } = Astro.props;
 ---
 
-<section class="mb-8 border-b border-dashed border-rule pb-6">
-    <h1 class="m-0 mb-2 font-display text-[clamp(2rem,5vw,3rem)] leading-[1.1]">{title}</h1>
-    {subheading && <p class="mt-0 mb-4 text-[1.1rem] text-slate-ink">{subheading}</p>}
+<section class="mb-8 border-b-[3px] border-ink pb-6">
+    {kicker && <p class="kicker mb-2 text-sm">{kicker}</p>}
+    <h1 class="m-0 font-display text-[clamp(2rem,5vw,3rem)] font-bold leading-[1.1]">{title}</h1>
+    {subheading && <p class="deck mt-2 mb-4 text-[1.1rem]">{subheading}</p>}
     {tags.length > 0 && <TagList tags={tags} />}
 </section>

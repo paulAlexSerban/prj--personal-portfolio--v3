@@ -5,19 +5,18 @@ const footerLinks = [
     { label: 'Snippets', href: '/snippet/' },
     { label: 'Book Notes', href: '/booknote/' },
 ];
+
+const year = new Date().getFullYear();
 ---
 
-<footer class="border-t-2 border-ink bg-aged px-6 py-8">
-    <div class="mx-auto max-w-[72rem]">
-        <nav aria-label="Footer">
-            <ul class="m-0 flex list-none flex-wrap gap-x-6 gap-y-3 p-0">
+<footer class="mt-8 border-t-2 border-ink px-6 py-10">
+    <div class="mx-auto max-w-[72rem] text-center">
+        <nav aria-label="Footer" class="mb-3">
+            <ul class="m-0 flex list-none flex-wrap justify-center gap-x-6 gap-y-3 p-0 text-[11px] smallcaps">
                 {
                     footerLinks.map((link) => (
                         <li>
-                            <a
-                                href={link.href}
-                                class="text-slate-ink no-underline hover:text-ink"
-                            >
+                            <a href={link.href} class="text-ink no-underline hover:underline">
                                 {link.label}
                             </a>
                         </li>
@@ -25,5 +24,6 @@ const footerLinks = [
                 }
             </ul>
         </nav>
+        <p class="kicker text-sm">Paul Serban · Printed in your browser · {year}</p>
     </div>
 </footer>

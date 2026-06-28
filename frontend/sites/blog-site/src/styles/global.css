@@ -3,6 +3,10 @@
 @import 'tailwindcss' source(none);
 @source '../../src';
 @source '../../../../../shared/ui/src';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
 @import '@prj--personal-portfolio--v3/shared--ui/styles.css';
 
 @layer components {

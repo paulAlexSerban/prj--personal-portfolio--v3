@@ -42,12 +42,14 @@ const sections = [
     description={`Content tagged with ${tagName}.`}
     ogTitle={`Tag: ${tagName}`}
 >
-    <HeroBanner title={tagName} subheading="Archive for this tag." />
+    <HeroBanner title={tagName} subheading="Archive for this tag." kicker="Tag Archive" />
     {
         sections.map((section) => (
             <section class="mb-12">
-                <h2 class="m-0 font-display text-[1.75rem]">{section.title}</h2>
-                <ul class="m-0 grid list-none grid-cols-[repeat(auto-fill,minmax(18rem,1fr))] gap-5 p-0">
+                <div class="mb-5 border-b-[3px] border-ink pb-2">
+                    <h2 class="m-0 font-display text-4xl font-bold">{section.title}</h2>
+                </div>
+                <ul class="m-0 grid list-none grid-cols-[repeat(auto-fill,minmax(25rem,1fr))] gap-5 p-0">
                     {section.items.map((item) => (
                         <li>
                             <PostCard
