@@ -39,6 +39,7 @@ export function getPostsByTagAndType(
             body: posts.body,
             subheading: posts.subheading,
             excerpt: posts.excerpt,
+            cover_image: posts.cover_image,
             author: posts.author,
             date: posts.date,
             pinned: posts.pinned,

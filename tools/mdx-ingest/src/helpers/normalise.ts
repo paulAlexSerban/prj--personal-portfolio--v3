@@ -93,6 +93,7 @@ const normalisePost = (file: ParsedFile, type: 'post' | 'book-note' | 'snippet')
         body: file.body,
         subheading: str(fm['subheading']),
         excerpt: str(fm['excerpt']),
+        cover_image: str(fm['cover']),
         author: str(fm['author']),
         date: str(fm['date']),
         pinned: bool(fm['pinned']),

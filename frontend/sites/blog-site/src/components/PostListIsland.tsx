@@ -1,10 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
-import {
-    filterByQuery,
-    sortBlogPosts,
-    type BlogPostFilterItem,
-    type BlogSortBy,
-} from '@prj--personal-portfolio--v3/shared--ui/post-filters';
+import { filterByQuery, sortBlogPosts, type BlogPostFilterItem, type BlogSortBy } from '@prj--personal-portfolio--v3/shared--ui/post-filters';
 import { clampPage, paginate, totalPages } from '@prj--personal-portfolio--v3/shared--ui/pagination';
 import { PostCardReact } from './PostCardReact';
 
@@ -49,10 +44,7 @@ export function PostListIsland({ posts }: Props) {
     };
 
     const rows = useMemo(() => {
-        const filtered = filterByQuery(posts, search, (p) => [
-            ...p.tags.map((t) => t.name),
-            ...p.tags.map((t) => t.slug),
-        ]);
+        const filtered = filterByQuery(posts, search, (p) => [...p.tags.map((t) => t.name), ...p.tags.map((t) => t.slug)]);
         return sortBlogPosts(filtered, sortBy);
     }, [posts, search, sortBy]);
 
@@ -83,11 +75,7 @@ export function PostListIsland({ posts }: Props) {
                                 setSortBy(s);
                                 goToPage(1);
                             }}
-                            title={
-                                s === 'title'
-                                    ? 'Sort alphabetically by title'
-                                    : 'Sort by newest first'
-                            }
+                            title={s === 'title' ? 'Sort alphabetically by title' : 'Sort by newest first'}
                             className={`underline-offset-4 ${sortBy === s ? 'font-bold underline' : 'hover:underline'}`}
                         >
                             {SORT_LABELS[s]}

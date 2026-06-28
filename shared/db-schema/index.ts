@@ -60,6 +60,7 @@ export const posts = sqliteTable('posts', {
     body: text('body').notNull(),
     subheading: text('subheading'),
     excerpt: text('excerpt'),
+    cover_image: text('cover_image'),
     author: text('author'),
     date: text('date'),
     pinned: integer('pinned', { mode: 'boolean' }).default(false),

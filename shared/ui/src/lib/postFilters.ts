@@ -8,6 +8,7 @@ export interface BlogPostFilterItem {
   slug: string;
   excerpt: string | null;
   date: string | null;
+  cover: string | null;
   tags: BlogPostTag[];
   type: "post" | "snippet" | "book-note";
 }

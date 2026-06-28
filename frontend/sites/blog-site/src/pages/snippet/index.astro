@@ -2,7 +2,7 @@
 import type { BlogPostFilterItem } from '@prj--personal-portfolio--v3/shared--ui/post-filters';
 
 import HeroBanner from '../../components/HeroBanner.astro';
-import { PostListIsland } from '../../components/PostListIsland.tsx';
+import { PostListIsland } from '../../components/PostListIsland';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { closeConnection, openDb } from '../../lib/db.ts';
 import { buildTagsMap, getPublishedByType } from '../../lib/queries/posts.ts';
@@ -17,6 +17,7 @@ const posts: BlogPostFilterItem[] = items.map((item) => ({
     slug: item.slug,
     excerpt: item.excerpt ?? null,
     date: item.date ?? null,
+    cover: item.cover_image ?? null,
     type: 'snippet',
     tags: (tagsMap.get(item.slug) ?? []).map((t) => ({ name: t.name, slug: t.slug })),
 }));

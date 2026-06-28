@@ -10,11 +10,24 @@ export default defineConfig({
     site: 'https://blog.paulserban.eu',
     output: 'static',
     trailingSlash: 'always',
-    integrations: [mdx({ components: mdxComponents }), react(), sitemap()],
+    integrations: [
+        mdx({ components: mdxComponents }),
+        react({
+            include: ['**/frontend/sites/blog-site/**', '**/shared/ui/**'],
+        }),
+        sitemap(),
+    ],
     vite: {
         plugins: [tailwindcss()],
+        resolve: {
+            dedupe: ['react', 'react-dom'],
+        },
+        optimizeDeps: {
+            include: ['react', 'react-dom', 'react/jsx-dev-runtime', 'react/jsx-runtime'],
+        },
         ssr: {
             external: ['better-sqlite3'],
+            noExternal: ['@prj--personal-portfolio--v3/shared--ui'],
         },
     },
 });

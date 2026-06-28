@@ -24,6 +24,10 @@
             "types": "./src/lib/pagination.ts",
             "import": "./src/lib/pagination.ts"
         },
+        "./cover-image": {
+            "types": "./src/lib/coverImage.ts",
+            "import": "./src/lib/coverImage.ts"
+        },
         "./styles.css": "./src/styles/theme.css"
     },
     "scripts": {
