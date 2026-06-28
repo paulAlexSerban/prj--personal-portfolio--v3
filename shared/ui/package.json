@@ -16,6 +16,18 @@
             "types": "./src/lib/utils.ts",
             "import": "./src/lib/utils.ts"
         },
+        "./button": {
+            "types": "./src/components/ui/button.tsx",
+            "import": "./src/components/ui/button.tsx"
+        },
+        "./input": {
+            "types": "./src/components/ui/input.tsx",
+            "import": "./src/components/ui/input.tsx"
+        },
+        "./sheet": {
+            "types": "./src/components/ui/sheet.tsx",
+            "import": "./src/components/ui/sheet.tsx"
+        },
         "./post-filters": {
             "types": "./src/lib/postFilters.ts",
             "import": "./src/lib/postFilters.ts"

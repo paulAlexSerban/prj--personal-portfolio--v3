@@ -1,4 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
+import { Button } from '@prj--personal-portfolio--v3/shared--ui/button';
+import { Input } from '@prj--personal-portfolio--v3/shared--ui/input';
+import { cn } from '@prj--personal-portfolio--v3/shared--ui/utils';
 import { filterByQuery, sortBlogPosts, type BlogPostFilterItem, type BlogSortBy } from '@prj--personal-portfolio--v3/shared--ui/post-filters';
 import { clampPage, paginate, totalPages } from '@prj--personal-portfolio--v3/shared--ui/pagination';
 import { PostCardReact } from './PostCardReact';
@@ -55,7 +58,7 @@ export function PostListIsland({ posts }: Props) {
     return (
         <div>
             <div className="mb-6 flex flex-wrap items-center gap-4 text-base">
-                <input
+                <Input
                     value={search}
                     onChange={(e) => {
                         setSearch(e.target.value);
@@ -63,23 +66,28 @@ export function PostListIsland({ posts }: Props) {
                     }}
                     placeholder="Search title, slug, or tag…"
                     aria-label="Search posts"
-                    className="min-w-[200px] flex-1 border-2 border-ink bg-transparent px-3 py-2"
+                    className="h-auto min-w-[200px] flex-1 rounded-none border-2 border-ink bg-transparent px-3 py-2 text-base shadow-none focus-visible:ring-0"
                 />
                 <div className="kicker flex items-center gap-3 text-[11px]">
                     <span className="text-slate-ink">Sort:</span>
                     {(['title', 'date'] as BlogSortBy[]).map((s) => (
-                        <button
+                        <Button
                             key={s}
                             type="button"
+                            variant="link"
+                            size="sm"
                             onClick={() => {
                                 setSortBy(s);
                                 goToPage(1);
                             }}
                             title={s === 'title' ? 'Sort alphabetically by title' : 'Sort by newest first'}
-                            className={`underline-offset-4 ${sortBy === s ? 'font-bold underline' : 'hover:underline'}`}
+                            className={cn(
+                                'h-auto p-0 text-[11px] uppercase tracking-wide text-ink underline-offset-4',
+                                sortBy === s ? 'font-bold underline' : 'no-underline hover:underline'
+                            )}
                         >
                             {SORT_LABELS[s]}
-                        </button>
+                        </Button>
                     ))}
                 </div>
             </div>
@@ -104,24 +112,28 @@ export function PostListIsland({ posts }: Props) {
                                 Page {current} of {pages} · {rows.length} total
                             </span>
                             <div className="flex gap-2">
-                                <button
+                                <Button
                                     type="button"
+                                    variant="outline"
+                                    size="sm"
                                     disabled={current <= 1}
                                     onClick={() => goToPage(current - 1)}
                                     title="Go to the previous page"
-                                    className="stamp stamp-ghost text-sm disabled:opacity-40"
+                                    className="rounded-none border-ink text-sm disabled:opacity-40"
                                 >
                                     ← Prev
-                                </button>
-                                <button
+                                </Button>
+                                <Button
                                     type="button"
+                                    variant="outline"
+                                    size="sm"
                                     disabled={current >= pages}
                                     onClick={() => goToPage(current + 1)}
                                     title="Go to the next page"
-                                    className="stamp stamp-ghost text-sm disabled:opacity-40"
+                                    className="rounded-none border-ink text-sm disabled:opacity-40"
                                 >
                                     Next →
-                                </button>
+                                </Button>
                             </div>
                         </div>
                     )}

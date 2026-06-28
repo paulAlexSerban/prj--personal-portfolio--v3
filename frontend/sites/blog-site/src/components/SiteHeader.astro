@@ -1,4 +1,6 @@
 ---
+import { MobileNav } from './MobileNav.tsx';
+
 const navLinks = [
     { label: 'Posts', href: '/post/' },
     { label: 'Snippets', href: '/snippet/' },
@@ -10,6 +12,8 @@ const pathname = Astro.url.pathname;
 function isActive(href: string): boolean {
     return pathname.startsWith(href);
 }
+
+const mobileLinks = navLinks.map((link) => ({ ...link, active: isActive(link.href) }));
 
 const year = new Date().getFullYear();
 ---
@@ -31,8 +35,8 @@ const year = new Date().getFullYear();
         <div class="rule-double mt-3"></div>
         <div class="mt-2 flex flex-wrap items-center justify-between gap-2">
             <p class="kicker text-[11px]">Vol. {year}</p>
-            <div class="flex flex-wrap items-center gap-5">
-                <nav class="flex flex-wrap gap-5 text-[11px] smallcaps" aria-label="Primary">
+            <div class="flex items-center gap-3 md:gap-5">
+                <nav class="hidden md:flex flex-wrap gap-5 text-[11px] smallcaps" aria-label="Primary">
                     {
                         navLinks.map((link) => (
                             <a
@@ -55,6 +59,7 @@ const year = new Date().getFullYear();
                     <span id="theme-toggle-icon" aria-hidden="true">☾</span>
                     <span id="theme-toggle-label">Dark</span>
                 </button>
+                <MobileNav client:load links={mobileLinks} />
             </div>
         </div>
     </div>
