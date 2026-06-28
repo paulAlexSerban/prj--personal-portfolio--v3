@@ -1,13 +1,13 @@
 packages:
-  - 'assets/*' # assets management tools
-  - 'backend/*'
-  - 'frontend/*'
-  - 'frontend/apps/*' # standalone frontend applications
-  - 'frontend/sites/*'
-  - 'infrastructure/*'
-  - 'shared/**/*'
-  - 'tools/**/*' # internal toolig
+    - 'assets/*' # assets management tools
+    - 'backend/*'
+    - 'frontend/*'
+    - 'frontend/apps/*' # standalone frontend applications
+    - 'frontend/sites/*'
+    - 'infrastructure/*'
+    - 'shared/**/*'
+    - 'tools/**/*' # internal toolig
 allowBuilds:
-  better-sqlite3: true
-  esbuild: true
-  sharp: set this to true or false
+    better-sqlite3: true
+    esbuild: true
+    sharp: set this to true or false

@@ -218,3 +218,32 @@
     font-size: 0.85rem;
     font-style: italic;
 }
+
+.mdx-link-list {
+    list-style: none;
+    margin: 1em 0;
+    padding: 0;
+}
+
+.mdx-link-list li {
+    margin: 0.35em 0;
+}
+
+.mdx-link-list a {
+    color: var(--ink-black);
+    font-weight: 700;
+}
+
+.mdx-heading-separator {
+    border-bottom: 1px dashed var(--column-rule);
+    padding-bottom: 0.35em;
+    margin-bottom: 0.75em;
+}
+
+.mdx-heading-sub {
+    display: block;
+    font-size: 0.85em;
+    font-weight: 400;
+    color: var(--slate);
+    margin-top: 0.25em;
+}

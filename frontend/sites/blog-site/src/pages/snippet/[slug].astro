@@ -1,10 +1,13 @@
 ---
-import { compileContent } from '@prj--personal-portfolio--v3/shared--quiz-markdown';
+import { evaluate } from '@mdx-js/mdx';
+import * as runtime from 'react/jsx-runtime';
+import rehypeHighlight from 'rehype-highlight';
+import remarkGfm from 'remark-gfm';
 
 import HeroBanner from '../../components/HeroBanner.astro';
-import MdxContent from '../../components/MdxContent.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { closeConnection, openDb } from '../../lib/db.ts';
+import { mdxComponents } from '../../lib/mdx-components.ts';
 import { getAllSlugs, getPostBySlug, getTagsForPost } from '../../lib/queries/posts.ts';
 
 export function getStaticPaths() {
@@ -24,7 +27,12 @@ if (!post) {
     throw new Error(`Snippet not found: ${slug}`);
 }
 
-const compiledHtml = compileContent(post.body);
+const { default: Content } = await evaluate(post.body, {
+    ...runtime,
+    remarkPlugins: [remarkGfm],
+    rehypePlugins: [rehypeHighlight],
+});
+
 const description = post.excerpt ?? post.subheading ?? undefined;
 const canonicalUrl = new URL(`/snippet/${slug}/`, Astro.site).href;
 ---
@@ -37,5 +45,7 @@ const canonicalUrl = new URL(`/snippet/${slug}/`, Astro.site).href;
     canonicalUrl={canonicalUrl}
 >
     <HeroBanner title={post.title} subheading={post.subheading ?? undefined} tags={tags} />
-    <MdxContent html={compiledHtml} />
+    <article class="md-content post-detail">
+        <Content components={mdxComponents} />
+    </article>
 </BaseLayout>
