@@ -14,7 +14,12 @@ const Heading = ({ level = 2, mainText, subheadingText, hasSeparator, children }
     const className = hasSeparator ? 'mb-3 border-b border-dashed border-rule pb-[0.35em]' : undefined;
 
     if (subheadingText) {
-        return createElement(tag, { className }, createElement('span', null, children ?? mainText), createElement('span', { className: 'mt-1 block text-[0.85em] font-normal text-slate-ink' }, subheadingText));
+        return createElement(
+            tag,
+            { className },
+            createElement('span', null, children ?? mainText),
+            createElement('span', { className: 'mt-1 block text-[0.85em] font-normal text-slate-ink' }, subheadingText)
+        );
     }
 
     return createElement(tag, { className }, children ?? mainText);
