@@ -56,3 +56,40 @@ Flashcard quizes (Anki style spaced repetition) are surfaced as a blog widget, a
 - `shared/` - shared libraries and utilities (e.g., foundations library, UI components, etc.)
 - `scripts/` - utility scripts for development, build, deployment, etc.
 - `tests/` - test suites for various components and services (e.g., integration tests, end-to-end tests, BDD tests, UI tests, etc.)
+
+## CI/CD & Deployment
+
+### Workflows
+
+- `.github/workflows/ci.yaml` - format check, typecheck, test, migrations (on push to `main` and PRs).
+- `.github/workflows/ingest-content.yaml` - clones the content repo, runs the ingest pipeline, uploads `database/output/` as an artifact.
+- `.github/workflows/deploy-dev.yaml` - DEV deploy to GitHub Pages. Ingests content, builds all three apps under sub-paths, merges outputs, and publishes via GitHub Pages.
+
+### Environments
+
+- **DEV** - GitHub Pages, served from the project repo at `https://paulalexserban.github.io/prj--personal-portfolio--v3/`.
+    - `/home/` - portfolio-site (Astro)
+    - `/blog/` - blog-site (Astro)
+    - `/quiz/` - quiz-web-app (Vite + React SPA)
+    - `/` redirects to `/home/`.
+- **TEST** / **PROD** - not yet implemented (planned separately).
+
+### Required repository settings (one-time, manual)
+
+These must be configured in the GitHub repository before `deploy-dev.yaml` can publish:
+
+1. **Pages source** - Settings -> Pages -> Build and deployment -> Source: **GitHub Actions**.
+2. **Secret `CONTENT_REPO_TOKEN`** - Settings -> Secrets and variables -> Actions. A PAT (or fine-grained token with `Contents: Read`) granting read access to `content--paulserban.eu`. Used by both `ingest-content.yaml` and `deploy-dev.yaml`.
+
+### Sub-path build configuration
+
+Each app reads its base path from an environment variable so the same build works locally (root) and on Pages (sub-path):
+
+- portfolio-site / blog-site (Astro): `ASTRO_SITE` and `ASTRO_BASE`.
+- quiz-web-app (Vite): `VITE_APP_BASE` - drives Vite `base`, the PWA manifest `start_url`/`scope`, the workbox cache pattern, and the TanStack Router `basepath`.
+
+The quiz SPA uses a `404.html` + `sessionStorage` redirect so deep links survive GitHub Pages' lack of server-side routing.
+
+### Triggering a DEV deploy
+
+`deploy-dev.yaml` runs on push to `main`, or manually via Actions -> **Deploy DEV (GitHub Pages)** -> **Run workflow**.

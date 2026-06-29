@@ -1,6 +1,7 @@
 ---
 import SiteFooter from '../components/SiteFooter.astro';
 import SiteHeader from '../components/SiteHeader.astro';
+import { assetUrl } from '../lib/urls.ts';
 import '../styles/global.css';
 
 interface Props {
@@ -46,7 +47,7 @@ const canonical = canonicalUrl ?? new URL(Astro.url.pathname, Astro.site).href;
         <meta property="og:type" content="website" />
         <meta property="og:url" content={canonical} />
         <link rel="canonical" href={canonical} />
-        <link rel="sitemap" href="/sitemap-index.xml" />
+        <link rel="sitemap" href={assetUrl('sitemap-index.xml')} />
         <slot name="head" />
     </head>
     <body class="min-h-screen bg-newsprint text-ink">

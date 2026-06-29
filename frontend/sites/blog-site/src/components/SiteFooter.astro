@@ -1,9 +1,13 @@
 ---
+import { externalLinkAttrs, siteUrls } from '../lib/urls.ts';
+
 const footerLinks = [
-    { label: 'Blog', href: '/' },
-    { label: 'Posts', href: '/post/' },
-    { label: 'Snippets', href: '/snippet/' },
-    { label: 'Book Notes', href: '/booknote/' },
+    { label: 'Blog', href: siteUrls.home },
+    { label: 'Posts', href: siteUrls.post },
+    { label: 'Snippets', href: siteUrls.snippet },
+    { label: 'Book Notes', href: siteUrls.booknote },
+    { label: 'Portfolio', href: siteUrls.portfolio },
+    { label: 'Quiz', href: siteUrls.quiz },
 ];
 
 const year = new Date().getFullYear();
@@ -16,7 +20,11 @@ const year = new Date().getFullYear();
                 {
                     footerLinks.map((link) => (
                         <li>
-                            <a href={link.href} class="text-ink no-underline hover:underline">
+                            <a
+                                href={link.href}
+                                class="text-ink no-underline hover:underline"
+                                {...externalLinkAttrs(link.href)}
+                            >
                                 {link.label}
                             </a>
                         </li>

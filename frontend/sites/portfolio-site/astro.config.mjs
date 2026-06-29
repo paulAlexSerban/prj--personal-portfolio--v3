@@ -12,7 +12,7 @@ export default defineConfig({
     integrations: [
         mdx(),
         react({
-            include: ['**/frontend/sites/portfolio-site/**', '**/shared/ui/**'],
+            include: ['**/frontend/sites/portfolio-site/**', '**/shared/ui/**', '**/shared/navigation/**'],
         }),
         sitemap(),
     ],
@@ -26,7 +26,7 @@ export default defineConfig({
         },
         ssr: {
             external: ['better-sqlite3'],
-            noExternal: ['@prj--personal-portfolio--v3/shared--ui'],
+            noExternal: ['@prj--personal-portfolio--v3/shared--ui', '@prj--personal-portfolio--v3/shared--navigation'],
         },
     },
 });

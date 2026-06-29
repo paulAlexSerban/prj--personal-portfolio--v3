@@ -1,19 +1,18 @@
 ---
-import { MobileNav } from './MobileNav.tsx';
+import { MobileNav } from '@prj--personal-portfolio--v3/shared--navigation';
+import { externalLinkAttrs, isNavLinkActive, siteUrls } from '../lib/urls.ts';
 
 const navLinks = [
-    { label: 'Posts', href: '/post/' },
-    { label: 'Snippets', href: '/snippet/' },
-    { label: 'Book Notes', href: '/booknote/' },
+    { label: 'Posts', href: siteUrls.post },
+    { label: 'Snippets', href: siteUrls.snippet },
+    { label: 'Book Notes', href: siteUrls.booknote },
+    { label: 'Portfolio', href: siteUrls.portfolio },
+    { label: 'Quiz', href: siteUrls.quiz },
 ];
 
 const pathname = Astro.url.pathname;
 
-function isActive(href: string): boolean {
-    return pathname.startsWith(href);
-}
-
-const mobileLinks = navLinks.map((link) => ({ ...link, active: isActive(link.href) }));
+const mobileLinks = navLinks.map((link) => ({ ...link, active: isNavLinkActive(pathname, link.href) }));
 
 const year = new Date().getFullYear();
 ---
@@ -24,7 +23,7 @@ const year = new Date().getFullYear();
             <p class="kicker font-mono text-[10px] md:text-sm">paulserban.eu</p>
             <p class="kicker font-mono text-[10px] md:text-sm">Writing Edition</p>
         </div>
-        <a href="/" class="mt-2 block text-center text-ink no-underline">
+        <a href={siteUrls.home} class="mt-2 block text-center text-ink no-underline">
             <h1
                 class="font-display font-black leading-none tracking-tight text-[clamp(2.5rem,8vw,5rem)]"
             >
@@ -41,8 +40,9 @@ const year = new Date().getFullYear();
                         navLinks.map((link) => (
                             <a
                                 href={link.href}
-                                aria-current={isActive(link.href) ? 'page' : undefined}
+                                aria-current={isNavLinkActive(pathname, link.href) ? 'page' : undefined}
                                 class="text-ink no-underline hover:underline aria-[current=page]:font-bold aria-[current=page]:underline"
+                                {...externalLinkAttrs(link.href)}
                             >
                                 {link.label}
                             </a>

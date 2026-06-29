@@ -2,16 +2,11 @@ import { useState } from 'react';
 import { Menu } from 'lucide-react';
 import { Button } from '@prj--personal-portfolio--v3/shared--ui/button';
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@prj--personal-portfolio--v3/shared--ui/sheet';
-import { externalLinkAttrs } from '../lib/urls.ts';
-
-export interface MobileNavLink {
-    label: string;
-    href: string;
-    active?: boolean;
-}
+import type { NavLink } from './types.ts';
+import { externalLinkAttrs } from './urls.ts';
 
 interface Props {
-    links: MobileNavLink[];
+    links: NavLink[];
 }
 
 export function MobileNav({ links }: Props) {

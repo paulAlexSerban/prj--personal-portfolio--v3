@@ -9,7 +9,7 @@ import {
 const base = import.meta.env.BASE_URL;
 
 const crossApp = createSiteUrls({
-    appSegment: 'home',
+    appSegment: 'blog',
     baseUrl: base,
     production: {
         portfolio: 'https://paulserban.eu',
@@ -20,13 +20,12 @@ const crossApp = createSiteUrls({
 
 export const siteUrls = {
     home: base,
-    experience: `${base}#experience`,
-    portfolio: `${base}portfolio/`,
-    portfolioProject: (slug: string) => `${base}portfolio/${slug}/`,
-    cv: `${base}cv/`,
-    blog: import.meta.env.PUBLIC_BLOG_URL ?? crossApp.blog,
-    blogPost: (slug: string) => `${(import.meta.env.PUBLIC_BLOG_URL ?? crossApp.blog).replace(/\/?$/, '/')}post/${slug}/`,
-    quiz: import.meta.env.PUBLIC_QUIZ_URL ?? crossApp.quiz,
+    post: `${base}post/`,
+    postSlug: (slug: string) => `${base}post/${slug}/`,
+    snippet: `${base}snippet/`,
+    booknote: `${base}booknote/`,
+    portfolio: crossApp.portfolio,
+    quiz: crossApp.quiz,
 } as const;
 
 export const assetUrl = (path: string) => sharedAssetUrl(base, path);

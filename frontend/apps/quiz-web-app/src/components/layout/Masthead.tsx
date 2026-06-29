@@ -9,6 +9,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@prj--personal-portfolio--v3/shared--ui";
+import { externalLinkAttrs, siteUrls } from "@/lib/urls";
 import { dayOfYear, formatDateline, isoWeek } from "@/utils/dates";
 
 const navItems = [
@@ -49,6 +50,16 @@ export function Masthead() {
                 {item.label}
               </Link>
             ))}
+            <a
+              href={siteUrls.portfolio}
+              className="hover:underline"
+              {...externalLinkAttrs(siteUrls.portfolio)}
+            >
+              Portfolio
+            </a>
+            <a href={siteUrls.blog} className="hover:underline" {...externalLinkAttrs(siteUrls.blog)}>
+              Blog
+            </a>
           </nav>
 
           <Sheet open={open} onOpenChange={setOpen}>
@@ -78,6 +89,22 @@ export function Masthead() {
                     {item.label}
                   </Link>
                 ))}
+                <a
+                  href={siteUrls.portfolio}
+                  onClick={() => setOpen(false)}
+                  className="border-b border-rule py-3 text-base no-underline text-ink hover:underline"
+                  {...externalLinkAttrs(siteUrls.portfolio)}
+                >
+                  Portfolio
+                </a>
+                <a
+                  href={siteUrls.blog}
+                  onClick={() => setOpen(false)}
+                  className="border-b border-rule py-3 text-base no-underline text-ink hover:underline"
+                  {...externalLinkAttrs(siteUrls.blog)}
+                >
+                  Blog
+                </a>
               </nav>
             </SheetContent>
           </Sheet>
