@@ -9,7 +9,7 @@ import { compileMarkdown } from '../../lib/markdown';
  * (and will move to MDX). The `html` prop name is kept for API stability but the
  * input is markdown.
  */
-export function CardRenderer({
+const CardRenderer = ({
     html,
     compiledHtml,
     reveal = true,
@@ -25,7 +25,7 @@ export function CardRenderer({
     /** Render as inline markdown (no block <p> wrapping) — for short labels. */
     inline?: boolean;
     className?: string;
-}) {
+}) => {
     const safe = useMemo(() => compiledHtml ?? compileMarkdown(html, { inline, reveal }), [compiledHtml, html, reveal, inline]);
 
     const elRef = useRef<HTMLElement | null>(null);
@@ -53,4 +53,6 @@ export function CardRenderer({
     }
 
     return <div ref={setRef} className={`md-content ${dropcap ? 'dropcap' : ''} ${className}`} dangerouslySetInnerHTML={{ __html: safe }} />;
-}
+};
+
+export { CardRenderer };

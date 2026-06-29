@@ -44,9 +44,7 @@
     },
     "scripts": {
         "typecheck": "tsc -b",
-        "test": "vitest run --passWithNoTests",
-        "storybook": "storybook dev -p 6006",
-        "build-storybook": "storybook build"
+        "test": "vitest run --passWithNoTests"
     },
     "peerDependencies": {
         "react": "^19.0.0",
@@ -100,12 +98,10 @@
         "vaul": "^1.1.2"
     },
     "devDependencies": {
-        "@storybook/react-vite": "^9.0.0",
         "@tailwindcss/vite": "^4.2.1",
         "@types/katex": "^0.16.8",
         "@types/react": "^19.2.0",
         "@types/react-dom": "^19.2.0",
-        "storybook": "^9.0.0",
         "tailwindcss": "^4.2.1",
         "typescript": "^5.8.3",
         "vite": "^7.3.1",
