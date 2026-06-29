@@ -11,8 +11,7 @@ import { getFeaturedPost, getRecentPosts } from '../lib/queries/posts.ts';
 import { buildProjectTagsMap, getFeaturedPreview } from '../lib/queries/projects.ts';
 import { getProfile } from '../lib/queries/profile.ts';
 import { getSkillsGrouped } from '../lib/queries/skills.ts';
-
-const BLOG_URL = 'https://blog.paulserban.eu';
+import { assetUrl, externalLinkAttrs, siteUrls } from '../lib/urls.ts';
 
 const db = openDb();
 const profile = getProfile(db);
@@ -28,7 +27,7 @@ const name = profile?.name ?? 'Paul Serban';
 const description = profile?.headline ?? 'Portfolio of Paul Serban.';
 ---
 
-<BaseLayout title={`${name} | Portfolio`} description={description} ogImage={profile?.photo_url ?? '/portrait.svg'}>
+<BaseLayout title={`${name} | Portfolio`} description={description} ogImage={profile?.photo_url ?? assetUrl('portrait.svg')}>
     <HeroSplit profile={profile} />
 
     <ExperienceTimeline items={experience} />
@@ -53,7 +52,7 @@ const description = profile?.headline ?? 'Portfolio of Paul Serban.';
                         <p class="kicker text-sm">Selected work</p>
                         <h2 class="m-0 font-display text-4xl font-bold">Case studies</h2>
                     </div>
-                    <a class="stamp stamp-ghost px-4 py-1.5 text-sm" href="/portfolio/">View all &rarr;</a>
+                    <a class="stamp stamp-ghost px-4 py-1.5 text-sm" href={siteUrls.portfolio}>View all &rarr;</a>
                 </div>
                 <ul class="m-0 grid list-none grid-cols-[repeat(auto-fill,minmax(18rem,1fr))] gap-8 p-0">
                     {featured.map((project) => (
@@ -78,10 +77,9 @@ const description = profile?.headline ?? 'Portfolio of Paul Serban.';
                     {recentPosts.slice(featuredPost ? 1 : 0).map((post) => (
                         <li class="border-b border-rule py-3 last:border-b-0">
                             <a
-                                href={`${BLOG_URL}/post/${post.slug}/`}
+                                href={siteUrls.blogPost(post.slug)}
                                 class="text-ink no-underline hover:underline"
-                                rel="noopener noreferrer"
-                                target="_blank"
+                                {...externalLinkAttrs(siteUrls.blogPost(post.slug))}
                             >
                                 <span class="kicker text-[11px]">{post.date}</span>
                                 <span class="ml-3 font-display font-bold">{post.title}</span>

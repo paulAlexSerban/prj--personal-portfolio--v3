@@ -1,6 +1,7 @@
 ---
 import SiteFooter from '../components/SiteFooter.astro';
 import SiteHeader from '../components/SiteHeader.astro';
+import { assetUrl } from '../lib/urls.ts';
 import '../styles/global.css';
 
 interface Props {
@@ -18,12 +19,13 @@ const {
     ogTitle = title,
     ogDescription = description,
     canonicalUrl,
-    ogImage = '/portrait.svg',
+    ogImage = assetUrl('portrait.svg'),
 } = Astro.props;
 
 const pageDescription = description ?? 'Paul Serban — engineer, architect, selected works.';
 const canonical = canonicalUrl ?? new URL(Astro.url.pathname, Astro.site).href;
 const ogImageUrl = new URL(ogImage, Astro.site).href;
+const sitemapUrl = assetUrl('sitemap-index.xml');
 ---
 
 <!doctype html>
@@ -50,7 +52,7 @@ const ogImageUrl = new URL(ogImage, Astro.site).href;
         <meta property="og:url" content={canonical} />
         <meta property="og:image" content={ogImageUrl} />
         <link rel="canonical" href={canonical} />
-        <link rel="sitemap" href="/sitemap-index.xml" />
+        <link rel="sitemap" href={sitemapUrl} />
         <slot name="head" />
     </head>
     <body class="min-h-screen bg-newsprint text-ink">

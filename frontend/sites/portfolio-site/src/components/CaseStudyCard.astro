@@ -1,6 +1,7 @@
 ---
 import type { ProjectRow, TagRow } from '@prj--personal-portfolio--v3/shared--db-schema';
 import { parseMetrics } from '../lib/queries/projects.ts';
+import { assetUrl, siteUrls } from '../lib/urls.ts';
 import TagList from './TagList.astro';
 
 interface Props {
@@ -10,9 +11,9 @@ interface Props {
 }
 
 const { project, tags, featured = false } = Astro.props;
-const href = `/portfolio/${project.slug}/`;
+const href = siteUrls.portfolioProject(project.slug);
 const metrics = parseMetrics(project.metrics);
-const cover = project.cover_image ?? '/placeholder-cover.png';
+const cover = project.cover_image ?? assetUrl('placeholder-cover.png');
 ---
 
 <article class="card-ruled flex flex-col">

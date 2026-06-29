@@ -1,27 +1,19 @@
 ---
 import { MobileNav } from './MobileNav.tsx';
-
-const QUIZ_APP_URL = 'https://quiz.paulserban.eu/';
-const BLOG_URL = 'https://blog.paulserban.eu/';
+import { externalLinkAttrs, isNavLinkActive, siteUrls } from '../lib/urls.ts';
 
 const navLinks = [
-    { label: 'Home', href: '/' },
-    { label: 'Experience', href: '/#experience' },
-    { label: 'Portfolio', href: '/portfolio/' },
-    { label: 'Blog', href: BLOG_URL },
-    { label: 'Quiz', href: QUIZ_APP_URL },
-    { label: 'CV', href: '/cv/' },
+    { label: 'Home', href: siteUrls.home },
+    { label: 'Experience', href: siteUrls.experience },
+    { label: 'Portfolio', href: siteUrls.portfolio },
+    { label: 'Blog', href: siteUrls.blog },
+    { label: 'Quiz', href: siteUrls.quiz },
+    { label: 'CV', href: siteUrls.cv },
 ];
 
 const pathname = Astro.url.pathname;
 
-function isActive(href: string): boolean {
-    if (href.startsWith('http') || href.startsWith('/#')) return false;
-    if (href === '/') return pathname === '/';
-    return pathname.startsWith(href);
-}
-
-const mobileLinks = navLinks.map((link) => ({ ...link, active: isActive(link.href) }));
+const mobileLinks = navLinks.map((link) => ({ ...link, active: isNavLinkActive(pathname, link.href) }));
 
 const year = new Date().getFullYear();
 ---
@@ -32,7 +24,7 @@ const year = new Date().getFullYear();
             <p class="kicker font-mono text-[10px] md:text-sm">paulserban.eu</p>
             <p class="kicker font-mono text-[10px] md:text-sm">Portfolio Edition</p>
         </div>
-        <a href="/" class="mt-2 block text-center text-ink no-underline">
+        <a href={siteUrls.home} class="mt-2 block text-center text-ink no-underline">
             <h1 class="font-display font-black leading-none tracking-tight text-[clamp(2.5rem,8vw,5rem)]">
                 Paul Serban
             </h1>
@@ -47,9 +39,9 @@ const year = new Date().getFullYear();
                         navLinks.map((link) => (
                             <a
                                 href={link.href}
-                                aria-current={isActive(link.href) ? 'page' : undefined}
+                                aria-current={isNavLinkActive(pathname, link.href) ? 'page' : undefined}
                                 class="text-ink no-underline hover:underline aria-[current=page]:font-bold aria-[current=page]:underline"
-                                {...(link.href.startsWith('http') ? { rel: 'noopener noreferrer', target: '_blank' } : {})}
+                                {...externalLinkAttrs(link.href)}
                             >
                                 {link.label}
                             </a>

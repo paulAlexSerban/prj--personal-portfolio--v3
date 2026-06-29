@@ -13,6 +13,7 @@ import {
     getTagsForProject,
     parseMetrics,
 } from '../../lib/queries/projects.ts';
+import { assetUrl, siteUrls } from '../../lib/urls.ts';
 
 export function getStaticPaths() {
     const db = openDb();
@@ -38,9 +39,9 @@ const { default: Content } = await evaluate(project.body, {
 });
 
 const description = project.excerpt ?? project.problem ?? project.subheading ?? undefined;
-const canonicalUrl = new URL(`/portfolio/${slug}/`, Astro.site).href;
+const canonicalUrl = new URL(siteUrls.portfolioProject(slug), Astro.site).href;
 const metrics = parseMetrics(project.metrics);
-const cover = project.cover_image ?? '/placeholder-cover.png';
+const cover = project.cover_image ?? assetUrl('placeholder-cover.png');
 ---
 
 <BaseLayout
@@ -52,7 +53,7 @@ const cover = project.cover_image ?? '/placeholder-cover.png';
     ogImage={cover}
 >
     <p class="mb-4">
-        <a href="/portfolio/" class="kicker text-xs hover:underline">&larr; Back to portfolio</a>
+        <a href={siteUrls.portfolio} class="kicker text-xs hover:underline">&larr; Back to portfolio</a>
     </p>
 
   {

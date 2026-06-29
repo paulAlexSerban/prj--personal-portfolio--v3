@@ -1,5 +1,6 @@
 import { useMemo, useState } from 'react';
 import type { ProjectRow, TagRow } from '@prj--personal-portfolio--v3/shared--db-schema';
+import { assetUrl, siteUrls } from '../lib/urls.ts';
 
 export interface ProjectWithTags {
     project: ProjectRow;
@@ -93,8 +94,8 @@ export function TechFilter({ featured, archive }: Props) {
 }
 
 function ProjectCardInner({ project, tags, featured = false }: { project: ProjectRow; tags: TagRow[]; featured?: boolean }) {
-    const href = `/portfolio/${project.slug}/`;
-    const cover = project.cover_image ?? '/placeholder-cover.png';
+    const href = siteUrls.portfolioProject(project.slug);
+    const cover = project.cover_image ?? assetUrl('placeholder-cover.png');
     return (
         <article className="card-ruled flex flex-col">
             <a href={href} className="mb-3 block overflow-hidden border border-rule">

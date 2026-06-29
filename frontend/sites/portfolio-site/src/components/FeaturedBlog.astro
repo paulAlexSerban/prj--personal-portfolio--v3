@@ -1,13 +1,13 @@
 ---
 import type { PostRow } from '@prj--personal-portfolio--v3/shared--db-schema';
+import { externalLinkAttrs, siteUrls } from '../lib/urls.ts';
 
 interface Props {
     post: PostRow;
 }
 
-const BLOG_URL = 'https://blog.paulserban.eu';
 const { post } = Astro.props;
-const href = `${BLOG_URL}/post/${post.slug}/`;
+const href = siteUrls.blogPost(post.slug);
 ---
 
 <section class="mb-12">
@@ -16,12 +16,12 @@ const href = `${BLOG_URL}/post/${post.slug}/`;
     <article class="grain border-2 border-ink bg-ink p-6 text-aged">
         {post.date && <p class="kicker mb-2 text-[11px] text-aged/70">{post.date}</p>}
         <h3 class="m-0 font-display text-3xl font-bold leading-tight">
-            <a href={href} class="text-aged no-underline hover:underline" rel="noopener noreferrer" target="_blank">
+            <a href={href} class="text-aged no-underline hover:underline" {...externalLinkAttrs(href)}>
                 {post.title}
             </a>
         </h3>
         {post.excerpt && <p class="mt-3 text-base leading-relaxed text-aged/85">{post.excerpt}</p>}
-        <a href={href} class="stamp stamp-ghost mt-4 border-aged px-4 py-1.5 text-sm text-aged hover:bg-aged hover:text-ink" rel="noopener noreferrer" target="_blank">
+        <a href={href} class="stamp stamp-ghost mt-4 border-aged px-4 py-1.5 text-sm text-aged hover:bg-aged hover:text-ink" {...externalLinkAttrs(href)}>
             Read post &rarr;
         </a>
     </article>

@@ -1,11 +1,11 @@
 ---
 import type { ProfileRow } from '@prj--personal-portfolio--v3/shared--db-schema';
+import { externalLinkAttrs, siteUrls } from '../lib/urls.ts';
 
 interface Props {
     profile: ProfileRow | undefined;
 }
 
-const BLOG_URL = 'https://blog.paulserban.eu';
 const { profile } = Astro.props;
 const name = profile?.name ?? 'Paul Serban';
 const headline = profile?.headline ?? 'I architect systems that ship.';
@@ -22,8 +22,8 @@ const headline = profile?.headline ?? 'I architect systems that ship.';
                 <p class="deck mt-4 max-w-prose text-[1.05rem] line-clamp-3">{profile.bio}</p>
             )}
             <div class="mt-6 flex flex-wrap gap-3">
-                <a class="stamp px-5 py-2 text-sm" href="/portfolio/">View work &rarr;</a>
-                <a class="stamp stamp-ghost px-5 py-2 text-sm" href={`${BLOG_URL}/`} rel="noopener noreferrer" target="_blank">
+                <a class="stamp px-5 py-2 text-sm" href={siteUrls.portfolio}>View work &rarr;</a>
+                <a class="stamp stamp-ghost px-5 py-2 text-sm" href={siteUrls.blog} {...externalLinkAttrs(siteUrls.blog)}>
                     Read blog &rarr;
                 </a>
             </div>

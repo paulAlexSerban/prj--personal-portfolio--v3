@@ -1,11 +1,13 @@
 ---
+import { externalLinkAttrs, siteUrls } from '../lib/urls.ts';
+
 const footerLinks = [
-    { label: 'Home', href: '/' },
-    { label: 'Experience', href: '/#experience' },
-    { label: 'Portfolio', href: '/portfolio/' },
-    { label: 'Blog', href: 'https://blog.paulserban.eu/' },
-    { label: 'Quiz', href: 'https://quiz.paulserban.eu/' },
-    { label: 'CV', href: '/cv/' },
+    { label: 'Home', href: siteUrls.home },
+    { label: 'Experience', href: siteUrls.experience },
+    { label: 'Portfolio', href: siteUrls.portfolio },
+    { label: 'Blog', href: siteUrls.blog },
+    { label: 'Quiz', href: siteUrls.quiz },
+    { label: 'CV', href: siteUrls.cv },
 ];
 
 const year = new Date().getFullYear();
@@ -21,7 +23,7 @@ const year = new Date().getFullYear();
                             <a
                                 href={link.href}
                                 class="text-ink no-underline hover:underline"
-                                {...(link.href.startsWith('http') ? { rel: 'noopener noreferrer', target: '_blank' } : {})}
+                                {...externalLinkAttrs(link.href)}
                             >
                                 {link.label}
                             </a>

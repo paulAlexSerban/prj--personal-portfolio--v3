@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Menu } from 'lucide-react';
 import { Button } from '@prj--personal-portfolio--v3/shared--ui/button';
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@prj--personal-portfolio--v3/shared--ui/sheet';
+import { externalLinkAttrs } from '../lib/urls.ts';
 
 export interface MobileNavLink {
     label: string;
@@ -34,7 +35,7 @@ export function MobileNav({ links }: Props) {
                             href={link.href}
                             aria-current={link.active ? 'page' : undefined}
                             onClick={() => setOpen(false)}
-                            {...(link.href.startsWith('http') ? { rel: 'noopener noreferrer', target: '_blank' } : {})}
+                            {...externalLinkAttrs(link.href)}
                             className="border-b border-rule py-3 text-base text-ink no-underline hover:underline aria-[current=page]:font-bold aria-[current=page]:underline"
                         >
                             {link.label}
