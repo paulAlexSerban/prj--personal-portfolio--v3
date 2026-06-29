@@ -1,6 +1,15 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <script>
+      (function () {
+        var r = sessionStorage.getItem("spa:redirect");
+        if (r) {
+          sessionStorage.removeItem("spa:redirect");
+          window.history.replaceState(null, null, r);
+        }
+      })();
+    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>The Review — Flashcards</title>

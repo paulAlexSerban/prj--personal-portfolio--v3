@@ -7,7 +7,8 @@ import { defineConfig } from 'astro/config';
 import { mdxComponents } from './src/lib/mdx-components.ts';
 
 export default defineConfig({
-    site: 'https://blog.paulserban.eu',
+    site: process.env.ASTRO_SITE ?? 'https://blog.paulserban.eu',
+    base: process.env.ASTRO_BASE ?? '/',
     output: 'static',
     trailingSlash: 'always',
     integrations: [

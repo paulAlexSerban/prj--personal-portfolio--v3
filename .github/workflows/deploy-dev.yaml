@@ -1,0 +1,115 @@
+name: Deploy DEV (GitHub Pages)
+
+on:
+    workflow_dispatch:
+    push:
+        branches: [main]
+
+concurrency:
+    group: pages
+    cancel-in-progress: false
+
+permissions:
+    contents: read
+    pages: write
+    id-token: write
+
+jobs:
+    ingest:
+        runs-on: ubuntu-latest
+        timeout-minutes: 30
+        steps:
+            - uses: actions/checkout@v4
+            - uses: ./.github/actions/setup-monorepo
+            - run: pnpm db:migrate
+            - name: Ingest content
+              env:
+                  GITHUB_TOKEN: ${{ secrets.CONTENT_REPO_TOKEN }}
+                  CONTENT_REPO_GIT_URL: https://github.com/paulAlexSerban/content--paulserban.eu.git
+              run: pnpm start
+            - name: Upload content DB
+              uses: actions/upload-artifact@v4
+              with:
+                  name: content-db
+                  path: database/output/
+                  if-no-files-found: error
+                  retention-days: 1
+
+    build:
+        needs: ingest
+        runs-on: ubuntu-latest
+        timeout-minutes: 20
+        steps:
+            - uses: actions/checkout@v4
+            - uses: ./.github/actions/setup-monorepo
+
+            - name: Configure Pages
+              id: pages
+              uses: actions/configure-pages@v4
+
+            - name: Download content DB
+              uses: actions/download-artifact@v4
+              with:
+                  name: content-db
+                  path: database/output/
+
+            - name: Build portfolio-site
+              env:
+                  ASTRO_SITE: ${{ steps.pages.outputs.origin }}
+                  ASTRO_BASE: ${{ steps.pages.outputs.base_path }}/home
+              run: pnpm --filter @prj--personal-portfolio--v3/frontend--portfolio-site build
+
+            - name: Build blog-site
+              env:
+                  ASTRO_SITE: ${{ steps.pages.outputs.origin }}
+                  ASTRO_BASE: ${{ steps.pages.outputs.base_path }}/blog
+              run: pnpm --filter @prj--personal-portfolio--v3/frontend--blog-site build
+
+            - name: Build quiz-web-app
+              env:
+                  VITE_APP_BASE: ${{ steps.pages.outputs.base_path }}/quiz
+              run: pnpm --filter @prj--personal-portfolio--v3/frontend--quiz-web-app build
+
+            - name: Merge outputs and scaffold navigation
+              env:
+                  REPO_BASE: ${{ steps.pages.outputs.base_path }}
+              run: |
+                  mkdir -p _site/home _site/blog _site/quiz
+                  cp -r frontend/sites/portfolio-site/dist/. _site/home/
+                  cp -r frontend/sites/blog-site/dist/. _site/blog/
+                  cp -r frontend/apps/quiz-web-app/dist/. _site/quiz/
+
+                  # Root → /home redirect
+                  printf '<!DOCTYPE html><html><head><meta http-equiv="refresh" content="0;url=%s/home/"></head><body></body></html>\n' \
+                    "$REPO_BASE" > _site/index.html
+
+                  # SPA 404 fallback: quiz deep-links redirect to quiz/ with path in sessionStorage
+                  cat > _site/404.html << EOF
+                  <!DOCTYPE html>
+                  <html>
+                  <head>
+                  <script>
+                  (function(){var l=window.location,b='$REPO_BASE';
+                  if(l.pathname.indexOf(b+'/quiz')===0){sessionStorage.setItem('spa:redirect',l.pathname+l.search);l.replace(b+'/quiz/');}
+                  })();
+                  </script>
+                  </head>
+                  <body>Page not found.</body>
+                  </html>
+                  EOF
+
+            - name: Upload Pages artifact
+              uses: actions/upload-pages-artifact@v3
+              with:
+                  path: _site/
+
+    deploy:
+        needs: build
+        runs-on: ubuntu-latest
+        environment:
+            name: github-pages
+            url: ${{ steps.deployment.outputs.page_url }}
+        steps:
+            - name: Deploy to GitHub Pages
+              id: deployment
+              uses: actions/deploy-pages@v4

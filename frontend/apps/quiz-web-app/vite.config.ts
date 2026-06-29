@@ -10,8 +10,12 @@ const pkg = JSON.parse(readFileSync(new URL("./package.json", import.meta.url), 
   version: string;
 };
 
+// Strip any trailing slash; empty string means serve from root (local dev default)
+const appBase = (process.env.VITE_APP_BASE ?? "").replace(/\/$/, "");
+
 // Strict CSR-only Vite app — client-side rendering only.
 export default defineConfig({
+  base: appBase || "/",
   define: {
     __APP_VERSION__: JSON.stringify(pkg.version),
   },
@@ -30,8 +34,8 @@ export default defineConfig({
         theme_color: "#0d0d0d",
         background_color: "#efe9dd",
         display: "standalone",
-        start_url: "/",
-        scope: "/",
+        start_url: appBase || "/",
+        scope: appBase || "/",
         icons: [
           { src: "pwa-192x192.png", sizes: "192x192", type: "image/png" },
           { src: "pwa-512x512.png", sizes: "512x512", type: "image/png" },
@@ -56,7 +60,7 @@ export default defineConfig({
         // stale-while-revalidate so visited sets stay available offline.
         runtimeCaching: [
           {
-            urlPattern: ({ url }) => url.pathname.startsWith("/data/"),
+            urlPattern: ({ url }) => url.pathname.startsWith(`${appBase}/data/`),
             handler: "StaleWhileRevalidate",
             options: {
               cacheName: "quiz-data",
