@@ -1,13 +1,18 @@
 [
-    { "name": "TypeScript", "category": "Languages", "sort_order": 1, "depth_note": "End-to-end type safety across the monorepo — fewer production bugs, lower maintenance cost." },
-    { "name": "Python", "category": "Languages", "sort_order": 2, "depth_note": "AI/agent workflows and data tooling — rapid prototyping that turns ideas into automation." },
-    { "name": "Astro", "category": "Frontend", "sort_order": 1, "depth_note": "Content-driven sites shipped as static HTML — fast loads and near-zero hosting cost." },
-    { "name": "React", "category": "Frontend", "sort_order": 2, "depth_note": "Interactive islands only where needed — rich UX without bloating the page weight." },
-    { "name": "Tailwind CSS", "category": "Frontend", "sort_order": 3, "depth_note": "A consistent design system at speed — UI changes ship in minutes, not days." },
-    { "name": "Node.js", "category": "Backend", "sort_order": 1, "depth_note": "Build-time pipelines and CLIs — one content source feeds every static surface." },
-    { "name": "SQLite", "category": "Backend", "sort_order": 2, "depth_note": "A single build artifact powers every site — no runtime database to operate or pay for." },
-    { "name": "Drizzle ORM", "category": "Backend", "sort_order": 3, "depth_note": "Schema-first, type-safe data access — migrations stay reviewable and safe to ship." },
-    { "name": "Docker", "category": "Cloud & DevOps", "sort_order": 1, "depth_note": "Reproducible environments — onboarding and deploys without \"works on my machine\"." },
-    { "name": "GitHub Actions", "category": "Cloud & DevOps", "sort_order": 2, "depth_note": "Automated sync, ingest and deploy — every release is push-button and repeatable." },
-    { "name": "AWS", "category": "Cloud & DevOps", "sort_order": 3, "depth_note": "Static hosting and serverless — scales on demand while you pay only for usage." }
+    { "name": "Python", "category": "AI & Backend", "sort_order": 1, "depth_note": "AI/agent workflows on AWS Bedrock & AgentCore — turning LLMs into production test automation that cut QA ~90%." },
+    { "name": "Node.js", "category": "AI & Backend", "sort_order": 2, "depth_note": "Event-driven microservices & internal tooling — automated a 6-hour daily bottleneck down to 6 minutes." },
+    { "name": "TypeScript", "category": "AI & Backend", "sort_order": 3, "depth_note": "End-to-end type safety across MERN monorepos — fewer production incidents, safer refactors." },
+
+    { "name": "AWS", "category": "Cloud & Platform", "sort_order": 1, "depth_note": "Bedrock, S3/CloudFront, Lambda, EC2, IAM — cost-optimised, secure delivery at scale." },
+    { "name": "Kubernetes", "category": "Cloud & Platform", "sort_order": 2, "depth_note": "Orchestrates production microservices — zero-downtime, multi-environment releases." },
+    { "name": "Docker", "category": "Cloud & Platform", "sort_order": 3, "depth_note": "Reproducible environments — consistent parity from local to production." },
+    { "name": "Terraform", "category": "Cloud & Platform", "sort_order": 4, "depth_note": "Infrastructure as code — auditable, repeatable platform provisioning." },
+
+    { "name": "React", "category": "Frontend", "sort_order": 1, "depth_note": "Component architecture for high-traffic platforms — accessible, performant UI." },
+    { "name": "Next.js", "category": "Frontend", "sort_order": 2, "depth_note": "SSR/SSG migrations that lift Core Web Vitals — cut frustrated clicks 75%." },
+    { "name": "SCSS", "category": "Frontend", "sort_order": 3, "depth_note": "ITCSS/BEM design systems — onboarding cut from 3 weeks to 1, zero style regressions." },
+
+    { "name": "Datadog", "category": "Observability & CI/CD", "sort_order": 1, "depth_note": "Latency & error dashboards per provider — surfaced fixes that lifted retention 50%." },
+    { "name": "Grafana", "category": "Observability & CI/CD", "sort_order": 2, "depth_note": "Grafana/Loki/Prometheus stacks — full-stack monitoring without vendor lock-in." },
+    { "name": "GitHub Actions", "category": "Observability & CI/CD", "sort_order": 3, "depth_note": "Multi-env pipelines with promotion & rollback — releases are push-button." }
 ]

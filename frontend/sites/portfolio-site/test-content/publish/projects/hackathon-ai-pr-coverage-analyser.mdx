@@ -1,0 +1,35 @@
+---
+title: AI PR Test-Coverage Analyser
+status: published
+subheading: Jury Prize — Betfair AI Hackathon (24h)
+excerpt: An LLM tool that analyses PR diffs and surfaces e2e test-coverage gaps against Jira-defined cases.
+role: Team lead (3 engineers)
+problem: PRs were merged without knowing which e2e tests actually covered the impacted services.
+approach: Built an AI tool that analyses PR diffs, cross-references impacted services against Jira-defined e2e cases, and surfaces coverage-gap recommendations via LLM workflows.
+outcome: Won the Jury Prize company-wide and surfaced real P1/P2 production issues during the build.
+metrics:
+    award: Jury Prize
+    duration: 24h
+    found: P1 + P2 bugs
+pinned: true
+priority: 109
+tags:
+    - Python
+    - LLMs
+    - GitHub API
+    - Jira API
+---
+
+## Problem
+
+Pull requests were being merged with no clear signal on which end-to-end tests covered the services they touched — leaving coverage gaps invisible until production.
+
+## Approach
+
+- **Led a 3-person team** to design, architect and ship in 24 hours.
+- **Analysed PR diffs across repositories** and mapped impacted services to Jira-defined e2e test cases.
+- **Surfaced intelligent coverage-gap recommendations** using LLM workflows over the GitHub and Jira APIs.
+
+## Outcome
+
+**Selected for the Jury Prize** from the full company-wide cohort. During development the tool already **surfaced several P1 and P2 issues** in the production application, which were reported to the owning teams.

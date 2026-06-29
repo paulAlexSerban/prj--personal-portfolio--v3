@@ -26,15 +26,15 @@ corepack pnpm --filter @prj--personal-portfolio--v3/tools--mdx-ingest start
 
 ## Routes
 
-| Path | Content |
-| ---- | ------- |
-| `/` | Hero, experience timeline, core skills (logos + value), case studies, featured blog |
-| `/portfolio/` | Featured + archive projects with tech filter |
-| `/portfolio/{slug}/` | Case study detail (problem/approach/outcome + MDX) |
-| `/cv/` | Printable CV from profile + experience |
+| Path                 | Content                                                                             |
+| -------------------- | ----------------------------------------------------------------------------------- |
+| `/`                  | Hero, experience timeline, core skills (logos + value), case studies, featured blog |
+| `/portfolio/`        | Featured + archive projects with tech filter                                        |
+| `/portfolio/{slug}/` | Case study detail (problem/approach/outcome + MDX)                                  |
+| `/cv/`               | Printable CV from profile + experience                                              |
 
 ## Environment
 
-| Variable | Default | Purpose |
-| -------- | ------- | ------- |
+| Variable        | Default                               | Purpose                 |
+| --------------- | ------------------------------------- | ----------------------- |
 | `DATABASE_PATH` | `../../../database/output/content.db` | SQLite content database |

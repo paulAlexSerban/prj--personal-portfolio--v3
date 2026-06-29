@@ -87,22 +87,12 @@ export function TechFilter({ featured, archive }: Props) {
                     </ul>
                 </section>
             )}
-            {filteredFeatured.length === 0 && filteredArchive.length === 0 && (
-                <p className="italic text-slate-ink">No projects match this filter.</p>
-            )}
+            {filteredFeatured.length === 0 && filteredArchive.length === 0 && <p className="italic text-slate-ink">No projects match this filter.</p>}
         </div>
     );
 }
 
-function ProjectCardInner({
-    project,
-    tags,
-    featured = false,
-}: {
-    project: ProjectRow;
-    tags: TagRow[];
-    featured?: boolean;
-}) {
+function ProjectCardInner({ project, tags, featured = false }: { project: ProjectRow; tags: TagRow[]; featured?: boolean }) {
     const href = `/portfolio/${project.slug}/`;
     const cover = project.cover_image ?? '/placeholder-cover.png';
     return (
@@ -120,9 +110,7 @@ function ProjectCardInner({
             <ul className="mt-3 flex list-none flex-wrap gap-[0.4rem] p-0">
                 {tags.slice(0, 4).map((t) => (
                     <li key={t.slug}>
-                        <span className="inline-block border border-rule bg-highlight px-2 py-[0.15rem] text-[0.75rem] text-ink">
-                            #{t.name.toLowerCase()}
-                        </span>
+                        <span className="inline-block border border-rule bg-highlight px-2 py-[0.15rem] text-[0.75rem] text-ink">#{t.name.toLowerCase()}</span>
                     </li>
                 ))}
             </ul>

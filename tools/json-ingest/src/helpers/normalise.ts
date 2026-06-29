@@ -113,9 +113,7 @@ export const normalise = (files: ParsedFile[]): NormalisedRows => {
         }
     }
 
-    console.log(
-        `[normalise] profile=${rows.profile.length}  skills=${rows.skills.length}  pages=${rows.pages.length}  experience=${rows.experience.length}`,
-    );
+    console.log(`[normalise] profile=${rows.profile.length}  skills=${rows.skills.length}  pages=${rows.pages.length}  experience=${rows.experience.length}`);
 
     return rows;
 };

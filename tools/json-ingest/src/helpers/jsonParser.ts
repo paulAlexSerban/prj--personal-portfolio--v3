@@ -46,9 +46,7 @@ const parseJsonFile = async (filePath: string, contentType: JsonContentType): Pr
                 return { slug: toSlug(name), contentType, data, filePath };
             }
             const slug =
-                typeof data['slug'] === 'string' && data['slug'].length > 0
-                    ? data['slug']
-                    : toSlug(`${String(data['role'] ?? 'role')}-${String(data['company'] ?? index)}`);
+                typeof data['slug'] === 'string' && data['slug'].length > 0 ? data['slug'] : toSlug(`${String(data['role'] ?? 'role')}-${String(data['company'] ?? index)}`);
             return { slug, contentType, data, filePath };
         });
     }
