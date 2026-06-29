@@ -1,0 +1,36 @@
+---
+import ProjectCard from '../../components/ProjectCard.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { closeConnection, openDb } from '../../lib/db.ts';
+import { buildProjectTagsMap, getAllProjects } from '../../lib/queries/projects.ts';
+
+const db = openDb();
+const projects = getAllProjects(db);
+const tagsMap = buildProjectTagsMap(db, projects);
+closeConnection(db);
+---
+
+<BaseLayout
+    title="Portfolio | Paul Serban"
+    description="The full list of Paul Serban's projects — case studies, tech stacks, and links."
+>
+    <section class="mb-8 border-b-[3px] border-ink pb-6">
+        <p class="kicker mb-2 text-sm">Selected work</p>
+        <h1 class="m-0 font-display text-[clamp(2rem,5vw,3rem)] font-bold leading-[1.1]">Portfolio</h1>
+        <p class="deck mt-2 text-[1.1rem]">Featured projects first, then everything else.</p>
+    </section>
+
+    {
+        projects.length > 0 ? (
+            <ul class="m-0 grid list-none grid-cols-[repeat(auto-fill,minmax(18rem,1fr))] gap-5 p-0">
+                {projects.map((project) => (
+                    <li>
+                        <ProjectCard project={project} tags={tagsMap.get(project.slug) ?? []} />
+                    </li>
+                ))}
+            </ul>
+        ) : (
+            <p>No published projects yet.</p>
+        )
+    }
+</BaseLayout>

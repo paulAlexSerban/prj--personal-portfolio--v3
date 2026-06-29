@@ -1,0 +1,29 @@
+---
+const footerLinks = [
+    { label: 'Home', href: '/' },
+    { label: 'Portfolio', href: '/portfolio/' },
+    { label: 'Blog', href: 'https://blog.paulserban.eu/' },
+    { label: 'Quiz App', href: 'https://quiz.paulserban.eu/' },
+];
+
+const year = new Date().getFullYear();
+---
+
+<footer class="mt-8 border-t-2 border-ink px-6 py-10">
+    <div class="mx-auto max-w-[72rem] text-center">
+        <nav aria-label="Footer" class="mb-3">
+            <ul class="m-0 flex list-none flex-wrap justify-center gap-x-6 gap-y-3 p-0 text-[11px] smallcaps">
+                {
+                    footerLinks.map((link) => (
+                        <li>
+                            <a href={link.href} class="text-ink no-underline hover:underline">
+                                {link.label}
+                            </a>
+                        </li>
+                    ))
+                }
+            </ul>
+        </nav>
+        <p class="kicker text-sm">Paul Serban · Printed in your browser · {year}</p>
+    </div>
+</footer>

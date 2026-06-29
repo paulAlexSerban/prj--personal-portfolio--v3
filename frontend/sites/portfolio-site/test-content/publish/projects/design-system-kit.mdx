@@ -1,0 +1,29 @@
+---
+title: Newspaper Design System
+status: published
+subheading: A shared UI kit across web surfaces
+excerpt: A token-driven component library with a distinctive print-inspired aesthetic, shared by the portfolio, blog, and quiz app.
+repo_url: https://github.com/paulserban/shared-ui
+pinned: false
+priority: 50
+tags:
+    - React
+    - Tailwind CSS
+    - TypeScript
+---
+
+## Problem
+
+Three sites meant three slightly different button styles, three definitions of "muted text," and a creeping inconsistency that made the whole thing feel unmaintained.
+
+## Approach
+
+I extracted a shared UI package with a single source of design tokens and a small set of primitives. The visual language is deliberately not the default dark-mode developer template — it borrows from print: rules, kickers, decks, and a restrained type scale, with full light/dark theming.
+
+- **Tokens in CSS**, consumed by Tailwind v4 with no separate config file.
+- **Framework-agnostic where possible** — Astro consumes static styles; React islands consume components.
+- **One theme, two modes** via a single class toggle.
+
+## Outcome
+
+Every surface now looks like part of the same publication, and a style change is one commit instead of three.

@@ -1,0 +1,30 @@
+---
+title: Spaced-Repetition Quiz Engine
+status: published
+subheading: Flashcards that schedule themselves
+excerpt: A client-side study app with swappable spaced-repetition schedulers (SM-2 and FSRS), driven by the same content database as the blog.
+repo_url: https://github.com/paulserban/quiz-engine
+demo_url: https://quiz.paulserban.eu
+pinned: true
+priority: 90
+tags:
+    - React
+    - TypeScript
+    - SQLite
+---
+
+## Problem
+
+I wanted to study from my own notes without a backend, an account, or a paid SaaS — and I wanted to swap scheduling algorithms without rewriting the app.
+
+## Approach
+
+Questions are authored as MDX next to the posts they belong to, ingested into SQLite, and exported as a static JSON bundle. The web app is fully client-side: it loads the bundle, tracks learning state in the browser, and feeds reviews to a pluggable scheduler.
+
+- **Scheduler as a seam** — SM-2 and FSRS implement one interface; switching is a config flag.
+- **Versioned local state** so storage can evolve without losing a user's history.
+- **No accounts** in v1 — everything lives in the browser.
+
+## Outcome
+
+A genuinely offline-capable study tool that reuses the blog's content with zero duplication, and a clean place to experiment with scheduling research.

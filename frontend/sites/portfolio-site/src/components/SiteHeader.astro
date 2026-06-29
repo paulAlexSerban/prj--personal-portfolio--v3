@@ -1,0 +1,100 @@
+---
+import { MobileNav } from './MobileNav.tsx';
+
+// TODO confirm — standalone flashcard quiz web app URL.
+const QUIZ_APP_URL = 'https://quiz.paulserban.eu/';
+const BLOG_URL = 'https://blog.paulserban.eu/';
+
+const navLinks = [
+    { label: 'Home', href: '/' },
+    { label: 'Portfolio', href: '/portfolio/' },
+    { label: 'Blog', href: BLOG_URL },
+    { label: 'Quiz App', href: QUIZ_APP_URL },
+];
+
+const pathname = Astro.url.pathname;
+
+function isActive(href: string): boolean {
+    if (!href.startsWith('/')) {
+        return false;
+    }
+    if (href === '/') {
+        return pathname === '/';
+    }
+    return pathname.startsWith(href);
+}
+
+const mobileLinks = navLinks.map((link) => ({ ...link, active: isActive(link.href) }));
+
+const year = new Date().getFullYear();
+---
+
+<header class="grain border-b-[3px] border-ink bg-aged">
+    <div class="mx-auto max-w-[72rem] px-6 pt-6 pb-4">
+        <div class="flex items-center justify-between gap-4">
+            <p class="kicker font-mono text-[10px] md:text-sm">paulserban.eu</p>
+            <p class="kicker font-mono text-[10px] md:text-sm">Portfolio Edition</p>
+        </div>
+        <a href="/" class="mt-2 block text-center text-ink no-underline">
+            <h1
+                class="font-display font-black leading-none tracking-tight text-[clamp(2.5rem,8vw,5rem)]"
+            >
+                Paul Serban
+            </h1>
+        </a>
+        <p class="deck mt-2 text-center text-sm">Engineer &middot; architect &middot; selected works</p>
+        <div class="rule-double mt-3"></div>
+        <div class="mt-2 flex flex-wrap items-center justify-between gap-2">
+            <p class="kicker text-[11px]">Vol. {year}</p>
+            <div class="flex items-center gap-3 md:gap-5">
+                <nav class="hidden md:flex flex-wrap gap-5 text-[11px] smallcaps" aria-label="Primary">
+                    {
+                        navLinks.map((link) => (
+                            <a
+                                href={link.href}
+                                aria-current={isActive(link.href) ? 'page' : undefined}
+                                class="text-ink no-underline hover:underline aria-[current=page]:font-bold aria-[current=page]:underline"
+                            >
+                                {link.label}
+                            </a>
+                        ))
+                    }
+                </nav>
+                <button
+                    id="theme-toggle"
+                    type="button"
+                    aria-label="Toggle dark mode"
+                    title="Toggle dark mode"
+                    class="kicker inline-flex items-center gap-1.5 border border-ink px-2 py-1 text-[11px] leading-none transition-colors hover:bg-ink hover:text-aged"
+                >
+                    <span id="theme-toggle-icon" aria-hidden="true">☾</span>
+                    <span id="theme-toggle-label">Dark</span>
+                </button>
+                <MobileNav client:load links={mobileLinks} />
+            </div>
+        </div>
+    </div>
+</header>
+
+<script is:inline>
+    (function () {
+        var btn = document.getElementById('theme-toggle');
+        if (!btn) return;
+        var icon = document.getElementById('theme-toggle-icon');
+        var label = document.getElementById('theme-toggle-label');
+        function sync() {
+            var dark = document.documentElement.classList.contains('dark');
+            if (icon) icon.textContent = dark ? '☀' : '☾';
+            if (label) label.textContent = dark ? 'Light' : 'Dark';
+            btn.setAttribute('aria-pressed', String(dark));
+        }
+        sync();
+        btn.addEventListener('click', function () {
+            var dark = document.documentElement.classList.toggle('dark');
+            try {
+                localStorage.setItem('theme', dark ? 'dark' : 'light');
+            } catch (e) {}
+            sync();
+        });
+    })();
+</script>

@@ -1,0 +1,33 @@
+---
+title: Content Pipeline SSG Platform
+status: published
+subheading: One content source, three static surfaces
+excerpt: A build-time pipeline that ingests MDX and JSON into SQLite, then feeds an Astro static site, a quiz app, and a mobile bundle from a single source of truth.
+repo_url: https://github.com/paulserban/portfolio-monorepo
+demo_url: https://paulserban.eu
+pinned: true
+priority: 100
+tags:
+    - TypeScript
+    - Astro
+    - SQLite
+    - Drizzle ORM
+---
+
+## Problem
+
+Content lived in three places that drifted apart: a blog, a portfolio, and a flashcard quiz. Every edit meant copying prose between repos, and "publish" was a manual, error-prone ritual.
+
+## Approach
+
+I designed a build-time pipeline as a pnpm monorepo. A sync step clones the private content repo; ingest tools parse MDX frontmatter and JSON into a SQLite database via Drizzle; the Astro SSG queries that database at build time and emits static HTML. The same database exports static JSON for the quiz app, so there is exactly one source of truth.
+
+Key decisions:
+
+- **SQLite as a build artifact**, not a server — zero runtime database, fully static output.
+- **Schema-first** with Drizzle migrations, so content shape changes are reviewable diffs.
+- **Lock-aware upserts** so future CMS-owned rows are never clobbered by the pipeline.
+
+## Outcome
+
+Publishing collapsed to a single command. Adding a new content type is a schema migration plus an ingest mapping — no bespoke glue per surface.

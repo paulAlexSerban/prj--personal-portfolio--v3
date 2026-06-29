@@ -1,0 +1,91 @@
+---
+import { evaluate } from '@mdx-js/mdx';
+import * as runtime from 'react/jsx-runtime';
+import rehypeHighlight from 'rehype-highlight';
+import remarkGfm from 'remark-gfm';
+
+import HeroBanner from '../../components/HeroBanner.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { closeConnection, openDb } from '../../lib/db.ts';
+import {
+    getAllProjectSlugs,
+    getProjectBySlug,
+    getTagsForProject,
+} from '../../lib/queries/projects.ts';
+
+export function getStaticPaths() {
+    const db = openDb();
+    const slugs = getAllProjectSlugs(db);
+    closeConnection(db);
+    return slugs.map(({ slug }) => ({ params: { slug } }));
+}
+
+const slug = Astro.params.slug!;
+const db = openDb();
+const project = getProjectBySlug(db, slug);
+const tags = getTagsForProject(db, slug);
+closeConnection(db);
+
+if (!project) {
+    throw new Error(`Project not found: ${slug}`);
+}
+
+const { default: Content } = await evaluate(project.body, {
+    ...runtime,
+    remarkPlugins: [remarkGfm],
+    rehypePlugins: [rehypeHighlight],
+});
+
+const description = project.excerpt ?? project.subheading ?? undefined;
+const canonicalUrl = new URL(`/portfolio/${slug}/`, Astro.site).href;
+---
+
+<BaseLayout
+    title={`${project.title} | Paul Serban`}
+    description={description}
+    ogTitle={project.title}
+    ogDescription={description}
+    canonicalUrl={canonicalUrl}
+>
+    <p class="mb-4">
+        <a href="/portfolio/" class="kicker text-[11px] hover:underline">&larr; Back to portfolio</a>
+    </p>
+
+    <HeroBanner
+        title={project.title}
+        subheading={project.subheading ?? undefined}
+        tags={tags}
+        kicker={project.pinned ? 'Featured project' : 'Project'}
+    />
+
+    {
+        (project.repo_url || project.demo_url) && (
+            <div class="mb-8 flex flex-wrap gap-4 text-[11px] smallcaps">
+                {project.repo_url && (
+                    <a
+                        class="stamp stamp-ghost px-3 py-1.5"
+                        href={project.repo_url}
+                        rel="noopener noreferrer"
+                        target="_blank"
+                    >
+                        View code
+                    </a>
+                )}
+                {project.demo_url && (
+                    <a
+                        class="stamp px-3 py-1.5"
+                        href={project.demo_url}
+                        rel="noopener noreferrer"
+                        target="_blank"
+                    >
+                        Live demo
+                    </a>
+                )}
+            </div>
+        )
+    }
+
+    <article class="md-content mt-4">
+        <Content />
+    </article>
+</BaseLayout>

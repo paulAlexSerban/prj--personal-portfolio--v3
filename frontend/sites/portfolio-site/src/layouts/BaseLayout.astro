@@ -1,0 +1,59 @@
+---
+import SiteFooter from '../components/SiteFooter.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import '../styles/global.css';
+
+interface Props {
+    title: string;
+    description?: string;
+    ogTitle?: string;
+    ogDescription?: string;
+    canonicalUrl?: string;
+}
+
+const {
+    title,
+    description,
+    ogTitle = title,
+    ogDescription = description,
+    canonicalUrl,
+} = Astro.props;
+
+const pageDescription = description ?? 'Portfolio, projects, and skills of Paul Serban.';
+const canonical = canonicalUrl ?? new URL(Astro.url.pathname, Astro.site).href;
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <script is:inline>
+            (function () {
+                try {
+                    var t = localStorage.getItem('theme');
+                    var dark =
+                        t === 'dark' ||
+                        (!t && window.matchMedia('(prefers-color-scheme: dark)').matches);
+                    document.documentElement.classList.toggle('dark', dark);
+                } catch (e) {}
+            })();
+        </script>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>{title}</title>
+        <meta name="description" content={pageDescription} />
+        <meta property="og:title" content={ogTitle} />
+        <meta property="og:description" content={ogDescription ?? pageDescription} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={canonical} />
+        <link rel="canonical" href={canonical} />
+        <link rel="sitemap" href="/sitemap-index.xml" />
+        <slot name="head" />
+    </head>
+    <body class="min-h-screen bg-newsprint text-ink">
+        <SiteHeader />
+        <main class="mx-auto max-w-[72rem] px-6 pt-8 pb-16">
+            <slot />
+        </main>
+        <SiteFooter />
+    </body>
+</html>
