@@ -1,7 +1,22 @@
 [
-    { "name": "Python", "category": "AI & Backend", "sort_order": 1, "depth_note": "AI/agent workflows on AWS Bedrock & AgentCore — turning LLMs into production test automation that cut QA ~90%." },
-    { "name": "Node.js", "category": "AI & Backend", "sort_order": 2, "depth_note": "Event-driven microservices & internal tooling — automated a 6-hour daily bottleneck down to 6 minutes." },
-    { "name": "TypeScript", "category": "AI & Backend", "sort_order": 3, "depth_note": "End-to-end type safety across MERN monorepos — fewer production incidents, safer refactors." },
+    {
+        "name": "Python",
+        "category": "AI & Backend",
+        "sort_order": 1,
+        "depth_note": "AI/agent workflows on AWS Bedrock & AgentCore — turning LLMs into production test automation that cut QA ~90%."
+    },
+    {
+        "name": "Node.js",
+        "category": "AI & Backend",
+        "sort_order": 2,
+        "depth_note": "Event-driven microservices & internal tooling — automated a 6-hour daily bottleneck down to 6 minutes."
+    },
+    {
+        "name": "TypeScript",
+        "category": "AI & Backend",
+        "sort_order": 3,
+        "depth_note": "End-to-end type safety across MERN monorepos — fewer production incidents, safer refactors."
+    },
 
     { "name": "AWS", "category": "Cloud & Platform", "sort_order": 1, "depth_note": "Bedrock, S3/CloudFront, Lambda, EC2, IAM — cost-optimised, secure delivery at scale." },
     { "name": "Kubernetes", "category": "Cloud & Platform", "sort_order": 2, "depth_note": "Orchestrates production microservices — zero-downtime, multi-environment releases." },
@@ -12,7 +27,12 @@
     { "name": "Next.js", "category": "Frontend", "sort_order": 2, "depth_note": "SSR/SSG migrations that lift Core Web Vitals — cut frustrated clicks 75%." },
     { "name": "SCSS", "category": "Frontend", "sort_order": 3, "depth_note": "ITCSS/BEM design systems — onboarding cut from 3 weeks to 1, zero style regressions." },
 
-    { "name": "Datadog", "category": "Observability & CI/CD", "sort_order": 1, "depth_note": "Latency & error dashboards per provider — surfaced fixes that lifted retention 50%." },
+    {
+        "name": "Datadog",
+        "category": "Observability & CI/CD",
+        "sort_order": 1,
+        "depth_note": "Latency & error dashboards per provider — surfaced fixes that lifted retention 50%."
+    },
     { "name": "Grafana", "category": "Observability & CI/CD", "sort_order": 2, "depth_note": "Grafana/Loki/Prometheus stacks — full-stack monitoring without vendor lock-in." },
     { "name": "GitHub Actions", "category": "Observability & CI/CD", "sort_order": 3, "depth_note": "Multi-env pipelines with promotion & rollback — releases are push-button." }
 ]
