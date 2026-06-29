@@ -1,13 +1,13 @@
 [
-    { "name": "TypeScript", "category": "Languages", "sort_order": 1 },
-    { "name": "Python", "category": "Languages", "sort_order": 2 },
-    { "name": "Astro", "category": "Frontend", "sort_order": 1 },
-    { "name": "React", "category": "Frontend", "sort_order": 2 },
-    { "name": "Tailwind CSS", "category": "Frontend", "sort_order": 3 },
-    { "name": "Node.js", "category": "Backend", "sort_order": 1 },
-    { "name": "SQLite", "category": "Backend", "sort_order": 2 },
-    { "name": "Drizzle ORM", "category": "Backend", "sort_order": 3 },
-    { "name": "Docker", "category": "Cloud & DevOps", "sort_order": 1 },
-    { "name": "GitHub Actions", "category": "Cloud & DevOps", "sort_order": 2 },
-    { "name": "AWS", "category": "Cloud & DevOps", "sort_order": 3 }
+    { "name": "TypeScript", "category": "Languages", "sort_order": 1, "depth_note": "End-to-end type safety across the monorepo — fewer production bugs, lower maintenance cost." },
+    { "name": "Python", "category": "Languages", "sort_order": 2, "depth_note": "AI/agent workflows and data tooling — rapid prototyping that turns ideas into automation." },
+    { "name": "Astro", "category": "Frontend", "sort_order": 1, "depth_note": "Content-driven sites shipped as static HTML — fast loads and near-zero hosting cost." },
+    { "name": "React", "category": "Frontend", "sort_order": 2, "depth_note": "Interactive islands only where needed — rich UX without bloating the page weight." },
+    { "name": "Tailwind CSS", "category": "Frontend", "sort_order": 3, "depth_note": "A consistent design system at speed — UI changes ship in minutes, not days." },
+    { "name": "Node.js", "category": "Backend", "sort_order": 1, "depth_note": "Build-time pipelines and CLIs — one content source feeds every static surface." },
+    { "name": "SQLite", "category": "Backend", "sort_order": 2, "depth_note": "A single build artifact powers every site — no runtime database to operate or pay for." },
+    { "name": "Drizzle ORM", "category": "Backend", "sort_order": 3, "depth_note": "Schema-first, type-safe data access — migrations stay reviewable and safe to ship." },
+    { "name": "Docker", "category": "Cloud & DevOps", "sort_order": 1, "depth_note": "Reproducible environments — onboarding and deploys without \"works on my machine\"." },
+    { "name": "GitHub Actions", "category": "Cloud & DevOps", "sort_order": 2, "depth_note": "Automated sync, ingest and deploy — every release is push-button and repeatable." },
+    { "name": "AWS", "category": "Cloud & DevOps", "sort_order": 3, "depth_note": "Static hosting and serverless — scales on demand while you pay only for usage." }
 ]

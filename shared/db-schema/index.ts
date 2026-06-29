@@ -47,8 +47,28 @@ export const skills = sqliteTable('skills', {
     name: text('name').notNull(),
     category: text('category').notNull(),
     sort_order: integer('sort_order').default(0),
+    proficiency: integer('proficiency').default(0),
+    depth_note: text('depth_note'),
     sync_source: text('sync_source').default('json'),
     locked: integer('locked', { mode: 'boolean' }).default(false),
+});
+
+// ── Experience (career timeline) ──────────────────────────────────────────────
+export const experience = sqliteTable('experience', {
+    id: text('id').primaryKey(),
+    slug: text('slug').notNull().unique(),
+    role: text('role').notNull(),
+    company: text('company').notNull(),
+    start_date: text('start_date').notNull(),
+    end_date: text('end_date'),
+    summary: text('summary'),
+    tech: text('tech'), // JSON array of tech strings
+    location: text('location'),
+    sort_order: integer('sort_order').default(0),
+    status: text('status').notNull(),
+    sync_source: text('sync_source').default('json'),
+    locked: integer('locked', { mode: 'boolean' }).default(false),
+    updated_at: integer('updated_at', { mode: 'timestamp' }),
 });
 
 // ── Posts (post | book-note | snippet) ───────────────────────────────────────
@@ -79,6 +99,12 @@ export const projects = sqliteTable('projects', {
     body: text('body').notNull(),
     subheading: text('subheading'),
     excerpt: text('excerpt'),
+    cover_image: text('cover_image'),
+    role: text('role'),
+    problem: text('problem'),
+    approach: text('approach'),
+    outcome: text('outcome'),
+    metrics: text('metrics'), // JSON object of key metrics
     repo_url: text('repo_url'),
     demo_url: text('demo_url'),
     status: text('status').notNull(),
@@ -183,6 +209,8 @@ export type ProfileRow = typeof profile.$inferSelect;
 export type NewProfileRow = typeof profile.$inferInsert;
 export type SkillRow = typeof skills.$inferSelect;
 export type NewSkillRow = typeof skills.$inferInsert;
+export type ExperienceRow = typeof experience.$inferSelect;
+export type NewExperienceRow = typeof experience.$inferInsert;
 export type PostRow = typeof posts.$inferSelect;
 export type NewPostRow = typeof posts.$inferInsert;
 export type ProjectRow = typeof projects.$inferSelect;

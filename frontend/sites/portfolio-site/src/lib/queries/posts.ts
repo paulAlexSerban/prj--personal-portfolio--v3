@@ -10,8 +10,6 @@ function sortByDateDesc(rows: PostRow[]): PostRow[] {
     });
 }
 
-// Recent published blog posts for the home page. Unlike the blog site, this is
-// NOT gated on quiz questions — the portfolio surfaces writing regardless.
 export function getRecentPosts(db: DrizzleDb, limit = 4): PostRow[] {
     const rows = db
         .select()
@@ -19,4 +17,15 @@ export function getRecentPosts(db: DrizzleDb, limit = 4): PostRow[] {
         .where(and(eq(posts.type, 'post'), eq(posts.status, 'published')))
         .all();
     return sortByDateDesc(rows).slice(0, limit);
+}
+
+export function getFeaturedPost(db: DrizzleDb): PostRow | undefined {
+    const rows = db
+        .select()
+        .from(posts)
+        .where(and(eq(posts.type, 'post'), eq(posts.status, 'published'), eq(posts.pinned, true)))
+        .all();
+    const sorted = sortByDateDesc(rows);
+    if (sorted.length > 0) return sorted[0];
+    return getRecentPosts(db, 1)[0];
 }

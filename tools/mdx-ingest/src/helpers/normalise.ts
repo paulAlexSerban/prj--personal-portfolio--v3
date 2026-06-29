@@ -105,6 +105,13 @@ const normalisePost = (file: ParsedFile, type: 'post' | 'book-note' | 'snippet')
     };
 };
 
+const serialiseMetrics = (raw: unknown): string | undefined => {
+    if (raw === undefined || raw === null) return undefined;
+    if (typeof raw === 'string') return raw;
+    if (typeof raw === 'object') return JSON.stringify(raw);
+    return undefined;
+};
+
 const normaliseProject = (file: ParsedFile): NewProjectRow => {
     const fm = file.frontmatter;
     return {
@@ -114,6 +121,12 @@ const normaliseProject = (file: ParsedFile): NewProjectRow => {
         body: file.body,
         subheading: str(fm['subheading']),
         excerpt: str(fm['excerpt']),
+        cover_image: str(fm['cover_image']) ?? str(fm['cover']),
+        role: str(fm['role']),
+        problem: str(fm['problem']),
+        approach: str(fm['approach']),
+        outcome: str(fm['outcome']),
+        metrics: serialiseMetrics(fm['metrics']),
         repo_url: str(fm['repo_url']),
         demo_url: str(fm['demo_url']),
         status: str(fm['status']) ?? 'draft',

@@ -34,6 +34,7 @@ export function MobileNav({ links }: Props) {
                             href={link.href}
                             aria-current={link.active ? 'page' : undefined}
                             onClick={() => setOpen(false)}
+                            {...(link.href.startsWith('http') ? { rel: 'noopener noreferrer', target: '_blank' } : {})}
                             className="border-b border-rule py-3 text-base text-ink no-underline hover:underline aria-[current=page]:font-bold aria-[current=page]:underline"
                         >
                             {link.label}

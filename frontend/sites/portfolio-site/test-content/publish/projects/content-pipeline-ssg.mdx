@@ -3,6 +3,14 @@ title: Content Pipeline SSG Platform
 status: published
 subheading: One content source, three static surfaces
 excerpt: A build-time pipeline that ingests MDX and JSON into SQLite, then feeds an Astro static site, a quiz app, and a mobile bundle from a single source of truth.
+role: Architect & lead implementer
+cover_image: /covers/content-pipeline.svg
+problem: Content lived in three places that drifted apart — blog, portfolio, and quiz.
+approach: Build-time pipeline with SQLite as single artifact; Drizzle schema + ingest tools + Astro SSG.
+outcome: Publishing collapsed to one command; new content types are a migration + ingest mapping.
+metrics:
+  surfaces: 3
+  deploy_time: "single command"
 repo_url: https://github.com/paulserban/portfolio-monorepo
 demo_url: https://paulserban.eu
 pinned: true

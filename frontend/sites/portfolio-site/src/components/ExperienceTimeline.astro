@@ -1,0 +1,53 @@
+---
+import type { ExperienceRow } from '@prj--personal-portfolio--v3/shared--db-schema';
+import { parseTech } from '../lib/queries/experience.ts';
+
+interface Props {
+    items: ExperienceRow[];
+}
+
+const { items } = Astro.props;
+---
+
+{
+    items.length > 0 && (
+        <section id="experience" class="mb-12">
+            <p class="kicker text-sm">Career</p>
+            <h2 class="m-0 mb-6 font-display text-4xl font-bold">Experience</h2>
+            <ol class="relative m-0 list-none border-l-2 border-ink p-0 pl-8">
+                {items.map((item) => {
+                    const tech = parseTech(item.tech);
+                    const period = item.end_date
+                        ? `${item.start_date} – ${item.end_date}`
+                        : `${item.start_date} – present`;
+                    return (
+                        <li class="relative mb-9 last:mb-0">
+                            <span
+                                class="absolute -left-[2.1rem] top-1 h-3.5 w-3.5 rounded-full border-2 border-ink bg-newsprint"
+                                aria-hidden="true"
+                            />
+                            <p class="kicker mb-1 text-[11px]">{period}</p>
+                            <h3 class="m-0 font-display text-xl font-bold">
+                                {item.role}
+                                <span class="font-normal text-charcoal"> @ {item.company}</span>
+                            </h3>
+                            {item.summary && <p class="mt-2 max-w-prose text-sm text-charcoal">{item.summary}</p>}
+                            {tech.length > 0 && (
+                                <ul class="mt-3 flex list-none flex-wrap gap-[0.4rem] p-0">
+                                    {tech.map((t) => (
+                                        <li>
+                                            <span class="inline-block border border-rule bg-highlight px-2 py-[0.15rem] text-[0.75rem] text-ink">
+                                                {t}
+                                            </span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            )}
+                        </li>
+                    );
+                })}
+            </ol>
+            <div class="rule-thin mt-8" />
+        </section>
+    )
+}

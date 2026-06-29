@@ -1,0 +1,35 @@
+---
+import ExperienceTimeline from '../components/ExperienceTimeline.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { closeConnection, openDb } from '../lib/db.ts';
+import { getExperienceTimeline } from '../lib/queries/experience.ts';
+import { getProfile } from '../lib/queries/profile.ts';
+
+const db = openDb();
+const profile = getProfile(db);
+const experience = getExperienceTimeline(db);
+closeConnection(db);
+
+const name = profile?.name ?? 'Paul Serban';
+---
+
+<BaseLayout title={`CV | ${name}`} description={`Curriculum vitae for ${name}.`}>
+    <section class="mb-8">
+        <h1 class="m-0 font-display text-4xl font-bold">{name}</h1>
+        {profile?.headline && <p class="deck mt-2 text-xl">{profile.headline}</p>}
+        {profile?.bio && <p class="mt-4 max-w-prose leading-relaxed">{profile.bio}</p>}
+        <div class="mt-4 flex flex-wrap gap-2 text-sm">
+            {profile?.github_url && <a class="inline-block border border-rule bg-highlight px-2 py-[0.15rem] text-[0.8rem] text-ink hover:underline" href={profile.github_url}>GitHub</a>}
+            {profile?.linkedin_url && <a class="inline-block border border-rule bg-highlight px-2 py-[0.15rem] text-[0.8rem] text-ink hover:underline" href={profile.linkedin_url}>LinkedIn</a>}
+        </div>
+        <button
+            type="button"
+            onclick="window.print()"
+            class="stamp mt-6 cursor-pointer px-5 py-2 text-sm"
+        >
+            Print / Save as PDF
+        </button>
+        <div class="rule mt-8"></div>
+    </section>
+    <ExperienceTimeline items={experience} />
+</BaseLayout>

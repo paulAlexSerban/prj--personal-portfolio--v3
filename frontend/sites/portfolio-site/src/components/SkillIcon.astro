@@ -1,0 +1,24 @@
+---
+import { skillIcons } from '../lib/skillIcons.ts';
+
+interface Props {
+    name: string;
+    class?: string;
+}
+
+const { name, class: className = '' } = Astro.props;
+const path = skillIcons[name];
+const fallback = name.trim().charAt(0).toUpperCase();
+---
+
+{
+    path ? (
+        <svg viewBox="0 0 24 24" fill="currentColor" role="img" aria-hidden="true" class={className}>
+            <Fragment set:html={path} />
+        </svg>
+    ) : (
+        <span aria-hidden="true" class={`inline-flex items-center justify-center font-display font-bold ${className}`}>
+            {fallback}
+        </span>
+    )
+}

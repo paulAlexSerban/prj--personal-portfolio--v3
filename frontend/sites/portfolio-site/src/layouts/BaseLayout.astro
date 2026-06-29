@@ -9,6 +9,7 @@ interface Props {
     ogTitle?: string;
     ogDescription?: string;
     canonicalUrl?: string;
+    ogImage?: string;
 }
 
 const {
@@ -17,10 +18,12 @@ const {
     ogTitle = title,
     ogDescription = description,
     canonicalUrl,
+    ogImage = '/portrait.svg',
 } = Astro.props;
 
-const pageDescription = description ?? 'Portfolio, projects, and skills of Paul Serban.';
+const pageDescription = description ?? 'Paul Serban — engineer, architect, selected works.';
 const canonical = canonicalUrl ?? new URL(Astro.url.pathname, Astro.site).href;
+const ogImageUrl = new URL(ogImage, Astro.site).href;
 ---
 
 <!doctype html>
@@ -45,6 +48,7 @@ const canonical = canonicalUrl ?? new URL(Astro.url.pathname, Astro.site).href;
         <meta property="og:description" content={ogDescription ?? pageDescription} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={canonical} />
+        <meta property="og:image" content={ogImageUrl} />
         <link rel="canonical" href={canonical} />
         <link rel="sitemap" href="/sitemap-index.xml" />
         <slot name="head" />

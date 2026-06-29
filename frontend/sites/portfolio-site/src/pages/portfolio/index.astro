@@ -1,36 +1,30 @@
 ---
-import ProjectCard from '../../components/ProjectCard.astro';
+import { TechFilter } from '../../components/TechFilter.tsx';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { closeConnection, openDb } from '../../lib/db.ts';
-import { buildProjectTagsMap, getAllProjects } from '../../lib/queries/projects.ts';
+import { buildProjectTagsMap, getArchiveProjects, getFeaturedProjects } from '../../lib/queries/projects.ts';
 
 const db = openDb();
-const projects = getAllProjects(db);
-const tagsMap = buildProjectTagsMap(db, projects);
+const featuredProjects = getFeaturedProjects(db);
+const archiveProjects = getArchiveProjects(db);
+const featuredTags = buildProjectTagsMap(db, featuredProjects);
+const archiveTags = buildProjectTagsMap(db, archiveProjects);
 closeConnection(db);
+
+const featured = featuredProjects.map((p) => ({ project: p, tags: featuredTags.get(p.slug) ?? [] }));
+const archive = archiveProjects.map((p) => ({ project: p, tags: archiveTags.get(p.slug) ?? [] }));
 ---
 
 <BaseLayout
     title="Portfolio | Paul Serban"
-    description="The full list of Paul Serban's projects — case studies, tech stacks, and links."
+    description="Case studies, tech stacks, and links to Paul Serban's work."
 >
-    <section class="mb-8 border-b-[3px] border-ink pb-6">
-        <p class="kicker mb-2 text-sm">Selected work</p>
-        <h1 class="m-0 font-display text-[clamp(2rem,5vw,3rem)] font-bold leading-[1.1]">Portfolio</h1>
-        <p class="deck mt-2 text-[1.1rem]">Featured projects first, then everything else.</p>
+    <section class="mb-10">
+        <p class="kicker text-sm">Selected work</p>
+        <h1 class="m-0 font-display text-[clamp(2rem,5vw,3.5rem)] font-bold">Portfolio</h1>
+        <p class="deck mt-2">Featured projects first, then the archive. Filter by tech stack.</p>
+        <div class="rule mt-6"></div>
     </section>
 
-    {
-        projects.length > 0 ? (
-            <ul class="m-0 grid list-none grid-cols-[repeat(auto-fill,minmax(18rem,1fr))] gap-5 p-0">
-                {projects.map((project) => (
-                    <li>
-                        <ProjectCard project={project} tags={tagsMap.get(project.slug) ?? []} />
-                    </li>
-                ))}
-            </ul>
-        ) : (
-            <p>No published projects yet.</p>
-        )
-    }
+    <TechFilter featured={featured} archive={archive} client:load />
 </BaseLayout>

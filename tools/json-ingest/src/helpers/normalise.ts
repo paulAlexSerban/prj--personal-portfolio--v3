@@ -1,11 +1,12 @@
 import { ulid } from 'ulidx';
-import type { NewProfileRow, NewSkillRow, NewPageRow } from '@prj--personal-portfolio--v3/shared--db-schema';
+import type { NewExperienceRow, NewProfileRow, NewSkillRow, NewPageRow } from '@prj--personal-portfolio--v3/shared--db-schema';
 import type { ParsedFile } from './jsonParser.ts';
 
 export type NormalisedRows = {
     profile: NewProfileRow[];
     skills: NewSkillRow[];
     pages: NewPageRow[];
+    experience: NewExperienceRow[];
 };
 
 const str = (v: unknown): string | undefined => (typeof v === 'string' && v.length > 0 ? v : undefined);
@@ -18,6 +19,12 @@ const serialisePageBody = (data: Record<string, unknown>): string => {
     void _status;
     void _slug;
     return JSON.stringify(rest);
+};
+
+const serialiseTech = (raw: unknown): string | undefined => {
+    if (!Array.isArray(raw)) return undefined;
+    const tech = raw.filter((t) => typeof t === 'string' && t.trim() !== '');
+    return tech.length > 0 ? JSON.stringify(tech) : undefined;
 };
 
 const normaliseProfile = (file: ParsedFile): NewProfileRow => {
@@ -45,8 +52,30 @@ const normaliseSkill = (file: ParsedFile): NewSkillRow => {
         name: str(d['name'])!,
         category: str(d['category'])!,
         sort_order: typeof d['sort_order'] === 'number' ? d['sort_order'] : 0,
+        proficiency: typeof d['proficiency'] === 'number' ? d['proficiency'] : 0,
+        depth_note: str(d['depth_note']),
         sync_source: 'json',
         locked: false,
+    };
+};
+
+const normaliseExperience = (file: ParsedFile): NewExperienceRow => {
+    const d = file.data;
+    return {
+        id: ulid(),
+        slug: file.slug,
+        role: str(d['role'])!,
+        company: str(d['company'])!,
+        start_date: str(d['start_date'])!,
+        end_date: str(d['end_date']),
+        summary: str(d['summary']),
+        tech: serialiseTech(d['tech']),
+        location: str(d['location']),
+        sort_order: typeof d['sort_order'] === 'number' ? d['sort_order'] : 0,
+        status: str(d['status']) ?? 'draft',
+        sync_source: 'json',
+        locked: false,
+        updated_at: now(),
     };
 };
 
@@ -65,7 +94,7 @@ const normalisePage = (file: ParsedFile): NewPageRow => {
 };
 
 export const normalise = (files: ParsedFile[]): NormalisedRows => {
-    const rows: NormalisedRows = { profile: [], skills: [], pages: [] };
+    const rows: NormalisedRows = { profile: [], skills: [], pages: [], experience: [] };
 
     for (const file of files) {
         switch (file.contentType) {
@@ -78,10 +107,15 @@ export const normalise = (files: ParsedFile[]): NormalisedRows => {
             case 'page':
                 rows.pages.push(normalisePage(file));
                 break;
+            case 'experience':
+                rows.experience.push(normaliseExperience(file));
+                break;
         }
     }
 
-    console.log(`[normalise] profile=${rows.profile.length}  skills=${rows.skills.length}  pages=${rows.pages.length}`);
+    console.log(
+        `[normalise] profile=${rows.profile.length}  skills=${rows.skills.length}  pages=${rows.pages.length}  experience=${rows.experience.length}`,
+    );
 
     return rows;
 };

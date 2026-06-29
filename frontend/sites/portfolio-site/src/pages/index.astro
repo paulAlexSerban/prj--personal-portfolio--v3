@@ -1,8 +1,13 @@
 ---
-import ProjectCard from '../components/ProjectCard.astro';
+import CaseStudyCard from '../components/CaseStudyCard.astro';
+import CoreSkills from '../components/CoreSkills.astro';
+import ExperienceTimeline from '../components/ExperienceTimeline.astro';
+import FeaturedBlog from '../components/FeaturedBlog.astro';
+import HeroSplit from '../components/HeroSplit.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { closeConnection, openDb } from '../lib/db.ts';
-import { getRecentPosts } from '../lib/queries/posts.ts';
+import { getExperienceTimeline } from '../lib/queries/experience.ts';
+import { getFeaturedPost, getRecentPosts } from '../lib/queries/posts.ts';
 import { buildProjectTagsMap, getFeaturedPreview } from '../lib/queries/projects.ts';
 import { getProfile } from '../lib/queries/profile.ts';
 import { getSkillsGrouped } from '../lib/queries/skills.ts';
@@ -11,159 +16,80 @@ const BLOG_URL = 'https://blog.paulserban.eu';
 
 const db = openDb();
 const profile = getProfile(db);
+const experience = getExperienceTimeline(db);
 const skillGroups = getSkillsGrouped(db);
 const featured = getFeaturedPreview(db, 3);
 const featuredTags = buildProjectTagsMap(db, featured);
-const recentPosts = getRecentPosts(db, 4);
+const featuredPost = getFeaturedPost(db);
+const recentPosts = getRecentPosts(db, 3);
 closeConnection(db);
 
 const name = profile?.name ?? 'Paul Serban';
 const description = profile?.headline ?? 'Portfolio of Paul Serban.';
 ---
 
-<BaseLayout title={`${name} | Portfolio`} description={description}>
-    {/* ── About Me ─────────────────────────────────────────────── */}
-    <section class="mb-12 border-b-[3px] border-ink pb-8">
-        <div class="grid gap-8 md:grid-cols-[1.6fr_1fr] md:items-center">
-            <div>
-                <p class="kicker mb-2 text-sm">About</p>
-                <h2 class="m-0 font-display text-[clamp(2rem,5vw,3.25rem)] font-bold leading-[1.05]">
-                    {profile?.headline ?? name}
-                </h2>
-                {profile?.bio && <p class="deck mt-4 max-w-prose text-[1.1rem]">{profile.bio}</p>}
-                {
-                    (profile?.github_url || profile?.linkedin_url) && (
-                        <div class="mt-5 flex flex-wrap gap-4 text-[11px] smallcaps">
-                            {profile?.github_url && (
-                                <a
-                                    class="stamp stamp-ghost px-3 py-1.5"
-                                    href={profile.github_url}
-                                    rel="noopener noreferrer"
-                                    target="_blank"
-                                >
-                                    GitHub
-                                </a>
-                            )}
-                            {profile?.linkedin_url && (
-                                <a
-                                    class="stamp stamp-ghost px-3 py-1.5"
-                                    href={profile.linkedin_url}
-                                    rel="noopener noreferrer"
-                                    target="_blank"
-                                >
-                                    LinkedIn
-                                </a>
-                            )}
-                        </div>
-                    )
-                }
-            </div>
-            {
-                profile?.photo_url && (
-                    <img
-                        src={profile.photo_url}
-                        alt={`Portrait of ${name}`}
-                        loading="eager"
-                        class="aspect-square w-full border border-rule object-cover grain"
-                    />
-                )
-            }
-        </div>
-    </section>
+<BaseLayout title={`${name} | Portfolio`} description={description} ogImage={profile?.photo_url ?? '/portrait.svg'}>
+    <HeroSplit profile={profile} />
 
-    {/* ── Skills ──────────────────────────────────────────────── */}
+    <ExperienceTimeline items={experience} />
+
     {
         skillGroups.length > 0 && (
             <section class="mb-12">
-                <div class="mb-5 border-b-[3px] border-ink pb-2">
-                    <p class="kicker text-sm">Toolkit</p>
-                    <h2 class="m-0 font-display text-4xl font-bold">Skills</h2>
-                </div>
-                <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                    {skillGroups.map((group) => (
-                        <div class="card-ruled border-b border-rule pb-4">
-                            <p class="kicker mb-2 text-[11px]">{group.category}</p>
-                            <ul class="m-0 flex list-none flex-wrap gap-[0.4rem] p-0">
-                                {group.skills.map((skill) => (
-                                    <li>
-                                        <span class="inline-block border border-rule bg-highlight px-2 py-[0.15rem] text-[0.8rem] text-ink">
-                                            {skill.name}
-                                        </span>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                    ))}
-                </div>
+                <p class="kicker text-sm">Toolkit</p>
+                <h2 class="m-0 font-display text-4xl font-bold">What I bring to the stack</h2>
+                <p class="deck mt-2 mb-6 max-w-prose">Not a keyword wall — the tools I reach for and the value each one delivers.</p>
+                <CoreSkills groups={skillGroups} />
+                <div class="rule-thin mt-8" />
             </section>
         )
     }
 
-    {/* ── Featured projects ───────────────────────────────────── */}
     {
         featured.length > 0 && (
             <section class="mb-12">
-                <div class="mb-5 flex flex-wrap items-end justify-between gap-3 border-b-[3px] border-ink pb-2">
+                <div class="mb-6 flex flex-wrap items-end justify-between gap-3">
                     <div>
                         <p class="kicker text-sm">Selected work</p>
-                        <h2 class="m-0 font-display text-4xl font-bold">Projects</h2>
+                        <h2 class="m-0 font-display text-4xl font-bold">Case studies</h2>
                     </div>
-                    <a class="stamp stamp-ghost px-3 py-1.5 text-sm" href="/portfolio/">
-                        View full portfolio
-                    </a>
+                    <a class="stamp stamp-ghost px-4 py-1.5 text-sm" href="/portfolio/">View all &rarr;</a>
                 </div>
-                <ul class="m-0 grid list-none grid-cols-[repeat(auto-fill,minmax(18rem,1fr))] gap-5 p-0">
+                <ul class="m-0 grid list-none grid-cols-[repeat(auto-fill,minmax(18rem,1fr))] gap-8 p-0">
                     {featured.map((project) => (
                         <li>
-                            <ProjectCard project={project} tags={featuredTags.get(project.slug) ?? []} />
+                            <CaseStudyCard project={project} tags={featuredTags.get(project.slug) ?? []} featured />
                         </li>
                     ))}
                 </ul>
+                <div class="rule-thin mt-10" />
             </section>
         )
     }
 
-    {/* ── Recent posts ────────────────────────────────────────── */}
+    {featuredPost && <FeaturedBlog post={featuredPost} />}
+
     {
-        recentPosts.length > 0 && (
+        recentPosts.length > 1 && (
             <section class="mb-12">
-                <div class="mb-5 flex flex-wrap items-end justify-between gap-3 border-b-[3px] border-ink pb-2">
-                    <div>
-                        <p class="kicker text-sm">From the blog</p>
-                        <h2 class="m-0 font-display text-4xl font-bold">Recent Posts</h2>
-                    </div>
-                    <a class="stamp stamp-ghost px-3 py-1.5 text-sm" href={`${BLOG_URL}/post/`}>
-                        Read the blog
-                    </a>
-                </div>
-                <ul class="m-0 grid list-none grid-cols-[repeat(auto-fill,minmax(18rem,1fr))] gap-5 p-0">
-                    {recentPosts.map((post) => (
-                        <li class="card-ruled border-b border-rule pb-4">
-                            <p class="kicker mb-1 text-[10px]">{post.date}</p>
-                            <h3 class="font-display text-xl font-bold leading-tight">
-                                <a
-                                    href={`${BLOG_URL}/post/${post.slug}/`}
-                                    class="text-ink no-underline hover:underline"
-                                    rel="noopener noreferrer"
-                                    target="_blank"
-                                >
-                                    {post.title}
-                                </a>
-                            </h3>
-                            {post.excerpt && (
-                                <p class="mt-2 text-base text-charcoal line-clamp-2">{post.excerpt}</p>
-                            )}
+                <p class="kicker text-sm">More reading</p>
+                <h2 class="m-0 mb-5 font-display text-3xl font-bold">Recent posts</h2>
+                <ul class="m-0 grid list-none gap-0 p-0">
+                    {recentPosts.slice(featuredPost ? 1 : 0).map((post) => (
+                        <li class="border-b border-rule py-3 last:border-b-0">
+                            <a
+                                href={`${BLOG_URL}/post/${post.slug}/`}
+                                class="text-ink no-underline hover:underline"
+                                rel="noopener noreferrer"
+                                target="_blank"
+                            >
+                                <span class="kicker text-[11px]">{post.date}</span>
+                                <span class="ml-3 font-display font-bold">{post.title}</span>
+                            </a>
                         </li>
                     ))}
                 </ul>
             </section>
         )
     }
-
-    {/* ── CTA ─────────────────────────────────────────────────── */}
-    <section class="border-t-2 border-ink pt-8 text-center">
-        <h2 class="m-0 font-display text-3xl font-bold">See the full body of work</h2>
-        <p class="deck mt-2">Detailed case studies, the tech behind each, and links to code.</p>
-        <a class="stamp mt-4 inline-block px-5 py-2 text-sm" href="/portfolio/">Explore the portfolio &rarr;</a>
-    </section>
 </BaseLayout>

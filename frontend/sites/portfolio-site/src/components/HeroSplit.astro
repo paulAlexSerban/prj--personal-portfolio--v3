@@ -1,0 +1,82 @@
+---
+import type { ProfileRow } from '@prj--personal-portfolio--v3/shared--db-schema';
+
+interface Props {
+    profile: ProfileRow | undefined;
+}
+
+const BLOG_URL = 'https://blog.paulserban.eu';
+const { profile } = Astro.props;
+const name = profile?.name ?? 'Paul Serban';
+const headline = profile?.headline ?? 'I architect systems that ship.';
+---
+
+<section class="mb-12">
+    <div class="grid gap-10 lg:grid-cols-2 lg:items-center">
+        <div>
+            <p class="kicker mb-2 text-sm">{name}</p>
+            <h2 class="m-0 font-display text-[clamp(2.25rem,6vw,3.75rem)] font-bold leading-[1.05]">
+                {headline}
+            </h2>
+            {profile?.bio && (
+                <p class="deck mt-4 max-w-prose text-[1.05rem] line-clamp-3">{profile.bio}</p>
+            )}
+            <div class="mt-6 flex flex-wrap gap-3">
+                <a class="stamp px-5 py-2 text-sm" href="/portfolio/">View work &rarr;</a>
+                <a class="stamp stamp-ghost px-5 py-2 text-sm" href={`${BLOG_URL}/`} rel="noopener noreferrer" target="_blank">
+                    Read blog &rarr;
+                </a>
+            </div>
+            {
+                (profile?.github_url || profile?.linkedin_url) && (
+                    <div class="mt-5 flex flex-wrap gap-4 text-[11px] smallcaps">
+                        {profile?.github_url && (
+                            <a class="text-ink underline-offset-2 hover:underline" href={profile.github_url} rel="noopener noreferrer" target="_blank">GitHub</a>
+                        )}
+                        {profile?.linkedin_url && (
+                            <a class="text-ink underline-offset-2 hover:underline" href={profile.linkedin_url} rel="noopener noreferrer" target="_blank">LinkedIn</a>
+                        )}
+                    </div>
+                )
+            }
+        </div>
+        <div class="flex flex-col items-center gap-4">
+            {
+                profile?.photo_url && (
+                    <img
+                        src={profile.photo_url}
+                        alt={`Portrait of ${name}`}
+                        loading="eager"
+                        width="200"
+                        height="200"
+                        class="grain aspect-square w-48 border border-rule object-cover"
+                    />
+                )
+            }
+            <figure class="m-0 w-full max-w-md border border-ink bg-aged p-4">
+                <svg viewBox="0 0 400 260" width="100%" height="auto" role="img" aria-label="System architecture: a content pipeline feeding static surfaces" class="font-mono text-ink">
+                    <title>System architecture schematic</title>
+                    <rect x="150" y="105" width="100" height="48" fill="var(--highlight)" stroke="currentColor" stroke-width="2"></rect>
+                    <text x="200" y="133" text-anchor="middle" font-size="11" fill="currentColor">Pipeline</text>
+                    <rect x="20" y="20" width="92" height="36" fill="none" stroke="currentColor" stroke-width="1.5"></rect>
+                    <text x="66" y="42" text-anchor="middle" font-size="10" fill="currentColor">Content</text>
+                    <rect x="288" y="20" width="92" height="36" fill="none" stroke="currentColor" stroke-width="1.5"></rect>
+                    <text x="334" y="42" text-anchor="middle" font-size="10" fill="currentColor">SQLite</text>
+                    <rect x="20" y="200" width="92" height="36" fill="none" stroke="currentColor" stroke-width="1.5"></rect>
+                    <text x="66" y="222" text-anchor="middle" font-size="10" fill="currentColor">Portfolio</text>
+                    <rect x="154" y="200" width="92" height="36" fill="none" stroke="currentColor" stroke-width="1.5"></rect>
+                    <text x="200" y="222" text-anchor="middle" font-size="10" fill="currentColor">Blog</text>
+                    <rect x="288" y="200" width="92" height="36" fill="none" stroke="currentColor" stroke-width="1.5"></rect>
+                    <text x="334" y="222" text-anchor="middle" font-size="10" fill="currentColor">Quiz</text>
+                    <line x1="112" y1="38" x2="155" y2="110" stroke="currentColor" stroke-width="1.5"></line>
+                    <line x1="288" y1="38" x2="245" y2="110" stroke="currentColor" stroke-width="1.5"></line>
+                    <line x1="160" y1="153" x2="80" y2="200" stroke="currentColor" stroke-width="1.5"></line>
+                    <line x1="200" y1="153" x2="200" y2="200" stroke="currentColor" stroke-width="1.5"></line>
+                    <line x1="240" y1="153" x2="320" y2="200" stroke="currentColor" stroke-width="1.5"></line>
+                </svg>
+                <figcaption class="kicker mt-2 text-center text-[10px]">One source, three static surfaces</figcaption>
+            </figure>
+        </div>
+    </div>
+    <div class="rule mt-10"></div>
+</section>

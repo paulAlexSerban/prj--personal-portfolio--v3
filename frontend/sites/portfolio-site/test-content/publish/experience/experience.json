@@ -1,0 +1,50 @@
+[
+    {
+        "slug": "junior-fe-agency",
+        "role": "Junior Frontend Developer",
+        "company": "Digital Agency",
+        "start_date": "2015-06",
+        "end_date": "2018-03",
+        "summary": "Built responsive marketing sites and learned to ship under tight deadlines.",
+        "tech": ["HTML", "CSS", "JavaScript", "SCSS"],
+        "location": "Remote",
+        "sort_order": 1,
+        "status": "published"
+    },
+    {
+        "slug": "mid-engineer-startup",
+        "role": "Full-Stack Engineer",
+        "company": "Product Startup",
+        "start_date": "2018-04",
+        "end_date": "2021-08",
+        "summary": "Owned features end-to-end across React frontends and Node APIs; introduced CI pipelines.",
+        "tech": ["React", "Node.js", "TypeScript", "AWS"],
+        "location": "Bucharest",
+        "sort_order": 2,
+        "status": "published"
+    },
+    {
+        "slug": "senior-lead-scaleup",
+        "role": "Senior Engineer / Tech Lead",
+        "company": "Scale-up",
+        "start_date": "2021-09",
+        "end_date": "2024-05",
+        "summary": "Led a squad building microservices on Kubernetes; drove architecture reviews and mentoring.",
+        "tech": ["TypeScript", "Kubernetes", "Docker", "PostgreSQL"],
+        "location": "Hybrid",
+        "sort_order": 3,
+        "status": "published"
+    },
+    {
+        "slug": "ai-engineer-enterprise",
+        "role": "AI Engineer",
+        "company": "Enterprise Platform",
+        "start_date": "2024-06",
+        "end_date": null,
+        "summary": "Designing agentic workflows and deployment pipelines for LLM-powered internal tools.",
+        "tech": ["Python", "LLM", "GitHub Actions", "K8s"],
+        "location": "Remote",
+        "sort_order": 4,
+        "status": "published"
+    }
+]

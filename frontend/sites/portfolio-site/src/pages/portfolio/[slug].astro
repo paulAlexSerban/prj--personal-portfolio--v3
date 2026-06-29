@@ -4,13 +4,14 @@ import * as runtime from 'react/jsx-runtime';
 import rehypeHighlight from 'rehype-highlight';
 import remarkGfm from 'remark-gfm';
 
-import HeroBanner from '../../components/HeroBanner.astro';
+import TagList from '../../components/TagList.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { closeConnection, openDb } from '../../lib/db.ts';
 import {
     getAllProjectSlugs,
     getProjectBySlug,
     getTagsForProject,
+    parseMetrics,
 } from '../../lib/queries/projects.ts';
 
 export function getStaticPaths() {
@@ -36,8 +37,10 @@ const { default: Content } = await evaluate(project.body, {
     rehypePlugins: [rehypeHighlight],
 });
 
-const description = project.excerpt ?? project.subheading ?? undefined;
+const description = project.excerpt ?? project.problem ?? project.subheading ?? undefined;
 const canonicalUrl = new URL(`/portfolio/${slug}/`, Astro.site).href;
+const metrics = parseMetrics(project.metrics);
+const cover = project.cover_image ?? '/placeholder-cover.png';
 ---
 
 <BaseLayout
@@ -46,46 +49,78 @@ const canonicalUrl = new URL(`/portfolio/${slug}/`, Astro.site).href;
     ogTitle={project.title}
     ogDescription={description}
     canonicalUrl={canonicalUrl}
+    ogImage={cover}
 >
     <p class="mb-4">
-        <a href="/portfolio/" class="kicker text-[11px] hover:underline">&larr; Back to portfolio</a>
+        <a href="/portfolio/" class="kicker text-xs hover:underline">&larr; Back to portfolio</a>
     </p>
 
-    <HeroBanner
-        title={project.title}
-        subheading={project.subheading ?? undefined}
-        tags={tags}
-        kicker={project.pinned ? 'Featured project' : 'Project'}
-    />
+  {
+      cover && (
+          <img
+              src={cover}
+              alt=""
+              loading="eager"
+              class="mb-6 aspect-video w-full border border-ink object-cover"
+          />
+      )
+  }
+
+    <header class="mb-8 border-b-2 border-ink pb-6">
+        {project.pinned && <p class="kicker mb-2 text-[11px]">Featured</p>}
+        <h1 class="m-0 font-display text-[clamp(2rem,5vw,3rem)] font-bold">{project.title}</h1>
+        {project.subheading && <p class="deck mt-2 text-lg">{project.subheading}</p>}
+        {project.role && <p class="mt-1 text-sm text-slate-ink">Role: {project.role}</p>}
+        <div class="mt-4"><TagList tags={tags} /></div>
+    </header>
+
+    <div class="mb-8 grid gap-0">
+        {project.problem && (
+            <div class="card-ruled mb-6">
+                <p class="kicker mb-2 text-[11px]">Problem</p>
+                <p class="m-0 text-sm leading-relaxed">{project.problem}</p>
+            </div>
+        )}
+        {project.approach && (
+            <div class="card-ruled mb-6">
+                <p class="kicker mb-2 text-[11px]">Approach</p>
+                <p class="m-0 text-sm leading-relaxed">{project.approach}</p>
+            </div>
+        )}
+        {project.outcome && (
+            <div class="card-ruled mb-6">
+                <p class="kicker mb-2 text-[11px]">Outcome</p>
+                <p class="m-0 text-sm leading-relaxed">{project.outcome}</p>
+            </div>
+        )}
+        {
+            Object.keys(metrics).length > 0 && (
+                <dl class="grid grid-cols-2 gap-px border border-ink bg-ink sm:grid-cols-3" style="font-family: var(--font-mono)">
+                    {Object.entries(metrics).map(([k, v]) => (
+                        <div class="bg-aged p-4">
+                            <dt class="kicker text-[10px]">{k}</dt>
+                            <dd class="m-0 text-2xl font-bold">{v}</dd>
+                        </div>
+                    ))}
+                </dl>
+            )
+        }
+    </div>
 
     {
         (project.repo_url || project.demo_url) && (
-            <div class="mb-8 flex flex-wrap gap-4 text-[11px] smallcaps">
+            <div class="mb-8 flex flex-wrap gap-3">
                 {project.repo_url && (
-                    <a
-                        class="stamp stamp-ghost px-3 py-1.5"
-                        href={project.repo_url}
-                        rel="noopener noreferrer"
-                        target="_blank"
-                    >
-                        View code
-                    </a>
+                    <a class="stamp stamp-ghost px-4 py-1.5 text-sm" href={project.repo_url} rel="noopener noreferrer" target="_blank">View code</a>
                 )}
                 {project.demo_url && (
-                    <a
-                        class="stamp px-3 py-1.5"
-                        href={project.demo_url}
-                        rel="noopener noreferrer"
-                        target="_blank"
-                    >
-                        Live demo
-                    </a>
+                    <a class="stamp px-4 py-1.5 text-sm" href={project.demo_url} rel="noopener noreferrer" target="_blank">Live demo</a>
                 )}
             </div>
         )
     }
 
-    <article class="md-content mt-4">
+    <article class="md-content">
         <Content />
     </article>
 </BaseLayout>

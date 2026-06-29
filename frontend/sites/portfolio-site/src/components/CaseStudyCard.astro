@@ -1,0 +1,60 @@
+---
+import type { ProjectRow, TagRow } from '@prj--personal-portfolio--v3/shared--db-schema';
+import { parseMetrics } from '../lib/queries/projects.ts';
+import TagList from './TagList.astro';
+
+interface Props {
+    project: ProjectRow;
+    tags: TagRow[];
+    featured?: boolean;
+}
+
+const { project, tags, featured = false } = Astro.props;
+const href = `/portfolio/${project.slug}/`;
+const metrics = parseMetrics(project.metrics);
+const cover = project.cover_image ?? '/placeholder-cover.png';
+---
+
+<article class="card-ruled flex flex-col">
+    <a href={href} class="mb-3 block overflow-hidden border border-rule">
+        <img src={cover} alt="" loading="lazy" class="aspect-video w-full object-cover" />
+    </a>
+    {featured && <p class="kicker mb-1 text-[10px]">Featured</p>}
+    <h3 class="font-display text-2xl font-bold leading-tight">
+        <a href={href} class="text-ink no-underline hover:underline">{project.title}</a>
+    </h3>
+    {project.role && <p class="mt-1 text-[11px] text-slate-ink">{project.role}</p>}
+    {project.problem && (
+        <p class="mt-3 text-sm text-charcoal">
+            <span class="smallcaps font-bold">Problem. </span>{project.problem}
+        </p>
+    )}
+    {project.outcome && (
+        <p class="mt-2 text-sm text-charcoal">
+            <span class="smallcaps font-bold">Outcome. </span>{project.outcome}
+        </p>
+    )}
+    {
+        Object.keys(metrics).length > 0 && (
+            <dl class="mt-3 flex flex-wrap gap-x-5 gap-y-1 text-xs" style="font-family: var(--font-mono)">
+                {Object.entries(metrics).map(([k, v]) => (
+                    <div>
+                        <dt class="kicker inline text-[10px]">{k}</dt>
+                        <dd class="ml-1 inline font-bold">{v}</dd>
+                    </div>
+                ))}
+            </dl>
+        )
+    }
+    <div class="rule-thin my-4"></div>
+    <TagList tags={tags} />
+    <div class="mt-3 flex flex-wrap items-center gap-x-4 gap-y-2 text-[10px] smallcaps">
+        <a href={href} class="kicker hover:underline">Case study &rarr;</a>
+        {project.repo_url && (
+            <a href={project.repo_url} class="kicker hover:underline" rel="noopener noreferrer" target="_blank">Code</a>
+        )}
+        {project.demo_url && (
+            <a href={project.demo_url} class="kicker hover:underline" rel="noopener noreferrer" target="_blank">Live</a>
+        )}
+    </div>
+</article>

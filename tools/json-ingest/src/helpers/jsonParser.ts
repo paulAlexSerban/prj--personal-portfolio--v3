@@ -2,7 +2,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import type { ScannedDirectory } from './jsonFileScanner.ts';
 
-export type JsonContentType = 'profile' | 'skill' | 'page';
+export type JsonContentType = 'profile' | 'skill' | 'page' | 'experience';
 
 export type ParsedFile = {
     slug: string;
@@ -15,6 +15,7 @@ const CONTENT_TYPE_MAP: Record<string, JsonContentType | undefined> = {
     profile: 'profile',
     skills: 'skill',
     pages: 'page',
+    experience: 'experience',
 };
 
 const toSlug = (value: string): string =>
@@ -30,22 +31,25 @@ const parseJsonFile = async (filePath: string, contentType: JsonContentType): Pr
     const raw = await fs.readFile(filePath, 'utf-8');
     const parsed: unknown = JSON.parse(raw);
 
-    if (contentType === 'skill') {
+    if (contentType === 'skill' || contentType === 'experience') {
+        const key = contentType === 'skill' ? 'skills' : 'experience';
         const items = Array.isArray(parsed)
             ? parsed
-            : typeof parsed === 'object' && parsed !== null && Array.isArray((parsed as Record<string, unknown>)['skills'])
-              ? ((parsed as Record<string, unknown>)['skills'] as unknown[])
+            : typeof parsed === 'object' && parsed !== null && Array.isArray((parsed as Record<string, unknown>)[key])
+              ? ((parsed as Record<string, unknown>)[key] as unknown[])
               : [parsed];
 
         return items.map((item, index) => {
             const data = (typeof item === 'object' && item !== null ? item : {}) as Record<string, unknown>;
-            const name = typeof data['name'] === 'string' ? data['name'] : `skill-${index}`;
-            return {
-                slug: toSlug(name),
-                contentType,
-                data,
-                filePath,
-            };
+            if (contentType === 'skill') {
+                const name = typeof data['name'] === 'string' ? data['name'] : `skill-${index}`;
+                return { slug: toSlug(name), contentType, data, filePath };
+            }
+            const slug =
+                typeof data['slug'] === 'string' && data['slug'].length > 0
+                    ? data['slug']
+                    : toSlug(`${String(data['role'] ?? 'role')}-${String(data['company'] ?? index)}`);
+            return { slug, contentType, data, filePath };
         });
     }
 

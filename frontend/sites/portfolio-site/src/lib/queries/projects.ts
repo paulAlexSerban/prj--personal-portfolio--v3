@@ -17,10 +17,43 @@ export function getFeaturedPreview(db: DrizzleDb, limit = 3): ProjectRow[] {
     return db
         .select()
         .from(projects)
-        .where(eq(projects.status, 'published'))
+        .where(and(eq(projects.status, 'published'), eq(projects.pinned, true)))
         .orderBy(...featuredFirst())
         .limit(limit)
         .all();
+}
+
+export function getFeaturedProjects(db: DrizzleDb): ProjectRow[] {
+    return db
+        .select()
+        .from(projects)
+        .where(and(eq(projects.status, 'published'), eq(projects.pinned, true)))
+        .orderBy(...featuredFirst())
+        .all();
+}
+
+export function getArchiveProjects(db: DrizzleDb): ProjectRow[] {
+    return db
+        .select()
+        .from(projects)
+        .where(and(eq(projects.status, 'published'), eq(projects.pinned, false)))
+        .orderBy(...featuredFirst())
+        .all();
+}
+
+export function parseMetrics(metricsJson: string | null | undefined): Record<string, string> {
+    if (!metricsJson) return {};
+    try {
+        const parsed = JSON.parse(metricsJson) as unknown;
+        if (typeof parsed === 'object' && parsed !== null && !Array.isArray(parsed)) {
+            return Object.fromEntries(
+                Object.entries(parsed).map(([k, v]) => [k, String(v)]),
+            );
+        }
+    } catch {
+        /* ignore */
+    }
+    return {};
 }
 
 export function getAllProjects(db: DrizzleDb): ProjectRow[] {

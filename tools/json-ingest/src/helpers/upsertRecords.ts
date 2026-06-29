@@ -1,4 +1,4 @@
-import { profile as profileTable, skills as skillsTable, pages as pagesTable } from '@prj--personal-portfolio--v3/shared--db-schema';
+import { experience as experienceTable, profile as profileTable, skills as skillsTable, pages as pagesTable } from '@prj--personal-portfolio--v3/shared--db-schema';
 import { upsertWithLockCheck, type UpsertResult, type DrizzleDb } from '@prj--personal-portfolio--v3/shared--db';
 import type { NormalisedRows } from './normalise.ts';
 
@@ -30,6 +30,9 @@ export const upsertRecords = (options: UpsertRecordsOptions): UpsertSummary => {
     }
     for (const row of rows.pages) {
         results.push(upsertWithLockCheck(db, pagesTable, row as UpsertRow, { dryRun, syncSource: SYNC_SOURCE }));
+    }
+    for (const row of rows.experience) {
+        results.push(upsertWithLockCheck(db, experienceTable, row as UpsertRow, { dryRun, syncSource: SYNC_SOURCE }));
     }
 
     const summary: UpsertSummary = { inserted: 0, updated: 0, skipped: 0 };

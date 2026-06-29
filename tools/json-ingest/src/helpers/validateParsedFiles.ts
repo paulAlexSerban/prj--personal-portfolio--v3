@@ -16,6 +16,7 @@ const REQUIRED_FIELDS: Record<JsonContentType, string[]> = {
     profile: ['name', 'headline', 'bio'],
     skill: ['name', 'category'],
     page: ['title', 'status'],
+    experience: ['role', 'company', 'start_date', 'status'],
 };
 
 const isMissing = (value: unknown): boolean => value === undefined || value === null || value === '';
