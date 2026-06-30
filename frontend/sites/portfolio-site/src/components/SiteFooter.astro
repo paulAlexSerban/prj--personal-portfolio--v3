@@ -1,13 +1,18 @@
 ---
+import { FooterSiteLinks, buildSiteTabs } from '@prj--personal-portfolio--v3/shared--navigation';
 import { externalLinkAttrs, siteUrls } from '../lib/urls.ts';
 
 const footerLinks = [
     { label: 'Home', href: siteUrls.home },
     { label: 'Experience', href: siteUrls.experience },
     { label: 'Portfolio', href: siteUrls.portfolio },
-    { label: 'Blog', href: siteUrls.blog },
-    { label: 'Quiz', href: siteUrls.quiz },
 ];
+
+const siteTabs = buildSiteTabs({
+    portfolio: siteUrls.home,
+    blog: siteUrls.blog,
+    quiz: siteUrls.quiz,
+});
 
 const year = new Date().getFullYear();
 ---
@@ -31,6 +36,9 @@ const year = new Date().getFullYear();
                 }
             </ul>
         </nav>
+        <div class="mb-3">
+            <FooterSiteLinks activeSite="portfolio" tabs={siteTabs} />
+        </div>
         <p class="kicker text-sm">Paul Serban · Printed in your browser · {year}</p>
     </div>
 </footer>

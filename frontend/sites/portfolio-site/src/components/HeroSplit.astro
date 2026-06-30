@@ -41,18 +41,6 @@ const headline = profile?.headline ?? 'I architect systems that ship.';
             }
         </div>
         <div class="flex flex-col items-center gap-4">
-            {
-                profile?.photo_url && (
-                    <img
-                        src={profile.photo_url}
-                        alt={`Portrait of ${name}`}
-                        loading="eager"
-                        width="200"
-                        height="200"
-                        class="grain aspect-square w-48 border border-rule object-cover"
-                    />
-                )
-            }
             <figure class="m-0 w-full max-w-md border border-ink bg-aged p-4">
                 <svg viewBox="0 0 400 280" width="100%" height="auto" role="img" aria-label="Architecture: an event-driven control plane orchestrating parallel LLM agents, observed end to end" class="font-mono text-ink">
                     <title>Agentic AI control plane</title>

@@ -1,5 +1,5 @@
 ---
-import { MobileNav, NavDropdown } from '@prj--personal-portfolio--v3/shared--navigation';
+import { MobileNav, SiteSwitcher, buildSiteTabs } from '@prj--personal-portfolio--v3/shared--navigation';
 import { externalLinkAttrs, isNavLinkActive, siteUrls } from '../lib/urls.ts';
 
 const navLinks = [
@@ -8,17 +8,15 @@ const navLinks = [
     { label: 'Book Notes', href: siteUrls.booknote },
 ];
 
-const crossAppLinks = [
-    { label: 'Portfolio', href: siteUrls.portfolio },
-    { label: 'Quiz', href: siteUrls.quiz },
-];
+const siteTabs = buildSiteTabs({
+    portfolio: siteUrls.portfolio,
+    blog: siteUrls.home,
+    quiz: siteUrls.quiz,
+});
 
 const pathname = Astro.url.pathname;
 
-const mobileNavLinks = [
-    ...navLinks.map((link) => ({ ...link, active: isNavLinkActive(pathname, link.href) })),
-    ...crossAppLinks.map((link) => ({ ...link, active: isNavLinkActive(pathname, link.href) })),
-];
+const mobileNavLinks = navLinks.map((link) => ({ ...link, active: isNavLinkActive(pathname, link.href) }));
 
 const year = new Date().getFullYear();
 ---
@@ -27,7 +25,10 @@ const year = new Date().getFullYear();
     <div class="mx-auto max-w-[72rem] px-6 pt-6 pb-4">
         <div class="flex items-center justify-between gap-4">
             <p class="kicker font-mono text-[10px] md:text-sm">paulserban.eu</p>
-            <p class="kicker font-mono text-[10px] md:text-sm">Writing Edition</p>
+            <div class="flex flex-col items-end gap-1">
+                <p class="kicker font-mono text-[10px] md:text-sm">Writing Edition</p>
+                <SiteSwitcher activeSite="blog" tabs={siteTabs} />
+            </div>
         </div>
         <a href={siteUrls.home} class="mt-2 block text-center text-ink no-underline">
             <h1
@@ -54,7 +55,6 @@ const year = new Date().getFullYear();
                             </a>
                         ))
                     }
-                    <NavDropdown client:load label="Sites ▾" links={crossAppLinks} />
                 </nav>
                 <button
                     id="theme-toggle"

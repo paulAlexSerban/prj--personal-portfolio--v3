@@ -1,3 +1,5 @@
+import type { SiteTab } from './types.ts';
+
 export type AppSegment = 'home' | 'blog' | 'quiz';
 
 export interface SiteUrlsConfig {
@@ -66,4 +68,12 @@ export function isNavLinkActive(pathname: string, href: string, base: string): b
     }
 
     return normalizedPath.startsWith(normalizedHref);
+}
+
+export function buildSiteTabs(urls: CrossAppUrls): SiteTab[] {
+    return [
+        { id: 'portfolio', label: 'Portfolio', href: urls.portfolio },
+        { id: 'blog', label: 'Blog', href: urls.blog },
+        { id: 'quiz', label: 'Quiz', href: urls.quiz },
+    ];
 }

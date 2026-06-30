@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { createSiteUrls, isNavLinkActive } from './urls.ts';
+import { buildSiteTabs, createSiteUrls, isNavLinkActive } from './urls.ts';
 
 const production = {
     portfolio: 'https://paulserban.eu',
@@ -39,5 +39,21 @@ describe('isNavLinkActive', () => {
 
         expect(isNavLinkActive('/prj/home/', base, base)).toBe(true);
         expect(isNavLinkActive('/prj/home/portfolio/', base, base)).toBe(false);
+    });
+});
+
+describe('buildSiteTabs', () => {
+    it('returns all three site tabs with correct hrefs', () => {
+        const tabs = buildSiteTabs({
+            portfolio: '/home/',
+            blog: '/blog/',
+            quiz: '/quiz/',
+        });
+
+        expect(tabs).toEqual([
+            { id: 'portfolio', label: 'Portfolio', href: '/home/' },
+            { id: 'blog', label: 'Blog', href: '/blog/' },
+            { id: 'quiz', label: 'Quiz', href: '/quiz/' },
+        ]);
     });
 });
