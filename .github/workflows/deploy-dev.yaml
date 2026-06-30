@@ -35,8 +35,6 @@ jobs:
                   pnpm --filter @prj--personal-portfolio--v3/tools--content-sync start
                   pnpm --filter @prj--personal-portfolio--v3/tools--mdx-ingest start
                   pnpm --filter @prj--personal-portfolio--v3/tools--json-ingest start
-            - name: Finalize content database for artifact upload
-              run: pnpm --filter @prj--personal-portfolio--v3/shared--db db:finalize
             - name: Export quiz JSON
               run: pnpm --filter @prj--personal-portfolio--v3/shared--quiz-export start
             - name: Upload content DB
