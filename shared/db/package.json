@@ -14,7 +14,8 @@
         "typecheck": "tsc -b",
         "db:generate": "drizzle-kit generate",
         "db:migrate": "drizzle-kit migrate",
-        "db:studio": "drizzle-kit studio"
+        "db:studio": "drizzle-kit studio",
+        "db:finalize": "node --experimental-strip-types src/finalize-for-artifact.ts"
     },
     "dependencies": {
         "@prj--personal-portfolio--v3/shared--db-schema": "workspace:*",

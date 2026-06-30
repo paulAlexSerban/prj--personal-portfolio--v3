@@ -35,31 +35,8 @@ jobs:
                   pnpm --filter @prj--personal-portfolio--v3/tools--content-sync start
                   pnpm --filter @prj--personal-portfolio--v3/tools--mdx-ingest start
                   pnpm --filter @prj--personal-portfolio--v3/tools--json-ingest start
-            - name: Checkpoint SQLite WAL
-              run: |
-                  node --input-type=module <<'EOF'
-                  import Database from 'better-sqlite3';
-                  const db = new Database(process.env.DATABASE_PATH);
-                  db.pragma('wal_checkpoint(FULL)');
-                  db.close();
-                  console.log('WAL checkpoint complete');
-                  EOF
-            - name: Verify ingested content
-              run: |
-                  node --input-type=module <<'EOF'
-                  import Database from 'better-sqlite3';
-                  const db = new Database(process.env.DATABASE_PATH);
-                  const profile = db.prepare("SELECT COUNT(*) AS c FROM profile").get().c;
-                  const projects = db.prepare("SELECT COUNT(*) AS c FROM projects WHERE status = 'published'").get().c;
-                  const posts = db.prepare("SELECT COUNT(*) AS c FROM posts WHERE status = 'published'").get().c;
-                  const questions = db.prepare("SELECT COUNT(*) AS c FROM questions WHERE status = 'published'").get().c;
-                  console.log({ profile, projects, posts, questions });
-                  db.close();
-                  if (profile === 0) {
-                    console.error('content.db has no profile row — ingest likely failed or content repo is empty');
-                    process.exit(1);
-                  }
-                  EOF
+            - name: Finalize content database for artifact upload
+              run: pnpm --filter @prj--personal-portfolio--v3/shared--db db:finalize
             - name: Export quiz JSON
               run: pnpm --filter @prj--personal-portfolio--v3/shared--quiz-export start
             - name: Upload content DB
