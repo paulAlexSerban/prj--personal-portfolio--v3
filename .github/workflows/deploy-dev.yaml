@@ -35,6 +35,15 @@ jobs:
                   if-no-files-found: error
                   retention-days: 1
 
+    # build portfolio and upload artifact
+    # build blog and upload artifact
+    # build quiz and upload artifact
+    # download artifacts
+    # merge artifacts
+    # scaffold navigation
+    # upload pages artifact
+
+
     build:
         needs: ingest
         runs-on: ubuntu-latest

@@ -57,7 +57,11 @@ export function Masthead() {
             >
               Portfolio
             </a>
-            <a href={siteUrls.blog} className="hover:underline" {...externalLinkAttrs(siteUrls.blog)}>
+            <a
+              href={siteUrls.blog}
+              className="hover:underline"
+              {...externalLinkAttrs(siteUrls.blog)}
+            >
               Blog
             </a>
           </nav>
