@@ -1,11 +1,14 @@
 import { execSync } from 'node:child_process';
 
 function clonePrivateRepo(repoUrl: string, targetDir: string, token: string) {
-    const authenticatedUrl = repoUrl.replace('https://github.com/', `https://${token}@github.com/`);
+    const url = new URL(repoUrl);
+    url.username = 'x-access-token';
+    url.password = token;
 
     try {
-        execSync(`git clone ${authenticatedUrl} ${targetDir}`, {
+        execSync(`git clone --depth 1 ${JSON.stringify(url.toString())} ${JSON.stringify(targetDir)}`, {
             stdio: 'inherit',
+            env: { ...process.env, GIT_TERMINAL_PROMPT: '0' },
         });
         console.log(`Successfully cloned to ${targetDir}`);
     } catch (error) {

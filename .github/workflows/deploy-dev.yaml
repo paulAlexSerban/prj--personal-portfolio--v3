@@ -26,7 +26,10 @@ jobs:
               env:
                   GITHUB_TOKEN: ${{ secrets.CONTENT_REPO_TOKEN }}
                   CONTENT_REPO_GIT_URL: https://github.com/paulAlexSerban/content--paulserban.eu.git
-              run: pnpm start
+              run: |
+                  pnpm --filter @prj--personal-portfolio--v3/tools--content-sync start
+                  pnpm --filter @prj--personal-portfolio--v3/tools--mdx-ingest start
+                  pnpm --filter @prj--personal-portfolio--v3/tools--json-ingest start
             - name: Upload content DB
               uses: actions/upload-artifact@v4
               with:

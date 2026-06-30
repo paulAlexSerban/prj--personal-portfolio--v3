@@ -1,18 +1,24 @@
 ---
-import { MobileNav } from '@prj--personal-portfolio--v3/shared--navigation';
+import { MobileNav, NavDropdown } from '@prj--personal-portfolio--v3/shared--navigation';
 import { externalLinkAttrs, isNavLinkActive, siteUrls } from '../lib/urls.ts';
 
 const navLinks = [
     { label: 'Posts', href: siteUrls.post },
     { label: 'Snippets', href: siteUrls.snippet },
     { label: 'Book Notes', href: siteUrls.booknote },
+];
+
+const crossAppLinks = [
     { label: 'Portfolio', href: siteUrls.portfolio },
     { label: 'Quiz', href: siteUrls.quiz },
 ];
 
 const pathname = Astro.url.pathname;
 
-const mobileLinks = navLinks.map((link) => ({ ...link, active: isNavLinkActive(pathname, link.href) }));
+const mobileNavLinks = [
+    ...navLinks.map((link) => ({ ...link, active: isNavLinkActive(pathname, link.href) })),
+    ...crossAppLinks.map((link) => ({ ...link, active: isNavLinkActive(pathname, link.href) })),
+];
 
 const year = new Date().getFullYear();
 ---
@@ -35,7 +41,7 @@ const year = new Date().getFullYear();
         <div class="mt-2 flex flex-wrap items-center justify-between gap-2">
             <p class="kicker text-[11px]">Vol. {year}</p>
             <div class="flex items-center gap-3 md:gap-5">
-                <nav class="hidden md:flex flex-wrap gap-5 text-[11px] smallcaps" aria-label="Primary">
+                <nav class="hidden md:flex flex-wrap items-center gap-5 text-[11px] smallcaps" aria-label="Primary">
                     {
                         navLinks.map((link) => (
                             <a
@@ -48,6 +54,7 @@ const year = new Date().getFullYear();
                             </a>
                         ))
                     }
+                    <NavDropdown client:load label="Sites ▾" links={crossAppLinks} />
                 </nav>
                 <button
                     id="theme-toggle"
@@ -59,7 +66,7 @@ const year = new Date().getFullYear();
                     <span id="theme-toggle-icon" aria-hidden="true">☾</span>
                     <span id="theme-toggle-label">Dark</span>
                 </button>
-                <MobileNav client:load links={mobileLinks} />
+                <MobileNav client:load links={mobileNavLinks} />
             </div>
         </div>
     </div>

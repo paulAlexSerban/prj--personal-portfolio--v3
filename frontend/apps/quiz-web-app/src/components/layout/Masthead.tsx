@@ -9,6 +9,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@prj--personal-portfolio--v3/shared--ui";
+import { NavDropdown } from "@prj--personal-portfolio--v3/shared--navigation";
 import { externalLinkAttrs, siteUrls } from "@/lib/urls";
 import { dayOfYear, formatDateline, isoWeek } from "@/utils/dates";
 
@@ -20,6 +21,11 @@ const navItems = [
   { to: "/stats", label: "Progress" },
   { to: "/settings", label: "Settings" },
 ] as const;
+
+const crossAppLinks = [
+  { label: "Portfolio", href: siteUrls.portfolio },
+  { label: "Blog", href: siteUrls.blog },
+];
 
 export function Masthead() {
   const [open, setOpen] = useState(false);
@@ -38,81 +44,74 @@ export function Masthead() {
           </h1>
         </Link>
         <div className="rule-double mt-2" />
-        <div className="flex items-center justify-between mt-2 flex-wrap gap-2">
+        <div className="relative z-20 mt-2 flex flex-wrap items-center justify-between gap-2">
           <p className="kicker text-[11px]">{formatDateline()}</p>
 
-          <nav
-            className="hidden md:flex gap-5 text-[11px] smallcaps flex-wrap"
-            aria-label="Primary"
-          >
-            {navItems.map((item) => (
-              <Link key={item.to} to={item.to} className="hover:underline">
-                {item.label}
-              </Link>
-            ))}
-            <a
-              href={siteUrls.portfolio}
-              className="hover:underline"
-              {...externalLinkAttrs(siteUrls.portfolio)}
-            >
-              Portfolio
-            </a>
-            <a
-              href={siteUrls.blog}
-              className="hover:underline"
-              {...externalLinkAttrs(siteUrls.blog)}
-            >
-              Blog
-            </a>
-          </nav>
+          <div className="flex items-center gap-3">
+            <div className="hidden md:block">
+              <NavDropdown label="Sites ▾" links={crossAppLinks} placement="top" />
+            </div>
 
-          <Sheet open={open} onOpenChange={setOpen}>
-            <SheetTrigger asChild>
-              <Button
-                type="button"
-                variant="outline"
-                size="icon"
-                aria-label="Open navigation menu"
-                className="md:hidden rounded-none border-ink"
-              >
-                <Menu className="h-4 w-4" />
-              </Button>
-            </SheetTrigger>
-            <SheetContent side="right" className="border-l-[3px] border-ink">
-              <SheetHeader>
-                <SheetTitle className="kicker text-left text-sm smallcaps">Navigation</SheetTitle>
-              </SheetHeader>
-              <nav className="mt-6 flex flex-col gap-1 smallcaps" aria-label="Primary mobile">
-                {navItems.map((item) => (
-                  <Link
-                    key={item.to}
-                    to={item.to}
+            <Sheet open={open} onOpenChange={setOpen}>
+              <SheetTrigger asChild>
+                <Button
+                  type="button"
+                  variant="outline"
+                  size="icon"
+                  aria-label="Open navigation menu"
+                  className="md:hidden rounded-none border-ink"
+                >
+                  <Menu className="h-4 w-4" />
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="right" className="border-l-[3px] border-ink">
+                <SheetHeader>
+                  <SheetTitle className="kicker text-left text-sm smallcaps">Navigation</SheetTitle>
+                </SheetHeader>
+                <nav className="mt-6 flex flex-col gap-1 smallcaps" aria-label="Primary mobile">
+                  {navItems.map((item) => (
+                    <Link
+                      key={item.to}
+                      to={item.to}
+                      onClick={() => setOpen(false)}
+                      className="border-b border-rule py-3 text-base no-underline text-ink hover:underline"
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                  <p className="kicker mt-4 mb-1 border-t border-rule pt-3 text-xs">Other Sites</p>
+                  <a
+                    href={siteUrls.portfolio}
                     onClick={() => setOpen(false)}
                     className="border-b border-rule py-3 text-base no-underline text-ink hover:underline"
+                    {...externalLinkAttrs(siteUrls.portfolio)}
                   >
-                    {item.label}
-                  </Link>
-                ))}
-                <a
-                  href={siteUrls.portfolio}
-                  onClick={() => setOpen(false)}
-                  className="border-b border-rule py-3 text-base no-underline text-ink hover:underline"
-                  {...externalLinkAttrs(siteUrls.portfolio)}
-                >
-                  Portfolio
-                </a>
-                <a
-                  href={siteUrls.blog}
-                  onClick={() => setOpen(false)}
-                  className="border-b border-rule py-3 text-base no-underline text-ink hover:underline"
-                  {...externalLinkAttrs(siteUrls.blog)}
-                >
-                  Blog
-                </a>
-              </nav>
-            </SheetContent>
-          </Sheet>
+                    Portfolio
+                  </a>
+                  <a
+                    href={siteUrls.blog}
+                    onClick={() => setOpen(false)}
+                    className="border-b border-rule py-3 text-base no-underline text-ink hover:underline"
+                    {...externalLinkAttrs(siteUrls.blog)}
+                  >
+                    Blog
+                  </a>
+                </nav>
+              </SheetContent>
+            </Sheet>
+          </div>
         </div>
+
+        <nav
+          className="relative z-0 mt-2 hidden flex-wrap gap-5 text-[11px] smallcaps md:flex"
+          aria-label="Primary"
+        >
+          {navItems.map((item) => (
+            <Link key={item.to} to={item.to} className="hover:underline">
+              {item.label}
+            </Link>
+          ))}
+        </nav>
       </div>
     </header>
   );
