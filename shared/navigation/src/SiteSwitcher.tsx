@@ -12,10 +12,7 @@ export function SiteSwitcher({ activeSite, tabs }: Props) {
             {tabs.map((tab, index) => (
                 <div key={tab.id} className={`flex ${index > 0 ? 'border-l border-ink' : ''}`}>
                     {tab.id === activeSite ? (
-                        <span
-                            aria-current="page"
-                            className="bg-ink px-2 py-0.5 font-bold text-aged"
-                        >
+                        <span aria-current="page" className="bg-ink px-2 py-0.5 font-bold text-aged">
                             {tab.label}
                         </span>
                     ) : (
