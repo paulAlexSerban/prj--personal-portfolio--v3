@@ -18,9 +18,7 @@ function escapeRegExp(value: string): string {
 }
 
 /** Build-time pattern for /data/* runtime cache — must be RegExp, not a closure (Workbox inlines sw.js). */
-const quizDataUrlPattern = new RegExp(
-  `^https?://[^/]+${escapeRegExp(`${appBase}/data/`)}`,
-);
+const quizDataUrlPattern = new RegExp(`^https?://[^/]+${escapeRegExp(`${appBase}/data/`)}`);
 
 // Strict CSR-only Vite app — client-side rendering only.
 export default defineConfig({
