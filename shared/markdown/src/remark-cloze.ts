@@ -32,9 +32,7 @@ export const remarkCloze: Plugin<[RemarkClozeOptions?], Root> = (options = {}) =
                     replacements.push({ type: 'text', value: value.slice(lastIndex, match.index) });
                 }
                 const inner = match[1];
-                const html = reveal
-                    ? `<b class="cloze-filled">${inner}</b>`
-                    : `<span class="cloze-blank">[…]</span>`;
+                const html = reveal ? `<b class="cloze-filled">${inner}</b>` : `<span class="cloze-blank">[…]</span>`;
                 replacements.push({ type: 'html', value: html });
                 lastIndex = match.index + match[0].length;
             }
