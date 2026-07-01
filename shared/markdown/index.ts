@@ -21,3 +21,4 @@ export { compileMarkdown, type CompileMarkdownOptions } from './src/markdown.ts'
 export { sanitizeHtml } from './src/sanitize.ts';
 export { ALLOWED_ATTR, ALLOWED_TAGS } from './src/allowlist.ts';
 export { extractRelativeImagePaths, questionAssetUrl, rewriteImagePaths } from './src/assets.ts';
+export { remarkPlugins, rehypePlugins } from './src/plugins.ts';

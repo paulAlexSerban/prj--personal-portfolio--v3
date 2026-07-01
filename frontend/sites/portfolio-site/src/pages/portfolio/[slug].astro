@@ -1,8 +1,7 @@
 ---
 import { evaluate } from '@mdx-js/mdx';
+import { rehypePlugins, remarkPlugins } from '@prj--personal-portfolio--v3/shared--markdown';
 import * as runtime from 'react/jsx-runtime';
-import rehypeHighlight from 'rehype-highlight';
-import remarkGfm from 'remark-gfm';
 
 import TagList from '../../components/TagList.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
@@ -34,8 +33,8 @@ if (!project) {
 
 const { default: Content } = await evaluate(project.body, {
     ...runtime,
-    remarkPlugins: [remarkGfm],
-    rehypePlugins: [rehypeHighlight],
+    remarkPlugins: [...remarkPlugins],
+    rehypePlugins: [...rehypePlugins],
 });
 
 const description = project.excerpt ?? project.problem ?? project.subheading ?? undefined;

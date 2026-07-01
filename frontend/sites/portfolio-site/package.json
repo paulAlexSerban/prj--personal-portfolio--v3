@@ -17,6 +17,7 @@
         "@prj--personal-portfolio--v3/shared--db": "workspace:*",
         "@prj--personal-portfolio--v3/shared--db-schema": "workspace:*",
         "@mdx-js/mdx": "^3.1.1",
+        "@prj--personal-portfolio--v3/shared--markdown": "workspace:*",
         "@prj--personal-portfolio--v3/shared--navigation": "workspace:*",
         "@prj--personal-portfolio--v3/shared--ui": "workspace:*",
         "astro": "^5.16.15",
@@ -25,8 +26,6 @@
         "lucide-react": "^0.575.0",
         "react": "^19.2.0",
         "react-dom": "^19.2.0",
-        "rehype-highlight": "^7.0.2",
-        "remark-gfm": "^4.0.1",
         "tailwindcss": "^4.2.1",
         "tw-animate-css": "^1.3.4"
     },

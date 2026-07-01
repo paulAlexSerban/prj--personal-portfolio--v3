@@ -1,6 +1,6 @@
 import { copyFile, mkdir } from 'node:fs/promises';
 import path from 'node:path';
-import { compileContent, detectContentFormat, extractRelativeImagePaths, questionAssetUrl, rewriteImagePaths } from '@prj--personal-portfolio--v3/shared--quiz-markdown';
+import { compileContent, detectContentFormat, extractRelativeImagePaths, questionAssetUrl, rewriteImagePaths } from '@prj--personal-portfolio--v3/shared--markdown';
 import type { ExportedQuestion, QuizData } from './contract.ts';
 
 export interface CompileOptions {

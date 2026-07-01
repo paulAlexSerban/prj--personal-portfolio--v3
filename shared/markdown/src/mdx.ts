@@ -15,7 +15,7 @@ function readAttr(attrs: string, name: string): string | undefined {
 
 /**
  * Transform a small allow-listed MDX component set into plain HTML before markdown
- * compilation. Unknown JSX is left as-is (marked will escape or ignore it).
+ * compilation. Unknown JSX is left as-is (the markdown compiler will escape or ignore it).
  */
 export function preprocessMdx(src: string): string {
     let out = src;
