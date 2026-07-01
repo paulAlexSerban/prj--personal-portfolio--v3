@@ -24,7 +24,9 @@ import { todayISO, uid } from "../utils/dates";
 const STORAGE_KEY = "quiz-web-app:v1";
 
 /** Run the persisted-state migration (backup + clamp). Exported for tests. */
-export function runPersistMigration(persistedState: MigratablePersistedState): MigratablePersistedState {
+export function runPersistMigration(
+  persistedState: MigratablePersistedState,
+): MigratablePersistedState {
   if (typeof window !== "undefined" && window.localStorage) {
     const backupKey = `${STORAGE_KEY}${PERSIST_BACKUP_KEY_SUFFIX}`;
     if (!window.localStorage.getItem(backupKey)) {

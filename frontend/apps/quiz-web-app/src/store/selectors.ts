@@ -17,25 +17,14 @@ export interface QueueScope {
   ignoreLimits?: boolean;
 }
 
-/** Cram ordering: learning due → new → review → everything else. */
-function sortCramQueue(cards: CardState[], now: number): CardState[] {
+/** Cram ordering: learning/relearning (due first) → new → review. */
+function sortCramQueue(cards: CardState[]): CardState[] {
   const learning = cards
-    .filter(
-      (c) =>
-        (c.cardType === "learning" || c.cardType === "relearning") && (c.learningDueAt ?? 0) <= now,
-    )
+    .filter((c) => c.cardType === "learning" || c.cardType === "relearning")
     .sort((a, b) => (a.learningDueAt ?? 0) - (b.learningDueAt ?? 0));
   const newC = cards.filter((c) => c.cardType === "new");
   const review = cards.filter((c) => c.cardType === "review");
-  const rest = cards.filter(
-    (c) =>
-      !learning.includes(c) &&
-      !newC.includes(c) &&
-      !review.includes(c) &&
-      c.cardType !== "learning" &&
-      c.cardType !== "relearning",
-  );
-  return [...learning, ...newC, ...review, ...rest];
+  return [...learning, ...newC, ...review];
 }
 
 /**
@@ -62,7 +51,7 @@ export function selectStudyQueue(state: QuizState, scope: QueueScope = {}): Card
   }
 
   if (scope.cram) {
-    return sortCramQueue(cards, now);
+    return sortCramQueue(cards);
   }
 
   const globalDaily =

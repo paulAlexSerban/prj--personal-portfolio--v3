@@ -226,9 +226,20 @@ export function useStudySession(scope: StudySessionScope): UseStudySessionResult
           }));
           setRevealed(true);
           setGradedCorrect(null);
+          if (cram && questionSlugs?.length === 1) {
+            setBuried((prev) => {
+              const next = new Set(prev);
+              next.delete(slug);
+              return next;
+            });
+          }
         },
       },
     });
+    // Single-card cram: one rating then end the session (practice, not a full queue).
+    if (cram && questionSlugs?.length === 1) {
+      setBuried((prev) => new Set(prev).add(slug));
+    }
   }
 
   function buryCurrent() {

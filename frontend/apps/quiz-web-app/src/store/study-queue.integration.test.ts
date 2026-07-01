@@ -51,4 +51,25 @@ describe("/study queue (real store)", () => {
     expect(selectStudyQueue(s, { questionSlugs: [SLUGS[20]], cram: true }).length).toBe(1);
     expect(selectStudyQueue(s, { now: Date.now() }).length).toBe(0);
   });
+
+  it("cram mode returns relearning cards even when the learning step is not yet due", () => {
+    const slug = SLUGS[0];
+    useStore.getState().addPost(POST, [slug]);
+    const card = useStore.getState().cardStates[slug];
+    useStore.setState({
+      cardStates: {
+        [slug]: {
+          ...card,
+          cardType: "relearning",
+          learningStep: 0,
+          learningDueAt: Date.now() + 600_000,
+        },
+      },
+    });
+    const s = useStore.getState();
+    expect(selectStudyQueue(s, { questionSlugs: [slug], cram: true, now: Date.now() }).length).toBe(
+      1,
+    );
+    expect(selectStudyQueue(s, { now: Date.now() }).length).toBe(0);
+  });
 });
