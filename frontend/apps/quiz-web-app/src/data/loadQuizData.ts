@@ -10,7 +10,7 @@ import type {
 } from "@prj--personal-portfolio--v3/tools--quiz-export/contract";
 
 /** Base path for the static JSON emitted by `shared--quiz-export`. */
-const DATA_BASE = "/data";
+const DATA_BASE = `${import.meta.env.BASE_URL.replace(/\/$/, "")}/data`;
 
 // Simple in-memory caches so repeated navigations don't re-fetch.
 let postsIndexCache: ExportedPostEntry[] | null = null;
