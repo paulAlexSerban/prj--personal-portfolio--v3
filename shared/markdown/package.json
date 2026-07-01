@@ -11,6 +11,10 @@
         "./allowlist": {
             "types": "./src/allowlist.ts",
             "import": "./src/allowlist.ts"
+        },
+        "./plugins": {
+            "types": "./src/plugins.ts",
+            "import": "./src/plugins.ts"
         }
     },
     "scripts": {

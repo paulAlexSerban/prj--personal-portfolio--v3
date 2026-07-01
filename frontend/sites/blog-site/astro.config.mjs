@@ -27,7 +27,7 @@ export default defineConfig({
             include: ['react', 'react-dom', 'react/jsx-dev-runtime', 'react/jsx-runtime'],
         },
         ssr: {
-            external: ['better-sqlite3'],
+            external: ['better-sqlite3', 'isomorphic-dompurify', 'jsdom'],
             noExternal: ['@prj--personal-portfolio--v3/shared--ui', '@prj--personal-portfolio--v3/shared--navigation'],
         },
     },
