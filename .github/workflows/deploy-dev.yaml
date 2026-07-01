@@ -87,7 +87,7 @@ jobs:
         runs-on: ubuntu-latest
         timeout-minutes: 20
         steps:
-            - uses: actions/checkout@v4
+            - uses: actions/checkout@v7
             - uses: ./.github/actions/setup-monorepo
 
             - name: Configure Pages
@@ -95,7 +95,7 @@ jobs:
               uses: actions/configure-pages@v4
 
             - name: Download content DB
-              uses: actions/download-artifact@v4
+              uses: actions/download-artifact@v8
               with:
                   name: content-db
                   path: database/output/
@@ -115,36 +115,36 @@ jobs:
                   if-no-files-found: error
                   retention-days: 1
 
-    # build-quiz:
-    #     needs: ingest
-    #     runs-on: ubuntu-latest
-    #     timeout-minutes: 20
-    #     steps:
-    #         - uses: actions/checkout@v4
-    #         - uses: ./.github/actions/setup-monorepo
+    build-quiz:
+        needs: ingest-content
+        runs-on: ubuntu-latest
+        timeout-minutes: 20
+        steps:
+            - uses: actions/checkout@v7
+            - uses: ./.github/actions/setup-monorepo
 
-    #         - name: Configure Pages
-    #           id: pages
-    #           uses: actions/configure-pages@v4
+            - name: Configure Pages
+              id: pages
+              uses: actions/configure-pages@v4
 
-    #         - name: Download quiz data
-    #           uses: actions/download-artifact@v4
-    #           with:
-    #               name: quiz-data
-    #               path: frontend/apps/quiz-web-app/public/data/
+            - name: Download quiz data
+              uses: actions/download-artifact@v8
+              with:
+                  name: quiz-data
+                  path: frontend/apps/quiz-web-app/public/data/
 
-    #         - name: Build quiz-web-app
-    #           env:
-    #               VITE_APP_BASE: ${{ steps.pages.outputs.base_path }}/quiz
-    #           run: pnpm --filter @prj--personal-portfolio--v3/frontend--quiz-web-app build
+            - name: Build quiz-web-app
+              env:
+                  VITE_APP_BASE: ${{ steps.pages.outputs.base_path }}/quiz
+              run: pnpm --filter @prj--personal-portfolio--v3/frontend--quiz-web-app build
 
-    #         - name: Upload quiz artifact
-    #           uses: actions/upload-artifact@v7
-    #           with:
-    #               name: quiz-dist
-    #               path: frontend/apps/quiz-web-app/dist/
-    #               if-no-files-found: error
-    #               retention-days: 1
+            - name: Upload quiz artifact
+              uses: actions/upload-artifact@v7
+              with:
+                  name: quiz-dist
+                  path: frontend/apps/quiz-web-app/dist/
+                  if-no-files-found: error
+                  retention-days: 1
 
     # merge:
     #     needs: [build-portfolio, build-blog, build-quiz]
