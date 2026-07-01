@@ -24,7 +24,7 @@ jobs:
         runs-on: ubuntu-latest
         timeout-minutes: 30
         steps:
-            - uses: actions/checkout@v4
+            - uses: actions/checkout@v7
             - uses: ./.github/actions/setup-monorepo
             - run: pnpm db:migrate
             - name: Ingest content
@@ -32,190 +32,187 @@ jobs:
                   GITHUB_TOKEN: ${{ secrets.CONTENT_REPO_TOKEN }}
                   CONTENT_REPO_GIT_URL: https://github.com/paulAlexSerban/content--paulserban.eu.git
               run: |
-                  pnpm --filter @prj--personal-portfolio--v3/tools--content-sync start
-                  pnpm --filter @prj--personal-portfolio--v3/tools--mdx-ingest start
-                  pnpm --filter @prj--personal-portfolio--v3/tools--json-ingest start
-            - name: Export quiz JSON
-              run: pnpm --filter @prj--personal-portfolio--v3/shared--quiz-export start
+                  pnpm start
+
             - name: Upload content DB
-              uses: actions/upload-artifact@v4
+              uses: actions/upload-artifact@v7
               with:
                   name: content-db
                   path: database/output/content.db
                   if-no-files-found: error
                   retention-days: 1
             - name: Upload quiz data
-              uses: actions/upload-artifact@v4
+              uses: actions/upload-artifact@v7
               with:
                   name: quiz-data
                   path: frontend/apps/quiz-web-app/public/data/
                   if-no-files-found: error
                   retention-days: 1
 
-    build-portfolio:
-        needs: ingest
-        runs-on: ubuntu-latest
-        timeout-minutes: 20
-        steps:
-            - uses: actions/checkout@v4
-            - uses: ./.github/actions/setup-monorepo
+    # build-portfolio:
+    #     needs: ingest
+    #     runs-on: ubuntu-latest
+    #     timeout-minutes: 20
+    #     steps:
+    #         - uses: actions/checkout@v4
+    #         - uses: ./.github/actions/setup-monorepo
 
-            - name: Configure Pages
-              id: pages
-              uses: actions/configure-pages@v4
+    #         - name: Configure Pages
+    #           id: pages
+    #           uses: actions/configure-pages@v4
 
-            - name: Download content DB
-              uses: actions/download-artifact@v4
-              with:
-                  name: content-db
-                  path: database/output/
+    #         - name: Download content DB
+    #           uses: actions/download-artifact@v4
+    #           with:
+    #               name: content-db
+    #               path: database/output/
 
-            - name: Build portfolio-site
-              env:
-                  ASTRO_SITE: ${{ steps.pages.outputs.origin }}
-                  ASTRO_BASE: ${{ steps.pages.outputs.base_path }}/home
-                  DATABASE_PATH: ${{ github.workspace }}/database/output/content.db
-              run: pnpm --filter @prj--personal-portfolio--v3/frontend--portfolio-site build
+    #         - name: Build portfolio-site
+    #           env:
+    #               ASTRO_SITE: ${{ steps.pages.outputs.origin }}
+    #               ASTRO_BASE: ${{ steps.pages.outputs.base_path }}/home
+    #               DATABASE_PATH: ${{ github.workspace }}/database/output/content.db
+    #           run: pnpm --filter @prj--personal-portfolio--v3/frontend--portfolio-site build
 
-            - name: Upload portfolio artifact
-              uses: actions/upload-artifact@v4
-              with:
-                  name: portfolio-dist
-                  path: frontend/sites/portfolio-site/dist/
-                  if-no-files-found: error
-                  retention-days: 1
+    #         - name: Upload portfolio artifact
+    #           uses: actions/upload-artifact@v7
+    #           with:
+    #               name: portfolio-dist
+    #               path: frontend/sites/portfolio-site/dist/
+    #               if-no-files-found: error
+    #               retention-days: 1
 
-    build-blog:
-        needs: ingest
-        runs-on: ubuntu-latest
-        timeout-minutes: 20
-        steps:
-            - uses: actions/checkout@v4
-            - uses: ./.github/actions/setup-monorepo
+    # build-blog:
+    #     needs: ingest
+    #     runs-on: ubuntu-latest
+    #     timeout-minutes: 20
+    #     steps:
+    #         - uses: actions/checkout@v4
+    #         - uses: ./.github/actions/setup-monorepo
 
-            - name: Configure Pages
-              id: pages
-              uses: actions/configure-pages@v4
+    #         - name: Configure Pages
+    #           id: pages
+    #           uses: actions/configure-pages@v4
 
-            - name: Download content DB
-              uses: actions/download-artifact@v4
-              with:
-                  name: content-db
-                  path: database/output/
+    #         - name: Download content DB
+    #           uses: actions/download-artifact@v4
+    #           with:
+    #               name: content-db
+    #               path: database/output/
 
-            - name: Build blog-site
-              env:
-                  ASTRO_SITE: ${{ steps.pages.outputs.origin }}
-                  ASTRO_BASE: ${{ steps.pages.outputs.base_path }}/blog
-                  DATABASE_PATH: ${{ github.workspace }}/database/output/content.db
-              run: pnpm --filter @prj--personal-portfolio--v3/frontend--blog-site build
+    #         - name: Build blog-site
+    #           env:
+    #               ASTRO_SITE: ${{ steps.pages.outputs.origin }}
+    #               ASTRO_BASE: ${{ steps.pages.outputs.base_path }}/blog
+    #               DATABASE_PATH: ${{ github.workspace }}/database/output/content.db
+    #           run: pnpm --filter @prj--personal-portfolio--v3/frontend--blog-site build
 
-            - name: Upload blog artifact
-              uses: actions/upload-artifact@v4
-              with:
-                  name: blog-dist
-                  path: frontend/sites/blog-site/dist/
-                  if-no-files-found: error
-                  retention-days: 1
+    #         - name: Upload blog artifact
+    #           uses: actions/upload-artifact@v7
+    #           with:
+    #               name: blog-dist
+    #               path: frontend/sites/blog-site/dist/
+    #               if-no-files-found: error
+    #               retention-days: 1
 
-    build-quiz:
-        needs: ingest
-        runs-on: ubuntu-latest
-        timeout-minutes: 20
-        steps:
-            - uses: actions/checkout@v4
-            - uses: ./.github/actions/setup-monorepo
+    # build-quiz:
+    #     needs: ingest
+    #     runs-on: ubuntu-latest
+    #     timeout-minutes: 20
+    #     steps:
+    #         - uses: actions/checkout@v4
+    #         - uses: ./.github/actions/setup-monorepo
 
-            - name: Configure Pages
-              id: pages
-              uses: actions/configure-pages@v4
+    #         - name: Configure Pages
+    #           id: pages
+    #           uses: actions/configure-pages@v4
 
-            - name: Download quiz data
-              uses: actions/download-artifact@v4
-              with:
-                  name: quiz-data
-                  path: frontend/apps/quiz-web-app/public/data/
+    #         - name: Download quiz data
+    #           uses: actions/download-artifact@v4
+    #           with:
+    #               name: quiz-data
+    #               path: frontend/apps/quiz-web-app/public/data/
 
-            - name: Build quiz-web-app
-              env:
-                  VITE_APP_BASE: ${{ steps.pages.outputs.base_path }}/quiz
-              run: pnpm --filter @prj--personal-portfolio--v3/frontend--quiz-web-app build
+    #         - name: Build quiz-web-app
+    #           env:
+    #               VITE_APP_BASE: ${{ steps.pages.outputs.base_path }}/quiz
+    #           run: pnpm --filter @prj--personal-portfolio--v3/frontend--quiz-web-app build
 
-            - name: Upload quiz artifact
-              uses: actions/upload-artifact@v4
-              with:
-                  name: quiz-dist
-                  path: frontend/apps/quiz-web-app/dist/
-                  if-no-files-found: error
-                  retention-days: 1
+    #         - name: Upload quiz artifact
+    #           uses: actions/upload-artifact@v7
+    #           with:
+    #               name: quiz-dist
+    #               path: frontend/apps/quiz-web-app/dist/
+    #               if-no-files-found: error
+    #               retention-days: 1
 
-    merge:
-        needs: [build-portfolio, build-blog, build-quiz]
-        runs-on: ubuntu-latest
-        timeout-minutes: 10
-        steps:
-            - name: Configure Pages
-              id: pages
-              uses: actions/configure-pages@v4
+    # merge:
+    #     needs: [build-portfolio, build-blog, build-quiz]
+    #     runs-on: ubuntu-latest
+    #     timeout-minutes: 10
+    #     steps:
+    #         - name: Configure Pages
+    #           id: pages
+    #           uses: actions/configure-pages@v4
 
-            - name: Download portfolio artifact
-              uses: actions/download-artifact@v4
-              with:
-                  name: portfolio-dist
-                  path: portfolio-dist/
+    #         - name: Download portfolio artifact
+    #           uses: actions/download-artifact@v4
+    #           with:
+    #               name: portfolio-dist
+    #               path: portfolio-dist/
 
-            - name: Download blog artifact
-              uses: actions/download-artifact@v4
-              with:
-                  name: blog-dist
-                  path: blog-dist/
+    #         - name: Download blog artifact
+    #           uses: actions/download-artifact@v4
+    #           with:
+    #               name: blog-dist
+    #               path: blog-dist/
 
-            - name: Download quiz artifact
-              uses: actions/download-artifact@v4
-              with:
-                  name: quiz-dist
-                  path: quiz-dist/
+    #         - name: Download quiz artifact
+    #           uses: actions/download-artifact@v4
+    #           with:
+    #               name: quiz-dist
+    #               path: quiz-dist/
 
-            - name: Merge outputs and scaffold navigation
-              env:
-                  REPO_BASE: ${{ steps.pages.outputs.base_path }}
-              run: |
-                  mkdir -p _site/home _site/blog _site/quiz
-                  cp -r portfolio-dist/. _site/home/
-                  cp -r blog-dist/. _site/blog/
-                  cp -r quiz-dist/. _site/quiz/
+    #         - name: Merge outputs and scaffold navigation
+    #           env:
+    #               REPO_BASE: ${{ steps.pages.outputs.base_path }}
+    #           run: |
+    #               mkdir -p _site/home _site/blog _site/quiz
+    #               cp -r portfolio-dist/. _site/home/
+    #               cp -r blog-dist/. _site/blog/
+    #               cp -r quiz-dist/. _site/quiz/
 
-                  # Root → /home redirect
-                  printf '<!DOCTYPE html><html><head><meta http-equiv="refresh" content="0;url=%s/home/"></head><body></body></html>\n' \
-                    "$REPO_BASE" > _site/index.html
+    #               # Root → /home redirect
+    #               printf '<!DOCTYPE html><html><head><meta http-equiv="refresh" content="0;url=%s/home/"></head><body></body></html>\n' \
+    #                 "$REPO_BASE" > _site/index.html
 
-                  # SPA 404 fallback: quiz deep-links redirect to quiz/ with path in sessionStorage
-                  cat > _site/404.html << EOF
-                  <!DOCTYPE html>
-                  <html>
-                  <head>
-                  <script>
-                  (function(){var l=window.location,b='$REPO_BASE';
-                  if(l.pathname.indexOf(b+'/quiz')===0){sessionStorage.setItem('spa:redirect',l.pathname+l.search);l.replace(b+'/quiz/');}
-                  })();
-                  </script>
-                  </head>
-                  <body>Page not found.</body>
-                  </html>
-                  EOF
+    #               # SPA 404 fallback: quiz deep-links redirect to quiz/ with path in sessionStorage
+    #               cat > _site/404.html << EOF
+    #               <!DOCTYPE html>
+    #               <html>
+    #               <head>
+    #               <script>
+    #               (function(){var l=window.location,b='$REPO_BASE';
+    #               if(l.pathname.indexOf(b+'/quiz')===0){sessionStorage.setItem('spa:redirect',l.pathname+l.search);l.replace(b+'/quiz/');}
+    #               })();
+    #               </script>
+    #               </head>
+    #               <body>Page not found.</body>
+    #               </html>
+    #               EOF
 
-            - name: Upload Pages artifact
-              uses: actions/upload-pages-artifact@v3
-              with:
-                  path: _site/
+    #         - name: Upload Pages artifact
+    #           uses: actions/upload-pages-artifact@v3
+    #           with:
+    #               path: _site/
 
-    deploy:
-        needs: merge
-        runs-on: ubuntu-latest
-        environment:
-            name: github-pages
-            url: ${{ steps.deployment.outputs.page_url }}
-        steps:
-            - name: Deploy to GitHub Pages
-              id: deployment
-              uses: actions/deploy-pages@v4
+    # deploy:
+    #     needs: merge
+    #     runs-on: ubuntu-latest
+    #     environment:
+    #         name: github-pages
+    #         url: ${{ steps.deployment.outputs.page_url }}
+    #     steps:
+    #         - name: Deploy to GitHub Pages
+    #           id: deployment
+    #           uses: actions/deploy-pages@v4
