@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { toast } from "sonner";
-import type { ExportedQuestion } from "@prj--personal-portfolio--v3/shared--quiz-export/contract";
+import type { ExportedQuestion } from "@prj--personal-portfolio--v3/tools--quiz-export/contract";
 import type { Rating, SessionStats, ScopeCounts } from "@prj--personal-portfolio--v3/shared--ui";
 import { loadPostQuestions } from "@/data/loadQuizData";
 import { useStore } from "@/store";

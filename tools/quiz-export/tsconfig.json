@@ -9,5 +9,18 @@
     },
     "include": ["index.ts", "src/**/*.ts"],
     "exclude": ["src/**/*.test.ts"],
-    "references": [{ "path": "../db-schema" }, { "path": "../db" }, { "path": "../question-contract" }, { "path": "../quiz-markdown" }]
+    "references": [
+        {
+            "path": "../../shared/db-schema"
+        },
+        {
+            "path": "../../shared/db"
+        },
+        {
+            "path": "../../shared/question-contract"
+        },
+        {
+            "path": "../../shared/quiz-markdown"
+        }
+    ]
 }

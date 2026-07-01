@@ -3,7 +3,7 @@ import { useEffect, useMemo, useState } from "react";
 import type {
   ExportedPostEntry,
   ExportedQuestion,
-} from "@prj--personal-portfolio--v3/shared--quiz-export/contract";
+} from "@prj--personal-portfolio--v3/tools--quiz-export/contract";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { Modal } from "@prj--personal-portfolio--v3/shared--ui";
 import { QuestionPreviewDrawer } from "@/containers/QuestionPreviewDrawer";

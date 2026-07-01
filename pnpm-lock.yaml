@@ -41,15 +41,15 @@ importers:
             '@prj--personal-portfolio--v3/shared--navigation':
                 specifier: workspace:*
                 version: link:../../../shared/navigation
-            '@prj--personal-portfolio--v3/shared--quiz-export':
-                specifier: workspace:*
-                version: link:../../../shared/quiz-export
             '@prj--personal-portfolio--v3/shared--quiz-markdown':
                 specifier: workspace:*
                 version: link:../../../shared/quiz-markdown
             '@prj--personal-portfolio--v3/shared--ui':
                 specifier: workspace:*
                 version: link:../../../shared/ui
+            '@prj--personal-portfolio--v3/tools--quiz-export':
+                specifier: workspace:*
+                version: link:../../../tools/quiz-export
             '@radix-ui/react-accordion':
                 specifier: ^1.2.12
                 version: 1.2.14(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
@@ -505,43 +505,6 @@ importers:
                 specifier: ^6.0.3
                 version: 6.0.3
 
-    shared/quiz-export:
-        dependencies:
-            '@prj--personal-portfolio--v3/shared--db':
-                specifier: workspace:*
-                version: link:../db
-            '@prj--personal-portfolio--v3/shared--db-schema':
-                specifier: workspace:*
-                version: link:../db-schema
-            '@prj--personal-portfolio--v3/shared--question-contract':
-                specifier: workspace:*
-                version: link:../question-contract
-            '@prj--personal-portfolio--v3/shared--quiz-markdown':
-                specifier: workspace:*
-                version: link:../quiz-markdown
-            '@prj--personal-portfolio--v3/tools--mdx-ingest':
-                specifier: workspace:*
-                version: link:../../tools/mdx-ingest
-            drizzle-orm:
-                specifier: ^0.45.2
-                version: 0.45.2(@types/better-sqlite3@7.6.13)(better-sqlite3@12.10.0)
-        devDependencies:
-            '@types/better-sqlite3':
-                specifier: ^7.6.13
-                version: 7.6.13
-            '@types/node':
-                specifier: ^25.9.1
-                version: 25.9.1
-            better-sqlite3:
-                specifier: ^12.10.0
-                version: 12.10.0
-            typescript:
-                specifier: ^6.0.3
-                version: 6.0.3
-            vitest:
-                specifier: ^3.2.4
-                version: 3.2.6(@types/debug@4.1.13)(@types/node@25.9.1)(jiti@2.7.0)(jsdom@29.1.1)(lightningcss@1.32.0)(terser@5.48.0)(tsx@4.22.3)(yaml@2.9.0)
-
     shared/quiz-markdown:
         dependencies:
             isomorphic-dompurify:
@@ -578,12 +541,12 @@ importers:
             '@hookform/resolvers':
                 specifier: ^5.2.2
                 version: 5.4.0(react-hook-form@7.80.0(react@19.2.7))
-            '@prj--personal-portfolio--v3/shared--quiz-export':
-                specifier: workspace:*
-                version: link:../quiz-export
             '@prj--personal-portfolio--v3/shared--quiz-markdown':
                 specifier: workspace:*
                 version: link:../quiz-markdown
+            '@prj--personal-portfolio--v3/tools--quiz-export':
+                specifier: workspace:*
+                version: link:../../tools/quiz-export
             '@radix-ui/react-accordion':
                 specifier: ^1.2.12
                 version: 1.2.14(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
@@ -822,6 +785,46 @@ importers:
             ulidx:
                 specifier: ^2.4.1
                 version: 2.4.1
+
+    tools/quiz-export:
+        dependencies:
+            '@prj--personal-portfolio--v3/shared--db':
+                specifier: workspace:*
+                version: link:../../shared/db
+            '@prj--personal-portfolio--v3/shared--db-schema':
+                specifier: workspace:*
+                version: link:../../shared/db-schema
+            '@prj--personal-portfolio--v3/shared--question-contract':
+                specifier: workspace:*
+                version: link:../../shared/question-contract
+            '@prj--personal-portfolio--v3/shared--quiz-markdown':
+                specifier: workspace:*
+                version: link:../../shared/quiz-markdown
+            '@prj--personal-portfolio--v3/tools--json-ingest':
+                specifier: workspace:*
+                version: link:../json-ingest
+            '@prj--personal-portfolio--v3/tools--mdx-ingest':
+                specifier: workspace:*
+                version: link:../mdx-ingest
+            drizzle-orm:
+                specifier: ^0.45.2
+                version: 0.45.2(@types/better-sqlite3@7.6.13)(better-sqlite3@12.10.0)
+        devDependencies:
+            '@types/better-sqlite3':
+                specifier: ^7.6.13
+                version: 7.6.13
+            '@types/node':
+                specifier: ^25.9.1
+                version: 25.9.1
+            better-sqlite3:
+                specifier: ^12.10.0
+                version: 12.10.0
+            typescript:
+                specifier: ^6.0.3
+                version: 6.0.3
+            vitest:
+                specifier: ^3.2.4
+                version: 3.2.6(@types/debug@4.1.13)(@types/node@25.9.1)(jiti@2.7.0)(jsdom@29.1.1)(lightningcss@1.32.0)(terser@5.48.0)(tsx@4.22.3)(yaml@2.9.0)
 
 packages:
     '@acemir/cssom@0.9.31':

@@ -61,8 +61,6 @@ Flashcard quizes (Anki style spaced repetition) are surfaced as a blog widget, a
 
 ### Workflows
 
-- `.github/workflows/ci.yaml` - format check, typecheck, test, migrations (on push to `main` and PRs).
-- `.github/workflows/ingest-content.yaml` - clones the content repo, runs the ingest pipeline, uploads `database/output/` as an artifact.
 - `.github/workflows/deploy-dev.yaml` - DEV deploy to GitHub Pages. Ingests content, builds all three apps under sub-paths, merges outputs, and publishes via GitHub Pages.
 
 ### Environments

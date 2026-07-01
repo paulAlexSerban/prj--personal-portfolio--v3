@@ -1,16 +1,38 @@
 {
     "files": [],
     "references": [
-        { "path": "./shared/db-schema" },
-        { "path": "./shared/question-contract" },
-        { "path": "./shared/task-manager" },
-        { "path": "./shared/db" },
-        { "path": "./shared/quiz-markdown" },
-        { "path": "./shared/quiz-export" },
-        { "path": "./shared/ui" },
-        { "path": "./shared/navigation" },
-        { "path": "./tools/content-sync" },
-        { "path": "./tools/mdx-ingest" },
-        { "path": "./tools/json-ingest" }
+        {
+            "path": "./shared/db-schema"
+        },
+        {
+            "path": "./shared/question-contract"
+        },
+        {
+            "path": "./shared/task-manager"
+        },
+        {
+            "path": "./shared/db"
+        },
+        {
+            "path": "./shared/quiz-markdown"
+        },
+        {
+            "path": "./tools/quiz-export"
+        },
+        {
+            "path": "./shared/ui"
+        },
+        {
+            "path": "./shared/navigation"
+        },
+        {
+            "path": "./tools/content-sync"
+        },
+        {
+            "path": "./tools/mdx-ingest"
+        },
+        {
+            "path": "./tools/json-ingest"
+        }
     ]
 }

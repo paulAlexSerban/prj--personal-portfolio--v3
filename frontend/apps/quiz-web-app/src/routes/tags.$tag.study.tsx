@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useMemo, useState } from "react";
-import type { ExportedQuestion } from "@prj--personal-portfolio--v3/shared--quiz-export/contract";
+import type { ExportedQuestion } from "@prj--personal-portfolio--v3/tools--quiz-export/contract";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { stampClasses } from "@prj--personal-portfolio--v3/shared--ui";
 import { StudySession } from "@/containers/StudySession";

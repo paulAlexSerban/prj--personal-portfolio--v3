@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import type { ExportedQuestion } from "@prj--personal-portfolio--v3/shared--quiz-export/contract";
+import type { ExportedQuestion } from "@prj--personal-portfolio--v3/tools--quiz-export/contract";
 import { QuestionPreview, stampClasses } from "@prj--personal-portfolio--v3/shared--ui";
 import { useQuestionPreview } from "@/hooks/useQuestionPreview";
 

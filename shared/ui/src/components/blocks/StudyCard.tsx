@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import type { ExportedQuestion } from '@prj--personal-portfolio--v3/shared--quiz-export/contract';
+import type { ExportedQuestion } from '@prj--personal-portfolio--v3/tools--quiz-export/contract';
 import { QuestionRenderer } from './QuestionRenderer';
 import { Stamp } from '../ui/Stamp';
 

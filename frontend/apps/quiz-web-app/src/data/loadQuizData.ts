@@ -7,7 +7,7 @@ import type {
   PostsIndex,
   TagQuestionsFile,
   TagsIndex,
-} from "@prj--personal-portfolio--v3/shared--quiz-export/contract";
+} from "@prj--personal-portfolio--v3/tools--quiz-export/contract";
 
 /** Base path for the static JSON emitted by `shared--quiz-export`. */
 const DATA_BASE = "/data";
