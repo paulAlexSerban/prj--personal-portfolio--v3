@@ -13,6 +13,13 @@ const pkg = JSON.parse(readFileSync(new URL("./package.json", import.meta.url), 
 // Strip any trailing slash; empty string means serve from root (local dev default)
 const appBase = (process.env.VITE_APP_BASE ?? "").replace(/\/$/, "");
 
+function escapeRegExp(value: string): string {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+/** Build-time pattern for /data/* runtime cache — must be RegExp, not a closure (Workbox inlines sw.js). */
+const quizDataUrlPattern = new RegExp(`^${escapeRegExp(`${appBase}/data/`)}`);
+
 // Strict CSR-only Vite app — client-side rendering only.
 export default defineConfig({
   base: appBase || "/",
@@ -60,7 +67,7 @@ export default defineConfig({
         // stale-while-revalidate so visited sets stay available offline.
         runtimeCaching: [
           {
-            urlPattern: ({ url }) => url.pathname.startsWith(`${appBase}/data/`),
+            urlPattern: quizDataUrlPattern,
             handler: "StaleWhileRevalidate",
             options: {
               cacheName: "quiz-data",
