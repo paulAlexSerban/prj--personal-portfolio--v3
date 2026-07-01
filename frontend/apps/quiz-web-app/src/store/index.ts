@@ -11,12 +11,28 @@ import type {
   StudySession,
 } from "./types";
 import { DEFAULT_CONFIG, DEFAULT_SETTINGS, createCardState, resetCardState } from "./types";
+import {
+  migratePersistedState,
+  PERSIST_BACKUP_KEY_SUFFIX,
+  type MigratablePersistedState,
+} from "./migrations";
 import { getScheduler } from "../algorithms/scheduler";
 import { buildDueCounts } from "../algorithms/fuzz";
 import { getPostDaily, resolvePostConfig } from "../lib/postConfig";
 import { todayISO, uid } from "../utils/dates";
 
 const STORAGE_KEY = "quiz-web-app:v1";
+
+/** Run the persisted-state migration (backup + clamp). Exported for tests. */
+export function runPersistMigration(persistedState: MigratablePersistedState): MigratablePersistedState {
+  if (typeof window !== "undefined" && window.localStorage) {
+    const backupKey = `${STORAGE_KEY}${PERSIST_BACKUP_KEY_SUFFIX}`;
+    if (!window.localStorage.getItem(backupKey)) {
+      window.localStorage.setItem(backupKey, JSON.stringify(persistedState));
+    }
+  }
+  return migratePersistedState(persistedState);
+}
 
 function freshDaily(today = todayISO(0)): DailyCounts {
   return { date: today, new: 0, reviews: 0 };
@@ -388,6 +404,8 @@ export const useStore = create<QuizStore>()(
     {
       name: STORAGE_KEY,
       storage,
+      version: 1,
+      migrate: (persistedState) => runPersistMigration(persistedState as MigratablePersistedState),
       // `lastReview` is a transient undo buffer — never persist it.
       partialize: ({ lastReview: _lastReview, ...rest }) => rest,
     },

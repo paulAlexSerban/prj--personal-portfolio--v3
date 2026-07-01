@@ -401,7 +401,7 @@ function SettingsPage() {
         />
         <NumRow
           label="Maximum interval (days)"
-          hint="Ceiling for any review interval. Caps how far into the future a well-known card can be pushed (default ~100 years)."
+          hint="Ceiling for any review interval. Caps how far into the future a well-known card can be pushed (default 30 days, ~1 month)."
           v={config.maximumInterval}
           on={(n) => setConfig({ maximumInterval: n })}
         />

@@ -170,7 +170,7 @@ export const fsrsStrategy: ReviewStrategy = {
       card.cardType = "relearning";
       card.learningStep = 0;
       scheduleLearning(card, config.lapseSteps[0] ?? 10, now, opts);
-      card.interval = intervalFromStability(sf, p.requestedRetention, p.maximumInterval);
+      card.interval = intervalFromStability(sf, p.requestedRetention, config.maximumInterval);
       return;
     }
 

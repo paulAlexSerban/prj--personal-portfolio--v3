@@ -102,6 +102,21 @@ describe("FSRS review flow", () => {
     expect(next.fsrsStability!).toBeLessThanOrEqual(20);
   });
 
+  it("a lapse on a high-stability card respects config.maximumInterval", () => {
+    const today = "2026-06-01";
+    const card: CardState = {
+      ...createCardState("p--q-lapse-cap", "p"),
+      cardType: "review",
+      interval: 500,
+      fsrsStability: 500,
+      fsrsDifficulty: 5,
+      fsrsLastReview: today,
+    };
+    const cappedConfig = { ...DEFAULT_CONFIG, maximumInterval: 30 };
+    const { card: next } = applyReviewFsrs(card, 1, cappedConfig, { today });
+    expect(next.interval).toBeLessThanOrEqual(cappedConfig.maximumInterval);
+  });
+
   it("Good on a due review card lengthens the interval", () => {
     const card: CardState = {
       ...createCardState("p--q3", "p"),
@@ -116,6 +131,25 @@ describe("FSRS review flow", () => {
     });
     expect(next.fsrsStability!).toBeGreaterThan(10);
     expect(next.interval).toBeGreaterThan(10);
+  });
+
+  it("repeated Easy ratings converge to and never exceed config.maximumInterval", () => {
+    let card: CardState = {
+      ...createCardState("p--q-cap", "p"),
+      cardType: "review",
+      interval: 25,
+      fsrsStability: 25,
+      fsrsDifficulty: 5,
+      fsrsLastReview: "2026-05-22",
+    };
+    let prev = 0;
+    for (let i = 0; i < 50; i++) {
+      card = applyReviewFsrs(card, 4, DEFAULT_CONFIG, { today: "2026-06-01" }).card;
+      expect(card.interval).toBeLessThanOrEqual(DEFAULT_CONFIG.maximumInterval);
+      expect(card.interval).toBeGreaterThanOrEqual(prev);
+      prev = card.interval;
+    }
+    expect(card.interval).toBeGreaterThanOrEqual(25);
   });
 });
 
@@ -179,10 +213,10 @@ describe("getScheduler", () => {
     const card: CardState = {
       ...createCardState("p--q8", "p"),
       cardType: "review",
-      interval: 20,
-      fsrsStability: 20,
+      interval: 5,
+      fsrsStability: 5,
       fsrsDifficulty: 5,
-      fsrsLastReview: "2026-05-12",
+      fsrsLastReview: "2026-05-28",
     };
     const lenient = getScheduler({
       ...DEFAULT_SETTINGS,

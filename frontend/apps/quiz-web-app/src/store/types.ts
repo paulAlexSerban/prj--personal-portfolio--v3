@@ -139,7 +139,7 @@ export const DEFAULT_CONFIG: StudyConfig = {
   minimumInterval: 1,
   easyBonus: 1.3,
   intervalModifier: 1.0,
-  maximumInterval: 36500,
+  maximumInterval: 30,
   startingEaseFactor: 2.5,
 };
 
