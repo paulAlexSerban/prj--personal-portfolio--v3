@@ -20,7 +20,7 @@ env:
     QUIZ_DATA_OUT: ${{ github.workspace }}/frontend/apps/quiz-web-app/public/data
 
 jobs:
-    ingest:
+    ingest-content:
         runs-on: ubuntu-latest
         timeout-minutes: 30
         steps:
@@ -49,38 +49,38 @@ jobs:
                   if-no-files-found: error
                   retention-days: 1
 
-    # build-portfolio:
-    #     needs: ingest
-    #     runs-on: ubuntu-latest
-    #     timeout-minutes: 20
-    #     steps:
-    #         - uses: actions/checkout@v4
-    #         - uses: ./.github/actions/setup-monorepo
+    build-portfolio:
+        needs: ingest-content
+        runs-on: ubuntu-latest
+        timeout-minutes: 20
+        steps:
+            - uses: actions/checkout@v7
+            - uses: ./.github/actions/setup-monorepo
 
-    #         - name: Configure Pages
-    #           id: pages
-    #           uses: actions/configure-pages@v4
+            - name: Configure Pages
+              id: pages
+              uses: actions/configure-pages@v4
 
-    #         - name: Download content DB
-    #           uses: actions/download-artifact@v4
-    #           with:
-    #               name: content-db
-    #               path: database/output/
+            - name: Download content DB
+              uses: actions/download-artifact@v8
+              with:
+                  name: content-db
+                  path: database/output/
 
-    #         - name: Build portfolio-site
-    #           env:
-    #               ASTRO_SITE: ${{ steps.pages.outputs.origin }}
-    #               ASTRO_BASE: ${{ steps.pages.outputs.base_path }}/home
-    #               DATABASE_PATH: ${{ github.workspace }}/database/output/content.db
-    #           run: pnpm --filter @prj--personal-portfolio--v3/frontend--portfolio-site build
+            - name: Build portfolio-site
+              env:
+                  ASTRO_SITE: ${{ steps.pages.outputs.origin }}
+                  ASTRO_BASE: ${{ steps.pages.outputs.base_path }}/home
+                  DATABASE_PATH: ${{ github.workspace }}/database/output/content.db
+              run: pnpm --filter @prj--personal-portfolio--v3/frontend--portfolio-site build
 
-    #         - name: Upload portfolio artifact
-    #           uses: actions/upload-artifact@v7
-    #           with:
-    #               name: portfolio-dist
-    #               path: frontend/sites/portfolio-site/dist/
-    #               if-no-files-found: error
-    #               retention-days: 1
+            - name: Upload portfolio artifact
+              uses: actions/upload-artifact@v7
+              with:
+                  name: portfolio-dist
+                  path: frontend/sites/portfolio-site/dist/
+                  if-no-files-found: error
+                  retention-days: 1
 
     # build-blog:
     #     needs: ingest
