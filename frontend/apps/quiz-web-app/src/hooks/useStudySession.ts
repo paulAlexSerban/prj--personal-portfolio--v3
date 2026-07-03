@@ -6,6 +6,7 @@ import { loadPostQuestions } from "@/data/loadQuizData";
 import { useStore } from "@/store";
 import { selectStudyQueue } from "@/store/selectors";
 import { getScheduler } from "@/algorithms/scheduler";
+import { pinActiveCardInQueue } from "@/lib/sessionQueue";
 import { todayISO } from "@/utils/dates";
 
 const RATING_LABELS: Record<Rating, string> = { 1: "Again", 2: "Hard", 3: "Good", 4: "Easy" };
@@ -70,6 +71,7 @@ export function useStudySession(scope: StudySessionScope): UseStudySessionResult
   const [ignoreLimits, setIgnoreLimits] = useState(false);
   const [gradedCorrect, setGradedCorrect] = useState<boolean | null>(null);
   const [buried, setBuried] = useState<Set<string>>(new Set());
+  const [activeSlug, setActiveSlug] = useState<string | null>(null);
   const [stats, setStats] = useState<SessionStats>({
     again: 0,
     hard: 0,
@@ -161,7 +163,29 @@ export function useStudySession(scope: StudySessionScope): UseStudySessionResult
     ? []
     : queue.filter((c) => questionMap.has(c.questionSlug) && !buried.has(c.questionSlug));
 
-  const currentCard = actionableQueue[0];
+  useEffect(() => {
+    setActiveSlug(null);
+  }, [scopeKey]);
+
+  useEffect(() => {
+    if (actionableQueue.length === 0) {
+      setActiveSlug(null);
+      return;
+    }
+    setActiveSlug((prev) => {
+      if (prev === null || !actionableQueue.some((c) => c.questionSlug === prev)) {
+        return actionableQueue[0]!.questionSlug;
+      }
+      return prev;
+    });
+  }, [actionableQueue]);
+
+  const sessionQueue = useMemo(
+    () => pinActiveCardInQueue(actionableQueue, activeSlug),
+    [actionableQueue, activeSlug],
+  );
+
+  const currentCard = sessionQueue[0];
   const currentQuestion = currentCard ? questionMap.get(currentCard.questionSlug) : undefined;
 
   const initialTotal = useRef(0);

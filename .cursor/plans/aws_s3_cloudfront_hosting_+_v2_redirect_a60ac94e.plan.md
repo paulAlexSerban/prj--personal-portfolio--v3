@@ -76,7 +76,7 @@ infrastructure/
 - `pnpm-workspace.yaml` already globs `infrastructure/*`; Terraform files don't need a `package.json`, they just live alongside the existing `infrastructure/readme.md`.
 - ACM certs for CloudFront must be in `us-east-1` regardless of S3 bucket region — use a provider alias, DNS-validated against the existing Route53 hosted zone (`data "aws_route53_zone"`, assumed already delegated for `paulserban.eu`).
 - `static-site` module per site: private S3 bucket (block all public access) + Origin Access Control, CloudFront distribution (default root object `index.html`), cache behaviors per the existing caching spike (`/assets/*` and other hashed paths: 1yr immutable; HTML: `max-age=0, must-revalidate`), Route53 `A`/`AAAA` alias record.
-  - Quiz distribution additionally needs a custom error response mapping 403/404 -> `/index.html` (200) for SPA client-side routing (replaces the GitHub Pages `404.html` sessionStorage hack, which stays untouched in `deploy-dev.yaml` for DEV).
+    - Quiz distribution additionally needs a custom error response mapping 403/404 -> `/index.html` (200) for SPA client-side routing (replaces the GitHub Pages `404.html` sessionStorage hack, which stays untouched in `deploy-dev.yaml` for DEV).
 
 ## 2. Redirect mechanism — CloudFront Function + KeyValueStore on the blog distribution
 
@@ -92,28 +92,28 @@ import cf from 'cloudfront';
 const kvsHandle = cf.kvs();
 
 async function handler(event) {
-  const request = event.request;
-  const match = request.uri.match(/^\/(post|snippet|booknote)\/([^/]+)\/?$/);
+    const request = event.request;
+    const match = request.uri.match(/^\/(post|snippet|booknote)\/([^/]+)\/?$/);
 
-  if (!match) {
-    return request; // not a post-detail path (asset, listing, etc.) - pass through
-  }
+    if (!match) {
+        return request; // not a post-detail path (asset, listing, etc.) - pass through
+    }
 
-  const [, type, slug] = match;
+    const [, type, slug] = match;
 
-  try {
-    await kvsHandle.get(`${type}/${slug}`); // throws if key not found
-    return request; // valid v3 slug - let it reach the origin
-  } catch {
-    return {
-      statusCode: 302,
-      statusDescription: 'Found',
-      headers: {
-        location: { value: `https://v2.paulserban.eu/blog/${type}/${slug}` },
-        'cache-control': { value: 'no-cache' },
-      },
-    };
-  }
+    try {
+        await kvsHandle.get(`${type}/${slug}`); // throws if key not found
+        return request; // valid v3 slug - let it reach the origin
+    } catch {
+        return {
+            statusCode: 302,
+            statusDescription: 'Found',
+            headers: {
+                location: { value: `https://v2.paulserban.eu/blog/${type}/${slug}` },
+                'cache-control': { value: 'no-cache' },
+            },
+        };
+    }
 }
 ```
 
@@ -139,6 +139,7 @@ resource "aws_route53_record" "v2" {
 ```
 
 The following remain **manual runbook steps** (documented in the new ADR, not Terraform, since they touch a distribution outside this repo's state):
+
 1. Add `v2.paulserban.eu` as an alternate domain name (CNAME) on v2's existing CloudFront distribution.
 2. Ensure/extend that distribution's ACM cert to cover `v2.paulserban.eu` (new cert or added SAN).
 3. Confirm the apex `paulserban.eu`/`www` DNS currently pointing at v2 will be safely repointed to the new v3 portfolio distribution once this Terraform is applied (Route53 record replacement, since the hosted zone is shared and DNS itself isn't "v2 infra").
@@ -146,12 +147,12 @@ The following remain **manual runbook steps** (documented in the new ADR, not Te
 ## 4. CI/CD changes
 
 - New workflow `.github/workflows/deploy-prod.yaml` (leave `deploy-dev.yaml`/GitHub Pages untouched for DEV):
-  - Reuses the existing ingest pattern from `deploy-dev.yaml` (checkout, `setup-monorepo`, `pnpm db:migrate`, `pnpm start`) to produce `content.db` + quiz JSON.
-  - Builds each app with **root-relative** env vars (no `/home`, `/blog`, `/quiz` sub-paths, since each is now its own subdomain): `ASTRO_SITE=https://paulserban.eu` / `ASTRO_BASE=/`, `ASTRO_SITE=https://blog.paulserban.eu` / `ASTRO_BASE=/`, `VITE_APP_BASE=/`.
-  - Deploy step per site: `aws s3 sync dist/ s3://<bucket> --delete` with `--cache-control` split between hashed assets (1yr immutable) and HTML (`max-age=0, must-revalidate`) per the caching spike, then `aws cloudfront create-invalidation --paths "/*.html" "/*"` scoped appropriately.
-  - Blog deploy additionally syncs the valid-slug list into the CloudFront KeyValueStore (`aws cloudfront-keyvaluestore ...`) so the redirect function's data matches the just-published content.
-  - AWS auth via GitHub OIDC (`aws-actions/configure-aws-credentials` assuming a deploy role) — no long-lived AWS keys as repo secrets.
-  - Bucket names / distribution IDs sourced from Terraform `outputs.tf` (either committed as a small values file after `terraform apply`, or looked up via SSM Parameter Store written by Terraform).
+    - Reuses the existing ingest pattern from `deploy-dev.yaml` (checkout, `setup-monorepo`, `pnpm db:migrate`, `pnpm start`) to produce `content.db` + quiz JSON.
+    - Builds each app with **root-relative** env vars (no `/home`, `/blog`, `/quiz` sub-paths, since each is now its own subdomain): `ASTRO_SITE=https://paulserban.eu` / `ASTRO_BASE=/`, `ASTRO_SITE=https://blog.paulserban.eu` / `ASTRO_BASE=/`, `VITE_APP_BASE=/`.
+    - Deploy step per site: `aws s3 sync dist/ s3://<bucket> --delete` with `--cache-control` split between hashed assets (1yr immutable) and HTML (`max-age=0, must-revalidate`) per the caching spike, then `aws cloudfront create-invalidation --paths "/*.html" "/*"` scoped appropriately.
+    - Blog deploy additionally syncs the valid-slug list into the CloudFront KeyValueStore (`aws cloudfront-keyvaluestore ...`) so the redirect function's data matches the just-published content.
+    - AWS auth via GitHub OIDC (`aws-actions/configure-aws-credentials` assuming a deploy role) — no long-lived AWS keys as repo secrets.
+    - Bucket names / distribution IDs sourced from Terraform `outputs.tf` (either committed as a small values file after `terraform apply`, or looked up via SSM Parameter Store written by Terraform).
 - Terraform apply itself runs as a separate, manually-triggered (or infra-path-filtered) workflow — infra changes shouldn't run on every content push.
 
 ## 5. Documentation updates
@@ -161,5 +162,6 @@ The following remain **manual runbook steps** (documented in the new ADR, not Te
 - Update `_docs/AGENTS.md` implementation-status table (CI/CD row) once this lands.
 
 ## Todos
+
 </plan>
 <todos>[{"id":"tf-bootstrap","content":"Create Terraform bootstrap (S3 state bucket + DynamoDB lock table) under infrastructure/aws/bootstrap/"},{"id":"tf-static-site-module","content":"Build reusable static-site Terraform module (S3 + OAC + CloudFront + ACM us-east-1 + Route53 alias) under infrastructure/aws/modules/static-site/"},{"id":"tf-envs-prod","content":"Instantiate the module 3x (portfolio, blog, quiz) plus the v2.paulserban.eu alias record in infrastructure/aws/envs/prod/"},{"id":"redirect-function","content":"Implement blog-redirect-function module (CloudFront Function + KeyValueStore, viewer-request redirect to v2.paulserban.eu) and attach to the blog CloudFront distribution"},{"id":"redirect-ci-sync","content":"Add CI step to sync the valid-slug list into the CloudFront KeyValueStore on each blog deploy"},{"id":"verify-v2-url-pattern","content":"Confirm v2's live URL pattern (/blog/{type}/{slug}) before finalizing the redirect target construction"},{"id":"v2-runbook","content":"Document manual runbook steps for adding v2.paulserban.eu alternate domain + ACM SAN on v2's existing CloudFront distribution"},{"id":"ci-prod-workflow","content":"Add .github/workflows/deploy-prod.yaml: root-relative builds, OIDC AWS auth, S3 sync with cache-control split, CloudFront invalidation"},{"id":"docs-adr","content":"Add ADR accepting AWS/Terraform/CloudFront Function hosting decision, superseding Cloudflare drafts, and update architecture doc + AGENTS.md status table"}]
