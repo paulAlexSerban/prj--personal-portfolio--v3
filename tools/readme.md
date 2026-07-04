@@ -15,6 +15,7 @@ For the agent-oriented version (scanner internals, tag handling, conventions), s
 | [`content-sync`](./content-sync/readme.md) | Clone the private content repo into `content/live/`.             |
 | [`mdx-ingest`](./mdx-ingest/readme.md)     | MDX (posts, projects, coursework, **questions**) → `content.db`. |
 | [`json-ingest`](./json-ingest/readme.md)   | JSON (profile, skills, pages) → `content.db`.                    |
+| [`quiz-export`](./quiz-export/readme.md)   | `content.db` → static JSON for the quiz web app.                 |
 
 ## How they fit together
 
@@ -31,13 +32,6 @@ content repo (private Git)  →  content-sync  →  content/live/
 
 Run **content-sync first**, then the two ingest tools (locally and in CI). All
 three use `shared--task-manager` for ordered, parallel-safe execution.
-
-## What's _not_ here
-
-- **Quiz JSON export** lives in `shared/quiz-export` (DB → static JSON), not in
-  `tools/` — it's a delivery format, not an authoring/ingest step.
-- **MDX → HTML compilation** is not done at ingest; the body is stored raw and
-  compiled later (Astro at build time, or `shared--quiz-markdown` for the quiz).
 
 ## Conventions
 

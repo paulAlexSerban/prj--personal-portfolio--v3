@@ -54,6 +54,7 @@ Flashcard quizes (Anki style spaced repetition) are surfaced as a blog widget, a
 - `frontend/` - frontend applications (e.g., main website, quiz web app, etc.)
 - `infrastructure/` - infrastructure as code (IaC) for deployment, hosting, etc.
 - `shared/` - shared libraries and utilities (e.g., foundations library, UI components, etc.)
+- `tools/` - tools for various tasks (e.g., content ingestion, database management, etc.)
 - `scripts/` - utility scripts for development, build, deployment, etc.
 - `tests/` - test suites for various components and services (e.g., integration tests, end-to-end tests, BDD tests, UI tests, etc.)
 
