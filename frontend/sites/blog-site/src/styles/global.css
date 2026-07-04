@@ -1,14 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=IM+Fell+English:ital@0;1&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap');
-
-@import 'tailwindcss' source(none);
-@source '../../src';
-@source '../../../../../shared/ui/src';
-@source '../../../../../shared/navigation/src';
+@import 'tailwindcss' source(none); /* turn off Tailwind's default auto detection */
+/* scan the current directory for files */
+@source "../../src";
 @import 'tw-animate-css';
 
 @custom-variant dark (&:is(.dark *));
 
-@import '@prj--personal-portfolio--v3/shared--ui/styles.css';
+/* import the shared Tailwind CSS */
+@import '@prj--personal-portfolio--v3/shared--ui/tailwind.css';
+@import '@prj--personal-portfolio--v3/shared--navigation/tailwind.css';
+
+@import '@prj--personal-portfolio--v3/shared--ui/theme.css';
+@import '@prj--personal-portfolio--v3/shared--ui/base.css';
+@import '@prj--personal-portfolio--v3/shared--ui/components.css';
+@import '@prj--personal-portfolio--v3/shared--ui/markdown-rendered-content.css';
 
 @layer components {
     /* Placeholder label for the empty quiz-widget mount point. Kept as CSS

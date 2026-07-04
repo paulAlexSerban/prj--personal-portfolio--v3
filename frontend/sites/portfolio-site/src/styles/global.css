@@ -1,15 +1,15 @@
-@import "tailwindcss" source(none); /* turn off Tailwind's default auto detection */
+@import 'tailwindcss' source(none); /* turn off Tailwind's default auto detection */
 /* scan the current directory for files */
 @source "../../src";
-@import "tw-animate-css";
+@import 'tw-animate-css';
 
 @custom-variant dark (&:is(.dark *));
 
 /* import the shared Tailwind CSS */
-@import "@prj--personal-portfolio--v3/shared--ui/tailwind.css";
-@import "@prj--personal-portfolio--v3/shared--navigation/tailwind.css";
+@import '@prj--personal-portfolio--v3/shared--ui/tailwind.css';
+@import '@prj--personal-portfolio--v3/shared--navigation/tailwind.css';
 
-@import "@prj--personal-portfolio--v3/shared--ui/theme.css";
-@import "@prj--personal-portfolio--v3/shared--ui/base.css";
-@import "@prj--personal-portfolio--v3/shared--ui/components.css";
-@import "@prj--personal-portfolio--v3/shared--ui/markdown-rendered-content.css";
+@import '@prj--personal-portfolio--v3/shared--ui/theme.css';
+@import '@prj--personal-portfolio--v3/shared--ui/base.css';
+@import '@prj--personal-portfolio--v3/shared--ui/components.css';
+@import '@prj--personal-portfolio--v3/shared--ui/markdown-rendered-content.css';

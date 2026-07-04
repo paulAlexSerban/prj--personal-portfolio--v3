@@ -12,13 +12,7 @@ interface Props {
     canonicalUrl?: string;
 }
 
-const {
-    title,
-    description,
-    ogTitle = title,
-    ogDescription = description,
-    canonicalUrl,
-} = Astro.props;
+const { title, description, ogTitle = title, ogDescription = description, canonicalUrl } = Astro.props;
 
 const pageDescription = description ?? 'Posts, snippets, and book notes by Paul Serban.';
 const canonical = canonicalUrl ?? new URL(Astro.url.pathname, Astro.site).href;
@@ -31,9 +25,7 @@ const canonical = canonicalUrl ?? new URL(Astro.url.pathname, Astro.site).href;
             (function () {
                 try {
                     var t = localStorage.getItem('theme');
-                    var dark =
-                        t === 'dark' ||
-                        (!t && window.matchMedia('(prefers-color-scheme: dark)').matches);
+                    var dark = t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches);
                     document.documentElement.classList.toggle('dark', dark);
                 } catch (e) {}
             })();
@@ -48,6 +40,9 @@ const canonical = canonicalUrl ?? new URL(Astro.url.pathname, Astro.site).href;
         <meta property="og:url" content={canonical} />
         <link rel="canonical" href={canonical} />
         <link rel="sitemap" href={assetUrl('sitemap-index.xml')} />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet" />
         <slot name="head" />
     </head>
     <body class="min-h-screen bg-newsprint text-ink">
