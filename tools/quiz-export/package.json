@@ -15,12 +15,13 @@
         }
     },
     "scripts": {
-        "start": "node --experimental-strip-types src/cli.ts",
-        "start:dry-run": "node --experimental-strip-types src/cli.ts --dry-run",
+        "start": "node --experimental-strip-types src/index.ts",
+        "start:dry-run": "node --experimental-strip-types src/index.ts --dry-run",
         "test": "vitest run",
         "typecheck": "tsc -b"
     },
     "dependencies": {
+        "@prj--personal-portfolio--v3/shared--task-manager": "workspace:*",
         "@prj--personal-portfolio--v3/shared--db": "workspace:*",
         "@prj--personal-portfolio--v3/shared--db-schema": "workspace:*",
         "@prj--personal-portfolio--v3/tools--mdx-ingest": "workspace:*",

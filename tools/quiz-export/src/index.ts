@@ -1,8 +1,10 @@
 import path from 'node:path';
-import { openConnection, closeConnection } from '@prj--personal-portfolio--v3/shared--db';
+import { taskManager, type Task } from '@prj--personal-portfolio--v3/shared--task-manager';
+import { openConnection, closeConnection, type DrizzleDb } from '@prj--personal-portfolio--v3/shared--db';
 import { buildQuizData } from './export.ts';
 import { compileQuizData } from './compile.ts';
 import { writeQuizJson } from './write.ts';
+import type { QuizData } from './contract.ts';
 
 const DATABASE_PATH = path.resolve(process.env['DATABASE_PATH'] ?? '../../database/output/content.db');
 const QUIZ_DATA_OUT = path.resolve(process.env['QUIZ_DATA_OUT'] ?? '../../frontend/apps/quiz-web-app/public/data');
@@ -11,29 +13,13 @@ const ASSETS_OUT = path.join(QUIZ_DATA_OUT, 'assets', 'questions');
 
 const isDryRun = process.argv.includes('--dry-run');
 
-async function main() {
-    if (isDryRun) {
-        console.log('[quiz-export] dry-run mode — no files will be written');
-    }
-
-    console.log(`[quiz-export] reading database: ${DATABASE_PATH}`);
-    const db = openConnection(DATABASE_PATH);
-
-    let data;
-    try {
-        data = await buildQuizData(db);
-    } finally {
-        closeConnection(db);
-    }
-
-    console.log('[quiz-export] compiling MDX/markdown → HTML…');
-    data = await compileQuizData(data, {
-        contentDir: CONTENT_DIR,
-        assetsOutDir: ASSETS_OUT,
-    });
-
+const logSummary = (data: QuizData) => {
     const totalQuestions = [...data.questionsByPost.values()].reduce((sum, qs) => sum + qs.length, 0);
     console.log(`[quiz-export] found ${data.posts.length} posts with ${totalQuestions} published questions`);
+};
+
+const writeOrDryRun = async (data: QuizData) => {
+    logSummary(data);
 
     if (isDryRun) {
         console.log(`[quiz-export] would write to: ${QUIZ_DATA_OUT}`);
@@ -60,7 +46,53 @@ async function main() {
     }
     console.log(`[quiz-export] wrote: ${result.allBundlePath}`);
     console.log('[quiz-export] done');
-}
+};
+
+const tasks: Task<unknown>[] = [
+    {
+        name: 'Open DB Connection',
+        action: () => {
+            console.log(`[quiz-export] reading database: ${DATABASE_PATH}`);
+            return openConnection(DATABASE_PATH);
+        },
+        dependsOn: [],
+    },
+    {
+        name: 'Export Quiz Data',
+        action: (ctx) => buildQuizData(ctx.getResult<DrizzleDb>('Open DB Connection')),
+        dependsOn: ['Open DB Connection'],
+    },
+    {
+        name: 'Close DB Connection',
+        action: (ctx) => closeConnection(ctx.getResult<DrizzleDb>('Open DB Connection')),
+        dependsOn: ['Open DB Connection', 'Export Quiz Data'],
+    },
+    {
+        name: 'Compile Quiz Data',
+        action: (ctx) => {
+            console.log('[quiz-export] compiling MDX/markdown → HTML…');
+            return compileQuizData(ctx.getResult<QuizData>('Export Quiz Data'), {
+                contentDir: CONTENT_DIR,
+                assetsOutDir: ASSETS_OUT,
+            });
+        },
+        dependsOn: ['Export Quiz Data'],
+    },
+    {
+        name: 'Write Quiz JSON',
+        action: (ctx) => writeOrDryRun(ctx.getResult<QuizData>('Compile Quiz Data')),
+        dependsOn: ['Compile Quiz Data', 'Close DB Connection'],
+    },
+];
+
+const main = async () => {
+    if (isDryRun) {
+        console.log('[quiz-export] dry-run mode — no files will be written');
+    }
+
+    const executor = taskManager().init(tasks);
+    await executor.execute();
+};
 
 main().catch((err) => {
     console.error('[quiz-export] fatal:', err);

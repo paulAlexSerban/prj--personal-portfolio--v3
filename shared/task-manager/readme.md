@@ -49,9 +49,23 @@ pnpm --filter @prj--personal-portfolio--v3/shared--task-manager test
 ## Where it sits
 
 - **Depends on:** nothing (standalone).
-- **Consumed by:** `tools/content-sync`, `tools/mdx-ingest`, `tools/json-ingest`.
+- **Consumed by:** `tools/content-sync`, `tools/mdx-ingest`, `tools/json-ingest`, `tools/quiz-export`.
+
+## Target pattern and conventions to adopt
+
+| Convention          | Ingest tools                                                                        |
+| ------------------- | ----------------------------------------------------------------------------------- |
+| Orchestration file  | `src/index.ts` owns `tasks[]` + `main()`                                            |
+| Start script        | `node --experimental-strip-types src/index.ts`                                      |
+| Task definition     | `{ name, action, dependsOn }` array passed to `taskManager().init(tasks).execute()` |
+| Data handoff        | `ctx.getResult<T>('Task Name')` with typed deps                                     |
+| Side-effect modules | Logic in helpers; no task-manager imports there                                     |
+| Error handling      | `main().catch(...); process.exit(1)`                                                |
+| Dry-run             | Passed into final write task (`upsertRecords({ dryRun })`)                          |
+| Dependency          | `shared--task-manager: workspace:*` + tsconfig project reference                    |
 
 ## Related docs
 
 - `shared/AGENTS.md` — all shared packages.
 - `tools/AGENTS.md` — the pipelines that use it.
+- `tools/readme.md` — the tools that use it.

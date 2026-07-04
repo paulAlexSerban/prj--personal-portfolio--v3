@@ -1,10 +1,10 @@
-# Quiz Export (`shared/quiz-export/`)
+# Quiz Export (`tools/quiz-export/`)
 
 Turns the build-time SQLite database (`database/output/content.db`) into the
 **static JSON files the quiz web app reads at runtime**. It is the bridge between
 the content pipeline (MDX → DB) and the browser app (JSON → flashcards).
 
-**Package:** `@prj--personal-portfolio--v3/shared--quiz-export`
+**Package:** `@prj--personal-portfolio--v3/tools--quiz-export`
 
 ## Why it exists
 
@@ -39,13 +39,13 @@ compile Markdown on every render.
 
 ```bash
 # emit JSON against the live database
-pnpm --filter @prj--personal-portfolio--v3/shared--quiz-export start
+pnpm --filter @prj--personal-portfolio--v3/tools--quiz-export start
 
 # report what it would write, but write nothing
-pnpm --filter @prj--personal-portfolio--v3/shared--quiz-export start:dry-run
+pnpm --filter @prj--personal-portfolio--v3/tools--quiz-export start:dry-run
 
 # tests
-pnpm --filter @prj--personal-portfolio--v3/shared--quiz-export test
+pnpm --filter @prj--personal-portfolio--v3/tools--quiz-export test
 ```
 
 Run `start` whenever content changes (i.e. after an ingest) and before building
@@ -67,15 +67,14 @@ the quiz app.
 | `src/compile.ts`  | `compileQuizData(data, opts)` — compiles Markdown/MDX → sanitized HTML (via `shared--quiz-markdown`) and copies/rewrites image assets.                           |
 | `src/write.ts`    | `writeQuizJson(data, outDir)` — writes all the JSON files above.                                                                                                 |
 | `src/contract.ts` | The TypeScript types for every output shape — **the source of truth the app imports** (`./contract` subpath).                                                    |
-| `src/cli.ts`      | Wires the three steps together for the `start` script; reads env vars, handles `--dry-run`.                                                                      |
+| `src/index.ts`    | CLI entry: task graph via `shared--task-manager` (Open DB → Export → Close ∥ Compile → Write); reads env vars, handles `--dry-run`.                             |
 | `index.ts`        | Library exports for other packages.                                                                                                                              |
 
-The library functions are pure and side-effect-free except `write.ts`; the CLI is
-the only thing that touches the filesystem and DB connection.
+The library functions are pure and side-effect-free except `write.ts`; the CLI orchestrates DB access, compilation, and filesystem writes through named tasks.
 
 ## Where it sits
 
-- **Depends on:** `shared--db`, `shared--db-schema`, `shared--question-contract`, `shared--quiz-markdown`.
+- **Depends on:** `shared--db`, `shared--db-schema`, `shared--question-contract`, `shared--markdown`, `shared--task-manager`.
 - **Consumed by:** `frontend--quiz-web-app` (imports `./contract` types; fetches the JSON at runtime); future mobile bundle (`_all.json`).
 
 ## Related docs
