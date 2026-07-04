@@ -57,19 +57,19 @@ export function StudyCard({
 
     return (
         <>
-            <div className="flex items-center justify-between mb-4 text-base" style={{ fontFamily: 'var(--font-mono)' }}>
+            <div className="flex items-center justify-between mb-4 text-xs" style={{ fontFamily: 'var(--font-mono)' }}>
                 {exitSlot}
                 <span>
                     {done + 1} / {total}
                 </span>
                 <div className="flex items-center gap-3">
-                    <button type="button" onClick={onBury} className="smallcaps underline" title="Skip this card for the rest of this session">
+                    <button type="button" onClick={onBury} className="smallcaps" title="Skip this card for the rest of this session">
                         Bury
                     </button>
-                    <button type="button" onClick={onSuspend} className="smallcaps underline" title="Exclude from all queues until you unsuspend it">
+                    <button type="button" onClick={onSuspend} className="smallcaps" title="Exclude from all queues until you unsuspend it">
                         Suspend
                     </button>
-                    <button type="button" onClick={onIgnore} className="smallcaps underline" title="Exclude this question from all future sessions">
+                    <button type="button" onClick={onIgnore} className="smallcaps" title="Exclude this question from all future sessions">
                         Ignore
                     </button>
                 </div>
@@ -90,8 +90,8 @@ export function StudyCard({
                 />
             </div>
 
-            <article className="bg-[var(--aged-white)] border-[3px] border-[var(--ink-black)] grain p-8 md:p-12 min-h-[460px] flex flex-col">
-                <p className="smallcaps text-[10px] text-[var(--slate)] mb-4">
+            <article className="bg-[var(--aged-white)] border-[3px] border-[var(--ink-black)] grain p-3 md:p-8 min-h-[460px] flex flex-col">
+                <p className="smallcaps text-[10px] text-[var(--slate)] mb-1 md:mb-4">
                     {card.cardType} card · ease {card.easeFactor.toFixed(2)} · ivl {card.interval}d
                 </p>
 

@@ -64,7 +64,7 @@ export function QuestionPreviewDrawer({
           key={tag}
           to="/tags/$tag"
           params={{ tag }}
-          className="text-[14px] border border-[var(--ink-black)] px-2 py-0.5 hover:bg-[var(--highlight)]"
+          className="text-sm md:text-[14px] border border-[var(--ink-black)] px-2 py-0.5 hover:bg-[var(--highlight)]"
         >
           {tag.toLowerCase()}
         </Link>

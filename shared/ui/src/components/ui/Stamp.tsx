@@ -6,7 +6,7 @@ export type StampSize = 'sm' | 'md' | 'lg';
 
 export function stampClasses(variant: StampVariant = 'solid', size: StampSize = 'md', extra = '') {
     const variantCls = variant === 'ghost' ? 'stamp stamp-ghost' : 'stamp';
-    const sizeCls = size === 'sm' ? 'text-sm px-3 py-1.5' : size === 'lg' ? 'text-lg px-6 py-3' : 'text-base';
+    const sizeCls = size === 'sm' ? 'text-sm px-3 py-1.5' : size === 'lg' ? 'text-lg px-6 py-3' : 'md:text-base text-sm';
     return `${variantCls} ${sizeCls} ${extra}`.trim();
 }
 

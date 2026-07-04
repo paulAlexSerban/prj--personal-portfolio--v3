@@ -33,7 +33,7 @@ function StudyAllPage() {
       exitSlot={
         <Link
           to="/sets"
-          className="smallcaps underline"
+          className="smallcaps"
           title="End this session and return to your sets"
         >
           ← End Session

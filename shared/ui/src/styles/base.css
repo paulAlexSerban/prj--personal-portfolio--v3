@@ -4,8 +4,6 @@
     }
 
     body {
-        background-color: var(--color-background);
-        color: var(--color-foreground);
         font-family: var(--font-body);
         background-image: radial-gradient(rgba(13, 13, 13, 0.06) 1px, transparent 1px), radial-gradient(rgba(13, 13, 13, 0.04) 1px, transparent 1px);
         background-size:
@@ -31,3 +29,5 @@
         outline-offset: 2px;
     }
 }
+
+

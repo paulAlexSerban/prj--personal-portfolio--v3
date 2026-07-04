@@ -34,7 +34,7 @@ export function Masthead() {
   const dateline = `Vol. ${__APP_VERSION__} · No. ${dayOfYear(now)}/${isoWeek(now)}`;
   return (
     <header className="grain border-b-[3px] border-ink">
-      <div className="max-w-6xl mx-auto px-6 pt-6 pb-4">
+      <div className="root-box">
         <div className="flex items-center justify-between gap-4">
           <p className="kicker font-mono text-[10px] md:text-sm">{dateline}</p>
           <div className="flex flex-col items-end gap-1">

@@ -47,7 +47,7 @@ function StudyPage() {
         <Link
           to="/sets/$postSlug"
           params={{ postSlug }}
-          className="smallcaps underline"
+          className="smallcaps"
           title="End this session and return to the set"
         >
           ← End Session

@@ -71,7 +71,7 @@ function TagsIndexPage() {
         Tags from questions in your active study sets.
       </p>
 
-      <div className="flex gap-3 mb-8">
+      <div className="flex flex-col md:flex-row gap-2 md:gap-3 mb-4 md:mb-8">
         <Link
           to="/browse"
           className={stampClasses("ghost", "md")}
@@ -100,10 +100,10 @@ function TagsIndexPage() {
               <Link
                 to="/tags/$tag"
                 params={{ tag: slug }}
-                className="flex items-center justify-between p-4 hover:bg-[var(--highlight)]"
+                className="flex items-center justify-between p-2 md:p-4 hover:bg-[var(--highlight)]"
               >
-                <span className="font-bold">{slug}</span>
-                <span className="smallcaps text-[10px] text-[var(--slate)]">
+                <span className="font-medium">{slug}</span>
+                <span className="smallcaps text-[10px] text-[var(--slate)] w-20 text-right">
                   {count} question{count === 1 ? "" : "s"}
                 </span>
               </Link>

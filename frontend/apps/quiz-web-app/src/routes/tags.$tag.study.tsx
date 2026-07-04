@@ -106,7 +106,7 @@ function TagStudyPage() {
         <Link
           to="/tags/$tag"
           params={{ tag }}
-          className="smallcaps underline"
+          className="smallcaps"
           title="End this session and return to the tag page"
         >
           ← End Session

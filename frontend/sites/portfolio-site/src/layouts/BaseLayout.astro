@@ -49,9 +49,9 @@ const sitemapUrl = assetUrl('sitemap-index.xml');
         <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet" />
         <slot name="head" />
     </head>
-    <body class="min-h-screen bg-newsprint text-ink">
+    <body class="body">
         <SiteHeader />
-        <main class="mx-auto max-w-[72rem] px-6 pt-8 pb-16">
+        <main class="root-box">
             <slot />
         </main>
         <SiteFooter />

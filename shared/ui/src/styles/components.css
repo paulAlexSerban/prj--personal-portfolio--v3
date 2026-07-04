@@ -1,4 +1,12 @@
 @layer components {
+    .body {
+        @apply min-h-screen bg-newsprint text-ink;
+    }
+
+    .root-box {
+        @apply max-w-6xl mx-auto px-2 md:px-6 py-3 md:py-10;
+    }
+
     /* Data tables: force horizontal scroll on narrow screens and keep the first
      column pinned so row context stays visible while scrolling. */
     .data-table {

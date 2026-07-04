@@ -47,7 +47,7 @@ export function QuestionPreview({
 
             <div className="rule my-6" />
 
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-col md:flex-wrap gap-2">
                 {studyAction}
                 <Stamp
                     variant="ghost"
@@ -62,7 +62,7 @@ export function QuestionPreview({
                 <Stamp variant="ghost" title="Reset this card's scheduling progress" onClick={onReset}>
                     Reset Progress
                 </Stamp>
-                <button type="button" onClick={onClose} title="Close this preview" className="smallcaps underline text-base ml-auto">
+                <button type="button" onClick={onClose} title="Close this preview" className="smallcaps underline text-base md:ml-auto">
                     Close
                 </button>
             </div>
@@ -122,7 +122,7 @@ function MetaRow({
     renderTag?: (tag: string) => ReactNode;
 }) {
     return (
-        <dl className="grid grid-cols-2 md:grid-cols-4 gap-3 text-base border-2 border-[var(--ink-black)] p-3" style={{ fontFamily: 'var(--font-mono)' }}>
+        <dl className="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm md:text-base border-2 border-[var(--ink-black)] p-3" style={{ fontFamily: 'var(--font-mono)' }}>
             <MetaItem label="Format" value={question.answerFormat.replace(/_/g, ' ')} />
             <MetaItem label="Difficulty" value={question.difficulty} />
             <MetaItem label="State" value={stateLabel} />
@@ -147,7 +147,7 @@ function MetaRow({
                         renderTag ? (
                             renderTag(tag)
                         ) : (
-                            <span key={tag} className="text-[14px] border border-[var(--ink-black)] px-2 py-0.5">
+                            <span key={tag} className="text-sm md:text-[14px] border border-[var(--ink-black)] px-2 py-0.5">
                                 {tag.toLowerCase()}
                             </span>
                         )

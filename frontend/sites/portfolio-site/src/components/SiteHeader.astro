@@ -22,7 +22,7 @@ const year = new Date().getFullYear();
 ---
 
 <header class="grain border-b-[3px] border-ink bg-aged">
-    <div class="mx-auto max-w-[72rem] px-6 pt-6 pb-4">
+    <div class="root-box">
         <div class="flex items-center justify-between gap-4">
             <p class="kicker font-mono text-[10px] md:text-sm">paulserban.eu</p>
             <div class="flex flex-col items-end gap-1">
@@ -71,21 +71,25 @@ const year = new Date().getFullYear();
 </header>
 
 <script is:inline>
-    (function () {
-        var btn = document.getElementById('theme-toggle');
-        if (!btn) return;
-        var icon = document.getElementById('theme-toggle-icon');
-        var label = document.getElementById('theme-toggle-label');
-        function sync() {
-            var dark = document.documentElement.classList.contains('dark');
+    (() => {
+        const btn = document.getElementById('theme-toggle');
+        if (!btn) {return};
+        const icon = document.getElementById('theme-toggle-icon');
+        const label = document.getElementById('theme-toggle-label');
+        const sync = () => {
+            const dark = document.documentElement.classList.contains('dark');
             if (icon) icon.textContent = dark ? '☀' : '☾';
             if (label) label.textContent = dark ? 'Light' : 'Dark';
             btn.setAttribute('aria-pressed', String(dark));
         }
         sync();
-        btn.addEventListener('click', function () {
-            var dark = document.documentElement.classList.toggle('dark');
-            try { localStorage.setItem('theme', dark ? 'dark' : 'light'); } catch (e) {}
+        btn.addEventListener('click', () => {
+            const dark = document.documentElement.classList.toggle('dark');
+            try { 
+                localStorage.setItem('theme', dark ? 'dark' : 'light'); 
+            } catch (e) {
+                console.error(e);
+            }
             sync();
         });
     })();

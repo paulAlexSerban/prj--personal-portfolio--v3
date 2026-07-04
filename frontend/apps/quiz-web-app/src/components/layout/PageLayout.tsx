@@ -15,8 +15,8 @@ export function PageLayout({ children }: { children: React.ReactNode }) {
   return (
     <div className="min-h-screen bg-newsprint text-ink">
       <Masthead />
-      <main className="max-w-6xl mx-auto px-6 py-10">{children}</main>
-      <footer className="max-w-6xl mx-auto px-6 py-10 mt-8 border-t-[2px] border-ink">
+      <main className="root-box">{children}</main>
+      <footer className="root-box mt-8 border-t-[2px] border-ink">
         <div className="mb-3 text-center">
           <FooterSiteLinks activeSite="quiz" tabs={siteTabs} />
         </div>

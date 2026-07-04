@@ -163,7 +163,7 @@ function SetDetailPage() {
 
           <div className="rule mt-4 mb-6" />
 
-          <div className="flex flex-wrap gap-3 mb-6">
+          <div className="flex flex-col md:flex-wrap gap-2 md:gap-3 mb-6">
             <Link
               to="/sets/$postSlug/study"
               params={{ postSlug }}
@@ -191,14 +191,14 @@ function SetDetailPage() {
               type="button"
               onClick={() => setConfirmRemove(true)}
               title="Remove this post from your study sets"
-              className="stamp stamp-ghost text-base ml-auto"
+              className="stamp stamp-ghost text-base md:ml-auto"
             >
               Remove from Set
             </button>
           </div>
 
           <div
-            className="grid grid-cols-2 md:grid-cols-5 border-y-2 border-[var(--ink-black)] divide-x-2 divide-[var(--ink-black)] mb-8"
+            className="grid grid-cols-5 border-y-2 border-[var(--ink-black)] divide-x-2 divide-[var(--ink-black)] mb-8"
             style={{ fontFamily: "var(--font-mono)" }}
           >
             {(
@@ -212,7 +212,7 @@ function SetDetailPage() {
             ).map(([label, n]) => (
               <div key={label} className="p-4 text-center">
                 <p className="text-[10px] smallcaps text-[var(--slate)]">{label}</p>
-                <p className="text-3xl font-bold">{n}</p>
+                <p className="text-xl md:text-2xl font-bold">{n}</p>
               </div>
             ))}
           </div>

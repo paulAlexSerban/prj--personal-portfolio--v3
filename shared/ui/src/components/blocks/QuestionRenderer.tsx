@@ -92,7 +92,7 @@ export function QuestionRenderer({ question, revealed, onReveal, onGraded, onRet
                 <p className="smallcaps text-[10px] text-[var(--slate)] mb-2">
                     {question.answerFormat.replace(/_/g, ' ')} · {question.difficulty} · {question.gradingMode === 'auto' ? 'auto-graded' : 'self-graded'}
                 </p>
-                <CardRenderer html={question.stem} compiledHtml={question.stemHtml} reveal={revealed} dropcap className="text-xl md:text-2xl leading-snug" />
+                <CardRenderer html={question.stem} compiledHtml={question.stemHtml} reveal={revealed} dropcap className="text-lg md:text-xl leading-snug" />
             </div>
 
             {/* ── Answer controls ──────────────────────────────────────────── */}

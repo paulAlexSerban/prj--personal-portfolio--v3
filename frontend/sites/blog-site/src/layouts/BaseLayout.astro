@@ -47,7 +47,7 @@ const canonical = canonicalUrl ?? new URL(Astro.url.pathname, Astro.site).href;
     </head>
     <body class="min-h-screen bg-newsprint text-ink">
         <SiteHeader />
-        <main class="mx-auto max-w-[72rem] px-6 pt-8 pb-16">
+        <main class="root-box">
             <slot />
         </main>
         <SiteFooter />
