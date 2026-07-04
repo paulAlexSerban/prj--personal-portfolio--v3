@@ -67,7 +67,7 @@ the quiz app.
 | `src/compile.ts`  | `compileQuizData(data, opts)` — compiles Markdown/MDX → sanitized HTML (via `shared--quiz-markdown`) and copies/rewrites image assets.                           |
 | `src/write.ts`    | `writeQuizJson(data, outDir)` — writes all the JSON files above.                                                                                                 |
 | `src/contract.ts` | The TypeScript types for every output shape — **the source of truth the app imports** (`./contract` subpath).                                                    |
-| `src/index.ts`    | CLI entry: task graph via `shared--task-manager` (Open DB → Export → Close ∥ Compile → Write); reads env vars, handles `--dry-run`.                             |
+| `src/index.ts`    | CLI entry: task graph via `shared--task-manager` (Open DB → Export → Close ∥ Compile → Write); reads env vars, handles `--dry-run`.                              |
 | `index.ts`        | Library exports for other packages.                                                                                                                              |
 
 The library functions are pure and side-effect-free except `write.ts`; the CLI orchestrates DB access, compilation, and filesystem writes through named tasks.
