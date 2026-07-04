@@ -40,7 +40,11 @@
             "types": "./src/lib/coverImage.ts",
             "import": "./src/lib/coverImage.ts"
         },
-        "./styles.css": "./src/styles/theme.css"
+        "./theme.css": "./src/styles/theme.css",
+        "./base.css": "./src/styles/base.css",
+        "./components.css": "./src/styles/components.css",
+        "./markdown-rendered-content.css": "./src/styles/markdown-rendered-content.css",
+        "./tailwind.css": "./src/styles/tailwind.css"
     },
     "scripts": {
         "typecheck": "tsc -b",

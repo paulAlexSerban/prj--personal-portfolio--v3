@@ -1,0 +1,113 @@
+@layer components {
+    /* Data tables: force horizontal scroll on narrow screens and keep the first
+     column pinned so row context stays visible while scrolling. */
+    .data-table {
+        min-width: 640px;
+    }
+    .data-table th:first-child,
+    .data-table td:first-child {
+        position: sticky;
+        left: 0;
+        z-index: 1;
+        background: var(--aged-white);
+    }
+    .data-table thead th:first-child {
+        background: var(--highlight);
+    }
+    .grain {
+        background-image: radial-gradient(rgba(13, 13, 13, 0.05) 1px, transparent 1px), radial-gradient(rgba(13, 13, 13, 0.03) 1px, transparent 1px);
+        background-size:
+            3px 3px,
+            7px 7px;
+        background-position:
+            0 0,
+            1px 2px;
+    }
+    .stamp {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-family: var(--font-display);
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        background: var(--ink-black);
+        color: var(--aged-white);
+        padding: 0.6rem 1.4rem;
+        border: 2px solid var(--ink-black);
+        cursor: pointer;
+        transition:
+            transform 0.12s ease,
+            background 0.12s ease;
+        user-select: none;
+    }
+    .stamp:hover:not(:disabled) {
+        transform: rotate(-0.6deg) translateY(-1px);
+        background: var(--charcoal);
+    }
+    .stamp:active:not(:disabled) {
+        transform: rotate(0.4deg) translateY(1px);
+    }
+    .stamp:disabled {
+        opacity: 0.4;
+        cursor: not-allowed;
+    }
+    .stamp-ghost {
+        background: transparent;
+        color: var(--ink-black);
+    }
+    .stamp-ghost:hover:not(:disabled) {
+        background: var(--ink-black);
+        color: var(--aged-white);
+    }
+    .rule {
+        border-top: 2px solid var(--ink-black);
+    }
+    .rule-thin {
+        border-top: 1px solid var(--ink-black);
+    }
+    .rule-double {
+        border-top: 1px solid var(--ink-black);
+        border-bottom: 1px solid var(--ink-black);
+        padding-top: 2px;
+        padding-bottom: 2px;
+    }
+    .smallcaps {
+        font-variant: small-caps;
+        letter-spacing: 0.12em;
+    }
+    /* Newspaper text patterns shared by the quiz app and the blog. */
+    .kicker {
+        font-variant: small-caps;
+        letter-spacing: 0.12em;
+        @apply text-slate-ink;
+    }
+    .deck {
+        @apply italic text-charcoal;
+    }
+    .card-ruled {
+        @apply border-t-[3px] border-ink pt-4;
+    }
+    .dropcap::first-letter {
+        font-family: var(--font-display);
+        font-weight: 900;
+        font-size: 3em;
+        float: left;
+        line-height: 0.85;
+        padding: 0.025em 0.05em 0 0;
+        color: var(--ink-black);
+    }
+    @keyframes inkbleed {
+        from {
+            opacity: 0;
+            filter: blur(4px);
+        }
+        to {
+            opacity: 1;
+            filter: blur(0);
+        }
+    }
+    .inkbleed {
+        animation: inkbleed 0.45s ease-out;
+    }
+}
