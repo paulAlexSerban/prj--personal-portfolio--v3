@@ -4,8 +4,9 @@ import type { ExportedQuestion } from "@prj--personal-portfolio--v3/tools--quiz-
 import { PageLayout } from "@/components/layout/PageLayout";
 import { QuestionPreviewDrawer } from "@/containers/QuestionPreviewDrawer";
 import { stampClasses } from "@prj--personal-portfolio--v3/shared--ui";
-import { loadTagQuestions, loadTagsIndex } from "@/data/loadQuizData";
+import { loadTagQuestions, loadTagsIndex, loadPostsIndex } from "@/data/loadQuizData";
 import { getCardStateLabel, stripMarkdownPreview } from "@/lib/questionFilters";
+import { blogPostUrl } from "@/lib/urls";
 import { useStore } from "@/store";
 import { todayISO } from "@/utils/dates";
 
@@ -24,17 +25,19 @@ function TagDetailPage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [preview, setPreview] = useState<ExportedQuestion | null>(null);
+  const [postTypes, setPostTypes] = useState<Map<string, string>>(new Map());
 
   useEffect(() => {
     let cancelled = false;
     setLoading(true);
     setError(null);
-    Promise.all([loadTagQuestions(tag), loadTagsIndex()])
-      .then(([qs, tags]) => {
+    Promise.all([loadTagQuestions(tag), loadTagsIndex(), loadPostsIndex()])
+      .then(([qs, tags, posts]) => {
         if (cancelled) return;
         const added = new Set(addedPosts);
         setQuestions(qs.filter((q) => added.has(q.postSlug)));
         setTagMeta(tags.find((t) => t.slug === tag) ?? null);
+        setPostTypes(new Map(posts.map((p) => [p.slug, p.type])));
       })
       .catch((e) => {
         if (!cancelled) setError(e instanceof Error ? e.message : "Failed to load tag");
@@ -48,6 +51,10 @@ function TagDetailPage() {
   }, [tag, addedPosts]);
 
   const today = todayISO(0);
+
+  const previewBlogHref = preview
+    ? blogPostUrl(postTypes.get(preview.postSlug) ?? "post", preview.postSlug)
+    : undefined;
 
   if (addedPosts.length === 0 && !loading) {
     return (
@@ -155,6 +162,7 @@ function TagDetailPage() {
         question={preview}
         open={preview !== null}
         onClose={() => setPreview(null)}
+        blogPostHref={previewBlogHref}
         studyTo={
           preview
             ? {

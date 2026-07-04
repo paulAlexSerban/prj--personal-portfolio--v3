@@ -2,7 +2,7 @@ import type { ReactNode } from 'react';
 import type { ExportedQuestion } from '@prj--personal-portfolio--v3/tools--quiz-export/contract';
 import { CardRenderer } from './CardRenderer';
 import { Modal } from '../ui/Modal';
-import { Stamp } from '../ui/Stamp';
+import { Stamp, stampClasses } from '../ui/Stamp';
 
 /** Minimal card state for preview display — app passes precomputed values. */
 export interface CardPreviewData {
@@ -25,6 +25,8 @@ export interface QuestionPreviewProps {
     onReset: () => void;
     onClose: () => void;
     renderTag?: (tag: string) => ReactNode;
+    /** External link to the source blog post (quiz app supplies URL). */
+    blogPostHref?: string;
 }
 
 export function QuestionPreview({
@@ -40,6 +42,7 @@ export function QuestionPreview({
     onReset,
     onClose,
     renderTag,
+    blogPostHref,
 }: QuestionPreviewProps) {
     return (
         <Modal open={open} onClose={onClose} title="Question Preview" wide>
@@ -62,6 +65,11 @@ export function QuestionPreview({
                 <Stamp variant="ghost" title="Reset this card's scheduling progress" onClick={onReset}>
                     Reset Progress
                 </Stamp>
+                {blogPostHref && (
+                    <a href={blogPostHref} target="_blank" rel="noopener noreferrer" className={stampClasses('ghost', 'md')} title="Open the source blog post in a new tab">
+                        Read source post ↗
+                    </a>
+                )}
                 <button type="button" onClick={onClose} title="Close this preview" className="smallcaps underline text-base md:ml-auto">
                     Close
                 </button>

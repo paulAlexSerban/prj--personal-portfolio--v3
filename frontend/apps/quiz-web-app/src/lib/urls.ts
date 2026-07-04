@@ -17,4 +17,11 @@ export const siteUrls = {
     blog: crossApp.blog,
 } as const;
 
+/** Canonical blog detail URL for a post, snippet, or book note. */
+export function blogPostUrl(postType: string, slug: string): string {
+    const segment = postType === 'book-note' ? 'booknote' : postType;
+    const base = siteUrls.blog.replace(/\/$/, '');
+    return `${base}/${segment}/${slug}/`;
+}
+
 export { isExternalUrl, externalLinkAttrs };

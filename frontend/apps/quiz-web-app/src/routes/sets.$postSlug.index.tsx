@@ -10,6 +10,7 @@ import { QuestionPreviewDrawer } from "@/containers/QuestionPreviewDrawer";
 import { Stamp, stampClasses } from "@prj--personal-portfolio--v3/shared--ui";
 import { loadPostQuestions, loadPostsIndex } from "@/data/loadQuizData";
 import { stripMarkdownPreview } from "@/lib/questionFilters";
+import { blogPostUrl, externalLinkAttrs } from "@/lib/urls";
 import { useStudySetActions } from "@/hooks/useStudySetActions";
 import { useStore } from "@/store";
 import type { QuizState } from "@/store";
@@ -142,6 +143,8 @@ function SetDetailPage() {
     );
   }
 
+  const blogHref = meta ? blogPostUrl(meta.type, meta.slug) : undefined;
+
   return (
     <PageLayout>
       {loading ? (
@@ -159,6 +162,18 @@ function SetDetailPage() {
           </h2>
           {meta?.excerpt && (
             <p className="mt-2 text-base text-[var(--charcoal)] italic">{meta.excerpt}</p>
+          )}
+          {blogHref && (
+            <p className="mt-3">
+              <a
+                href={blogHref}
+                {...externalLinkAttrs}
+                className={stampClasses("ghost", "md")}
+                title="Open the source blog post in a new tab"
+              >
+                Read post on blog ↗
+              </a>
+            </p>
           )}
 
           <div className="rule mt-4 mb-6" />
@@ -467,6 +482,7 @@ function SetDetailPage() {
         question={preview}
         open={preview !== null}
         onClose={() => setPreview(null)}
+        blogPostHref={blogHref}
       />
     </PageLayout>
   );

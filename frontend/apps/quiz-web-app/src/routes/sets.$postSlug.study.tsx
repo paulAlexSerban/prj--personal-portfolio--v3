@@ -1,7 +1,10 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { useEffect, useMemo, useState } from "react";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { stampClasses } from "@prj--personal-portfolio--v3/shared--ui";
 import { StudySession } from "@/containers/StudySession";
+import { loadPostsIndex } from "@/data/loadQuizData";
+import { blogPostUrl } from "@/lib/urls";
 import { useStore } from "@/store";
 
 type StudySearch = {
@@ -19,6 +22,30 @@ function StudyPage() {
   const { postSlug } = Route.useParams();
   const { cram } = Route.useSearch();
   const addedPosts = useStore((s) => s.addedPosts);
+  const [postTypes, setPostTypes] = useState<Map<string, string>>(new Map());
+
+  useEffect(() => {
+    let cancelled = false;
+    loadPostsIndex()
+      .then((posts) => {
+        if (cancelled) return;
+        setPostTypes(new Map(posts.map((p) => [p.slug, p.type])));
+      })
+      .catch(() => {
+        if (!cancelled) setPostTypes(new Map());
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  const getPostBlogHref = useMemo(
+    () => (slug: string) => {
+      const postType = postTypes.get(slug);
+      return postType ? blogPostUrl(postType, slug) : undefined;
+    },
+    [postTypes],
+  );
 
   if (!addedPosts.includes(postSlug)) {
     return (
@@ -38,6 +65,7 @@ function StudyPage() {
       postSlugs={[postSlug]}
       questionSlugs={cram ? [cram] : undefined}
       cram={isCram}
+      getPostBlogHref={getPostBlogHref}
       completionSubtitle={
         isCram
           ? "You have finished this cram session."

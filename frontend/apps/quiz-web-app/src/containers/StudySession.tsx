@@ -16,6 +16,8 @@ export interface StudySessionProps {
   completionActions: ReactNode;
   /** Completion screen subtitle copy. */
   completionSubtitle?: string;
+  /** Resolve blog post URL for a question's parent post slug. */
+  getPostBlogHref?: (postSlug: string) => string | undefined;
 }
 
 /**
@@ -29,6 +31,7 @@ export function StudySession({
   exitSlot,
   completionActions,
   completionSubtitle = "You have reached the end of today's queue.",
+  getPostBlogHref,
 }: StudySessionProps) {
   const session = useStudySession({ postSlugs, questionSlugs, cram });
 
@@ -74,6 +77,8 @@ export function StudySession({
 
   if (!session.currentQuestion || !session.cardView) return null;
 
+  const blogPostHref = getPostBlogHref?.(session.currentQuestion.postSlug);
+
   return (
     <PageLayout>
       <StudyCard
@@ -85,6 +90,7 @@ export function StudySession({
         ratingPreview={session.ratingPreview}
         ratingDisabled={session.ratingDisabled}
         exitSlot={exitSlot}
+        blogPostHref={blogPostHref}
         onReveal={session.onReveal}
         onGraded={session.onGraded}
         onRetry={session.onRetry}

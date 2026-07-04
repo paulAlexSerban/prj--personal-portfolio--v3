@@ -9,6 +9,8 @@ export interface QuestionPreviewDrawerProps {
   onClose: () => void;
   /** Override study link (e.g. tag-scoped cram). Defaults to per-set study route. */
   studyTo?: { to: string; params?: Record<string, string>; search?: Record<string, string> };
+  /** External link to the source blog post for this question. */
+  blogPostHref?: string;
 }
 
 /**
@@ -20,6 +22,7 @@ export function QuestionPreviewDrawer({
   open,
   onClose,
   studyTo,
+  blogPostHref,
 }: QuestionPreviewDrawerProps) {
   const preview = useQuestionPreview(question);
 
@@ -59,6 +62,7 @@ export function QuestionPreviewDrawer({
       onSuspendToggle={preview.onSuspendToggle}
       onReset={preview.onReset}
       onClose={onClose}
+      blogPostHref={blogPostHref}
       renderTag={(tag) => (
         <Link
           key={tag}

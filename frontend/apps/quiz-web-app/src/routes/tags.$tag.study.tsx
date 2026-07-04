@@ -4,7 +4,8 @@ import type { ExportedQuestion } from "@prj--personal-portfolio--v3/tools--quiz-
 import { PageLayout } from "@/components/layout/PageLayout";
 import { stampClasses } from "@prj--personal-portfolio--v3/shared--ui";
 import { StudySession } from "@/containers/StudySession";
-import { loadTagQuestions } from "@/data/loadQuizData";
+import { loadTagQuestions, loadPostsIndex } from "@/data/loadQuizData";
+import { blogPostUrl } from "@/lib/urls";
 import { useStore } from "@/store";
 
 type TagStudySearch = {
@@ -31,15 +32,17 @@ function TagStudyPage() {
   const [questions, setQuestions] = useState<ExportedQuestion[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [postTypes, setPostTypes] = useState<Map<string, string>>(new Map());
 
   useEffect(() => {
     let cancelled = false;
     setLoading(true);
-    loadTagQuestions(tag)
-      .then((qs) => {
+    Promise.all([loadTagQuestions(tag), loadPostsIndex()])
+      .then(([qs, posts]) => {
         if (cancelled) return;
         const added = new Set(addedPosts);
         setQuestions(qs.filter((q) => added.has(q.postSlug)));
+        setPostTypes(new Map(posts.map((p) => [p.slug, p.type])));
       })
       .catch((e) => {
         if (!cancelled) setError(e instanceof Error ? e.message : "Failed to load tag");
@@ -59,6 +62,14 @@ function TagStudyPage() {
   const isSingleCram = Boolean(cram && cram !== "1");
   const cramMode = Boolean(cram);
   const scopedSlugs = isSingleCram && cram ? [cram] : questionSlugs;
+
+  const getPostBlogHref = useMemo(
+    () => (slug: string) => {
+      const postType = postTypes.get(slug);
+      return postType ? blogPostUrl(postType, slug) : undefined;
+    },
+    [postTypes],
+  );
 
   if (loading) {
     return (
@@ -97,6 +108,7 @@ function TagStudyPage() {
       postSlugs={postSlugs}
       questionSlugs={scopedSlugs}
       cram={cramMode}
+      getPostBlogHref={getPostBlogHref}
       completionSubtitle={
         cramMode
           ? `You have finished this cram session for tag “${tag}”.`

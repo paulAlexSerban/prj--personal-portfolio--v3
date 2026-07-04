@@ -34,6 +34,8 @@ export interface StudyCardProps {
     onBury: () => void;
     onSuspend: () => void;
     onIgnore: () => void;
+    /** External link to the source blog post (quiz app supplies URL). */
+    blogPostHref?: string;
 }
 
 export function StudyCard({
@@ -52,6 +54,7 @@ export function StudyCard({
     onBury,
     onSuspend,
     onIgnore,
+    blogPostHref,
 }: StudyCardProps) {
     const { done, total } = progress;
 
@@ -130,6 +133,20 @@ export function StudyCard({
                         </div>
                         <p className="smallcaps text-[10px] text-[var(--slate)] mt-3 text-center italic" title="Content is read-only - edit in the source content repo">
                             Read-only · content edited in source
+                            {blogPostHref && (
+                                <>
+                                    {' · '}
+                                    <a
+                                        href={blogPostHref}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="underline not-italic"
+                                        title="Open the source blog post in a new tab"
+                                    >
+                                        Read source post ↗
+                                    </a>
+                                </>
+                            )}
                         </p>
                     </div>
                 )}

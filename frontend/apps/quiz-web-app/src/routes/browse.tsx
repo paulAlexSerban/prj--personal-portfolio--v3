@@ -14,6 +14,7 @@ import {
   stripMarkdownPreview,
   type QuestionBrowseFilters,
 } from "@/lib/questionFilters";
+import { blogPostUrl } from "@/lib/urls";
 import { useStore } from "@/store";
 import { todayISO } from "@/utils/dates";
 
@@ -30,6 +31,7 @@ function BrowsePage() {
 
   const [allQuestions, setAllQuestions] = useState<ExportedQuestion[]>([]);
   const [postTitles, setPostTitles] = useState<Map<string, string>>(new Map());
+  const [postTypes, setPostTypes] = useState<Map<string, string>>(new Map());
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [filters, setFilters] = useState<QuestionBrowseFilters>(EMPTY_BROWSE_FILTERS);
@@ -46,6 +48,7 @@ function BrowsePage() {
         const added = new Set(addedPosts);
         setAllQuestions(questions.filter((q) => added.has(q.postSlug)));
         setPostTitles(new Map(posts.map((p) => [p.slug, p.title])));
+        setPostTypes(new Map(posts.map((p) => [p.slug, p.type])));
       })
       .catch((e) => {
         if (!cancelled) setError(e instanceof Error ? e.message : "Failed to load questions");
@@ -72,6 +75,10 @@ function BrowsePage() {
   useEffect(() => {
     setPage(1);
   }, [filters]);
+
+  const previewBlogHref = preview
+    ? blogPostUrl(postTypes.get(preview.postSlug) ?? "post", preview.postSlug)
+    : undefined;
 
   if (addedPosts.length === 0 && !loading) {
     return (
@@ -169,6 +176,7 @@ function BrowsePage() {
         question={preview}
         open={preview !== null}
         onClose={() => setPreview(null)}
+        blogPostHref={previewBlogHref}
       />
     </PageLayout>
   );
