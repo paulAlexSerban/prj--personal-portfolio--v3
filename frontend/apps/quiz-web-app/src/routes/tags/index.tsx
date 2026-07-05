@@ -7,10 +7,10 @@ import { loadAllQuestions } from "@/data/loadQuizData";
 import { useStore } from "@/store";
 
 export const Route = createFileRoute("/tags/")({
-  component: TagsIndexPage,
+  component: TagsIndexView,
 });
 
-function TagsIndexPage() {
+function TagsIndexView() {
   const addedPosts = useStore((s) => s.addedPosts);
   const [questions, setQuestions] = useState<ExportedQuestion[]>([]);
   const [loading, setLoading] = useState(true);

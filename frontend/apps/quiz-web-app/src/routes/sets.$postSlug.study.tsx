@@ -15,10 +15,10 @@ export const Route = createFileRoute("/sets/$postSlug/study")({
   validateSearch: (search: Record<string, unknown>): StudySearch => ({
     cram: typeof search.cram === "string" && search.cram.length > 0 ? search.cram : undefined,
   }),
-  component: StudyPage,
+  component: StudyView,
 });
 
-function StudyPage() {
+function StudyView() {
   const { postSlug } = Route.useParams();
   const { cram } = Route.useSearch();
   const addedPosts = useStore((s) => s.addedPosts);

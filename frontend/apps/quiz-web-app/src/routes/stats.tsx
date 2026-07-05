@@ -10,10 +10,10 @@ import { predictedRetention } from "@/algorithms/fsrs";
 import { todayISO } from "@/utils/dates";
 
 export const Route = createFileRoute("/stats")({
-  component: StatsPage,
+  component: StatsView,
 });
 
-function StatsPage() {
+function StatsView() {
   const cardStates = useStore((s) => s.cardStates);
   const ignored = useStore((s) => s.ignored);
   const suspended = useStore((s) => s.suspended);

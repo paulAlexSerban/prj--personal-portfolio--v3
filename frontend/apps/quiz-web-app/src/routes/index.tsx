@@ -9,12 +9,12 @@ import { useStudySetActions } from "@/hooks/useStudySetActions";
 import { useStore } from "@/store";
 
 export const Route = createFileRoute("/")({
-  component: BrowsePage,
+  component: HomeView,
 });
 
 type SortBy = "title" | "questions";
 
-function BrowsePage() {
+function HomeView() {
   const addedPosts = useStore((s) => s.addedPosts);
   const { addToStudySet, removeFromStudySet, loadingSlug, error, clearError } =
     useStudySetActions();

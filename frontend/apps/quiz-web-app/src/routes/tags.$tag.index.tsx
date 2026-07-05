@@ -11,10 +11,10 @@ import { useStore } from "@/store";
 import { todayISO } from "@/utils/dates";
 
 export const Route = createFileRoute("/tags/$tag/")({
-  component: TagDetailPage,
+  component: TagDetailView,
 });
 
-function TagDetailPage() {
+function TagDetailView() {
   const { tag } = Route.useParams();
   const addedPosts = useStore((s) => s.addedPosts);
   const cardStates = useStore((s) => s.cardStates);

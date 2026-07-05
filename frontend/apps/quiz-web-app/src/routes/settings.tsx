@@ -12,10 +12,10 @@ import { applyTheme } from "@/lib/theme";
 import { DEFAULT_FSRS_PARAMS } from "@/algorithms/fsrs";
 
 export const Route = createFileRoute("/settings")({
-  component: SettingsPage,
+  component: SettingsView,
 });
 
-function SettingsPage() {
+function SettingsView() {
   const settings = useStore((s) => s.settings);
   const setSettings = useStore((s) => s.setSettings);
   const config = useStore((s) => s.config);

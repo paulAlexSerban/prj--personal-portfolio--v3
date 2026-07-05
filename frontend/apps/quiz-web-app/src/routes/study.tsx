@@ -8,10 +8,10 @@ import { blogPostUrl } from "@/lib/urls";
 import { useStore } from "@/store";
 
 export const Route = createFileRoute("/study")({
-  component: StudyAllPage,
+  component: StudyAllView,
 });
 
-function StudyAllPage() {
+function StudyAllView() {
   const addedPosts = useStore((s) => s.addedPosts);
   const [postTypes, setPostTypes] = useState<Map<string, string>>(new Map());
 

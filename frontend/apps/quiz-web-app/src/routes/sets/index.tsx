@@ -9,10 +9,10 @@ import type { QuizState } from "@/store";
 import { getPostStats } from "@/store/selectors";
 
 export const Route = createFileRoute("/sets/")({
-  component: StudySetsPage,
+  component: StudySetsView,
 });
 
-function StudySetsPage() {
+function StudySetsView() {
   const addedPosts = useStore((s) => s.addedPosts);
   const cardStates = useStore((s) => s.cardStates);
   const ignored = useStore((s) => s.ignored);

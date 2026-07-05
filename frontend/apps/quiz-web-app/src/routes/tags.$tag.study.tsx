@@ -21,10 +21,10 @@ export const Route = createFileRoute("/tags/$tag/study")({
           : "1"
         : undefined,
   }),
-  component: TagStudyPage,
+  component: TagStudyView,
 });
 
-function TagStudyPage() {
+function TagStudyView() {
   const { tag } = Route.useParams();
   const { cram } = Route.useSearch();
   const addedPosts = useStore((s) => s.addedPosts);

@@ -21,10 +21,10 @@ import { todayISO } from "@/utils/dates";
 const PAGE_SIZE = 25;
 
 export const Route = createFileRoute("/browse")({
-  component: BrowsePage,
+  component: BrowseView,
 });
 
-function BrowsePage() {
+function BrowseView() {
   const addedPosts = useStore((s) => s.addedPosts);
   const cardStates = useStore((s) => s.cardStates);
   const ignored = useStore((s) => s.ignored);
