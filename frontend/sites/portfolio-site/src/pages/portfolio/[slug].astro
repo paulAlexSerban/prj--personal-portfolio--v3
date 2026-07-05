@@ -3,16 +3,17 @@ import { evaluate } from '@mdx-js/mdx';
 import { rehypePlugins, remarkPlugins } from '@prj--personal-portfolio--v3/shared--markdown/plugins';
 import * as runtime from 'react/jsx-runtime';
 
-import TagList from '../../components/TagList.astro';
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import { closeConnection, openDb } from '../../lib/db.ts';
+import TagList from '@/library/components/TagList.astro';
+import BaseLayout from '@/system/templates/BaseTemplate.astro';
+
+import { closeConnection, openDb } from '@/lib/db.ts';
 import {
     getAllProjectSlugs,
     getProjectBySlug,
     getTagsForProject,
     parseMetrics,
-} from '../../lib/queries/projects.ts';
-import { assetUrl, siteUrls } from '../../lib/urls.ts';
+} from '@/lib/queries/projects.ts';
+import { assetUrl, siteUrls } from '@/lib/urls.ts';
 
 export function getStaticPaths() {
     const db = openDb();

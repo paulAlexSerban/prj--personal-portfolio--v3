@@ -209,4 +209,4 @@ export const PostListIsland = ({ posts }: PostListIslandProps) => {
             )}
         </div>
     );
-}
+};

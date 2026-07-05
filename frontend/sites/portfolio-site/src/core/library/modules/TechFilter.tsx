@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react';
 import type { ProjectRow, TagRow } from '@prj--personal-portfolio--v3/shared--db-schema';
-import { assetUrl, siteUrls } from '../lib/urls.ts';
+
+import { assetUrl, siteUrls } from '@/lib/urls.ts';
 
 export interface ProjectWithTags {
     project: ProjectRow;

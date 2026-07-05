@@ -1,9 +1,10 @@
 ---
-import ExperienceTimeline from '../components/ExperienceTimeline.astro';
-import BaseLayout from '../layouts/BaseLayout.astro';
-import { closeConnection, openDb } from '../lib/db.ts';
-import { getExperienceTimeline } from '../lib/queries/experience.ts';
-import { getProfile } from '../lib/queries/profile.ts';
+import ExperienceTimeline from '@/library/modules/ExperienceTimeline.astro';
+import BaseLayout from '@/system/templates/BaseTemplate.astro';
+
+import { closeConnection, openDb } from '@/lib/db.ts';
+import { getExperienceTimeline } from '@/lib/queries/experience.ts';
+import { getProfile } from '@/lib/queries/profile.ts';
 
 const db = openDb();
 const profile = getProfile(db);

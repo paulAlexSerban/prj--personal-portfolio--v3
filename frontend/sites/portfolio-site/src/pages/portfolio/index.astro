@@ -1,8 +1,9 @@
 ---
-import { TechFilter } from '../../components/TechFilter.tsx';
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import { closeConnection, openDb } from '../../lib/db.ts';
-import { buildProjectTagsMap, getArchiveProjects, getFeaturedProjects } from '../../lib/queries/projects.ts';
+import { TechFilter } from '@/library/modules/TechFilter.tsx';
+import BaseLayout from '@/system/templates/BaseTemplate.astro';
+
+import { closeConnection, openDb } from '@/lib/db.ts';
+import { buildProjectTagsMap, getArchiveProjects, getFeaturedProjects } from '@/lib/queries/projects.ts';
 
 const db = openDb();
 const featuredProjects = getFeaturedProjects(db);

@@ -1,8 +1,9 @@
 ---
-import SiteFooter from '../components/SiteFooter.astro';
-import SiteHeader from '../components/SiteHeader.astro';
-import { assetUrl } from '../lib/urls.ts';
-import '../styles/global.css';
+import SiteFooter from '@/library/modules/SiteFooter.astro';
+import SiteHeader from '@/library/modules/SiteHeader.astro';
+
+import { assetUrl } from '@/lib/urls.ts';
+import '@/styles/global.css';
 
 interface Props {
     title: string;

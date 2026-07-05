@@ -1,17 +1,18 @@
 ---
-import CaseStudyCard from '../components/CaseStudyCard.astro';
-import CoreSkills from '../components/CoreSkills.astro';
-import ExperienceTimeline from '../components/ExperienceTimeline.astro';
-import FeaturedBlog from '../components/FeaturedBlog.astro';
-import HeroSplit from '../components/HeroSplit.astro';
-import BaseLayout from '../layouts/BaseLayout.astro';
-import { closeConnection, openDb } from '../lib/db.ts';
-import { getExperienceTimeline } from '../lib/queries/experience.ts';
-import { getFeaturedPost, getRecentPosts } from '../lib/queries/posts.ts';
-import { buildProjectTagsMap, getFeaturedPreview } from '../lib/queries/projects.ts';
-import { getProfile } from '../lib/queries/profile.ts';
-import { getSkillsGrouped } from '../lib/queries/skills.ts';
-import { assetUrl, externalLinkAttrs, siteUrls } from '../lib/urls.ts';
+import CaseStudyCard from '@/library/modules/CaseStudyCard.astro';
+import CoreSkills from '@/library/modules/CoreSkills.astro';
+import ExperienceTimeline from '@/library/modules/ExperienceTimeline.astro';
+import FeaturedBlog from '@/library/modules/FeaturedBlog.astro';
+import HeroSplit from '@/library/modules/HeroSplit.astro';
+import BaseLayout from '@/system/templates/BaseTemplate.astro';
+
+import { closeConnection, openDb } from '@/lib/db.ts';
+import { getExperienceTimeline } from '@/lib/queries/experience.ts';
+import { getFeaturedPost, getRecentPosts } from '@/lib/queries/posts.ts';
+import { buildProjectTagsMap, getFeaturedPreview } from '@/lib/queries/projects.ts';
+import { getProfile } from '@/lib/queries/profile.ts';
+import { getSkillsGrouped } from '@/lib/queries/skills.ts';
+import { assetUrl, externalLinkAttrs, siteUrls } from '@/lib/urls.ts';
 
 const db = openDb();
 const profile = getProfile(db);
