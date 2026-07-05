@@ -81,6 +81,14 @@ export default defineConfig({
   ],
   server: {
     port: 5180,
+    allowedHosts: true,
+    hmr: process.env.VITE_HMR_HOST
+      ? {
+          host: process.env.VITE_HMR_HOST,
+          clientPort: Number(process.env.VITE_HMR_CLIENT_PORT ?? 443),
+          protocol: (process.env.VITE_HMR_PROTOCOL ?? "wss") as "ws" | "wss",
+        }
+      : undefined,
   },
   test: {
     // jsdom provides the `window` DOMPurify needs to initialize, plus a DOM for

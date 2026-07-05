@@ -17,6 +17,16 @@ export default defineConfig({
         sitemap(),
     ],
     vite: {
+        server: {
+            allowedHosts: true,
+            hmr: process.env.ASTRO_HMR_HOST
+                ? {
+                      host: process.env.ASTRO_HMR_HOST,
+                      clientPort: Number(process.env.ASTRO_HMR_CLIENT_PORT ?? 443),
+                      protocol: process.env.ASTRO_HMR_PROTOCOL ?? 'wss',
+                  }
+                : undefined,
+        },
         plugins: [tailwindcss()],
         resolve: {
             dedupe: ['react', 'react-dom'],

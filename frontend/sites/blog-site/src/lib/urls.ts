@@ -24,8 +24,8 @@ export const siteUrls = {
     postSlug: (slug: string) => `${base}post/${slug}/`,
     snippet: `${base}snippet/`,
     booknote: `${base}booknote/`,
-    portfolio: crossApp.portfolio,
-    quiz: crossApp.quiz,
+    portfolio: import.meta.env.PUBLIC_PORTFOLIO_URL ?? crossApp.portfolio,
+    quiz: import.meta.env.PUBLIC_QUIZ_URL ?? crossApp.quiz,
 } as const;
 
 export const assetUrl = (path: string) => sharedAssetUrl(base, path);

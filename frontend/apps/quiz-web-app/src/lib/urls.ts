@@ -13,8 +13,8 @@ const crossApp = createSiteUrls({
 });
 
 export const siteUrls = {
-    portfolio: crossApp.portfolio,
-    blog: crossApp.blog,
+    portfolio: import.meta.env.VITE_PORTFOLIO_URL ?? crossApp.portfolio,
+    blog: import.meta.env.VITE_BLOG_URL ?? crossApp.blog,
 } as const;
 
 /** Canonical blog detail URL for a post, snippet, or book note. */

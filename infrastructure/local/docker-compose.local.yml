@@ -1,0 +1,96 @@
+name: paulserban-local
+
+services:
+  traefik:
+    image: traefik:v3.3
+    container_name: traefik-local
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+      - "8080:8080"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - ./traefik/traefik.yml:/etc/traefik/traefik.yml:ro
+      - ./traefik/dynamic:/etc/traefik/dynamic:ro
+      - ./traefik/certs:/certs:ro
+    networks:
+      - local
+
+  portfolio:
+    build:
+      context: ../..
+      dockerfile: frontend/sites/portfolio-site/local.Dockerfile
+    container_name: portfolio-local
+    restart: unless-stopped
+    environment:
+      ASTRO_SITE: https://local.paulserban.eu
+      ASTRO_HMR_HOST: local.paulserban.eu
+      ASTRO_HMR_CLIENT_PORT: "443"
+      ASTRO_HMR_PROTOCOL: wss
+      DATABASE_PATH: /app/database/output/content.db
+      PUBLIC_BLOG_URL: https://local.blog.paulserban.eu/
+      PUBLIC_QUIZ_URL: https://local.quiz.paulserban.eu/
+    volumes:
+      - ../../database/output:/app/database/output
+    networks:
+      - local
+    labels:
+      - traefik.enable=true
+      - traefik.docker.network=paulserban-local
+      - traefik.http.routers.portfolio.rule=Host(`local.paulserban.eu`)
+      - traefik.http.routers.portfolio.entrypoints=websecure
+      - traefik.http.routers.portfolio.tls=true
+      - traefik.http.services.portfolio.loadbalancer.server.port=4321
+
+  blog:
+    build:
+      context: ../..
+      dockerfile: frontend/sites/blog-site/local.Dockerfile
+    container_name: blog-local
+    restart: unless-stopped
+    environment:
+      ASTRO_SITE: https://local.blog.paulserban.eu
+      ASTRO_HMR_HOST: local.blog.paulserban.eu
+      ASTRO_HMR_CLIENT_PORT: "443"
+      ASTRO_HMR_PROTOCOL: wss
+      DATABASE_PATH: /app/database/output/content.db
+      PUBLIC_PORTFOLIO_URL: https://local.paulserban.eu/
+      PUBLIC_QUIZ_URL: https://local.quiz.paulserban.eu/
+    volumes:
+      - ../../database/output:/app/database/output
+    networks:
+      - local
+    labels:
+      - traefik.enable=true
+      - traefik.docker.network=paulserban-local
+      - traefik.http.routers.blog.rule=Host(`local.blog.paulserban.eu`)
+      - traefik.http.routers.blog.entrypoints=websecure
+      - traefik.http.routers.blog.tls=true
+      - traefik.http.services.blog.loadbalancer.server.port=4321
+
+  quiz:
+    build:
+      context: ../..
+      dockerfile: frontend/apps/quiz-web-app/local.Dockerfile
+    container_name: quiz-local
+    restart: unless-stopped
+    environment:
+      VITE_HMR_HOST: local.quiz.paulserban.eu
+      VITE_HMR_CLIENT_PORT: "443"
+      VITE_HMR_PROTOCOL: wss
+      VITE_PORTFOLIO_URL: https://local.paulserban.eu/
+      VITE_BLOG_URL: https://local.blog.paulserban.eu/
+    networks:
+      - local
+    labels:
+      - traefik.enable=true
+      - traefik.docker.network=paulserban-local
+      - traefik.http.routers.quiz.rule=Host(`local.quiz.paulserban.eu`)
+      - traefik.http.routers.quiz.entrypoints=websecure
+      - traefik.http.routers.quiz.tls=true
+      - traefik.http.services.quiz.loadbalancer.server.port=5180
+
+networks:
+  local:
+    name: paulserban-local

@@ -92,3 +92,12 @@ The quiz SPA uses a `404.html` + `sessionStorage` redirect so deep links survive
 ### Triggering a DEV deploy
 
 `deploy-dev.yaml` runs on push to `main`, or manually via Actions -> **Deploy DEV (GitHub Pages)** -> **Run workflow**.
+
+## URLs
+
+| URL Service                      | Service           |
+| -------------------------------- | ----------------- |
+| https://local.paulserban.eu      | Portfolio         |
+| https://local.blog.paulserban.eu | Blog              |
+| https://local.quiz.paulserban.eu | Quiz              |
+| http://localhost:8080            | Traefik dashboard |
