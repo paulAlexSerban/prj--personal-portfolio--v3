@@ -2,18 +2,18 @@
 name: Difficulty sorting for new cards
 overview: Sort new (unseen) cards by difficulty — beginner first, advanced last — so they are introduced in order of increasing difficulty within a study session. A beginner card always takes priority over intermediate/advanced new cards.
 todos:
-  - id: queue-sort
-    content: Add difficultyMap to QueueOpts and sort newC by difficulty in buildQueue (queue.ts)
-    status: completed
-  - id: selectors-thread
-    content: Add difficultyMap to QueueScope and thread it through selectStudyQueue → buildQueue; sort cram newC too (selectors.ts)
-    status: completed
-  - id: session-derive
-    content: Derive difficultyMap from questionMap and pass it to selectStudyQueue in useStudySession.ts
-    status: completed
-  - id: tests
-    content: Add difficulty-sort test cases to queue.test.ts
-    status: completed
+    - id: queue-sort
+      content: Add difficultyMap to QueueOpts and sort newC by difficulty in buildQueue (queue.ts)
+      status: completed
+    - id: selectors-thread
+      content: Add difficultyMap to QueueScope and thread it through selectStudyQueue → buildQueue; sort cram newC too (selectors.ts)
+      status: completed
+    - id: session-derive
+      content: Derive difficultyMap from questionMap and pass it to selectStudyQueue in useStudySession.ts
+      status: completed
+    - id: tests
+      content: Add difficulty-sort test cases to queue.test.ts
+      status: completed
 isProject: false
 ---
 
@@ -56,13 +56,13 @@ const DIFFICULTY_RANK: Record<string, number> = { beginner: 1, intermediate: 2, 
 
 // inside buildQueue, replace the newC line:
 const newC = cards
-  .filter((c) => c.cardType === "new")
-  .sort((a, b) => {
-    const ra = opts.difficultyMap?.get(a.questionSlug) ?? 2;
-    const rb = opts.difficultyMap?.get(b.questionSlug) ?? 2;
-    return ra - rb;
-  })
-  .slice(0, newLimit);
+    .filter((c) => c.cardType === 'new')
+    .sort((a, b) => {
+        const ra = opts.difficultyMap?.get(a.questionSlug) ?? 2;
+        const rb = opts.difficultyMap?.get(b.questionSlug) ?? 2;
+        return ra - rb;
+    })
+    .slice(0, newLimit);
 ```
 
 The sort is a stable ascending sort so ties preserve relative insertion order. Slicing after sorting ensures the daily new-card budget also favours beginner cards.
@@ -79,12 +79,12 @@ Derive `difficultyMap` from `questionMap` in a `useMemo`. Pass it into the exist
 
 ```ts
 const difficultyMap = useMemo(() => {
-  const rank: Record<string, number> = { beginner: 1, intermediate: 2, advanced: 3 };
-  const map = new Map<string, number>();
-  for (const [slug, q] of questionMap) {
-    map.set(slug, rank[q.difficulty] ?? 2);
-  }
-  return map;
+    const rank: Record<string, number> = { beginner: 1, intermediate: 2, advanced: 3 };
+    const map = new Map<string, number>();
+    for (const [slug, q] of questionMap) {
+        map.set(slug, rank[q.difficulty] ?? 2);
+    }
+    return map;
 }, [questionMap]);
 ```
 
