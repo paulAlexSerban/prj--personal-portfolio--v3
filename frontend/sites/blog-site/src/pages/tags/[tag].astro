@@ -1,10 +1,11 @@
 ---
-import HeroBanner from '../../components/HeroBanner.astro';
-import PostCard from '../../components/PostCard.astro';
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import { closeConnection, openDb } from '../../lib/db.ts';
-import { buildTagsMap } from '../../lib/queries/posts.ts';
-import { getAllBlogTags, getPostsByTagAndType } from '../../lib/queries/tags.ts';
+import HeroBanner from '@/library/modules/HeroBanner.astro';
+import PostCard from '@/library/modules/PostCard/PostCard.astro';
+import BaseLayout from '@/system/templates/BaseTemplate.astro';
+
+import { closeConnection, openDb } from '@/lib/db.ts';
+import { buildTagsMap } from '@/lib/queries/posts.ts';
+import { getAllBlogTags, getPostsByTagAndType } from '@/lib/queries/tags.ts';
 
 export function getStaticPaths() {
     const db = openDb();

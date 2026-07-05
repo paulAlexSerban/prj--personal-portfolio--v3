@@ -1,10 +1,10 @@
-import Callout from '../components/mdx/Callout.tsx';
-import Figure from '../components/mdx/Figure.tsx';
-import Heading from '../components/mdx/Heading.tsx';
-import ImageResponsive from '../components/mdx/ImageResponsive.tsx';
-import ImageSvg from '../components/mdx/ImageSvg.tsx';
-import Link from '../components/mdx/Link.tsx';
-import LinkList from '../components/mdx/LinkList.tsx';
+import Callout from '../core/library/components/Callout.tsx';
+import Figure from '../core/library/components/Figure.tsx';
+import Heading from '../core/library/components/Heading.tsx';
+import ImageResponsive from '../core/library/components/ImageResponsive.tsx';
+import ImageSvg from '../core/library/components/ImageSvg.tsx';
+import Link from '../core/library/components/Link.tsx';
+import LinkList from '../core/library/components/LinkList.tsx';
 
 export const mdxComponents = {
     Callout,

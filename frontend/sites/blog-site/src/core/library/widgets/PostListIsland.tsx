@@ -4,9 +4,10 @@ import { Input } from '@prj--personal-portfolio--v3/shared--ui/input';
 import { cn } from '@prj--personal-portfolio--v3/shared--ui/utils';
 import { filterByQuery, sortBlogPosts, type BlogPostFilterItem, type BlogSortBy } from '@prj--personal-portfolio--v3/shared--ui/post-filters';
 import { clampPage, paginate, totalPages } from '@prj--personal-portfolio--v3/shared--ui/pagination';
-import { PostCardReact } from './PostCardReact';
 
-interface Props {
+import { PostCardReact } from '@/library/modules/PostCard/PostCardReact';
+
+interface PostListIslandProps {
     posts: BlogPostFilterItem[];
 }
 
@@ -18,7 +19,7 @@ const SORT_LABELS: Record<BlogSortBy, string> = {
 };
 
 const DEFAULT_SORT: BlogSortBy = 'date';
-const SEARCH_DEBOUNCE_MS = 250;
+const SEARCH_DEBOUNCE_MS = 500;
 
 interface UrlState {
     q: string;
@@ -51,7 +52,7 @@ function writeUrlState({ q, sort, page }: UrlState): void {
     window.history.replaceState({}, '', url);
 }
 
-export function PostListIsland({ posts }: Props) {
+export const PostListIsland = ({ posts }: PostListIslandProps) => {
     // `searchInput` is the live text box value; `query` is the debounced value
     // that actually filters; `urlQuery` is what is currently persisted in the URL
     // (only updated on Enter) and drives the "press Enter to save" hint.

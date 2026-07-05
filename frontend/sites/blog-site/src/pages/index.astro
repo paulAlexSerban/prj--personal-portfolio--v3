@@ -1,8 +1,8 @@
 ---
-import PostCard from '../components/PostCard.astro';
-import BaseLayout from '../layouts/BaseLayout.astro';
-import { closeConnection, openDb } from '../lib/db.ts';
-import { buildTagsMap, getPinnedByType } from '../lib/queries/posts.ts';
+import PostCard from '@/library/modules/PostCard/PostCard.astro';
+import BaseLayout from '@/system/templates/BaseTemplate.astro';
+import { closeConnection, openDb } from '@/lib/db.ts';
+import { buildTagsMap, getPinnedByType } from '@/lib/queries/posts.ts';
 
 const db = openDb();
 const posts = getPinnedByType(db, 'post');

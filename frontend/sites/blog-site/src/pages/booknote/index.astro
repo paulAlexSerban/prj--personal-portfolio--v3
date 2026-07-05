@@ -1,11 +1,12 @@
 ---
 import type { BlogPostFilterItem } from '@prj--personal-portfolio--v3/shared--ui/post-filters';
 
-import HeroBanner from '../../components/HeroBanner.astro';
-import { PostListIsland } from '../../components/PostListIsland';
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import { closeConnection, openDb } from '../../lib/db.ts';
-import { buildTagsMap, getPublishedByType } from '../../lib/queries/posts.ts';
+import HeroBanner from '@/library/modules/HeroBanner.astro';
+import { PostListIsland } from '@/library/widgets/PostListIsland.tsx';
+import BaseLayout from '@/system/templates/BaseTemplate.astro';
+
+import { closeConnection, openDb } from '@/lib/db.ts';
+import { buildTagsMap, getPublishedByType } from '@/lib/queries/posts.ts';
 
 const db = openDb();
 const items = getPublishedByType(db, 'book-note');

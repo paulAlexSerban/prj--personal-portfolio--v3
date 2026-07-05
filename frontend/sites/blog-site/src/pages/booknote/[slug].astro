@@ -3,16 +3,17 @@ import { evaluate } from '@mdx-js/mdx';
 import { rehypePlugins, remarkPlugins } from '@prj--personal-portfolio--v3/shared--markdown/plugins';
 import * as runtime from 'react/jsx-runtime';
 
-import HeroBanner from '../../components/HeroBanner.astro';
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import { closeConnection, openDb } from '../../lib/db.ts';
-import { mdxComponents } from '../../lib/mdx-components.ts';
+import HeroBanner from '@/library/modules/HeroBanner.astro';
+import BaseLayout from '@/system/templates/BaseTemplate.astro';
+
+import { closeConnection, openDb } from '@/lib/db.ts';
+import { mdxComponents } from '@/lib/mdx-components.ts';
 import {
     getAllSlugs,
     getPostBySlug,
     getQuestionCountForPost,
     getTagsForPost,
-} from '../../lib/queries/posts.ts';
+} from '@/lib/queries/posts.ts';
 
 export function getStaticPaths() {
     const db = openDb();

@@ -9,14 +9,14 @@ const typeLabel: Record<BlogPostFilterItem['type'], string> = {
     'book-note': 'Book Note',
 };
 
-function detailHref(type: BlogPostFilterItem['type'], slug: string): string {
+const detailHref = (type: BlogPostFilterItem['type'], slug: string): string => {
     if (type === 'book-note') {
         return `/booknote/${slug}/`;
     }
     return `/${type}/${slug}/`;
-}
+};
 
-interface Props {
+interface PostCardReactProps {
     post: BlogPostFilterItem;
 }
 
@@ -25,7 +25,7 @@ interface Props {
  * Structure and classes intentionally match PostCard.astro + TagList.astro so the
  * static (hub) and interactive (listing) cards render identically.
  */
-export function PostCardReact({ post }: Props) {
+export const PostCardReact = ({ post }: PostCardReactProps) => {
     const href = detailHref(post.type, post.slug);
     const meta = [typeLabel[post.type], post.date].filter(Boolean).join(' · ');
     const tags = post.tags.slice(0, 5);
@@ -33,11 +33,17 @@ export function PostCardReact({ post }: Props) {
     return (
         <article className="card-ruled border-b border-rule pb-4">
             <a href={href} className="mb-3 block overflow-hidden border border-rule">
-                <img src={coverImageUrl(post.cover, PLACEHOLDER_COVER)} alt="" loading="lazy" className="aspect-video w-full object-cover" />
+                <img 
+                    src={coverImageUrl(post.cover, PLACEHOLDER_COVER)} 
+                    alt="" 
+                    loading="lazy" className="aspect-video w-full object-cover" />
             </a>
             <p className="kicker mb-1 text-[10px]">{meta}</p>
             <h2 className="font-display text-2xl font-bold leading-tight">
-                <a href={href} className="text-ink no-underline hover:underline">
+                <a href={href} 
+                   className="text-ink no-underline hover:underline"
+                   title={post.title}
+                >
                     {post.title}
                 </a>
             </h2>
@@ -62,4 +68,4 @@ export function PostCardReact({ post }: Props) {
             </a>
         </article>
     );
-}
+};
