@@ -1,6 +1,6 @@
 import type { CardState, PostStats } from "./types";
 import type { QuizState } from "./index";
-import { buildQueue, mergePostQueues } from "../algorithms/queue";
+import { buildQueue, mergePostQueues, sortNewByDifficulty } from "../algorithms/queue";
 import { getPostDaily, resolvePostConfig } from "../lib/postConfig";
 import { todayISO, DEFAULT_DAY_START_HOUR } from "../utils/dates";
 
@@ -15,14 +15,19 @@ export interface QueueScope {
   now?: number;
   /** Ignore today's new/review caps ("study ahead" / cram). */
   ignoreLimits?: boolean;
+  /** Question slug → difficulty rank (1 = beginner, 2 = intermediate, 3 = advanced). */
+  difficultyMap?: Map<string, number>;
 }
 
 /** Cram ordering: learning/relearning (due first) → new → review. */
-function sortCramQueue(cards: CardState[]): CardState[] {
+function sortCramQueue(cards: CardState[], difficultyMap?: Map<string, number>): CardState[] {
   const learning = cards
     .filter((c) => c.cardType === "learning" || c.cardType === "relearning")
     .sort((a, b) => (a.learningDueAt ?? 0) - (b.learningDueAt ?? 0));
-  const newC = cards.filter((c) => c.cardType === "new");
+  const newC = sortNewByDifficulty(
+    cards.filter((c) => c.cardType === "new"),
+    difficultyMap,
+  );
   const review = cards.filter((c) => c.cardType === "review");
   return [...learning, ...newC, ...review];
 }
@@ -51,7 +56,7 @@ export function selectStudyQueue(state: QuizState, scope: QueueScope = {}): Card
   }
 
   if (scope.cram) {
-    return sortCramQueue(cards);
+    return sortCramQueue(cards, scope.difficultyMap);
   }
 
   const globalDaily =
@@ -99,6 +104,7 @@ export function selectStudyQueue(state: QuizState, scope: QueueScope = {}): Card
       ignoreLimits: scope.ignoreLimits,
       newBudget,
       reviewBudget,
+      difficultyMap: scope.difficultyMap,
     });
 
     // Deduct global budget by what this sub-queue consumed.

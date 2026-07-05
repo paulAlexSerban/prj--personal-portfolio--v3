@@ -1,5 +1,7 @@
 import type { CardState, AppSettings, StudyConfig } from "../store/types";
 
+const DEFAULT_DIFFICULTY_RANK = 2;
+
 export interface QueueOpts {
   config: StudyConfig;
   newStudiedToday: number;
@@ -13,6 +15,21 @@ export interface QueueOpts {
   newBudget?: number;
   /** Explicit remaining review budget (overrides config − studied when set). */
   reviewBudget?: number;
+  /** Question slug → difficulty rank (1 = beginner, 2 = intermediate, 3 = advanced). */
+  difficultyMap?: Map<string, number>;
+}
+
+/** Sort new cards by difficulty rank (beginner → advanced). Stable when ranks tie. */
+export function sortNewByDifficulty(
+  cards: CardState[],
+  difficultyMap?: Map<string, number>,
+): CardState[] {
+  if (!difficultyMap) return cards;
+  return [...cards].sort((a, b) => {
+    const ra = difficultyMap.get(a.questionSlug) ?? DEFAULT_DIFFICULTY_RANK;
+    const rb = difficultyMap.get(b.questionSlug) ?? DEFAULT_DIFFICULTY_RANK;
+    return ra - rb;
+  });
 }
 
 /**
@@ -48,7 +65,10 @@ export function buildQueue(cards: CardState[], opts: QueueOpts): CardState[] {
     .filter((c) => c.cardType === "review" && c.dueDate <= opts.today)
     .sort((a, b) => a.dueDate.localeCompare(b.dueDate))
     .slice(0, reviewLimit);
-  const newC = cards.filter((c) => c.cardType === "new").slice(0, newLimit);
+  const newC = sortNewByDifficulty(
+    cards.filter((c) => c.cardType === "new"),
+    opts.difficultyMap,
+  ).slice(0, newLimit);
 
   const order = opts.settings.studyOrder;
   let queue: CardState[];

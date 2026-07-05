@@ -122,6 +122,15 @@ export function useStudySession(scope: StudySessionScope): UseStudySessionResult
     return () => clearInterval(i);
   }, []);
 
+  const difficultyMap = useMemo(() => {
+    const rank: Record<string, number> = { beginner: 1, intermediate: 2, advanced: 3 };
+    const map = new Map<string, number>();
+    for (const [slug, q] of questionMap) {
+      map.set(slug, rank[q.difficulty] ?? 2);
+    }
+    return map;
+  }, [questionMap]);
+
   const queue = useMemo(() => {
     const state = {
       addedPosts,
@@ -140,6 +149,7 @@ export function useStudySession(scope: StudySessionScope): UseStudySessionResult
       cram,
       now: Date.now(),
       ignoreLimits: ignoreLimits || cram,
+      difficultyMap,
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [
@@ -157,6 +167,7 @@ export function useStudySession(scope: StudySessionScope): UseStudySessionResult
     ignoreLimits,
     cram,
     questionSlugs,
+    difficultyMap,
   ]);
 
   const actionableQueue = loading

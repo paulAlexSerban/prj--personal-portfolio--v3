@@ -55,4 +55,65 @@ describe("buildQueue", () => {
     );
     expect(queue[0]!.questionSlug).toBe("p--due");
   });
+
+  it("sorts new cards beginner → intermediate → advanced when difficultyMap is provided", () => {
+    const cards = [
+      createCardState("p--advanced", "p"),
+      createCardState("p--beginner", "p"),
+      createCardState("p--intermediate", "p"),
+    ];
+    const difficultyMap = new Map<string, number>([
+      ["p--beginner", 1],
+      ["p--intermediate", 2],
+      ["p--advanced", 3],
+    ]);
+    const queue = buildQueue(
+      cards,
+      baseOpts({
+        settings: { ...DEFAULT_SETTINGS, studyOrder: "new-first" },
+        difficultyMap,
+      }),
+    );
+    expect(queue.map((c) => c.questionSlug)).toEqual([
+      "p--beginner",
+      "p--intermediate",
+      "p--advanced",
+    ]);
+  });
+
+  it("prefers beginner new cards when daily new limit is exceeded", () => {
+    const cards = [
+      createCardState("p--advanced", "p"),
+      createCardState("p--beginner", "p"),
+      createCardState("p--intermediate", "p"),
+    ];
+    const difficultyMap = new Map<string, number>([
+      ["p--beginner", 1],
+      ["p--intermediate", 2],
+      ["p--advanced", 3],
+    ]);
+    const queue = buildQueue(
+      cards,
+      baseOpts({
+        config: { ...DEFAULT_CONFIG, newCardsPerDay: 1 },
+        settings: { ...DEFAULT_SETTINGS, studyOrder: "new-first" },
+        difficultyMap,
+      }),
+    );
+    expect(queue).toHaveLength(1);
+    expect(queue[0]!.questionSlug).toBe("p--beginner");
+  });
+
+  it("preserves input order for new cards when no difficultyMap is provided", () => {
+    const cards = [
+      createCardState("p--first", "p"),
+      createCardState("p--second", "p"),
+      createCardState("p--third", "p"),
+    ];
+    const queue = buildQueue(
+      cards,
+      baseOpts({ settings: { ...DEFAULT_SETTINGS, studyOrder: "new-first" } }),
+    );
+    expect(queue.map((c) => c.questionSlug)).toEqual(["p--first", "p--second", "p--third"]);
+  });
 });
