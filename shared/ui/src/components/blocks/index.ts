@@ -1,4 +1,6 @@
 export { CardRenderer } from './CardRenderer.tsx';
+export { CoverImage, type CoverImageProps } from './CoverImage.tsx';
+export { ErrorPage, type ErrorPageProps } from './ErrorPage.tsx';
 export { NothingDueView, type NothingDueViewProps, type ScopeCounts } from './NothingDueView.tsx';
 export { QuestionPreview, type QuestionPreviewProps, type CardPreviewData } from './QuestionPreview.tsx';
 export { QuestionRenderer, type QuestionRendererProps } from './QuestionRenderer.tsx';

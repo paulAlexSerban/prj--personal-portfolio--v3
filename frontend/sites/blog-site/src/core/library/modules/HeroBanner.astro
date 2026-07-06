@@ -1,6 +1,6 @@
 ---
 import type { TagRow } from '@prj--personal-portfolio--v3/shared--db-schema';
-import { coverImageUrl } from '@prj--personal-portfolio--v3/shared--ui/cover-image';
+import { CoverImage } from '@prj--personal-portfolio--v3/shared--ui/blocks';
 
 import TagList from '@/library/components/TagList.astro';
 
@@ -20,12 +20,15 @@ const { title, subheading, tags = [], kicker, cover } = Astro.props;
 <section class="mb-8 border-b-[3px] border-ink pb-6">
     {
         cover && (
-            <img
-                src={coverImageUrl(cover, PLACEHOLDER_COVER)}
-                alt=""
-                loading="eager"
-                class="mb-6 aspect-video w-full border border-rule object-cover"
-            />
+            <div class="mb-6">
+                <CoverImage
+                    cover={cover}
+                    placeholder={PLACEHOLDER_COVER}
+                    loading="eager"
+                    sizes="hero"
+                    imgClassName="aspect-video w-full object-cover"
+                />
+            </div>
         )
     }
     {kicker && <p class="kicker mb-2 text-sm">{kicker}</p>}

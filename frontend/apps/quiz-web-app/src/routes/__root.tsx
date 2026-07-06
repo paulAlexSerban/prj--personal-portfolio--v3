@@ -1,41 +1,33 @@
-import { Outlet, Link, createRootRoute } from "@tanstack/react-router";
+import { createRootRoute, Outlet } from "@tanstack/react-router";
 import { Toaster } from "@prj--personal-portfolio--v3/shared--ui";
+import { ErrorPage } from "@prj--personal-portfolio--v3/shared--ui/blocks";
+import { PageLayout } from "@/components/layout/PageLayout";
 
 function NotFoundComponent() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background px-4">
-      <div className="max-w-md text-center">
-        <h1 className="text-7xl font-bold text-foreground">404</h1>
-        <h2 className="mt-4 text-xl font-semibold text-foreground">Page not found</h2>
-        <p className="mt-2 text-base text-muted-foreground">
-          The page you're looking for doesn't exist or has been moved.
-        </p>
-        <div className="mt-6">
-          <Link
-            to="/"
-            className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-base font-medium text-primary-foreground transition-colors hover:bg-primary/90"
-          >
-            Go home
-          </Link>
-        </div>
-      </div>
-    </div>
+    <PageLayout>
+      <ErrorPage
+        code="404"
+        title="Page not found"
+        message="The page you're looking for doesn't exist or has been moved."
+        homeHref="/"
+        homeLabel="Go home"
+      />
+    </PageLayout>
   );
 }
 
 function ErrorComponent({ error }: { error: Error }) {
   console.error(error);
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background px-4">
-      <div className="max-w-md text-center">
-        <h1 className="text-xl font-semibold tracking-tight text-foreground">
-          This page didn't load
-        </h1>
-        <p className="mt-2 text-base text-muted-foreground">
-          Something went wrong. Try refreshing or head back home.
-        </p>
-      </div>
-    </div>
+    <PageLayout>
+      <ErrorPage
+        title="This page didn't load"
+        message="Something went wrong. Try refreshing or head back home."
+        homeHref="/"
+        homeLabel="Go home"
+      />
+    </PageLayout>
   );
 }
 

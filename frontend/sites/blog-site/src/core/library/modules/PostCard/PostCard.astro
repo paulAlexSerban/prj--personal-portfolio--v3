@@ -1,6 +1,6 @@
 ---
 import type { PostRow, TagRow } from '@prj--personal-portfolio--v3/shared--db-schema';
-import { coverImageUrl } from '@prj--personal-portfolio--v3/shared--ui/cover-image';
+import { CoverImage } from '@prj--personal-portfolio--v3/shared--ui/blocks';
 
 import TagList from '@/library/components/TagList.astro';
 
@@ -34,12 +34,12 @@ const meta = [typeLabel[type], post.date].filter(Boolean).join(' · ');
 ---
 
 <article class="card-ruled border-b border-rule pb-4">
-    <a href={href} class="mb-3 block overflow-hidden border border-rule">
-        <img
-            src={coverImageUrl(post.cover_image, PLACEHOLDER_COVER)}
-            alt=""
-            loading="lazy"
-            class="aspect-video w-full object-cover"
+    <a href={href} class="mb-3 block overflow-hidden">
+        <CoverImage
+            cover={post.cover_image}
+            placeholder={PLACEHOLDER_COVER}
+            sizes="card"
+            imgClassName="aspect-video w-full object-cover"
         />
     </a>
     <p class="kicker mb-1 text-[10px]">{meta}</p>

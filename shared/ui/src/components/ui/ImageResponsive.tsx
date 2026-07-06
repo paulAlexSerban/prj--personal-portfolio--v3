@@ -73,6 +73,8 @@ export interface ImageResponsiveProps {
     widthsStr?: string;
     sizes?: string;
     className?: string;
+    imgClassName?: string;
+    loading?: 'lazy' | 'eager';
 }
 
 const stripExtension = (value = '') => {
@@ -163,7 +165,17 @@ const createSrcSet = (imageName: string, hash: string, ratioIndexes: number[], w
  * hero-banner-960x540-16x9-q80.a3f91c2b.webp,
  * hero-banner-1280x720-16x9-q80.a3f91c2b.png
  */
-const ImageResponsive = ({ imageName, alt, ratiosStr = '[2,2,2,2,2]', widthsStr = '[0,1,2,3,4]', hash, sizes = DEFAULT_SIZES, className = '' }: ImageResponsiveProps) => {
+const ImageResponsive = ({
+    imageName,
+    alt,
+    ratiosStr = '[2,2,2,2,2]',
+    widthsStr = '[0,1,2,3,4]',
+    hash,
+    sizes = DEFAULT_SIZES,
+    className = '',
+    imgClassName = '',
+    loading = 'lazy',
+}: ImageResponsiveProps) => {
     const normalizedImageName = normalizeImageName(imageName);
     const normalizedHash = normalizeHash(hash);
     const ratioIndexes = normalizeIndexes(ratiosStr, DEFAULT_RATIO_INDEXES);
@@ -185,8 +197,9 @@ const ImageResponsive = ({ imageName, alt, ratiosStr = '[2,2,2,2,2]', widthsStr 
                     srcSet={createSrcSet(normalizedImageName, normalizedHash, ratioIndexes, widthIndexes, FALLBACK_FORMAT)}
                     sizes={sizes}
                     alt={alt}
-                    loading="lazy"
+                    loading={loading}
                     decoding="async"
+                    className={imgClassName}
                 />
             </picture>
         </div>

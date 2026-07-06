@@ -1,0 +1,19 @@
+---
+import BaseLayout from '@/system/templates/BaseTemplate.astro';
+import { siteUrls } from '@/lib/urls.ts';
+---
+
+<BaseLayout
+    title="Page not found | Paul Serban"
+    description="The page you requested could not be found."
+>
+    <section class="py-16 text-center">
+        <p class="kicker text-sm">404</p>
+        <h1 class="font-display text-6xl font-bold">Page not found</h1>
+        <p class="deck mt-4 text-lg">
+            The page you're looking for doesn't exist or has been moved.
+        </p>
+        <div class="rule-thin my-8"></div>
+        <a href={siteUrls.home} class="stamp md:text-base text-sm">Back home</a>
+    </section>
+</BaseLayout>

@@ -131,7 +131,7 @@ export function StudyCard({
                                 );
                             })}
                         </div>
-                        <p className="smallcaps text-[10px] text-[var(--slate)] mt-3 text-center italic" title="Content is read-only - edit in the source content repo">
+                        <p className="smallcaps text-sm text-[var(--slate)] mt-3 text-center italic" title="Content is read-only - edit in the source content repo">
                             Read-only · content edited in source
                             {blogPostHref && (
                                 <>

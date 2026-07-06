@@ -7,6 +7,7 @@ import { filterByQuery } from "@prj--personal-portfolio--v3/shared--ui/post-filt
 import { loadPostsIndex } from "@/data/loadQuizData";
 import { useStudySetActions } from "@/hooks/useStudySetActions";
 import { useStore } from "@/store";
+import { blogPostUrl } from "@/lib/urls";
 
 export const Route = createFileRoute("/")({
   component: HomeView,
@@ -127,6 +128,7 @@ function HomeView() {
           {rows.map((post) => {
             const isAdded = addedSet.has(post.slug);
             const isLoading = loadingSlug === post.slug;
+            const blogHref = post ? blogPostUrl(post.type, post.slug) : undefined;
             return (
               <article key={post.slug} className="border-t-[3px] border-[var(--ink-black)] pt-4">
                 <p className="smallcaps text-[10px] text-[var(--slate)] mb-1">
@@ -185,8 +187,19 @@ function HomeView() {
                       >
                         Remove
                       </button>
+                      {blogHref && (
+                        <Link
+                          to={blogHref}
+                          params={{ postSlug: post.slug }}
+                          className={stampClasses("ghost", "sm")}
+                          title={`View the ${post.title} blog post`}
+                        >
+                          View Post
+                        </Link>
+                      )}
                     </>
                   ) : (
+                    <>
                     <button
                       type="button"
                       disabled={isLoading}
@@ -196,7 +209,18 @@ function HomeView() {
                     >
                       {isLoading ? "Loading…" : "Add to Study Set"}
                     </button>
-                  )}
+                    {blogHref && (
+                        <Link
+                          to={blogHref}
+                          params={{ postSlug: post.slug }}
+                          className={stampClasses("ghost", "sm")}
+                          title={`View the ${post.title} blog post`}
+                        >
+                          View Post
+                        </Link>
+                      )}
+                      </>
+                    )}
                 </div>
               </article>
             );

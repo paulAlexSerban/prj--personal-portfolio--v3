@@ -1,5 +1,7 @@
 export const ASSET_BASE_URL = "https://paulserban.eu/assets";
 
+export { parseResponsiveCover, type ResponsiveCoverRef } from "./responsiveCover";
+
 /** Resolve a post cover to a render URL; falls back to a placeholder when unset. */
 export function coverImageUrl(
   cover: string | null | undefined,
