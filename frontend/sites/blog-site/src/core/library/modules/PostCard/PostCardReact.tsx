@@ -1,5 +1,5 @@
 import type { BlogPostFilterItem } from '@prj--personal-portfolio--v3/shared--ui/post-filters';
-import { CoverImage } from '@prj--personal-portfolio--v3/shared--ui/blocks';
+import { CoverImage } from '@prj--personal-portfolio--v3/shared--ui/cover-image-ui';
 
 const PLACEHOLDER_COVER = '/placeholder-cover.png';
 
