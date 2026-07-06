@@ -52,12 +52,5 @@ export function CoverImage({
         );
     }
 
-    return (
-        <img
-            src={coverImageUrl(cover, placeholder)}
-            alt={alt}
-            loading={loading}
-            className={imgClassName}
-        />
-    );
+    return <img src={coverImageUrl(cover, placeholder)} alt={alt} loading={loading} className={imgClassName} />;
 }

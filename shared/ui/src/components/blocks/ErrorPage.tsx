@@ -8,13 +8,7 @@ export interface ErrorPageProps {
     homeLabel?: string;
 }
 
-export function ErrorPage({
-    code,
-    title,
-    message,
-    homeHref,
-    homeLabel = 'Back home',
-}: ErrorPageProps) {
+export function ErrorPage({ code, title, message, homeHref, homeLabel = 'Back home' }: ErrorPageProps) {
     return (
         <section className="py-16 text-center">
             {code && <p className="kicker text-sm">{code}</p>}

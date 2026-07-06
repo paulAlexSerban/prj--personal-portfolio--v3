@@ -200,16 +200,16 @@ function HomeView() {
                     </>
                   ) : (
                     <>
-                    <button
-                      type="button"
-                      disabled={isLoading}
-                      onClick={() => addToStudySet(post.slug)}
-                      title={`Add ${post.title} to your study sets`}
-                      className={stampClasses("solid", "sm")}
-                    >
-                      {isLoading ? "Loading…" : "Add to Study Set"}
-                    </button>
-                    {blogHref && (
+                      <button
+                        type="button"
+                        disabled={isLoading}
+                        onClick={() => addToStudySet(post.slug)}
+                        title={`Add ${post.title} to your study sets`}
+                        className={stampClasses("solid", "sm")}
+                      >
+                        {isLoading ? "Loading…" : "Add to Study Set"}
+                      </button>
+                      {blogHref && (
                         <Link
                           to={blogHref}
                           params={{ postSlug: post.slug }}
@@ -219,8 +219,8 @@ function HomeView() {
                           View Post
                         </Link>
                       )}
-                      </>
-                    )}
+                    </>
+                  )}
                 </div>
               </article>
             );

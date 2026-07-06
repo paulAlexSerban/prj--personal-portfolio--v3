@@ -2,21 +2,21 @@
 name: Error pages implementation
 overview: Add branded 404 and error pages to portfolio-site, blog-site, and quiz-web-app using the existing newspaper design system, and update the GitHub Pages deploy workflow so sub-path 404s route to the correct styled page.
 todos:
-  - id: shared-error-page
-    content: Create shared/ui ErrorPage block and export from blocks/index.ts
-    status: completed
-  - id: portfolio-404
-    content: Add portfolio-site/src/pages/404.astro with BaseLayout and newspaper styling
-    status: completed
-  - id: blog-404
-    content: Add blog-site/src/pages/404.astro with BaseLayout and newspaper styling
-    status: completed
-  - id: quiz-error-ui
-    content: Update quiz-web-app __root.tsx to use PageLayout + ErrorPage for 404 and error states
-    status: completed
-  - id: deploy-404-router
-    content: Update deploy-dev.yaml root 404.html to route /home/* and /blog/* to styled 404 pages
-    status: completed
+    - id: shared-error-page
+      content: Create shared/ui ErrorPage block and export from blocks/index.ts
+      status: completed
+    - id: portfolio-404
+      content: Add portfolio-site/src/pages/404.astro with BaseLayout and newspaper styling
+      status: completed
+    - id: blog-404
+      content: Add blog-site/src/pages/404.astro with BaseLayout and newspaper styling
+      status: completed
+    - id: quiz-error-ui
+      content: Update quiz-web-app __root.tsx to use PageLayout + ErrorPage for 404 and error states
+      status: completed
+    - id: deploy-404-router
+      content: Update deploy-dev.yaml root 404.html to route /home/* and /blog/* to styled 404 pages
+      status: completed
 isProject: false
 ---
 
@@ -24,12 +24,12 @@ isProject: false
 
 ## Problem
 
-| App | Current behavior |
-|-----|------------------|
-| [portfolio-site](frontend/sites/portfolio-site/) | No `404.astro` — Astro/host default |
-| [blog-site](frontend/sites/blog-site/) | No `404.astro` — Astro/host default |
-| [quiz-web-app](frontend/apps/quiz-web-app/) | Root `notFoundComponent` / `errorComponent` exist but use shadcn tokens (`bg-background`) **outside** `PageLayout` — looks unlike the rest of the app |
-| [deploy-dev.yaml](.github/workflows/deploy-dev.yaml) | Root `_site/404.html` only handles quiz SPA deep-links; `/home/*` and `/blog/*` misses show plain `"Page not found."` |
+| App                                                  | Current behavior                                                                                                                                      |
+| ---------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [portfolio-site](frontend/sites/portfolio-site/)     | No `404.astro` — Astro/host default                                                                                                                   |
+| [blog-site](frontend/sites/blog-site/)               | No `404.astro` — Astro/host default                                                                                                                   |
+| [quiz-web-app](frontend/apps/quiz-web-app/)          | Root `notFoundComponent` / `errorComponent` exist but use shadcn tokens (`bg-background`) **outside** `PageLayout` — looks unlike the rest of the app |
+| [deploy-dev.yaml](.github/workflows/deploy-dev.yaml) | Root `_site/404.html` only handles quiz SPA deep-links; `/home/*` and `/blog/*` misses show plain `"Page not found."`                                 |
 
 Static Astro sites cannot serve runtime `500.astro` pages (`output: 'static'`). Scope is **404 pages** for Astro + **404 + runtime error UI** for the quiz SPA.
 
@@ -60,11 +60,11 @@ Add [`shared/ui/src/components/blocks/ErrorPage.tsx`](shared/ui/src/components/b
 
 ```tsx
 interface ErrorPageProps {
-  code?: string;        // "404" | "Error"
-  title: string;
-  message: string;
-  homeHref: string;
-  homeLabel?: string;   // default "Back home"
+    code?: string; // "404" | "Error"
+    title: string;
+    message: string;
+    homeHref: string;
+    homeLabel?: string; // default "Back home"
 }
 ```
 
@@ -75,6 +75,7 @@ Newspaper-styled centered content (no layout chrome — parent supplies `PageLay
 Add [`frontend/sites/portfolio-site/src/pages/404.astro`](frontend/sites/portfolio-site/src/pages/404.astro) and [`frontend/sites/blog-site/src/pages/404.astro`](frontend/sites/blog-site/src/pages/404.astro).
 
 Each page:
+
 - Wraps content in existing [`BaseTemplate.astro`](frontend/sites/portfolio-site/src/core/system/templates/BaseTemplate.astro) (header/footer included)
 - Sets `title="Page not found | Paul Serban"` and a short `description`
 - Mirrors the `ErrorPage` visual structure in plain Astro/HTML (no React island — zero JS on 404)
@@ -93,7 +94,7 @@ Update [`frontend/apps/quiz-web-app/src/routes/__root.tsx`](frontend/apps/quiz-w
 
 ```tsx
 <PageLayout>
-  <ErrorPage code="404" title="Page not found" message="…" homeHref="/" />
+    <ErrorPage code="404" title="Page not found" message="…" homeHref="/" />
 </PageLayout>
 ```
 
@@ -122,14 +123,14 @@ This ensures GH Pages' single root `404.html` delegates to each site's branded p
 
 ## Files changed
 
-| File | Change |
-|------|--------|
-| `shared/ui/src/components/blocks/ErrorPage.tsx` | **new** shared presentation block |
-| `shared/ui/src/components/blocks/index.ts` | export `ErrorPage` |
-| `frontend/sites/portfolio-site/src/pages/404.astro` | **new** |
-| `frontend/sites/blog-site/src/pages/404.astro` | **new** |
-| `frontend/apps/quiz-web-app/src/routes/__root.tsx` | use `PageLayout` + `ErrorPage` |
-| `.github/workflows/deploy-dev.yaml` | route root 404 to sub-site pages |
+| File                                                | Change                            |
+| --------------------------------------------------- | --------------------------------- |
+| `shared/ui/src/components/blocks/ErrorPage.tsx`     | **new** shared presentation block |
+| `shared/ui/src/components/blocks/index.ts`          | export `ErrorPage`                |
+| `frontend/sites/portfolio-site/src/pages/404.astro` | **new**                           |
+| `frontend/sites/blog-site/src/pages/404.astro`      | **new**                           |
+| `frontend/apps/quiz-web-app/src/routes/__root.tsx`  | use `PageLayout` + `ErrorPage`    |
+| `.github/workflows/deploy-dev.yaml`                 | route root 404 to sub-site pages  |
 
 ## Out of scope
 

@@ -186,17 +186,15 @@ jobs:
                   printf '<!DOCTYPE html><html><head><meta http-equiv="refresh" content="0;url=%s/home/"></head><body></body></html>\n' \
                     "$REPO_BASE" > _site/index.html
 
-                  # 404 router: quiz SPA deep-links, portfolio/blog styled 404 pages
+                  # SPA 404 fallback: quiz deep-links redirect to quiz/ with path in sessionStorage
                   cat > _site/404.html << EOF
                   <!DOCTYPE html>
                   <html>
                   <head>
                   <script>
-                  (function(){var l=window.location,b='$REPO_BASE',p=l.pathname;
-                  if(p.indexOf(b+'/quiz')===0){sessionStorage.setItem('spa:redirect',l.pathname+l.search);l.replace(b+'/quiz/');return;}
-                  if(p.indexOf(b+'/blog')===0){l.replace(b+'/blog/404.html');return;}
-                  if(p.indexOf(b+'/home')===0){l.replace(b+'/home/404.html');return;}
-                  l.replace(b+'/home/404.html');})();
+                  (function(){var l=window.location,b='$REPO_BASE';
+                  if(l.pathname.indexOf(b+'/quiz')===0){sessionStorage.setItem('spa:redirect',l.pathname+l.search);l.replace(b+'/quiz/');}
+                  })();
                   </script>
                   </head>
                   <body>Page not found.</body>

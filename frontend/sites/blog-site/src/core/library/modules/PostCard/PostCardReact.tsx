@@ -33,12 +33,7 @@ export const PostCardReact = ({ post }: PostCardReactProps) => {
     return (
         <article className="card-ruled border-b border-rule pb-4">
             <a href={href} className="mb-3 block overflow-hidden">
-                <CoverImage
-                    cover={post.cover}
-                    placeholder={PLACEHOLDER_COVER}
-                    sizes="card"
-                    imgClassName="aspect-video w-full object-cover"
-                />
+                <CoverImage cover={post.cover} placeholder={PLACEHOLDER_COVER} sizes="card" imgClassName="aspect-video w-full object-cover" />
             </a>
             <p className="kicker mb-1 text-[10px]">{meta}</p>
             <h2 className="font-display text-2xl font-bold leading-tight">
