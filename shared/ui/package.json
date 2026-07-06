@@ -40,6 +40,10 @@
             "types": "./src/lib/coverImage.ts",
             "import": "./src/lib/coverImage.ts"
         },
+        "./image-responsive": {
+            "types": "./src/components/ui/ImageResponsive.tsx",
+            "import": "./src/components/ui/ImageResponsive.tsx"
+        },
         "./theme.css": "./src/styles/theme.css",
         "./base.css": "./src/styles/base.css",
         "./components.css": "./src/styles/components.css",
