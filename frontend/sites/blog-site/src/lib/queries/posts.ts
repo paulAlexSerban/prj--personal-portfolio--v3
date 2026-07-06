@@ -40,7 +40,7 @@ export function getPublishedByType(db: DrizzleDb, type: BlogContentType): PostRo
             and(
                 eq(posts.type, type),
                 eq(posts.status, 'published'),
-                inArray(posts.slug, publishedQuestionPostSlugs(db)),
+                // inArray(posts.slug, publishedQuestionPostSlugs(db)), # uncomment this line to filter by posts that have at least one published question
             ),
         )
         .all();
@@ -56,7 +56,7 @@ export function getPinnedByType(db: DrizzleDb, type: BlogContentType): PostRow[]
                 eq(posts.type, type),
                 eq(posts.status, 'published'),
                 eq(posts.pinned, true),
-                inArray(posts.slug, publishedQuestionPostSlugs(db)),
+                // inArray(posts.slug, publishedQuestionPostSlugs(db)), # uncomment this line to filter by posts that have at least one published question
             ),
         )
         .limit(6)
@@ -68,7 +68,8 @@ export function getAllSlugs(db: DrizzleDb, type: BlogContentType): { slug: strin
     return db
         .select({ slug: posts.slug })
         .from(posts)
-        .where(and(eq(posts.type, type), inArray(posts.slug, publishedQuestionPostSlugs(db))))
+        .where(and(eq(posts.type, type)))
+        // .where(and(eq(posts.type, type), inArray(posts.slug, publishedQuestionPostSlugs(db)))) # uncommend and use this line to filter by posts that have at least one published question
         .all();
 }
 

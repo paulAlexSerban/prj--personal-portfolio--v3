@@ -2,12 +2,12 @@
 
 Run the portfolio site, blog site, and quiz web app behind Traefik on HTTPS with local domain names — no port numbers in the browser URL.
 
-| Service | URL |
-| ------- | --- |
-| Portfolio | https://local.paulserban.eu |
-| Blog | https://local.blog.paulserban.eu |
-| Quiz | https://local.quiz.paulserban.eu |
-| Traefik dashboard | http://localhost:8080 |
+| Service           | URL                              |
+| ----------------- | -------------------------------- |
+| Portfolio         | https://local.paulserban.eu      |
+| Blog              | https://local.blog.paulserban.eu |
+| Quiz              | https://local.quiz.paulserban.eu |
+| Traefik dashboard | http://localhost:8080            |
 
 HTTP (port 80) redirects to HTTPS (port 443).
 
@@ -21,7 +21,6 @@ Follow the [official Docker install guide](https://docs.docker.com/engine/instal
 
 ```bash
 sudo apt-get update
-sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 ```
 
 Add your user to the `docker` group (log out and back in afterward):

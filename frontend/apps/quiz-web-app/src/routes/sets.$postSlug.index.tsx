@@ -241,7 +241,7 @@ function SetDetailPage() {
               {(() => {
                 const maxF = Math.max(1, ...forecast7.map((f) => f.count));
                 return (
-                  <div style={{ fontFamily: "var(--font-mono)" }} className="text-base">
+                  <div style={{ fontFamily: "var(--font-mono)" }} className="text-sm">
                     {forecast7.map((f) => (
                       <div key={f.date} className="flex items-center gap-3 py-1">
                         <span className="w-28 smallcaps text-[var(--slate)]">{f.label}</span>

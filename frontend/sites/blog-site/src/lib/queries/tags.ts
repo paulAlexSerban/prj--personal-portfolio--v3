@@ -24,7 +24,7 @@ export function getAllBlogTags(db: DrizzleDb): TagRow[] {
         .where(
             and(
                 inArray(content_tags.content_type, BLOG_CONTENT_TYPES),
-                inArray(content_tags.content_slug, publishedQuestionPostSlugs(db)),
+                // inArray(content_tags.content_slug, publishedQuestionPostSlugs(db)), # uncomment this line to filter by posts that have at least one published question
             ),
         )
         .all();
@@ -61,7 +61,7 @@ export function getPostsByTagAndType(
                 eq(content_tags.tag_slug, tagSlug),
                 eq(content_tags.content_type, type),
                 eq(posts.status, 'published'),
-                inArray(posts.slug, publishedQuestionPostSlugs(db)),
+                // inArray(posts.slug, publishedQuestionPostSlugs(db)), # uncomment this line to filter by posts that have at least one published question
             ),
         )
         .limit(9)
