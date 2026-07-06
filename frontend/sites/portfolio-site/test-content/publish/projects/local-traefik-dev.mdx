@@ -1,0 +1,49 @@
+---
+title: Local Traefik Dev Stack
+status: published
+subheading: Production-like HTTPS across three apps on one machine
+excerpt: A Docker Compose + Traefik setup that serves the portfolio, blog, and quiz app on trusted local HTTPS subdomains — no port numbers, no certificate warnings.
+role: Solo builder
+cover_image: /covers/local-traefik-dev.svg
+problem: Three monorepo frontends each wanted their own dev port; cross-site navigation broke, and nothing matched production TLS behaviour.
+approach: Traefik reverse proxy with mkcert TLS, per-app local.Dockerfiles, and env-driven cross-domain navigation.
+outcome: One `docker compose up` boots the full system at local.*.paulserban.eu on ports 80/443.
+metrics:
+    apps: 3
+    ports_exposed: '80 + 443'
+    cert_trust: mkcert
+repo_url: https://github.com/paulAlexSerban/prj--personal-portfolio--v3
+pinned: true
+priority: 85
+tags:
+    - Docker
+    - Traefik
+    - mkcert
+    - TypeScript
+    - Astro
+---
+
+## Problem
+
+The monorepo ships three separate frontends — an Astro portfolio, an Astro blog, and a Vite quiz app — each with its own dev server and port. Running them together meant juggling `:4321`, `:5180`, and friends in the browser, header links pointed at production domains, and nothing exercised HTTPS the way deployment does.
+
+## Approach
+
+I treated local development like a miniature production edge: Traefik terminates TLS on ports 80 and 443, redirects HTTP to HTTPS, and routes by `Host` header to the right container.
+
+- **Per-app `local.Dockerfile`** with monorepo-root build context so pnpm workspace dependencies resolve cleanly.
+- **mkcert** for browser-trusted certificates on `local.paulserban.eu`, `local.blog.paulserban.eu`, and `local.quiz.paulserban.eu` — mapped via `/etc/hosts`, not a real DNS server.
+- **Docker Compose** wires Traefik, the three dev servers, and a shared bridge network; Astro sites bind-mount `content.db` for build-time queries.
+- **Cross-site navigation** via `PUBLIC_*` / `VITE_*` URL env vars so the shared `SiteSwitcher` links to local subdomains instead of production.
+- **HMR over WSS** through Traefik — Vite and Astro dev servers configured with `allowedHosts` and explicit HMR host/port/protocol.
+
+```text
+Browser ──► Traefik (:443, TLS) ──► portfolio (:4321)
+              │                  ──► blog      (:4321)
+              │                  ──► quiz      (:5180)
+              └── HTTP :80 → HTTPS redirect
+```
+
+## Outcome
+
+A single `docker compose up --build` boots the full system. Developers hit real domain names on standard ports, navigation between sites works, and TLS behaviour matches production closely enough to catch mixed-content and cookie-scope issues early. Setup guides for macOS and Debian live in `_docs/infrastructure/`.
