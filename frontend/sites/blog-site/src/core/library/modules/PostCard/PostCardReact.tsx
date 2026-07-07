@@ -1,8 +1,6 @@
 import type { BlogPostFilterItem } from '@prj--personal-portfolio--v3/shared--ui/post-filters';
 import { CoverImage } from '@prj--personal-portfolio--v3/shared--ui/cover-image-ui';
 
-const PLACEHOLDER_COVER = '/placeholder-cover.png';
-
 const typeLabel: Record<BlogPostFilterItem['type'], string> = {
     post: 'Post',
     snippet: 'Snippet',
@@ -32,9 +30,11 @@ export const PostCardReact = ({ post }: PostCardReactProps) => {
 
     return (
         <article className="card-ruled border-b border-rule pb-4">
-            <a href={href} className="mb-3 block overflow-hidden">
-                <CoverImage cover={post.cover} placeholder={PLACEHOLDER_COVER} sizes="card" imgClassName="aspect-video w-full object-cover" />
-            </a>
+            {post.cover && (
+                <a href={href} className="mb-3 block overflow-hidden">
+                    <CoverImage cover={post.cover} placeholder="" sizes="card" imgClassName="aspect-video w-full object-cover" />
+                </a>
+            )}
             <p className="kicker mb-1 text-[10px]">{meta}</p>
             <h2 className="font-display text-2xl font-bold leading-tight">
                 <a href={href} className="text-ink no-underline hover:underline" title={post.title}>

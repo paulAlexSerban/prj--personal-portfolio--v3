@@ -166,9 +166,9 @@ export const PostListIsland = ({ posts }: PostListIslandProps) => {
                 </div>
             ) : (
                 <>
-                    <ul className="m-0 grid list-none grid-cols-[repeat(auto-fill,minmax(18rem,1fr))] gap-5 p-0">
+                    <ul className="m-0 list-none columns-1 gap-5 p-0 sm:columns-2 lg:columns-3">
                         {pageItems.map((post) => (
-                            <li key={post.slug}>
+                            <li key={post.slug} className="mb-5 break-inside-avoid">
                                 <PostCardReact post={post} />
                             </li>
                         ))}

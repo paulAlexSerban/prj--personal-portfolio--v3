@@ -50,9 +50,9 @@ const sections = [
                     </a>
                 </div>
                 {section.items.length > 0 ? (
-                    <ul class="m-0 grid list-none grid-cols-[repeat(auto-fill,minmax(18rem,1fr))] gap-5 p-0">
+                    <ul class="m-0 list-none columns-1 gap-5 p-0 sm:columns-2 lg:columns-3">
                         {section.items.map((item) => (
-                            <li>
+                            <li class="mb-5 break-inside-avoid">
                                 <PostCard
                                     post={item}
                                     tags={tagsMap.get(item.slug) ?? []}

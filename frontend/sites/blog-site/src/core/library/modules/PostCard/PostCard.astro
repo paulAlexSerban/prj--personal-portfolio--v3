@@ -6,8 +6,6 @@ import TagList from '@/library/components/TagList.astro';
 
 import type { BlogContentType } from '@/lib/queries/posts.ts';
 
-const PLACEHOLDER_COVER = '/placeholder-cover.png';
-
 interface Props {
     post: PostRow;
     tags: TagRow[];
@@ -34,14 +32,18 @@ const meta = [typeLabel[type], post.date].filter(Boolean).join(' · ');
 ---
 
 <article class="card-ruled border-b border-rule pb-4">
-    <a href={href} class="mb-3 block overflow-hidden">
-        <CoverImage
-            cover={post.cover_image}
-            placeholder={PLACEHOLDER_COVER}
-            sizes="card"
-            imgClassName="aspect-video w-full object-cover"
-        />
-    </a>
+    {
+        post.cover_image && (
+            <a href={href} class="mb-3 block overflow-hidden">
+                <CoverImage
+                    cover={post.cover_image}
+                    placeholder=""
+                    sizes="card"
+                    imgClassName="aspect-video w-full object-cover"
+                />
+            </a>
+        )
+    }
     <p class="kicker mb-1 text-[10px]">{meta}</p>
     <h2 class="font-display text-2xl font-bold leading-tight">
         <a href={href} class="text-ink no-underline hover:underline">{post.title}</a>
