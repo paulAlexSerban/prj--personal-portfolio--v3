@@ -7,6 +7,11 @@ certs:
 		-key-file  infrastructure/local/traefik/certs/local-key.pem \
 		local.paulserban.eu local.blog.paulserban.eu local.quiz.paulserban.eu
 
+# 3. cleanup db file - fetch fresh content - rebuild db
+db_clean_and_rebuild:
+	rm database/output/content.db
+	pnpm start
+
 # 3. Start stack
 compose_up:
 	docker compose -f infrastructure/local/docker-compose.local.yml up --build

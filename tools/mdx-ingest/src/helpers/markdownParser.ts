@@ -47,6 +47,7 @@ export const markdownParser = async (scannedDirectories: ScannedDirectory[]): Pr
             } catch (error) {
                 const message = error instanceof Error ? error.message : String(error);
                 console.warn(`[markdownParser] Skipping "${filePath}": ${message}`);
+                throw error;
             }
         }
     }

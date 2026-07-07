@@ -1,22 +1,22 @@
 ---
 name: Blog Grid Newspaper Layout
-overview: "Two changes: remove the placeholder cover image fallback so cards with no cover show no image at all, and switch the post grid from a CSS auto-fill grid (same-height rows) to a CSS multi-column newspaper layout where cards stack independently per column."
+overview: 'Two changes: remove the placeholder cover image fallback so cards with no cover show no image at all, and switch the post grid from a CSS auto-fill grid (same-height rows) to a CSS multi-column newspaper layout where cards stack independently per column.'
 todos:
-  - id: no-cover-astro
-    content: "PostCard.astro: conditionally render cover image only when cover_image is present, remove placeholder constant and import"
-    status: completed
-  - id: no-cover-react
-    content: "PostCardReact.tsx: conditionally render cover image only when post.cover is present, remove placeholder constant and import"
-    status: completed
-  - id: grid-index
-    content: "pages/index.astro: switch <ul> from CSS grid to CSS columns (columns-1 sm:columns-2 lg:columns-3), add break-inside-avoid mb-5 to <li>"
-    status: completed
-  - id: grid-tags
-    content: "pages/tags/[tag].astro: same CSS columns change"
-    status: completed
-  - id: grid-island
-    content: "PostListIsland.tsx: same CSS columns change on the <ul> and each <li>"
-    status: completed
+    - id: no-cover-astro
+      content: 'PostCard.astro: conditionally render cover image only when cover_image is present, remove placeholder constant and import'
+      status: completed
+    - id: no-cover-react
+      content: 'PostCardReact.tsx: conditionally render cover image only when post.cover is present, remove placeholder constant and import'
+      status: completed
+    - id: grid-index
+      content: 'pages/index.astro: switch <ul> from CSS grid to CSS columns (columns-1 sm:columns-2 lg:columns-3), add break-inside-avoid mb-5 to <li>'
+      status: completed
+    - id: grid-tags
+      content: 'pages/tags/[tag].astro: same CSS columns change'
+      status: completed
+    - id: grid-island
+      content: 'PostListIsland.tsx: same CSS columns change on the <ul> and each <li>'
+      status: completed
 isProject: false
 ---
 
@@ -32,15 +32,19 @@ isProject: false
 The sketch shows 3 independent vertical columns where cards flow top-to-bottom per column without being locked to shared row boundaries. This is exactly what CSS multi-column layout (`columns`) produces.
 
 **Current grid pattern (all list pages):**
+
 ```html
 <ul class="m-0 grid list-none grid-cols-[repeat(auto-fill,minmax(18rem,1fr))] gap-5 p-0">
-  <li>...</li>
+    <li>...</li>
+</ul>
 ```
 
 **New pattern:**
+
 ```html
 <ul class="m-0 list-none columns-1 sm:columns-2 lg:columns-3 gap-5 p-0">
-  <li class="break-inside-avoid mb-5">...</li>
+    <li class="break-inside-avoid mb-5">...</li>
+</ul>
 ```
 
 - `columns-1 sm:columns-2 lg:columns-3` — 1 col mobile, 2 col tablet, 3 col desktop
@@ -54,6 +58,7 @@ The sketch shows 3 independent vertical columns where cards flow top-to-bottom p
 ### [`PostCard.astro`](frontend/sites/blog-site/src/core/library/modules/PostCard/PostCard.astro)
 
 Replace the unconditional `CoverImage` block:
+
 ```astro
 <!-- before -->
 <a href={href} class="mb-3 block overflow-hidden">
@@ -73,6 +78,7 @@ Also remove the now-unused `PLACEHOLDER_COVER` constant and the `CoverImage` imp
 ### [`PostCardReact.tsx`](frontend/sites/blog-site/src/core/library/modules/PostCard/PostCardReact.tsx)
 
 Same conditional:
+
 ```tsx
 // before
 <a href={href} className="mb-3 block overflow-hidden">

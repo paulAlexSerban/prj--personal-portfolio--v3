@@ -161,7 +161,7 @@ function HomeView() {
                   </p>
                 )}
                 {post.tags.length > 0 && (
-                  <p className="mt-2 text-[10px] smallcaps text-[var(--slate)]">
+                  <p className="mt-2 text-xs smallcaps text-[var(--slate)]">
                     {post.tags.slice(0, 4).join(" · ")}
                     {post.tags.length > 4 ? " …" : ""}
                   </p>

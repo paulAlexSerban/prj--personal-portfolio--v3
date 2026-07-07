@@ -49,7 +49,7 @@ export const PostCardReact = ({ post }: PostCardReactProps) => {
                         <li key={tag.slug}>
                             <a
                                 href={`/tags/${tag.slug}/`}
-                                className="inline-block border border-rule bg-highlight px-2 py-[0.15rem] text-[0.8rem] text-ink no-underline hover:border-ink"
+                                className="inline-block border border-rule bg-highlight px-2 py-[0.15rem] text-xs text-ink no-underline hover:border-ink"
                             >
                                 #{tag.name.toLowerCase()}
                             </a>
@@ -57,7 +57,7 @@ export const PostCardReact = ({ post }: PostCardReactProps) => {
                     ))}
                 </ul>
             )}
-            <a href={href} className="kicker mt-3 inline-block text-[10px] hover:underline">
+            <a href={href} className="kicker mt-3 inline-block text-sm hover:underline">
                 Read &rarr;
             </a>
         </article>

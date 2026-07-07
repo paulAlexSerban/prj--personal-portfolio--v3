@@ -54,7 +54,7 @@ const canonicalUrl = new URL(`/post/${slug}/`, Astro.site).href;
         title={post.title}
         subheading={post.subheading ?? undefined}
         tags={tags}
-        cover={post.cover_image ?? '/placeholder-cover.png'}
+        cover={post.cover_image ?? undefined}
     />
     <article class="md-content mt-4">
         <Content components={mdxComponents} />

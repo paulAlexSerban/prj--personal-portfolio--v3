@@ -51,5 +51,5 @@ const meta = [typeLabel[type], post.date].filter(Boolean).join(' · ');
     {post.excerpt && <p class="mt-2 text-base text-charcoal line-clamp-2">{post.excerpt}</p>}
     <div class="rule-thin my-4"></div>
     <TagList tags={tags} />
-    <a href={href} class="kicker mt-3 inline-block text-[10px] hover:underline">Read &rarr;</a>
+    <a href={href} class="kicker mt-3 inline-block text-sm hover:underline">Read &rarr;</a>
 </article>
