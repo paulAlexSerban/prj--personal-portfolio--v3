@@ -2,24 +2,24 @@
 name: Fix GitHub Pages links
 overview: Fix the doubled "View Post" URL in the quiz app (TanStack Link prepends its basepath to an already-absolute path) and fix all root-relative links in the blog site that ignore the GitHub Pages base path.
 todos:
-  - id: quiz-viewpost
-    content: Replace TanStack Link with plain anchor for both View Post buttons in quiz routes/index.tsx
-    status: completed
-  - id: quiz-extattrs
-    content: Fix externalLinkAttrs function-spread no-op in sets.$postSlug.index.tsx (explicit target/rel)
-    status: completed
-  - id: blog-detailpath
-    content: Make postDetailPath base-aware in blog-site lib/urls.ts
-    status: completed
-  - id: blog-tagpath
-    content: Add tagPath helper and use it in TagList.astro and PostCardReact.tsx
-    status: completed
-  - id: blog-hub-assets
-    content: Use siteUrls for viewAllHref in index.astro and assetUrl for HeroBanner placeholder cover
-    status: completed
-  - id: verify-builds
-    content: Typecheck both apps; build with Pages-like base env and inspect emitted hrefs
-    status: completed
+    - id: quiz-viewpost
+      content: Replace TanStack Link with plain anchor for both View Post buttons in quiz routes/index.tsx
+      status: completed
+    - id: quiz-extattrs
+      content: Fix externalLinkAttrs function-spread no-op in sets.$postSlug.index.tsx (explicit target/rel)
+      status: completed
+    - id: blog-detailpath
+      content: Make postDetailPath base-aware in blog-site lib/urls.ts
+      status: completed
+    - id: blog-tagpath
+      content: Add tagPath helper and use it in TagList.astro and PostCardReact.tsx
+      status: completed
+    - id: blog-hub-assets
+      content: Use siteUrls for viewAllHref in index.astro and assetUrl for HeroBanner placeholder cover
+      status: completed
+    - id: verify-builds
+      content: Typecheck both apps; build with Pages-like base env and inspect emitted hrefs
+      status: completed
 isProject: false
 ---
 
@@ -47,7 +47,7 @@ On GitHub Pages, `blogPostUrl()` correctly returns `/prj--personal-portfolio--v3
 ### Quiz app
 
 1. **`routes/index.tsx`** — both "View Post" `<Link>`s (added and not-added branches) must become plain `<a href={blogHref} target="_blank" rel="noopener noreferrer">`, consistent with the "Read source post" links elsewhere. The `params={{ postSlug }}` prop is meaningless there and gets dropped.
-2. **`routes/sets.$postSlug.index.tsx` line 170** — `{...externalLinkAttrs}` spreads the *function itself* (a no-op; it adds zero attributes). `externalLinkAttrs(href)` is a function in [shared/navigation/src/urls.ts](shared/navigation/src/urls.ts). Since the title says "opens in a new tab" and the target is a different app, replace with explicit `target="_blank" rel="noopener noreferrer"`.
+2. **`routes/sets.$postSlug.index.tsx` line 170** — `{...externalLinkAttrs}` spreads the _function itself_ (a no-op; it adds zero attributes). `externalLinkAttrs(href)` is a function in [shared/navigation/src/urls.ts](shared/navigation/src/urls.ts). Since the title says "opens in a new tab" and the target is a different app, replace with explicit `target="_blank" rel="noopener noreferrer"`.
 
 ### Blog site — root-relative links that ignore `BASE_URL`
 

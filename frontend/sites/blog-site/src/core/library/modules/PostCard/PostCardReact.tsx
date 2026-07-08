@@ -26,8 +26,8 @@ export const PostCardReact = ({ post }: PostCardReactProps) => {
     return (
         <article className="card-ruled border-b border-rule pb-4">
             {post.cover && (
-                <a href={href} className="mb-3 block overflow-hidden">
-                    <CoverImage cover={post.cover} placeholder="" sizes="card" imgClassName="aspect-video w-full object-cover" />
+                <a href={href} className="group mb-3 block overflow-hidden">
+                    <CoverImage cover={post.cover} placeholder="" sizes="card" imgClassName="post-card-cover-img aspect-video w-full object-cover" />
                 </a>
             )}
             <p className="kicker mb-1 text-[10px]">{meta}</p>
@@ -42,10 +42,7 @@ export const PostCardReact = ({ post }: PostCardReactProps) => {
                 <ul className="m-0 flex list-none flex-wrap gap-[0.4rem] p-0">
                     {tags.map((tag) => (
                         <li key={tag.slug}>
-                            <a
-                                href={tagPath(tag.slug)}
-                                className="inline-block border border-rule bg-highlight px-2 py-[0.15rem] text-xs text-ink no-underline hover:border-ink"
-                            >
+                            <a href={tagPath(tag.slug)} className="inline-block border border-rule bg-highlight px-2 py-[0.15rem] text-xs text-ink no-underline hover:border-ink">
                                 #{tag.name.toLowerCase()}
                             </a>
                         </li>
