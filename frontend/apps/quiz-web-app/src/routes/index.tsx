@@ -3,7 +3,11 @@ import { useEffect, useMemo, useState } from "react";
 import type { ExportedPostEntry } from "@prj--personal-portfolio--v3/tools--quiz-export/contract";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { stampClasses } from "@prj--personal-portfolio--v3/shared--ui";
-import { filterByQuery } from "@prj--personal-portfolio--v3/shared--ui/post-filters";
+import {
+  filterByQuery,
+  sortQuizPosts,
+  type QuizSortBy,
+} from "@prj--personal-portfolio--v3/shared--ui/post-filters";
 import { loadPostsIndex } from "@/data/loadQuizData";
 import { useStudySetActions } from "@/hooks/useStudySetActions";
 import { useStore } from "@/store";
@@ -13,7 +17,17 @@ export const Route = createFileRoute("/")({
   component: HomeView,
 });
 
-type SortBy = "title" | "questions";
+const SORT_LABELS: Record<QuizSortBy, string> = {
+  date: "Newest",
+  title: "Title",
+  questions: "Most Questions",
+};
+
+const SORT_TITLES: Record<QuizSortBy, string> = {
+  date: "Sort by newest blog post first",
+  title: "Sort posts alphabetically by title",
+  questions: "Sort posts by number of questions",
+};
 
 function HomeView() {
   const addedPosts = useStore((s) => s.addedPosts);
@@ -24,7 +38,7 @@ function HomeView() {
   const [loadError, setLoadError] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState("");
-  const [sortBy, setSortBy] = useState<SortBy>("title");
+  const [sortBy, setSortBy] = useState<QuizSortBy>("date");
 
   useEffect(() => {
     let cancelled = false;
@@ -48,10 +62,7 @@ function HomeView() {
 
   const rows = useMemo(() => {
     const filtered = filterByQuery(posts, search, (p) => p.tags);
-    const sorted = [...filtered];
-    if (sortBy === "title") sorted.sort((a, b) => a.title.localeCompare(b.title));
-    else sorted.sort((a, b) => b.questionCount - a.questionCount);
-    return sorted;
+    return sortQuizPosts(filtered, sortBy);
   }, [posts, search, sortBy]);
 
   return (
@@ -81,19 +92,15 @@ function HomeView() {
         />
         <div className="flex items-center gap-3 text-sm smallcaps">
           <span className="text-[var(--slate)]">Sort:</span>
-          {(["title", "questions"] as SortBy[]).map((s) => (
+          {(["date", "title", "questions"] as QuizSortBy[]).map((s) => (
             <button
               key={s}
               type="button"
               onClick={() => setSortBy(s)}
-              title={
-                s === "title"
-                  ? "Sort posts alphabetically by title"
-                  : "Sort posts by number of questions"
-              }
+              title={SORT_TITLES[s]}
               className={`underline-offset-4 ${sortBy === s ? "underline font-bold" : "hover:underline"}`}
             >
-              {s === "title" ? "Title" : "Most Questions"}
+              {SORT_LABELS[s]}
             </button>
           ))}
         </div>

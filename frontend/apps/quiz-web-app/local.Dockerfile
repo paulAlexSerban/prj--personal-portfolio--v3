@@ -1,21 +1,10 @@
-# Local dev image — build context: monorepo root
+# Local dev image — build context: monorepo root (requires local base image)
+#   make local_base_build
 #   docker build -f frontend/apps/quiz-web-app/local.Dockerfile .
 
-FROM node:24-alpine
+ARG LOCAL_BASE_IMAGE=prj-personal-portfolio-v3-local-base:latest
+FROM ${LOCAL_BASE_IMAGE}
 
-RUN apk add --no-cache python3 make g++ libc6-compat
-
-WORKDIR /app
-
-RUN corepack enable && corepack prepare pnpm@11.5.0 --activate
-
-COPY package.json pnpm-workspace.yaml pnpm-lock.yaml tsconfig.json tsconfig.base.json ./
-COPY shared ./shared
-COPY tools ./tools
-COPY frontend/apps/quiz-web-app ./frontend/apps/quiz-web-app
-
-RUN pnpm install --frozen-lockfile \
-    --filter @prj--personal-portfolio--v3/frontend--quiz-web-app...
 
 EXPOSE 5180
 

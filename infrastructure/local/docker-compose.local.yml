@@ -1,6 +1,14 @@
 name: paulserban-local
 
 services:
+    local-base:
+        image: prj-personal-portfolio-v3-local-base:latest
+        build:
+            context: ../..
+            dockerfile: local.base.Dockerfile
+        profiles:
+            - build-only
+
     traefik:
         image: traefik:v3.7
         container_name: traefik-local
@@ -21,6 +29,8 @@ services:
         build:
             context: ../..
             dockerfile: frontend/sites/portfolio-site/local.Dockerfile
+            args:
+                LOCAL_BASE_IMAGE: prj-personal-portfolio-v3-local-base:latest
         container_name: portfolio-local
         restart: unless-stopped
         environment:
@@ -47,6 +57,8 @@ services:
         build:
             context: ../..
             dockerfile: frontend/sites/blog-site/local.Dockerfile
+            args:
+                LOCAL_BASE_IMAGE: prj-personal-portfolio-v3-local-base:latest
         container_name: blog-local
         restart: unless-stopped
         environment:
@@ -73,6 +85,8 @@ services:
         build:
             context: ../..
             dockerfile: frontend/apps/quiz-web-app/local.Dockerfile
+            args:
+                LOCAL_BASE_IMAGE: prj-personal-portfolio-v3-local-base:latest
         container_name: quiz-local
         restart: unless-stopped
         environment:

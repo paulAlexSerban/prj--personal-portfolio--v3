@@ -2,7 +2,9 @@ import { describe, it, expect } from "vitest";
 import {
   filterByQuery,
   sortBlogPosts,
+  sortQuizPosts,
   type BlogPostFilterItem,
+  type QuizPostSortItem,
 } from "./postFilters";
 
 const items: BlogPostFilterItem[] = [
@@ -95,5 +97,46 @@ describe("sortBlogPosts", () => {
     const snapshot = items.map((p) => p.slug);
     sortBlogPosts(items, "title");
     expect(items.map((p) => p.slug)).toEqual(snapshot);
+  });
+});
+
+const quizItems: QuizPostSortItem[] = [
+  { title: "Big O Notation", date: "2026-01-10", questionCount: 12 },
+  { title: "Vim Basics", date: "2026-03-05", questionCount: 5 },
+  { title: "Refactoring", date: null, questionCount: 20 },
+];
+
+describe("sortQuizPosts", () => {
+  it("sorts by date newest first (null dates last)", () => {
+    const result = sortQuizPosts(quizItems, "date");
+    expect(result.map((p) => p.title)).toEqual([
+      "Vim Basics",
+      "Big O Notation",
+      "Refactoring",
+    ]);
+  });
+
+  it("sorts by title ascending", () => {
+    const result = sortQuizPosts(quizItems, "title");
+    expect(result.map((p) => p.title)).toEqual([
+      "Big O Notation",
+      "Refactoring",
+      "Vim Basics",
+    ]);
+  });
+
+  it("sorts by question count descending", () => {
+    const result = sortQuizPosts(quizItems, "questions");
+    expect(result.map((p) => p.title)).toEqual([
+      "Refactoring",
+      "Big O Notation",
+      "Vim Basics",
+    ]);
+  });
+
+  it("does not mutate the input array", () => {
+    const snapshot = quizItems.map((p) => p.title);
+    sortQuizPosts(quizItems, "date");
+    expect(quizItems.map((p) => p.title)).toEqual(snapshot);
   });
 });

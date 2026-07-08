@@ -15,6 +15,20 @@ export interface BlogPostFilterItem {
 
 export type BlogSortBy = "title" | "date";
 
+export type QuizSortBy = "date" | "title" | "questions";
+
+export interface QuizPostSortItem {
+  title: string;
+  date: string | null;
+  questionCount: number;
+}
+
+function compareDateNewestFirst(a: string | null, b: string | null): number {
+  const dateA = a ? new Date(a).getTime() : 0;
+  const dateB = b ? new Date(b).getTime() : 0;
+  return dateB - dateA;
+}
+
 /**
  * Generic case-insensitive text filter over title, slug, and an app-provided
  * tag-string extractor. Shared by the quiz catalogue and the blog listings.
@@ -46,11 +60,23 @@ export function sortBlogPosts(
   if (sort === "title") {
     sorted.sort((a, b) => a.title.localeCompare(b.title));
   } else {
-    sorted.sort((a, b) => {
-      const dateA = a.date ? new Date(a.date).getTime() : 0;
-      const dateB = b.date ? new Date(b.date).getTime() : 0;
-      return dateB - dateA;
-    });
+    sorted.sort((a, b) => compareDateNewestFirst(a.date, b.date));
+  }
+  return sorted;
+}
+
+/** Sort quiz catalogue items by date (newest first), title (A→Z), or question count. Pure; does not mutate input. */
+export function sortQuizPosts<T extends QuizPostSortItem>(
+  items: T[],
+  sort: QuizSortBy,
+): T[] {
+  const sorted = [...items];
+  if (sort === "title") {
+    sorted.sort((a, b) => a.title.localeCompare(b.title));
+  } else if (sort === "questions") {
+    sorted.sort((a, b) => b.questionCount - a.questionCount);
+  } else {
+    sorted.sort((a, b) => compareDateNewestFirst(a.date, b.date));
   }
   return sorted;
 }
