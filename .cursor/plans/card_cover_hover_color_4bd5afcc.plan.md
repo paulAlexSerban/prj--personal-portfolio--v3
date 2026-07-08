@@ -2,18 +2,18 @@
 name: Card cover hover color
 overview: Add a warm newspaper-tinted desaturated filter on PostCard cover images by default, transitioning to full color on hover, in both Astro and React card variants.
 todos:
-  - id: css-class
-    content: Add `.post-card-cover-img` + group-hover filter reset in blog-site `global.css`
-    status: completed
-  - id: postcard-astro
-    content: Apply `group` wrapper + `post-card-cover-img` class in PostCard.astro
-    status: completed
-  - id: postcard-react
-    content: Mirror same cover classes in PostCardReact.tsx
-    status: completed
-  - id: verify
-    content: Typecheck and spot-check light/dark hover on listing pages
-    status: completed
+    - id: css-class
+      content: Add `.post-card-cover-img` + group-hover filter reset in blog-site `global.css`
+      status: completed
+    - id: postcard-astro
+      content: Apply `group` wrapper + `post-card-cover-img` class in PostCard.astro
+      status: completed
+    - id: postcard-react
+      content: Mirror same cover classes in PostCardReact.tsx
+      status: completed
+    - id: verify
+      content: Typecheck and spot-check light/dark hover on listing pages
+      status: completed
 isProject: false
 ---
 
