@@ -8,7 +8,7 @@ import {
 import type { DrizzleDb } from '@prj--personal-portfolio--v3/shared--db';
 import { and, eq, inArray } from 'drizzle-orm';
 
-import { publishedQuestionPostSlugs, type BlogContentType } from './posts.ts';
+import { publishedQuestionPostSlugs, isPublishedOnOrBefore, type BlogContentType } from './posts.ts';
 
 const BLOG_CONTENT_TYPES: BlogContentType[] = ['post', 'book-note', 'snippet'];
 
@@ -67,7 +67,9 @@ export function getPostsByTagAndType(
         .limit(9)
         .all();
 
-    return [...rows].sort((a, b) => {
+    return rows
+        .filter((row) => isPublishedOnOrBefore(row.date))
+        .sort((a, b) => {
         const dateA = a.date ? new Date(a.date).getTime() : 0;
         const dateB = b.date ? new Date(b.date).getTime() : 0;
         return dateB - dateA;

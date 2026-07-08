@@ -4,6 +4,8 @@ import { CoverImage } from '@prj--personal-portfolio--v3/shared--ui/cover-image-
 
 import TagList from '@/library/components/TagList.astro';
 
+import { assetUrl } from '@/lib/urls.ts';
+
 interface Props {
     title: string;
     subheading?: string;
@@ -12,7 +14,7 @@ interface Props {
     cover?: string;
 }
 
-const PLACEHOLDER_COVER = '/placeholder-cover.png';
+const PLACEHOLDER_COVER = assetUrl('placeholder-cover.png');
 
 const { title, subheading, tags = [], kicker, cover } = Astro.props;
 ---

@@ -37,7 +37,31 @@ const DETAIL_SEGMENT: Record<BlogContentType, string> = {
 };
 
 export function postDetailPath(type: BlogContentType, slug: string): string {
-    return `/${DETAIL_SEGMENT[type]}/${slug}/`;
+    return `${base}${DETAIL_SEGMENT[type]}/${slug}/`;
+}
+
+export function tagPath(slug: string): string {
+    return `${base}tags/${slug}/`;
+}
+
+/**
+ * Resolve an internal link from MDX content to a path that respects BASE_URL.
+ * Legacy content may prefix paths with `/blog/` (production subdomain convention).
+ */
+export function resolveInternalBlogHref(href: string): string {
+    if (/^https?:\/\//.test(href)) return href;
+
+    let path = href.startsWith('/') ? href : `/${href}`;
+    if (path.startsWith('/blog/')) {
+        path = path.slice('/blog'.length);
+    }
+
+    const basePath = base.replace(/\/$/, '');
+    if (basePath && (path === basePath || path.startsWith(`${basePath}/`))) {
+        return path;
+    }
+
+    return `${basePath}${path}`;
 }
 
 export const assetUrl = (path: string) => sharedAssetUrl(base, path);

@@ -58,6 +58,7 @@ export async function buildQuizData(db: DrizzleDb): Promise<QuizData> {
             postTitle: posts.title,
             postType: posts.type,
             postExcerpt: posts.excerpt,
+            postDate: posts.date,
         })
         .from(questions)
         .innerJoin(posts, eq(questions.post_slug, posts.slug))
@@ -114,7 +115,7 @@ export async function buildQuizData(db: DrizzleDb): Promise<QuizData> {
 
     // ── 5. Assemble ExportedQuestion objects ──────────────────────────────────
     const questionsByPost = new Map<string, ExportedQuestion[]>();
-    const postMeta = new Map<string, { title: string; type: string; excerpt: string | null }>();
+    const postMeta = new Map<string, { title: string; type: string; excerpt: string | null; date: string | null }>();
 
     for (const row of rows) {
         const answerFormat = safeAnswerFormat(row.answer_format);
@@ -145,6 +146,7 @@ export async function buildQuizData(db: DrizzleDb): Promise<QuizData> {
                 title: row.postTitle,
                 type: row.postType,
                 excerpt: row.postExcerpt ?? null,
+                date: row.postDate ?? null,
             });
         }
     }
@@ -157,6 +159,7 @@ export async function buildQuizData(db: DrizzleDb): Promise<QuizData> {
             title: meta.title,
             type: meta.type,
             excerpt: meta.excerpt,
+            date: meta.date,
             questionCount: (questionsByPost.get(slug) ?? []).length,
             tags: tagsByPost.get(slug) ?? [],
         });

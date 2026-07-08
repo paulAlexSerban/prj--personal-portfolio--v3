@@ -1,3 +1,5 @@
+import { resolveInternalBlogHref } from '../../../lib/urls.ts';
+
 interface LinkItem {
     label: string;
     href: string;
@@ -10,10 +12,9 @@ interface LinkListProps {
 }
 
 const normalizeBlogHref = (href: string, isInternal?: boolean): string => {
-    if (isInternal) {
-        return href.replace(/^\/blog\//, '/');
-    }
-    return href;
+    if (isInternal === false || /^https?:\/\//.test(href)) return href;
+    if (!href.startsWith('/')) return href;
+    return resolveInternalBlogHref(href);
 };
 
 const LinkList = ({ links = [] }: LinkListProps) => {

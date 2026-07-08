@@ -3,6 +3,7 @@ import PostCard from '@/library/modules/PostCard/PostCard.astro';
 import BaseLayout from '@/system/templates/BaseTemplate.astro';
 import { closeConnection, openDb } from '@/lib/db.ts';
 import { buildTagsMap, getPinnedByType } from '@/lib/queries/posts.ts';
+import { siteUrls } from '@/lib/urls.ts';
 
 const db = openDb();
 const posts = getPinnedByType(db, 'post');
@@ -14,21 +15,21 @@ closeConnection(db);
 const sections = [
     {
         title: 'Posts',
-        viewAllHref: '/post/',
+        viewAllHref: siteUrls.post,
         viewAllLabel: 'View all Posts',
         items: posts,
         type: 'post' as const,
     },
     {
         title: 'Snippets',
-        viewAllHref: '/snippet/',
+        viewAllHref: siteUrls.snippet,
         viewAllLabel: 'View all Snippets',
         items: snippets,
         type: 'snippet' as const,
     },
     {
         title: 'Book Notes',
-        viewAllHref: '/booknote/',
+        viewAllHref: siteUrls.booknote,
         viewAllLabel: 'View all Book Notes',
         items: booknotes,
         type: 'book-note' as const,

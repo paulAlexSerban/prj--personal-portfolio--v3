@@ -1,7 +1,7 @@
 import type { BlogPostFilterItem } from '@prj--personal-portfolio--v3/shared--ui/post-filters';
 import { CoverImage } from '@prj--personal-portfolio--v3/shared--ui/cover-image-ui';
 
-import { postDetailPath } from '@/lib/urls.ts';
+import { postDetailPath, tagPath } from '@/lib/urls.ts';
 
 const typeLabel: Record<BlogPostFilterItem['type'], string> = {
     post: 'Post',
@@ -43,7 +43,7 @@ export const PostCardReact = ({ post }: PostCardReactProps) => {
                     {tags.map((tag) => (
                         <li key={tag.slug}>
                             <a
-                                href={`/tags/${tag.slug}/`}
+                                href={tagPath(tag.slug)}
                                 className="inline-block border border-rule bg-highlight px-2 py-[0.15rem] text-xs text-ink no-underline hover:border-ink"
                             >
                                 #{tag.name.toLowerCase()}

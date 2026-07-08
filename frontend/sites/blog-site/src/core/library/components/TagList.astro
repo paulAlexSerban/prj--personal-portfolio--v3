@@ -1,6 +1,8 @@
 ---
 import type { TagRow } from '@prj--personal-portfolio--v3/shared--db-schema';
 
+import { tagPath } from '@/lib/urls.ts';
+
 interface Props {
     tags: TagRow[];
 }
@@ -15,7 +17,7 @@ const slicedTags = tags.slice(0, 5);
             {slicedTags.map((tag) => (
                 <li>
                     <a
-                        href={`/tags/${tag.slug}/`}
+                        href={tagPath(tag.slug)}
                         class="inline-block border border-rule bg-highlight px-2 py-[0.15rem] text-xs text-ink no-underline hover:border-ink"
                     >
                         #{tag.name.toLowerCase()}

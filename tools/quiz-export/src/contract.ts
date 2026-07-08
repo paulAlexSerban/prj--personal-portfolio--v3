@@ -48,6 +48,8 @@ export interface ExportedPostEntry {
     title: string;
     type: string;
     excerpt: string | null;
+    /** Publication date (raw string from content frontmatter); null when unset. */
+    date: string | null;
     questionCount: number;
     tags: string[];
 }

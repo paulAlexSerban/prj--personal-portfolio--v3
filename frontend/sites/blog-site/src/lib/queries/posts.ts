@@ -17,6 +17,20 @@ export const CONTENT_TYPE_LABEL: Record<BlogContentType, string> = {
     'book-note': 'Book note',
 };
 
+/** True when `date` is missing, unparseable, or on/before the calendar day of `asOf`. */
+export function isPublishedOnOrBefore(date: string | null | undefined, asOf = new Date()): boolean {
+    if (!date) return true;
+    const published = new Date(date);
+    if (Number.isNaN(published.getTime())) return true;
+    const asOfDay = new Date(asOf.getFullYear(), asOf.getMonth(), asOf.getDate());
+    const publishedDay = new Date(published.getFullYear(), published.getMonth(), published.getDate());
+    return publishedDay.getTime() <= asOfDay.getTime();
+}
+
+function filterPublishedAsOfToday(rows: PostRow[]): PostRow[] {
+    return rows.filter((row) => isPublishedOnOrBefore(row.date));
+}
+
 function sortByDateDesc(rows: PostRow[]): PostRow[] {
     return [...rows].sort((a, b) => {
         const dateA = a.date ? new Date(a.date).getTime() : 0;
@@ -50,7 +64,7 @@ export function getPublishedByType(db: DrizzleDb, type: BlogContentType): PostRo
             ),
         )
         .all();
-    return sortByDateDesc(rows);
+    return sortByDateDesc(filterPublishedAsOfToday(rows));
 }
 
 export function getPinnedByType(db: DrizzleDb, type: BlogContentType): PostRow[] {
@@ -67,16 +81,18 @@ export function getPinnedByType(db: DrizzleDb, type: BlogContentType): PostRow[]
         )
         .limit(6)
         .all();
-    return sortByDateDesc(rows);
+    return sortByDateDesc(filterPublishedAsOfToday(rows));
 }
 
 export function getAllSlugs(db: DrizzleDb, type: BlogContentType): { slug: string }[] {
     return db
-        .select({ slug: posts.slug })
+        .select({ slug: posts.slug, date: posts.date })
         .from(posts)
         .where(and(eq(posts.type, type)))
         // .where(and(eq(posts.type, type), inArray(posts.slug, publishedQuestionPostSlugs(db)))) # uncommend and use this line to filter by posts that have at least one published question
-        .all();
+        .all()
+        .filter((row) => isPublishedOnOrBefore(row.date))
+        .map(({ slug }) => ({ slug }));
 }
 
 export function getPostBySlug(db: DrizzleDb, slug: string): PostRow | undefined {
@@ -89,7 +105,8 @@ export function getPostBySlugAndType(
     type: BlogContentType,
 ): PostRow | undefined {
     const post = getPostBySlug(db, slug);
-    return post?.type === type ? post : undefined;
+    if (!post || post.type !== type || !isPublishedOnOrBefore(post.date)) return undefined;
+    return post;
 }
 
 export function getPostStaticPaths(db: DrizzleDb, type: BlogContentType) {

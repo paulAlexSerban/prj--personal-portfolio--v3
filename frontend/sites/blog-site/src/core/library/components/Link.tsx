@@ -1,5 +1,7 @@
 import type { ReactNode } from 'react';
 
+import { resolveInternalBlogHref } from '../../../lib/urls.ts';
+
 interface LinkProps {
     href?: string;
     children?: ReactNode;
@@ -11,10 +13,9 @@ interface LinkProps {
 }
 
 const normalizeBlogHref = (href: string, isInternal?: boolean): string => {
-    if (isInternal !== false && href.startsWith('/')) {
-        return href.replace(/^\/blog\//, '/');
-    }
-    return href;
+    if (isInternal === false || /^https?:\/\//.test(href)) return href;
+    if (!href.startsWith('/')) return href;
+    return resolveInternalBlogHref(href);
 };
 
 const Link = ({ href = '#', children, isInternal, ariaLabel, className, classNames }: LinkProps) => {

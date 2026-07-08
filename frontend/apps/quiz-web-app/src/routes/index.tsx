@@ -188,14 +188,15 @@ function HomeView() {
                         Remove
                       </button>
                       {blogHref && (
-                        <Link
-                          to={blogHref}
-                          params={{ postSlug: post.slug }}
+                        <a
+                          href={blogHref}
+                          target="_blank"
+                          rel="noopener noreferrer"
                           className={stampClasses("ghost", "sm")}
                           title={`View the ${post.title} blog post`}
                         >
                           View Post
-                        </Link>
+                        </a>
                       )}
                     </>
                   ) : (
@@ -210,14 +211,15 @@ function HomeView() {
                         {isLoading ? "Loading…" : "Add to Study Set"}
                       </button>
                       {blogHref && (
-                        <Link
-                          to={blogHref}
-                          params={{ postSlug: post.slug }}
+                        <a
+                          href={blogHref}
+                          target="_blank"
+                          rel="noopener noreferrer"
                           className={stampClasses("ghost", "sm")}
                           title={`View the ${post.title} blog post`}
                         >
                           View Post
-                        </Link>
+                        </a>
                       )}
                     </>
                   )}

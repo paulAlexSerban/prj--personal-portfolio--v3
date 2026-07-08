@@ -10,7 +10,7 @@ import { QuestionPreviewDrawer } from "@/containers/QuestionPreviewDrawer";
 import { Stamp, stampClasses } from "@prj--personal-portfolio--v3/shared--ui";
 import { loadPostQuestions, loadPostsIndex } from "@/data/loadQuizData";
 import { stripMarkdownPreview } from "@/lib/questionFilters";
-import { blogPostUrl, externalLinkAttrs } from "@/lib/urls";
+import { blogPostUrl } from "@/lib/urls";
 import { useStudySetActions } from "@/hooks/useStudySetActions";
 import { useStore } from "@/store";
 import type { QuizState } from "@/store";
@@ -167,7 +167,8 @@ function SetDetailPage() {
             <p className="mt-3">
               <a
                 href={blogHref}
-                {...externalLinkAttrs}
+                target="_blank"
+                rel="noopener noreferrer"
                 className={stampClasses("ghost", "md")}
                 title="Open the source blog post in a new tab"
               >
