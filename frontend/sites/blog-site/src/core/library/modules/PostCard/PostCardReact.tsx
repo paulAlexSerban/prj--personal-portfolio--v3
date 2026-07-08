@@ -1,17 +1,12 @@
 import type { BlogPostFilterItem } from '@prj--personal-portfolio--v3/shared--ui/post-filters';
 import { CoverImage } from '@prj--personal-portfolio--v3/shared--ui/cover-image-ui';
 
+import { postDetailPath } from '@/lib/urls.ts';
+
 const typeLabel: Record<BlogPostFilterItem['type'], string> = {
     post: 'Post',
     snippet: 'Snippet',
     'book-note': 'Book Note',
-};
-
-const detailHref = (type: BlogPostFilterItem['type'], slug: string): string => {
-    if (type === 'book-note') {
-        return `/booknote/${slug}/`;
-    }
-    return `/${type}/${slug}/`;
 };
 
 interface PostCardReactProps {
@@ -24,7 +19,7 @@ interface PostCardReactProps {
  * static (hub) and interactive (listing) cards render identically.
  */
 export const PostCardReact = ({ post }: PostCardReactProps) => {
-    const href = detailHref(post.type, post.slug);
+    const href = postDetailPath(post.type, post.slug);
     const meta = [typeLabel[post.type], post.date].filter(Boolean).join(' · ');
     const tags = post.tags.slice(0, 5);
 

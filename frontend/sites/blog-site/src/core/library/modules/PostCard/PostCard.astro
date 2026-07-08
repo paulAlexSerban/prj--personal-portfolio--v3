@@ -5,6 +5,7 @@ import { CoverImage } from '@prj--personal-portfolio--v3/shared--ui/cover-image-
 import TagList from '@/library/components/TagList.astro';
 
 import type { BlogContentType } from '@/lib/queries/posts.ts';
+import { postDetailPath } from '@/lib/urls.ts';
 
 interface Props {
     post: PostRow;
@@ -14,20 +15,13 @@ interface Props {
 
 const { post, tags, type } = Astro.props;
 
-function detailHref(contentType: BlogContentType, slug: string): string {
-    if (contentType === 'book-note') {
-        return `/booknote/${slug}/`;
-    }
-    return `/${contentType}/${slug}/`;
-}
-
 const typeLabel: Record<BlogContentType, string> = {
     post: 'Post',
     snippet: 'Snippet',
     'book-note': 'Book Note',
 };
 
-const href = detailHref(type, post.slug);
+const href = postDetailPath(type, post.slug);
 const meta = [typeLabel[type], post.date].filter(Boolean).join(' · ');
 ---
 

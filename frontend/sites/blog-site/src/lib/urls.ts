@@ -6,6 +6,8 @@ import {
     isNavLinkActive as sharedIsNavLinkActive,
 } from '@prj--personal-portfolio--v3/shared--navigation';
 
+import type { BlogContentType } from '@/lib/queries/posts.ts';
+
 const base = import.meta.env.BASE_URL;
 
 const crossApp = createSiteUrls({
@@ -27,6 +29,16 @@ export const siteUrls = {
     portfolio: import.meta.env.PUBLIC_PORTFOLIO_URL ?? crossApp.portfolio,
     quiz: import.meta.env.PUBLIC_QUIZ_URL ?? crossApp.quiz,
 } as const;
+
+const DETAIL_SEGMENT: Record<BlogContentType, string> = {
+    post: 'post',
+    snippet: 'snippet',
+    'book-note': 'booknote',
+};
+
+export function postDetailPath(type: BlogContentType, slug: string): string {
+    return `/${DETAIL_SEGMENT[type]}/${slug}/`;
+}
 
 export const assetUrl = (path: string) => sharedAssetUrl(base, path);
 export const isNavLinkActive = (pathname: string, href: string) => sharedIsNavLinkActive(pathname, href, base);

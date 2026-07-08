@@ -1,0 +1,73 @@
+---
+import { evaluate } from '@mdx-js/mdx';
+import { rehypePlugins, remarkPlugins } from '@prj--personal-portfolio--v3/shared--markdown/plugins';
+import * as runtime from 'react/jsx-runtime';
+
+import HeroBanner from '@/library/modules/HeroBanner.astro';
+import BaseLayout from '@/system/templates/BaseTemplate.astro';
+
+import { closeConnection, openDb } from '@/lib/db.ts';
+import { mdxComponents } from '@/lib/mdx-components.ts';
+import {
+    CONTENT_TYPE_LABEL,
+    getPostBySlugAndType,
+    getQuestionCountForPost,
+    getTagsForPost,
+    type BlogContentType,
+} from '@/lib/queries/posts.ts';
+import { postDetailPath } from '@/lib/urls.ts';
+
+interface Props {
+    slug: string;
+    contentType: BlogContentType;
+}
+
+const { slug, contentType } = Astro.props;
+
+const db = openDb();
+const post = getPostBySlugAndType(db, slug, contentType);
+const tags = getTagsForPost(db, slug);
+const questionCount = getQuestionCountForPost(db, slug);
+closeConnection(db);
+
+if (!post) {
+    throw new Error(`${CONTENT_TYPE_LABEL[contentType]} not found: ${slug}`);
+}
+
+const { default: Content } = await evaluate(post.body, {
+    ...runtime,
+    remarkPlugins: [...remarkPlugins],
+    rehypePlugins: [...rehypePlugins],
+});
+
+const description = post.excerpt ?? post.subheading ?? undefined;
+const canonicalUrl = new URL(postDetailPath(contentType, slug), Astro.site).href;
+---
+
+<BaseLayout
+    title={`${post.title} | Paul Serban`}
+    description={description}
+    ogTitle={post.title}
+    ogDescription={description}
+    canonicalUrl={canonicalUrl}
+>
+    <HeroBanner
+        title={post.title}
+        subheading={post.subheading ?? undefined}
+        tags={tags}
+        cover={post.cover_image ?? undefined}
+    />
+    <article class="md-content mt-4">
+        <Content components={mdxComponents} />
+    </article>
+    {
+        questionCount > 0 && (
+            <div
+                id="quiz-widget-mount"
+                class="quiz-widget-slot mt-12 min-h-16 border-2 border-dashed border-rule bg-highlight p-6"
+                data-quiz-widget
+                data-post-slug={post.slug}
+            />
+        )
+    }
+</BaseLayout>

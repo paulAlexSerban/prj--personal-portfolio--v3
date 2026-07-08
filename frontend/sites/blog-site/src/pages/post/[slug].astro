@@ -1,72 +1,17 @@
 ---
-import { evaluate } from '@mdx-js/mdx';
-import { rehypePlugins, remarkPlugins } from '@prj--personal-portfolio--v3/shared--markdown/plugins';
-import * as runtime from 'react/jsx-runtime';
-
-import HeroBanner from '@/library/modules/HeroBanner.astro';
-import BaseLayout from '@/system/templates/BaseTemplate.astro';
+import PostTemplate from '@/system/templates/PostTemplate.astro';
 
 import { closeConnection, openDb } from '@/lib/db.ts';
-import { mdxComponents } from '@/lib/mdx-components.ts';
-import {
-    getAllSlugs,
-    getPostBySlug,
-    getQuestionCountForPost,
-    getTagsForPost,
-} from '@/lib/queries/posts.ts';
+import { getPostStaticPaths } from '@/lib/queries/posts.ts';
 
 export function getStaticPaths() {
     const db = openDb();
-    const slugs = getAllSlugs(db, 'post');
+    const paths = getPostStaticPaths(db, 'post');
     closeConnection(db);
-    return slugs.map(({ slug }) => ({ params: { slug } }));
+    return paths;
 }
 
 const slug = Astro.params.slug!;
-const db = openDb();
-const post = getPostBySlug(db, slug);
-const tags = getTagsForPost(db, slug);
-const questionCount = getQuestionCountForPost(db, slug);
-closeConnection(db);
-
-if (!post) {
-    throw new Error(`Post not found: ${slug}`);
-}
-
-const { default: Content } = await evaluate(post.body, {
-    ...runtime,
-    remarkPlugins: [...remarkPlugins],
-    rehypePlugins: [...rehypePlugins],
-});
-
-const description = post.excerpt ?? post.subheading ?? undefined;
-const canonicalUrl = new URL(`/post/${slug}/`, Astro.site).href;
 ---
 
-<BaseLayout
-    title={`${post.title} | Paul Serban`}
-    description={description}
-    ogTitle={post.title}
-    ogDescription={description}
-    canonicalUrl={canonicalUrl}
->
-    <HeroBanner
-        title={post.title}
-        subheading={post.subheading ?? undefined}
-        tags={tags}
-        cover={post.cover_image ?? undefined}
-    />
-    <article class="md-content mt-4">
-        <Content components={mdxComponents} />
-    </article>
-    {
-        questionCount > 0 && (
-            <div
-                id="quiz-widget-mount"
-                class="quiz-widget-slot mt-12 min-h-16 border-2 border-dashed border-rule bg-highlight p-6"
-                data-quiz-widget
-                data-post-slug={post.slug}
-            />
-        )
-    }
-</BaseLayout>
+<PostTemplate slug={slug} contentType="post" />

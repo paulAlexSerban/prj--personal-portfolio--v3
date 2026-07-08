@@ -11,6 +11,12 @@ import { and, count, eq, inArray } from 'drizzle-orm';
 
 export type BlogContentType = 'post' | 'book-note' | 'snippet';
 
+export const CONTENT_TYPE_LABEL: Record<BlogContentType, string> = {
+    post: 'Post',
+    snippet: 'Snippet',
+    'book-note': 'Book note',
+};
+
 function sortByDateDesc(rows: PostRow[]): PostRow[] {
     return [...rows].sort((a, b) => {
         const dateA = a.date ? new Date(a.date).getTime() : 0;
@@ -75,6 +81,19 @@ export function getAllSlugs(db: DrizzleDb, type: BlogContentType): { slug: strin
 
 export function getPostBySlug(db: DrizzleDb, slug: string): PostRow | undefined {
     return db.select().from(posts).where(eq(posts.slug, slug)).get();
+}
+
+export function getPostBySlugAndType(
+    db: DrizzleDb,
+    slug: string,
+    type: BlogContentType,
+): PostRow | undefined {
+    const post = getPostBySlug(db, slug);
+    return post?.type === type ? post : undefined;
+}
+
+export function getPostStaticPaths(db: DrizzleDb, type: BlogContentType) {
+    return getAllSlugs(db, type).map(({ slug }) => ({ params: { slug } }));
 }
 
 export function getTagsForPost(db: DrizzleDb, slug: string): TagRow[] {

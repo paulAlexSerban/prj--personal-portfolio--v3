@@ -66,10 +66,10 @@ Flashcard quizes (Anki style spaced repetition) are surfaced as a blog widget, a
 
 ### Environments
 
-- **DEV** - GitHub Pages, served from the project repo at `https://paulalexserban.github.io/prj--personal-portfolio--v3/`.
-    - `/home/` - portfolio-site (Astro)
-    - `/blog/` - blog-site (Astro)
-    - `/quiz/` - quiz-web-app (Vite + React SPA)
+- **DEV** - GitHub Pages, served from the project repo at https://paulalexserban.github.io/prj--personal-portfolio--v3/ (link to repo).
+    - `/home/` - portfolio-site (Astro) - https://paulalexserban.github.io/prj--personal-portfolio--v3/home/ (link to sub-path)
+    - `/blog/` - blog-site (Astro) - https://paulalexserban.github.io/prj--personal-portfolio--v3/blog/ (link to sub-path)
+    - `/quiz/` - quiz-web-app (Vite + React SPA) - https://paulalexserban.github.io/prj--personal-portfolio--v3/quiz/ (link to sub-path)
     - `/` redirects to `/home/`.
 - **TEST** / **PROD** - not yet implemented (planned separately).
 
