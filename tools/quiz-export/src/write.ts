@@ -27,17 +27,18 @@ export async function writeQuizJson(data: QuizData, outDir: string): Promise<Wri
     await writeFile(postsIndexPath, JSON.stringify(postsIndex, null, 2), 'utf-8');
 
     // ── questions/<post_slug>.json ────────────────────────────────────────────
-    const questionFilePaths: string[] = [];
-    for (const [postSlug, questionList] of data.questionsByPost.entries()) {
-        const file: PostQuestionsFile = {
-            version: 2,
-            postSlug,
-            questions: questionList,
-        };
-        const filePath = path.join(questionsDir, `${postSlug}.json`);
-        await writeFile(filePath, JSON.stringify(file, null, 2), 'utf-8');
-        questionFilePaths.push(filePath);
-    }
+    const questionEntries = [...data.questionsByPost.entries()];
+    const questionFilePaths = questionEntries.map(([postSlug]) => path.join(questionsDir, `${postSlug}.json`));
+    await Promise.all(
+        questionEntries.map(([postSlug, questionList], i) => {
+            const file: PostQuestionsFile = {
+                version: 2,
+                postSlug,
+                questions: questionList,
+            };
+            return writeFile(questionFilePaths[i]!, JSON.stringify(file, null, 2), 'utf-8');
+        }),
+    );
 
     // ── tags.json ─────────────────────────────────────────────────────────────
     const tagEntries: ExportedTagEntry[] = [...data.questionsByTag.entries()].sort(([a], [b]) => a.localeCompare(b)).map(([slug, qs]) => ({ slug, questionCount: qs.length }));
@@ -51,17 +52,18 @@ export async function writeQuizJson(data: QuizData, outDir: string): Promise<Wri
     await writeFile(tagsIndexPath, JSON.stringify(tagsIndex, null, 2), 'utf-8');
 
     // ── tags/<tag_slug>.json ──────────────────────────────────────────────────
-    const tagFilePaths: string[] = [];
-    for (const [tagSlug, questionList] of data.questionsByTag.entries()) {
-        const file: TagQuestionsFile = {
-            version: 2,
-            tagSlug,
-            questions: questionList,
-        };
-        const filePath = path.join(tagsDir, `${tagSlug}.json`);
-        await writeFile(filePath, JSON.stringify(file, null, 2), 'utf-8');
-        tagFilePaths.push(filePath);
-    }
+    const tagEntriesList = [...data.questionsByTag.entries()];
+    const tagFilePaths = tagEntriesList.map(([tagSlug]) => path.join(tagsDir, `${tagSlug}.json`));
+    await Promise.all(
+        tagEntriesList.map(([tagSlug, questionList], i) => {
+            const file: TagQuestionsFile = {
+                version: 2,
+                tagSlug,
+                questions: questionList,
+            };
+            return writeFile(tagFilePaths[i]!, JSON.stringify(file, null, 2), 'utf-8');
+        }),
+    );
 
     // ── _all.json ─────────────────────────────────────────────────────────────
     const allBundle: AllQuestionsBundle = {

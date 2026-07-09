@@ -87,17 +87,21 @@ async function compileQuestion(question: ExportedQuestion, opts: CompileOptions)
 
 /** Compile MDX/markdown fields to sanitized HTML and optionally copy image assets. */
 export async function compileQuizData(data: QuizData, opts: CompileOptions = {}): Promise<QuizData> {
-    const questionsByPost = new Map<string, ExportedQuestion[]>();
-    for (const [postSlug, list] of data.questionsByPost.entries()) {
-        const compiled = await Promise.all(list.map((q) => compileQuestion(q, opts)));
-        questionsByPost.set(postSlug, compiled);
+    const uniqueQuestions = new Map<string, ExportedQuestion>();
+    for (const list of data.questionsByPost.values()) {
+        for (const q of list) uniqueQuestions.set(q.slug, q);
     }
 
-    const questionsByTag = new Map<string, ExportedQuestion[]>();
-    for (const [tagSlug, list] of data.questionsByTag.entries()) {
-        const compiled = await Promise.all(list.map((q) => compileQuestion(q, opts)));
-        questionsByTag.set(tagSlug, compiled);
-    }
+    const compiledEntries = await Promise.all(
+        [...uniqueQuestions.values()].map(async (q) => [q.slug, await compileQuestion(q, opts)] as const),
+    );
+    const compiledBySlug = new Map(compiledEntries);
 
-    return { ...data, questionsByPost, questionsByTag };
+    const remap = (list: ExportedQuestion[]) => list.map((q) => compiledBySlug.get(q.slug)!);
+
+    return {
+        ...data,
+        questionsByPost: new Map([...data.questionsByPost].map(([k, list]) => [k, remap(list)])),
+        questionsByTag: new Map([...data.questionsByTag].map(([k, list]) => [k, remap(list)])),
+    };
 }

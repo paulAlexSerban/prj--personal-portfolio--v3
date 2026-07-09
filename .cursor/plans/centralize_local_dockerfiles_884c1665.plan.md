@@ -2,21 +2,21 @@
 name: Centralize local Dockerfiles
 overview: Create a root `local.base.Dockerfile` for common local-dev image setup, convert the three app `local.Dockerfile`s into thin images that inherit from that base, and update the Makefile to build the base before Compose builds app images.
 todos:
-  - id: base-dockerfile
-    content: Create root `local.base.Dockerfile` with shared Node, Alpine deps, pnpm, workspace metadata, shared, and tools layers
-    status: completed
-  - id: thin-app-dockerfiles
-    content: Refactor portfolio, blog, and quiz `local.Dockerfile`s to inherit from the local base image and keep only app-specific copy/install/run steps
-    status: completed
-  - id: compose-build-args
-    content: Add `LOCAL_BASE_IMAGE` build args to the three frontend services in `docker-compose.local.yml`
-    status: completed
-  - id: makefile-targets
-    content: Update `makefile` with compose/base image variables, `local_base_build`, and `compose_up` dependency ordering
-    status: completed
-  - id: verify-local-docker
-    content: Validate compose config and build base plus three app images
-    status: in_progress
+    - id: base-dockerfile
+      content: Create root `local.base.Dockerfile` with shared Node, Alpine deps, pnpm, workspace metadata, shared, and tools layers
+      status: completed
+    - id: thin-app-dockerfiles
+      content: Refactor portfolio, blog, and quiz `local.Dockerfile`s to inherit from the local base image and keep only app-specific copy/install/run steps
+      status: completed
+    - id: compose-build-args
+      content: Add `LOCAL_BASE_IMAGE` build args to the three frontend services in `docker-compose.local.yml`
+      status: completed
+    - id: makefile-targets
+      content: Update `makefile` with compose/base image variables, `local_base_build`, and `compose_up` dependency ordering
+      status: completed
+    - id: verify-local-docker
+      content: Validate compose config and build base plus three app images
+      status: in_progress
 isProject: false
 ---
 
@@ -122,10 +122,10 @@ For each frontend service build block, pass the base image name as a build arg:
 
 ```yaml
 build:
-  context: ../..
-  dockerfile: frontend/sites/blog-site/local.Dockerfile
-  args:
-    LOCAL_BASE_IMAGE: prj-personal-portfolio-v3-local-base:latest
+    context: ../..
+    dockerfile: frontend/sites/blog-site/local.Dockerfile
+    args:
+        LOCAL_BASE_IMAGE: prj-personal-portfolio-v3-local-base:latest
 ```
 
 This makes the dependency explicit in Compose config, but the image must still be built first by the Makefile.
@@ -183,9 +183,9 @@ Expected outcomes:
 - Quiz still exposes `5180` internally.
 - Traefik labels remain unchanged.
 - Local URLs still route:
-  - `https://local.paulserban.eu`
-  - `https://local.blog.paulserban.eu`
-  - `https://local.quiz.paulserban.eu`
+    - `https://local.paulserban.eu`
+    - `https://local.blog.paulserban.eu`
+    - `https://local.quiz.paulserban.eu`
 
 ## Out of Scope
 

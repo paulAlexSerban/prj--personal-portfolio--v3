@@ -51,9 +51,9 @@ const sections = [
                     </a>
                 </div>
                 {section.items.length > 0 ? (
-                    <ul class="m-0 list-none columns-1 gap-5 p-0 sm:columns-2 lg:columns-3">
+                    <ul class="post-list-grid">
                         {section.items.map((item) => (
-                            <li class="mb-5 break-inside-avoid">
+                            <li>
                                 <PostCard
                                     post={item}
                                     tags={tagsMap.get(item.slug) ?? []}

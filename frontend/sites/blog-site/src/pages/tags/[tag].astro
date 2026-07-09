@@ -50,9 +50,9 @@ const sections = [
                 <div class="mb-5 border-b-[3px] border-ink pb-2">
                     <h2 class="m-0 font-display text-4xl font-bold">{section.title}</h2>
                 </div>
-                <ul class="m-0 list-none columns-1 gap-5 p-0 sm:columns-2 lg:columns-3">
+                <ul class="post-list-grid">
                     {section.items.map((item) => (
-                        <li class="mb-5 break-inside-avoid">
+                        <li>
                             <PostCard
                                 post={item}
                                 tags={tagsMap.get(item.slug) ?? []}
