@@ -69,6 +69,7 @@ Remaining `_drafts/` (database engine, CMS, CI/CD, hosting, caching, mobile wrap
 | Frontmatter contracts  | Architecture doc § MDX Frontmatter Contracts                     |
 | Build-time data flow   | Architecture doc § SSG Build                                     |
 | Quiz web app / export  | `frontend/apps/quiz-web-app/AGENTS.md` + `shared/AGENTS.md`; plans in `02 plans/quiz-web-app-*.md` |
+| Scheduling algorithms  | `architectural-knowledge-management/spaced-repetition-algorithms-reference.md` (SM-2 + FSRS-5 behaviour, weights, tuning) |
 | Product behaviour      | Relevant file under `product/`                                   |
 
 ## Implementation status (docs vs code)
