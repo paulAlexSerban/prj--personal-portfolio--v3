@@ -2,15 +2,15 @@
 name: Fix quiz-export duplicate compile
 overview: Eliminate the ~8x redundant compilation in tools/quiz-export by compiling each unique question once and reusing the result for both post- and tag-grouped output; parallelize file writes as a smaller secondary win.
 todos:
-  - id: dedup-compile
-    content: Rewrite compileQuizData to compile each unique question once by slug and reuse for both post and tag groupings
-    status: completed
-  - id: parallel-writes
-    content: Parallelize question/tag file writes in write.ts with Promise.all
-    status: completed
-  - id: dedup-test
-    content: Add a test asserting a multi-tag question is compiled only once
-    status: completed
+    - id: dedup-compile
+      content: Rewrite compileQuizData to compile each unique question once by slug and reuse for both post and tag groupings
+      status: completed
+    - id: parallel-writes
+      content: Parallelize question/tag file writes in write.ts with Promise.all
+      status: completed
+    - id: dedup-test
+      content: Add a test asserting a multi-tag question is compiled only once
+      status: completed
 isProject: false
 ---
 
@@ -41,23 +41,21 @@ Example shape:
 
 ```ts
 export async function compileQuizData(data: QuizData, opts: CompileOptions = {}): Promise<QuizData> {
-  const uniqueQuestions = new Map<string, ExportedQuestion>();
-  for (const list of data.questionsByPost.values()) {
-    for (const q of list) uniqueQuestions.set(q.slug, q);
-  }
+    const uniqueQuestions = new Map<string, ExportedQuestion>();
+    for (const list of data.questionsByPost.values()) {
+        for (const q of list) uniqueQuestions.set(q.slug, q);
+    }
 
-  const compiledEntries = await Promise.all(
-    [...uniqueQuestions.values()].map(async (q) => [q.slug, await compileQuestion(q, opts)] as const),
-  );
-  const compiledBySlug = new Map(compiledEntries);
+    const compiledEntries = await Promise.all([...uniqueQuestions.values()].map(async (q) => [q.slug, await compileQuestion(q, opts)] as const));
+    const compiledBySlug = new Map(compiledEntries);
 
-  const remap = (list: ExportedQuestion[]) => list.map((q) => compiledBySlug.get(q.slug)!);
+    const remap = (list: ExportedQuestion[]) => list.map((q) => compiledBySlug.get(q.slug)!);
 
-  return {
-    ...data,
-    questionsByPost: new Map([...data.questionsByPost].map(([k, list]) => [k, remap(list)])),
-    questionsByTag: new Map([...data.questionsByTag].map(([k, list]) => [k, remap(list)])),
-  };
+    return {
+        ...data,
+        questionsByPost: new Map([...data.questionsByPost].map(([k, list]) => [k, remap(list)])),
+        questionsByTag: new Map([...data.questionsByTag].map(([k, list]) => [k, remap(list)])),
+    };
 }
 ```
 

@@ -84,7 +84,7 @@ export function Masthead() {
         </div>
 
         <nav
-          className="mt-2 hidden flex-wrap gap-5 text-[11px] smallcaps md:flex"
+          className="mt-2 hidden flex-wrap gap-5 text-sm smallcaps md:flex"
           aria-label="Primary"
         >
           {navItems.map((item) => (

@@ -385,7 +385,7 @@ function StatsView() {
               </table>
             </div>
           )}
-          <p className="text-[10px] italic text-[var(--slate)] mt-2">
+          <p className="text-sm italic text-[var(--slate)] mt-2">
             Threshold and action configurable in{" "}
             <Link to="/settings" className="underline">
               Settings

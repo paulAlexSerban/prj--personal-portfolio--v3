@@ -179,7 +179,7 @@ function SetDetailPage() {
 
           <div className="rule mt-4 mb-6" />
 
-          <div className="flex flex-col md:flex-wrap gap-2 md:gap-3 mb-6">
+          <div className="flex flex-col md:flex-row md:flex-wrap gap-2 md:gap-3 mb-6">
             <Link
               to="/sets/$postSlug/study"
               params={{ postSlug }}
@@ -226,7 +226,7 @@ function SetDetailPage() {
                 ["Total", stats.total],
               ] as [string, number][]
             ).map(([label, n]) => (
-              <div key={label} className="p-4 text-center">
+              <div key={label} className="p-2 text-center">
                 <p className="text-[10px] smallcaps text-[var(--slate)]">{label}</p>
                 <p className="text-xl md:text-2xl font-bold">{n}</p>
               </div>
@@ -310,7 +310,7 @@ function SetDetailPage() {
                   Reset to global defaults
                 </button>
               )}
-              <p className="text-[10px] italic text-[var(--slate)] mt-2">
+              <p className="text-sm italic text-[var(--slate)] mt-2">
                 Per-set overrides · global defaults in{" "}
                 <Link to="/settings" className="underline">
                   Settings

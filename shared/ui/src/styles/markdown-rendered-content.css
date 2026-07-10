@@ -13,7 +13,7 @@
     font-family: var(--font-display);
     font-weight: 700;
     line-height: 1.15;
-    margin: 1.2em 0 0.5em;
+    margin: 1.2rem 0 0.5rem;
 }
 .md-content h1 {
     font-size: 2rem;
@@ -30,13 +30,13 @@
     letter-spacing: 0.06em;
 }
 .md-content p {
-    margin: 0.6em 0;
-    font-size: 1.2rem;
+    margin: 0.6rem 0;
+    font-size: 1.1rem;
 }
 .md-content ul,
 .md-content ol {
-    margin: 0.6em 0;
-    padding-left: 1.5em;
+    margin: 0.6rem 0;
+    padding-left: 1.5rem;
 }
 .md-content ul {
     list-style: square;
@@ -45,7 +45,8 @@
     list-style: decimal;
 }
 .md-content li {
-    margin: 0.25em 0;
+    margin: 0.25rem 0;
+    font-size: 1.1rem;
 }
 .md-content a {
     text-decoration: underline;

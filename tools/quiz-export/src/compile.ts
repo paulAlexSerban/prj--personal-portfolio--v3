@@ -92,9 +92,7 @@ export async function compileQuizData(data: QuizData, opts: CompileOptions = {})
         for (const q of list) uniqueQuestions.set(q.slug, q);
     }
 
-    const compiledEntries = await Promise.all(
-        [...uniqueQuestions.values()].map(async (q) => [q.slug, await compileQuestion(q, opts)] as const),
-    );
+    const compiledEntries = await Promise.all([...uniqueQuestions.values()].map(async (q) => [q.slug, await compileQuestion(q, opts)] as const));
     const compiledBySlug = new Map(compiledEntries);
 
     const remap = (list: ExportedQuestion[]) => list.map((q) => compiledBySlug.get(q.slug)!);

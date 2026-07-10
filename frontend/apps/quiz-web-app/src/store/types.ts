@@ -154,7 +154,7 @@ export const DEFAULT_SETTINGS: AppSettings = {
   leechThreshold: 8,
   leechAction: "suspend",
   scheduler: "sm2",
-  fsrsTargetRetention: 0.9,
+  fsrsTargetRetention: 0.95,
 };
 
 /** Fresh SM-2 state for a question newly added to the study set. */

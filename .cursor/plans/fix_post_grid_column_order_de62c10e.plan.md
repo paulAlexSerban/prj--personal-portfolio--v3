@@ -2,15 +2,15 @@
 name: Fix post grid column order
 overview: Replace CSS multi-column layout (which balances by card height → 2-1-2) with a row-first CSS grid so cards fill left-to-right in reading order (2-2-1 for five items on a 3-column page).
 todos:
-  - id: grid-post-list-island
-    content: Replace columns-* with grid in PostListIsland.tsx
-    status: completed
-  - id: grid-static-pages
-    content: Replace columns-* with grid in index.astro and tags/[tag].astro
-    status: completed
-  - id: verify-layout
-    content: Manually verify snippet listing column order at lg breakpoint
-    status: completed
+    - id: grid-post-list-island
+      content: Replace columns-* with grid in PostListIsland.tsx
+      status: completed
+    - id: grid-static-pages
+      content: Replace columns-* with grid in index.astro and tags/[tag].astro
+      status: completed
+    - id: verify-layout
+      content: Manually verify snippet listing column order at lg breakpoint
+      status: completed
 isProject: false
 ---
 
@@ -43,8 +43,6 @@ flowchart LR
   end
 ```
 
-
-
 Vertical counts per column: **2 · 2 · 1**.
 
 ## Fix
@@ -57,13 +55,11 @@ Switch from `columns-*` to **CSS grid** with the same breakpoints. G2rid places 
 
 ### Files to update (same class change in all three)
 
-
 | File                                                                                                                                           | Used on                                                 |
 | ---------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------- |
 | `[frontend/sites/blog-site/src/core/library/widgets/PostListIsland.tsx](frontend/sites/blog-site/src/core/library/widgets/PostListIsland.tsx)` | Snippets / Posts / Book Notes listing pages (paginated) |
 | `[frontend/sites/blog-site/src/pages/index.astro](frontend/sites/blog-site/src/pages/index.astro)`                                             | Hub pinned sections                                     |
 | `[frontend/sites/blog-site/src/pages/tags/[tag].astro](frontend/sites/blog-site/src/pages/tags/[tag].astro)`                                   | Tag archive sections                                    |
-
 
 Optional DRY: add a shared utility in `[frontend/sites/blog-site/src/styles/global.css](frontend/sites/blog-site/src/styles/global.css)`, e.g. `.post-list-grid`, and use it in all three places — keeps listing/hub/tag layouts in sync.
 
@@ -77,4 +73,3 @@ Grid rows align to the tallest card in each row; shorter cards leave empty space
 - Confirm order: card 1 top-left, card 2 top-center, card 3 top-right, card 4 second row left, card 5 second row center.
 - Spot-check hub (`/`) pinned snippets and a tag page for the same layout.
 - Resize to `sm` (2 cols) and mobile (1 col) — no regressions.
-
