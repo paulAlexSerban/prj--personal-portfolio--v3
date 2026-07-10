@@ -37,7 +37,7 @@ export async function writeQuizJson(data: QuizData, outDir: string): Promise<Wri
                 questions: questionList,
             };
             return writeFile(questionFilePaths[i]!, JSON.stringify(file, null, 2), 'utf-8');
-        }),
+        })
     );
 
     // ── tags.json ─────────────────────────────────────────────────────────────
@@ -62,7 +62,7 @@ export async function writeQuizJson(data: QuizData, outDir: string): Promise<Wri
                 questions: questionList,
             };
             return writeFile(tagFilePaths[i]!, JSON.stringify(file, null, 2), 'utf-8');
-        }),
+        })
     );
 
     // ── _all.json ─────────────────────────────────────────────────────────────
