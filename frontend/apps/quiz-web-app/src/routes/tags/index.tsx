@@ -4,7 +4,11 @@ import type { ExportedQuestion } from "@prj--personal-portfolio--v3/tools--quiz-
 import { PageLayout } from "@/components/layout/PageLayout";
 import { stampClasses } from "@prj--personal-portfolio--v3/shared--ui";
 import { PaginationBar } from "@prj--personal-portfolio--v3/shared--ui/pagination-bar";
-import { clampPage, paginate, totalPages } from "@prj--personal-portfolio--v3/shared--ui/pagination";
+import {
+  clampPage,
+  paginate,
+  totalPages,
+} from "@prj--personal-portfolio--v3/shared--ui/pagination";
 import { loadAllQuestions } from "@/data/loadQuizData";
 import {
   renderStampNext,
@@ -106,35 +110,35 @@ function TagsIndexView() {
       ) : (
         <>
           <ul
-          className="border-2 border-[var(--ink-black)] divide-y-2 divide-[var(--ink-black)]"
-          style={{ fontFamily: "var(--font-mono)" }}
-        >
-          {pageItems.map(([slug, count]) => (
-            <li key={slug}>
-              <Link
-                to="/tags/$tag"
-                params={{ tag: slug }}
-                className="flex items-center justify-between p-2 md:p-4 hover:bg-[var(--highlight)]"
-              >
-                <span className="font-medium">{slug}</span>
-                <span className="smallcaps text-[10px] text-[var(--slate)] w-20 text-right">
-                  {count} question{count === 1 ? "" : "s"}
-                </span>
-              </Link>
-            </li>
-          ))}
-        </ul>
-        <PaginationBar
-          page={current}
-          pages={pages}
-          total={tagCounts.length}
-          itemLabel="tags"
-          onPageChange={setPage}
-          className="mt-4 text-base"
-          labelClassName={stampPaginationLabelClassName}
-          renderPrev={renderStampPrev}
-          renderNext={renderStampNext}
-        />
+            className="border-2 border-[var(--ink-black)] divide-y-2 divide-[var(--ink-black)]"
+            style={{ fontFamily: "var(--font-mono)" }}
+          >
+            {pageItems.map(([slug, count]) => (
+              <li key={slug}>
+                <Link
+                  to="/tags/$tag"
+                  params={{ tag: slug }}
+                  className="flex items-center justify-between p-2 md:p-4 hover:bg-[var(--highlight)]"
+                >
+                  <span className="font-medium">{slug}</span>
+                  <span className="smallcaps text-[10px] text-[var(--slate)] w-20 text-right">
+                    {count} question{count === 1 ? "" : "s"}
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <PaginationBar
+            page={current}
+            pages={pages}
+            total={tagCounts.length}
+            itemLabel="tags"
+            onPageChange={setPage}
+            className="mt-4 text-base"
+            labelClassName={stampPaginationLabelClassName}
+            renderPrev={renderStampPrev}
+            renderNext={renderStampNext}
+          />
         </>
       )}
     </PageLayout>

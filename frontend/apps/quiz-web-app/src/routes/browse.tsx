@@ -5,7 +5,11 @@ import { PageLayout } from "@/components/layout/PageLayout";
 import { QuestionPreviewDrawer } from "@/containers/QuestionPreviewDrawer";
 import { stampClasses } from "@prj--personal-portfolio--v3/shared--ui";
 import { PaginationBar } from "@prj--personal-portfolio--v3/shared--ui/pagination-bar";
-import { clampPage, paginate, totalPages } from "@prj--personal-portfolio--v3/shared--ui/pagination";
+import {
+  clampPage,
+  paginate,
+  totalPages,
+} from "@prj--personal-portfolio--v3/shared--ui/pagination";
 import { loadAllQuestions, loadPostsIndex } from "@/data/loadQuizData";
 import {
   EMPTY_BROWSE_FILTERS,

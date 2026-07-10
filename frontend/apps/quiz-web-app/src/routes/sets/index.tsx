@@ -4,7 +4,11 @@ import type { ExportedPostEntry } from "@prj--personal-portfolio--v3/tools--quiz
 import { PageLayout } from "@/components/layout/PageLayout";
 import { stampClasses } from "@prj--personal-portfolio--v3/shared--ui";
 import { PaginationBar } from "@prj--personal-portfolio--v3/shared--ui/pagination-bar";
-import { clampPage, paginate, totalPages } from "@prj--personal-portfolio--v3/shared--ui/pagination";
+import {
+  clampPage,
+  paginate,
+  totalPages,
+} from "@prj--personal-portfolio--v3/shared--ui/pagination";
 import { loadPostsIndex } from "@/data/loadQuizData";
 import {
   GRID_PAGE_SIZE,
@@ -124,84 +128,86 @@ function StudySetsView() {
       ) : (
         <>
           <div className="grid md:grid-cols-2 gap-x-10 gap-y-8">
-          {pageItems.map(({ slug, meta, stats, due }) => (
-            <article key={slug} className="border-t-[3px] border-[var(--ink-black)] pt-4">
-              <p className="smallcaps text-[10px] text-[var(--slate)] mb-1">
-                Study Set · {meta?.questionCount ?? stats.total} questions
-              </p>
-              <Link to="/sets/$postSlug" params={{ postSlug: slug }} className="hover:underline">
-                <h3
-                  className="text-3xl font-bold leading-tight"
-                  style={{ fontFamily: "var(--font-display)" }}
-                >
-                  {meta?.title ?? slug}
-                </h3>
-              </Link>
-              <div className="rule-thin my-4" />
-              <div
-                className="grid grid-cols-4 gap-2 text-center"
-                style={{ fontFamily: "var(--font-mono)" }}
-              >
-                <div>
-                  <p className="text-[10px] smallcaps text-[var(--slate)]">New</p>
-                  <p className="text-xl font-bold">{stats.newCount}</p>
-                </div>
-                <div>
-                  <p className="text-[10px] smallcaps text-[var(--slate)]">Due</p>
-                  <p className="text-xl font-bold">{stats.reviewDueCount + stats.learningCount}</p>
-                </div>
-                <div>
-                  <p className="text-[10px] smallcaps text-[var(--slate)]">Ignored</p>
-                  <p className="text-xl font-bold">{stats.ignoredCount}</p>
-                </div>
-                <div>
-                  <p className="text-[10px] smallcaps text-[var(--slate)]">Total</p>
-                  <p className="text-xl font-bold">{stats.total}</p>
-                </div>
-              </div>
-              <div className="mt-4 flex gap-2">
-                {due > 0 ? (
-                  <Link
-                    to="/sets/$postSlug/study"
-                    params={{ postSlug: slug }}
-                    className={stampClasses("solid", "sm")}
-                    title={`Study ${due} due cards in ${meta?.title ?? slug}`}
+            {pageItems.map(({ slug, meta, stats, due }) => (
+              <article key={slug} className="border-t-[3px] border-[var(--ink-black)] pt-4">
+                <p className="smallcaps text-[10px] text-[var(--slate)] mb-1">
+                  Study Set · {meta?.questionCount ?? stats.total} questions
+                </p>
+                <Link to="/sets/$postSlug" params={{ postSlug: slug }} className="hover:underline">
+                  <h3
+                    className="text-3xl font-bold leading-tight"
+                    style={{ fontFamily: "var(--font-display)" }}
                   >
-                    Study ({due})
-                  </Link>
-                ) : (
+                    {meta?.title ?? slug}
+                  </h3>
+                </Link>
+                <div className="rule-thin my-4" />
+                <div
+                  className="grid grid-cols-4 gap-2 text-center"
+                  style={{ fontFamily: "var(--font-mono)" }}
+                >
+                  <div>
+                    <p className="text-[10px] smallcaps text-[var(--slate)]">New</p>
+                    <p className="text-xl font-bold">{stats.newCount}</p>
+                  </div>
+                  <div>
+                    <p className="text-[10px] smallcaps text-[var(--slate)]">Due</p>
+                    <p className="text-xl font-bold">
+                      {stats.reviewDueCount + stats.learningCount}
+                    </p>
+                  </div>
+                  <div>
+                    <p className="text-[10px] smallcaps text-[var(--slate)]">Ignored</p>
+                    <p className="text-xl font-bold">{stats.ignoredCount}</p>
+                  </div>
+                  <div>
+                    <p className="text-[10px] smallcaps text-[var(--slate)]">Total</p>
+                    <p className="text-xl font-bold">{stats.total}</p>
+                  </div>
+                </div>
+                <div className="mt-4 flex gap-2">
+                  {due > 0 ? (
+                    <Link
+                      to="/sets/$postSlug/study"
+                      params={{ postSlug: slug }}
+                      className={stampClasses("solid", "sm")}
+                      title={`Study ${due} due cards in ${meta?.title ?? slug}`}
+                    >
+                      Study ({due})
+                    </Link>
+                  ) : (
+                    <Link
+                      to="/sets/$postSlug"
+                      params={{ postSlug: slug }}
+                      className={stampClasses("solid", "sm")}
+                      title={`Browse questions in ${meta?.title ?? slug}`}
+                    >
+                      Browse
+                    </Link>
+                  )}
                   <Link
                     to="/sets/$postSlug"
                     params={{ postSlug: slug }}
-                    className={stampClasses("solid", "sm")}
-                    title={`Browse questions in ${meta?.title ?? slug}`}
+                    className={stampClasses("ghost", "sm")}
+                    title={`View details for ${meta?.title ?? slug}`}
                   >
-                    Browse
+                    Details
                   </Link>
-                )}
-                <Link
-                  to="/sets/$postSlug"
-                  params={{ postSlug: slug }}
-                  className={stampClasses("ghost", "sm")}
-                  title={`View details for ${meta?.title ?? slug}`}
-                >
-                  Details
-                </Link>
-              </div>
-            </article>
-          ))}
-        </div>
-        <PaginationBar
-          page={current}
-          pages={pages}
-          total={rows.length}
-          itemLabel="sets"
-          onPageChange={setPage}
-          className="mt-8 text-base"
-          labelClassName={stampPaginationLabelClassName}
-          renderPrev={renderStampPrev}
-          renderNext={renderStampNext}
-        />
+                </div>
+              </article>
+            ))}
+          </div>
+          <PaginationBar
+            page={current}
+            pages={pages}
+            total={rows.length}
+            itemLabel="sets"
+            onPageChange={setPage}
+            className="mt-8 text-base"
+            labelClassName={stampPaginationLabelClassName}
+            renderPrev={renderStampPrev}
+            renderNext={renderStampNext}
+          />
         </>
       )}
     </PageLayout>

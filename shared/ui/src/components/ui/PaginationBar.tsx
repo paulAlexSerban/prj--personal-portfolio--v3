@@ -20,17 +20,7 @@ export interface PaginationBarProps {
 }
 
 /** Prev/Next pager with shared copy and a11y; visuals supplied via render props. */
-export function PaginationBar({
-    page,
-    pages,
-    total,
-    onPageChange,
-    itemLabel = 'total',
-    className,
-    labelClassName,
-    renderPrev,
-    renderNext,
-}: PaginationBarProps) {
+export function PaginationBar({ page, pages, total, onPageChange, itemLabel = 'total', className, labelClassName, renderPrev, renderNext }: PaginationBarProps) {
     if (pages <= 1) return null;
 
     const prevDisabled = page <= 1;

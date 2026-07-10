@@ -2,36 +2,36 @@
 name: Cross-app shared pagination
 overview: Build one shared, render-prop-based `PaginationBar` in `shared/ui` that both blog-site and quiz-web-app consume, then apply pagination consistently to every unpaginated list view in quiz-web-app.
 todos:
-  - id: pagination-bar
-    content: Add shared PaginationBar component + export path to shared/ui; delete unused shadcn Pagination primitives
-    status: completed
-  - id: refactor-browse
-    content: Refactor quiz browse.tsx to use PaginationBar + clampPage
-    status: completed
-  - id: refactor-postlist
-    content: Refactor blog PostListIsland.tsx to use PaginationBar
-    status: completed
-  - id: paginate-set-detail
-    content: Add pagination to sets.$postSlug.index.tsx questions table
-    status: completed
-  - id: paginate-tag-detail
-    content: Add pagination to tags.$tag.index.tsx questions table
-    status: completed
-  - id: paginate-home
-    content: Add pagination to routes/index.tsx posts catalogue
-    status: completed
-  - id: paginate-sets-index
-    content: Add pagination to routes/sets/index.tsx study-set grid
-    status: completed
-  - id: paginate-tags-index
-    content: Add pagination to routes/tags/index.tsx tag list
-    status: completed
-  - id: paginate-leeches
-    content: Add pagination to stats.tsx leeches table
-    status: completed
-  - id: verify
-    content: Typecheck/test both apps; manual pass on all touched routes
-    status: completed
+    - id: pagination-bar
+      content: Add shared PaginationBar component + export path to shared/ui; delete unused shadcn Pagination primitives
+      status: completed
+    - id: refactor-browse
+      content: Refactor quiz browse.tsx to use PaginationBar + clampPage
+      status: completed
+    - id: refactor-postlist
+      content: Refactor blog PostListIsland.tsx to use PaginationBar
+      status: completed
+    - id: paginate-set-detail
+      content: Add pagination to sets.$postSlug.index.tsx questions table
+      status: completed
+    - id: paginate-tag-detail
+      content: Add pagination to tags.$tag.index.tsx questions table
+      status: completed
+    - id: paginate-home
+      content: Add pagination to routes/index.tsx posts catalogue
+      status: completed
+    - id: paginate-sets-index
+      content: Add pagination to routes/sets/index.tsx study-set grid
+      status: completed
+    - id: paginate-tags-index
+      content: Add pagination to routes/tags/index.tsx tag list
+      status: completed
+    - id: paginate-leeches
+      content: Add pagination to stats.tsx leeches table
+      status: completed
+    - id: verify
+      content: Typecheck/test both apps; manual pass on all touched routes
+      status: completed
 isProject: false
 ---
 
@@ -48,12 +48,12 @@ Two parts of the original ask are **already done** from a prior session (not ref
 So "the math" is not the gap. The real gaps, found by reading every route file:
 
 1. **Quiz-web-app has pagination on exactly one route** (`/browse`, 25/page, local inline `Pagination` function at [`browse.tsx:272-313`](frontend/apps/quiz-web-app/src/routes/browse.tsx)). Five other list views render **everything, unbounded**:
-   - [`routes/index.tsx`](frontend/apps/quiz-web-app/src/routes/index.tsx) — full posts catalogue grid
-   - [`routes/sets/index.tsx`](frontend/apps/quiz-web-app/src/routes/sets/index.tsx) — study-set grid
-   - [`routes/sets.$postSlug.index.tsx:357`](frontend/apps/quiz-web-app/src/routes/sets.$postSlug.index.tsx) — per-post questions table
-   - [`routes/tags/index.tsx`](frontend/apps/quiz-web-app/src/routes/tags/index.tsx) — tag list
-   - [`routes/tags.$tag.index.tsx:136`](frontend/apps/quiz-web-app/src/routes/tags.$tag.index.tsx) — per-tag questions table
-   - [`routes/stats.tsx:362`](frontend/apps/quiz-web-app/src/routes/stats.tsx) — leeches table
+    - [`routes/index.tsx`](frontend/apps/quiz-web-app/src/routes/index.tsx) — full posts catalogue grid
+    - [`routes/sets/index.tsx`](frontend/apps/quiz-web-app/src/routes/sets/index.tsx) — study-set grid
+    - [`routes/sets.$postSlug.index.tsx:357`](frontend/apps/quiz-web-app/src/routes/sets.$postSlug.index.tsx) — per-post questions table
+    - [`routes/tags/index.tsx`](frontend/apps/quiz-web-app/src/routes/tags/index.tsx) — tag list
+    - [`routes/tags.$tag.index.tsx:136`](frontend/apps/quiz-web-app/src/routes/tags.$tag.index.tsx) — per-tag questions table
+    - [`routes/stats.tsx:362`](frontend/apps/quiz-web-app/src/routes/stats.tsx) — leeches table
 2. **Today's actual data volume is small** (18 posts, ≤35 questions/post — checked via `posts.json`). Nothing here is a live performance emergency; this is about **consistency and future-proofing**, not fixing lag. Worth saying plainly so the effort is scoped honestly.
 3. **The prior plan explicitly rejected a shared UI pagination component**, only sharing math, because blog (Tailwind `Button` on a card grid) and quiz (custom `.stamp` CSS-var buttons on data tables) are visually incompatible. That reasoning was correct **at the time**, but you've now chosen to force a shared component anyway across both apps — which means the component **must** bridge two incompatible visual systems via render props/slots, not hardcode one theme. Accepting that added indirection is a real trade-off, not free.
 4. **Dead code found**: `shared/ui/src/components/ui/pagination.tsx` (shadcn `Pagination`/`PaginationLink`/`PaginationPrevious`/etc., anchor-based) is exported from the package barrel (`shared/ui/index.ts:31`) but **imported by nobody**. It doesn't fit the render-prop design either (it's link-based, assumes real navigation). Removing it avoids a naming collision with the new component and deletes unused weight.
@@ -110,15 +110,15 @@ New file `shared/ui/src/components/ui/PaginationBar.tsx`, exported via a new `".
 
 ```tsx
 export interface PaginationBarProps {
-  page: number;
-  pages: number;
-  total: number;
-  onPageChange: (page: number) => void;
-  itemLabel?: string; // e.g. "questions" — defaults to "total"
-  className?: string;
-  labelClassName?: string;
-  renderPrev: (state: { disabled: boolean; onClick: () => void }) => React.ReactNode;
-  renderNext: (state: { disabled: boolean; onClick: () => void }) => React.ReactNode;
+    page: number;
+    pages: number;
+    total: number;
+    onPageChange: (page: number) => void;
+    itemLabel?: string; // e.g. "questions" — defaults to "total"
+    className?: string;
+    labelClassName?: string;
+    renderPrev: (state: { disabled: boolean; onClick: () => void }) => React.ReactNode;
+    renderNext: (state: { disabled: boolean; onClick: () => void }) => React.ReactNode;
 }
 ```
 
@@ -135,10 +135,10 @@ Consumers plug in their own button:
 
 ## Page-size convention (applied consistently)
 
-| View shape | Page size | Rationale |
-|---|---|---|
-| Card grids (`index.tsx`, `sets/index.tsx`) | 12 | Matches blog's existing grid precedent |
-| Tables / dense lists (`browse.tsx`, `sets.$postSlug.index.tsx`, `tags.$tag.index.tsx`, `tags/index.tsx`, `stats.tsx` leeches) | 25 | Matches quiz's existing `browse.tsx` precedent |
+| View shape                                                                                                                    | Page size | Rationale                                      |
+| ----------------------------------------------------------------------------------------------------------------------------- | --------- | ---------------------------------------------- |
+| Card grids (`index.tsx`, `sets/index.tsx`)                                                                                    | 12        | Matches blog's existing grid precedent         |
+| Tables / dense lists (`browse.tsx`, `sets.$postSlug.index.tsx`, `tags.$tag.index.tsx`, `tags/index.tsx`, `stats.tsx` leeches) | 25        | Matches quiz's existing `browse.tsx` precedent |
 
 ## Consistency fix bundled in
 

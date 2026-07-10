@@ -7,7 +7,11 @@ import type {
 import { PageLayout } from "@/components/layout/PageLayout";
 import { Modal } from "@prj--personal-portfolio--v3/shared--ui";
 import { PaginationBar } from "@prj--personal-portfolio--v3/shared--ui/pagination-bar";
-import { clampPage, paginate, totalPages } from "@prj--personal-portfolio--v3/shared--ui/pagination";
+import {
+  clampPage,
+  paginate,
+  totalPages,
+} from "@prj--personal-portfolio--v3/shared--ui/pagination";
 import { QuestionPreviewDrawer } from "@/containers/QuestionPreviewDrawer";
 import { Stamp, stampClasses } from "@prj--personal-portfolio--v3/shared--ui";
 import { loadPostQuestions, loadPostsIndex } from "@/data/loadQuizData";

@@ -5,7 +5,11 @@ import { PageLayout } from "@/components/layout/PageLayout";
 import { QuestionPreviewDrawer } from "@/containers/QuestionPreviewDrawer";
 import { stampClasses } from "@prj--personal-portfolio--v3/shared--ui";
 import { PaginationBar } from "@prj--personal-portfolio--v3/shared--ui/pagination-bar";
-import { clampPage, paginate, totalPages } from "@prj--personal-portfolio--v3/shared--ui/pagination";
+import {
+  clampPage,
+  paginate,
+  totalPages,
+} from "@prj--personal-portfolio--v3/shared--ui/pagination";
 import { loadTagQuestions, loadTagsIndex, loadPostsIndex } from "@/data/loadQuizData";
 import { getCardStateLabel, stripMarkdownPreview } from "@/lib/questionFilters";
 import {
@@ -141,50 +145,52 @@ function TagDetailView() {
       ) : (
         <>
           <div className="border-2 border-[var(--ink-black)] overflow-x-auto">
-          <table className="w-full text-base" style={{ fontFamily: "var(--font-mono)" }}>
-            <thead className="border-b-2 border-[var(--ink-black)] bg-[var(--highlight)]">
-              <tr>
-                <th className="p-2 text-left">Stem</th>
-                <th className="p-2 text-left w-24">Format</th>
-                <th className="p-2 text-left w-20">State</th>
-                <th className="p-2 text-left w-20">Diff</th>
-              </tr>
-            </thead>
-            <tbody>
-              {pageItems.map((q) => {
-                const card = cardStates[q.slug];
-                const isIgnored = Boolean(ignored[q.slug]);
-                return (
-                  <tr
-                    key={q.slug}
-                    className={`border-b border-[var(--column-rule)] cursor-pointer hover:bg-[var(--highlight)] ${
-                      isIgnored ? "opacity-50" : ""
-                    }`}
-                    onClick={() => setPreview(q)}
-                  >
-                    <td className="p-2 max-w-[320px]">
-                      <span className="line-clamp-2">{stripMarkdownPreview(q.stem)}</span>
-                    </td>
-                    <td className="p-2 smallcaps text-[14px]">{q.answerFormat}</td>
-                    <td className="p-2 capitalize">{getCardStateLabel(card, isIgnored, today)}</td>
-                    <td className="p-2 capitalize">{q.difficulty}</td>
-                  </tr>
-                );
-              })}
-            </tbody>
-          </table>
-        </div>
-        <PaginationBar
-          page={current}
-          pages={pages}
-          total={questions.length}
-          itemLabel="questions"
-          onPageChange={setPage}
-          className="mt-4 text-base"
-          labelClassName={stampPaginationLabelClassName}
-          renderPrev={renderStampPrev}
-          renderNext={renderStampNext}
-        />
+            <table className="w-full text-base" style={{ fontFamily: "var(--font-mono)" }}>
+              <thead className="border-b-2 border-[var(--ink-black)] bg-[var(--highlight)]">
+                <tr>
+                  <th className="p-2 text-left">Stem</th>
+                  <th className="p-2 text-left w-24">Format</th>
+                  <th className="p-2 text-left w-20">State</th>
+                  <th className="p-2 text-left w-20">Diff</th>
+                </tr>
+              </thead>
+              <tbody>
+                {pageItems.map((q) => {
+                  const card = cardStates[q.slug];
+                  const isIgnored = Boolean(ignored[q.slug]);
+                  return (
+                    <tr
+                      key={q.slug}
+                      className={`border-b border-[var(--column-rule)] cursor-pointer hover:bg-[var(--highlight)] ${
+                        isIgnored ? "opacity-50" : ""
+                      }`}
+                      onClick={() => setPreview(q)}
+                    >
+                      <td className="p-2 max-w-[320px]">
+                        <span className="line-clamp-2">{stripMarkdownPreview(q.stem)}</span>
+                      </td>
+                      <td className="p-2 smallcaps text-[14px]">{q.answerFormat}</td>
+                      <td className="p-2 capitalize">
+                        {getCardStateLabel(card, isIgnored, today)}
+                      </td>
+                      <td className="p-2 capitalize">{q.difficulty}</td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
+          <PaginationBar
+            page={current}
+            pages={pages}
+            total={questions.length}
+            itemLabel="questions"
+            onPageChange={setPage}
+            className="mt-4 text-base"
+            labelClassName={stampPaginationLabelClassName}
+            renderPrev={renderStampPrev}
+            renderNext={renderStampNext}
+          />
         </>
       )}
 
