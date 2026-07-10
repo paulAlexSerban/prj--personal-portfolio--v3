@@ -35,8 +35,8 @@ export default defineConfig({
       registerType: "autoUpdate",
       includeAssets: ["favicon.ico", "apple-touch-icon.png"],
       manifest: {
-        name: "The Review — Flashcards",
-        short_name: "The Review",
+        name: "The Typeset Review — Flashcards",
+        short_name: "The Typeset Review",
         description: "Spaced-repetition flashcard study, offline-ready.",
         theme_color: "#0d0d0d",
         background_color: "#efe9dd",

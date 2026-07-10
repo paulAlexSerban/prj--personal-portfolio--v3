@@ -43,8 +43,8 @@ export function Masthead() {
           </div>
         </div>
         <Link to="/" className="block text-center mt-1 no-underline text-ink">
-          <h1 className="font-display font-black tracking-tight leading-none text-[clamp(3rem,9vw,6rem)]">
-            The Review
+          <h1 className="flex flex-col font-display font-black tracking-tight leading-none text-[clamp(2.5rem,7vw,4rem)]">
+            <span>The Typeset</span> <span>Review</span>
           </h1>
         </Link>
         <div className="rule-double mt-2" />

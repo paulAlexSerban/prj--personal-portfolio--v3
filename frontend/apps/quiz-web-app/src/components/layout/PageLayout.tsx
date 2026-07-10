@@ -21,7 +21,7 @@ export function PageLayout({ children }: { children: React.ReactNode }) {
           <FooterSiteLinks activeSite="quiz" tabs={siteTabs} />
         </div>
         <p className="kicker text-sm text-center">
-          The Review · Printed daily in your browser · Algorithm: {algorithm}
+          The Typeset Review · Printed daily in your browser · Algorithm: {algorithm}
         </p>
       </footer>
     </div>
