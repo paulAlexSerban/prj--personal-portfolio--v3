@@ -4,8 +4,16 @@ import type { ExportedQuestion } from "@prj--personal-portfolio--v3/tools--quiz-
 import { PageLayout } from "@/components/layout/PageLayout";
 import { QuestionPreviewDrawer } from "@/containers/QuestionPreviewDrawer";
 import { stampClasses } from "@prj--personal-portfolio--v3/shared--ui";
+import { PaginationBar } from "@prj--personal-portfolio--v3/shared--ui/pagination-bar";
+import { clampPage, paginate, totalPages } from "@prj--personal-portfolio--v3/shared--ui/pagination";
 import { loadTagQuestions, loadTagsIndex, loadPostsIndex } from "@/data/loadQuizData";
 import { getCardStateLabel, stripMarkdownPreview } from "@/lib/questionFilters";
+import {
+  renderStampNext,
+  renderStampPrev,
+  stampPaginationLabelClassName,
+  TABLE_PAGE_SIZE,
+} from "@/lib/paginationUi";
 import { blogPostUrl } from "@/lib/urls";
 import { useStore } from "@/store";
 import { todayISO } from "@/utils/dates";
@@ -26,6 +34,7 @@ function TagDetailView() {
   const [error, setError] = useState<string | null>(null);
   const [preview, setPreview] = useState<ExportedQuestion | null>(null);
   const [postTypes, setPostTypes] = useState<Map<string, string>>(new Map());
+  const [page, setPage] = useState(1);
 
   useEffect(() => {
     let cancelled = false;
@@ -48,6 +57,14 @@ function TagDetailView() {
     return () => {
       cancelled = true;
     };
+  }, [tag, addedPosts]);
+
+  const pages = totalPages(questions.length, TABLE_PAGE_SIZE);
+  const current = clampPage(page, pages);
+  const pageItems = paginate(questions, current, TABLE_PAGE_SIZE);
+
+  useEffect(() => {
+    setPage(1);
   }, [tag, addedPosts]);
 
   const today = todayISO(0);
@@ -122,7 +139,8 @@ function TagDetailView() {
           No questions with this tag in your active study sets.
         </p>
       ) : (
-        <div className="border-2 border-[var(--ink-black)] overflow-x-auto">
+        <>
+          <div className="border-2 border-[var(--ink-black)] overflow-x-auto">
           <table className="w-full text-base" style={{ fontFamily: "var(--font-mono)" }}>
             <thead className="border-b-2 border-[var(--ink-black)] bg-[var(--highlight)]">
               <tr>
@@ -133,7 +151,7 @@ function TagDetailView() {
               </tr>
             </thead>
             <tbody>
-              {questions.map((q) => {
+              {pageItems.map((q) => {
                 const card = cardStates[q.slug];
                 const isIgnored = Boolean(ignored[q.slug]);
                 return (
@@ -156,6 +174,18 @@ function TagDetailView() {
             </tbody>
           </table>
         </div>
+        <PaginationBar
+          page={current}
+          pages={pages}
+          total={questions.length}
+          itemLabel="questions"
+          onPageChange={setPage}
+          className="mt-4 text-base"
+          labelClassName={stampPaginationLabelClassName}
+          renderPrev={renderStampPrev}
+          renderNext={renderStampNext}
+        />
+        </>
       )}
 
       <QuestionPreviewDrawer

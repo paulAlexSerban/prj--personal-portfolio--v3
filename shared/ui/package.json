@@ -36,6 +36,10 @@
             "types": "./src/lib/pagination.ts",
             "import": "./src/lib/pagination.ts"
         },
+        "./pagination-bar": {
+            "types": "./src/components/ui/PaginationBar.tsx",
+            "import": "./src/components/ui/PaginationBar.tsx"
+        },
         "./cover-image": {
             "types": "./src/lib/coverImage.ts",
             "import": "./src/lib/coverImage.ts"

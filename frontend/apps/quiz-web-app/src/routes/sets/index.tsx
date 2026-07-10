@@ -3,7 +3,15 @@ import { useEffect, useMemo, useState } from "react";
 import type { ExportedPostEntry } from "@prj--personal-portfolio--v3/tools--quiz-export/contract";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { stampClasses } from "@prj--personal-portfolio--v3/shared--ui";
+import { PaginationBar } from "@prj--personal-portfolio--v3/shared--ui/pagination-bar";
+import { clampPage, paginate, totalPages } from "@prj--personal-portfolio--v3/shared--ui/pagination";
 import { loadPostsIndex } from "@/data/loadQuizData";
+import {
+  GRID_PAGE_SIZE,
+  renderStampNext,
+  renderStampPrev,
+  stampPaginationLabelClassName,
+} from "@/lib/paginationUi";
 import { useStore } from "@/store";
 import type { QuizState } from "@/store";
 import { getPostStats } from "@/store/selectors";
@@ -20,6 +28,7 @@ function StudySetsView() {
   const [posts, setPosts] = useState<ExportedPostEntry[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [page, setPage] = useState(1);
 
   useEffect(() => {
     let cancelled = false;
@@ -52,6 +61,10 @@ function StudySetsView() {
         (a, b) => b.due - a.due || (a.meta?.title ?? a.slug).localeCompare(b.meta?.title ?? b.slug),
       );
   }, [addedPosts, posts, cardStates, ignored]);
+
+  const pages = totalPages(rows.length, GRID_PAGE_SIZE);
+  const current = clampPage(page, pages);
+  const pageItems = paginate(rows, current, GRID_PAGE_SIZE);
 
   const totalDue = rows.reduce((n, r) => n + r.due, 0);
 
@@ -109,8 +122,9 @@ function StudySetsView() {
           </div>
         </div>
       ) : (
-        <div className="grid md:grid-cols-2 gap-x-10 gap-y-8">
-          {rows.map(({ slug, meta, stats, due }) => (
+        <>
+          <div className="grid md:grid-cols-2 gap-x-10 gap-y-8">
+          {pageItems.map(({ slug, meta, stats, due }) => (
             <article key={slug} className="border-t-[3px] border-[var(--ink-black)] pt-4">
               <p className="smallcaps text-[10px] text-[var(--slate)] mb-1">
                 Study Set · {meta?.questionCount ?? stats.total} questions
@@ -177,6 +191,18 @@ function StudySetsView() {
             </article>
           ))}
         </div>
+        <PaginationBar
+          page={current}
+          pages={pages}
+          total={rows.length}
+          itemLabel="sets"
+          onPageChange={setPage}
+          className="mt-8 text-base"
+          labelClassName={stampPaginationLabelClassName}
+          renderPrev={renderStampPrev}
+          renderNext={renderStampNext}
+        />
+        </>
       )}
     </PageLayout>
   );

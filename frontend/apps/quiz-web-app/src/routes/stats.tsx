@@ -2,11 +2,19 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { Modal } from "@prj--personal-portfolio--v3/shared--ui";
+import { PaginationBar } from "@prj--personal-portfolio--v3/shared--ui/pagination-bar";
+import { clampPage, paginate, totalPages } from "@prj--personal-portfolio--v3/shared--ui/pagination";
 import { Stamp, stampClasses } from "@prj--personal-portfolio--v3/shared--ui";
 import { useStore } from "@/store";
 import { selectDueCount, selectLeeches } from "@/store/selectors";
 import { cardRetrievability } from "@/algorithms/scheduler";
 import { predictedRetention } from "@/algorithms/fsrs";
+import {
+  renderStampNext,
+  renderStampPrev,
+  stampPaginationLabelClassName,
+  TABLE_PAGE_SIZE,
+} from "@/lib/paginationUi";
 import { todayISO } from "@/utils/dates";
 
 export const Route = createFileRoute("/stats")({
@@ -29,6 +37,7 @@ function StatsView() {
 
   const [confirmReset, setConfirmReset] = useState(false);
   const [retentionWindow, setRetentionWindow] = useState<30 | 90 | 365>(30);
+  const [leechPage, setLeechPage] = useState(1);
 
   const storeSlice = {
     addedPosts,
@@ -58,6 +67,10 @@ function StatsView() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [cardStates, addedPosts, settings.leechThreshold],
   );
+
+  const leechPages = totalPages(leeches.length, TABLE_PAGE_SIZE);
+  const leechCurrent = clampPage(leechPage, leechPages);
+  const leechPageItems = paginate(leeches, leechCurrent, TABLE_PAGE_SIZE);
 
   const cardArr = Object.values(cardStates);
   const postSet = new Set(addedPosts);
@@ -344,7 +357,8 @@ function StatsView() {
           {leeches.length === 0 ? (
             <p className="text-base italic text-[var(--slate)]">No leeches — keep it up.</p>
           ) : (
-            <div className="border-2 border-[var(--ink-black)] overflow-x-auto">
+            <>
+              <div className="border-2 border-[var(--ink-black)] overflow-x-auto">
               <table
                 className="data-table w-full text-base"
                 style={{ fontFamily: "var(--font-mono)" }}
@@ -359,7 +373,7 @@ function StatsView() {
                   </tr>
                 </thead>
                 <tbody>
-                  {leeches.map((c) => (
+                  {leechPageItems.map((c) => (
                     <tr key={c.questionSlug} className="border-b border-[var(--column-rule)]">
                       <td className="p-2 max-w-[240px] truncate" title={c.questionSlug}>
                         {c.questionSlug}
@@ -384,6 +398,18 @@ function StatsView() {
                 </tbody>
               </table>
             </div>
+            <PaginationBar
+              page={leechCurrent}
+              pages={leechPages}
+              total={leeches.length}
+              itemLabel="leeches"
+              onPageChange={setLeechPage}
+              className="mt-4 text-base"
+              labelClassName={stampPaginationLabelClassName}
+              renderPrev={renderStampPrev}
+              renderNext={renderStampNext}
+            />
+            </>
           )}
           <p className="text-sm italic text-[var(--slate)] mt-2">
             Threshold and action configurable in{" "}

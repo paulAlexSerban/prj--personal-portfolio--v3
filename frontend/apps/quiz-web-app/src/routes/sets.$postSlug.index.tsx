@@ -6,10 +6,18 @@ import type {
 } from "@prj--personal-portfolio--v3/tools--quiz-export/contract";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { Modal } from "@prj--personal-portfolio--v3/shared--ui";
+import { PaginationBar } from "@prj--personal-portfolio--v3/shared--ui/pagination-bar";
+import { clampPage, paginate, totalPages } from "@prj--personal-portfolio--v3/shared--ui/pagination";
 import { QuestionPreviewDrawer } from "@/containers/QuestionPreviewDrawer";
 import { Stamp, stampClasses } from "@prj--personal-portfolio--v3/shared--ui";
 import { loadPostQuestions, loadPostsIndex } from "@/data/loadQuizData";
 import { stripMarkdownPreview } from "@/lib/questionFilters";
+import {
+  renderStampNext,
+  renderStampPrev,
+  stampPaginationLabelClassName,
+  TABLE_PAGE_SIZE,
+} from "@/lib/paginationUi";
 import { blogPostUrl } from "@/lib/urls";
 import { useStudySetActions } from "@/hooks/useStudySetActions";
 import { useStore } from "@/store";
@@ -46,6 +54,7 @@ function SetDetailPage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [search, setSearch] = useState("");
+  const [page, setPage] = useState(1);
   const [confirmRemove, setConfirmRemove] = useState(false);
   const [confirmReset, setConfirmReset] = useState(false);
   const [preview, setPreview] = useState<ExportedQuestion | null>(null);
@@ -131,6 +140,14 @@ function SetDetailPage() {
         question.answerFormat.includes(q),
     );
   }, [questions, search]);
+
+  const pages = totalPages(filtered.length, TABLE_PAGE_SIZE);
+  const current = clampPage(page, pages);
+  const pageItems = paginate(filtered, current, TABLE_PAGE_SIZE);
+
+  useEffect(() => {
+    setPage(1);
+  }, [search]);
 
   if (!isAdded && !loading) {
     return (
@@ -354,7 +371,7 @@ function SetDetailPage() {
                 </tr>
               </thead>
               <tbody>
-                {filtered.map((q) => {
+                {pageItems.map((q) => {
                   const card = cardStates[q.slug];
                   const isIgnored = Boolean(ignored[q.slug]);
                   return (
@@ -409,7 +426,7 @@ function SetDetailPage() {
                     </tr>
                   );
                 })}
-                {filtered.length === 0 && (
+                {pageItems.length === 0 && (
                   <tr>
                     <td colSpan={7} className="p-6 text-center italic text-[var(--slate)]">
                       No questions match.
@@ -419,6 +436,18 @@ function SetDetailPage() {
               </tbody>
             </table>
           </div>
+
+          <PaginationBar
+            page={current}
+            pages={pages}
+            total={filtered.length}
+            itemLabel="questions"
+            onPageChange={setPage}
+            className="mt-4 text-base"
+            labelClassName={stampPaginationLabelClassName}
+            renderPrev={renderStampPrev}
+            renderNext={renderStampNext}
+          />
         </article>
       )}
 

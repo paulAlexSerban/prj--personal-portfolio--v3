@@ -3,6 +3,8 @@ import { useEffect, useMemo, useState } from "react";
 import type { ExportedPostEntry } from "@prj--personal-portfolio--v3/tools--quiz-export/contract";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { stampClasses } from "@prj--personal-portfolio--v3/shared--ui";
+import { PaginationBar } from "@prj--personal-portfolio--v3/shared--ui/pagination-bar";
+import { clampPage, paginate, totalPages } from "@prj--personal-portfolio--v3/shared--ui/pagination";
 import {
   filterByQuery,
   sortQuizPosts,
@@ -10,6 +12,12 @@ import {
 } from "@prj--personal-portfolio--v3/shared--ui/post-filters";
 import { loadPostsIndex } from "@/data/loadQuizData";
 import { useStudySetActions } from "@/hooks/useStudySetActions";
+import {
+  GRID_PAGE_SIZE,
+  renderStampNext,
+  renderStampPrev,
+  stampPaginationLabelClassName,
+} from "@/lib/paginationUi";
 import { useStore } from "@/store";
 import { blogPostUrl } from "@/lib/urls";
 
@@ -39,6 +47,7 @@ function HomeView() {
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState("");
   const [sortBy, setSortBy] = useState<QuizSortBy>("date");
+  const [page, setPage] = useState(1);
 
   useEffect(() => {
     let cancelled = false;
@@ -64,6 +73,14 @@ function HomeView() {
     const filtered = filterByQuery(posts, search, (p) => p.tags);
     return sortQuizPosts(filtered, sortBy);
   }, [posts, search, sortBy]);
+
+  const pages = totalPages(rows.length, GRID_PAGE_SIZE);
+  const current = clampPage(page, pages);
+  const pageItems = paginate(rows, current, GRID_PAGE_SIZE);
+
+  useEffect(() => {
+    setPage(1);
+  }, [search, sortBy]);
 
   return (
     <PageLayout>
@@ -131,8 +148,9 @@ function HomeView() {
           </p>
         </div>
       ) : (
-        <div className="grid md:grid-cols-2 gap-x-10 gap-y-8">
-          {rows.map((post) => {
+        <>
+          <div className="grid md:grid-cols-2 gap-x-10 gap-y-8">
+          {pageItems.map((post) => {
             const isAdded = addedSet.has(post.slug);
             const isLoading = loadingSlug === post.slug;
             const blogHref = post ? blogPostUrl(post.type, post.slug) : undefined;
@@ -235,6 +253,18 @@ function HomeView() {
             );
           })}
         </div>
+        <PaginationBar
+          page={current}
+          pages={pages}
+          total={rows.length}
+          itemLabel="posts"
+          onPageChange={setPage}
+          className="mt-8 text-base"
+          labelClassName={stampPaginationLabelClassName}
+          renderPrev={renderStampPrev}
+          renderNext={renderStampNext}
+        />
+        </>
       )}
     </PageLayout>
   );

@@ -4,7 +4,8 @@ import type { ExportedQuestion } from "@prj--personal-portfolio--v3/tools--quiz-
 import { PageLayout } from "@/components/layout/PageLayout";
 import { QuestionPreviewDrawer } from "@/containers/QuestionPreviewDrawer";
 import { stampClasses } from "@prj--personal-portfolio--v3/shared--ui";
-import { paginate, totalPages } from "@prj--personal-portfolio--v3/shared--ui/pagination";
+import { PaginationBar } from "@prj--personal-portfolio--v3/shared--ui/pagination-bar";
+import { clampPage, paginate, totalPages } from "@prj--personal-portfolio--v3/shared--ui/pagination";
 import { loadAllQuestions, loadPostsIndex } from "@/data/loadQuizData";
 import {
   EMPTY_BROWSE_FILTERS,
@@ -14,11 +15,17 @@ import {
   stripMarkdownPreview,
   type QuestionBrowseFilters,
 } from "@/lib/questionFilters";
+import {
+  renderStampNext,
+  renderStampPrev,
+  stampPaginationLabelClassName,
+  TABLE_PAGE_SIZE,
+} from "@/lib/paginationUi";
 import { blogPostUrl } from "@/lib/urls";
 import { useStore } from "@/store";
 import { todayISO } from "@/utils/dates";
 
-const PAGE_SIZE = 25;
+const PAGE_SIZE = TABLE_PAGE_SIZE;
 
 export const Route = createFileRoute("/browse")({
   component: BrowseView,
@@ -70,7 +77,8 @@ function BrowseView() {
   const filterOptions = useMemo(() => collectBrowseFilterOptions(allQuestions), [allQuestions]);
 
   const pages = totalPages(filtered.length, PAGE_SIZE);
-  const pageItems = paginate(filtered, page, PAGE_SIZE);
+  const current = clampPage(page, pages);
+  const pageItems = paginate(filtered, current, PAGE_SIZE);
 
   useEffect(() => {
     setPage(1);
@@ -168,7 +176,17 @@ function BrowseView() {
             </table>
           </div>
 
-          <Pagination page={page} pages={pages} total={filtered.length} onPage={setPage} />
+          <PaginationBar
+            page={current}
+            pages={pages}
+            total={filtered.length}
+            itemLabel="questions"
+            onPageChange={setPage}
+            className="text-base"
+            labelClassName={stampPaginationLabelClassName}
+            renderPrev={renderStampPrev}
+            renderNext={renderStampNext}
+          />
         </>
       )}
 
@@ -266,48 +284,5 @@ function SelectFilter({
         </option>
       ))}
     </select>
-  );
-}
-
-function Pagination({
-  page,
-  pages,
-  total,
-  onPage,
-}: {
-  page: number;
-  pages: number;
-  total: number;
-  onPage: (p: number) => void;
-}) {
-  return (
-    <div
-      className="flex items-center justify-between text-base"
-      style={{ fontFamily: "var(--font-mono)" }}
-    >
-      <span className="smallcaps text-[10px] text-[var(--slate)]">
-        Page {page} of {pages} · {total} total
-      </span>
-      <div className="flex gap-2">
-        <button
-          type="button"
-          disabled={page <= 1}
-          onClick={() => onPage(page - 1)}
-          title="Go to the previous page"
-          className="stamp stamp-ghost text-sm disabled:opacity-40"
-        >
-          ← Prev
-        </button>
-        <button
-          type="button"
-          disabled={page >= pages}
-          onClick={() => onPage(page + 1)}
-          title="Go to the next page"
-          className="stamp stamp-ghost text-sm disabled:opacity-40"
-        >
-          Next →
-        </button>
-      </div>
-    </div>
   );
 }
