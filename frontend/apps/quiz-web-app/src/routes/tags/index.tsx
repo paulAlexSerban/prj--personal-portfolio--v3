@@ -3,7 +3,19 @@ import { useEffect, useMemo, useState } from "react";
 import type { ExportedQuestion } from "@prj--personal-portfolio--v3/tools--quiz-export/contract";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { stampClasses } from "@prj--personal-portfolio--v3/shared--ui";
+import { PaginationBar } from "@prj--personal-portfolio--v3/shared--ui/pagination-bar";
+import {
+  clampPage,
+  paginate,
+  totalPages,
+} from "@prj--personal-portfolio--v3/shared--ui/pagination";
 import { loadAllQuestions } from "@/data/loadQuizData";
+import {
+  renderStampNext,
+  renderStampPrev,
+  stampPaginationLabelClassName,
+  TABLE_PAGE_SIZE,
+} from "@/lib/paginationUi";
 import { useStore } from "@/store";
 
 export const Route = createFileRoute("/tags/")({
@@ -15,6 +27,7 @@ function TagsIndexView() {
   const [questions, setQuestions] = useState<ExportedQuestion[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [page, setPage] = useState(1);
 
   useEffect(() => {
     let cancelled = false;
@@ -45,6 +58,10 @@ function TagsIndexView() {
     }
     return [...map.entries()].sort((a, b) => a[0].localeCompare(b[0]));
   }, [questions]);
+
+  const pages = totalPages(tagCounts.length, TABLE_PAGE_SIZE);
+  const current = clampPage(page, pages);
+  const pageItems = paginate(tagCounts, current, TABLE_PAGE_SIZE);
 
   if (addedPosts.length === 0 && !loading) {
     return (
@@ -91,25 +108,38 @@ function TagsIndexView() {
       ) : tagCounts.length === 0 ? (
         <p className="italic text-[var(--slate)]">No tags found in your study sets.</p>
       ) : (
-        <ul
-          className="border-2 border-[var(--ink-black)] divide-y-2 divide-[var(--ink-black)]"
-          style={{ fontFamily: "var(--font-mono)" }}
-        >
-          {tagCounts.map(([slug, count]) => (
-            <li key={slug}>
-              <Link
-                to="/tags/$tag"
-                params={{ tag: slug }}
-                className="flex items-center justify-between p-2 md:p-4 hover:bg-[var(--highlight)]"
-              >
-                <span className="font-medium">{slug}</span>
-                <span className="smallcaps text-[10px] text-[var(--slate)] w-20 text-right">
-                  {count} question{count === 1 ? "" : "s"}
-                </span>
-              </Link>
-            </li>
-          ))}
-        </ul>
+        <>
+          <ul
+            className="border-2 border-[var(--ink-black)] divide-y-2 divide-[var(--ink-black)]"
+            style={{ fontFamily: "var(--font-mono)" }}
+          >
+            {pageItems.map(([slug, count]) => (
+              <li key={slug}>
+                <Link
+                  to="/tags/$tag"
+                  params={{ tag: slug }}
+                  className="flex items-center justify-between p-2 md:p-4 hover:bg-[var(--highlight)]"
+                >
+                  <span className="font-medium">{slug}</span>
+                  <span className="smallcaps text-[10px] text-[var(--slate)] w-20 text-right">
+                    {count} question{count === 1 ? "" : "s"}
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <PaginationBar
+            page={current}
+            pages={pages}
+            total={tagCounts.length}
+            itemLabel="tags"
+            onPageChange={setPage}
+            className="mt-4 text-base"
+            labelClassName={stampPaginationLabelClassName}
+            renderPrev={renderStampPrev}
+            renderNext={renderStampNext}
+          />
+        </>
       )}
     </PageLayout>
   );

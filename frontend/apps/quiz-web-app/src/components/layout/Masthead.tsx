@@ -83,10 +83,7 @@ export function Masthead() {
           </Sheet>
         </div>
 
-        <nav
-          className="mt-2 hidden flex-wrap gap-5 text-[11px] smallcaps md:flex"
-          aria-label="Primary"
-        >
+        <nav className="mt-2 hidden flex-wrap gap-5 text-sm smallcaps md:flex" aria-label="Primary">
           {navItems.map((item) => (
             <Link key={item.to} to={item.to} className="hover:underline">
               {item.label}

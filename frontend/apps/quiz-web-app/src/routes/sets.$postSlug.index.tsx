@@ -6,10 +6,22 @@ import type {
 } from "@prj--personal-portfolio--v3/tools--quiz-export/contract";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { Modal } from "@prj--personal-portfolio--v3/shared--ui";
+import { PaginationBar } from "@prj--personal-portfolio--v3/shared--ui/pagination-bar";
+import {
+  clampPage,
+  paginate,
+  totalPages,
+} from "@prj--personal-portfolio--v3/shared--ui/pagination";
 import { QuestionPreviewDrawer } from "@/containers/QuestionPreviewDrawer";
 import { Stamp, stampClasses } from "@prj--personal-portfolio--v3/shared--ui";
 import { loadPostQuestions, loadPostsIndex } from "@/data/loadQuizData";
 import { stripMarkdownPreview } from "@/lib/questionFilters";
+import {
+  renderStampNext,
+  renderStampPrev,
+  stampPaginationLabelClassName,
+  TABLE_PAGE_SIZE,
+} from "@/lib/paginationUi";
 import { blogPostUrl } from "@/lib/urls";
 import { useStudySetActions } from "@/hooks/useStudySetActions";
 import { useStore } from "@/store";
@@ -46,6 +58,7 @@ function SetDetailPage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [search, setSearch] = useState("");
+  const [page, setPage] = useState(1);
   const [confirmRemove, setConfirmRemove] = useState(false);
   const [confirmReset, setConfirmReset] = useState(false);
   const [preview, setPreview] = useState<ExportedQuestion | null>(null);
@@ -132,6 +145,14 @@ function SetDetailPage() {
     );
   }, [questions, search]);
 
+  const pages = totalPages(filtered.length, TABLE_PAGE_SIZE);
+  const current = clampPage(page, pages);
+  const pageItems = paginate(filtered, current, TABLE_PAGE_SIZE);
+
+  useEffect(() => {
+    setPage(1);
+  }, [search]);
+
   if (!isAdded && !loading) {
     return (
       <PageLayout>
@@ -179,7 +200,7 @@ function SetDetailPage() {
 
           <div className="rule mt-4 mb-6" />
 
-          <div className="flex flex-col md:flex-wrap gap-2 md:gap-3 mb-6">
+          <div className="flex flex-col md:flex-row md:flex-wrap gap-2 md:gap-3 mb-6">
             <Link
               to="/sets/$postSlug/study"
               params={{ postSlug }}
@@ -226,7 +247,7 @@ function SetDetailPage() {
                 ["Total", stats.total],
               ] as [string, number][]
             ).map(([label, n]) => (
-              <div key={label} className="p-4 text-center">
+              <div key={label} className="p-2 text-center">
                 <p className="text-[10px] smallcaps text-[var(--slate)]">{label}</p>
                 <p className="text-xl md:text-2xl font-bold">{n}</p>
               </div>
@@ -310,7 +331,7 @@ function SetDetailPage() {
                   Reset to global defaults
                 </button>
               )}
-              <p className="text-[10px] italic text-[var(--slate)] mt-2">
+              <p className="text-sm italic text-[var(--slate)] mt-2">
                 Per-set overrides · global defaults in{" "}
                 <Link to="/settings" className="underline">
                   Settings
@@ -354,7 +375,7 @@ function SetDetailPage() {
                 </tr>
               </thead>
               <tbody>
-                {filtered.map((q) => {
+                {pageItems.map((q) => {
                   const card = cardStates[q.slug];
                   const isIgnored = Boolean(ignored[q.slug]);
                   return (
@@ -409,7 +430,7 @@ function SetDetailPage() {
                     </tr>
                   );
                 })}
-                {filtered.length === 0 && (
+                {pageItems.length === 0 && (
                   <tr>
                     <td colSpan={7} className="p-6 text-center italic text-[var(--slate)]">
                       No questions match.
@@ -419,6 +440,18 @@ function SetDetailPage() {
               </tbody>
             </table>
           </div>
+
+          <PaginationBar
+            page={current}
+            pages={pages}
+            total={filtered.length}
+            itemLabel="questions"
+            onPageChange={setPage}
+            className="mt-4 text-base"
+            labelClassName={stampPaginationLabelClassName}
+            renderPrev={renderStampPrev}
+            renderNext={renderStampNext}
+          />
         </article>
       )}
 

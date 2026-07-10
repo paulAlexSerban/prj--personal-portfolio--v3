@@ -3,6 +3,12 @@ import { useEffect, useMemo, useState } from "react";
 import type { ExportedPostEntry } from "@prj--personal-portfolio--v3/tools--quiz-export/contract";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { stampClasses } from "@prj--personal-portfolio--v3/shared--ui";
+import { PaginationBar } from "@prj--personal-portfolio--v3/shared--ui/pagination-bar";
+import {
+  clampPage,
+  paginate,
+  totalPages,
+} from "@prj--personal-portfolio--v3/shared--ui/pagination";
 import {
   filterByQuery,
   sortQuizPosts,
@@ -10,6 +16,12 @@ import {
 } from "@prj--personal-portfolio--v3/shared--ui/post-filters";
 import { loadPostsIndex } from "@/data/loadQuizData";
 import { useStudySetActions } from "@/hooks/useStudySetActions";
+import {
+  GRID_PAGE_SIZE,
+  renderStampNext,
+  renderStampPrev,
+  stampPaginationLabelClassName,
+} from "@/lib/paginationUi";
 import { useStore } from "@/store";
 import { blogPostUrl } from "@/lib/urls";
 
@@ -39,6 +51,7 @@ function HomeView() {
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState("");
   const [sortBy, setSortBy] = useState<QuizSortBy>("date");
+  const [page, setPage] = useState(1);
 
   useEffect(() => {
     let cancelled = false;
@@ -64,6 +77,14 @@ function HomeView() {
     const filtered = filterByQuery(posts, search, (p) => p.tags);
     return sortQuizPosts(filtered, sortBy);
   }, [posts, search, sortBy]);
+
+  const pages = totalPages(rows.length, GRID_PAGE_SIZE);
+  const current = clampPage(page, pages);
+  const pageItems = paginate(rows, current, GRID_PAGE_SIZE);
+
+  useEffect(() => {
+    setPage(1);
+  }, [search, sortBy]);
 
   return (
     <PageLayout>
@@ -131,110 +152,123 @@ function HomeView() {
           </p>
         </div>
       ) : (
-        <div className="grid md:grid-cols-2 gap-x-10 gap-y-8">
-          {rows.map((post) => {
-            const isAdded = addedSet.has(post.slug);
-            const isLoading = loadingSlug === post.slug;
-            const blogHref = post ? blogPostUrl(post.type, post.slug) : undefined;
-            return (
-              <article key={post.slug} className="border-t-[3px] border-[var(--ink-black)] pt-4">
-                <p className="smallcaps text-[10px] text-[var(--slate)] mb-1">
-                  {post.type} · {post.questionCount} questions
-                </p>
-                {isAdded ? (
-                  <Link
-                    to="/sets/$postSlug"
-                    params={{ postSlug: post.slug }}
-                    className="hover:underline"
-                  >
+        <>
+          <div className="grid md:grid-cols-2 gap-x-10 gap-y-8">
+            {pageItems.map((post) => {
+              const isAdded = addedSet.has(post.slug);
+              const isLoading = loadingSlug === post.slug;
+              const blogHref = post ? blogPostUrl(post.type, post.slug) : undefined;
+              return (
+                <article key={post.slug} className="border-t-[3px] border-[var(--ink-black)] pt-4">
+                  <p className="smallcaps text-[10px] text-[var(--slate)] mb-1">
+                    {post.type} · {post.questionCount} questions
+                  </p>
+                  {isAdded ? (
+                    <Link
+                      to="/sets/$postSlug"
+                      params={{ postSlug: post.slug }}
+                      className="hover:underline"
+                    >
+                      <h3
+                        className="text-2xl font-bold leading-tight"
+                        style={{ fontFamily: "var(--font-display)" }}
+                      >
+                        {post.title}
+                      </h3>
+                    </Link>
+                  ) : (
                     <h3
                       className="text-2xl font-bold leading-tight"
                       style={{ fontFamily: "var(--font-display)" }}
                     >
                       {post.title}
                     </h3>
-                  </Link>
-                ) : (
-                  <h3
-                    className="text-2xl font-bold leading-tight"
-                    style={{ fontFamily: "var(--font-display)" }}
-                  >
-                    {post.title}
-                  </h3>
-                )}
-                {post.excerpt && (
-                  <p className="mt-2 text-base text-[var(--charcoal)] line-clamp-2">
-                    {post.excerpt}
-                  </p>
-                )}
-                {post.tags.length > 0 && (
-                  <p className="mt-2 text-xs smallcaps text-[var(--slate)]">
-                    {post.tags.slice(0, 4).join(" · ")}
-                    {post.tags.length > 4 ? " …" : ""}
-                  </p>
-                )}
-                <div className="rule-thin my-4" />
-                <div className="flex gap-2">
-                  {isAdded ? (
-                    <>
-                      <Link
-                        to="/sets/$postSlug"
-                        params={{ postSlug: post.slug }}
-                        className={stampClasses("solid", "sm")}
-                        title={`Open the ${post.title} study set`}
-                      >
-                        Open Set
-                      </Link>
-                      <button
-                        type="button"
-                        disabled={isLoading}
-                        onClick={() => removeFromStudySet(post.slug)}
-                        title={`Remove ${post.title} from your study sets`}
-                        className={stampClasses("ghost", "sm")}
-                      >
-                        Remove
-                      </button>
-                      {blogHref && (
-                        <a
-                          href={blogHref}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className={stampClasses("ghost", "sm")}
-                          title={`View the ${post.title} blog post`}
-                        >
-                          View Post
-                        </a>
-                      )}
-                    </>
-                  ) : (
-                    <>
-                      <button
-                        type="button"
-                        disabled={isLoading}
-                        onClick={() => addToStudySet(post.slug)}
-                        title={`Add ${post.title} to your study sets`}
-                        className={stampClasses("solid", "sm")}
-                      >
-                        {isLoading ? "Loading…" : "Add to Study Set"}
-                      </button>
-                      {blogHref && (
-                        <a
-                          href={blogHref}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className={stampClasses("ghost", "sm")}
-                          title={`View the ${post.title} blog post`}
-                        >
-                          View Post
-                        </a>
-                      )}
-                    </>
                   )}
-                </div>
-              </article>
-            );
-          })}
-        </div>
+                  {post.excerpt && (
+                    <p className="mt-2 text-base text-[var(--charcoal)] line-clamp-2">
+                      {post.excerpt}
+                    </p>
+                  )}
+                  {post.tags.length > 0 && (
+                    <p className="mt-2 text-xs smallcaps text-[var(--slate)]">
+                      {post.tags.slice(0, 4).join(" · ")}
+                      {post.tags.length > 4 ? " …" : ""}
+                    </p>
+                  )}
+                  <div className="rule-thin my-4" />
+                  <div className="flex gap-2">
+                    {isAdded ? (
+                      <>
+                        <Link
+                          to="/sets/$postSlug"
+                          params={{ postSlug: post.slug }}
+                          className={stampClasses("solid", "sm")}
+                          title={`Open the ${post.title} study set`}
+                        >
+                          Open Set
+                        </Link>
+                        <button
+                          type="button"
+                          disabled={isLoading}
+                          onClick={() => removeFromStudySet(post.slug)}
+                          title={`Remove ${post.title} from your study sets`}
+                          className={stampClasses("ghost", "sm")}
+                        >
+                          Remove
+                        </button>
+                        {blogHref && (
+                          <a
+                            href={blogHref}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={stampClasses("ghost", "sm")}
+                            title={`View the ${post.title} blog post`}
+                          >
+                            View Post
+                          </a>
+                        )}
+                      </>
+                    ) : (
+                      <>
+                        <button
+                          type="button"
+                          disabled={isLoading}
+                          onClick={() => addToStudySet(post.slug)}
+                          title={`Add ${post.title} to your study sets`}
+                          className={stampClasses("solid", "sm")}
+                        >
+                          {isLoading ? "Loading…" : "Add to Study Set"}
+                        </button>
+                        {blogHref && (
+                          <a
+                            href={blogHref}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={stampClasses("ghost", "sm")}
+                            title={`View the ${post.title} blog post`}
+                          >
+                            View Post
+                          </a>
+                        )}
+                      </>
+                    )}
+                  </div>
+                </article>
+              );
+            })}
+          </div>
+          <PaginationBar
+            page={current}
+            pages={pages}
+            total={rows.length}
+            itemLabel="posts"
+            onPageChange={setPage}
+            className="mt-8 text-base"
+            labelClassName={stampPaginationLabelClassName}
+            renderPrev={renderStampPrev}
+            renderNext={renderStampNext}
+          />
+        </>
       )}
     </PageLayout>
   );

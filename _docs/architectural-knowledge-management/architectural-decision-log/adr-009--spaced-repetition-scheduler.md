@@ -48,5 +48,7 @@ produced it.
 
 ## See also
 
+- **Algorithm reference (formulas, weights, Easy behaviour, tuning):**
+  `../spaced-repetition-algorithms-reference.md`
 - Enhancements plan Phase 7: `_docs/02 plans/quiz-web-app-enhancements-plan.md`.
 - Code map: `frontend/apps/quiz-web-app/AGENTS.md` (Scheduling section).

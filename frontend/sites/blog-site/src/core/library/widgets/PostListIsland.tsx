@@ -4,6 +4,7 @@ import { Input } from '@prj--personal-portfolio--v3/shared--ui/input';
 import { cn } from '@prj--personal-portfolio--v3/shared--ui/utils';
 import { filterByQuery, sortBlogPosts, type BlogPostFilterItem, type BlogSortBy } from '@prj--personal-portfolio--v3/shared--ui/post-filters';
 import { clampPage, paginate, totalPages } from '@prj--personal-portfolio--v3/shared--ui/pagination';
+import { PaginationBar } from '@prj--personal-portfolio--v3/shared--ui/pagination-bar';
 
 import { PostCardReact } from '@/library/modules/PostCard/PostCardReact';
 
@@ -175,35 +176,40 @@ export const PostListIsland = ({ posts }: PostListIslandProps) => {
                     </ul>
 
                     {pages > 1 && (
-                        <div className="mt-8 flex items-center justify-between text-base">
-                            <span className="kicker text-[10px] text-slate-ink">
-                                Page {current} of {pages} · {rows.length} total
-                            </span>
-                            <div className="flex gap-2">
+                        <PaginationBar
+                            page={current}
+                            pages={pages}
+                            total={rows.length}
+                            onPageChange={goToPage}
+                            className="mt-8 text-base"
+                            labelClassName="kicker text-[10px] text-slate-ink"
+                            renderPrev={({ disabled, onClick }) => (
                                 <Button
                                     type="button"
                                     variant="outline"
                                     size="sm"
-                                    disabled={current <= 1}
-                                    onClick={() => goToPage(current - 1)}
+                                    disabled={disabled}
+                                    onClick={onClick}
                                     title="Go to the previous page"
                                     className="rounded-none border-ink text-sm disabled:opacity-40"
                                 >
                                     ← Prev
                                 </Button>
+                            )}
+                            renderNext={({ disabled, onClick }) => (
                                 <Button
                                     type="button"
                                     variant="outline"
                                     size="sm"
-                                    disabled={current >= pages}
-                                    onClick={() => goToPage(current + 1)}
+                                    disabled={disabled}
+                                    onClick={onClick}
                                     title="Go to the next page"
                                     className="rounded-none border-ink text-sm disabled:opacity-40"
                                 >
                                     Next →
                                 </Button>
-                            </div>
-                        </div>
+                            )}
+                        />
                     )}
                 </>
             )}

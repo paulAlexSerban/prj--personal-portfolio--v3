@@ -28,7 +28,7 @@ export * from './src/components/ui/label.tsx';
 export * from './src/components/ui/menubar.tsx';
 export * from './src/components/ui/Modal.tsx';
 export * from './src/components/ui/navigation-menu.tsx';
-export * from './src/components/ui/pagination.tsx';
+export * from './src/components/ui/PaginationBar.tsx';
 export * from './src/components/ui/popover.tsx';
 export * from './src/components/ui/progress.tsx';
 export * from './src/components/ui/radio-group.tsx';

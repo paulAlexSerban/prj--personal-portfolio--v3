@@ -96,6 +96,7 @@ pnpm --filter @prj--personal-portfolio--v3/frontend--quiz-web-app test
 
 ## Related docs
 
+- `_docs/architectural-knowledge-management/spaced-repetition-algorithms-reference.md` — SM-2 + FSRS-5 behaviour, weights, Easy intervals, tuning.
 - `_docs/02 plans/quiz-web-app-refactor-plan.md` — original CSR refactor + export.
 - `_docs/02 plans/quiz-web-app-enhancements-plan.md` — markdown/MDX, SR best
   practices, dual scheduler (FSRS) enhancement phases.
