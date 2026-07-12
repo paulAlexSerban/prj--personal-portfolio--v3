@@ -2,21 +2,21 @@
 name: Nested questions ingest
 overview: Update `tools/mdx-ingest` to discover questions under each post/booknote/snippet folder (`publish/{type}/{year}/{month}/{slug}/questions/`) instead of a top-level `publish/questions/` directory, while keeping the existing `{post-slug}--{uid}.mdx` naming and DB contract unchanged.
 todos:
-  - id: scanner-split
-    content: "Update markdownFileScanner: skip questions/ in parent walk, collect nested questions into synthetic questions directory, remove top-level questions from typePattern"
-    status: completed
-  - id: parser-validate
-    content: Extend ParsedFile with parentPostSlug; derive from path in parser; validate against filename post_slug in normaliseQuestion
-    status: completed
-  - id: tests
-    content: Add fixture-based scanner/parser tests and test script to mdx-ingest package.json
-    status: completed
-  - id: docs
-    content: Update tools/mdx-ingest/readme.md and tools/AGENTS.md for nested questions layout
-    status: completed
-  - id: quiz-export
-    content: Update tools/quiz-export compile.ts to find question MDX under nested **/questions/ paths for image copying
-    status: completed
+    - id: scanner-split
+      content: 'Update markdownFileScanner: skip questions/ in parent walk, collect nested questions into synthetic questions directory, remove top-level questions from typePattern'
+      status: completed
+    - id: parser-validate
+      content: Extend ParsedFile with parentPostSlug; derive from path in parser; validate against filename post_slug in normaliseQuestion
+      status: completed
+    - id: tests
+      content: Add fixture-based scanner/parser tests and test script to mdx-ingest package.json
+      status: completed
+    - id: docs
+      content: Update tools/mdx-ingest/readme.md and tools/AGENTS.md for nested questions layout
+      status: completed
+    - id: quiz-export
+      content: Update tools/quiz-export compile.ts to find question MDX under nested **/questions/ paths for image copying
+      status: completed
 isProject: false
 ---
 
@@ -56,8 +56,8 @@ flowchart LR
 **File:** [`tools/mdx-ingest/src/helpers/markdownFileScanner.ts`](tools/mdx-ingest/src/helpers/markdownFileScanner.ts)
 
 - Remove `questions` from the default `typePattern` regex:
-  - from: `/^(projects|coursework|posts|booknotes|snippets|questions)$/`
-  - to: `/^(projects|coursework|posts|booknotes|snippets)$/`
+    - from: `/^(projects|coursework|posts|booknotes|snippets|questions)$/`
+    - to: `/^(projects|coursework|posts|booknotes|snippets)$/`
 - Update `collectMarkdownFiles` to **skip descending into directories named `questions`** (so parent MDX is ingested, question MDX is not).
 - Add `collectNestedQuestionFiles(typeDir)` that walks `posts/`, `booknotes/`, and `snippets/` and collects `.mdx`/`.md` files only inside `questions/` subdirectories.
 - After scanning parent-type folders, emit one synthetic directory for all nested questions:
@@ -124,19 +124,19 @@ After ingest works, quiz export will fail to copy question images unless this is
 
 1. Run content-sync (if needed) so `content/live/` reflects the new repo layout.
 2. `pnpm --filter @prj--personal-portfolio--v3/tools--mdx-ingest start:dry-run`
-   - Expect questions counted from nested paths, zero from top-level `questions/`.
-   - Expect no question files ingested as `posts`.
+    - Expect questions counted from nested paths, zero from top-level `questions/`.
+    - Expect no question files ingested as `posts`.
 3. Full ingest + `pnpm --filter @prj--personal-portfolio--v3/tools--quiz-export start:dry-run` to confirm parent FK resolution and export counts.
 4. `pnpm typecheck` and new mdx-ingest tests.
 
 ## Files to touch
 
-| File | Change |
-|------|--------|
+| File                                                                                                         | Change                                                     |
+| ------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------- |
 | [`tools/mdx-ingest/src/helpers/markdownFileScanner.ts`](tools/mdx-ingest/src/helpers/markdownFileScanner.ts) | Skip `questions/` in parent walk; collect nested questions |
-| [`tools/mdx-ingest/src/helpers/markdownParser.ts`](tools/mdx-ingest/src/helpers/markdownParser.ts) | Set `parentPostSlug` on question `ParsedFile` |
-| [`tools/mdx-ingest/src/helpers/normalise.ts`](tools/mdx-ingest/src/helpers/normalise.ts) | Validate path vs filename `post_slug` |
-| `tools/mdx-ingest/src/helpers/markdownFileScanner.test.ts` | New fixture-based tests |
-| [`tools/mdx-ingest/package.json`](tools/mdx-ingest/package.json) | Add `test` script |
-| [`tools/mdx-ingest/readme.md`](tools/mdx-ingest/readme.md), [`tools/AGENTS.md`](tools/AGENTS.md) | Doc updates |
-| [`tools/quiz-export/src/compile.ts`](tools/quiz-export/src/compile.ts) | Resolve nested question MDX path for asset copy |
+| [`tools/mdx-ingest/src/helpers/markdownParser.ts`](tools/mdx-ingest/src/helpers/markdownParser.ts)           | Set `parentPostSlug` on question `ParsedFile`              |
+| [`tools/mdx-ingest/src/helpers/normalise.ts`](tools/mdx-ingest/src/helpers/normalise.ts)                     | Validate path vs filename `post_slug`                      |
+| `tools/mdx-ingest/src/helpers/markdownFileScanner.test.ts`                                                   | New fixture-based tests                                    |
+| [`tools/mdx-ingest/package.json`](tools/mdx-ingest/package.json)                                             | Add `test` script                                          |
+| [`tools/mdx-ingest/readme.md`](tools/mdx-ingest/readme.md), [`tools/AGENTS.md`](tools/AGENTS.md)             | Doc updates                                                |
+| [`tools/quiz-export/src/compile.ts`](tools/quiz-export/src/compile.ts)                                       | Resolve nested question MDX path for asset copy            |

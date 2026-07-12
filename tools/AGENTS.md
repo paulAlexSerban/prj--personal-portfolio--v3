@@ -89,15 +89,15 @@ pnpm --filter @prj--personal-portfolio--v3/tools--mdx-ingest start:dry-run   # n
 
 ### MDX folder → table mapping
 
-| `publish/` folder | Parser type  | DB target                      |
-| ----------------- | ------------ | ------------------------------ |
-| `posts/`          | `post`       | `posts` (`type = 'post'`)      |
-| `booknotes/`      | `booknote`   | `posts` (`type = 'book-note'`) |
-| `snippets/`       | `snippet`    | `posts` (`type = 'snippet'`)   |
-| `projects/`       | `project`    | `projects`                     |
-| `coursework/`     | `coursework` | `coursework`                   |
-| `posts/.../questions/`, `booknotes/.../questions/`, `snippets/.../questions/` | `question` | `questions` |
-| `pages/`          | —            | handled by `json-ingest`       |
+| `publish/` folder                                                             | Parser type  | DB target                      |
+| ----------------------------------------------------------------------------- | ------------ | ------------------------------ |
+| `posts/`                                                                      | `post`       | `posts` (`type = 'post'`)      |
+| `booknotes/`                                                                  | `booknote`   | `posts` (`type = 'book-note'`) |
+| `snippets/`                                                                   | `snippet`    | `posts` (`type = 'snippet'`)   |
+| `projects/`                                                                   | `project`    | `projects`                     |
+| `coursework/`                                                                 | `coursework` | `coursework`                   |
+| `posts/.../questions/`, `booknotes/.../questions/`, `snippets/.../questions/` | `question`   | `questions`                    |
+| `pages/`                                                                      | —            | handled by `json-ingest`       |
 
 ### MDX validation
 

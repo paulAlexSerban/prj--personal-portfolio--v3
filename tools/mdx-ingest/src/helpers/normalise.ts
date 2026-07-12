@@ -182,9 +182,7 @@ const normaliseQuestion = (file: ParsedFile): NormalisedQuestion | null => {
     const post_slug = parts.slice(0, -1).join('--');
 
     if (file.parentPostSlug && file.parentPostSlug !== post_slug) {
-        console.warn(
-            `[normalise] Question "${file.slug}": parent folder "${file.parentPostSlug}" does not match filename post_slug "${post_slug}" — skipping`
-        );
+        console.warn(`[normalise] Question "${file.slug}": parent folder "${file.parentPostSlug}" does not match filename post_slug "${post_slug}" — skipping`);
         return null;
     }
 

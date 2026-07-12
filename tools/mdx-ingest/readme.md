@@ -28,26 +28,26 @@ Scan → Parse → Validate → Normalise ──┐
 Open DB → Run Migrations ─────────────┘
 ```
 
-| Step      | Helper                   | Responsibility                                                                                        |
-| --------- | ------------------------ | ----------------------------------------------------------------------------------------------------- |
+| Step      | Helper                   | Responsibility                                                                                                                               |
+| --------- | ------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------- |
 | Scan      | `markdownFileScanner.ts` | Walk `publish/` subfolders (`posts`, `booknotes`, `snippets`, `projects`, `coursework`); nested `questions/` under posts/booknotes/snippets. |
-| Parse     | `markdownParser.ts`      | `gray-matter` → frontmatter + body.                                                                   |
-| Validate  | `validateParsedFiles.ts` | Required frontmatter per type; invalid files are skipped with a warning.                              |
-| Normalise | `normalise.ts`           | Map to insert rows, mint ULIDs, extract tags.                                                         |
-| Migrate   | `shared--db`             | Open the DB + apply `database/migrations/`.                                                           |
-| Upsert    | `upsertRecords.ts`       | Per-table upsert, tag sync, respects `locked` (CMS-owned) rows.                                       |
+| Parse     | `markdownParser.ts`      | `gray-matter` → frontmatter + body.                                                                                                          |
+| Validate  | `validateParsedFiles.ts` | Required frontmatter per type; invalid files are skipped with a warning.                                                                     |
+| Normalise | `normalise.ts`           | Map to insert rows, mint ULIDs, extract tags.                                                                                                |
+| Migrate   | `shared--db`             | Open the DB + apply `database/migrations/`.                                                                                                  |
+| Upsert    | `upsertRecords.ts`       | Per-table upsert, tag sync, respects `locked` (CMS-owned) rows.                                                                              |
 
 ## Folder → table mapping
 
-| `publish/` folder | DB target                          |
-| ----------------- | ---------------------------------- |
-| `posts/`          | `posts` (`type = 'post'`)          |
-| `booknotes/`      | `posts` (`type = 'book-note'`)     |
-| `snippets/`       | `posts` (`type = 'snippet'`)       |
-| `projects/`       | `projects`                         |
-| `coursework/`     | `coursework`                       |
+| `publish/` folder                                                             | DB target                          |
+| ----------------------------------------------------------------------------- | ---------------------------------- |
+| `posts/`                                                                      | `posts` (`type = 'post'`)          |
+| `booknotes/`                                                                  | `posts` (`type = 'book-note'`)     |
+| `snippets/`                                                                   | `posts` (`type = 'snippet'`)       |
+| `projects/`                                                                   | `projects`                         |
+| `coursework/`                                                                 | `coursework`                       |
 | `posts/.../questions/`, `booknotes/.../questions/`, `snippets/.../questions/` | `questions` (+ `question_options`) |
-| `pages/`          | — (handled by `json-ingest`)       |
+| `pages/`                                                                      | — (handled by `json-ingest`)       |
 
 ## Questions, specifically
 

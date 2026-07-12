@@ -66,12 +66,7 @@ describe('markdownFilesScanner', () => {
         const questions = scanned.find((dir) => dir.typeName === 'questions');
 
         expect(questions?.path).toBe(fixtureRoot);
-        expect(questions?.files).toEqual(
-            expect.arrayContaining([
-                'posts/2024/03/my-post/questions/my-post--q1.mdx',
-                'booknotes/2025/01/some-book/questions/some-book--q1.mdx',
-            ])
-        );
+        expect(questions?.files).toEqual(expect.arrayContaining(['posts/2024/03/my-post/questions/my-post--q1.mdx', 'booknotes/2025/01/some-book/questions/some-book--q1.mdx']));
     });
 
     it('does not emit a questions directory when no nested questions exist', async () => {
