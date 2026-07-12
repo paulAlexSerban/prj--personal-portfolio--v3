@@ -1,4 +1,4 @@
-import { copyFile, mkdir } from 'node:fs/promises';
+import { access, copyFile, mkdir, readdir } from 'node:fs/promises';
 import path from 'node:path';
 import { compileContent, detectContentFormat, extractRelativeImagePaths, questionAssetUrl, rewriteImagePaths } from '@prj--personal-portfolio--v3/shared--markdown';
 import type { ExportedQuestion, QuizData } from './contract.ts';
@@ -12,13 +12,53 @@ export interface CompileOptions {
     assetsPublicBase?: string;
 }
 
+async function findQuestionMdxPath(contentDir: string, slug: string): Promise<string | null> {
+    const targetName = `${slug}.mdx`;
+    const questionsDirName = 'questions';
+
+    const walk = async (dir: string): Promise<string | null> => {
+        const entries = await readdir(dir, { withFileTypes: true });
+
+        for (const entry of entries) {
+            const entryPath = path.join(dir, entry.name);
+
+            if (entry.isDirectory()) {
+                if (entry.name === questionsDirName) {
+                    const candidate = path.join(entryPath, targetName);
+
+                    try {
+                        await access(candidate);
+                        return candidate;
+                    } catch {
+                        // File not in this questions directory.
+                    }
+                }
+
+                const found = await walk(entryPath);
+                if (found) {
+                    return found;
+                }
+            }
+        }
+
+        return null;
+    };
+
+    return walk(contentDir);
+}
+
 async function copyAssetsForQuestion(
     question: ExportedQuestion,
     fields: string[],
     opts: Required<Pick<CompileOptions, 'contentDir' | 'assetsOutDir' | 'assetsPublicBase'>>
 ): Promise<Map<string, string>> {
     const rewrites = new Map<string, string>();
-    const mdxPath = path.join(opts.contentDir, 'questions', `${question.slug}.mdx`);
+    const mdxPath = await findQuestionMdxPath(opts.contentDir, question.slug);
+
+    if (!mdxPath) {
+        return rewrites;
+    }
+
     const mdxDir = path.dirname(mdxPath);
 
     const allPaths = new Set<string>();

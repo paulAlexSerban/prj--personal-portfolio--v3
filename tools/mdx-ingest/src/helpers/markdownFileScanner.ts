@@ -13,9 +13,11 @@ export type ScannedDirectory = {
     files: string[];
 };
 
+const QUESTION_PARENT_TYPES = new Set(['posts', 'booknotes', 'snippets']);
+
 const isMarkdownFile = (fileName: string): boolean => fileName.endsWith('.mdx') || fileName.endsWith('.md');
 
-const collectMarkdownFiles = async (dir: string, rootDir = dir): Promise<string[]> => {
+const collectContentMarkdownFiles = async (dir: string, rootDir = dir): Promise<string[]> => {
     const entries = await fs.readdir(dir, { withFileTypes: true });
     const files: string[] = [];
 
@@ -23,7 +25,11 @@ const collectMarkdownFiles = async (dir: string, rootDir = dir): Promise<string[
         const entryPath = path.join(dir, entry.name);
 
         if (entry.isDirectory()) {
-            files.push(...(await collectMarkdownFiles(entryPath, rootDir)));
+            if (entry.name === 'questions') {
+                continue;
+            }
+
+            files.push(...(await collectContentMarkdownFiles(entryPath, rootDir)));
             continue;
         }
 
@@ -35,10 +41,46 @@ const collectMarkdownFiles = async (dir: string, rootDir = dir): Promise<string[
     return files;
 };
 
+const collectNestedQuestionFiles = async (typeDir: string, typeName: string): Promise<string[]> => {
+    const files: string[] = [];
+
+    const walk = async (dir: string): Promise<void> => {
+        const entries = await fs.readdir(dir, { withFileTypes: true });
+
+        for (const entry of entries) {
+            const entryPath = path.join(dir, entry.name);
+
+            if (entry.isDirectory()) {
+                if (entry.name === 'questions') {
+                    const questionEntries = await fs.readdir(entryPath, { withFileTypes: true });
+
+                    for (const questionEntry of questionEntries) {
+                        if (!questionEntry.isFile() || !isMarkdownFile(questionEntry.name)) {
+                            continue;
+                        }
+
+                        const questionPath = path.join(entryPath, questionEntry.name);
+                        const relativeFromPublish = path.join(typeName, path.relative(typeDir, questionPath));
+                        files.push(relativeFromPublish);
+                    }
+
+                    continue;
+                }
+
+                await walk(entryPath);
+            }
+        }
+    };
+
+    await walk(typeDir);
+    return files;
+};
+
 export const markdownFilesScanner =
-    ({ baseDir, sourceFolders, typePattern = /^(projects|coursework|posts|booknotes|snippets|questions)$/ }: DirectoryPath) =>
+    ({ baseDir, sourceFolders, typePattern = /^(projects|coursework|posts|booknotes|snippets)$/ }: DirectoryPath) =>
     async (): Promise<ScannedDirectory[]> => {
         const result: ScannedDirectory[] = [];
+        const nestedQuestionFiles: string[] = [];
         const entries = await fs.readdir(baseDir, { withFileTypes: true });
         const typeDirs = entries.filter((entry) => {
             if (!entry.isDirectory()) {
@@ -54,12 +96,24 @@ export const markdownFilesScanner =
 
         for (const typeDir of typeDirs) {
             const typePath = path.join(baseDir, typeDir.name);
-            const files = await collectMarkdownFiles(typePath);
+            const files = await collectContentMarkdownFiles(typePath);
 
             result.push({
                 typeName: typeDir.name,
                 path: typePath,
                 files,
+            });
+
+            if (QUESTION_PARENT_TYPES.has(typeDir.name)) {
+                nestedQuestionFiles.push(...(await collectNestedQuestionFiles(typePath, typeDir.name)));
+            }
+        }
+
+        if (nestedQuestionFiles.length > 0) {
+            result.push({
+                typeName: 'questions',
+                path: baseDir,
+                files: nestedQuestionFiles,
             });
         }
 

@@ -30,7 +30,7 @@ Open DB → Run Migrations ─────────────┘
 
 | Step      | Helper                   | Responsibility                                                                                        |
 | --------- | ------------------------ | ----------------------------------------------------------------------------------------------------- |
-| Scan      | `markdownFileScanner.ts` | Walk `publish/` subfolders (`posts`, `booknotes`, `snippets`, `projects`, `coursework`, `questions`). |
+| Scan      | `markdownFileScanner.ts` | Walk `publish/` subfolders (`posts`, `booknotes`, `snippets`, `projects`, `coursework`); nested `questions/` under posts/booknotes/snippets. |
 | Parse     | `markdownParser.ts`      | `gray-matter` → frontmatter + body.                                                                   |
 | Validate  | `validateParsedFiles.ts` | Required frontmatter per type; invalid files are skipped with a warning.                              |
 | Normalise | `normalise.ts`           | Map to insert rows, mint ULIDs, extract tags.                                                         |
@@ -46,13 +46,15 @@ Open DB → Run Migrations ─────────────┘
 | `snippets/`       | `posts` (`type = 'snippet'`)       |
 | `projects/`       | `projects`                         |
 | `coursework/`     | `coursework`                       |
-| `questions/`      | `questions` (+ `question_options`) |
+| `posts/.../questions/`, `booknotes/.../questions/`, `snippets/.../questions/` | `questions` (+ `question_options`) |
 | `pages/`          | — (handled by `json-ingest`)       |
 
 ## Questions, specifically
 
+- **Path:** `publish/{posts|booknotes|snippets}/{year}/{month}/{slug}/questions/{post-slug}--{uid}.mdx`
 - **Filename convention** `{post-slug}--{uid}.mdx` → `post_slug` is everything
-  before the last `--` (links a question to its parent post).
+  before the last `--` (links a question to its parent post). The parent folder
+  slug must match the filename prefix.
 - `front` ← frontmatter `question`; `back` ← the MDX body (answer + explanation).
 - Frontmatter is validated with `shared--question-contract`; MC/MS `options` +
   `correct_option_keys` become `question_options` rows; a true/false `answer` goes

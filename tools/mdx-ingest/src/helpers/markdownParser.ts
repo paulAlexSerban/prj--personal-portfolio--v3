@@ -11,6 +11,8 @@ export type ParsedFile = {
     frontmatter: Record<string, unknown>;
     body: string;
     filePath: string;
+    /** Parent post slug derived from the path above /questions/ (question files only). */
+    parentPostSlug?: string;
 };
 
 const CONTENT_TYPE_MAP: Record<string, ContentType> = {
@@ -23,6 +25,18 @@ const CONTENT_TYPE_MAP: Record<string, ContentType> = {
 };
 
 const deriveSlug = (filePath: string): string => path.basename(filePath).replace(/\.(mdx?|md)$/, '');
+
+const deriveParentPostSlug = (relativeFile: string): string | undefined => {
+    const questionsSegment = `${path.sep}questions${path.sep}`;
+    const questionsIdx = relativeFile.indexOf(questionsSegment);
+
+    if (questionsIdx === -1) {
+        return undefined;
+    }
+
+    const parentDir = relativeFile.slice(0, questionsIdx);
+    return path.basename(parentDir);
+};
 
 export const markdownParser = async (scannedDirectories: ScannedDirectory[]): Promise<ParsedFile[]> => {
     const result: ParsedFile[] = [];
@@ -42,8 +56,16 @@ export const markdownParser = async (scannedDirectories: ScannedDirectory[]): Pr
                 const raw = await fs.readFile(filePath, 'utf-8');
                 const { data: frontmatter, content: body } = matter(raw);
                 const slug = deriveSlug(relativeFile);
+                const parentPostSlug = contentType === 'question' ? deriveParentPostSlug(relativeFile) : undefined;
 
-                result.push({ slug, contentType, frontmatter: frontmatter as Record<string, unknown>, body, filePath });
+                result.push({
+                    slug,
+                    contentType,
+                    frontmatter: frontmatter as Record<string, unknown>,
+                    body,
+                    filePath,
+                    parentPostSlug,
+                });
             } catch (error) {
                 const message = error instanceof Error ? error.message : String(error);
                 console.warn(`[markdownParser] Skipping "${filePath}": ${message}`);

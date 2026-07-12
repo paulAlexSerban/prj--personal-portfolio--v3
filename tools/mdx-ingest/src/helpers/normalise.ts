@@ -180,6 +180,14 @@ const normaliseQuestion = (file: ParsedFile): NormalisedQuestion | null => {
 
     const fm = parsed.data;
     const post_slug = parts.slice(0, -1).join('--');
+
+    if (file.parentPostSlug && file.parentPostSlug !== post_slug) {
+        console.warn(
+            `[normalise] Question "${file.slug}": parent folder "${file.parentPostSlug}" does not match filename post_slug "${post_slug}" — skipping`
+        );
+        return null;
+    }
+
     const stem = fm.question;
     const body = file.body.trim();
     const grading_mode = deriveGradingMode(fm.answer_format);

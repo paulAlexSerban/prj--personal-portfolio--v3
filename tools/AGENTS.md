@@ -27,7 +27,7 @@ All questions are **MDX only** — see [`types-of-questions.md`](../_docs/01%20s
 | What is tested       | `cognitive_style` | Stored on `questions.cognitive_style`          |
 | Grading              | `grading_mode`    | Stored; derived from `answer_format` at ingest |
 
-- **`mdx-ingest`:** `publish/questions/*.mdx` → `questions` (+ `question_options` when applicable); raw MDX body in `back` (**not** compiled to HTML in ingest).
+- **`mdx-ingest`:** nested `publish/{posts|booknotes|snippets}/.../questions/*.mdx` → `questions` (+ `question_options` when applicable); raw MDX body in `back` (**not** compiled to HTML in ingest).
 - **`json-ingest`:** does **not** handle questions — only `profile/`, `skills/`, `pages/`.
 - **Quiz delivery:** static JSON export now lives in **`shared/quiz-export`** (not `tools/`): it reads `content.db` and emits `/data/{posts,tags}.json`, `/data/questions/<post>.json`, `/data/tags/<tag>.json`, and `_all.json`, with Markdown/MDX compiled to sanitized HTML via `shared/quiz-markdown`. This is a delivery format, not an authoring format. See `shared/AGENTS.md`.
 
@@ -96,7 +96,7 @@ pnpm --filter @prj--personal-portfolio--v3/tools--mdx-ingest start:dry-run   # n
 | `snippets/`       | `snippet`    | `posts` (`type = 'snippet'`)   |
 | `projects/`       | `project`    | `projects`                     |
 | `coursework/`     | `coursework` | `coursework`                   |
-| `questions/`      | `question`   | `questions`                    |
+| `posts/.../questions/`, `booknotes/.../questions/`, `snippets/.../questions/` | `question` | `questions` |
 | `pages/`          | —            | handled by `json-ingest`       |
 
 ### MDX validation
@@ -113,7 +113,8 @@ Structured types: `options` + `correct_option_keys` in frontmatter → `question
 
 ### Question conventions
 
-- Filename: `{post-slug}--{uid}.mdx` → `post_slug` = everything before the last `--` (see draft ADR cross-surface FK).
+- Path: `publish/{posts|booknotes|snippets}/{year}/{month}/{slug}/questions/{post-slug}--{uid}.mdx`
+- Filename: `{post-slug}--{uid}.mdx` → `post_slug` = everything before the last `--` (see draft ADR cross-surface FK). Parent folder slug must match the filename prefix.
 - `front` ← frontmatter `question` (future alias: `stem`).
 - `back` ← MDX body (answer + explanation); maps to `answer_format: free_text`, `grading_mode: self` in the content model.
 - Parent post must exist in `posts` before the question upserts (FK); otherwise skipped with warning.
@@ -121,11 +122,13 @@ Structured types: `options` + `correct_option_keys` in frontmatter → `question
 
 ### Scanner
 
-`markdownFileScanner.ts` default `typePattern` includes `questions`:
+`markdownFileScanner.ts` walks top-level `posts`, `booknotes`, `snippets`, `projects`, and `coursework`. For posts/booknotes/snippets it skips `questions/` when collecting parent content and emits nested question files under a synthetic `questions` scan result:
 
 ```typescript
-/^(projects|coursework|posts|booknotes|snippets|questions)$/;
+/^(projects|coursework|posts|booknotes|snippets)$/;
 ```
+
+Nested question paths look like `posts/{year}/{month}/{slug}/questions/{post-slug}--{uid}.mdx`.
 
 ### Tag handling (mdx upsert)
 
