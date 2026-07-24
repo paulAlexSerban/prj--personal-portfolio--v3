@@ -20,9 +20,17 @@
             "types": "./src/components/ui/button.tsx",
             "import": "./src/components/ui/button.tsx"
         },
+        "./calendar": {
+            "types": "./src/components/ui/calendar.tsx",
+            "import": "./src/components/ui/calendar.tsx"
+        },
         "./input": {
             "types": "./src/components/ui/input.tsx",
             "import": "./src/components/ui/input.tsx"
+        },
+        "./popover": {
+            "types": "./src/components/ui/popover.tsx",
+            "import": "./src/components/ui/popover.tsx"
         },
         "./sheet": {
             "types": "./src/components/ui/sheet.tsx",
