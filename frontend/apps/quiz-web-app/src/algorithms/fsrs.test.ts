@@ -218,16 +218,20 @@ describe("getScheduler", () => {
       fsrsDifficulty: 5,
       fsrsLastReview: "2026-05-28",
     };
+    // DEFAULT_CONFIG.maximumInterval is 30, which caps both retention targets to
+    // the same day count (and thus the same "1mo" label). Use a higher cap so
+    // the retention difference is visible in the preview string.
+    const config = { ...DEFAULT_CONFIG, maximumInterval: 36500 };
     const lenient = getScheduler({
       ...DEFAULT_SETTINGS,
       scheduler: "fsrs",
       fsrsTargetRetention: 0.8,
-    }).previewInterval(card, 3, DEFAULT_CONFIG);
+    }).previewInterval(card, 3, config);
     const strict = getScheduler({
       ...DEFAULT_SETTINGS,
       scheduler: "fsrs",
       fsrsTargetRetention: 0.95,
-    }).previewInterval(card, 3, DEFAULT_CONFIG);
+    }).previewInterval(card, 3, config);
     expect(lenient).not.toBe(strict);
   });
 });

@@ -24,4 +24,20 @@ export function blogPostUrl(postType: string, slug: string): string {
     return `${base}/${segment}/${slug}/`;
 }
 
+function blogDetailSegment(postType: string): string {
+    return postType === 'book-note' ? 'booknote' : postType;
+}
+
+/** Canonical blog URL for a cheat sheet companion page. */
+export function blogCheatSheetUrl(postType: string, postSlug: string, itemSlug: string): string {
+    const base = siteUrls.blog.replace(/\/$/, '');
+    return `${base}/${blogDetailSegment(postType)}/${postSlug}/cheat_sheet/${itemSlug}/`;
+}
+
+/** Canonical blog URL for a learning plan companion page. */
+export function blogLearningPlanUrl(postType: string, postSlug: string, itemSlug: string): string {
+    const base = siteUrls.blog.replace(/\/$/, '');
+    return `${base}/${blogDetailSegment(postType)}/${postSlug}/learning_plans/${itemSlug}/`;
+}
+
 export { isExternalUrl, externalLinkAttrs };

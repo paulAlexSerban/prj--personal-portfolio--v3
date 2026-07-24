@@ -40,6 +40,14 @@ export function postDetailPath(type: BlogContentType, slug: string): string {
     return `${base}${DETAIL_SEGMENT[type]}/${slug}/`;
 }
 
+export function cheatSheetDetailPath(type: BlogContentType, postSlug: string, itemSlug: string): string {
+    return `${base}${DETAIL_SEGMENT[type]}/${postSlug}/cheat_sheet/${itemSlug}/`;
+}
+
+export function learningPlanDetailPath(type: BlogContentType, postSlug: string, itemSlug: string): string {
+    return `${base}${DETAIL_SEGMENT[type]}/${postSlug}/learning_plans/${itemSlug}/`;
+}
+
 export function tagPath(slug: string): string {
     return `${base}tags/${slug}/`;
 }

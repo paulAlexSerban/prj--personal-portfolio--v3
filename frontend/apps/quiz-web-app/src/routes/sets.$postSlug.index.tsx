@@ -22,7 +22,7 @@ import {
   stampPaginationLabelClassName,
   TABLE_PAGE_SIZE,
 } from "@/lib/paginationUi";
-import { blogPostUrl } from "@/lib/urls";
+import { blogCheatSheetUrl, blogLearningPlanUrl, blogPostUrl } from "@/lib/urls";
 import { useStudySetActions } from "@/hooks/useStudySetActions";
 import { useStore } from "@/store";
 import type { QuizState } from "@/store";
@@ -185,7 +185,7 @@ function SetDetailPage() {
             <p className="mt-2 text-base text-[var(--charcoal)] italic">{meta.excerpt}</p>
           )}
           {blogHref && (
-            <p className="mt-3">
+            <p className="mt-3 flex flex-wrap gap-2">
               <a
                 href={blogHref}
                 target="_blank"
@@ -195,6 +195,30 @@ function SetDetailPage() {
               >
                 Read post on blog ↗
               </a>
+              {meta?.cheatSheets?.map((sheet) => (
+                <a
+                  key={`cs-${sheet.slug}`}
+                  href={blogCheatSheetUrl(meta.type, meta.slug, sheet.slug)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={stampClasses("ghost", "md")}
+                  title={`Open cheat sheet “${sheet.title}” on the blog`}
+                >
+                  {meta.cheatSheets.length === 1 ? "Cheat sheet ↗" : `${sheet.title} ↗`}
+                </a>
+              ))}
+              {meta?.learningPlans?.map((plan) => (
+                <a
+                  key={`lp-${plan.slug}`}
+                  href={blogLearningPlanUrl(meta.type, meta.slug, plan.slug)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={stampClasses("ghost", "md")}
+                  title={`Open learning plan “${plan.title}” on the blog`}
+                >
+                  {plan.title} ↗
+                </a>
+              ))}
             </p>
           )}
 

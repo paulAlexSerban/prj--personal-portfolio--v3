@@ -44,6 +44,14 @@ status: published
 4
 `;
 
+const companionMdx = `---
+title: Companion Title
+status: published
+---
+
+Body
+`;
+
 describe('markdownFilesScanner', () => {
     it('collects parent content but not nested questions under posts', async () => {
         await writeFile('posts/2024/03/my-post/my-post.mdx', postMdx);
@@ -75,6 +83,40 @@ describe('markdownFilesScanner', () => {
         const scanned = await markdownFilesScanner({ baseDir: fixtureRoot })();
 
         expect(scanned.find((dir) => dir.typeName === 'questions')).toBeUndefined();
+    });
+
+    it('excludes intermediary, flat cheat_sheet, and learning_plan from ordinary posts walk', async () => {
+        await writeFile('posts/2024/03/my-post/my-post.mdx', postMdx);
+        await writeFile('posts/2024/03/my-post/cheat_sheet.mdx', companionMdx);
+        await writeFile('posts/2024/03/my-post/learning_plan/20hours.mdx', companionMdx);
+        await writeFile('posts/2024/03/my-post/intermediary/scratch.md', '# scratch\n');
+
+        const scanned = await markdownFilesScanner({ baseDir: fixtureRoot })();
+        const posts = scanned.find((dir) => dir.typeName === 'posts');
+
+        expect(posts?.files).toEqual(['2024/03/my-post/my-post.mdx']);
+    });
+
+    it('emits flat and folder cheat sheets under synthetic cheat_sheets directory', async () => {
+        await writeFile('posts/2024/03/my-post/my-post.mdx', postMdx);
+        await writeFile('posts/2024/03/my-post/cheat_sheet.mdx', companionMdx);
+        await writeFile('posts/2024/03/my-post/cheat_sheet/extra.mdx', companionMdx);
+
+        const scanned = await markdownFilesScanner({ baseDir: fixtureRoot })();
+        const cheatSheets = scanned.find((dir) => dir.typeName === 'cheat_sheets');
+
+        expect(cheatSheets?.path).toBe(fixtureRoot);
+        expect(cheatSheets?.files).toEqual(expect.arrayContaining(['posts/2024/03/my-post/cheat_sheet.mdx', 'posts/2024/03/my-post/cheat_sheet/extra.mdx']));
+    });
+
+    it('emits learning plans under synthetic learning_plans directory', async () => {
+        await writeFile('posts/2024/03/my-post/my-post.mdx', postMdx);
+        await writeFile('posts/2024/03/my-post/learning_plan/20hours.mdx', companionMdx);
+
+        const scanned = await markdownFilesScanner({ baseDir: fixtureRoot })();
+        const learningPlans = scanned.find((dir) => dir.typeName === 'learning_plans');
+
+        expect(learningPlans?.files).toEqual(['posts/2024/03/my-post/learning_plan/20hours.mdx']);
     });
 });
 
@@ -118,6 +160,62 @@ describe('nested question ingest pipeline', () => {
         expect(rows.questions).toHaveLength(1);
         expect(rows.questions[0]).toMatchObject({
             slug: 'my-post--q1',
+            post_slug: 'my-post',
+        });
+    });
+});
+
+describe('companion ingest pipeline', () => {
+    it('parses flat cheat sheet with parentPostSlug from path', async () => {
+        await writeFile('posts/2024/03/my-post/my-post.mdx', postMdx);
+        await writeFile('posts/2024/03/my-post/cheat_sheet.mdx', companionMdx);
+
+        const scanned = await markdownFilesScanner({ baseDir: fixtureRoot })();
+        const parsed = await markdownParser(scanned);
+        const cheatSheet = parsed.find((file) => file.contentType === 'cheat_sheet');
+
+        expect(cheatSheet).toMatchObject({
+            slug: 'cheat_sheet',
+            contentType: 'cheat_sheet',
+            parentPostSlug: 'my-post',
+        });
+    });
+
+    it('parses folder learning plan with parentPostSlug from path', async () => {
+        await writeFile('posts/2024/03/my-post/my-post.mdx', postMdx);
+        await writeFile('posts/2024/03/my-post/learning_plan/20hours.mdx', companionMdx);
+
+        const scanned = await markdownFilesScanner({ baseDir: fixtureRoot })();
+        const parsed = await markdownParser(scanned);
+        const plan = parsed.find((file) => file.contentType === 'learning_plan');
+
+        expect(plan).toMatchObject({
+            slug: '20hours',
+            contentType: 'learning_plan',
+            parentPostSlug: 'my-post',
+        });
+    });
+
+    it('normalises companions into DB rows with composite slug', async () => {
+        await writeFile('posts/2024/03/my-post/my-post.mdx', postMdx);
+        await writeFile('posts/2024/03/my-post/cheat_sheet.mdx', companionMdx);
+        await writeFile('posts/2024/03/my-post/learning_plan/20hours.mdx', companionMdx);
+
+        const scanned = await markdownFilesScanner({ baseDir: fixtureRoot })();
+        const parsed = await markdownParser(scanned);
+        const validated = validateParsedFiles(parsed);
+        const rows = normalise(validated.valid);
+
+        expect(rows.cheatSheets).toHaveLength(1);
+        expect(rows.cheatSheets[0]).toMatchObject({
+            slug: 'my-post--cheat_sheet',
+            post_slug: 'my-post',
+            title: 'Companion Title',
+            status: 'published',
+        });
+        expect(rows.learningPlans).toHaveLength(1);
+        expect(rows.learningPlans[0]).toMatchObject({
+            slug: 'my-post--20hours',
             post_slug: 'my-post',
         });
     });

@@ -1,0 +1,18 @@
+---
+import CompanionTemplate from '@/system/templates/CompanionTemplate.astro';
+
+import { closeConnection, openDb } from '@/lib/db.ts';
+import { getLearningPlanStaticPaths } from '@/lib/queries/companions.ts';
+
+export function getStaticPaths() {
+    const db = openDb();
+    const paths = getLearningPlanStaticPaths(db, 'book-note');
+    closeConnection(db);
+    return paths;
+}
+
+const slug = Astro.params.slug!;
+const itemSlug = Astro.params.itemSlug!;
+---
+
+<CompanionTemplate slug={slug} contentType="book-note" companionKind="learning_plan" itemSlug={itemSlug} />

@@ -1,5 +1,5 @@
 import { eq } from 'drizzle-orm';
-import { questions, question_options, question_tags, posts, content_tags, tags } from '@prj--personal-portfolio--v3/shared--db-schema';
+import { questions, question_options, question_tags, posts, content_tags, cheat_sheets, learning_plans } from '@prj--personal-portfolio--v3/shared--db-schema';
 import { deriveGradingMode, ANSWER_FORMATS, COGNITIVE_STYLES, DIFFICULTIES } from '@prj--personal-portfolio--v3/shared--question-contract';
 import type { DrizzleDb } from '@prj--personal-portfolio--v3/shared--db';
 import type { ExportedOption, ExportedPostEntry, ExportedQuestion, QuizData } from './contract.ts';
@@ -34,6 +34,12 @@ function parsePayload(raw: string | null): Record<string, unknown> | null {
 function extractTrueFalseAnswer(payload: Record<string, unknown> | null): boolean | null {
     if (payload && typeof payload['answer'] === 'boolean') return payload['answer'];
     return null;
+}
+
+/** Strip `{post_slug}--` prefix from a companion composite slug → item slug for URLs. */
+function companionItemSlug(compositeSlug: string, postSlug: string): string {
+    const prefix = `${postSlug}--`;
+    return compositeSlug.startsWith(prefix) ? compositeSlug.slice(prefix.length) : compositeSlug;
 }
 
 // ── Main export builder ───────────────────────────────────────────────────────
@@ -113,6 +119,39 @@ export async function buildQuizData(db: DrizzleDb): Promise<QuizData> {
         tagsByPost.set(pt.content_slug, list);
     }
 
+    // ── 4b. Fetch published cheat sheets / learning plans ─────────────────────
+    const allCheatSheets = await db
+        .select({
+            slug: cheat_sheets.slug,
+            post_slug: cheat_sheets.post_slug,
+            title: cheat_sheets.title,
+        })
+        .from(cheat_sheets)
+        .where(eq(cheat_sheets.status, 'published'));
+
+    const cheatSheetsByPost = new Map<string, { slug: string; title: string }[]>();
+    for (const cs of allCheatSheets) {
+        const list = cheatSheetsByPost.get(cs.post_slug) ?? [];
+        list.push({ slug: companionItemSlug(cs.slug, cs.post_slug), title: cs.title });
+        cheatSheetsByPost.set(cs.post_slug, list);
+    }
+
+    const allLearningPlans = await db
+        .select({
+            slug: learning_plans.slug,
+            post_slug: learning_plans.post_slug,
+            title: learning_plans.title,
+        })
+        .from(learning_plans)
+        .where(eq(learning_plans.status, 'published'));
+
+    const learningPlansByPost = new Map<string, { slug: string; title: string }[]>();
+    for (const lp of allLearningPlans) {
+        const list = learningPlansByPost.get(lp.post_slug) ?? [];
+        list.push({ slug: companionItemSlug(lp.slug, lp.post_slug), title: lp.title });
+        learningPlansByPost.set(lp.post_slug, list);
+    }
+
     // ── 5. Assemble ExportedQuestion objects ──────────────────────────────────
     const questionsByPost = new Map<string, ExportedQuestion[]>();
     const postMeta = new Map<string, { title: string; type: string; excerpt: string | null; date: string | null }>();
@@ -162,6 +201,8 @@ export async function buildQuizData(db: DrizzleDb): Promise<QuizData> {
             date: meta.date,
             questionCount: (questionsByPost.get(slug) ?? []).length,
             tags: tagsByPost.get(slug) ?? [],
+            cheatSheets: cheatSheetsByPost.get(slug) ?? [],
+            learningPlans: learningPlansByPost.get(slug) ?? [],
         });
     }
 

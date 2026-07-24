@@ -200,6 +200,38 @@ export const question_tags = sqliteTable(
     })
 );
 
+// ── Cheat sheets (companion to post | book-note | snippet) ────────────────────
+export const cheat_sheets = sqliteTable('cheat_sheets', {
+    id: text('id').primaryKey(),
+    slug: text('slug').notNull().unique(), // `{post_slug}--{file_basename}`
+    post_slug: text('post_slug')
+        .notNull()
+        .references(() => posts.slug),
+    title: text('title').notNull(),
+    body: text('body').notNull(),
+    status: text('status').notNull(),
+    sort_order: integer('sort_order').default(0),
+    sync_source: text('sync_source').default('mdx'),
+    locked: integer('locked', { mode: 'boolean' }).default(false),
+    updated_at: integer('updated_at', { mode: 'timestamp' }),
+});
+
+// ── Learning plans (companion to post | book-note | snippet) ──────────────────
+export const learning_plans = sqliteTable('learning_plans', {
+    id: text('id').primaryKey(),
+    slug: text('slug').notNull().unique(), // `{post_slug}--{file_basename}`
+    post_slug: text('post_slug')
+        .notNull()
+        .references(() => posts.slug),
+    title: text('title').notNull(),
+    body: text('body').notNull(),
+    status: text('status').notNull(),
+    sort_order: integer('sort_order').default(0),
+    sync_source: text('sync_source').default('mdx'),
+    locked: integer('locked', { mode: 'boolean' }).default(false),
+    updated_at: integer('updated_at', { mode: 'timestamp' }),
+});
+
 // ── Inferred types ────────────────────────────────────────────────────────────
 export type TagRow = typeof tags.$inferSelect;
 export type NewTagRow = typeof tags.$inferInsert;
@@ -223,5 +255,9 @@ export type QuestionOptionRow = typeof question_options.$inferSelect;
 export type NewQuestionOptionRow = typeof question_options.$inferInsert;
 export type QuestionTagRow = typeof question_tags.$inferSelect;
 export type NewQuestionTagRow = typeof question_tags.$inferInsert;
+export type CheatSheetRow = typeof cheat_sheets.$inferSelect;
+export type NewCheatSheetRow = typeof cheat_sheets.$inferInsert;
+export type LearningPlanRow = typeof learning_plans.$inferSelect;
+export type NewLearningPlanRow = typeof learning_plans.$inferInsert;
 export type PageRow = typeof pages.$inferSelect;
 export type NewPageRow = typeof pages.$inferInsert;

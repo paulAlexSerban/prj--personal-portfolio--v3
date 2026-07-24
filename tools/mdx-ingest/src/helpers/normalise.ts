@@ -9,6 +9,8 @@ import type {
     NewTagRow,
     NewContentTagRow,
     NewQuestionTagRow,
+    NewCheatSheetRow,
+    NewLearningPlanRow,
     ContentType,
 } from '@prj--personal-portfolio--v3/shared--db-schema';
 import type { ParsedFile } from './markdownParser.ts';
@@ -19,6 +21,8 @@ export type NormalisedRows = {
     coursework: NewCourseworkRow[];
     questions: NewQuestionRow[];
     questionOptions: NewQuestionOptionRow[];
+    cheatSheets: NewCheatSheetRow[];
+    learningPlans: NewLearningPlanRow[];
     tags: NewTagRow[];
     contentTags: NewContentTagRow[];
     questionTags: NewQuestionTagRow[];
@@ -213,6 +217,29 @@ const normaliseQuestion = (file: ParsedFile): NormalisedQuestion | null => {
     };
 };
 
+const normaliseCompanion = (file: ParsedFile): NewCheatSheetRow | NewLearningPlanRow | null => {
+    if (!file.parentPostSlug) {
+        console.warn(`[normalise] Companion "${file.slug}" has no parent post slug — skipping`);
+        return null;
+    }
+
+    const fm = file.frontmatter;
+    const itemSlug = file.slug === 'cheat_sheet' ? 'cheat_sheet' : file.slug;
+
+    return {
+        id: ulid(),
+        slug: `${file.parentPostSlug}--${itemSlug}`,
+        post_slug: file.parentPostSlug,
+        title: str(fm['title']) ?? itemSlug,
+        body: file.body,
+        status: str(fm['status']) ?? 'draft',
+        sort_order: typeof fm['sort_order'] === 'number' ? fm['sort_order'] : 0,
+        sync_source: 'mdx',
+        locked: false,
+        updated_at: now(),
+    };
+};
+
 // ── Main ──────────────────────────────────────────────────────────────────────
 
 export const normalise = (files: ParsedFile[]): NormalisedRows => {
@@ -222,6 +249,8 @@ export const normalise = (files: ParsedFile[]): NormalisedRows => {
         coursework: [],
         questions: [],
         questionOptions: [],
+        cheatSheets: [],
+        learningPlans: [],
         tags: [],
         contentTags: [],
         questionTags: [],
@@ -265,6 +294,16 @@ export const normalise = (files: ParsedFile[]): NormalisedRows => {
                 }
                 break;
             }
+            case 'cheat_sheet': {
+                const row = normaliseCompanion(file);
+                if (row) rows.cheatSheets.push(row);
+                break;
+            }
+            case 'learning_plan': {
+                const row = normaliseCompanion(file);
+                if (row) rows.learningPlans.push(row);
+                break;
+            }
         }
     }
 
@@ -275,6 +314,7 @@ export const normalise = (files: ParsedFile[]): NormalisedRows => {
     console.log(
         `[normalise] posts=${rows.posts.length}  projects=${rows.projects.length}  ` +
             `coursework=${rows.coursework.length}  questions=${rows.questions.length}  ` +
+            `cheatSheets=${rows.cheatSheets.length}  learningPlans=${rows.learningPlans.length}  ` +
             `questionOptions=${rows.questionOptions.length}  tags=${rows.tags.length}  ` +
             `contentLinks=${rows.contentTags.length}  questionLinks=${rows.questionTags.length}`
     );

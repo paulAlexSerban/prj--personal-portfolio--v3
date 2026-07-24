@@ -3,7 +3,7 @@ import path from 'node:path';
 import matter from 'gray-matter';
 import type { ScannedDirectory } from './markdownFileScanner.ts';
 
-export type ContentType = 'post' | 'booknote' | 'snippet' | 'project' | 'coursework' | 'question';
+export type ContentType = 'post' | 'booknote' | 'snippet' | 'project' | 'coursework' | 'question' | 'cheat_sheet' | 'learning_plan';
 
 export type ParsedFile = {
     slug: string;
@@ -11,7 +11,7 @@ export type ParsedFile = {
     frontmatter: Record<string, unknown>;
     body: string;
     filePath: string;
-    /** Parent post slug derived from the path above /questions/ (question files only). */
+    /** Parent post slug derived from the path (questions, cheat sheets, learning plans). */
     parentPostSlug?: string;
 };
 
@@ -22,7 +22,11 @@ const CONTENT_TYPE_MAP: Record<string, ContentType> = {
     projects: 'project',
     coursework: 'coursework',
     questions: 'question',
+    cheat_sheets: 'cheat_sheet',
+    learning_plans: 'learning_plan',
 };
+
+const COMPANION_DIR_NAMES = new Set(['cheat_sheet', 'learning_plan']);
 
 const deriveSlug = (filePath: string): string => path.basename(filePath).replace(/\.(mdx?|md)$/, '');
 
@@ -36,6 +40,24 @@ const deriveParentPostSlug = (relativeFile: string): string | undefined => {
 
     const parentDir = relativeFile.slice(0, questionsIdx);
     return path.basename(parentDir);
+};
+
+/**
+ * Parent post slug for cheat sheets / learning plans.
+ * - Flat: `posts/2024/06/<slug>/cheat_sheet.mdx` → parent = `<slug>`
+ * - Folder: `posts/2024/06/<slug>/cheat_sheet/<file>.mdx` → parent = `<slug>`
+ * - Folder: `posts/2024/06/<slug>/learning_plan/<file>.mdx` → parent = `<slug>`
+ */
+const deriveCompanionParentSlug = (relativeFile: string): string | undefined => {
+    const parentDir = path.dirname(relativeFile);
+    const parentBasename = path.basename(parentDir);
+
+    if (COMPANION_DIR_NAMES.has(parentBasename)) {
+        return path.basename(path.dirname(parentDir));
+    }
+
+    // Flat cheat_sheet.mdx next to the post
+    return parentBasename;
 };
 
 export const markdownParser = async (scannedDirectories: ScannedDirectory[]): Promise<ParsedFile[]> => {
@@ -56,7 +78,13 @@ export const markdownParser = async (scannedDirectories: ScannedDirectory[]): Pr
                 const raw = await fs.readFile(filePath, 'utf-8');
                 const { data: frontmatter, content: body } = matter(raw);
                 const slug = deriveSlug(relativeFile);
-                const parentPostSlug = contentType === 'question' ? deriveParentPostSlug(relativeFile) : undefined;
+                let parentPostSlug: string | undefined;
+
+                if (contentType === 'question') {
+                    parentPostSlug = deriveParentPostSlug(relativeFile);
+                } else if (contentType === 'cheat_sheet' || contentType === 'learning_plan') {
+                    parentPostSlug = deriveCompanionParentSlug(relativeFile);
+                }
 
                 result.push({
                     slug,

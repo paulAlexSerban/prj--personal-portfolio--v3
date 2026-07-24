@@ -5,6 +5,8 @@ import {
     coursework as courseworkTable,
     questions as questionsTable,
     question_options as questionOptionsTable,
+    cheat_sheets as cheatSheetsTable,
+    learning_plans as learningPlansTable,
     tags as tagsTable,
     content_tags as contentTagsTable,
     question_tags as questionTagsTable,
@@ -21,6 +23,8 @@ export type UpsertSummary = {
     questionLinks: number;
     questionOptions: number;
     questionsSkipped: number;
+    cheatSheetsSkipped: number;
+    learningPlansSkipped: number;
 };
 
 type UpsertRecordsOptions = {
@@ -126,6 +130,7 @@ export const upsertRecords = (options: UpsertRecordsOptions): UpsertSummary => {
 
     const contentResults: UpsertResult[] = [];
     const questionResults: UpsertResult[] = [];
+    const companionResults: UpsertResult[] = [];
 
     for (const row of rows.posts) {
         contentResults.push(upsertWithLockCheck(db, postsTable, row, { dryRun }));
@@ -164,6 +169,31 @@ export const upsertRecords = (options: UpsertRecordsOptions): UpsertSummary => {
     const questionLinkCount = syncQuestionTags(db, upsertedQuestionSlugs, rows, dryRun);
     const questionOptionCount = syncQuestionOptions(db, upsertedQuestionSlugs, rows, dryRun);
 
+    // Cheat sheets / learning plans also require parent post (FK on post_slug)
+    const companionParentSlugs = [...new Set([...rows.cheatSheets.map((c) => c.post_slug), ...rows.learningPlans.map((l) => l.post_slug)])];
+    const existingCompanionParents = dryRun ? new Set(companionParentSlugs) : loadExistingPostSlugs(db, companionParentSlugs);
+
+    let cheatSheetsSkipped = 0;
+    let learningPlansSkipped = 0;
+
+    for (const row of rows.cheatSheets) {
+        if (!existingCompanionParents.has(row.post_slug)) {
+            cheatSheetsSkipped++;
+            console.warn(`  [skip] cheat sheet "${row.slug}": parent post "${row.post_slug}" not found`);
+            continue;
+        }
+        companionResults.push(upsertWithLockCheck(db, cheatSheetsTable, row, { dryRun }));
+    }
+
+    for (const row of rows.learningPlans) {
+        if (!existingCompanionParents.has(row.post_slug)) {
+            learningPlansSkipped++;
+            console.warn(`  [skip] learning plan "${row.slug}": parent post "${row.post_slug}" not found`);
+            continue;
+        }
+        companionResults.push(upsertWithLockCheck(db, learningPlansTable, row, { dryRun }));
+    }
+
     const summary: UpsertSummary = {
         inserted: 0,
         updated: 0,
@@ -173,17 +203,27 @@ export const upsertRecords = (options: UpsertRecordsOptions): UpsertSummary => {
         questionLinks: questionLinkCount,
         questionOptions: questionOptionCount,
         questionsSkipped,
+        cheatSheetsSkipped,
+        learningPlansSkipped,
     };
 
-    for (const r of [...contentResults, ...questionResults]) {
+    for (const r of [...contentResults, ...questionResults, ...companionResults]) {
         summary[r.outcome]++;
     }
+
+    const skipParts = [
+        questionsSkipped > 0 ? `questionsSkipped=${questionsSkipped}` : '',
+        cheatSheetsSkipped > 0 ? `cheatSheetsSkipped=${cheatSheetsSkipped}` : '',
+        learningPlansSkipped > 0 ? `learningPlansSkipped=${learningPlansSkipped}` : '',
+    ]
+        .filter(Boolean)
+        .join('  ');
 
     console.log(
         `[upsert] inserted=${summary.inserted}  updated=${summary.updated}  skipped=${summary.skipped}  ` +
             `tags=${summary.tags}  contentLinks=${summary.contentLinks}  questionLinks=${summary.questionLinks}  ` +
             `questionOptions=${summary.questionOptions}` +
-            (questionsSkipped > 0 ? `  questionsSkipped=${questionsSkipped}` : '') +
+            (skipParts ? `  ${skipParts}` : '') +
             (dryRun ? '  (dry-run)' : '')
     );
 

@@ -52,6 +52,10 @@ export interface ExportedPostEntry {
     date: string | null;
     questionCount: number;
     tags: string[];
+    /** Companion cheat sheets (item slug + title); empty when none published. */
+    cheatSheets: { slug: string; title: string }[];
+    /** Companion learning plans (item slug + title); empty when none published. */
+    learningPlans: { slug: string; title: string }[];
 }
 
 // ── Tag-level index entry ─────────────────────────────────────────────────────

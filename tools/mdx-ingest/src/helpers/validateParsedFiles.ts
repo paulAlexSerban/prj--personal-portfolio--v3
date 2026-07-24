@@ -20,6 +20,8 @@ const REQUIRED_FIELDS: Record<ContentType, string[]> = {
     project: ['title', 'status'],
     coursework: ['title', 'status'],
     question: ['question', 'status'],
+    cheat_sheet: ['title', 'status'],
+    learning_plan: ['title', 'status'],
 };
 
 const isMissing = (value: unknown): boolean => value === undefined || value === null || value === '';

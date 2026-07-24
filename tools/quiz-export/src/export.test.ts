@@ -77,6 +77,32 @@ function createTestDb() {
             tag_slug TEXT NOT NULL REFERENCES tags(slug) ON DELETE CASCADE,
             PRIMARY KEY (question_slug, tag_slug)
         );
+
+        CREATE TABLE IF NOT EXISTS cheat_sheets (
+            id TEXT PRIMARY KEY,
+            slug TEXT NOT NULL UNIQUE,
+            post_slug TEXT NOT NULL REFERENCES posts(slug),
+            title TEXT NOT NULL,
+            body TEXT NOT NULL,
+            status TEXT NOT NULL,
+            sort_order INTEGER DEFAULT 0,
+            sync_source TEXT DEFAULT 'mdx',
+            locked INTEGER DEFAULT 0,
+            updated_at INTEGER
+        );
+
+        CREATE TABLE IF NOT EXISTS learning_plans (
+            id TEXT PRIMARY KEY,
+            slug TEXT NOT NULL UNIQUE,
+            post_slug TEXT NOT NULL REFERENCES posts(slug),
+            title TEXT NOT NULL,
+            body TEXT NOT NULL,
+            status TEXT NOT NULL,
+            sort_order INTEGER DEFAULT 0,
+            sync_source TEXT DEFAULT 'mdx',
+            locked INTEGER DEFAULT 0,
+            updated_at INTEGER
+        );
     `);
 
     return drizzle(sqlite, { schema });
@@ -261,6 +287,47 @@ describe('buildQuizData', () => {
         expect(result.posts).toHaveLength(2);
         expect(result.questionsByPost.get('post-a')).toHaveLength(1);
         expect(result.questionsByPost.get('post-b')).toHaveLength(1);
+    });
+
+    it('attaches published cheat sheets and learning plans on the post index entry', async () => {
+        const db = createTestDb();
+        insertPost(db);
+        insertQuestion(db);
+        db.insert(schema.cheat_sheets)
+            .values({
+                id: 'cs-1',
+                slug: 'react-hooks--cheat_sheet',
+                post_slug: 'react-hooks',
+                title: 'Hooks Cheat Sheet',
+                body: '…',
+                status: 'published',
+            })
+            .run();
+        db.insert(schema.learning_plans)
+            .values({
+                id: 'lp-1',
+                slug: 'react-hooks--20hours',
+                post_slug: 'react-hooks',
+                title: '20-Hour Plan',
+                body: '…',
+                status: 'published',
+            })
+            .run();
+        db.insert(schema.cheat_sheets)
+            .values({
+                id: 'cs-draft',
+                slug: 'react-hooks--draft',
+                post_slug: 'react-hooks',
+                title: 'Draft Sheet',
+                body: '…',
+                status: 'draft',
+            })
+            .run();
+
+        const result = await buildQuizData(db);
+        const post = result.posts.find((p) => p.slug === 'react-hooks')!;
+        expect(post.cheatSheets).toEqual([{ slug: 'cheat_sheet', title: 'Hooks Cheat Sheet' }]);
+        expect(post.learningPlans).toEqual([{ slug: '20hours', title: '20-Hour Plan' }]);
     });
 
     // ── questionsByTag ────────────────────────────────────────────────────────

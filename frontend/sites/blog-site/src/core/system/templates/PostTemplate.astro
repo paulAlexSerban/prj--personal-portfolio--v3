@@ -9,13 +9,22 @@ import BaseLayout from '@/system/templates/BaseTemplate.astro';
 import { closeConnection, openDb } from '@/lib/db.ts';
 import { mdxComponents } from '@/lib/mdx-components.ts';
 import {
+    companionItemSlug,
+    getCheatSheetsForPost,
+    getLearningPlansForPost,
+} from '@/lib/queries/companions.ts';
+import {
     CONTENT_TYPE_LABEL,
     getPostBySlugAndType,
     getQuestionCountForPost,
     getTagsForPost,
     type BlogContentType,
 } from '@/lib/queries/posts.ts';
-import { postDetailPath } from '@/lib/urls.ts';
+import {
+    cheatSheetDetailPath,
+    learningPlanDetailPath,
+    postDetailPath,
+} from '@/lib/urls.ts';
 
 interface Props {
     slug: string;
@@ -28,6 +37,8 @@ const db = openDb();
 const post = getPostBySlugAndType(db, slug, contentType);
 const tags = getTagsForPost(db, slug);
 const questionCount = getQuestionCountForPost(db, slug);
+const cheatSheets = getCheatSheetsForPost(db, slug);
+const learningPlans = getLearningPlansForPost(db, slug);
 closeConnection(db);
 
 if (!post) {
@@ -42,6 +53,7 @@ const { default: Content } = await evaluate(post.body, {
 
 const description = post.excerpt ?? post.subheading ?? undefined;
 const canonicalUrl = new URL(postDetailPath(contentType, slug), Astro.site).href;
+const hasResources = cheatSheets.length > 0 || learningPlans.length > 0;
 ---
 
 <BaseLayout
@@ -68,6 +80,41 @@ const canonicalUrl = new URL(postDetailPath(contentType, slug), Astro.site).href
                 data-quiz-widget
                 data-post-slug={post.slug}
             />
+        )
+    }
+    {
+        hasResources && (
+            <section class="mt-12 border-t-[3px] border-ink pt-6">
+                <h2 class="m-0 mb-4 font-display text-xl font-bold">Resources</h2>
+                <ul class="m-0 flex list-none flex-col gap-2 p-0 sm:flex-row sm:flex-wrap">
+                    {cheatSheets.map((sheet) => {
+                        const itemSlug = companionItemSlug(sheet.slug, slug);
+                        return (
+                            <li>
+                                <a
+                                    href={cheatSheetDetailPath(contentType, slug, itemSlug)}
+                                    class="inline-block border border-rule bg-highlight px-3 py-1.5 text-sm text-ink no-underline hover:border-ink"
+                                >
+                                    Cheat sheet: {sheet.title}
+                                </a>
+                            </li>
+                        );
+                    })}
+                    {learningPlans.map((plan) => {
+                        const itemSlug = companionItemSlug(plan.slug, slug);
+                        return (
+                            <li>
+                                <a
+                                    href={learningPlanDetailPath(contentType, slug, itemSlug)}
+                                    class="inline-block border border-rule bg-highlight px-3 py-1.5 text-sm text-ink no-underline hover:border-ink"
+                                >
+                                    Learning plan: {plan.title}
+                                </a>
+                            </li>
+                        );
+                    })}
+                </ul>
+            </section>
         )
     }
 </BaseLayout>

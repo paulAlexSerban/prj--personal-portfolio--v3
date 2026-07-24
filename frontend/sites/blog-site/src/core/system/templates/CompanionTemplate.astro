@@ -1,0 +1,126 @@
+---
+import { evaluate } from '@mdx-js/mdx';
+import { rehypePlugins, remarkPlugins } from '@prj--personal-portfolio--v3/shared--markdown/plugins';
+import * as runtime from 'react/jsx-runtime';
+
+import HeroBanner from '@/library/modules/HeroBanner.astro';
+import BaseLayout from '@/system/templates/BaseTemplate.astro';
+
+import { closeConnection, openDb } from '@/lib/db.ts';
+import { mdxComponents } from '@/lib/mdx-components.ts';
+import {
+    companionItemSlug,
+    getCheatSheetBySlugs,
+    getCheatSheetsForPost,
+    getLearningPlanBySlugs,
+    getLearningPlansForPost,
+} from '@/lib/queries/companions.ts';
+import {
+    CONTENT_TYPE_LABEL,
+    getPostBySlugAndType,
+    type BlogContentType,
+} from '@/lib/queries/posts.ts';
+import {
+    cheatSheetDetailPath,
+    learningPlanDetailPath,
+    postDetailPath,
+} from '@/lib/urls.ts';
+
+export type CompanionKind = 'cheat_sheet' | 'learning_plan';
+
+interface Props {
+    slug: string;
+    contentType: BlogContentType;
+    companionKind: CompanionKind;
+    itemSlug: string;
+}
+
+const { slug, contentType, companionKind, itemSlug } = Astro.props;
+
+const db = openDb();
+const post = getPostBySlugAndType(db, slug, contentType);
+const companion =
+    companionKind === 'cheat_sheet'
+        ? getCheatSheetBySlugs(db, slug, itemSlug)
+        : getLearningPlanBySlugs(db, slug, itemSlug);
+
+const siblings =
+    companionKind === 'cheat_sheet'
+        ? getCheatSheetsForPost(db, slug).filter((row) => row.slug !== companion?.slug)
+        : getLearningPlansForPost(db, slug).filter((row) => row.slug !== companion?.slug);
+
+closeConnection(db);
+
+if (!post) {
+    throw new Error(`${CONTENT_TYPE_LABEL[contentType]} not found: ${slug}`);
+}
+
+if (!companion) {
+    const kindLabel = companionKind === 'cheat_sheet' ? 'Cheat sheet' : 'Learning plan';
+    throw new Error(`${kindLabel} not found: ${slug}/${itemSlug}`);
+}
+
+const { default: Content } = await evaluate(companion.body, {
+    ...runtime,
+    remarkPlugins: [...remarkPlugins],
+    rehypePlugins: [...rehypePlugins],
+});
+
+const kindLabel = companionKind === 'cheat_sheet' ? 'Cheat sheet' : 'Learning plan';
+const kicker = `${kindLabel} · ${CONTENT_TYPE_LABEL[contentType]}`;
+const parentHref = postDetailPath(contentType, slug);
+const canonicalPath =
+    companionKind === 'cheat_sheet'
+        ? cheatSheetDetailPath(contentType, slug, itemSlug)
+        : learningPlanDetailPath(contentType, slug, itemSlug);
+const canonicalUrl = new URL(canonicalPath, Astro.site).href;
+---
+
+<BaseLayout
+    title={`${companion.title} | Paul Serban`}
+    description={`Companion ${kindLabel.toLowerCase()} for ${post.title}`}
+    ogTitle={companion.title}
+    ogDescription={`Companion ${kindLabel.toLowerCase()} for ${post.title}`}
+    canonicalUrl={canonicalUrl}
+>
+    <HeroBanner title={companion.title} kicker={kicker} />
+
+    <p class="mb-6">
+        <a href={parentHref} class="text-sm text-ink underline hover:no-underline">
+            ← Back to {post.title}
+        </a>
+    </p>
+
+    <article class="md-content mt-4">
+        <Content components={mdxComponents} />
+    </article>
+
+    {
+        siblings.length > 0 && (
+            <section class="mt-12 border-t-[3px] border-ink pt-6">
+                <h2 class="m-0 mb-4 font-display text-xl font-bold">
+                    {companionKind === 'cheat_sheet' ? 'Other cheat sheets' : 'Other learning plans'}
+                </h2>
+                <ul class="m-0 flex list-none flex-col gap-2 p-0">
+                    {siblings.map((row) => {
+                        const siblingItem = companionItemSlug(row.slug, slug);
+                        const href =
+                            companionKind === 'cheat_sheet'
+                                ? cheatSheetDetailPath(contentType, slug, siblingItem)
+                                : learningPlanDetailPath(contentType, slug, siblingItem);
+                        return (
+                            <li>
+                                <a
+                                    href={href}
+                                    class="inline-block border border-rule bg-highlight px-3 py-1.5 text-sm text-ink no-underline hover:border-ink"
+                                >
+                                    {row.title}
+                                </a>
+                            </li>
+                        );
+                    })}
+                </ul>
+            </section>
+        )
+    }
+</BaseLayout>

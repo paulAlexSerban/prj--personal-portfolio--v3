@@ -1,0 +1,18 @@
+---
+import CompanionTemplate from '@/system/templates/CompanionTemplate.astro';
+
+import { closeConnection, openDb } from '@/lib/db.ts';
+import { getCheatSheetStaticPaths } from '@/lib/queries/companions.ts';
+
+export function getStaticPaths() {
+    const db = openDb();
+    const paths = getCheatSheetStaticPaths(db, 'book-note');
+    closeConnection(db);
+    return paths;
+}
+
+const slug = Astro.params.slug!;
+const itemSlug = Astro.params.itemSlug!;
+---
+
+<CompanionTemplate slug={slug} contentType="book-note" companionKind="cheat_sheet" itemSlug={itemSlug} />
