@@ -11,7 +11,7 @@ Schema (`db-schema`) is separated from runtime (`db`) so the frontend can import
 ### `@prj--personal-portfolio--v3/shared--db-schema` (`shared/db-schema/`)
 
 - **Role**: Drizzle table definitions and inferred TypeScript types only — no Node DB drivers.
-- **Exports**: tables (`posts`, `projects`, `coursework`, `questions`, `question_options`, `pages`, `profile`, `skills`, `tags`, `content_tags`), row types, and `ContentType`.
+- **Exports**: tables (`posts`, `projects`, `coursework`, `questions`, `question_options`, `cheat_sheets`, `learning_plans`, `pages`, `profile`, `skills`, `tags`, `content_tags`, `question_tags`), row types, and `ContentType`.
 - **Consumers**: ingest tools, Astro (types), `shared--db`.
 
 ### `@prj--personal-portfolio--v3/shared--db` (`shared/db/`)
@@ -71,8 +71,8 @@ Schema (`db-schema`) is separated from runtime (`db`) so the frontend can import
 
 - **Role**: Reads `content.db` and emits static JSON consumed by the quiz web app and the offline mobile bundle.
 - **Files**:
-    - `src/contract.ts` — exported TS types: `ExportedQuestion`, `ExportedPostEntry`, `PostsIndex`, `PostQuestionsFile`, `AllQuestionsBundle`, `QuizData`. JSON **version 2** includes precompiled `*Html` fields.
-    - `src/export.ts` — `buildQuizData(db): Promise<QuizData>` — pure query: joins `questions` → `posts` + `question_options` (sorted by `sort_order`) + `question_tags` + `content_tags`. Filters to `status = 'published'` only.
+    - `src/contract.ts` — exported TS types: `ExportedQuestion`, `ExportedPostEntry`, `PostsIndex`, `PostQuestionsFile`, `AllQuestionsBundle`, `QuizData`. JSON **version 2** includes precompiled `*Html` fields. `ExportedPostEntry` also carries `cheatSheets` / `learningPlans` (`{ slug, title }[]`) for quiz → blog companion links.
+    - `src/export.ts` — `buildQuizData(db): Promise<QuizData>` — pure query: joins `questions` → `posts` + `question_options` (sorted by `sort_order`) + `question_tags` + `content_tags` + published companion rows. Filters to `status = 'published'` only.
     - `src/compile.ts` — `compileQuizData(data, opts)` — MDX/markdown → sanitized HTML; copies question images from `CONTENT_DIR` to `assets/questions/` and rewrites paths.
     - `src/write.ts` — `writeQuizJson(data, outDir)` — writes `posts.json`, `questions/<post_slug>.json`, `tags/<tag>.json`, `_all.json`.
     - `src/cli.ts` — CLI entry; reads `DATABASE_PATH`, `QUIZ_DATA_OUT`, `CONTENT_DIR` env vars; supports `--dry-run`.

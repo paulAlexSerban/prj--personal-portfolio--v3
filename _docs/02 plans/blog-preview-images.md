@@ -10,18 +10,20 @@ overview: >
 todos:
   - id: o1-pipeline
     content: G1.O1 — schema cover_image column + migration + ingest mapping (S1–S3)
-    status: pending
+    status: completed
   - id: o2-resolver
     content: G1.O2 — shared tested coverImageUrl resolver + export path (S1–S2)
-    status: pending
+    status: completed
   - id: o3-placeholder
     content: G1.O3 — generate + commit sketch-style placeholder PNG to blog public/ (S1)
-    status: pending
+    status: completed
   - id: o4-render
     content: G1.O4 — render covers on cards (P1) + post hero (P2)
-    status: pending
+    status: completed
 isProject: false
 ---
+
+**Status:** ✅ implemented — `posts.cover_image` column, `shared/ui` `coverImageUrl` resolver, blog `public/placeholder-cover.png`, and card/hero rendering all shipped.
 
 # Plan: blog post cards/teasers + post pages show preview (cover) images with a sketch placeholder
 

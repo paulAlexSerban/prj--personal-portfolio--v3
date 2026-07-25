@@ -4,7 +4,7 @@
 | Field | Value |
 | --- | --- |
 | **Status** | Living — reflects what is built today |
-| **Last Updated** | 2026-06-28 |
+| **Last Updated** | 2026-07-25 |
 | **Scope** | High-level overview. Per-area detail lives in each area's `readme.md` / `AGENTS.md`; decisions live in the ADR log. |
 
 > This document is intentionally short. It is a **map**, not a manual. For how a
@@ -57,9 +57,11 @@ backend/, infrastructure/, assets/   scaffolds for future work
 ```
 
 **Implemented today:** the content pipeline (`tools/*`), the shared packages
-(`shared/*`), and the quiz web app (`frontend/apps/quiz-web-app`). Other
-`frontend/` and `backend/` folders are scaffolds (see the implementation-status
-table in [`_docs/AGENTS.md`](../AGENTS.md)).
+(`shared/*`), the quiz web app (`frontend/apps/quiz-web-app`), and the Astro
+sites (`frontend/sites/portfolio-site`, `frontend/sites/blog-site`) — DEV deploy
+via GitHub Pages. Local Docker + Traefik lives under `infrastructure/local/`.
+`backend/` remains a scaffold; production AWS hosting is still draft (see the
+implementation-status table in [`_docs/AGENTS.md`](../AGENTS.md)).
 
 ## 5. End-to-end data flow
 
@@ -72,7 +74,8 @@ content repo (MDX/JSON)
   ▼
 database/output/content.db (SQLite)
   │
-  ├─▶ Astro SSG (build time, planned)   queries the DB → static HTML pages
+  ├─▶ Astro SSG (build time) — portfolio-site + blog-site query the DB → static HTML
+  │     (DEV: GitHub Pages; prod hosting still draft — see hosting/CI ADRs)
   │
   └─▶ shared/quiz-export (build-time CLI)  queries the DB → static JSON
             (posts.json, questions/<post>.json, tags.json, tags/<tag>.json,
@@ -83,7 +86,7 @@ database/output/content.db (SQLite)
 ```
 
 Key point: **the quiz JSON is produced by `shared/quiz-export`, not by the Astro
-build.** They are two independent consumers of the same `content.db`.
+build.** They are independent consumers of the same `content.db`.
 
 - Schema + types: [`shared/db-schema`](../../shared/db-schema/readme.md)
 - DB runtime + lock-aware upsert: [`shared/db`](../../shared/db/readme.md)
@@ -93,8 +96,11 @@ build.** They are two independent consumers of the same `content.db`.
 ## 6. Content model & frontmatter
 
 Tables (Drizzle): `posts` (post / book-note / snippet), `projects`, `coursework`,
-`pages`, `profile`, `skills`, `questions`, `question_options`, plus `tags` +
-`content_tags` / `question_tags` junctions. Full shape: `shared/db-schema`.
+`pages`, `profile`, `skills`, `questions`, `question_options`, `cheat_sheets`,
+`learning_plans`, plus `tags` + `content_tags` / `question_tags` junctions. Full
+shape: `shared/db-schema`. Companion content (cheat sheets / learning plans) is
+authored under each post folder and linked from blog detail pages and the quiz
+set-detail UI.
 
 Frontmatter contracts (example — posts):
 

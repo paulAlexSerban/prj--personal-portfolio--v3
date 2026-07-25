@@ -4,15 +4,17 @@ overview: Resolve the six findings (F1–F6) from the v1 design review spike —
 todos:
   - id: postcard-batch
     content: G1.O1.P1 — Fix PostCard (F1 tags + F2 bottom edge + F3 Read CTA) (S1–S2)
-    status: pending
+    status: completed
   - id: header-batch
     content: G1.O2.P1 — Fix SiteHeader (F4 toggle visibility + F5 deck size) (S1)
-    status: pending
+    status: completed
   - id: grid-batch
     content: G1.O3.P1 — Fix grid min-column width across 5 pages (F6) (S1)
-    status: pending
+    status: completed
 isProject: false
 ---
+
+**Status:** ✅ implemented — F1–F6 fixes landed. Visual treatment was later superseded by the full newspaper redesign (`blog-site-newspaper-design.md`).
 
 # Plan: Blog design improvement — F1–F6 from the v1 design review
 

@@ -1,3 +1,5 @@
+**Status:** ✅ implemented — `shared/ui` `filterByQuery` / `sortBlogPosts` + blog listing React island + quiz browse adoption all shipped.
+
 G1 — Blog listing pages have client-side search+sort; shared filterByQuery is imported by both apps; blog card layout matches quiz card structure
 Intent: three listing pages gain search (title/slug/tag) + sort (title/newest) via a React island; the filter function lives in shared/ui and both apps use it; blog cards rendered in the island match PostCard.astro visuals.
 Gates: TDD (new unit tests in shared/ui + quiz characterization test); Manual (search works + cards render at 375/800/1100px); Deliverable: pnpm build and pnpm typecheck exit 0 in both apps.

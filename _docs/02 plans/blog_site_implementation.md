@@ -4,27 +4,29 @@ overview: Implement `frontend/sites/blog-site` as a standalone Astro SSG app at 
 todos:
   - id: workspace-setup
     content: G1.O1.P1 — Register frontend/sites/* in workspace + create package.json, astro.config.mjs, tsconfig, and src/ scaffold (S1–S4)
-    status: pending
+    status: completed
   - id: data-layer
     content: G1.O2.P1 — Create src/lib/db.ts + src/lib/queries/posts.ts + src/lib/queries/tags.ts (S1–S3)
-    status: pending
+    status: completed
   - id: chrome-components
     content: G1.O3.P1 — Create BaseLayout.astro, SiteHeader.astro, SiteFooter.astro (S1–S3)
-    status: pending
+    status: completed
   - id: content-components
     content: G1.O3.P2 — Create TagList.astro, PostCard.astro, HeroBanner.astro, MdxContent.astro (S4–S7)
-    status: pending
+    status: completed
   - id: hub-listing-pages
     content: G1.O4.P1 — Create index.astro (hub) + post/snippet/booknote index pages (S1–S4)
-    status: pending
+    status: completed
   - id: detail-pages
     content: G1.O4.P2 — Create post/[slug].astro (+ quiz slot), snippet/[slug].astro, booknote/[slug].astro (S5–S7)
-    status: pending
+    status: completed
   - id: tag-archive
     content: G1.O4.P3 — Create tags/[tag].astro (S8)
-    status: pending
+    status: completed
 isProject: false
 ---
+
+**Status:** ✅ implemented — `frontend/sites/blog-site` is live (hub, listings, detail, tags) and deployed on DEV via GitHub Pages.
 
 # Plan: Blog Site v3 Implementation
 

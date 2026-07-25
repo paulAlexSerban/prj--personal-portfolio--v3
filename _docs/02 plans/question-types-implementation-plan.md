@@ -1,6 +1,6 @@
 # Question types — critical review & phased implementation plan
 
-**Status:** draft plan (Phase 0 docs **done** — spike, MDX guide, SRS PRD, `tools/AGENTS.md`)  
+**Status:** Phases 0–4 ✅ done in code (`shared/question-contract`, schema + options, mdx-ingest, `shared/quiz-export`). Phases 5–6 still open (richer metadata / CMS cleanup).  
 **Inputs:** [`01 spikes/types-of-questions.md`](../01%20spikes/types-of-questions.md), [`migrating-question-mdx-content.md`](../01%20spikes/migrating-question-mdx-content.md), `shared/db-schema`, `tools/mdx-ingest`, `tools/json-ingest`, product PRDs (quiz / SM-2)  
 **Out of scope here:** `frontend/`, `packages/quiz-ui`, SM-2 engine implementation (referenced only where they constrain schema)
 

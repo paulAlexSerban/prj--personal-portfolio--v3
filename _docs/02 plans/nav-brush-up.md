@@ -2,6 +2,8 @@ Now I have all the context I need.
 
 ---
 
+**Status:** ✅ implemented — `SiteSwitcher` / `buildSiteTabs` across portfolio, blog, and quiz; CV link removed from portfolio nav.
+
 # Plan: Navigation Structure — Grouping, CV Removal & Hover Dropdown
 
 ## Context Ledger

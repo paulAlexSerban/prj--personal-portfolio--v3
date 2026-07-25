@@ -4,24 +4,26 @@ overview: Audit the blog-site's custom CSS and migrate it to Tailwind. Tailwind 
 todos:
   - id: net-baseline
     content: G1.O1.P1 — Capture visual-parity baseline + checklist (manual net) (S1)
-    status: pending
+    status: completed
   - id: chrome-components
     content: G1.O2.P1 — Inline-utility migration of chrome components (S1–S6)
-    status: pending
+    status: completed
   - id: pages
     content: G1.O2.P2 — Inline-utility migration of pages (S7–S10)
-    status: pending
+    status: completed
   - id: mdx-components
     content: G1.O3.P1 — Inline-utility migration of blog-local MDX classes (S1–S2)
-    status: pending
+    status: completed
   - id: teardown
     content: G1.O2.P3 — Delete layout.css, relocate :empty::before, remove import (S11)
-    status: pending
+    status: completed
   - id: shared-typography
     content: G1.O4.P1 — OPTIONAL/cross-package — express shared .md-content via @apply (S1–S2)
-    status: pending
+    status: completed
 isProject: false
 ---
+
+**Status:** ✅ implemented — blog-local `layout.css` removed; styling is Tailwind utilities + shared `theme.css`.
 
 # Plan: Audit custom CSS & implement Tailwind — `frontend/sites/blog-site`
 

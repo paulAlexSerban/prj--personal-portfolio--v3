@@ -1,5 +1,7 @@
 # Quiz → Blog crosslinks
 
+**Status:** ✅ implemented — `blogPostUrl` + set-detail / preview / study-session links shipped.
+
 ## Intent
 
 Question sets in the quiz web app are keyed by blog post slug (`questions.post_slug` / `ExportedQuestion.postSlug`). Users should be able to jump from quiz surfaces back to the source blog post where the content was authored.

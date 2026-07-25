@@ -14,3 +14,4 @@ A statically generated website presenting the author's written content: posts, b
 | BLOG-06 | The blog MUST achieve a Lighthouse Performance score ≥ 95 and SEO score ≥ 95                                | Must Have   |
 | BLOG-07 | The blog SHOULD include listing pages for each content type with pagination or infinite scroll              | Should Have |
 | BLOG-08 | Listing pages SHOULD support filtering by tag                                                               | Should Have |
+| BLOG-09 | Posts, book-notes, and snippets SHOULD link to published companion cheat sheets and learning plans when present | Should Have |

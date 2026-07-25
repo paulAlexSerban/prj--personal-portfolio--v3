@@ -104,18 +104,26 @@ Rebuild the quiz container after regenerating `public/data/` (or mount that dire
 
 ## Start the stack
 
-From the monorepo root:
+From the monorepo root (preferred — builds the shared local base image first):
 
 ```bash
+make compose_up
+```
+
+Or build the base image alone, then Compose:
+
+```bash
+make local_base_build
 docker compose -f infrastructure/local/docker-compose.local.yml up --build
 ```
 
-Add `-d` to run in the background.
+Add `-d` to the compose command to run in the background (or stop with `make compose_down`).
 
 Stop:
 
 ```bash
-docker compose -f infrastructure/local/docker-compose.local.yml down
+make compose_down
+# or: docker compose -f infrastructure/local/docker-compose.local.yml down
 ```
 
 Rebuild a single service after code changes:
@@ -135,7 +143,7 @@ Browser ──► Traefik (:443, TLS) ──► portfolio (:4321)
 
 - **Traefik** is the reverse proxy and local DNS entry point (via `/etc/hosts`).
 - **mkcert** provides browser-trusted certificates for `*.paulserban.eu` local subdomains.
-- Each app has its own `local.Dockerfile`; build context is the monorepo root (pnpm workspace deps).
+- Apps share a root [`local.base.Dockerfile`](../../local.base.Dockerfile) (Node, pnpm, workspace `shared/` + `tools/`); each app has a thin `local.Dockerfile` that inherits from that base and copies only its own sources.
 - Astro sites mount `database/output/` read-only so `content.db` is available inside containers.
 
 ## Troubleshooting
@@ -167,9 +175,11 @@ The dev servers allow custom hosts when run via Docker. Rebuild the affected con
 
 ## Related files
 
+- Makefile targets: [`makefile`](../../makefile) (`certs`, `local_base_build`, `compose_up`, `compose_down`)
+- Base image: [`local.base.Dockerfile`](../../local.base.Dockerfile)
 - Compose: [`infrastructure/local/docker-compose.local.yml`](../../infrastructure/local/docker-compose.local.yml)
 - Traefik config: [`infrastructure/local/traefik/`](../../infrastructure/local/traefik/)
-- Dockerfiles:
+- App Dockerfiles (thin, inherit base):
   - [`frontend/sites/portfolio-site/local.Dockerfile`](../../frontend/sites/portfolio-site/local.Dockerfile)
   - [`frontend/sites/blog-site/local.Dockerfile`](../../frontend/sites/blog-site/local.Dockerfile)
   - [`frontend/apps/quiz-web-app/local.Dockerfile`](../../frontend/apps/quiz-web-app/local.Dockerfile)

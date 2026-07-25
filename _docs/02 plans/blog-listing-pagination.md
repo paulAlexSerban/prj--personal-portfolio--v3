@@ -12,15 +12,17 @@ overview: >
 todos:
   - id: o1-shared
     content: G1.O1 — shared/ui pagination.ts (paginate/totalPages/clampPage) + export + tests
-    status: pending
+    status: completed
   - id: o2-quiz
     content: G1.O2 — quiz browse imports shared pagination; remove local copies; relocate tests
-    status: pending
+    status: completed
   - id: o3-blog
     content: G1.O3 — PostListIsland pagination (12/page) + ?page= URL sync + reset-on-filter
-    status: pending
+    status: completed
 isProject: false
 ---
+
+**Status:** ✅ implemented — shared pagination math + blog listing `?page=` sync shipped. A later change (`.cursor/plans/cross-app_shared_pagination_*`) reversed this plan's "no shared Pagination React component" decision and added `shared/ui` `PaginationBar` consumed by both blog and quiz.
 
 # Plan: implement pagination on blog listing pages (search unchanged)
 

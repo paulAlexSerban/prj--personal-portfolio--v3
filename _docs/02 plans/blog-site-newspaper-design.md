@@ -4,24 +4,26 @@ overview: Review the quiz web app's "THE REVIEW" newspaper design, codify its re
 todos:
   - id: shared-classes
     content: G1.O1.P2 — Add .kicker/.deck/.card-ruled to shared/ui theme.css (S1)
-    status: pending
+    status: completed
   - id: quiz-normalize
     content: G1.O1.P3 — Normalize quiz Masthead + PageLayout to tokens/classes (S1–S2)
-    status: pending
+    status: completed
   - id: blog-masthead
     content: G1.O2.P1 — Blog masthead (Paul Serban) + bg-newsprint shell (S1–S2)
-    status: pending
+    status: completed
   - id: blog-cards
     content: G1.O2.P2 — Top-ruled PostCard + kicker/deck section headers + HeroBanner (S1–S3)
-    status: pending
+    status: completed
   - id: blog-footer
     content: G1.O2.P3 — Footer smallcaps tagline (S1)
-    status: pending
+    status: completed
   - id: blog-dark
     content: G1.O3.P1 — Dark variant + no-FOUC inline script + masthead toggle (S1–S3)
-    status: pending
+    status: completed
 isProject: false
 ---
+
+**Status:** ✅ implemented — shared kicker/deck/card-ruled classes, "Paul Serban" masthead, and blog dark-mode toggle all shipped.
 
 # Plan: Unify "THE REVIEW" design across quiz app and blog; blog gains masthead + dark toggle
 

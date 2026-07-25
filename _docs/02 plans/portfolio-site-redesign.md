@@ -1,5 +1,7 @@
 # Portfolio-site Redesign and Expansion
 
+**Status:** ✅ implemented — portfolio-site illustrated aesthetic + expanded content pipeline shipped (`frontend/sites/portfolio-site/`).
+
 Brutally honest framing: the current build is competent but inert — it tells, it doesn't show. This plan implements the design review's *high-value structural* ideas inside a new portfolio-only illustrated aesthetic, backed by an expanded content pipeline so nothing is hardcoded (HOME-05).
 
 ## Decisions locked

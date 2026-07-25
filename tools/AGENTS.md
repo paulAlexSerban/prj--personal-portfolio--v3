@@ -91,13 +91,15 @@ pnpm --filter @prj--personal-portfolio--v3/tools--mdx-ingest start:dry-run   # n
 
 | `publish/` folder                                                             | Parser type  | DB target                      |
 | ----------------------------------------------------------------------------- | ------------ | ------------------------------ |
-| `posts/`                                                                      | `post`       | `posts` (`type = 'post'`)      |
-| `booknotes/`                                                                  | `booknote`   | `posts` (`type = 'book-note'`) |
-| `snippets/`                                                                   | `snippet`    | `posts` (`type = 'snippet'`)   |
-| `projects/`                                                                   | `project`    | `projects`                     |
-| `coursework/`                                                                 | `coursework` | `coursework`                   |
-| `posts/.../questions/`, `booknotes/.../questions/`, `snippets/.../questions/` | `question`   | `questions`                    |
-| `pages/`                                                                      | —            | handled by `json-ingest`       |
+| `posts/`                                                                      | `post`         | `posts` (`type = 'post'`)      |
+| `booknotes/`                                                                  | `booknote`     | `posts` (`type = 'book-note'`) |
+| `snippets/`                                                                   | `snippet`      | `posts` (`type = 'snippet'`)   |
+| `projects/`                                                                   | `project`      | `projects`                     |
+| `coursework/`                                                                 | `coursework`   | `coursework`                   |
+| `posts/.../questions/`, `booknotes/.../questions/`, `snippets/.../questions/` | `question`     | `questions`                    |
+| `posts/.../cheat_sheet(.mdx\|/)`, same under booknotes/snippets               | `cheat_sheet`  | `cheat_sheets`                 |
+| `posts/.../learning_plan/`, same under booknotes/snippets                     | `learning_plan`| `learning_plans`               |
+| `pages/`                                                                      | —              | handled by `json-ingest`       |
 
 ### MDX validation
 
@@ -106,6 +108,7 @@ Required frontmatter (missing → file skipped with warning):
 - post / booknote / snippet: `title`, `status`, `date`
 - project / coursework: `title`, `status`
 - question: `question`, `status`
+- cheat_sheet / learning_plan: `title`, `status` (no `date`)
 
 Optional frontmatter (defaults when omitted): `answer_format` (`free_text`), `cognitive_style` (`factual_recall`), `difficulty` (`intermediate`).
 
@@ -122,13 +125,13 @@ Structured types: `options` + `correct_option_keys` in frontmatter → `question
 
 ### Scanner
 
-`markdownFileScanner.ts` walks top-level `posts`, `booknotes`, `snippets`, `projects`, and `coursework`. For posts/booknotes/snippets it skips `questions/` when collecting parent content and emits nested question files under a synthetic `questions` scan result:
+`markdownFileScanner.ts` walks top-level `posts`, `booknotes`, `snippets`, `projects`, and `coursework`. For posts/booknotes/snippets it skips `questions/`, `cheat_sheet` (file or folder), `learning_plan/`, and `intermediary/` when collecting parent content. Nested questions and companion files are emitted under synthetic scan results (`questions`, `cheat_sheets`, `learning_plans`):
 
 ```typescript
 /^(projects|coursework|posts|booknotes|snippets)$/;
 ```
 
-Nested question paths look like `posts/{year}/{month}/{slug}/questions/{post-slug}--{uid}.mdx`.
+Nested question paths look like `posts/{year}/{month}/{slug}/questions/{post-slug}--{uid}.mdx`. Companion paths: flat `…/{slug}/cheat_sheet.mdx` and/or `…/{slug}/cheat_sheet/*.mdx`, plus `…/{slug}/learning_plan/*.mdx`. Slug for companions is `{post_slug}--{file_basename}`.
 
 ### Tag handling (mdx upsert)
 
