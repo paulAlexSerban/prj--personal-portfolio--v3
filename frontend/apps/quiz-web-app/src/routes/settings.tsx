@@ -244,7 +244,7 @@ function SettingsView() {
           label="Algorithm"
           hint="SM-2 is the classic SuperMemo algorithm (simple, ease-factor based). FSRS-5 is a modern memory model that predicts forgetting per card and typically hits the same retention with fewer reviews. Switching opens a confirmation and migrates your cards without losing progress."
         >
-          <div className="flex gap-2">
+          <div className="flex gap-2 md:flex-row flex-col">
             {(
               [
                 ["sm2", "SM-2 (classic)"],

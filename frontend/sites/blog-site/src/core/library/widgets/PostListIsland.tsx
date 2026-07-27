@@ -246,8 +246,8 @@ export const PostListIsland = ({ posts }: PostListIslandProps) => {
                         aria-describedby="post-search-hint"
                         className="h-auto w-full rounded-none border-2 border-ink bg-transparent px-3 py-2 text-base shadow-none focus-visible:ring-0"
                     />
-                    <p id="post-search-hint" aria-live="polite" className={cn('kicker mt-1 text-[10px]', pendingSearch ? 'font-bold text-ink' : 'text-slate-ink')}>
-                        {pendingSearch ? 'Filtering live — press Enter to save this search to the URL' : 'Search is saved to the URL (share or reload to keep it)'}
+                    <p id="post-search-hint" aria-live="polite" className={cn('kicker mt-1 text-sm', pendingSearch ? 'font-bold text-ink' : 'text-slate-ink')}>
+                        {pendingSearch ? 'Filtering live - press Enter to save this search to the URL' : 'Search is saved to the URL (share or reload to keep it)'}
                     </p>
                 </form>
                 <div className="kicker flex flex-wrap items-center gap-3 pt-2 text-[11px]">
