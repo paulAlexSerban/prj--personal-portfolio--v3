@@ -1,0 +1,56 @@
+name: CI
+
+on:
+    push:
+        branches: [main]
+    pull_request:
+        branches: [main]
+
+concurrency:
+    group: ci-${{ github.workflow }}-${{ github.ref }}
+    cancel-in-progress: true
+
+permissions:
+    contents: read
+
+jobs:
+    quality:
+        runs-on: ubuntu-latest
+        timeout-minutes: 15
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v7
+
+            - name: Setup monorepo
+              uses: ./.github/actions/setup-monorepo
+
+            - name: Check formatting
+              run: pnpm formats:check
+
+            - name: Typecheck
+              run: pnpm typecheck
+
+            - name: Test
+              run: pnpm test
+
+            - name: Apply database migrations
+              run: pnpm db:migrate
+
+    changeset-check:
+        if: >
+            github.event_name == 'pull_request' &&
+            github.head_ref != 'changeset-release/main' &&
+            github.actor != 'github-actions[bot]'
+        runs-on: ubuntu-latest
+        timeout-minutes: 10
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v7
+              with:
+                  fetch-depth: 0
+
+            - name: Setup monorepo
+              uses: ./.github/actions/setup-monorepo
+
+            - name: Require changeset for versioned package changes
+              run: pnpm release:status

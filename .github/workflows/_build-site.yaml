@@ -1,17 +1,37 @@
-name: Deploy DEV (GitHub Pages)
+name: Build site bundle
 
 on:
-    workflow_dispatch:
-    push:
-
-concurrency:
-    group: pages
-    cancel-in-progress: false
-
-permissions:
-    contents: read
-    pages: write
-    id-token: write
+    workflow_call:
+        inputs:
+            environment:
+                description: Target environment name (staging, production, etc.)
+                required: true
+                type: string
+            site_url:
+                description: Absolute site origin (e.g. https://staging.example.com). Empty until hosting is configured.
+                required: false
+                type: string
+                default: ''
+            portfolio_base:
+                description: URL base path for portfolio-site
+                required: false
+                type: string
+                default: /home
+            blog_base:
+                description: URL base path for blog-site
+                required: false
+                type: string
+                default: /blog
+            quiz_base:
+                description: URL base path for quiz-web-app
+                required: false
+                type: string
+                default: /quiz
+            artifact_retention_days:
+                description: Retention for the merged site-bundle artifact
+                required: false
+                type: number
+                default: 14
 
 env:
     DATABASE_PATH: ${{ github.workspace }}/database/output/content.db
@@ -30,20 +50,20 @@ jobs:
               env:
                   GITHUB_TOKEN: ${{ secrets.CONTENT_REPO_TOKEN }}
                   CONTENT_REPO_GIT_URL: https://github.com/paulAlexSerban/content--paulserban.eu.git
-              run: |
-                  pnpm start
+              run: pnpm start
 
             - name: Upload content DB
               uses: actions/upload-artifact@v7
               with:
-                  name: content-db
+                  name: content-db-${{ inputs.environment }}
                   path: database/output/content.db
                   if-no-files-found: error
                   retention-days: 1
+
             - name: Upload quiz data
               uses: actions/upload-artifact@v7
               with:
-                  name: quiz-data
+                  name: quiz-data-${{ inputs.environment }}
                   path: frontend/apps/quiz-web-app/public/data/
                   if-no-files-found: error
                   retention-days: 1
@@ -56,27 +76,23 @@ jobs:
             - uses: actions/checkout@v7
             - uses: ./.github/actions/setup-monorepo
 
-            - name: Configure Pages
-              id: pages
-              uses: actions/configure-pages@v4
-
             - name: Download content DB
               uses: actions/download-artifact@v8
               with:
-                  name: content-db
+                  name: content-db-${{ inputs.environment }}
                   path: database/output/
 
             - name: Build portfolio-site
               env:
-                  ASTRO_SITE: ${{ steps.pages.outputs.origin }}
-                  ASTRO_BASE: ${{ steps.pages.outputs.base_path }}/home
+                  ASTRO_SITE: ${{ inputs.site_url }}
+                  ASTRO_BASE: ${{ inputs.portfolio_base }}
                   DATABASE_PATH: ${{ github.workspace }}/database/output/content.db
               run: pnpm --filter @prj--personal-portfolio--v3/frontend--portfolio-site build
 
             - name: Upload portfolio artifact
               uses: actions/upload-artifact@v7
               with:
-                  name: portfolio-dist
+                  name: portfolio-dist-${{ inputs.environment }}
                   path: frontend/sites/portfolio-site/dist/
                   if-no-files-found: error
                   retention-days: 1
@@ -89,27 +105,23 @@ jobs:
             - uses: actions/checkout@v7
             - uses: ./.github/actions/setup-monorepo
 
-            - name: Configure Pages
-              id: pages
-              uses: actions/configure-pages@v4
-
             - name: Download content DB
               uses: actions/download-artifact@v8
               with:
-                  name: content-db
+                  name: content-db-${{ inputs.environment }}
                   path: database/output/
 
             - name: Build blog-site
               env:
-                  ASTRO_SITE: ${{ steps.pages.outputs.origin }}
-                  ASTRO_BASE: ${{ steps.pages.outputs.base_path }}/blog
+                  ASTRO_SITE: ${{ inputs.site_url }}
+                  ASTRO_BASE: ${{ inputs.blog_base }}
                   DATABASE_PATH: ${{ github.workspace }}/database/output/content.db
               run: pnpm --filter @prj--personal-portfolio--v3/frontend--blog-site build
 
             - name: Upload blog artifact
               uses: actions/upload-artifact@v7
               with:
-                  name: blog-dist
+                  name: blog-dist-${{ inputs.environment }}
                   path: frontend/sites/blog-site/dist/
                   if-no-files-found: error
                   retention-days: 1
@@ -122,25 +134,21 @@ jobs:
             - uses: actions/checkout@v7
             - uses: ./.github/actions/setup-monorepo
 
-            - name: Configure Pages
-              id: pages
-              uses: actions/configure-pages@v4
-
             - name: Download quiz data
               uses: actions/download-artifact@v8
               with:
-                  name: quiz-data
+                  name: quiz-data-${{ inputs.environment }}
                   path: frontend/apps/quiz-web-app/public/data/
 
             - name: Build quiz-web-app
               env:
-                  VITE_APP_BASE: ${{ steps.pages.outputs.base_path }}/quiz
+                  VITE_APP_BASE: ${{ inputs.quiz_base }}
               run: pnpm --filter @prj--personal-portfolio--v3/frontend--quiz-web-app build
 
             - name: Upload quiz artifact
               uses: actions/upload-artifact@v7
               with:
-                  name: quiz-dist
+                  name: quiz-dist-${{ inputs.environment }}
                   path: frontend/apps/quiz-web-app/dist/
                   if-no-files-found: error
                   retention-days: 1
@@ -150,40 +158,38 @@ jobs:
         runs-on: ubuntu-latest
         timeout-minutes: 10
         steps:
-            - name: Configure Pages
-              id: pages
-              uses: actions/configure-pages@v6
-
             - name: Download portfolio artifact
               uses: actions/download-artifact@v8
               with:
-                  name: portfolio-dist
+                  name: portfolio-dist-${{ inputs.environment }}
                   path: portfolio-dist/
 
             - name: Download blog artifact
-              uses: actions/download-artifact@v4
+              uses: actions/download-artifact@v8
               with:
-                  name: blog-dist
+                  name: blog-dist-${{ inputs.environment }}
                   path: blog-dist/
 
             - name: Download quiz artifact
               uses: actions/download-artifact@v8
               with:
-                  name: quiz-dist
+                  name: quiz-dist-${{ inputs.environment }}
                   path: quiz-dist/
 
             - name: Merge outputs and scaffold navigation
               env:
-                  REPO_BASE: ${{ steps.pages.outputs.base_path }}
+                  PORTFOLIO_BASE: ${{ inputs.portfolio_base }}
+                  BLOG_BASE: ${{ inputs.blog_base }}
+                  QUIZ_BASE: ${{ inputs.quiz_base }}
               run: |
                   mkdir -p _site/home _site/blog _site/quiz
                   cp -r portfolio-dist/. _site/home/
                   cp -r blog-dist/. _site/blog/
                   cp -r quiz-dist/. _site/quiz/
 
-                  # Root → /home redirect
-                  printf '<!DOCTYPE html><html><head><meta http-equiv="refresh" content="0;url=%s/home/"></head><body></body></html>\n' \
-                    "$REPO_BASE" > _site/index.html
+                  # Root → portfolio redirect
+                  printf '<!DOCTYPE html><html><head><meta http-equiv="refresh" content="0;url=%s/"></head><body></body></html>\n' \
+                    "$PORTFOLIO_BASE" > _site/index.html
 
                   # 404 router: quiz SPA deep-links, portfolio/blog styled 404 pages
                   cat > _site/404.html << EOF
@@ -192,30 +198,23 @@ jobs:
                     <head>
                       <script>
                         (function(){
-                          var l=window.location,b='$REPO_BASE',p=l.pathname;
-                          if(p.indexOf(b+'/quiz')===0){
-                            sessionStorage.setItem('spa:redirect',l.pathname+l.search);l.replace(b+'/quiz/');return;}
-                          if(p.indexOf(b+'/blog')===0){l.replace(b+'/blog/404.html');return;}
-                          if(p.indexOf(b+'/home')===0){l.replace(b+'/home/404.html');return;}
-                        l.replace(b+'/home/404.html');})();
+                          var l=window.location,p=l.pathname;
+                          var quiz='${QUIZ_BASE}',blog='${BLOG_BASE}',home='${PORTFOLIO_BASE}';
+                          if(p.indexOf(quiz)===0){
+                            sessionStorage.setItem('spa:redirect',l.pathname+l.search);l.replace(quiz+'/');return;}
+                          if(p.indexOf(blog)===0){l.replace(blog+'/404.html');return;}
+                          if(p.indexOf(home)===0){l.replace(home+'/404.html');return;}
+                        l.replace(home+'/404.html');})();
                       </script>
                     </head>
                     <body>Page not found.</body>
                   </html>
                   EOF
 
-            - name: Upload Pages artifact
-              uses: actions/upload-pages-artifact@v3
+            - name: Upload site bundle
+              uses: actions/upload-artifact@v7
               with:
+                  name: site-bundle
                   path: _site/
-
-    deploy:
-        needs: merge
-        runs-on: ubuntu-latest
-        environment:
-            name: github-pages
-            url: ${{ steps.deployment.outputs.page_url }}
-        steps:
-            - name: Deploy to GitHub Pages
-              id: deployment
-              uses: actions/deploy-pages@v4
+                  if-no-files-found: error
+                  retention-days: ${{ inputs.artifact_retention_days }}

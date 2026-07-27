@@ -15,6 +15,10 @@
         "formats:check": "pnpm prettier --check .",
         "formats:write": "pnpm prettier --write .",
         "prepare": "husky",
+        "release:add": "changeset",
+        "release:status": "changeset status --since=origin/main",
+        "release:version": "changeset version",
+        "release:tag": "changeset tag",
         "start:dry-run": "pnpm -r start:dry-run",
         "start": "pnpm -r start",
         "test": "pnpm -r test",
@@ -22,6 +26,7 @@
         "deps:graph": "pnpm-workspace-graph"
     },
     "devDependencies": {
+        "@changesets/cli": "^2.31.1",
         "@commitlint/cli": "^21.0.1",
         "@commitlint/config-conventional": "^21.0.1",
         "commitizen": "^4.3.1",

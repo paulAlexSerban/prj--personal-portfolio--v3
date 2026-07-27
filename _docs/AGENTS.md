@@ -47,7 +47,7 @@ content repo (MDX)  →  tools/content-sync  →  content/live/
 - **Content model**: MDX frontmatter → ingest pipeline → `content.db` → static HTML + JSON data exports.
 - **Tables / types**: `posts` (post, book-note, snippet), `projects`, `coursework`, `questions`, `cheat_sheets`, `learning_plans`, `profile`, `skills`, `tags` + `content_tags` / `question_tags` junctions.
 - **CMS contract**: rows with `locked: true` are CMS-owned; MDX ingest skips them (`sync_source: 'mdx'` for pipeline writes).
-- **Future surfaces**: headless CMS overrides, quiz widget on blog posts, mobile offline bundle, production AWS hosting (draft ADR).
+- **Future surfaces**: headless CMS overrides, quiz widget on blog posts, mobile offline bundle; production hosting TBD (ADR-010).
 
 ## Product scope (v0.1)
 
@@ -72,8 +72,9 @@ Feature-level PRDs live under `product/` (blog, portfolio, quiz widget/web/mobil
 | `adr-007--db-tooling.md`                  | Drizzle ORM for SQLite                         |
 | `adr-008--quiz-web-app-architecture.md`   | CSR React + static JSON + shared packages      |
 | `adr-009--spaced-repetition-scheduler.md` | SM-2 + FSRS-5, runtime-switchable              |
+| `adr-010--release-and-branching-strategy.md` | Trunk-based branching, Changesets SemVer, CI/CD promotion |
 
-Remaining `_drafts/` (database engine, CMS, CI/CD, hosting, caching, mobile wrapper) are proposals, not settled. The quiz-design drafts (`sr-engine`/`quiz-ui`/`storage`/`client-state`/`delivery-targets`) are **superseded by ADR-008/009** and now just point to the as-built docs.
+Remaining `_drafts/` (database engine, CMS, hosting, caching, mobile wrapper) are proposals, not settled. The quiz-design drafts (`sr-engine`/`quiz-ui`/`storage`/`client-state`/`delivery-targets`) are **superseded by ADR-008/009** and now just point to the as-built docs. The CI/CD draft is superseded for branching/release by ADR-010; hosting remains TBD.
 
 ## Key documents for agents
 
@@ -108,8 +109,9 @@ Remaining `_drafts/` (database engine, CMS, CI/CD, hosting, caching, mobile wrap
 | Branded 404 / error pages                                          | **Implemented** — portfolio, blog, quiz + GH Pages 404 router                       |
 | Local Docker + Traefik (HTTPS `*.paulserban.eu`)                   | **Implemented** — `infrastructure/local/` + root `local.base.Dockerfile`            |
 | DEV CI/CD (GitHub Pages)                                           | **Implemented** — `.github/workflows/deploy-dev.yaml`                               |
+| Quality CI + Changesets release / stage→prod pipelines             | **Implemented** — `ci.yaml`, `release.yaml`, `_build-site.yaml` (hosting stubbed)   |
 | CMS                                                                | Planned — see drafts and PRDs                                                       |
-| Production hosting / CI-CD (AWS S3 + CloudFront)                   | Planned — see `.cursor/plans/aws_s3_cloudfront_*` and hosting/CI drafts             |
+| Production hosting provider                                        | TBD — stage/prod deploy steps are placeholders (see ADR-010)                        |
 
 ## When editing docs
 
