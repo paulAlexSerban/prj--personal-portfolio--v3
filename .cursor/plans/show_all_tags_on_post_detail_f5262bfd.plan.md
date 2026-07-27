@@ -2,15 +2,15 @@
 name: Show all tags on post detail
 overview: Limit tags to 5 only on listing cards; show all tags on the individual post/snippet/book-note detail page, since both currently share the same `TagList.astro` component that hardcodes `slice(0, 5)`.
 todos:
-  - id: add-limit-prop
-    content: Add optional limit prop to TagList.astro (blog-site), default to showing all tags when omitted
-    status: completed
-  - id: update-postcard
-    content: Pass limit={5} from PostCard.astro to TagList so listing cards stay capped at 5
-    status: completed
-  - id: verify-detail
-    content: Verify HeroBanner/PostTemplate detail page now renders all tags with no limit
-    status: completed
+    - id: add-limit-prop
+      content: Add optional limit prop to TagList.astro (blog-site), default to showing all tags when omitted
+      status: completed
+    - id: update-postcard
+      content: Pass limit={5} from PostCard.astro to TagList so listing cards stay capped at 5
+      status: completed
+    - id: verify-detail
+      content: Verify HeroBanner/PostTemplate detail page now renders all tags with no limit
+      status: completed
 isProject: false
 ---
 
