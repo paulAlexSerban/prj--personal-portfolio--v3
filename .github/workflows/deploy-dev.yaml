@@ -3,6 +3,7 @@ name: Deploy DEV (GitHub Pages)
 on:
     workflow_dispatch:
     push:
+        branches: [main]
 
 concurrency:
     group: pages
