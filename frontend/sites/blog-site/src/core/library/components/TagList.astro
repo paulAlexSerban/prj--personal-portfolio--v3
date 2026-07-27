@@ -5,10 +5,11 @@ import { tagPath } from '@/lib/urls.ts';
 
 interface Props {
     tags: TagRow[];
+    limit?: number;
 }
 
-const { tags } = Astro.props;
-const slicedTags = tags.slice(0, 5);
+const { tags, limit } = Astro.props;
+const slicedTags = limit != null ? tags.slice(0, limit) : tags;
 ---
 
 {

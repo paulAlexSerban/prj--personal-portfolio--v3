@@ -1,0 +1,89 @@
+name: Release
+
+on:
+    push:
+        branches: [main]
+
+concurrency:
+    group: release-${{ github.workflow }}-${{ github.ref }}
+    cancel-in-progress: false
+
+permissions:
+    contents: write
+    pull-requests: write
+
+jobs:
+    version:
+        runs-on: ubuntu-latest
+        timeout-minutes: 15
+        outputs:
+            published: ${{ steps.changesets.outputs.published }}
+            publishedPackages: ${{ steps.changesets.outputs.publishedPackages }}
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v7
+              with:
+                  fetch-depth: 0
+
+            - name: Setup monorepo
+              uses: ./.github/actions/setup-monorepo
+
+            - name: Create Version Packages PR or tag release
+              id: changesets
+              uses: changesets/action@v1
+              with:
+                  publish: npx @changesets/cli tag
+                  commit: 'chore: version packages'
+                  title: 'chore: version packages'
+                  createGithubReleases: false
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    build-site:
+        needs: version
+        if: needs.version.outputs.published == 'true'
+        uses: ./.github/workflows/_build-site.yaml
+        with:
+            environment: staging
+            artifact_retention_days: 14
+        secrets: inherit
+
+    deploy-stage:
+        needs: build-site
+        runs-on: ubuntu-latest
+        timeout-minutes: 10
+        environment: staging
+        steps:
+            - name: Download site bundle
+              uses: actions/download-artifact@v8
+              with:
+                  name: site-bundle
+                  path: _site/
+
+            - name: Deploy (placeholder - hosting provider TBD)
+              run: |
+                  echo "Environment: staging"
+                  echo "No hosting provider selected yet."
+                  echo "Built site bundle is attached as workflow artifact: site-bundle"
+                  echo "Replace this step with the real deploy command once a provider is chosen."
+                  ls -la _site/
+
+    deploy-prod:
+        needs: deploy-stage
+        runs-on: ubuntu-latest
+        timeout-minutes: 10
+        environment: production
+        steps:
+            - name: Download site bundle
+              uses: actions/download-artifact@v8
+              with:
+                  name: site-bundle
+                  path: _site/
+
+            - name: Deploy (placeholder - hosting provider TBD)
+              run: |
+                  echo "Environment: production"
+                  echo "No hosting provider selected yet."
+                  echo "Promoting the same site-bundle artifact that was deployed to staging (no rebuild)."
+                  echo "Replace this step with the real deploy command once a provider is chosen."
+                  ls -la _site/
