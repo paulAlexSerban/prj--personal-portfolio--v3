@@ -232,6 +232,23 @@ export const learning_plans = sqliteTable('learning_plans', {
     updated_at: integer('updated_at', { mode: 'timestamp' }),
 });
 
+// ── News items (RSS aggregator) ───────────────────────────────────────────────
+export const news_items = sqliteTable('news_items', {
+    id: text('id').primaryKey(),
+    slug: text('slug').notNull().unique(), // deterministic hash of guid/link
+    guid: text('guid').notNull(),
+    title: text('title').notNull(),
+    link: text('link').notNull(),
+    source: text('source').notNull(), // feed display name
+    source_url: text('source_url').notNull(),
+    category: text('category').notNull(),
+    summary: text('summary'),
+    published_at: integer('published_at', { mode: 'timestamp' }),
+    fetched_at: integer('fetched_at', { mode: 'timestamp' }),
+    sync_source: text('sync_source').default('rss'),
+    locked: integer('locked', { mode: 'boolean' }).default(false),
+});
+
 // ── Inferred types ────────────────────────────────────────────────────────────
 export type TagRow = typeof tags.$inferSelect;
 export type NewTagRow = typeof tags.$inferInsert;
@@ -261,3 +278,5 @@ export type LearningPlanRow = typeof learning_plans.$inferSelect;
 export type NewLearningPlanRow = typeof learning_plans.$inferInsert;
 export type PageRow = typeof pages.$inferSelect;
 export type NewPageRow = typeof pages.$inferInsert;
+export type NewsItemRow = typeof news_items.$inferSelect;
+export type NewNewsItemRow = typeof news_items.$inferInsert;

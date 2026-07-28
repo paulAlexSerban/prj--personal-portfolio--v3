@@ -190,6 +190,14 @@ Required fields (missing → skipped with warning):
 
 ---
 
+## `@prj--personal-portfolio--v3/tools--news-sync` (`tools/news-sync/`)
+
+Fetches RSS/Atom feeds into `content/news/cache/*.json`. Runs from `.github/workflows/news-sync.yaml` daily (`pnpm --filter ...tools--news-sync sync`), **not** from root `pnpm start`.
+
+## `@prj--personal-portfolio--v3/tools--news-ingest` (`tools/news-ingest/`)
+
+Reads `content/news/cache/*.json` and upserts into `news_items`. Runs as part of root `pnpm start`. Prunes unlocked RSS rows absent from the latest cache.
+
 ## Agent notes
 
 - Keep pipeline steps as named tasks in `src/index.ts`; logic stays in `src/helpers/`.

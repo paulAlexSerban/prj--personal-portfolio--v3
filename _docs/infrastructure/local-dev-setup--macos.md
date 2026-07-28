@@ -1,12 +1,13 @@
 # Local development setup — macOS
 
-Run the portfolio site, blog site, and quiz web app behind Traefik on HTTPS with local domain names — no port numbers in the browser URL.
+Run the portfolio site, blog site, quiz web app, and news-feed site behind Traefik on HTTPS with local domain names — no port numbers in the browser URL.
 
 | Service | URL |
 | ------- | --- |
 | Portfolio | https://local.paulserban.eu |
 | Blog | https://local.blog.paulserban.eu |
 | Quiz | https://local.quiz.paulserban.eu |
+| News feed | https://local.news-feed.paulserban.eu |
 | Traefik dashboard | http://localhost:8080 |
 
 HTTP (port 80) redirects to HTTPS (port 443).
@@ -60,6 +61,7 @@ sudo tee -a /etc/hosts <<'EOF'
 127.0.0.1  local.paulserban.eu
 127.0.0.1  local.blog.paulserban.eu
 127.0.0.1  local.quiz.paulserban.eu
+127.0.0.1  local.news-feed.paulserban.eu
 EOF
 ```
 
@@ -78,7 +80,7 @@ From the monorepo root:
 ```bash
 mkcert -cert-file infrastructure/local/traefik/certs/local.pem \
        -key-file  infrastructure/local/traefik/certs/local-key.pem \
-       local.paulserban.eu local.blog.paulserban.eu local.quiz.paulserban.eu
+       local.paulserban.eu local.blog.paulserban.eu local.quiz.paulserban.eu local.news-feed.paulserban.eu
 ```
 
 Certificate files are gitignored; regenerate if you delete `infrastructure/local/traefik/certs/`.
@@ -138,6 +140,7 @@ docker compose -f infrastructure/local/docker-compose.local.yml up --build portf
 Browser ──► Traefik (:443, TLS) ──► portfolio (:4321)
               │                  ──► blog      (:4321)
               │                  ──► quiz      (:5180)
+              │                  ──► news      (:4321)
               └── HTTP :80 → HTTPS redirect
 ```
 
@@ -182,6 +185,7 @@ The dev servers allow custom hosts when run via Docker. Rebuild the affected con
 - App Dockerfiles (thin, inherit base):
   - [`frontend/sites/portfolio-site/local.Dockerfile`](../../frontend/sites/portfolio-site/local.Dockerfile)
   - [`frontend/sites/blog-site/local.Dockerfile`](../../frontend/sites/blog-site/local.Dockerfile)
+  - [`frontend/sites/news-feed-site/local.Dockerfile`](../../frontend/sites/news-feed-site/local.Dockerfile)
   - [`frontend/apps/quiz-web-app/local.Dockerfile`](../../frontend/apps/quiz-web-app/local.Dockerfile)
 
 Debian setup: [local-dev-setup--debian.md](./local-dev-setup--debian.md)

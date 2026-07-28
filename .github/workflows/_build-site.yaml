@@ -27,6 +27,11 @@ on:
                 required: false
                 type: string
                 default: /quiz
+            news_base:
+                description: URL base path for news-feed-site
+                required: false
+                type: string
+                default: /news
             artifact_retention_days:
                 description: Retention for the merged site-bundle artifact
                 required: false
@@ -153,8 +158,37 @@ jobs:
                   if-no-files-found: error
                   retention-days: 1
 
+    build-news:
+        needs: ingest-content
+        runs-on: ubuntu-latest
+        timeout-minutes: 20
+        steps:
+            - uses: actions/checkout@v7
+            - uses: ./.github/actions/setup-monorepo
+
+            - name: Download content DB
+              uses: actions/download-artifact@v8
+              with:
+                  name: content-db-${{ inputs.environment }}
+                  path: database/output/
+
+            - name: Build news-feed-site
+              env:
+                  ASTRO_SITE: ${{ inputs.site_url }}
+                  ASTRO_BASE: ${{ inputs.news_base }}
+                  DATABASE_PATH: ${{ github.workspace }}/database/output/content.db
+              run: pnpm --filter @prj--personal-portfolio--v3/frontend--news-feed-site build
+
+            - name: Upload news artifact
+              uses: actions/upload-artifact@v7
+              with:
+                  name: news-dist-${{ inputs.environment }}
+                  path: frontend/sites/news-feed-site/dist/
+                  if-no-files-found: error
+                  retention-days: 1
+
     merge:
-        needs: [build-portfolio, build-blog, build-quiz]
+        needs: [build-portfolio, build-blog, build-quiz, build-news]
         runs-on: ubuntu-latest
         timeout-minutes: 10
         steps:
@@ -176,22 +210,30 @@ jobs:
                   name: quiz-dist-${{ inputs.environment }}
                   path: quiz-dist/
 
+            - name: Download news artifact
+              uses: actions/download-artifact@v8
+              with:
+                  name: news-dist-${{ inputs.environment }}
+                  path: news-dist/
+
             - name: Merge outputs and scaffold navigation
               env:
                   PORTFOLIO_BASE: ${{ inputs.portfolio_base }}
                   BLOG_BASE: ${{ inputs.blog_base }}
                   QUIZ_BASE: ${{ inputs.quiz_base }}
+                  NEWS_BASE: ${{ inputs.news_base }}
               run: |
-                  mkdir -p _site/home _site/blog _site/quiz
+                  mkdir -p _site/home _site/blog _site/quiz _site/news
                   cp -r portfolio-dist/. _site/home/
                   cp -r blog-dist/. _site/blog/
                   cp -r quiz-dist/. _site/quiz/
+                  cp -r news-dist/. _site/news/
 
                   # Root → portfolio redirect
                   printf '<!DOCTYPE html><html><head><meta http-equiv="refresh" content="0;url=%s/"></head><body></body></html>\n' \
                     "$PORTFOLIO_BASE" > _site/index.html
 
-                  # 404 router: quiz SPA deep-links, portfolio/blog styled 404 pages
+                  # 404 router: quiz SPA deep-links, portfolio/blog/news styled 404 pages
                   cat > _site/404.html << EOF
                   <!DOCTYPE html>
                   <html>
@@ -199,10 +241,11 @@ jobs:
                       <script>
                         (function(){
                           var l=window.location,p=l.pathname;
-                          var quiz='${QUIZ_BASE}',blog='${BLOG_BASE}',home='${PORTFOLIO_BASE}';
+                          var quiz='${QUIZ_BASE}',blog='${BLOG_BASE}',home='${PORTFOLIO_BASE}',news='${NEWS_BASE}';
                           if(p.indexOf(quiz)===0){
                             sessionStorage.setItem('spa:redirect',l.pathname+l.search);l.replace(quiz+'/');return;}
                           if(p.indexOf(blog)===0){l.replace(blog+'/404.html');return;}
+                          if(p.indexOf(news)===0){l.replace(news+'/404.html');return;}
                           if(p.indexOf(home)===0){l.replace(home+'/404.html');return;}
                         l.replace(home+'/404.html');})();
                       </script>

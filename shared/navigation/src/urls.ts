@@ -1,6 +1,6 @@
 import type { SiteTab } from './types.ts';
 
-export type AppSegment = 'home' | 'blog' | 'quiz';
+export type AppSegment = 'home' | 'blog' | 'quiz' | 'news';
 
 export interface SiteUrlsConfig {
     appSegment: AppSegment;
@@ -9,6 +9,7 @@ export interface SiteUrlsConfig {
         portfolio: string;
         blog: string;
         quiz: string;
+        news: string;
     };
 }
 
@@ -16,6 +17,7 @@ export interface CrossAppUrls {
     portfolio: string;
     blog: string;
     quiz: string;
+    news: string;
 }
 
 function withTrailingSlash(url: string): string {
@@ -33,6 +35,7 @@ export function createSiteUrls(config: SiteUrlsConfig): CrossAppUrls {
             portfolio: `${repoBase}/home/`,
             blog: `${repoBase}/blog/`,
             quiz: `${repoBase}/quiz/`,
+            news: `${repoBase}/news/`,
         };
     }
 
@@ -40,6 +43,7 @@ export function createSiteUrls(config: SiteUrlsConfig): CrossAppUrls {
         portfolio: withTrailingSlash(config.production.portfolio),
         blog: withTrailingSlash(config.production.blog),
         quiz: withTrailingSlash(config.production.quiz),
+        news: withTrailingSlash(config.production.news),
     };
 }
 
@@ -75,5 +79,6 @@ export function buildSiteTabs(urls: CrossAppUrls): SiteTab[] {
         { id: 'portfolio', label: 'Portfolio', href: urls.portfolio },
         { id: 'blog', label: 'Blog', href: urls.blog },
         { id: 'quiz', label: 'Quiz', href: urls.quiz },
+        { id: 'news', label: 'News', href: urls.news },
     ];
 }

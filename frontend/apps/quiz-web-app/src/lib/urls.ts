@@ -9,12 +9,14 @@ const crossApp = createSiteUrls({
         portfolio: 'https://paulserban.eu',
         blog: 'https://blog.paulserban.eu',
         quiz: 'https://quiz.paulserban.eu',
+        news: 'https://news-feed.paulserban.eu',
     },
 });
 
 export const siteUrls = {
     portfolio: import.meta.env.VITE_PORTFOLIO_URL ?? crossApp.portfolio,
     blog: import.meta.env.VITE_BLOG_URL ?? crossApp.blog,
+    news: import.meta.env.VITE_NEWS_URL ?? crossApp.news,
 } as const;
 
 /** Canonical blog detail URL for a post, snippet, or book note. */

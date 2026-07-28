@@ -5,6 +5,7 @@ const production = {
     portfolio: 'https://paulserban.eu',
     blog: 'https://blog.paulserban.eu',
     quiz: 'https://quiz.paulserban.eu',
+    news: 'https://news-feed.paulserban.eu',
 };
 
 describe('createSiteUrls', () => {
@@ -17,6 +18,7 @@ describe('createSiteUrls', () => {
 
         expect(urls.blog).toBe('/prj/blog/');
         expect(urls.quiz).toBe('/prj/quiz/');
+        expect(urls.news).toBe('/prj/news/');
         expect(urls.portfolio).toBe('/prj/home/');
     });
 
@@ -30,6 +32,7 @@ describe('createSiteUrls', () => {
         expect(urls.portfolio).toBe('https://paulserban.eu/');
         expect(urls.blog).toBe('https://blog.paulserban.eu/');
         expect(urls.quiz).toBe('https://quiz.paulserban.eu/');
+        expect(urls.news).toBe('https://news-feed.paulserban.eu/');
     });
 });
 
@@ -43,17 +46,19 @@ describe('isNavLinkActive', () => {
 });
 
 describe('buildSiteTabs', () => {
-    it('returns all three site tabs with correct hrefs', () => {
+    it('returns all four site tabs with correct hrefs', () => {
         const tabs = buildSiteTabs({
             portfolio: '/home/',
             blog: '/blog/',
             quiz: '/quiz/',
+            news: '/news/',
         });
 
         expect(tabs).toEqual([
             { id: 'portfolio', label: 'Portfolio', href: '/home/' },
             { id: 'blog', label: 'Blog', href: '/blog/' },
             { id: 'quiz', label: 'Quiz', href: '/quiz/' },
+            { id: 'news', label: 'News', href: '/news/' },
         ]);
     });
 });

@@ -1,0 +1,43 @@
+name: News Sync (daily RSS fetch)
+
+on:
+    schedule:
+        - cron: '0 6 * * *'
+    workflow_dispatch:
+
+concurrency:
+    group: news-sync
+    cancel-in-progress: false
+
+permissions:
+    contents: write
+
+jobs:
+    sync:
+        runs-on: ubuntu-latest
+        timeout-minutes: 30
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v7
+              with:
+                  token: ${{ secrets.GITHUB_TOKEN }}
+
+            - name: Setup monorepo
+              uses: ./.github/actions/setup-monorepo
+
+            - name: Fetch RSS feeds into content/news/cache
+              env:
+                  NEWS_RETENTION_DAYS: '14'
+              run: pnpm --filter @prj--personal-portfolio--v3/tools--news-sync sync
+
+            - name: Commit cache if changed
+              run: |
+                  git config user.name "github-actions[bot]"
+                  git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+                  git add content/news/cache/
+                  if git diff --staged --quiet; then
+                    echo "No news cache changes."
+                    exit 0
+                  fi
+                  git commit -m "chore(news): update RSS cache"
+                  git push

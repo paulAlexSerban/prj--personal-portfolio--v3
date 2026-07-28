@@ -95,9 +95,10 @@ The quiz SPA uses a `404.html` + `sessionStorage` redirect so deep links survive
 
 ## URLs
 
-| URL Service                      | Service           |
-| -------------------------------- | ----------------- |
-| https://local.paulserban.eu      | Portfolio         |
-| https://local.blog.paulserban.eu | Blog              |
-| https://local.quiz.paulserban.eu | Quiz              |
-| http://localhost:8080            | Traefik dashboard |
+| URL Service                           | Service           |
+| ------------------------------------- | ----------------- |
+| https://local.paulserban.eu           | Portfolio         |
+| https://local.blog.paulserban.eu      | Blog              |
+| https://local.quiz.paulserban.eu      | Quiz              |
+| https://local.news-feed.paulserban.eu | News feed         |
+| http://localhost:8080                 | Traefik dashboard |

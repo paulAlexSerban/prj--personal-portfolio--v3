@@ -1,6 +1,6 @@
 # Personal Portfolio v3 — Monorepo
 
-TypeScript pnpm monorepo for a portfolio, blog, and flashcard-quiz platform (JAMStack / SSG).
+TypeScript pnpm monorepo for a portfolio, blog, flashcard-quiz, and news-feed platform (JAMStack / SSG).
 
 ## Architecture
 
@@ -9,7 +9,8 @@ TypeScript pnpm monorepo for a portfolio, blog, and flashcard-quiz platform (JAM
     1. `tools/content-sync` clones content
     2. `tools/mdx-ingest` parses MDX
     3. `tools/json-ingest` parses JSON
-    4. upserts into `database/output/content.db` (SQLite).
+    4. `tools/news-ingest` upserts RSS cache from `content/news/cache/` (fed by daily `tools/news-sync`)
+    5. upserts into `database/output/content.db` (SQLite).
 - **Build-time reads**: the frontend SSG (Astro) queries `content.db` at build time; MDX body is stored as text, compiled at build.
 - **Shared layer**: Drizzle schema (`shared/db-schema`), DB runtime (`shared/db`), and a dependency-aware task runner (`shared/task-manager`).
 - **Docs**: product requirements, ADRs, and implementation plans live in `_docs/`.
@@ -22,6 +23,7 @@ TypeScript pnpm monorepo for a portfolio, blog, and flashcard-quiz platform (JAM
 | `database/`             | SQLite file + Drizzle migration SQL — see `database/AGENTS.md`        |
 | `shared/`               | Reusable packages (schema, DB, task manager) — see `shared/AGENTS.md` |
 | `tools/`                | Content sync and MDX ingest CLIs — see `tools/AGENTS.md`              |
+| `frontend/sites/`       | Astro SSG sites (portfolio, blog, news-feed)                          |
 | `frontend/`, `backend/` | App surfaces (add `AGENTS.md` when those areas grow)                  |
 
 ## Common commands

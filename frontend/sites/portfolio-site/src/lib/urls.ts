@@ -15,6 +15,7 @@ const crossApp = createSiteUrls({
         portfolio: 'https://paulserban.eu',
         blog: 'https://blog.paulserban.eu',
         quiz: 'https://quiz.paulserban.eu',
+        news: 'https://news-feed.paulserban.eu',
     },
 });
 
@@ -27,6 +28,7 @@ export const siteUrls = {
     blog: import.meta.env.PUBLIC_BLOG_URL ?? crossApp.blog,
     blogPost: (slug: string) => `${(import.meta.env.PUBLIC_BLOG_URL ?? crossApp.blog).replace(/\/?$/, '/')}post/${slug}/`,
     quiz: import.meta.env.PUBLIC_QUIZ_URL ?? crossApp.quiz,
+    news: import.meta.env.PUBLIC_NEWS_URL ?? crossApp.news,
 } as const;
 
 export const assetUrl = (path: string) => sharedAssetUrl(base, path);

@@ -26,6 +26,7 @@ const siteTabs = buildSiteTabs({
   portfolio: siteUrls.portfolio,
   blog: siteUrls.blog,
   quiz: import.meta.env.BASE_URL,
+  news: siteUrls.news,
 });
 
 export function Masthead() {

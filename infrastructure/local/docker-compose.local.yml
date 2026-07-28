@@ -41,6 +41,7 @@ services:
             DATABASE_PATH: /app/database/output/content.db
             PUBLIC_BLOG_URL: https://local.blog.paulserban.eu/
             PUBLIC_QUIZ_URL: https://local.quiz.paulserban.eu/
+            PUBLIC_NEWS_URL: https://local.news-feed.paulserban.eu/
         volumes:
             - ../../database/output:/app/database/output
         networks:
@@ -69,6 +70,7 @@ services:
             DATABASE_PATH: /app/database/output/content.db
             PUBLIC_PORTFOLIO_URL: https://local.paulserban.eu/
             PUBLIC_QUIZ_URL: https://local.quiz.paulserban.eu/
+            PUBLIC_NEWS_URL: https://local.news-feed.paulserban.eu/
         volumes:
             - ../../database/output:/app/database/output
         networks:
@@ -95,6 +97,7 @@ services:
             VITE_HMR_PROTOCOL: wss
             VITE_PORTFOLIO_URL: https://local.paulserban.eu/
             VITE_BLOG_URL: https://local.blog.paulserban.eu/
+            VITE_NEWS_URL: https://local.news-feed.paulserban.eu/
         networks:
             - local
         labels:
@@ -104,6 +107,35 @@ services:
             - traefik.http.routers.quiz.entrypoints=websecure
             - traefik.http.routers.quiz.tls=true
             - traefik.http.services.quiz.loadbalancer.server.port=5180
+
+    news:
+        build:
+            context: ../..
+            dockerfile: frontend/sites/news-feed-site/local.Dockerfile
+            args:
+                LOCAL_BASE_IMAGE: prj-personal-portfolio-v3-local-base:latest
+        container_name: news-local
+        restart: unless-stopped
+        environment:
+            ASTRO_SITE: https://local.news-feed.paulserban.eu
+            ASTRO_HMR_HOST: local.news-feed.paulserban.eu
+            ASTRO_HMR_CLIENT_PORT: '443'
+            ASTRO_HMR_PROTOCOL: wss
+            DATABASE_PATH: /app/database/output/content.db
+            PUBLIC_PORTFOLIO_URL: https://local.paulserban.eu/
+            PUBLIC_BLOG_URL: https://local.blog.paulserban.eu/
+            PUBLIC_QUIZ_URL: https://local.quiz.paulserban.eu/
+        volumes:
+            - ../../database/output:/app/database/output
+        networks:
+            - local
+        labels:
+            - traefik.enable=true
+            - traefik.docker.network=paulserban-local
+            - traefik.http.routers.news.rule=Host(`local.news-feed.paulserban.eu`)
+            - traefik.http.routers.news.entrypoints=websecure
+            - traefik.http.routers.news.tls=true
+            - traefik.http.services.news.loadbalancer.server.port=4321
 
 networks:
     local:

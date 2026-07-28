@@ -4,7 +4,7 @@ export interface NavLink {
     active?: boolean;
 }
 
-export type SiteId = 'portfolio' | 'blog' | 'quiz';
+export type SiteId = 'portfolio' | 'blog' | 'quiz' | 'news';
 
 export interface SiteTab {
     id: SiteId;

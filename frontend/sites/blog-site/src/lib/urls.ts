@@ -17,6 +17,7 @@ const crossApp = createSiteUrls({
         portfolio: 'https://paulserban.eu',
         blog: 'https://blog.paulserban.eu',
         quiz: 'https://quiz.paulserban.eu',
+        news: 'https://news-feed.paulserban.eu',
     },
 });
 
@@ -28,6 +29,7 @@ export const siteUrls = {
     booknote: `${base}booknote/`,
     portfolio: import.meta.env.PUBLIC_PORTFOLIO_URL ?? crossApp.portfolio,
     quiz: import.meta.env.PUBLIC_QUIZ_URL ?? crossApp.quiz,
+    news: import.meta.env.PUBLIC_NEWS_URL ?? crossApp.news,
 } as const;
 
 const DETAIL_SEGMENT: Record<BlogContentType, string> = {
