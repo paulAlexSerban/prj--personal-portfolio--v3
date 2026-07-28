@@ -892,9 +892,6 @@ importers:
             '@prj--personal-portfolio--v3/tools--mdx-ingest':
                 specifier: workspace:*
                 version: link:../mdx-ingest
-            '@prj--personal-portfolio--v3/tools--news-sync':
-                specifier: workspace:*
-                version: link:../news-sync
             '@types/node':
                 specifier: ^25.9.1
                 version: 25.9.1

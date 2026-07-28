@@ -1,1007 +1,1007 @@
 {
-    "category": "programming",
-    "label": "Programming",
-    "fetchedAt": "2026-07-28T08:53:50.815Z",
-    "items": [
-        {
-            "slug": "13e3b548c70aa7407703ac05",
-            "guid": "https://hynek.me/talks/python-superpower/",
-            "title": "Python’s True Superpower",
-            "link": "https://hynek.me/talks/python-superpower/",
-            "source": "Hynek Schlawack",
-            "sourceUrl": "https://hynek.me/index.xml",
-            "summary": "Python appears to be everywhere nowadays! How did it happen, that a language that almost died in the Python 2 to 3 process is now the lingua franca a default choice when people talk about programming? There must be some secret superpower and I think I found it!",
-            "publishedAt": "2025-09-19T00:00:00.000Z"
-        },
-        {
-            "slug": "b3e73cd39d536b9f9c119756",
-            "guid": "https://scratchpad.blog/how-to-debug-rails-applications-and-tests-in-vs-code/",
-            "title": "How to Debug Rails Applications and Tests in VS Code",
-            "link": "https://scratchpad.blog/how-to-debug-rails-applications-and-tests-in-vs-code/",
-            "source": "ScratchPad",
-            "sourceUrl": "https://scratchpad.blog/feed.xml",
-            "summary": "Debugging is an essential yet often tedious task for software developers. While scattering print statements throughout your code is a common approach, using a proper debugger is far more efficient. For Ruby on Rails developers, VS Code offers robust debugging capabilities throug…",
-            "publishedAt": "2025-07-16T00:00:00.000Z"
-        },
-        {
-            "slug": "37d77c960cbb2c8efb668ae3",
-            "guid": "https://scratchpad.blog/effortless-sqlite-backups-for-rails-with-litestream/",
-            "title": "Effortless SQLite Backups for Rails with Litestream",
-            "link": "https://scratchpad.blog/effortless-sqlite-backups-for-rails-with-litestream/",
-            "source": "ScratchPad",
-            "sourceUrl": "https://scratchpad.blog/feed.xml",
-            "summary": "SQLite has experienced a remarkable renaissance in recent years, particularly in the Rails community. Since Rails 8, it is the default database for newly generated Rails applications. With its simplicity, performance, and zero-configuration setup, SQLite has become an attractive…",
-            "publishedAt": "2025-06-26T00:00:00.000Z"
-        },
-        {
-            "slug": "f988f9810e51519b5eaec079",
-            "guid": "https://scratchpad.blog/devops/howto/securely-authenticating-to-aws-from-github-actions-workflows/",
-            "title": "Securely Authenticating to AWS from GitHub Actions Workflows",
-            "link": "https://scratchpad.blog/devops/howto/securely-authenticating-to-aws-from-github-actions-workflows/",
-            "source": "ScratchPad",
-            "sourceUrl": "https://scratchpad.blog/feed.xml",
-            "summary": "GitHub Actions Workflows have become the go-to solution for running CI/CD workflows for projects hosted on GitHub. Its seamless integration with GitHub repositories makes it a natural choice for automating tasks like building, testing, and deploying applications. For Developers …",
-            "publishedAt": "2025-06-06T00:00:00.000Z"
-        },
-        {
-            "slug": "9561714819c8be0544ac35a1",
-            "guid": "https://hynek.me/talks/design-pressure/",
-            "title": "Design Pressure",
-            "link": "https://hynek.me/talks/design-pressure/",
-            "source": "Hynek Schlawack",
-            "sourceUrl": "https://hynek.me/index.xml",
-            "summary": "Ever had this weird gut feeling that something is off in your code, but couldn’t put the finger on why? Are you starting your projects with the best intentions, following all best practices, and still feel like your architecture turns weird eventually?",
-            "publishedAt": "2025-05-16T00:00:00.000Z"
-        },
-        {
-            "slug": "71749659f370dfbcdce53300",
-            "guid": "https://hynek.me/articles/docker-virtualenv/",
-            "title": "Why I Still Use Python Virtual Environments in Docker",
-            "link": "https://hynek.me/articles/docker-virtualenv/",
-            "source": "Hynek Schlawack",
-            "sourceUrl": "https://hynek.me/index.xml",
-            "summary": "Whenever I publish something about my Python Docker workflows, I invariably get challenged about whether it makes sense to use virtual environments in Docker containers. As always, it’s a trade-off, and I err on the side of standards and predictability.",
-            "publishedAt": "2024-09-02T11:00:00.000Z"
-        },
-        {
-            "slug": "2d58b1aca95dfc29cddc6b78",
-            "guid": "https://hynek.me/articles/docker-uv/",
-            "title": "Production-ready Python Docker Containers with uv",
-            "link": "https://hynek.me/articles/docker-uv/",
-            "source": "Hynek Schlawack",
-            "sourceUrl": "https://hynek.me/index.xml",
-            "summary": "Starting with 0.3.0 , Astral’s uv brought many great features, including support for cross-platform lock files uv.lock . Together with subsequent fixes, it has become Python’s finest workflow tool for my (non-scientific) use cases. Here’s how I build production-ready containers,…",
-            "publishedAt": "2024-08-28T11:00:00.000Z"
-        },
-        {
-            "slug": "02c0dddd265fe203b693bc74",
-            "guid": "https://vadimkravcenko.com/?p=2821",
-            "title": "What I learned building a $1K MRR SaaS in 6 weeks",
-            "link": "https://vadimkravcenko.com/shorts/building-1k-saas-in-6-weeks/",
-            "source": "Vadim Kravcenko",
-            "sourceUrl": "https://vadimkravcenko.com/feed/",
-            "summary": "Question: Answer: The post What I learned building a $1K MRR SaaS in 6 weeks appeared first on Vadim Kravcenko.",
-            "publishedAt": "2024-07-09T14:06:46.000Z"
-        },
-        {
-            "slug": "71288887da84813c398cf602",
-            "guid": "https://vadimkravcenko.com/?p=2798",
-            "title": "Stand Out and Dare to Disagree",
-            "link": "https://vadimkravcenko.com/shorts/stand-out-and-dare-to-disagree/",
-            "source": "Vadim Kravcenko",
-            "sourceUrl": "https://vadimkravcenko.com/feed/",
-            "summary": "Question: Answer: The post Stand Out and Dare to Disagree appeared first on Vadim Kravcenko.",
-            "publishedAt": "2024-05-16T10:19:36.000Z"
-        },
-        {
-            "slug": "9d14dd8899bd7f9b225029a7",
-            "guid": "https://vadimkravcenko.com/?p=2765",
-            "title": "I’m sorry",
-            "link": "https://vadimkravcenko.com/shorts/building-a-tool-again/",
-            "source": "Vadim Kravcenko",
-            "sourceUrl": "https://vadimkravcenko.com/feed/",
-            "summary": "Question: Answer: The post I’m sorry appeared first on Vadim Kravcenko.",
-            "publishedAt": "2024-05-09T10:47:32.000Z"
-        },
-        {
-            "slug": "87e37a4cd49845b82d0cdd4d",
-            "guid": "https://vadimkravcenko.com/?p=2712",
-            "title": "Valueless CTO: High Salary, No Return",
-            "link": "https://vadimkravcenko.com/shorts/cto-value-high-salary-no-return/",
-            "source": "Vadim Kravcenko",
-            "sourceUrl": "https://vadimkravcenko.com/feed/",
-            "summary": "Question: Answer: The post Valueless CTO: High Salary, No Return appeared first on Vadim Kravcenko.",
-            "publishedAt": "2024-04-30T09:37:08.000Z"
-        },
-        {
-            "slug": "ed60b99d5f26e73492d84161",
-            "guid": "https://vadimkravcenko.com/?p=2699",
-            "title": "How much a CTO makes and where can I find CTO Jobs?",
-            "link": "https://vadimkravcenko.com/qa/cto-salary-find-cto-jobs/",
-            "source": "Vadim Kravcenko",
-            "sourceUrl": "https://vadimkravcenko.com/feed/",
-            "summary": "Question: Here's the thing, I’m kind of stuck trying to figure out what a CTO actually makes in terms of $$$, most of the people in the field are secretive about how much they're getting. It's not just about the money (okay, it's a bit about the money), but also understanding if…",
-            "publishedAt": "2024-04-27T17:28:28.000Z"
-        },
-        {
-            "slug": "3c75648a9b0c49961ee6632a",
-            "guid": "https://vadimkravcenko.com/?p=2691",
-            "title": "How to become a CTO?",
-            "link": "https://vadimkravcenko.com/qa/how-to-become-a-cto-career-path/",
-            "source": "Vadim Kravcenko",
-            "sourceUrl": "https://vadimkravcenko.com/feed/",
-            "summary": "Question: Hey Vadim, Long-time reader, enjoy your content a lot. I've been a software engineer for about seven years now, doing mostly web development and taking over ownership of different modules step by step, expanding my people skills so to speak. Lately, I've been doing som…",
-            "publishedAt": "2024-04-27T16:59:37.000Z"
-        },
-        {
-            "slug": "05d065a33a53eda3dfcda75d",
-            "guid": "https://vadimkravcenko.com/?p=2661",
-            "title": "10x Engineers",
-            "link": "https://vadimkravcenko.com/shorts/10x-engineers/",
-            "source": "Vadim Kravcenko",
-            "sourceUrl": "https://vadimkravcenko.com/feed/",
-            "summary": "Question: Answer: The post 10x Engineers appeared first on Vadim Kravcenko.",
-            "publishedAt": "2024-04-20T14:44:52.000Z"
-        },
-        {
-            "slug": "adf22c18515cccd4395f2fc8",
-            "guid": "https://vadimkravcenko.com/?p=2627",
-            "title": "How can you tell if you’re a good developer?",
-            "link": "https://vadimkravcenko.com/qa/how-can-you-tell-good-developer/",
-            "source": "Vadim Kravcenko",
-            "sourceUrl": "https://vadimkravcenko.com/feed/",
-            "summary": "Question: Hey Vadim, So, I've been coding for money for about 5 years now. I've jumped around a lot — Java, Javascript, Python, NodeJS — you name it. The job market's been great, making it super easy for me to switch between gigs. I've done both full-time and contract work acros…",
-            "publishedAt": "2024-04-06T12:53:56.000Z"
-        },
-        {
-            "slug": "d57ac718ad942ff59ba593a8",
-            "guid": "https://vadimkravcenko.com/?p=2620",
-            "title": "I’m finishing university, scared about future career prospects",
-            "link": "https://vadimkravcenko.com/qa/finishing-university-scared-about-future-career-prospects/",
-            "source": "Vadim Kravcenko",
-            "sourceUrl": "https://vadimkravcenko.com/feed/",
-            "summary": "Question: Hey, my name's Kalesh, I'm 22 and about to finish my bachelor's in August. Planning to be a software engineer. But, I keep hearing the job market's tough. Been reading online that lots of devs are struggling to find steady gigs. Is your company looking for any devs? Wh…",
-            "publishedAt": "2024-04-06T12:05:10.000Z"
-        },
-        {
-            "slug": "26bec7b3160e4dd87bd2be70",
-            "guid": "https://vadimkravcenko.com/?p=2612",
-            "title": "I have a very poor work-life balance. How can I escape the grind?",
-            "link": "https://vadimkravcenko.com/qa/poor-work-life-balance-escape-the-grind/",
-            "source": "Vadim Kravcenko",
-            "sourceUrl": "https://vadimkravcenko.com/feed/",
-            "summary": "Question: Hey Vadim, Here's the situation: from the moment my alarm clock interrupts my sleep, until I finally come home late at night, my life is essentially a never-ending cycle of sitting in front of the PC and stressing with a workload that feels like it's set to max. I feel…",
-            "publishedAt": "2024-04-06T11:39:01.000Z"
-        },
-        {
-            "slug": "47228de8f313d265427dfdd9",
-            "guid": "https://hynek.me/articles/python-virtualenv-redux/",
-            "title": "Python Project-Local Virtualenv Management Redux",
-            "link": "https://hynek.me/articles/python-virtualenv-redux/",
-            "source": "Hynek Schlawack",
-            "sourceUrl": "https://hynek.me/index.xml",
-            "summary": "One of my first TIL entries was about how you can imitate Node’s node_modules semantics in Python on UNIX-like operating systems. A lot has happened since then (to the better!) and it’s time for an update. direnv still rocks, though.",
-            "publishedAt": "2024-04-02T00:00:00.000Z"
-        },
-        {
-            "slug": "2b155dd1945ec36a2a7b9e4d",
-            "guid": "https://vadimkravcenko.com/?p=2587",
-            "title": "Mental Health in Software Engineering",
-            "link": "https://vadimkravcenko.com/shorts/mental-health-in-software-engineering/",
-            "source": "Vadim Kravcenko",
-            "sourceUrl": "https://vadimkravcenko.com/feed/",
-            "summary": "Question: Answer: The post Mental Health in Software Engineering appeared first on Vadim Kravcenko.",
-            "publishedAt": "2024-03-31T20:20:38.000Z"
-        },
-        {
-            "slug": "c5ba22c11eea7c6a3b56959b",
-            "guid": "https://vadimkravcenko.com/?p=2483",
-            "title": "Why software projects fail",
-            "link": "https://vadimkravcenko.com/shorts/why-software-projects-fail/",
-            "source": "Vadim Kravcenko",
-            "sourceUrl": "https://vadimkravcenko.com/feed/",
-            "summary": "Question: Answer: The post Why software projects fail appeared first on Vadim Kravcenko.",
-            "publishedAt": "2024-03-14T16:13:51.000Z"
-        },
-        {
-            "slug": "bab7168e2296b615b3880b7c",
-            "guid": "https://vadimkravcenko.com/?p=2459",
-            "title": "What is your unethical CS career’s advice?",
-            "link": "https://vadimkravcenko.com/qa/whats-your-unethical-cs-careers-advice/",
-            "source": "Vadim Kravcenko",
-            "sourceUrl": "https://vadimkravcenko.com/feed/",
-            "summary": "Question: Hey Vadim, I’m starting to question a lot of the conventional wisdom handed down to us about climbing the tech ladder. You know, the whole \"work hard, play fair, and success will come\" spiel. I’m not so sure anymore. It feels slow, I'm looking for shortcuts maybe? e.g.…",
-            "publishedAt": "2024-02-25T16:46:46.000Z"
-        },
-        {
-            "slug": "ea835aec274378d19ee7c449",
-            "guid": "https://vadimkravcenko.com/?p=2451",
-            "title": "My coworker rewrote all my code, what should I do?",
-            "link": "https://vadimkravcenko.com/qa/my-coworker-rewrote-all-my-code-what-should-i-do/",
-            "source": "Vadim Kravcenko",
-            "sourceUrl": "https://vadimkravcenko.com/feed/",
-            "summary": "Question: Hello Vadim, I'm reaching out to you for some advice, as something weird happened, and I'm not sure how to react. Here are the key points For the past six months, I've been working in my role as a Python Backend Developer, diligently maintaining and extending the Pytho…",
-            "publishedAt": "2024-02-24T19:05:07.000Z"
-        },
-        {
-            "slug": "0b71aee6c83ee8c06faa199a",
-            "guid": "https://vadimkravcenko.com/?p=2423",
-            "title": "Falsehoods Junior Developers believe about becoming Senior",
-            "link": "https://vadimkravcenko.com/shorts/falsehoods-junior-developers-believe-about-becoming-senior/",
-            "source": "Vadim Kravcenko",
-            "sourceUrl": "https://vadimkravcenko.com/feed/",
-            "summary": "Question: Answer: The post Falsehoods Junior Developers believe about becoming Senior appeared first on Vadim Kravcenko.",
-            "publishedAt": "2024-02-20T21:23:21.000Z"
-        },
-        {
-            "slug": "731d7101a8ac691cb26f078b",
-            "guid": "https://vadimkravcenko.com/?p=2403",
-            "title": "How do you know when to use which programming language?",
-            "link": "https://vadimkravcenko.com/qa/how-you-know-when-to-use-what-programming-language/",
-            "source": "Vadim Kravcenko",
-            "sourceUrl": "https://vadimkravcenko.com/feed/",
-            "summary": "Question: Hi, My name is Alex. I just graduated university, I'm confused, how do I choose a programming language for a job? Does it matter? Will I be assigned a programming language? Thanks for the help. Answer: The post How do you know when to use which programming language? ap…",
-            "publishedAt": "2024-02-11T18:32:45.000Z"
-        },
-        {
-            "slug": "36b0ff45f91271ad4591bd77",
-            "guid": "https://vadimkravcenko.com/?p=2400",
-            "title": "How to get programming experience when you can’t find a job?",
-            "link": "https://vadimkravcenko.com/qa/how-to-get-programming-experience-when-you-cant-find-a-job/",
-            "source": "Vadim Kravcenko",
-            "sourceUrl": "https://vadimkravcenko.com/feed/",
-            "summary": "Question: Hello Vadim, It's been almost a year since I graduated as a CS major and was high on enthusiasm, ready to dive into the tech industry. Yet, here I am, feeling like shit, like I've hit a wall, my initial excitement replaced with a growing sense of frustration and, if I'…",
-            "publishedAt": "2024-02-11T17:25:06.000Z"
-        },
-        {
-            "slug": "5865df6069d20b878065d945",
-            "guid": "https://vadimkravcenko.com/?p=2384",
-            "title": "Do some people just not have the talent for Software Engineering?",
-            "link": "https://vadimkravcenko.com/qa/some-people-just-not-have-the-talent-for-software-engineering/",
-            "source": "Vadim Kravcenko",
-            "sourceUrl": "https://vadimkravcenko.com/feed/",
-            "summary": "Question: Hi, I wanted to share my story and why I'm a bit confused. After graduating college, I landed jobs as a Software Engineer at two respected companies. No, they weren't FAANG, but they were places where I thought I could grow, contribute, and make a decent amount of mone…",
-            "publishedAt": "2024-02-09T22:55:49.000Z"
-        },
-        {
-            "slug": "bdd7516bbe76478cdb6071a4",
-            "guid": "https://vadimkravcenko.com/?p=2374",
-            "title": "How to learn coding without a degree?",
-            "link": "https://vadimkravcenko.com/qa/learn-coding-without-a-degree/",
-            "source": "Vadim Kravcenko",
-            "sourceUrl": "https://vadimkravcenko.com/feed/",
-            "summary": "Question: Hey Vadim, I'm kinda lost. My background is in sales, but to be honest, I find myself disconnected from it. Not having fun, not enjoying it, don't like people as much. Science/Math was never on my radar until recently, all my friends make so much money working in IT, a…",
-            "publishedAt": "2024-02-09T19:41:28.000Z"
-        },
-        {
-            "slug": "045c91b11559b46958ba2cc5",
-            "guid": "https://vadimkravcenko.com/?p=2357",
-            "title": "What to expect from the dev agency after MVP is done?",
-            "link": "https://vadimkravcenko.com/qa/what-expect-from-dev-agency-after-mvp/",
-            "source": "Vadim Kravcenko",
-            "sourceUrl": "https://vadimkravcenko.com/feed/",
-            "summary": "Question: Hello Vadim, I'm standing at a crossroads, we've just wrapped up the development of our mobile app MVP with an external software development company (quite successfully I might add), and I'm now facing a barrage of questions that keep me up at night, more so than my th…",
-            "publishedAt": "2024-02-08T20:48:55.000Z"
-        },
-        {
-            "slug": "db3daadcbb031d041ef7172f",
-            "guid": "https://vadimkravcenko.com/?p=2349",
-            "title": "How to better handle stress in a startup?",
-            "link": "https://vadimkravcenko.com/qa/how-to-better-handle-stress-in-a-startup/",
-            "source": "Vadim Kravcenko",
-            "sourceUrl": "https://vadimkravcenko.com/feed/",
-            "summary": "Question: Hey Vadim, Thanks a lot for the articles, they help a lot. I've been on a pretty wild journey these past few years, and I find myself at a crossroads, looking for some guidance. A few years back, I managed to secure a spot in the top university of my country in Softwar…",
-            "publishedAt": "2024-02-08T20:12:41.000Z"
-        },
-        {
-            "slug": "91dcd7c77c6f05a73b34ddf2",
-            "guid": "https://vadimkravcenko.com/?p=2317",
-            "title": "Startup Infrastructure: Scaling from Zero to Enterprise",
-            "link": "https://vadimkravcenko.com/shorts/infrastructure-from-zero-to-enterprise/",
-            "source": "Vadim Kravcenko",
-            "sourceUrl": "https://vadimkravcenko.com/feed/",
-            "summary": "Question: Answer: The post Startup Infrastructure: Scaling from Zero to Enterprise appeared first on Vadim Kravcenko.",
-            "publishedAt": "2024-02-03T18:16:38.000Z"
-        },
-        {
-            "slug": "6fff857cb5ec350874505108",
-            "guid": "https://vadimkravcenko.com/?p=2260",
-            "title": "Healthy Code Reviews",
-            "link": "https://vadimkravcenko.com/shorts/code-reviews/",
-            "source": "Vadim Kravcenko",
-            "sourceUrl": "https://vadimkravcenko.com/feed/",
-            "summary": "Question: Answer: The post Healthy Code Reviews appeared first on Vadim Kravcenko.",
-            "publishedAt": "2024-01-14T12:30:40.000Z"
-        },
-        {
-            "slug": "c5a38b80770343928a26d205",
-            "guid": "https://vadimkravcenko.com/?p=2209",
-            "title": "Security at Startup",
-            "link": "https://vadimkravcenko.com/shorts/security-at-startup/",
-            "source": "Vadim Kravcenko",
-            "sourceUrl": "https://vadimkravcenko.com/feed/",
-            "summary": "Question: Answer: The post Security at Startup appeared first on Vadim Kravcenko.",
-            "publishedAt": "2023-12-24T11:54:25.000Z"
-        },
-        {
-            "slug": "d0df05f9235456c1f08f292c",
-            "guid": "https://hynek.me/articles/pull-requests-branch/",
-            "title": "Don’t Start Pull Requests from Your Main Branch",
-            "link": "https://hynek.me/articles/pull-requests-branch/",
-            "source": "Hynek Schlawack",
-            "sourceUrl": "https://hynek.me/index.xml",
-            "summary": "When contributing to other users’ repositories, always start a new branch in your fork.",
-            "publishedAt": "2023-12-21T05:00:00.000Z"
-        },
-        {
-            "slug": "33cd22ab4e697c3925a5d79d",
-            "guid": "https://vadimkravcenko.com/?p=2177",
-            "title": "Handling Process Debt in IT",
-            "link": "https://vadimkravcenko.com/shorts/process-debt/",
-            "source": "Vadim Kravcenko",
-            "sourceUrl": "https://vadimkravcenko.com/feed/",
-            "summary": "Question: Answer: The post Handling Process Debt in IT appeared first on Vadim Kravcenko.",
-            "publishedAt": "2023-12-10T16:25:34.000Z"
-        },
-        {
-            "slug": "d9bfa290be6954fc27c480a9",
-            "guid": "https://vadimkravcenko.com/?p=425",
-            "title": "How to determine app idea is technically feasible as a non-technical founder?",
-            "link": "https://vadimkravcenko.com/qa/determine-idea-technically-feasible/",
-            "source": "Vadim Kravcenko",
-            "sourceUrl": "https://vadimkravcenko.com/feed/",
-            "summary": "Question: I'm a non-technical founder with a concept for a productivity app that sets screen time limits and rewards users for staying below these limits. However, I'm struggling to determine if this idea is technically feasible, especially considering the data access restrictio…",
-            "publishedAt": "2023-11-26T12:46:50.000Z"
-        },
-        {
-            "slug": "6a87fca998e3a977d8c17cec",
-            "guid": "https://vadimkravcenko.com/?p=2104",
-            "title": "Postmortems in Software Development",
-            "link": "https://vadimkravcenko.com/shorts/dealing-with-failures-and-postmortems/",
-            "source": "Vadim Kravcenko",
-            "sourceUrl": "https://vadimkravcenko.com/feed/",
-            "summary": "Question: Answer: The post Postmortems in Software Development appeared first on Vadim Kravcenko.",
-            "publishedAt": "2023-11-22T19:40:42.000Z"
-        },
-        {
-            "slug": "75233df228549cae9b15346c",
-            "guid": "https://vadimkravcenko.com/?p=255",
-            "title": "Every software is messy and has skeletons",
-            "link": "https://vadimkravcenko.com/shorts/every-app-has-its-skeletons/",
-            "source": "Vadim Kravcenko",
-            "sourceUrl": "https://vadimkravcenko.com/feed/",
-            "summary": "Question: Answer: The post Every software is messy and has skeletons appeared first on Vadim Kravcenko.",
-            "publishedAt": "2023-11-18T12:37:12.000Z"
-        },
-        {
-            "slug": "e8f981db90e8852c60c1b210",
-            "guid": "https://vadimkravcenko.com/?p=1973",
-            "title": "Habits of great software engineers",
-            "link": "https://vadimkravcenko.com/shorts/habits-of-great-software-engineers/",
-            "source": "Vadim Kravcenko",
-            "sourceUrl": "https://vadimkravcenko.com/feed/",
-            "summary": "Question: Answer: The post Habits of great software engineers appeared first on Vadim Kravcenko.",
-            "publishedAt": "2023-11-04T11:08:19.000Z"
-        },
-        {
-            "slug": "ede0b4f7a0069b13421c1891",
-            "guid": "https://vadimkravcenko.com/?p=1513",
-            "title": "Networking as an introvert CTO",
-            "link": "https://vadimkravcenko.com/shorts/networking-introvert-cto/",
-            "source": "Vadim Kravcenko",
-            "sourceUrl": "https://vadimkravcenko.com/feed/",
-            "summary": "Question: Answer: The post Networking as an introvert CTO appeared first on Vadim Kravcenko.",
-            "publishedAt": "2023-10-19T14:52:15.000Z"
-        },
-        {
-            "slug": "1340b8486397e1e2f2d52b96",
-            "guid": "https://vadimkravcenko.com/?p=1874",
-            "title": "Database Migrations",
-            "link": "https://vadimkravcenko.com/shorts/database-migrations/",
-            "source": "Vadim Kravcenko",
-            "sourceUrl": "https://vadimkravcenko.com/feed/",
-            "summary": "Question: Answer: The post Database Migrations appeared first on Vadim Kravcenko.",
-            "publishedAt": "2023-10-01T10:03:54.000Z"
-        },
-        {
-            "slug": "4ca463332de885ec92cd869b",
-            "guid": "https://vadimkravcenko.com/?p=1851",
-            "title": "Asking questions the right way",
-            "link": "https://vadimkravcenko.com/shorts/asking-right-questions/",
-            "source": "Vadim Kravcenko",
-            "sourceUrl": "https://vadimkravcenko.com/feed/",
-            "summary": "Question: Answer: The post Asking questions the right way appeared first on Vadim Kravcenko.",
-            "publishedAt": "2023-09-14T06:40:20.000Z"
-        },
-        {
-            "slug": "893c806c501f7b65d069204c",
-            "guid": "https://vadimkravcenko.com/?p=1827",
-            "title": "Aging Code",
-            "link": "https://vadimkravcenko.com/shorts/aging-code/",
-            "source": "Vadim Kravcenko",
-            "sourceUrl": "https://vadimkravcenko.com/feed/",
-            "summary": "Question: Answer: The post Aging Code appeared first on Vadim Kravcenko.",
-            "publishedAt": "2023-09-05T18:26:44.000Z"
-        },
-        {
-            "slug": "91a0e1609d05f7a022e83772",
-            "guid": "https://vadimkravcenko.com/?p=1764",
-            "title": "Managing difficult software engineers",
-            "link": "https://vadimkravcenko.com/shorts/managing-bad-engineers/",
-            "source": "Vadim Kravcenko",
-            "sourceUrl": "https://vadimkravcenko.com/feed/",
-            "summary": "Question: Answer: The post Managing difficult software engineers appeared first on Vadim Kravcenko.",
-            "publishedAt": "2023-08-14T12:22:09.000Z"
-        },
-        {
-            "slug": "27fb1fbbbb24d0da30f75b84",
-            "guid": "https://vadimkravcenko.com/?p=1706",
-            "title": "Can an offshore dev agency steal your code?",
-            "link": "https://vadimkravcenko.com/qa/can-offshore-dev-agency-steal-code/",
-            "source": "Vadim Kravcenko",
-            "sourceUrl": "https://vadimkravcenko.com/feed/",
-            "summary": "Question: hey Vadim, I'm a CTO at a newly created startup and we're looking to outsource development to an offshore dev agency. I understand the importance of the intellectual property. It's my first time working with an offshore outsourcing company, and I have some concerns abo…",
-            "publishedAt": "2023-08-13T15:20:29.000Z"
-        },
-        {
-            "slug": "e5c451208e8efd17615c28aa",
-            "guid": "https://vadimkravcenko.com/?p=1718",
-            "title": "Is development the right career for me?",
-            "link": "https://vadimkravcenko.com/qa/development-right-career/",
-            "source": "Vadim Kravcenko",
-            "sourceUrl": "https://vadimkravcenko.com/feed/",
-            "summary": "Question: Recently, during a work review with my boss, I was confronted with a question that's been lingering in my mind for a few years: \"Is software development truly the right career for me?\" While I've always delivered my tasks on time and met expectations, my boss noticed m…",
-            "publishedAt": "2023-08-13T13:41:53.000Z"
-        },
-        {
-            "slug": "1f4dddb630f34b0c2f436086",
-            "guid": "https://vadimkravcenko.com/?p=1716",
-            "title": "Is coding bootcamp better than university?",
-            "link": "https://vadimkravcenko.com/qa/coding-bootcamp-better-university/",
-            "source": "Vadim Kravcenko",
-            "sourceUrl": "https://vadimkravcenko.com/feed/",
-            "summary": "Question: Hi Vadim, I'm 20 and want to become a software engineer, I'm at a crossroads in deciding the best educational path to take. I've heard a lot about coding bootcamps from some of my friends and their promise of teaching practical skills from the get-go in 90 days. On the…",
-            "publishedAt": "2023-08-13T13:41:24.000Z"
-        },
-        {
-            "slug": "80cf256ef74e91ba9f831f3d",
-            "guid": "https://vadimkravcenko.com/?p=1682",
-            "title": "As a non-technical founder what should I be doing while the product is developed?",
-            "link": "https://vadimkravcenko.com/qa/non-technical-founder-during-development/",
-            "source": "Vadim Kravcenko",
-            "sourceUrl": "https://vadimkravcenko.com/feed/",
-            "summary": "Question: As a non-technical co-founder of a startup, I'm currently in a phase where our CTO and the technical team are busy developing our product. While I trust their expertise in handling the technical aspects, I'm unsure about my role during this phase. What specific respons…",
-            "publishedAt": "2023-07-30T15:39:59.000Z"
-        },
-        {
-            "slug": "b369d57f7838eb90b4dc0416",
-            "guid": "https://vadimkravcenko.com/?p=1667",
-            "title": "Is 150K USD a reasonable rate to build a mobile app?",
-            "link": "https://vadimkravcenko.com/qa/reasonable-rate-build-mobile-app/",
-            "source": "Vadim Kravcenko",
-            "sourceUrl": "https://vadimkravcenko.com/feed/",
-            "summary": "Question: As a startup founder, I've recently been quoted a rate of 150K USD for the development of a mobile app for my product. I'm trying to understand if this is a reasonable amount to invest in our app development. I've also had a quote of 50K for wireframes/designs from an …",
-            "publishedAt": "2023-07-30T08:26:56.000Z"
-        },
-        {
-            "slug": "cd5133d192020bc0bba7d755",
-            "guid": "https://vadimkravcenko.com/?p=1619",
-            "title": "Should I quit my well-paid job to start a startup?",
-            "link": "https://vadimkravcenko.com/qa/should-quit-well-paid-job-start-startup/",
-            "source": "Vadim Kravcenko",
-            "sourceUrl": "https://vadimkravcenko.com/feed/",
-            "summary": "Question: I'm currently in a well-paid and stable job that provides a comfortable lifestyle. However, I've been nurturing a small startup idea. I'm grappling with the decision of whether to leave my current job to pursue this dream. I'm really afraid of leaving my job and ending…",
-            "publishedAt": "2023-07-23T19:16:27.000Z"
-        },
-        {
-            "slug": "fb7fb77d933c695acf0b2157",
-            "guid": "https://vadimkravcenko.com/?p=1613",
-            "title": "How to stop thinking like an engineer and think like a businessman?",
-            "link": "https://vadimkravcenko.com/qa/how-to-stop-thinking-as-an-engineer-and-start-thinking-like-a-business-man/",
-            "source": "Vadim Kravcenko",
-            "sourceUrl": "https://vadimkravcenko.com/feed/",
-            "summary": "Question: As an engineer, I've been trained to solve problems and to focus on the technical aspects of a project. However, I'm finding that as I want to do startup stuff, I need to start thinking more like a businessman. How can I shift my focus from the technical details to the…",
-            "publishedAt": "2023-07-23T19:02:47.000Z"
-        },
-        {
-            "slug": "d112948e76bfbef31705aefb",
-            "guid": "https://vadimkravcenko.com/?p=1605",
-            "title": "Is it a bad idea if I build the MVP of my startup on my company’s pc?",
-            "link": "https://vadimkravcenko.com/qa/bad-idea-build-mvp-startup-on-companys-pc/",
-            "source": "Vadim Kravcenko",
-            "sourceUrl": "https://vadimkravcenko.com/feed/",
-            "summary": "Question: Hello, I'm in the process of developing the Minimum Viable Product (MVP) for my startup, it's a simple idea for a gaming app that should help you learn investing. However, I'm currently employed and the only available resource I have for this development is my company'…",
-            "publishedAt": "2023-07-23T18:49:06.000Z"
-        },
-        {
-            "slug": "819b9e8cd94852f81a143109",
-            "guid": "https://vadimkravcenko.com/?p=756",
-            "title": "How dangerous is over-engineering for a start up?",
-            "link": "https://vadimkravcenko.com/qa/how-dangerous-is-over-engineering/",
-            "source": "Vadim Kravcenko",
-            "sourceUrl": "https://vadimkravcenko.com/feed/",
-            "summary": "Question: Hey Vadim, I hope to tap into your CTO experience. We're building a startup and are constantly grappling with the balance between creating robust, future-proof solutions and delivering value to our customers in the most efficient way possible. Basically we're over engi…",
-            "publishedAt": "2023-07-23T07:54:49.000Z"
-        },
-        {
-            "slug": "d47faa588af66eff7ac37864",
-            "guid": "https://vadimkravcenko.com/?p=422",
-            "title": "How do I tell my cofounder I need to quit?",
-            "link": "https://vadimkravcenko.com/qa/how-do-i-tell-my-cofounder-i-need-to-quit/",
-            "source": "Vadim Kravcenko",
-            "sourceUrl": "https://vadimkravcenko.com/feed/",
-            "summary": "Question: I've been running in overdrive mode the last year or so, I've come to a crossroads where I feel the need to step away from my role and pursue a different path. I am grappling with how to convey this decision to my co-founder, who has been my partner in this journey. Wh…",
-            "publishedAt": "2023-07-23T07:39:00.000Z"
-        },
-        {
-            "slug": "8de8b693d819da2085be222d",
-            "guid": "https://vadimkravcenko.com/?p=1550",
-            "title": "What does a CTO actually do?",
-            "link": "https://vadimkravcenko.com/shorts/what-cto-does/",
-            "source": "Vadim Kravcenko",
-            "sourceUrl": "https://vadimkravcenko.com/feed/",
-            "summary": "Question: Answer: The post What does a CTO actually do? appeared first on Vadim Kravcenko.",
-            "publishedAt": "2023-07-21T13:10:21.000Z"
-        },
-        {
-            "slug": "aebc8104a99cdd40930c489f",
-            "guid": "https://vadimkravcenko.com/?p=1476",
-            "title": "Being a good mentor – a developers guide",
-            "link": "https://vadimkravcenko.com/shorts/good-mentor/",
-            "source": "Vadim Kravcenko",
-            "sourceUrl": "https://vadimkravcenko.com/feed/",
-            "summary": "Question: Answer: The post Being a good mentor – a developers guide appeared first on Vadim Kravcenko.",
-            "publishedAt": "2023-07-08T16:26:50.000Z"
-        },
-        {
-            "slug": "44d1018bf69f610ced75ae64",
-            "guid": "https://hynek.me/articles/turbo-charge-tox/",
-            "title": "Two Ways to Turbo-Charge tox",
-            "link": "https://hynek.me/articles/turbo-charge-tox/",
-            "source": "Hynek Schlawack",
-            "sourceUrl": "https://hynek.me/index.xml",
-            "summary": "No, it’s not (just) run-parallel – let’s cut the local tox runtime by 75%!",
-            "publishedAt": "2023-06-26T14:00:00.000Z"
-        },
-        {
-            "slug": "fae963e80bce8271f4b584fd",
-            "guid": "https://vadimkravcenko.com/?p=1453",
-            "title": "Healthy Documentation",
-            "link": "https://vadimkravcenko.com/shorts/proper-documentation/",
-            "source": "Vadim Kravcenko",
-            "sourceUrl": "https://vadimkravcenko.com/feed/",
-            "summary": "Question: Answer: The post Healthy Documentation appeared first on Vadim Kravcenko.",
-            "publishedAt": "2023-06-11T14:39:44.000Z"
-        },
-        {
-            "slug": "6ad4d6719186f183d77cf52c",
-            "guid": "https://vadimkravcenko.com/?p=1409",
-            "title": "Rules of Thumb for Software Development Estimations",
-            "link": "https://vadimkravcenko.com/shorts/project-estimates/",
-            "source": "Vadim Kravcenko",
-            "sourceUrl": "https://vadimkravcenko.com/feed/",
-            "summary": "Question: Answer: The post Rules of Thumb for Software Development Estimations appeared first on Vadim Kravcenko.",
-            "publishedAt": "2023-05-01T19:32:21.000Z"
-        },
-        {
-            "slug": "a3375e6f36a6f5add65f8a2e",
-            "guid": "https://hynek.me/talks/subclassing/",
-            "title": "Subclassing, Composition, Python, and You",
-            "link": "https://hynek.me/talks/subclassing/",
-            "source": "Hynek Schlawack",
-            "sourceUrl": "https://hynek.me/index.xml",
-            "summary": "Ever seen a code base where understanding a simple method meant jumping through tangled class hierarchies? We all have! And while “Favor composition over inheritance!” is almost as old as object-oriented programming, strictly avoiding all types of subclassing leads to verbose, u…",
-            "publishedAt": "2023-04-22T00:00:00.000Z"
-        },
-        {
-            "slug": "b241a684ec896b2a82c5ca32",
-            "guid": "https://vadimkravcenko.com/?p=1355",
-            "title": "Bullsh*t Jobs",
-            "link": "https://vadimkravcenko.com/shorts/bullshit-jobs/",
-            "source": "Vadim Kravcenko",
-            "sourceUrl": "https://vadimkravcenko.com/feed/",
-            "summary": "Question: Answer: The post Bullsh*t Jobs appeared first on Vadim Kravcenko.",
-            "publishedAt": "2023-04-01T18:13:46.000Z"
-        },
-        {
-            "slug": "0dc24d639b3e4380668acf5e",
-            "guid": "https://bitsofco.de/when-is-focus-visible-visible/",
-            "title": "When is :focus-visible visible?",
-            "link": "https://bitsofco.de/when-is-focus-visible-visible/",
-            "source": "Bits of Code",
-            "sourceUrl": "https://bitsofco.de/feed/feed.xml",
-            "summary": "Focus outlines (and their styling) have frequently been a point of contention between aesthetics and usability. On the one hand, focus outlines are incredibly important for navigation, particularly by users navigating via keyboard or other non-pointer devices. On the other hand,…",
-            "publishedAt": "2023-03-21T00:00:00.000Z"
-        },
-        {
-            "slug": "daaee22b6b37c448fce79605",
-            "guid": "https://vadimkravcenko.com/?p=1337",
-            "title": "Product Owner vs Project Managers",
-            "link": "https://vadimkravcenko.com/shorts/owner-vs-manager/",
-            "source": "Vadim Kravcenko",
-            "sourceUrl": "https://vadimkravcenko.com/feed/",
-            "summary": "Question: Answer: The post Product Owner vs Project Managers appeared first on Vadim Kravcenko.",
-            "publishedAt": "2023-03-12T18:12:05.000Z"
-        },
-        {
-            "slug": "02f4f3d869504f2ebe91a9a7",
-            "guid": "https://bitsofco.de/from-ghost-to-11ty/",
-            "title": "From Ghost to 11ty",
-            "link": "https://bitsofco.de/from-ghost-to-11ty/",
-            "source": "Bits of Code",
-            "sourceUrl": "https://bitsofco.de/feed/feed.xml",
-            "summary": "Over 5 years ago, I migrated this blog From Jekyll to Ghost. Back then, my reasons for moving to Ghost were because - I wanted a CMS Managing all the posts’ raw markdown files in one folder was getting clunky The Jekyll build process was starting to significantly lag I no longer…",
-            "publishedAt": "2023-02-22T00:00:00.000Z"
-        },
-        {
-            "slug": "3c37982f3a911de741fbf44f",
-            "guid": "https://hynek.me/articles/why-i-like-nox/",
-            "title": "Why I Like Nox",
-            "link": "https://hynek.me/articles/why-i-like-nox/",
-            "source": "Hynek Schlawack",
-            "sourceUrl": "https://hynek.me/index.xml",
-            "summary": "Ever since I got involved with open-source Python projects, tox has been vital for testing packages across Python versions (and other factors). However, lately, I’ve been increasingly using Nox for my projects instead. Since I’ve been asked why repeatedly, I’ll sum up my thought…",
-            "publishedAt": "2023-01-18T12:00:00.000Z"
-        },
-        {
-            "slug": "d9254bd2242326d1f786c208",
-            "guid": "https://hynek.me/articles/macos-dyld-env/",
-            "title": "Surprising Consequences of macOS’s Environment Variable Sanitization",
-            "link": "https://hynek.me/articles/macos-dyld-env/",
-            "source": "Hynek Schlawack",
-            "sourceUrl": "https://hynek.me/index.xml",
-            "summary": "Why does DYLD_LIBRARY_PATH keep disappearing!?",
-            "publishedAt": "2023-01-09T08:00:00.000Z"
-        },
-        {
-            "slug": "1794d22a9b03e715bcd7227d",
-            "guid": "https://hynek.me/articles/productive-fruit-fly-programmer/",
-            "title": "How I’m a Productive Programmer With a Memory of a Fruit Fly",
-            "link": "https://hynek.me/articles/productive-fruit-fly-programmer/",
-            "source": "Hynek Schlawack",
-            "sourceUrl": "https://hynek.me/index.xml",
-            "summary": "A love letter to tools that changed everything for me.",
-            "publishedAt": "2022-09-19T00:00:00.000Z"
-        },
-        {
-            "slug": "4e33e3467f6300df92e182de",
-            "guid": "https://hynek.me/articles/python-recursive-optional-dependencies/",
-            "title": "Recursive Optional Dependencies in Python",
-            "link": "https://hynek.me/articles/python-recursive-optional-dependencies/",
-            "source": "Hynek Schlawack",
-            "sourceUrl": "https://hynek.me/index.xml",
-            "summary": "One of my (slowly evaporating) reasons why I like putting packaging metadata into an executable setup.py is the ability to have optional dependencies that are combinations of others. As of pip 21.2, this is possible without running code.",
-            "publishedAt": "2022-07-29T06:00:00.000Z"
-        },
-        {
-            "slug": "a4dd1b0e9cb627bb1a8bae1c",
-            "guid": "https://hynek.me/articles/what-to-mock-in-5-mins/",
-            "title": "“Don’t Mock What You Don’t Own” in 5 Minutes",
-            "link": "https://hynek.me/articles/what-to-mock-in-5-mins/",
-            "source": "Hynek Schlawack",
-            "sourceUrl": "https://hynek.me/index.xml",
-            "summary": "A common issue when writing tests for real-world software is how to deal with third-party dependencies. Let’s examine an old, but counter-intuitive principle.",
-            "publishedAt": "2022-06-21T09:00:00.000Z"
-        },
-        {
-            "slug": "c66f3fe06e028a1eca52ef73",
-            "guid": "https://hynek.me/articles/import-attrs/",
-            "title": "import attrs",
-            "link": "https://hynek.me/articles/import-attrs/",
-            "source": "Hynek Schlawack",
-            "sourceUrl": "https://hynek.me/index.xml",
-            "summary": "An attempt at catharsis. This is a deeply personal blog post about the most influential project I’ve ever created: attrs , the progenitor of modern Python class utilities. I’m retelling its history from my perspective, how it begot dataclasses , and how I’m leading it into the f…",
-            "publishedAt": "2021-12-28T00:00:00.000Z"
-        },
-        {
-            "slug": "713e44e508dc30625cb09e83",
-            "guid": "https://hynek.me/articles/ditch-codecov-python/",
-            "title": "How to Ditch Codecov for Python Projects",
-            "link": "https://hynek.me/articles/ditch-codecov-python/",
-            "source": "Hynek Schlawack",
-            "sourceUrl": "https://hynek.me/index.xml",
-            "summary": "Codecov’s unreliability breaking CI on my open source projects has been a constant source of frustration for me for years. I have found a way to enforce coverage over a whole GitHub Actions build matrix that doesn’t rely on third-party services.",
-            "publishedAt": "2021-11-18T08:00:00.000Z"
-        },
-        {
-            "slug": "b13f5a094cd3320869fa17ed",
-            "guid": "https://bitsofco.de/web-performance-metrics-cheatsheet/",
-            "title": "Web Performance Metrics Cheatsheet",
-            "link": "https://bitsofco.de/web-performance-metrics-cheatsheet/",
-            "source": "Bits of Code",
-            "sourceUrl": "https://bitsofco.de/feed/feed.xml",
-            "summary": "I recently gave a talk on “Making Sense of Performance Metrics” at the Web Unleashed Conference, and it was suggested that I turn the breakdown of all the performance metrics into a cheatsheet; so here it is! The full cheatsheet, including a downloadable PDF version, are at the …",
-            "publishedAt": "2021-10-25T00:00:00.000Z"
-        },
-        {
-            "slug": "766195d3fb4e2c563324173c",
-            "guid": "https://hynek.me/articles/til/",
-            "title": "Announcing a New Section: TIL",
-            "link": "https://hynek.me/articles/til/",
-            "source": "Hynek Schlawack",
-            "sourceUrl": "https://hynek.me/index.xml",
-            "summary": "Trying out something new: today I’m launching my own Today I Learned section. In this essay I will sum up what my plans and hopes are.",
-            "publishedAt": "2021-08-25T12:00:00.000Z"
-        },
-        {
-            "slug": "25ec6be7d1956ffe45715db8",
-            "guid": "https://hynek.me/articles/python-subclassing-redux/",
-            "title": "Subclassing in Python Redux",
-            "link": "https://hynek.me/articles/python-subclassing-redux/",
-            "source": "Hynek Schlawack",
-            "sourceUrl": "https://hynek.me/index.xml",
-            "summary": "The conflict between subclassing and composition is as old as object-oriented programming. The latest crop of languages like Go or Rust prove that you don’t need subclassing to successfully write code. But what’s a pragmatic approach to subclassing in Python, specifically?",
-            "publishedAt": "2021-06-22T15:00:00.000Z"
-        },
-        {
-            "slug": "f95b68b2b1d042c3a0d97e82",
-            "guid": "https://bitsofco.de/setting-up-a-decentralised-website/",
-            "title": "Setting up a Decentralised Website (ENS + IPFS = dWeb)",
-            "link": "https://bitsofco.de/setting-up-a-decentralised-website/",
-            "source": "Bits of Code",
-            "sourceUrl": "https://bitsofco.de/feed/feed.xml",
-            "summary": "One thing that I’ve been really into lately has been ENS names. As someone who’s already obsessed with buying domain names, ENS names have been an even greater obsession (mostly because of emoji names, like ✊🏾✊🏾✊🏾.eth)! So what are ENS names, exactly? And what is a “decentral…",
-            "publishedAt": "2021-06-18T00:00:00.000Z"
-        },
-        {
-            "slug": "ba0c15c9e0cd0c1a77949c96",
-            "guid": "https://hynek.me/articles/canonical-seo-fail/",
-            "title": "Canonical SEO Failure",
-            "link": "https://hynek.me/articles/canonical-seo-fail/",
-            "source": "Hynek Schlawack",
-            "sourceUrl": "https://hynek.me/index.xml",
-            "summary": "This post is less about teaching and more about schadenfreude amusement for you, and catharsis for me. It’s the story of how one unfortunate HTML tag kicked me off almost all search engines and my months-long way back. And why it didn’t matter in the end.",
-            "publishedAt": "2021-04-28T00:00:00.000Z"
-        },
-        {
-            "slug": "0e84bd6637754afe4adb68dc",
-            "guid": "https://hynek.me/articles/semver-will-not-save-you/",
-            "title": "Semantic Versioning Will Not Save You",
-            "link": "https://hynek.me/articles/semver-will-not-save-you/",
-            "source": "Hynek Schlawack",
-            "sourceUrl": "https://hynek.me/index.xml",
-            "summary": "The widely used Python package cryptography changed their build system to use Rust for low-level code, which caused an emotional GitHub thread. Enthusiasts of 32-bit hardware from the 1990s aside, a vocal faction stipulated adherence to Semantic Versioning from the maintainers, …",
-            "publishedAt": "2021-03-02T00:00:00.000Z"
-        },
-        {
-            "slug": "75875ce2d2dd6b1e5760b51d",
-            "guid": "https://hynek.me/articles/lie-vs-lay/",
-            "title": "Lie vs Lay",
-            "link": "https://hynek.me/articles/lie-vs-lay/",
-            "source": "Hynek Schlawack",
-            "sourceUrl": "https://hynek.me/index.xml",
-            "summary": "Lie and lay are infamously confusing to non-native speakers. It’s so bad that it sparked a cottage industry of click-baity articles full of sketchy ads. Since English is my third language, I stumbled a lot myself until I wrote this cheatsheet.",
-            "publishedAt": "2021-02-03T00:00:00.000Z"
-        },
-        {
-            "slug": "9fc18b6fbdeea68382855bf9",
-            "guid": "https://bitsofco.de/chrome-dev-summit-2020/",
-            "title": "Highlights from Chrome Dev Summit 2020",
-            "link": "https://bitsofco.de/chrome-dev-summit-2020/",
-            "source": "Bits of Code",
-            "sourceUrl": "https://bitsofco.de/feed/feed.xml",
-            "summary": "CDS in 2020 was a bit different, like everything else. It was online, and the talks were more bite-sized at roughly 10 minutes each. I really enjoyed this new style of the summit and, while I missed the in-person aspects of the conference, this was a great way to end the year. S…",
-            "publishedAt": "2020-12-14T00:00:00.000Z"
-        },
-        {
-            "slug": "3e37290acf2f7f406afaf713",
-            "guid": "https://hynek.me/articles/waiting-in-asyncio/",
-            "title": "Waiting in asyncio",
-            "link": "https://hynek.me/articles/waiting-in-asyncio/",
-            "source": "Hynek Schlawack",
-            "sourceUrl": "https://hynek.me/index.xml",
-            "summary": "One of the main appeals of using Python’s asyncio is being able to fire off many coroutines and run them concurrently. How many ways do you know for waiting for their results?",
-            "publishedAt": "2020-05-21T00:00:00.000Z"
-        },
-        {
-            "slug": "3dc8566274ae91d82386d944",
-            "guid": "https://hynek.me/talks/abstractions/",
-            "title": "Classy Abstractions",
-            "link": "https://hynek.me/talks/abstractions/",
-            "source": "Hynek Schlawack",
-            "sourceUrl": "https://hynek.me/index.xml",
-            "summary": "Let’s talk about abstractions and Pythonic code.",
-            "publishedAt": "2020-05-18T00:00:00.000Z"
-        },
-        {
-            "slug": "fc9e3754e69f0ce5a0e734ac",
-            "guid": "https://hynek.me/articles/document-your-tests/",
-            "title": "Why You Should Document Your Tests",
-            "link": "https://hynek.me/articles/document-your-tests/",
-            "source": "Hynek Schlawack",
-            "sourceUrl": "https://hynek.me/index.xml",
-            "summary": "Some projects have the policy that all tests must have an explanatory comment – including all of mine. At first, I found that baffling. If that’s you right now, this article is for you.",
-            "publishedAt": "2020-05-04T00:00:00.000Z"
-        },
-        {
-            "slug": "cbe1f881570daa32d6daeec7",
-            "guid": "https://bitsofco.de/what-i-wish-i-knew-about-react/",
-            "title": "What I wish I knew about React",
-            "link": "https://bitsofco.de/what-i-wish-i-knew-about-react/",
-            "source": "Bits of Code",
-            "sourceUrl": "https://bitsofco.de/feed/feed.xml",
-            "summary": "A couple weeks ago I started working on my first React application. Not only was it my first React application, but it was also my first React Native application, so a lot was new to me all in one go. Coming from the Angular (and Ionic) world, it felt like all my preconceived no…",
-            "publishedAt": "2020-04-28T00:00:00.000Z"
-        },
-        {
-            "slug": "6aa7296b2e1c161b857b63c2",
-            "guid": "https://hynek.me/articles/python-github-actions/",
-            "title": "Python in GitHub Actions",
-            "link": "https://hynek.me/articles/python-github-actions/",
-            "source": "Hynek Schlawack",
-            "sourceUrl": "https://hynek.me/index.xml",
-            "summary": "GitHub’s own CI called GitHub Actions has been out of closed beta for a while and offers generous free quotas and a seamless integration with the rest of the site. Let’s have a look at how to use it for an open source Python package.",
-            "publishedAt": "2020-03-09T00:00:00.000Z"
-        },
-        {
-            "slug": "526f8e590a2e101095556607",
-            "guid": "https://hynek.me/articles/python-in-production/",
-            "title": "Python in Production",
-            "link": "https://hynek.me/articles/python-in-production/",
-            "source": "Hynek Schlawack",
-            "sourceUrl": "https://hynek.me/index.xml",
-            "summary": "I’m missing a key part from the public Python discourse and I would like to help to change that.",
-            "publishedAt": "2020-02-23T16:45:00.000Z"
-        },
-        {
-            "slug": "bfb1ec7d4b9d3e3758144429",
-            "guid": "https://hynek.me/articles/packaging-metadata/",
-            "title": "Python Packaging Metadata",
-            "link": "https://hynek.me/articles/packaging-metadata/",
-            "source": "Hynek Schlawack",
-            "sourceUrl": "https://hynek.me/index.xml",
-            "summary": "Since this topic keeps coming up, I’d like to briefly share my thoughts on Python package metadata because it’s – as always – more complex than it seems.",
-            "publishedAt": "2020-02-14T00:00:00.000Z"
-        },
-        {
-            "slug": "4f3179cb089ef559264227e1",
-            "guid": "https://bitsofco.de/how-i-created-488-live-images/",
-            "title": "How I created 488 \"live images\"",
-            "link": "https://bitsofco.de/how-i-created-488-live-images/",
-            "source": "Bits of Code",
-            "sourceUrl": "https://bitsofco.de/feed/feed.xml",
-            "summary": "I've recently been going down a rabbit hole of making improvements to my CanIUse embed. To give a bit of a background, it is an interactive embed I created to easily embed data from caniuse.com in my blog posts and anywhere else. I previously wrote about how I first created the …",
-            "publishedAt": "2019-11-26T00:00:00.000Z"
-        },
-        {
-            "slug": "f3298d5ca67348355ed35452",
-            "guid": "https://bitsofco.de/chrome-dev-summit-2019/",
-            "title": "Highlights from Chrome Dev Summit 2019",
-            "link": "https://bitsofco.de/chrome-dev-summit-2019/",
-            "source": "Bits of Code",
-            "sourceUrl": "https://bitsofco.de/feed/feed.xml",
-            "summary": "I’ve been going to Chrome Dev Summit for a couple of years now (2016 & 2018) and I always like to do this roundup article, highlighting what I thought were the most interesting ideas and projects from the conference. So let’s get into it! HTML is (finally) getting some 💕 # It s…",
-            "publishedAt": "2019-11-18T00:00:00.000Z"
-        },
-        {
-            "slug": "68a1359adaaab8c7877cad3a",
-            "guid": "https://bitsofco.de/how-to-use-puppeteer-in-a-netlify-aws-lambda-function/",
-            "title": "How to use Puppeteer in a Netlify (AWS Lambda) function",
-            "link": "https://bitsofco.de/how-to-use-puppeteer-in-a-netlify-aws-lambda-function/",
-            "source": "Bits of Code",
-            "sourceUrl": "https://bitsofco.de/feed/feed.xml",
-            "summary": "I recently gave a talk at JAMstack_conf San Francisco about how I used headless chrome (via Puppeteer) and Cloudinary to capture screenshots of my interactive caniuse embed. I did this to have a fallback image to use in case the embed couldn’t be loaded, for example in cases whe…",
-            "publishedAt": "2019-10-28T00:00:00.000Z"
-        },
-        {
-            "slug": "806d552f455dc88e62d3d466",
-            "guid": "https://hynek.me/articles/books-that-changed-my-life/",
-            "title": "Books That Changed My Life",
-            "link": "https://hynek.me/articles/books-that-changed-my-life/",
-            "source": "Hynek Schlawack",
-            "sourceUrl": "https://hynek.me/index.xml",
-            "summary": "People always ask for book recommendations, so here’s my list of books that changed my life in one way or another. None of them is related to tech or programming, but all affect how I think and work.",
-            "publishedAt": "2019-09-23T00:00:00.000Z"
-        },
-        {
-            "slug": "4fb66643b8d81a4c6d75b368",
-            "guid": "https://bitsofco.de/calling-smart-contract-functions-using-web3-js-call-vs-send/",
-            "title": "Calling smart contract functions using web3.js - call() vs send()",
-            "link": "https://bitsofco.de/calling-smart-contract-functions-using-web3-js-call-vs-send/",
-            "source": "Bits of Code",
-            "sourceUrl": "https://bitsofco.de/feed/feed.xml",
-            "summary": "I’ve recently been doing Udacity’s Blockchain Developer Nanodegree, and the gotcha that has caused me the most wasted hours is the difference between calling a method in my smart contract using the call() vs send() web3.js methods. Using web3.js to call smart contract functions …",
-            "publishedAt": "2019-09-03T00:00:00.000Z"
-        },
-        {
-            "slug": "eb479c8acca109f14efe5541",
-            "guid": "https://bitsofco.de/solidity-function-visibility-explained/",
-            "title": "Solidity function visibility, explained",
-            "link": "https://bitsofco.de/solidity-function-visibility-explained/",
-            "source": "Bits of Code",
-            "sourceUrl": "https://bitsofco.de/feed/feed.xml",
-            "summary": "When writing a smart contract, we can control who/what can call functions within that contract by specifying what is known as the function visibility. This allows us to easily secure certain parts of a contract without having to write too much custom logic. Who can call a smart …",
-            "publishedAt": "2019-08-27T00:00:00.000Z"
-        },
-        {
-            "slug": "03db52810026b53ed6cff660",
-            "guid": "https://scratchpad.blog/the-one-skill-every-software-developer-should-master/",
-            "title": "The one skill every Software Developer should master",
-            "link": "https://scratchpad.blog/the-one-skill-every-software-developer-should-master/",
-            "source": "ScratchPad",
-            "sourceUrl": "https://scratchpad.blog/feed.xml",
-            "summary": "There’s no doubt that the main skill of any software developer is to write good code regardless of the programming language and the platform he is specialized on. This means he must be able to write code that is concise, readable, testable, performant, etc. For this, a developer…",
-            "publishedAt": "2019-06-27T00:00:00.000Z"
-        },
-        {
-            "slug": "4b444d819e546eee3e9ffb0b",
-            "guid": "https://scratchpad.blog/theres-just-one-reason-for-using-the-cloud/",
-            "title": "There’s just one reason for using the Cloud",
-            "link": "https://scratchpad.blog/theres-just-one-reason-for-using-the-cloud/",
-            "source": "ScratchPad",
-            "sourceUrl": "https://scratchpad.blog/feed.xml",
-            "summary": "In the past years I’ve worked with various clients to migrate existing workloads to the cloud and to build new ones in a cloud-native fashion. Most of the time the most important goal for using the cloud were expectations regarding significant cost reductions. This might be a re…",
-            "publishedAt": "2019-06-23T00:00:00.000Z"
-        },
-        {
-            "slug": "aea2ded6d523d47b82d45159",
-            "guid": "https://hynek.me/articles/simple-python-azure-pipelines/",
-            "title": "Python in Azure Pipelines, Step by Step",
-            "link": "https://hynek.me/articles/simple-python-azure-pipelines/",
-            "source": "Hynek Schlawack",
-            "sourceUrl": "https://hynek.me/index.xml",
-            "summary": "Since the acquisition of Travis CI , the future of their free offering is unclear. Azure Pipelines has a generous free tier, but the examples I found are discouragingly complex and take advantage of features like templating that most projects don’t need. To close that gap, this …",
-            "publishedAt": "2019-06-03T09:14:00.000Z"
-        },
-        {
-            "slug": "e10f193e3d0fa911877a0310",
-            "guid": "https://bitsofco.de/your-first-performance-budget-with-lighthouse/",
-            "title": "Your first performance budget with Lighthouse",
-            "link": "https://bitsofco.de/your-first-performance-budget-with-lighthouse/",
-            "source": "Bits of Code",
-            "sourceUrl": "https://bitsofco.de/feed/feed.xml",
-            "summary": "I asked on Twitter the other day how many people had created and enforced a performance budget for a website they were working on. Not surprisingly, the vast majority of people hadn't. I'm curious, have you ever created (and enforced) a performance budget for a site you're worki…",
-            "publishedAt": "2019-05-28T00:00:00.000Z"
-        },
-        {
-            "slug": "a106a939d28d91b191f656c5",
-            "guid": "https://scratchpad.blog/devops/6-reasons-for-using-the-aws-devops-tools/",
-            "title": "6 reasons for using the AWS DevOps tools",
-            "link": "https://scratchpad.blog/devops/6-reasons-for-using-the-aws-devops-tools/",
-            "source": "ScratchPad",
-            "sourceUrl": "https://scratchpad.blog/feed.xml",
-            "summary": "AWS provides a set of services for supporting the DevOps tool chain. These services are CodeCommit, CodePipeline, CodeBuild and CodeDeploy. With these tools it’s easy to run the complete DevOps Pipeline on AWS. Why should you use these tools instead of the myriad other services …",
-            "publishedAt": "2019-05-25T00:00:00.000Z"
-        },
-        {
-            "slug": "a09ceced237041d3c235ab0f",
-            "guid": "https://scratchpad.blog/howto/how-to-use-codedeploy-with-aws-lightsail/",
-            "title": "How to use CodeDeploy with AWS Lightsail",
-            "link": "https://scratchpad.blog/howto/how-to-use-codedeploy-with-aws-lightsail/",
-            "source": "ScratchPad",
-            "sourceUrl": "https://scratchpad.blog/feed.xml",
-            "summary": "Automating the deployment of your application is key for fast development cycles. CodeDeploy is a service offered by AWS to perform this task. Unfortunately, AWS Lightsail Instances are not supported by default by CodeDeploy. This post shows how CodeDeplpy can be set up to deplo…",
-            "publishedAt": "2019-05-16T00:00:00.000Z"
-        },
-        {
-            "slug": "9325af6e89a96e5ec51d6764",
-            "guid": "https://hynek.me/articles/hallway-track/",
-            "title": "The Price of the Hallway Track",
-            "link": "https://hynek.me/articles/hallway-track/",
-            "source": "Hynek Schlawack",
-            "sourceUrl": "https://hynek.me/index.xml",
-            "summary": "There are many good reasons not to go to every talk possible when attending conferences. However, increasingly, it became hip to boast about avoiding going to talks – encouraging others to follow suit. That rubs me the wrong way as a speaker, and I’ll try to explain why.",
-            "publishedAt": "2019-05-15T18:00:00.000Z"
-        },
-        {
-            "slug": "34abe6c96fb3f4449e0b77b5",
-            "guid": "https://scratchpad.blog/howto/how-to-use-efs-with-aws-lightsail/",
-            "title": "How to use EFS with AWS Lightsail",
-            "link": "https://scratchpad.blog/howto/how-to-use-efs-with-aws-lightsail/",
-            "source": "ScratchPad",
-            "sourceUrl": "https://scratchpad.blog/feed.xml",
-            "summary": "Update 2019-09-01: Integrating EFS with Lightsail instances does not seem to work anymore. The information described in this article might be helpful nevertheless. Please get into touch with me if you find a working solution. Scaling web applications can be tricky. One obstacle …",
-            "publishedAt": "2019-05-09T00:00:00.000Z"
-        },
-        {
-            "slug": "c89d13944be8420958aabf4e",
-            "guid": "https://hynek.me/talks/python-foss/",
-            "title": "Maintaining a Python Project When It’s Not Your Job",
-            "link": "https://hynek.me/talks/python-foss/",
-            "source": "Hynek Schlawack",
-            "sourceUrl": "https://hynek.me/index.xml",
-            "summary": "PyPI is a gold mine of great packages but those packages have to be written first. More often than not, projects that millions of people depend on are written and maintained by only one person. If you’re unlucky, that person is you! This talk tries to lighten the burden by givin…",
-            "publishedAt": "2019-05-03T00:00:00.000Z"
-        }
-    ]
+  "category": "programming",
+  "label": "Programming",
+  "fetchedAt": "2026-07-28T09:55:11.363Z",
+  "items": [
+    {
+      "slug": "13e3b548c70aa7407703ac05",
+      "guid": "https://hynek.me/talks/python-superpower/",
+      "title": "Python’s True Superpower",
+      "link": "https://hynek.me/talks/python-superpower/",
+      "source": "Hynek Schlawack",
+      "sourceUrl": "https://hynek.me/index.xml",
+      "summary": "Python appears to be everywhere nowadays! How did it happen, that a language that almost died in the Python 2 to 3 process is now the lingua franca a default choice when people talk about programming? There must be some secret superpower and I think I found it!",
+      "publishedAt": "2025-09-19T00:00:00.000Z"
+    },
+    {
+      "slug": "b3e73cd39d536b9f9c119756",
+      "guid": "https://scratchpad.blog/how-to-debug-rails-applications-and-tests-in-vs-code/",
+      "title": "How to Debug Rails Applications and Tests in VS Code",
+      "link": "https://scratchpad.blog/how-to-debug-rails-applications-and-tests-in-vs-code/",
+      "source": "ScratchPad",
+      "sourceUrl": "https://scratchpad.blog/feed.xml",
+      "summary": "Debugging is an essential yet often tedious task for software developers. While scattering print statements throughout your code is a common approach, using a proper debugger is far more efficient. For Ruby on Rails developers, VS Code offers robust debugging capabilities throug…",
+      "publishedAt": "2025-07-16T00:00:00.000Z"
+    },
+    {
+      "slug": "37d77c960cbb2c8efb668ae3",
+      "guid": "https://scratchpad.blog/effortless-sqlite-backups-for-rails-with-litestream/",
+      "title": "Effortless SQLite Backups for Rails with Litestream",
+      "link": "https://scratchpad.blog/effortless-sqlite-backups-for-rails-with-litestream/",
+      "source": "ScratchPad",
+      "sourceUrl": "https://scratchpad.blog/feed.xml",
+      "summary": "SQLite has experienced a remarkable renaissance in recent years, particularly in the Rails community. Since Rails 8, it is the default database for newly generated Rails applications. With its simplicity, performance, and zero-configuration setup, SQLite has become an attractive…",
+      "publishedAt": "2025-06-26T00:00:00.000Z"
+    },
+    {
+      "slug": "f988f9810e51519b5eaec079",
+      "guid": "https://scratchpad.blog/devops/howto/securely-authenticating-to-aws-from-github-actions-workflows/",
+      "title": "Securely Authenticating to AWS from GitHub Actions Workflows",
+      "link": "https://scratchpad.blog/devops/howto/securely-authenticating-to-aws-from-github-actions-workflows/",
+      "source": "ScratchPad",
+      "sourceUrl": "https://scratchpad.blog/feed.xml",
+      "summary": "GitHub Actions Workflows have become the go-to solution for running CI/CD workflows for projects hosted on GitHub. Its seamless integration with GitHub repositories makes it a natural choice for automating tasks like building, testing, and deploying applications. For Developers …",
+      "publishedAt": "2025-06-06T00:00:00.000Z"
+    },
+    {
+      "slug": "9561714819c8be0544ac35a1",
+      "guid": "https://hynek.me/talks/design-pressure/",
+      "title": "Design Pressure",
+      "link": "https://hynek.me/talks/design-pressure/",
+      "source": "Hynek Schlawack",
+      "sourceUrl": "https://hynek.me/index.xml",
+      "summary": "Ever had this weird gut feeling that something is off in your code, but couldn’t put the finger on why? Are you starting your projects with the best intentions, following all best practices, and still feel like your architecture turns weird eventually?",
+      "publishedAt": "2025-05-16T00:00:00.000Z"
+    },
+    {
+      "slug": "71749659f370dfbcdce53300",
+      "guid": "https://hynek.me/articles/docker-virtualenv/",
+      "title": "Why I Still Use Python Virtual Environments in Docker",
+      "link": "https://hynek.me/articles/docker-virtualenv/",
+      "source": "Hynek Schlawack",
+      "sourceUrl": "https://hynek.me/index.xml",
+      "summary": "Whenever I publish something about my Python Docker workflows, I invariably get challenged about whether it makes sense to use virtual environments in Docker containers. As always, it’s a trade-off, and I err on the side of standards and predictability.",
+      "publishedAt": "2024-09-02T11:00:00.000Z"
+    },
+    {
+      "slug": "2d58b1aca95dfc29cddc6b78",
+      "guid": "https://hynek.me/articles/docker-uv/",
+      "title": "Production-ready Python Docker Containers with uv",
+      "link": "https://hynek.me/articles/docker-uv/",
+      "source": "Hynek Schlawack",
+      "sourceUrl": "https://hynek.me/index.xml",
+      "summary": "Starting with 0.3.0 , Astral’s uv brought many great features, including support for cross-platform lock files uv.lock . Together with subsequent fixes, it has become Python’s finest workflow tool for my (non-scientific) use cases. Here’s how I build production-ready containers,…",
+      "publishedAt": "2024-08-28T11:00:00.000Z"
+    },
+    {
+      "slug": "02c0dddd265fe203b693bc74",
+      "guid": "https://vadimkravcenko.com/?p=2821",
+      "title": "What I learned building a $1K MRR SaaS in 6 weeks",
+      "link": "https://vadimkravcenko.com/shorts/building-1k-saas-in-6-weeks/",
+      "source": "Vadim Kravcenko",
+      "sourceUrl": "https://vadimkravcenko.com/feed/",
+      "summary": "Question: Answer: The post What I learned building a $1K MRR SaaS in 6 weeks appeared first on Vadim Kravcenko.",
+      "publishedAt": "2024-07-09T14:06:46.000Z"
+    },
+    {
+      "slug": "71288887da84813c398cf602",
+      "guid": "https://vadimkravcenko.com/?p=2798",
+      "title": "Stand Out and Dare to Disagree",
+      "link": "https://vadimkravcenko.com/shorts/stand-out-and-dare-to-disagree/",
+      "source": "Vadim Kravcenko",
+      "sourceUrl": "https://vadimkravcenko.com/feed/",
+      "summary": "Question: Answer: The post Stand Out and Dare to Disagree appeared first on Vadim Kravcenko.",
+      "publishedAt": "2024-05-16T10:19:36.000Z"
+    },
+    {
+      "slug": "9d14dd8899bd7f9b225029a7",
+      "guid": "https://vadimkravcenko.com/?p=2765",
+      "title": "I’m sorry",
+      "link": "https://vadimkravcenko.com/shorts/building-a-tool-again/",
+      "source": "Vadim Kravcenko",
+      "sourceUrl": "https://vadimkravcenko.com/feed/",
+      "summary": "Question: Answer: The post I’m sorry appeared first on Vadim Kravcenko.",
+      "publishedAt": "2024-05-09T10:47:32.000Z"
+    },
+    {
+      "slug": "87e37a4cd49845b82d0cdd4d",
+      "guid": "https://vadimkravcenko.com/?p=2712",
+      "title": "Valueless CTO: High Salary, No Return",
+      "link": "https://vadimkravcenko.com/shorts/cto-value-high-salary-no-return/",
+      "source": "Vadim Kravcenko",
+      "sourceUrl": "https://vadimkravcenko.com/feed/",
+      "summary": "Question: Answer: The post Valueless CTO: High Salary, No Return appeared first on Vadim Kravcenko.",
+      "publishedAt": "2024-04-30T09:37:08.000Z"
+    },
+    {
+      "slug": "ed60b99d5f26e73492d84161",
+      "guid": "https://vadimkravcenko.com/?p=2699",
+      "title": "How much a CTO makes and where can I find CTO Jobs?",
+      "link": "https://vadimkravcenko.com/qa/cto-salary-find-cto-jobs/",
+      "source": "Vadim Kravcenko",
+      "sourceUrl": "https://vadimkravcenko.com/feed/",
+      "summary": "Question: Here's the thing, I’m kind of stuck trying to figure out what a CTO actually makes in terms of $$$, most of the people in the field are secretive about how much they're getting. It's not just about the money (okay, it's a bit about the money), but also understanding if…",
+      "publishedAt": "2024-04-27T17:28:28.000Z"
+    },
+    {
+      "slug": "3c75648a9b0c49961ee6632a",
+      "guid": "https://vadimkravcenko.com/?p=2691",
+      "title": "How to become a CTO?",
+      "link": "https://vadimkravcenko.com/qa/how-to-become-a-cto-career-path/",
+      "source": "Vadim Kravcenko",
+      "sourceUrl": "https://vadimkravcenko.com/feed/",
+      "summary": "Question: Hey Vadim, Long-time reader, enjoy your content a lot. I've been a software engineer for about seven years now, doing mostly web development and taking over ownership of different modules step by step, expanding my people skills so to speak. Lately, I've been doing som…",
+      "publishedAt": "2024-04-27T16:59:37.000Z"
+    },
+    {
+      "slug": "05d065a33a53eda3dfcda75d",
+      "guid": "https://vadimkravcenko.com/?p=2661",
+      "title": "10x Engineers",
+      "link": "https://vadimkravcenko.com/shorts/10x-engineers/",
+      "source": "Vadim Kravcenko",
+      "sourceUrl": "https://vadimkravcenko.com/feed/",
+      "summary": "Question: Answer: The post 10x Engineers appeared first on Vadim Kravcenko.",
+      "publishedAt": "2024-04-20T14:44:52.000Z"
+    },
+    {
+      "slug": "adf22c18515cccd4395f2fc8",
+      "guid": "https://vadimkravcenko.com/?p=2627",
+      "title": "How can you tell if you’re a good developer?",
+      "link": "https://vadimkravcenko.com/qa/how-can-you-tell-good-developer/",
+      "source": "Vadim Kravcenko",
+      "sourceUrl": "https://vadimkravcenko.com/feed/",
+      "summary": "Question: Hey Vadim, So, I've been coding for money for about 5 years now. I've jumped around a lot — Java, Javascript, Python, NodeJS — you name it. The job market's been great, making it super easy for me to switch between gigs. I've done both full-time and contract work acros…",
+      "publishedAt": "2024-04-06T12:53:56.000Z"
+    },
+    {
+      "slug": "d57ac718ad942ff59ba593a8",
+      "guid": "https://vadimkravcenko.com/?p=2620",
+      "title": "I’m finishing university, scared about future career prospects",
+      "link": "https://vadimkravcenko.com/qa/finishing-university-scared-about-future-career-prospects/",
+      "source": "Vadim Kravcenko",
+      "sourceUrl": "https://vadimkravcenko.com/feed/",
+      "summary": "Question: Hey, my name's Kalesh, I'm 22 and about to finish my bachelor's in August. Planning to be a software engineer. But, I keep hearing the job market's tough. Been reading online that lots of devs are struggling to find steady gigs. Is your company looking for any devs? Wh…",
+      "publishedAt": "2024-04-06T12:05:10.000Z"
+    },
+    {
+      "slug": "26bec7b3160e4dd87bd2be70",
+      "guid": "https://vadimkravcenko.com/?p=2612",
+      "title": "I have a very poor work-life balance. How can I escape the grind?",
+      "link": "https://vadimkravcenko.com/qa/poor-work-life-balance-escape-the-grind/",
+      "source": "Vadim Kravcenko",
+      "sourceUrl": "https://vadimkravcenko.com/feed/",
+      "summary": "Question: Hey Vadim, Here's the situation: from the moment my alarm clock interrupts my sleep, until I finally come home late at night, my life is essentially a never-ending cycle of sitting in front of the PC and stressing with a workload that feels like it's set to max. I feel…",
+      "publishedAt": "2024-04-06T11:39:01.000Z"
+    },
+    {
+      "slug": "47228de8f313d265427dfdd9",
+      "guid": "https://hynek.me/articles/python-virtualenv-redux/",
+      "title": "Python Project-Local Virtualenv Management Redux",
+      "link": "https://hynek.me/articles/python-virtualenv-redux/",
+      "source": "Hynek Schlawack",
+      "sourceUrl": "https://hynek.me/index.xml",
+      "summary": "One of my first TIL entries was about how you can imitate Node’s node_modules semantics in Python on UNIX-like operating systems. A lot has happened since then (to the better!) and it’s time for an update. direnv still rocks, though.",
+      "publishedAt": "2024-04-02T00:00:00.000Z"
+    },
+    {
+      "slug": "2b155dd1945ec36a2a7b9e4d",
+      "guid": "https://vadimkravcenko.com/?p=2587",
+      "title": "Mental Health in Software Engineering",
+      "link": "https://vadimkravcenko.com/shorts/mental-health-in-software-engineering/",
+      "source": "Vadim Kravcenko",
+      "sourceUrl": "https://vadimkravcenko.com/feed/",
+      "summary": "Question: Answer: The post Mental Health in Software Engineering appeared first on Vadim Kravcenko.",
+      "publishedAt": "2024-03-31T20:20:38.000Z"
+    },
+    {
+      "slug": "c5ba22c11eea7c6a3b56959b",
+      "guid": "https://vadimkravcenko.com/?p=2483",
+      "title": "Why software projects fail",
+      "link": "https://vadimkravcenko.com/shorts/why-software-projects-fail/",
+      "source": "Vadim Kravcenko",
+      "sourceUrl": "https://vadimkravcenko.com/feed/",
+      "summary": "Question: Answer: The post Why software projects fail appeared first on Vadim Kravcenko.",
+      "publishedAt": "2024-03-14T16:13:51.000Z"
+    },
+    {
+      "slug": "bab7168e2296b615b3880b7c",
+      "guid": "https://vadimkravcenko.com/?p=2459",
+      "title": "What is your unethical CS career’s advice?",
+      "link": "https://vadimkravcenko.com/qa/whats-your-unethical-cs-careers-advice/",
+      "source": "Vadim Kravcenko",
+      "sourceUrl": "https://vadimkravcenko.com/feed/",
+      "summary": "Question: Hey Vadim, I’m starting to question a lot of the conventional wisdom handed down to us about climbing the tech ladder. You know, the whole \"work hard, play fair, and success will come\" spiel. I’m not so sure anymore. It feels slow, I'm looking for shortcuts maybe? e.g.…",
+      "publishedAt": "2024-02-25T16:46:46.000Z"
+    },
+    {
+      "slug": "ea835aec274378d19ee7c449",
+      "guid": "https://vadimkravcenko.com/?p=2451",
+      "title": "My coworker rewrote all my code, what should I do?",
+      "link": "https://vadimkravcenko.com/qa/my-coworker-rewrote-all-my-code-what-should-i-do/",
+      "source": "Vadim Kravcenko",
+      "sourceUrl": "https://vadimkravcenko.com/feed/",
+      "summary": "Question: Hello Vadim, I'm reaching out to you for some advice, as something weird happened, and I'm not sure how to react. Here are the key points For the past six months, I've been working in my role as a Python Backend Developer, diligently maintaining and extending the Pytho…",
+      "publishedAt": "2024-02-24T19:05:07.000Z"
+    },
+    {
+      "slug": "0b71aee6c83ee8c06faa199a",
+      "guid": "https://vadimkravcenko.com/?p=2423",
+      "title": "Falsehoods Junior Developers believe about becoming Senior",
+      "link": "https://vadimkravcenko.com/shorts/falsehoods-junior-developers-believe-about-becoming-senior/",
+      "source": "Vadim Kravcenko",
+      "sourceUrl": "https://vadimkravcenko.com/feed/",
+      "summary": "Question: Answer: The post Falsehoods Junior Developers believe about becoming Senior appeared first on Vadim Kravcenko.",
+      "publishedAt": "2024-02-20T21:23:21.000Z"
+    },
+    {
+      "slug": "731d7101a8ac691cb26f078b",
+      "guid": "https://vadimkravcenko.com/?p=2403",
+      "title": "How do you know when to use which programming language?",
+      "link": "https://vadimkravcenko.com/qa/how-you-know-when-to-use-what-programming-language/",
+      "source": "Vadim Kravcenko",
+      "sourceUrl": "https://vadimkravcenko.com/feed/",
+      "summary": "Question: Hi, My name is Alex. I just graduated university, I'm confused, how do I choose a programming language for a job? Does it matter? Will I be assigned a programming language? Thanks for the help. Answer: The post How do you know when to use which programming language? ap…",
+      "publishedAt": "2024-02-11T18:32:45.000Z"
+    },
+    {
+      "slug": "36b0ff45f91271ad4591bd77",
+      "guid": "https://vadimkravcenko.com/?p=2400",
+      "title": "How to get programming experience when you can’t find a job?",
+      "link": "https://vadimkravcenko.com/qa/how-to-get-programming-experience-when-you-cant-find-a-job/",
+      "source": "Vadim Kravcenko",
+      "sourceUrl": "https://vadimkravcenko.com/feed/",
+      "summary": "Question: Hello Vadim, It's been almost a year since I graduated as a CS major and was high on enthusiasm, ready to dive into the tech industry. Yet, here I am, feeling like shit, like I've hit a wall, my initial excitement replaced with a growing sense of frustration and, if I'…",
+      "publishedAt": "2024-02-11T17:25:06.000Z"
+    },
+    {
+      "slug": "5865df6069d20b878065d945",
+      "guid": "https://vadimkravcenko.com/?p=2384",
+      "title": "Do some people just not have the talent for Software Engineering?",
+      "link": "https://vadimkravcenko.com/qa/some-people-just-not-have-the-talent-for-software-engineering/",
+      "source": "Vadim Kravcenko",
+      "sourceUrl": "https://vadimkravcenko.com/feed/",
+      "summary": "Question: Hi, I wanted to share my story and why I'm a bit confused. After graduating college, I landed jobs as a Software Engineer at two respected companies. No, they weren't FAANG, but they were places where I thought I could grow, contribute, and make a decent amount of mone…",
+      "publishedAt": "2024-02-09T22:55:49.000Z"
+    },
+    {
+      "slug": "bdd7516bbe76478cdb6071a4",
+      "guid": "https://vadimkravcenko.com/?p=2374",
+      "title": "How to learn coding without a degree?",
+      "link": "https://vadimkravcenko.com/qa/learn-coding-without-a-degree/",
+      "source": "Vadim Kravcenko",
+      "sourceUrl": "https://vadimkravcenko.com/feed/",
+      "summary": "Question: Hey Vadim, I'm kinda lost. My background is in sales, but to be honest, I find myself disconnected from it. Not having fun, not enjoying it, don't like people as much. Science/Math was never on my radar until recently, all my friends make so much money working in IT, a…",
+      "publishedAt": "2024-02-09T19:41:28.000Z"
+    },
+    {
+      "slug": "045c91b11559b46958ba2cc5",
+      "guid": "https://vadimkravcenko.com/?p=2357",
+      "title": "What to expect from the dev agency after MVP is done?",
+      "link": "https://vadimkravcenko.com/qa/what-expect-from-dev-agency-after-mvp/",
+      "source": "Vadim Kravcenko",
+      "sourceUrl": "https://vadimkravcenko.com/feed/",
+      "summary": "Question: Hello Vadim, I'm standing at a crossroads, we've just wrapped up the development of our mobile app MVP with an external software development company (quite successfully I might add), and I'm now facing a barrage of questions that keep me up at night, more so than my th…",
+      "publishedAt": "2024-02-08T20:48:55.000Z"
+    },
+    {
+      "slug": "db3daadcbb031d041ef7172f",
+      "guid": "https://vadimkravcenko.com/?p=2349",
+      "title": "How to better handle stress in a startup?",
+      "link": "https://vadimkravcenko.com/qa/how-to-better-handle-stress-in-a-startup/",
+      "source": "Vadim Kravcenko",
+      "sourceUrl": "https://vadimkravcenko.com/feed/",
+      "summary": "Question: Hey Vadim, Thanks a lot for the articles, they help a lot. I've been on a pretty wild journey these past few years, and I find myself at a crossroads, looking for some guidance. A few years back, I managed to secure a spot in the top university of my country in Softwar…",
+      "publishedAt": "2024-02-08T20:12:41.000Z"
+    },
+    {
+      "slug": "91dcd7c77c6f05a73b34ddf2",
+      "guid": "https://vadimkravcenko.com/?p=2317",
+      "title": "Startup Infrastructure: Scaling from Zero to Enterprise",
+      "link": "https://vadimkravcenko.com/shorts/infrastructure-from-zero-to-enterprise/",
+      "source": "Vadim Kravcenko",
+      "sourceUrl": "https://vadimkravcenko.com/feed/",
+      "summary": "Question: Answer: The post Startup Infrastructure: Scaling from Zero to Enterprise appeared first on Vadim Kravcenko.",
+      "publishedAt": "2024-02-03T18:16:38.000Z"
+    },
+    {
+      "slug": "6fff857cb5ec350874505108",
+      "guid": "https://vadimkravcenko.com/?p=2260",
+      "title": "Healthy Code Reviews",
+      "link": "https://vadimkravcenko.com/shorts/code-reviews/",
+      "source": "Vadim Kravcenko",
+      "sourceUrl": "https://vadimkravcenko.com/feed/",
+      "summary": "Question: Answer: The post Healthy Code Reviews appeared first on Vadim Kravcenko.",
+      "publishedAt": "2024-01-14T12:30:40.000Z"
+    },
+    {
+      "slug": "c5a38b80770343928a26d205",
+      "guid": "https://vadimkravcenko.com/?p=2209",
+      "title": "Security at Startup",
+      "link": "https://vadimkravcenko.com/shorts/security-at-startup/",
+      "source": "Vadim Kravcenko",
+      "sourceUrl": "https://vadimkravcenko.com/feed/",
+      "summary": "Question: Answer: The post Security at Startup appeared first on Vadim Kravcenko.",
+      "publishedAt": "2023-12-24T11:54:25.000Z"
+    },
+    {
+      "slug": "d0df05f9235456c1f08f292c",
+      "guid": "https://hynek.me/articles/pull-requests-branch/",
+      "title": "Don’t Start Pull Requests from Your Main Branch",
+      "link": "https://hynek.me/articles/pull-requests-branch/",
+      "source": "Hynek Schlawack",
+      "sourceUrl": "https://hynek.me/index.xml",
+      "summary": "When contributing to other users’ repositories, always start a new branch in your fork.",
+      "publishedAt": "2023-12-21T05:00:00.000Z"
+    },
+    {
+      "slug": "33cd22ab4e697c3925a5d79d",
+      "guid": "https://vadimkravcenko.com/?p=2177",
+      "title": "Handling Process Debt in IT",
+      "link": "https://vadimkravcenko.com/shorts/process-debt/",
+      "source": "Vadim Kravcenko",
+      "sourceUrl": "https://vadimkravcenko.com/feed/",
+      "summary": "Question: Answer: The post Handling Process Debt in IT appeared first on Vadim Kravcenko.",
+      "publishedAt": "2023-12-10T16:25:34.000Z"
+    },
+    {
+      "slug": "d9bfa290be6954fc27c480a9",
+      "guid": "https://vadimkravcenko.com/?p=425",
+      "title": "How to determine app idea is technically feasible as a non-technical founder?",
+      "link": "https://vadimkravcenko.com/qa/determine-idea-technically-feasible/",
+      "source": "Vadim Kravcenko",
+      "sourceUrl": "https://vadimkravcenko.com/feed/",
+      "summary": "Question: I'm a non-technical founder with a concept for a productivity app that sets screen time limits and rewards users for staying below these limits. However, I'm struggling to determine if this idea is technically feasible, especially considering the data access restrictio…",
+      "publishedAt": "2023-11-26T12:46:50.000Z"
+    },
+    {
+      "slug": "6a87fca998e3a977d8c17cec",
+      "guid": "https://vadimkravcenko.com/?p=2104",
+      "title": "Postmortems in Software Development",
+      "link": "https://vadimkravcenko.com/shorts/dealing-with-failures-and-postmortems/",
+      "source": "Vadim Kravcenko",
+      "sourceUrl": "https://vadimkravcenko.com/feed/",
+      "summary": "Question: Answer: The post Postmortems in Software Development appeared first on Vadim Kravcenko.",
+      "publishedAt": "2023-11-22T19:40:42.000Z"
+    },
+    {
+      "slug": "75233df228549cae9b15346c",
+      "guid": "https://vadimkravcenko.com/?p=255",
+      "title": "Every software is messy and has skeletons",
+      "link": "https://vadimkravcenko.com/shorts/every-app-has-its-skeletons/",
+      "source": "Vadim Kravcenko",
+      "sourceUrl": "https://vadimkravcenko.com/feed/",
+      "summary": "Question: Answer: The post Every software is messy and has skeletons appeared first on Vadim Kravcenko.",
+      "publishedAt": "2023-11-18T12:37:12.000Z"
+    },
+    {
+      "slug": "e8f981db90e8852c60c1b210",
+      "guid": "https://vadimkravcenko.com/?p=1973",
+      "title": "Habits of great software engineers",
+      "link": "https://vadimkravcenko.com/shorts/habits-of-great-software-engineers/",
+      "source": "Vadim Kravcenko",
+      "sourceUrl": "https://vadimkravcenko.com/feed/",
+      "summary": "Question: Answer: The post Habits of great software engineers appeared first on Vadim Kravcenko.",
+      "publishedAt": "2023-11-04T11:08:19.000Z"
+    },
+    {
+      "slug": "ede0b4f7a0069b13421c1891",
+      "guid": "https://vadimkravcenko.com/?p=1513",
+      "title": "Networking as an introvert CTO",
+      "link": "https://vadimkravcenko.com/shorts/networking-introvert-cto/",
+      "source": "Vadim Kravcenko",
+      "sourceUrl": "https://vadimkravcenko.com/feed/",
+      "summary": "Question: Answer: The post Networking as an introvert CTO appeared first on Vadim Kravcenko.",
+      "publishedAt": "2023-10-19T14:52:15.000Z"
+    },
+    {
+      "slug": "1340b8486397e1e2f2d52b96",
+      "guid": "https://vadimkravcenko.com/?p=1874",
+      "title": "Database Migrations",
+      "link": "https://vadimkravcenko.com/shorts/database-migrations/",
+      "source": "Vadim Kravcenko",
+      "sourceUrl": "https://vadimkravcenko.com/feed/",
+      "summary": "Question: Answer: The post Database Migrations appeared first on Vadim Kravcenko.",
+      "publishedAt": "2023-10-01T10:03:54.000Z"
+    },
+    {
+      "slug": "4ca463332de885ec92cd869b",
+      "guid": "https://vadimkravcenko.com/?p=1851",
+      "title": "Asking questions the right way",
+      "link": "https://vadimkravcenko.com/shorts/asking-right-questions/",
+      "source": "Vadim Kravcenko",
+      "sourceUrl": "https://vadimkravcenko.com/feed/",
+      "summary": "Question: Answer: The post Asking questions the right way appeared first on Vadim Kravcenko.",
+      "publishedAt": "2023-09-14T06:40:20.000Z"
+    },
+    {
+      "slug": "893c806c501f7b65d069204c",
+      "guid": "https://vadimkravcenko.com/?p=1827",
+      "title": "Aging Code",
+      "link": "https://vadimkravcenko.com/shorts/aging-code/",
+      "source": "Vadim Kravcenko",
+      "sourceUrl": "https://vadimkravcenko.com/feed/",
+      "summary": "Question: Answer: The post Aging Code appeared first on Vadim Kravcenko.",
+      "publishedAt": "2023-09-05T18:26:44.000Z"
+    },
+    {
+      "slug": "91a0e1609d05f7a022e83772",
+      "guid": "https://vadimkravcenko.com/?p=1764",
+      "title": "Managing difficult software engineers",
+      "link": "https://vadimkravcenko.com/shorts/managing-bad-engineers/",
+      "source": "Vadim Kravcenko",
+      "sourceUrl": "https://vadimkravcenko.com/feed/",
+      "summary": "Question: Answer: The post Managing difficult software engineers appeared first on Vadim Kravcenko.",
+      "publishedAt": "2023-08-14T12:22:09.000Z"
+    },
+    {
+      "slug": "27fb1fbbbb24d0da30f75b84",
+      "guid": "https://vadimkravcenko.com/?p=1706",
+      "title": "Can an offshore dev agency steal your code?",
+      "link": "https://vadimkravcenko.com/qa/can-offshore-dev-agency-steal-code/",
+      "source": "Vadim Kravcenko",
+      "sourceUrl": "https://vadimkravcenko.com/feed/",
+      "summary": "Question: hey Vadim, I'm a CTO at a newly created startup and we're looking to outsource development to an offshore dev agency. I understand the importance of the intellectual property. It's my first time working with an offshore outsourcing company, and I have some concerns abo…",
+      "publishedAt": "2023-08-13T15:20:29.000Z"
+    },
+    {
+      "slug": "e5c451208e8efd17615c28aa",
+      "guid": "https://vadimkravcenko.com/?p=1718",
+      "title": "Is development the right career for me?",
+      "link": "https://vadimkravcenko.com/qa/development-right-career/",
+      "source": "Vadim Kravcenko",
+      "sourceUrl": "https://vadimkravcenko.com/feed/",
+      "summary": "Question: Recently, during a work review with my boss, I was confronted with a question that's been lingering in my mind for a few years: \"Is software development truly the right career for me?\" While I've always delivered my tasks on time and met expectations, my boss noticed m…",
+      "publishedAt": "2023-08-13T13:41:53.000Z"
+    },
+    {
+      "slug": "1f4dddb630f34b0c2f436086",
+      "guid": "https://vadimkravcenko.com/?p=1716",
+      "title": "Is coding bootcamp better than university?",
+      "link": "https://vadimkravcenko.com/qa/coding-bootcamp-better-university/",
+      "source": "Vadim Kravcenko",
+      "sourceUrl": "https://vadimkravcenko.com/feed/",
+      "summary": "Question: Hi Vadim, I'm 20 and want to become a software engineer, I'm at a crossroads in deciding the best educational path to take. I've heard a lot about coding bootcamps from some of my friends and their promise of teaching practical skills from the get-go in 90 days. On the…",
+      "publishedAt": "2023-08-13T13:41:24.000Z"
+    },
+    {
+      "slug": "80cf256ef74e91ba9f831f3d",
+      "guid": "https://vadimkravcenko.com/?p=1682",
+      "title": "As a non-technical founder what should I be doing while the product is developed?",
+      "link": "https://vadimkravcenko.com/qa/non-technical-founder-during-development/",
+      "source": "Vadim Kravcenko",
+      "sourceUrl": "https://vadimkravcenko.com/feed/",
+      "summary": "Question: As a non-technical co-founder of a startup, I'm currently in a phase where our CTO and the technical team are busy developing our product. While I trust their expertise in handling the technical aspects, I'm unsure about my role during this phase. What specific respons…",
+      "publishedAt": "2023-07-30T15:39:59.000Z"
+    },
+    {
+      "slug": "b369d57f7838eb90b4dc0416",
+      "guid": "https://vadimkravcenko.com/?p=1667",
+      "title": "Is 150K USD a reasonable rate to build a mobile app?",
+      "link": "https://vadimkravcenko.com/qa/reasonable-rate-build-mobile-app/",
+      "source": "Vadim Kravcenko",
+      "sourceUrl": "https://vadimkravcenko.com/feed/",
+      "summary": "Question: As a startup founder, I've recently been quoted a rate of 150K USD for the development of a mobile app for my product. I'm trying to understand if this is a reasonable amount to invest in our app development. I've also had a quote of 50K for wireframes/designs from an …",
+      "publishedAt": "2023-07-30T08:26:56.000Z"
+    },
+    {
+      "slug": "cd5133d192020bc0bba7d755",
+      "guid": "https://vadimkravcenko.com/?p=1619",
+      "title": "Should I quit my well-paid job to start a startup?",
+      "link": "https://vadimkravcenko.com/qa/should-quit-well-paid-job-start-startup/",
+      "source": "Vadim Kravcenko",
+      "sourceUrl": "https://vadimkravcenko.com/feed/",
+      "summary": "Question: I'm currently in a well-paid and stable job that provides a comfortable lifestyle. However, I've been nurturing a small startup idea. I'm grappling with the decision of whether to leave my current job to pursue this dream. I'm really afraid of leaving my job and ending…",
+      "publishedAt": "2023-07-23T19:16:27.000Z"
+    },
+    {
+      "slug": "fb7fb77d933c695acf0b2157",
+      "guid": "https://vadimkravcenko.com/?p=1613",
+      "title": "How to stop thinking like an engineer and think like a businessman?",
+      "link": "https://vadimkravcenko.com/qa/how-to-stop-thinking-as-an-engineer-and-start-thinking-like-a-business-man/",
+      "source": "Vadim Kravcenko",
+      "sourceUrl": "https://vadimkravcenko.com/feed/",
+      "summary": "Question: As an engineer, I've been trained to solve problems and to focus on the technical aspects of a project. However, I'm finding that as I want to do startup stuff, I need to start thinking more like a businessman. How can I shift my focus from the technical details to the…",
+      "publishedAt": "2023-07-23T19:02:47.000Z"
+    },
+    {
+      "slug": "d112948e76bfbef31705aefb",
+      "guid": "https://vadimkravcenko.com/?p=1605",
+      "title": "Is it a bad idea if I build the MVP of my startup on my company’s pc?",
+      "link": "https://vadimkravcenko.com/qa/bad-idea-build-mvp-startup-on-companys-pc/",
+      "source": "Vadim Kravcenko",
+      "sourceUrl": "https://vadimkravcenko.com/feed/",
+      "summary": "Question: Hello, I'm in the process of developing the Minimum Viable Product (MVP) for my startup, it's a simple idea for a gaming app that should help you learn investing. However, I'm currently employed and the only available resource I have for this development is my company'…",
+      "publishedAt": "2023-07-23T18:49:06.000Z"
+    },
+    {
+      "slug": "819b9e8cd94852f81a143109",
+      "guid": "https://vadimkravcenko.com/?p=756",
+      "title": "How dangerous is over-engineering for a start up?",
+      "link": "https://vadimkravcenko.com/qa/how-dangerous-is-over-engineering/",
+      "source": "Vadim Kravcenko",
+      "sourceUrl": "https://vadimkravcenko.com/feed/",
+      "summary": "Question: Hey Vadim, I hope to tap into your CTO experience. We're building a startup and are constantly grappling with the balance between creating robust, future-proof solutions and delivering value to our customers in the most efficient way possible. Basically we're over engi…",
+      "publishedAt": "2023-07-23T07:54:49.000Z"
+    },
+    {
+      "slug": "d47faa588af66eff7ac37864",
+      "guid": "https://vadimkravcenko.com/?p=422",
+      "title": "How do I tell my cofounder I need to quit?",
+      "link": "https://vadimkravcenko.com/qa/how-do-i-tell-my-cofounder-i-need-to-quit/",
+      "source": "Vadim Kravcenko",
+      "sourceUrl": "https://vadimkravcenko.com/feed/",
+      "summary": "Question: I've been running in overdrive mode the last year or so, I've come to a crossroads where I feel the need to step away from my role and pursue a different path. I am grappling with how to convey this decision to my co-founder, who has been my partner in this journey. Wh…",
+      "publishedAt": "2023-07-23T07:39:00.000Z"
+    },
+    {
+      "slug": "8de8b693d819da2085be222d",
+      "guid": "https://vadimkravcenko.com/?p=1550",
+      "title": "What does a CTO actually do?",
+      "link": "https://vadimkravcenko.com/shorts/what-cto-does/",
+      "source": "Vadim Kravcenko",
+      "sourceUrl": "https://vadimkravcenko.com/feed/",
+      "summary": "Question: Answer: The post What does a CTO actually do? appeared first on Vadim Kravcenko.",
+      "publishedAt": "2023-07-21T13:10:21.000Z"
+    },
+    {
+      "slug": "aebc8104a99cdd40930c489f",
+      "guid": "https://vadimkravcenko.com/?p=1476",
+      "title": "Being a good mentor – a developers guide",
+      "link": "https://vadimkravcenko.com/shorts/good-mentor/",
+      "source": "Vadim Kravcenko",
+      "sourceUrl": "https://vadimkravcenko.com/feed/",
+      "summary": "Question: Answer: The post Being a good mentor – a developers guide appeared first on Vadim Kravcenko.",
+      "publishedAt": "2023-07-08T16:26:50.000Z"
+    },
+    {
+      "slug": "44d1018bf69f610ced75ae64",
+      "guid": "https://hynek.me/articles/turbo-charge-tox/",
+      "title": "Two Ways to Turbo-Charge tox",
+      "link": "https://hynek.me/articles/turbo-charge-tox/",
+      "source": "Hynek Schlawack",
+      "sourceUrl": "https://hynek.me/index.xml",
+      "summary": "No, it’s not (just) run-parallel – let’s cut the local tox runtime by 75%!",
+      "publishedAt": "2023-06-26T14:00:00.000Z"
+    },
+    {
+      "slug": "fae963e80bce8271f4b584fd",
+      "guid": "https://vadimkravcenko.com/?p=1453",
+      "title": "Healthy Documentation",
+      "link": "https://vadimkravcenko.com/shorts/proper-documentation/",
+      "source": "Vadim Kravcenko",
+      "sourceUrl": "https://vadimkravcenko.com/feed/",
+      "summary": "Question: Answer: The post Healthy Documentation appeared first on Vadim Kravcenko.",
+      "publishedAt": "2023-06-11T14:39:44.000Z"
+    },
+    {
+      "slug": "6ad4d6719186f183d77cf52c",
+      "guid": "https://vadimkravcenko.com/?p=1409",
+      "title": "Rules of Thumb for Software Development Estimations",
+      "link": "https://vadimkravcenko.com/shorts/project-estimates/",
+      "source": "Vadim Kravcenko",
+      "sourceUrl": "https://vadimkravcenko.com/feed/",
+      "summary": "Question: Answer: The post Rules of Thumb for Software Development Estimations appeared first on Vadim Kravcenko.",
+      "publishedAt": "2023-05-01T19:32:21.000Z"
+    },
+    {
+      "slug": "a3375e6f36a6f5add65f8a2e",
+      "guid": "https://hynek.me/talks/subclassing/",
+      "title": "Subclassing, Composition, Python, and You",
+      "link": "https://hynek.me/talks/subclassing/",
+      "source": "Hynek Schlawack",
+      "sourceUrl": "https://hynek.me/index.xml",
+      "summary": "Ever seen a code base where understanding a simple method meant jumping through tangled class hierarchies? We all have! And while “Favor composition over inheritance!” is almost as old as object-oriented programming, strictly avoiding all types of subclassing leads to verbose, u…",
+      "publishedAt": "2023-04-22T00:00:00.000Z"
+    },
+    {
+      "slug": "b241a684ec896b2a82c5ca32",
+      "guid": "https://vadimkravcenko.com/?p=1355",
+      "title": "Bullsh*t Jobs",
+      "link": "https://vadimkravcenko.com/shorts/bullshit-jobs/",
+      "source": "Vadim Kravcenko",
+      "sourceUrl": "https://vadimkravcenko.com/feed/",
+      "summary": "Question: Answer: The post Bullsh*t Jobs appeared first on Vadim Kravcenko.",
+      "publishedAt": "2023-04-01T18:13:46.000Z"
+    },
+    {
+      "slug": "0dc24d639b3e4380668acf5e",
+      "guid": "https://bitsofco.de/when-is-focus-visible-visible/",
+      "title": "When is :focus-visible visible?",
+      "link": "https://bitsofco.de/when-is-focus-visible-visible/",
+      "source": "Bits of Code",
+      "sourceUrl": "https://bitsofco.de/feed/feed.xml",
+      "summary": "Focus outlines (and their styling) have frequently been a point of contention between aesthetics and usability. On the one hand, focus outlines are incredibly important for navigation, particularly by users navigating via keyboard or other non-pointer devices. On the other hand,…",
+      "publishedAt": "2023-03-21T00:00:00.000Z"
+    },
+    {
+      "slug": "daaee22b6b37c448fce79605",
+      "guid": "https://vadimkravcenko.com/?p=1337",
+      "title": "Product Owner vs Project Managers",
+      "link": "https://vadimkravcenko.com/shorts/owner-vs-manager/",
+      "source": "Vadim Kravcenko",
+      "sourceUrl": "https://vadimkravcenko.com/feed/",
+      "summary": "Question: Answer: The post Product Owner vs Project Managers appeared first on Vadim Kravcenko.",
+      "publishedAt": "2023-03-12T18:12:05.000Z"
+    },
+    {
+      "slug": "02f4f3d869504f2ebe91a9a7",
+      "guid": "https://bitsofco.de/from-ghost-to-11ty/",
+      "title": "From Ghost to 11ty",
+      "link": "https://bitsofco.de/from-ghost-to-11ty/",
+      "source": "Bits of Code",
+      "sourceUrl": "https://bitsofco.de/feed/feed.xml",
+      "summary": "Over 5 years ago, I migrated this blog From Jekyll to Ghost. Back then, my reasons for moving to Ghost were because - I wanted a CMS Managing all the posts’ raw markdown files in one folder was getting clunky The Jekyll build process was starting to significantly lag I no longer…",
+      "publishedAt": "2023-02-22T00:00:00.000Z"
+    },
+    {
+      "slug": "3c37982f3a911de741fbf44f",
+      "guid": "https://hynek.me/articles/why-i-like-nox/",
+      "title": "Why I Like Nox",
+      "link": "https://hynek.me/articles/why-i-like-nox/",
+      "source": "Hynek Schlawack",
+      "sourceUrl": "https://hynek.me/index.xml",
+      "summary": "Ever since I got involved with open-source Python projects, tox has been vital for testing packages across Python versions (and other factors). However, lately, I’ve been increasingly using Nox for my projects instead. Since I’ve been asked why repeatedly, I’ll sum up my thought…",
+      "publishedAt": "2023-01-18T12:00:00.000Z"
+    },
+    {
+      "slug": "d9254bd2242326d1f786c208",
+      "guid": "https://hynek.me/articles/macos-dyld-env/",
+      "title": "Surprising Consequences of macOS’s Environment Variable Sanitization",
+      "link": "https://hynek.me/articles/macos-dyld-env/",
+      "source": "Hynek Schlawack",
+      "sourceUrl": "https://hynek.me/index.xml",
+      "summary": "Why does DYLD_LIBRARY_PATH keep disappearing!?",
+      "publishedAt": "2023-01-09T08:00:00.000Z"
+    },
+    {
+      "slug": "1794d22a9b03e715bcd7227d",
+      "guid": "https://hynek.me/articles/productive-fruit-fly-programmer/",
+      "title": "How I’m a Productive Programmer With a Memory of a Fruit Fly",
+      "link": "https://hynek.me/articles/productive-fruit-fly-programmer/",
+      "source": "Hynek Schlawack",
+      "sourceUrl": "https://hynek.me/index.xml",
+      "summary": "A love letter to tools that changed everything for me.",
+      "publishedAt": "2022-09-19T00:00:00.000Z"
+    },
+    {
+      "slug": "4e33e3467f6300df92e182de",
+      "guid": "https://hynek.me/articles/python-recursive-optional-dependencies/",
+      "title": "Recursive Optional Dependencies in Python",
+      "link": "https://hynek.me/articles/python-recursive-optional-dependencies/",
+      "source": "Hynek Schlawack",
+      "sourceUrl": "https://hynek.me/index.xml",
+      "summary": "One of my (slowly evaporating) reasons why I like putting packaging metadata into an executable setup.py is the ability to have optional dependencies that are combinations of others. As of pip 21.2, this is possible without running code.",
+      "publishedAt": "2022-07-29T06:00:00.000Z"
+    },
+    {
+      "slug": "a4dd1b0e9cb627bb1a8bae1c",
+      "guid": "https://hynek.me/articles/what-to-mock-in-5-mins/",
+      "title": "“Don’t Mock What You Don’t Own” in 5 Minutes",
+      "link": "https://hynek.me/articles/what-to-mock-in-5-mins/",
+      "source": "Hynek Schlawack",
+      "sourceUrl": "https://hynek.me/index.xml",
+      "summary": "A common issue when writing tests for real-world software is how to deal with third-party dependencies. Let’s examine an old, but counter-intuitive principle.",
+      "publishedAt": "2022-06-21T09:00:00.000Z"
+    },
+    {
+      "slug": "c66f3fe06e028a1eca52ef73",
+      "guid": "https://hynek.me/articles/import-attrs/",
+      "title": "import attrs",
+      "link": "https://hynek.me/articles/import-attrs/",
+      "source": "Hynek Schlawack",
+      "sourceUrl": "https://hynek.me/index.xml",
+      "summary": "An attempt at catharsis. This is a deeply personal blog post about the most influential project I’ve ever created: attrs , the progenitor of modern Python class utilities. I’m retelling its history from my perspective, how it begot dataclasses , and how I’m leading it into the f…",
+      "publishedAt": "2021-12-28T00:00:00.000Z"
+    },
+    {
+      "slug": "713e44e508dc30625cb09e83",
+      "guid": "https://hynek.me/articles/ditch-codecov-python/",
+      "title": "How to Ditch Codecov for Python Projects",
+      "link": "https://hynek.me/articles/ditch-codecov-python/",
+      "source": "Hynek Schlawack",
+      "sourceUrl": "https://hynek.me/index.xml",
+      "summary": "Codecov’s unreliability breaking CI on my open source projects has been a constant source of frustration for me for years. I have found a way to enforce coverage over a whole GitHub Actions build matrix that doesn’t rely on third-party services.",
+      "publishedAt": "2021-11-18T08:00:00.000Z"
+    },
+    {
+      "slug": "b13f5a094cd3320869fa17ed",
+      "guid": "https://bitsofco.de/web-performance-metrics-cheatsheet/",
+      "title": "Web Performance Metrics Cheatsheet",
+      "link": "https://bitsofco.de/web-performance-metrics-cheatsheet/",
+      "source": "Bits of Code",
+      "sourceUrl": "https://bitsofco.de/feed/feed.xml",
+      "summary": "I recently gave a talk on “Making Sense of Performance Metrics” at the Web Unleashed Conference, and it was suggested that I turn the breakdown of all the performance metrics into a cheatsheet; so here it is! The full cheatsheet, including a downloadable PDF version, are at the …",
+      "publishedAt": "2021-10-25T00:00:00.000Z"
+    },
+    {
+      "slug": "766195d3fb4e2c563324173c",
+      "guid": "https://hynek.me/articles/til/",
+      "title": "Announcing a New Section: TIL",
+      "link": "https://hynek.me/articles/til/",
+      "source": "Hynek Schlawack",
+      "sourceUrl": "https://hynek.me/index.xml",
+      "summary": "Trying out something new: today I’m launching my own Today I Learned section. In this essay I will sum up what my plans and hopes are.",
+      "publishedAt": "2021-08-25T12:00:00.000Z"
+    },
+    {
+      "slug": "25ec6be7d1956ffe45715db8",
+      "guid": "https://hynek.me/articles/python-subclassing-redux/",
+      "title": "Subclassing in Python Redux",
+      "link": "https://hynek.me/articles/python-subclassing-redux/",
+      "source": "Hynek Schlawack",
+      "sourceUrl": "https://hynek.me/index.xml",
+      "summary": "The conflict between subclassing and composition is as old as object-oriented programming. The latest crop of languages like Go or Rust prove that you don’t need subclassing to successfully write code. But what’s a pragmatic approach to subclassing in Python, specifically?",
+      "publishedAt": "2021-06-22T15:00:00.000Z"
+    },
+    {
+      "slug": "f95b68b2b1d042c3a0d97e82",
+      "guid": "https://bitsofco.de/setting-up-a-decentralised-website/",
+      "title": "Setting up a Decentralised Website (ENS + IPFS = dWeb)",
+      "link": "https://bitsofco.de/setting-up-a-decentralised-website/",
+      "source": "Bits of Code",
+      "sourceUrl": "https://bitsofco.de/feed/feed.xml",
+      "summary": "One thing that I’ve been really into lately has been ENS names. As someone who’s already obsessed with buying domain names, ENS names have been an even greater obsession (mostly because of emoji names, like ✊🏾✊🏾✊🏾.eth)! So what are ENS names, exactly? And what is a “decentral…",
+      "publishedAt": "2021-06-18T00:00:00.000Z"
+    },
+    {
+      "slug": "ba0c15c9e0cd0c1a77949c96",
+      "guid": "https://hynek.me/articles/canonical-seo-fail/",
+      "title": "Canonical SEO Failure",
+      "link": "https://hynek.me/articles/canonical-seo-fail/",
+      "source": "Hynek Schlawack",
+      "sourceUrl": "https://hynek.me/index.xml",
+      "summary": "This post is less about teaching and more about schadenfreude amusement for you, and catharsis for me. It’s the story of how one unfortunate HTML tag kicked me off almost all search engines and my months-long way back. And why it didn’t matter in the end.",
+      "publishedAt": "2021-04-28T00:00:00.000Z"
+    },
+    {
+      "slug": "0e84bd6637754afe4adb68dc",
+      "guid": "https://hynek.me/articles/semver-will-not-save-you/",
+      "title": "Semantic Versioning Will Not Save You",
+      "link": "https://hynek.me/articles/semver-will-not-save-you/",
+      "source": "Hynek Schlawack",
+      "sourceUrl": "https://hynek.me/index.xml",
+      "summary": "The widely used Python package cryptography changed their build system to use Rust for low-level code, which caused an emotional GitHub thread. Enthusiasts of 32-bit hardware from the 1990s aside, a vocal faction stipulated adherence to Semantic Versioning from the maintainers, …",
+      "publishedAt": "2021-03-02T00:00:00.000Z"
+    },
+    {
+      "slug": "75875ce2d2dd6b1e5760b51d",
+      "guid": "https://hynek.me/articles/lie-vs-lay/",
+      "title": "Lie vs Lay",
+      "link": "https://hynek.me/articles/lie-vs-lay/",
+      "source": "Hynek Schlawack",
+      "sourceUrl": "https://hynek.me/index.xml",
+      "summary": "Lie and lay are infamously confusing to non-native speakers. It’s so bad that it sparked a cottage industry of click-baity articles full of sketchy ads. Since English is my third language, I stumbled a lot myself until I wrote this cheatsheet.",
+      "publishedAt": "2021-02-03T00:00:00.000Z"
+    },
+    {
+      "slug": "9fc18b6fbdeea68382855bf9",
+      "guid": "https://bitsofco.de/chrome-dev-summit-2020/",
+      "title": "Highlights from Chrome Dev Summit 2020",
+      "link": "https://bitsofco.de/chrome-dev-summit-2020/",
+      "source": "Bits of Code",
+      "sourceUrl": "https://bitsofco.de/feed/feed.xml",
+      "summary": "CDS in 2020 was a bit different, like everything else. It was online, and the talks were more bite-sized at roughly 10 minutes each. I really enjoyed this new style of the summit and, while I missed the in-person aspects of the conference, this was a great way to end the year. S…",
+      "publishedAt": "2020-12-14T00:00:00.000Z"
+    },
+    {
+      "slug": "3e37290acf2f7f406afaf713",
+      "guid": "https://hynek.me/articles/waiting-in-asyncio/",
+      "title": "Waiting in asyncio",
+      "link": "https://hynek.me/articles/waiting-in-asyncio/",
+      "source": "Hynek Schlawack",
+      "sourceUrl": "https://hynek.me/index.xml",
+      "summary": "One of the main appeals of using Python’s asyncio is being able to fire off many coroutines and run them concurrently. How many ways do you know for waiting for their results?",
+      "publishedAt": "2020-05-21T00:00:00.000Z"
+    },
+    {
+      "slug": "3dc8566274ae91d82386d944",
+      "guid": "https://hynek.me/talks/abstractions/",
+      "title": "Classy Abstractions",
+      "link": "https://hynek.me/talks/abstractions/",
+      "source": "Hynek Schlawack",
+      "sourceUrl": "https://hynek.me/index.xml",
+      "summary": "Let’s talk about abstractions and Pythonic code.",
+      "publishedAt": "2020-05-18T00:00:00.000Z"
+    },
+    {
+      "slug": "fc9e3754e69f0ce5a0e734ac",
+      "guid": "https://hynek.me/articles/document-your-tests/",
+      "title": "Why You Should Document Your Tests",
+      "link": "https://hynek.me/articles/document-your-tests/",
+      "source": "Hynek Schlawack",
+      "sourceUrl": "https://hynek.me/index.xml",
+      "summary": "Some projects have the policy that all tests must have an explanatory comment – including all of mine. At first, I found that baffling. If that’s you right now, this article is for you.",
+      "publishedAt": "2020-05-04T00:00:00.000Z"
+    },
+    {
+      "slug": "cbe1f881570daa32d6daeec7",
+      "guid": "https://bitsofco.de/what-i-wish-i-knew-about-react/",
+      "title": "What I wish I knew about React",
+      "link": "https://bitsofco.de/what-i-wish-i-knew-about-react/",
+      "source": "Bits of Code",
+      "sourceUrl": "https://bitsofco.de/feed/feed.xml",
+      "summary": "A couple weeks ago I started working on my first React application. Not only was it my first React application, but it was also my first React Native application, so a lot was new to me all in one go. Coming from the Angular (and Ionic) world, it felt like all my preconceived no…",
+      "publishedAt": "2020-04-28T00:00:00.000Z"
+    },
+    {
+      "slug": "6aa7296b2e1c161b857b63c2",
+      "guid": "https://hynek.me/articles/python-github-actions/",
+      "title": "Python in GitHub Actions",
+      "link": "https://hynek.me/articles/python-github-actions/",
+      "source": "Hynek Schlawack",
+      "sourceUrl": "https://hynek.me/index.xml",
+      "summary": "GitHub’s own CI called GitHub Actions has been out of closed beta for a while and offers generous free quotas and a seamless integration with the rest of the site. Let’s have a look at how to use it for an open source Python package.",
+      "publishedAt": "2020-03-09T00:00:00.000Z"
+    },
+    {
+      "slug": "526f8e590a2e101095556607",
+      "guid": "https://hynek.me/articles/python-in-production/",
+      "title": "Python in Production",
+      "link": "https://hynek.me/articles/python-in-production/",
+      "source": "Hynek Schlawack",
+      "sourceUrl": "https://hynek.me/index.xml",
+      "summary": "I’m missing a key part from the public Python discourse and I would like to help to change that.",
+      "publishedAt": "2020-02-23T16:45:00.000Z"
+    },
+    {
+      "slug": "bfb1ec7d4b9d3e3758144429",
+      "guid": "https://hynek.me/articles/packaging-metadata/",
+      "title": "Python Packaging Metadata",
+      "link": "https://hynek.me/articles/packaging-metadata/",
+      "source": "Hynek Schlawack",
+      "sourceUrl": "https://hynek.me/index.xml",
+      "summary": "Since this topic keeps coming up, I’d like to briefly share my thoughts on Python package metadata because it’s – as always – more complex than it seems.",
+      "publishedAt": "2020-02-14T00:00:00.000Z"
+    },
+    {
+      "slug": "4f3179cb089ef559264227e1",
+      "guid": "https://bitsofco.de/how-i-created-488-live-images/",
+      "title": "How I created 488 \"live images\"",
+      "link": "https://bitsofco.de/how-i-created-488-live-images/",
+      "source": "Bits of Code",
+      "sourceUrl": "https://bitsofco.de/feed/feed.xml",
+      "summary": "I've recently been going down a rabbit hole of making improvements to my CanIUse embed. To give a bit of a background, it is an interactive embed I created to easily embed data from caniuse.com in my blog posts and anywhere else. I previously wrote about how I first created the …",
+      "publishedAt": "2019-11-26T00:00:00.000Z"
+    },
+    {
+      "slug": "f3298d5ca67348355ed35452",
+      "guid": "https://bitsofco.de/chrome-dev-summit-2019/",
+      "title": "Highlights from Chrome Dev Summit 2019",
+      "link": "https://bitsofco.de/chrome-dev-summit-2019/",
+      "source": "Bits of Code",
+      "sourceUrl": "https://bitsofco.de/feed/feed.xml",
+      "summary": "I’ve been going to Chrome Dev Summit for a couple of years now (2016 & 2018) and I always like to do this roundup article, highlighting what I thought were the most interesting ideas and projects from the conference. So let’s get into it! HTML is (finally) getting some 💕 # It s…",
+      "publishedAt": "2019-11-18T00:00:00.000Z"
+    },
+    {
+      "slug": "68a1359adaaab8c7877cad3a",
+      "guid": "https://bitsofco.de/how-to-use-puppeteer-in-a-netlify-aws-lambda-function/",
+      "title": "How to use Puppeteer in a Netlify (AWS Lambda) function",
+      "link": "https://bitsofco.de/how-to-use-puppeteer-in-a-netlify-aws-lambda-function/",
+      "source": "Bits of Code",
+      "sourceUrl": "https://bitsofco.de/feed/feed.xml",
+      "summary": "I recently gave a talk at JAMstack_conf San Francisco about how I used headless chrome (via Puppeteer) and Cloudinary to capture screenshots of my interactive caniuse embed. I did this to have a fallback image to use in case the embed couldn’t be loaded, for example in cases whe…",
+      "publishedAt": "2019-10-28T00:00:00.000Z"
+    },
+    {
+      "slug": "806d552f455dc88e62d3d466",
+      "guid": "https://hynek.me/articles/books-that-changed-my-life/",
+      "title": "Books That Changed My Life",
+      "link": "https://hynek.me/articles/books-that-changed-my-life/",
+      "source": "Hynek Schlawack",
+      "sourceUrl": "https://hynek.me/index.xml",
+      "summary": "People always ask for book recommendations, so here’s my list of books that changed my life in one way or another. None of them is related to tech or programming, but all affect how I think and work.",
+      "publishedAt": "2019-09-23T00:00:00.000Z"
+    },
+    {
+      "slug": "4fb66643b8d81a4c6d75b368",
+      "guid": "https://bitsofco.de/calling-smart-contract-functions-using-web3-js-call-vs-send/",
+      "title": "Calling smart contract functions using web3.js - call() vs send()",
+      "link": "https://bitsofco.de/calling-smart-contract-functions-using-web3-js-call-vs-send/",
+      "source": "Bits of Code",
+      "sourceUrl": "https://bitsofco.de/feed/feed.xml",
+      "summary": "I’ve recently been doing Udacity’s Blockchain Developer Nanodegree, and the gotcha that has caused me the most wasted hours is the difference between calling a method in my smart contract using the call() vs send() web3.js methods. Using web3.js to call smart contract functions …",
+      "publishedAt": "2019-09-03T00:00:00.000Z"
+    },
+    {
+      "slug": "eb479c8acca109f14efe5541",
+      "guid": "https://bitsofco.de/solidity-function-visibility-explained/",
+      "title": "Solidity function visibility, explained",
+      "link": "https://bitsofco.de/solidity-function-visibility-explained/",
+      "source": "Bits of Code",
+      "sourceUrl": "https://bitsofco.de/feed/feed.xml",
+      "summary": "When writing a smart contract, we can control who/what can call functions within that contract by specifying what is known as the function visibility. This allows us to easily secure certain parts of a contract without having to write too much custom logic. Who can call a smart …",
+      "publishedAt": "2019-08-27T00:00:00.000Z"
+    },
+    {
+      "slug": "03db52810026b53ed6cff660",
+      "guid": "https://scratchpad.blog/the-one-skill-every-software-developer-should-master/",
+      "title": "The one skill every Software Developer should master",
+      "link": "https://scratchpad.blog/the-one-skill-every-software-developer-should-master/",
+      "source": "ScratchPad",
+      "sourceUrl": "https://scratchpad.blog/feed.xml",
+      "summary": "There’s no doubt that the main skill of any software developer is to write good code regardless of the programming language and the platform he is specialized on. This means he must be able to write code that is concise, readable, testable, performant, etc. For this, a developer…",
+      "publishedAt": "2019-06-27T00:00:00.000Z"
+    },
+    {
+      "slug": "4b444d819e546eee3e9ffb0b",
+      "guid": "https://scratchpad.blog/theres-just-one-reason-for-using-the-cloud/",
+      "title": "There’s just one reason for using the Cloud",
+      "link": "https://scratchpad.blog/theres-just-one-reason-for-using-the-cloud/",
+      "source": "ScratchPad",
+      "sourceUrl": "https://scratchpad.blog/feed.xml",
+      "summary": "In the past years I’ve worked with various clients to migrate existing workloads to the cloud and to build new ones in a cloud-native fashion. Most of the time the most important goal for using the cloud were expectations regarding significant cost reductions. This might be a re…",
+      "publishedAt": "2019-06-23T00:00:00.000Z"
+    },
+    {
+      "slug": "aea2ded6d523d47b82d45159",
+      "guid": "https://hynek.me/articles/simple-python-azure-pipelines/",
+      "title": "Python in Azure Pipelines, Step by Step",
+      "link": "https://hynek.me/articles/simple-python-azure-pipelines/",
+      "source": "Hynek Schlawack",
+      "sourceUrl": "https://hynek.me/index.xml",
+      "summary": "Since the acquisition of Travis CI , the future of their free offering is unclear. Azure Pipelines has a generous free tier, but the examples I found are discouragingly complex and take advantage of features like templating that most projects don’t need. To close that gap, this …",
+      "publishedAt": "2019-06-03T09:14:00.000Z"
+    },
+    {
+      "slug": "e10f193e3d0fa911877a0310",
+      "guid": "https://bitsofco.de/your-first-performance-budget-with-lighthouse/",
+      "title": "Your first performance budget with Lighthouse",
+      "link": "https://bitsofco.de/your-first-performance-budget-with-lighthouse/",
+      "source": "Bits of Code",
+      "sourceUrl": "https://bitsofco.de/feed/feed.xml",
+      "summary": "I asked on Twitter the other day how many people had created and enforced a performance budget for a website they were working on. Not surprisingly, the vast majority of people hadn't. I'm curious, have you ever created (and enforced) a performance budget for a site you're worki…",
+      "publishedAt": "2019-05-28T00:00:00.000Z"
+    },
+    {
+      "slug": "a106a939d28d91b191f656c5",
+      "guid": "https://scratchpad.blog/devops/6-reasons-for-using-the-aws-devops-tools/",
+      "title": "6 reasons for using the AWS DevOps tools",
+      "link": "https://scratchpad.blog/devops/6-reasons-for-using-the-aws-devops-tools/",
+      "source": "ScratchPad",
+      "sourceUrl": "https://scratchpad.blog/feed.xml",
+      "summary": "AWS provides a set of services for supporting the DevOps tool chain. These services are CodeCommit, CodePipeline, CodeBuild and CodeDeploy. With these tools it’s easy to run the complete DevOps Pipeline on AWS. Why should you use these tools instead of the myriad other services …",
+      "publishedAt": "2019-05-25T00:00:00.000Z"
+    },
+    {
+      "slug": "a09ceced237041d3c235ab0f",
+      "guid": "https://scratchpad.blog/howto/how-to-use-codedeploy-with-aws-lightsail/",
+      "title": "How to use CodeDeploy with AWS Lightsail",
+      "link": "https://scratchpad.blog/howto/how-to-use-codedeploy-with-aws-lightsail/",
+      "source": "ScratchPad",
+      "sourceUrl": "https://scratchpad.blog/feed.xml",
+      "summary": "Automating the deployment of your application is key for fast development cycles. CodeDeploy is a service offered by AWS to perform this task. Unfortunately, AWS Lightsail Instances are not supported by default by CodeDeploy. This post shows how CodeDeplpy can be set up to deplo…",
+      "publishedAt": "2019-05-16T00:00:00.000Z"
+    },
+    {
+      "slug": "9325af6e89a96e5ec51d6764",
+      "guid": "https://hynek.me/articles/hallway-track/",
+      "title": "The Price of the Hallway Track",
+      "link": "https://hynek.me/articles/hallway-track/",
+      "source": "Hynek Schlawack",
+      "sourceUrl": "https://hynek.me/index.xml",
+      "summary": "There are many good reasons not to go to every talk possible when attending conferences. However, increasingly, it became hip to boast about avoiding going to talks – encouraging others to follow suit. That rubs me the wrong way as a speaker, and I’ll try to explain why.",
+      "publishedAt": "2019-05-15T18:00:00.000Z"
+    },
+    {
+      "slug": "34abe6c96fb3f4449e0b77b5",
+      "guid": "https://scratchpad.blog/howto/how-to-use-efs-with-aws-lightsail/",
+      "title": "How to use EFS with AWS Lightsail",
+      "link": "https://scratchpad.blog/howto/how-to-use-efs-with-aws-lightsail/",
+      "source": "ScratchPad",
+      "sourceUrl": "https://scratchpad.blog/feed.xml",
+      "summary": "Update 2019-09-01: Integrating EFS with Lightsail instances does not seem to work anymore. The information described in this article might be helpful nevertheless. Please get into touch with me if you find a working solution. Scaling web applications can be tricky. One obstacle …",
+      "publishedAt": "2019-05-09T00:00:00.000Z"
+    },
+    {
+      "slug": "c89d13944be8420958aabf4e",
+      "guid": "https://hynek.me/talks/python-foss/",
+      "title": "Maintaining a Python Project When It’s Not Your Job",
+      "link": "https://hynek.me/talks/python-foss/",
+      "source": "Hynek Schlawack",
+      "sourceUrl": "https://hynek.me/index.xml",
+      "summary": "PyPI is a gold mine of great packages but those packages have to be written first. More often than not, projects that millions of people depend on are written and maintained by only one person. If you’re unlucky, that person is you! This talk tries to lighten the burden by givin…",
+      "publishedAt": "2019-05-03T00:00:00.000Z"
+    }
+  ]
 }

@@ -18,6 +18,9 @@ db_clean_and_rebuild:
 	rm database/output/content.db
 	pnpm start
 
+sync_news:
+	pnpm --filter @prj--personal-portfolio--v3/tools--news-sync sync
+
 local_base_build:
 	$(COMPOSE) build local-base
 

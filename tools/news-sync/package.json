@@ -6,7 +6,7 @@
     "license": "MIT",
     "packageManager": "pnpm@11.5.0",
     "scripts": {
-        "start": "node --experimental-strip-types src/index.ts",
+        "sync": "node --experimental-strip-types src/index.ts",
         "typecheck": "tsc -b"
     },
     "dependencies": {

@@ -28,7 +28,7 @@ jobs:
             - name: Fetch RSS feeds into content/news/cache
               env:
                   NEWS_RETENTION_DAYS: '14'
-              run: pnpm --filter @prj--personal-portfolio--v3/tools--news-sync start
+              run: pnpm --filter @prj--personal-portfolio--v3/tools--news-sync sync
 
             - name: Commit cache if changed
               run: |
