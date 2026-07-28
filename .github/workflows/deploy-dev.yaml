@@ -4,6 +4,9 @@ on:
     workflow_dispatch:
     push:
         branches: [main]
+    workflow_run:
+        workflows: [News Sync (daily RSS fetch)]
+        types: [completed]
 
 concurrency:
     group: pages
@@ -21,10 +24,15 @@ env:
 
 jobs:
     ingest-content:
+        # Skip when triggered by a failed/cancelled News Sync run; still run for
+        # push, workflow_dispatch, and successful News Sync completions.
+        if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
         runs-on: ubuntu-latest
         timeout-minutes: 30
         steps:
             - uses: actions/checkout@v7
+              with:
+                  ref: ${{ github.event.workflow_run.head_sha || github.sha }}
             - uses: ./.github/actions/setup-monorepo
             - run: pnpm db:migrate
             - name: Ingest content
@@ -55,6 +63,8 @@ jobs:
         timeout-minutes: 20
         steps:
             - uses: actions/checkout@v7
+              with:
+                  ref: ${{ github.event.workflow_run.head_sha || github.sha }}
             - uses: ./.github/actions/setup-monorepo
 
             - name: Configure Pages
@@ -88,6 +98,8 @@ jobs:
         timeout-minutes: 20
         steps:
             - uses: actions/checkout@v7
+              with:
+                  ref: ${{ github.event.workflow_run.head_sha || github.sha }}
             - uses: ./.github/actions/setup-monorepo
 
             - name: Configure Pages
@@ -121,6 +133,8 @@ jobs:
         timeout-minutes: 20
         steps:
             - uses: actions/checkout@v7
+              with:
+                  ref: ${{ github.event.workflow_run.head_sha || github.sha }}
             - uses: ./.github/actions/setup-monorepo
 
             - name: Configure Pages
@@ -152,6 +166,8 @@ jobs:
         timeout-minutes: 20
         steps:
             - uses: actions/checkout@v7
+              with:
+                  ref: ${{ github.event.workflow_run.head_sha || github.sha }}
             - uses: ./.github/actions/setup-monorepo
 
             - name: Configure Pages
