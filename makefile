@@ -11,18 +11,21 @@ certs:
 	mkcert -install
 	mkcert -cert-file infrastructure/local/traefik/certs/local.pem \
 		-key-file  infrastructure/local/traefik/certs/local-key.pem \
-		local.paulserban.eu local.blog.paulserban.eu local.quiz.paulserban.eu
+		local.paulserban.eu local.blog.paulserban.eu local.quiz.paulserban.eu local.news-feed.paulserban.eu
 
 # 3. cleanup db file - fetch fresh content - rebuild db
 db_clean_and_rebuild:
 	rm database/output/content.db
 	pnpm start
 
+sync_news:
+	pnpm --filter @prj--personal-portfolio--v3/tools--news-sync sync
+
 local_base_build:
 	$(COMPOSE) build local-base
 
 compose_build: local_base_build
-	$(COMPOSE) build portfolio blog quiz
+	$(COMPOSE) build portfolio blog quiz news
 
 # 3. Start stack
 compose_up: local_base_build

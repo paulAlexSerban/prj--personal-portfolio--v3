@@ -1,0 +1,73 @@
+---
+import NewsCard from '@/library/modules/NewsCard.astro';
+import { NewsPagination } from '@/library/modules/NewsPagination.tsx';
+import BaseLayout from '@/system/templates/BaseTemplate.astro';
+import { closeConnection, openDb } from '@/lib/db.ts';
+import {
+    categoryLabel,
+    countItemsByCategory,
+    getCategoryPagePaths,
+    getItemsByCategory,
+    getStaticCategoryPaths,
+    pageCount,
+} from '@/lib/queries/news.ts';
+import { PAGE_SIZE, siteUrls } from '@/lib/urls.ts';
+
+export function getStaticPaths() {
+    const db = openDb();
+    const categories = getStaticCategoryPaths(db);
+    const paths = categories.flatMap(({ category }) => getCategoryPagePaths(db, category, PAGE_SIZE));
+    closeConnection(db);
+    return paths.map(({ category, page }) => ({ params: { category, page } }));
+}
+
+const category = Astro.params.category!;
+const pageNum = Number(Astro.params.page);
+const db = openDb();
+const total = countItemsByCategory(db, category);
+const pages = pageCount(total, PAGE_SIZE);
+const items = getItemsByCategory(db, category, { limit: PAGE_SIZE, offset: (pageNum - 1) * PAGE_SIZE });
+closeConnection(db);
+const label = categoryLabel(category);
+
+if (!Number.isFinite(pageNum) || pageNum < 2 || pageNum > pages) {
+    return Astro.redirect(siteUrls.category(category));
+}
+---
+
+<BaseLayout
+    title={`${label} News · Page ${pageNum} | Paul Serban`}
+    description={`${label} headlines — page ${pageNum}.`}
+>
+    <section class="mb-10">
+        <div class="mb-5 flex flex-wrap items-end justify-between gap-3 border-b-[3px] border-ink pb-2">
+            <div>
+                <p class="kicker text-sm">Category · Page {pageNum}</p>
+                <h2 class="m-0 font-display text-4xl font-bold">{label}</h2>
+            </div>
+            <a class="stamp stamp-ghost px-3 py-1.5 text-sm no-underline" href={siteUrls.home}>
+                All latest
+            </a>
+        </div>
+
+        <ul class="m-0 list-none columns-1 gap-5 p-0 sm:columns-2 lg:columns-3">
+            {
+                items.map((item) => (
+                    <li class="mb-5 break-inside-avoid">
+                        <NewsCard item={item} showCategory={false} />
+                    </li>
+                ))
+            }
+        </ul>
+
+        <div class="mt-10 border-t border-rule pt-4">
+            <NewsPagination
+                page={pageNum}
+                pages={pages}
+                total={total}
+                prevHref={siteUrls.categoryPage(category, pageNum - 1)}
+                nextHref={pageNum < pages ? siteUrls.categoryPage(category, pageNum + 1) : undefined}
+            />
+        </div>
+    </section>
+</BaseLayout>

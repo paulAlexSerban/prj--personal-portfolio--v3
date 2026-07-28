@@ -1,0 +1,12 @@
+{
+    "extends": "../../tsconfig.base.json",
+    "compilerOptions": {
+        "rootDir": "src",
+        "outDir": "dist",
+        "composite": true,
+        "noEmit": true,
+        "types": ["node"]
+    },
+    "include": ["src/**/*.ts"],
+    "references": [{ "path": "../../shared/db-schema" }, { "path": "../../shared/db" }, { "path": "../../shared/task-manager" }]
+}

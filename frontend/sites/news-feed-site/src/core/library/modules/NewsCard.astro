@@ -1,0 +1,59 @@
+---
+import type { NewsItemRow } from '@prj--personal-portfolio--v3/shared--db-schema';
+import { categoryLabel, formatNewsDate, isPublishedToday } from '@/lib/queries/news.ts';
+import { siteUrls } from '@/lib/urls.ts';
+
+interface Props {
+    item: NewsItemRow;
+    showCategory?: boolean;
+}
+
+const { item, showCategory = true } = Astro.props;
+const isToday = isPublishedToday(item.published_at);
+const dateLabel = formatNewsDate(item.published_at);
+---
+
+<article class="card-ruled border-b border-rule pb-4">
+    <div class="mb-2 flex flex-wrap items-center gap-2">
+        {
+            isToday && (
+                <span class="stamp text-[10px] px-2 py-0.5" aria-label="Published today">
+                    New today
+                </span>
+            )
+        }
+        {
+            showCategory && (
+                <a
+                    href={siteUrls.category(item.category)}
+                    class="kicker inline-block border border-ink px-2 py-0.5 text-[10px] text-ink no-underline hover:bg-ink hover:text-aged"
+                >
+                    {categoryLabel(item.category)}
+                </a>
+            )
+        }
+        <p class="kicker mb-0 text-[10px]">
+            {item.source} · {dateLabel}
+        </p>
+    </div>
+    <h2 class="font-display text-2xl font-bold leading-tight">
+        <a
+            href={item.link}
+            class="text-ink no-underline hover:underline"
+            rel="noopener noreferrer"
+            target="_blank"
+        >
+            {item.title}
+        </a>
+    </h2>
+    {item.summary && <p class="mt-2 text-base text-charcoal line-clamp-2">{item.summary}</p>}
+    <div class="rule-thin my-4"></div>
+    <a
+        href={item.link}
+        class="kicker mt-1 inline-flex items-center gap-1 text-sm hover:underline"
+        rel="noopener noreferrer"
+        target="_blank"
+    >
+        Read original <span aria-hidden="true">↗</span>
+    </a>
+</article>
