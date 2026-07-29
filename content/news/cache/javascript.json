@@ -1,8 +1,38 @@
 {
   "category": "javascript",
   "label": "JavaScript",
-  "fetchedAt": "2026-07-28T09:55:11.363Z",
+  "fetchedAt": "2026-07-29T06:49:24.328Z",
   "items": [
+    {
+      "slug": "e1ee0de8dda0d3dc855b128a",
+      "guid": "https://flaviocopes.com/terraform-for-developers/",
+      "title": "Terraform for developers: a complete beginner's guide",
+      "link": "https://flaviocopes.com/terraform-for-developers/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Learn what Terraform is, how infrastructure as code works, and how to create, change, inspect, and destroy infrastructure safely.",
+      "publishedAt": "2026-07-28T13:00:00.000Z"
+    },
+    {
+      "slug": "e03a510f9d420d5ead7792d2",
+      "guid": "https://flaviocopes.com/canvas-ui/",
+      "title": "Canvas UI puts WebGL shaders over real, interactive HTML",
+      "link": "https://flaviocopes.com/canvas-ui/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Canvas UI uses the experimental HTML-in-Canvas API to combine real DOM content with WebGL shaders, without giving up links, forms, or accessibility.",
+      "publishedAt": "2026-07-28T11:00:00.000Z"
+    },
+    {
+      "slug": "15f82ebc3f593280c28a3770",
+      "guid": "https://flaviocopes.com/vite-plugin-tutorial/",
+      "title": "Build a Vite plugin from scratch",
+      "link": "https://flaviocopes.com/vite-plugin-tutorial/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Build a Vite plugin from scratch that transforms custom note files, exposes a virtual module, supports development and production, and adds tests.",
+      "publishedAt": "2026-07-28T09:00:00.000Z"
+    },
     {
       "slug": "38c73782e2914ad71ce9684d",
       "guid": "https://flaviocopes.com/disasterlab/",
@@ -22,6 +52,26 @@
       "sourceUrl": "https://flaviocopes.com/rss.xml",
       "summary": "What chunking is in RAG, how chunk size and overlap determine chunk count, what embedding and vector storage cost, and whether top-k fits your context.",
       "publishedAt": "2026-07-28T05:00:00.000Z"
+    },
+    {
+      "slug": "abb1375ca810a7e02be7ab0e",
+      "guid": "https://blog.appsignal.com/2026/07/28/appsignal-launch-week-2026-recap.html",
+      "title": "AppSignal Launch Week 2026 Recap",
+      "link": "https://blog.appsignal.com/2026/07/28/appsignal-launch-week-2026-recap.html",
+      "source": "AppSignal",
+      "sourceUrl": "https://blog.appsignal.com/feed.xml",
+      "summary": "That's a wrap on Launch Week 2026. In case you missed a day, or you want the short version, here is everything we shipped. Day 1: Render Metrics Stream Support Render makes deploys easy. When something goes wrong, the signal is often scattered across HTTP latency, Postgres conne…",
+      "publishedAt": "2026-07-28T00:00:00.000Z"
+    },
+    {
+      "slug": "7693d66eca93343fa074d272",
+      "guid": "https://javascriptweekly.com/issues/796",
+      "title": "Anders Hejlsberg demos TypeScript 7's 10x speedup",
+      "link": "https://javascriptweekly.com/issues/796",
+      "source": "JavaScript Weekly",
+      "sourceUrl": "https://javascriptweekly.com/rss/1b4m1h9j",
+      "summary": "#​796 — July 28, 2026 Read on the Web JavaScript Weekly Rust Is Eating JavaScript (Still, in 2026) — Our most-read link of 2021 gets an update for 2026. Lee Robinson (then Vercel, now Cursor) predicted Rust would be used to reimplement more and more JavaScript ecosystem tooling,…",
+      "publishedAt": "2026-07-28T00:00:00.000Z"
     },
     {
       "slug": "4fa82a3abaa157a88b3a01bc",
@@ -302,36 +352,6 @@
       "sourceUrl": "https://javascriptweekly.com/rss/1b4m1h9j",
       "summary": "#​795 — July 21, 2026 Read on the Web JavaScript Weekly Framework Benchmarks: Compare Frontend Frameworks — An experienced developer built and benchmarked the same app across numerous frameworks (e.g. Angular, Solid, React, Alpine.js…). Here are the results, covering bundle size…",
       "publishedAt": "2026-07-21T00:00:00.000Z"
-    },
-    {
-      "slug": "c3946436ac193abbd97ac019",
-      "guid": "https://flaviocopes.com/vercel-ai-sdk/",
-      "title": "Vercel AI SDK tutorial: build a streaming chatbot with tools",
-      "link": "https://flaviocopes.com/vercel-ai-sdk/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Build a streaming Next.js chatbot with Vercel AI SDK v7, then add a typed tool call, structured output with Zod, and deployment safeguards.",
-      "publishedAt": "2026-07-20T13:00:00.000Z"
-    },
-    {
-      "slug": "e9bcf16f67d0ce7099612030",
-      "guid": "https://flaviocopes.com/chrome-extension-tutorial/",
-      "title": "Build a Chrome extension from scratch with JavaScript",
-      "link": "https://flaviocopes.com/chrome-extension-tutorial/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Build a Chrome extension from scratch with JavaScript using Manifest V3, a popup, content script, service worker, storage, and shortcuts.",
-      "publishedAt": "2026-07-20T09:00:00.000Z"
-    },
-    {
-      "slug": "568a3ee149eef53ca6e52e12",
-      "guid": "https://flaviocopes.com/dont-let-the-llm-do-the-math/",
-      "title": "Don't let the LLM do the math",
-      "link": "https://flaviocopes.com/dont-let-the-llm-do-the-math/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Keep pricing and numbers deterministic in AI products. Let the LLM write prose only. A hybrid architecture from a real deployment advisor.",
-      "publishedAt": "2026-07-20T05:00:00.000Z"
     },
     {
       "slug": "1c4fc14dfc272f57f10048ae",

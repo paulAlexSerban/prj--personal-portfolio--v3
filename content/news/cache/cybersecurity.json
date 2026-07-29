@@ -1,8 +1,248 @@
 {
   "category": "cybersecurity",
   "label": "Cybersecurity",
-  "fetchedAt": "2026-07-28T09:55:11.363Z",
+  "fetchedAt": "2026-07-29T06:49:24.328Z",
   "items": [
+    {
+      "slug": "42d1eedeb284c954018c399a",
+      "guid": "https://thehackernews.com/2026/07/two-compromised-joyfill-npm-packages.html",
+      "title": "Two Compromised joyfill npm Packages Run RAT When Imported Into Node.js",
+      "link": "https://thehackernews.com/2026/07/two-compromised-joyfill-npm-packages.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "Beta release versions of two npm packages in the @joyfill namespace have been compromised to deliver a remote access trojan (RAT) associated with the DEV#POPPER malware family. The list of affected packages is as follows - @joyfill/layouts@0.1.2-2773.beta.0 @joyfill/components@4…",
+      "publishedAt": "2026-07-29T04:20:57.000Z"
+    },
+    {
+      "slug": "15a299ba63f2ed2a91e3d3af",
+      "guid": "https://www.schneier.com/?p=72379",
+      "title": "Measuring LLMs’ Ability to Perform Cryptanalysis",
+      "link": "https://www.schneier.com/blog/archives/2026/07/measuring-llms-ability-to-perform-cryptanalysis.html",
+      "source": "Schneier on Security",
+      "sourceUrl": "https://www.schneier.com/feed/",
+      "summary": "There’s new benchmark measuring AI’s ability to perform mathematical cryptanalysis. Anthropic’s frontier model actually found new attacks. The benchmark: “CryptanalysisBench: Can LLMs do Cryptanalysis?” The idea is to benchmark the ability of LLMs to discover new mathematical cr…",
+      "publishedAt": "2026-07-29T01:47:05.000Z"
+    },
+    {
+      "slug": "27d976b26e26be695e1b8371",
+      "guid": "https://www.cio.com/article/4202549/what-every-cio-needs-to-know-about-platform-engineering-in-the-age-of-ai.html",
+      "title": "What every CIO needs to know about platform engineering in the age of AI",
+      "link": "https://www.cio.com/article/4202549/what-every-cio-needs-to-know-about-platform-engineering-in-the-age-of-ai.html",
+      "source": "CIO",
+      "sourceUrl": "https://www.cio.com/feed/",
+      "summary": "Most CIOs have AI on the agenda. Most have started with pilots, some have moved to production. But there’s a quieter, more consequential shift underway that isn’t getting the boardroom attention it deserves: AI agents are no longer just a feature inside your applications. They a…",
+      "publishedAt": "2026-07-29T01:23:43.000Z"
+    },
+    {
+      "slug": "331be888ad818330e0307f37",
+      "guid": "https://www.darkreading.com/cloud-security/non-human-identity-sprawl-creates-a-new-cloud-attack-path",
+      "title": "Ghost Credentials Expose Cloud Systems to Hidden Identity Risks",
+      "link": "https://www.darkreading.com/cloud-security/non-human-identity-sprawl-creates-a-new-cloud-attack-path",
+      "source": "Dark Reading",
+      "sourceUrl": "https://www.darkreading.com/rss.xml",
+      "summary": "Dormant nonhuman identities can create security blind spots, says security researcher Aleksandr Krasnov, who has released an open source tool to sniff out trust paths.",
+      "publishedAt": "2026-07-28T21:33:23.000Z"
+    },
+    {
+      "slug": "60d567f96e1b4560d9749116",
+      "guid": "https://www.darkreading.com/cyber-risk/flaw-exposes-data-centers-server-takeover",
+      "title": "Thousands of Data Center Controllers Open to Takeover",
+      "link": "https://www.darkreading.com/cyber-risk/flaw-exposes-data-centers-server-takeover",
+      "source": "Dark Reading",
+      "sourceUrl": "https://www.darkreading.com/rss.xml",
+      "summary": "A host of Internet-exposed remote hardware management processors are subject to offline password-cracking attacks — and adversaries have taken note.",
+      "publishedAt": "2026-07-28T21:07:55.000Z"
+    },
+    {
+      "slug": "7df0eff93528ef6fdb1bde75",
+      "guid": "https://www.darkreading.com/application-security/ai-agents-escape-sandboxes-old-security-rules-apply",
+      "title": "When AI Agents Escape Sandboxes, Old Security Rules Apply",
+      "link": "https://www.darkreading.com/application-security/ai-agents-escape-sandboxes-old-security-rules-apply",
+      "source": "Dark Reading",
+      "sourceUrl": "https://www.darkreading.com/rss.xml",
+      "summary": "OpenAI's recent AI agent sandbox escape proves traditional security principles matter more than ever: limit access, isolate execution, log everything.",
+      "publishedAt": "2026-07-28T20:27:36.000Z"
+    },
+    {
+      "slug": "6b4d3a6eb6f52a9caf831976",
+      "guid": "https://www.cio.com/article/4202405/security-at-the-speed-of-ai-how-to-protect-against-sophisticated-cyberattacks.html",
+      "title": "Security at the speed of AI: How to protect against sophisticated cyberattacks",
+      "link": "https://www.cio.com/article/4202405/security-at-the-speed-of-ai-how-to-protect-against-sophisticated-cyberattacks.html",
+      "source": "CIO",
+      "sourceUrl": "https://www.cio.com/feed/",
+      "summary": "For decades, cyberattacks have been constrained by the skill and speed of the humans launching them. That is no longer the case. Today, frontier AI models can discover zero-day vulnerabilities in minutes and deploy autonomous agents to exploit them before most organizations have…",
+      "publishedAt": "2026-07-28T20:14:27.000Z"
+    },
+    {
+      "slug": "f4b9704380706c1b8348b4b0",
+      "guid": "https://www.darkreading.com/cybersecurity-analytics/stronger-ai-safety-requires-peeking-inside-black-box",
+      "title": "Stronger AI Safety Requires Peeking Inside the 'Black Box'",
+      "link": "https://www.darkreading.com/cybersecurity-analytics/stronger-ai-safety-requires-peeking-inside-black-box",
+      "source": "Dark Reading",
+      "sourceUrl": "https://www.darkreading.com/rss.xml",
+      "summary": "Researchers propose focusing on identification of certain cognitive elements in LLMs that indicate when AI systems may take an unwanted action.",
+      "publishedAt": "2026-07-28T20:05:32.000Z"
+    },
+    {
+      "slug": "834f71b07c6beddee72fd60d",
+      "guid": "https://thehackernews.com/2026/07/claude-ai-just-cracked-post-quantum.html",
+      "title": "Claude AI Just Cracked a Post-Quantum Test Scheme and Found a Faster 7-Round AES Attack",
+      "link": "https://thehackernews.com/2026/07/claude-ai-just-cracked-post-quantum.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "Anthropic says Claude Mythos Preview helped derive an end-to-end key-recovery attack against HAWK-256 and a 200- to 800-fold speedup for an attack on seven-round AES-128. The HAWK attack exploits a previously unused symmetry in the lattice behind the signature scheme. Anthropic'…",
+      "publishedAt": "2026-07-28T18:59:07.000Z"
+    },
+    {
+      "slug": "af56a0a4d6169e085186a19e",
+      "guid": "https://www.darkreading.com/vulnerabilities-threats/certighost-flaw-microsoft-active-directory-certificates",
+      "title": "'Certighost' Flaw Haunts Microsoft Active Directory Certificates",
+      "link": "https://www.darkreading.com/vulnerabilities-threats/certighost-flaw-microsoft-active-directory-certificates",
+      "source": "Dark Reading",
+      "sourceUrl": "https://www.darkreading.com/rss.xml",
+      "summary": "Microsoft patched a high-severity vulnerability earlier this month that allows a threat actor to escalate privileges and compromise an AD environment.",
+      "publishedAt": "2026-07-28T16:38:48.000Z"
+    },
+    {
+      "slug": "25a6aa3b9fadee7c14ee8988",
+      "guid": "https://thehackernews.com/2026/07/tengu-botnet-reboots-compromised-linux.html",
+      "title": "Tengu Botnet Reboots Compromised Linux Devices When Defenders Kill Its Process",
+      "link": "https://thehackernews.com/2026/07/tengu-botnet-reboots-compromised-linux.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "A new Mirai-derived botnet called Tengu can use a compromised Linux device's hardware watchdog to trigger a reboot when defenders kill its main process. If that happens, Tengu's other persistence mechanisms get another chance to relaunch it. Nozomi Networks Labs observed the dro…",
+      "publishedAt": "2026-07-28T15:01:33.000Z"
+    },
+    {
+      "slug": "81917f51ec1dcd5caa08b8eb",
+      "guid": "https://thehackernews.com/2026/07/24650-internet-exposed-bmcs-disclose.html",
+      "title": "24,650 Internet-Exposed BMCs Disclose IPMI Password Hashes Before Login",
+      "link": "https://thehackernews.com/2026/07/24650-internet-exposed-bmcs-disclose.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "Cybersecurity researchers have sounded an alert after finding more than 36,000 Baseboard Management Controller (BMC) management interfaces exposing Intelligent Platform Management Interface (IPMI) protocol to the public internet. Of the 36,872 internet-exposed server-management …",
+      "publishedAt": "2026-07-28T14:41:36.000Z"
+    },
+    {
+      "slug": "03429ea5c1ea7e0e76468efe",
+      "guid": "https://thehackernews.com/2026/07/jfrog-confirms-openai-models-exploited.html",
+      "title": "JFrog Confirms OpenAI Models Exploited Artifactory Zero-Day Before Hugging Face Breach",
+      "link": "https://thehackernews.com/2026/07/jfrog-confirms-openai-models-exploited.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "JFrog has confirmed that OpenAI models exploited a zero-day in self-hosted Artifactory while trying to reach the open internet from a sealed evaluation environment. Artifactory is JFrog's software repository manager. OpenAI says the models then escalated privileges and moved lat…",
+      "publishedAt": "2026-07-28T13:33:47.000Z"
+    },
+    {
+      "slug": "8f4baa3bbcd66abc3df64973",
+      "guid": "https://orca.security/?p=73863",
+      "title": "Cloud Security for Payment Data: A PCI DSS Compliance Guide",
+      "link": "https://orca.security/resources/blog/cloud-security-for-payment-data/",
+      "source": "Orca Security Blog",
+      "sourceUrl": "https://orca.security/resources/blog/feed/",
+      "summary": "Securing payment data in the cloud means treating PCI DSS compliance as a continuous engineering discipline. Organizations processing cardholder data across AWS, Azure, or GCP are responsible for data encryption, access controls, network segmentation, and misconfiguration remedi…",
+      "publishedAt": "2026-07-28T13:19:03.000Z"
+    },
+    {
+      "slug": "025a3117f438b13a4b8c8b6f",
+      "guid": "https://www.cio.com/article/4201942/when-it-comes-to-ai-bigger-isnt-always-better-2.html",
+      "title": "When it comes to AI, bigger isn’t always better",
+      "link": "https://www.cio.com/article/4201942/when-it-comes-to-ai-bigger-isnt-always-better-2.html",
+      "source": "CIO",
+      "sourceUrl": "https://www.cio.com/feed/",
+      "summary": "There is growing concern about trust in AI as the technology is adopted by more people. Large language models (LLMs) continue to face persistent challenges with hallucinations and inaccurate outputs. LLMs are probabilistic systems trained to give answers, even when the correct a…",
+      "publishedAt": "2026-07-28T13:00:00.000Z"
+    },
+    {
+      "slug": "507ba26671cda44a19fc50d3",
+      "guid": "https://thehackernews.com/2026/07/critical-openwrt-dhcpv6-flaw-could-let.html",
+      "title": "Critical OpenWrt DHCPv6 Flaw Could Let Unauthenticated Attackers Run Code as Root",
+      "link": "https://thehackernews.com/2026/07/critical-openwrt-dhcpv6-flaw-could-let.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "OpenWrt has shipped version 24.10.8 to close a critical DHCPv6 stack overflow and a wider set of remotely triggerable flaws in network services enabled by default. The critical issue, tracked as CVE-2026-53921 and rated 9.8 on CVSS 3.1 in OpenWrt's GitHub advisory, lets an unaut…",
+      "publishedAt": "2026-07-28T12:56:14.000Z"
+    },
+    {
+      "slug": "f56a835b2422fc9148f41623",
+      "guid": "https://www.darkreading.com/cybersecurity-operations/former-citigroup-ciso-blauner-great-security-leader",
+      "title": "Former Citigroup CISO Blauner on What Makes A Great Security Leader",
+      "link": "https://www.darkreading.com/cybersecurity-operations/former-citigroup-ciso-blauner-great-security-leader",
+      "source": "Dark Reading",
+      "sourceUrl": "https://www.darkreading.com/rss.xml",
+      "summary": "The cybersecurity pioneer discusses the evolution of the CISO role, AI's impact on careers, and why operational resilience is the profession's next frontier.",
+      "publishedAt": "2026-07-28T12:30:00.000Z"
+    },
+    {
+      "slug": "4a8f14e0c2abc4a459ec6fdc",
+      "guid": "https://www.cio.com/article/4202236/earnings-from-sap-servicenow-and-ibm-challenge-the-saaspocalypse-narrative.html",
+      "title": "Earnings from SAP, ServiceNow, and IBM challenge the SaaSpocalypse narrative",
+      "link": "https://www.cio.com/article/4202236/earnings-from-sap-servicenow-and-ibm-challenge-the-saaspocalypse-narrative.html",
+      "source": "CIO",
+      "sourceUrl": "https://www.cio.com/feed/",
+      "summary": "The first wave of quarterly earnings from major enterprise software vendors suggests that while AI is beginning to reshape enterprise technology spending, it has yet to produce the sharp decline in software demand that some industry observers have dubbed the “SaaSpocalypse.” The…",
+      "publishedAt": "2026-07-28T12:01:31.000Z"
+    },
+    {
+      "slug": "45125b18e0f09d0c696e5bfe",
+      "guid": "https://www.cio.com/article/4201938/when-satellites-become-ai-agents-space-data-centers-become-the-next-ai-frontier.html",
+      "title": "When satellites become AI agents, space data centers become the next AI frontier",
+      "link": "https://www.cio.com/article/4201938/when-satellites-become-ai-agents-space-data-centers-become-the-next-ai-frontier.html",
+      "source": "CIO",
+      "sourceUrl": "https://www.cio.com/feed/",
+      "summary": "For decades, space infrastructure was largely understood through the language of rockets, satellites, launch capacity, communications and exploration. The enterprise technology world watched from a distance. Space was important, but it was not usually treated as part of enterpri…",
+      "publishedAt": "2026-07-28T12:00:00.000Z"
+    },
+    {
+      "slug": "3961ed94abdabaf2dc6b241c",
+      "guid": "https://thehackernews.com/2026/07/nimbus-manticore-deploys-nightledger.html",
+      "title": "Nimbus Manticore Deploys NightLedger and Turns Victim Systems Into Covert Relays",
+      "link": "https://thehackernews.com/2026/07/nimbus-manticore-deploys-nightledger.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "The Iranian state-backed hacking group tracked as Nimbus Manticore (aka GalaxyGato, Mirage Kitten, Smoke Sandstorm, Subtle Snail, and UNC1549) has been attributed to a fresh set of attacks targeting entities across the Middle East, Africa, and South Asia. The intrusions involve …",
+      "publishedAt": "2026-07-28T11:55:20.000Z"
+    },
+    {
+      "slug": "b0f95190e80364decd60e30d",
+      "guid": "https://www.schneier.com/?p=72348",
+      "title": "Axon Is Another License Plate Surveillance Company",
+      "link": "https://www.schneier.com/blog/archives/2026/07/axon-is-another-license-plate-surveillance-company.html",
+      "source": "Schneier on Security",
+      "sourceUrl": "https://www.schneier.com/feed/",
+      "summary": "Governments are switching, but I’m not sure it makes a difference: …some municipalities, including Denver, Colorado, are ditching their Flock arrays. But keep in mind that if they’re only switching from Flock to another brand of license-plate readers, like Axon, it’s like a gamb…",
+      "publishedAt": "2026-07-28T11:06:30.000Z"
+    },
+    {
+      "slug": "4d42488b78077c94c30e6615",
+      "guid": "https://www.cio.com/article/4201936/why-redundant-requests-are-driving-hidden-ai-costs.html",
+      "title": "You’re calling the same AI API thousands of times: Why redundant requests are driving hidden AI costs",
+      "link": "https://www.cio.com/article/4201936/why-redundant-requests-are-driving-hidden-ai-costs.html",
+      "source": "CIO",
+      "sourceUrl": "https://www.cio.com/feed/",
+      "summary": "During a recent advisory engagement, I watched 50 different customers ask the same return-policy question on a Tuesday. The AI support system answered all 50 correctly. It also executed fifty independent calls to a frontier model, ingested the same internal policy document 50 ti…",
+      "publishedAt": "2026-07-28T11:00:00.000Z"
+    },
+    {
+      "slug": "a411d72a6251d061894b7b45",
+      "guid": "https://www.cio.com/article/4201343/why-ai-governance-is-failing-and-what-actually-works.html",
+      "title": "Why AI governance is failing — and what actually works",
+      "link": "https://www.cio.com/article/4201343/why-ai-governance-is-failing-and-what-actually-works.html",
+      "source": "CIO",
+      "sourceUrl": "https://www.cio.com/feed/",
+      "summary": "AI adoption has outrun AI governance, and the consequences are impacting the business. According to Cloud Security Alliance (CSA) research, 65% of organizations report having experienced at least one AI agent-related incident in the past year. Nearly half have tied confirmed or …",
+      "publishedAt": "2026-07-28T10:01:00.000Z"
+    },
+    {
+      "slug": "cf675a082b083d59448a0b2f",
+      "guid": "https://www.cio.com/article/4201932/the-compounding-enterprise.html",
+      "title": "The compounding enterprise",
+      "link": "https://www.cio.com/article/4201932/the-compounding-enterprise.html",
+      "source": "CIO",
+      "sourceUrl": "https://www.cio.com/feed/",
+      "summary": "On July 20, a federal judge gave final approval to the largest copyright settlement in U.S. history. Anthropic will pay $3,000 per work for roughly 500,000 books it pulled from pirate libraries to train its models. Here’s the detail most of the coverage missed: The court had alr…",
+      "publishedAt": "2026-07-28T10:00:00.000Z"
+    },
     {
       "slug": "7c8f0c2522ce4f22ae626123",
       "guid": "https://www.cio.com/article/4196942/the-data-scientist-is-dead.html",
@@ -56,7 +296,7 @@
     {
       "slug": "f45f0d6e0fd0ce79770d4c78",
       "guid": "https://thehackernews.com/2026/07/microsoft-says-new-cybersecurity-ai.html",
-      "title": "Microsoft Says New Cybersecurity AI Model Helps MDASH Hit 95.95% at Half the Cost",
+      "title": "Microsoft Says New Cybersecurity AI Model Helps MDASH Score 95.95% at Half the Cost",
       "link": "https://thehackernews.com/2026/07/microsoft-says-new-cybersecurity-ai.html",
       "source": "The Hacker News",
       "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
@@ -84,6 +324,26 @@
       "publishedAt": "2026-07-28T01:00:00.000Z"
     },
     {
+      "slug": "88571d3c3d876280c9689fad",
+      "guid": "https://snyk.io/blog/openai-hugging-face-incident/",
+      "title": "The Generator Can't Be the Validator: What OpenAI's Hugging Face Incident Proves About AI Security",
+      "link": "https://snyk.io/blog/openai-hugging-face-incident/",
+      "source": "Snyk Blog",
+      "sourceUrl": "https://snyk.io/blog/feed/",
+      "summary": "OpenAI’s Hugging Face incident is a wake-up call: AI systems can escape their own test harnesses, and vendors can’t be the only ones validating safety.",
+      "publishedAt": "2026-07-28T00:00:00.000Z"
+    },
+    {
+      "slug": "2555666b070b93b00f5415c7",
+      "guid": "https://www.darkreading.com/endpoint-security/agentic-browsers-rewind-web-security-20-years",
+      "title": "Agentic Browsers Rewind Web Security by 20 Years",
+      "link": "https://www.darkreading.com/endpoint-security/agentic-browsers-rewind-web-security-20-years",
+      "source": "Dark Reading",
+      "sourceUrl": "https://www.darkreading.com/rss.xml",
+      "summary": "PleaseFix class of flaws makes it easy to socially engineer agentic browsers and highlights weaknesses in how they handle cross-origin requests.",
+      "publishedAt": "2026-07-27T21:39:09.000Z"
+    },
+    {
       "slug": "c991330f722436f7d29cc43a",
       "guid": "https://www.darkreading.com/cloud-security/confused-deputy-flaws-google-cloud-microsoft-azure",
       "title": "'Confused Deputy' Flaws Persist in Google Cloud, Microsoft Azure",
@@ -102,6 +362,16 @@
       "sourceUrl": "https://www.darkreading.com/rss.xml",
       "summary": "An FBI agent explains how the mulitnational law-enforcement Operation Cronos was successful in disrupting the largest ransomware group of its time.",
       "publishedAt": "2026-07-27T20:33:29.000Z"
+    },
+    {
+      "slug": "dab2de440b6bb0dc7a90ea0c",
+      "guid": "https://www.darkreading.com/endpoint-security/why-resetting-passwords-no-longer-stop-attacks",
+      "title": "Why Resetting Passwords No Longer Stops Attackers",
+      "link": "https://www.darkreading.com/endpoint-security/why-resetting-passwords-no-longer-stop-attacks",
+      "source": "Dark Reading",
+      "sourceUrl": "https://www.darkreading.com/rss.xml",
+      "summary": "As attackers shift from password theft to session and token theft to bypass multifactor authentication controls, organizations must move beyond login security and protect authenticated sessions.",
+      "publishedAt": "2026-07-27T18:39:50.000Z"
     },
     {
       "slug": "47607845e1cdf882b792f3f8",
@@ -504,16 +774,6 @@
       "publishedAt": "2026-07-24T11:30:00.000Z"
     },
     {
-      "slug": "3488de8e9e78f8e19f66ce84",
-      "guid": "https://www.cio.com/article/4201118/atos-launches-sovereign-cloud-service-to-power-comeback.html",
-      "title": "Atos launches sovereign cloud service to power comeback",
-      "link": "https://www.cio.com/article/4201118/atos-launches-sovereign-cloud-service-to-power-comeback.html",
-      "source": "CIO",
-      "sourceUrl": "https://www.cio.com/feed/",
-      "summary": "Atos has launched a new sovereign cloud platform aimed squarely at European public sector bodies, healthcare providers and defense organizations. It’s the latest effort by European companies in their fight back against US dominance. Atos Sovereign Cloud offers a range of control…",
-      "publishedAt": "2026-07-24T11:08:12.000Z"
-    },
-    {
       "slug": "e0ee093bd65cbc27afcab375",
       "guid": "https://www.schneier.com/?p=72361",
       "title": "Why AI Needs a “Genie Coefficient”",
@@ -522,16 +782,6 @@
       "sourceUrl": "https://www.schneier.com/feed/",
       "summary": "This essay was written with Barath Raghavan, and originally appeared in IEEE Spectrum. Major benchmarks measure what AI can do. None measure whether it does what you mean: the distance between what you ask an AI to do and the unspoken assumptions about how you want the AI to do …",
       "publishedAt": "2026-07-24T11:03:06.000Z"
-    },
-    {
-      "slug": "5b05b6f4c1e1e2f36833fe1c",
-      "guid": "https://www.cio.com/article/4199594/why-i-changed-how-i-pitch-ai-its-no-longer-about-saving-money-but-managing-tokens-and-adoption.html",
-      "title": "Why I changed how I pitch AI: It’s no longer about saving money, but managing tokens and adoption",
-      "link": "https://www.cio.com/article/4199594/why-i-changed-how-i-pitch-ai-its-no-longer-about-saving-money-but-managing-tokens-and-adoption.html",
-      "source": "CIO",
-      "sourceUrl": "https://www.cio.com/feed/",
-      "summary": "I have worked alongside enterprise technology for more than 30 years and watched AI evolve from a lab experiment into the modern boardroom’s core focus. However, the last few years of implementing AI alongside our customers have delivered our most profound reality checks. The in…",
-      "publishedAt": "2026-07-24T11:00:00.000Z"
     },
     {
       "slug": "8239526967df147abf93f1ff",
@@ -552,46 +802,6 @@
       "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
       "summary": "The threat actors behind the Golden Chickens malware-as-a-service (MaaS) ecosystem have resurfaced with four new malware families, indicating that the operators are showing no signs of stopping despite extensive public disclosures into their inner workings. The malware families …",
       "publishedAt": "2026-07-24T10:09:24.000Z"
-    },
-    {
-      "slug": "7e842326e12ddaa3fe03dac7",
-      "guid": "https://www.cio.com/article/4198060/cios-beware-dns-ksk-rollover-could-kick-off-wave-of-mysterious-outages.html",
-      "title": "CIOs beware: DNS KSK rollover could kick off wave of mysterious outages",
-      "link": "https://www.cio.com/article/4198060/cios-beware-dns-ksk-rollover-could-kick-off-wave-of-mysterious-outages.html",
-      "source": "CIO",
-      "sourceUrl": "https://www.cio.com/feed/",
-      "summary": "Predicting an outage is tricky business, but CIOs might want to circle Oct. 11, 2026, through Jan. 11, 2027, for likely trouble of a potentially widespread and puzzling nature. That’s because a relatively trivial update to DNSSEC on Oct. 11, one that will take full effect by Jan…",
-      "publishedAt": "2026-07-24T10:01:00.000Z"
-    },
-    {
-      "slug": "e2219e4075e7182eb948c53b",
-      "guid": "https://www.cio.com/article/191157/what-is-business-analytics-using-data-to-predict-business-outcomes.html",
-      "title": "What is a business analyst? A key role for business-IT efficiency",
-      "link": "https://www.cio.com/article/191157/what-is-business-analytics-using-data-to-predict-business-outcomes.html",
-      "source": "CIO",
-      "sourceUrl": "https://www.cio.com/feed/",
-      "summary": "What is a business analyst? Business analysts (BAs) are responsible for bridging the gap between IT and the business using data analytics to assess processes, determine requirements, and deliver data-driven recommendations and reports to executives and stakeholders. BAs engage w…",
-      "publishedAt": "2026-07-24T10:00:00.000Z"
-    },
-    {
-      "slug": "70476bb93c789ee7fef2dd02",
-      "guid": "https://www.cio.com/article/4199585/3-cybersecurity-issues-that-should-keep-every-ceo-awake-at-night.html",
-      "title": "3 cybersecurity issues that should keep every CEO awake at night",
-      "link": "https://www.cio.com/article/4199585/3-cybersecurity-issues-that-should-keep-every-ceo-awake-at-night.html",
-      "source": "CIO",
-      "sourceUrl": "https://www.cio.com/feed/",
-      "summary": "For years, I have been saying that cybersecurity is no longer a technology problem. It has become a business leadership challenge. Yet, despite record levels of spending, ever-growing security teams, increasingly sophisticated technologies and a constant stream of new regulation…",
-      "publishedAt": "2026-07-24T10:00:00.000Z"
-    },
-    {
-      "slug": "f43bb31d8ab85d89a2533bbf",
-      "guid": "https://www.cio.com/article/4199572/sponsor-mismatch-is-the-silent-killer-of-enterprise-transformation.html",
-      "title": "Sponsor mismatch is the silent killer of enterprise transformation",
-      "link": "https://www.cio.com/article/4199572/sponsor-mismatch-is-the-silent-killer-of-enterprise-transformation.html",
-      "source": "CIO",
-      "sourceUrl": "https://www.cio.com/feed/",
-      "summary": "Late in a large enterprise SAP transformation, the strategic governance conversations began to drift. Instead of executive decisions, we found ourselves debating whether the program needed dedicated testing, whether cutover required a full weekend, whether twenty Agile teams rea…",
-      "publishedAt": "2026-07-24T09:00:00.000Z"
     },
     {
       "slug": "dd3c71c164d4d5a58e969f2d",
@@ -674,16 +884,6 @@
       "publishedAt": "2026-07-23T16:42:30.000Z"
     },
     {
-      "slug": "75b11d9ff2a176eaa290919d",
-      "guid": "https://www.cio.com/article/4200826/google-ceo-distracts-from-gemini-3-5-pro-delay-with-talk-of-gemini-4-and-monthly-releases-3.html",
-      "title": "Google CEO distracts from Gemini 3.5 Pro delay with talk of Gemini 4 and monthly releases",
-      "link": "https://www.cio.com/article/4200826/google-ceo-distracts-from-gemini-3-5-pro-delay-with-talk-of-gemini-4-and-monthly-releases-3.html",
-      "source": "CIO",
-      "sourceUrl": "https://www.cio.com/feed/",
-      "summary": "Google CEO Sundar Pichai has sought to allay concerns over the delayed release of the Gemini 3.5 Pro large language model. He dodged questions about it in Google’s quarterly earnings call on Wednesday by focusing on the company’s next frontier AI model, Gemini 4, and plans to re…",
-      "publishedAt": "2026-07-23T16:29:35.000Z"
-    },
-    {
       "slug": "0fad97e2f1c1223d951ec9dd",
       "guid": "https://thehackernews.com/2026/07/threatsday-android-spyware-plc-attacks.html",
       "title": "ThreatsDay: Android Spyware, PLC Attacks, AI Image Prompt Injection + 12 More Stories",
@@ -712,16 +912,6 @@
       "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
       "summary": "Cybersecurity researchers have uncovered a sandbox escape vulnerability in Anthropic's Claude Cowork that makes it possible to break out of the confines of a Linux virtual machine (VM) within which the agent runs to read or write files anywhere on the Mac. Accomplish AI, which s…",
       "publishedAt": "2026-07-23T13:27:59.000Z"
-    },
-    {
-      "slug": "6e6b85403d1c2508173d9db1",
-      "guid": "https://www.cio.com/article/4200684/openai-presence-raises-new-questions-about-enterprise-automation-and-jobs.html",
-      "title": "OpenAI Presence raises new questions about enterprise automation and jobs",
-      "link": "https://www.cio.com/article/4200684/openai-presence-raises-new-questions-about-enterprise-automation-and-jobs.html",
-      "source": "CIO",
-      "sourceUrl": "https://www.cio.com/feed/",
-      "summary": "OpenAI has launched Presence, an enterprise service for deploying voice and chat agents that can resolve customer and employee requests, potentially automating some work now handled by frontline support teams. The agents can answer questions and operate IT systems, and enterpris…",
-      "publishedAt": "2026-07-23T13:15:07.000Z"
     },
     {
       "slug": "fafb9124e07e3f123b2eadfd",
@@ -812,196 +1002,6 @@
       "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
       "summary": "Google on Thursday announced a new way for users to sign-in to their accounts by letting them take a selfie video. The selfie for sign-in, per the tech giant, is another option on top of existing recovery methods to log in to an account, including an email address or a phone num…",
       "publishedAt": "2026-07-23T10:00:00.000Z"
-    },
-    {
-      "slug": "624c6b980255a780eff8f70d",
-      "guid": "https://thehackernews.com/2026/07/nine-year-old-refluxfs-linux-flaw-gives.html",
-      "title": "Nine-Year-Old RefluXFS Linux Flaw Gives Local Users Root on Default RHEL Installs",
-      "link": "https://thehackernews.com/2026/07/nine-year-old-refluxfs-linux-flaw-gives.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "RefluXFS, a Linux kernel flaw disclosed on July 22 and tracked as CVE-2026-64600, lets an unprivileged local user overwrite root-owned files on an XFS filesystem and gain persistent root access. Qualys said default installations of Red Hat Enterprise Linux and its derivatives, F…",
-      "publishedAt": "2026-07-23T08:04:35.000Z"
-    },
-    {
-      "slug": "595728cd86e774189ec626c3",
-      "guid": "https://www.darkreading.com/cyberattacks-data-breaches/brazilian-banking-trojan-spreading-portugal",
-      "title": "Brazilian Banking Trojan Actively Spreading in Portugal",
-      "link": "https://www.darkreading.com/cyberattacks-data-breaches/brazilian-banking-trojan-spreading-portugal",
-      "source": "Dark Reading",
-      "sourceUrl": "https://www.darkreading.com/rss.xml",
-      "summary": "Portuguese businesses operate in the same native language as Brazilian hackers, making those businesses easy targets.",
-      "publishedAt": "2026-07-23T07:00:00.000Z"
-    },
-    {
-      "slug": "cf457a6325533fbcb0d0d92b",
-      "guid": "https://thehackernews.com/2026/07/check-point-patches-exploited.html",
-      "title": "Check Point Patches Exploited SmartConsole Flaw Allowing Full Admin Access",
-      "link": "https://thehackernews.com/2026/07/check-point-patches-exploited.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "Check Point has released security updates to address multiple vulnerabilities impacting Security Management and Multi-Domain Management (MDSM) products, including a critical flaw that has come under active exploitation in the wild. The security flaw, tracked as CVE-2026-16232 (C…",
-      "publishedAt": "2026-07-23T06:34:36.000Z"
-    },
-    {
-      "slug": "7a0b6551b6e92a56f5f5965a",
-      "guid": "https://www.darkreading.com/cyberattacks-data-breaches/ransomware-attack-japanese-frozen-food-chain",
-      "title": "Ransomware Attack Puts a Chill on Japanese Frozen-Food Chain",
-      "link": "https://www.darkreading.com/cyberattacks-data-breaches/ransomware-attack-japanese-frozen-food-chain",
-      "source": "Dark Reading",
-      "sourceUrl": "https://www.darkreading.com/rss.xml",
-      "summary": "A cyberattack on a food and logistics firm disrupts the supply of frozen food to thousands of clients, including major franchises like Kentucky Fried Chicken.",
-      "publishedAt": "2026-07-23T01:00:00.000Z"
-    },
-    {
-      "slug": "eae79913c908c39c79e09914",
-      "guid": "https://www.darkreading.com/identity-access-management-security/flaws-passkeys-implementation-old-attacks-work",
-      "title": "Flaws in Passkey Implementation Show Old Attacks Still Work",
-      "link": "https://www.darkreading.com/identity-access-management-security/flaws-passkeys-implementation-old-attacks-work",
-      "source": "Dark Reading",
-      "sourceUrl": "https://www.darkreading.com/rss.xml",
-      "summary": "Ahead of Black Hat USA, researchers find exploitable flaws in how Microsoft handles passkeys that could allow attackers to impersonate privileged users.",
-      "publishedAt": "2026-07-22T23:50:01.000Z"
-    },
-    {
-      "slug": "21e40616821f0168b08a21ce",
-      "guid": "https://grahamcluley.com/?p=17351821",
-      "title": "Smashing Security podcast #477: How 14 orders of chicken McNuggets helped nail a suspected Russian hacker",
-      "link": "https://grahamcluley.com/smashing-security-podcast-477/",
-      "source": "Graham Cluley",
-      "sourceUrl": "https://grahamcluley.com/feed/",
-      "summary": "A Russian intelligence-linked hacker is arrested in Thailand while enjoying a beach holiday - and the trail of evidence that nailed him to the Russian government includes 14 separate orders of chicken McNuggets. Meanwhile, AI music generator Suno has been hacked - and the stolen…",
-      "publishedAt": "2026-07-22T23:10:22.000Z"
-    },
-    {
-      "slug": "b6268eeefff4b7e1428c74b1",
-      "guid": "https://www.darkreading.com/cyber-risk/attackers-live-off-ai-toolchain",
-      "title": "Attackers Are Learning to Live Off the AI Toolchain",
-      "link": "https://www.darkreading.com/cyber-risk/attackers-live-off-ai-toolchain",
-      "source": "Dark Reading",
-      "sourceUrl": "https://www.darkreading.com/rss.xml",
-      "summary": "Sandworm_Mode is an early example of malware that exploits trusted AI tools and workflows to make malicious activity virtually indistinguishable from normal activity.",
-      "publishedAt": "2026-07-22T21:29:01.000Z"
-    },
-    {
-      "slug": "071bbd4a84c7c555ee89b446",
-      "guid": "https://www.darkreading.com/mobile-security/fake-bahrain-alert-apps-android-surveillance-malware",
-      "title": "Fake Bahrain Alert App Deploys Android Surveillance Malware",
-      "link": "https://www.darkreading.com/mobile-security/fake-bahrain-alert-apps-android-surveillance-malware",
-      "source": "Dark Reading",
-      "sourceUrl": "https://www.darkreading.com/rss.xml",
-      "summary": "A malicious application delivers four-stage Android spyware via phony Google Play sites, exploiting civilian fear during Iranian missile strikes.",
-      "publishedAt": "2026-07-22T19:42:42.000Z"
-    },
-    {
-      "slug": "4263055e9b99c07ba0e72514",
-      "guid": "https://thehackernews.com/2026/07/github-cuts-public-bug-bounty-payouts.html",
-      "title": "GitHub Cuts Public Bug Bounty Payouts, Moves Top Rewards to VIP Tier",
-      "link": "https://thehackernews.com/2026/07/github-cuts-public-bug-bounty-payouts.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "Beginning July 27, 2026, GitHub will cut public bug bounty payouts by at least half at every severity level. Critical findings will drop from $20,000-$30,000+ to a fixed $10,000, while its permanent invite-only VIP tier will pay $30,000 or more. Reports filed before that date, i…",
-      "publishedAt": "2026-07-22T18:37:42.000Z"
-    },
-    {
-      "slug": "83c96b979abbb11129782595",
-      "guid": "https://thehackernews.com/2026/07/ubuntu-snap-confine-flaw-could-give.html",
-      "title": "Ubuntu snap-confine Flaw Could Give Local Users Root on Default Desktop Installs",
-      "link": "https://thehackernews.com/2026/07/ubuntu-snap-confine-flaw-could-give.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "Cybersecurity researchers have disclosed details of a new local privilege escalation (LPE) vulnerability in snap-confine that an unprivileged user can trigger to obtain root access and gain complete control of a target environment. The high-severity flaw, tracked as CVE-2026-893…",
-      "publishedAt": "2026-07-22T18:07:16.000Z"
-    },
-    {
-      "slug": "a49b88adbaebc15cbedd60fb",
-      "guid": "https://orca.security/?p=73658",
-      "title": "Risk Prioritization: How Security Teams Focus on What Matters",
-      "link": "https://orca.security/resources/blog/risk-prioritization/",
-      "source": "Orca Security Blog",
-      "sourceUrl": "https://orca.security/resources/blog/feed/",
-      "summary": "Key Takeaways Risk prioritization is the practice of ranking security findings by the risk they actually present in your environment. The work that removes the most risk happens first. Most teams already have more findings than they can fix. What they lack is a defensible order.…",
-      "publishedAt": "2026-07-22T17:46:33.000Z"
-    },
-    {
-      "slug": "661ba0a7d059c757d10e240f",
-      "guid": "https://orca.security/?p=73669",
-      "title": "Security Visibility: Best Practices for Cloud Security Teams",
-      "link": "https://orca.security/resources/blog/security-visibility/",
-      "source": "Orca Security Blog",
-      "sourceUrl": "https://orca.security/resources/blog/feed/",
-      "summary": "Key Takeaways Security visibility is the ability to see every asset, identity, and data store you run, with enough context to know which ones matter. Most cloud security teams can describe their architecture in detail. Far fewer can list what is running in it this morning, in ev…",
-      "publishedAt": "2026-07-22T17:45:17.000Z"
-    },
-    {
-      "slug": "57deb39eb5febd853613dce7",
-      "guid": "https://www.darkreading.com/cyber-risk/openai-models-autonomously-hack-hugging-face",
-      "title": "When AI Attacks: OpenAI Models Autonomously Hack Hugging Face",
-      "link": "https://www.darkreading.com/cyber-risk/openai-models-autonomously-hack-hugging-face",
-      "source": "Dark Reading",
-      "sourceUrl": "https://www.darkreading.com/rss.xml",
-      "summary": "Advanced LLMs escaped their sandboxes while attempting to achieve a non-malicious benchmark test objective.",
-      "publishedAt": "2026-07-22T15:53:47.000Z"
-    },
-    {
-      "slug": "2145338ac03acef84ff33160",
-      "guid": "https://thehackernews.com/2026/07/adobe-acrobat-extension-flaw-let.html",
-      "title": "Adobe Acrobat Extension Flaw Let Malicious Sites Read WhatsApp Web Data",
-      "link": "https://thehackernews.com/2026/07/adobe-acrobat-extension-flaw-let.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "Cybersecurity researchers have disclosed details of a now-patched vulnerability chain in the Adobe Acrobat Chrome extension that has over 314 million users, which, if exploited, could facilitate a silent hijack of a user's WhatsApp data. The shortcoming has been codenamed Hermet…",
-      "publishedAt": "2026-07-22T15:01:21.000Z"
-    },
-    {
-      "slug": "b3e12b577370fb81f10f6020",
-      "guid": "https://orca.security/?p=73680",
-      "title": "WordPress Core Pre-Auth RCE Chain Exploited in the Wild",
-      "link": "https://orca.security/resources/blog/wordpress-core-pre-auth-rce-chain/",
-      "source": "Orca Security Blog",
-      "sourceUrl": "https://orca.security/resources/blog/feed/",
-      "summary": "A critical vulnerability chain combining CVE-2026-63030 (CVSS 9.8) and CVE-2026-60137 (CVSS 5.9) was disclosed affecting WordPress Core, allowing attackers to achieve unauthenticated remote code execution via chained REST API batch-route confusion and SQL injection flaws. Due to…",
-      "publishedAt": "2026-07-22T14:48:54.000Z"
-    },
-    {
-      "slug": "eebbd4b16160da452e2551de",
-      "guid": "https://orca.security/?p=73663",
-      "title": "AI on Both Sides: Key Takeaways From Cloud Security LIVE 2026",
-      "link": "https://orca.security/resources/blog/cloud-security-live-2026-ai-both-sides-recap/",
-      "source": "Orca Security Blog",
-      "sourceUrl": "https://orca.security/resources/blog/feed/",
-      "summary": "AI security splits into two conversations: stopping attackers who use AI, and using AI to defend faster. At Cloud Security LIVE 2026, Gil Geron, CEO and co-founder of Orca, Jim Reavis, CEO of the Cloud Security Alliance and its new AI Foundation, and Brian Gatta, global vice pre…",
-      "publishedAt": "2026-07-22T14:35:41.000Z"
-    },
-    {
-      "slug": "9cf505a00034ffd7a5cf4fbf",
-      "guid": "https://danielmiessler.com/blog/openai-hack-paperclip-maximizer",
-      "title": "The OpenAI Hack Was a Mini Paperclip Maximizer",
-      "link": "https://danielmiessler.com/blog/openai-hack-paperclip-maximizer?utm_source=rss&utm_medium=feed&utm_campaign=website",
-      "source": "Daniel Miessler",
-      "sourceUrl": "https://danielmiessler.com/feed.rss",
-      "summary": "One thing that I don't think enough people are thinking about with this OpenAI / Hugging Face incidenthttps://thehackernews.com/2026/07/openai-says-its-own-ai-models-escaped.html is that it's an actual instance of the famous Paperclip Maximizer scenario loved by AI safety types.…",
-      "publishedAt": "2026-07-22T13:08:44.000Z"
-    },
-    {
-      "slug": "eb3d859d30acc3964de3ec08",
-      "guid": "https://thehackernews.com/2026/07/hackers-exploit-windmill-flaw-to-read.html",
-      "title": "Hackers Exploit Windmill Flaw to Read Arbitrary Server Files Without Authentication",
-      "link": "https://thehackernews.com/2026/07/hackers-exploit-windmill-flaw-to-read.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "A high-severity security flaw impacting open-source developer platform Windmill has come under active exploitation in the wild, per VulnCheck. The vulnerability in question is CVE-2026-29059 (CVSS score: 7.5), a case of unauthenticated path traversal impacting Windmill's \"get_lo…",
-      "publishedAt": "2026-07-22T12:36:36.000Z"
-    },
-    {
-      "slug": "0dc690d54f76e2996c9e0a4b",
-      "guid": "https://thehackernews.com/2026/07/the-fastest-path-to-ai-adoption-runs.html",
-      "title": "The Fastest Path to AI Adoption Runs Through Security",
-      "link": "https://thehackernews.com/2026/07/the-fastest-path-to-ai-adoption-runs.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "Security leaders who build fast, visible paths to AI adoption are becoming the most valued partners in their organizations. AI governance done right gives security teams the visibility they need, employees the tools they want, and CISOs the strategic influence they have earned. …",
-      "publishedAt": "2026-07-22T11:58:00.000Z"
     }
   ]
 }
