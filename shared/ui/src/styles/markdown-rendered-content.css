@@ -69,8 +69,8 @@
 .md-content pre {
     font-family: var(--font-mono);
     font-size: 0.82em;
-    background: var(--ink-black);
-    color: var(--aged-white, #efe9dd);
+    background: var(--code-surface);
+    color: var(--code-surface-foreground);
     padding: 0.9em 1.1em;
     margin: 0.8em 0;
     overflow-x: auto;
@@ -175,16 +175,15 @@
 }
 
 /* ── Code syntax highlighting (highlight.js) ──────────────────────────────── */
-/* The code surface is always dark (ink-black) in both themes, so tokens use a
-   light, low-saturation newsprint palette for legibility and print fidelity. */
+/* Code surface is always dark (--code-surface); tokens use light cool neutrals. */
 .md-content pre code.hljs {
-    color: var(--aged-white);
+    color: var(--code-surface-foreground);
     background: transparent;
     padding: 0;
 }
 .md-content .hljs-comment,
 .md-content .hljs-quote {
-    color: #9a9486;
+    color: #8a8d93;
     font-style: italic;
 }
 .md-content .hljs-keyword,
@@ -192,14 +191,14 @@
 .md-content .hljs-literal,
 .md-content .hljs-built_in,
 .md-content .hljs-type {
-    color: #efe9dd;
+    color: #e8e9eb;
     font-weight: 700;
 }
 .md-content .hljs-string,
 .md-content .hljs-meta .hljs-string,
 .md-content .hljs-regexp,
 .md-content .hljs-addition {
-    color: #cdb69b;
+    color: #b9c9d6;
 }
 .md-content .hljs-number,
 .md-content .hljs-symbol,
@@ -220,11 +219,11 @@
 .md-content .hljs-variable,
 .md-content .hljs-template-variable,
 .md-content .hljs-params {
-    color: #d8d2c4;
+    color: #d3d6da;
 }
 .md-content .hljs-meta,
 .md-content .hljs-tag {
-    color: #8a8475;
+    color: #83868c;
 }
 .md-content .hljs-deletion {
     color: #c98f8f;

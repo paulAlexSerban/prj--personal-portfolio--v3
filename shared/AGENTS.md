@@ -62,7 +62,7 @@ Schema (`db-schema`) is separated from runtime (`db`) so the frontend can import
     - `src/lib/richText.ts` — lazy/code-split KaTeX + highlight.js loaders
     - `src/lib/utils.ts` — `cn()` helper
     - `src/hooks/use-mobile.tsx` — responsive hook (Sidebar)
-    - `src/styles/theme.css` — newspaper palette + dark theme + markdown/KaTeX/hljs styles
+    - `src/styles/theme.css` — newspaper palette (light-only) + markdown/KaTeX/hljs styles
 - **Scripts**: `typecheck`; `storybook` / `build-storybook` (block gallery).
 - **Consumers**: `frontend--quiz-web-app` (today); future Astro portfolio/blog via React islands.
 - **Depends on**: `shared--quiz-export` (contract types) + `shared--quiz-markdown` (compile); Radix UI, CVA, lucide-react, sonner, KaTeX, highlight.js (see `package.json`); `react`/`react-dom` as peer deps.

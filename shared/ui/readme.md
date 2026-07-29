@@ -40,7 +40,7 @@ supplies that via containers + hooks).
 - `src/lib/markdown.ts` — `marked` GFM + math/cloze tokenizer used by `CardRenderer`
 - `src/lib/richText.ts` — **lazy/code-split** KaTeX + highlight.js loaders (offline-precached)
 - `src/hooks/use-mobile.tsx` — responsive breakpoint hook (used by `Sidebar`)
-- `src/styles/theme.css` — newspaper palette, dark theme, `.stamp`/`.rule`/`.smallcaps`,
+- `src/styles/theme.css` — newspaper palette (light-only), `.stamp`/`.rule`/`.smallcaps`,
   `.md-content` markdown typography, KaTeX/hljs token colours
 
 > Blocks render content via `shared--quiz-markdown` (export-time HTML is the fast
@@ -60,7 +60,6 @@ In your global CSS entry:
 @source "../src";
 @source "../../../../shared/ui/src"; /* scan package for Tailwind classes */
 @import 'tw-animate-css';
-@custom-variant dark (&:is(.dark *));
 @import '@prj--personal-portfolio--v3/shared--ui/styles.css';
 ```
 
@@ -100,7 +99,7 @@ pnpm --filter @prj--personal-portfolio--v3/shared--ui build-storybook  # static 
 ```
 
 Every block has a story — use Storybook to develop/preview blocks in isolation
-(no app, no store) across light/dark themes.
+(no app, no store).
 
 ## Where it sits
 

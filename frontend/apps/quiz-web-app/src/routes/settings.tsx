@@ -8,7 +8,6 @@ import { useStore } from "@/store";
 import { DEFAULT_CONFIG } from "@/store/types";
 import type { QuizState } from "@/store";
 import type { SchedulerName } from "@/store/types";
-import { applyTheme } from "@/lib/theme";
 import { DEFAULT_FSRS_PARAMS } from "@/algorithms/fsrs";
 
 export const Route = createFileRoute("/settings")({
@@ -28,11 +27,6 @@ function SettingsView() {
   const [importMsg, setImportMsg] = useState<string | null>(null);
   const [confirmScheduler, setConfirmScheduler] = useState<SchedulerName | null>(null);
   const fileRef = useRef<HTMLInputElement>(null);
-
-  function selectTheme(t: typeof settings.theme) {
-    setSettings({ theme: t });
-    applyTheme(t);
-  }
 
   function switchScheduler(target: SchedulerName) {
     const count = Object.keys(useStore.getState().cardStates).length;
@@ -78,7 +72,6 @@ function SettingsView() {
         const snapshot = JSON.parse(String(reader.result)) as Partial<QuizState>;
         if (typeof snapshot !== "object" || snapshot === null) throw new Error("Invalid file.");
         importState(snapshot);
-        applyTheme(useStore.getState().settings.theme);
         const postCount = snapshot.addedPosts?.length ?? 0;
         const cardCount = Object.keys(snapshot.cardStates ?? {}).length;
         const msg = `Imported: ${postCount} set(s), ${cardCount} card state(s).`;
@@ -99,25 +92,6 @@ function SettingsView() {
       <h2 className="text-5xl font-bold mb-8" style={{ fontFamily: "var(--font-display)" }}>
         Settings
       </h2>
-
-      <Section title="Appearance">
-        <Row
-          label="Theme"
-          hint="Colour scheme for the app. “System” follows your operating system’s light/dark preference and updates automatically when it changes."
-        >
-          {(["light", "dark", "system"] as const).map((t) => (
-            <button
-              key={t}
-              type="button"
-              onClick={() => selectTheme(t)}
-              title={`Use the ${t} theme`}
-              className={`smallcaps text-base mr-3 ${settings.theme === t ? "underline font-bold" : "hover:underline"}`}
-            >
-              {t}
-            </button>
-          ))}
-        </Row>
-      </Section>
 
       <Section title="Study">
         <Row

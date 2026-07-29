@@ -57,41 +57,9 @@ const year = new Date().getFullYear();
                         ))
                     }
                 </nav>
-                <button
-                    id="theme-toggle"
-                    type="button"
-                    aria-label="Toggle dark mode"
-                    title="Toggle dark mode"
-                    class="kicker inline-flex items-center gap-1.5 border border-ink px-2 py-1 text-[11px] leading-none transition-colors hover:bg-ink hover:text-aged"
-                >
-                    <span id="theme-toggle-icon" aria-hidden="true">☾</span>
-                    <span id="theme-toggle-label">Dark</span>
-                </button>
                 <MobileNav client:load links={mobileNavLinks} />
             </div>
         </div>
     </div>
 </header>
 
-<script is:inline>
-    (function () {
-        var btn = document.getElementById('theme-toggle');
-        if (!btn) return;
-        var icon = document.getElementById('theme-toggle-icon');
-        var label = document.getElementById('theme-toggle-label');
-        function sync() {
-            var dark = document.documentElement.classList.contains('dark');
-            if (icon) icon.textContent = dark ? '☀' : '☾';
-            if (label) label.textContent = dark ? 'Light' : 'Dark';
-            btn.setAttribute('aria-pressed', String(dark));
-        }
-        sync();
-        btn.addEventListener('click', function () {
-            var dark = document.documentElement.classList.toggle('dark');
-            try {
-                localStorage.setItem('theme', dark ? 'dark' : 'light');
-            } catch (e) {}
-            sync();
-        });
-    })();
-</script>

@@ -38,7 +38,7 @@ export default defineConfig({
         name: "The Typeset Review — Flashcards",
         short_name: "The Typeset Review",
         description: "Spaced-repetition flashcard study, offline-ready.",
-        theme_color: "#0d0d0d",
+        theme_color: "#f2efe7",
         background_color: "#efe9dd",
         display: "standalone",
         start_url: appBase || "/",

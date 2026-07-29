@@ -61,7 +61,6 @@ interface SimResult {
 
 function fsrsSettings(): AppSettings {
   return {
-    theme: "light",
     studyOrder: "mixed",
     showTiming: true,
     keyboardShortcuts: true,
