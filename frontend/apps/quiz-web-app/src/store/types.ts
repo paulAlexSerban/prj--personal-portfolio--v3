@@ -89,7 +89,6 @@ export interface StudySession {
 }
 
 export interface AppSettings {
-  theme: "light" | "dark" | "system";
   studyOrder: "new-first" | "reviews-first" | "mixed";
   showTiming: boolean;
   keyboardShortcuts: boolean;
@@ -144,7 +143,6 @@ export const DEFAULT_CONFIG: StudyConfig = {
 };
 
 export const DEFAULT_SETTINGS: AppSettings = {
-  theme: "light",
   studyOrder: "mixed",
   showTiming: true,
   keyboardShortcuts: true,

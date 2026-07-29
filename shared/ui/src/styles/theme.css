@@ -65,6 +65,10 @@
     --column-rule: #b0a898;
     --highlight: #e8e4da;
 
+    /* Fixed dark code-block surface (independent of page palette). */
+    --code-surface: #1a1b1e;
+    --code-surface-foreground: #e8e9eb;
+
     --background: var(--newsprint);
     --foreground: var(--ink-black);
     --card: var(--aged-white);
@@ -97,54 +101,4 @@
     --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
     --sidebar-border: oklch(0.929 0.013 255.508);
     --sidebar-ring: oklch(0.704 0.04 256.788);
-}
-
-.dark {
-    /* Invert the raw newspaper palette. The whole app styles itself with these
-     raw tokens directly (var(--ink-black), var(--aged-white), …), so the dark
-     theme has to remap the palette here — not just the semantic tokens below.
-     Names keep their slot meaning: --ink-black = "ink" (primary text/borders),
-     --aged-white = "paper" (surfaces), --newsprint = page background. */
-    --ink-black: #ece9e1; /* ink → light on dark */
-    --press-black: #ffffff;
-    --charcoal: #cfcabd; /* secondary text */
-    --slate: #968f80; /* muted text */
-    --newsprint: #14130f; /* page background */
-    --aged-white: #1e1c16; /* card / article surface */
-    --column-rule: #3d382f; /* rules / dotted borders */
-    --highlight: #2b2820; /* hover / secondary surface */
-
-    /* Semantic tokens recomputed from the inverted palette (mirrors :root). */
-    --background: var(--newsprint);
-    --foreground: var(--ink-black);
-    --card: var(--aged-white);
-    --card-foreground: var(--ink-black);
-    --popover: var(--aged-white);
-    --popover-foreground: var(--ink-black);
-    --primary: var(--ink-black);
-    --primary-foreground: var(--aged-white);
-    --secondary: var(--highlight);
-    --secondary-foreground: var(--ink-black);
-    --muted: var(--highlight);
-    --muted-foreground: var(--slate);
-    --accent: var(--highlight);
-    --accent-foreground: var(--ink-black);
-    --destructive: var(--ink-black);
-    --destructive-foreground: var(--aged-white);
-    --border: var(--column-rule);
-    --input: var(--column-rule);
-    --ring: var(--ink-black);
-    --chart-1: oklch(0.488 0.243 264.376);
-    --chart-2: oklch(0.696 0.17 162.48);
-    --chart-3: oklch(0.769 0.188 70.08);
-    --chart-4: oklch(0.627 0.265 303.9);
-    --chart-5: oklch(0.645 0.246 16.439);
-    --sidebar: oklch(0.208 0.042 265.755);
-    --sidebar-foreground: oklch(0.984 0.003 247.858);
-    --sidebar-primary: oklch(0.488 0.243 264.376);
-    --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
-    --sidebar-accent: oklch(0.279 0.041 260.031);
-    --sidebar-accent-foreground: oklch(0.984 0.003 247.858);
-    --sidebar-border: oklch(1 0 0 / 10%);
-    --sidebar-ring: oklch(0.551 0.027 264.364);
 }

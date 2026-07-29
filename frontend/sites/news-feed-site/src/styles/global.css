@@ -2,8 +2,6 @@
 @source "../../src";
 @import 'tw-animate-css';
 
-@custom-variant dark (&:is(.dark *));
-
 @import '@prj--personal-portfolio--v3/shared--ui/tailwind.css';
 @import '@prj--personal-portfolio--v3/shared--navigation/tailwind.css';
 

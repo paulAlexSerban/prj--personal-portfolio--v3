@@ -3,8 +3,6 @@
 @source "../../src";
 @import 'tw-animate-css';
 
-@custom-variant dark (&:is(.dark *));
-
 /* import the shared Tailwind CSS */
 @import '@prj--personal-portfolio--v3/shared--ui/tailwind.css';
 @import '@prj--personal-portfolio--v3/shared--navigation/tailwind.css';
@@ -29,16 +27,12 @@
         transition: filter 0.3s ease;
     }
 
-    .dark .post-card-cover-img {
-        filter: grayscale(0.8) sepia(0.1) saturate(0.75);
-    }
-
     .group:hover .post-card-cover-img {
         filter: none;
     }
 
     /* Row-first card grid (left-to-right reading order); avoids CSS columns height-balancing. */
-    /*     .post-list-grid {
+    .post-list-grid {
         @apply m-0 grid list-none grid-cols-1 gap-5 p-0 sm:grid-cols-2 lg:grid-cols-3;
-    } */
+    }
 }
