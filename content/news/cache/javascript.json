@@ -1,8 +1,68 @@
 {
   "category": "javascript",
   "label": "JavaScript",
-  "fetchedAt": "2026-07-29T06:49:24.328Z",
+  "fetchedAt": "2026-07-30T06:47:59.951Z",
   "items": [
+    {
+      "slug": "d1fd6567059ddd7fa668812a",
+      "guid": "https://flaviocopes.com/vercel-workflows/",
+      "title": "Vercel Workflows tutorial: build a durable background job",
+      "link": "https://flaviocopes.com/vercel-workflows/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Build a durable Vercel Workflow with use workflow, use step, sleep, automatic retries, local inspection, and deployment-safe execution.",
+      "publishedAt": "2026-07-29T13:00:00.000Z"
+    },
+    {
+      "slug": "ef04bb8dea81b47d0261f926",
+      "guid": "https://flaviocopes.com/fstack-software-factory/",
+      "title": "How I turned fstack into a software factory",
+      "link": "https://flaviocopes.com/fstack-software-factory/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "How I use fstack, GPT-5.6 Sol, bounded subagents, repository context, and review gates to build many software products without losing control.",
+      "publishedAt": "2026-07-29T11:00:00.000Z"
+    },
+    {
+      "slug": "ae7866d684158d37a846bb76",
+      "guid": "https://flaviocopes.com/tauri-desktop-app-tutorial/",
+      "title": "Tauri tutorial: build a desktop app with web technologies",
+      "link": "https://flaviocopes.com/tauri-desktop-app-tutorial/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Build a Tauri 2 desktop notes app with HTML, CSS, JavaScript, a Rust command, local file storage, permissions, development, and packaging.",
+      "publishedAt": "2026-07-29T09:00:00.000Z"
+    },
+    {
+      "slug": "2c2e678408a134c03b255bb5",
+      "guid": "https://flaviocopes.com/paymentprocessor/",
+      "title": "I launched Payment Processor",
+      "link": "https://flaviocopes.com/paymentprocessor/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "I launched Payment Processor, an evidence-led guide to Merchant of Record and direct payment providers, with comparisons and decision tools.",
+      "publishedAt": "2026-07-29T07:00:00.000Z"
+    },
+    {
+      "slug": "71a12dab219662596bb9056f",
+      "guid": "https://flaviocopes.com/promise-all-allsettled-race-any/",
+      "title": "Promise.all vs allSettled vs race vs any",
+      "link": "https://flaviocopes.com/promise-all-allsettled-race-any/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Learn when to use Promise.all, allSettled, race and any in JavaScript, how each handles rejections, and the common mistakes that bite in production.",
+      "publishedAt": "2026-07-29T05:00:00.000Z"
+    },
+    {
+      "slug": "de091bb0bae4ec89f3b22866",
+      "guid": "https://blog.appsignal.com/2026/07/29/appsignal-mcp-server-get-started-in-your-ide.html",
+      "title": "AppSignal MCP Server: Get Started in your IDE",
+      "link": "https://blog.appsignal.com/2026/07/29/appsignal-mcp-server-get-started-in-your-ide.html",
+      "source": "AppSignal",
+      "sourceUrl": "https://blog.appsignal.com/feed.xml",
+      "summary": "Cursor, Claude, and their fellow tools are great when they are speaking code, but once that code hits production, they are not exactly native. However, if your code is monitored by AppSignal, an MCP server can bridge that gap and allow agents to poke around the production. TL;DR…",
+      "publishedAt": "2026-07-29T00:00:00.000Z"
+    },
     {
       "slug": "e1ee0de8dda0d3dc855b128a",
       "guid": "https://flaviocopes.com/terraform-for-developers/",
@@ -284,36 +344,6 @@
       "publishedAt": "2026-07-23T09:00:00.000Z"
     },
     {
-      "slug": "9e5b77a028c73f0e5934ff88",
-      "guid": "https://flaviocopes.com/detect-tech-stack-github-repo/",
-      "title": "Detect a tech stack from a GitHub repo URL",
-      "link": "https://flaviocopes.com/detect-tech-stack-github-repo/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Detect a project's tech stack from a public GitHub repo without cloning. GitHub API branch lookup, parallel raw manifest fetches, and signal mapping.",
-      "publishedAt": "2026-07-23T05:00:00.000Z"
-    },
-    {
-      "slug": "95dfadc8f0c25d85fe9ebf83",
-      "guid": "https://flaviocopes.com/opentelemetry-nodejs-tutorial/",
-      "title": "OpenTelemetry tutorial for Node.js: traces and metrics from scratch",
-      "link": "https://flaviocopes.com/opentelemetry-nodejs-tutorial/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Instrument a Node.js API with OpenTelemetry, export traces and metrics through a collector, and learn how to debug slow production requests.",
-      "publishedAt": "2026-07-22T09:00:00.000Z"
-    },
-    {
-      "slug": "1452dee5b03ff6df128c4820",
-      "guid": "https://flaviocopes.com/animated-svg-connection-lines/",
-      "title": "Self-drawing SVG connection lines",
-      "link": "https://flaviocopes.com/animated-svg-connection-lines/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Animate SVG connection lines that draw themselves on scroll, with staggered edges, IntersectionObserver, and prefers-reduced-motion fallbacks.",
-      "publishedAt": "2026-07-22T05:00:00.000Z"
-    },
-    {
       "slug": "642ab4b5898be994d98ed8a2",
       "guid": "https://blog.appsignal.com/2026/07/22/monitoring-your-django-app-health-on-fly-io.html",
       "title": "Monitoring Your Django App Health on Fly.io",
@@ -322,26 +352,6 @@
       "sourceUrl": "https://blog.appsignal.com/feed.xml",
       "summary": "Fly.io is a neat choice for deploying Django fast and globally. What it doesn’t really give you out of the box, though, is a deeper picture of an application’s performance. Deployment is only part of the story. No matter which platform you’re using, operating a production applic…",
       "publishedAt": "2026-07-22T00:00:00.000Z"
-    },
-    {
-      "slug": "7f5d0d0877431e1e02e93896",
-      "guid": "https://flaviocopes.com/openapi-tutorial/",
-      "title": "OpenAPI tutorial: document and validate a REST API",
-      "link": "https://flaviocopes.com/openapi-tutorial/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Learn OpenAPI by building a books API with reusable schemas, request validation, interactive documentation, and a generated TypeScript client.",
-      "publishedAt": "2026-07-21T09:00:00.000Z"
-    },
-    {
-      "slug": "5469411c6005a91d30b5b79c",
-      "guid": "https://flaviocopes.com/interactive-canvas-vanilla-js/",
-      "title": "Build a draggable node diagram without a library",
-      "link": "https://flaviocopes.com/interactive-canvas-vanilla-js/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Build a Railway-style draggable infrastructure canvas with vanilla JS. Positioned nodes, SVG edges, pointer events, no diagram library needed.",
-      "publishedAt": "2026-07-21T05:00:00.000Z"
     },
     {
       "slug": "ee84f98e6570f6e44eb82280",
