@@ -1,127 +1,257 @@
 {
   "category": "web-dev",
   "label": "Web Development",
-  "fetchedAt": "2026-07-30T16:24:40.310Z",
+  "fetchedAt": "2026-07-31T06:53:44.271Z",
   "items": [
     {
-      "slug": "36340ea68a27601840cef8c6",
-      "guid": "https://dev.to/canro91/my-favorite-post-from-july-2j07",
-      "title": "My favorite post from July!",
-      "link": "https://dev.to/canro91/my-favorite-post-from-july-2j07",
+      "slug": "094bba8cae435dad4b78c0c1",
+      "guid": "https://dev.to/amitesh0512/getting-started-with-clean-architecture-a-practical-guide-1a09",
+      "title": "Getting Started with Clean Architecture: A Practical Guide",
+      "link": "https://dev.to/amitesh0512/getting-started-with-clean-architecture-a-practical-guide-1a09",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "I've Spent 10+ Years in Software Engineering. After Sickness, Burnout, and a Layoff, I'm Rebuilding My Career. Ask Me Anything Writing therapy and a new book trilogy Cesar Aguirre Jul 20 #discuss #watercooler #ama #coding 102 reactions comments 1 min read",
-      "publishedAt": "2026-07-30T16:15:05.000Z"
+      "summary": "Introduction to Clean Architecture Clean architecture, a software design philosophy championed by the renowned Robert C. Martin (Uncle Bob), has revolutionized the way developers approach system design. By prioritizing the separation of concerns and promoting independence From f…",
+      "publishedAt": "2026-07-31T06:44:34.000Z"
     },
     {
-      "slug": "a7056fdf896459092124c63f",
-      "guid": "https://dev.to/fu_bront_a2bc935343b8b06e/what-i-learned-building-an-ai-background-remover-on-cloudflare-2l74",
-      "title": "What I Learned Building an AI Background Remover on Cloudflare",
-      "link": "https://dev.to/fu_bront_a2bc935343b8b06e/what-i-learned-building-an-ai-background-remover-on-cloudflare-2l74",
+      "slug": "dbc55e096aebe0ee2a811b81",
+      "guid": "https://dev.to/trungdlp/correctness-has-a-price-we-benchmarked-fair-leaderboards-3ia8",
+      "title": "Correctness Has a Price: We Benchmarked Fair Leaderboards",
+      "link": "https://dev.to/trungdlp/correctness-has-a-price-we-benchmarked-fair-leaderboards-3ia8",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "I recently shipped CutoutKit, a small web app that removes image backgrounds and returns a transparent PNG. The interface is intentionally simple: upload an image, wait a few seconds, and download the result. The implementation behind that flow was less simple. Once I moved past…",
-      "publishedAt": "2026-07-30T16:15:01.000Z"
+      "summary": "Engineering posts often end with: The new design is correct, scalable, and fast. Fast compared with what? When we changed Podium so tied players a Lua script; a per-leaderboard sequence; a public-ID mapping; a second sorted set for ascending order. That design is fairer. It is a…",
+      "publishedAt": "2026-07-31T06:44:23.000Z"
     },
     {
-      "slug": "a86a77142ef8d8d5275b1b54",
-      "guid": "https://dev.to/someb1oody/advanced-rust-115-trait-bounds-compilation-and-dispatch-4hc5",
-      "title": "[Advanced Rust] 1.15. Trait Bounds - Compilation and Dispatch",
-      "link": "https://dev.to/someb1oody/advanced-rust-115-trait-bounds-compilation-and-dispatch-4hc5",
+      "slug": "b95d639e22a4383c82519caa",
+      "guid": "https://dev.to/trungdlp/redis-cluster-wont-shard-your-hot-leaderboard-2c4p",
+      "title": "Redis Cluster Won't Shard Your Hot Leaderboard",
+      "link": "https://dev.to/trungdlp/redis-cluster-wont-shard-your-hot-leaderboard-2c4p",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "1.15.1. Static Dispatch What happens when we compile generic code? The compiler copies part of the type or function for each T (for each concrete type), so that each type has its own function. This process is called monomorphization. (Calling methods on a dyn Trait is different:…",
-      "publishedAt": "2026-07-30T16:14:29.000Z"
+      "summary": "\"We use Redis Cluster\" can mean two very different things: Our dataset is distributed across Redis nodes. Every individual data structure is distributed across Redis nodes. The first can be true while the second is false. That distinction matters for leaderboards. In Podium, eac…",
+      "publishedAt": "2026-07-31T06:43:59.000Z"
     },
     {
-      "slug": "df0b71d27bf85cabaddd05d2",
-      "guid": "https://dev.to/surajrkhonde/episode-8-git-workflow-1o37",
-      "title": "Episode 8: Git Workflow",
-      "link": "https://dev.to/surajrkhonde/episode-8-git-workflow-1o37",
+      "slug": "f45518c93640504422c70736",
+      "guid": "https://dev.to/trungdlp/your-redis-leaderboard-is-probably-breaking-ties-wrong-39k4",
+      "title": "Your Redis Leaderboard Is Probably Breaking Ties Wrong",
+      "link": "https://dev.to/trungdlp/your-redis-leaderboard-is-probably-breaking-ties-wrong-39k4",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "This series follows a fictional conversation between an experienced engineer and his nephew. Every episode explores one stage of how software moves from an idea to production. 👦 Nephew: Uncle, code's ready. git add ., git commit, git push to main, done? 👨‍🦳 Uncle: Stop. Two p…",
-      "publishedAt": "2026-07-30T16:12:03.000Z"
+      "summary": "A leaderboard looks like a one-command problem: ZADD weekly 100 alice ZADD weekly 100 bob ZREVRANGE weekly 0 -1 WITHSCORES While building Podium, an open-source Redis-backed / podium Podium High-performance, Redis-backed leaderboards for games and competitive applications. Podiu…",
+      "publishedAt": "2026-07-31T06:41:29.000Z"
     },
     {
-      "slug": "ab4d3706a82cee70fcbbcf5f",
-      "guid": "https://dev.to/tanya_monoware/how-to-inspect-a-jwt-without-uploading-a-production-token-4co6",
-      "title": "How to Inspect a JWT Without Uploading a Production Token",
-      "link": "https://dev.to/tanya_monoware/how-to-inspect-a-jwt-without-uploading-a-production-token-4co6",
+      "slug": "cccc684684bb87a715c8873f",
+      "guid": "https://dev.to/cheng_zhang_45ee857b979b0/how-to-generate-e-commerce-product-pages-in-bulk-with-ai-fd",
+      "title": "How to Generate E-commerce Product Pages in Bulk with AI",
+      "link": "https://dev.to/cheng_zhang_45ee857b979b0/how-to-generate-e-commerce-product-pages-in-bulk-with-ai-fd",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "A JSON Web Token often looks like opaque security data, but its header and Uploading a live bearer token to an unknown server-side decoder. Treating decoded claims as proof that the token is authentic. This workflow separates three different jobs: Inspecting the token structure.…",
-      "publishedAt": "2026-07-30T16:08:15.000Z"
+      "summary": "Article Summary Bulk-generating product pages with AI looks simple: send product attributes to a model and ask it to write persuasive copy. In practice, this approach often creates invented claims, mismatched specifications, repetitive content, prohibited wording, and formats th…",
+      "publishedAt": "2026-07-31T06:35:59.000Z"
     },
     {
-      "slug": "c54d0692cdc821b7fa5ca486",
-      "guid": "https://dev.to/celsonery/kubernetes-visualizando-metricas-com-grafana-21kk",
-      "title": "Kubernetes: Visualizando Métricas com Grafana",
-      "link": "https://dev.to/celsonery/kubernetes-visualizando-metricas-com-grafana-21kk",
+      "slug": "709f5151eaeb543511fce22b",
+      "guid": "https://dev.to/sumaninster/we-added-mobile-approvals-to-our-cli-ai-tool-approve-claudes-destructive-commands-from-your-19il",
+      "title": "We added mobile approvals to our CLI AI tool -- approve Claude's destructive commands from your phone",
+      "link": "https://dev.to/sumaninster/we-added-mobile-approvals-to-our-cli-ai-tool-approve-claudes-destructive-commands-from-your-19il",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "🇺🇸 English version coming soon. O Prometheus (visto no artigo anterior desta série de addons) é excelente para coletar e armazenar métricas, mas sua interface nativa é bastante limitada para visualização. É aí que entra o Grafana: a ferramenta mais usada para transformar os da…",
-      "publishedAt": "2026-07-30T16:05:21.000Z"
+      "summary": "Quick share of a feature we built into Telechat (self-hosted Claude AI bot) that's been surprisingly useful for devops workflows: Desktop Bridge with mobile approvals. You're running Claude Code (or any Claude-powered agent) on your workstation. It's refactoring a module, runnin…",
+      "publishedAt": "2026-07-31T06:22:29.000Z"
     },
     {
-      "slug": "6232b7153fd5c0c5c023af79",
-      "guid": "https://dev.to/sparshsharmadev/building-a-transformer-from-scratch-in-pytorch-j43",
-      "title": "Building a Transformer from Scratch in PyTorch",
-      "link": "https://dev.to/sparshsharmadev/building-a-transformer-from-scratch-in-pytorch-j43",
+      "slug": "aaec4f9b561a383a5ecd129a",
+      "guid": "https://dev.to/sumaninster/telechat-self-host-claude-ai-across-telegramwhatsappslack-with-one-npm-install-26pj",
+      "title": "Telechat: self-host Claude AI across Telegram/WhatsApp/Slack with one npm install",
+      "link": "https://dev.to/sumaninster/telechat-self-host-claude-ai-across-telegramwhatsappslack-with-one-npm-install-26pj",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "I trained my own transformer model from the ground up — no HuggingFace, no shortcuts. Here's the full breakdown: multi-head attention, positional encoding, training loops, and the mistakes that actually taught me how these things work. Why Build from Scratch? So I decided to bui…",
-      "publishedAt": "2026-07-30T16:02:16.000Z"
+      "summary": "Built something the r/selfhosted crowd might appreciate: Telechat — a self-hosted Claude AI bot that connects to Telegram, WhatsApp, Slack, and web chat from a single process. Anthropic launched Claude Code Channels recently — Claude on Telegram/Discord, managed by Anthropic. It…",
+      "publishedAt": "2026-07-31T06:22:29.000Z"
     },
     {
-      "slug": "a7f7765bd514193a7a35f733",
-      "guid": "https://dev.to/celsonery/kubernetes-automatizando-certificados-tls-com-cert-manager-56em",
-      "title": "Kubernetes: Automatizando Certificados TLS com Cert-Manager",
-      "link": "https://dev.to/celsonery/kubernetes-automatizando-certificados-tls-com-cert-manager-56em",
+      "slug": "09ba7a029e3ec02cac7d3530",
+      "guid": "https://dev.to/yaser/nice-post-explaining-the-small-bits-about-local-rag-h8b",
+      "title": "Nice post explaining the small bits about local RAG!",
+      "link": "https://dev.to/yaser/nice-post-explaining-the-small-bits-about-local-rag-h8b",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "🇺🇸 English version coming soon. Com o Ingress Controller já configurado (veja o artigo anterior desta série de addons), o cluster consegue rotear múltiplos domínios HTTP para os Services corretos. O próximo passo natural é habilitar HTTPS nesses domínios — e fazer isso manualm…",
-      "publishedAt": "2026-07-30T16:01:23.000Z"
+      "summary": "Building a 100% Local RAG System on Kubernetes — No API Keys Required Ahmed Nafies Jul 30 #kubernetes #rag #llm #postgres 1 reaction Add Comment 8 min read",
+      "publishedAt": "2026-07-31T06:20:26.000Z"
     },
     {
-      "slug": "96ed02652cdc8c35a607a22a",
-      "guid": "https://dev.to/saras_growth_space/-lld-data-structures-in-design-context-inside-a-hashmap-buckets-collisions-and-why-everything-g4m",
-      "title": "LLD Data Structures in Design Context: Inside a HashMap — Buckets, Collisions and Why Everything Still Works",
-      "link": "https://dev.to/saras_growth_space/-lld-data-structures-in-design-context-inside-a-hashmap-buckets-collisions-and-why-everything-g4m",
+      "slug": "8541c225884af1326b78cd0c",
+      "guid": "https://dev.to/kamal_namdeo/mastering-python-futures-from-basic-submissions-to-event-driven-concurrency-55n6",
+      "title": "Mastering Python Futures: From Basic Submissions to Event-Driven Concurrency",
+      "link": "https://dev.to/kamal_namdeo/mastering-python-futures-from-basic-submissions-to-event-driven-concurrency-55n6",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "\"A HashMap is fast not because collisions never happen. It is fast because it knows how to handle them efficiently.\" In the previous articles, we built the foundation of HashMap thinking. We understood: Why fast lookup is an important system behaviour. Why unique keys are valuab…",
-      "publishedAt": "2026-07-30T16:00:00.000Z"
+      "summary": "When building modern Python applications—whether scraping web pages, fetching data from external APIs, or querying databases—IO-bound operations often slow down execution. Python’s concurrent.futures module provides a high-level, elegant interface for running tasks asynchronousl…",
+      "publishedAt": "2026-07-31T06:16:00.000Z"
     },
     {
-      "slug": "1a494076447a74b58b07b686",
-      "guid": "https://dev.to/rana_usman_091f132d62256f/designing-a-trustworthy-keto-planning-tool-ux-lessons-for-health-calculators-4f3b",
-      "title": "Designing a Trustworthy Keto Planning Tool: UX Lessons for Health Calculators",
-      "link": "https://dev.to/rana_usman_091f132d62256f/designing-a-trustworthy-keto-planning-tool-ux-lessons-for-health-calculators-4f3b",
+      "slug": "bb064420c99b73e969963a8b",
+      "guid": "https://dev.to/franklyn_nmesoma/building-production-ai-systemsfinal-4o3o",
+      "title": "Building Production AI Systems(Final)",
+      "link": "https://dev.to/franklyn_nmesoma/building-production-ai-systemsfinal-4o3o",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "Health calculators sit in an awkward product category. Users want a fast, specific answer, but the inputs are personal, the underlying models contain assumptions, and a polished number can look more authoritative than it really is. A keto meal-planning product makes those tensio…",
-      "publishedAt": "2026-07-30T15:57:03.000Z"
+      "summary": "Designing AI Systems That Outlive Today's Models If there's one lesson this series has taught me, it's this: Don't build your application around a model. Build it around a capability. That might sound like a small distinction. It isn't. Because models change. Constantly. A few m…",
+      "publishedAt": "2026-07-31T06:15:00.000Z"
     },
     {
-      "slug": "71f85171863f03dc0b688a03",
-      "guid": "https://dev.to/aleksandr_kossarev_e23623/silent-failures-when-your-ai-agents-context-dies-without-a-sound-1fk9",
-      "title": "Silent Failures: When Your AI Agent's Context Dies Without a Sound",
-      "link": "https://dev.to/aleksandr_kossarev_e23623/silent-failures-when-your-ai-agents-context-dies-without-a-sound-1fk9",
+      "slug": "a6006a6812f88ecd1210401b",
+      "guid": "https://dev.to/sumaninster/i-built-a-self-hosted-alternative-to-claude-code-channels-heres-why-3j0g",
+      "title": "I built a self-hosted alternative to Claude Code Channels -- here's why",
+      "link": "https://dev.to/sumaninster/i-built-a-self-hosted-alternative-to-claude-code-channels-heres-why-3j0g",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "Silent Failures: When Your AI Agent's Context Dies Without a Sound Engineering notes on diagnosing and protecting memory in conversational AI systems A conversational AI agent was working. Code was clean. Tests were green. External diagnostics showed nothing wrong. But the agent…",
-      "publishedAt": "2026-07-30T15:56:21.000Z"
+      "summary": "When Claude Code Channels launched, I was stoked — Claude on my phone, finally. Then I hit the limitations: Only Telegram and Discord. I live in WhatsApp (most of the world does). Everything routes through Anthropic's servers. Fine for most people, but I work with clients who ha…",
+      "publishedAt": "2026-07-31T06:14:44.000Z"
     },
     {
-      "slug": "77e9415749a76c34301e057b",
-      "guid": "https://dev.to/pavelespitia/how-much-gpu-you-actually-need-for-local-code-review-in-2026-1oj7",
-      "title": "How Much GPU You Actually Need for Local Code Review in 2026",
-      "link": "https://dev.to/pavelespitia/how-much-gpu-you-actually-need-for-local-code-review-in-2026-1oj7",
+      "slug": "f526a05735ec1ebdc0454807",
+      "guid": "https://dev.to/mirshahreza/introducing-sequelizedotnet-bringing-sequelizejss-database-first-philosophy-to-net-3f8i",
+      "title": "Introducing SequelizeDotNet: Bringing Sequelize.js's Database-First Philosophy to .NET",
+      "link": "https://dev.to/mirshahreza/introducing-sequelizedotnet-bringing-sequelizejss-database-first-philosophy-to-net-3f8i",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "Last month a guy in a security Discord asked what GPU he should buy to run code review models locally. Budget: around $1,600. I told him to try it first on the laptop he already had, and he was almost offended. He'd read enough threads to believe local AI starts at 24GB of VRAM.…",
-      "publishedAt": "2026-07-30T15:56:20.000Z"
+      "summary": "A database-first, explicit-DDL ORM for .NET — runtime-emitted entity types, JOIN-free eager loading, CDC push notifications, and schema-driven GraphQL/OpenAPI generation. If you've built anything with Sequelize.js in the Node.js world, you know the feeling: point it at a databas…",
+      "publishedAt": "2026-07-31T06:13:47.000Z"
+    },
+    {
+      "slug": "0c2ae6656f6a485a89b491e4",
+      "guid": "6a47ad7312e85d0001a7d863",
+      "title": "Bash Alias Tutorial for Beginners",
+      "link": "https://kodekloud.com/blog/bash-alias-tutorial-for-beginners/",
+      "source": "KodeKloud",
+      "sourceUrl": "https://kodekloud.com/blog/rss/",
+      "summary": "Tired of typing long Linux commands? Learn how to speed up command-line sessions with Bash aliases.",
+      "publishedAt": "2026-07-31T00:30:20.000Z"
+    },
+    {
+      "slug": "01091c61fc420789a97acb09",
+      "guid": "6a299b65409b5b000105ba59",
+      "title": "Easy Ways to Check Python Version (and Package Versions)",
+      "link": "https://kodekloud.com/blog/easy-ways-to-check-python-version-and-package-versions/",
+      "source": "KodeKloud",
+      "sourceUrl": "https://kodekloud.com/blog/rss/",
+      "summary": "The easiest and fastest ways to check Python (interpreter) version and Python package versions.",
+      "publishedAt": "2026-07-31T00:28:01.000Z"
+    },
+    {
+      "slug": "230284bf19e4338da67b9f75",
+      "guid": "https://medium.com/p/ce5bd470aee1",
+      "title": "AI Agents Don’t Need Smarter Retrieval. They Need a Config Database",
+      "link": "https://itnext.io/ai-agents-dont-need-smarter-retrieval-they-need-a-config-database-ce5bd470aee1?source=rss----5b301f10ddcd---4",
+      "source": "itnext",
+      "sourceUrl": "https://itnext.io/feed",
+      "summary": "",
+      "publishedAt": "2026-07-30T19:55:09.000Z"
+    },
+    {
+      "slug": "7349fc4cbd1aa9019c2af874",
+      "guid": "https://medium.com/p/a11fbab14110",
+      "title": "Validating, scoring, and gating Kubernetes configuration after every change",
+      "link": "https://itnext.io/validating-scoring-and-gating-kubernetes-configuration-after-every-change-a11fbab14110?source=rss----5b301f10ddcd---4",
+      "source": "itnext",
+      "sourceUrl": "https://itnext.io/feed",
+      "summary": "",
+      "publishedAt": "2026-07-30T19:55:06.000Z"
+    },
+    {
+      "slug": "a734e336cad58308f0ff9ecb",
+      "guid": "https://medium.com/p/200558945ffa",
+      "title": "Cache Me If You Can: A .NET Caching Survival Guide",
+      "link": "https://itnext.io/cache-me-if-you-can-a-net-caching-survival-guide-200558945ffa?source=rss----5b301f10ddcd---4",
+      "source": "itnext",
+      "sourceUrl": "https://itnext.io/feed",
+      "summary": "",
+      "publishedAt": "2026-07-30T19:53:18.000Z"
+    },
+    {
+      "slug": "e6d011f54d4328a1c2726dbd",
+      "guid": "https://dzone.com/articles/3664328",
+      "title": "SRE Best Practices for Production Alerting",
+      "link": "https://dzone.com/articles/sre-production-alerting",
+      "source": "DZone",
+      "sourceUrl": "https://feeds.dzone.com/home",
+      "summary": "One of the biggest problems that teams managing large-scale distributed systems face is alert noise. Getting precise signals when something is wrong in production services is critical for maintaining the stability of production systems since it enables teams to reduce the time t…",
+      "publishedAt": "2026-07-30T19:00:00.000Z"
+    },
+    {
+      "slug": "59f558b21f68dcd2ad6162c3",
+      "guid": "https://dzone.com/articles/3666194",
+      "title": "The Trust Surface: The Missing Complement to Attack Surface",
+      "link": "https://dzone.com/articles/trust-surface-attack-surface",
+      "source": "DZone",
+      "sourceUrl": "https://feeds.dzone.com/home",
+      "summary": "Organizations don't have an identity crisis. They have a trust accounting crisis. Nobody is keeping the books. Security has gone through two eras of defining itself by what it measures. In the 1990s, security meant the firewall: define the perimeter, control what crosses it. In …",
+      "publishedAt": "2026-07-30T18:00:05.000Z"
+    },
+    {
+      "slug": "d1dedc52e279ec723284c9b4",
+      "guid": "https://medium.com/p/775851ccd08c",
+      "title": "Your Pod Died of “Out of Ephemeral Storage” but the Disk Is Half Empty!!",
+      "link": "https://itnext.io/your-pod-died-of-out-of-ephemeral-storage-but-the-disk-is-half-empty-775851ccd08c?source=rss----5b301f10ddcd---4",
+      "source": "itnext",
+      "sourceUrl": "https://itnext.io/feed",
+      "summary": "",
+      "publishedAt": "2026-07-30T17:36:48.000Z"
+    },
+    {
+      "slug": "94ee4a05febd7aa174db55ae",
+      "guid": "https://github.blog/?p=97813",
+      "title": "Stacked sessions and pull requests in the GitHub Copilot app",
+      "link": "https://github.blog/ai-and-ml/github-copilot/stacked-sessions-and-pull-requests-in-the-github-copilot-app/",
+      "source": "Github Blog",
+      "sourceUrl": "https://github.blog/feed/",
+      "summary": "Learn how I modernized an old codebase of mine using stacked sessions and pull requests in the GitHub Copilot app. The post Stacked sessions and pull requests in the GitHub Copilot app appeared first on The GitHub Blog.",
+      "publishedAt": "2026-07-30T17:30:24.000Z"
+    },
+    {
+      "slug": "7223e95674f601e52b6d0f0f",
+      "guid": "https://www.digitalocean.com/blog/serving-kimi-k3-inference-engine",
+      "title": "Under the Hood: Serving Kimi K3",
+      "link": "https://www.digitalocean.com/blog/serving-kimi-k3-inference-engine",
+      "source": "Digital Ocean Labs",
+      "sourceUrl": "https://www.digitalocean.com/blog/rss",
+      "summary": "DigitalOcean launched Kimi K3 on day 0. It’s already one of the most popular models on the platform and across the market: second most likes on Hugging Face, sixth most traffic on OpenCode. Getting a model this size running well on day zero took real work across several teams. T…",
+      "publishedAt": "2026-07-30T17:10:40.266Z"
+    },
+    {
+      "slug": "a0ed1c73106af5d8643f3f64",
+      "guid": "https://dzone.com/articles/3653961",
+      "title": "Your AI Agent Shipped an Answer. But Did It Earn the Right To?",
+      "link": "https://dzone.com/articles/agentic-ai-quality-metrics",
+      "source": "DZone",
+      "sourceUrl": "https://feeds.dzone.com/home",
+      "summary": "There was a time when evaluating an AI system meant running a test set, computing an accuracy score, and calling it done. That was good enough when models answered questions in isolation. It is not good enough anymore. Agentic AI systems do not just answer questions. They retrie…",
+      "publishedAt": "2026-07-30T17:00:05.000Z"
+    },
+    {
+      "slug": "8e3fc3595938810286cb4529",
+      "guid": "6a6b3f9b0d69a200019bb05f",
+      "title": "Building an AI Agent That Writes and Validates Ansible Playbooks",
+      "link": "https://kodekloud.com/blog/building-an-ai-agent-that-writes-and-validates-ansible-playbooks/",
+      "source": "KodeKloud",
+      "sourceUrl": "https://kodekloud.com/blog/rss/",
+      "summary": "Language models write Ansible that runs perfectly the first time and breaks the second. Ansible happens to ship the exact test that catches it, which is what makes this agent verifiable rather than hopeful.",
+      "publishedAt": "2026-07-30T16:56:13.000Z"
+    },
+    {
+      "slug": "b7a3a4e3e716eb7f108af392",
+      "guid": "https://dzone.com/articles/3666131",
+      "title": "I Built a RAG Agent on Azure AI Foundry in an Afternoon. Here's What Nobody Tells You.",
+      "link": "https://dzone.com/articles/rag-agent-azure-ai-foundry",
+      "source": "DZone",
+      "sourceUrl": "https://feeds.dzone.com/home",
+      "summary": "Six months ago, building a RAG pipeline meant a full week of plumbing: an embedding job here, a vector store there, a retriever glued on with duct tape, and an orchestration layer that broke every time you touched it. I've built enough of these the hard way — hand-rolled vector …",
+      "publishedAt": "2026-07-30T16:00:06.000Z"
     },
     {
       "slug": "f6004d9a2d05379e8fac2009",
@@ -152,6 +282,16 @@
       "sourceUrl": "https://frontendmasters.com/blog/feed/",
       "summary": "Chrome 146 introduced a scoped custom element registry, allowing different versions of custom elements to share the same tag name without using the global namespace.",
       "publishedAt": "2026-07-30T14:43:28.000Z"
+    },
+    {
+      "slug": "64d822f09633895600154251",
+      "guid": "6a6b625e08d602aac2992fab",
+      "title": "Agentic AI using LangGraph – Build AI Agents & Automate Workflows",
+      "link": "https://www.freecodecamp.org/news/agentic-ai-using-langgraph-build-ai-agents-automate-workflows/",
+      "source": "Free Code Camp - News",
+      "sourceUrl": "https://www.freecodecamp.org/news/rss",
+      "summary": "We are rapidly moving past standard, single-prompt Large Language Models and entering the era of autonomous AI agents. To help you master this new paradigm, we have just published a massive, comprehen",
+      "publishedAt": "2026-07-30T14:40:30.000Z"
     },
     {
       "slug": "d368de4ac465b7f255393125",
@@ -282,26 +422,6 @@
       "sourceUrl": "https://feeds.dzone.com/home",
       "summary": "Cross-border e-commerce sellers often spend hours comparing the same products across different Amazon marketplaces. Prices, reviews, and seller signals vary by country, but the process is still largely manual. I wanted to see how far I could automate it with a small AI agent bui…",
       "publishedAt": "2026-07-29T16:24:34.000Z"
-    },
-    {
-      "slug": "7349fc4cbd1aa9019c2af874",
-      "guid": "https://medium.com/p/a11fbab14110",
-      "title": "Validating, scoring, and gating Kubernetes configuration after every change",
-      "link": "https://itnext.io/validating-scoring-and-gating-kubernetes-configuration-after-every-change-a11fbab14110?source=rss----5b301f10ddcd---4",
-      "source": "itnext",
-      "sourceUrl": "https://itnext.io/feed",
-      "summary": "",
-      "publishedAt": "2026-07-29T16:12:30.000Z"
-    },
-    {
-      "slug": "230284bf19e4338da67b9f75",
-      "guid": "https://medium.com/p/ce5bd470aee1",
-      "title": "AI Agents Don’t Need Smarter Retrieval. They Need a Config Database",
-      "link": "https://itnext.io/ai-agents-dont-need-smarter-retrieval-they-need-a-config-database-ce5bd470aee1?source=rss----5b301f10ddcd---4",
-      "source": "itnext",
-      "sourceUrl": "https://itnext.io/feed",
-      "summary": "",
-      "publishedAt": "2026-07-29T16:10:05.000Z"
     },
     {
       "slug": "bba1b951ee24778736f81bcd",
@@ -484,16 +604,6 @@
       "publishedAt": "2026-07-28T22:48:28.000Z"
     },
     {
-      "slug": "edd9291bc4d9a3d5c066aed3",
-      "guid": "https://medium.com/p/4559f65028d1",
-      "title": "Enhance OutSystems with LOBE",
-      "link": "https://itnext.io/introducing-lobe-loh-bee-4559f65028d1?source=rss----5b301f10ddcd---4",
-      "source": "itnext",
-      "sourceUrl": "https://itnext.io/feed",
-      "summary": "",
-      "publishedAt": "2026-07-28T20:09:45.000Z"
-    },
-    {
       "slug": "793479269a2da4e67427aa19",
       "guid": "https://dzone.com/articles/3653972",
       "title": "Why Standard Test Automation Misses the Failures That Matter in AI Agent Systems",
@@ -604,16 +714,6 @@
       "publishedAt": "2026-07-28T16:00:00.000Z"
     },
     {
-      "slug": "57fe37d1f887677f2690c8f8",
-      "guid": "https://medium.com/p/0ebfb4c857fa",
-      "title": "Detection-as-Code in One GitHub Action with RSigma",
-      "link": "https://itnext.io/detection-as-code-in-one-github-action-with-rsigma-0ebfb4c857fa?source=rss----5b301f10ddcd---4",
-      "source": "itnext",
-      "sourceUrl": "https://itnext.io/feed",
-      "summary": "",
-      "publishedAt": "2026-07-28T15:30:28.000Z"
-    },
-    {
       "slug": "e2afda93cc50e35d97fcc202",
       "guid": "https://www.sitepoint.com/designing-reliable-document-generation-workflows-in-modern-webs-applications/",
       "title": "Designing Reliable Document Generation Workflows in Modern Webs Applications",
@@ -692,16 +792,6 @@
       "sourceUrl": "https://frontendmasters.com/blog/feed/",
       "summary": "In which Adam highlights the integration process and notes some challenges compared to the TanStack setup we covered shortly ago.",
       "publishedAt": "2026-07-28T03:59:22.000Z"
-    },
-    {
-      "slug": "6242a748a2e3262613ac2266",
-      "guid": "6a67c5edb2d5c5f568857cd3",
-      "title": "How to Build an Automated Workload Model for Peak Readiness",
-      "link": "https://www.freecodecamp.org/news/how-to-build-an-automated-workload-model-for-peak-readiness/",
-      "source": "Free Code Camp - News",
-      "sourceUrl": "https://www.freecodecamp.org/news/rss",
-      "summary": "If you’ve ever spent two days pulling data out of an APM tool just to answer “how many virtual users should I run in my load test?”, this tutorial is for you. By the end, you’ll know how to derive eve",
-      "publishedAt": "2026-07-27T20:56:13.000Z"
     },
     {
       "slug": "3312f539fd697dd8072f7056",
@@ -804,26 +894,6 @@
       "publishedAt": "2026-07-27T16:00:00.000Z"
     },
     {
-      "slug": "837f0640f6e518973c10c1c3",
-      "guid": "https://dzone.com/articles/3654855",
-      "title": "Designing a Page Object Model + TestNG Hybrid Framework: Patterns That Actually Scale",
-      "link": "https://dzone.com/articles/page-object-model-testng-framework",
-      "source": "DZone",
-      "sourceUrl": "https://feeds.dzone.com/home",
-      "summary": "Most articles on Page Object Model are written by people who maintain twelve tests. This is one written by somebody who has lived inside a 2,400-test web automation suite for three years and watched it ossify, get rebuilt, and ossify again. I don’t think POM is wrong. I think th…",
-      "publishedAt": "2026-07-27T15:00:00.000Z"
-    },
-    {
-      "slug": "96ede5b7e9f30784e69a3be7",
-      "guid": "https://dzone.com/articles/3656508",
-      "title": "From DevOps to AIOps: How Agentic AI Tamed Our Multi-Substrate Chaos",
-      "link": "https://dzone.com/articles/agentic-ai-multi-substrate-chaos",
-      "source": "DZone",
-      "sourceUrl": "https://feeds.dzone.com/home",
-      "summary": "The Mess We Started With When I took over the team, we had two substrates and a long list of problems that cut across both. On-prem ran on VMware. The core application was vendor-licensed, but over the years the team had layered so much custom code on top of it that the vendor c…",
-      "publishedAt": "2026-07-27T14:00:00.000Z"
-    },
-    {
       "slug": "e11cf3ea17e0385bf849727f",
       "guid": "https://tympanus.net/codrops/?p=117105",
       "title": "Between Print and Digital: The Making of MERSI’s Website",
@@ -832,26 +902,6 @@
       "sourceUrl": "https://tympanus.net/codrops/feed/",
       "summary": "FLOT NOIR reimagines MERSI’s digital presence as a quiet, immersive space between architectural print and interactive web, combining a tailored Webflow build with precise motion and editorial storytelling.",
       "publishedAt": "2026-07-27T13:18:10.000Z"
-    },
-    {
-      "slug": "3123459be502d5053f4178ba",
-      "guid": "https://dzone.com/articles/3659761",
-      "title": "Stop Fine-Tuning Everything: A Decision Framework for Model Adaptation",
-      "link": "https://dzone.com/articles/stop-fine-tuning-everything",
-      "source": "DZone",
-      "sourceUrl": "https://feeds.dzone.com/home",
-      "summary": "The default playbook for adapting a foundation model looks like this: grab a pre-trained model, collect labeled data, fine-tune, deploy. It works often enough that teams rarely question it, but fine-tuning is one of six adaptation strategies. Picking the wrong one costs you week…",
-      "publishedAt": "2026-07-27T13:00:04.000Z"
-    },
-    {
-      "slug": "c8ada1870c6eff127bda4442",
-      "guid": "https://dzone.com/articles/3665296",
-      "title": "Building a Voice-Controlled Graph Assistant With Neo4j, LiveKit, and OpenAI",
-      "link": "https://dzone.com/articles/voice-controlled-graph-assistant",
-      "source": "DZone",
-      "sourceUrl": "https://feeds.dzone.com/home",
-      "summary": "Natural language interfaces to databases have become increasingly practical, but most examples stop at typed queries. In this article, we'll add a voice layer, allowing users to speak questions to a knowledge graph and hear the answers spoken back. We'll walk through the full de…",
-      "publishedAt": "2026-07-27T12:00:00.000Z"
     },
     {
       "slug": "0ae7d0a9e8676ba874e09469",
@@ -952,56 +1002,6 @@
       "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
       "summary": "Apache Ossie for Developers: Standardizing Semantic Metadata in AI Projects on SitePoint.",
       "publishedAt": "2026-07-24T21:41:34.000Z"
-    },
-    {
-      "slug": "fe2c539e15dbb6e47d707d40",
-      "guid": "https://www.sitepoint.com/rubberduck-local-ai-emulation/",
-      "title": "Rubberduck: Emulating OpenAI Locally for Reliable AI Development",
-      "link": "https://www.sitepoint.com/rubberduck-local-ai-emulation/?utm_source=rss",
-      "source": "SitePoint",
-      "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
-      "summary": "Rubberduck: Emulating OpenAI Locally for Reliable AI Development on SitePoint.",
-      "publishedAt": "2026-07-24T21:41:33.000Z"
-    },
-    {
-      "slug": "0b1d3a3bd087a60e7152509d",
-      "guid": "6a63a451b3b8d50001120a5f",
-      "title": "Building an AI Agent for Automated API Security Testing Using Python",
-      "link": "https://kodekloud.com/blog/ai-agent-api-security-testing-python/",
-      "source": "KodeKloud",
-      "sourceUrl": "https://kodekloud.com/blog/rss/",
-      "summary": "Scanners find misconfigurations but miss the vulnerability that tops the OWASP API list, because catching it requires knowing who should own which record. Here is how to build an agent in Python that does understand.",
-      "publishedAt": "2026-07-24T18:04:25.000Z"
-    },
-    {
-      "slug": "664deb036e7e1adfaec5934d",
-      "guid": "https://master.dev/blog/?p=10485",
-      "title": "When You Need To Make a Triangle, Think Conic Gradients",
-      "link": "https://master.dev/blog/when-you-need-to-make-a-triangle-think-conic-gradients/",
-      "source": "Frontend Masters",
-      "sourceUrl": "https://frontendmasters.com/blog/feed/",
-      "summary": "Certainly it isn't the *only* way, but you've got a lot of angular control with conic-gradient() and it's fun to work with.",
-      "publishedAt": "2026-07-24T14:58:46.000Z"
-    },
-    {
-      "slug": "f034bf87bcf30ab8126e6cf4",
-      "guid": "https://tympanus.net/codrops/?p=117849",
-      "title": "The Art of Continuous Transformation: How Garden Eight Blends Integrity with Play",
-      "link": "https://tympanus.net/codrops/2026/07/24/the-art-of-continuous-transformation-how-garden-eight-blends-integrity-with-play/",
-      "source": "Codrops",
-      "sourceUrl": "https://tympanus.net/codrops/feed/",
-      "summary": "Inside Garden Eight's approach to creating websites that are not only visually striking, but thoughtfully crafted to evolve, engage, and endure.",
-      "publishedAt": "2026-07-24T14:06:07.000Z"
-    },
-    {
-      "slug": "4df02baa219474f9e7e5ce74",
-      "guid": "https://www.digitalocean.com/blog/model-synthesis",
-      "title": "Outperforming Fable 5 at half the price: meet model synthesis, a new server-side tool on DigitalOcean Inference Engine",
-      "link": "https://www.digitalocean.com/blog/model-synthesis",
-      "source": "Digital Ocean Labs",
-      "sourceUrl": "https://www.digitalocean.com/blog/rss",
-      "summary": "Anyone building with AI runs into the same tradeoff: how to get the most intelligence per dollar, the right model at the right cost for each task. DigitalOcean Inference Engine is built to help you make that tradeoff, and one way is finding the right model for each job. But some…",
-      "publishedAt": "2026-07-23T20:03:12.073Z"
     }
   ]
 }
