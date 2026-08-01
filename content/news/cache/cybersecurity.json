@@ -1,7 +1,7 @@
 {
   "category": "cybersecurity",
   "label": "Cybersecurity",
-  "fetchedAt": "2026-07-31T18:33:25.616Z",
+  "fetchedAt": "2026-08-01T06:45:51.923Z",
   "items": [
     {
       "slug": "71cf681166236cb4d64391e4",
@@ -12,6 +12,36 @@
       "sourceUrl": "https://danielmiessler.com/feed.rss",
       "summary": "AI Influence Level/blog/ai-influence-level-ail has been a text label since 2023. A line at the bottom of a post saying how much of it I wrote and how much the AI did. Text at the bottom is fine for disclosure. It's bad for glancing. So here's a mark. The family Six badges, AIL 0…",
       "publishedAt": "2026-07-31T22:30:00.000Z"
+    },
+    {
+      "slug": "24dcbc17beb53eae9e06827b",
+      "guid": "https://www.schneier.com/?p=72308",
+      "title": "Friday Squid Blogging: Squid Helps Discover New Marine Species",
+      "link": "https://www.schneier.com/blog/archives/2026/07/friday-squid-blogging-squid-helps-discover-new-marine-species.html",
+      "source": "Schneier on Security",
+      "sourceUrl": "https://www.schneier.com/feed/",
+      "summary": "The Squid is a new scientific machine: One of the technological breakthroughs was the onboard use of a spinning wheel confocal microscope, nicknamed the Squid, which uses lasers to scan microscopic details of how organisms are put together. “That opens up a whole new world of ex…",
+      "publishedAt": "2026-07-31T21:06:46.000Z"
+    },
+    {
+      "slug": "63ae4bfd895ffdf8f579a254",
+      "guid": "https://thehackernews.com/2026/08/suspected-chinese-speaking-hackers.html",
+      "title": "Suspected Chinese-Speaking Hackers Target Central Asian Governments With OctLurk and SilkLurk",
+      "link": "https://thehackernews.com/2026/08/suspected-chinese-speaking-hackers.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "A Chinese-speaking threat actor is suspected to be behind a fresh wave of cyber attacks targeting government organizations mainly located in Central Asia, including Afghanistan, Kyrgyzstan, Tajikistan, Uzbekistan, Kazakhstan, and the Syrian Arab Republic, since January 2025. The…",
+      "publishedAt": "2026-07-31T18:52:04.000Z"
+    },
+    {
+      "slug": "bd509bf84507638c8b035997",
+      "guid": "https://www.darkreading.com/cybersecurity-operations/cisa-issues-fresh-sbom-guidance",
+      "title": "CISA Issues Fresh SBOM Guidance. Did They Get It Right?",
+      "link": "https://www.darkreading.com/cybersecurity-operations/cisa-issues-fresh-sbom-guidance",
+      "source": "Dark Reading",
+      "sourceUrl": "https://www.darkreading.com/rss.xml",
+      "summary": "A couple-dozen changes to SBOM fields will make them more comprehensive, but some argue that the framework lacks real risk-management improvements.",
+      "publishedAt": "2026-07-31T18:13:11.000Z"
     },
     {
       "slug": "f7ae702cf818f1bfe620788e",
@@ -70,7 +100,7 @@
       "link": "https://www.darkreading.com/data-privacy/drop-platform-lets-californians-ditch-their-data",
       "source": "Dark Reading",
       "sourceUrl": "https://www.darkreading.com/rss.xml",
-      "summary": "The Delete Request and Opt-out Platform (DROP) launches Aug. 1 and hundreds of thousands of California residents already registered. Other states could follow if the process goes smoothly.",
+      "summary": "Hundreds of thousands of California residents have already registered for the Delete Request and Opt-out Platform (DROP), which launches Aug. 1. Other states could follow if the process goes smoothly.",
       "publishedAt": "2026-07-31T13:19:36.000Z"
     },
     {
@@ -972,36 +1002,6 @@
       "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
       "summary": "A new Mirai-derived botnet called Tengu can use a compromised Linux device's hardware watchdog to trigger a reboot when defenders kill its main process. If that happens, Tengu's other persistence mechanisms get another chance to relaunch it. Nozomi Networks Labs observed the dro…",
       "publishedAt": "2026-07-28T15:01:33.000Z"
-    },
-    {
-      "slug": "81917f51ec1dcd5caa08b8eb",
-      "guid": "https://thehackernews.com/2026/07/24650-internet-exposed-bmcs-disclose.html",
-      "title": "24,650 Internet-Exposed BMCs Disclose IPMI Password Hashes Before Login",
-      "link": "https://thehackernews.com/2026/07/24650-internet-exposed-bmcs-disclose.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "Cybersecurity researchers have sounded an alert after finding more than 36,000 Baseboard Management Controller (BMC) management interfaces exposing Intelligent Platform Management Interface (IPMI) protocol to the public internet. Of the 36,872 internet-exposed server-management …",
-      "publishedAt": "2026-07-28T14:41:36.000Z"
-    },
-    {
-      "slug": "03429ea5c1ea7e0e76468efe",
-      "guid": "https://thehackernews.com/2026/07/jfrog-confirms-openai-models-exploited.html",
-      "title": "JFrog Confirms OpenAI Models Exploited Artifactory Zero-Day Before Hugging Face Breach",
-      "link": "https://thehackernews.com/2026/07/jfrog-confirms-openai-models-exploited.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "JFrog has confirmed that OpenAI models exploited a zero-day in self-hosted Artifactory while trying to reach the open internet from a sealed evaluation environment. Artifactory is JFrog's software repository manager. OpenAI says the models then escalated privileges and moved lat…",
-      "publishedAt": "2026-07-28T13:33:47.000Z"
-    },
-    {
-      "slug": "8f4baa3bbcd66abc3df64973",
-      "guid": "https://orca.security/?p=73863",
-      "title": "Cloud Security for Payment Data: A PCI DSS Compliance Guide",
-      "link": "https://orca.security/resources/blog/cloud-security-for-payment-data/",
-      "source": "Orca Security Blog",
-      "sourceUrl": "https://orca.security/resources/blog/feed/",
-      "summary": "Securing payment data in the cloud means treating PCI DSS compliance as a continuous engineering discipline. Organizations processing cardholder data across AWS, Azure, or GCP are responsible for data encryption, access controls, network segmentation, and misconfiguration remedi…",
-      "publishedAt": "2026-07-28T13:19:03.000Z"
     }
   ]
 }

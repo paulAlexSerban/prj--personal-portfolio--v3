@@ -1,8 +1,28 @@
 {
   "category": "javascript",
   "label": "JavaScript",
-  "fetchedAt": "2026-07-31T18:33:25.616Z",
+  "fetchedAt": "2026-08-01T06:45:51.923Z",
   "items": [
+    {
+      "slug": "67d5e58662a16ddf78bd7d35",
+      "guid": "https://flaviocopes.com/jwt-signing-web-crypto/",
+      "title": "How JWT signing actually works (HS256 with Web Crypto)",
+      "link": "https://flaviocopes.com/jwt-signing-web-crypto/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Learn how JWT signing works by building and signing an HS256 token by hand with the Web Crypto API: base64url, HMAC-SHA256, and verification.",
+      "publishedAt": "2026-08-01T05:00:00.000Z"
+    },
+    {
+      "slug": "af4d8a3f0978f8a7a27ed837",
+      "guid": "https://flaviocopes.com/temporal-api/",
+      "title": "The Temporal API: JavaScript dates, finally fixed",
+      "link": "https://flaviocopes.com/temporal-api/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Temporal replaces JavaScript's broken Date object. Learn the key types, practical examples, browser support, and how to polyfill for production.",
+      "publishedAt": "2026-08-01T05:00:00.000Z"
+    },
     {
       "slug": "5f694d0c6b355ad7d7a0e407",
       "guid": "https://flaviocopes.com/cloud-platform-plugins-ai-coding-agents/",
@@ -332,26 +352,6 @@
       "sourceUrl": "https://flaviocopes.com/rss.xml",
       "summary": "A practical mini-course on running real apps on Cloudflare with Workers, Pages, D1, KV, R2, Queues, Durable Objects, AI, and more.",
       "publishedAt": "2026-07-26T05:05:00.000Z"
-    },
-    {
-      "slug": "b89d4302c9bedce2efefea14",
-      "guid": "https://flaviocopes.com/llm-vram-requirements/",
-      "title": "How much VRAM do you need to run an LLM locally?",
-      "link": "https://flaviocopes.com/llm-vram-requirements/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "How to estimate the VRAM an LLM needs: parameter count times quantization bits, plus KV cache that grows with context length, plus overhead.",
-      "publishedAt": "2026-07-26T05:00:00.000Z"
-    },
-    {
-      "slug": "c32e2bbe99771508b233823f",
-      "guid": "https://flaviocopes.com/github-stacked-prs/",
-      "title": "GitHub Stacked PRs: a practical guide to gh stack",
-      "link": "https://flaviocopes.com/github-stacked-prs/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Learn GitHub Stacked PRs with gh stack: design focused layers, submit the chain, handle review feedback, rebase safely, and merge.",
-      "publishedAt": "2026-07-25T13:00:00.000Z"
     },
     {
       "slug": "642ab4b5898be994d98ed8a2",
