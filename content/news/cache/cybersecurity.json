@@ -1,8 +1,48 @@
 {
   "category": "cybersecurity",
   "label": "Cybersecurity",
-  "fetchedAt": "2026-08-01T06:45:51.923Z",
+  "fetchedAt": "2026-08-02T06:49:11.713Z",
   "items": [
+    {
+      "slug": "33d64b684b386f21f4b0aac2",
+      "guid": "https://thehackernews.com/2026/08/coldcard-hardware-wallet-flaw-linked-to.html",
+      "title": "Coldcard Hardware Wallet Flaw Linked to $70 Million Bitcoin Theft in 41 Minutes",
+      "link": "https://thehackernews.com/2026/08/coldcard-hardware-wallet-flaw-linked-to.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "An attacker drained 1,196 Bitcoin addresses in 41 minutes on July 30, taking 1,082.65 BTC worth about $70.2 million at the time. Galaxy Research mapped the sweep and tied it to a firmware flaw in Coldcard, the Bitcoin-only hardware wallet made by Canadian firm Coinkite. A March …",
+      "publishedAt": "2026-08-01T17:17:22.000Z"
+    },
+    {
+      "slug": "0fa86a6b2f57fc9d8dcf3f8c",
+      "guid": "https://thehackernews.com/2026/08/hackers-poison-adform-script-to-swap.html",
+      "title": "Hackers Poison Adform Script to Swap Crypto Wallet Addresses Across Customer Sites",
+      "link": "https://thehackernews.com/2026/08/hackers-poison-adform-script-to-swap.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "Attackers modified a JavaScript file served by advertising technology company Adform, turning it into a browser-side tool that rewrites cryptocurrency wallet addresses. Adform detected the incident on July 27, 2026, removed the malicious code, notified affected clients, and repo…",
+      "publishedAt": "2026-08-01T09:03:07.000Z"
+    },
+    {
+      "slug": "097fcbe5b08ca7e56f3460f2",
+      "guid": "https://thehackernews.com/2026/08/adobe-campaign-classic-cvss-100-flaw.html",
+      "title": "Adobe Campaign Classic CVSS 10.0 Flaw Could Run Code Without User Interaction",
+      "link": "https://thehackernews.com/2026/08/adobe-campaign-classic-cvss-100-flaw.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "Adobe has released security updates to address a maximum-severity security flaw in Campaign Classic (ACC), its enterprise-focused marketing automation platform, that could result in arbitrary code execution. The vulnerability, tracked as CVE-2026-48449, carries a severity score …",
+      "publishedAt": "2026-08-01T07:12:42.000Z"
+    },
+    {
+      "slug": "ef832fb7175ff4cbeb8653d6",
+      "guid": "https://thehackernews.com/2026/08/hijacked-hotel-wi-fi-pushes-fake.html",
+      "title": "Hijacked Hotel Wi-Fi Pushes Fake Updates to Deliver Surveillance Malware",
+      "link": "https://thehackernews.com/2026/08/hijacked-hotel-wi-fi-pushes-fake.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "A fake browser update served over hijacked hotel Wi-Fi has been used to deliver CornFlake, a remote access trojan (RAT) that can capture webcam images, microphone audio, and keystrokes, Microsoft said in its latest report. Researchers track the operation as CaptiveCrunch and att…",
+      "publishedAt": "2026-08-01T06:29:05.000Z"
+    },
     {
       "slug": "71cf681166236cb4d64391e4",
       "guid": "https://danielmiessler.com/blog/ail-badge-examples",
@@ -10,7 +50,7 @@
       "link": "https://danielmiessler.com/blog/ail-badge-examples?utm_source=rss&utm_medium=feed&utm_campaign=website",
       "source": "Daniel Miessler",
       "sourceUrl": "https://danielmiessler.com/feed.rss",
-      "summary": "AI Influence Level/blog/ai-influence-level-ail has been a text label since 2023. A line at the bottom of a post saying how much of it I wrote and how much the AI did. Text at the bottom is fine for disclosure. It's bad for glancing. So here's a mark. The family Six badges, AIL 0…",
+      "summary": "AIL badge scale showing levels zero through five/images/ail-scale-chart.webp/images/ail-scale-chart.webp AI Influence Level/blog/ai-influence-level-ail has been a text label since 2023. A line at the bottom of a post saying how much of it I wrote and how much the AI did. Text at…",
       "publishedAt": "2026-07-31T22:30:00.000Z"
     },
     {
@@ -302,6 +342,16 @@
       "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
       "summary": "Threat actors with ties to North Korea have been attributed to a sophisticated macOS malvertising campaign that involves redirecting users to fake web pages displaying a full-screen non-existent update sequence to deliver malware as part of a new iteration of the long-running Co…",
       "publishedAt": "2026-07-30T18:18:24.000Z"
+    },
+    {
+      "slug": "706359fb1cbc03ae9c165b95",
+      "guid": "https://krebsonsecurity.com/?p=74047",
+      "title": "Read This Before You Buy That TV Streaming Stick",
+      "link": "https://krebsonsecurity.com/2026/07/read-this-before-you-buy-that-tv-streaming-stick/",
+      "source": "Krebson Security",
+      "sourceUrl": "https://krebsonsecurity.com/feed/",
+      "summary": "Security experts have been sounding the alarm for years about the risks of using generic TV boxes that promise unlimited content streaming for a one-time fee, warning that they secretly rent the user's Internet connection out to strangers. But a groundbreaking new analysis finds…",
+      "publishedAt": "2026-07-30T16:49:00.000Z"
     },
     {
       "slug": "eb4cdf588d26726862a4e849",
@@ -952,56 +1002,6 @@
       "sourceUrl": "https://www.darkreading.com/rss.xml",
       "summary": "A host of Internet-exposed remote hardware management processors are subject to offline password-cracking attacks — and adversaries have taken note.",
       "publishedAt": "2026-07-28T21:07:55.000Z"
-    },
-    {
-      "slug": "7df0eff93528ef6fdb1bde75",
-      "guid": "https://www.darkreading.com/application-security/ai-agents-escape-sandboxes-old-security-rules-apply",
-      "title": "When AI Agents Escape Sandboxes, Old Security Rules Apply",
-      "link": "https://www.darkreading.com/application-security/ai-agents-escape-sandboxes-old-security-rules-apply",
-      "source": "Dark Reading",
-      "sourceUrl": "https://www.darkreading.com/rss.xml",
-      "summary": "OpenAI's recent AI agent sandbox escape proves traditional security principles matter more than ever: limit access, isolate execution, log everything.",
-      "publishedAt": "2026-07-28T20:27:36.000Z"
-    },
-    {
-      "slug": "f4b9704380706c1b8348b4b0",
-      "guid": "https://www.darkreading.com/cybersecurity-analytics/stronger-ai-safety-requires-peeking-inside-black-box",
-      "title": "Stronger AI Safety Requires Peeking Inside the 'Black Box'",
-      "link": "https://www.darkreading.com/cybersecurity-analytics/stronger-ai-safety-requires-peeking-inside-black-box",
-      "source": "Dark Reading",
-      "sourceUrl": "https://www.darkreading.com/rss.xml",
-      "summary": "Researchers propose focusing on identification of certain cognitive elements in LLMs that indicate when AI systems may take an unwanted action.",
-      "publishedAt": "2026-07-28T20:05:32.000Z"
-    },
-    {
-      "slug": "834f71b07c6beddee72fd60d",
-      "guid": "https://thehackernews.com/2026/07/claude-ai-just-cracked-post-quantum.html",
-      "title": "Claude AI Just Cracked a Post-Quantum Test Scheme and Found a Faster 7-Round AES Attack",
-      "link": "https://thehackernews.com/2026/07/claude-ai-just-cracked-post-quantum.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "Anthropic says Claude Mythos Preview helped derive an end-to-end key-recovery attack against HAWK-256 and a 200- to 800-fold speedup for an attack on seven-round AES-128. The HAWK attack exploits a previously unused symmetry in the lattice behind the signature scheme. Anthropic'…",
-      "publishedAt": "2026-07-28T18:59:07.000Z"
-    },
-    {
-      "slug": "af56a0a4d6169e085186a19e",
-      "guid": "https://www.darkreading.com/vulnerabilities-threats/certighost-flaw-microsoft-active-directory-certificates",
-      "title": "'Certighost' Flaw Haunts Microsoft Active Directory Certificates",
-      "link": "https://www.darkreading.com/vulnerabilities-threats/certighost-flaw-microsoft-active-directory-certificates",
-      "source": "Dark Reading",
-      "sourceUrl": "https://www.darkreading.com/rss.xml",
-      "summary": "Microsoft patched a high-severity vulnerability earlier this month that allows a threat actor to escalate privileges and compromise an AD environment.",
-      "publishedAt": "2026-07-28T16:38:48.000Z"
-    },
-    {
-      "slug": "25a6aa3b9fadee7c14ee8988",
-      "guid": "https://thehackernews.com/2026/07/tengu-botnet-reboots-compromised-linux.html",
-      "title": "Tengu Botnet Reboots Compromised Linux Devices When Defenders Kill Its Process",
-      "link": "https://thehackernews.com/2026/07/tengu-botnet-reboots-compromised-linux.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "A new Mirai-derived botnet called Tengu can use a compromised Linux device's hardware watchdog to trigger a reboot when defenders kill its main process. If that happens, Tengu's other persistence mechanisms get another chance to relaunch it. Nozomi Networks Labs observed the dro…",
-      "publishedAt": "2026-07-28T15:01:33.000Z"
     }
   ]
 }

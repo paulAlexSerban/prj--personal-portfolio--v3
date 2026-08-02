@@ -1,8 +1,38 @@
 {
   "category": "javascript",
   "label": "JavaScript",
-  "fetchedAt": "2026-08-01T06:45:51.923Z",
+  "fetchedAt": "2026-08-02T06:49:11.713Z",
   "items": [
+    {
+      "slug": "c7ed4838cebfb89f83406285",
+      "guid": "https://flaviocopes.com/vercel-queues/",
+      "title": "Vercel Queues tutorial: process background jobs reliably",
+      "link": "https://flaviocopes.com/vercel-queues/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Publish and consume Vercel Queue messages with retries, delayed delivery, idempotency keys, private consumers, and safe duplicate handling.",
+      "publishedAt": "2026-08-01T13:00:00.000Z"
+    },
+    {
+      "slug": "8d772a47535bd78e945ae37e",
+      "guid": "https://flaviocopes.com/free-courses-for-developers/",
+      "title": "I just published 55 free courses for developers",
+      "link": "https://flaviocopes.com/free-courses-for-developers/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "My 55 new free courses cover coding, AI, the internet, Linux, deployment, databases, and security. You can also download them as PDF and EPUB files.",
+      "publishedAt": "2026-08-01T10:00:00.000Z"
+    },
+    {
+      "slug": "0d9e792c76bcff830d807ba9",
+      "guid": "https://flaviocopes.com/i-launched-prototyped/",
+      "title": "I launched Prototyped",
+      "link": "https://flaviocopes.com/i-launched-prototyped/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "I launched Prototyped, a store for working software prototypes with full source code, tests, documentation, and instructions for coding agents.",
+      "publishedAt": "2026-08-01T06:45:00.000Z"
+    },
     {
       "slug": "67d5e58662a16ddf78bd7d35",
       "guid": "https://flaviocopes.com/jwt-signing-web-crypto/",
@@ -36,11 +66,11 @@
     {
       "slug": "dbedb5e5172415c61cf7a90f",
       "guid": "https://flaviocopes.com/waitinglists-dev/",
-      "title": "I launched waitinglists.dev: self-hostable waiting lists",
+      "title": "I launched Waiting Lists: self-hostable waiting lists",
       "link": "https://flaviocopes.com/waitinglists-dev/",
       "source": "Flavio Copes",
       "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "I built waitinglists.dev, a self-hostable double-opt-in waiting-list service I'll soon distribute with source code and agent customization instructions.",
+      "summary": "I built Waiting Lists, a self-hostable double-opt-in waiting-list service with source code and agent customization instructions.",
       "publishedAt": "2026-07-31T10:00:00.000Z"
     },
     {
@@ -254,16 +284,6 @@
       "publishedAt": "2026-07-28T00:00:00.000Z"
     },
     {
-      "slug": "7693d66eca93343fa074d272",
-      "guid": "https://javascriptweekly.com/issues/796",
-      "title": "Anders Hejlsberg demos TypeScript 7's 10x speedup",
-      "link": "https://javascriptweekly.com/issues/796",
-      "source": "JavaScript Weekly",
-      "sourceUrl": "https://javascriptweekly.com/rss/1b4m1h9j",
-      "summary": "#​796 — July 28, 2026 Read on the Web JavaScript Weekly Rust Is Eating JavaScript (Still, in 2026) — Our most-read link of 2021 gets an update for 2026. Lee Robinson (then Vercel, now Cursor) predicted Rust would be used to reimplement more and more JavaScript ecosystem tooling,…",
-      "publishedAt": "2026-07-28T00:00:00.000Z"
-    },
-    {
       "slug": "4fa82a3abaa157a88b3a01bc",
       "guid": "https://flaviocopes.com/build-astro-integration/",
       "title": "How to build an Astro integration",
@@ -324,36 +344,6 @@
       "publishedAt": "2026-07-26T13:00:00.000Z"
     },
     {
-      "slug": "c4fedfd946c700a7e9c070e6",
-      "guid": "https://flaviocopes.com/publish-typescript-package-npm/",
-      "title": "Build and publish a TypeScript package to npm",
-      "link": "https://flaviocopes.com/publish-typescript-package-npm/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Build a TypeScript library for npm with ESM and CommonJS outputs, type declarations, exports, tests, semantic versions, and trusted publishing.",
-      "publishedAt": "2026-07-26T09:00:00.000Z"
-    },
-    {
-      "slug": "3f4e62461096b55c9b786bae",
-      "guid": "https://flaviocopes.com/calculum/",
-      "title": "I launched Calculum: practical calculators for real life",
-      "link": "https://flaviocopes.com/calculum/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "I launched calculum.dev, a growing library of practical calculators with clear formulas, visible assumptions, and browser-only calculations.",
-      "publishedAt": "2026-07-26T08:00:00.000Z"
-    },
-    {
-      "slug": "3d06aff80a39be74bfe6352e",
-      "guid": "https://flaviocopes.com/production-at-the-edge/",
-      "title": "Production at the Edge",
-      "link": "https://flaviocopes.com/production-at-the-edge/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "A practical mini-course on running real apps on Cloudflare with Workers, Pages, D1, KV, R2, Queues, Durable Objects, AI, and more.",
-      "publishedAt": "2026-07-26T05:05:00.000Z"
-    },
-    {
       "slug": "642ab4b5898be994d98ed8a2",
       "guid": "https://blog.appsignal.com/2026/07/22/monitoring-your-django-app-health-on-fly-io.html",
       "title": "Monitoring Your Django App Health on Fly.io",
@@ -362,16 +352,6 @@
       "sourceUrl": "https://blog.appsignal.com/feed.xml",
       "summary": "Fly.io is a neat choice for deploying Django fast and globally. What it doesn’t really give you out of the box, though, is a deeper picture of an application’s performance. Deployment is only part of the story. No matter which platform you’re using, operating a production applic…",
       "publishedAt": "2026-07-22T00:00:00.000Z"
-    },
-    {
-      "slug": "ee84f98e6570f6e44eb82280",
-      "guid": "https://javascriptweekly.com/issues/795",
-      "title": "The coding challenge you don't want to pass",
-      "link": "https://javascriptweekly.com/issues/795",
-      "source": "JavaScript Weekly",
-      "sourceUrl": "https://javascriptweekly.com/rss/1b4m1h9j",
-      "summary": "#​795 — July 21, 2026 Read on the Web JavaScript Weekly Framework Benchmarks: Compare Frontend Frameworks — An experienced developer built and benchmarked the same app across numerous frameworks (e.g. Angular, Solid, React, Alpine.js…). Here are the results, covering bundle size…",
-      "publishedAt": "2026-07-21T00:00:00.000Z"
     },
     {
       "slug": "1c4fc14dfc272f57f10048ae",
