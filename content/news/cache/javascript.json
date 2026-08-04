@@ -1,8 +1,128 @@
 {
   "category": "javascript",
   "label": "JavaScript",
-  "fetchedAt": "2026-08-01T06:45:51.923Z",
+  "fetchedAt": "2026-08-04T06:47:44.107Z",
   "items": [
+    {
+      "slug": "589ad4bfd87c9ba2a37875f3",
+      "guid": "https://flaviocopes.com/idempotent-double-opt-in-signup/",
+      "title": "Build idempotent double opt-in signup",
+      "link": "https://flaviocopes.com/idempotent-double-opt-in-signup/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Use a conditional SQL upsert to prevent duplicate subscribers, limit confirmation resends, and recover immediately after failed email delivery.",
+      "publishedAt": "2026-08-03T13:00:00.000Z"
+    },
+    {
+      "slug": "fd268e25c9698c76b2808cd4",
+      "guid": "https://flaviocopes.com/optimize-astro-build-deploy-time/",
+      "title": "How I made this Astro site build faster and cut its deploy size",
+      "link": "https://flaviocopes.com/optimize-astro-build-deploy-time/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "How I made a 4,000-page Astro build phase 25% faster and cut its deploy artifact by 34% using concurrency, shared OG images, and Cloudflare R2.",
+      "publishedAt": "2026-08-03T09:00:00.000Z"
+    },
+    {
+      "slug": "a0b1aaa3583b39cce0f682c7",
+      "guid": "https://flaviocopes.com/i-launched-port-pilot/",
+      "title": "I launched Port Pilot",
+      "link": "https://flaviocopes.com/i-launched-port-pilot/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "I launched Port Pilot, a local service command center with a macOS menu bar app, live terminal dashboard, and agent-friendly CLI.",
+      "publishedAt": "2026-08-03T07:00:00.000Z"
+    },
+    {
+      "slug": "23dffa87236fca388ef8f11f",
+      "guid": "https://flaviocopes.com/css-conic-gradients/",
+      "title": "conic-gradient and the modern CSS gradient toolbox",
+      "link": "https://flaviocopes.com/css-conic-gradients/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Learn how conic-gradient works and what changed in CSS gradients: pie charts with hard stops, color wheels, repeating patterns and oklch interpolation.",
+      "publishedAt": "2026-08-03T05:00:00.000Z"
+    },
+    {
+      "slug": "d18f2de46c1b8c3d40b71996",
+      "guid": "https://flaviocopes.com/libsql-turso/",
+      "title": "libSQL and Turso: SQLite for production",
+      "link": "https://flaviocopes.com/libsql-turso/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "libSQL is Turso's open fork of SQLite for production. Learn Turso Cloud, embedded replicas, and when to pick it over Cloudflare D1.",
+      "publishedAt": "2026-08-03T05:00:00.000Z"
+    },
+    {
+      "slug": "6236d8a0f74e2b3d71518e5d",
+      "guid": "https://flaviocopes.com/harden-public-form-endpoint/",
+      "title": "Harden a public form endpoint",
+      "link": "https://flaviocopes.com/harden-public-form-endpoint/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Harden a public form API with body-size limits, exact input shapes, explicit consent, origin allowlists, neutral responses, and two rate limits.",
+      "publishedAt": "2026-08-02T13:00:00.000Z"
+    },
+    {
+      "slug": "af5f3d523eabde255c5c64f1",
+      "guid": "https://flaviocopes.com/i-launched-local-hoster/",
+      "title": "I launched Local Hoster",
+      "link": "https://flaviocopes.com/i-launched-local-hoster/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "I launched Local Hoster, a small Node.js CLI that gives local development projects stable .localhost URLs with HTTPS through Caddy.",
+      "publishedAt": "2026-08-02T07:00:00.000Z"
+    },
+    {
+      "slug": "7705762a252e43dd1cb5c280",
+      "guid": "https://flaviocopes.com/css-easing-cubic-bezier/",
+      "title": "CSS easing functions: what cubic-bezier actually does",
+      "link": "https://flaviocopes.com/css-easing-cubic-bezier/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Learn how CSS easing works under the hood: the four cubic-bezier control points, what ease and ease-out really are, plus linear() and steps().",
+      "publishedAt": "2026-08-02T05:00:00.000Z"
+    },
+    {
+      "slug": "12d63b3d027e872cdbac3a1d",
+      "guid": "https://flaviocopes.com/drizzle/",
+      "title": "Drizzle ORM: an introduction",
+      "link": "https://flaviocopes.com/drizzle/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Drizzle ORM is a TypeScript-first SQL toolkit. Learn schema definitions, queries, relations, and migrations with drizzle-kit for Node, Bun, and Cloudflare D1.",
+      "publishedAt": "2026-08-02T05:00:00.000Z"
+    },
+    {
+      "slug": "c7ed4838cebfb89f83406285",
+      "guid": "https://flaviocopes.com/vercel-queues/",
+      "title": "Vercel Queues tutorial: process background jobs reliably",
+      "link": "https://flaviocopes.com/vercel-queues/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Publish and consume Vercel Queue messages with retries, delayed delivery, idempotency keys, private consumers, and safe duplicate handling.",
+      "publishedAt": "2026-08-01T13:00:00.000Z"
+    },
+    {
+      "slug": "8d772a47535bd78e945ae37e",
+      "guid": "https://flaviocopes.com/free-courses-for-developers/",
+      "title": "I just published 55 free courses for developers",
+      "link": "https://flaviocopes.com/free-courses-for-developers/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "My 55 new free courses cover coding, AI, the internet, Linux, deployment, databases, and security. You can also download them as PDF and EPUB files.",
+      "publishedAt": "2026-08-01T10:00:00.000Z"
+    },
+    {
+      "slug": "0d9e792c76bcff830d807ba9",
+      "guid": "https://flaviocopes.com/i-launched-prototyped/",
+      "title": "I launched Prototyped",
+      "link": "https://flaviocopes.com/i-launched-prototyped/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "I launched Prototyped, a store for working software prototypes with full source code, tests, documentation, and instructions for coding agents.",
+      "publishedAt": "2026-08-01T06:45:00.000Z"
+    },
     {
       "slug": "67d5e58662a16ddf78bd7d35",
       "guid": "https://flaviocopes.com/jwt-signing-web-crypto/",
@@ -36,11 +156,11 @@
     {
       "slug": "dbedb5e5172415c61cf7a90f",
       "guid": "https://flaviocopes.com/waitinglists-dev/",
-      "title": "I launched waitinglists.dev: self-hostable waiting lists",
+      "title": "I launched Waiting Lists: self-hostable waiting lists",
       "link": "https://flaviocopes.com/waitinglists-dev/",
       "source": "Flavio Copes",
       "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "I built waitinglists.dev, a self-hostable double-opt-in waiting-list service I'll soon distribute with source code and agent customization instructions.",
+      "summary": "I built Waiting Lists, a self-hostable double-opt-in waiting-list service with source code and agent customization instructions.",
       "publishedAt": "2026-07-31T10:00:00.000Z"
     },
     {
@@ -150,7 +270,7 @@
       "link": "https://flaviocopes.com/fstack-software-factory/",
       "source": "Flavio Copes",
       "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "How I use fstack, GPT-5.6 Sol, bounded subagents, repository context, and review gates to build many software products without losing control.",
+      "summary": "How I use fstack, Fable, bounded subagents, repository context, and review gates to build many software products without losing control.",
       "publishedAt": "2026-07-29T11:00:00.000Z"
     },
     {
@@ -160,7 +280,7 @@
       "link": "https://flaviocopes.com/tauri-desktop-app-tutorial/",
       "source": "Flavio Copes",
       "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Build a Tauri 2 desktop notes app with HTML, CSS, JavaScript, a Rust command, local file storage, permissions, development, and packaging.",
+      "summary": "Build a Tauri 2 desktop notes app with HTML, CSS, TypeScript, a Rust command, local file storage, permissions, development, and packaging.",
       "publishedAt": "2026-07-29T09:00:00.000Z"
     },
     {
@@ -204,46 +324,6 @@
       "publishedAt": "2026-07-28T13:00:00.000Z"
     },
     {
-      "slug": "e03a510f9d420d5ead7792d2",
-      "guid": "https://flaviocopes.com/canvas-ui/",
-      "title": "Canvas UI puts WebGL shaders over real, interactive HTML",
-      "link": "https://flaviocopes.com/canvas-ui/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Canvas UI uses the experimental HTML-in-Canvas API to combine real DOM content with WebGL shaders, without giving up links, forms, or accessibility.",
-      "publishedAt": "2026-07-28T11:00:00.000Z"
-    },
-    {
-      "slug": "15f82ebc3f593280c28a3770",
-      "guid": "https://flaviocopes.com/vite-plugin-tutorial/",
-      "title": "Build a Vite plugin from scratch",
-      "link": "https://flaviocopes.com/vite-plugin-tutorial/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Build a Vite plugin from scratch that transforms custom note files, exposes a virtual module, supports development and production, and adds tests.",
-      "publishedAt": "2026-07-28T09:00:00.000Z"
-    },
-    {
-      "slug": "38c73782e2914ad71ce9684d",
-      "guid": "https://flaviocopes.com/disasterlab/",
-      "title": "I launched Disaster Lab: know what to do when something breaks",
-      "link": "https://flaviocopes.com/disasterlab/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "I launched Disaster Lab, a free library of practical prevention and recovery playbooks for personal and business digital disasters.",
-      "publishedAt": "2026-07-28T07:50:00.000Z"
-    },
-    {
-      "slug": "7894a3895fabcf7e4d00615c",
-      "guid": "https://flaviocopes.com/rag-chunking-explained/",
-      "title": "RAG chunking explained: chunk size, overlap, and what it costs",
-      "link": "https://flaviocopes.com/rag-chunking-explained/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "What chunking is in RAG, how chunk size and overlap determine chunk count, what embedding and vector storage cost, and whether top-k fits your context.",
-      "publishedAt": "2026-07-28T05:00:00.000Z"
-    },
-    {
       "slug": "abb1375ca810a7e02be7ab0e",
       "guid": "https://blog.appsignal.com/2026/07/28/appsignal-launch-week-2026-recap.html",
       "title": "AppSignal Launch Week 2026 Recap",
@@ -264,46 +344,6 @@
       "publishedAt": "2026-07-28T00:00:00.000Z"
     },
     {
-      "slug": "4fa82a3abaa157a88b3a01bc",
-      "guid": "https://flaviocopes.com/build-astro-integration/",
-      "title": "How to build an Astro integration",
-      "link": "https://flaviocopes.com/build-astro-integration/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Build an Astro integration from scratch using hooks, configuration updates, injected routes and scripts, package metadata, and local testing.",
-      "publishedAt": "2026-07-27T09:00:00.000Z"
-    },
-    {
-      "slug": "6e17ec052eb717f8d7ec8820",
-      "guid": "https://flaviocopes.com/migratingto/",
-      "title": "I launched migratingto.dev: exact playbooks for moving between platforms",
-      "link": "https://flaviocopes.com/migratingto/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "I launched migratingto.dev, a library of versioned migration playbooks with transfer breakdowns, timelines, rollback plans, and verification checks.",
-      "publishedAt": "2026-07-27T08:30:00.000Z"
-    },
-    {
-      "slug": "68b2def937dc74c7f4ead145",
-      "guid": "https://flaviocopes.com/liquid-software/",
-      "title": "Liquid Software: When Software Can Change Its Shape",
-      "link": "https://flaviocopes.com/liquid-software/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Liquid software is complete, working source code designed to be understood, owned, and reshaped with the help of AI coding agents.",
-      "publishedAt": "2026-07-27T08:00:00.000Z"
-    },
-    {
-      "slug": "8f3df7ec95c13d1dece18a14",
-      "guid": "https://flaviocopes.com/local-llm-vs-api-cost/",
-      "title": "Running LLMs locally vs paying for an API: the actual math",
-      "link": "https://flaviocopes.com/local-llm-vs-api-cost/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Local LLM vs API costs compared: amortized hardware, electricity, tokens per second, break-even point in months, and when local actually wins.",
-      "publishedAt": "2026-07-27T05:00:00.000Z"
-    },
-    {
       "slug": "ef94fc402a07f65ea4789cb0",
       "guid": "https://blog.appsignal.com/2026/07/27/why-your-sidekiq-jobs-are-slower-than-you-think-and-how-appsignal-fixes-that.html",
       "title": "Why Your Sidekiq Jobs Are Slower Than You Think, and How AppSignal Fixes That",
@@ -314,46 +354,6 @@
       "publishedAt": "2026-07-27T00:00:00.000Z"
     },
     {
-      "slug": "174e57c09b048c2ca6241973",
-      "guid": "https://flaviocopes.com/vercel-sandbox/",
-      "title": "Vercel Sandbox tutorial: run untrusted code safely",
-      "link": "https://flaviocopes.com/vercel-sandbox/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Create a Vercel Sandbox, upload and run JavaScript, collect its output, restrict network access, enforce a timeout, and stop it safely.",
-      "publishedAt": "2026-07-26T13:00:00.000Z"
-    },
-    {
-      "slug": "c4fedfd946c700a7e9c070e6",
-      "guid": "https://flaviocopes.com/publish-typescript-package-npm/",
-      "title": "Build and publish a TypeScript package to npm",
-      "link": "https://flaviocopes.com/publish-typescript-package-npm/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Build a TypeScript library for npm with ESM and CommonJS outputs, type declarations, exports, tests, semantic versions, and trusted publishing.",
-      "publishedAt": "2026-07-26T09:00:00.000Z"
-    },
-    {
-      "slug": "3f4e62461096b55c9b786bae",
-      "guid": "https://flaviocopes.com/calculum/",
-      "title": "I launched Calculum: practical calculators for real life",
-      "link": "https://flaviocopes.com/calculum/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "I launched calculum.dev, a growing library of practical calculators with clear formulas, visible assumptions, and browser-only calculations.",
-      "publishedAt": "2026-07-26T08:00:00.000Z"
-    },
-    {
-      "slug": "3d06aff80a39be74bfe6352e",
-      "guid": "https://flaviocopes.com/production-at-the-edge/",
-      "title": "Production at the Edge",
-      "link": "https://flaviocopes.com/production-at-the-edge/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "A practical mini-course on running real apps on Cloudflare with Workers, Pages, D1, KV, R2, Queues, Durable Objects, AI, and more.",
-      "publishedAt": "2026-07-26T05:05:00.000Z"
-    },
-    {
       "slug": "642ab4b5898be994d98ed8a2",
       "guid": "https://blog.appsignal.com/2026/07/22/monitoring-your-django-app-health-on-fly-io.html",
       "title": "Monitoring Your Django App Health on Fly.io",
@@ -362,26 +362,6 @@
       "sourceUrl": "https://blog.appsignal.com/feed.xml",
       "summary": "Fly.io is a neat choice for deploying Django fast and globally. What it doesn’t really give you out of the box, though, is a deeper picture of an application’s performance. Deployment is only part of the story. No matter which platform you’re using, operating a production applic…",
       "publishedAt": "2026-07-22T00:00:00.000Z"
-    },
-    {
-      "slug": "ee84f98e6570f6e44eb82280",
-      "guid": "https://javascriptweekly.com/issues/795",
-      "title": "The coding challenge you don't want to pass",
-      "link": "https://javascriptweekly.com/issues/795",
-      "source": "JavaScript Weekly",
-      "sourceUrl": "https://javascriptweekly.com/rss/1b4m1h9j",
-      "summary": "#​795 — July 21, 2026 Read on the Web JavaScript Weekly Framework Benchmarks: Compare Frontend Frameworks — An experienced developer built and benchmarked the same app across numerous frameworks (e.g. Angular, Solid, React, Alpine.js…). Here are the results, covering bundle size…",
-      "publishedAt": "2026-07-21T00:00:00.000Z"
-    },
-    {
-      "slug": "1c4fc14dfc272f57f10048ae",
-      "guid": "https://blog.appsignal.com/2026/07/20/why-ai-generated-code-needs-monitoring-more-than-handwritten-code.html",
-      "title": "Why AI-Generated Code Needs Monitoring More Than Handwritten Code",
-      "link": "https://blog.appsignal.com/2026/07/20/why-ai-generated-code-needs-monitoring-more-than-handwritten-code.html",
-      "source": "AppSignal",
-      "sourceUrl": "https://blog.appsignal.com/feed.xml",
-      "summary": "Like it or not, vibe coding is here to stay. It’s too easy to just go away. Maybe if the per token cost rises too much at some point that it becomes cheaper to hire a junior… But until then, you’d better get used to it. For now, tools like Cursor, Copilot, and Claude let develop…",
-      "publishedAt": "2026-07-20T00:00:00.000Z"
     }
   ]
 }
