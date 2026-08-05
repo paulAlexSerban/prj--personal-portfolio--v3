@@ -1,8 +1,58 @@
 {
   "category": "javascript",
   "label": "JavaScript",
-  "fetchedAt": "2026-08-04T06:47:44.107Z",
+  "fetchedAt": "2026-08-05T06:48:16.081Z",
   "items": [
+    {
+      "slug": "3b7cf2dcce97b2e935eda121",
+      "guid": "https://flaviocopes.com/vercel-blob/",
+      "title": "Vercel Blob tutorial: upload and serve files",
+      "link": "https://flaviocopes.com/vercel-blob/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Upload files to Vercel Blob from a server or browser, validate uploads, choose public or private storage, serve files, and delete them safely.",
+      "publishedAt": "2026-08-04T13:00:00.000Z"
+    },
+    {
+      "slug": "eccaf5386df14a726110bfc2",
+      "guid": "https://flaviocopes.com/scheduled-cloudflare-pages-rebuilds/",
+      "title": "How I auto-publish scheduled posts with a Cloudflare Worker cron",
+      "link": "https://flaviocopes.com/scheduled-cloudflare-pages-rebuilds/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "How I publish future-dated posts on a static Astro site: a Cloudflare Worker cron triggers a daily Pages rebuild via a deploy hook, with a DST-proof schedule.",
+      "publishedAt": "2026-08-04T09:00:00.000Z"
+    },
+    {
+      "slug": "b27f740e4b755aa228b61401",
+      "guid": "https://flaviocopes.com/i-launched-events-logger/",
+      "title": "I launched Events Logger",
+      "link": "https://flaviocopes.com/i-launched-events-logger/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "I launched Events Logger, a self-hosted event tracking dashboard with a REST API, CLI, charts, and KPI insight cards on SQLite.",
+      "publishedAt": "2026-08-04T06:00:00.000Z"
+    },
+    {
+      "slug": "13646c9aa429b47c8070cdba",
+      "guid": "https://flaviocopes.com/css-aspect-ratio-property/",
+      "title": "The CSS aspect-ratio property and the math behind it",
+      "link": "https://flaviocopes.com/css-aspect-ratio-property/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Learn how the CSS aspect-ratio property replaces the padding-top hack, the math behind contain and cover, and how width and height attributes prevent CLS.",
+      "publishedAt": "2026-08-04T05:00:00.000Z"
+    },
+    {
+      "slug": "37bb5364201d5d3b8b3560e5",
+      "guid": "https://flaviocopes.com/vitest/",
+      "title": "Vitest: an introduction",
+      "link": "https://flaviocopes.com/vitest/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Vitest is the fast Vite-powered test runner with a Jest-compatible API, native ESM and TypeScript support, watch mode, and built-in mocking.",
+      "publishedAt": "2026-08-04T05:00:00.000Z"
+    },
     {
       "slug": "589ad4bfd87c9ba2a37875f3",
       "guid": "https://flaviocopes.com/idempotent-double-opt-in-signup/",
@@ -264,46 +314,6 @@
       "publishedAt": "2026-07-29T13:00:00.000Z"
     },
     {
-      "slug": "ef04bb8dea81b47d0261f926",
-      "guid": "https://flaviocopes.com/fstack-software-factory/",
-      "title": "How I turned fstack into a software factory",
-      "link": "https://flaviocopes.com/fstack-software-factory/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "How I use fstack, Fable, bounded subagents, repository context, and review gates to build many software products without losing control.",
-      "publishedAt": "2026-07-29T11:00:00.000Z"
-    },
-    {
-      "slug": "ae7866d684158d37a846bb76",
-      "guid": "https://flaviocopes.com/tauri-desktop-app-tutorial/",
-      "title": "Tauri tutorial: build a desktop app with web technologies",
-      "link": "https://flaviocopes.com/tauri-desktop-app-tutorial/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Build a Tauri 2 desktop notes app with HTML, CSS, TypeScript, a Rust command, local file storage, permissions, development, and packaging.",
-      "publishedAt": "2026-07-29T09:00:00.000Z"
-    },
-    {
-      "slug": "2c2e678408a134c03b255bb5",
-      "guid": "https://flaviocopes.com/paymentprocessor/",
-      "title": "I launched Payment Processor",
-      "link": "https://flaviocopes.com/paymentprocessor/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "I launched Payment Processor, an evidence-led guide to Merchant of Record and direct payment providers, with comparisons and decision tools.",
-      "publishedAt": "2026-07-29T07:00:00.000Z"
-    },
-    {
-      "slug": "71a12dab219662596bb9056f",
-      "guid": "https://flaviocopes.com/promise-all-allsettled-race-any/",
-      "title": "Promise.all vs allSettled vs race vs any",
-      "link": "https://flaviocopes.com/promise-all-allsettled-race-any/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Learn when to use Promise.all, allSettled, race and any in JavaScript, how each handles rejections, and the common mistakes that bite in production.",
-      "publishedAt": "2026-07-29T05:00:00.000Z"
-    },
-    {
       "slug": "de091bb0bae4ec89f3b22866",
       "guid": "https://blog.appsignal.com/2026/07/29/appsignal-mcp-server-get-started-in-your-ide.html",
       "title": "AppSignal MCP Server: Get Started in your IDE",
@@ -312,16 +322,6 @@
       "sourceUrl": "https://blog.appsignal.com/feed.xml",
       "summary": "Cursor, Claude, and their fellow tools are great when they are speaking code, but once that code hits production, they are not exactly native. However, if your code is monitored by AppSignal, an MCP server can bridge that gap and allow agents to poke around the production. TL;DR…",
       "publishedAt": "2026-07-29T00:00:00.000Z"
-    },
-    {
-      "slug": "e1ee0de8dda0d3dc855b128a",
-      "guid": "https://flaviocopes.com/terraform-for-developers/",
-      "title": "Terraform for developers: a complete beginner's guide",
-      "link": "https://flaviocopes.com/terraform-for-developers/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Learn what Terraform is, how infrastructure as code works, and how to create, change, inspect, and destroy infrastructure safely.",
-      "publishedAt": "2026-07-28T13:00:00.000Z"
     },
     {
       "slug": "abb1375ca810a7e02be7ab0e",
@@ -334,16 +334,6 @@
       "publishedAt": "2026-07-28T00:00:00.000Z"
     },
     {
-      "slug": "7693d66eca93343fa074d272",
-      "guid": "https://javascriptweekly.com/issues/796",
-      "title": "Anders Hejlsberg demos TypeScript 7's 10x speedup",
-      "link": "https://javascriptweekly.com/issues/796",
-      "source": "JavaScript Weekly",
-      "sourceUrl": "https://javascriptweekly.com/rss/1b4m1h9j",
-      "summary": "#​796 — July 28, 2026 Read on the Web JavaScript Weekly Rust Is Eating JavaScript (Still, in 2026) — Our most-read link of 2021 gets an update for 2026. Lee Robinson (then Vercel, now Cursor) predicted Rust would be used to reimplement more and more JavaScript ecosystem tooling,…",
-      "publishedAt": "2026-07-28T00:00:00.000Z"
-    },
-    {
       "slug": "ef94fc402a07f65ea4789cb0",
       "guid": "https://blog.appsignal.com/2026/07/27/why-your-sidekiq-jobs-are-slower-than-you-think-and-how-appsignal-fixes-that.html",
       "title": "Why Your Sidekiq Jobs Are Slower Than You Think, and How AppSignal Fixes That",
@@ -352,16 +342,6 @@
       "sourceUrl": "https://blog.appsignal.com/feed.xml",
       "summary": "As developers, we sometimes find ourselves in situations where something feels slower than it should be. The first thing we tell ourselves is “Maybe I need a different tool.” And sure, at times, it might be due to the tool, I’ll give you that. But most of the time, it comes down…",
       "publishedAt": "2026-07-27T00:00:00.000Z"
-    },
-    {
-      "slug": "642ab4b5898be994d98ed8a2",
-      "guid": "https://blog.appsignal.com/2026/07/22/monitoring-your-django-app-health-on-fly-io.html",
-      "title": "Monitoring Your Django App Health on Fly.io",
-      "link": "https://blog.appsignal.com/2026/07/22/monitoring-your-django-app-health-on-fly-io.html",
-      "source": "AppSignal",
-      "sourceUrl": "https://blog.appsignal.com/feed.xml",
-      "summary": "Fly.io is a neat choice for deploying Django fast and globally. What it doesn’t really give you out of the box, though, is a deeper picture of an application’s performance. Deployment is only part of the story. No matter which platform you’re using, operating a production applic…",
-      "publishedAt": "2026-07-22T00:00:00.000Z"
     }
   ]
 }
