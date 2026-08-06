@@ -73,3 +73,57 @@ Versioning infrastructure code is crucial for maintaining stability, reproducibi
 ### Conclusion:
 
 Versioning infrastructure code is about more than just keeping track of changes; it's about ensuring the stability and reliability of your infrastructure. By applying these best practices, you can create a robust, scalable, and maintainable infrastructure that aligns well with your application development processes.
+
+## Terraform
+
+Terraform is a tool for building, changing, and versioning infrastructure safely and efficiently. Terraform can manage existing and popular service providers, such as AWS, Azure, Google Cloud, as well as custom in-house solutions.
+
+### Terraform Commands
+
+- `terraform init`: Initialize a Terraform working directory by downloading and installing the providers defined in the configuration, and enabling features.
+- `terraform plan`: Generate and show an execution plan, which lets you preview the changes that Terraform will make to your infrastructure.
+- `terraform apply`: Apply the changes required to reach the desired state of the configuration, or the changes required to reach the desired state.
+- `terraform destroy`: Destroy the Terraform-managed infrastructure.
+- `terraform show`: Show the current state of the Terraform configuration.
+
+### Setup local AWS CLI
+
+#### 1. Install the AWS CLI (if needed)
+```bash
+curl -fsSL "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o /tmp/awscliv2.zip
+cd /tmp && unzip -o awscliv2.zip
+sudo ./aws/install
+aws --version
+```
+
+#### 2. Create an access key in AWS
+In the AWS console: IAM → Users → your user → Security credentials → Create access key
+(Use a user that can manage S3, CloudFront, ACM, Route 53, and IAM for this first apply.)
+
+
+#### 3. Configure the CLI
+```bash
+aws configure
+# AWS Access Key ID:     <paste>
+# AWS Secret Access Key: <paste>
+# Default region:        us-east-1
+# Default output:        json
+```
+That writes ~/.aws/credentials and ~/.aws/config.
+
+
+#### 4. Verify, then re-run Terraform
+```bash
+aws sts get-caller-identity
+cd ~/Desktop/projects/personal--platform/prj--personal-portfolio--v3/infrastructure/aws/envs/test
+terraform plan
+terraform apply
+```
+
+If you use SSO instead of long-lived keys:
+```bash
+aws configure sso
+aws sso login --profile <your-profile>
+export AWS_PROFILE=<your-profile>
+terraform plan
+```

@@ -1,0 +1,20 @@
+function handler(event) {
+  var request = event.request;
+  var headers = request.headers;
+  var expected = '${auth_header_value}';
+
+  if (
+    typeof headers.authorization !== 'undefined' &&
+    headers.authorization.value === expected
+  ) {
+    return request;
+  }
+
+  return {
+    statusCode: 401,
+    statusDescription: 'Unauthorized',
+    headers: {
+      'www-authenticate': { value: 'Basic realm="${realm}"' },
+    },
+  };
+}

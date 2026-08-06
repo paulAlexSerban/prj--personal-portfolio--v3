@@ -1,0 +1,295 @@
+terraform {
+  required_version = ">= 1.6.0"
+
+  required_providers {
+    aws = {
+      source                = "hashicorp/aws"
+      version               = ">= 5.0"
+      configuration_aliases = [aws.us_east_1]
+    }
+  }
+}
+
+locals {
+  bucket_name = coalesce(var.bucket_name, var.domain_name)
+  # CloudFront resource names allow only alphanumerics, dashes, and underscores.
+  cloudfront_name_prefix = replace(local.bucket_name, ".", "-")
+
+  basic_auth_header_value = (
+    var.basic_auth_enabled
+    ? "Basic ${base64encode("${var.basic_auth_username}:${var.basic_auth_password}")}"
+    : null
+  )
+}
+
+check "basic_auth_credentials" {
+  assert {
+    condition = (
+      !var.basic_auth_enabled ||
+      (
+        var.basic_auth_username != null &&
+        var.basic_auth_username != "" &&
+        var.basic_auth_password != null &&
+        var.basic_auth_password != ""
+      )
+    )
+    error_message = "basic_auth_username and basic_auth_password are required when basic_auth_enabled is true."
+  }
+}
+
+# ---------------------------------------------------------------------------
+# S3 bucket (private; only readable by CloudFront via Origin Access Control)
+# ---------------------------------------------------------------------------
+
+resource "aws_s3_bucket" "site" {
+  bucket = local.bucket_name
+  tags   = var.tags
+}
+
+resource "aws_s3_bucket_public_access_block" "site" {
+  bucket = aws_s3_bucket.site.id
+
+  block_public_acls       = true
+  block_public_policy     = true
+  ignore_public_acls      = true
+  restrict_public_buckets = true
+}
+
+resource "aws_s3_bucket_ownership_controls" "site" {
+  bucket = aws_s3_bucket.site.id
+  rule {
+    object_ownership = "BucketOwnerEnforced"
+  }
+}
+
+resource "aws_s3_bucket_server_side_encryption_configuration" "site" {
+  bucket = aws_s3_bucket.site.id
+  rule {
+    apply_server_side_encryption_by_default {
+      sse_algorithm = "AES256"
+    }
+  }
+}
+
+resource "aws_s3_bucket_versioning" "site" {
+  bucket = aws_s3_bucket.site.id
+  versioning_configuration {
+    status = "Enabled"
+  }
+}
+
+# ---------------------------------------------------------------------------
+# ACM certificate (must live in us-east-1 for CloudFront), DNS-validated
+# ---------------------------------------------------------------------------
+
+resource "aws_acm_certificate" "site" {
+  provider          = aws.us_east_1
+  domain_name       = var.domain_name
+  validation_method = "DNS"
+  tags              = var.tags
+
+  lifecycle {
+    create_before_destroy = true
+  }
+}
+
+resource "aws_route53_record" "cert_validation" {
+  for_each = {
+    for dvo in aws_acm_certificate.site.domain_validation_options : dvo.domain_name => {
+      name   = dvo.resource_record_name
+      type   = dvo.resource_record_type
+      record = dvo.resource_record_value
+    }
+  }
+
+  zone_id         = var.hosted_zone_id
+  name            = each.value.name
+  type            = each.value.type
+  records         = [each.value.record]
+  ttl             = 60
+  allow_overwrite = true
+}
+
+resource "aws_acm_certificate_validation" "site" {
+  provider                = aws.us_east_1
+  certificate_arn         = aws_acm_certificate.site.arn
+  validation_record_fqdns = [for r in aws_route53_record.cert_validation : r.fqdn]
+}
+
+# ---------------------------------------------------------------------------
+# CloudFront distribution (Origin Access Control -> private S3 bucket)
+# ---------------------------------------------------------------------------
+
+resource "aws_cloudfront_origin_access_control" "site" {
+  name                              = "${local.cloudfront_name_prefix}-oac"
+  origin_access_control_origin_type = "s3"
+  signing_behavior                  = "always"
+  signing_protocol                  = "sigv4"
+}
+
+resource "aws_cloudfront_response_headers_policy" "site" {
+  name    = "${local.cloudfront_name_prefix}-security-headers"
+  comment = "HSTS, X-Content-Type-Options, Referrer-Policy for ${var.domain_name}"
+
+  security_headers_config {
+    strict_transport_security {
+      access_control_max_age_sec = 31536000
+      include_subdomains         = true
+      preload                    = true
+      override                   = true
+    }
+
+    content_type_options {
+      override = true
+    }
+
+    referrer_policy {
+      referrer_policy = "strict-origin-when-cross-origin"
+      override        = true
+    }
+  }
+}
+
+resource "aws_cloudfront_function" "basic_auth" {
+  count = var.basic_auth_enabled ? 1 : 0
+
+  name    = "${local.cloudfront_name_prefix}-basic-auth"
+  runtime = "cloudfront-js-2.0"
+  publish = true
+  code = templatefile("${path.module}/src/basic-auth.js.tftpl", {
+    auth_header_value = local.basic_auth_header_value
+    realm             = var.domain_name
+  })
+}
+
+resource "aws_cloudfront_distribution" "site" {
+  enabled             = true
+  is_ipv6_enabled     = true
+  default_root_object = var.default_root_object
+  aliases             = [var.domain_name]
+  price_class         = var.price_class
+  tags                = var.tags
+
+  origin {
+    domain_name              = aws_s3_bucket.site.bucket_regional_domain_name
+    origin_id                = "s3-${local.bucket_name}"
+    origin_access_control_id = aws_cloudfront_origin_access_control.site.id
+  }
+
+  default_cache_behavior {
+    allowed_methods            = ["GET", "HEAD"]
+    cached_methods             = ["GET", "HEAD"]
+    target_origin_id           = "s3-${local.bucket_name}"
+    viewer_protocol_policy     = "redirect-to-https"
+    compress                   = true
+    cache_policy_id            = "658327ea-f89d-4fab-a63d-7e88639e58f6" # AWS managed: CachingOptimized
+    response_headers_policy_id = aws_cloudfront_response_headers_policy.site.id
+
+    dynamic "function_association" {
+      for_each = var.basic_auth_enabled ? [1] : []
+      content {
+        event_type   = "viewer-request"
+        function_arn = aws_cloudfront_function.basic_auth[0].arn
+      }
+    }
+  }
+
+  custom_error_response {
+    error_code            = 403
+    response_code         = 200
+    response_page_path    = var.not_found_response_page
+    error_caching_min_ttl = 10
+  }
+
+  custom_error_response {
+    error_code            = 404
+    response_code         = 200
+    response_page_path    = var.not_found_response_page
+    error_caching_min_ttl = 10
+  }
+
+  restrictions {
+    geo_restriction {
+      restriction_type = "none"
+    }
+  }
+
+  viewer_certificate {
+    acm_certificate_arn      = aws_acm_certificate_validation.site.certificate_arn
+    ssl_support_method       = "sni-only"
+    minimum_protocol_version = var.minimum_protocol_version
+  }
+}
+
+data "aws_iam_policy_document" "site_bucket_policy" {
+  statement {
+    sid       = "AllowCloudFrontOAC"
+    actions   = ["s3:GetObject"]
+    resources = ["${aws_s3_bucket.site.arn}/*"]
+
+    principals {
+      type        = "Service"
+      identifiers = ["cloudfront.amazonaws.com"]
+    }
+
+    condition {
+      test     = "StringEquals"
+      variable = "AWS:SourceArn"
+      values   = [aws_cloudfront_distribution.site.arn]
+    }
+  }
+
+  statement {
+    sid     = "DenyInsecureTransport"
+    effect  = "Deny"
+    actions = ["s3:*"]
+    resources = [
+      aws_s3_bucket.site.arn,
+      "${aws_s3_bucket.site.arn}/*",
+    ]
+
+    principals {
+      type        = "*"
+      identifiers = ["*"]
+    }
+
+    condition {
+      test     = "Bool"
+      variable = "aws:SecureTransport"
+      values   = ["false"]
+    }
+  }
+}
+
+resource "aws_s3_bucket_policy" "site" {
+  bucket = aws_s3_bucket.site.id
+  policy = data.aws_iam_policy_document.site_bucket_policy.json
+}
+
+# ---------------------------------------------------------------------------
+# Route 53 alias records -> CloudFront
+# ---------------------------------------------------------------------------
+
+resource "aws_route53_record" "site_a" {
+  zone_id = var.hosted_zone_id
+  name    = var.domain_name
+  type    = "A"
+
+  alias {
+    name                   = aws_cloudfront_distribution.site.domain_name
+    zone_id                = aws_cloudfront_distribution.site.hosted_zone_id
+    evaluate_target_health = false
+  }
+}
+
+resource "aws_route53_record" "site_aaaa" {
+  zone_id = var.hosted_zone_id
+  name    = var.domain_name
+  type    = "AAAA"
+
+  alias {
+    name                   = aws_cloudfront_distribution.site.domain_name
+    zone_id                = aws_cloudfront_distribution.site.hosted_zone_id
+    evaluate_target_health = false
+  }
+}

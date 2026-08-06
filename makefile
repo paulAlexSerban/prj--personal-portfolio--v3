@@ -36,3 +36,23 @@ compose_down:
 
 compose_down_clean:
 	docker compose -f $(COMPOSE_FILE) down -v
+
+# Installs Terraform 1.9.8 to ~/.local/bin (add that dir to PATH if needed).
+install_terraform:
+	@mkdir -p "$(HOME)/.local/bin"
+	@curl -fsSL -o /tmp/terraform.zip https://releases.hashicorp.com/terraform/1.9.8/terraform_1.9.8_linux_amd64.zip \
+	&& cd /tmp && unzip -o terraform.zip \
+	&& install -m 755 /tmp/terraform "$(HOME)/.local/bin/terraform" \
+	&& "$(HOME)/.local/bin/terraform" version
+	@case ":$$PATH:" in *":$(HOME)/.local/bin:"*) ;; *) \
+		echo ""; \
+		echo "Note: $(HOME)/.local/bin is not on your PATH. Add this to ~/.zshrc:"; \
+		echo '  export PATH="$$HOME/.local/bin:$$PATH"'; \
+		echo "Then run: source ~/.zshrc"; \
+	esac
+
+install_aws_cli:
+	sudo curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+	sudo unzip awscliv2.zip
+	sudo ./aws/install
+	aws --version
