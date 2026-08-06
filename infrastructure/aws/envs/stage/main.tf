@@ -104,7 +104,7 @@ module "github_oidc_deploy_role" {
 
   github_org           = var.github_org
   github_repo          = var.github_repo
-  github_environment   = "staging"
+  github_environment   = "stage"
   create_oidc_provider = var.create_oidc_provider
   role_name            = "gha-deploy-${var.domain_name}"
 

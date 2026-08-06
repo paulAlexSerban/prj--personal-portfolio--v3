@@ -47,6 +47,6 @@ output "news_site_url" {
 }
 
 output "github_actions_role_arn" {
-  description = "IAM role ARN for the release.yaml staging deploy jobs (set as AWS_DEPLOY_ROLE_ARN on the staging GitHub Environment)."
+  description = "IAM role ARN for the release.yaml stage deploy jobs (set as AWS_DEPLOY_ROLE_ARN on the stage GitHub Environment)."
   value       = module.github_oidc_deploy_role.role_arn
 }

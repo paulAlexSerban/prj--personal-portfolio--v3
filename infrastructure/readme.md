@@ -1,6 +1,6 @@
 # Tips for Managing Infrastructure in a Monorepo:
 
-- **Environment Separation**: If you have multiple environments (like development, staging, production), consider structuring your Kubernetes configs to reflect these environments, either through directory structure or naming conventions.
+- **Environment Separation**: If you have multiple environments (like development, stage, production), consider structuring your Kubernetes configs to reflect these environments, either through directory structure or naming conventions.
 - **Access Control**: Ensure proper access control and security practices are in place, as infrastructure configurations can be sensitive.
 - **Documentation**: Maintain clear documentation within the /infra directory to guide developers on how to use and update these configurations.
 - **CI/CD Integration**: Consider how these configurations integrate with your CI/CD pipelines and whether there are specific pipelines for deploying infrastructure changes.
@@ -18,7 +18,7 @@ Versioning infrastructure code is crucial for maintaining stability, reproducibi
 ### 2. **Branching Strategies**
 
 - **Practice**: Adopt a branching strategy (like Git Flow or Trunk-Based Development) for managing changes in your infrastructure code.
-- **Benefits**: Helps in managing different environments (development, staging, production) and facilitates collaborative development.
+- **Benefits**: Helps in managing different environments (development, stage, production) and facilitates collaborative development.
 
 ### 3. **Commit Messages and Change Documentation**
 
@@ -42,7 +42,7 @@ Versioning infrastructure code is crucial for maintaining stability, reproducibi
 
 ### 7. **Environment Parity**
 
-- **Practice**: Strive for parity between different environments (development, staging, production) in terms of infrastructure setup.
+- **Practice**: Strive for parity between different environments (development, stage, production) in terms of infrastructure setup.
 - **Benefits**: Reduces "it works on my machine" issues and improves reliability of deployments.
 
 ### 8. **Immutable Infrastructure**

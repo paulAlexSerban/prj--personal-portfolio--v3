@@ -4,7 +4,7 @@ on:
     workflow_call:
         inputs:
             environment:
-                description: Target environment name (staging, production, etc.)
+                description: Target environment name (stage, production, etc.)
                 required: true
                 type: string
             portfolio_url:

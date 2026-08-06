@@ -6,10 +6,10 @@
 
 The monorepo already uses conventional commits (commitlint + commitizen), an empty
 Changesets scaffold, and a continuous **dev** deploy to GitHub Pages on every push
-to `main`. Staging and production hosting are not chosen yet; an earlier AWS
+to `main`. stage and production hosting are not chosen yet; an earlier AWS
 S3/CloudFront plan is explicitly **not** being implemented. We need a clear
 branching model, semantic versioning for private packages, and GitHub Actions
-pipelines that can promote a build through **dev → staging → production** without
+pipelines that can promote a build through **dev → stage → production** without
 baking in a specific host.
 
 ## Decision
@@ -22,7 +22,7 @@ baking in a specific host.
   `main` and follow the same promotion path.
 - **Dev** = continuous deployment of every `main` push (existing
   `.github/workflows/deploy-dev.yaml` → GitHub Pages).
-- **Staging / production** = promoted only when a Changesets **Version Packages**
+- **stage / production** = promoted only when a Changesets **Version Packages**
   PR is merged (version bump + tags), not on every commit.
 
 ### Versioning (Changesets, internal-only)
@@ -47,14 +47,14 @@ baking in a specific host.
 Release promotion rules:
 
 1. Pending changesets → open/update **Version Packages** PR (no stage/prod deploy).
-2. Version PR merge → `changeset tag` → build once → deploy **staging** (placeholder).
+2. Version PR merge → `changeset tag` → build once → deploy **stage** (placeholder).
 3. Same **site-bundle** artifact promoted to **production** (GitHub Environment
    approval gate; placeholder deploy until a host is chosen).
 
 ### GitOps practices
 
 - Git (commits + tags) is the only deploy trigger — no click-ops deploys.
-- GitHub Environments (`staging`, `production`, existing `github-pages`) hold
+- GitHub Environments (`stage`, `production`, existing `github-pages`) hold
   future secrets/vars and protection rules.
 - Promote the built artifact; do not rebuild for production.
 - Versions, changelogs, and tags live in git for auditability.
@@ -64,7 +64,7 @@ Release promotion rules:
 - Stage/prod deploy steps are stubs until a hosting provider is selected; only
   the build/package path is production-ready.
 - Manual GitHub setup is required: branch protection on `main` (required checks
-  `quality`, `changeset-check`), Environments `staging` and `production` (prod
+  `quality`, `changeset-check`), Environments `stage` and `production` (prod
   with required reviewers).
 - Draft ADRs that assumed Turbo + Cloudflare Pages for CI/CD/hosting are
   superseded for release/branching; hosting remains TBD.

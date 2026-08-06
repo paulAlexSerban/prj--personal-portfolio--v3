@@ -43,7 +43,7 @@ jobs:
         if: needs.version.outputs.published == 'true'
         uses: ./.github/workflows/_build-site.yaml
         with:
-            environment: staging
+            environment: stage
             portfolio_url: https://stage.paulserban.eu
             blog_url: https://stage.blog.paulserban.eu
             quiz_url: https://stage.quiz.paulserban.eu
@@ -60,7 +60,7 @@ jobs:
         needs: build-site
         runs-on: ubuntu-latest
         timeout-minutes: 10
-        environment: staging
+        environment: stage
         permissions:
             contents: read
             id-token: write
@@ -68,7 +68,7 @@ jobs:
             - name: Download portfolio artifact
               uses: actions/download-artifact@v8
               with:
-                  name: portfolio-dist-staging
+                  name: portfolio-dist-stage
                   path: _site/
 
             - name: Configure AWS credentials
@@ -90,7 +90,7 @@ jobs:
         needs: build-site
         runs-on: ubuntu-latest
         timeout-minutes: 10
-        environment: staging
+        environment: stage
         permissions:
             contents: read
             id-token: write
@@ -98,7 +98,7 @@ jobs:
             - name: Download blog artifact
               uses: actions/download-artifact@v8
               with:
-                  name: blog-dist-staging
+                  name: blog-dist-stage
                   path: _site/
 
             - name: Configure AWS credentials
@@ -120,7 +120,7 @@ jobs:
         needs: build-site
         runs-on: ubuntu-latest
         timeout-minutes: 10
-        environment: staging
+        environment: stage
         permissions:
             contents: read
             id-token: write
@@ -128,7 +128,7 @@ jobs:
             - name: Download quiz artifact
               uses: actions/download-artifact@v8
               with:
-                  name: quiz-dist-staging
+                  name: quiz-dist-stage
                   path: _site/
 
             - name: Configure AWS credentials
@@ -150,7 +150,7 @@ jobs:
         needs: build-site
         runs-on: ubuntu-latest
         timeout-minutes: 10
-        environment: staging
+        environment: stage
         permissions:
             contents: read
             id-token: write
@@ -158,7 +158,7 @@ jobs:
             - name: Download news artifact
               uses: actions/download-artifact@v8
               with:
-                  name: news-dist-staging
+                  name: news-dist-stage
                   path: _site/
 
             - name: Configure AWS credentials
@@ -190,5 +190,5 @@ jobs:
               run: |
                   echo "Environment: production"
                   echo "No hosting provider selected yet."
-                  echo "Staging deploy completed for portfolio/blog/quiz/news (per-app S3 + CloudFront)."
+                  echo "stage deploy completed for portfolio/blog/quiz/news (per-app S3 + CloudFront)."
                   echo "Replace this job with a real prod promotion once envs/prod exists."

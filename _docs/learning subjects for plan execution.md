@@ -254,11 +254,11 @@ flowchart LR
 ### Level 5 — Integration (dress rehearsals)
 
 13. **“DEV-parity prod dry run”**  
-    Clone your `deploy-dev.yaml` flow but target AWS instead of Pages: ingest → build portfolio only → S3 sync. Use a staging subdomain.  
+    Clone your `deploy-dev.yaml` flow but target AWS instead of Pages: ingest → build portfolio only → S3 sync. Use a stage subdomain.  
     *Learn:* env vars (`ASTRO_BASE=/`), artifact handoff, end-to-end pipeline.
 
-14. **“Blog + redirect staging”**  
-    Deploy blog-site to staging. Wire KVS from real `getAllSlugs()`. Hit a slug that exists (200) and one that doesn’t (302 to a stub v2 URL).  
+14. **“Blog + redirect stage”**  
+    Deploy blog-site to stage. Wire KVS from real `getAllSlugs()`. Hit a slug that exists (200) and one that doesn’t (302 to a stub v2 URL).  
     *Learn:* full blog path before touching production DNS.
 
 15. **“DNS cutover simulation”**  
@@ -293,4 +293,4 @@ flowchart LR
 
 ---
 
-If you want, I can turn this into a week-by-week study plan mapped to the plan’s todos (`tf-bootstrap`, `static-site module`, `deploy-prod.yaml`, etc.), or a “minimum viable path” that gets you to a staging deploy with the fewest AWS resources first.
+If you want, I can turn this into a week-by-week study plan mapped to the plan’s todos (`tf-bootstrap`, `static-site module`, `deploy-prod.yaml`, etc.), or a “minimum viable path” that gets you to a stage deploy with the fewest AWS resources first.

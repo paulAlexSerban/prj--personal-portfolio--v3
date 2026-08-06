@@ -13,7 +13,7 @@ stage.news-feed.paulserban.eu -> CloudFront (Basic Auth) -> S3 (news)
 
 ACM certs live in us-east-1 (DNS-validated against the shared hosted zone).
 
-GitHub Actions (environment:staging)
+GitHub Actions (environment:stage)
   -- OIDC token --> IAM role (gha-deploy-stage.paulserban.eu)
                      -> s3:* on all four buckets
                      -> cloudfront:CreateInvalidation on all four distributions
@@ -88,9 +88,9 @@ against **live** content (private content-repo sync; `content_source` defaults t
 uses **GitHub OIDC** (short-lived credentials via `sts:AssumeRoleWithWebIdentity`);
 there are no long-lived AWS access keys.
 
-Configure a GitHub **Environment** named `staging` with:
+Configure a GitHub **Environment** named `stage` with:
 
-**Variables** (`Settings -> Environments -> staging -> Variables`):
+**Variables** (`Settings -> Environments -> stage -> Variables`):
 
 | Name                                   | Value                                                   | Source                     |
 | -------------------------------------- | ------------------------------------------------------- | -------------------------- |
@@ -110,7 +110,7 @@ can clone the private content repository during the build.
 
 No AWS secrets are required. Each deploy job has `permissions: id-token: write` so
 GitHub can mint an OIDC token; the IAM role trust policy only allows
-`repo:paulAlexSerban/prj--personal-portfolio--v3:environment:staging`.
+`repo:paulAlexSerban/prj--personal-portfolio--v3:environment:stage`.
 
 ### OIDC provider note
 
