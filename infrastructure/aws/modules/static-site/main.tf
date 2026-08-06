@@ -150,16 +150,32 @@ resource "aws_cloudfront_response_headers_policy" "site" {
   }
 }
 
-resource "aws_cloudfront_function" "basic_auth" {
-  count = var.basic_auth_enabled ? 1 : 0
+# Single viewer-request function: optional Basic Auth + directory → index.html
+# rewrite. CloudFront allows only one function association per event type, and
+# default_root_object only applies to "/", so Astro's trailingSlash:"always"
+# output (post/slug/index.html) needs an explicit rewrite for deep links.
+#
+# moved + create_before_destroy: rename from basic_auth[0] without deleting the
+# old function while a distribution still references it (CloudFront 409
+# FunctionInUse). Envs that already completed the migration ignore `moved`.
+moved {
+  from = aws_cloudfront_function.basic_auth[0]
+  to   = aws_cloudfront_function.viewer_request
+}
 
-  name    = "${local.cloudfront_name_prefix}-basic-auth"
+resource "aws_cloudfront_function" "viewer_request" {
+  name    = "${local.cloudfront_name_prefix}-viewer-request"
   runtime = "cloudfront-js-2.0"
   publish = true
-  code = templatefile("${path.module}/src/basic-auth.js.tftpl", {
-    auth_header_value = local.basic_auth_header_value
-    realm             = var.domain_name
+  code = templatefile("${path.module}/src/viewer-request.js.tftpl", {
+    basic_auth_enabled = var.basic_auth_enabled
+    auth_header_value  = coalesce(local.basic_auth_header_value, "")
+    realm              = var.domain_name
   })
+
+  lifecycle {
+    create_before_destroy = true
+  }
 }
 
 resource "aws_cloudfront_distribution" "site" {
@@ -185,12 +201,9 @@ resource "aws_cloudfront_distribution" "site" {
     cache_policy_id            = "658327ea-f89d-4fab-a63d-7e88639e58f6" # AWS managed: CachingOptimized
     response_headers_policy_id = aws_cloudfront_response_headers_policy.site.id
 
-    dynamic "function_association" {
-      for_each = var.basic_auth_enabled ? [1] : []
-      content {
-        event_type   = "viewer-request"
-        function_arn = aws_cloudfront_function.basic_auth[0].arn
-      }
+    function_association {
+      event_type   = "viewer-request"
+      function_arn = aws_cloudfront_function.viewer_request.arn
     }
   }
 

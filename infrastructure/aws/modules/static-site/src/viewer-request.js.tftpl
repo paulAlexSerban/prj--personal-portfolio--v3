@@ -1,0 +1,33 @@
+function handler(event) {
+  var request = event.request;
+  var headers = request.headers;
+  var uri = request.uri;
+
+%{ if basic_auth_enabled ~}
+  var expected = '${auth_header_value}';
+
+  if (
+    typeof headers.authorization === 'undefined' ||
+    headers.authorization.value !== expected
+  ) {
+    return {
+      statusCode: 401,
+      statusDescription: 'Unauthorized',
+      headers: {
+        'www-authenticate': { value: 'Basic realm="${realm}"' },
+      },
+    };
+  }
+%{ endif ~}
+
+  // CloudFront default_root_object only applies to "/". Astro emits
+  // directory/index.html with trailingSlash: "always", so rewrite
+  // "/post/slug/" -> "/post/slug/index.html" (and bare dirs without slash).
+  if (uri.endsWith('/')) {
+    request.uri = uri + 'index.html';
+  } else if (!uri.includes('.')) {
+    request.uri = uri + '/index.html';
+  }
+
+  return request;
+}

@@ -33,6 +33,7 @@ as static output (no runtime server, no accounts in v0.1).
 | ORM / DB tooling | Drizzle (ORM + Kit + Studio) | ADR-007 |
 | Quiz web app | CSR React 19 + zustand + static JSON, PWA | **ADR-008** |
 | Spaced-repetition engine | SM-2 **and** FSRS-5, runtime-switchable | **ADR-009** |
+| CDN deep-link / directory index | CloudFront Function rewrite; keep Astro `trailingSlash: always` | **ADR-011** |
 
 ## 3. Two repositories
 

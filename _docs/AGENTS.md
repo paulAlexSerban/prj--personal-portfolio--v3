@@ -73,8 +73,9 @@ Feature-level PRDs live under `product/` (blog, portfolio, quiz widget/web/mobil
 | `adr-008--quiz-web-app-architecture.md`   | CSR React + static JSON + shared packages      |
 | `adr-009--spaced-repetition-scheduler.md` | SM-2 + FSRS-5, runtime-switchable              |
 | `adr-010--release-and-branching-strategy.md` | Trunk-based branching, Changesets SemVer, CI/CD promotion |
+| `adr-011--cloudfront-directory-index-rewrite.md` | CF Function rewrite for Astro `trailingSlash: always` on S3+CloudFront |
 
-Remaining `_drafts/` (database engine, CMS, hosting, caching, mobile wrapper) are proposals, not settled. The quiz-design drafts (`sr-engine`/`quiz-ui`/`storage`/`client-state`/`delivery-targets`) are **superseded by ADR-008/009** and now just point to the as-built docs. The CI/CD draft is superseded for branching/release by ADR-010; hosting remains TBD.
+Remaining `_drafts/` (database engine, CMS, hosting, caching, mobile wrapper) are proposals, not settled. The quiz-design drafts (`sr-engine`/`quiz-ui`/`storage`/`client-state`/`delivery-targets`) are **superseded by ADR-008/009** and now just point to the as-built docs. The CI/CD draft is superseded for branching/release by ADR-010; test/stage AWS hosting uses S3+CloudFront (see ADR-011 for directory-index behaviour); production promotion remains partially stubbed.
 
 ## Key documents for agents
 
@@ -111,7 +112,7 @@ Remaining `_drafts/` (database engine, CMS, hosting, caching, mobile wrapper) ar
 | DEV CI/CD (GitHub Pages)                                           | **Implemented** — `.github/workflows/deploy-dev.yaml`                               |
 | Quality CI + Changesets release / stage→prod pipelines             | **Implemented** — `ci.yaml`, `release.yaml`, `_build-site.yaml` (hosting stubbed)   |
 | CMS                                                                | Planned — see drafts and PRDs                                                       |
-| Production hosting provider                                        | TBD — stage/prod deploy steps are placeholders (see ADR-010)                        |
+| Production hosting provider                                        | In progress — test/stage on S3+CloudFront (ADR-011); prod promotion still stubbed (ADR-010) |
 
 ## When editing docs
 
