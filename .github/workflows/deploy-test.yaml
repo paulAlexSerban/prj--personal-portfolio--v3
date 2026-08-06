@@ -15,10 +15,18 @@ jobs:
         uses: ./.github/workflows/_build-site.yaml
         with:
             environment: test
-            site_url: https://test.paulserban.eu
+            portfolio_url: https://test.paulserban.eu
+            blog_url: https://test.blog.paulserban.eu
+            quiz_url: https://test.quiz.paulserban.eu
+            news_url: https://test.news-feed.paulserban.eu
+            portfolio_base: /
+            blog_base: /
+            quiz_base: /
+            news_base: /
+            emit_merged_bundle: false
         secrets: inherit
 
-    deploy-test:
+    deploy-portfolio:
         needs: build-site
         runs-on: ubuntu-latest
         timeout-minutes: 10
@@ -27,10 +35,10 @@ jobs:
             contents: read
             id-token: write
         steps:
-            - name: Download site bundle
+            - name: Download portfolio artifact
               uses: actions/download-artifact@v8
               with:
-                  name: site-bundle
+                  name: portfolio-dist-test
                   path: _site/
 
             - name: Configure AWS credentials
@@ -40,10 +48,100 @@ jobs:
                   aws-region: ${{ vars.AWS_REGION }}
 
             - name: Sync to S3
-              run: aws s3 sync _site/ "s3://${{ vars.S3_BUCKET_NAME }}" --delete
+              run: aws s3 sync _site/ "s3://${{ vars.PORTFOLIO_S3_BUCKET_NAME }}" --delete
 
             - name: Invalidate CloudFront cache
               run: |
                   aws cloudfront create-invalidation \
-                    --distribution-id "${{ vars.CLOUDFRONT_DISTRIBUTION_ID }}" \
+                    --distribution-id "${{ vars.PORTFOLIO_CLOUDFRONT_DISTRIBUTION_ID }}" \
+                    --paths "/*"
+
+    deploy-blog:
+        needs: build-site
+        runs-on: ubuntu-latest
+        timeout-minutes: 10
+        environment: test
+        permissions:
+            contents: read
+            id-token: write
+        steps:
+            - name: Download blog artifact
+              uses: actions/download-artifact@v8
+              with:
+                  name: blog-dist-test
+                  path: _site/
+
+            - name: Configure AWS credentials
+              uses: aws-actions/configure-aws-credentials@v6
+              with:
+                  role-to-assume: ${{ vars.AWS_DEPLOY_ROLE_ARN }}
+                  aws-region: ${{ vars.AWS_REGION }}
+
+            - name: Sync to S3
+              run: aws s3 sync _site/ "s3://${{ vars.BLOG_S3_BUCKET_NAME }}" --delete
+
+            - name: Invalidate CloudFront cache
+              run: |
+                  aws cloudfront create-invalidation \
+                    --distribution-id "${{ vars.BLOG_CLOUDFRONT_DISTRIBUTION_ID }}" \
+                    --paths "/*"
+
+    deploy-quiz:
+        needs: build-site
+        runs-on: ubuntu-latest
+        timeout-minutes: 10
+        environment: test
+        permissions:
+            contents: read
+            id-token: write
+        steps:
+            - name: Download quiz artifact
+              uses: actions/download-artifact@v8
+              with:
+                  name: quiz-dist-test
+                  path: _site/
+
+            - name: Configure AWS credentials
+              uses: aws-actions/configure-aws-credentials@v6
+              with:
+                  role-to-assume: ${{ vars.AWS_DEPLOY_ROLE_ARN }}
+                  aws-region: ${{ vars.AWS_REGION }}
+
+            - name: Sync to S3
+              run: aws s3 sync _site/ "s3://${{ vars.QUIZ_S3_BUCKET_NAME }}" --delete
+
+            - name: Invalidate CloudFront cache
+              run: |
+                  aws cloudfront create-invalidation \
+                    --distribution-id "${{ vars.QUIZ_CLOUDFRONT_DISTRIBUTION_ID }}" \
+                    --paths "/*"
+
+    deploy-news:
+        needs: build-site
+        runs-on: ubuntu-latest
+        timeout-minutes: 10
+        environment: test
+        permissions:
+            contents: read
+            id-token: write
+        steps:
+            - name: Download news artifact
+              uses: actions/download-artifact@v8
+              with:
+                  name: news-dist-test
+                  path: _site/
+
+            - name: Configure AWS credentials
+              uses: aws-actions/configure-aws-credentials@v6
+              with:
+                  role-to-assume: ${{ vars.AWS_DEPLOY_ROLE_ARN }}
+                  aws-region: ${{ vars.AWS_REGION }}
+
+            - name: Sync to S3
+              run: aws s3 sync _site/ "s3://${{ vars.NEWS_S3_BUCKET_NAME }}" --delete
+
+            - name: Invalidate CloudFront cache
+              run: |
+                  aws cloudfront create-invalidation \
+                    --distribution-id "${{ vars.NEWS_CLOUDFRONT_DISTRIBUTION_ID }}" \
                     --paths "/*"

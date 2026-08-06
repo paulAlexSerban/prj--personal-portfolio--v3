@@ -85,7 +85,7 @@ data "aws_iam_policy_document" "deploy_permissions" {
     sid       = "ListBucket"
     effect    = "Allow"
     actions   = ["s3:ListBucket"]
-    resources = [var.s3_bucket_arn]
+    resources = var.s3_bucket_arns
   }
 
   statement {
@@ -96,14 +96,14 @@ data "aws_iam_policy_document" "deploy_permissions" {
       "s3:PutObject",
       "s3:DeleteObject",
     ]
-    resources = ["${var.s3_bucket_arn}/*"]
+    resources = [for arn in var.s3_bucket_arns : "${arn}/*"]
   }
 
   statement {
     sid       = "InvalidateDistribution"
     effect    = "Allow"
     actions   = ["cloudfront:CreateInvalidation"]
-    resources = [var.cloudfront_distribution_arn]
+    resources = var.cloudfront_distribution_arns
   }
 }
 

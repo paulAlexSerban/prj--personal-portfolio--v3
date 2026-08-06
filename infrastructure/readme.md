@@ -89,6 +89,7 @@ Terraform is a tool for building, changing, and versioning infrastructure safely
 ### Setup local AWS CLI
 
 #### 1. Install the AWS CLI (if needed)
+
 ```bash
 curl -fsSL "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o /tmp/awscliv2.zip
 cd /tmp && unzip -o awscliv2.zip
@@ -97,11 +98,12 @@ aws --version
 ```
 
 #### 2. Create an access key in AWS
+
 In the AWS console: IAM → Users → your user → Security credentials → Create access key
 (Use a user that can manage S3, CloudFront, ACM, Route 53, and IAM for this first apply.)
 
-
 #### 3. Configure the CLI
+
 ```bash
 aws configure
 # AWS Access Key ID:     <paste>
@@ -109,10 +111,11 @@ aws configure
 # Default region:        us-east-1
 # Default output:        json
 ```
+
 That writes ~/.aws/credentials and ~/.aws/config.
 
-
 #### 4. Verify, then re-run Terraform
+
 ```bash
 aws sts get-caller-identity
 cd ~/Desktop/projects/personal--platform/prj--personal-portfolio--v3/infrastructure/aws/envs/test
@@ -121,6 +124,7 @@ terraform apply
 ```
 
 If you use SSO instead of long-lived keys:
+
 ```bash
 aws configure sso
 aws sso login --profile <your-profile>

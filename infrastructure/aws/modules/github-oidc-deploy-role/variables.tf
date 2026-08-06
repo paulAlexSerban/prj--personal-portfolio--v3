@@ -24,14 +24,14 @@ variable "role_name" {
   type        = string
 }
 
-variable "s3_bucket_arn" {
-  description = "ARN of the S3 bucket the role may sync into."
-  type        = string
+variable "s3_bucket_arns" {
+  description = "ARNs of the S3 buckets the role may sync into."
+  type        = list(string)
 }
 
-variable "cloudfront_distribution_arn" {
-  description = "ARN of the CloudFront distribution the role may invalidate."
-  type        = string
+variable "cloudfront_distribution_arns" {
+  description = "ARNs of the CloudFront distributions the role may invalidate."
+  type        = list(string)
 }
 
 variable "tags" {

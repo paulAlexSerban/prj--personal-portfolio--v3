@@ -7,8 +7,23 @@ on:
                 description: Target environment name (staging, production, etc.)
                 required: true
                 type: string
-            site_url:
-                description: Absolute site origin (e.g. https://staging.example.com). Empty until hosting is configured.
+            portfolio_url:
+                description: Absolute origin for portfolio-site (e.g. https://test.paulserban.eu). Empty until hosting is configured.
+                required: false
+                type: string
+                default: ''
+            blog_url:
+                description: Absolute origin for blog-site
+                required: false
+                type: string
+                default: ''
+            quiz_url:
+                description: Absolute origin for quiz-web-app
+                required: false
+                type: string
+                default: ''
+            news_url:
+                description: Absolute origin for news-feed-site
                 required: false
                 type: string
                 default: ''
@@ -32,6 +47,11 @@ on:
                 required: false
                 type: string
                 default: /news
+            emit_merged_bundle:
+                description: If true, merge per-app dists into a single site-bundle artifact (GitHub Pages / release). Set false for per-domain S3 deploys.
+                required: false
+                type: boolean
+                default: true
             artifact_retention_days:
                 description: Retention for the merged site-bundle artifact
                 required: false
@@ -89,10 +109,14 @@ jobs:
 
             - name: Build portfolio-site
               env:
-                  ASTRO_SITE: ${{ inputs.site_url }}
+                  ASTRO_SITE: ${{ inputs.portfolio_url }}
                   ASTRO_BASE: ${{ inputs.portfolio_base }}
                   DATABASE_PATH: ${{ github.workspace }}/database/output/content.db
-              run: pnpm --filter @prj--personal-portfolio--v3/frontend--portfolio-site build
+              run: |
+                  [ -n "${{ inputs.blog_url }}" ] && export PUBLIC_BLOG_URL="${{ inputs.blog_url }}"
+                  [ -n "${{ inputs.quiz_url }}" ] && export PUBLIC_QUIZ_URL="${{ inputs.quiz_url }}"
+                  [ -n "${{ inputs.news_url }}" ] && export PUBLIC_NEWS_URL="${{ inputs.news_url }}"
+                  pnpm --filter @prj--personal-portfolio--v3/frontend--portfolio-site build
 
             - name: Upload portfolio artifact
               uses: actions/upload-artifact@v7
@@ -118,10 +142,14 @@ jobs:
 
             - name: Build blog-site
               env:
-                  ASTRO_SITE: ${{ inputs.site_url }}
+                  ASTRO_SITE: ${{ inputs.blog_url }}
                   ASTRO_BASE: ${{ inputs.blog_base }}
                   DATABASE_PATH: ${{ github.workspace }}/database/output/content.db
-              run: pnpm --filter @prj--personal-portfolio--v3/frontend--blog-site build
+              run: |
+                  [ -n "${{ inputs.portfolio_url }}" ] && export PUBLIC_PORTFOLIO_URL="${{ inputs.portfolio_url }}"
+                  [ -n "${{ inputs.quiz_url }}" ] && export PUBLIC_QUIZ_URL="${{ inputs.quiz_url }}"
+                  [ -n "${{ inputs.news_url }}" ] && export PUBLIC_NEWS_URL="${{ inputs.news_url }}"
+                  pnpm --filter @prj--personal-portfolio--v3/frontend--blog-site build
 
             - name: Upload blog artifact
               uses: actions/upload-artifact@v7
@@ -148,7 +176,11 @@ jobs:
             - name: Build quiz-web-app
               env:
                   VITE_APP_BASE: ${{ inputs.quiz_base }}
-              run: pnpm --filter @prj--personal-portfolio--v3/frontend--quiz-web-app build
+              run: |
+                  [ -n "${{ inputs.portfolio_url }}" ] && export VITE_PORTFOLIO_URL="${{ inputs.portfolio_url }}"
+                  [ -n "${{ inputs.blog_url }}" ] && export VITE_BLOG_URL="${{ inputs.blog_url }}"
+                  [ -n "${{ inputs.news_url }}" ] && export VITE_NEWS_URL="${{ inputs.news_url }}"
+                  pnpm --filter @prj--personal-portfolio--v3/frontend--quiz-web-app build
 
             - name: Upload quiz artifact
               uses: actions/upload-artifact@v7
@@ -174,10 +206,14 @@ jobs:
 
             - name: Build news-feed-site
               env:
-                  ASTRO_SITE: ${{ inputs.site_url }}
+                  ASTRO_SITE: ${{ inputs.news_url }}
                   ASTRO_BASE: ${{ inputs.news_base }}
                   DATABASE_PATH: ${{ github.workspace }}/database/output/content.db
-              run: pnpm --filter @prj--personal-portfolio--v3/frontend--news-feed-site build
+              run: |
+                  [ -n "${{ inputs.portfolio_url }}" ] && export PUBLIC_PORTFOLIO_URL="${{ inputs.portfolio_url }}"
+                  [ -n "${{ inputs.blog_url }}" ] && export PUBLIC_BLOG_URL="${{ inputs.blog_url }}"
+                  [ -n "${{ inputs.quiz_url }}" ] && export PUBLIC_QUIZ_URL="${{ inputs.quiz_url }}"
+                  pnpm --filter @prj--personal-portfolio--v3/frontend--news-feed-site build
 
             - name: Upload news artifact
               uses: actions/upload-artifact@v7
@@ -188,6 +224,7 @@ jobs:
                   retention-days: 1
 
     merge:
+        if: ${{ inputs.emit_merged_bundle }}
         needs: [build-portfolio, build-blog, build-quiz, build-news]
         runs-on: ubuntu-latest
         timeout-minutes: 10

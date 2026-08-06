@@ -1,13 +1,31 @@
 variable "aws_region" {
   description = "Primary AWS region for the S3 bucket. CloudFront/ACM always use us-east-1 regardless of this value."
   type        = string
-  default     = "us-east-1"
+  default     = "eu-central-1"
 }
 
 variable "domain_name" {
-  description = "Fully-qualified domain name for the test environment."
+  description = "Fully-qualified domain name for the portfolio (apex) test site."
   type        = string
   default     = "test.paulserban.eu"
+}
+
+variable "blog_domain_name" {
+  description = "Fully-qualified domain name for the blog test site."
+  type        = string
+  default     = "test.blog.paulserban.eu"
+}
+
+variable "quiz_domain_name" {
+  description = "Fully-qualified domain name for the quiz test site."
+  type        = string
+  default     = "test.quiz.paulserban.eu"
+}
+
+variable "news_domain_name" {
+  description = "Fully-qualified domain name for the news-feed test site."
+  type        = string
+  default     = "test.news-feed.paulserban.eu"
 }
 
 variable "hosted_zone_id" {
@@ -34,13 +52,13 @@ variable "create_oidc_provider" {
 }
 
 variable "basic_auth_username" {
-  description = "HTTP Basic Auth username for the CloudFront viewer-request function."
+  description = "HTTP Basic Auth username for the CloudFront viewer-request function (shared across all four test sites)."
   type        = string
   sensitive   = true
 }
 
 variable "basic_auth_password" {
-  description = "HTTP Basic Auth password for the CloudFront viewer-request function."
+  description = "HTTP Basic Auth password for the CloudFront viewer-request function (shared across all four test sites)."
   type        = string
   sensitive   = true
 }
