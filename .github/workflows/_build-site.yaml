@@ -57,10 +57,14 @@ on:
                 required: false
                 type: number
                 default: 14
+            content_source:
+                description: Which content tree to ingest — 'live' (clone private content repo) or 'test' (committed fixtures under content/test)
+                required: false
+                type: string
+                default: live
 
 env:
     DATABASE_PATH: ${{ github.workspace }}/database/output/content.db
-    CONTENT_DIR: ${{ github.workspace }}/content/live/content/publish
     QUIZ_DATA_OUT: ${{ github.workspace }}/frontend/apps/quiz-web-app/public/data
 
 jobs:
@@ -71,11 +75,22 @@ jobs:
             - uses: actions/checkout@v7
             - uses: ./.github/actions/setup-monorepo
             - run: pnpm db:migrate
-            - name: Ingest content
+
+            - name: Sync live content
+              if: inputs.content_source == 'live'
               env:
                   GITHUB_TOKEN: ${{ secrets.CONTENT_REPO_TOKEN }}
                   CONTENT_REPO_GIT_URL: https://github.com/paulAlexSerban/content--paulserban.eu.git
-              run: pnpm start
+              run: pnpm --filter @prj--personal-portfolio--v3/tools--content-sync start
+
+            - name: Ingest content
+              env:
+                  CONTENT_DIR: ${{ github.workspace }}/content/${{ inputs.content_source }}/content/publish
+              run: |
+                  pnpm --filter @prj--personal-portfolio--v3/tools--mdx-ingest start
+                  pnpm --filter @prj--personal-portfolio--v3/tools--json-ingest start
+                  pnpm --filter @prj--personal-portfolio--v3/tools--news-ingest start
+                  pnpm --filter @prj--personal-portfolio--v3/tools--quiz-export start
 
             - name: Upload content DB
               uses: actions/upload-artifact@v7

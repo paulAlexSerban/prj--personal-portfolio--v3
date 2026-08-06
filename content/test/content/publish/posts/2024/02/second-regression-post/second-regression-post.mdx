@@ -1,0 +1,24 @@
+---
+title: 'Regression Fixture: Second Post for Listings'
+subheading: 'A second published post so blog index and pagination paths have more than one row'
+excerpt: 'Minimal second fixture post. Exists so listing, filtering, and related-post queries see more than a single item.'
+status: 'published'
+pinned: false
+author: 'Regression Fixture'
+date: 'February 01, 2024'
+tags:
+    - 'Regression Testing'
+    - 'JavaScript'
+---
+
+## Why this exists
+
+Blog index pages, tag pages, and "recent posts" widgets need at least two published posts to exercise multi-item rendering. This fixture has no nested questions or companions on purpose.
+
+## Body content
+
+Plain paragraphs and a short list keep MDX compilation covered without duplicating the richer first fixture:
+
+- Listing cards should show title, excerpt, and date
+- Tag filters should include `Regression Testing`
+- Detail page should render this markdown body

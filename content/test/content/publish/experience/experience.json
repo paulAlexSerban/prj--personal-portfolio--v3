@@ -1,0 +1,26 @@
+[
+    {
+        "slug": "regression-role-current",
+        "role": "Senior Software Engineer (Fixture)",
+        "company": "Regression Test Co",
+        "start_date": "Jan 2024",
+        "end_date": null,
+        "summary": "Synthetic current role for experience timeline regression coverage on the portfolio site.",
+        "tech": ["TypeScript", "Astro", "AWS", "GitHub Actions"],
+        "location": "Remote",
+        "sort_order": 1,
+        "status": "published"
+    },
+    {
+        "slug": "regression-role-prior",
+        "role": "Software Engineer (Fixture)",
+        "company": "Fixture Labs",
+        "start_date": "Jan 2020",
+        "end_date": "Dec 2023",
+        "summary": "Synthetic prior role so the experience timeline renders multiple entries in test builds.",
+        "tech": ["React", "Node.js"],
+        "location": "Remote",
+        "sort_order": 2,
+        "status": "published"
+    }
+]

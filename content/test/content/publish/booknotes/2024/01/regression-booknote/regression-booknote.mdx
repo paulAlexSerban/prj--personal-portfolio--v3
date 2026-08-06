@@ -1,0 +1,27 @@
+---
+title: 'Regression Fixture Booknote: Designing Data-Intensive Applications (excerpt)'
+subheading: 'Synthetic book note used to exercise the booknotes ingest path and blog booknote surface'
+excerpt: 'Fixture booknote covering reliability, scalability, and maintainability vocabulary for regression builds.'
+date: 'January 20, 2024'
+status: 'published'
+pinned: false
+author: 'Regression Fixture'
+tags:
+    - 'System Design'
+    - 'Regression Testing'
+    - 'Databases'
+---
+
+## Introduction
+
+This booknote is **fixture content** for the test environment. It mirrors the shape of live booknotes so `mdx-ingest` and the blog booknote routes stay covered.
+
+## Key Takeaways
+
+- **Reliability** — the system continues to work correctly even when faults occur
+- **Scalability** — the system's ability to cope with increased load
+- **Maintainability** — making it easy for engineers to work on the system over time
+
+## Notes
+
+Trade-off thinking shows up again: stronger consistency often costs availability or latency under partition. Fixture builds should surface booknote cards with title, excerpt, and tags.

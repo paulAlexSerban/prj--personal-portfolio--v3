@@ -1,0 +1,45 @@
+---
+title: 'Regression Fixture: Software Architecture Basics'
+subheading: 'A synthetic post used to exercise blog, quiz, cheat-sheet, and learning-plan surfaces'
+excerpt: 'Fixture content for regression testing. Covers headings, code blocks, lists, and nested companions (questions, cheat sheet, learning plan).'
+status: 'published'
+pinned: true
+author: 'Regression Fixture'
+date: 'January 15, 2024'
+tags:
+    - 'Software Architecture'
+    - 'Regression Testing'
+    - 'TypeScript'
+---
+
+## Introduction
+
+This is **fixture content** for the `test.*` environment. It is not live portfolio material. Its job is to keep blog rendering, quiz export, cheat sheets, and learning plans exercised so regressions surface before production.
+
+## Key Ideas
+
+Architecture is a continuous decision process. Three primitives show up everywhere:
+
+1. **Components** — units of computation with an interface
+2. **Connectors** — how components communicate (sync HTTP, async queues)
+3. **Configurations** — how components and connectors are assembled
+
+```typescript
+type Component = { name: string; interface: string[] };
+type Connector = 'http' | 'queue' | 'function-call';
+
+const example: Component = {
+    name: 'OrderService',
+    interface: ['placeOrder', 'cancelOrder'],
+};
+```
+
+## Trade-offs
+
+- Premature microservices add operational cost without clear benefit
+- Documented ADRs keep the _why_ after the _how_ has been rewritten
+- High cohesion and low coupling remain the evaluation lens
+
+## Conclusion
+
+If this page renders with MDX features intact, the blog SSG path is healthy. Companion questions under `questions/` exercise the quiz surface.

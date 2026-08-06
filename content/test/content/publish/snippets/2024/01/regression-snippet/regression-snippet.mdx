@@ -1,0 +1,29 @@
+---
+title: 'Regression Fixture Snippet: Debounce in TypeScript'
+subheading: 'Minimal code snippet used to exercise the snippets ingest and blog snippet routes'
+excerpt: 'A tiny debounce helper as fixture content for regression testing of snippet pages.'
+category: 'snippet'
+status: 'published'
+pinned: false
+date: 'January 10, 2024'
+tags:
+    - 'TypeScript'
+    - 'JavaScript'
+    - 'Regression Testing'
+---
+
+## Snippet
+
+```typescript
+export function debounce<T extends (...args: unknown[]) => void>(fn: T, ms: number): T {
+    let timer: ReturnType<typeof setTimeout> | undefined;
+    return ((...args: Parameters<T>) => {
+        clearTimeout(timer);
+        timer = setTimeout(() => fn(...args), ms);
+    }) as T;
+}
+```
+
+## Notes
+
+Fixture only — clears prior timer, schedules a new call after `ms`. Used so snippet listing and detail pages render from SQLite-backed content.

@@ -1,0 +1,34 @@
+---
+title: Regression Fixture Project One
+status: published
+subheading: Primary portfolio card for regression builds
+excerpt: Synthetic project that exercises pinned project cards, tech tags, and case-study detail pages.
+role: Architect & implementer
+problem: Portfolio and blog surfaces needed deterministic content without cloning the private live content repo.
+approach: Commit a small fixture tree under content/test and point CONTENT_DIR at it for the test environment.
+outcome: Test deploys build from known fixtures; live content stays on the private repo sync path.
+metrics:
+    surfaces: 4
+    fixture_posts: 2
+repo_url: https://github.com/paulAlexSerban/prj--personal-portfolio--v3
+demo_url: https://test.paulserban.eu
+pinned: true
+priority: 100
+date: 'January 05, 2024'
+tags:
+    - TypeScript
+    - Astro
+    - Regression Testing
+---
+
+## Problem
+
+Live content is large and private. The `test.*` environment needs predictable fixtures so CI can validate rendering without cloning production content.
+
+## Approach
+
+Author a minimal MDX/JSON tree under `content/test/content/publish/` that covers every ingest mapping the pipeline supports.
+
+## Outcome
+
+Test deploys ingest fixtures via `CONTENT_DIR`; production and GitHub Pages keep using `content/live`.

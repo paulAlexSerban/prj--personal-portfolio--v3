@@ -1,0 +1,31 @@
+---
+title: Regression Fixture Cheat Sheet - Architecture Primitives
+status: published
+---
+
+Quick reference for the regression fixture post. Not live content.
+
+## Overview
+
+- Architecture = structural decisions that constrain future change
+- Evaluate with cohesion (high) and coupling (low)
+- Document significant choices as ADRs
+
+## Key Concepts
+
+### Components, Connectors, Configurations
+
+- **Component**: unit of computation with an interface
+- **Connector**: communication mechanism (HTTP, queue, call)
+- **Configuration**: assembly of the above into a system
+
+### Common Patterns
+
+- Layered / n-tier — good for small teams on one deployable
+- Microservices — extract only when scaling or ownership needs diverge
+- Event-driven — prefer publish over synchronous call chains when temporal decoupling matters
+
+## Trade-offs
+
+- Complexity has a cost; YAGNI applies to architecture too
+- Distributed failures are partial and probabilistic — plan for retries and idempotency

@@ -24,6 +24,7 @@ jobs:
             quiz_base: /
             news_base: /
             emit_merged_bundle: false
+            content_source: test
         secrets: inherit
 
     deploy-portfolio:

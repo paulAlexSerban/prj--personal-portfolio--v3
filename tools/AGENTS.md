@@ -15,7 +15,16 @@ content repo (private Git)  →  content-sync  →  content/live/
                                             database/output/content.db
 ```
 
-Run **content-sync** before **mdx-ingest** and **json-ingest** locally and in CI.
+Run **content-sync** before **mdx-ingest** and **json-ingest** locally and in CI when using live content.
+
+`CONTENT_DIR` (env) selects which publish tree to ingest. Defaults to `content/live/content/publish`. The reusable `_build-site.yaml` workflow accepts a `content_source` input (`live` | `test`):
+
+| `content_source` | Path                           | Notes                                                  |
+| ---------------- | ------------------------------ | ------------------------------------------------------ |
+| `live` (default) | `content/live/content/publish` | Runs `content-sync` first (needs `CONTENT_REPO_TOKEN`) |
+| `test`           | `content/test/content/publish` | Committed regression fixtures; skips `content-sync`    |
+
+The test AWS deploy (`deploy-test.yaml`) passes `content_source: test`. GitHub Pages / release keep the `live` default.
 
 ## Question content model (ingest perspective)
 

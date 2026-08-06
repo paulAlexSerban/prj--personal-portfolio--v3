@@ -31,16 +31,16 @@ Each site is gated by the same **HTTP Basic Auth** CloudFront Function. Set
 - Terraform >= 1.6.
 - An AWS account with an existing **Route 53 public hosted zone for `paulserban.eu`**.
   Find its zone ID with:
-  ```bash
-  aws route53 list-hosted-zones-by-name --dns-name paulserban.eu
-  ```
+    ```bash
+    aws route53 list-hosted-zones-by-name --dns-name paulserban.eu
+    ```
 - An AWS identity with permissions for S3, CloudFront, ACM, Route 53, and IAM
   (OIDC provider + role) for the one-off manual apply.
 - Before the first apply of the blog/quiz/news stacks, confirm those CNAMEs are
   not already attached to another CloudFront distribution:
-  ```bash
-  aws cloudfront list-distributions --query "DistributionList.Items[*].{Id:Id,Aliases:Aliases.Items}"
-  ```
+    ```bash
+    aws cloudfront list-distributions --query "DistributionList.Items[*].{Id:Id,Aliases:Aliases.Items}"
+    ```
 
 ## State: local, on purpose (for now)
 
