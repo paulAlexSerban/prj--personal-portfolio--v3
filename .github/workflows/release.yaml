@@ -44,45 +44,151 @@ jobs:
         uses: ./.github/workflows/_build-site.yaml
         with:
             environment: staging
+            portfolio_url: https://stage.paulserban.eu
+            blog_url: https://stage.blog.paulserban.eu
+            quiz_url: https://stage.quiz.paulserban.eu
+            news_url: https://stage.news-feed.paulserban.eu
+            portfolio_base: /
+            blog_base: /
+            quiz_base: /
+            news_base: /
+            emit_merged_bundle: false
             artifact_retention_days: 14
         secrets: inherit
 
-    deploy-stage:
+    deploy-stage-portfolio:
         needs: build-site
         runs-on: ubuntu-latest
         timeout-minutes: 10
         environment: staging
+        permissions:
+            contents: read
+            id-token: write
         steps:
-            - name: Download site bundle
+            - name: Download portfolio artifact
               uses: actions/download-artifact@v8
               with:
-                  name: site-bundle
+                  name: portfolio-dist-staging
                   path: _site/
 
-            - name: Deploy (placeholder - hosting provider TBD)
+            - name: Configure AWS credentials
+              uses: aws-actions/configure-aws-credentials@v6
+              with:
+                  role-to-assume: ${{ vars.AWS_DEPLOY_ROLE_ARN }}
+                  aws-region: ${{ vars.AWS_REGION }}
+
+            - name: Sync to S3
+              run: aws s3 sync _site/ "s3://${{ vars.PORTFOLIO_S3_BUCKET_NAME }}" --delete
+
+            - name: Invalidate CloudFront cache
               run: |
-                  echo "Environment: staging"
-                  echo "No hosting provider selected yet."
-                  echo "Built site bundle is attached as workflow artifact: site-bundle"
-                  echo "Replace this step with the real deploy command once a provider is chosen."
-                  ls -la _site/
+                  aws cloudfront create-invalidation \
+                    --distribution-id "${{ vars.PORTFOLIO_CLOUDFRONT_DISTRIBUTION_ID }}" \
+                    --paths "/*"
+
+    deploy-stage-blog:
+        needs: build-site
+        runs-on: ubuntu-latest
+        timeout-minutes: 10
+        environment: staging
+        permissions:
+            contents: read
+            id-token: write
+        steps:
+            - name: Download blog artifact
+              uses: actions/download-artifact@v8
+              with:
+                  name: blog-dist-staging
+                  path: _site/
+
+            - name: Configure AWS credentials
+              uses: aws-actions/configure-aws-credentials@v6
+              with:
+                  role-to-assume: ${{ vars.AWS_DEPLOY_ROLE_ARN }}
+                  aws-region: ${{ vars.AWS_REGION }}
+
+            - name: Sync to S3
+              run: aws s3 sync _site/ "s3://${{ vars.BLOG_S3_BUCKET_NAME }}" --delete
+
+            - name: Invalidate CloudFront cache
+              run: |
+                  aws cloudfront create-invalidation \
+                    --distribution-id "${{ vars.BLOG_CLOUDFRONT_DISTRIBUTION_ID }}" \
+                    --paths "/*"
+
+    deploy-stage-quiz:
+        needs: build-site
+        runs-on: ubuntu-latest
+        timeout-minutes: 10
+        environment: staging
+        permissions:
+            contents: read
+            id-token: write
+        steps:
+            - name: Download quiz artifact
+              uses: actions/download-artifact@v8
+              with:
+                  name: quiz-dist-staging
+                  path: _site/
+
+            - name: Configure AWS credentials
+              uses: aws-actions/configure-aws-credentials@v6
+              with:
+                  role-to-assume: ${{ vars.AWS_DEPLOY_ROLE_ARN }}
+                  aws-region: ${{ vars.AWS_REGION }}
+
+            - name: Sync to S3
+              run: aws s3 sync _site/ "s3://${{ vars.QUIZ_S3_BUCKET_NAME }}" --delete
+
+            - name: Invalidate CloudFront cache
+              run: |
+                  aws cloudfront create-invalidation \
+                    --distribution-id "${{ vars.QUIZ_CLOUDFRONT_DISTRIBUTION_ID }}" \
+                    --paths "/*"
+
+    deploy-stage-news:
+        needs: build-site
+        runs-on: ubuntu-latest
+        timeout-minutes: 10
+        environment: staging
+        permissions:
+            contents: read
+            id-token: write
+        steps:
+            - name: Download news artifact
+              uses: actions/download-artifact@v8
+              with:
+                  name: news-dist-staging
+                  path: _site/
+
+            - name: Configure AWS credentials
+              uses: aws-actions/configure-aws-credentials@v6
+              with:
+                  role-to-assume: ${{ vars.AWS_DEPLOY_ROLE_ARN }}
+                  aws-region: ${{ vars.AWS_REGION }}
+
+            - name: Sync to S3
+              run: aws s3 sync _site/ "s3://${{ vars.NEWS_S3_BUCKET_NAME }}" --delete
+
+            - name: Invalidate CloudFront cache
+              run: |
+                  aws cloudfront create-invalidation \
+                    --distribution-id "${{ vars.NEWS_CLOUDFRONT_DISTRIBUTION_ID }}" \
+                    --paths "/*"
 
     deploy-prod:
-        needs: deploy-stage
+        needs:
+            - deploy-stage-portfolio
+            - deploy-stage-blog
+            - deploy-stage-quiz
+            - deploy-stage-news
         runs-on: ubuntu-latest
         timeout-minutes: 10
         environment: production
         steps:
-            - name: Download site bundle
-              uses: actions/download-artifact@v8
-              with:
-                  name: site-bundle
-                  path: _site/
-
             - name: Deploy (placeholder - hosting provider TBD)
               run: |
                   echo "Environment: production"
                   echo "No hosting provider selected yet."
-                  echo "Promoting the same site-bundle artifact that was deployed to staging (no rebuild)."
-                  echo "Replace this step with the real deploy command once a provider is chosen."
-                  ls -la _site/
+                  echo "Staging deploy completed for portfolio/blog/quiz/news (per-app S3 + CloudFront)."
+                  echo "Replace this job with a real prod promotion once envs/prod exists."

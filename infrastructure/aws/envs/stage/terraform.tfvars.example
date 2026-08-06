@@ -1,0 +1,16 @@
+# Copy this file to terraform.tfvars (gitignored) and fill in real values.
+
+aws_region     = "eu-central-1"
+domain_name    = "stage.paulserban.eu"
+# Optional overrides (defaults match these values):
+# blog_domain_name = "stage.blog.paulserban.eu"
+# quiz_domain_name = "stage.quiz.paulserban.eu"
+# news_domain_name = "stage.news-feed.paulserban.eu"
+hosted_zone_id = "ZXXXXXXXXXXXXXX" # aws route53 list-hosted-zones-by-name --dns-name paulserban.eu
+
+# Reuse the IAM OIDC provider created by envs/test (default is already false).
+# create_oidc_provider = false
+
+# HTTP Basic Auth enforced by a CloudFront Function (viewer-request) on all four sites.
+basic_auth_username = "stage"
+basic_auth_password = "change-me"
