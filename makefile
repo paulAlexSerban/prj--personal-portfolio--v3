@@ -56,3 +56,19 @@ install_aws_cli:
 	sudo unzip awscliv2.zip
 	sudo ./aws/install
 	aws --version
+
+tf_init_test:
+	# init terraform from /infrastructure/aws/envs/test
+	terraform -chdir=infrastructure/aws/envs/test init
+
+tf_plan_test:
+	# plan terraform from /infrastructure/aws/envs/test
+	terraform -chdir=infrastructure/aws/envs/test plan
+
+tf_apply_test:
+	# apply terraform from /infrastructure/aws/envs/test
+	terraform -chdir=infrastructure/aws/envs/test apply
+
+tf_destroy_test:
+	# destroy terraform from /infrastructure/aws/envs/test
+	terraform -chdir=infrastructure/aws/envs/test destroy
