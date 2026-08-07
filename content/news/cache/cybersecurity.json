@@ -1,8 +1,328 @@
 {
   "category": "cybersecurity",
   "label": "Cybersecurity",
-  "fetchedAt": "2026-08-06T08:09:17.560Z",
+  "fetchedAt": "2026-08-07T06:55:56.308Z",
   "items": [
+    {
+      "slug": "804bc0cba059c63b4e58ddbc",
+      "guid": "https://www.cio.com/article/4206332/cloudflare-wants-to-provide-the-operating-system-for-the-ai-first-enterprise.html",
+      "title": "Cloudflare wants to provide the operating system for the AI-first enterprise",
+      "link": "https://www.cio.com/article/4206332/cloudflare-wants-to-provide-the-operating-system-for-the-ai-first-enterprise.html",
+      "source": "CIO",
+      "sourceUrl": "https://www.cio.com/feed/",
+      "summary": "Traditional operating systems (OS) were built to manage hardware, files, apps, and users on a device, but Cloudflare says the agentic AI era requires a whole new format. The company this week announced Cloudflare OS, which connects AI agents, enterprise data and context, interna…",
+      "publishedAt": "2026-08-07T00:25:18.000Z"
+    },
+    {
+      "slug": "844584cc082091b1aaf52a94",
+      "guid": "https://www.darkreading.com/cyberattacks-data-breaches/coordination-gap-attackers-outpacing-law-enforcement",
+      "title": "The Coordination Gap: How Attackers Are Outpacing Law Enforcement",
+      "link": "https://www.darkreading.com/cyberattacks-data-breaches/coordination-gap-attackers-outpacing-law-enforcement",
+      "source": "Dark Reading",
+      "sourceUrl": "https://www.darkreading.com/rss.xml",
+      "summary": "The fight against cybercrime continues because threat actors have adapted their strategies to avoid deterrents, but law enforcement still operates in silos.",
+      "publishedAt": "2026-08-06T21:42:50.000Z"
+    },
+    {
+      "slug": "ac7ffd1ea856e1acb0822e55",
+      "guid": "https://www.darkreading.com/cloud-security/researcher-claims-control-chatgpt-secure-sandbox",
+      "title": "Researcher Claims Control of ChatGPT Secure Sandbox",
+      "link": "https://www.darkreading.com/cloud-security/researcher-claims-control-chatgpt-secure-sandbox",
+      "source": "Dark Reading",
+      "sourceUrl": "https://www.darkreading.com/rss.xml",
+      "summary": "A researcher demonstrated a proof-of-concept attack chain that provided C2-style influence over ChatGPT's isolated sandbox during a session at Black Hat USA 2026.",
+      "publishedAt": "2026-08-06T20:38:51.000Z"
+    },
+    {
+      "slug": "ceb0d67e2cdce82254d6f533",
+      "guid": "https://www.darkreading.com/cybersecurity-operations/from-bobmojis-to-bobbleheads-how-the-democratic-party-built-a-security-first-culture",
+      "title": "From Bobmojis to Bobbleheads: How the Democratic Party Built a Security-First Culture",
+      "link": "https://www.darkreading.com/cybersecurity-operations/from-bobmojis-to-bobbleheads-how-the-democratic-party-built-a-security-first-culture",
+      "source": "Dark Reading",
+      "sourceUrl": "https://www.darkreading.com/rss.xml",
+      "summary": "Former chief security officers of the Democratic National Committee explain that a strong security-first mindset requires executive support – and a dose of absurdity.",
+      "publishedAt": "2026-08-06T19:00:11.000Z"
+    },
+    {
+      "slug": "76d72c59e4a3096db7ebdcb3",
+      "guid": "https://thehackernews.com/2026/08/new-zapscape-kvm-flaw-could-let.html",
+      "title": "New Zapscape KVM Flaw Could Let Privileged L1 Guest Code Escape to Linux Hosts",
+      "link": "https://thehackernews.com/2026/08/new-zapscape-kvm-flaw-could-let.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "Zapscape, a new Linux kernel vulnerability, could allow an attacker with kernel privileges inside an L1 guest virtual machine (VM) to escape KVM isolation and execute code on the host. The risk applies when nested virtualization is exposed to untrusted guests. The flaw is tracke…",
+      "publishedAt": "2026-08-06T17:58:30.000Z"
+    },
+    {
+      "slug": "928199c4605279dbdca573b5",
+      "guid": "https://thehackernews.com/2026/08/cisco-patches-12-sd-wan-and-ios-xe.html",
+      "title": "Cisco Patches 12 SD-WAN and IOS XE Flaws, Including Three 9.8 CVSS Score Bugs",
+      "link": "https://thehackernews.com/2026/08/cisco-patches-12-sd-wan-and-ios-xe.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "Cisco has rolled out updates to address multiple critical security vulnerabilities impacting Catalyst SD-WAN and IOS XE Software as part of a comprehensive internal security review. The security issues affect Cisco Catalyst SD-WAN Software, regardless of device configuration, an…",
+      "publishedAt": "2026-08-06T17:13:15.000Z"
+    },
+    {
+      "slug": "fe2b992ef8bb9e43842c2f2b",
+      "guid": "https://krebsonsecurity.com/?p=74093",
+      "title": "Canadian Man Pleads Guilty in Snowflake Extortions",
+      "link": "https://krebsonsecurity.com/2026/08/canadian-man-pleads-guilty-in-snowflake-extortions/",
+      "source": "Krebson Security",
+      "sourceUrl": "https://krebsonsecurity.com/feed/",
+      "summary": "A 26-year-old Canadian man once described as one of the most consequential cybercrime threat actors of 2024 has pleaded guilty to computer fraud and conspiracy to hack and extort more than 165 organizations that used the cloud data storage provider Snowflake. Connor Riley Moucka…",
+      "publishedAt": "2026-08-06T17:00:56.000Z"
+    },
+    {
+      "slug": "23bdedbf23716bd51b26eb69",
+      "guid": "https://thehackernews.com/2026/08/new-interrupt-injection-attack-can.html",
+      "title": "New Interrupt Injection Attack Can Bypass Spectre v2 Defenses on Intel and AMD CPUs",
+      "link": "https://thehackernews.com/2026/08/new-interrupt-injection-attack-can.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "An unprivileged Linux program can time a hardware interrupt to land in the gap between a processor sanitizing its branch predictor and the kernel using it, re-poisoning the predictor after the defense has run. MIT CSAIL researchers Daniël Trujillo and Mengjia Yan named the techn…",
+      "publishedAt": "2026-08-06T16:17:13.000Z"
+    },
+    {
+      "slug": "8347f09debcf9426794d1e12",
+      "guid": "https://thehackernews.com/2026/08/threatsday-odysseus-rce-samsung-one.html",
+      "title": "ThreatsDay: Odysseus RCE, Samsung One-Click Takeover, iCloud Backdoor Fight + 27 More Stories",
+      "link": "https://thehackernews.com/2026/08/threatsday-odysseus-rce-samsung-one.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "Apparently, opening the thing is now enough. A repo can run before the first prompt, a package can hide among hundreds, and a harmless-looking PDF can finish the job. This week runs on cheap leverage: exposed servers, recycled bugs, poisoned agent instructions, remote-access too…",
+      "publishedAt": "2026-08-06T15:24:31.000Z"
+    },
+    {
+      "slug": "3c4506be8f97ebd194883ab0",
+      "guid": "https://www.cio.com/article/4206237/why-governance-is-the-accelerator-for-coding-agents.html",
+      "title": "Why governance is the accelerator for coding agents",
+      "link": "https://www.cio.com/article/4206237/why-governance-is-the-accelerator-for-coding-agents.html",
+      "source": "CIO",
+      "sourceUrl": "https://www.cio.com/feed/",
+      "summary": "Governance is what lets a team run coding agents and stand behind what they ship. As more code originates from agents, the question every engineering leader is now answering is not how fast the work moves, but who owns it and how it gets checked before it lands. The teams pullin…",
+      "publishedAt": "2026-08-06T14:12:53.000Z"
+    },
+    {
+      "slug": "ee3bfa6ec39281f7e620aaa2",
+      "guid": "https://www.cio.com/article/4206213/the-hidden-costs-of-scaling-ai-agents-without-coordination.html",
+      "title": "The hidden costs of scaling AI agents without coordination",
+      "link": "https://www.cio.com/article/4206213/the-hidden-costs-of-scaling-ai-agents-without-coordination.html",
+      "source": "CIO",
+      "sourceUrl": "https://www.cio.com/feed/",
+      "summary": "Engineering organizations tasked with scaling AI agents are discovering that the speed they initially achieved is being lost to endless rework. Without proper coordination, ten developers each running several agents against the same codebase becomes an alignment problem that com…",
+      "publishedAt": "2026-08-06T13:56:53.000Z"
+    },
+    {
+      "slug": "2f0aebf81dae7b013ce0c77f",
+      "guid": "https://orca.security/?p=74233",
+      "title": "Vulnerability Scanning Tools: Top 10 Compared for 2026",
+      "link": "https://orca.security/resources/blog/vulnerability-scanning-tools/",
+      "source": "Orca Security Blog",
+      "sourceUrl": "https://orca.security/resources/blog/feed/",
+      "summary": "Key Takeaways Vulnerability scanning tools inspect specific asset types for known security weaknesses and report the findings to whatever system manages remediation. They are not interchangeable with vulnerability management platforms, which organize, prioritize, and track the w…",
+      "publishedAt": "2026-08-06T12:50:00.000Z"
+    },
+    {
+      "slug": "e008e8e90f540c7b9dac02e7",
+      "guid": "https://orca.security/?p=74247",
+      "title": "AI Guardrails: Essential Safety Controls Explained",
+      "link": "https://orca.security/resources/blog/ai-guardrails/",
+      "source": "Orca Security Blog",
+      "sourceUrl": "https://orca.security/resources/blog/feed/",
+      "summary": "Key Takeaways AI guardrails are runtime controls that check what enters a model, what leaves it, and what the application does with the answer. They run on every request. They carry your policy rather than a general standard of harm, and each one has an error rate. One clarifica…",
+      "publishedAt": "2026-08-06T12:50:00.000Z"
+    },
+    {
+      "slug": "d805423c42b4ed244080848b",
+      "guid": "https://orca.security/?p=74329",
+      "title": "An Inside Look at Orca AI Agent Pods",
+      "link": "https://orca.security/resources/blog/an-inside-look-at-orca-ai-agent-pods/",
+      "source": "Orca Security Blog",
+      "sourceUrl": "https://orca.security/resources/blog/feed/",
+      "summary": "We believe modern security platforms need to enable security for the way your team actually works. In practice, that means two things. That’s the bar. This post walks through how Orca AI delivers on both, including how you can shape agents of your own. AI Agents With Domain Expe…",
+      "publishedAt": "2026-08-06T12:50:00.000Z"
+    },
+    {
+      "slug": "991d57a0483129622dec9d53",
+      "guid": "https://orca.security/?p=74239",
+      "title": "Cloud Security Controls: Types, Frameworks & Checklist",
+      "link": "https://orca.security/resources/blog/cloud-security-controls/",
+      "source": "Orca Security Blog",
+      "sourceUrl": "https://orca.security/resources/blog/feed/",
+      "summary": "Key Takeaways A cloud security control is a mechanism that makes one security requirement true in a running environment. Default encryption on a storage account is a control. A policy that rejects a public bucket at deployment time is a control. The framework line saying data mu…",
+      "publishedAt": "2026-08-06T12:50:00.000Z"
+    },
+    {
+      "slug": "5ebab680430f16a7131701f4",
+      "guid": "https://thehackernews.com/2026/08/over-4400-rockwell-plcs-exposed-online.html",
+      "title": "Over 4,400 Rockwell PLCs Exposed Online, 22 Found in Water Attack Cities",
+      "link": "https://thehackernews.com/2026/08/over-4400-rockwell-plcs-exposed-online.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "Forescout found 22 internet-facing Rockwell Automation programmable logic controllers (PLCs) in cities hit by recent cyberattacks on US water utilities. Nineteen used the same mobile carrier network. Its August 3 scan counted 4,407 exposed Rockwell controllers worldwide, includi…",
+      "publishedAt": "2026-08-06T12:16:58.000Z"
+    },
+    {
+      "slug": "d0f1f7310d7478328499722c",
+      "guid": "https://www.cio.com/article/4205737/why-ai-is-forcing-a-rethink-of-data-center-cooling.html",
+      "title": "Why AI is forcing a rethink of data center cooling",
+      "link": "https://www.cio.com/article/4205737/why-ai-is-forcing-a-rethink-of-data-center-cooling.html",
+      "source": "CIO",
+      "sourceUrl": "https://www.cio.com/feed/",
+      "summary": "For years, cooling has played a supporting role in data center design. Decisions have been driven primarily by compute, storage and networking requirements, while cooling systems quietly ensured everything stayed within safe operating limits. Most enterprise environments operate…",
+      "publishedAt": "2026-08-06T12:00:00.000Z"
+    },
+    {
+      "slug": "4f4e67e509edb3c0d493c0d4",
+      "guid": "https://thehackernews.com/2026/08/cryptojs-weak-rng-behind-57-million-in.html",
+      "title": "CryptoJS Weak RNG Behind $5.7 Million in Drains Affects Five Crypto Wallet Apps",
+      "link": "https://thehackernews.com/2026/08/cryptojs-weak-rng-behind-57-million-in.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "Coinspect has identified CryptoJS.lib.WordArray.random() as the weak random number generator behind the Ill Bloom wallet drains. Introduced in the JavaScript cryptography library 12 years ago, the function supplied weak entropy that affected wallet apps used to generate recovery…",
+      "publishedAt": "2026-08-06T11:49:48.000Z"
+    },
+    {
+      "slug": "73f30e8ce33026a3376e8b9c",
+      "guid": "https://thehackernews.com/2026/08/webkit-proxy-bypasses-can-expose-real.html",
+      "title": "Apple iCloud Private Relay Can Expose Real IPs Through WebKit Proxy Bypasses",
+      "link": "https://thehackernews.com/2026/08/webkit-proxy-bypasses-can-expose-real.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "Cybersecurity researchers have disclosed a security issue with Apple's iCloud Private Relay tool that can expose a user's real IP address. Introduced with iOS 15, iCloud Private Relay employs a dual-hop architecture to ensure users' privacy by routing their Safari web traffic th…",
+      "publishedAt": "2026-08-06T11:33:08.000Z"
+    },
+    {
+      "slug": "376accbc001ddf742f0da6f6",
+      "guid": "https://thehackernews.com/2026/08/ai-recommendation-poisoning-how-ask-ai.html",
+      "title": "AI Recommendation Poisoning: How \"Ask AI\" Buttons Silently Alter LLM Memory",
+      "link": "https://thehackernews.com/2026/08/ai-recommendation-poisoning-how-ask-ai.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "A new class of prompt injection is spreading across commercial websites. It requires no malware, no stolen credentials, and no zero-day exploit. It abuses a standard feature built into almost every major AI assistant: pre-filled deep links. We observed production websites embedd…",
+      "publishedAt": "2026-08-06T11:30:00.000Z"
+    },
+    {
+      "slug": "926b046bebb4f9b9035b7b40",
+      "guid": "https://www.schneier.com/?p=72376",
+      "title": "Adversarial Clothing Designed to Fool Facial Recognition Systems",
+      "link": "https://www.schneier.com/blog/archives/2026/08/adversarial-clothing-designed-to-fool-facial-recognition-systems.html",
+      "source": "Schneier on Security",
+      "sourceUrl": "https://www.schneier.com/feed/",
+      "summary": "There are many companies manufacturing adversarial clothing designed to confuse facial recognition systems. It’s a cool idea, but I worry that it’s mostly security theater: “Our patterns play with that chaos, confuse algorithms and make it way harder to pin you down,” he said. B…",
+      "publishedAt": "2026-08-06T11:04:51.000Z"
+    },
+    {
+      "slug": "4213250a3844bf70ea18a5f9",
+      "guid": "https://www.cio.com/article/4205732/structural-agile-why-fast-delivery-quietly-loses-its-meaning.html",
+      "title": "Structural agile: Why fast delivery quietly loses its meaning",
+      "link": "https://www.cio.com/article/4205732/structural-agile-why-fast-delivery-quietly-loses-its-meaning.html",
+      "source": "CIO",
+      "sourceUrl": "https://www.cio.com/feed/",
+      "summary": "Open the history tab of any epic that has been alive for more than two quarters. Go ahead, pick one. Count the edits. Somewhere around edit 11, the description was rewritten to satisfy a stakeholder who has since changed roles. Around edit 19, the scope was trimmed to protect a …",
+      "publishedAt": "2026-08-06T11:00:00.000Z"
+    },
+    {
+      "slug": "a15ab079dccc802b93e06e2f",
+      "guid": "https://grahamcluley.com/?p=17351881",
+      "title": "Apple’s bug bounty program is drowning in so much AI slop, it is in danger of missing serious exploits",
+      "link": "https://www.bitdefender.com/en-us/blog/hotforsecurity/apple-bug-bounty-ai-missing-exploits",
+      "source": "Graham Cluley",
+      "sourceUrl": "https://grahamcluley.com/feed/",
+      "summary": "Apple has imposed strict new submission limits on its bug bounty portal after finding itself overwhelmed by low-quality, AI generated vulnerability reports - many of which were found to be describing security flaws that simply didn't exist. Read more in my article on the Hot for…",
+      "publishedAt": "2026-08-06T10:26:02.000Z"
+    },
+    {
+      "slug": "67c61bb13b1a856f1127e7e0",
+      "guid": "https://www.cio.com/article/4205856/7-use-cases-for-leveraging-ai-in-the-physical-world.html",
+      "title": "7 use cases for leveraging AI in the physical world",
+      "link": "https://www.cio.com/article/4205856/7-use-cases-for-leveraging-ai-in-the-physical-world.html",
+      "source": "CIO",
+      "sourceUrl": "https://www.cio.com/feed/",
+      "summary": "The next big AI wave won’t be a chatbot in your laptop, or an agent that works behind the scenes to turn meeting notes into project tickets, but AI that takes control of devices that move and interact with the environment. Physical AI can be defined as the integration of AI into…",
+      "publishedAt": "2026-08-06T10:01:00.000Z"
+    },
+    {
+      "slug": "28cb305ea21da4f716a8d689",
+      "guid": "https://www.cio.com/article/4205726/algorithms-arent-enough-why-factories-need-an-ai-reasoning-layer.html",
+      "title": "Algorithms aren’t enough: Why factories need an AI reasoning layer",
+      "link": "https://www.cio.com/article/4205726/algorithms-arent-enough-why-factories-need-an-ai-reasoning-layer.html",
+      "source": "CIO",
+      "sourceUrl": "https://www.cio.com/feed/",
+      "summary": "The scheduling fallacy and the shift to autonomy Walk onto almost any manufacturing shop floor, and you will witness the same systemic vulnerability: a brilliantly engineered, multi-million-dollar Advanced Planning and Scheduling (APS) system rendered completely useless by a sin…",
+      "publishedAt": "2026-08-06T10:00:00.000Z"
+    },
+    {
+      "slug": "711c2e140f494ac9f954b17e",
+      "guid": "https://www.cio.com/article/4203063/how-ai-takes-flight-at-ge-aerospace.html",
+      "title": "How AI takes flight at GE Aerospace",
+      "link": "https://www.cio.com/article/4203063/how-ai-takes-flight-at-ge-aerospace.html",
+      "source": "CIO",
+      "sourceUrl": "https://www.cio.com/feed/",
+      "summary": "The race to adopt AI has left many CIOs wrestling with a fundamental question: How do you move faster without introducing unacceptable risk? Few leaders face that challenge at a higher level than David Burns, CIO of GE Aerospace. Building on the company’s decade of experience ap…",
+      "publishedAt": "2026-08-06T09:30:00.000Z"
+    },
+    {
+      "slug": "4c338a28ee4465db8153a5a7",
+      "guid": "https://thehackernews.com/2026/08/attackers-compile-khunt-inside-oracle.html",
+      "title": "Attackers Compile khunt Inside Oracle to Turn SQL Injection Into Windows SYSTEM Access",
+      "link": "https://thehackernews.com/2026/08/attackers-compile-khunt-inside-oracle.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "Attackers broke into an organization's Oracle database through a SQL injection flaw in a public-facing web application, then installed a post-exploitation toolkit without writing an executable to disk. They fed Java source code to the database, let Oracle compile it into stored …",
+      "publishedAt": "2026-08-06T09:19:23.000Z"
+    },
+    {
+      "slug": "12b480be69cb9b9c6ceac8d8",
+      "guid": "https://www.cio.com/article/4205720/why-ai-roi-metrics-are-measuring-the-wrong-thing.html",
+      "title": "Why AI ROI metrics are measuring the wrong thing",
+      "link": "https://www.cio.com/article/4205720/why-ai-roi-metrics-are-measuring-the-wrong-thing.html",
+      "source": "CIO",
+      "sourceUrl": "https://www.cio.com/feed/",
+      "summary": "The loudest conversation in business right now is about how much value AI actually generates. Over the last year, AI has moved from a side experiment to a strategic priority. It has its own budget line, its own place on the board’s agenda and its own pressure to show results. Ev…",
+      "publishedAt": "2026-08-06T09:00:00.000Z"
+    },
+    {
+      "slug": "f0d571f1a1d49753b19f208c",
+      "guid": "https://thehackernews.com/2026/08/aws-google-and-vercel-patch-agent-flaws.html",
+      "title": "AWS, Google, and Vercel Agent Flaws Let Attackers Trigger Tools Without Running the Model",
+      "link": "https://thehackernews.com/2026/08/aws-google-and-vercel-patch-agent-flaws.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "Security flaws in agent infrastructure from Amazon Web Services (AWS), Google, and Vercel let untrusted or forged instructions reach an agent's tools with no check that a model turn had authorized them. In several of the attack paths, the model never ran at all, so system prompt…",
+      "publishedAt": "2026-08-06T08:57:30.000Z"
+    },
+    {
+      "slug": "869ad889d89225fb691b8dbf",
+      "guid": "https://thehackernews.com/2026/08/chinese-made-zbtlink-routers-ship-with.html",
+      "title": "Chinese-Made Zbtlink Routers Ship With Backdoor That Opens Unauthenticated Root Shells",
+      "link": "https://thehackernews.com/2026/08/chinese-made-zbtlink-routers-ship-with.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "Cybersecurity researchers have disclosed details of a \"factory-shipped backdoor\" implanted in at least 20 Chinese router models from Zbtlink. According to a new report from VulnCheck, the implant appears in all 21 firmware images currently available from Zbtlink that span more t…",
+      "publishedAt": "2026-08-06T08:05:22.000Z"
+    },
+    {
+      "slug": "ee969749e0fc37aac1b848cf",
+      "guid": "https://thehackernews.com/2026/08/ransom-cartel-creator-gets-16-years-in.html",
+      "title": "Ransom Cartel Creator Gets 16 Years in Prison for Operating Ransomware-as-a-Service",
+      "link": "https://thehackernews.com/2026/08/ransom-cartel-creator-gets-16-years-in.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "A federal judge in Alexandria, Virginia, sentenced Maksim Silnikau to 16 years in prison on August 5 for creating and running Ransom Cartel, the ransomware-as-a-service operation he stood up in 2021. Between 2021 and 2023, Ransom Cartel conspirators attacked at least 18 companie…",
+      "publishedAt": "2026-08-06T07:19:54.000Z"
+    },
+    {
+      "slug": "0024bf7a69c1bf7d874e6490",
+      "guid": "https://thehackernews.com/2026/08/cisa-flags-teamcity-cve-2026-63077-rce.html",
+      "title": "CISA Flags TeamCity CVE-2026-63077 RCE Flaw Under Active Exploitation in the Wild",
+      "link": "https://thehackernews.com/2026/08/cisa-flags-teamcity-cve-2026-63077-rce.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "A newly patched security flaw impacting on-premise versions of JetBrains TeamCity has come under active exploitation in the wild, according to the U.S. Cybersecurity and Infrastructure Security Agency (CISA). The vulnerability in question is CVE-2026-63077 (CVSS score: 9.8), a c…",
+      "publishedAt": "2026-08-06T06:51:43.000Z"
+    },
     {
       "slug": "b41d695ada7747c6903de3ba",
       "guid": "https://thehackernews.com/2026/08/snowflake-hacker-pleads-guilty-over.html",
@@ -464,16 +784,6 @@
       "publishedAt": "2026-08-04T13:00:00.000Z"
     },
     {
-      "slug": "f674f08b59f82867c9c394d1",
-      "guid": "https://orca.security/?p=74171",
-      "title": "Reasoning-Driven Full Repository Code Security with Orca’s Code Security Auditor",
-      "link": "https://orca.security/resources/blog/ai-code-security-auditor-red-agent/",
-      "source": "Orca Security Blog",
-      "sourceUrl": "https://orca.security/resources/blog/feed/",
-      "summary": "Key Takeaways How AI Code Security Is Changing Software Development Code ships faster than it used to, and AI is a big part of why. Developers lean on AI assistants to write more of it, review less of it line by line, and merge on a schedule no human team could keep up with unas…",
-      "publishedAt": "2026-08-04T12:50:00.000Z"
-    },
-    {
       "slug": "44ecaac94b41bbc85b10c300",
       "guid": "https://www.cio.com/article/4204575/why-meta-agents-must-become-the-economic-intelligence-layer-of-the-agentic-enterprise.html",
       "title": "Why meta agents must become the economic intelligence layer of the agentic enterprise",
@@ -544,26 +854,6 @@
       "publishedAt": "2026-08-04T10:01:00.000Z"
     },
     {
-      "slug": "587c56f79d92ee4fe3f0bb07",
-      "guid": "https://www.cio.com/article/4204565/why-ai-infrastructure-needs-a-new-operating-model.html",
-      "title": "Why AI infrastructure needs a new operating model",
-      "link": "https://www.cio.com/article/4204565/why-ai-infrastructure-needs-a-new-operating-model.html",
-      "source": "CIO",
-      "sourceUrl": "https://www.cio.com/feed/",
-      "summary": "The next AI infrastructure crisis may come from unmanaged inference capacity. For the past several years, the AI infrastructure conversation centered on one question: how do we get more compute? That made sense. Enterprises needed GPUs, cloud capacity, foundation models and room…",
-      "publishedAt": "2026-08-04T10:00:00.000Z"
-    },
-    {
-      "slug": "10d68ffee94091429cbaddae",
-      "guid": "https://www.cio.com/article/4204089/the-risk-of-ai-agents-for-the-cio-loss-of-perspective.html",
-      "title": "Don’t let your company be fooled by AI efficiency",
-      "link": "https://www.cio.com/article/4204089/the-risk-of-ai-agents-for-the-cio-loss-of-perspective.html",
-      "source": "CIO",
-      "sourceUrl": "https://www.cio.com/feed/",
-      "summary": "The scenario isn’t hypothetical: Some of the companies that went furthest in replacing people with AI have had to backtrack. For example, in 2024 Klarna became a European benchmark for what AI could do for a company. Its AI assistant handled two-thirds of customer service chats …",
-      "publishedAt": "2026-08-04T09:30:00.000Z"
-    },
-    {
       "slug": "79321c6c50ff9d2e259488a0",
       "guid": "https://thehackernews.com/2026/08/doublecup-uses-clickfix-and-cached-pngs.html",
       "title": "DOUBLECUP Uses ClickFix and Cached PNGs to Deliver CountLoader and DeviceManager RAT",
@@ -582,16 +872,6 @@
       "sourceUrl": "https://grahamcluley.com/feed/",
       "summary": "Do you hold cryptocurrency? Have you received a letter telling you that you must register with a so-called \"Digital Asset Compliance Portal\"? If so, it's time to hit the brakes, because it sounds like someone is trying to scam you. Read more in my article on the Hot for Security…",
       "publishedAt": "2026-08-04T09:02:46.000Z"
-    },
-    {
-      "slug": "bb48c18b7a8b916b6c471897",
-      "guid": "https://www.cio.com/article/4204554/the-ai-assurance-gap-cios-need-proof-that-agentic-ai-controls-actually-work.html",
-      "title": "The AI assurance gap: CIOs need proof that agentic AI controls actually work",
-      "link": "https://www.cio.com/article/4204554/the-ai-assurance-gap-cios-need-proof-that-agentic-ai-controls-actually-work.html",
-      "source": "CIO",
-      "sourceUrl": "https://www.cio.com/feed/",
-      "summary": "Enterprises have spent decades learning how to audit people and software. Agentic AI creates a third category: systems that interpret instructions, call tools and act across workflows without a mature assurance model built around them. In my work as a leader and investor across …",
-      "publishedAt": "2026-08-04T09:00:00.000Z"
     },
     {
       "slug": "da4061a77e664dfa9d5b3393",
@@ -714,16 +994,6 @@
       "publishedAt": "2026-08-03T17:02:46.000Z"
     },
     {
-      "slug": "8cbc5294f78299856ac071f4",
-      "guid": "https://www.cio.com/article/4204537/moburst-unveils-ai-driven-mobile-growth-playbook.html",
-      "title": "Moburst Unveils AI-Driven Mobile Growth Playbook",
-      "link": "https://www.cio.com/article/4204537/moburst-unveils-ai-driven-mobile-growth-playbook.html",
-      "source": "CIO",
-      "sourceUrl": "https://www.cio.com/feed/",
-      "summary": "Moburst, a mobile growth marketing agency, has formalized a mobile-specific approach to Answer Engine Optimization, aimed at helping app publishers get recommended by AI assistants such as ChatGPT, Perplexity, and Google’s AI Overviews, in addition to ranking inside the App Stor…",
-      "publishedAt": "2026-08-03T16:37:34.000Z"
-    },
-    {
       "slug": "5264422e426d2ea1d9b9b3c8",
       "guid": "https://thehackernews.com/2026/08/google-password-manager-attacks-could.html",
       "title": "Google Password Manager Attacks Could Let Malware Hijack Passkey-Protected Accounts",
@@ -732,276 +1002,6 @@
       "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
       "summary": "Malware running as an ordinary user on a Windows machine can sign into a victim's passkey-protected accounts without a fingerprint, a PIN, or anything at all appearing on the victim's screen. Unit 42 detailed three attack paths against Chrome's Google Password Manager cloud auth…",
       "publishedAt": "2026-08-03T16:24:47.000Z"
-    },
-    {
-      "slug": "5c95936bd15988709385d25b",
-      "guid": "https://thehackernews.com/2026/08/inc-ransomware-emerges-as-dominant.html",
-      "title": "INC Ransomware Emerges as Dominant Actor Exploiting SonicWall SMA 1000 Flaws",
-      "link": "https://thehackernews.com/2026/08/inc-ransomware-emerges-as-dominant.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "The INC Ransomware operation has emerged as the \"dominant threat actor\" exploiting the recently disclosed security flaws in SonicWall Secure Mobile Access (SMA) 1000 series VPN appliances. In a report published over the weekend, Resecurity said it observed the INC Ransomware acc…",
-      "publishedAt": "2026-08-03T16:15:13.000Z"
-    },
-    {
-      "slug": "506af16cb0e064d46f7ad99f",
-      "guid": "https://www.darkreading.com/cyberattacks-data-breaches/chinese-actor-deepseek-ai-agent-attack-security-firm",
-      "title": "Chinese Actor Weaponizes Deepseek AI Agent to Attack Security Firm",
-      "link": "https://www.darkreading.com/cyberattacks-data-breaches/chinese-actor-deepseek-ai-agent-attack-security-firm",
-      "source": "Dark Reading",
-      "sourceUrl": "https://www.darkreading.com/rss.xml",
-      "summary": "Researchers intercepted and investigated the model, which was attempting to compromise more than 1,200 hosts for proxyjacking to launch further attacks.",
-      "publishedAt": "2026-08-03T15:42:18.000Z"
-    },
-    {
-      "slug": "05bc9225a21d8a356b799bc8",
-      "guid": "https://thehackernews.com/2026/08/weekly-recap-rogue-ai-models-88m.html",
-      "title": "⚡ Weekly Recap: Rogue AI Models, $88M Bitcoin Theft, Water-System Attacks and Dangling DNS Hijacks",
-      "link": "https://thehackernews.com/2026/08/weekly-recap-rogue-ai-models-88m.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "This week kept coming back to permission. A model crossed a boundary. A wallet trusted bad randomness. Webmail kept an intruder around. Public systems, package feeds, hotel networks, and login flows all gave away more than intended. Some of it was clever. Most of it was just acc…",
-      "publishedAt": "2026-08-03T14:03:11.000Z"
-    },
-    {
-      "slug": "0ed79529e1300b03b0b63040",
-      "guid": "https://www.darkreading.com/cybersecurity-operations/fix-for-ciso-fatigue",
-      "title": "Is There Really a Fix for CISO Fatigue?",
-      "link": "https://www.darkreading.com/cybersecurity-operations/fix-for-ciso-fatigue",
-      "source": "Dark Reading",
-      "sourceUrl": "https://www.darkreading.com/rss.xml",
-      "summary": "Accountability without any real authority is driving CISO burnout, and organizations need to take notice.",
-      "publishedAt": "2026-08-03T14:00:00.000Z"
-    },
-    {
-      "slug": "5576a0f9031367ba755870b3",
-      "guid": "https://www.cio.com/article/4203577/the-socs-ai-maturity-model.html",
-      "title": "The SOC’s AI maturity model",
-      "link": "https://www.cio.com/article/4203577/the-socs-ai-maturity-model.html",
-      "source": "CIO",
-      "sourceUrl": "https://www.cio.com/feed/",
-      "summary": "The path to next-generation AI Security Operations Centers (SOCs), where AI works hand-in-hand with human analysts, is paved with ambitious goals. This ideal SOC incorporates AI across every task to stop fast-moving threats. But a fully AI-powered SOC isn’t a single deployment o…",
-      "publishedAt": "2026-08-03T13:42:26.000Z"
-    },
-    {
-      "slug": "6de2c42368974b9e7448ed5e",
-      "guid": "https://www.cio.com/article/4204442/sap-dodges-german-antitrust-investigation-over-data-extraction.html",
-      "title": "SAP dodges German antitrust investigation over data extraction",
-      "link": "https://www.cio.com/article/4204442/sap-dodges-german-antitrust-investigation-over-data-extraction.html",
-      "source": "CIO",
-      "sourceUrl": "https://www.cio.com/feed/",
-      "summary": "SAP is not unfairly preventing enterprises from extracting their data from its systems for use with competitors’ applications, the German Federal Cartel Office (Bundeskartellamt) concluded Thursday after a preliminary investigation. The Bundeskartellamt does not currently intend…",
-      "publishedAt": "2026-08-03T13:02:15.000Z"
-    },
-    {
-      "slug": "e268f4976f97d5d3590f7635",
-      "guid": "https://orca.security/?p=74157",
-      "title": "Introducing AI AppGen Security to Protect the New Generation of AI Builders",
-      "link": "https://orca.security/resources/blog/introducing-ai-appgen-security/",
-      "source": "Orca Security Blog",
-      "sourceUrl": "https://orca.security/resources/blog/feed/",
-      "summary": "Thirty years ago, software developers wrote code line by line, and a handful of them per company shipped anything to production. Ten years ago, DevOps engineers automated that pipeline and multiplied what each of them could deploy. Three years ago, AI coding assistants—GitHub Co…",
-      "publishedAt": "2026-08-03T12:50:00.000Z"
-    },
-    {
-      "slug": "4550d87641477afc4f8ba899",
-      "guid": "https://www.cio.com/article/4203967/companies-winning-with-ai-operate-differently-heres-how.html",
-      "title": "Companies winning with AI operate differently. Here’s how.",
-      "link": "https://www.cio.com/article/4203967/companies-winning-with-ai-operate-differently-heres-how.html",
-      "source": "CIO",
-      "sourceUrl": "https://www.cio.com/feed/",
-      "summary": "The first phase of the AI race was largely about access. Companies rushed to adopt tools, launch pilots, and demonstrate that they were moving quickly enough to keep pace with the market. In many organizations, simply showing momentum became the strategy. Leadership teams wanted…",
-      "publishedAt": "2026-08-03T12:00:00.000Z"
-    },
-    {
-      "slug": "88249c3d8da86c13001f929b",
-      "guid": "https://www.cio.com/article/4204035/ais-measurement-crisis-is-over-the-translation-crisis-is-next.html",
-      "title": "AI’s measurement crisis is over. The translation crisis is next",
-      "link": "https://www.cio.com/article/4204035/ais-measurement-crisis-is-over-the-translation-crisis-is-next.html",
-      "source": "CIO",
-      "sourceUrl": "https://www.cio.com/feed/",
-      "summary": "Last fall, you couldn’t open a business publication without tripping over some version of the same headline: where is the ROI for AI? The anchor for most of that coverage was MIT’s “GenAI Divide” report, which found that despite $30 to 40 billion in enterprise generative AI spen…",
-      "publishedAt": "2026-08-03T12:00:00.000Z"
-    },
-    {
-      "slug": "02e9c00b5f52b66a75cd9ac9",
-      "guid": "https://thehackernews.com/2026/08/fomo-in-soc-where-ai-platforms-like.html",
-      "title": "FOMO in the SOC: Where AI Platforms like Claude Actually Fit",
-      "link": "https://thehackernews.com/2026/08/fomo-in-soc-where-ai-platforms-like.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "AI is moving incredibly fast, and every security leader is feeling the pressure to keep up. AI platforms like Claude, Codex and Cursor are already helping security teams write detections, investigate alerts, summarize incidents, and automate repetitive work. The conversation has…",
-      "publishedAt": "2026-08-03T11:30:00.000Z"
-    },
-    {
-      "slug": "b2773a1af189ff5f7d434425",
-      "guid": "https://www.cio.com/article/4204033/the-missing-role-in-every-enterprise-ai-strategy-the-analytics-engineer.html",
-      "title": "The missing role in every enterprise AI strategy: The analytics engineer",
-      "link": "https://www.cio.com/article/4204033/the-missing-role-in-every-enterprise-ai-strategy-the-analytics-engineer.html",
-      "source": "CIO",
-      "sourceUrl": "https://www.cio.com/feed/",
-      "summary": "Every enterprise AI strategy these days has mostly the same core cast: Software engineers who log online events data, data engineers who move data from online to offline data warehouses, data scientists who build machine learning models, AI/ML engineers who deploy these models t…",
-      "publishedAt": "2026-08-03T11:00:00.000Z"
-    },
-    {
-      "slug": "8f03bf579ace704a7a38c7e7",
-      "guid": "https://thehackernews.com/2026/08/chinese-threat-actor-uses-leaked.html",
-      "title": "Chinese Threat Actor Uses Leaked DarkSword Kit to Deploy GHOSTBLADE on iOS",
-      "link": "https://thehackernews.com/2026/08/chinese-threat-actor-uses-leaked.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "An unknown Chinese-speaking threat actor has been observed running a campaign targeting Apple iOS devices by leveraging a publicly leaked version of the DarkSword exploit kit. Attack surface management platform Censys said it identified the threat actor running more than 100 web…",
-      "publishedAt": "2026-08-03T10:49:06.000Z"
-    },
-    {
-      "slug": "88cb909a24f5d5f44ac1bcf1",
-      "guid": "https://www.schneier.com/?p=72422",
-      "title": "The OpenAI Hack Shows the Genie Is Out of the Bottle",
-      "link": "https://www.schneier.com/blog/archives/2026/08/the-openai-hack-shows-the-genie-is-out-of-the-bottle.html",
-      "source": "Schneier on Security",
-      "sourceUrl": "https://www.schneier.com/feed/",
-      "summary": "This essay originally appeared in Foreign Policy. Earlier this month, two of OpenAI’s models broke out of their containment sandbox and attacked another AI company. The story is kind of wild. OpenAI was running security tests on two of its models: GPT-5.6 Sol and an unreleased m…",
-      "publishedAt": "2026-08-03T10:47:47.000Z"
-    },
-    {
-      "slug": "a71a79482b5b08780929b605",
-      "guid": "https://thehackernews.com/2026/08/pnld-breach-exposes-uk-police-and.html",
-      "title": "PNLD Breach Exposes U.K. Police and Government Contact Details on Dark Web",
-      "link": "https://thehackernews.com/2026/08/pnld-breach-exposes-uk-police-and.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "The Police National Legal Database (PNLD) has confirmed that police, government and customer contact information was compromised and published on the dark web. The data included names, organisations and work email addresses belonging to police officers, police staff, criminal ju…",
-      "publishedAt": "2026-08-03T09:13:56.000Z"
-    },
-    {
-      "slug": "8fe8040350542cd0b3fdfc8e",
-      "guid": "https://danielmiessler.com/blog/the-ai-native-company",
-      "title": "The AI-Native Company",
-      "link": "https://danielmiessler.com/blog/the-ai-native-company?utm_source=rss&utm_medium=feed&utm_campaign=website",
-      "source": "Daniel Miessler",
-      "sourceUrl": "https://danielmiessler.com/feed.rss",
-      "summary": "Human architects reconstructing a company into a transparent AI-native operating system/images/the-ai-native-company.webp/images/the-ai-native-company.webp Heading into Black Hat / DEF CON this week I think the biggest idea in tech right now isn’t the attacker vs. defender quest…",
-      "publishedAt": "2026-08-03T08:48:25.000Z"
-    },
-    {
-      "slug": "000b4c51e3b2ed33ec252758",
-      "guid": "https://thehackernews.com/2026/08/thermo-fisher-patches-flaw-that-could.html",
-      "title": "Thermo Fisher Patches Flaw That Could Make DNA File Tampering Nearly Undetectable",
-      "link": "https://thehackernews.com/2026/08/thermo-fisher-patches-flaw-that-could.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "Thermo Fisher Scientific has patched a flaw in select Applied Biosystems human identification software that could allow data files to be altered before analysis software loads them. The vendor's July 31 security bulletin says nearly undetectable changes to .fsa and .hid outputs …",
-      "publishedAt": "2026-08-03T08:05:30.000Z"
-    },
-    {
-      "slug": "44aca34a590464aee2812459",
-      "guid": "https://thehackernews.com/2026/08/n-able-says-attackers-take-over-n.html",
-      "title": "N-able Says Attackers Take Over N-central Servers After Initial Fix Proves Incomplete",
-      "link": "https://thehackernews.com/2026/08/n-able-says-attackers-take-over-n.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "N-able said attackers exploited an authentication bypass in N-central to gain remote administrative access and reach the customer systems managed through those servers. Its first fix was incomplete. CVE-2026-18577 affects N-central builds prior to 2026.3.1.7. N-able shipped buil…",
-      "publishedAt": "2026-08-03T06:41:46.000Z"
-    },
-    {
-      "slug": "0a3d3912cd46c461b65c4055",
-      "guid": "https://thehackernews.com/2026/08/hugging-face-diffusers-flaws-could-let.html",
-      "title": "Hugging Face Diffusers Flaws Could Let Model Repositories Execute Arbitrary Code",
-      "link": "https://thehackernews.com/2026/08/hugging-face-diffusers-flaws-could-let.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "Three high-severity security flaws have been disclosed in Hugging Face's Diffusers library that could allow crafted model repositories to stealthily execute arbitrary code on machines that load it, opening the artificial intelligence (AI) supply chain to security risk. \"These vu…",
-      "publishedAt": "2026-08-03T06:40:31.000Z"
-    },
-    {
-      "slug": "f0e370adb6a9630606f7abed",
-      "guid": "6a6af72861f3fc00018ce113",
-      "title": "Welcoming the Nepalese Government to Have I Been Pwned",
-      "link": "https://www.troyhunt.com/welcoming-the-nepalese-government-to-have-i-been-pwned/",
-      "source": "Troy Hunt",
-      "sourceUrl": "https://www.troyhunt.com/rss/",
-      "summary": "Today, we welcome the 47th government onboarded to Have I Been Pwned’s free gov service: Nepal. Their National Cyber Security Centre now has access to monitor Nepalese government domains against the data in HIBP. This gives the NCSC the ability to identify exposure across govern…",
-      "publishedAt": "2026-08-03T06:38:05.000Z"
-    },
-    {
-      "slug": "32ec5de2d2ae4364f42bcdf4",
-      "guid": "6a6fbac6ef243b000134850c",
-      "title": "Weekly Update 515",
-      "link": "https://www.troyhunt.com/weekly-update-515/",
-      "source": "Troy Hunt",
-      "sourceUrl": "https://www.troyhunt.com/rss/",
-      "summary": "Apparently, Aussies are so obsessed with coffee that it's referred to as the coffee capital of the world down here (some bits, at least). \"But what about Italy?\" people ask. Having spent a lot of time in a lot of Italy, no, it's just",
-      "publishedAt": "2026-08-03T00:07:14.000Z"
-    },
-    {
-      "slug": "33d64b684b386f21f4b0aac2",
-      "guid": "https://thehackernews.com/2026/08/coldcard-hardware-wallet-flaw-linked-to.html",
-      "title": "Coldcard Hardware Wallet Flaw Linked to $70 Million Bitcoin Theft in 41 Minutes",
-      "link": "https://thehackernews.com/2026/08/coldcard-hardware-wallet-flaw-linked-to.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "An attacker drained 1,196 Bitcoin addresses in 41 minutes on July 30, taking 1,082.65 BTC worth about $70.2 million at the time. Galaxy Research mapped the sweep and tied it to a firmware flaw in Coldcard, the Bitcoin-only hardware wallet made by Canadian firm Coinkite. A March …",
-      "publishedAt": "2026-08-01T17:17:22.000Z"
-    },
-    {
-      "slug": "0fa86a6b2f57fc9d8dcf3f8c",
-      "guid": "https://thehackernews.com/2026/08/hackers-poison-adform-script-to-swap.html",
-      "title": "Hackers Poison Adform Script to Swap Crypto Wallet Addresses Across Customer Sites",
-      "link": "https://thehackernews.com/2026/08/hackers-poison-adform-script-to-swap.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "Attackers modified a JavaScript file served by advertising technology company Adform, turning it into a browser-side tool that rewrites cryptocurrency wallet addresses. Adform detected the incident on July 27, 2026, removed the malicious code, notified affected clients, and repo…",
-      "publishedAt": "2026-08-01T09:03:07.000Z"
-    },
-    {
-      "slug": "097fcbe5b08ca7e56f3460f2",
-      "guid": "https://thehackernews.com/2026/08/adobe-campaign-classic-cvss-100-flaw.html",
-      "title": "Adobe Campaign Classic CVSS 10.0 Flaw Could Run Code Without User Interaction",
-      "link": "https://thehackernews.com/2026/08/adobe-campaign-classic-cvss-100-flaw.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "Adobe has released security updates to address a maximum-severity security flaw in Campaign Classic (ACC), its enterprise-focused marketing automation platform, that could result in arbitrary code execution. The vulnerability, tracked as CVE-2026-48449, carries a severity score …",
-      "publishedAt": "2026-08-01T07:12:42.000Z"
-    },
-    {
-      "slug": "ef832fb7175ff4cbeb8653d6",
-      "guid": "https://thehackernews.com/2026/08/hijacked-hotel-wi-fi-pushes-fake.html",
-      "title": "Hijacked Hotel Wi-Fi Pushes Fake Updates to Deliver Surveillance Malware",
-      "link": "https://thehackernews.com/2026/08/hijacked-hotel-wi-fi-pushes-fake.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "A fake browser update served over hijacked hotel Wi-Fi has been used to deliver CornFlake, a remote access trojan (RAT) that can capture webcam images, microphone audio, and keystrokes, Microsoft said in its latest report. Researchers track the operation as CaptiveCrunch and att…",
-      "publishedAt": "2026-08-01T06:29:05.000Z"
-    },
-    {
-      "slug": "71cf681166236cb4d64391e4",
-      "guid": "https://danielmiessler.com/blog/ail-badge-examples",
-      "title": "AIL Badges",
-      "link": "https://danielmiessler.com/blog/ail-badge-examples?utm_source=rss&utm_medium=feed&utm_campaign=website",
-      "source": "Daniel Miessler",
-      "sourceUrl": "https://danielmiessler.com/feed.rss",
-      "summary": "AIL badge scale showing levels zero through five/images/ail-scale-chart.webp/images/ail-scale-chart.webp AI Influence Level/blog/ai-influence-level-ail has been a text label since 2023. A line at the bottom of a post saying how much of it I wrote and how much the AI did. Text at…",
-      "publishedAt": "2026-07-31T22:30:00.000Z"
-    },
-    {
-      "slug": "24dcbc17beb53eae9e06827b",
-      "guid": "https://www.schneier.com/?p=72308",
-      "title": "Friday Squid Blogging: Squid Helps Discover New Marine Species",
-      "link": "https://www.schneier.com/blog/archives/2026/07/friday-squid-blogging-squid-helps-discover-new-marine-species.html",
-      "source": "Schneier on Security",
-      "sourceUrl": "https://www.schneier.com/feed/",
-      "summary": "The Squid is a new scientific machine: One of the technological breakthroughs was the onboard use of a spinning wheel confocal microscope, nicknamed the Squid, which uses lasers to scan microscopic details of how organisms are put together. “That opens up a whole new world of ex…",
-      "publishedAt": "2026-07-31T21:06:46.000Z"
-    },
-    {
-      "slug": "63ae4bfd895ffdf8f579a254",
-      "guid": "https://thehackernews.com/2026/08/suspected-chinese-speaking-hackers.html",
-      "title": "Suspected Chinese-Speaking Hackers Target Central Asian Governments With OctLurk and SilkLurk",
-      "link": "https://thehackernews.com/2026/08/suspected-chinese-speaking-hackers.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "A Chinese-speaking threat actor is suspected to be behind a fresh wave of cyber attacks targeting government organizations mainly located in Central Asia, including Afghanistan, Kyrgyzstan, Tajikistan, Uzbekistan, Kazakhstan, and the Syrian Arab Republic, since January 2025. The…",
-      "publishedAt": "2026-07-31T18:52:04.000Z"
     }
   ]
 }

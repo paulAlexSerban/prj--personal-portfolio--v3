@@ -1,8 +1,58 @@
 {
   "category": "javascript",
   "label": "JavaScript",
-  "fetchedAt": "2026-08-06T08:09:17.560Z",
+  "fetchedAt": "2026-08-07T06:55:56.308Z",
   "items": [
+    {
+      "slug": "5486b98b98f9dae34270afab",
+      "guid": "https://flaviocopes.com/i-launched-hostingpicker/",
+      "title": "I launched HostingPicker",
+      "link": "https://flaviocopes.com/i-launched-hostingpicker/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "I launched HostingPicker, a free hosting advisor with hand-checked prices, honest tradeoffs, and recommendations based on your project.",
+      "publishedAt": "2026-08-07T06:30:00.000Z"
+    },
+    {
+      "slug": "0905785ce16509e09db8c94c",
+      "guid": "https://flaviocopes.com/bun/",
+      "title": "Bun: a faster JavaScript runtime",
+      "link": "https://flaviocopes.com/bun/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Bun is a fast JavaScript runtime with built-in TypeScript, a package manager, and a test runner. Install it, run your first program, and explore what it offers.",
+      "publishedAt": "2026-08-07T05:00:00.000Z"
+    },
+    {
+      "slug": "b009301fef7209fdae5b8399",
+      "guid": "https://flaviocopes.com/robots-txt-ai-crawlers/",
+      "title": "robots.txt in the age of AI crawlers",
+      "link": "https://flaviocopes.com/robots-txt-ai-crawlers/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "A robots.txt refresher plus the new part: GPTBot, ClaudeBot, PerplexityBot and friends, blocking AI training vs AI search, and the tradeoffs.",
+      "publishedAt": "2026-08-07T05:00:00.000Z"
+    },
+    {
+      "slug": "5a8bd8f8be7bcc4329d9f2a3",
+      "guid": "https://flaviocopes.com/track-transactional-email-delivery/",
+      "title": "Track transactional email delivery",
+      "link": "https://flaviocopes.com/track-transactional-email-delivery/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Track accepted, delivered, deferred, bounced, and rejected email states by correlating provider events with your own delivery records.",
+      "publishedAt": "2026-08-06T13:00:00.000Z"
+    },
+    {
+      "slug": "04bad6919e0694f30f16b66d",
+      "guid": "https://flaviocopes.com/i-launched-plausible-automation-toolkit/",
+      "title": "I launched Plausible Automation Toolkit",
+      "link": "https://flaviocopes.com/i-launched-plausible-automation-toolkit/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "I launched a macOS CLI and Codex skill that installs analytics, reports traffic, and manages goals on self-hosted Plausible.",
+      "publishedAt": "2026-08-06T12:35:00.000Z"
+    },
     {
       "slug": "9ffb5a16af17aa06453a0eae",
       "guid": "https://flaviocopes.com/how-oauth-works/",
@@ -22,6 +72,16 @@
       "sourceUrl": "https://flaviocopes.com/rss.xml",
       "summary": "What HSTS, CSP, X-Content-Type-Options, X-Frame-Options, Referrer-Policy and Permissions-Policy protect against, with sane starter values.",
       "publishedAt": "2026-08-06T05:00:00.000Z"
+    },
+    {
+      "slug": "6f2ce27b1132afe656c7712d",
+      "guid": "https://flaviocopes.com/how-plausible-analytics-is-built/",
+      "title": "How Plausible Analytics Community Edition is built",
+      "link": "https://flaviocopes.com/how-plausible-analytics-is-built/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "I read the Plausible Community Edition code to see how its tracker, Elixir app, databases, and React dashboard work together.",
+      "publishedAt": "2026-08-05T15:00:00.000Z"
     },
     {
       "slug": "1f85e9b797eddc9bd5c005a1",
@@ -262,66 +322,6 @@
       "sourceUrl": "https://flaviocopes.com/rss.xml",
       "summary": "I launched Prototyped, a store for working software prototypes with full source code, tests, documentation, and instructions for coding agents.",
       "publishedAt": "2026-08-01T06:45:00.000Z"
-    },
-    {
-      "slug": "67d5e58662a16ddf78bd7d35",
-      "guid": "https://flaviocopes.com/jwt-signing-web-crypto/",
-      "title": "How JWT signing actually works (HS256 with Web Crypto)",
-      "link": "https://flaviocopes.com/jwt-signing-web-crypto/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Learn how JWT signing works by building and signing an HS256 token by hand with the Web Crypto API: base64url, HMAC-SHA256, and verification.",
-      "publishedAt": "2026-08-01T05:00:00.000Z"
-    },
-    {
-      "slug": "af4d8a3f0978f8a7a27ed837",
-      "guid": "https://flaviocopes.com/temporal-api/",
-      "title": "The Temporal API: JavaScript dates, finally fixed",
-      "link": "https://flaviocopes.com/temporal-api/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Temporal replaces JavaScript's broken Date object. Learn the key types, practical examples, browser support, and how to polyfill for production.",
-      "publishedAt": "2026-08-01T05:00:00.000Z"
-    },
-    {
-      "slug": "5f694d0c6b355ad7d7a0e407",
-      "guid": "https://flaviocopes.com/cloud-platform-plugins-ai-coding-agents/",
-      "title": "Cloud platform plugins and skills for AI coding agents",
-      "link": "https://flaviocopes.com/cloud-platform-plugins-ai-coding-agents/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Install official coding-agent plugins, skills, and MCP servers for Cloudflare, Railway, DigitalOcean, Render, AWS, Azure, and Google Cloud.",
-      "publishedAt": "2026-07-31T13:00:00.000Z"
-    },
-    {
-      "slug": "dbedb5e5172415c61cf7a90f",
-      "guid": "https://flaviocopes.com/waitinglists-dev/",
-      "title": "I launched Waiting Lists: self-hostable waiting lists",
-      "link": "https://flaviocopes.com/waitinglists-dev/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "I built Waiting Lists, a self-hostable double-opt-in waiting-list service with source code and agent customization instructions.",
-      "publishedAt": "2026-07-31T10:00:00.000Z"
-    },
-    {
-      "slug": "fe3faf5b5368bf260861291b",
-      "guid": "https://flaviocopes.com/kubernetes-for-developers/",
-      "title": "Kubernetes for developers: a complete beginner's guide",
-      "link": "https://flaviocopes.com/kubernetes-for-developers/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Learn what Kubernetes is and how Pods, Deployments, Services, YAML manifests, scaling, updates, and self-healing work in a local cluster.",
-      "publishedAt": "2026-07-31T09:00:00.000Z"
-    },
-    {
-      "slug": "ce422b2428abd4ba3d3e55f9",
-      "guid": "https://flaviocopes.com/uuid-v4-vs-v7/",
-      "title": "UUID v4 vs v7, and what's inside a UUID",
-      "link": "https://flaviocopes.com/uuid-v4-vs-v7/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Learn what the bits inside a UUID mean, why random v4 IDs hurt database index performance, how v7 embeds a timestamp, and when to pick each.",
-      "publishedAt": "2026-07-31T05:00:00.000Z"
     },
     {
       "slug": "b5718db41559c8191f2613f1",
