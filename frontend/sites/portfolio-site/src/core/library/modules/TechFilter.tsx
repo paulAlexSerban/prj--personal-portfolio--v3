@@ -1,5 +1,6 @@
 import { useMemo, useState } from 'react';
 import type { ProjectRow, TagRow } from '@prj--personal-portfolio--v3/shared--db-schema';
+import { CoverImage } from '@prj--personal-portfolio--v3/shared--ui/cover-image-ui';
 
 import { assetUrl, siteUrls } from '@/lib/urls.ts';
 
@@ -96,11 +97,10 @@ export function TechFilter({ featured, archive }: Props) {
 
 function ProjectCardInner({ project, tags, featured = false }: { project: ProjectRow; tags: TagRow[]; featured?: boolean }) {
     const href = siteUrls.portfolioProject(project.slug);
-    const cover = project.cover_image ?? assetUrl('placeholder-cover.png');
     return (
         <article className="card-ruled flex flex-col">
             <a href={href} className="mb-3 block overflow-hidden border border-rule">
-                <img src={cover} alt="" loading="lazy" className="aspect-video w-full object-cover" />
+                <CoverImage cover={project.cover_image} placeholder={assetUrl('placeholder-cover.png')} sizes="card" imgClassName="aspect-video w-full object-cover" />
             </a>
             {featured && <p className="kicker mb-1 text-[10px]">Featured</p>}
             <h3 className="font-display text-xl font-bold leading-tight">

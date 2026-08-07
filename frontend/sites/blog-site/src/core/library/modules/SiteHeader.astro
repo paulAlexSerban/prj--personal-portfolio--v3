@@ -1,5 +1,5 @@
 ---
-import { MobileNav, SiteSwitcher, buildSiteTabs } from '@prj--personal-portfolio--v3/shared--navigation';
+import { MobileNav, ObfuscatedMailto, SiteSwitcher, buildSiteTabs } from '@prj--personal-portfolio--v3/shared--navigation';
 import { externalLinkAttrs, isNavLinkActive, siteUrls } from '@/lib/urls.ts';
 
 const navLinks = [
@@ -25,7 +25,13 @@ const year = new Date().getFullYear();
 <header class="grain border-b-[3px] border-ink bg-aged">
     <div class="root-box">
         <div class="flex items-center justify-between gap-4">
-            <p class="kicker font-mono text-[10px] md:text-sm">paulserban.eu</p>
+            <div class="flex flex-col gap-1">
+                <p class="kicker font-mono text-[10px] md:text-sm">paulserban.eu</p>
+                <ObfuscatedMailto
+                    client:load
+                    className="kicker font-mono text-[10px] md:text-sm text-ink no-underline hover:underline"
+                />
+            </div>
             <div class="flex flex-col items-end gap-1">
                 <p class="kicker font-mono text-[10px] md:text-sm">Writing Edition</p>
                 <SiteSwitcher activeSite="blog" tabs={siteTabs} />

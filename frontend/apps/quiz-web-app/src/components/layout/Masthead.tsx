@@ -9,7 +9,11 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@prj--personal-portfolio--v3/shared--ui";
-import { SiteSwitcher, buildSiteTabs } from "@prj--personal-portfolio--v3/shared--navigation";
+import {
+  SiteSwitcher,
+  ObfuscatedMailto,
+  buildSiteTabs,
+} from "@prj--personal-portfolio--v3/shared--navigation";
 import { siteUrls } from "@/lib/urls";
 import { dayOfYear, formatDateline, isoWeek } from "@/utils/dates";
 
@@ -37,7 +41,10 @@ export function Masthead() {
     <header className="grain border-b-[3px] border-ink">
       <div className="root-box">
         <div className="flex items-center justify-between gap-4">
-          <p className="kicker font-mono text-[10px] md:text-sm">{dateline}</p>
+          <div className="flex flex-col gap-1">
+            <p className="kicker font-mono text-[10px] md:text-sm">{dateline}</p>
+            <ObfuscatedMailto className="kicker font-mono text-[10px] md:text-sm text-ink no-underline hover:underline" />
+          </div>
           <div className="flex flex-col items-end gap-1">
             <p className="kicker font-mono text-[10px] md:text-sm">Spaced Repetition Edition</p>
             <SiteSwitcher activeSite="quiz" tabs={siteTabs} />

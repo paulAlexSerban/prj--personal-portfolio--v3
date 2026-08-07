@@ -1,6 +1,7 @@
 ---
 import { evaluate } from '@mdx-js/mdx';
 import { rehypePlugins, remarkPlugins } from '@prj--personal-portfolio--v3/shared--markdown/plugins';
+import { CoverImage } from '@prj--personal-portfolio--v3/shared--ui/cover-image-ui';
 import * as runtime from 'react/jsx-runtime';
 
 import TagList from '@/library/components/TagList.astro';
@@ -41,7 +42,8 @@ const { default: Content } = await evaluate(project.body, {
 const description = project.excerpt ?? project.problem ?? project.subheading ?? undefined;
 const canonicalUrl = new URL(siteUrls.portfolioProject(slug), Astro.site).href;
 const metrics = parseMetrics(project.metrics);
-const cover = project.cover_image ?? assetUrl('placeholder-cover.png');
+const PLACEHOLDER_COVER = assetUrl('placeholder-cover.png');
+const cover = project.cover_image ?? PLACEHOLDER_COVER;
 ---
 
 <BaseLayout
@@ -56,16 +58,15 @@ const cover = project.cover_image ?? assetUrl('placeholder-cover.png');
         <a href={siteUrls.portfolio} class="kicker text-xs hover:underline">&larr; Back to portfolio</a>
     </p>
 
-  {
-      cover && (
-          <img
-              src={cover}
-              alt=""
-              loading="eager"
-              class="mb-6 aspect-video w-full border border-ink object-cover"
-          />
-      )
-  }
+    <div class="mb-6">
+        <CoverImage
+            cover={project.cover_image}
+            placeholder={PLACEHOLDER_COVER}
+            loading="eager"
+            sizes="hero"
+            imgClassName="aspect-video w-full border border-ink object-cover"
+        />
+    </div>
 
     <header class="mb-8 border-b-2 border-ink pb-6">
         {project.pinned && <p class="kicker mb-2 text-[11px]">Featured</p>}

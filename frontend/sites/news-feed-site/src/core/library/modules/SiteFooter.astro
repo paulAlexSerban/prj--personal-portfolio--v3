@@ -1,5 +1,5 @@
 ---
-import { FooterSiteLinks, buildSiteTabs } from '@prj--personal-portfolio--v3/shared--navigation';
+import { FooterSiteLinks, ObfuscatedMailto, buildSiteTabs } from '@prj--personal-portfolio--v3/shared--navigation';
 import { closeConnection, openDb } from '@/lib/db.ts';
 import { getCategories } from '@/lib/queries/news.ts';
 import { externalLinkAttrs, siteUrls } from '@/lib/urls.ts';
@@ -45,6 +45,9 @@ const year = new Date().getFullYear();
         <div class="mb-3">
             <FooterSiteLinks activeSite="news" tabs={siteTabs} />
         </div>
+        <p class="kicker mb-2 text-sm">
+            <ObfuscatedMailto client:load className="kicker text-sm text-ink no-underline hover:underline" />
+        </p>
         <p class="kicker text-sm">Paul Serban · Engineering Wire · {year}</p>
     </div>
 </footer>

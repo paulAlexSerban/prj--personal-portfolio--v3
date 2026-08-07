@@ -1,4 +1,8 @@
-import { FooterSiteLinks, buildSiteTabs } from "@prj--personal-portfolio--v3/shared--navigation";
+import {
+  FooterSiteLinks,
+  ObfuscatedMailto,
+  buildSiteTabs,
+} from "@prj--personal-portfolio--v3/shared--navigation";
 import { Masthead } from "./Masthead";
 import { siteUrls } from "@/lib/urls";
 import { useStore } from "@/store";
@@ -21,6 +25,9 @@ export function PageLayout({ children }: { children: React.ReactNode }) {
         <div className="mb-3 text-center">
           <FooterSiteLinks activeSite="quiz" tabs={siteTabs} />
         </div>
+        <p className="kicker mb-2 text-sm text-center">
+          <ObfuscatedMailto className="kicker text-sm text-ink no-underline hover:underline" />
+        </p>
         <p className="kicker text-sm text-center">
           The Typeset Review · Printed daily in your browser · Algorithm: {algorithm}
         </p>
