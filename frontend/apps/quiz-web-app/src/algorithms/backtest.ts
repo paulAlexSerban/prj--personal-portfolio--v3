@@ -189,8 +189,8 @@ function main() {
   const pct = sm2.reviews ? ((delta / sm2.reviews) * 100).toFixed(1) : "0";
   console.log(
     delta > 0
-      ? `  → FSRS used ${delta} fewer reviews (${pct}%) at comparable retention.`
-      : `  → SM-2 used ${-delta} fewer reviews; inspect parameters.`,
+      ? `  -> FSRS used ${delta} fewer reviews (${pct}%) at comparable retention.`
+      : `  -> SM-2 used ${-delta} fewer reviews; inspect parameters.`,
   );
 }
 

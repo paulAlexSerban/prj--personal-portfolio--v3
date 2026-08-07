@@ -128,7 +128,7 @@ export function pageCount(total: number, pageSize: number): number {
 export function getHomePagePaths(db: DrizzleDb, pageSize: number): { page: string }[] {
     const total = countAllItems(db);
     const pages = pageCount(total, pageSize);
-    // page/1 redirects conceptually to index — only emit 2..N
+    // page/1 redirects conceptually to index - only emit 2..N
     return Array.from({ length: Math.max(0, pages - 1) }, (_, i) => ({ page: String(i + 2) }));
 }
 

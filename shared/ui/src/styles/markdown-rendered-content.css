@@ -111,6 +111,18 @@
     max-width: 100%;
     height: auto;
 }
+.md-content .mermaid {
+    margin: 1.5em 0;
+    overflow-x: auto;
+    border: 1px solid var(--ink-black);
+    background: var(--aged-white, var(--highlight));
+    padding: 1em;
+    text-align: center;
+}
+.md-content .mermaid svg {
+    max-width: 100%;
+    height: auto;
+}
 
 /* MDX component placeholders (compiled at export time) */
 .md-content .mdx-callout {

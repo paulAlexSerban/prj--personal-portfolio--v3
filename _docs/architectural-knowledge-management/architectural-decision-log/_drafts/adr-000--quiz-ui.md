@@ -1,4 +1,4 @@
-# (draft) Quiz UI — SUPERSEDED
+# (draft) Quiz UI - SUPERSEDED
 
 > **Superseded by [ADR-008](../adr-008--quiz-web-app-architecture.md).**
 > The "React + Vite" intent held; the location changed. The quiz UI is a CSR React

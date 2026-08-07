@@ -1,6 +1,6 @@
 # Question Contract (`shared/question-contract/`)
 
-The **validation and normalization rules for flashcard questions** — the
+The **validation and normalization rules for flashcard questions** - the
 authoritative definition of what a valid question looks like, shared by the ingest
 pipeline and the export. Built on Zod.
 
@@ -36,7 +36,7 @@ if (!result.ok) throw new Error(result.error); // human-readable validation mess
 | Export                              | Role                                                                                                                                                                                           |
 | ----------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `parseQuestionFrontmatter(fm)`      | Validate + normalize frontmatter (a discriminated union by `answer_format`). Returns `{ ok: true, data }` or `{ ok: false, error }`. Applies defaults and cross-checks correct-key references. |
-| `deriveGradingMode(answerFormat)`   | `free_text → 'self'`, everything else `→ 'auto'`.                                                                                                                                              |
+| `deriveGradingMode(answerFormat)`   | `free_text -> 'self'`, everything else `-> 'auto'`.                                                                                                                                            |
 | `buildQuestionPayload(fm)`          | Serialize the extra fields (`concept`, `concepts_tested`, true/false `answer`, …) into the JSON `payload` column, or `null` if empty.                                                          |
 | `buildQuestionOptionRows(slug, fm)` | Turn MC/MS options into `question_options` rows with `sort_order` + `is_correct`.                                                                                                              |
 | Enums + types                       | `ANSWER_FORMATS`, `COGNITIVE_STYLES`, `DIFFICULTIES`, `GRADING_MODES`, `ParsedQuestionFrontmatter`, etc.                                                                                       |
@@ -60,5 +60,5 @@ pnpm --filter @prj--personal-portfolio--v3/shared--question-contract test
 
 ## Related docs
 
-- `shared/AGENTS.md` — all shared packages.
-- `_docs/01 spikes/types-of-questions.md` — the question taxonomy and authoring formats.
+- `shared/AGENTS.md` - all shared packages.
+- `_docs/01 spikes/types-of-questions.md` - the question taxonomy and authoring formats.

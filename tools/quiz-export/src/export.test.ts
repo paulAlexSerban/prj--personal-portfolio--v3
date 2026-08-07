@@ -10,7 +10,7 @@ function createTestDb() {
     const sqlite = new Database(':memory:');
     sqlite.pragma('foreign_keys = ON');
 
-    // Minimal DDL — mirrors the real Drizzle schema
+    // Minimal DDL - mirrors the real Drizzle schema
     sqlite.exec(`
         CREATE TABLE IF NOT EXISTS tags (
             id TEXT PRIMARY KEY,

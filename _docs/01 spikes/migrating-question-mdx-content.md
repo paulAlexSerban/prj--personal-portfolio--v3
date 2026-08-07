@@ -1,6 +1,6 @@
 # Question MDX authoring guide
 
-Guide for the **content repository** (`content--paulserban.eu`). All question types — including multiple choice and true/false — are **`publish/questions/*.mdx` only**. No JSON question files.
+Guide for the **content repository** (`content--paulserban.eu`). All question types - including multiple choice and true/false - are **`publish/questions/*.mdx` only**. No JSON question files.
 
 **Why MDX only:** explanations can use **JSX**, custom components, and **images**; the ingest pipeline stores the raw body and the quiz/blog build compiles it at render time.
 
@@ -41,7 +41,7 @@ Your model answer.
 
 ## Explanation
 
-Why this matters — plain Markdown is fine; add JSX when you need it.
+Why this matters - plain Markdown is fine; add JSX when you need it.
 ```
 
 ---
@@ -104,7 +104,7 @@ correct_option_keys:
 
 ## Explanation
 
-Why **b** is correct and why each distractor fails — diagrams and JSX welcome here.
+Why **b** is correct and why each distractor fails - diagrams and JSX welcome here.
 ```
 
 For **multiple_select**, use `answer_format: multiple_select` and list every correct `key` under `correct_option_keys`.
@@ -164,7 +164,7 @@ Only **DAGs** have a topological ordering. For false statements, state the corre
 
 ## Pipeline status (app monorepo)
 
-Today `mdx-ingest` only maps `question` → `front` and body → `back`. Fields like `answer_format` and `options` are **documented and safe to author now**; ingest and DB columns will follow [implementation plan](../02%20plans/question-types-implementation-plan.md) Phase 1+.
+Today `mdx-ingest` only maps `question` -> `front` and body -> `back`. Fields like `answer_format` and `options` are **documented and safe to author now**; ingest and DB columns will follow [implementation plan](../02%20plans/question-types-implementation-plan.md) Phase 1+.
 
 ---
 

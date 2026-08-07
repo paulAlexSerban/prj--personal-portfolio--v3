@@ -150,7 +150,7 @@ resource "aws_cloudfront_response_headers_policy" "site" {
   }
 }
 
-# Single viewer-request function: optional Basic Auth + directory → index.html
+# Single viewer-request function: optional Basic Auth + directory -> index.html
 # rewrite. CloudFront allows only one function association per event type, and
 # default_root_object only applies to "/", so Astro's trailingSlash:"always"
 # output (post/slug/index.html) needs an explicit rewrite for deep links.

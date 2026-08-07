@@ -10,7 +10,7 @@ import {
 
 export type { ApplyReviewOpts, ReviewResult } from "./learning";
 
-/** SM-2 review behaviour: ease-factor + interval growth, lapses → relearning. */
+/** SM-2 review behaviour: ease-factor + interval growth, lapses -> relearning. */
 export const sm2Strategy: ReviewStrategy = {
   graduate(card, config, easy, opts) {
     card.cardType = "review";

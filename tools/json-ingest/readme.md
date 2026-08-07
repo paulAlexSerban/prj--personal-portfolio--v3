@@ -17,15 +17,15 @@ from one queryable source.
 > `profile/`, `skills/`, and `pages/`.
 
 ```
-content/live/.../publish/{profile,skills,pages}/*.json ──► scan → parse → validate → normalise ──► upsert ──► content.db
+content/live/.../publish/{profile,skills,pages}/*.json ──► scan -> parse -> validate -> normalise ──► upsert ──► content.db
 ```
 
-## What it does (task graph — same shape as `mdx-ingest`)
+## What it does (task graph - same shape as `mdx-ingest`)
 
 ```
-Scan → Parse → Validate → Normalise ──┐
-                                       ├→ Upsert Records
-Open DB → Run Migrations ─────────────┘
+Scan -> Parse -> Validate -> Normalise ──┐
+                                       ├-> Upsert Records
+Open DB -> Run Migrations ─────────────┘
 ```
 
 | Step      | Helper                   | Responsibility                                                     |
@@ -37,7 +37,7 @@ Open DB → Run Migrations ─────────────┘
 | Migrate   | `shared--db`             | Open the DB + apply migrations.                                    |
 | Upsert    | `upsertRecords.ts`       | Upsert with `sync_source: 'json'`, respects `locked` rows.         |
 
-## Folder → table mapping
+## Folder -> table mapping
 
 | `publish/` folder | File shape                                                        | DB target                                                     |
 | ----------------- | ----------------------------------------------------------------- | ------------------------------------------------------------- |
@@ -45,7 +45,7 @@ Open DB → Run Migrations ─────────────┘
 | `skills/`         | array or `{ skills: [...] }` of `{ name, category, sort_order? }` | `skills` (slug from kebab-case name)                          |
 | `pages/`          | `{ title, status, slug?, ... }` per file                          | `pages` (slug from filename or `slug`; extras in `body` JSON) |
 
-**Required fields** (missing → skipped): profile `name`/`headline`/`bio`; skill
+**Required fields** (missing -> skipped): profile `name`/`headline`/`bio`; skill
 `name`/`category`; page `title`/`status`.
 
 ## How to run it
@@ -61,9 +61,9 @@ Run **after** `content-sync`. Env overrides: `CONTENT_DIR`, `DATABASE_PATH`,
 ## Where it sits
 
 - **Depends on:** `tools--content-sync`, `shared--db`, `shared--db-schema`, `shared--task-manager`, `ulidx`.
-- **Feeds:** `content.db` (`profile`, `skills`, `pages`) → the SSG frontend.
+- **Feeds:** `content.db` (`profile`, `skills`, `pages`) -> the SSG frontend.
 
 ## Related docs
 
-- `tools/AGENTS.md` — full pipeline + per-tool detail.
-- `database/AGENTS.md` — schema + migration workflow.
+- `tools/AGENTS.md` - full pipeline + per-tool detail.
+- `database/AGENTS.md` - schema + migration workflow.

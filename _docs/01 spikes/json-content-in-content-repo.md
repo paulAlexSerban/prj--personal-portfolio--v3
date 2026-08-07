@@ -1,6 +1,6 @@
 # JSON content authoring guide
 
-Guide for the **content repository** (`content--paulserban.eu`). Site config that is **not** prose — profile, skills, career experience, and standalone pages — is authored as **JSON** under `content/publish/`. The monorepo ingests it via `tools/json-ingest`.
+Guide for the **content repository** (`content--paulserban.eu`). Site config that is **not** prose - profile, skills, career experience, and standalone pages - is authored as **JSON** under `content/publish/`. The monorepo ingests it via `tools/json-ingest`.
 
 **Not JSON:** posts, book notes, snippets, projects, coursework, and **all quiz questions** are **MDX** (`tools/mdx-ingest`). See [migrating-question-mdx-content](./migrating-question-mdx-content.md).
 
@@ -37,11 +37,11 @@ content/
 | `pages/`                | `json-ingest` | `pages`      |
 | everything else         | `mdx-ingest`  | (varies)     |
 
-Invalid or incomplete JSON is **skipped with a warning** — ingest continues for other files.
+Invalid or incomplete JSON is **skipped with a warning** - ingest continues for other files.
 
 ---
 
-## `profile/` — site identity (singleton)
+## `profile/` - site identity (singleton)
 
 **Path:** `content/publish/profile/profile.json` (filename is conventional; slug is always `profile`)
 
@@ -73,7 +73,7 @@ Only one profile row is stored (`slug = "profile"`). Re-ingest updates the same 
 
 ---
 
-## `skills/` — grouped skill list
+## `skills/` - grouped skill list
 
 **Path:** `content/publish/skills/skills.json`
 
@@ -83,13 +83,13 @@ Each item:
 
 | Field         | Required | Type    | Default | Notes                                      |
 | ------------- | -------- | ------- | ------- | ------------------------------------------ |
-| `name`        | yes      | string  | —       | Display name; slug = kebab-case of name    |
-| `category`    | yes      | string  | —       | Group heading (e.g. `"Frontend"`)          |
+| `name`        | yes      | string  | -       | Display name; slug = kebab-case of name    |
+| `category`    | yes      | string  | -       | Group heading (e.g. `"Frontend"`)          |
 | `sort_order`  | no       | number  | `0`     | Order within category (lower first)        |
 | `proficiency` | no       | number  | `0`     | Reserved for future UI                     |
-| `depth_note`  | no       | string  | —       | One-line depth / impact note for the skill |
+| `depth_note`  | no       | string  | -       | One-line depth / impact note for the skill |
 
-**Slug rule:** `name` → lowercase, non-alphanumeric → `-` (e.g. `"Node.js"` → `node-js`).
+**Slug rule:** `name` -> lowercase, non-alphanumeric -> `-` (e.g. `"Node.js"` -> `node-js`).
 
 ```json
 [
@@ -97,7 +97,7 @@ Each item:
     "name": "Python",
     "category": "AI & Backend",
     "sort_order": 1,
-    "depth_note": "AI/agent workflows on AWS Bedrock & AgentCore — turning LLMs into production test automation."
+    "depth_note": "AI/agent workflows on AWS Bedrock & AgentCore - turning LLMs into production test automation."
   },
   {
     "name": "TypeScript",
@@ -126,7 +126,7 @@ Wrapped form (equivalent):
 
 ---
 
-## `experience/` — career timeline
+## `experience/` - career timeline
 
 **Path:** `content/publish/experience/experience.json`
 
@@ -136,15 +136,15 @@ Each item:
 
 | Field        | Required | Type     | Default              | Notes                                           |
 | ------------ | -------- | -------- | -------------------- | ----------------------------------------------- |
-| `role`       | yes      | string   | —                    | Job title                                       |
-| `company`    | yes      | string   | —                    | Employer / client name                          |
-| `start_date` | yes      | string   | —                    | Free-text date (e.g. `"Apr 2024"`, `"2020"`)    |
-| `status`     | yes      | string   | —                    | e.g. `"published"` or `"draft"`                 |
+| `role`       | yes      | string   | -                    | Job title                                       |
+| `company`    | yes      | string   | -                    | Employer / client name                          |
+| `start_date` | yes      | string   | -                    | Free-text date (e.g. `"Apr 2024"`, `"2020"`)    |
+| `status`     | yes      | string   | -                    | e.g. `"published"` or `"draft"`                 |
 | `slug`       | no       | string   | derived from role+co | Stable URL key; set explicitly when possible    |
 | `end_date`   | no       | string   | `null`               | `null` = current role                           |
-| `summary`    | no       | string   | —                    | Longer role description                         |
-| `tech`       | no       | string[] | —                    | Tech stack tags for the role                    |
-| `location`   | no       | string   | —                    | e.g. `"Bucharest, Romania"`                     |
+| `summary`    | no       | string   | -                    | Longer role description                         |
+| `tech`       | no       | string[] | -                    | Tech stack tags for the role                    |
+| `location`   | no       | string   | -                    | e.g. `"Bucharest, Romania"`                     |
 | `sort_order` | no       | number   | `0`                  | Display order (lower first)                     |
 
 **Slug rule:** use `slug` when set; otherwise kebab-case of `{role}-{company}`.
@@ -180,13 +180,13 @@ Each item:
 
 ---
 
-## `pages/` — JSON-authored static pages
+## `pages/` - JSON-authored static pages
 
-**Path:** `content/publish/pages/{slug}.json` — **one page per file**.
+**Path:** `content/publish/pages/{slug}.json` - **one page per file**.
 
 **Required:** `title`, `status`
 
-**Optional:** `slug` — if omitted, slug = filename without `.json` (e.g. `about.json` → `about`)
+**Optional:** `slug` - if omitted, slug = filename without `.json` (e.g. `about.json` -> `about`)
 
 **Any other top-level fields** are stored in the DB `body` column as serialised JSON (not in dedicated columns). Use this for page-specific payload (sections, CTAs, metadata, etc.).
 
@@ -213,7 +213,7 @@ Each item:
 | `title`  | string | Page title                                           |
 | `status` | string | `"published"` or `"draft"`                           |
 | `slug`   | string | URL segment; defaults to filename                    |
-| `…`      | any    | Everything else → `pages.body` in `content.db`       |
+| `…`      | any    | Everything else -> `pages.body` in `content.db`       |
 
 ---
 
@@ -234,7 +234,7 @@ Empty string counts as missing. Files with missing required fields are skipped.
 
 - Rows are upserted with `sync_source: 'json'`.
 - Rows marked `locked: true` in the DB (CMS-owned) are **not** overwritten by ingest.
-- Run order locally / in CI: `content-sync` → `json-ingest` (and `mdx-ingest` for MDX).
+- Run order locally / in CI: `content-sync` -> `json-ingest` (and `mdx-ingest` for MDX).
 
 ```bash
 pnpm --filter @prj--personal-portfolio--v3/tools--json-ingest start
@@ -252,7 +252,7 @@ pnpm --filter @prj--personal-portfolio--v3/tools--json-ingest start
 
 ## Related docs
 
-- [migrating-question-mdx-content](./migrating-question-mdx-content.md) — quiz question MDX
-- `tools/json-ingest/readme.md` — ingest task graph and CLI
-- `tools/AGENTS.md` — full content pipeline
-- `shared/db-schema/index.ts` — `profile`, `skills`, `experience`, `pages` columns
+- [migrating-question-mdx-content](./migrating-question-mdx-content.md) - quiz question MDX
+- `tools/json-ingest/readme.md` - ingest task graph and CLI
+- `tools/AGENTS.md` - full content pipeline
+- `shared/db-schema/index.ts` - `profile`, `skills`, `experience`, `pages` columns

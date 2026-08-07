@@ -2,7 +2,7 @@
 
 ## Overview
 
-The home page is the author's professional landing page — the primary entry point for recruiters and collaborators. It showcases the author's identity, skills, and selected projects. A dedicated portfolio page provides a complete view of the author's work. Both share the site-wide navigation.
+The home page is the author's professional landing page - the primary entry point for recruiters and collaborators. It showcases the author's identity, skills, and selected projects. A dedicated portfolio page provides a complete view of the author's work. Both share the site-wide navigation.
 
 ## Navigation
 
@@ -22,9 +22,9 @@ The home page is the author's professional landing page — the primary entry po
 | HOME-02 | The home page MUST render a Skills section listing technical skills grouped by category                                                                                | Must Have   |
 | HOME-03 | The home page MUST render a Projects section showcasing a curated selection of the author's work                                                                       | Must Have   |
 | HOME-04 | Each project entry in the Projects section MUST display: name, short description, primary tech stack, and at least one external link (GitHub, live URL, or case study) | Must Have   |
-| HOME-05 | All home page content (bio, skills, projects) MUST be driven by the content pipeline — no values hardcoded in templates                                                | Must Have   |
+| HOME-05 | All home page content (bio, skills, projects) MUST be driven by the content pipeline - no values hardcoded in templates                                                | Must Have   |
 | HOME-06 | The home page MUST include a call-to-action linking to the full Portfolio page                                                                                         | Should Have |
-| HOME-07 | The home page SHOULD include a Recent Posts section showing the 3–5 most recently published blog posts                                                                 | Should Have |
+| HOME-07 | The home page SHOULD include a Recent Posts section showing the 3-5 most recently published blog posts                                                                 | Should Have |
 | HOME-08 | Project entries in the Projects section SHOULD support an optional thumbnail or cover image                                                                            | Should Have |
 
 ## Portfolio Page (`/portfolio`)

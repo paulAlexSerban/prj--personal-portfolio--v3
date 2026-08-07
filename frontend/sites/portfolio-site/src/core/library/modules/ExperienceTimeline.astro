@@ -18,8 +18,8 @@ const { items } = Astro.props;
                 {items.map((item) => {
                     const tech = parseTech(item.tech);
                     const period = item.end_date
-                        ? `${item.start_date} – ${item.end_date}`
-                        : `${item.start_date} – present`;
+                        ? `${item.start_date} - ${item.end_date}`
+                        : `${item.start_date} - present`;
                     return (
                         <li class="relative mb-9 last:mb-0">
                             <span

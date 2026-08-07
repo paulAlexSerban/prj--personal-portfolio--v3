@@ -2,7 +2,7 @@ import { describe, it, expect } from "vitest";
 import { filterByQuery } from "@prj--personal-portfolio--v3/shared--ui/post-filters";
 
 /**
- * Characterization test for the post-catalogue search at routes/index.tsx:47–55.
+ * Characterization test for the post-catalogue search at routes/index.tsx:47-55.
  *
  * The original inline filter:
  *   posts.filter((p) =>
@@ -29,7 +29,7 @@ const posts: PostLike[] = [
 
 const run = (q: string) => filterByQuery(posts, q, (p) => p.tags).map((p) => p.slug);
 
-describe("post catalogue filter — characterization", () => {
+describe("post catalogue filter - characterization", () => {
   it("empty query returns every post", () => {
     expect(run("")).toEqual(["big-o-notation", "python-strings", "vim-basics"]);
   });

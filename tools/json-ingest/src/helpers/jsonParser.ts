@@ -65,7 +65,7 @@ export const jsonParser = async (scannedDirectories: ScannedDirectory[]): Promis
         const contentType = CONTENT_TYPE_MAP[directory.typeName];
 
         if (!contentType) {
-            console.warn(`[jsonParser] Unknown content type "${directory.typeName}" — skipping directory`);
+            console.warn(`[jsonParser] Unknown content type "${directory.typeName}" - skipping directory`);
             continue;
         }
 

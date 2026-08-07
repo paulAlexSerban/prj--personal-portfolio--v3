@@ -1,4 +1,4 @@
-# (draft) Client-side state schema — SUPERSEDED
+# (draft) Client-side state schema - SUPERSEDED
 
 > **Superseded by [ADR-008](../adr-008--quiz-web-app-architecture.md).**
 > This draft sketched a `packages/storage` `StorageAdapter` + a small `UserStats`

@@ -15,11 +15,11 @@ export interface QueueScope {
   now?: number;
   /** Ignore today's new/review caps ("study ahead" / cram). */
   ignoreLimits?: boolean;
-  /** Question slug → difficulty rank (1 = beginner, 2 = intermediate, 3 = advanced). */
+  /** Question slug -> difficulty rank (1 = beginner, 2 = intermediate, 3 = advanced). */
   difficultyMap?: Map<string, number>;
 }
 
-/** Cram ordering: learning/relearning (due first) → new → review. */
+/** Cram ordering: learning/relearning (due first) -> new -> review. */
 function sortCramQueue(cards: CardState[], difficultyMap?: Map<string, number>): CardState[] {
   const learning = cards
     .filter((c) => c.cardType === "learning" || c.cardType === "relearning")
@@ -33,7 +33,7 @@ function sortCramQueue(cards: CardState[], difficultyMap?: Map<string, number>):
 }
 
 /**
- * Compute the due study queue from store state. Joins added posts → their
+ * Compute the due study queue from store state. Joins added posts -> their
  * card states, drops ignored/suspended questions, and applies SM-2 queue ordering
  * with per-set and global daily limits.
  */
@@ -133,7 +133,7 @@ export function getPostStats(state: QuizState, postSlug: string, today = todayIS
   };
 }
 
-/** Total cards due across all (or scoped) added posts — for the progress screen. */
+/** Total cards due across all (or scoped) added posts - for the progress screen. */
 export function selectDueCount(state: QuizState, scope: QueueScope = {}): number {
   return selectStudyQueue(state, scope).length;
 }

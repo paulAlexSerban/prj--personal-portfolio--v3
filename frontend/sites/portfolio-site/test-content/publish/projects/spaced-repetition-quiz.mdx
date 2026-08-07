@@ -5,7 +5,7 @@ subheading: Flashcards that schedule themselves
 excerpt: A client-side study app with swappable spaced-repetition schedulers (SM-2 and FSRS), driven by the same content database as the blog.
 role: Solo builder
 cover_image: /covers/quiz-engine.svg
-problem: Studying from notes required a backend, account, or paid SaaS — with no algorithm swap.
+problem: Studying from notes required a backend, account, or paid SaaS - with no algorithm swap.
 approach: Static JSON bundle from SQLite; pluggable SM-2/FSRS scheduler; versioned browser-local state.
 outcome: Offline-capable study tool reusing blog content with zero duplication.
 metrics:
@@ -23,15 +23,15 @@ tags:
 
 ## Problem
 
-I wanted to study from my own notes without a backend, an account, or a paid SaaS — and I wanted to swap scheduling algorithms without rewriting the app.
+I wanted to study from my own notes without a backend, an account, or a paid SaaS - and I wanted to swap scheduling algorithms without rewriting the app.
 
 ## Approach
 
 Questions are authored as MDX next to the posts they belong to, ingested into SQLite, and exported as a static JSON bundle. The web app is fully client-side: it loads the bundle, tracks learning state in the browser, and feeds reviews to a pluggable scheduler.
 
-- **Scheduler as a seam** — SM-2 and FSRS implement one interface; switching is a config flag.
+- **Scheduler as a seam** - SM-2 and FSRS implement one interface; switching is a config flag.
 - **Versioned local state** so storage can evolve without losing a user's history.
-- **No accounts** in v1 — everything lives in the browser.
+- **No accounts** in v1 - everything lives in the browser.
 
 ## Outcome
 

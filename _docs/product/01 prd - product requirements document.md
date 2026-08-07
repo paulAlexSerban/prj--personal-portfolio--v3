@@ -231,7 +231,7 @@ Requirements use MoSCoW prioritisation:
 
 ## User Flows
 
-### Flow A — Author: Add or Update a Project
+### Flow A - Author: Add or Update a Project
 
 ```
 1. Author writes projects/{slug}.mdx with frontmatter and long-form body
@@ -242,7 +242,7 @@ Requirements use MoSCoW prioritisation:
 6. Site deployed to CDN
 ```
 
-### Flow B — Author: Write a Post and Its Questions
+### Flow B - Author: Write a Post and Its Questions
 
 ```
 1. Author writes posts/{slug}.mdx
@@ -254,7 +254,7 @@ Requirements use MoSCoW prioritisation:
 7. Blog deployed to CDN
 ```
 
-### Flow C — Author: Edit via CMS, Export Back to MDX
+### Flow C - Author: Edit via CMS, Export Back to MDX
 
 ```
 1. Author opens CMS and edits an entity, then saves
@@ -265,14 +265,14 @@ Requirements use MoSCoW prioritisation:
 6. Entity ownership returned to MDX
 ```
 
-### Flow D — Recruiter: Evaluating the Author
+### Flow D - Recruiter: Evaluating the Author
 
 ```
 1. Recruiter arrives at / via LinkedIn, GitHub, or referral
-2. Recruiter reads About Me — name, headline, bio, photo
+2. Recruiter reads About Me - name, headline, bio, photo
 3. Recruiter scans Skills section grouped by category
-4. Recruiter views featured Projects — descriptions and links
-5. Recruiter clicks "View Portfolio" CTA → /portfolio
+4. Recruiter views featured Projects - descriptions and links
+5. Recruiter clicks "View Portfolio" CTA -> /portfolio
 6. Recruiter filters projects by tech stack to confirm relevant experience
 7. Recruiter opens a project's long-form case study
 8. Recruiter follows GitHub or live URL to verify work
@@ -280,7 +280,7 @@ Requirements use MoSCoW prioritisation:
 10. Recruiter contacts author via LinkedIn link in navigation
 ```
 
-### Flow E — Reader: Quiz from a Blog Post
+### Flow E - Reader: Quiz from a Blog Post
 
 ```
 1. Reader finishes reading /posts/{slug}
@@ -288,26 +288,26 @@ Requirements use MoSCoW prioritisation:
 3. Modal opens; questions for this post are loaded
 4. New questions initialised with default spaced repetition state
 5. Post slug recorded in user's study sets
-6. Session begins — due cards shown front-first
+6. Session begins - due cards shown front-first
 7. Reader reveals answer and rates: Again / Hard / Good / Easy
 8. Card state updated and persisted to client storage
-9. Session ends → summary screen shown
+9. Session ends -> summary screen shown
 10. Modal closed
 ```
 
-### Flow F — Reader: Quiz Web App, Multi-Post Study
+### Flow F - Reader: Quiz Web App, Multi-Post Study
 
 ```
 1. Reader opens the quiz web app
 2. App loads user state from client storage
 3. Reader adds multiple posts to their study set
 4. App fetches question data for each post; new cards added to deck
-5. Reader selects "Study all due" → session starts
+5. Reader selects "Study all due" -> session starts
 6. Due cards across all study sets presented
 7. After session, progress screen shows cards reviewed and upcoming schedule
 ```
 
-### Flow G — Reader: Ignore a Question
+### Flow G - Reader: Ignore a Question
 
 ```
 1. Reader encounters a question they wish to exclude
@@ -330,7 +330,7 @@ Requirements use MoSCoW prioritisation:
 | Multi-author workflows               | Single-author assumption in v0.1 | v0.2   |
 | Deck sharing between users           | Requires user backend            | v0.2   |
 | Push notifications (mobile)          | Non-core for v0.1                | v0.2   |
-| Comments / social features           | Out of core scope                | —      |
+| Comments / social features           | Out of core scope                | -      |
 | Dark / light theme toggle            | UI polish                        | v0.2   |
 
 ## Risks
@@ -342,7 +342,7 @@ Requirements use MoSCoW prioritisation:
 | R3  | Quiz widget bundle size degrades blog Lighthouse score  | Medium     | Medium | Lazy load widget; measure bundle size at every build; enforce size budget in CI   |
 | R4  | localStorage quota exceeded for large card decks        | Low        | Medium | Implement storage size warning; v0.2 remote sync as relief valve                  |
 | R5  | CMS and MDX pipeline conflict corrupts an entity        | Low        | High   | Lock mechanism must be covered by integration tests; `--dry-run` available in CI  |
-| R6  | Apple Developer Program enrollment delay                | Medium     | High   | Enroll immediately — Apple review can take 1–2 weeks                              |
+| R6  | Apple Developer Program enrollment delay                | Medium     | High   | Enroll immediately - Apple review can take 1-2 weeks                              |
 
 ## Open Questions
 
@@ -350,7 +350,7 @@ Requirements use MoSCoW prioritisation:
 | ----- | ------------------------------------------------------------------------------------------------------------------- | ------ | ---------------------- | ---- |
 | OQ-1  | Will the database file be committed to the app repo as a build artifact, or stored and pulled as a CI artifact?     | Author | Before CI setup        |
 | OQ-2  | What is the hosting target for the CMS? (Railway / Fly.io / self-managed VPS)                                       | Author | Before CMS setup       |
-| OQ-3  | ~~Does question MDX use only frontmatter fields (`front`, `back`) or is the MDX body also rendered as answer content?~~ **Resolved:** frontmatter → stem + structured fields; MDX body → answer/explanation (compiled at build for display). All question types are MDX. See [migrating-question-mdx-content.md](../01%20spikes/migrating-question-mdx-content.md). | Author | Done |
+| OQ-3  | ~~Does question MDX use only frontmatter fields (`front`, `back`) or is the MDX body also rendered as answer content?~~ **Resolved:** frontmatter -> stem + structured fields; MDX body -> answer/explanation (compiled at build for display). All question types are MDX. See [migrating-question-mdx-content.md](../01%20spikes/migrating-question-mdx-content.md). | Author | Done |
 | OQ-4  | Should the quiz widget appear on book-note and snippet pages, or only on posts?                                     | Author | Before blog build      |
 | OQ-5  | Should the mobile app bundle all question data at build time (fully offline) or fetch on first launch?              | Author | Before mobile build    |
 | OQ-6  | Should a failed Lighthouse performance budget gate and block the CI deploy?                                         | Author | Before CI setup        |
@@ -366,7 +366,7 @@ Requirements use MoSCoW prioritisation:
 | **MDX**                 | Markdown extended with JSX. The authoring format for all content.                                                                        |
 | **SSG**                 | Static Site Generation. The site is pre-built to static HTML at deploy time; no server is required at runtime.                           |
 | **Content Pipeline**    | The CLI and CI tool that synchronises MDX files from the content repository into the database.                                           |
-| **Lock / CMS-owned**    | When an entity is edited via the CMS it becomes locked — the pipeline will not overwrite it until it is explicitly exported back to MDX. |
+| **Lock / CMS-owned**    | When an entity is edited via the CMS it becomes locked - the pipeline will not overwrite it until it is explicitly exported back to MDX. |
 | **SM-2**                | SuperMemo 2 algorithm. The spaced repetition algorithm used by Anki to schedule card reviews.                                            |
 | **Spaced Repetition**   | A learning technique where cards are reviewed at increasing intervals based on the quality of recall.                                    |
 | **Card State**          | The per-question record tracking spaced repetition parameters: ease, interval, repetition count, and next due date.                      |

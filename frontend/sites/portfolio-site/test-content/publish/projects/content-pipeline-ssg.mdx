@@ -5,7 +5,7 @@ subheading: One content source, three static surfaces
 excerpt: A build-time pipeline that ingests MDX and JSON into SQLite, then feeds an Astro static site, a quiz app, and a mobile bundle from a single source of truth.
 role: Architect & lead implementer
 cover_image: /covers/content-pipeline.svg
-problem: Content lived in three places that drifted apart — blog, portfolio, and quiz.
+problem: Content lived in three places that drifted apart - blog, portfolio, and quiz.
 approach: Build-time pipeline with SQLite as single artifact; Drizzle schema + ingest tools + Astro SSG.
 outcome: Publishing collapsed to one command; new content types are a migration + ingest mapping.
 metrics:
@@ -32,10 +32,10 @@ I designed a build-time pipeline as a pnpm monorepo. A sync step clones the priv
 
 Key decisions:
 
-- **SQLite as a build artifact**, not a server — zero runtime database, fully static output.
+- **SQLite as a build artifact**, not a server - zero runtime database, fully static output.
 - **Schema-first** with Drizzle migrations, so content shape changes are reviewable diffs.
 - **Lock-aware upserts** so future CMS-owned rows are never clobbered by the pipeline.
 
 ## Outcome
 
-Publishing collapsed to a single command. Adding a new content type is a schema migration plus an ingest mapping — no bespoke glue per surface.
+Publishing collapsed to a single command. Adding a new content type is a schema migration plus an ingest mapping - no bespoke glue per surface.

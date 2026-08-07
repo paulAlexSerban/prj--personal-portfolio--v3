@@ -24,7 +24,7 @@ describe("FSRS core formulas", () => {
     expect(initStability(4, w)).toBeCloseTo(w[3]);
   });
 
-  it("initial difficulty is ordered: harder ratings → higher difficulty", () => {
+  it("initial difficulty is ordered: harder ratings -> higher difficulty", () => {
     const again = initDifficulty(1, w);
     const easy = initDifficulty(4, w);
     expect(again).toBeGreaterThan(easy);
@@ -58,7 +58,7 @@ describe("FSRS core formulas", () => {
     expect(ivl).toBe(10);
   });
 
-  it("higher retention target → shorter interval", () => {
+  it("higher retention target -> shorter interval", () => {
     const lenient = intervalFromStability(50, 0.8);
     const strict = intervalFromStability(50, 0.95);
     expect(strict).toBeLessThan(lenient);
@@ -154,7 +154,7 @@ describe("FSRS review flow", () => {
 });
 
 describe("scheduler migration round-trip", () => {
-  it("SM-2 → FSRS seeds stability/difficulty for review cards", () => {
+  it("SM-2 -> FSRS seeds stability/difficulty for review cards", () => {
     const card: CardState = {
       ...createCardState("p--q4", "p"),
       cardType: "review",
@@ -173,7 +173,7 @@ describe("scheduler migration round-trip", () => {
     expect(migrateToFsrs(card, DEFAULT_CONFIG).fsrsStability).toBeUndefined();
   });
 
-  it("SM-2 → FSRS → SM-2 preserves interval and easeFactor exactly", () => {
+  it("SM-2 -> FSRS -> SM-2 preserves interval and easeFactor exactly", () => {
     const card: CardState = {
       ...createCardState("p--q6", "p"),
       cardType: "review",

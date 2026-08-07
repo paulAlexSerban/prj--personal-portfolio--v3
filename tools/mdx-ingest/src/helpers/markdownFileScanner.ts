@@ -126,7 +126,7 @@ const collectCompanionFiles = async (typeDir: string, typeName: string, companio
                 continue;
             }
 
-            // Flat cheat_sheet.mdx only (not learning_plan — those live in a folder)
+            // Flat cheat_sheet.mdx only (not learning_plan - those live in a folder)
             if (companionDirName === 'cheat_sheet' && entry.isFile() && FLAT_CHEAT_SHEET_BASENAMES.has(entry.name)) {
                 const relativeFromPublish = path.join(typeName, path.relative(typeDir, entryPath));
                 files.push(relativeFromPublish);

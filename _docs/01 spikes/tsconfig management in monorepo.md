@@ -1,6 +1,6 @@
-Managing multiple `tsconfig.json` files in a monorepo is less about “configuration tricks” and more about enforcing **clear layering + inheritance + boundaries**. If you don’t structure it deliberately, you’ll end up with inconsistent builds, broken path resolution, and duplicated compiler options everywhere.
+Managing multiple `tsconfig.json` files in a monorepo is less about “configuration tricks” and more about enforcing **clear layering + inheritance + boundaries**. If you don't structure it deliberately, you'll end up with inconsistent builds, broken path resolution, and duplicated compiler options everywhere.
 
-Here’s a solid, scalable approach that works for pnpm-based monorepos.
+Here's a solid, scalable approach that works for pnpm-based monorepos.
 
 ---
 
@@ -252,7 +252,7 @@ Causes:
 
 ### ❌ Mixing build + dev configs
 
-Don’t overload one config for both IDE and CI.
+Don't overload one config for both IDE and CI.
 
 ---
 

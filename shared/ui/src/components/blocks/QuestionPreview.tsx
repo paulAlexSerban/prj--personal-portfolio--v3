@@ -4,7 +4,7 @@ import { CardRenderer } from './CardRenderer';
 import { Modal } from '../ui/Modal';
 import { Stamp, stampClasses } from '../ui/Stamp';
 
-/** Minimal card state for preview display — app passes precomputed values. */
+/** Minimal card state for preview display - app passes precomputed values. */
 export interface CardPreviewData {
     interval: number;
     easeFactor: number;
@@ -180,7 +180,7 @@ function AnswerSection({ question }: { question: ExportedQuestion }) {
         return (
             <section>
                 <p className="smallcaps text-[10px] text-[var(--slate)] mb-2">Answer</p>
-                <p className="italic text-[var(--charcoal)] text-base">Self-graded — see explanation below.</p>
+                <p className="italic text-[var(--charcoal)] text-base">Self-graded - see explanation below.</p>
             </section>
         );
     }

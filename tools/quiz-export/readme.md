@@ -2,7 +2,7 @@
 
 Turns the build-time SQLite database (`database/output/content.db`) into the
 **static JSON files the quiz web app reads at runtime**. It is the bridge between
-the content pipeline (MDX → DB) and the browser app (JSON → flashcards).
+the content pipeline (MDX -> DB) and the browser app (JSON -> flashcards).
 
 **Package:** `@prj--personal-portfolio--v3/tools--quiz-export`
 
@@ -15,7 +15,7 @@ JSON files that the app can simply `fetch()`.
 
 ```
 content.db ──► buildQuizData ──► compileQuizData ──► writeQuizJson ──► public/data/*.json
-   (DB)         (query + join)    (MDX → safe HTML)    (write files)      (app reads these)
+   (DB)         (query + join)    (MDX -> safe HTML)    (write files)      (app reads these)
 ```
 
 ## What it produces
@@ -25,7 +25,7 @@ Written to `frontend/apps/quiz-web-app/public/data/` by default:
 | File                         | Contents                                                                                    |
 | ---------------------------- | ------------------------------------------------------------------------------------------- |
 | `posts.json`                 | Index of every post that has ≥1 published question (title, excerpt, `questionCount`, tags). |
-| `questions/<post_slug>.json` | All questions for one post — lazy-loaded by the app when you open a set.                    |
+| `questions/<post_slug>.json` | All questions for one post - lazy-loaded by the app when you open a set.                    |
 | `tags.json`                  | Index of tags with question counts.                                                         |
 | `tags/<tag_slug>.json`       | All questions carrying a given tag (powers tag-based study).                                |
 | `_all.json`                  | Everything (all posts + all questions) in one file, for full offline / future mobile.       |
@@ -61,14 +61,14 @@ the quiz app.
 
 ## How it works (source map)
 
-| File              | Role                                                                                                                                                             |
-| ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `src/export.ts`   | `buildQuizData(db)` — pure query. Joins `questions` → `posts`, attaches `question_options` (ordered) + tags, parses `payload`. Only `status = 'published'` rows. |
-| `src/compile.ts`  | `compileQuizData(data, opts)` — compiles Markdown/MDX → sanitized HTML (via `shared--quiz-markdown`) and copies/rewrites image assets.                           |
-| `src/write.ts`    | `writeQuizJson(data, outDir)` — writes all the JSON files above.                                                                                                 |
-| `src/contract.ts` | The TypeScript types for every output shape — **the source of truth the app imports** (`./contract` subpath).                                                    |
-| `src/index.ts`    | CLI entry: task graph via `shared--task-manager` (Open DB → Export → Close ∥ Compile → Write); reads env vars, handles `--dry-run`.                              |
-| `index.ts`        | Library exports for other packages.                                                                                                                              |
+| File              | Role                                                                                                                                                              |
+| ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `src/export.ts`   | `buildQuizData(db)` - pure query. Joins `questions` -> `posts`, attaches `question_options` (ordered) + tags, parses `payload`. Only `status = 'published'` rows. |
+| `src/compile.ts`  | `compileQuizData(data, opts)` - compiles Markdown/MDX -> sanitized HTML (via `shared--quiz-markdown`) and copies/rewrites image assets.                           |
+| `src/write.ts`    | `writeQuizJson(data, outDir)` - writes all the JSON files above.                                                                                                  |
+| `src/contract.ts` | The TypeScript types for every output shape - **the source of truth the app imports** (`./contract` subpath).                                                     |
+| `src/index.ts`    | CLI entry: task graph via `shared--task-manager` (Open DB -> Export -> Close ∥ Compile -> Write); reads env vars, handles `--dry-run`.                            |
+| `index.ts`        | Library exports for other packages.                                                                                                                               |
 
 The library functions are pure and side-effect-free except `write.ts`; the CLI orchestrates DB access, compilation, and filesystem writes through named tasks.
 
@@ -79,6 +79,6 @@ The library functions are pure and side-effect-free except `write.ts`; the CLI o
 
 ## Related docs
 
-- `_docs/02 plans/quiz-web-app-refactor-plan.md` — Phase 1 designed this module.
-- `_docs/02 plans/quiz-web-app-enhancements-plan.md` — Phase 6 added the compile step + v2 contract.
-- `shared/AGENTS.md` — all shared packages.
+- `_docs/02 plans/quiz-web-app-refactor-plan.md` - Phase 1 designed this module.
+- `_docs/02 plans/quiz-web-app-enhancements-plan.md` - Phase 6 added the compile step + v2 contract.
+- `shared/AGENTS.md` - all shared packages.

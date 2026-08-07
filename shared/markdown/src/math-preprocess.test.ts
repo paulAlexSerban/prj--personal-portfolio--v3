@@ -13,7 +13,7 @@ describe('preprocessMath', () => {
     });
 });
 
-describe('compileMarkdown — block math', () => {
+describe('compileMarkdown - block math', () => {
     it('emits a block-math placeholder for $$…$$', () => {
         const html = compileMarkdown('$$\\frac{a}{b}$$');
         expect(html).toContain('<div class="math math-block">');

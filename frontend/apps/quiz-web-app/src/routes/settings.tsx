@@ -34,8 +34,8 @@ function SettingsView() {
     setConfirmScheduler(null);
     toast.success(
       target === "fsrs"
-        ? `Switched to FSRS — ${count} card(s) migrated (stability/difficulty seeded)`
-        : `Switched to SM-2 — ${count} card(s) migrated`,
+        ? `Switched to FSRS - ${count} card(s) migrated (stability/difficulty seeded)`
+        : `Switched to SM-2 - ${count} card(s) migrated`,
     );
   }
 
@@ -112,13 +112,13 @@ function SettingsView() {
         </Row>
         <Row
           label="Show time taken per card"
-          hint="When on, the study screen displays how long you spend on each card and totals it per session. Purely informational — it doesn’t affect scheduling."
+          hint="When on, the study screen displays how long you spend on each card and totals it per session. Purely informational - it doesn't affect scheduling."
         >
           <Toggle v={settings.showTiming} on={(v) => setSettings({ showTiming: v })} />
         </Row>
         <Row
           label="Keyboard shortcuts"
-          hint="Enables hotkeys during study: 1–4 to rate Again/Hard/Good/Easy, Space/Enter to reveal or rate Good. Turn off if shortcuts interfere with assistive tools."
+          hint="Enables hotkeys during study: 1-4 to rate Again/Hard/Good/Easy, Space/Enter to reveal or rate Good. Turn off if shortcuts interfere with assistive tools."
         >
           <Toggle
             v={settings.keyboardShortcuts}
@@ -136,7 +136,7 @@ function SettingsView() {
               setSettings({ globalNewLimit: e.target.value === "" ? null : Number(e.target.value) })
             }
             className="bg-transparent border-b-2 border-[var(--ink-black)] w-24 py-1"
-            placeholder="—"
+            placeholder="-"
             style={{ fontFamily: "var(--font-mono)" }}
           />
         </Row>
@@ -153,12 +153,12 @@ function SettingsView() {
               })
             }
             className="bg-transparent border-b-2 border-[var(--ink-black)] w-24 py-1"
-            placeholder="—"
+            placeholder="-"
             style={{ fontFamily: "var(--font-mono)" }}
           />
         </Row>
         <Row
-          label="Next day starts at (hour, 0–23)"
+          label="Next day starts at (hour, 0-23)"
           hint="The local hour your “study day” rolls over (Anki-style). With the default 4, cards due “tomorrow” become available at 4 AM, so late-night study before then still counts as today. Raise it if you study past midnight."
         >
           <input
@@ -180,7 +180,7 @@ function SettingsView() {
         </p>
         <Row
           label="Leech threshold (lapses, 0 = off)"
-          hint="Number of times a card may lapse (be rated “Again” from review) before it’s flagged as a leech. Lower = stricter. Set to 0 to disable leech detection entirely."
+          hint="Number of times a card may lapse (be rated “Again” from review) before it's flagged as a leech. Lower = stricter. Set to 0 to disable leech detection entirely."
         >
           <input
             type="number"
@@ -210,7 +210,7 @@ function SettingsView() {
 
       <Section title="Scheduler">
         <p className="text-base italic text-[var(--slate)] mb-4">
-          Choose the spaced-repetition algorithm. Switching migrates every card losslessly — SM-2
+          Choose the spaced-repetition algorithm. Switching migrates every card losslessly - SM-2
           keeps interval &amp; ease, FSRS seeds stability &amp; difficulty from them. You can switch
           back at any time.
         </p>
@@ -267,7 +267,7 @@ function SettingsView() {
                 className="w-full mt-2 accent-[var(--ink-black)]"
               />
               <p className="text-[14px] italic text-[var(--slate)] mt-0.5">
-                Higher retention → shorter intervals &amp; more reviews. 90% is a good default.
+                Higher retention &gt; shorter intervals &amp; more reviews. 90% is a good default.
               </p>
             </div>
             <details className="py-2 border-b border-dotted border-[var(--column-rule)]">
@@ -361,9 +361,9 @@ function SettingsView() {
           />
         </Row>
         <NumRow
-          label="Lapse new interval (×)"
+          label="Lapse new interval (*)"
           step={0.05}
-          hint="Multiplier applied to a card’s interval after a lapse. 0 resets it (relearn from scratch); 0.5 keeps half of the previous interval once it graduates again."
+          hint="Multiplier applied to a card's interval after a lapse. 0 resets it (relearn from scratch); 0.5 keeps half of the previous interval once it graduates again."
           v={config.lapseNewInterval}
           on={(n) => setConfig({ lapseNewInterval: n })}
         />
@@ -380,14 +380,14 @@ function SettingsView() {
           on={(n) => setConfig({ maximumInterval: n })}
         />
         <NumRow
-          label="Easy bonus (×)"
+          label="Easy bonus (*)"
           step={0.05}
           hint="Extra multiplier applied to the interval when you rate a review card “Easy”, on top of normal growth. 1.3 means Easy intervals are 30% longer than Good."
           v={config.easyBonus}
           on={(n) => setConfig({ easyBonus: n })}
         />
         <NumRow
-          label="Interval modifier (×)"
+          label="Interval modifier (*)"
           step={0.05}
           hint="Global multiplier on every review interval. Below 1 shortens all intervals (more reviews, higher retention); above 1 lengthens them. A quick way to tune overall difficulty."
           v={config.intervalModifier}
@@ -396,7 +396,7 @@ function SettingsView() {
         <NumRow
           label="Starting ease"
           step={0.05}
-          hint="The initial ease factor for a freshly graduated card (default 2.5 = ×2.5 interval growth on “Good”). Ease rises with Easy ratings and falls with Hard/Again."
+          hint="The initial ease factor for a freshly graduated card (default 2.5 = *2.5 interval growth on “Good”). Ease rises with Easy ratings and falls with Hard/Again."
           v={config.startingEaseFactor}
           on={(n) => setConfig({ startingEaseFactor: n })}
         />
@@ -541,7 +541,7 @@ function SettingsView() {
           {confirmScheduler === "fsrs" ? (
             <>
               FSRS models memory with <b>stability</b> and <b>difficulty</b>, scheduling each card
-              to hit your target retention. Existing cards keep their progress — stability is seeded
+              to hit your target retention. Existing cards keep their progress - stability is seeded
               from their current interval and difficulty from ease.
             </>
           ) : (

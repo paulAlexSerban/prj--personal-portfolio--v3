@@ -1,4 +1,4 @@
-# Stage environment - Route 53 → CloudFront → S3 (per-app)
+# Stage environment - Route 53 -> CloudFront -> S3 (per-app)
 
 Provisions **four** independent static-hosting stacks under the `paulserban.eu`
 zone, plus a single GitHub Actions OIDC deploy role that can sync/invalidate all
@@ -37,7 +37,7 @@ Each site is gated by the same **HTTP Basic Auth** CloudFront Function. Set
     ```
 - The **test** environment OIDC provider already applied (`envs/test` with
   `create_oidc_provider = true`). Stage sets `create_oidc_provider = false` and
-  looks up that existing provider — only one IAM OIDC provider for
+  looks up that existing provider - only one IAM OIDC provider for
   `token.actions.githubusercontent.com` can exist per AWS account.
 - An AWS identity with permissions for S3, CloudFront, ACM, Route 53, and IAM
   (role only; OIDC provider already exists) for the one-off manual apply.

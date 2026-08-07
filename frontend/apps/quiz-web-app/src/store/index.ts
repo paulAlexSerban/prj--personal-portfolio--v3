@@ -91,7 +91,7 @@ export interface QuizState {
 }
 
 export interface QuizActions {
-  /** Add a post and create fresh state for any of its questions not already tracked (additive — WEB-04). */
+  /** Add a post and create fresh state for any of its questions not already tracked (additive - WEB-04). */
   addPost: (postSlug: string, questionSlugs: string[]) => void;
   /** Remove a post from the study set but keep all card progress (WEB-05). */
   removePost: (postSlug: string) => void;
@@ -99,7 +99,7 @@ export interface QuizActions {
   reviewCard: (questionSlug: string, rating: Rating, timeTakenMs: number) => void;
   /** Revert the most recent reviewCard (restore card + daily, drop its log). */
   undoLastReview: () => LastReview | null;
-  /** Mark a question ignored — excluded from all future sessions (WEB-08). */
+  /** Mark a question ignored - excluded from all future sessions (WEB-08). */
   ignoreQuestion: (questionSlug: string) => void;
   unignoreQuestion: (questionSlug: string) => void;
   /** Temporarily suspend / unsuspend a question (excluded from queues). */
@@ -408,7 +408,7 @@ export const useStore = create<QuizStore>()(
       storage,
       version: 1,
       migrate: (persistedState) => runPersistMigration(persistedState as MigratablePersistedState),
-      // `lastReview` is a transient undo buffer — never persist it.
+      // `lastReview` is a transient undo buffer - never persist it.
       partialize: ({ lastReview: _lastReview, ...rest }) => rest,
     },
   ),

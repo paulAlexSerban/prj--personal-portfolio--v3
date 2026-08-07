@@ -34,7 +34,7 @@ The project requires a server-side runtime to handle the build system, API route
 |                                                                        |                                            | You are okay with potential compatibility issues with existing libraries and tools.                |    
 
 ## Decision
-After evaluating the options, **Node.js** has been chosen as the JavaScript runtime for the project. This decision is based on Node.js’s ubiquity, excellent ecosystem support, long-term stability, and native compatibility with TypeScript. Node.js provides a robust and well-supported environment for both frontend and backend development, making it the optimal choice for the portfolio project.
+After evaluating the options, **Node.js** has been chosen as the JavaScript runtime for the project. This decision is based on Node.js's ubiquity, excellent ecosystem support, long-term stability, and native compatibility with TypeScript. Node.js provides a robust and well-supported environment for both frontend and backend development, making it the optimal choice for the portfolio project.
 
 ## Consequences
 - The project will leverage Node.js for all server-side logic, including the build system and API routes, ensuring compatibility with the chosen programming language and frameworks.

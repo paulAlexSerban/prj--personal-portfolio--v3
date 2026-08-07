@@ -195,14 +195,14 @@ export function applyReviewFsrs(
 
 /**
  * Seed FSRS state from an SM-2 card without resetting progress. Stability maps
- * from `interval`; difficulty maps linearly from `easeFactor`. Idempotent —
+ * from `interval`; difficulty maps linearly from `easeFactor`. Idempotent -
  * cards already carrying FSRS state, or not yet in review, are returned as-is.
  */
 export function migrateToFsrs(card: CardState, config: StudyConfig): CardState {
   if (card.fsrsStability !== undefined && card.fsrsDifficulty !== undefined) return card;
   if (card.cardType !== "review") return card;
   const stability = Math.max(0.1, card.interval || config.minimumInterval);
-  // EF 2.5 → D≈5.5, EF 1.3 → D 10 (clamped), EF 3.5 → D 1.
+  // EF 2.5 -> D≈5.5, EF 1.3 -> D 10 (clamped), EF 3.5 -> D 1.
   const difficulty = clamp((3.5 - card.easeFactor) * (10 / 2.2) + 1, 1, 10);
   const lastReview = addDaysISO(card.dueDate, -Math.max(1, card.interval || 1));
   return {

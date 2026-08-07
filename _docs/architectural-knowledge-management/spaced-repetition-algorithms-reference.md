@@ -24,9 +24,9 @@ getScheduler(settings)          ← scheduler.ts
               ▼
        runReview()             ← learning.ts (shared card-state machine)
               │
-              ├── new / learning  → handleLearning()
-              ├── relearning      → handleRelearning()
-              └── review          → strategy.review()  (algorithm-specific)
+              ├── new / learning  -> handleLearning()
+              ├── relearning      -> handleRelearning()
+              └── review          -> strategy.review()  (algorithm-specific)
               │
               ▼
        scheduleReviewInterval()  ← fuzz + load balancing (all algorithms)
@@ -90,7 +90,7 @@ Ratings reflect **recall quality after the review step**, not raw correctness al
 | `fsrsDifficulty` (D) | Card difficulty, clamped to [1, 10]                 |
 | `fsrsLastReview`     | ISO date of last FSRS review (for forgetting curve) |
 
-`interval` and `dueDate` are still written under FSRS — they are the **user-facing schedule** after post-processing. FSRS computes a base interval from stability, then shared code applies clamping, fuzz, and load balancing.
+`interval` and `dueDate` are still written under FSRS - they are the **user-facing schedule** after post-processing. FSRS computes a base interval from stability, then shared code applies clamping, fuzz, and load balancing.
 
 ---
 
@@ -124,19 +124,19 @@ Lapse steps come from `config.lapseSteps` (default `[10]` minutes).
 
 When a card graduates from learning or relearning, the active `ReviewStrategy` sets algorithm-specific state and schedules the first day-based interval:
 
-- **SM-2:** `graduate(card, config, easy)` — uses `easyInterval` or `graduatingInterval`
-- **FSRS:** `graduate(card, config, easy)` — seeds stability/difficulty from the rating
+- **SM-2:** `graduate(card, config, easy)` - uses `easyInterval` or `graduatingInterval`
+- **FSRS:** `graduate(card, config, easy)` - seeds stability/difficulty from the rating
 
 ### Interval post-processing (all algorithms)
 
 Every day-based schedule goes through `scheduleReviewInterval`:
 
 1. **Clamp** to `[minimumInterval, maximumInterval]`
-2. **Fuzz** — deterministic ±offset based on card slug (Anki-style magnitude)
-3. **Load balance** — pick a due date within the fuzz window that minimises cards already due that day (21-day lookahead)
+2. **Fuzz** - deterministic ±offset based on card slug (Anki-style magnitude)
+3. **Load balance** - pick a due date within the fuzz window that minimises cards already due that day (21-day lookahead)
 
 ```typescript
-// fuzz.ts — magnitude grows with interval
+// fuzz.ts - magnitude grows with interval
 // < 2 days:  no fuzz
 // < 7 days:  ±1 day
 // < 30 days: ±5% (min ±1)
@@ -164,8 +164,8 @@ Every day-based schedule goes through `scheduleReviewInterval`:
 
 | Rating | Δ ease factor     |
 | ------ | ----------------- |
-| Again  | −0.20 (floor 1.3) |
-| Hard   | −0.15 (floor 1.3) |
+| Again  | -0.20 (floor 1.3) |
+| Hard   | -0.15 (floor 1.3) |
 | Good   | unchanged         |
 | Easy   | +0.15             |
 
@@ -173,10 +173,10 @@ Every day-based schedule goes through `scheduleReviewInterval`:
 
 | Rating | Formula                                                           |
 | ------ | ----------------------------------------------------------------- |
-| Again  | Lapse → relearning; interval × `lapseNewInterval` (default 0)     |
-| Hard   | `interval × 1.2`                                                  |
-| Good   | `interval × easeFactor`                                           |
-| Easy   | `interval × easeFactor × easyBonus` (default easyBonus = **1.3**) |
+| Again  | Lapse -> relearning; interval * `lapseNewInterval` (default 0)     |
+| Hard   | `interval * 1.2`                                                  |
+| Good   | `interval * easeFactor`                                           |
+| Easy   | `interval * easeFactor * easyBonus` (default easyBonus = **1.3**) |
 
 ### SM-2 configuration (`StudyConfig`)
 
@@ -199,7 +199,7 @@ All fields below are used by SM-2:
 
 ## 5. FSRS-5 algorithm
 
-**Optional scheduler.** Free Spaced Repetition Scheduler v5 — models memory with **stability** (S) and **difficulty** (D) instead of a single ease factor.
+**Optional scheduler.** Free Spaced Repetition Scheduler v5 - models memory with **stability** (S) and **difficulty** (D) instead of a single ease factor.
 
 **Source:** `src/algorithms/fsrs.ts`
 
@@ -216,23 +216,23 @@ External reference: [FSRS algorithm wiki](https://github.com/open-spaced-repetit
 ```
 R(t) = (1 + FACTOR · t / S) ^ DECAY
 
-DECAY = −0.5
+DECAY = -0.5
 FACTOR = 19/81
 ```
 
 **Interval from stability:** Days until R drops to `requestedRetention`:
 
 ```
-interval = (S / FACTOR) · (requestedRetention^(1/DECAY) − 1)
+interval = (S / FACTOR) · (requestedRetention^(1/DECAY) - 1)
 ```
 
-At the default **90% retention**, interval ≈ stability (rounded). Example: S = 15.47 → interval ≈ **15 days**.
+At the default **90% retention**, interval ≈ stability (rounded). Example: S = 15.47 -> interval ≈ **15 days**.
 
 ### Default parameters
 
 ```typescript
 DEFAULT_FSRS_PARAMS = {
-  w: [/* 19 weights — see table below */],
+  w: [/* 19 weights - see table below */],
   requestedRetention: 0.9,
   maximumInterval: 36500,  // internal formula cap; user cap applied later
 }
@@ -242,8 +242,8 @@ User settings (`AppSettings`):
 
 | Setting               | Default              | Purpose                              |
 | --------------------- | -------------------- | ------------------------------------ |
-| `fsrsTargetRetention` | 0.9                  | Target recall probability (0.7–0.99) |
-| `fsrsWeights`         | undefined → defaults | Optional 19-element weight vector    |
+| `fsrsTargetRetention` | 0.9                  | Target recall probability (0.7-0.99) |
+| `fsrsWeights`         | undefined -> defaults | Optional 19-element weight vector    |
 
 ### The 19 weights (`w[0]` … `w[18]`)
 
@@ -251,10 +251,10 @@ Published FSRS-5 defaults (optimised on large review datasets):
 
 | Index       | Value       | Used for                                           |
 | ----------- | ----------- | -------------------------------------------------- |
-| `w[0]`      | 0.4072      | Initial stability — **Again**                      |
-| `w[1]`      | 1.1829      | Initial stability — **Hard**                       |
-| `w[2]`      | 3.1262      | Initial stability — **Good**                       |
-| **`w[3]`**  | **15.4722** | Initial stability — **Easy**                       |
+| `w[0]`      | 0.4072      | Initial stability - **Again**                      |
+| `w[1]`      | 1.1829      | Initial stability - **Hard**                       |
+| `w[2]`      | 3.1262      | Initial stability - **Good**                       |
+| **`w[3]`**  | **15.4722** | Initial stability - **Easy**                       |
 | `w[4]`      | 7.2102      | Initial difficulty base                            |
 | `w[5]`      | 0.5316      | Initial difficulty rating factor                   |
 | `w[6]`      | 1.0651      | Difficulty change magnitude                        |
@@ -271,7 +271,7 @@ Published FSRS-5 defaults (optimised on large review datasets):
 | `w[17]`     | 0.51        | Present in defaults; **not used** in this codebase |
 | `w[18]`     | 0.43        | Present in defaults; **not used** in this codebase |
 
-Custom weights can be pasted in Settings → Advanced: FSRS weights.
+Custom weights can be pasted in Settings -> Advanced: FSRS weights.
 
 ### Initial state on graduation
 
@@ -289,7 +289,7 @@ initDifficulty(rating) = clamp(w[4] - exp(w[5] * (rating - 1)) + 1, 1, 10)
 | Good     | 3.13 days         | ~3 days                                |
 | **Easy** | **15.47 days**    | **~15 days**                           |
 
-**This is why Easy on a new card schedules past 14 days under FSRS.** There is no 14-day constant — `w[3] = 15.4722` is baked into the published FSRS-5 defaults. The final due date may land at 14–16 days after fuzz (±1 day for intervals in the 7–30 range).
+**This is why Easy on a new card schedules past 14 days under FSRS.** There is no 14-day constant - `w[3] = 15.4722` is baked into the published FSRS-5 defaults. The final due date may land at 14-16 days after fuzz (±1 day for intervals in the 7-30 range).
 
 ### Review-state updates
 
@@ -299,8 +299,8 @@ On each review, FSRS:
 2. Computes **retrievability** R from stability and elapsed time
 3. Updates **difficulty** via `nextDifficulty` (Again raises D, Easy lowers D)
 4. Updates **stability**:
-   - **Again (lapse):** `nextForgetStability` — stability decreases, card enters relearning
-   - **Hard / Good / Easy:** `nextRecallStability` — stability increases
+   - **Again (lapse):** `nextForgetStability` - stability decreases, card enters relearning
+   - **Hard / Good / Easy:** `nextRecallStability` - stability increases
 
 **Recall stability growth** (Hard / Good / Easy):
 
@@ -319,12 +319,12 @@ newStability = stability · (1 + inc)
 
 | Factor                | Effect                                      |
 | --------------------- | ------------------------------------------- |
-| Current stability     | Higher base → larger absolute jump          |
-| Difficulty            | Lower D → bigger growth (`11 - difficulty`) |
-| Retrievability R      | Reviewed closer to forgetting → bigger jump |
-| `w[16]` easy bonus    | **~3×** multiplier on the growth term       |
+| Current stability     | Higher base -> larger absolute jump          |
+| Difficulty            | Lower D -> bigger growth (`11 - difficulty`) |
+| Retrievability R      | Reviewed closer to forgetting -> bigger jump |
+| `w[16]` easy bonus    | **~3*** multiplier on the growth term       |
 | `nextDifficulty`      | Easy lowers D, helping future intervals     |
-| `fsrsTargetRetention` | Lower retention → shorter intervals         |
+| `fsrsTargetRetention` | Lower retention -> shorter intervals         |
 | `maximumInterval`     | Hard cap (default 30 days)                  |
 
 Repeated Easy ratings can push stability well above 14 days, capped by `config.maximumInterval`.
@@ -334,16 +334,16 @@ Repeated Easy ratings can push stability well above 14 days, capped by `config.m
 When a relearning card graduates (Good on last step, or Easy):
 
 - **Keeps existing stability** (or falls back to Good's initial stability `w[2]` if missing)
-- Does **not** re-seed `w[3]` — Easy here does not jump to ~15 days unless stability was already high
+- Does **not** re-seed `w[3]` - Easy here does not jump to ~15 days unless stability was already high
 
 ### FSRS vs SM-2 settings
 
-These `StudyConfig` fields are **SM-2 only** — FSRS ignores them:
+These `StudyConfig` fields are **SM-2 only** - FSRS ignores them:
 
 | Setting              | SM-2 default | FSRS                                      |
 | -------------------- | ------------ | ----------------------------------------- |
 | `easyInterval`       | 4 days       | Ignored (uses `w[3]` instead)             |
-| `easyBonus`          | 1.3×         | Ignored (uses `w[16]` instead)            |
+| `easyBonus`          | 1.3*         | Ignored (uses `w[16]` instead)            |
 | `graduatingInterval` | 1 day        | Ignored (uses `w[2]` for Good graduation) |
 | `intervalModifier`   | 1.0          | Ignored                                   |
 
@@ -358,22 +358,22 @@ These fields are **shared** by both algorithms:
 
 **Two different maximums exist:**
 
-- `FsrsParams.maximumInterval` = 36500 — internal formula cap in `intervalFromStability`
-- `StudyConfig.maximumInterval` = 30 — effective user-facing cap via `scheduleReviewInterval`
+- `FsrsParams.maximumInterval` = 36500 - internal formula cap in `intervalFromStability`
+- `StudyConfig.maximumInterval` = 30 - effective user-facing cap via `scheduleReviewInterval`
 
 ---
 
-## 6. Easy rating — side-by-side comparison
+## 6. Easy rating - side-by-side comparison
 
 Why Easy behaves differently between algorithms:
 
 | Scenario               | SM-2                                        | FSRS                                              |
 | ---------------------- | ------------------------------------------- | ------------------------------------------------- |
-| New card, rate Easy    | Skip learning → **4 days** (`easyInterval`) | Skip learning → **~15 days** (`w[3]`)             |
-| Review card, rate Easy | `interval × EF × 1.3`                       | Stability × `(1 + inc)` with **2.99×** easy bonus |
+| New card, rate Easy    | Skip learning -> **4 days** (`easyInterval`) | Skip learning -> **~15 days** (`w[3]`)             |
+| Review card, rate Easy | `interval * EF * 1.3`                       | Stability * `(1 + inc)` with **2.99*** easy bonus |
 | Relearning, rate Easy  | Graduate with prior interval                | Graduate with **prior stability**                 |
 
-If you see ~15 days on first Easy under FSRS, that is **expected**. If you expected 4 days, that is the SM-2 `easyInterval` setting — it does not apply to FSRS.
+If you see ~15 days on first Easy under FSRS, that is **expected**. If you expected 4 days, that is the SM-2 `easyInterval` setting - it does not apply to FSRS.
 
 ---
 
@@ -381,23 +381,23 @@ If you see ~15 days on first Easy under FSRS, that is **expected**. If you expec
 
 Triggered when the user changes `settings.scheduler` in Settings (with confirmation).
 
-### SM-2 → FSRS (`migrateToFsrs`)
+### SM-2 -> FSRS (`migrateToFsrs`)
 
 For review cards without FSRS state:
 
 - `fsrsStability` ← `interval` (identity mapping)
-- `fsrsDifficulty` ← linear remap from `easeFactor`: `D = (3.5 − EF) · 10/2.2 + 1`, clamped [1, 10]
-- `fsrsLastReview` ← inferred from `dueDate − interval`
+- `fsrsDifficulty` ← linear remap from `easeFactor`: `D = (3.5 - EF) · 10/2.2 + 1`, clamped [1, 10]
+- `fsrsLastReview` ← inferred from `dueDate - interval`
 
-Idempotent — cards already carrying FSRS state are unchanged.
+Idempotent - cards already carrying FSRS state are unchanged.
 
-### FSRS → SM-2 (`migrateToSm2`)
+### FSRS -> SM-2 (`migrateToSm2`)
 
-Drops `fsrsStability`, `fsrsDifficulty`, `fsrsLastReview`. Keeps `interval` and `easeFactor` — lossless.
+Drops `fsrsStability`, `fsrsDifficulty`, `fsrsLastReview`. Keeps `interval` and `easeFactor` - lossless.
 
 ### Round-trip guarantee
 
-SM-2 → FSRS → SM-2 preserves `interval` and `easeFactor` exactly (covered by unit tests).
+SM-2 -> FSRS -> SM-2 preserves `interval` and `easeFactor` exactly (covered by unit tests).
 
 ---
 
@@ -434,39 +434,39 @@ Typical result: FSRS reaches ~90% retention with ~36% fewer reviews than SM-2 on
 
 ## 9. End-to-end flow diagrams
 
-### New card → Easy (FSRS)
+### New card -> Easy (FSRS)
 
 ```
 Rate Easy
-  → handleLearning: rating === 4
-  → fsrsStrategy.graduate(easy=true)
-  → fsrsStability = w[3] = 15.47
-  → intervalFromStability(15.47, 0.9) ≈ 15 days
-  → clamp [1, 30]
-  → fuzz ±1 day
-  → load balance within 21-day window
-  → card.dueDate set
+  -> handleLearning: rating === 4
+  -> fsrsStrategy.graduate(easy=true)
+  -> fsrsStability = w[3] = 15.47
+  -> intervalFromStability(15.47, 0.9) ≈ 15 days
+  -> clamp [1, 30]
+  -> fuzz ±1 day
+  -> load balance within 21-day window
+  -> card.dueDate set
 ```
 
-### Review card → Easy (FSRS)
+### Review card -> Easy (FSRS)
 
 ```
 Rate Easy
-  → compute retrievability R from elapsed days
-  → nextDifficulty (D decreases)
-  → nextRecallStability with w[16] easy bonus (~3×)
-  → new stability may be 2–7× previous
-  → intervalFromStability → clamp → fuzz → dueDate
+  -> compute retrievability R from elapsed days
+  -> nextDifficulty (D decreases)
+  -> nextRecallStability with w[16] easy bonus (~3*)
+  -> new stability may be 2-7* previous
+  -> intervalFromStability -> clamp -> fuzz -> dueDate
 ```
 
-### Review card → Again (both algorithms)
+### Review card -> Again (both algorithms)
 
 ```
 Rate Again
-  → lapses += 1
-  → enter relearning (short minute-based steps)
-  → SM-2: ease −0.20, interval × lapseNewInterval
-  → FSRS: nextForgetStability (stability drops)
+  -> lapses += 1
+  -> enter relearning (short minute-based steps)
+  -> SM-2: ease -0.20, interval * lapseNewInterval
+  -> FSRS: nextForgetStability (stability drops)
 ```
 
 ---

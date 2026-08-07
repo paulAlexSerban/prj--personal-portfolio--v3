@@ -7,7 +7,7 @@ export interface CompileContentOptions extends CompileMarkdownOptions {
 }
 
 /**
- * Full content pipeline: optional MDX preprocess → markdown → cloze → sanitize.
+ * Full content pipeline: optional MDX preprocess -> markdown -> cloze -> sanitize.
  * Used at export time (Node) and as a client fallback when precompiled HTML is absent.
  */
 export function compileContent(src: string, opts: CompileContentOptions = {}): string {

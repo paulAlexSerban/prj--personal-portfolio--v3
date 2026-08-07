@@ -114,7 +114,7 @@ function BrowseView() {
         All Questions
       </h2>
       <p className="text-base italic text-[var(--charcoal)] mb-6">
-        Search and preview across every set you&apos;ve added — no scheduling changes.
+        Search and preview across every set you&apos;ve added - no scheduling changes.
       </p>
 
       <FilterBar

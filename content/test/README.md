@@ -5,7 +5,7 @@ Committed regression fixtures for the `test.*` AWS environment. Mirrors the layo
 ## Purpose
 
 - Keep portfolio, blog, quiz, and news-feed surfaces buildable without cloning the private content repo
-- Exercise every MDX/JSON ingest mapping (posts, questions × 4 answer formats, cheat sheets, learning plans, booknotes, snippets, projects, coursework, profile, skills, experience, pages)
+- Exercise every MDX/JSON ingest mapping (posts, questions \* 4 answer formats, cheat sheets, learning plans, booknotes, snippets, projects, coursework, profile, skills, experience, pages)
 - Provide deterministic copy so CI regressions are reproducible
 
 ## Layout

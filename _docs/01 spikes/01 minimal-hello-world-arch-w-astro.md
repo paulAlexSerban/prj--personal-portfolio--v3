@@ -69,7 +69,7 @@ This is static content rendered at build time.
 
 <Hello name="Astro + MDX" client:load />
 
-## What’s happening here?
+## What's happening here?
 
 - Markdown is compiled to HTML
 - React component is embedded inside MDX
@@ -172,24 +172,24 @@ This line is the entire game:
 
 You control hydration explicitly:
 
-* `client:load` → hydrate immediately
-* `client:idle` → hydrate when browser is idle
-* `client:visible` → hydrate only when visible
-* no directive → **zero JS (pure static HTML)**
+* `client:load` -> hydrate immediately
+* `client:idle` -> hydrate when browser is idle
+* `client:visible` -> hydrate only when visible
+* no directive -> **zero JS (pure static HTML)**
 
 ---
 
 # What You Just Built
 
-* MDX → compiled at build time
-* React → embedded as islands
-* Output → static HTML
-* JS → only where needed
+* MDX -> compiled at build time
+* React -> embedded as islands
+* Output -> static HTML
+* JS -> only where needed
 
 This is fundamentally different from:
 
-* **Next.js** → ships React everywhere
-* **TanStack Start** → not optimized for static content
+* **Next.js** -> ships React everywhere
+* **TanStack Start** -> not optimized for static content
 
 ---
 
@@ -229,4 +229,4 @@ You now have:
 * MDX as a content system
 * React as an **optional enhancement layer**
 
-That’s the cleanest mental model you can get for a content platform.
+That's the cleanest mental model you can get for a content platform.

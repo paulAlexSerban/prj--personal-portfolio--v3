@@ -1,4 +1,4 @@
-# (draft) Quiz delivery targets — SUPERSEDED
+# (draft) Quiz delivery targets - SUPERSEDED
 
 > **Superseded by [ADR-008](../adr-008--quiz-web-app-architecture.md).**
 > This early draft assumed `packages/quiz-ui`, `apps/quiz-web`, and a Capacitor

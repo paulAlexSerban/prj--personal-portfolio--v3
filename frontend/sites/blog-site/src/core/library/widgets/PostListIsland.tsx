@@ -95,7 +95,7 @@ function writeUrlState({ q, sort, page, from, to }: UrlState): void {
 function dateFilterLabel(from: string | null, to: string | null): string {
     if (!from) return 'Date';
     if (!to || to === from) return formatDateLabel(from);
-    return `${formatDateLabel(from)} – ${formatDateLabel(to)}`;
+    return `${formatDateLabel(from)} - ${formatDateLabel(to)}`;
 }
 
 export const PostListIsland = ({ posts }: PostListIslandProps) => {
@@ -123,7 +123,7 @@ export const PostListIsland = ({ posts }: PostListIslandProps) => {
     }, []);
 
     // Live filtering: debounce the text box into `query`. URL is left untouched
-    // here — it is only written on Enter (and on sort/pagination actions).
+    // here - it is only written on Enter (and on sort/pagination actions).
     // Page reset happens in the typing handler so this doesn't clobber a page
     // restored from the URL on first load.
     useEffect(() => {
@@ -375,7 +375,7 @@ export const PostListIsland = ({ posts }: PostListIslandProps) => {
                                     title="Go to the next page"
                                     className="rounded-none border-ink text-sm disabled:opacity-40"
                                 >
-                                    Next →
+                                    Next &gt;
                                 </Button>
                             )}
                         />

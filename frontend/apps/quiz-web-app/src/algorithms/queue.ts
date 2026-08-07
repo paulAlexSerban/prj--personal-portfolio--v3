@@ -11,15 +11,15 @@ export interface QueueOpts {
   settings: AppSettings;
   /** When true, daily new/review caps are ignored (e.g. "study ahead"/cram). */
   ignoreLimits?: boolean;
-  /** Explicit remaining new-card budget (overrides config − studied when set). */
+  /** Explicit remaining new-card budget (overrides config - studied when set). */
   newBudget?: number;
-  /** Explicit remaining review budget (overrides config − studied when set). */
+  /** Explicit remaining review budget (overrides config - studied when set). */
   reviewBudget?: number;
-  /** Question slug → difficulty rank (1 = beginner, 2 = intermediate, 3 = advanced). */
+  /** Question slug -> difficulty rank (1 = beginner, 2 = intermediate, 3 = advanced). */
   difficultyMap?: Map<string, number>;
 }
 
-/** Sort new cards by difficulty rank (beginner → advanced). Stable when ranks tie. */
+/** Sort new cards by difficulty rank (beginner -> advanced). Stable when ranks tie. */
 export function sortNewByDifficulty(
   cards: CardState[],
   difficultyMap?: Map<string, number>,

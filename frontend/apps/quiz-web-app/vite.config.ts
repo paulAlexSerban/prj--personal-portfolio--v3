@@ -17,10 +17,10 @@ function escapeRegExp(value: string): string {
   return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 
-/** Build-time pattern for /data/* runtime cache — must be RegExp, not a closure (Workbox inlines sw.js). */
+/** Build-time pattern for /data/* runtime cache - must be RegExp, not a closure (Workbox inlines sw.js). */
 const quizDataUrlPattern = new RegExp(`^https?://[^/]+${escapeRegExp(`${appBase}/data/`)}`);
 
-// Strict CSR-only Vite app — client-side rendering only.
+// Strict CSR-only Vite app - client-side rendering only.
 export default defineConfig({
   base: appBase || "/",
   define: {
@@ -35,7 +35,7 @@ export default defineConfig({
       registerType: "autoUpdate",
       includeAssets: ["favicon.ico", "apple-touch-icon.png"],
       manifest: {
-        name: "The Typeset Review — Flashcards",
+        name: "The Typeset Review - Flashcards",
         short_name: "The Typeset Review",
         description: "Spaced-repetition flashcard study, offline-ready.",
         theme_color: "#f2efe7",

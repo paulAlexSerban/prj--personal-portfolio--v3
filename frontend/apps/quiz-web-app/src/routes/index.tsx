@@ -95,7 +95,7 @@ function HomeView() {
             Browse Posts
           </h2>
           <p className="mt-2 text-base text-[var(--charcoal)] italic max-w-xl">
-            Add a post to your study set — all of its flashcards join your deck without resetting
+            Add a post to your study set - all of its flashcards join your deck without resetting
             prior progress.
           </p>
         </div>

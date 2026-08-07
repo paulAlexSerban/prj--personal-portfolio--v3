@@ -10,7 +10,7 @@ import { and, asc, eq } from 'drizzle-orm';
 
 import { isPublishedOnOrBefore, type BlogContentType } from '@/lib/queries/posts.ts';
 
-/** Strip `{post_slug}--` prefix from a companion composite slug → item slug for URLs. */
+/** Strip `{post_slug}--` prefix from a companion composite slug -> item slug for URLs. */
 export function companionItemSlug(compositeSlug: string, postSlug: string): string {
     const prefix = `${postSlug}--`;
     return compositeSlug.startsWith(prefix) ? compositeSlug.slice(prefix.length) : compositeSlug;

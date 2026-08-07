@@ -10,7 +10,7 @@ the native `better-sqlite3` driver.
 
 The schema (table definitions + types) is kept in `shared--db-schema` so type-only
 consumers don't drag a native binary into their bundle. `shared--db` is the
-runtime half — it depends on the schema and adds the driver, migrator, and write
+runtime half - it depends on the schema and adds the driver, migrator, and write
 helpers used by the **ingest tools at build time**.
 
 ## API
@@ -38,12 +38,12 @@ writes are tagged `sync_source: 'mdx'`. The helper assumes the target table has
 
 ## Source map
 
-| File                | Role                                                                                     |
-| ------------------- | ---------------------------------------------------------------------------------------- |
-| `src/connection.ts` | `openConnection` / `closeConnection` / `DrizzleDb`.                                      |
-| `src/migrate.ts`    | `runMigrations`.                                                                         |
-| `src/upsert.ts`     | `upsertWithLockCheck` + `UpsertOutcome` / `UpsertResult`.                                |
-| `drizzle.config.ts` | Drizzle Kit config (schema → `database/migrations/`, db → `database/output/content.db`). |
+| File                | Role                                                                                       |
+| ------------------- | ------------------------------------------------------------------------------------------ |
+| `src/connection.ts` | `openConnection` / `closeConnection` / `DrizzleDb`.                                        |
+| `src/migrate.ts`    | `runMigrations`.                                                                           |
+| `src/upsert.ts`     | `upsertWithLockCheck` + `UpsertOutcome` / `UpsertResult`.                                  |
+| `drizzle.config.ts` | Drizzle Kit config (schema -> `database/migrations/`, db -> `database/output/content.db`). |
 
 ## Scripts
 
@@ -62,5 +62,5 @@ pnpm db:studio     # open Drizzle Studio
 
 ## Related docs
 
-- `shared/AGENTS.md` — all shared packages.
-- `database/AGENTS.md` — the SQLite artifact + migration files.
+- `shared/AGENTS.md` - all shared packages.
+- `database/AGENTS.md` - the SQLite artifact + migration files.

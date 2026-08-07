@@ -1,6 +1,6 @@
 | **CI/CD**             | GitHub Actions              | Native Git integration; free for public repos  
 
-### 12.1 Workflow: Content Push → Deploy
+### 12.1 Workflow: Content Push -> Deploy
 
 **Trigger:** Push to `main` branch of `content--blog_domain.eu`
 
@@ -20,7 +20,7 @@ jobs:
       - Deploy quiz-web dist/ to Cloudflare Pages
 ```
 
-### 12.2 Workflow: App Code Push → Deploy
+### 12.2 Workflow: App Code Push -> Deploy
 
 **Trigger:** Push to `main` branch of app monorepo
 
@@ -32,9 +32,9 @@ jobs:
       - Checkout app monorepo (db/content.db already present)
       - pnpm install
       - Run: turbo build
-      - Deploy blog → Cloudflare Pages
-      - Deploy quiz-web → Cloudflare Pages
-      - (Optional) Run Capacitor build → Fastlane → App Store / Play Store
+      - Deploy blog -> Cloudflare Pages
+      - Deploy quiz-web -> Cloudflare Pages
+      - (Optional) Run Capacitor build -> Fastlane -> App Store / Play Store
 ```
 
 ### 12.3 Turbo Task Graph
@@ -61,5 +61,5 @@ jobs:
   run: lhci autorun
   env:
     LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_TOKEN }}
-# Budget: performance ≥ 95, SEO ≥ 95 — fails build if not met
+# Budget: performance ≥ 95, SEO ≥ 95 - fails build if not met
 ```

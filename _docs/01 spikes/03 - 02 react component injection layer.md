@@ -6,7 +6,7 @@
 
 from **Next.js**, typically via `next-mdx-remote`.
 
-Let’s be blunt about what this actually is—and how it compares to what you’re trying to do with **Astro**.
+Let's be blunt about what this actually is-and how it compares to what you're trying to do with **Astro**.
 
 ---
 
@@ -38,7 +38,7 @@ And you pass:
 
 Because:
 
-* MDX is compiled → serialized → sent to client/server
+* MDX is compiled -> serialized -> sent to client/server
 * React renders it dynamically at runtime
 * Components are resolved via props
 
@@ -62,7 +62,7 @@ There is no equivalent of:
 
 Because Astro:
 
-* Compiles MDX → HTML during build
+* Compiles MDX -> HTML during build
 * Does NOT evaluate MDX at runtime
 
 ---
@@ -85,7 +85,7 @@ Because Astro:
 
 # Can You Replicate `MDXRemote` Behavior in Astro?
 
-Yes—but not the same way.
+Yes-but not the same way.
 
 You have 2 real options:
 
@@ -125,7 +125,7 @@ But now you:
 * Increase bundle size
 * Reintroduce React-heavy runtime
 
-At that point, you’re basically rebuilding Next.js badly.
+At that point, you're basically rebuilding Next.js badly.
 
 ---
 
@@ -181,9 +181,9 @@ But the tradeoff is different:
 
 # The Real Decision
 
-You’re not choosing syntax.
+You're not choosing syntax.
 
-You’re choosing **architecture timing**:
+You're choosing **architecture timing**:
 
 | Decision Axis | Next.js (`MDXRemote`) | Astro  |
 | ------------- | --------------------- | ------ |
@@ -194,7 +194,7 @@ You’re choosing **architecture timing**:
 
 ---
 
-# What I’d Recommend (Based on Your Goal)
+# What I'd Recommend (Based on Your Goal)
 
 You said:
 
@@ -228,5 +228,5 @@ Only if you need:
 
 Astro is powerful because it eliminates runtime.
 
-You don’t want to recreate `MDXRemote` in Astro—you want to **avoid needing it entirely**.
+You don't want to recreate `MDXRemote` in Astro-you want to **avoid needing it entirely**.
 

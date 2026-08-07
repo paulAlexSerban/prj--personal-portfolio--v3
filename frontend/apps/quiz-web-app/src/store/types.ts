@@ -7,7 +7,7 @@ export type SchedulerName = "sm2" | "fsrs";
 
 /**
  * Per-question spaced-repetition state. Keyed by question slug in the store.
- * Content (stem, options, explanation) lives in the JSON data, NOT here —
+ * Content (stem, options, explanation) lives in the JSON data, NOT here -
  * this object only carries the scheduling state for a single question.
  *
  * SM-2 uses `interval` / `easeFactor` / `repetitions`. FSRS additionally
@@ -94,7 +94,7 @@ export interface AppSettings {
   keyboardShortcuts: boolean;
   globalNewLimit: number | null;
   globalReviewLimit: number | null;
-  /** Hour (0–23) when the study day rolls over (Anki default: 4). */
+  /** Hour (0-23) when the study day rolls over (Anki default: 4). */
   dayStartHour: number;
   /** Auto-leech when lapses reach this count (0 = disabled). */
   leechThreshold: number;
@@ -102,13 +102,13 @@ export interface AppSettings {
   leechAction: "suspend" | "tag";
   /** Active scheduling algorithm. */
   scheduler: SchedulerName;
-  /** FSRS target retrieval probability [0.7 – 0.99]. */
+  /** FSRS target retrieval probability [0.7 - 0.99]. */
   fsrsTargetRetention: number;
   /** Optional custom FSRS weights (19 values). Falls back to defaults when unset. */
   fsrsWeights?: number[];
 }
 
-/** Per-post overrides for pacing — unset fields inherit global config. */
+/** Per-post overrides for pacing - unset fields inherit global config. */
 export type PostConfigOverride = Partial<
   Pick<StudyConfig, "newCardsPerDay" | "maxReviewsPerDay" | "learningSteps" | "lapseSteps">
 >;

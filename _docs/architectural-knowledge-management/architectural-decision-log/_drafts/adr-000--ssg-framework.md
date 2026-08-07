@@ -5,7 +5,7 @@ Proposed
 
 ## Context
 We need a **static site generation pipeline** that:
-* Converts **MDX → static HTML**
+* Converts **MDX -> static HTML**
 * Supports **content-heavy pages (blog, docs, knowledge base)**
 * Has strong **performance (SEO, Core Web Vitals)**
 * Enables **component-driven content (React/JSX in MDX)**
@@ -44,13 +44,13 @@ Key architectural concerns:
 | Extremely flexible routing via TanStack Router       | **Immature SSG story**     | You are building:                                             |                                              |
 | Fine-grained control over data loading (React Query) | No first-party MDX support | - Your own content system;                                    | You want full control over architecture;     |
 | Modern architecture (React Query, Router, etc.)      | Requires manual setup:     | - Your own SSG pipeline                                       | You are building a custom platform;          |
-|                                                      | - MDX parsing              | This is not a content framework—it’s a **framework toolkit**. | You’re okay investing time in infrastructure |
+|                                                      | - MDX parsing              | This is not a content framework-it's a **framework toolkit**. | You're okay investing time in infrastructure |
 |                                                      | - Content layer            |                                                               |                                              |
 |                                                      | - Static export logic      |                                                               |                                              |
 |                                                      | Smaller ecosystem          |                                                               |                                              |
 
 ### Reality check
-If your goal is MDX → static site, this is the **wrong abstraction level**.
+If your goal is MDX -> static site, this is the **wrong abstraction level**.
 
 
 ## 3. Astro
@@ -91,7 +91,7 @@ Astro aligns directly with:
 * Minimal JS as a principle (not an optimization)
 
 Next.js solves a broader problem than needed.
-TanStack Start doesn’t solve this problem out of the box at all.
+TanStack Start doesn't solve this problem out of the box at all.
 
 ## Consequences
 
@@ -118,8 +118,8 @@ If requirements grow:
 
 ## Bottom Line
 
-* If you're building a **platform** → TanStack Start
-* If you're building a **web app with content** → Next.js
-* If you're building a **content system with components (MDX)** → Astro
+* If you're building a **platform** -> TanStack Start
+* If you're building a **web app with content** -> Next.js
+* If you're building a **content system with components (MDX)** -> Astro
 
 ## Resources

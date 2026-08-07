@@ -14,7 +14,7 @@ Packages in this workspace are **private** (not published to npm). Changesets is
 
 1. Semantic version bumps per package
 2. Changelog generation
-3. Git tags (`pkg-name@version`) that trigger stage → production promotion
+3. Git tags (`pkg-name@version`) that trigger stage -> production promotion
 
 ### Contributor workflow
 

@@ -1,6 +1,6 @@
 # DB Schema (`shared/db-schema/`)
 
-The **single source of truth for the database shape** — Drizzle table definitions
+The **single source of truth for the database shape** - Drizzle table definitions
 and the TypeScript row types inferred from them. Nothing else: no driver, no
 connection, no queries.
 
@@ -9,7 +9,7 @@ connection, no queries.
 ## Why it's its own package
 
 It deliberately has **no Node DB driver** (`better-sqlite3` lives in `shared--db`).
-That lets type-only consumers — the Astro frontend, the export module — import row
+That lets type-only consumers - the Astro frontend, the export module - import row
 types without pulling a native SQLite binary into their bundle.
 
 ## What's in it
@@ -28,7 +28,7 @@ Also exports the inferred `Select`/`Insert` row types and `ContentType`.
 ## How to change the schema
 
 1. Edit `index.ts` (add/alter a table or column).
-2. From the repo root run `pnpm db:generate` — Drizzle Kit writes a new SQL
+2. From the repo root run `pnpm db:generate` - Drizzle Kit writes a new SQL
    migration under `database/migrations/`.
 3. Commit the schema change **and** the generated migration together.
 4. `pnpm db:migrate` applies it to `database/output/content.db`.
@@ -43,6 +43,6 @@ Also exports the inferred `Select`/`Insert` row types and `ContentType`.
 
 ## Related docs
 
-- `shared/AGENTS.md` — all shared packages.
-- `database/AGENTS.md` — migrations and the SQLite artifact.
-- `_docs/02 plans/question-types-implementation-plan.md` — schema/ingest rationale.
+- `shared/AGENTS.md` - all shared packages.
+- `database/AGENTS.md` - migrations and the SQLite artifact.
+- `_docs/02 plans/question-types-implementation-plan.md` - schema/ingest rationale.

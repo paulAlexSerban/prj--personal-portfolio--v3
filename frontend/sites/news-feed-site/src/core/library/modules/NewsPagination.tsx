@@ -32,11 +32,11 @@ export function NewsPagination({ page, pages, total, prevHref, nextHref, itemLab
             renderNext={({ disabled }) =>
                 disabled || !nextHref ? (
                     <span className="stamp stamp-ghost px-3 py-1.5 text-sm opacity-40" aria-disabled="true">
-                        Next →
+                        Next &gt;
                     </span>
                 ) : (
                     <a className="stamp stamp-ghost px-3 py-1.5 text-sm no-underline" href={nextHref}>
-                        Next →
+                        Next &gt;
                     </a>
                 )
             }

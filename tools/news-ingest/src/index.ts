@@ -56,7 +56,7 @@ const tasks: Task<unknown>[] = [
 
 const main = async () => {
     const dryRun = process.argv.includes('--dry-run');
-    if (dryRun) console.log('[news-ingest] dry-run mode — no writes will happen');
+    if (dryRun) console.log('[news-ingest] dry-run mode - no writes will happen');
     console.log(`[news-ingest] cache=${CACHE_DIR}`);
 
     const executor = taskManager().init(tasks);

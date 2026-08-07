@@ -79,7 +79,7 @@ export async function loadTagQuestions(tagSlug: string): Promise<ExportedQuestio
   return questions;
 }
 
-/** All questions across every post — used by the global browse screen. */
+/** All questions across every post - used by the global browse screen. */
 export async function loadAllQuestions(): Promise<ExportedQuestion[]> {
   if (allQuestionsCache) return allQuestionsCache;
   const data = await fetchJson<AllQuestionsBundle>(`${DATA_BASE}/_all.json`);

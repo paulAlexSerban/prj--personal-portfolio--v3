@@ -4,7 +4,7 @@ Otherwise, MDX has no idea what `<Hello />` is.
 
 So the architecture becomes:
 
-> **MDX (content repo) → compiled with injected components → Astro build → S3 → CloudFront**
+> **MDX (content repo) -> compiled with injected components -> Astro build -> S3 -> CloudFront**
 
 ---
 
@@ -115,7 +115,7 @@ You have 3 real options:
 
 ---
 
-## Option A — Git Submodule (cleanest)
+## Option A - Git Submodule (cleanest)
 
 ```bash id="82r3r7"
 git submodule add https://github.com/your-org/content-repo src/content
@@ -132,7 +132,7 @@ Cons:
 
 ---
 
-## Option B — CI Pull (most flexible)
+## Option B - CI Pull (most flexible)
 
 In CI:
 
@@ -152,7 +152,7 @@ Cons:
 
 ---
 
-## Option C — Remote Fetch (worst for stability)
+## Option C - Remote Fetch (worst for stability)
 
 Fetch at build time via API/raw GitHub.
 
@@ -231,7 +231,7 @@ aws s3 sync dist/ s3://your-bucket --delete
 
 ## 1. Component API Stability
 
-You’ve created a **contract**:
+You've created a **contract**:
 
 ```mdx
 <Hello name="..." />
@@ -262,7 +262,7 @@ That means:
 
 ## 3. Build Coupling
 
-* Content changes → require full rebuild
+* Content changes -> require full rebuild
 * No runtime rendering (pure SSG)
 
 This is correct for:
@@ -305,10 +305,10 @@ Be honest about this:
 
 MDX references components that:
 
-* don’t exist
+* don't exist
 * changed API
 
-→ build fails
+-> build fails
 
 ---
 
@@ -323,7 +323,7 @@ You lose:
 
 ### 3. Scaling Content
 
-At scale, you’ll want:
+At scale, you'll want:
 
 * Content collections (Astro)
 * Frontmatter validation (Zod)
@@ -342,4 +342,4 @@ This approach is:
 
 But it's not “simple static site” anymore.
 
-You’ve effectively built a **headless content system with a compile-time renderer**.
+You've effectively built a **headless content system with a compile-time renderer**.

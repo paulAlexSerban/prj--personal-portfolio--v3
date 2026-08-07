@@ -1,7 +1,7 @@
 import { describe, it, expect } from "vitest";
 import { compileContent, compileMarkdown } from "./markdown";
 
-describe("compileMarkdown — math placeholders", () => {
+describe("compileMarkdown - math placeholders", () => {
   it("emits an inline-math placeholder carrying the raw TeX", () => {
     const html = compileMarkdown("The sum $\\sum_{i=1}^n i$ grows.");
     expect(html).toContain('<span class="math math-inline">');
@@ -28,7 +28,7 @@ describe("compileMarkdown — math placeholders", () => {
   });
 });
 
-describe("compileMarkdown — code blocks", () => {
+describe("compileMarkdown - code blocks", () => {
   it("keeps the language class so the highlighter can target it", () => {
     const html = compileMarkdown("```ts\nconst x: number = 1;\n```");
     expect(html).toContain("<pre>");
@@ -41,7 +41,7 @@ describe("compileMarkdown — code blocks", () => {
   });
 });
 
-describe("compileMarkdown — cloze + inline mode", () => {
+describe("compileMarkdown - cloze + inline mode", () => {
   it("hides cloze deletions until revealed", () => {
     const hidden = compileMarkdown("Capital is {{c1::Paris}}.", { reveal: false });
     expect(hidden).toContain("cloze-blank");
@@ -59,7 +59,7 @@ describe("compileMarkdown — cloze + inline mode", () => {
   });
 });
 
-describe("compileContent — MDX + XSS", () => {
+describe("compileContent - MDX + XSS", () => {
   it("renders Callout components from MDX source", () => {
     const html = compileContent('<Callout type="tip">Remember cycles.</Callout>');
     expect(html).toContain("mdx-callout-tip");

@@ -2,7 +2,7 @@
 
 Questions power the spaced-repetition quiz (SM-2, Again / Hard / Good / Easy). Every question is one **card** in the SRS (keyed by `slug`).
 
-**Authoring:** all questions are **MDX** under `publish/questions/`. Frontmatter holds structured fields (stem, options, metadata); the **MDX body** holds the model answer (for `free_text`) and the **explanation** — including JSX components and images. There is no separate JSON question format in the content repo.
+**Authoring:** all questions are **MDX** under `publish/questions/`. Frontmatter holds structured fields (stem, options, metadata); the **MDX body** holds the model answer (for `free_text`) and the **explanation** - including JSX components and images. There is no separate JSON question format in the content repo.
 
 Two **independent** axes describe each question:
 
@@ -22,7 +22,7 @@ Two **independent** axes describe each question:
 | `multiple_choice` | One correct option                       | `auto`                                          |
 | `multiple_select` | Several correct options                  | `auto`                                          |
 | `true_false`      | Declarative statement; answer is boolean | `auto`                                          |
-| `free_text`       | User recalls, then reveals model answer  | `self` (LLM-assisted grading planned — see PRD) |
+| `free_text`       | User recalls, then reveals model answer  | `self` (LLM-assisted grading planned - see PRD) |
 
 All formats use the **same SM-2 scheduling**. Auto-graded formats score the selection before rating; self-graded formats reveal the model answer from the body, then the user rates Again/Hard/Good/Easy.
 
@@ -39,7 +39,7 @@ All formats use the **same SM-2 scheduling**. Auto-graded formats score the sele
 | `open_ended`     | Synthesis or critical thinking            |
 | `analogy`        | Map a technical concept to a familiar one |
 
-**Example:** `answer_format: multiple_choice` + `cognitive_style: factual_recall` — not a single overloaded `type`.
+**Example:** `answer_format: multiple_choice` + `cognitive_style: factual_recall` - not a single overloaded `type`.
 
 ---
 
@@ -47,7 +47,7 @@ All formats use the **same SM-2 scheduling**. Auto-graded formats score the sele
 
 | Part            | Role                                                                    |
 | --------------- | ----------------------------------------------------------------------- |
-| **Filename**    | `{post-slug}--{uid}.mdx` → `post_slug` derived from filename            |
+| **Filename**    | `{post-slug}--{uid}.mdx` -> `post_slug` derived from filename            |
 | **Frontmatter** | Metadata + stem + structured fields (options, `answer` for T/F, etc.)   |
 | **Body**        | Model answer (`free_text` only) + rich **Explanation** (MDX/JSX/images) |
 
@@ -132,7 +132,7 @@ tags:
 
 ![DFS back-edge example](./images/dfs-back-edge.png)
 
-<Callout type="tip">Kahn's algorithm fails when a cycle exists — no zero-in-degree node remains.</Callout>
+<Callout type="tip">Kahn's algorithm fails when a cycle exists - no zero-in-degree node remains.</Callout>
 ```
 
 ### `multiple_select`
@@ -201,7 +201,7 @@ JSON source used to generate the MDX:
   "concept": "Topological sort",
   "answer": false,
   "tags": [ "Graph Theory", "Topological Sort" ],
-  "explanation": "False — only **DAGs** admit a topological ordering. Cyclic graphs have no topological sort.\n\nThe correct claim: topological sort applies to **directed acyclic** graphs."
+  "explanation": "False - only **DAGs** admit a topological ordering. Cyclic graphs have no topological sort.\n\nThe correct claim: topological sort applies to **directed acyclic** graphs."
 }
 ```
 
@@ -221,12 +221,12 @@ tags:
 
 ## Explanation
 
-False — only **DAGs** admit a topological ordering. Cyclic graphs have no topological sort.
+False - only **DAGs** admit a topological ordering. Cyclic graphs have no topological sort.
 
 The correct claim: topological sort applies to **directed acyclic** graphs.
 ```
 
-### `free_text` — `factual_recall`
+### `free_text` - `factual_recall`
 
 JSON source used to generate the MDX:
 ```json
@@ -265,7 +265,7 @@ An edge `(u, v)` where `v` is an ancestor of `u` in the DFS tree.
 Back-edges are the standard signal for **cycle detection** in directed graphs.
 ```
 
-### `free_text` — `comprehension` / `application` / `scenario` / `open_ended` / `analogy`
+### `free_text` - `comprehension` / `application` / `scenario` / `open_ended` / `analogy`
 
 Same `answer_format: free_text`. Vary `cognitive_style` and optional frontmatter (`concepts_tested`, `concept_target`, `concept_source`). Use **Answer** + **Explanation** in the body; put diagrams and JSX in **Explanation**.
 
@@ -279,7 +279,7 @@ JSON source used to generate the MDX:
   "difficulty": "advanced",
   "concepts_tested": [ "Topological sort", "Parallel execution" ],
   "answer": "Model a task graph as a DAG, run topological sort, execute each **level** of the resulting level-order in parallel.",
-  "explanation": "Alternative: critical-path scheduling if tasks have **weights** (durations) — see the post section on…",
+  "explanation": "Alternative: critical-path scheduling if tasks have **weights** (durations) - see the post section on…",
   "tags": [ "Scheduling", "Parallelism" ]
 }
 ```
@@ -305,7 +305,7 @@ Model a task graph as a DAG, run topological sort, execute each **level** of the
 
 ## Explanation
 
-Alternative: critical-path scheduling if tasks have **weights** (durations) — see the post section on…
+Alternative: critical-path scheduling if tasks have **weights** (durations) - see the post section on…
 
 <ComparisonTable tasks={...} />
 ```
@@ -318,7 +318,7 @@ Alternative: critical-path scheduling if tasks have **weights** (durations) — 
 | ----------------- | --------------------------------------------------------------------------------------------------------------------------- |
 | **mdx-ingest**    | Parses frontmatter + stores **raw MDX body** (no HTML compilation)                                                          |
 | **SSG / quiz UI** | Compiles explanation MDX at build or render time for rich display                                                           |
-| **Static export** | Build may emit `/data/questions/{post-slug}.json` for the quiz app — that is a **delivery** format, not an authoring format |
+| **Static export** | Build may emit `/data/questions/{post-slug}.json` for the quiz app - that is a **delivery** format, not an authoring format |
 
 ---
 ## MDX examples by `answer_format`
@@ -375,7 +375,7 @@ tags:
 
 ![DFS back-edge example](./images/dfs-back-edge.png)
 
-<Callout type="tip">Kahn's algorithm fails when a cycle exists — no zero-in-degree node remains.</Callout>
+<Callout type="tip">Kahn's algorithm fails when a cycle exists - no zero-in-degree node remains.</Callout>
 ```
 
 ### `multiple_select`
@@ -441,7 +441,7 @@ JSON source used to generate the MDX:
   "concept": "Topological sort",
   "answer": false,
   "tags": [ "Graph Theory" ],
-  "explanation": "False — only **DAGs** admit a topological ordering. Cyclic graphs have no topological sort.\n\nThe correct claim: topological sort applies to **directed acyclic** graphs."
+  "explanation": "False - only **DAGs** admit a topological ordering. Cyclic graphs have no topological sort.\n\nThe correct claim: topological sort applies to **directed acyclic** graphs."
 }
 ```
 
@@ -458,12 +458,12 @@ answer: false
 
 ## Explanation
 
-False — only **DAGs** admit a topological ordering. Cyclic graphs have no topological sort.
+False - only **DAGs** admit a topological ordering. Cyclic graphs have no topological sort.
 
 The correct claim: topological sort applies to **directed acyclic** graphs.
 ```
 
-### `free_text` — `factual_recall`
+### `free_text` - `factual_recall`
 
 JSON source used to generate the MDX:
 ```json
@@ -498,7 +498,7 @@ An edge `(u, v)` where `v` is an ancestor of `u` in the DFS tree.
 Back-edges are the standard signal for **cycle detection** in directed graphs.
 ```
 
-### `free_text` — `comprehension` / `application` / `scenario` / `open_ended` / `analogy`
+### `free_text` - `comprehension` / `application` / `scenario` / `open_ended` / `analogy`
 
 Same `answer_format: free_text`. Vary `cognitive_style` and optional frontmatter (`concepts_tested`, `concept_target`, `concept_source`). Use **Answer** + **Explanation** in the body; put diagrams and JSX in **Explanation**.
 
@@ -512,7 +512,7 @@ JSON source used to generate the MDX:
   "difficulty": "advanced",
   "concepts_tested": [ "Topological sort", "Parallel execution" ],
   "answer": "Model a task graph as a DAG, run topological sort, execute each **level** of the resulting level-order in parallel.",
-  "explanation": "Alternative: critical-path scheduling if tasks have **weights** (durations) — see the post section on…"
+  "explanation": "Alternative: critical-path scheduling if tasks have **weights** (durations) - see the post section on…"
 }
 ```
 
@@ -534,7 +534,7 @@ Model a task graph as a DAG, run topological sort, execute each **level** of the
 
 ## Explanation
 
-Alternative: critical-path scheduling if tasks have **weights** (durations) — see the post section on…
+Alternative: critical-path scheduling if tasks have **weights** (durations) - see the post section on…
 
 <ComparisonTable tasks={...} />
 ```
@@ -543,7 +543,7 @@ Alternative: critical-path scheduling if tasks have **weights** (durations) — 
 
 ## Pipeline notes
 
-## Legacy `type` → canonical mapping
+## Legacy `type` -> canonical mapping
 
 | Old spike `type`  | `answer_format`   | `cognitive_style`   |
 | ----------------- | ----------------- | ------------------- |

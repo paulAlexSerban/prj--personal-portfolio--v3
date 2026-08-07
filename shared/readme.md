@@ -10,10 +10,10 @@ see [`AGENTS.md`](./AGENTS.md). Each package below has its own `readme.md`.
 
 | Package                                              | What it does                                                                                                   |
 | ---------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
-| [`db-schema`](./db-schema/readme.md)                 | Single source of truth for the DB shape — Drizzle table definitions + inferred types (no driver).              |
-| [`db`](./db/readme.md)                               | SQLite runtime — connection, migrations, and the lock-aware upsert helper.                                     |
+| [`db-schema`](./db-schema/readme.md)                 | Single source of truth for the DB shape - Drizzle table definitions + inferred types (no driver).              |
+| [`db`](./db/readme.md)                               | SQLite runtime - connection, migrations, and the lock-aware upsert helper.                                     |
 | [`question-contract`](./question-contract/readme.md) | Zod validation + normalization for flashcard question frontmatter.                                             |
-| [`quiz-markdown`](./quiz-markdown/readme.md)         | Shared Markdown/MDX → sanitized-HTML compiler (one allow-list, used by export + app).                          |
+| [`quiz-markdown`](./quiz-markdown/readme.md)         | Shared Markdown/MDX -> sanitized-HTML compiler (one allow-list, used by export + app).                         |
 | [`quiz-export`](./quiz-export/readme.md)             | Reads `content.db` and emits the static JSON the quiz web app consumes.                                        |
 | [`ui`](./ui/readme.md)                               | React UI kit + newspaper design system ("THE REVIEW") **and** the quiz presentation blocks (Storybook-backed). |
 | [`task-manager`](./task-manager/readme.md)           | Tiny dependency-aware task runner for the CLI pipelines.                                                       |

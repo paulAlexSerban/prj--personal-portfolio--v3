@@ -1,6 +1,6 @@
 **“MDX without imports, components magically available”** is not how MDX works by default. You need to introduce a **component injection layer** at build time.
 
-Let’s structure this properly.
+Let's structure this properly.
 
 ---
 # The Real Architecture
@@ -169,7 +169,7 @@ export default function Callout({ children }) {
 npm run build
 ```
 
-Output → `/dist` → upload to S3
+Output -> `/dist` -> upload to S3
 
 ---
 # 9. Deploy to S3 + CloudFront
@@ -207,7 +207,7 @@ That means:
 * No autocomplete
 * Harder onboarding
 
-You’re trading **developer clarity for author simplicity**
+You're trading **developer clarity for author simplicity**
 
 ---
 ### 2. Version Coupling
@@ -217,7 +217,7 @@ If content uses:
 <FancyChart />
 ```
 
-…and your Astro app doesn’t provide it → build breaks
+…and your Astro app doesn't provide it -> build breaks
 
 You need:
 * Versioning strategy
@@ -231,7 +231,7 @@ If content repo is not trusted:
 * You are executing arbitrary code at build time
 
 ---
-# Better Version (What I’d Actually Do)
+# Better Version (What I'd Actually Do)
 
 Instead of fully implicit components:
 
@@ -272,7 +272,7 @@ Next logical steps:
 
 1. Content schema validation (Zod + Astro collections)
 2. MDX linting (prevent unknown components)
-3. Preview system (PR → preview deploy)
+3. Preview system (PR -> preview deploy)
 4. Search indexing (build-time)
 5. Cache strategy for CloudFront (critical for performance)
 

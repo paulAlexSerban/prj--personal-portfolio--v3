@@ -36,7 +36,7 @@ function extractTrueFalseAnswer(payload: Record<string, unknown> | null): boolea
     return null;
 }
 
-/** Strip `{post_slug}--` prefix from a companion composite slug → item slug for URLs. */
+/** Strip `{post_slug}--` prefix from a companion composite slug -> item slug for URLs. */
 function companionItemSlug(compositeSlug: string, postSlug: string): string {
     const prefix = `${postSlug}--`;
     return compositeSlug.startsWith(prefix) ? compositeSlug.slice(prefix.length) : compositeSlug;

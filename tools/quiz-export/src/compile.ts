@@ -4,7 +4,7 @@ import { compileContent, detectContentFormat, extractRelativeImagePaths, questio
 import type { ExportedQuestion, QuizData } from './contract.ts';
 
 export interface CompileOptions {
-    /** Content publish dir (…/publish) — enables asset copy + path rewrite. */
+    /** Content publish dir (…/publish) - enables asset copy + path rewrite. */
     contentDir?: string;
     /** Output dir for copied assets (…/public/data/assets/questions). */
     assetsOutDir?: string;
@@ -79,7 +79,7 @@ async function copyAssetsForQuestion(
             await copyFile(srcFile, destFile);
             rewrites.set(rel, questionAssetUrl(question.slug, fileName, opts.assetsPublicBase));
         } catch {
-            // Source image missing — leave relative path; frontend may 404 gracefully.
+            // Source image missing - leave relative path; frontend may 404 gracefully.
         }
     }
     return rewrites;

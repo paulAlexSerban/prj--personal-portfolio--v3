@@ -15,7 +15,7 @@ type RowWithSlug = Record<string, unknown> & {
     locked?: boolean | null;
 };
 
-// Columns on the table as a plain record — drizzle exposes them at runtime
+// Columns on the table as a plain record - drizzle exposes them at runtime
 // even though the base SQLiteTable type doesn't declare them.
 type TableColumns = Record<string, ReturnType<typeof getTableColumns>[string]>;
 

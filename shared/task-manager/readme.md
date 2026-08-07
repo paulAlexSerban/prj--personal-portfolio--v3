@@ -8,7 +8,7 @@ parallel, and passes results down the graph.
 
 ## Why it exists
 
-The content pipeline is a small DAG: sync content → ingest MDX → ingest JSON, some
+The content pipeline is a small DAG: sync content -> ingest MDX -> ingest JSON, some
 steps feeding others. Rather than hand-wiring `await` order in each CLI, those
 tools declare tasks and let this runner schedule them. No external dependencies.
 
@@ -33,7 +33,7 @@ A `Task` has a unique `name`, an `action(context)`, and a `dependsOn` list.
 - **Level scheduling:** tasks are grouped into levels by dependency depth; each
   level runs concurrently (`Promise.all`), levels run in sequence.
 - **Scoped results:** `context.getResult(name)` only returns a dependency's result.
-  Reading a non-dependency throws — dependencies must be declared explicitly.
+  Reading a non-dependency throws - dependencies must be declared explicitly.
 - **Fails fast at init:** circular dependencies and references to unknown tasks
   throw from `init()`, before anything runs.
 - Logs `Starting…` / `Completed…` per task.
@@ -66,6 +66,6 @@ pnpm --filter @prj--personal-portfolio--v3/shared--task-manager test
 
 ## Related docs
 
-- `shared/AGENTS.md` — all shared packages.
-- `tools/AGENTS.md` — the pipelines that use it.
-- `tools/readme.md` — the tools that use it.
+- `shared/AGENTS.md` - all shared packages.
+- `tools/AGENTS.md` - the pipelines that use it.
+- `tools/readme.md` - the tools that use it.

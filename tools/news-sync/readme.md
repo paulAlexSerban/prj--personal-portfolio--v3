@@ -6,5 +6,5 @@ Runs from the daily `news-sync` GitHub Actions workflow (`pnpm --filter ...tools
 
 Env:
 
-- `NEWS_CACHE_DIR` — default `../../content/news/cache`
-- `NEWS_RETENTION_DAYS` — default `14`
+- `NEWS_CACHE_DIR` - default `../../content/news/cache`
+- `NEWS_RETENTION_DAYS` - default `14`

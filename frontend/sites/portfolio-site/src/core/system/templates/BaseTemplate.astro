@@ -16,7 +16,7 @@ interface Props {
 
 const { title, description, ogTitle = title, ogDescription = description, canonicalUrl, ogImage = assetUrl('portrait.svg') } = Astro.props;
 
-const pageDescription = description ?? 'Paul Serban — engineer, architect, selected works.';
+const pageDescription = description ?? 'Paul Serban - engineer, architect, selected works.';
 const canonical = canonicalUrl ?? new URL(Astro.url.pathname, Astro.site).href;
 const ogImageUrl = new URL(ogImage, Astro.site).href;
 const sitemapUrl = assetUrl('sitemap-index.xml');

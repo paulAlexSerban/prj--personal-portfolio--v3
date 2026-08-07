@@ -79,7 +79,7 @@ export const taskManager = (): TaskManager => {
     const createContext = (task: Task<unknown>): TaskContext => ({
         getResult: <T = unknown>(taskName: string): T => {
             if (!task.dependsOn.includes(taskName)) {
-                throw new Error(`Task "${task.name}" cannot access result of "${taskName}" — not a dependency`);
+                throw new Error(`Task "${task.name}" cannot access result of "${taskName}" - not a dependency`);
             }
 
             return getResult<T>(taskName);

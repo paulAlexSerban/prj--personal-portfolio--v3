@@ -1,4 +1,4 @@
-# Local dev image — build context: monorepo root (requires local base image)
+# Local dev image - build context: monorepo root (requires local base image)
 #   make local_base_build
 #   docker build -f frontend/sites/portfolio-site/local.Dockerfile .
 

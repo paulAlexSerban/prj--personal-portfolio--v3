@@ -80,13 +80,13 @@ The project will use:
 - **Workspaces**: Yarn Workspaces allow multiple projects within a monorepo to share dependencies and install them in a single `node_modules` folder, reducing redundancy and improving performance.
 - **Fast Dependency Resolution**: Yarn resolves dependencies quickly by leveraging caching and parallelized operations, making it faster than alternatives like npm.
 - **Deterministic Installs**: Yarn ensures that dependencies are installed consistently across different environments, reducing "works on my machine" problems.
-- **Plug'n'Play Mode (PnP)**: Yarn’s PnP feature can further optimize dependency resolution by eliminating the need for a `node_modules` folder entirely, speeding up installs and improving performance.
+- **Plug'n'Play Mode (PnP)**: Yarn's PnP feature can further optimize dependency resolution by eliminating the need for a `node_modules` folder entirely, speeding up installs and improving performance.
 - **Compatibility**: Yarn integrates seamlessly with Nx, creating a cohesive toolset for managing dependencies across the monorepo.
 
 ## Consequences
 By adopting Nx and Yarn in a monorepo setup:
 - **Scalability**: The project can easily scale as new components are added (e.g., additional microservices, libraries), without adding significant complexity to the development process.
-- **Speed**: Development cycles will be faster due to Nx’s caching, task parallelization, and dependency graph optimizations.
+- **Speed**: Development cycles will be faster due to Nx's caching, task parallelization, and dependency graph optimizations.
 - **Ease of Maintenance**: A monorepo allows for centralized dependency management and easier refactoring across the codebase. Yarn Workspaces reduce redundant dependencies, while Nx ensures efficient task orchestration.
 - **Consistency**: Using a single repository promotes code consistency and simplifies version control, allowing for easier management of the overall system.
 - **Tooling Integration**: Nx and Yarn integrate well with modern JavaScript frameworks, simplifying the setup and reducing friction when adopting new tools or libraries in the future.

@@ -8,10 +8,10 @@ Astro sites in this monorepo (`portfolio-site`, `blog-site`, `news-feed-site`) u
 `trailingSlash: 'always'` and emit directory layouts such as
 `post/{slug}/index.html`. Deep links like `/post/{slug}/` work on GitHub Pages
 because Pages serves directory indexes. They failed on the AWS test/stage stacks
-(S3 private bucket + Origin Access Control + CloudFront): CloudFront’s
-`default_root_object` only maps `/` → `index.html`, not subdirectory paths.
+(S3 private bucket + Origin Access Control + CloudFront): CloudFront's
+`default_root_object` only maps `/` -> `index.html`, not subdirectory paths.
 Requests for `/post/{slug}/` looked up S3 key `post/{slug}/` (missing), returned
-403 under OAC, and the distribution’s custom error response soft-mapped that to
+403 under OAC, and the distribution's custom error response soft-mapped that to
 `/404.html`.
 
 Test/stage already attach a CloudFront viewer-request Function for HTTP Basic
@@ -42,7 +42,7 @@ Do **not** switch sites to `trailingSlash: 'never'` solely to avoid this rewrite
 
 | Option | Approach | Rejected because |
 | ------ | -------- | ---------------- |
-| **A. CF Function rewrite (chosen)** | Append `index.html` for directory URIs | — |
+| **A. CF Function rewrite (chosen)** | Append `index.html` for directory URIs | - |
 | **B. `trailingSlash: 'never'`** | Emit `post/{slug}.html` | Changes public URL shape; breaks existing trailing-slash links/bookmarks unless redirects are added; still needs rewrite/redirect for `/…/` URLs; touches Astro config + URL helpers across three sites |
 | **C. S3 website endpoint as origin** | Native `IndexDocument` | Conflicts with private bucket + OAC security model used for these stacks |
 | **D. Lambda@Edge origin-request** | Same rewrite as A | Higher cost/latency and operational weight than CloudFront Functions for a static rewrite |
@@ -53,9 +53,9 @@ Do **not** switch sites to `trailingSlash: 'never'` solely to avoid this rewrite
   Pages behaviour without changing Astro URL conventions.
 - Basic Auth and directory rewrite share one Function; do not attach a second
   viewer-request Function.
-- Quiz SPA stacks keep custom error → `/index.html` for true missing keys;
+- Quiz SPA stacks keep custom error -> `/index.html` for true missing keys;
   directory rewrite still applies to real `…/index.html` assets first.
-- Soft 403/404 → `/404.html` (200) remains for genuine misses on non-SPA sites;
+- Soft 403/404 -> `/404.html` (200) remains for genuine misses on non-SPA sites;
   tightening response codes is out of scope for this ADR.
 
 ## See also

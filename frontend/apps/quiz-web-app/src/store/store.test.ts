@@ -37,7 +37,7 @@ describe("addPost", () => {
     expect(s.cardStates["react-hooks--a"]!.postSlug).toBe("react-hooks");
   });
 
-  it("is additive — re-adding does not reset progress on existing questions (WEB-04)", () => {
+  it("is additive - re-adding does not reset progress on existing questions (WEB-04)", () => {
     const store = useStore.getState();
     store.addPost("react-hooks", ["react-hooks--a"]);
     // advance the card out of "new"

@@ -56,7 +56,7 @@ describe("buildQueue", () => {
     expect(queue[0]!.questionSlug).toBe("p--due");
   });
 
-  it("sorts new cards beginner → intermediate → advanced when difficultyMap is provided", () => {
+  it("sorts new cards beginner -> intermediate -> advanced when difficultyMap is provided", () => {
     const cards = [
       createCardState("p--advanced", "p"),
       createCardState("p--beginner", "p"),

@@ -5,7 +5,7 @@ Node.js CLIs for the content pipeline. All ingest tools use `shared--task-manage
 ## Pipeline overview
 
 ```
-content repo (private Git)  →  content-sync  →  content/live/
+content repo (private Git)  ->  content-sync  ->  content/live/
                                                       ↓
                                     ┌─────────────────┴─────────────────┐
                                     ↓                                   ↓
@@ -28,7 +28,7 @@ The test AWS deploy (`deploy-test.yaml`) passes `content_source: test`. GitHub P
 
 ## Question content model (ingest perspective)
 
-All questions are **MDX only** — see [`types-of-questions.md`](../_docs/01%20spikes/types-of-questions.md) and [`migrating-question-mdx-content.md`](../_docs/01%20spikes/migrating-question-mdx-content.md).
+All questions are **MDX only** - see [`types-of-questions.md`](../_docs/01%20spikes/types-of-questions.md) and [`migrating-question-mdx-content.md`](../_docs/01%20spikes/migrating-question-mdx-content.md).
 
 | Axis                 | Field             | Ingest today                                   |
 | -------------------- | ----------------- | ---------------------------------------------- |
@@ -36,8 +36,8 @@ All questions are **MDX only** — see [`types-of-questions.md`](../_docs/01%20s
 | What is tested       | `cognitive_style` | Stored on `questions.cognitive_style`          |
 | Grading              | `grading_mode`    | Stored; derived from `answer_format` at ingest |
 
-- **`mdx-ingest`:** nested `publish/{posts|booknotes|snippets}/.../questions/*.mdx` → `questions` (+ `question_options` when applicable); raw MDX body in `back` (**not** compiled to HTML in ingest).
-- **`json-ingest`:** does **not** handle questions — only `profile/`, `skills/`, `pages/`.
+- **`mdx-ingest`:** nested `publish/{posts|booknotes|snippets}/.../questions/*.mdx` -> `questions` (+ `question_options` when applicable); raw MDX body in `back` (**not** compiled to HTML in ingest).
+- **`json-ingest`:** does **not** handle questions - only `profile/`, `skills/`, `pages/`.
 - **Quiz delivery:** static JSON export now lives in **`shared/quiz-export`** (not `tools/`): it reads `content.db` and emits `/data/{posts,tags}.json`, `/data/questions/<post>.json`, `/data/tags/<tag>.json`, and `_all.json`, with Markdown/MDX compiled to sanitized HTML via `shared/quiz-markdown`. This is a delivery format, not an authoring format. See `shared/AGENTS.md`.
 
 ---
@@ -48,13 +48,13 @@ Clones the private MDX content repository into the monorepo.
 
 **Task graph** (sequential):
 
-1. Setup Environment — validate env, ensure target dir exists
-2. Clean Repository Directory — wipe `content/live/`
-3. Clone Private Repository — `git clone` with token-authenticated URL
-4. Remove Unnecessary Repository Files — keep only `content/` at repo root
-5. Remove Unnecessary Content Files — keep `publish`, `in-progress`, `backlog` under `content/`
+1. Setup Environment - validate env, ensure target dir exists
+2. Clean Repository Directory - wipe `content/live/`
+3. Clone Private Repository - `git clone` with token-authenticated URL
+4. Remove Unnecessary Repository Files - keep only `content/` at repo root
+5. Remove Unnecessary Content Files - keep `publish`, `in-progress`, `backlog` under `content/`
 
-Steps 4–5 run in parallel after clone (both depend on clone only).
+Steps 4-5 run in parallel after clone (both depend on clone only).
 
 **Env** (from root `.env` via `dotenv`): `GITHUB_TOKEN`, `CONTENT_REPO_GIT_URL`.
 
@@ -70,14 +70,14 @@ pnpm --filter @prj--personal-portfolio--v3/tools--content-sync start
 
 ## `@prj--personal-portfolio--v3/tools--mdx-ingest` (`tools/mdx-ingest/`)
 
-Reads published MDX, validates frontmatter, normalises rows, migrates DB, upserts records. **Does not compile MDX to HTML** — body is stored raw; Astro compiles at build time.
+Reads published MDX, validates frontmatter, normalises rows, migrates DB, upserts records. **Does not compile MDX to HTML** - body is stored raw; Astro compiles at build time.
 
 **Task graph**:
 
 ```
-Scan → Parse → Validate → Normalise ──┐
-                                       ├→ Upsert Records
-Open DB → Run Migrations ─────────────┘
+Scan -> Parse -> Validate -> Normalise ──┐
+                                       ├-> Upsert Records
+Open DB -> Run Migrations ─────────────┘
 ```
 
 | Task                     | Helper                   | Responsibility                                             |
@@ -96,7 +96,7 @@ pnpm --filter @prj--personal-portfolio--v3/tools--mdx-ingest start
 pnpm --filter @prj--personal-portfolio--v3/tools--mdx-ingest start:dry-run   # no writes
 ```
 
-### MDX folder → table mapping
+### MDX folder -> table mapping
 
 | `publish/` folder                                                             | Parser type     | DB target                      |
 | ----------------------------------------------------------------------------- | --------------- | ------------------------------ |
@@ -108,11 +108,11 @@ pnpm --filter @prj--personal-portfolio--v3/tools--mdx-ingest start:dry-run   # n
 | `posts/.../questions/`, `booknotes/.../questions/`, `snippets/.../questions/` | `question`      | `questions`                    |
 | `posts/.../cheat_sheet(.mdx\|/)`, same under booknotes/snippets               | `cheat_sheet`   | `cheat_sheets`                 |
 | `posts/.../learning_plan/`, same under booknotes/snippets                     | `learning_plan` | `learning_plans`               |
-| `pages/`                                                                      | —               | handled by `json-ingest`       |
+| `pages/`                                                                      | -               | handled by `json-ingest`       |
 
 ### MDX validation
 
-Required frontmatter (missing → file skipped with warning):
+Required frontmatter (missing -> file skipped with warning):
 
 - post / booknote / snippet: `title`, `status`, `date`
 - project / coursework: `title`, `status`
@@ -121,12 +121,12 @@ Required frontmatter (missing → file skipped with warning):
 
 Optional frontmatter (defaults when omitted): `answer_format` (`free_text`), `cognitive_style` (`factual_recall`), `difficulty` (`intermediate`).
 
-Structured types: `options` + `correct_option_keys` in frontmatter → `question_options` table; T/F `answer` → `questions.payload`; explanation (JSX/images) in **body** → `questions.back`.
+Structured types: `options` + `correct_option_keys` in frontmatter -> `question_options` table; T/F `answer` -> `questions.payload`; explanation (JSX/images) in **body** -> `questions.back`.
 
 ### Question conventions
 
 - Path: `publish/{posts|booknotes|snippets}/{year}/{month}/{slug}/questions/{post-slug}--{uid}.mdx`
-- Filename: `{post-slug}--{uid}.mdx` → `post_slug` = everything before the last `--` (see draft ADR cross-surface FK). Parent folder slug must match the filename prefix.
+- Filename: `{post-slug}--{uid}.mdx` -> `post_slug` = everything before the last `--` (see draft ADR cross-surface FK). Parent folder slug must match the filename prefix.
 - `front` ← frontmatter `question` (future alias: `stem`).
 - `back` ← MDX body (answer + explanation); maps to `answer_format: free_text`, `grading_mode: self` in the content model.
 - Parent post must exist in `posts` before the question upserts (FK); otherwise skipped with warning.
@@ -160,9 +160,9 @@ Reads published JSON for site config content, validates fields, normalises rows,
 **Task graph** (same shape as mdx-ingest):
 
 ```
-Scan → Parse → Validate → Normalise ──┐
-                                       ├→ Upsert Records
-Open DB → Run Migrations ─────────────┘
+Scan -> Parse -> Validate -> Normalise ──┐
+                                       ├-> Upsert Records
+Open DB -> Run Migrations ─────────────┘
 ```
 
 | Task                     | Helper                   | Responsibility                                                |
@@ -181,7 +181,7 @@ pnpm --filter @prj--personal-portfolio--v3/tools--json-ingest start
 pnpm --filter @prj--personal-portfolio--v3/tools--json-ingest start:dry-run
 ```
 
-### JSON folder → table mapping (today)
+### JSON folder -> table mapping (today)
 
 | `publish/` folder | File shape                                                          | DB target                                                                 |
 | ----------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------------- |
@@ -191,7 +191,7 @@ pnpm --filter @prj--personal-portfolio--v3/tools--json-ingest start:dry-run
 
 ### JSON validation
 
-Required fields (missing → skipped with warning):
+Required fields (missing -> skipped with warning):
 
 - profile: `name`, `headline`, `bio`
 - skill: `name`, `category`
@@ -210,14 +210,14 @@ Reads `content/news/cache/*.json` and upserts into `news_items`. Runs as part of
 ## Agent notes
 
 - Keep pipeline steps as named tasks in `src/index.ts`; logic stays in `src/helpers/`.
-- Both ingest tools depend on `tools--content-sync` — sync content first.
+- Both ingest tools depend on `tools--content-sync` - sync content first.
 - `profile`, `skills`, and `pages` are written by **json-ingest**; MDX content types by **mdx-ingest**.
-- All question types (including MC/TF) are authored as **MDX**; extend **mdx-ingest** only — never json-ingest for questions.
+- All question types (including MC/TF) are authored as **MDX**; extend **mdx-ingest** only - never json-ingest for questions.
 - Do not serialise MDX to HTML in mdx-ingest.
 
 ## Related docs
 
-- `_docs/01 spikes/types-of-questions.md` — `answer_format` + `cognitive_style`
-- `_docs/01 spikes/migrating-question-mdx-content.md` — what authors change in MDX
-- `_docs/02 plans/question-types-implementation-plan.md` — schema and ingest phases
-- `shared/AGENTS.md`, `database/AGENTS.md` — schema and migration workflow
+- `_docs/01 spikes/types-of-questions.md` - `answer_format` + `cognitive_style`
+- `_docs/01 spikes/migrating-question-mdx-content.md` - what authors change in MDX
+- `_docs/02 plans/question-types-implementation-plan.md` - schema and ingest phases
+- `shared/AGENTS.md`, `database/AGENTS.md` - schema and migration workflow

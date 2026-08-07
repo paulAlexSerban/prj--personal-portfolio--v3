@@ -31,7 +31,7 @@ export function getCardStateLabel(
   today = todayISO(0),
 ): string {
   if (isIgnored) return "ignored";
-  if (!card) return "—";
+  if (!card) return "-";
   if (card.cardType === "review" && card.dueDate <= today) return "due";
   return card.cardType;
 }

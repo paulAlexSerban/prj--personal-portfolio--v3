@@ -22,7 +22,7 @@ const CardRenderer = ({
     compiledHtml?: string;
     reveal?: boolean;
     dropcap?: boolean;
-    /** Render as inline markdown (no block <p> wrapping) — for short labels. */
+    /** Render as inline markdown (no block <p> wrapping) - for short labels. */
     inline?: boolean;
     className?: string;
 }) => {

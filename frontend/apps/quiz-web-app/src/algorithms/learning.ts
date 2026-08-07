@@ -27,7 +27,7 @@ export interface ReviewResult {
  * scheduler only needs to define how a card behaves once it reaches review.
  */
 export interface ReviewStrategy {
-  /** Graduate a card from learning → review (`easy` = rated Easy at graduation). */
+  /** Graduate a card from learning -> review (`easy` = rated Easy at graduation). */
   graduate(card: CardState, config: StudyConfig, easy: boolean, opts: ApplyReviewOpts): void;
   /** Graduate a relearning card back to review. */
   relearnGraduate(card: CardState, config: StudyConfig, opts: ApplyReviewOpts): void;
@@ -157,7 +157,7 @@ function handleRelearning(
     strategy.relearnGraduate(card, config, opts);
     return;
   }
-  // Hard — stay
+  // Hard - stay
   const cur = steps[card.learningStep] ?? 10;
   scheduleLearning(card, cur * 1.5, now, opts);
 }

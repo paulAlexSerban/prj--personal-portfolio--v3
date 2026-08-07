@@ -334,7 +334,7 @@ function StatsView() {
                     width: `${(retrievabilityBands.amber / Math.max(1, fsrsCards.length)) * 100}%`,
                     background: "var(--column-rule)",
                   }}
-                  title={`70–90%: ${retrievabilityBands.amber}`}
+                  title={`70-90%: ${retrievabilityBands.amber}`}
                 />
                 <div
                   style={{
@@ -359,7 +359,7 @@ function StatsView() {
       {settings.leechThreshold > 0 && (
         <Section title={`Leeches (≥ ${settings.leechThreshold} lapses)`}>
           {leeches.length === 0 ? (
-            <p className="text-base italic text-[var(--slate)]">No leeches — keep it up.</p>
+            <p className="text-base italic text-[var(--slate)]">No leeches - keep it up.</p>
           ) : (
             <>
               <div className="border-2 border-[var(--ink-black)] overflow-x-auto">

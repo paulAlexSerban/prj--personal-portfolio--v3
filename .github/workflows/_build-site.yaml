@@ -58,7 +58,7 @@ on:
                 type: number
                 default: 14
             content_source:
-                description: Which content tree to ingest — 'live' (clone private content repo) or 'test' (committed fixtures under content/test)
+                description: Which content tree to ingest - 'live' (clone private content repo) or 'test' (committed fixtures under content/test)
                 required: false
                 type: string
                 default: live
@@ -281,7 +281,7 @@ jobs:
                   cp -r quiz-dist/. _site/quiz/
                   cp -r news-dist/. _site/news/
 
-                  # Root → portfolio redirect
+                  # Root -> portfolio redirect
                   printf '<!DOCTYPE html><html><head><meta http-equiv="refresh" content="0;url=%s/"></head><body></body></html>\n' \
                     "$PORTFOLIO_BASE" > _site/index.html
 

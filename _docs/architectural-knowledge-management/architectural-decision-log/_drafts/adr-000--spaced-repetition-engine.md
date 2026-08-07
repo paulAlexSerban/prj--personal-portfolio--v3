@@ -1,4 +1,4 @@
-# (draft) Spaced-repetition engine — SUPERSEDED
+# (draft) Spaced-repetition engine - SUPERSEDED
 
 > **Superseded by [ADR-009](../adr-009--spaced-repetition-scheduler.md).**
 > This draft specified an SM-2-only engine in a standalone `packages/sr-engine`.

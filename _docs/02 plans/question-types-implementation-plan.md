@@ -1,6 +1,6 @@
-# Question types — critical review & phased implementation plan
+# Question types - critical review & phased implementation plan
 
-**Status:** Phases 0–4 ✅ done in code (`shared/question-contract`, schema + options, mdx-ingest, `shared/quiz-export`). Phases 5–6 still open (richer metadata / CMS cleanup).  
+**Status:** Phases 0-4 ✅ done in code (`shared/question-contract`, schema + options, mdx-ingest, `shared/quiz-export`). Phases 5-6 still open (richer metadata / CMS cleanup).  
 **Inputs:** [`01 spikes/types-of-questions.md`](../01%20spikes/types-of-questions.md), [`migrating-question-mdx-content.md`](../01%20spikes/migrating-question-mdx-content.md), `shared/db-schema`, `tools/mdx-ingest`, `tools/json-ingest`, product PRDs (quiz / SM-2)  
 **Out of scope here:** `frontend/`, `packages/quiz-ui`, SM-2 engine implementation (referenced only where they constrain schema)
 
@@ -45,7 +45,7 @@ Several spike entries are **the same interaction model** with different pedagogy
 
 | Spike `type`                                       | Actual interaction                               | Fits current `front`/`back`?  |
 | -------------------------------------------------- | ------------------------------------------------ | ----------------------------- |
-| `factual_recall`, `comprehension`, `application`   | Show prompt → user recalls → reveal model answer | Yes (classic flashcard)       |
+| `factual_recall`, `comprehension`, `application`   | Show prompt -> user recalls -> reveal model answer | Yes (classic flashcard)       |
 | `scenario`, `open_ended`                           | Same, with longer rubric on back                 | Yes                           |
 | `analogy`                                          | Same + extra metadata (`concept_source`, etc.)   | Yes (metadata in frontmatter) |
 | `multiple_choice`, `multiple_select`, `true_false` | Structured options + machine-checkable answer    | **No**                        |
@@ -62,7 +62,7 @@ PRDs require SM-2 with Again / Hard / Good / Easy ([spaced repetition PRD](../pr
 | Answer format                                      | Auto-gradable in v0.1?                       | SM-2 without extra UX?                                          |
 | -------------------------------------------------- | -------------------------------------------- | --------------------------------------------------------------- |
 | `multiple_choice`, `multiple_select`, `true_false` | Yes                                          | Yes (if UI enforces answer before reveal)                       |
-| `free_text` (all “style-only” types)               | **No** (unless exact string match — brittle) | Only with **self-grading** (user sees model answer, then rates) |
+| `free_text` (all “style-only” types)               | **No** (unless exact string match - brittle) | Only with **self-grading** (user sees model answer, then rates) |
 
 **Open-ended and scenario questions are not “flashcards” in the Anki sense** unless you accept self-graded cards. The spike does not state this; the PRDs do not either. **Decide in Phase 0** or you will build schema for content the quiz cannot run fairly.
 
@@ -71,7 +71,7 @@ Suggested v0.1 product cut:
 | Ship in v0.1                                                                     | Defer                                                                 |
 | -------------------------------------------------------------------------------- | --------------------------------------------------------------------- |
 | `multiple_choice`, `true_false`, `free_text` + `cognitive_style: factual_recall` | `multiple_select` (UX + partial credit ambiguity)                     |
-| Self-graded `free_text` for comprehension/application                            | Auto-graded open-ended (needs LLM or rubric — out of scope)           |
+| Self-graded `free_text` for comprehension/application                            | Auto-graded open-ended (needs LLM or rubric - out of scope)           |
 |                                                                                  | `open_ended` as a distinct engine path (same as free_text + metadata) |
 
 ### 1.4 Internal inconsistencies in the spike JSON
@@ -81,14 +81,14 @@ Suggested v0.1 product cut:
 | Field naming                                                                 | `concept` vs `concepts_tested` vs `concept_target` / `concept_source`     |
 | `style` on MC but not on `factual_recall`                                    | Cognitive style is optional in one shape, mandatory in another            |
 | `difficulty` on all types but `open_ended` only allows intermediate/advanced | Fine, but must be in shared enum + validator                              |
-| `answer` type varies                                                         | string, string[], boolean — needs discriminated union per `answer_format` |
+| `answer` type varies                                                         | string, string[], boolean - needs discriminated union per `answer_format` |
 | MC answer by **exact option text**                                           | Fragile if author edits option copy; prefer stable `option_id` (Phase 2+) |
 
 ### 1.5 Authoring: MDX only (resolved)
 
-- **Authoring:** all questions in `publish/questions/*.mdx` — frontmatter for stem/options/metadata, body for answer + rich explanation (JSX/images).
-- **Implemented today:** `mdx-ingest` maps `question` → `front`, body → `back` only.
-- **json-ingest** remains for `profile`, `skills`, `pages` only — **never** for questions.
+- **Authoring:** all questions in `publish/questions/*.mdx` - frontmatter for stem/options/metadata, body for answer + rich explanation (JSX/images).
+- **Implemented today:** `mdx-ingest` maps `question` -> `front`, body -> `back` only.
+- **json-ingest** remains for `profile`, `skills`, `pages` only - **never** for questions.
 - **Build export:** static `/data/questions/*.json` for quiz/PWA is generated at SSG time from the DB, not authored in the content repo.
 
 ### 1.6 What already works (do not over-credit gaps)
@@ -97,14 +97,14 @@ Suggested v0.1 product cut:
 | ----------------------------- | -------------------------------------------------------------------------------------------------------------- |
 | Scanner excludes `questions/` | **Outdated.** `markdownFileScanner.ts` default pattern already includes `questions`. Update `tools/AGENTS.md`. |
 | `post_slug` FK                | Implemented; slug convention `{post-slug}--{uid}` enforced in `normalise.ts`.                                  |
-| Question tags                 | `question_tags` junction — good; reuse for all formats.                                                        |
-| `upsertWithLockCheck`         | Requires `slug` + `locked` — any new table needs the same or a shared upsert variant.                          |
+| Question tags                 | `question_tags` junction - good; reuse for all formats.                                                        |
+| `upsertWithLockCheck`         | Requires `slug` + `locked` - any new table needs the same or a shared upsert variant.                          |
 
 ---
 
 ## 2. Current state (`shared/` + `tools/`)
 
-### 2.1 `shared/db-schema` — `questions` table
+### 2.1 `shared/db-schema` - `questions` table
 
 ```122:135:shared/db-schema/index.ts
 export const questions = sqliteTable('questions', {
@@ -127,14 +127,14 @@ export const questions = sqliteTable('questions', {
 
 ### 2.2 `tools/mdx-ingest`
 
-- Maps MDX → `front` / `back` only (`normaliseQuestion`).
+- Maps MDX -> `front` / `back` only (`normaliseQuestion`).
 - Validates `question`, `status` only.
 - No JSON schema, no type discrimination.
 
 ### 2.3 `tools/json-ingest`
 
 - No scanner path for questions.
-- Pattern to copy: scan → parse → validate → normalise → upsert (same task graph as MDX).
+- Pattern to copy: scan -> parse -> validate -> normalise -> upsert (same task graph as MDX).
 
 ### 2.4 Build output (planned, not implemented)
 
@@ -149,12 +149,12 @@ Architecture targets `/data/questions/{post-slug}.json` and `_all.json`. **No ex
 | Approach                                      | Verdict                                                                                                                            |
 | --------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
 | **9 tables** (one per spike `type`)           | High migration and ingest cost; shared columns duplicated; CMS complexity; **not justified** while row counts are in the hundreds. |
-| **Single `questions` + JSON blob**            | Fast to ship; weak querying; options not FK-safe. **Acceptable for Phase 1–2 only.**                                               |
+| **Single `questions` + JSON blob**            | Fast to ship; weak querying; options not FK-safe. **Acceptable for Phase 1-2 only.**                                               |
 | **Core + `question_options` + typed payload** | **Recommended steady state.**                                                                                                      |
 
 ### 3.2 Steady-state schema (SQLite / Drizzle)
 
-**Table: `questions` (core — every card)**
+**Table: `questions` (core - every card)**
 
 | Column                                        | Notes                                                                                        |
 | --------------------------------------------- | -------------------------------------------------------------------------------------------- |
@@ -165,16 +165,16 @@ Architecture targets `/data/questions/{post-slug}.json` and `_all.json`. **No ex
 | `difficulty`                                  | `beginner` \| `intermediate` \| `advanced`                                                   |
 | `stem`                                        | Question text (replaces `front`; keep `front` as deprecated alias during migration)          |
 | `explanation`                                 | Post-answer explanation (move out of unstructured `back`)                                    |
-| `grading_mode`                                | `auto` \| `self` — derived from `answer_format` but stored for export clarity                |
-| `payload`                                     | JSON text — type-specific extras: `concept`, `concepts_tested`, analogy fields, etc.         |
-| `back`                                        | **Deprecated** — optional mirror of `explanation` + legacy MDX body until migration complete |
+| `grading_mode`                                | `auto` \| `self` - derived from `answer_format` but stored for export clarity                |
+| `payload`                                     | JSON text - type-specific extras: `concept`, `concepts_tested`, analogy fields, etc.         |
+| `back`                                        | **Deprecated** - optional mirror of `explanation` + legacy MDX body until migration complete |
 
 **Table: `question_options` (only for MC / multiple_select)**
 
 | Column          | Notes                                                  |
 | --------------- | ------------------------------------------------------ |
-| `question_slug` | FK → `questions.slug`, ON DELETE CASCADE               |
-| `option_key`    | Stable id (`a`, `b`, … or uuid) — **not** display text |
+| `question_slug` | FK -> `questions.slug`, ON DELETE CASCADE               |
+| `option_key`    | Stable id (`a`, `b`, … or uuid) - **not** display text |
 | `sort_order`    | int                                                    |
 | `label`         | Display text                                           |
 | `is_correct`    | boolean                                                |
@@ -183,7 +183,7 @@ Architecture targets `/data/questions/{post-slug}.json` and `_all.json`. **No ex
 
 Only if you need SQL queries like “all questions touching concept X”. Otherwise keep `concepts_tested` inside `payload`.
 
-**Do not add** separate tables for `factual_recall` vs `comprehension` — that is `cognitive_style` on the same row.
+**Do not add** separate tables for `factual_recall` vs `comprehension` - that is `cognitive_style` on the same row.
 
 ### 3.3 MDX authoring file (content repo)
 
@@ -195,7 +195,7 @@ Add `@prj--personal-portfolio--v3/shared--question-contract`:
 
 - Zod schemas per `answer_format` (discriminated union).
 - Inferred TS types exported to ingest tools and (later) Astro/quiz-ui.
-- **Single source of truth** — validates MDX frontmatter after `gray-matter` parse; MDX examples in the spike are authoritative for authors.
+- **Single source of truth** - validates MDX frontmatter after `gray-matter` parse; MDX examples in the spike are authoritative for authors.
 
 ---
 
@@ -205,7 +205,7 @@ Each phase should land with: migration (if any), ingest support, tests on valida
 
 ---
 
-### Phase 0 — Taxonomy & decisions (docs only, ~1 day) ✅ largely complete
+### Phase 0 - Taxonomy & decisions (docs only, ~1 day) ✅ largely complete
 
 **Goal:** unblock schema and ingest design without code churn.
 
@@ -224,7 +224,7 @@ Each phase should land with: migration (if any), ingest support, tests on valida
 
 ---
 
-### Phase 1 — Contract package + DB core columns (~2–3 days)
+### Phase 1 - Contract package + DB core columns (~2-3 days)
 
 **`shared/`**
 
@@ -232,7 +232,7 @@ Each phase should land with: migration (if any), ingest support, tests on valida
 2. Extend `questions` in `shared/db-schema/index.ts`:
    - `answer_format`, `cognitive_style`, `difficulty`, `stem`, `explanation`, `grading_mode`, `payload` (text JSON).
    - Keep `front`/`back` nullable or populated from `stem`/`explanation` for backward compatibility.
-3. `pnpm db:generate` → migration `0004_…`.
+3. `pnpm db:generate` -> migration `0004_…`.
 
 **`tools/`**
 
@@ -246,7 +246,7 @@ Each phase should land with: migration (if any), ingest support, tests on valida
 
 ---
 
-### Phase 2 — `question_options` + mdx-ingest for structured types (~3–5 days)
+### Phase 2 - `question_options` + mdx-ingest for structured types (~3-5 days)
 
 **`shared/`**
 
@@ -254,8 +254,8 @@ Each phase should land with: migration (if any), ingest support, tests on valida
 
 **`tools/mdx-ingest`**
 
-1. Extend `validateParsedFiles` — required fields per `answer_format` (e.g. `options` + `correct_option_keys` for MC).
-2. Normaliser: parse frontmatter with Zod from `shared--question-contract`; map options → `question_options`; store raw MDX body as explanation.
+1. Extend `validateParsedFiles` - required fields per `answer_format` (e.g. `options` + `correct_option_keys` for MC).
+2. Normaliser: parse frontmatter with Zod from `shared--question-contract`; map options -> `question_options`; store raw MDX body as explanation.
 3. Upsert: parent question then options (delete-and-replace per slug); respect `locked`.
 
 **`tools/json-ingest`**
@@ -266,18 +266,18 @@ Each phase should land with: migration (if any), ingest support, tests on valida
 
 ---
 
-### Phase 3 — MDX legacy bridge + free-text types (~2 days)
+### Phase 3 - MDX legacy bridge + free-text types (~2 days)
 
 **`tools/mdx-ingest`**
 
-- `normaliseQuestion`: set `answer_format: 'free_text'`, `grading_mode: 'self'`, `cognitive_style` from optional frontmatter (default `factual_recall`), map `question` → `stem`, body → `explanation` (+ optional legacy `back`).
+- `normaliseQuestion`: set `answer_format: 'free_text'`, `grading_mode: 'self'`, `cognitive_style` from optional frontmatter (default `factual_recall`), map `question` -> `stem`, body -> `explanation` (+ optional legacy `back`).
 - Extend validation: allow optional `answer_format` / `cognitive_style` in frontmatter for new MDX.
 
 **Exit criteria:** existing MDX flashcards still ingest with defaults (`free_text`, `factual_recall`); new frontmatter fields persisted.
 
 ---
 
-### Phase 4 — Build-time JSON export (~2–3 days) — ✅ DONE (`shared/quiz-export`)
+### Phase 4 - Build-time JSON export (~2-3 days) - ✅ DONE (`shared/quiz-export`)
 
 > **Satisfied by `shared/quiz-export`** (the export lives in `shared/`, not `tools/`,
 > per the quiz-web-app refactor plan D4). It reads `content.db` and emits
@@ -295,22 +295,22 @@ Each phase should land with: migration (if any), ingest support, tests on valida
 
 - ✅ Reuses `shared--question-contract` types for the export shape (no third schema).
 
-**Exit criteria:** the app loads one post’s questions without reading SQLite in the
-browser — **met**.
+**Exit criteria:** the app loads one post's questions without reading SQLite in the
+browser - **met**.
 
 ---
 
-### Phase 5 — `multiple_select` + richer metadata (~2 days)
+### Phase 5 - `multiple_select` + richer metadata (~2 days)
 
 - Extend Zod + `question_options` (multiple `is_correct`).
-- UI spec for partial credit (recommend: **no partial credit in v0.1** — all-or-nothing).
+- UI spec for partial credit (recommend: **no partial credit in v0.1** - all-or-nothing).
 - `payload` fields for `concepts_tested`, analogy metadata.
 
-**Exit criteria:** spike’s `multiple_select` example validates and exports.
+**Exit criteria:** spike's `multiple_select` example validates and exports.
 
 ---
 
-### Phase 6 — CMS, analytics, cleanup (later)
+### Phase 6 - CMS, analytics, cleanup (later)
 
 - Directus collection aligned with `questions` + options.
 - Drop `front`/`back` columns (breaking migration) once normaliser uses `stem` + dedicated explanation storage.
@@ -326,7 +326,7 @@ browser — **met**.
 | `shared/question-contract` (new)  |         | ✓   | ✓              | ✓   | ✓   | ✓   |
 | `shared/db-schema`                |         | ✓   | ✓              |     |     | ✓   |
 | `shared/db` upsert                |         |     | ✓ (child rows) |     |     |     |
-| `tools/json-ingest`               |         |     | —              |     |     |     |
+| `tools/json-ingest`               |         |     | -              |     |     |     |
 | `tools/mdx-ingest`                |         | ✓   | ✓              | ✓   |     | ✓   |
 | `database/migrations`             |         | ✓   | ✓              |     |     | ✓   |
 | `frontend` / quiz-ui              |         |     |                |     | ✓   | ✓   |

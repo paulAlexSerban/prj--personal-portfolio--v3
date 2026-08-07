@@ -123,7 +123,7 @@ export function filterByQuery<T extends { title: string; slug: string }>(
   );
 }
 
-/** Sort blog listing items by title (A→Z) or date (newest first). Pure; does not mutate input. */
+/** Sort blog listing items by title (A->Z) or date (newest first). Pure; does not mutate input. */
 export function sortBlogPosts(
   items: BlogPostFilterItem[],
   sort: BlogSortBy,
@@ -137,7 +137,7 @@ export function sortBlogPosts(
   return sorted;
 }
 
-/** Sort quiz catalogue items by date (newest first), title (A→Z), or question count. Pure; does not mutate input. */
+/** Sort quiz catalogue items by date (newest first), title (A->Z), or question count. Pure; does not mutate input. */
 export function sortQuizPosts<T extends QuizPostSortItem>(
   items: T[],
   sort: QuizSortBy,

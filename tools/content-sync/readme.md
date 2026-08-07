@@ -18,13 +18,13 @@ private content repo ──(git clone)──► content/live/  (publish / in-pro
 
 ## What it does (task graph, sequential)
 
-1. **Setup Environment** — validate env vars, ensure the target dir exists.
-2. **Clean Repository Directory** — wipe `content/live/`.
-3. **Clone Private Repository** — `git clone` using a token-authenticated URL.
-4. **Remove Unnecessary Repository Files** — keep only `content/` at the repo root.
-5. **Remove Unnecessary Content Files** — keep `publish`, `in-progress`, `backlog`.
+1. **Setup Environment** - validate env vars, ensure the target dir exists.
+2. **Clean Repository Directory** - wipe `content/live/`.
+3. **Clone Private Repository** - `git clone` using a token-authenticated URL.
+4. **Remove Unnecessary Repository Files** - keep only `content/` at the repo root.
+5. **Remove Unnecessary Content Files** - keep `publish`, `in-progress`, `backlog`.
 
-Steps 4–5 run in parallel after the clone (via `shared--task-manager`).
+Steps 4-5 run in parallel after the clone (via `shared--task-manager`).
 
 ## How to run it
 
@@ -50,5 +50,5 @@ Requires a root `.env` (loaded via `dotenv`) with:
 
 ## Related docs
 
-- `tools/AGENTS.md` — full pipeline + per-tool detail.
-- `_docs/AGENTS.md` — system architecture (two-repo content model).
+- `tools/AGENTS.md` - full pipeline + per-tool detail.
+- `_docs/AGENTS.md` - system architecture (two-repo content model).

@@ -1,6 +1,6 @@
-# Quiz → Blog crosslinks
+# Quiz -> Blog crosslinks
 
-**Status:** ✅ implemented — `blogPostUrl` + set-detail / preview / study-session links shipped.
+**Status:** ✅ implemented - `blogPostUrl` + set-detail / preview / study-session links shipped.
 
 ## Intent
 
@@ -38,8 +38,8 @@ Routes that show question previews or study sessions load `posts.json` (or alrea
 
 Presentation blocks stay pure; the quiz app supplies URLs:
 
-- **`QuestionPreview`**: optional `blogPostHref?: string` — ghost-stamp link in the actions row
-- **`StudyCard`**: optional `blogPostHref?: string` — inline link in the read-only footer
+- **`QuestionPreview`**: optional `blogPostHref?: string` - ghost-stamp link in the actions row
+- **`StudyCard`**: optional `blogPostHref?: string` - inline link in the read-only footer
 
 Containers:
 
@@ -48,6 +48,6 @@ Containers:
 
 ## Related docs
 
-- [`adr-000--cross-surface-foreign-key.md`](../architectural-knowledge-management/architectural-decision-log/_drafts/adr-000--cross-surface-foreign-key.md) — `post_slug` from question filename
-- [`blog_site_implementation.md`](./blog_site_implementation.md) — blog routing and quiz widget slot on post pages
-- [`quiz-web-app-refactor-plan.md`](./quiz-web-app-refactor-plan.md) — deck = post, card = question model
+- [`adr-000--cross-surface-foreign-key.md`](../architectural-knowledge-management/architectural-decision-log/_drafts/adr-000--cross-surface-foreign-key.md) - `post_slug` from question filename
+- [`blog_site_implementation.md`](./blog_site_implementation.md) - blog routing and quiz widget slot on post pages
+- [`quiz-web-app-refactor-plan.md`](./quiz-web-app-refactor-plan.md) - deck = post, card = question model

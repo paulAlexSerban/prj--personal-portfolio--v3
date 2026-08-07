@@ -16,7 +16,7 @@ Question **content** types are defined in [`types-of-questions.md`](../01%20spik
 | SR-04 | Cards with higher ease ratings MUST receive longer intervals before next review than cards rated lower                                                  | Must Have |
 | SR-05 | A new card seen for the first time MUST be presented before any previously reviewed cards in the same session                                           | Must Have |
 | SR-06 | Only cards due for review on or before today MUST appear in a session by default                                                                        | Must Have |
-| SR-07 | The scheduling behaviour MUST be consistent across the widget, web app, and mobile app — the same card state produces the same schedule on all surfaces | Must Have |
+| SR-07 | The scheduling behaviour MUST be consistent across the widget, web app, and mobile app - the same card state produces the same schedule on all surfaces | Must Have |
 
 Ratings always reflect **recall quality after the review step**, not raw correctness alone. For auto-graded cards, the user still chooses Again/Hard/Good/Easy after seeing whether their selection was correct.
 

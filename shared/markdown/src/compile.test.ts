@@ -11,7 +11,7 @@ describe('detectContentFormat', () => {
     });
 });
 
-describe('compileContent — MDX components', () => {
+describe('compileContent - MDX components', () => {
     it('renders Callout to an aside with type class', () => {
         const html = compileContent('<Callout type="tip">Remember this.</Callout>');
         expect(html).toContain('mdx-callout');
@@ -42,7 +42,7 @@ describe('compileContent — MDX components', () => {
     });
 });
 
-describe('compileMarkdown — math + code (inherited behaviour)', () => {
+describe('compileMarkdown - math + code (inherited behaviour)', () => {
     it('preserves inline math placeholder', () => {
         const html = compileMarkdown('Sum $\\sum_{i=1}^n i$');
         expect(html).toContain('math-inline');
@@ -50,7 +50,7 @@ describe('compileMarkdown — math + code (inherited behaviour)', () => {
     });
 });
 
-describe('compileContent — XSS', () => {
+describe('compileContent - XSS', () => {
     it('strips script tags and event handlers from hostile payloads', () => {
         const hostile = `<script>alert('xss')</script>
 <img src=x onerror=alert(1)>

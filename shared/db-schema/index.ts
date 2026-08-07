@@ -10,7 +10,7 @@ export const tags = sqliteTable('tags', {
 // content_type values that appear in content_tags (questions use question_tags)
 export type ContentType = 'post' | 'book-note' | 'snippet' | 'project' | 'coursework' | 'page';
 
-// ── Content → Tag junction ────────────────────────────────────────────────────
+// ── Content -> Tag junction ────────────────────────────────────────────────────
 export const content_tags = sqliteTable(
     'content_tags',
     {
@@ -184,7 +184,7 @@ export const question_options = sqliteTable(
     })
 );
 
-// ── Question → Tag junction ───────────────────────────────────────────────────
+// ── Question -> Tag junction ───────────────────────────────────────────────────
 export const question_tags = sqliteTable(
     'question_tags',
     {

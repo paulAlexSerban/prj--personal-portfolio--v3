@@ -100,7 +100,7 @@ describe('compileQuizData', () => {
         spy.mockClear();
         const compiled = await compileQuizData(raw);
 
-        // stem + explanation + 2 option labels — once per unique question, not per grouping
+        // stem + explanation + 2 option labels - once per unique question, not per grouping
         expect(spy).toHaveBeenCalledTimes(4);
 
         const fromPost = compiled.questionsByPost.get('graphs')![0]!;

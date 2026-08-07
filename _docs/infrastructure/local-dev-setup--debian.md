@@ -1,6 +1,6 @@
-# Local development setup — Debian / Ubuntu
+# Local development setup - Debian / Ubuntu
 
-Run the portfolio site, blog site, quiz web app, and news-feed site behind Traefik on HTTPS with local domain names — no port numbers in the browser URL.
+Run the portfolio site, blog site, quiz web app, and news-feed site behind Traefik on HTTPS with local domain names - no port numbers in the browser URL.
 
 | Service           | URL                                    |
 | ----------------- | -------------------------------------- |
@@ -120,7 +120,7 @@ Rebuild the quiz container after regenerating `public/data/`.
 
 ## Start the stack
 
-From the monorepo root (preferred — builds the shared local base image first):
+From the monorepo root (preferred - builds the shared local base image first):
 
 ```bash
 make compose_up
@@ -155,7 +155,7 @@ Browser ──► Traefik (:443, TLS) ──► portfolio (:4321)
               │                  ──► blog      (:4321)
               │                  ──► quiz      (:5180)
               │                  ──► news      (:4321)
-              └── HTTP :80 → HTTPS redirect
+              └── HTTP :80 -> HTTPS redirect
 ```
 
 - **Traefik** is the reverse proxy and local DNS entry point (via `/etc/hosts`).

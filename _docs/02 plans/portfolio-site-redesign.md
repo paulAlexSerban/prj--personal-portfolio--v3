@@ -1,8 +1,8 @@
 # Portfolio-site Redesign and Expansion
 
-**Status:** ✅ implemented — portfolio-site illustrated aesthetic + expanded content pipeline shipped (`frontend/sites/portfolio-site/`).
+**Status:** ✅ implemented - portfolio-site illustrated aesthetic + expanded content pipeline shipped (`frontend/sites/portfolio-site/`).
 
-Brutally honest framing: the current build is competent but inert — it tells, it doesn't show. This plan implements the design review's *high-value structural* ideas inside a new portfolio-only illustrated aesthetic, backed by an expanded content pipeline so nothing is hardcoded (HOME-05).
+Brutally honest framing: the current build is competent but inert - it tells, it doesn't show. This plan implements the design review's *high-value structural* ideas inside a new portfolio-only illustrated aesthetic, backed by an expanded content pipeline so nothing is hardcoded (HOME-05).
 
 ## Decisions locked
 - Aesthetic: full rough/Excalidraw look for portfolio only (Rough.js / SVG illustrations, radar, architecture diagram). Accepts brand divergence + more JS.
@@ -17,9 +17,9 @@ Brutally honest framing: the current build is competent but inert — it tells, 
 
 ## Explicitly NOT doing
 - No illustration components in `shared/ui`.
-- No animated/live architecture diagram in v1 — static Rough SVG first.
+- No animated/live architecture diagram in v1 - static Rough SVG first.
 - No new tag-junction seam in json-ingest (use `tech` column).
 - No CMS, no runtime server, no client accounts.
 
 ## Phases
-See implementation in `frontend/sites/portfolio-site/` — phases P0–P7 as executed in this branch.
+See implementation in `frontend/sites/portfolio-site/` - phases P0-P7 as executed in this branch.

@@ -58,7 +58,7 @@ const tasks: Task<unknown>[] = [
 
 const main = async () => {
     const dryRun = process.argv.includes('--dry-run');
-    if (dryRun) console.log('[mdx-ingest] dry-run mode — no writes will happen');
+    if (dryRun) console.log('[mdx-ingest] dry-run mode - no writes will happen');
 
     const executor = taskManager().init(tasks);
     await executor.execute();

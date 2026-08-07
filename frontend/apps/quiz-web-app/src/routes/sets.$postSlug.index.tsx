@@ -414,7 +414,7 @@ function SetDetailPage() {
                         <span className="line-clamp-2">{stripMarkdownPreview(q.stem)}</span>
                       </td>
                       <td className="p-2 smallcaps text-[14px]">{q.answerFormat}</td>
-                      <td className="p-2">{card?.cardType ?? "—"}</td>
+                      <td className="p-2">{card?.cardType ?? "-"}</td>
                       {/**date fromat yy-MM-dd */}
                       <td className="p-2">
                         {card?.dueDate
@@ -423,15 +423,15 @@ function SetDetailPage() {
                               month: "2-digit",
                               day: "2-digit",
                             })
-                          : "—"}
+                          : "-"}
                       </td>
-                      <td className="p-2">{card ? `${card.interval}d` : "—"}</td>
+                      <td className="p-2">{card ? `${card.interval}d` : "-"}</td>
                       {settings.scheduler === "fsrs" ? (
                         <td className="p-2">
                           <RetrievabilityCell card={card} today={today} />
                         </td>
                       ) : (
-                        <td className="p-2">{card ? card.easeFactor.toFixed(2) : "—"}</td>
+                        <td className="p-2">{card ? card.easeFactor.toFixed(2) : "-"}</td>
                       )}
                       <td className="p-2 ">
                         <button
@@ -553,9 +553,9 @@ function RetrievabilityCell({
   card: import("@/store/types").CardState | undefined;
   today: string;
 }) {
-  if (!card) return <>—</>;
+  if (!card) return <>-</>;
   const r = cardRetrievability(card, today);
-  if (r == null) return <>—</>;
+  if (r == null) return <>-</>;
   const pct = Math.round(r * 100);
   const color = r >= 0.9 ? "var(--ink-black)" : r >= 0.7 ? "var(--slate)" : "#c0392b";
   return (

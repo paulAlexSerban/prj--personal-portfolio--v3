@@ -8,7 +8,7 @@ export function fuzzMagnitude(interval: number): number {
   return Math.max(2, Math.floor(interval * 0.1));
 }
 
-/** Deterministic integer in [−range, +range] from a string seed. */
+/** Deterministic integer in [-range, +range] from a string seed. */
 export function seededOffset(seed: string, range: number): number {
   if (range === 0) return 0;
   let h = 0;
@@ -34,7 +34,7 @@ export interface BalanceOpts {
   seed: string;
   today: string;
   minimumInterval: number;
-  /** date → count of review cards already due that day */
+  /** date -> count of review cards already due that day */
   dueCounts: Map<string, number>;
   /** How many days forward to look when picking the lightest slot */
   lookaheadDays?: number;

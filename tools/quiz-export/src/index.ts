@@ -70,7 +70,7 @@ const tasks: Task<unknown>[] = [
     {
         name: 'Compile Quiz Data',
         action: (ctx) => {
-            console.log('[quiz-export] compiling MDX/markdown → HTML…');
+            console.log('[quiz-export] compiling MDX/markdown -> HTML…');
             return compileQuizData(ctx.getResult<QuizData>('Export Quiz Data'), {
                 contentDir: CONTENT_DIR,
                 assetsOutDir: ASSETS_OUT,
@@ -87,7 +87,7 @@ const tasks: Task<unknown>[] = [
 
 const main = async () => {
     if (isDryRun) {
-        console.log('[quiz-export] dry-run mode — no files will be written');
+        console.log('[quiz-export] dry-run mode - no files will be written');
     }
 
     const executor = taskManager().init(tasks);

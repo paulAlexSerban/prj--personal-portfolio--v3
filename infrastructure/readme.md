@@ -99,7 +99,7 @@ aws --version
 
 #### 2. Create an access key in AWS
 
-In the AWS console: IAM → Users → your user → Security credentials → Create access key
+In the AWS console: IAM -> Users -> your user -> Security credentials -> Create access key
 (Use a user that can manage S3, CloudFront, ACM, Route 53, and IAM for this first apply.)
 
 #### 3. Configure the CLI

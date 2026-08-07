@@ -22,12 +22,12 @@ export interface ExportedQuestion {
     cognitiveStyle: CognitiveStyle;
     difficulty: Difficulty;
     gradingMode: GradingMode;
-    /** Authoring format — set by `compileQuizData`. */
+    /** Authoring format - set by `compileQuizData`. */
     contentFormat?: ContentFormat;
     stem: string;
     /** Export-time compiled, sanitized HTML (present after `compileQuizData`). */
     stemHtml?: string;
-    /** Raw MDX/markdown answer body — stored in questions.back. */
+    /** Raw MDX/markdown answer body - stored in questions.back. */
     explanation: string;
     /** Export-time compiled, sanitized HTML (present after `compileQuizData`). */
     explanationHtml?: string;

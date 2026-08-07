@@ -41,13 +41,13 @@ export function addDaysISO(iso: string, days: number): string {
   return localDateISO(dt);
 }
 
-/** Day of the year, 1–366 (Jan 1 = 1). */
+/** Day of the year, 1-366 (Jan 1 = 1). */
 export function dayOfYear(d = new Date()): number {
   const start = new Date(d.getFullYear(), 0, 0);
   return Math.floor((d.getTime() - start.getTime()) / 86400000);
 }
 
-/** ISO-8601 week number, 1–53 (weeks start Monday; week 1 holds the first Thursday). */
+/** ISO-8601 week number, 1-53 (weeks start Monday; week 1 holds the first Thursday). */
 export function isoWeek(d = new Date()): number {
   const date = new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()));
   const dayNum = (date.getUTCDay() + 6) % 7; // Mon=0 … Sun=6
@@ -69,7 +69,7 @@ export function formatDateline(d = new Date()): string {
   });
 }
 
-/** Whole calendar days between two ISO dates (b − a). */
+/** Whole calendar days between two ISO dates (b - a). */
 export function daysBetween(aISO: string, bISO: string): number {
   const [ay, am, ad] = aISO.split("-").map(Number);
   const [by, bm, bd] = bISO.split("-").map(Number);

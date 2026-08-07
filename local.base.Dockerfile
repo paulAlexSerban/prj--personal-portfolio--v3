@@ -1,4 +1,4 @@
-# Local monorepo base image — build context: monorepo root
+# Local monorepo base image - build context: monorepo root
 #   docker build -f local.base.Dockerfile -t prj-personal-portfolio-v3-local-base:latest .
 
 FROM node:24-alpine

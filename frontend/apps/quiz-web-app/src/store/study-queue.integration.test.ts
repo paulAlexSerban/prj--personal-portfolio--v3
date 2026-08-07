@@ -23,11 +23,11 @@ describe("/study queue (real store)", () => {
     useStore.getState().addPost(POST, SLUGS);
     // Drain the daily new budget by reviewing 20 brand-new cards.
     for (let i = 0; i < 20; i++) {
-      useStore.getState().reviewCard(SLUGS[i], 4, 1000); // Easy → graduates out of "new"
+      useStore.getState().reviewCard(SLUGS[i], 4, 1000); // Easy -> graduates out of "new"
     }
     const s = useStore.getState();
     const queue = selectStudyQueue(s, { now: Date.now() });
-    // Remaining 10 are still "new" but the daily cap is hit → empty until tomorrow.
+    // Remaining 10 are still "new" but the daily cap is hit -> empty until tomorrow.
     expect(queue.length).toBe(0);
   });
 

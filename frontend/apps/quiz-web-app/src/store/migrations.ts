@@ -21,7 +21,7 @@ export interface MigratePersistedStateOpts {
 /**
  * One-shot migration for persisted quiz state: bump a legacy default
  * `config.maximumInterval`, clamp card intervals, and pull far-future due
- * dates within the effective cap. Idempotent — safe to run more than once.
+ * dates within the effective cap. Idempotent - safe to run more than once.
  */
 export function migratePersistedState<T extends MigratablePersistedState>(
   state: T,

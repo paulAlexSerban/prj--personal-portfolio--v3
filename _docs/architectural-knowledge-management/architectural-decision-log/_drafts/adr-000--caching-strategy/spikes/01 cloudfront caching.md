@@ -22,9 +22,9 @@
 
 **Explanation:**
 
-* **Immutable assets** get long TTL → never need invalidation
-* **HTML** gets short TTL → CloudFront can fetch updated HTML after deploy
-* **No ETag checks needed** → CloudFront serves cached content until TTL expires
+* **Immutable assets** get long TTL -> never need invalidation
+* **HTML** gets short TTL -> CloudFront can fetch updated HTML after deploy
+* **No ETag checks needed** -> CloudFront serves cached content until TTL expires
 
 ---
 
@@ -74,7 +74,7 @@ main.ef456.css
 aws s3 sync dist/ s3://my-site-bucket --delete
 ```
 
-2. **Invalidate only HTML files** (assets don’t need invalidation):
+2. **Invalidate only HTML files** (assets don't need invalidation):
 
 ```bash
 aws cloudfront create-invalidation \
@@ -83,32 +83,32 @@ aws cloudfront create-invalidation \
 ```
 
 * Keeps invalidation cost and time low
-* Assets stay cached → fast delivery
+* Assets stay cached -> fast delivery
 
 ---
 
 # 6. Optional: CloudFront Custom Cache Policy
 
-* Enable **Forward Headers** → None
-* Enable **Query String Forwarding** → None (unless you need search)
-* Enable **Compress Objects Automatically** → Yes
+* Enable **Forward Headers** -> None
+* Enable **Query String Forwarding** -> None (unless you need search)
+* Enable **Compress Objects Automatically** -> Yes
 * Use **Origin Shield** (optional, for global scaling)
 
 ---
 
 # 7. Why This Is Optimal
 
-* **Immutable assets** → 1-year cache, no ETag needed
-* **HTML short TTL + invalidation** → ensures latest content is delivered
-* **No unnecessary headers** → reduces overhead
-* **Scales linearly** → 1200+ posts and thousands of assets
+* **Immutable assets** -> 1-year cache, no ETag needed
+* **HTML short TTL + invalidation** -> ensures latest content is delivered
+* **No unnecessary headers** -> reduces overhead
+* **Scales linearly** -> 1200+ posts and thousands of assets
 
 ---
 
 # 8. Extra Tips
 
-1. **Tag pages**: paginate them, generate static HTML → same caching rules as posts
-2. **Images**: external pipeline → use `Cache-Control: public, max-age=31536000, immutable`
-3. **Builds**: 1–3 minutes → CloudFront serves everything instantly after deploy
+1. **Tag pages**: paginate them, generate static HTML -> same caching rules as posts
+2. **Images**: external pipeline -> use `Cache-Control: public, max-age=31536000, immutable`
+3. **Builds**: 1-3 minutes -> CloudFront serves everything instantly after deploy
 
 

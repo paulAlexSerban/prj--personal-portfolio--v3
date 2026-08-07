@@ -9,7 +9,7 @@ A standalone web application providing the full quiz experience across all of th
 | WEB-01 | The quiz web app MUST be accessible at a dedicated URL, independent of the blog                                        | Must Have   |
 | WEB-02 | The user MUST be able to browse all available posts and add them to their personal study set                           | Must Have   |
 | WEB-03 | Adding a post MUST add all of its associated questions to the user's card deck                                         | Must Have   |
-| WEB-04 | Adding a post to the study set MUST be additive — previously reviewed cards are not reset                              | Must Have   |
+| WEB-04 | Adding a post to the study set MUST be additive - previously reviewed cards are not reset                              | Must Have   |
 | WEB-05 | Removing a post from the study set MUST NOT delete the user's progress on its questions                                | Must Have   |
 | WEB-06 | The user MUST be able to run a quiz session with SM-2 rating (Again, Hard, Good, Easy)                                 | Must Have   |
 | WEB-07 | The user MUST be able to view a progress screen showing: total cards, cards due today, and upcoming review schedule    | Must Have   |
@@ -18,6 +18,6 @@ A standalone web application providing the full quiz experience across all of th
 | WEB-10 | The web app MUST function offline as a PWA                                                                             | Must Have   |
 | WEB-11 | The web app SHOULD support a "study all due cards" mode across all added study sets                                    | Should Have |
 | WEB-12 | The web app COULD allow the user to reset all progress for a given post or globally                                    | Could Have  |
-| WEB-13 | The web app MUST support auto-graded and self-graded question flows per the spaced repetition PRD (SR-08–SR-11)           | Must Have   |
+| WEB-13 | The web app MUST support auto-graded and self-graded question flows per the spaced repetition PRD (SR-08-SR-11)           | Must Have   |
 
 Question formats: [`types-of-questions.md`](../01%20spikes/types-of-questions.md). SM-2: [spaced repetition PRD](./01%20prd%20-%20feature%20requirements%20-%20spaced%20repetition%20behavior.md).

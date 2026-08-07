@@ -238,7 +238,7 @@ jobs:
                   cp -r quiz-dist/. _site/quiz/
                   cp -r news-dist/. _site/news/
 
-                  # Root → /home redirect
+                  # Root -> /home redirect
                   printf '<!DOCTYPE html><html><head><meta http-equiv="refresh" content="0;url=%s/home/"></head><body></body></html>\n' \
                     "$REPO_BASE" > _site/index.html
 

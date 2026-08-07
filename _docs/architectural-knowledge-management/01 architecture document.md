@@ -3,7 +3,7 @@
 
 | Field | Value |
 | --- | --- |
-| **Status** | Living — reflects what is built today |
+| **Status** | Living - reflects what is built today |
 | **Last Updated** | 2026-07-25 |
 | **Scope** | High-level overview. Per-area detail lives in each area's `readme.md` / `AGENTS.md`; decisions live in the ADR log. |
 
@@ -26,7 +26,7 @@ as static output (no runtime server, no accounts in v0.1).
 | --- | --- | --- |
 | Language | TypeScript | ADR-001 |
 | JS runtime | Node.js | ADR-002 |
-| Monorepo | **pnpm workspaces** (migrated off the original Nx/Lerna plan) | ADR-003 → ADR-004 |
+| Monorepo | **pnpm workspaces** (migrated off the original Nx/Lerna plan) | ADR-003 -> ADR-004 |
 | Content rendering | JAMStack / SSG | ADR-005 |
 | SSG framework | Astro + MDX | ADR-006 |
 | Database | SQLite (file-based build artifact) | draft `database-engine` |
@@ -49,7 +49,7 @@ and lets a future CMS own rows the pipeline must not overwrite (`locked: true`).
 
 ```
 _docs/        product, architecture, ADRs, plans   (this folder)
-content/      content/live/ — synced clone of the content repo
+content/      content/live/ - synced clone of the content repo
 database/     content.db (SQLite) + Drizzle migrations
 shared/       reusable packages (see shared/readme.md)
 tools/        content pipeline CLIs (see tools/readme.md)
@@ -59,7 +59,7 @@ backend/, infrastructure/, assets/   scaffolds for future work
 
 **Implemented today:** the content pipeline (`tools/*`), the shared packages
 (`shared/*`), the quiz web app (`frontend/apps/quiz-web-app`), and the Astro
-sites (`frontend/sites/portfolio-site`, `frontend/sites/blog-site`) — DEV deploy
+sites (`frontend/sites/portfolio-site`, `frontend/sites/blog-site`) - DEV deploy
 via GitHub Pages. Local Docker + Traefik lives under `infrastructure/local/`.
 `backend/` remains a scaffold; production AWS hosting is still draft (see the
 implementation-status table in [`_docs/AGENTS.md`](../AGENTS.md)).
@@ -69,16 +69,16 @@ implementation-status table in [`_docs/AGENTS.md`](../AGENTS.md)).
 ```
 content repo (MDX/JSON)
   │
-  ▼  tools/content-sync        clone → content/live/
-  ▼  tools/mdx-ingest          MDX  → posts/projects/coursework/questions
-  ▼  tools/json-ingest         JSON → profile/skills/pages
+  ▼  tools/content-sync        clone -> content/live/
+  ▼  tools/mdx-ingest          MDX  -> posts/projects/coursework/questions
+  ▼  tools/json-ingest         JSON -> profile/skills/pages
   ▼
 database/output/content.db (SQLite)
   │
-  ├─▶ Astro SSG (build time) — portfolio-site + blog-site query the DB → static HTML
-  │     (DEV: GitHub Pages; prod hosting still draft — see hosting/CI ADRs)
+  ├─▶ Astro SSG (build time) - portfolio-site + blog-site query the DB -> static HTML
+  │     (DEV: GitHub Pages; prod hosting still draft - see hosting/CI ADRs)
   │
-  └─▶ shared/quiz-export (build-time CLI)  queries the DB → static JSON
+  └─▶ shared/quiz-export (build-time CLI)  queries the DB -> static JSON
             (posts.json, questions/<post>.json, tags.json, tags/<tag>.json,
              _all.json, copied assets; Markdown/MDX compiled to safe HTML)
                     │
@@ -103,7 +103,7 @@ shape: `shared/db-schema`. Companion content (cheat sheets / learning plans) is
 authored under each post folder and linked from blog detail pages and the quiz
 set-detail UI.
 
-Frontmatter contracts (example — posts):
+Frontmatter contracts (example - posts):
 
 ```yaml
 ---
@@ -146,7 +146,7 @@ built; the `_all.json` bundle keeps the offline-mobile door open.
 
 CMS choice, database-engine ADR, CI/CD, deployment/hosting, caching, and the mobile
 wrapper remain **drafts** under
-[`architectural-decision-log/_drafts/`](./architectural-decision-log/_drafts/) —
+[`architectural-decision-log/_drafts/`](./architectural-decision-log/_drafts/) -
 treat them as proposals, not settled decisions. The original quiz-design drafts
 (`sr-engine`/`quiz-ui`/`storage` packages, Capacitor) are **superseded by ADR-008 /
 ADR-009**; the as-built design differs (consolidated `shared/*` + one CSR app).

@@ -44,9 +44,9 @@ const deriveParentPostSlug = (relativeFile: string): string | undefined => {
 
 /**
  * Parent post slug for cheat sheets / learning plans.
- * - Flat: `posts/2024/06/<slug>/cheat_sheet.mdx` → parent = `<slug>`
- * - Folder: `posts/2024/06/<slug>/cheat_sheet/<file>.mdx` → parent = `<slug>`
- * - Folder: `posts/2024/06/<slug>/learning_plan/<file>.mdx` → parent = `<slug>`
+ * - Flat: `posts/2024/06/<slug>/cheat_sheet.mdx` -> parent = `<slug>`
+ * - Folder: `posts/2024/06/<slug>/cheat_sheet/<file>.mdx` -> parent = `<slug>`
+ * - Folder: `posts/2024/06/<slug>/learning_plan/<file>.mdx` -> parent = `<slug>`
  */
 const deriveCompanionParentSlug = (relativeFile: string): string | undefined => {
     const parentDir = path.dirname(relativeFile);
@@ -67,7 +67,7 @@ export const markdownParser = async (scannedDirectories: ScannedDirectory[]): Pr
         const contentType = CONTENT_TYPE_MAP[directory.typeName];
 
         if (!contentType) {
-            console.warn(`[markdownParser] Unknown content type "${directory.typeName}" — skipping directory`);
+            console.warn(`[markdownParser] Unknown content type "${directory.typeName}" - skipping directory`);
             continue;
         }
 

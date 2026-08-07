@@ -18,9 +18,9 @@ with reusable UI and content libraries in `shared/`:
 
 - **Content:** `shared/quiz-export` (build-time CLI) reads `content.db` and writes
   `posts.json`, `questions/<post>.json`, `tags*.json`, and `_all.json` (with
-  Markdown/MDX precompiled to safe HTML). The app `fetch()`es these — no DB or
+  Markdown/MDX precompiled to safe HTML). The app `fetch()`es these - no DB or
   server in the browser.
-- **Rendering:** `shared/quiz-markdown` is the single Markdown/MDX → sanitized-HTML
+- **Rendering:** `shared/quiz-markdown` is the single Markdown/MDX -> sanitized-HTML
   pipeline (one DOMPurify allow-list, used by export and the app).
 - **UI:** presentation "blocks" live in `shared/ui` (`./blocks`, Storybook-backed);
   the app holds only containers + hooks + routes + store + schedulers.
@@ -48,7 +48,7 @@ with reusable UI and content libraries in `shared/`:
 
 `_drafts/adr-000--quiz-delivery-targets.md`, `adr-000--quiz-ui.md`,
 `adr-000--shared-package-architecture.md`, `adr-000--client-side-state-schema.md`
-— the as-built layout differs (no `packages/sr-engine|quiz-ui|storage`).
+- the as-built layout differs (no `packages/sr-engine|quiz-ui|storage`).
 
 ## See also
 

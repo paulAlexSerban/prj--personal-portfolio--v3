@@ -17,7 +17,7 @@ because:
 With `MDXRemote` (from `next-mdx-remote`):
 
 1. You fetch MDX as raw string (from CMS, repo, etc.)
-2. You compile it → `compiledSource`
+2. You compile it -> `compiledSource`
 3. You render with:
 
 ```jsx
@@ -34,7 +34,7 @@ This matches exactly what you want.
 
 # Can You Do the Same in Astro?
 
-Short answer: **yes—but not the same way**.
+Short answer: **yes-but not the same way**.
 
 Because **Astro** is:
 
@@ -45,7 +45,7 @@ So there are **2 viable patterns**, and only one truly matches your requirement.
 
 ---
 
-# Option 1 — Astro Native (Build-Time Injection)
+# Option 1 - Astro Native (Build-Time Injection)
 
 What I showed earlier:
 
@@ -68,7 +68,7 @@ What I showed earlier:
 
 ---
 
-# Option 2 — “Next.js-like” in Astro (Closest Match)
+# Option 2 - “Next.js-like” in Astro (Closest Match)
 
 You can replicate `MDXRemote` using:
 
@@ -165,7 +165,7 @@ A functional equivalent of:
 
 ---
 
-# But Here’s the Hard Truth
+# But Here's the Hard Truth
 
 This approach:
 
@@ -179,7 +179,7 @@ This approach:
 
 * Ships React runtime
 * Uses `new Function()` (not trivial security-wise)
-* Loses Astro’s core advantage (zero-JS)
+* Loses Astro's core advantage (zero-JS)
 * More complex than necessary
 
 ---
@@ -196,12 +196,12 @@ This approach:
 
 # What You Actually Want (Recommendation)
 
-Don’t blindly copy `MDXRemote`.
+Don't blindly copy `MDXRemote`.
 
-You’re mixing two different philosophies:
+You're mixing two different philosophies:
 
-* **Next.js** → runtime-driven
-* **Astro** → build-time-driven
+* **Next.js** -> runtime-driven
+* **Astro** -> build-time-driven
 
 ---
 
@@ -221,10 +221,10 @@ NOT runtime compilation.
 
 # Clean Final Pattern
 
-* External repo → pulled at build time
-* MDX files → no imports
-* Components → injected globally
-* Output → static HTML
+* External repo -> pulled at build time
+* MDX files -> no imports
+* Components -> injected globally
+* Output -> static HTML
 
 This gives you:
 
@@ -236,14 +236,14 @@ This gives you:
 
 # Bottom Line
 
-Yes—you *can* replicate:
+Yes-you *can* replicate:
 
 ```jsx
 <MDXRemote />
 ```
 
-But you probably **shouldn’t**.
+But you probably **shouldn't**.
 
 If you're going static + CDN:
 
-> Runtime MDX is solving a problem you don’t have.
+> Runtime MDX is solving a problem you don't have.

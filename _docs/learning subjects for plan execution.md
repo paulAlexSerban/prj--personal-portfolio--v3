@@ -16,12 +16,12 @@ Three Terraform-managed static sites on S3 + CloudFront (portfolio, blog, quiz),
 | **CDN edge caching** | CloudFront serves cached copies close to users |
 | **Origin vs edge** | S3 is origin; CloudFront is edge; redirect runs before origin |
 | **Subdomain vs sub-path routing** | DEV uses `/home/`, `/blog/`, `/quiz/`; prod uses separate subdomains |
-| **SPA vs SSG routing** | Blog/portfolio are pre-built HTML; quiz needs 404 → `index.html` fallback |
+| **SPA vs SSG routing** | Blog/portfolio are pre-built HTML; quiz needs 404 -> `index.html` fallback |
 | **HTTP redirects (301 vs 302)** | Plan uses 302 for legacy blog posts not in v3 |
-| **Cache-Control semantics** | `max-age`, `immutable`, `must-revalidate` — set at S3 upload time |
+| **Cache-Control semantics** | `max-age`, `immutable`, `must-revalidate` - set at S3 upload time |
 | **Content hashing / cache busting** | Hashed assets (`app.abc123.js`) can be cached forever |
 
-**Skills:** reason about request flow (browser → DNS → CloudFront → S3), choose cache TTLs, debug “stale content after deploy.”
+**Skills:** reason about request flow (browser -> DNS -> CloudFront -> S3), choose cache TTLs, debug “stale content after deploy.”
 
 ---
 
@@ -29,18 +29,18 @@ Three Terraform-managed static sites on S3 + CloudFront (portfolio, blog, quiz),
 
 ### S3
 - Private buckets (block public access)
-- **Origin Access Control (OAC)** — CloudFront reads S3; bucket stays private
+- **Origin Access Control (OAC)** - CloudFront reads S3; bucket stays private
 - `aws s3 sync` with `--delete`, `--cache-control`, `--exclude`/`--include`
 - Bucket policies and IAM least privilege
 
 ### CloudFront
 - Distributions, origins, default root object (`index.html`)
-- **Cache behaviors** — path patterns (`/assets/*` vs `/*.html`)
+- **Cache behaviors** - path patterns (`/assets/*` vs `/*.html`)
 - **Cache policies** vs legacy forwarded headers
-- **Invalidation** — when and why (`/*.html` after deploy, not hashed assets)
-- **Custom error responses** — quiz SPA: 403/404 → `/index.html` (200)
-- **Alternate domain names (CNAMEs)** — attach custom domains to a distribution
-- **CloudFront’s fixed hosted zone ID** (`Z2FDTNDATAQYW2`) for Route53 alias records
+- **Invalidation** - when and why (`/*.html` after deploy, not hashed assets)
+- **Custom error responses** - quiz SPA: 403/404 -> `/index.html` (200)
+- **Alternate domain names (CNAMEs)** - attach custom domains to a distribution
+- **CloudFront's fixed hosted zone ID** (`Z2FDTNDATAQYW2`) for Route53 alias records
 
 ### ACM (AWS Certificate Manager)
 - TLS certs for HTTPS
@@ -51,30 +51,30 @@ Three Terraform-managed static sites on S3 + CloudFront (portfolio, blog, quiz),
 ### Route53
 - Hosted zones, A/AAAA records
 - **Alias records** to CloudFront (not plain CNAME at apex)
-- Shared zone implications when repointing apex from v2 → v3
+- Shared zone implications when repointing apex from v2 -> v3
 
 ### CloudFront Functions + KeyValueStore
 - `viewer-request` event (runs before cache/origin lookup)
 - `cloudfront-js-2.0` runtime
 - KVS: key lookup, `put-key` / `update-keys` from CI
-- Limits: ~1 ms, 2 MB memory — why this beats Lambda@Edge here
+- Limits: ~1 ms, 2 MB memory - why this beats Lambda@Edge here
 
 ### IAM + OIDC
 - IAM roles, policies, trust relationships
-- **GitHub Actions OIDC** — `id-token: write`, `aws-actions/configure-aws-credentials`
+- **GitHub Actions OIDC** - `id-token: write`, `aws-actions/configure-aws-credentials`
 - Deploy role scoped to specific buckets/distributions/KVS
 - No long-lived access keys in GitHub Secrets
 
 ### Optional but useful
-- **SSM Parameter Store** — store Terraform outputs for CI
-- **DynamoDB** — Terraform state locking
-- **CloudWatch** — basic logs/metrics for debugging
+- **SSM Parameter Store** - store Terraform outputs for CI
+- **DynamoDB** - Terraform state locking
+- **CloudWatch** - basic logs/metrics for debugging
 
 **Skills:** read AWS console + CLI output, write least-privilege IAM, understand regional constraints (ACM for CloudFront).
 
 ---
 
-## 3. Infrastructure as Code — Terraform
+## 3. Infrastructure as Code - Terraform
 
 | Concept | Plan usage |
 |---|---|
@@ -83,7 +83,7 @@ Three Terraform-managed static sites on S3 + CloudFront (portfolio, blog, quiz),
 | **Variables / outputs** | Domain names, bucket names, distribution IDs for CI |
 | **Remote state** | S3 backend + DynamoDB lock table (bootstrap) |
 | **Data sources** | `aws_route53_zone` for existing `paulserban.eu` zone |
-| **Resource dependencies** | Cert validation → distribution → DNS alias |
+| **Resource dependencies** | Cert validation -> distribution -> DNS alias |
 | **Workspace / env layout** | `infrastructure/aws/envs/prod/` |
 | **State separation** | Bootstrap applied once manually; prod env separate |
 | **Import vs greenfield** | v2 infra stays external; you only add DNS alias + redirect target |
@@ -92,13 +92,13 @@ Three Terraform-managed static sites on S3 + CloudFront (portfolio, blog, quiz),
 
 ---
 
-## 4. CI/CD — GitHub Actions
+## 4. CI/CD - GitHub Actions
 
 | Topic | Plan usage |
 |---|---|
 | **Workflow triggers** | Content deploy on push; infra deploy manual/path-filtered |
 | **Reusable actions** | Your existing `setup-monorepo` |
-| **Job dependencies / artifacts** | Ingest → build → deploy pipeline (like `deploy-dev.yaml`) |
+| **Job dependencies / artifacts** | Ingest -> build -> deploy pipeline (like `deploy-dev.yaml`) |
 | **Environment variables at build** | `ASTRO_SITE`, `ASTRO_BASE=/`, `VITE_APP_BASE=/` |
 | **OIDC to AWS** | Assume deploy role without static keys |
 | **Deploy scripts** | S3 sync with cache-control split, CloudFront invalidation, KVS sync |
@@ -118,17 +118,17 @@ Three Terraform-managed static sites on S3 + CloudFront (portfolio, blog, quiz),
 | **URL conventions** | v3: `/post/{slug}/`; v2: `/blog/post/{slug}` |
 | **`getAllSlugs()`** | Same query drives static paths and KVS population |
 | **Quiz SPA (Vite)** | Client-side routing, `base` path, `public/data/` JSON |
-| **Content pipeline** | `pnpm start` → `content.db` → build |
+| **Content pipeline** | `pnpm start` -> `content.db` -> build |
 | **pnpm workspaces** | Filter builds: `pnpm --filter ... build` |
 
-**Skills:** trace “which slugs exist at build time” from DB query → Astro routes → KVS keys.
+**Skills:** trace “which slugs exist at build time” from DB query -> Astro routes -> KVS keys.
 
 ---
 
 ## 6. DNS, TLS, and cutover strategy
 
 - How apex (`paulserban.eu`) and `www` currently point to v2
-- Safe cutover: cert ready → distribution ready → flip Route53 → verify
+- Safe cutover: cert ready -> distribution ready -> flip Route53 -> verify
 - Adding `v2.paulserban.eu` to **existing** v2 CloudFront (manual runbook)
 - Propagation, TTL, and rollback thinking
 - Verifying v2 URL patterns before hardcoding redirect targets
@@ -144,7 +144,7 @@ From your existing caching spike:
 - Long TTL + `immutable` for hashed assets
 - Short TTL / `must-revalidate` for HTML
 - When invalidation is still needed
-- Why you don’t invalidate `/assets/*` after every deploy
+- Why you don't invalidate `/assets/*` after every deploy
 - CloudFront Function redirect responses: `cache-control: no-cache`
 
 **Skills:** design a deploy that minimizes invalidation cost and maximizes cache hit rate.
@@ -187,7 +187,7 @@ flowchart LR
 
 ## Mini project ideas (progressive)
 
-### Level 1 — Foundations
+### Level 1 - Foundations
 
 1. **“Hello static site”**  
    Build a 3-page HTML site locally. Upload to a **public** S3 bucket with static website hosting. Access via S3 website endpoint.  
@@ -198,12 +198,12 @@ flowchart LR
    *Learn:* OAC, origin config, basic caching.
 
 3. **“Custom domain lab”**  
-   Buy/use a cheap domain or a subdomain you own. ACM cert (DNS validation) + Route53 alias → CloudFront.  
+   Buy/use a cheap domain or a subdomain you own. ACM cert (DNS validation) + Route53 alias -> CloudFront.  
    *Learn:* ACM `us-east-1`, alias records, HTTPS.
 
 ---
 
-### Level 2 — Terraform
+### Level 2 - Terraform
 
 4. **“Terraform static-site module (v0)”**  
    One module: S3 + OAC + CloudFront + Route53 record. Parameterize `domain_name` and `bucket_name`.  
@@ -214,12 +214,12 @@ flowchart LR
    *Learn:* remote state, locking, bootstrap chicken-and-egg.
 
 6. **“Three sites, one module”**  
-   Instantiate your module 3× with different names (`portfolio`, `blog`, `quiz` subdomains on a test domain).  
+   Instantiate your module 3* with different names (`portfolio`, `blog`, `quiz` subdomains on a test domain).  
    *Learn:* module reuse, env-specific `tfvars`.
 
 ---
 
-### Level 3 — CI/CD
+### Level 3 - CI/CD
 
 7. **“OIDC deploy pipeline”**  
    GitHub Action: on push, build a tiny static site, `aws s3 sync`, `create-invalidation`. Auth via OIDC only.  
@@ -230,19 +230,19 @@ flowchart LR
    *Learn:* exact pattern from your caching spike and prod workflow.
 
 9. **“SPA on CloudFront”**  
-   Deploy a minimal React/Vite SPA. Add custom error response 404 → `/index.html`. Test client-side routes.  
+   Deploy a minimal React/Vite SPA. Add custom error response 404 -> `/index.html`. Test client-side routes.  
    *Learn:* quiz distribution behavior.
 
 ---
 
-### Level 4 — Redirect logic
+### Level 4 - Redirect logic
 
 10. **“CloudFront Function playground”**  
     Function that logs/rewrites paths (e.g. add a header, block `/admin`). Attach to `viewer-request`.  
     *Learn:* function association, event types, deployment speed.
 
 11. **“KVS redirect mini-blog”**  
-    Two “sites”: v3 with 5 slugs in KVS, v2 with fake legacy URLs. Function: if slug ∉ KVS → 302 to v2 pattern. Populate KVS via CLI in a deploy script.  
+    Two “sites”: v3 with 5 slugs in KVS, v2 with fake legacy URLs. Function: if slug ∉ KVS -> 302 to v2 pattern. Populate KVS via CLI in a deploy script.  
     *Learn:* exact redirect mechanism from the plan.
 
 12. **“Slug export from your repo”**  
@@ -251,14 +251,14 @@ flowchart LR
 
 ---
 
-### Level 5 — Integration (dress rehearsals)
+### Level 5 - Integration (dress rehearsals)
 
 13. **“DEV-parity prod dry run”**  
-    Clone your `deploy-dev.yaml` flow but target AWS instead of Pages: ingest → build portfolio only → S3 sync. Use a stage subdomain.  
+    Clone your `deploy-dev.yaml` flow but target AWS instead of Pages: ingest -> build portfolio only -> S3 sync. Use a stage subdomain.  
     *Learn:* env vars (`ASTRO_BASE=/`), artifact handoff, end-to-end pipeline.
 
 14. **“Blog + redirect stage”**  
-    Deploy blog-site to stage. Wire KVS from real `getAllSlugs()`. Hit a slug that exists (200) and one that doesn’t (302 to a stub v2 URL).  
+    Deploy blog-site to stage. Wire KVS from real `getAllSlugs()`. Hit a slug that exists (200) and one that doesn't (302 to a stub v2 URL).  
     *Learn:* full blog path before touching production DNS.
 
 15. **“DNS cutover simulation”**  
@@ -283,14 +283,14 @@ flowchart LR
 
 ## Checklist before you touch production
 
-- [ ] Can explain browser → Route53 → CloudFront → S3 for one request
+- [ ] Can explain browser -> Route53 -> CloudFront -> S3 for one request
 - [ ] Can `terraform plan` a module and predict what changes
 - [ ] OIDC role can sync S3 and invalidate CloudFront, nothing else
 - [ ] Confirmed live v2 URL pattern (`/blog/post/{slug}` etc.)
 - [ ] KVS keys match `getAllSlugs()` output format (`post/slug`, not just `slug`)
-- [ ] Quiz SPA deep links work after 404 → `index.html` mapping
+- [ ] Quiz SPA deep links work after 404 -> `index.html` mapping
 - [ ] Rollback plan for apex DNS if v3 deploy fails
 
 ---
 
-If you want, I can turn this into a week-by-week study plan mapped to the plan’s todos (`tf-bootstrap`, `static-site module`, `deploy-prod.yaml`, etc.), or a “minimum viable path” that gets you to a stage deploy with the fewest AWS resources first.
+If you want, I can turn this into a week-by-week study plan mapped to the plan's todos (`tf-bootstrap`, `static-site module`, `deploy-prod.yaml`, etc.), or a “minimum viable path” that gets you to a stage deploy with the fewest AWS resources first.

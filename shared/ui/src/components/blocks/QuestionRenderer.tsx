@@ -9,14 +9,14 @@ export interface QuestionRendererProps {
     onReveal: () => void;
     /** Reported once on reveal: true/false for auto-graded, null for self-graded. */
     onGraded?: (correct: boolean | null) => void;
-    /** Offer a retry (un-reveal) — shown for wrong auto-graded answers. */
+    /** Offer a retry (un-reveal) - shown for wrong auto-graded answers. */
     onRetry?: () => void;
 }
 
 /**
  * Renders a single question, branching on `answerFormat`.
- * - free_text: stem → reveal explanation → self-grade
- * - multiple_choice / true_false: pick answer → submit (auto-grade) → reveal
+ * - free_text: stem &gt; reveal explanation &gt; self-grade
+ * - multiple_choice / true_false: pick answer &gt; submit (auto-grade) &gt; reveal
  * - multiple_select: all-or-nothing auto-grade
  *
  * Mount with `key={question.slug}` so internal answer state resets per card.
@@ -60,7 +60,7 @@ export function QuestionRenderer({ question, revealed, onReveal, onGraded, onRet
         }
     })();
 
-    // Report correctness once revealed — covers both button-submit and the
+    // Report correctness once revealed - covers both button-submit and the
     // keyboard reveal path owned by StudySession.
     useEffect(() => {
         if (revealed) onGraded?.(isCorrect);

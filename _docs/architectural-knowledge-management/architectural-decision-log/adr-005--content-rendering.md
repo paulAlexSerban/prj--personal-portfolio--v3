@@ -11,7 +11,7 @@ Before deciding, several architectural alternatives were considered, each with d
 ### 1. **Server-Side Rendering (SSR)**
 | **Pros**                                                                                                                                     | **Cons**                                                                                                                          |
 | -------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
-| Dynamic content generation on each request ensures that users receive the latest data without relying on API calls.                          | Performance: Pages are generated at request time, leading to higher response times compared to JAMstack’s pre-built static pages. |
+| Dynamic content generation on each request ensures that users receive the latest data without relying on API calls.                          | Performance: Pages are generated at request time, leading to higher response times compared to JAMstack's pre-built static pages. |
 | Suitable for highly dynamic applications where real-time data or complex server-side logic is critical.                                      | Complexity: Requires server infrastructure to handle rendering and additional resources for scaling.                              |
 | SEO: SSR can be SEO-friendly since content is rendered on the server, but it may require additional optimizations to ensure fast load times. | Cost: Managing servers for rendering and scaling for high traffic can increase costs significantly.                               |
 
@@ -33,7 +33,7 @@ Before deciding, several architectural alternatives were considered, each with d
 ### 4. **Content Management System (CMS)-Driven Approach (WordPress, Drupal)**
 | **Pros**                                                                                      | **Cons**                                                                                                                                                                                                 |
 | --------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Easily manageable content with a user-friendly interface for adding and updating pages.       | Performance: Traditional CMS platforms are server-side by default, meaning they can’t take full advantage of CDNs for static delivery. This results in slower page loads, especially under high traffic. |
+| Easily manageable content with a user-friendly interface for adding and updating pages.       | Performance: Traditional CMS platforms are server-side by default, meaning they can't take full advantage of CDNs for static delivery. This results in slower page loads, especially under high traffic. |
 | A wide range of plugins and themes, making it easy to extend the website with minimal coding. | Security: CMS platforms are frequent targets for attacks due to their popularity and the complexity of keeping plugins and systems up to date.                                                           |
 |                                                                                               | Customization: While CMS platforms offer flexibility with plugins, fully customizing them to meet specific design and functionality needs can be limiting or overly complex.                             |
 
@@ -43,9 +43,9 @@ To meet these needs, the **JAMstack (JavaScript, APIs, and Markup)** architectur
 The project will adopt **JAMstack** architecture for the following reasons:
 - **Performance**: Since the frontend is served as static assets, the site can be globally distributed via CDNs (Content Delivery Networks), ensuring fast load times for users regardless of location.
   - Pre-built static pages are fast and can be globally distributed via CDNs, ensuring excellent load times for a portfolio where fast, accessible content is critical.
-- **SEO**: With static content that’s pre-rendered, JAMstack offers excellent SEO performance, allowing search engines to index content easily.
+- **SEO**: With static content that's pre-rendered, JAMstack offers excellent SEO performance, allowing search engines to index content easily.
 - **Security**: With no direct server involved, common vulnerabilities associated with server-side architectures (e.g., DDoS attacks, server injections) are minimized.
-  - There’s no need to maintain a server, minimizing potential security vulnerabilities. API calls are used only when necessary for dynamic content.
+  - There's no need to maintain a server, minimizing potential security vulnerabilities. API calls are used only when necessary for dynamic content.
 - **Scalability**: Static sites are inherently scalable, as serving static assets from a CDN requires no scaling effort on the server side. Dynamic content is managed through API endpoints, which can scale independently.
 - **Developer Experience**: With modern frameworks like Next.js, the development workflow is streamlined, allowing for easy integration with modern JavaScript tools and libraries, as well as deployment processes tailored for static sites (e.g., Vercel, Netlify).
   - The decoupled nature of JAMstack allows for faster development and iteration cycles. The project can be developed using modern tools and frameworks such as **Next.js** or **Gatsby**, which support both static site generation (SSG) and dynamic capabilities via APIs.
@@ -58,7 +58,7 @@ The project will adopt **JAMstack** architecture for the following reasons:
 - **Decoupled Backend**: The project will use external APIs or microservices to handle dynamic content, which could require additional effort to develop and maintain in the future.
 
 ## Alternatives Considered (Revisited)
-1. **Server-Side Rendering (SSR)** was rejected due to its complexity and higher infrastructure costs, which are unnecessary for the portfolio’s static content.
+1. **Server-Side Rendering (SSR)** was rejected due to its complexity and higher infrastructure costs, which are unnecessary for the portfolio's static content.
 2. **Single-Page Application (SPA)** was ruled out because SEO is a priority, and managing a large SPA can introduce performance bottlenecks.
-3. **Traditional MPA with Backend Framework** introduces overhead that isn’t required for a personal portfolio, where pre-built static content suffices.
+3. **Traditional MPA with Backend Framework** introduces overhead that isn't required for a personal portfolio, where pre-built static content suffices.
 4. **CMS-driven** architecture was considered overkill and introduces potential security issues and performance challenges. JAMstack provides the needed flexibility and performance without the overhead of managing a traditional CMS.

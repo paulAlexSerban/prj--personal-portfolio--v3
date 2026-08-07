@@ -1,4 +1,4 @@
-# Test environment - Route 53 → CloudFront → S3 (per-app)
+# Test environment - Route 53 -> CloudFront -> S3 (per-app)
 
 Provisions **four** independent static-hosting stacks under the `paulserban.eu`
 zone, plus a single GitHub Actions OIDC deploy role that can sync/invalidate all

@@ -83,7 +83,7 @@ export const questions = sqliteTable('questions', {
 ### Entity Relationships
 
 ```
-profile     (1 row — singleton)
+profile     (1 row - singleton)
 
 skills      (many rows)
 
@@ -95,7 +95,7 @@ posts       (many rows)
   └── type: 'post' | 'book-note' | 'snippet'
 
 questions   (many rows)
-  └── post_slug → posts.slug  (many-to-one)
+  └── post_slug -> posts.slug  (many-to-one)
   └── slug: "{post-slug}--{uuid5}" (encodes relationship in filename)
 ```
 

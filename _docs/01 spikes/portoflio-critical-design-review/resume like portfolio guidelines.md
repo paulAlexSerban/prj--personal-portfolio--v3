@@ -1,4 +1,4 @@
-Most CVs fail because they describe the *candidate*, not the *impact*. Yours should read like a value proposition, not a biography. If it doesn’t help an employer quickly answer **“what do I gain?”**, it’s noise.
+Most CVs fail because they describe the *candidate*, not the *impact*. Yours should read like a value proposition, not a biography. If it doesn't help an employer quickly answer **“what do I gain?”**, it's noise.
 
 You should start treating your career as a product and your skills as features, you need to study how world-class product marketers, copywriters, and business strategists think. You also need to master the exact engineering resumes that clear the bar at elite tech companies.
 
@@ -8,26 +8,26 @@ You should start treating your career as a product and your skills as features, 
 | ------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | “React, Node.js, AWS, TypeScript”<br>“Experienced in system design” | * “Reduced API latency by 42% by redesigning caching and query strategy in a high-traffic Node.js service”<br>* “Led migration of monolith to event-driven architecture, improving deployment frequency from bi-weekly to daily” |
 | That tells nothing                                                  | Skills are not value. Outcomes are value                                                                                                                                                                                         |
-If a bullet point doesn’t contain:
+If a bullet point doesn't contain:
 * a system
 * a constraint
 * an action
 * a measurable or observable result
-…it’s filler.
+…it's filler.
 
 ---
 ## Your CV is not chronological - it is selective marketing
-Most engineers treat CVs like logs -> That’s wrong.
+Most engineers treat CVs like logs -> That's wrong.
 
 You should:
-* delete 50–70% of what you’ve done
+* delete 50-70% of what you've done
 * keep only what supports the role you want next
 
 If you want to be seen as a senior/staff engineer:
 * remove junior “CRUD app” noise
 * emphasize architecture, scaling, ownership, decision-making
 
-Recruiters don’t reward honesty. They reward clarity of signal.
+Recruiters don't reward honesty. They reward clarity of signal.
 
 #### Prove Your Velocity (The "Signal" vs. "Noise" Ratio)
 Hiring managers are terrified of hiring "expert" engineers who move like molasses. They want to see velocity, execution, and initiative.
@@ -48,13 +48,13 @@ Stop Listing Responsibilities. Start Listing Outcomes
 | “Built microservices in AWS”                                                                              | “Broke down a tightly coupled backend into 6 services to eliminate deployment bottlenecks and reduce blast radius during failures” |
 This is the difference between “did work” and “owned systems”.
 
-An employer does not care that you "maintained a Kubernetes cluster" or "wrote TypeScript microservices." That’s just you doing your job. They care about the *impact* of those actions.
+An employer does not care that you "maintained a Kubernetes cluster" or "wrote TypeScript microservices." That's just you doing your job. They care about the *impact* of those actions.
 
 Every bullet point in your experience section must follow a strict value-driven framework, like Google's **X-Y-Z formula**: `Accomplished [X], as measured by [Y], by doing [Z].`
 * **The Lazy "Feature" Way:** *"Responsible for building AI agent infrastructure using Amazon Bedrock."*
 * **The High-Value "Product" Way:** *"Designed and launched an enterprise AI agent control plane using Amazon Bedrock, **reducing prompt latency by 35% and saving $12k/month** in token overhead via optimized context caching."*
 
-**The Brutal Truth:** If a bullet point on your CV doesn't end with a metric, a dollar amount, a time-saved figure, or a massive architectural win, it’s bloat. Strip it out.
+**The Brutal Truth:** If a bullet point on your CV doesn't end with a metric, a dollar amount, a time-saved figure, or a massive architectural win, it's bloat. Strip it out.
 
 ---
 ## Think in “business translation layer”
@@ -65,7 +65,7 @@ Every bullet should implicitly answer:
 * Did this increase velocity?
 * Did this improve reliability?
 
-If you can’t map it to one of those, it’s probably irrelevant.
+If you can't map it to one of those, it's probably irrelevant.
 Even in pure engineering roles, hiring managers think in those terms.
 
 #### Speak the Business Language (The Language of the Buyer)
@@ -123,7 +123,7 @@ If you cannot use strong verbs, your impact was probably weak.
 You are positioning perception before they read anything else.
 
 #### Ditch the "Objective" Summary. Write a Value Proposition.
-If the top of your resume says something generic like *"Passionate Senior Software Engineer seeking a challenging role in an innovative company..."* delete it immediately. It’s selfish. It tells the employer what *you* want from *them*.
+If the top of your resume says something generic like *"Passionate Senior Software Engineer seeking a challenging role in an innovative company..."* delete it immediately. It's selfish. It tells the employer what *you* want from *them*.
 
 Instead, give them a 2-3 sentence product hook. Who are you, what is your unfair advantage, and what problem do you solve for them on Day 1?
 > **Example:**
@@ -132,9 +132,9 @@ Instead, give them a 2-3 sentence product hook. Who are you, what is your unfair
 ---
 ## Quantification is not optional for senior roles
 
-| If you don’t quantify       | Even rough numbers help                                                                                        |
+| If you don't quantify       | Even rough numbers help                                                                                        |
 | --------------------------- | -------------------------------------------------------------------------------------------------------------- |
-| you will be assumed average | * latency reduced by ~30–50%<br>* deployment frequency increased 2–3x<br>* incident rate reduced significantly |
+| you will be assumed average | * latency reduced by ~30-50%<br>* deployment frequency increased 2-3x<br>* incident rate reduced significantly |
 No numbers = no seriousness.
 
 #### Quantify the "Scope of Impact" (Not Just Percentages)
@@ -165,11 +165,11 @@ Ask:
 * Can I increase delivery speed?
 * Can I lower operational risk?
 
-If your CV doesn’t answer at least one, it’s weak.
+If your CV doesn't answer at least one, it's weak.
 
 ---
 ## Scope the Product to the Target Market (Tailoring)
-A great product doesn’t try to be everything to everyone. If Apple marketed the iPhone to enterprise server admins, they'd talk about Unix compliance. If they marketed it to teens, they'd talk about the camera.
+A great product doesn't try to be everything to everyone. If Apple marketed the iPhone to enterprise server admins, they'd talk about Unix compliance. If they marketed it to teens, they'd talk about the camera.
 
 You need to do the same. Do not send a generic CV to five different types of roles.
 * If you are applying for an **AI/Agentic platform role**, your hackathon wins, Bedrock ecosystem knowledge, and architecture control plane experience should be front and center.
@@ -196,7 +196,7 @@ Instead, group your skills logically and contextually. Show the buyer exactly wh
 
 ```
 
-> **The Brutal Truth:** If you haven’t used a language or framework commercially or deeply in a production-level project within the last 2–3 years, move it to a "Familiar with" secondary section or delete it entirely. Bloated skill lists invite interviewers to trip you up on outdated tech.
+> **The Brutal Truth:** If you haven't used a language or framework commercially or deeply in a production-level project within the last 2-3 years, move it to a "Familiar with" secondary section or delete it entirely. Bloated skill lists invite interviewers to trip you up on outdated tech.
 
 
 ---
@@ -208,7 +208,7 @@ Instead, group your skills logically and contextually. Show the buyer exactly wh
 ---
 ## Optimize for the "F-Shaped" Scanning Pattern
 
-Hiring managers do not read CVs; they skim them in an **F-shape pattern**—heavy across the top line, slightly less across the next few lines, and then a vertical plunge down the left side.
+Hiring managers do not read CVs; they skim them in an **F-shape pattern**-heavy across the top line, slightly less across the next few lines, and then a vertical plunge down the left side.
 
 If your most impressive tech stack, metrics, or career highlights are buried in the middle of a dense paragraph or on the right side of the page, they are effectively invisible.
 * **The Fix:** Front-load your bullet points. Put the tool, action, and metric in the first 4 words.
@@ -232,7 +232,7 @@ Every bullet point must start with an aggressive, punchy action verb: **Architec
 If your CV looks cluttered, uses tiny font, has erratic spacing, or stretches across 4 pages of unedited text, the "user experience" (UX) is broken. The hiring manager will close the tab.
 * **The Page Rule:** If you have under 10 years of experience, keep it to a tight, high-impact **1 page**. If you have more, **2 pages** maximum. Absolutely nothing of value happens on page 3.
 * **Whitespace is your friend:** Leave breathing room between sections. If a document looks like a wall of text, the human brain instinctively resists reading it.
-* **Ditch the graphics:** Avoid complex multi-column layouts, skill bars (e.g., "TypeScript: 4.5/5 stars" — what does that even mean?), or profile photos unless you are applying in a region where it is legally mandatory. Clean, well-spaced, single-column Markdown or standard text layouts perform best both for human eyes and ATS scanners.
+* **Ditch the graphics:** Avoid complex multi-column layouts, skill bars (e.g., "TypeScript: 4.5/5 stars" - what does that even mean?), or profile photos unless you are applying in a region where it is legally mandatory. Clean, well-spaced, single-column Markdown or standard text layouts perform best both for human eyes and ATS scanners.
 
 ---
 
@@ -240,9 +240,9 @@ If your CV looks cluttered, uses tiny font, has erratic spacing, or stretches ac
 Take your CV and rewrite every bullet using this template:
 > `“Because of [problem/context], I [action/decision], resulting in [measurable outcome]”`
 
-Then cut anything that doesn’t survive that filter.
+Then cut anything that doesn't survive that filter.
 
-If you want to view yourself as the product and your skills as the features, you need to understand a fundamental rule of product marketing: **Features don’t sell; benefits do.**
+If you want to view yourself as the product and your skills as the features, you need to understand a fundamental rule of product marketing: **Features don't sell; benefits do.**
 
 Right now, most CVs read like a grocery list of technologies and a boring diary of daily tasks. If you want to showcase actual value, you have to shift from *“Here is what I did”* to *“Here is how much better off the company was because I was there.”*
 
@@ -252,7 +252,7 @@ Right now, most CVs read like a grocery list of technologies and a boring diary 
 
 # Resources
 
-A curated list of high-impact books, articles, and framework references - split between the **marketing/positioning mindset** and **technical execution**—to completely change how you write your CV.
+A curated list of high-impact books, articles, and framework references - split between the **marketing/positioning mindset** and **technical execution**-to completely change how you write your CV.
 
 ---
 
@@ -271,11 +271,11 @@ To change *how* you view your value, you need to understand positioning, copywri
 ## 2. Technical CV Execution & Frameworks (Online References)
 When you are ready to put pen to paper, use these highly technical, field-tested engineering frameworks to structure your bullet points and layout.
 ### The Google X-Y-Z Formula
-* **The Concept:** Developed by Google’s hiring teams, this is the gold standard for engineering resume bullet points. It forces you to lead with the outcome.
+* **The Concept:** Developed by Google's hiring teams, this is the gold standard for engineering resume bullet points. It forces you to lead with the outcome.
 * **The Formula:**
 $$\text{Accomplished [X]} \times \text{as measured by [Y]} \times \text{by doing [Z]}$$
 
-* **Reference Context:** You can find this detailed across Google’s official careers guidance and tech recruiting blogs. It completely eliminates passive, low-value descriptions.
+* **Reference Context:** You can find this detailed across Google's official careers guidance and tech recruiting blogs. It completely eliminates passive, low-value descriptions.
 ### The STAR & CAR Methods
 * **STAR:** Situation, Task, Action, Result.
 * **CAR (Better for CVs):** Context, Action, Result.
@@ -288,6 +288,6 @@ $$\text{Accomplished [X]} \times \text{as measured by [Y]} \times \text{by doing
 ## 3. The "Product Catalog" Strategy (An Actionable Exercise)
 Before rewriting your resume, try this exercise inspired by product inventory management:
 1. **Build a "Master Vault" Document:** Create a private document (a hidden file or a dedicated canvas) where you dump *every single win, metric, hackathon prize, architecture decision, and system optimization* you have ever done. Do not worry about length here. This is your raw product feature database.
-2. **Extract the "SKUs" for the Job:** When an enterprise-level AI role opens up, look at their job description. Treat it as a "Features Requested" list. Go to your Master Vault, pull out the 4–5 bullet points that perfectly match those exact needs, polish them using the Google X-Y-Z formula, and assemble your targeted, high-converting 1-page CV.
+2. **Extract the "SKUs" for the Job:** When an enterprise-level AI role opens up, look at their job description. Treat it as a "Features Requested" list. Go to your Master Vault, pull out the 4-5 bullet points that perfectly match those exact needs, polish them using the Google X-Y-Z formula, and assemble your targeted, high-converting 1-page CV.
 
 This keeps your CV lean, razor-sharp, and highly relevant to the buyer sitting across the table.

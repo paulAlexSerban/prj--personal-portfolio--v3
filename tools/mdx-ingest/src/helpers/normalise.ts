@@ -171,7 +171,7 @@ const normaliseQuestion = (file: ParsedFile): NormalisedQuestion | null => {
     const parts = file.slug.split('--');
 
     if (parts.length < 2) {
-        console.warn(`[normalise] Question "${file.slug}" doesn't follow {post-slug}--{uid} convention — skipping`);
+        console.warn(`[normalise] Question "${file.slug}" doesn't follow {post-slug}--{uid} convention - skipping`);
         return null;
     }
 
@@ -186,7 +186,7 @@ const normaliseQuestion = (file: ParsedFile): NormalisedQuestion | null => {
     const post_slug = parts.slice(0, -1).join('--');
 
     if (file.parentPostSlug && file.parentPostSlug !== post_slug) {
-        console.warn(`[normalise] Question "${file.slug}": parent folder "${file.parentPostSlug}" does not match filename post_slug "${post_slug}" — skipping`);
+        console.warn(`[normalise] Question "${file.slug}": parent folder "${file.parentPostSlug}" does not match filename post_slug "${post_slug}" - skipping`);
         return null;
     }
 
@@ -219,7 +219,7 @@ const normaliseQuestion = (file: ParsedFile): NormalisedQuestion | null => {
 
 const normaliseCompanion = (file: ParsedFile): NewCheatSheetRow | NewLearningPlanRow | null => {
     if (!file.parentPostSlug) {
-        console.warn(`[normalise] Companion "${file.slug}" has no parent post slug — skipping`);
+        console.warn(`[normalise] Companion "${file.slug}" has no parent post slug - skipping`);
         return null;
     }
 

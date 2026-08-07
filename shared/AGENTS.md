@@ -10,22 +10,22 @@ Schema (`db-schema`) is separated from runtime (`db`) so the frontend can import
 
 ### `@prj--personal-portfolio--v3/shared--db-schema` (`shared/db-schema/`)
 
-- **Role**: Drizzle table definitions and inferred TypeScript types only — no Node DB drivers.
+- **Role**: Drizzle table definitions and inferred TypeScript types only - no Node DB drivers.
 - **Exports**: tables (`posts`, `projects`, `coursework`, `questions`, `question_options`, `cheat_sheets`, `learning_plans`, `pages`, `profile`, `skills`, `tags`, `content_tags`, `question_tags`), row types, and `ContentType`.
 - **Consumers**: ingest tools, Astro (types), `shared--db`.
 
 ### `@prj--personal-portfolio--v3/shared--db` (`shared/db/`)
 
-- **Role**: SQLite runtime — connection, migrations, upsert helper.
+- **Role**: SQLite runtime - connection, migrations, upsert helper.
 - **Files**:
-    - `src/connection.ts` — `openConnection`, `closeConnection`, `DrizzleDb` type
-    - `src/migrate.ts` — `runMigrations(db, migrationsFolder)`
-    - `src/upsert.ts` — `upsertWithLockCheck`
-    - `drizzle.config.ts` — Drizzle Kit config (schema → `database/migrations/`, db → `database/output/content.db`)
+    - `src/connection.ts` - `openConnection`, `closeConnection`, `DrizzleDb` type
+    - `src/migrate.ts` - `runMigrations(db, migrationsFolder)`
+    - `src/upsert.ts` - `upsertWithLockCheck`
+    - `drizzle.config.ts` - Drizzle Kit config (schema -> `database/migrations/`, db -> `database/output/content.db`)
 - **API**:
-    - `openConnection(dbPath)` — better-sqlite3 + Drizzle, WAL + FK pragmas
-    - `runMigrations(db, migrationsFolder)` — applies `database/migrations/` via drizzle migrator
-    - `upsertWithLockCheck(db, table, row, { dryRun?, syncSource? })` — insert or update by `slug`; skips `locked` rows; sets `sync_source` (default `'mdx'`) and `locked: false` on write
+    - `openConnection(dbPath)` - better-sqlite3 + Drizzle, WAL + FK pragmas
+    - `runMigrations(db, migrationsFolder)` - applies `database/migrations/` via drizzle migrator
+    - `upsertWithLockCheck(db, table, row, { dryRun?, syncSource? })` - insert or update by `slug`; skips `locked` rows; sets `sync_source` (default `'mdx'`) and `locked: false` on write
 - **Scripts**: `db:generate`, `db:migrate`, `db:studio` (Drizzle Kit).
 
 ### `@prj--personal-portfolio--v3/shared--question-contract` (`shared/question-contract/`)
@@ -35,13 +35,13 @@ Schema (`db-schema`) is separated from runtime (`db`) so the frontend can import
 
 ### `@prj--personal-portfolio--v3/shared--quiz-markdown` (`shared/quiz-markdown/`)
 
-- **Role**: Shared markdown + MDX → sanitized HTML compiler used by export and the quiz web app fallback path.
+- **Role**: Shared markdown + MDX -> sanitized HTML compiler used by export and the quiz web app fallback path.
 - **Files**:
-    - `src/mdx.ts` — preprocesses allow-listed MDX components (`<Callout>`, `<Figure>`) to HTML placeholders.
-    - `src/markdown.ts` — `marked` (GFM + math placeholders) + cloze + DOMPurify via `isomorphic-dompurify`.
-    - `src/allowlist.ts` — `ALLOWED_TAGS` / `ALLOWED_ATTR` (keep in sync across export + frontend).
-    - `src/assets.ts` — relative image path extraction + rewrite helpers.
-    - `index.ts` — `compileContent()` main API.
+    - `src/mdx.ts` - preprocesses allow-listed MDX components (`<Callout>`, `<Figure>`) to HTML placeholders.
+    - `src/markdown.ts` - `marked` (GFM + math placeholders) + cloze + DOMPurify via `isomorphic-dompurify`.
+    - `src/allowlist.ts` - `ALLOWED_TAGS` / `ALLOWED_ATTR` (keep in sync across export + frontend).
+    - `src/assets.ts` - relative image path extraction + rewrite helpers.
+    - `index.ts` - `compileContent()` main API.
 - **Scripts**: `pnpm --filter ...shared--quiz-markdown test` (7 tests).
 - **Consumers**: `shared--quiz-export` (export-time compile), `frontend--quiz-web-app` (client fallback).
 
@@ -51,18 +51,18 @@ Schema (`db-schema`) is separated from runtime (`db`) so the frontend can import
   presentation "blocks". Two layers: generic shadcn/ui primitives + the
   presentation-only flashcard UI (the quiz app wires blocks via containers/hooks).
 - **Exports**:
-    - `.` — barrel (blocks + primitives + `cn` + `useIsMobile`)
-    - `./blocks` — quiz blocks only (`CardRenderer`, `QuestionRenderer`, `StudyCard`, `QuestionPreview`, `SessionEndView`, `NothingDueView`)
-    - `./utils` — `cn()` only
-    - `./styles.css` — design tokens, component classes, `.md-content` typography
+    - `.` - barrel (blocks + primitives + `cn` + `useIsMobile`)
+    - `./blocks` - quiz blocks only (`CardRenderer`, `QuestionRenderer`, `StudyCard`, `QuestionPreview`, `SessionEndView`, `NothingDueView`)
+    - `./utils` - `cn()` only
+    - `./styles.css` - design tokens, component classes, `.md-content` typography
 - **Files**:
-    - `src/components/blocks/` — quiz blocks (pure, props-driven) + Storybook stories
-    - `src/components/ui/` — shadcn/ui + `Stamp.tsx`, `Modal.tsx`
-    - `src/lib/markdown.ts` — `marked` GFM + math/cloze tokenizer (used by `CardRenderer`)
-    - `src/lib/richText.ts` — lazy/code-split KaTeX + highlight.js loaders
-    - `src/lib/utils.ts` — `cn()` helper
-    - `src/hooks/use-mobile.tsx` — responsive hook (Sidebar)
-    - `src/styles/theme.css` — newspaper palette (light-only) + markdown/KaTeX/hljs styles
+    - `src/components/blocks/` - quiz blocks (pure, props-driven) + Storybook stories
+    - `src/components/ui/` - shadcn/ui + `Stamp.tsx`, `Modal.tsx`
+    - `src/lib/markdown.ts` - `marked` GFM + math/cloze tokenizer (used by `CardRenderer`)
+    - `src/lib/richText.ts` - lazy/code-split KaTeX + highlight.js loaders
+    - `src/lib/utils.ts` - `cn()` helper
+    - `src/hooks/use-mobile.tsx` - responsive hook (Sidebar)
+    - `src/styles/theme.css` - newspaper palette (light-only) + markdown/KaTeX/hljs styles
 - **Scripts**: `typecheck`; `storybook` / `build-storybook` (block gallery).
 - **Consumers**: `frontend--quiz-web-app` (today); future Astro portfolio/blog via React islands.
 - **Depends on**: `shared--quiz-export` (contract types) + `shared--quiz-markdown` (compile); Radix UI, CVA, lucide-react, sonner, KaTeX, highlight.js (see `package.json`); `react`/`react-dom` as peer deps.
@@ -71,30 +71,30 @@ Schema (`db-schema`) is separated from runtime (`db`) so the frontend can import
 
 - **Role**: Reads `content.db` and emits static JSON consumed by the quiz web app and the offline mobile bundle.
 - **Files**:
-    - `src/contract.ts` — exported TS types: `ExportedQuestion`, `ExportedPostEntry`, `PostsIndex`, `PostQuestionsFile`, `AllQuestionsBundle`, `QuizData`. JSON **version 2** includes precompiled `*Html` fields. `ExportedPostEntry` also carries `cheatSheets` / `learningPlans` (`{ slug, title }[]`) for quiz → blog companion links.
-    - `src/export.ts` — `buildQuizData(db): Promise<QuizData>` — pure query: joins `questions` → `posts` + `question_options` (sorted by `sort_order`) + `question_tags` + `content_tags` + published companion rows. Filters to `status = 'published'` only.
-    - `src/compile.ts` — `compileQuizData(data, opts)` — MDX/markdown → sanitized HTML; copies question images from `CONTENT_DIR` to `assets/questions/` and rewrites paths.
-    - `src/write.ts` — `writeQuizJson(data, outDir)` — writes `posts.json`, `questions/<post_slug>.json`, `tags/<tag>.json`, `_all.json`.
-    - `src/cli.ts` — CLI entry; reads `DATABASE_PATH`, `QUIZ_DATA_OUT`, `CONTENT_DIR` env vars; supports `--dry-run`.
-    - `index.ts` — library re-exports for consumers (`frontend--quiz-web-app` imports types).
+    - `src/contract.ts` - exported TS types: `ExportedQuestion`, `ExportedPostEntry`, `PostsIndex`, `PostQuestionsFile`, `AllQuestionsBundle`, `QuizData`. JSON **version 2** includes precompiled `*Html` fields. `ExportedPostEntry` also carries `cheatSheets` / `learningPlans` (`{ slug, title }[]`) for quiz -> blog companion links.
+    - `src/export.ts` - `buildQuizData(db): Promise<QuizData>` - pure query: joins `questions` -> `posts` + `question_options` (sorted by `sort_order`) + `question_tags` + `content_tags` + published companion rows. Filters to `status = 'published'` only.
+    - `src/compile.ts` - `compileQuizData(data, opts)` - MDX/markdown -> sanitized HTML; copies question images from `CONTENT_DIR` to `assets/questions/` and rewrites paths.
+    - `src/write.ts` - `writeQuizJson(data, outDir)` - writes `posts.json`, `questions/<post_slug>.json`, `tags/<tag>.json`, `_all.json`.
+    - `src/cli.ts` - CLI entry; reads `DATABASE_PATH`, `QUIZ_DATA_OUT`, `CONTENT_DIR` env vars; supports `--dry-run`.
+    - `index.ts` - library re-exports for consumers (`frontend--quiz-web-app` imports types).
 - **Output** (default: `frontend/apps/quiz-web-app/public/data/`):
-    - `posts.json` — index of posts that have ≥1 published question.
-    - `questions/<post_slug>.json` — questions for a single post (lazy-loaded by the app).
-    - `tags.json` + `tags/<tag_slug>.json` — tag index and per-tag question bundles.
-    - `assets/questions/<question-slug>/` — copied images referenced by MDX/markdown (offline-ready).
-    - `_all.json` — full bundle (posts + all questions) for offline / mobile.
+    - `posts.json` - index of posts that have ≥1 published question.
+    - `questions/<post_slug>.json` - questions for a single post (lazy-loaded by the app).
+    - `tags.json` + `tags/<tag_slug>.json` - tag index and per-tag question bundles.
+    - `assets/questions/<question-slug>/` - copied images referenced by MDX/markdown (offline-ready).
+    - `_all.json` - full bundle (posts + all questions) for offline / mobile.
 - **Contract version**: all files carry `"version": 2` (precompiled HTML fields).
 - **Scripts**:
-    - `pnpm --filter ...shared--quiz-export start` — run export against live DB.
-    - `pnpm --filter ...shared--quiz-export start:dry-run` — report counts, write nothing.
-    - `pnpm --filter ...shared--quiz-export test` — vitest suite.
+    - `pnpm --filter ...shared--quiz-export start` - run export against live DB.
+    - `pnpm --filter ...shared--quiz-export start:dry-run` - report counts, write nothing.
+    - `pnpm --filter ...shared--quiz-export test` - vitest suite.
 - **Consumers**: `frontend--quiz-web-app` (types + JSON at runtime), future mobile bundle.
 - **Depends on**: `shared--db`, `shared--db-schema`, `shared--question-contract`, `shared--quiz-markdown`.
 
 ### `@prj--personal-portfolio--v3/shared--task-manager` (`shared/task-manager/`)
 
 - **Role**: Lightweight DAG task executor for CLI pipelines.
-- **API**: `taskManager().init(tasks).execute()` — tasks declare `name`, `action`, `dependsOn`; same-level tasks run in parallel; `context.getResult()` only exposes declared dependencies; circular deps throw at init.
+- **API**: `taskManager().init(tasks).execute()` - tasks declare `name`, `action`, `dependsOn`; same-level tasks run in parallel; `context.getResult()` only exposes declared dependencies; circular deps throw at init.
 - **Tests**: `index.test.ts` covers level grouping and dependency access rules.
 - **Used by**: `tools/content-sync`, `tools/mdx-ingest`, `tools/json-ingest`.
 

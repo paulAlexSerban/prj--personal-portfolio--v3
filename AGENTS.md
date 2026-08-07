@@ -1,4 +1,4 @@
-# Personal Portfolio v3 — Monorepo
+# Personal Portfolio v3 - Monorepo
 
 TypeScript pnpm monorepo for a portfolio, blog, flashcard-quiz, and news-feed platform (JAMStack / SSG).
 
@@ -19,10 +19,10 @@ TypeScript pnpm monorepo for a portfolio, blog, flashcard-quiz, and news-feed pl
 
 | Path                    | Role                                                                  |
 | ----------------------- | --------------------------------------------------------------------- |
-| `_docs/`                | PRDs, architecture docs, ADRs, plans — see `_docs/AGENTS.md`          |
-| `database/`             | SQLite file + Drizzle migration SQL — see `database/AGENTS.md`        |
-| `shared/`               | Reusable packages (schema, DB, task manager) — see `shared/AGENTS.md` |
-| `tools/`                | Content sync and MDX ingest CLIs — see `tools/AGENTS.md`              |
+| `_docs/`                | PRDs, architecture docs, ADRs, plans - see `_docs/AGENTS.md`          |
+| `database/`             | SQLite file + Drizzle migration SQL - see `database/AGENTS.md`        |
+| `shared/`               | Reusable packages (schema, DB, task manager) - see `shared/AGENTS.md` |
+| `tools/`                | Content sync and MDX ingest CLIs - see `tools/AGENTS.md`              |
 | `frontend/sites/`       | Astro SSG sites (portfolio, blog, news-feed)                          |
 | `frontend/`, `backend/` | App surfaces (add `AGENTS.md` when those areas grow)                  |
 

@@ -1,6 +1,6 @@
 # Documentation (`_docs/`)
 
-Authoritative project knowledge: product intent, architecture decisions, and implementation plans. Not runtime code — keep it aligned with `shared/`, `database/`, and `tools/` as those areas evolve.
+Authoritative project knowledge: product intent, architecture decisions, and implementation plans. Not runtime code - keep it aligned with `shared/`, `database/`, and `tools/` as those areas evolve.
 
 ## Layout
 
@@ -29,7 +29,7 @@ When a `.cursor/plans` change ships, update the matching `_docs/02 plans` status
 Two Git repos: this **application monorepo** and a private **content repo** (`content--paulserban.eu`) with MDX under `content/publish`, `content/in-progress`, and `content/backlog`.
 
 ```
-content repo (MDX)  →  tools/content-sync  →  content/live/
+content repo (MDX)  ->  tools/content-sync  ->  content/live/
                                                     ↓
                                     ┌───────────────┴───────────────┐
                                     ↓                               ↓
@@ -40,11 +40,11 @@ content repo (MDX)  →  tools/content-sync  →  content/live/
                                                     ↓
                          ┌──────────────────────────┼──────────────────────────┐
                          ↓                          ↓                          ↓
-              portfolio-site (Astro)        blog-site (Astro)        shared/quiz-export → quiz JSON
+              portfolio-site (Astro)        blog-site (Astro)        shared/quiz-export -> quiz JSON
 ```
 
 - **Stack**: TypeScript, Node.js, pnpm workspace monorepo, Astro SSG (ADR-006), SQLite (file-based build artifact).
-- **Content model**: MDX frontmatter → ingest pipeline → `content.db` → static HTML + JSON data exports.
+- **Content model**: MDX frontmatter -> ingest pipeline -> `content.db` -> static HTML + JSON data exports.
 - **Tables / types**: `posts` (post, book-note, snippet), `projects`, `coursework`, `questions`, `cheat_sheets`, `learning_plans`, `profile`, `skills`, `tags` + `content_tags` / `question_tags` junctions.
 - **CMS contract**: rows with `locked: true` are CMS-owned; MDX ingest skips them (`sync_source: 'mdx'` for pipeline writes).
 - **Future surfaces**: headless CMS overrides, quiz widget on blog posts, mobile offline bundle; production hosting TBD (ADR-010).
@@ -53,9 +53,9 @@ content repo (MDX)  →  tools/content-sync  →  content/live/
 
 From `product/01 prd - product requirements document.md`:
 
-1. **Portfolio** — home page with profile, skills, featured projects.
-2. **Blog** — SSG posts, book notes, snippets; fast, SEO-friendly; companion cheat sheets / learning plans.
-3. **Quiz** — flashcards linked to posts via slug convention; widget, web app, and mobile from one content source.
+1. **Portfolio** - home page with profile, skills, featured projects.
+2. **Blog** - SSG posts, book notes, snippets; fast, SEO-friendly; companion cheat sheets / learning plans.
+3. **Quiz** - flashcards linked to posts via slug convention; widget, web app, and mobile from one content source.
 
 Feature-level PRDs live under `product/` (blog, portfolio, quiz widget/web/mobile, spaced repetition, user learning state, content authoring/management).
 
@@ -95,24 +95,24 @@ Remaining `_drafts/` (database engine, CMS, hosting, caching, mobile wrapper) ar
 
 | Area                                                               | Status                                                                              |
 | ------------------------------------------------------------------ | ----------------------------------------------------------------------------------- |
-| MDX ingest pipeline (scan → parse → validate → normalise → upsert) | **Implemented** — see `tools/mdx-ingest`                                            |
-| JSON ingest pipeline (profile, skills, pages)                      | **Implemented** — see `tools/json-ingest`                                           |
+| MDX ingest pipeline (scan -> parse -> validate -> normalise -> upsert) | **Implemented** - see `tools/mdx-ingest`                                            |
+| JSON ingest pipeline (profile, skills, pages)                      | **Implemented** - see `tools/json-ingest`                                           |
 | `shared/db-schema`, `shared/db`, `shared/task-manager`             | **Implemented**                                                                     |
-| Tags normalised to `tags` + `content_tags` (not JSON columns)      | **Implemented** — migration `0001`                                                  |
-| `pages` table + `profile`/`skills` slugs                           | **Implemented** — migration `0002`                                                  |
-| Build-time quiz JSON export (DB → static JSON)                     | **Implemented** — `shared/quiz-export` (satisfies question-types plan P4)           |
-| Markdown/MDX compile + sanitize for quiz content                   | **Implemented** — `shared/quiz-markdown`                                            |
-| Quiz web app (CSR React, SM-2 + FSRS, offline PWA)                 | **Implemented** — `frontend/apps/quiz-web-app`                                      |
-| Shared UI kit + newspaper design system                            | **Implemented** — `shared/ui` (quiz + Astro sites)                                  |
-| Astro frontend (portfolio-site + blog-site)                        | **Implemented** — `frontend/sites/*`; DEV deploy via GitHub Pages                   |
-| Blog companion content (cheat sheets + learning plans)             | **Implemented** — `cheat_sheets` / `learning_plans` tables + nested blog routes     |
-| Cross-app shared pagination (`PaginationBar`)                      | **Implemented** — `shared/ui`                                                       |
-| Branded 404 / error pages                                          | **Implemented** — portfolio, blog, quiz + GH Pages 404 router                       |
-| Local Docker + Traefik (HTTPS `*.paulserban.eu`)                   | **Implemented** — `infrastructure/local/` + root `local.base.Dockerfile`            |
-| DEV CI/CD (GitHub Pages)                                           | **Implemented** — `.github/workflows/deploy-dev.yaml`                               |
-| Quality CI + Changesets release / stage→prod pipelines             | **Implemented** — `ci.yaml`, `release.yaml`, `_build-site.yaml` (hosting stubbed)   |
-| CMS                                                                | Planned — see drafts and PRDs                                                       |
-| Production hosting provider                                        | In progress — test/stage on S3+CloudFront (ADR-011); prod promotion still stubbed (ADR-010) |
+| Tags normalised to `tags` + `content_tags` (not JSON columns)      | **Implemented** - migration `0001`                                                  |
+| `pages` table + `profile`/`skills` slugs                           | **Implemented** - migration `0002`                                                  |
+| Build-time quiz JSON export (DB -> static JSON)                     | **Implemented** - `shared/quiz-export` (satisfies question-types plan P4)           |
+| Markdown/MDX compile + sanitize for quiz content                   | **Implemented** - `shared/quiz-markdown`                                            |
+| Quiz web app (CSR React, SM-2 + FSRS, offline PWA)                 | **Implemented** - `frontend/apps/quiz-web-app`                                      |
+| Shared UI kit + newspaper design system                            | **Implemented** - `shared/ui` (quiz + Astro sites)                                  |
+| Astro frontend (portfolio-site + blog-site)                        | **Implemented** - `frontend/sites/*`; DEV deploy via GitHub Pages                   |
+| Blog companion content (cheat sheets + learning plans)             | **Implemented** - `cheat_sheets` / `learning_plans` tables + nested blog routes     |
+| Cross-app shared pagination (`PaginationBar`)                      | **Implemented** - `shared/ui`                                                       |
+| Branded 404 / error pages                                          | **Implemented** - portfolio, blog, quiz + GH Pages 404 router                       |
+| Local Docker + Traefik (HTTPS `*.paulserban.eu`)                   | **Implemented** - `infrastructure/local/` + root `local.base.Dockerfile`            |
+| DEV CI/CD (GitHub Pages)                                           | **Implemented** - `.github/workflows/deploy-dev.yaml`                               |
+| Quality CI + Changesets release / stage->prod pipelines             | **Implemented** - `ci.yaml`, `release.yaml`, `_build-site.yaml` (hosting stubbed)   |
+| CMS                                                                | Planned - see drafts and PRDs                                                       |
+| Production hosting provider                                        | In progress - test/stage on S3+CloudFront (ADR-011); prod promotion still stubbed (ADR-010) |
 
 ## When editing docs
 

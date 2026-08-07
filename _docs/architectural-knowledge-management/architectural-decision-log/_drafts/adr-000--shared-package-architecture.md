@@ -1,4 +1,4 @@
-# (draft) Shared package architecture — SUPERSEDED
+# (draft) Shared package architecture - SUPERSEDED
 
 > **Superseded by [ADR-008](../adr-008--quiz-web-app-architecture.md).**
 > This draft proposed `packages/{sr-engine,quiz-ui,storage,content-client}`. None

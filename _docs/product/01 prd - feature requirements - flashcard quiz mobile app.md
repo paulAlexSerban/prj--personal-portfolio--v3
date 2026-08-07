@@ -2,7 +2,7 @@
 
 ## Overview
 
-The quiz web app delivered as a native iOS and Android application via the respective app stores. The native layer is intentionally thin — the web app is the product; the native wrapper provides distribution, offline access, and device integration.
+The quiz web app delivered as a native iOS and Android application via the respective app stores. The native layer is intentionally thin - the web app is the product; the native wrapper provides distribution, offline access, and device integration.
 
 | ID     | Requirement                                                                                                                            | Priority    |
 | ------ | -------------------------------------------------------------------------------------------------------------------------------------- | ----------- |
