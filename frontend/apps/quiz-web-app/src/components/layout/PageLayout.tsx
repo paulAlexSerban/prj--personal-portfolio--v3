@@ -26,7 +26,7 @@ export function PageLayout({ children }: { children: React.ReactNode }) {
           <FooterSiteLinks activeSite="quiz" tabs={siteTabs} />
         </div>
         <p className="kicker mb-2 text-sm text-center">
-          <ObfuscatedMailto className="kicker text-sm text-ink no-underline hover:underline" />
+          <ObfuscatedMailto className="inline-flex items-center text-ink no-underline text-sm hover:opacity-70" />
         </p>
         <p className="kicker text-sm text-center">
           The Typeset Review · Printed daily in your browser · Algorithm: {algorithm}

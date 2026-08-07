@@ -43,7 +43,7 @@ export function Masthead() {
         <div className="flex items-center justify-between gap-4">
           <div className="flex flex-col gap-1">
             <p className="kicker font-mono text-[10px] md:text-sm">{dateline}</p>
-            <ObfuscatedMailto className="kicker font-mono text-[10px] md:text-sm text-ink no-underline hover:underline" />
+            <ObfuscatedMailto className="inline-flex items-center text-ink no-underline text-[10px] md:text-sm hover:opacity-70" />
           </div>
           <div className="flex flex-col items-end gap-1">
             <p className="kicker font-mono text-[10px] md:text-sm">Spaced Repetition Edition</p>

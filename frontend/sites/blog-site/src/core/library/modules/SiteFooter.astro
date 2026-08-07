@@ -41,7 +41,10 @@ const year = new Date().getFullYear();
             <FooterSiteLinks activeSite="blog" tabs={siteTabs} />
         </div>
         <p class="kicker mb-2 text-sm">
-            <ObfuscatedMailto client:load className="kicker text-sm text-ink no-underline hover:underline" />
+            <ObfuscatedMailto
+                client:load
+                className="inline-flex items-center text-ink no-underline text-sm hover:opacity-70"
+            />
         </p>
         <p class="kicker text-sm">Paul Serban · Printed in your browser · {year}</p>
     </div>

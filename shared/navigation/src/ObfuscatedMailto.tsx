@@ -1,5 +1,6 @@
 import type { MouseEvent, TouchEvent } from 'react';
-import { CONTACT_EMAIL, CONTACT_MAILTO, decodeFromBase64, encodeToBase64 } from './contact.ts';
+import { Mail } from 'lucide-react';
+import { CONTACT_MAILTO, decodeFromBase64, encodeToBase64 } from './contact.ts';
 
 interface Props {
     className?: string;
@@ -29,13 +30,14 @@ export function ObfuscatedMailto({ className }: Props) {
         <a
             href={encodedHref}
             aria-label="Email Paul Serban"
+            title="Email"
             className={className}
             onMouseEnter={handleReveal}
             onMouseLeave={handleConceal}
             onTouchStart={handleReveal}
             onTouchEnd={handleConceal}
         >
-            {CONTACT_EMAIL}
+            <Mail aria-hidden="true" className="size-[1em]" strokeWidth={1.75} />
         </a>
     );
 }
