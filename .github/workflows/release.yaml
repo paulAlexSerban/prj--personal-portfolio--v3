@@ -176,19 +176,159 @@ jobs:
                     --distribution-id "${{ vars.NEWS_CLOUDFRONT_DISTRIBUTION_ID }}" \
                     --paths "/*"
 
-    deploy-prod:
+    # Single human gate before any production build/deploy.
+    # Configure Required reviewers on the GitHub Environment named
+    # `production-approval` (Settings -> Environments). Using a dedicated
+    # approval environment avoids re-prompting for each deploy-prod-* job
+    # (those still use `production` for OIDC + deploy vars).
+    approve-prod:
         needs:
             - deploy-stage-portfolio
             - deploy-stage-blog
             - deploy-stage-quiz
             - deploy-stage-news
         runs-on: ubuntu-latest
+        timeout-minutes: 1440
+        environment: production-approval
+        steps:
+            - name: Production approval gate
+              run: |
+                  echo "Stage deploys succeeded."
+                  echo "Human approval received for production promotion."
+
+    build-site-prod:
+        needs: approve-prod
+        uses: ./.github/workflows/_build-site.yaml
+        with:
+            environment: production
+            portfolio_url: https://paulserban.eu
+            blog_url: https://blog.paulserban.eu
+            quiz_url: https://quiz.paulserban.eu
+            news_url: https://news-feed.paulserban.eu
+            portfolio_base: /
+            blog_base: /
+            quiz_base: /
+            news_base: /
+            emit_merged_bundle: false
+            artifact_retention_days: 14
+        secrets: inherit
+
+    deploy-prod-portfolio:
+        needs: build-site-prod
+        runs-on: ubuntu-latest
         timeout-minutes: 10
         environment: production
+        permissions:
+            contents: read
+            id-token: write
         steps:
-            - name: Deploy (placeholder - hosting provider TBD)
+            - name: Download portfolio artifact
+              uses: actions/download-artifact@v8
+              with:
+                  name: portfolio-dist-production
+                  path: _site/
+
+            - name: Configure AWS credentials
+              uses: aws-actions/configure-aws-credentials@v6
+              with:
+                  role-to-assume: ${{ vars.AWS_DEPLOY_ROLE_ARN }}
+                  aws-region: ${{ vars.AWS_REGION }}
+
+            - name: Sync to S3
+              run: aws s3 sync _site/ "s3://${{ vars.PORTFOLIO_S3_BUCKET_NAME }}" --delete
+
+            - name: Invalidate CloudFront cache
               run: |
-                  echo "Environment: production"
-                  echo "No hosting provider selected yet."
-                  echo "stage deploy completed for portfolio/blog/quiz/news (per-app S3 + CloudFront)."
-                  echo "Replace this job with a real prod promotion once envs/prod exists."
+                  aws cloudfront create-invalidation \
+                    --distribution-id "${{ vars.PORTFOLIO_CLOUDFRONT_DISTRIBUTION_ID }}" \
+                    --paths "/*"
+
+    deploy-prod-blog:
+        needs: build-site-prod
+        runs-on: ubuntu-latest
+        timeout-minutes: 10
+        environment: production
+        permissions:
+            contents: read
+            id-token: write
+        steps:
+            - name: Download blog artifact
+              uses: actions/download-artifact@v8
+              with:
+                  name: blog-dist-production
+                  path: _site/
+
+            - name: Configure AWS credentials
+              uses: aws-actions/configure-aws-credentials@v6
+              with:
+                  role-to-assume: ${{ vars.AWS_DEPLOY_ROLE_ARN }}
+                  aws-region: ${{ vars.AWS_REGION }}
+
+            - name: Sync to S3
+              run: aws s3 sync _site/ "s3://${{ vars.BLOG_S3_BUCKET_NAME }}" --delete
+
+            - name: Invalidate CloudFront cache
+              run: |
+                  aws cloudfront create-invalidation \
+                    --distribution-id "${{ vars.BLOG_CLOUDFRONT_DISTRIBUTION_ID }}" \
+                    --paths "/*"
+
+    deploy-prod-quiz:
+        needs: build-site-prod
+        runs-on: ubuntu-latest
+        timeout-minutes: 10
+        environment: production
+        permissions:
+            contents: read
+            id-token: write
+        steps:
+            - name: Download quiz artifact
+              uses: actions/download-artifact@v8
+              with:
+                  name: quiz-dist-production
+                  path: _site/
+
+            - name: Configure AWS credentials
+              uses: aws-actions/configure-aws-credentials@v6
+              with:
+                  role-to-assume: ${{ vars.AWS_DEPLOY_ROLE_ARN }}
+                  aws-region: ${{ vars.AWS_REGION }}
+
+            - name: Sync to S3
+              run: aws s3 sync _site/ "s3://${{ vars.QUIZ_S3_BUCKET_NAME }}" --delete
+
+            - name: Invalidate CloudFront cache
+              run: |
+                  aws cloudfront create-invalidation \
+                    --distribution-id "${{ vars.QUIZ_CLOUDFRONT_DISTRIBUTION_ID }}" \
+                    --paths "/*"
+
+    deploy-prod-news:
+        needs: build-site-prod
+        runs-on: ubuntu-latest
+        timeout-minutes: 10
+        environment: production
+        permissions:
+            contents: read
+            id-token: write
+        steps:
+            - name: Download news artifact
+              uses: actions/download-artifact@v8
+              with:
+                  name: news-dist-production
+                  path: _site/
+
+            - name: Configure AWS credentials
+              uses: aws-actions/configure-aws-credentials@v6
+              with:
+                  role-to-assume: ${{ vars.AWS_DEPLOY_ROLE_ARN }}
+                  aws-region: ${{ vars.AWS_REGION }}
+
+            - name: Sync to S3
+              run: aws s3 sync _site/ "s3://${{ vars.NEWS_S3_BUCKET_NAME }}" --delete
+
+            - name: Invalidate CloudFront cache
+              run: |
+                  aws cloudfront create-invalidation \
+                    --distribution-id "${{ vars.NEWS_CLOUDFRONT_DISTRIBUTION_ID }}" \
+                    --paths "/*"
