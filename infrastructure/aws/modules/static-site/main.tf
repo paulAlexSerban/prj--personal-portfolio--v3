@@ -15,10 +15,12 @@ locals {
   # CloudFront resource names allow only alphanumerics, dashes, and underscores.
   cloudfront_name_prefix = replace(local.bucket_name, ".", "-")
 
+  # Empty string when auth is off — do not use null + coalesce(..., "") because
+  # Terraform's coalesce also rejects empty strings.
   basic_auth_header_value = (
     var.basic_auth_enabled
     ? "Basic ${base64encode("${var.basic_auth_username}:${var.basic_auth_password}")}"
-    : null
+    : ""
   )
 }
 
@@ -169,8 +171,9 @@ resource "aws_cloudfront_function" "viewer_request" {
   publish = true
   code = templatefile("${path.module}/src/viewer-request.js.tftpl", {
     basic_auth_enabled = var.basic_auth_enabled
-    auth_header_value  = coalesce(local.basic_auth_header_value, "")
+    auth_header_value  = local.basic_auth_header_value
     realm              = var.domain_name
+    redirect_rules     = var.redirect_rules
   })
 
   lifecycle {

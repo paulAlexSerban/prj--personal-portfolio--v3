@@ -63,3 +63,13 @@ variable "basic_auth_password" {
   default     = null
   sensitive   = true
 }
+
+variable "redirect_rules" {
+  description = "Path-prefix redirects issued by the viewer-request function, e.g. old /blog links to the blog.* subdomain."
+  type = list(object({
+    path_prefix   = string
+    target_domain = string
+    permanent     = optional(bool, true)
+  }))
+  default = []
+}

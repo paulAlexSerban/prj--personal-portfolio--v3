@@ -47,6 +47,15 @@ module "static_site" {
   domain_name    = var.domain_name
   hosted_zone_id = var.hosted_zone_id
   tags           = local.tags
+
+  # v2 blog lived under /blog on the apex; v3 moved it to blog.paulserban.eu.
+  # Keep old forum/bookmark links working with a permanent redirect.
+  redirect_rules = [
+    {
+      path_prefix   = "/blog"
+      target_domain = var.blog_domain_name
+    }
+  ]
 }
 
 module "static_site_blog" {

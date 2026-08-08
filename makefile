@@ -88,3 +88,19 @@ tf_apply_stage:
 tf_destroy_stage:
 	# destroy terraform from /infrastructure/aws/envs/stage
 	terraform -chdir=infrastructure/aws/envs/stage destroy
+
+tf_init_prod:
+	# init terraform from /infrastructure/aws/envs/prod
+	terraform -chdir=infrastructure/aws/envs/prod init
+
+tf_plan_prod:
+	# plan terraform from /infrastructure/aws/envs/prod
+	terraform -chdir=infrastructure/aws/envs/prod plan
+
+tf_apply_prod:
+	# apply terraform from /infrastructure/aws/envs/prod
+	terraform -chdir=infrastructure/aws/envs/prod apply
+
+tf_destroy_prod:
+	# destroy terraform from /infrastructure/aws/envs/prod
+	terraform -chdir=infrastructure/aws/envs/prod destroy
