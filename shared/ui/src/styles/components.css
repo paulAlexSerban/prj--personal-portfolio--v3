@@ -105,6 +105,16 @@
         padding: 0.025rem 0.05rem 0 0;
         color: var(--ink-black);
     }
+
+    .post-card-cover-img {
+        filter: grayscale(0.95) sepia(0.3) saturate(0.4) brightness(0.95);
+        transition: filter 0.3s ease;
+    }
+
+    .group:hover .post-card-cover-img {
+        filter: none;
+    }
+    
     @keyframes inkbleed {
         from {
             opacity: 0;

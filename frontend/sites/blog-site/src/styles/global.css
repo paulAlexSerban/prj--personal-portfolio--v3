@@ -22,15 +22,6 @@
         font-style: italic;
     }
 
-    .post-card-cover-img {
-        filter: grayscale(0.95) sepia(0.3) saturate(0.4) brightness(0.95);
-        transition: filter 0.3s ease;
-    }
-
-    .group:hover .post-card-cover-img {
-        filter: none;
-    }
-
     /* Row-first card grid (left-to-right reading order); avoids CSS columns height-balancing. */
     .post-list-grid {
         @apply m-0 grid list-none grid-cols-1 gap-5 p-0 sm:grid-cols-2 lg:grid-cols-3;
