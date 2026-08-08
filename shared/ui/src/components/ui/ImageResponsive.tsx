@@ -1,20 +1,21 @@
-const IMAGE_BASE_URL = 'https://paulserban.eu/assets/images';
+const IMAGE_BASE_URL = 'https://assets.paulserban.eu/assets/images';
 
-const ACCEPTED_FORMATS = ['avif', 'webp'] as const;
-const FALLBACK_FORMAT = 'png';
+/** Formats the content pipeline actually emits today (gulp process:images). */
+const ACCEPTED_FORMATS = ['avif'] as const;
+const FALLBACK_FORMAT = 'avif';
 const DEFAULT_QUALITY = 80;
 const IMAGE_EXTENSION_REGEX = /\.(avif|webp|jpe?g|png|gif|svg)$/i;
 
 /**
  * The ImageResponsive component generates responsive image URLs based on the provided image name,
  * content hash, aspect ratios, and widths.
- * It uses the <picture> element to serve different image formats (AVIF, WebP) and falls back to PNG if necessary.
+ * It uses the <picture> element to serve AVIF renditions produced by the content pipeline.
  *
  * Matrix:
  * | Aspect Ratios           | 0 = 1x1          | 1 = 4x3          | 2 = 16x9          | 3 = 21x9           | 4 = 3x4            |
  * | Responsive Widths       | 0 = 480px        | 1 = 960px        | 2 = 1280px        | 3 = 1920px         | 4 = 2560px         |
  * | Responsive Breakpoints  | xs               | sm               | md                | lg                 | xl                 |
- * | Resulting Image Example | hero-480x480-1x1-q80.abcdef12.avif | hero-960x720-4x3-q80.abcdef12.webp | hero-1280x720-16x9-q80.abcdef12.png | hero-1920x1080-16x9-q80.abcdef12.avif | hero-2560x1440-16x9-q80.abcdef12.webp |
+ * | Resulting Image Example | hero-480x480-1x1-q80.abcdef12.avif | hero-960x720-4x3-q80.abcdef12.avif | hero-1280x720-16x9-q80.abcdef12.avif | hero-1920x1080-16x9-q80.abcdef12.avif | hero-2560x1440-16x9-q80.abcdef12.avif |
  */
 const ASPECT_RATIOS = ['1x1', '4x3', '16x9', '21x9', '3x4'] as const;
 const RESPONSIVE_WIDTHS = [480, 960, 1280, 1920, 2560] as const;
@@ -162,8 +163,8 @@ const createSrcSet = (imageName: string, hash: string, ratioIndexes: number[], w
  *
  * Both examples resolve to responsive files like:
  * hero-banner-480x270-16x9-q80.a3f91c2b.avif,
- * hero-banner-960x540-16x9-q80.a3f91c2b.webp,
- * hero-banner-1280x720-16x9-q80.a3f91c2b.png
+ * hero-banner-960x540-16x9-q80.a3f91c2b.avif,
+ * hero-banner-1280x720-16x9-q80.a3f91c2b.avif
  */
 const ImageResponsive = ({
     imageName,

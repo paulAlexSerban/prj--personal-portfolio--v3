@@ -50,10 +50,17 @@ module "static_site" {
 
   # v2 blog lived under /blog on the apex; v3 moved it to blog.paulserban.eu.
   # Keep old forum/bookmark links working with a permanent redirect.
+  # /assets on the apex redirects to the dedicated assets CDN (full path kept)
+  # so previously deployed HTML keeps working until sites are rebuilt.
   redirect_rules = [
     {
       path_prefix   = "/blog"
       target_domain = var.blog_domain_name
+    },
+    {
+      path_prefix   = "/assets"
+      target_domain = var.assets_domain_name
+      strip_prefix  = false
     }
   ]
 }
@@ -92,6 +99,22 @@ module "static_site_news" {
   }
 
   domain_name    = var.news_domain_name
+  hosted_zone_id = var.hosted_zone_id
+  tags           = local.tags
+}
+
+# Shared content media CDN. Bucket is owned/filled by content--paulserban.eu
+# (npm run push:assets); this module only fronts it with CloudFront + DNS.
+module "assets_cdn" {
+  source = "../../modules/assets-cdn"
+  providers = {
+    aws           = aws
+    aws.us_east_1 = aws.us_east_1
+  }
+
+  domain_name    = var.assets_domain_name
+  bucket_name    = var.assets_bucket_name
+  bucket_region  = var.aws_region
   hosted_zone_id = var.hosted_zone_id
   tags           = local.tags
 }

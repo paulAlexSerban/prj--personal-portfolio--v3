@@ -1,8 +1,9 @@
 # Production environment - Route 53 -> CloudFront -> S3 (per-app)
 
 Provisions **four** independent static-hosting stacks under the `paulserban.eu`
-zone, plus a single GitHub Actions OIDC deploy role that can sync/invalidate all
-of them. Production uses **live** content (private content-repo sync) and is
+zone, plus a shared **assets CDN** for content-pipeline media, plus a single
+GitHub Actions OIDC deploy role that can sync/invalidate the four sites.
+Production uses **live** content (private content-repo sync) and is
 **public** (no HTTP Basic Auth).
 
 ```
@@ -10,14 +11,19 @@ paulserban.eu           -> CloudFront -> S3 (portfolio)
 blog.paulserban.eu      -> CloudFront -> S3 (blog)
 quiz.paulserban.eu      -> CloudFront -> S3 (quiz SPA)
 news-feed.paulserban.eu -> CloudFront -> S3 (news)
+assets.paulserban.eu    -> CloudFront -> S3 website (existing assets.paulserban.eu bucket)
 
 ACM certs live in us-east-1 (DNS-validated against the shared hosted zone).
 
 GitHub Actions (environment:production)
   -- OIDC token --> IAM role (gha-deploy-paulserban.eu)
-                     -> s3:* on all four buckets
+                     -> s3:* on all four site buckets
                      -> cloudfront:CreateInvalidation on all four distributions
 ```
+
+Content images/icons are written by `content--paulserban.eu` (`npm run push:assets`)
+into the existing `assets.paulserban.eu` bucket. Apps load them from
+`https://assets.paulserban.eu/assets/...` — site deploys never touch that bucket.
 
 Module code lives in [`../../modules/static-site`](../../modules/static-site)
 and [`../../modules/github-oidc-deploy-role`](../../modules/github-oidc-deploy-role).

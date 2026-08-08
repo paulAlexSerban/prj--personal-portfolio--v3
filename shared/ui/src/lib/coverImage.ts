@@ -1,4 +1,4 @@
-export const ASSET_BASE_URL = "https://paulserban.eu/assets";
+export const ASSET_BASE_URL = "https://assets.paulserban.eu/assets";
 
 export { parseResponsiveCover, type ResponsiveCoverRef } from "./responsiveCover";
 

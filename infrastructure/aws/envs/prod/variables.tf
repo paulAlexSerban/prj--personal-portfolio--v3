@@ -28,6 +28,18 @@ variable "news_domain_name" {
   default     = "news-feed.paulserban.eu"
 }
 
+variable "assets_domain_name" {
+  description = "Fully-qualified domain name for the shared content assets CDN."
+  type        = string
+  default     = "assets.paulserban.eu"
+}
+
+variable "assets_bucket_name" {
+  description = "Existing S3 bucket that holds content-pipeline asset output (not created by this stack)."
+  type        = string
+  default     = "assets.paulserban.eu"
+}
+
 variable "hosted_zone_id" {
   description = "Route 53 hosted zone ID for paulserban.eu. Find it with: aws route53 list-hosted-zones-by-name --dns-name paulserban.eu."
   type        = string

@@ -5,7 +5,11 @@ function handler(event) {
 
 %{ for rule in redirect_rules ~}
   if (uri === '${rule.path_prefix}' || uri.indexOf('${rule.path_prefix}/') === 0) {
+%{ if try(rule.strip_prefix, true) ~}
     var remainder = uri === '${rule.path_prefix}' ? '/' : uri.substring('${rule.path_prefix}'.length);
+%{ else ~}
+    var remainder = uri;
+%{ endif ~}
     var qs = '';
     var params = Object.keys(request.querystring || {});
     if (params.length > 0) {

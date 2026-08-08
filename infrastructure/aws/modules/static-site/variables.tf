@@ -70,6 +70,9 @@ variable "redirect_rules" {
     path_prefix   = string
     target_domain = string
     permanent     = optional(bool, true)
+    # When true (default), /blog/foo -> https://blog.../foo. When false, keep the
+    # full URI (e.g. /assets/images/x -> https://assets.../assets/images/x).
+    strip_prefix  = optional(bool, true)
   }))
   default = []
 }

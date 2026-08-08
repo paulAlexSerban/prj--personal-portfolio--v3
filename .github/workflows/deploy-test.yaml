@@ -49,11 +49,7 @@ jobs:
                   aws-region: ${{ vars.AWS_REGION }}
 
             - name: Sync to S3
-              # Keep content-repo assets (pushed separately to /assets/) across site deploys.
-              run: |
-                  aws s3 sync _site/ "s3://${{ vars.PORTFOLIO_S3_BUCKET_NAME }}" \
-                    --delete \
-                    --exclude "assets/*"
+              run: aws s3 sync _site/ "s3://${{ vars.PORTFOLIO_S3_BUCKET_NAME }}" --delete
 
             - name: Invalidate CloudFront cache
               run: |
