@@ -1,8 +1,68 @@
 {
   "category": "javascript",
   "label": "JavaScript",
-  "fetchedAt": "2026-08-08T06:28:34.923Z",
+  "fetchedAt": "2026-08-09T06:33:03.204Z",
   "items": [
+    {
+      "slug": "fcb7df79eaf7d08ea47fa3c5",
+      "guid": "https://flaviocopes.com/character-limits-titles-descriptions/",
+      "title": "The character limits that matter: SERP titles, meta descriptions, OG tags, subject lines",
+      "link": "https://flaviocopes.com/character-limits-titles-descriptions/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "How Google truncates titles by pixels not characters, the real limits for OG tags and email subjects, and practical targets to write to.",
+      "publishedAt": "2026-08-09T05:00:00.000Z"
+    },
+    {
+      "slug": "873a06ddae552da1515fdd47",
+      "guid": "https://flaviocopes.com/hono-middleware-cookies-headers/",
+      "title": "Hono: middleware, cookies, headers, redirects",
+      "link": "https://flaviocopes.com/hono-middleware-cookies-headers/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Hono middleware, cookies, headers, and redirects for everyday web apps. Built-in logger, basic auth, and CORS, plus custom middleware and signed cookies.",
+      "publishedAt": "2026-08-09T05:00:00.000Z"
+    },
+    {
+      "slug": "c2efc8ac0876ddf971aaa0fb",
+      "guid": "https://flaviocopes.com/cloudflare-worker-multiple-handlers/",
+      "title": "Use fetch, queue, and scheduled handlers in one Cloudflare Worker",
+      "link": "https://flaviocopes.com/cloudflare-worker-multiple-handlers/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Run an Astro app, background queue consumer, and retention cron from one Cloudflare Worker by keeping each handler small and explicit.",
+      "publishedAt": "2026-08-08T13:00:00.000Z"
+    },
+    {
+      "slug": "8bf228d3f9a690a798c246ea",
+      "guid": "https://flaviocopes.com/how-astro-is-built/",
+      "title": "How Astro is built",
+      "link": "https://flaviocopes.com/how-astro-is-built/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "I wanted to know what Astro does when we run astro build. Let's follow one page from its .astro file to the final HTML in dist.",
+      "publishedAt": "2026-08-08T09:00:00.000Z"
+    },
+    {
+      "slug": "116e44257eae381f48eea9be",
+      "guid": "https://flaviocopes.com/kitesurf-agentic-browser/",
+      "title": "Kitesurf: Cloudflare's browser built for AI agents",
+      "link": "https://flaviocopes.com/kitesurf-agentic-browser/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Kitesurf is a browser built for AI agents. Learn how it runs on Cloudflare Workers, how it compares to Chromium, and how to use it.",
+      "publishedAt": "2026-08-08T09:00:00.000Z"
+    },
+    {
+      "slug": "d126e1f4aa03968e90bfcb9e",
+      "guid": "https://flaviocopes.com/bb-agentic-ide/",
+      "title": "bb: an IDE where your coding agents work together",
+      "link": "https://flaviocopes.com/bb-agentic-ide/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "bb is a free, open source, local-first IDE that runs coding agents in threads. Claude Code, Codex, Cursor and more, all programmable from one app.",
+      "publishedAt": "2026-08-08T07:30:00.000Z"
+    },
     {
       "slug": "9806ad7aa42196496ca604d2",
       "guid": "https://flaviocopes.com/hono/",
@@ -262,66 +322,6 @@
       "sourceUrl": "https://flaviocopes.com/rss.xml",
       "summary": "How I made a 4,000-page Astro build phase 25% faster and cut its deploy artifact by 34% using concurrency, shared OG images, and Cloudflare R2.",
       "publishedAt": "2026-08-03T09:00:00.000Z"
-    },
-    {
-      "slug": "a0b1aaa3583b39cce0f682c7",
-      "guid": "https://flaviocopes.com/i-launched-port-pilot/",
-      "title": "I launched Port Pilot",
-      "link": "https://flaviocopes.com/i-launched-port-pilot/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "I launched Port Pilot, a local service command center with a macOS menu bar app, live terminal dashboard, and agent-friendly CLI.",
-      "publishedAt": "2026-08-03T07:00:00.000Z"
-    },
-    {
-      "slug": "23dffa87236fca388ef8f11f",
-      "guid": "https://flaviocopes.com/css-conic-gradients/",
-      "title": "conic-gradient and the modern CSS gradient toolbox",
-      "link": "https://flaviocopes.com/css-conic-gradients/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Learn how conic-gradient works and what changed in CSS gradients: pie charts with hard stops, color wheels, repeating patterns and oklch interpolation.",
-      "publishedAt": "2026-08-03T05:00:00.000Z"
-    },
-    {
-      "slug": "d18f2de46c1b8c3d40b71996",
-      "guid": "https://flaviocopes.com/libsql-turso/",
-      "title": "libSQL and Turso: SQLite for production",
-      "link": "https://flaviocopes.com/libsql-turso/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "libSQL is Turso's open fork of SQLite for production. Learn Turso Cloud, embedded replicas, and when to pick it over Cloudflare D1.",
-      "publishedAt": "2026-08-03T05:00:00.000Z"
-    },
-    {
-      "slug": "6236d8a0f74e2b3d71518e5d",
-      "guid": "https://flaviocopes.com/harden-public-form-endpoint/",
-      "title": "Harden a public form endpoint",
-      "link": "https://flaviocopes.com/harden-public-form-endpoint/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Harden a public form API with body-size limits, exact input shapes, explicit consent, origin allowlists, neutral responses, and two rate limits.",
-      "publishedAt": "2026-08-02T13:00:00.000Z"
-    },
-    {
-      "slug": "af5f3d523eabde255c5c64f1",
-      "guid": "https://flaviocopes.com/i-launched-local-hoster/",
-      "title": "I launched Local Hoster",
-      "link": "https://flaviocopes.com/i-launched-local-hoster/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "I launched Local Hoster, a small Node.js CLI that gives local development projects stable .localhost URLs with HTTPS through Caddy.",
-      "publishedAt": "2026-08-02T07:00:00.000Z"
-    },
-    {
-      "slug": "7705762a252e43dd1cb5c280",
-      "guid": "https://flaviocopes.com/css-easing-cubic-bezier/",
-      "title": "CSS easing functions: what cubic-bezier actually does",
-      "link": "https://flaviocopes.com/css-easing-cubic-bezier/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Learn how CSS easing works under the hood: the four cubic-bezier control points, what ease and ease-out really are, plus linear() and steps().",
-      "publishedAt": "2026-08-02T05:00:00.000Z"
     },
     {
       "slug": "b5718db41559c8191f2613f1",
