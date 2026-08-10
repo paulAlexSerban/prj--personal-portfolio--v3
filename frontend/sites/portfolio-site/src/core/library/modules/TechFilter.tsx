@@ -99,8 +99,13 @@ function ProjectCardInner({ project, tags, featured = false }: { project: Projec
     const href = siteUrls.portfolioProject(project.slug);
     return (
         <article className="card-ruled flex flex-col">
-            <a href={href} className="mb-3 block overflow-hidden border border-rule">
-                <CoverImage cover={project.cover_image} placeholder={assetUrl('placeholder-cover.png')} sizes="card" imgClassName="aspect-video w-full object-cover" />
+            <a href={href} className="group mb-3 block overflow-hidden border border-rule">
+                <CoverImage
+                    cover={project.cover_image}
+                    placeholder={assetUrl('placeholder-cover.png')}
+                    sizes="card"
+                    imgClassName="post-card-cover-img aspect-video w-full object-cover"
+                />
             </a>
             {featured && <p className="kicker mb-1 text-[10px]">Featured</p>}
             <h3 className="font-display text-xl font-bold leading-tight">
