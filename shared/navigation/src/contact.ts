@@ -1,5 +1,7 @@
 export const CONTACT_EMAIL = 'paul.alex.serban@gmail.com';
 export const CONTACT_MAILTO = `mailto:${CONTACT_EMAIL}`;
+export const GITHUB_URL = 'https://github.com/paulAlexSerban';
+export const LINKEDIN_URL = 'https://www.linkedin.com/in/paulalexs/';
 
 export function encodeToBase64(str: string): string {
     try {

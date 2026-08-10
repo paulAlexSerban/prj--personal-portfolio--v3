@@ -31,18 +31,6 @@ const headline = profile?.headline ?? 'I architect systems that ship.';
                     Read blog &rarr;
                 </a>
             </div>
-            {
-                (profile?.github_url || profile?.linkedin_url) && (
-                    <div class="mt-5 flex flex-wrap gap-4 text-[11px] smallcaps">
-                        {profile?.github_url && (
-                            <a class="text-ink underline-offset-2 hover:underline" href={profile.github_url} rel="noopener noreferrer" target="_blank">GitHub</a>
-                        )}
-                        {profile?.linkedin_url && (
-                            <a class="text-ink underline-offset-2 hover:underline" href={profile.linkedin_url} rel="noopener noreferrer" target="_blank">LinkedIn</a>
-                        )}
-                    </div>
-                )
-            }
         </div>
         <div class="group">
             <CoverImage

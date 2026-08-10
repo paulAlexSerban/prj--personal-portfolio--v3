@@ -1,6 +1,6 @@
 import {
   FooterSiteLinks,
-  ObfuscatedMailto,
+  SocialLinks,
   buildSiteTabs,
 } from "@prj--personal-portfolio--v3/shared--navigation";
 import { Masthead } from "./Masthead";
@@ -25,12 +25,10 @@ export function PageLayout({ children }: { children: React.ReactNode }) {
         <div className="mb-3 text-center">
           <FooterSiteLinks activeSite="quiz" tabs={siteTabs} />
         </div>
-        <p className="kicker mb-2 text-sm text-center">
-          <ObfuscatedMailto className="inline-flex items-center text-ink no-underline text-sm hover:opacity-70" />
-        </p>
-        <p className="kicker text-sm text-center">
-          The Typeset Review · Printed daily in your browser · Algorithm: {algorithm}
-        </p>
+        <div className="kicker mb-2 flex flex-nowrap items-center justify-center gap-3 text-sm">
+          <SocialLinks linkClassName="inline-flex items-center text-ink no-underline text-sm hover:opacity-70" />
+          <span>The Typeset Review · Printed daily in your browser · Algorithm: {algorithm}</span>
+        </div>
       </footer>
     </div>
   );

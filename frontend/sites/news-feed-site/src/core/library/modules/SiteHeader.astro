@@ -1,5 +1,5 @@
 ---
-import { MobileNav, ObfuscatedMailto, SiteSwitcher, buildSiteTabs } from '@prj--personal-portfolio--v3/shared--navigation';
+import { MobileNav, SiteSwitcher, SocialLinks, buildSiteTabs } from '@prj--personal-portfolio--v3/shared--navigation';
 import { closeConnection, openDb } from '@/lib/db.ts';
 import { getCategories } from '@/lib/queries/news.ts';
 import { externalLinkAttrs, isNavLinkActive, siteUrls } from '@/lib/urls.ts';
@@ -30,9 +30,9 @@ const year = new Date().getFullYear();
         <div class="flex items-center justify-between gap-4">
             <div class="flex flex-col gap-1">
                 <p class="kicker font-mono text-[10px] md:text-sm">paulserban.eu</p>
-                <ObfuscatedMailto
+                <SocialLinks
                     client:load
-                    className="inline-flex items-center text-ink no-underline text-[10px] md:text-sm hover:opacity-70"
+                    linkClassName="inline-flex items-center text-ink no-underline text-[10px] md:text-sm hover:opacity-70"
                 />
             </div>
             <div class="flex flex-col items-end gap-1">

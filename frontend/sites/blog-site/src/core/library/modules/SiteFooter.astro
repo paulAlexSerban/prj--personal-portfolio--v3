@@ -1,5 +1,5 @@
 ---
-import { FooterSiteLinks, ObfuscatedMailto, buildSiteTabs } from '@prj--personal-portfolio--v3/shared--navigation';
+import { FooterSiteLinks, SocialLinks, buildSiteTabs } from '@prj--personal-portfolio--v3/shared--navigation';
 import { externalLinkAttrs, siteUrls } from '@/lib/urls.ts';
 
 const footerLinks = [
@@ -40,12 +40,12 @@ const year = new Date().getFullYear();
         <div class="mb-3">
             <FooterSiteLinks activeSite="blog" tabs={siteTabs} />
         </div>
-        <p class="kicker mb-2 text-sm">
-            <ObfuscatedMailto
+        <div class="kicker mb-2 flex flex-nowrap items-center justify-center gap-3 text-sm">
+            <SocialLinks
                 client:load
-                className="inline-flex items-center text-ink no-underline text-sm hover:opacity-70"
+                linkClassName="inline-flex items-center text-ink no-underline text-sm hover:opacity-70"
             />
-        </p>
-        <p class="kicker text-sm">Paul Serban · Printed in your browser · {year}</p>
+            <span>Paul Serban · Printed in your browser · {year}</span>
+        </div>
     </div>
 </footer>

@@ -11,7 +11,7 @@ import {
 } from "@prj--personal-portfolio--v3/shared--ui";
 import {
   SiteSwitcher,
-  ObfuscatedMailto,
+  SocialLinks,
   buildSiteTabs,
 } from "@prj--personal-portfolio--v3/shared--navigation";
 import { siteUrls } from "@/lib/urls";
@@ -38,66 +38,72 @@ export function Masthead() {
   const now = new Date();
   const dateline = `Vol. ${__APP_VERSION__} · No. ${dayOfYear(now)}/${isoWeek(now)}`;
   return (
-    <header className="grain border-b-[3px] border-ink">
+    <header className="grain border-b-[3px] border-ink bg-aged">
       <div className="root-box">
         <div className="flex items-center justify-between gap-4">
           <div className="flex flex-col gap-1">
-            <p className="kicker font-mono text-[10px] md:text-sm">{dateline}</p>
-            <ObfuscatedMailto className="inline-flex items-center text-ink no-underline text-[10px] md:text-sm hover:opacity-70" />
+            {/* <p className="kicker font-mono text-[10px] md:text-sm">{dateline}</p> */}
+            <p className="kicker font-mono text-[10px] md:text-sm">paulserban.eu</p>
+            <SocialLinks linkClassName="inline-flex items-center text-ink no-underline text-[10px] md:text-sm hover:opacity-70" />
           </div>
           <div className="flex flex-col items-end gap-1">
             <p className="kicker font-mono text-[10px] md:text-sm">Spaced Repetition Edition</p>
             <SiteSwitcher activeSite="quiz" tabs={siteTabs} />
           </div>
         </div>
-        <Link to="/" className="block text-center mt-1 no-underline text-ink">
+        <Link to="/" className="mt-2 block text-center text-ink no-underline">
           <h1 className="flex flex-col font-display font-black tracking-tight leading-none text-[clamp(2.5rem,7vw,4rem)]">
             <span>The Typeset</span> <span>Review</span>
           </h1>
         </Link>
-        <div className="rule-double mt-2" />
+        <div className="rule-double mt-3" />
         <div className="mt-2 flex flex-wrap items-center justify-between gap-2">
-          <p className="kicker text-[11px]">{formatDateline()}</p>
-
-          <Sheet open={open} onOpenChange={setOpen}>
-            <SheetTrigger asChild>
-              <Button
-                type="button"
-                variant="outline"
-                size="icon"
-                aria-label="Open navigation menu"
-                className="md:hidden rounded-none border-ink"
-              >
-                <Menu className="h-4 w-4" />
-              </Button>
-            </SheetTrigger>
-            <SheetContent side="right" className="border-l-[3px] border-ink">
-              <SheetHeader>
-                <SheetTitle className="kicker text-left text-sm smallcaps">Navigation</SheetTitle>
-              </SheetHeader>
-              <nav className="mt-6 flex flex-col gap-1 smallcaps" aria-label="Primary mobile">
-                {navItems.map((item) => (
-                  <Link
-                    key={item.to}
-                    to={item.to}
-                    onClick={() => setOpen(false)}
-                    className="border-b border-rule py-3 text-base no-underline text-ink hover:underline"
-                  >
-                    {item.label}
-                  </Link>
-                ))}
-              </nav>
-            </SheetContent>
-          </Sheet>
+          <p className="kicker text-[11px]">
+            {dateline} · {formatDateline()}
+          </p>
+          <div className="flex items-center gap-3 md:gap-5">
+            <nav
+              className="hidden md:flex flex-wrap items-center gap-5 text-[11px] smallcaps"
+              aria-label="Primary"
+            >
+              {navItems.map((item) => (
+                <Link key={item.to} to={item.to} className="text-ink no-underline hover:underline">
+                  {item.label}
+                </Link>
+              ))}
+            </nav>
+            <Sheet open={open} onOpenChange={setOpen}>
+              <SheetTrigger asChild>
+                <Button
+                  type="button"
+                  variant="outline"
+                  size="icon"
+                  aria-label="Open navigation menu"
+                  className="md:hidden rounded-none border-ink"
+                >
+                  <Menu className="h-4 w-4" />
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="right" className="border-l-[3px] border-ink">
+                <SheetHeader>
+                  <SheetTitle className="kicker text-left text-sm smallcaps">Navigation</SheetTitle>
+                </SheetHeader>
+                <nav className="mt-6 flex flex-col gap-1 smallcaps" aria-label="Primary mobile">
+                  {navItems.map((item) => (
+                    <Link
+                      key={item.to}
+                      to={item.to}
+                      onClick={() => setOpen(false)}
+                      className="border-b border-rule py-3 text-base no-underline text-ink hover:underline"
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                </nav>
+              </SheetContent>
+            </Sheet>
+          </div>
         </div>
-
-        <nav className="mt-2 hidden flex-wrap gap-5 text-sm smallcaps md:flex" aria-label="Primary">
-          {navItems.map((item) => (
-            <Link key={item.to} to={item.to} className="hover:underline">
-              {item.label}
-            </Link>
-          ))}
-        </nav>
       </div>
     </header>
   );
