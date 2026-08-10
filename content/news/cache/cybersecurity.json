@@ -1,8 +1,28 @@
 {
   "category": "cybersecurity",
   "label": "Cybersecurity",
-  "fetchedAt": "2026-08-09T06:33:03.204Z",
+  "fetchedAt": "2026-08-10T07:01:38.084Z",
   "items": [
+    {
+      "slug": "0c532563f6e3e553192b1812",
+      "guid": "https://thehackernews.com/2026/08/openais-next-ai-model-astra-shows-cyber.html",
+      "title": "OpenAI's Next AI Model Astra Shows Cyber Performance Strong Enough to Trigger Pause",
+      "link": "https://thehackernews.com/2026/08/openais-next-ai-model-astra-shows-cyber.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "OpenAI has announced that it's pausing some \"internal activities\" involving its upcoming artificial intelligence (AI) model Astra after an internal evaluation found it had made significant advancements in agentic coding and cybersecurity. In response to the discovery, the AI ups…",
+      "publishedAt": "2026-08-10T05:50:03.000Z"
+    },
+    {
+      "slug": "bf4b4b245e97ba304deefc31",
+      "guid": "https://danielmiessler.com/blog/work-just-became-fun",
+      "title": "Work Just Became Fun for Millions of People",
+      "link": "https://danielmiessler.com/blog/work-just-became-fun?utm_source=rss&utm_medium=feed&utm_campaign=website",
+      "source": "Daniel Miessler",
+      "sourceUrl": "https://danielmiessler.com/feed.rss",
+      "summary": "Charcoal sketch of a purple meeting room torn open, with figures joyfully building a rising sienna structure/images/work-just-became-fun-header.webp/images/work-just-became-fun-header.webp There's a narrative about AI and work that says AI was supposed to let us do way LESS work…",
+      "publishedAt": "2026-08-09T22:15:08.000Z"
+    },
     {
       "slug": "ab2cf02445d4050eb2a042cc",
       "guid": "https://thehackernews.com/2026/08/atlassian-rovo-can-be-tricked-into.html",
@@ -152,36 +172,6 @@
       "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
       "summary": "WordPress has fixed a pre-authentication reflected cross-site scripting (XSS) flaw in its login screen that affects every version of the content management system. pwn.ai demonstrated how the flaw can be chained into PHP code execution on the server when a logged-in administrato…",
       "publishedAt": "2026-08-07T12:56:23.000Z"
-    },
-    {
-      "slug": "1d4ecabedc262d8b7f7ed781",
-      "guid": "https://orca.security/?p=74362",
-      "title": "What is AI AppGen Security?",
-      "link": "https://orca.security/resources/blog/what-is-ai-appgen-security/",
-      "source": "Orca Security Blog",
-      "sourceUrl": "https://orca.security/resources/blog/feed/",
-      "summary": "Key Takeaways AI AppGen security is the practice of finding and governing applications that an AI app builder generated and deployed outside your development pipeline. The unit of risk is the running application: a live URL, a database behind it, an identity that reaches real re…",
-      "publishedAt": "2026-08-07T12:50:00.000Z"
-    },
-    {
-      "slug": "1cff17733f268bcb82cdd31e",
-      "guid": "https://orca.security/?p=74227",
-      "title": "Vulnerability Management Lifecycle: Core Phases",
-      "link": "https://orca.security/resources/blog/vulnerability-management-lifecycle/",
-      "source": "Orca Security Blog",
-      "sourceUrl": "https://orca.security/resources/blog/feed/",
-      "summary": "Key Takeaways The vulnerability management lifecycle runs through six connected phases: asset discovery, vulnerability assessment, risk-based prioritization, remediation, verification and rescanning, then reporting and continuous improvement. The sixth phase feeds the first, whi…",
-      "publishedAt": "2026-08-07T12:50:00.000Z"
-    },
-    {
-      "slug": "0ff012c1351af567f632b8c1",
-      "guid": "https://orca.security/?p=74231",
-      "title": "Application Security Framework: Complete Guide",
-      "link": "https://orca.security/resources/blog/application-security-framework/",
-      "source": "Orca Security Blog",
-      "sourceUrl": "https://orca.security/resources/blog/feed/",
-      "summary": "Key Takeaways An application security framework is a published set of security requirements or practices that an organization adopts, applies to its applications, and can be measured against. Some frameworks describe what a security program should do. Others state what a finishe…",
-      "publishedAt": "2026-08-07T12:50:00.000Z"
     },
     {
       "slug": "882234da8eb0a84151668d2b",
@@ -472,46 +462,6 @@
       "sourceUrl": "https://www.cio.com/feed/",
       "summary": "Engineering organizations tasked with scaling AI agents are discovering that the speed they initially achieved is being lost to endless rework. Without proper coordination, ten developers each running several agents against the same codebase becomes an alignment problem that com…",
       "publishedAt": "2026-08-06T13:56:53.000Z"
-    },
-    {
-      "slug": "2f0aebf81dae7b013ce0c77f",
-      "guid": "https://orca.security/?p=74233",
-      "title": "Vulnerability Scanning Tools: Top 10 Compared for 2026",
-      "link": "https://orca.security/resources/blog/vulnerability-scanning-tools/",
-      "source": "Orca Security Blog",
-      "sourceUrl": "https://orca.security/resources/blog/feed/",
-      "summary": "Key Takeaways Vulnerability scanning tools inspect specific asset types for known security weaknesses and report the findings to whatever system manages remediation. They are not interchangeable with vulnerability management platforms, which organize, prioritize, and track the w…",
-      "publishedAt": "2026-08-06T12:50:00.000Z"
-    },
-    {
-      "slug": "e008e8e90f540c7b9dac02e7",
-      "guid": "https://orca.security/?p=74247",
-      "title": "AI Guardrails: Essential Safety Controls Explained",
-      "link": "https://orca.security/resources/blog/ai-guardrails/",
-      "source": "Orca Security Blog",
-      "sourceUrl": "https://orca.security/resources/blog/feed/",
-      "summary": "Key Takeaways AI guardrails are runtime controls that check what enters a model, what leaves it, and what the application does with the answer. They run on every request. They carry your policy rather than a general standard of harm, and each one has an error rate. One clarifica…",
-      "publishedAt": "2026-08-06T12:50:00.000Z"
-    },
-    {
-      "slug": "d805423c42b4ed244080848b",
-      "guid": "https://orca.security/?p=74329",
-      "title": "An Inside Look at Orca AI Agent Pods",
-      "link": "https://orca.security/resources/blog/an-inside-look-at-orca-ai-agent-pods/",
-      "source": "Orca Security Blog",
-      "sourceUrl": "https://orca.security/resources/blog/feed/",
-      "summary": "We believe modern security platforms need to enable security for the way your team actually works. In practice, that means two things. That’s the bar. This post walks through how Orca AI delivers on both, including how you can shape agents of your own. AI Agents With Domain Expe…",
-      "publishedAt": "2026-08-06T12:50:00.000Z"
-    },
-    {
-      "slug": "991d57a0483129622dec9d53",
-      "guid": "https://orca.security/?p=74239",
-      "title": "Cloud Security Controls: Types, Frameworks & Checklist",
-      "link": "https://orca.security/resources/blog/cloud-security-controls/",
-      "source": "Orca Security Blog",
-      "sourceUrl": "https://orca.security/resources/blog/feed/",
-      "summary": "Key Takeaways A cloud security control is a mechanism that makes one security requirement true in a running environment. Default encryption on a storage account is a control. A policy that rejects a public bucket at deployment time is a control. The framework line saying data mu…",
-      "publishedAt": "2026-08-06T12:50:00.000Z"
     },
     {
       "slug": "5ebab680430f16a7131701f4",
@@ -814,16 +764,6 @@
       "publishedAt": "2026-08-05T14:27:30.000Z"
     },
     {
-      "slug": "67c35c91b7420cccf9bddf50",
-      "guid": "https://orca.security/?p=74317",
-      "title": "Compromised keyv Maintainer Account Triggers Massive npm Supply Chain Attack",
-      "link": "https://orca.security/resources/blog/compromised-keyv-npm-supply-chain-attack/",
-      "source": "Orca Security Blog",
-      "sourceUrl": "https://orca.security/resources/blog/feed/",
-      "summary": "A compromised GitHub maintainer account was used to publish malicious versions of 10 widely-used npm packages in the keyv and cacheable ecosystem, collectively downloaded over 619 million times per month. The attack, attributed to the TeamPCP threat group, deployed a descendant …",
-      "publishedAt": "2026-08-05T14:13:47.000Z"
-    },
-    {
       "slug": "66d9046cc862a96644b42c0a",
       "guid": "https://thehackernews.com/2026/08/trojanized-npm-packages-decode-c2-ip.html",
       "title": "Trojanized npm Packages Employ NullReceiver Tactic to Decode C2 IP from Blockchain",
@@ -832,26 +772,6 @@
       "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
       "summary": "Cybersecurity researchers have flagged an evolution of the EtherHiding blockchain-based command-and-control (C2) technique that conceals the C2 server IP address inside a made-up destination address of a completely empty Ethereum transfer. The new dead drop resolver approach, ob…",
       "publishedAt": "2026-08-05T13:41:27.000Z"
-    },
-    {
-      "slug": "f2834935683f193357f678aa",
-      "guid": "https://orca.security/?p=73835",
-      "title": "10 Best Tenable Alternatives in 2026",
-      "link": "https://orca.security/resources/blog/10-best-tenable-alternatives/",
-      "source": "Orca Security Blog",
-      "sourceUrl": "https://orca.security/resources/blog/feed/",
-      "summary": "Many security teams adopted Tenable for network and infrastructure vulnerability management, and it still does that job well. But as cloud estates grow to include containers, serverless functions, and infrastructure-as-code pipelines, the gap between what Tenable covers and what…",
-      "publishedAt": "2026-08-05T12:50:00.000Z"
-    },
-    {
-      "slug": "cae2d6b65c3ad5bc906a211b",
-      "guid": "https://orca.security/?p=73840",
-      "title": "7 Best Rapid7 Alternatives for Cloud Security and Exposure Management in 2026",
-      "link": "https://orca.security/resources/blog/7-best-rapid7-alternatives/",
-      "source": "Orca Security Blog",
-      "sourceUrl": "https://orca.security/resources/blog/feed/",
-      "summary": "When your vulnerability findings are scattered across InsightVM, InsightCloudSec, InsightIDR, and Exposure Command, the real problem isn’t any single product. It’s the lack of a unified view that tells you which exposures an attacker could actually reach before your next audit o…",
-      "publishedAt": "2026-08-05T12:50:00.000Z"
     },
     {
       "slug": "8cfe78538442a3b78be2b58e",
@@ -1002,6 +922,86 @@
       "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
       "summary": "The commercial phishing-as-a-service (PhaaS) toolkit known as Greatness has become the latest crimeware solution to add support for device code phishing, a rapidly growing cyber threat that abuses the legitimate OAuth 2.0 Device Authorization Grant to bypass Multi-Factor Authent…",
       "publishedAt": "2026-08-04T17:27:39.000Z"
+    },
+    {
+      "slug": "4b6302d9f5c48ebc651f72fe",
+      "guid": "https://thehackernews.com/2026/08/keyv-linked-npm-worm-poisons-hundreds.html",
+      "title": "Keyv-Linked npm Worm Poisons Hundreds of Packages, Plants Claude Code and VS Code Hooks",
+      "link": "https://thehackernews.com/2026/08/keyv-linked-npm-worm-poisons-hundreds.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "A credential-stealing npm worm that first appeared in keyv@6.0.0 spread beyond the Keyv and Cacheable namespaces into hundreds of packages across multiple organizations on August 4, 2026. SafeDep verified 353 poisoned versions across 79 package names in the npm registry. Its mon…",
+      "publishedAt": "2026-08-04T13:30:23.000Z"
+    },
+    {
+      "slug": "db6c2ae7b2b21caafca3c0a5",
+      "guid": "https://thehackernews.com/2026/08/fake-adobe-and-zoom-updates-install.html",
+      "title": "Fake Adobe and Zoom Updates Install ScreenConnect for Persistent Remote Access",
+      "link": "https://thehackernews.com/2026/08/fake-adobe-and-zoom-updates-install.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "Cybersecurity researchers have disclosed details of an active, multi-wave campaign that employs social engineering lures themed around Adobe and Zoom software updates, business document reviews, and system maintenance utilities to stealthily deploy Remote Monitoring and Manageme…",
+      "publishedAt": "2026-08-04T13:11:22.000Z"
+    },
+    {
+      "slug": "5c96f6a77e0eadff75fcaf0a",
+      "guid": "https://www.darkreading.com/application-security/ai-notetaker-spy-government-corporate-video-calls",
+      "title": "AI Notetaker Lets Hackers Spy on Government, Corporate Video Calls",
+      "link": "https://www.darkreading.com/application-security/ai-notetaker-spy-government-corporate-video-calls",
+      "source": "Dark Reading",
+      "sourceUrl": "https://www.darkreading.com/rss.xml",
+      "summary": "A Google Firebase misconfiguration lets users of tl;dv, an AI meeting tool, query any other users' meeting information and potentially join calls.",
+      "publishedAt": "2026-08-04T13:00:00.000Z"
+    },
+    {
+      "slug": "06c0ec5ab822387d991e6d45",
+      "guid": "https://thehackernews.com/2026/08/when-vibe-hacking-turns-ai-into-junior.html",
+      "title": "When Vibe Hacking Turns AI into the Junior Hacker Every Adversary Always Wanted",
+      "link": "https://thehackernews.com/2026/08/when-vibe-hacking-turns-ai-into-junior.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "The cybersecurity industry has spent decades assuming that offensive capability scales with technical expertise. That assumption is starting to break. Security teams have long estimated risk by ranking attacker sophistication. Nation-state actors sat at one end. Organized crimin…",
+      "publishedAt": "2026-08-04T11:30:00.000Z"
+    },
+    {
+      "slug": "85e31ca3185cf77c545c4b83",
+      "guid": "https://www.schneier.com/?p=72386",
+      "title": "Some Claude Chats Are Searchable on Google",
+      "link": "https://www.schneier.com/blog/archives/2026/08/some-claude-chats-are-searchable-on-google.html",
+      "source": "Schneier on Security",
+      "sourceUrl": "https://www.schneier.com/feed/",
+      "summary": "And it’s personal information (alternate link): The exposed data includes an AI-powered therapy app that someone appears to have vibe-coded, notes on meetings, and a dashboard someone made apparently to analyze medical billing data. Exposed chats reportedly include private crypt…",
+      "publishedAt": "2026-08-04T10:13:58.000Z"
+    },
+    {
+      "slug": "85516e38ab57f13083015b1d",
+      "guid": "https://grahamcluley.com/?p=17351860",
+      "title": "Fake IRS letters target cryptocurrency holders",
+      "link": "https://www.bitdefender.com/en-us/blog/hotforsecurity/fake-irs-letters-cryptocurrency",
+      "source": "Graham Cluley",
+      "sourceUrl": "https://grahamcluley.com/feed/",
+      "summary": "Do you hold cryptocurrency? Have you received a letter telling you that you must register with a so-called \"Digital Asset Compliance Portal\"? If so, it's time to hit the brakes, because it sounds like someone is trying to scam you. Read more in my article on the Hot for Security…",
+      "publishedAt": "2026-08-04T09:02:46.000Z"
+    },
+    {
+      "slug": "f9d8aff206010542268b8180",
+      "guid": "https://www.darkreading.com/cybersecurity-analytics/device-code-phishing-vishing-doubles",
+      "title": "Device Code Phishing Up 1,500% in 2026; Vishing Doubles",
+      "link": "https://www.darkreading.com/cybersecurity-analytics/device-code-phishing-vishing-doubles",
+      "source": "Dark Reading",
+      "sourceUrl": "https://www.darkreading.com/rss.xml",
+      "summary": "Newer social engineering techniques help attackers ignore entrenched security controls and limit the evidence they leave behind.",
+      "publishedAt": "2026-08-04T07:00:00.000Z"
+    },
+    {
+      "slug": "3f957d9d7620e3fd85837ef5",
+      "guid": "https://snyk.io/blog/evo-continuous-offensive-security/",
+      "title": "Evo Continuous Offensive Security Is Here Pentesting Grade Coverage For The 350 Days A Year You Aren't Testing",
+      "link": "https://snyk.io/blog/evo-continuous-offensive-security/",
+      "source": "Snyk Blog",
+      "sourceUrl": "https://snyk.io/blog/feed/",
+      "summary": "Snyk Evo Continuous Offensive Security brings autonomous, AI-powered pentesting to the 350 days between traditional tests, uncovering exploitable flaws attackers can find first.",
+      "publishedAt": "2026-08-04T04:00:00.000Z"
     }
   ]
 }
