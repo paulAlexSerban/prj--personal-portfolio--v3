@@ -1,8 +1,98 @@
 {
   "category": "javascript",
   "label": "JavaScript",
-  "fetchedAt": "2026-08-08T06:28:34.923Z",
+  "fetchedAt": "2026-08-10T07:01:38.084Z",
   "items": [
+    {
+      "slug": "3deb550ea36ad0e33f813c48",
+      "guid": "https://flaviocopes.com/glob-patterns-explained/",
+      "title": "Glob patterns explained (and why .gitignore behaves that way)",
+      "link": "https://flaviocopes.com/glob-patterns-explained/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "How glob patterns work: star vs double star, question marks, character classes, brace expansion, and the gitignore rules that trip everyone up.",
+      "publishedAt": "2026-08-10T05:00:00.000Z"
+    },
+    {
+      "slug": "2abea088dc21f85707489f69",
+      "guid": "https://flaviocopes.com/hono-cloudflare-workers/",
+      "title": "Deploying Hono on Cloudflare Workers",
+      "link": "https://flaviocopes.com/hono-cloudflare-workers/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Deploy a Hono API on Cloudflare Workers with wrangler dev, typed D1 bindings, and a tiny REST endpoint. The final post in the Bun and Hono series.",
+      "publishedAt": "2026-08-10T05:00:00.000Z"
+    },
+    {
+      "slug": "5215ff55834132baf05f85ce",
+      "guid": "https://flaviocopes.com/prototyped-is-now-free/",
+      "title": "Prototyped is now free",
+      "link": "https://flaviocopes.com/prototyped-is-now-free/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "I moved Prototyped to flaviocopes.com/software and made every product free to download when you subscribe to my newsletter.",
+      "publishedAt": "2026-08-09T21:10:00.000Z"
+    },
+    {
+      "slug": "94f4b755f8a333e934d882d3",
+      "guid": "https://flaviocopes.com/workerd/",
+      "title": "How workerd, the Cloudflare Workers runtime, is built",
+      "link": "https://flaviocopes.com/workerd/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "I read the workerd source to explain its server, service graph, V8 isolates, JavaScript APIs, request contexts, and self-hosting model.",
+      "publishedAt": "2026-08-09T09:00:00.000Z"
+    },
+    {
+      "slug": "873a06ddae552da1515fdd47",
+      "guid": "https://flaviocopes.com/hono-middleware-cookies-headers/",
+      "title": "Hono: middleware, cookies, headers, redirects",
+      "link": "https://flaviocopes.com/hono-middleware-cookies-headers/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Hono middleware, cookies, headers, and redirects for everyday web apps. Built-in logger, basic auth, and CORS, plus custom middleware and signed cookies.",
+      "publishedAt": "2026-08-09T05:00:00.000Z"
+    },
+    {
+      "slug": "c2efc8ac0876ddf971aaa0fb",
+      "guid": "https://flaviocopes.com/cloudflare-worker-multiple-handlers/",
+      "title": "Use fetch, queue, and scheduled handlers in one Cloudflare Worker",
+      "link": "https://flaviocopes.com/cloudflare-worker-multiple-handlers/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Run an Astro app, background queue consumer, and retention cron from one Cloudflare Worker by keeping each handler small and explicit.",
+      "publishedAt": "2026-08-08T13:00:00.000Z"
+    },
+    {
+      "slug": "8bf228d3f9a690a798c246ea",
+      "guid": "https://flaviocopes.com/how-astro-is-built/",
+      "title": "How Astro is built",
+      "link": "https://flaviocopes.com/how-astro-is-built/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "I wanted to know what Astro does when we run astro build. Let's follow one page from its .astro file to the final HTML in dist.",
+      "publishedAt": "2026-08-08T09:00:00.000Z"
+    },
+    {
+      "slug": "116e44257eae381f48eea9be",
+      "guid": "https://flaviocopes.com/kitesurf-agentic-browser/",
+      "title": "Kitesurf: Cloudflare's browser built for AI agents",
+      "link": "https://flaviocopes.com/kitesurf-agentic-browser/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Kitesurf is a browser built for AI agents. Learn how it runs on Cloudflare Workers, how it compares to Chromium, and how to use it.",
+      "publishedAt": "2026-08-08T09:00:00.000Z"
+    },
+    {
+      "slug": "d126e1f4aa03968e90bfcb9e",
+      "guid": "https://flaviocopes.com/bb-agentic-ide/",
+      "title": "How bb, the programmable IDE for coding agents, is built",
+      "link": "https://flaviocopes.com/bb-agentic-ide/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "I read the bb source to follow one coding-agent task through its server, SQLite database, host daemon, provider runtime, event stream, and app.",
+      "publishedAt": "2026-08-08T07:30:00.000Z"
+    },
     {
       "slug": "9806ad7aa42196496ca604d2",
       "guid": "https://flaviocopes.com/hono/",
@@ -76,11 +166,11 @@
     {
       "slug": "5a8bd8f8be7bcc4329d9f2a3",
       "guid": "https://flaviocopes.com/track-transactional-email-delivery/",
-      "title": "Track transactional email delivery",
+      "title": "What happens after your email API says accepted",
       "link": "https://flaviocopes.com/track-transactional-email-delivery/",
       "source": "Flavio Copes",
       "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Track accepted, delivered, deferred, bounced, and rejected email states by correlating provider events with your own delivery records.",
+      "summary": "Follow one transactional email through provider acceptance, SMTP delivery, queues, duplicate and out-of-order events, reconciliation, bounces, and complaints.",
       "publishedAt": "2026-08-06T13:00:00.000Z"
     },
     {
@@ -224,16 +314,6 @@
       "publishedAt": "2026-08-04T05:00:00.000Z"
     },
     {
-      "slug": "37bb5364201d5d3b8b3560e5",
-      "guid": "https://flaviocopes.com/vitest/",
-      "title": "Vitest: an introduction",
-      "link": "https://flaviocopes.com/vitest/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Vitest is the fast Vite-powered test runner with a Jest-compatible API, native ESM and TypeScript support, watch mode, and built-in mocking.",
-      "publishedAt": "2026-08-04T05:00:00.000Z"
-    },
-    {
       "slug": "a6948bff13efd593331ddeab",
       "guid": "https://javascriptweekly.com/issues/797",
       "title": "Reimplementing htmx from scratch",
@@ -242,86 +322,6 @@
       "sourceUrl": "https://javascriptweekly.com/rss/1b4m1h9j",
       "summary": "#​797 — August 4, 2026 Read on the Web JavaScript Weekly Next.js 16.3 Released — The newly expanded Next.js team (now including Dan Abramov and 𝕏 Pete Hunt!) has dropped the latest version of the popular React framework, complete with faster builds, optional TypeScript 7 type c…",
       "publishedAt": "2026-08-04T00:00:00.000Z"
-    },
-    {
-      "slug": "589ad4bfd87c9ba2a37875f3",
-      "guid": "https://flaviocopes.com/idempotent-double-opt-in-signup/",
-      "title": "Build idempotent double opt-in signup",
-      "link": "https://flaviocopes.com/idempotent-double-opt-in-signup/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Use a conditional SQL upsert to prevent duplicate subscribers, limit confirmation resends, and recover immediately after failed email delivery.",
-      "publishedAt": "2026-08-03T13:00:00.000Z"
-    },
-    {
-      "slug": "fd268e25c9698c76b2808cd4",
-      "guid": "https://flaviocopes.com/optimize-astro-build-deploy-time/",
-      "title": "How I made this Astro site build faster and cut its deploy size",
-      "link": "https://flaviocopes.com/optimize-astro-build-deploy-time/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "How I made a 4,000-page Astro build phase 25% faster and cut its deploy artifact by 34% using concurrency, shared OG images, and Cloudflare R2.",
-      "publishedAt": "2026-08-03T09:00:00.000Z"
-    },
-    {
-      "slug": "a0b1aaa3583b39cce0f682c7",
-      "guid": "https://flaviocopes.com/i-launched-port-pilot/",
-      "title": "I launched Port Pilot",
-      "link": "https://flaviocopes.com/i-launched-port-pilot/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "I launched Port Pilot, a local service command center with a macOS menu bar app, live terminal dashboard, and agent-friendly CLI.",
-      "publishedAt": "2026-08-03T07:00:00.000Z"
-    },
-    {
-      "slug": "23dffa87236fca388ef8f11f",
-      "guid": "https://flaviocopes.com/css-conic-gradients/",
-      "title": "conic-gradient and the modern CSS gradient toolbox",
-      "link": "https://flaviocopes.com/css-conic-gradients/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Learn how conic-gradient works and what changed in CSS gradients: pie charts with hard stops, color wheels, repeating patterns and oklch interpolation.",
-      "publishedAt": "2026-08-03T05:00:00.000Z"
-    },
-    {
-      "slug": "d18f2de46c1b8c3d40b71996",
-      "guid": "https://flaviocopes.com/libsql-turso/",
-      "title": "libSQL and Turso: SQLite for production",
-      "link": "https://flaviocopes.com/libsql-turso/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "libSQL is Turso's open fork of SQLite for production. Learn Turso Cloud, embedded replicas, and when to pick it over Cloudflare D1.",
-      "publishedAt": "2026-08-03T05:00:00.000Z"
-    },
-    {
-      "slug": "6236d8a0f74e2b3d71518e5d",
-      "guid": "https://flaviocopes.com/harden-public-form-endpoint/",
-      "title": "Harden a public form endpoint",
-      "link": "https://flaviocopes.com/harden-public-form-endpoint/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Harden a public form API with body-size limits, exact input shapes, explicit consent, origin allowlists, neutral responses, and two rate limits.",
-      "publishedAt": "2026-08-02T13:00:00.000Z"
-    },
-    {
-      "slug": "af5f3d523eabde255c5c64f1",
-      "guid": "https://flaviocopes.com/i-launched-local-hoster/",
-      "title": "I launched Local Hoster",
-      "link": "https://flaviocopes.com/i-launched-local-hoster/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "I launched Local Hoster, a small Node.js CLI that gives local development projects stable .localhost URLs with HTTPS through Caddy.",
-      "publishedAt": "2026-08-02T07:00:00.000Z"
-    },
-    {
-      "slug": "7705762a252e43dd1cb5c280",
-      "guid": "https://flaviocopes.com/css-easing-cubic-bezier/",
-      "title": "CSS easing functions: what cubic-bezier actually does",
-      "link": "https://flaviocopes.com/css-easing-cubic-bezier/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Learn how CSS easing works under the hood: the four cubic-bezier control points, what ease and ease-out really are, plus linear() and steps().",
-      "publishedAt": "2026-08-02T05:00:00.000Z"
     },
     {
       "slug": "b5718db41559c8191f2613f1",
@@ -362,16 +362,6 @@
       "sourceUrl": "https://javascriptweekly.com/rss/1b4m1h9j",
       "summary": "#​796 — July 28, 2026 Read on the Web JavaScript Weekly Rust Is Eating JavaScript (Still, in 2026) — Our most-read link of 2021 gets an update for 2026. Lee Robinson (then Vercel, now Cursor) predicted Rust would be used to reimplement more and more JavaScript ecosystem tooling,…",
       "publishedAt": "2026-07-28T00:00:00.000Z"
-    },
-    {
-      "slug": "ef94fc402a07f65ea4789cb0",
-      "guid": "https://blog.appsignal.com/2026/07/27/why-your-sidekiq-jobs-are-slower-than-you-think-and-how-appsignal-fixes-that.html",
-      "title": "Why Your Sidekiq Jobs Are Slower Than You Think, and How AppSignal Fixes That",
-      "link": "https://blog.appsignal.com/2026/07/27/why-your-sidekiq-jobs-are-slower-than-you-think-and-how-appsignal-fixes-that.html",
-      "source": "AppSignal",
-      "sourceUrl": "https://blog.appsignal.com/feed.xml",
-      "summary": "As developers, we sometimes find ourselves in situations where something feels slower than it should be. The first thing we tell ourselves is “Maybe I need a different tool.” And sure, at times, it might be due to the tool, I’ll give you that. But most of the time, it comes down…",
-      "publishedAt": "2026-07-27T00:00:00.000Z"
     }
   ]
 }
