@@ -18,10 +18,10 @@ const db = openDb();
 const profile = getProfile(db);
 const experience = getExperienceTimeline(db);
 const skillGroups = getSkillsGrouped(db);
-const featured = getFeaturedPreview(db, 3);
+const featured = getFeaturedPreview(db,8);
 const featuredTags = buildProjectTagsMap(db, featured);
 const featuredPost = getFeaturedPost(db);
-const recentPosts = getRecentPosts(db, 3);
+const recentPosts = getRecentPosts(db, 8);
 closeConnection(db);
 
 const name = profile?.name ?? 'Paul Serban';
@@ -75,7 +75,7 @@ const description = profile?.headline ?? 'Portfolio of Paul Serban.';
                 <p class="kicker text-sm">More reading</p>
                 <h2 class="m-0 mb-5 font-display text-3xl font-bold">Recent posts</h2>
                 <ul class="m-0 grid list-none gap-0 p-0">
-                    {recentPosts.slice(featuredPost ? 1 : 0).map((post) => (
+                    {recentPosts.slice(featuredPost ? 2 : 1).map((post) => (
                         <li class="border-b border-rule py-3 last:border-b-0">
                             <a
                                 href={siteUrls.blogPost(post.slug)}

@@ -68,6 +68,7 @@ const hasResources = cheatSheets.length > 0 || learningPlans.length > 0;
         subheading={post.subheading ?? undefined}
         tags={tags}
         cover={post.cover_image ?? undefined}
+        kicker={post.date ?? undefined}
     />
     <article class="md-content mt-4">
         <Content components={mdxComponents} />
