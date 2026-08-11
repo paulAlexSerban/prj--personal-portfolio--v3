@@ -99,7 +99,7 @@ function ProjectCardInner({ project, tags, featured = false }: { project: Projec
     const href = siteUrls.portfolioProject(project.slug);
     return (
         <article className="card-ruled flex flex-col">
-            <a href={href} className="group mb-3 block overflow-hidden border border-rule">
+            <a href={href} className="group mb-3 block overflow-hidden">
                 <CoverImage
                     cover={project.cover_image}
                     placeholder={assetUrl('placeholder-cover.png')}
@@ -117,7 +117,7 @@ function ProjectCardInner({ project, tags, featured = false }: { project: Projec
             <ul className="mt-3 flex list-none flex-wrap gap-[0.4rem] p-0">
                 {tags.slice(0, 4).map((t) => (
                     <li key={t.slug}>
-                        <span className="inline-block border border-rule bg-highlight px-2 py-[0.15rem] text-[0.75rem] text-ink">#{t.name.toLowerCase()}</span>
+                        <span className="inline-block bg-highlight px-2 py-[0.15rem] text-[0.75rem] text-ink">#{t.name.toLowerCase()}</span>
                     </li>
                 ))}
             </ul>
