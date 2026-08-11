@@ -15,6 +15,7 @@ import {
 } from '@/lib/queries/companions.ts';
 import {
     CONTENT_TYPE_LABEL,
+    getAdjacentPosts,
     getPostBySlugAndType,
     getQuestionCountForPost,
     getTagsForPost,
@@ -39,6 +40,7 @@ const tags = getTagsForPost(db, slug);
 const questionCount = getQuestionCountForPost(db, slug);
 const cheatSheets = getCheatSheetsForPost(db, slug);
 const learningPlans = getLearningPlansForPost(db, slug);
+const adjacent = getAdjacentPosts(db, slug, contentType);
 closeConnection(db);
 
 if (!post) {
@@ -116,6 +118,37 @@ const hasResources = cheatSheets.length > 0 || learningPlans.length > 0;
                     })}
                 </ul>
             </section>
+        )
+    }
+    {
+        (adjacent.older || adjacent.newer) && (
+            <nav
+                class="mt-12 flex items-start justify-between gap-4 border-t-[3px] border-ink pt-6"
+                aria-label="Post navigation"
+            >
+                <div class="max-w-[45%]">
+                    {adjacent.older && (
+                        <a
+                            href={postDetailPath(contentType, adjacent.older.slug)}
+                            class="group block text-ink no-underline"
+                        >
+                            <p class="kicker mb-1 text-[10px]">&larr; Older</p>
+                            <p class="font-display font-bold group-hover:underline">{adjacent.older.title}</p>
+                        </a>
+                    )}
+                </div>
+                <div class="max-w-[45%] text-right">
+                    {adjacent.newer && (
+                        <a
+                            href={postDetailPath(contentType, adjacent.newer.slug)}
+                            class="group block text-ink no-underline"
+                        >
+                            <p class="kicker mb-1 text-[10px]">Newer &rarr;</p>
+                            <p class="font-display font-bold group-hover:underline">{adjacent.newer.title}</p>
+                        </a>
+                    )}
+                </div>
+            </nav>
         )
     }
 </BaseLayout>

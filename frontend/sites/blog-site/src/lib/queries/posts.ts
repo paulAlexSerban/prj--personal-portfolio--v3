@@ -109,6 +109,22 @@ export function getPostBySlugAndType(
     return post;
 }
 
+export interface AdjacentPosts {
+    newer?: PostRow; // published after current
+    older?: PostRow; // published before current
+}
+
+/** Chronological neighbors within the same content type (newest → oldest order). */
+export function getAdjacentPosts(db: DrizzleDb, slug: string, type: BlogContentType): AdjacentPosts {
+    const ordered = getPublishedByType(db, type);
+    const index = ordered.findIndex((row) => row.slug === slug);
+    if (index === -1) return {};
+    return {
+        newer: index > 0 ? ordered[index - 1] : undefined,
+        older: index < ordered.length - 1 ? ordered[index + 1] : undefined,
+    };
+}
+
 export function getPostStaticPaths(db: DrizzleDb, type: BlogContentType) {
     return getAllSlugs(db, type).map(({ slug }) => ({ params: { slug } }));
 }
