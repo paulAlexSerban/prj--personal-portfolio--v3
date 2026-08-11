@@ -25,9 +25,13 @@ export function PageLayout({ children }: { children: React.ReactNode }) {
         <div className="mb-3 text-center">
           <FooterSiteLinks activeSite="quiz" tabs={siteTabs} />
         </div>
-        <div className="kicker mb-2 flex flex-nowrap items-center justify-center gap-3 text-sm">
+        <div className="kicker mb-2 flex flex-col items-center justify-center gap-3 text-sm">
           <SocialLinks linkClassName="inline-flex items-center text-ink no-underline text-sm hover:opacity-70" />
-          <span>The Typeset Review · Printed daily in your browser · Algorithm: {algorithm}</span>
+          <p className="text-center flex flex-col justify-center">
+            <span>The Typeset Review</span>
+            <span>Printed daily in your browser</span>
+            <span>Algorithm: {algorithm}</span>
+          </p>
         </div>
       </footer>
     </div>

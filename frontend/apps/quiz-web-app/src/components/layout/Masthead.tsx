@@ -57,7 +57,7 @@ export function Masthead() {
           </h1>
         </Link>
         <div className="rule-double mt-3" />
-        <div className="mt-2 flex flex-wrap items-center justify-between gap-2">
+        <div className="mt-2 flex flex-nowrap items-center justify-between gap-2">
           <p className="kicker text-[11px]">
             {dateline} · {formatDateline()}
           </p>

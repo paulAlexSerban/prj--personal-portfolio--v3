@@ -62,9 +62,9 @@ export function isoWeek(d = new Date()): number {
 
 export function formatDateline(d = new Date()): string {
   return d.toLocaleDateString("en-US", {
-    weekday: "long",
+    weekday: "short",
     year: "numeric",
-    month: "long",
+    month: "short",
     day: "numeric",
   });
 }
