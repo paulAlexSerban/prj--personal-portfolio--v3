@@ -1,8 +1,38 @@
 {
   "category": "javascript",
   "label": "JavaScript",
-  "fetchedAt": "2026-08-10T07:01:38.084Z",
+  "fetchedAt": "2026-08-11T06:41:25.372Z",
   "items": [
+    {
+      "slug": "cd05248c2d572bc0fd1db62e",
+      "guid": "https://flaviocopes.com/kysely/",
+      "title": "A deep dive into Kysely",
+      "link": "https://flaviocopes.com/kysely/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Learn how Kysely turns typed TypeScript queries into parameterized SQL, with schema types, joins, transactions, migrations, testing, and real projects.",
+      "publishedAt": "2026-08-11T05:00:00.000Z"
+    },
+    {
+      "slug": "699069fc4c71cc9ef94729d3",
+      "guid": "https://flaviocopes.com/cloudflare-computer/",
+      "title": "A deep dive into Cloudflare Computer",
+      "link": "https://flaviocopes.com/cloudflare-computer/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "How Cloudflare Computer combines a Durable Object filesystem, Dynamic Worker runtimes, a container backend, FUSE mount, and sync protocol.",
+      "publishedAt": "2026-08-10T11:00:00.000Z"
+    },
+    {
+      "slug": "f968661995d690757223f473",
+      "guid": "https://flaviocopes.com/herdr/",
+      "title": "A deep dive into Herdr",
+      "link": "https://flaviocopes.com/herdr/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Herdr keeps coding agents in persistent terminal workspaces, shows which ones need attention, and exposes the whole system through a CLI and API.",
+      "publishedAt": "2026-08-10T07:00:00.000Z"
+    },
     {
       "slug": "3deb550ea36ad0e33f813c48",
       "guid": "https://flaviocopes.com/glob-patterns-explained/",
@@ -186,11 +216,11 @@
     {
       "slug": "9ffb5a16af17aa06453a0eae",
       "guid": "https://flaviocopes.com/how-oauth-works/",
-      "title": "How OAuth works: GitHub and Google login explained",
+      "title": "A deep dive into OAuth 2.0",
       "link": "https://flaviocopes.com/how-oauth-works/",
       "source": "Flavio Copes",
       "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "How OAuth 2.0 authorization code flow works for GitHub and Google login: redirects, codes, access tokens, scopes, and what happens behind the button.",
+      "summary": "Learn how OAuth 2.0 authorization code flow, PKCE, state, scopes, access tokens, OpenID Connect, sessions, and social login work in practice.",
       "publishedAt": "2026-08-06T05:00:00.000Z"
     },
     {
@@ -284,36 +314,6 @@
       "publishedAt": "2026-08-04T13:00:00.000Z"
     },
     {
-      "slug": "eccaf5386df14a726110bfc2",
-      "guid": "https://flaviocopes.com/scheduled-cloudflare-pages-rebuilds/",
-      "title": "How I auto-publish scheduled posts with a Cloudflare Worker cron",
-      "link": "https://flaviocopes.com/scheduled-cloudflare-pages-rebuilds/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "How I publish future-dated posts on a static Astro site: a Cloudflare Worker cron triggers a daily Pages rebuild via a deploy hook, with a DST-proof schedule.",
-      "publishedAt": "2026-08-04T09:00:00.000Z"
-    },
-    {
-      "slug": "b27f740e4b755aa228b61401",
-      "guid": "https://flaviocopes.com/i-launched-events-logger/",
-      "title": "I launched Events Logger",
-      "link": "https://flaviocopes.com/i-launched-events-logger/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "I launched Events Logger, a self-hosted event tracking dashboard with a REST API, CLI, charts, and KPI insight cards on SQLite.",
-      "publishedAt": "2026-08-04T06:00:00.000Z"
-    },
-    {
-      "slug": "13646c9aa429b47c8070cdba",
-      "guid": "https://flaviocopes.com/css-aspect-ratio-property/",
-      "title": "The CSS aspect-ratio property and the math behind it",
-      "link": "https://flaviocopes.com/css-aspect-ratio-property/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Learn how the CSS aspect-ratio property replaces the padding-top hack, the math behind contain and cover, and how width and height attributes prevent CLS.",
-      "publishedAt": "2026-08-04T05:00:00.000Z"
-    },
-    {
       "slug": "a6948bff13efd593331ddeab",
       "guid": "https://javascriptweekly.com/issues/797",
       "title": "Reimplementing htmx from scratch",
@@ -342,26 +342,6 @@
       "sourceUrl": "https://blog.appsignal.com/feed.xml",
       "summary": "Cursor, Claude, and their fellow tools are great when they are speaking code, but once that code hits production, they are not exactly native. However, if your code is monitored by AppSignal, an MCP server can bridge that gap and allow agents to poke around the production. TL;DR…",
       "publishedAt": "2026-07-29T00:00:00.000Z"
-    },
-    {
-      "slug": "abb1375ca810a7e02be7ab0e",
-      "guid": "https://blog.appsignal.com/2026/07/28/appsignal-launch-week-2026-recap.html",
-      "title": "AppSignal Launch Week 2026 Recap",
-      "link": "https://blog.appsignal.com/2026/07/28/appsignal-launch-week-2026-recap.html",
-      "source": "AppSignal",
-      "sourceUrl": "https://blog.appsignal.com/feed.xml",
-      "summary": "That's a wrap on Launch Week 2026. In case you missed a day, or you want the short version, here is everything we shipped. Day 1: Render Metrics Stream Support Render makes deploys easy. When something goes wrong, the signal is often scattered across HTTP latency, Postgres conne…",
-      "publishedAt": "2026-07-28T00:00:00.000Z"
-    },
-    {
-      "slug": "7693d66eca93343fa074d272",
-      "guid": "https://javascriptweekly.com/issues/796",
-      "title": "Anders Hejlsberg demos TypeScript 7's 10x speedup",
-      "link": "https://javascriptweekly.com/issues/796",
-      "source": "JavaScript Weekly",
-      "sourceUrl": "https://javascriptweekly.com/rss/1b4m1h9j",
-      "summary": "#​796 — July 28, 2026 Read on the Web JavaScript Weekly Rust Is Eating JavaScript (Still, in 2026) — Our most-read link of 2021 gets an update for 2026. Lee Robinson (then Vercel, now Cursor) predicted Rust would be used to reimplement more and more JavaScript ecosystem tooling,…",
-      "publishedAt": "2026-07-28T00:00:00.000Z"
     }
   ]
 }
