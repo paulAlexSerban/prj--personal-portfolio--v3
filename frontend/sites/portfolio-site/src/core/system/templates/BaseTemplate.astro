@@ -1,4 +1,6 @@
 ---
+import { ImageZoomRoot } from '@prj--personal-portfolio--v3/shared--ui/image-zoom-root';
+
 import SiteFooter from '@/library/modules/SiteFooter.astro';
 import SiteHeader from '@/library/modules/SiteHeader.astro';
 
@@ -47,5 +49,6 @@ const sitemapUrl = assetUrl('sitemap-index.xml');
             <slot />
         </main>
         <SiteFooter />
+        <ImageZoomRoot client:load />
     </body>
 </html>

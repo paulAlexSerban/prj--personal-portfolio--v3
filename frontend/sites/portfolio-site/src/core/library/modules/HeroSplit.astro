@@ -34,6 +34,9 @@ const headline = profile?.headline ?? 'I architect systems that ship.';
         </div>
         <div class="group">
             <CoverImage
+                client:load
+                zoomable={true}
+                zoomAlt="Paul Serban portfolio architecture banner"
                 cover={PORTFOLIO_BANNER_COVER}
                 placeholder={PLACEHOLDER_COVER}
                 alt="Paul Serban portfolio architecture banner"

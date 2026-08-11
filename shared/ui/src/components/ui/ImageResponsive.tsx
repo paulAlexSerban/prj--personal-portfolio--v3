@@ -65,6 +65,8 @@ const ASPECT_RATIO_DIMENSIONS: Record<AspectRatio, Record<ResponsiveWidth, [numb
 const DEFAULT_RATIO_INDEXES = [2, 2, 2, 2, 2] as const;
 const DEFAULT_WIDTH_INDEXES = [0, 1, 2, 3, 4] as const;
 const DEFAULT_SIZES = '(max-width: 768px) 100vw, 66vw';
+const ZOOM_WIDTHS = '[4,4,4,4,4]';
+const ZOOM_SIZES = '95vw';
 
 export interface ImageResponsiveProps {
     imageName: string;
@@ -76,6 +78,8 @@ export interface ImageResponsiveProps {
     className?: string;
     imgClassName?: string;
     loading?: 'lazy' | 'eager';
+    /** When true, clicking the image opens a full-screen zoom lightbox. */
+    zoomable?: boolean;
 }
 
 const stripExtension = (value = '') => {
@@ -151,22 +155,19 @@ const createSrcSet = (imageName: string, hash: string, ratioIndexes: number[], w
         .join(', ');
 };
 
-/**
- * Usage example:
- * <ImageResponsive
- *   imageName="hero-banner"
- *   alt="Developer workspace"
- *   ratiosStr="[2,2,2,2,2]"
- *   widthsStr="[0,1,2,3,4]"
- *   hash="a3f91c2b"
- * />
- *
- * Both examples resolve to responsive files like:
- * hero-banner-480x270-16x9-q80.a3f91c2b.avif,
- * hero-banner-960x540-16x9-q80.a3f91c2b.avif,
- * hero-banner-1280x720-16x9-q80.a3f91c2b.avif
- */
-const ImageResponsive = ({
+type PictureProps = {
+    imageName: string;
+    hash: string;
+    alt: string;
+    ratiosStr?: string;
+    widthsStr?: string;
+    sizes?: string;
+    className?: string;
+    imgClassName?: string;
+    loading?: 'lazy' | 'eager';
+};
+
+function ResponsivePicture({
     imageName,
     alt,
     ratiosStr = '[2,2,2,2,2]',
@@ -176,7 +177,7 @@ const ImageResponsive = ({
     className = '',
     imgClassName = '',
     loading = 'lazy',
-}: ImageResponsiveProps) => {
+}: PictureProps) {
     const normalizedImageName = normalizeImageName(imageName);
     const normalizedHash = normalizeHash(hash);
     const ratioIndexes = normalizeIndexes(ratiosStr, DEFAULT_RATIO_INDEXES);
@@ -204,6 +205,83 @@ const ImageResponsive = ({
                 />
             </picture>
         </div>
+    );
+}
+
+/**
+ * Usage example:
+ * <ImageResponsive
+ *   imageName="hero-banner"
+ *   alt="Developer workspace"
+ *   ratiosStr="[2,2,2,2,2]"
+ *   widthsStr="[0,1,2,3,4]"
+ *   hash="a3f91c2b"
+ * />
+ *
+ * Both examples resolve to responsive files like:
+ * hero-banner-480x270-16x9-q80.a3f91c2b.avif,
+ * hero-banner-960x540-16x9-q80.a3f91c2b.avif,
+ * hero-banner-1280x720-16x9-q80.a3f91c2b.avif
+ */
+const ImageResponsive = ({
+    imageName,
+    alt,
+    ratiosStr = '[2,2,2,2,2]',
+    widthsStr = '[0,1,2,3,4]',
+    hash,
+    sizes = DEFAULT_SIZES,
+    className = '',
+    imgClassName = '',
+    loading = 'lazy',
+    zoomable = false,
+}: ImageResponsiveProps) => {
+    const normalizedImageName = normalizeImageName(imageName);
+    const normalizedHash = normalizeHash(hash);
+    const ratioIndexes = normalizeIndexes(ratiosStr, DEFAULT_RATIO_INDEXES);
+    const zoomWidthIndexes = normalizeIndexes(ZOOM_WIDTHS, DEFAULT_WIDTH_INDEXES);
+
+    const inlineImage = (
+        <ResponsivePicture
+            imageName={imageName}
+            hash={hash}
+            alt={alt}
+            ratiosStr={ratiosStr}
+            widthsStr={widthsStr}
+            sizes={sizes}
+            className={className}
+            imgClassName={imgClassName}
+            loading={loading}
+        />
+    );
+
+    if (!zoomable || !normalizedImageName || !normalizedHash) {
+        return inlineImage;
+    }
+
+    // SSR-safe zoom trigger: ImageZoomRoot (page island) listens for [data-image-zoom].
+    // Needed because evaluate()'d MDX Content cannot use client:* directives.
+    const zoomEntries = buildSrcSetEntries(normalizedImageName, normalizedHash, ratioIndexes, zoomWidthIndexes, FALLBACK_FORMAT);
+    const zoomSrc = zoomEntries[zoomEntries.length - 1]?.src ?? zoomEntries[0]?.src;
+    const zoomSrcSet = zoomEntries.map((entry) => entry.srcset).join(', ');
+    const zoomLabel = alt ? `Zoom image: ${alt}` : 'Zoom image';
+
+    if (!zoomSrc) {
+        return inlineImage;
+    }
+
+    return (
+        <button
+            type="button"
+            data-image-zoom
+            data-zoom-src={zoomSrc}
+            data-zoom-srcset={zoomSrcSet}
+            data-zoom-sizes={ZOOM_SIZES}
+            data-zoom-alt={alt}
+            aria-label={zoomLabel}
+            className="block w-full cursor-zoom-in border-0 bg-transparent p-0 text-left"
+        >
+            {inlineImage}
+        </button>
     );
 };
 

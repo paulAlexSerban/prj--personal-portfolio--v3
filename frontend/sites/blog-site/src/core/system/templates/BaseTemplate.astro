@@ -1,4 +1,6 @@
 ---
+import { ImageZoomRoot } from '@prj--personal-portfolio--v3/shared--ui/image-zoom-root';
+
 import SiteFooter from '@/library/modules/SiteFooter.astro';
 import SiteHeader from '@/library/modules/SiteHeader.astro';
 import { assetUrl } from '@/lib/urls.ts';
@@ -43,5 +45,6 @@ const canonical = canonicalUrl ?? new URL(Astro.url.pathname, Astro.site).href;
             <slot />
         </main>
         <SiteFooter />
+        <ImageZoomRoot client:load />
     </body>
 </html>

@@ -61,11 +61,14 @@ const cover = project.cover_image ?? PLACEHOLDER_COVER;
 
     <div class="mb-6">
         <CoverImage
+            client:load
             cover={project.cover_image}
             placeholder={PLACEHOLDER_COVER}
+            alt={project.title}
             loading="eager"
             sizes="hero"
             imgClassName="aspect-video w-full object-cover"
+            zoomable
         />
     </div>
 

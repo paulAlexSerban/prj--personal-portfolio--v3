@@ -24,11 +24,14 @@ const { title, subheading, tags = [], kicker, cover } = Astro.props;
         cover && (
             <div class="mb-6">
                 <CoverImage
+                    client:load
                     cover={cover}
                     placeholder={PLACEHOLDER_COVER}
+                    alt={title}
                     loading="eager"
                     sizes="hero"
                     imgClassName="aspect-video w-full object-cover"
+                    zoomable
                 />
             </div>
         )
