@@ -76,3 +76,15 @@ variable "redirect_rules" {
   }))
   default = []
 }
+
+variable "access_logging_bucket" {
+  description = "S3 bucket domain name (e.g. my-bucket.s3.amazonaws.com) for CloudFront standard access logs. Null disables logging."
+  type        = string
+  default     = null
+}
+
+variable "access_logging_prefix" {
+  description = "Prefix inside the access-log bucket for this distribution's logs. Defaults to domain_name/."
+  type        = string
+  default     = null
+}

@@ -210,6 +210,15 @@ resource "aws_cloudfront_distribution" "site" {
     }
   }
 
+  dynamic "logging_config" {
+    for_each = var.access_logging_bucket != null ? [1] : []
+    content {
+      include_cookies = false
+      bucket          = var.access_logging_bucket
+      prefix          = coalesce(var.access_logging_prefix, "${var.domain_name}/")
+    }
+  }
+
   custom_error_response {
     error_code            = 403
     response_code         = 200

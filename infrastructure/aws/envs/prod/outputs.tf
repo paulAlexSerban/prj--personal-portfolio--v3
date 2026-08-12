@@ -1,3 +1,13 @@
+output "cf_access_logs_bucket_name" {
+  description = "Shared S3 bucket receiving CloudFront standard access logs (site/blog/quiz)."
+  value       = aws_s3_bucket.cf_access_logs.bucket
+}
+
+output "cf_access_logs_bucket_arn" {
+  description = "ARN of the CloudFront access-log bucket (used by observability-hub IAM)."
+  value       = aws_s3_bucket.cf_access_logs.arn
+}
+
 output "portfolio_bucket_name" {
   value = module.static_site.bucket_name
 }

@@ -35,6 +35,66 @@ locals {
     Environment = "prod"
     ManagedBy   = "terraform"
   }
+
+  # Shared destination for CloudFront standard access logs across site/blog/quiz.
+  # Domain-prefixed keys keep logs queryable per distribution.
+  cf_access_logs_bucket_name = "cf-access-logs.paulserban.eu"
+}
+
+# ---------------------------------------------------------------------------
+# Shared CloudFront access-log bucket (Phase 0 observability)
+# ACL-based log delivery requires BucketOwnerPreferred, not BucketOwnerEnforced.
+# ---------------------------------------------------------------------------
+
+resource "aws_s3_bucket" "cf_access_logs" {
+  bucket = local.cf_access_logs_bucket_name
+  tags   = merge(local.tags, { Purpose = "cloudfront-access-logs" })
+}
+
+resource "aws_s3_bucket_public_access_block" "cf_access_logs" {
+  bucket = aws_s3_bucket.cf_access_logs.id
+
+  block_public_acls       = true
+  block_public_policy     = true
+  ignore_public_acls      = true
+  restrict_public_buckets = true
+}
+
+resource "aws_s3_bucket_ownership_controls" "cf_access_logs" {
+  bucket = aws_s3_bucket.cf_access_logs.id
+  rule {
+    object_ownership = "BucketOwnerPreferred"
+  }
+}
+
+resource "aws_s3_bucket_acl" "cf_access_logs" {
+  depends_on = [aws_s3_bucket_ownership_controls.cf_access_logs]
+  bucket     = aws_s3_bucket.cf_access_logs.id
+  acl        = "log-delivery-write"
+}
+
+resource "aws_s3_bucket_server_side_encryption_configuration" "cf_access_logs" {
+  bucket = aws_s3_bucket.cf_access_logs.id
+  rule {
+    apply_server_side_encryption_by_default {
+      sse_algorithm = "AES256"
+    }
+  }
+}
+
+resource "aws_s3_bucket_lifecycle_configuration" "cf_access_logs" {
+  bucket = aws_s3_bucket.cf_access_logs.id
+
+  rule {
+    id     = "expire-access-logs"
+    status = "Enabled"
+
+    filter {}
+
+    expiration {
+      days = 60
+    }
+  }
 }
 
 module "static_site" {
@@ -47,6 +107,9 @@ module "static_site" {
   domain_name    = var.domain_name
   hosted_zone_id = var.hosted_zone_id
   tags           = local.tags
+
+  access_logging_bucket = aws_s3_bucket.cf_access_logs.bucket_domain_name
+  access_logging_prefix = "${var.domain_name}/"
 
   # v2 blog lived under /blog on the apex; v3 moved it to blog.paulserban.eu.
   # Keep old forum/bookmark links working with a permanent redirect.
@@ -75,6 +138,9 @@ module "static_site_blog" {
   domain_name    = var.blog_domain_name
   hosted_zone_id = var.hosted_zone_id
   tags           = local.tags
+
+  access_logging_bucket = aws_s3_bucket.cf_access_logs.bucket_domain_name
+  access_logging_prefix = "${var.blog_domain_name}/"
 }
 
 module "static_site_quiz" {
@@ -89,6 +155,9 @@ module "static_site_quiz" {
   tags           = local.tags
   # Quiz is an SPA - map 403/404 to index.html instead of a static 404 page.
   not_found_response_page = "/index.html"
+
+  access_logging_bucket = aws_s3_bucket.cf_access_logs.bucket_domain_name
+  access_logging_prefix = "${var.quiz_domain_name}/"
 }
 
 module "static_site_news" {
