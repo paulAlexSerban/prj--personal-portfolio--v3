@@ -48,16 +48,16 @@ const description = profile?.headline ?? 'Portfolio of Paul Serban.';
     {
         featured.length > 0 && (
             <section class="mb-12">
-                <div class="mb-6 flex flex-wrap items-end justify-between gap-3">
+                <div class="mb-5 flex flex-wrap items-end justify-between gap-3 border-b-[3px] border-ink pb-2">
                     <div>
                         <p class="kicker text-sm">Selected work</p>
                         <h2 class="m-0 font-display text-4xl font-bold">Case studies & Projects</h2>
                     </div>
                     <a class="stamp stamp-ghost px-4 py-1.5 text-sm" href={siteUrls.portfolio}>View all &rarr;</a>
                 </div>
-                <ul class="m-0 grid list-none grid-cols-[repeat(auto-fill,minmax(18rem,1fr))] gap-8 p-0">
+                <ul class="m-0 list-none columns-1 gap-5 p-0 sm:columns-2 lg:columns-3">
                     {featured.map((project) => (
-                        <li>
+                        <li class="mb-5 break-inside-avoid">
                             <CaseStudyCard project={project} tags={featuredTags.get(project.slug) ?? []} featured />
                         </li>
                     ))}

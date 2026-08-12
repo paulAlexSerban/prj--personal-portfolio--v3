@@ -37,12 +37,12 @@ baking in a specific host.
 
 ### Pipelines (GitHub Actions)
 
-| Workflow | Trigger | Role |
-| -------- | ------- | ---- |
-| `ci.yaml` | PR + push to `main` | Format, typecheck, test, migrate; PR changeset check |
-| `deploy-dev.yaml` | Push to `main` | Continuous dev deploy (GitHub Pages) - unchanged |
-| `release.yaml` | Push to `main` | Changesets Version PR **or** tag + stage -> prod promotion |
-| `_build-site.yaml` | `workflow_call` | Reusable ingest -> build -> merge into `_site/` artifact |
+| Workflow           | Trigger             | Role                                                       |
+| ------------------ | ------------------- | ---------------------------------------------------------- |
+| `ci.yaml`          | PR + push to `main` | Format, typecheck, test, migrate; PR changeset check       |
+| `deploy-dev.yaml`  | Push to `main`      | Continuous dev deploy (GitHub Pages) - unchanged           |
+| `release.yaml`     | Push to `main`      | Changesets Version PR **or** tag + stage -> prod promotion |
+| `_build-site.yaml` | `workflow_call`     | Reusable ingest -> build -> merge into `_site/` artifact   |
 
 Release promotion rules:
 
