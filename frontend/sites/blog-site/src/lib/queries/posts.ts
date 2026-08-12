@@ -79,7 +79,7 @@ export function getPinnedByType(db: DrizzleDb, type: BlogContentType): PostRow[]
                 // inArray(posts.slug, publishedQuestionPostSlugs(db)), # uncomment this line to filter by posts that have at least one published question
             ),
         )
-        .limit(6)
+        .limit(12)
         .all();
     return sortByDateDesc(filterPublishedAsOfToday(rows));
 }
