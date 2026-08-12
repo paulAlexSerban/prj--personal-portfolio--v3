@@ -17,263 +17,56 @@ permissions:
     pages: write
     id-token: write
 
-env:
-    DATABASE_PATH: ${{ github.workspace }}/database/output/content.db
-    CONTENT_DIR: ${{ github.workspace }}/content/live/content/publish
-    QUIZ_DATA_OUT: ${{ github.workspace }}/frontend/apps/quiz-web-app/public/data
-
 jobs:
-    ingest-content:
+    resolve-pages:
         # Skip when triggered by a failed/cancelled News Sync run; still run for
         # push, workflow_dispatch, and successful News Sync completions.
         if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
         runs-on: ubuntu-latest
-        timeout-minutes: 30
-        steps:
-            - uses: actions/checkout@v7
-              with:
-                  ref: ${{ github.event.workflow_run.head_sha || github.sha }}
-            - uses: ./.github/actions/setup-monorepo
-            - run: pnpm db:migrate
-            - name: Ingest content
-              env:
-                  GITHUB_TOKEN: ${{ secrets.CONTENT_REPO_TOKEN }}
-                  CONTENT_REPO_GIT_URL: https://github.com/paulAlexSerban/content--paulserban.eu.git
-              run: |
-                  pnpm start
-
-            - name: Upload content DB
-              uses: actions/upload-artifact@v7
-              with:
-                  name: content-db
-                  path: database/output/content.db
-                  if-no-files-found: error
-                  retention-days: 1
-            - name: Upload quiz data
-              uses: actions/upload-artifact@v7
-              with:
-                  name: quiz-data
-                  path: frontend/apps/quiz-web-app/public/data/
-                  if-no-files-found: error
-                  retention-days: 1
-
-    build-portfolio:
-        needs: ingest-content
-        runs-on: ubuntu-latest
-        timeout-minutes: 20
-        steps:
-            - uses: actions/checkout@v7
-              with:
-                  ref: ${{ github.event.workflow_run.head_sha || github.sha }}
-            - uses: ./.github/actions/setup-monorepo
-
-            - name: Configure Pages
-              id: pages
-              uses: actions/configure-pages@v4
-
-            - name: Download content DB
-              uses: actions/download-artifact@v8
-              with:
-                  name: content-db
-                  path: database/output/
-
-            - name: Build portfolio-site
-              env:
-                  ASTRO_SITE: ${{ steps.pages.outputs.origin }}
-                  ASTRO_BASE: ${{ steps.pages.outputs.base_path }}/home
-                  DATABASE_PATH: ${{ github.workspace }}/database/output/content.db
-              run: pnpm --filter @prj--personal-portfolio--v3/frontend--portfolio-site build
-
-            - name: Upload portfolio artifact
-              uses: actions/upload-artifact@v7
-              with:
-                  name: portfolio-dist
-                  path: frontend/sites/portfolio-site/dist/
-                  if-no-files-found: error
-                  retention-days: 1
-
-    build-blog:
-        needs: ingest-content
-        runs-on: ubuntu-latest
-        timeout-minutes: 20
-        steps:
-            - uses: actions/checkout@v7
-              with:
-                  ref: ${{ github.event.workflow_run.head_sha || github.sha }}
-            - uses: ./.github/actions/setup-monorepo
-
-            - name: Configure Pages
-              id: pages
-              uses: actions/configure-pages@v4
-
-            - name: Download content DB
-              uses: actions/download-artifact@v8
-              with:
-                  name: content-db
-                  path: database/output/
-
-            - name: Build blog-site
-              env:
-                  ASTRO_SITE: ${{ steps.pages.outputs.origin }}
-                  ASTRO_BASE: ${{ steps.pages.outputs.base_path }}/blog
-                  DATABASE_PATH: ${{ github.workspace }}/database/output/content.db
-              run: pnpm --filter @prj--personal-portfolio--v3/frontend--blog-site build
-
-            - name: Upload blog artifact
-              uses: actions/upload-artifact@v7
-              with:
-                  name: blog-dist
-                  path: frontend/sites/blog-site/dist/
-                  if-no-files-found: error
-                  retention-days: 1
-
-    build-quiz:
-        needs: ingest-content
-        runs-on: ubuntu-latest
-        timeout-minutes: 20
-        steps:
-            - uses: actions/checkout@v7
-              with:
-                  ref: ${{ github.event.workflow_run.head_sha || github.sha }}
-            - uses: ./.github/actions/setup-monorepo
-
-            - name: Configure Pages
-              id: pages
-              uses: actions/configure-pages@v4
-
-            - name: Download quiz data
-              uses: actions/download-artifact@v8
-              with:
-                  name: quiz-data
-                  path: frontend/apps/quiz-web-app/public/data/
-
-            - name: Build quiz-web-app
-              env:
-                  VITE_APP_BASE: ${{ steps.pages.outputs.base_path }}/quiz
-              run: pnpm --filter @prj--personal-portfolio--v3/frontend--quiz-web-app build
-
-            - name: Upload quiz artifact
-              uses: actions/upload-artifact@v7
-              with:
-                  name: quiz-dist
-                  path: frontend/apps/quiz-web-app/dist/
-                  if-no-files-found: error
-                  retention-days: 1
-
-    build-news:
-        needs: ingest-content
-        runs-on: ubuntu-latest
-        timeout-minutes: 20
-        steps:
-            - uses: actions/checkout@v7
-              with:
-                  ref: ${{ github.event.workflow_run.head_sha || github.sha }}
-            - uses: ./.github/actions/setup-monorepo
-
-            - name: Configure Pages
-              id: pages
-              uses: actions/configure-pages@v4
-
-            - name: Download content DB
-              uses: actions/download-artifact@v8
-              with:
-                  name: content-db
-                  path: database/output/
-
-            - name: Build news-feed-site
-              env:
-                  ASTRO_SITE: ${{ steps.pages.outputs.origin }}
-                  ASTRO_BASE: ${{ steps.pages.outputs.base_path }}/news
-                  DATABASE_PATH: ${{ github.workspace }}/database/output/content.db
-              run: pnpm --filter @prj--personal-portfolio--v3/frontend--news-feed-site build
-
-            - name: Upload news artifact
-              uses: actions/upload-artifact@v7
-              with:
-                  name: news-dist
-                  path: frontend/sites/news-feed-site/dist/
-                  if-no-files-found: error
-                  retention-days: 1
-
-    merge:
-        needs: [build-portfolio, build-blog, build-quiz, build-news]
-        runs-on: ubuntu-latest
-        timeout-minutes: 10
+        outputs:
+            origin: ${{ steps.pages.outputs.origin }}
+            base_path: ${{ steps.pages.outputs.base_path }}
         steps:
             - name: Configure Pages
               id: pages
               uses: actions/configure-pages@v6
 
-            - name: Download portfolio artifact
+    build-site:
+        needs: resolve-pages
+        uses: ./.github/workflows/_build-site.yaml
+        with:
+            environment: dev
+            portfolio_url: ${{ needs.resolve-pages.outputs.origin }}
+            blog_url: ${{ needs.resolve-pages.outputs.origin }}
+            quiz_url: ${{ needs.resolve-pages.outputs.origin }}
+            news_url: ${{ needs.resolve-pages.outputs.origin }}
+            portfolio_base: ${{ needs.resolve-pages.outputs.base_path }}/home
+            blog_base: ${{ needs.resolve-pages.outputs.base_path }}/blog
+            quiz_base: ${{ needs.resolve-pages.outputs.base_path }}/quiz
+            news_base: ${{ needs.resolve-pages.outputs.base_path }}/news
+            emit_merged_bundle: true
+            content_source: live
+            ref: ${{ github.event.workflow_run.head_sha || github.sha }}
+        secrets: inherit
+
+    deploy:
+        needs: build-site
+        runs-on: ubuntu-latest
+        environment:
+            name: github-pages
+            url: ${{ steps.deployment.outputs.page_url }}
+        steps:
+            - name: Download site bundle
               uses: actions/download-artifact@v8
               with:
-                  name: portfolio-dist
-                  path: portfolio-dist/
-
-            - name: Download blog artifact
-              uses: actions/download-artifact@v4
-              with:
-                  name: blog-dist
-                  path: blog-dist/
-
-            - name: Download quiz artifact
-              uses: actions/download-artifact@v8
-              with:
-                  name: quiz-dist
-                  path: quiz-dist/
-
-            - name: Download news artifact
-              uses: actions/download-artifact@v8
-              with:
-                  name: news-dist
-                  path: news-dist/
-
-            - name: Merge outputs and scaffold navigation
-              env:
-                  REPO_BASE: ${{ steps.pages.outputs.base_path }}
-              run: |
-                  mkdir -p _site/home _site/blog _site/quiz _site/news
-                  cp -r portfolio-dist/. _site/home/
-                  cp -r blog-dist/. _site/blog/
-                  cp -r quiz-dist/. _site/quiz/
-                  cp -r news-dist/. _site/news/
-
-                  # Root -> /home redirect
-                  printf '<!DOCTYPE html><html><head><meta http-equiv="refresh" content="0;url=%s/home/"></head><body></body></html>\n' \
-                    "$REPO_BASE" > _site/index.html
-
-                  # 404 router: quiz SPA deep-links, portfolio/blog/news styled 404 pages
-                  cat > _site/404.html << EOF
-                  <!DOCTYPE html>
-                  <html>
-                    <head>
-                      <script>
-                        (function(){
-                          var l=window.location,b='$REPO_BASE',p=l.pathname;
-                          if(p.indexOf(b+'/quiz')===0){
-                            sessionStorage.setItem('spa:redirect',l.pathname+l.search);l.replace(b+'/quiz/');return;}
-                          if(p.indexOf(b+'/blog')===0){l.replace(b+'/blog/404.html');return;}
-                          if(p.indexOf(b+'/news')===0){l.replace(b+'/news/404.html');return;}
-                          if(p.indexOf(b+'/home')===0){l.replace(b+'/home/404.html');return;}
-                        l.replace(b+'/home/404.html');})();
-                      </script>
-                    </head>
-                    <body>Page not found.</body>
-                  </html>
-                  EOF
+                  name: site-bundle
+                  path: _site/
 
             - name: Upload Pages artifact
               uses: actions/upload-pages-artifact@v3
               with:
                   path: _site/
 
-    deploy:
-        needs: merge
-        runs-on: ubuntu-latest
-        environment:
-            name: github-pages
-            url: ${{ steps.deployment.outputs.page_url }}
-        steps:
             - name: Deploy to GitHub Pages
               id: deployment
               uses: actions/deploy-pages@v4

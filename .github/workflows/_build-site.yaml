@@ -62,6 +62,11 @@ on:
                 required: false
                 type: string
                 default: live
+            ref:
+                description: Git ref/SHA to checkout (e.g. workflow_run.head_sha). Defaults to the caller commit.
+                required: false
+                type: string
+                default: ''
 
 env:
     DATABASE_PATH: ${{ github.workspace }}/database/output/content.db
@@ -73,6 +78,8 @@ jobs:
         timeout-minutes: 30
         steps:
             - uses: actions/checkout@v7
+              with:
+                  ref: ${{ inputs.ref || github.sha }}
             - uses: ./.github/actions/setup-monorepo
             - run: pnpm db:migrate
 
@@ -114,6 +121,8 @@ jobs:
         timeout-minutes: 20
         steps:
             - uses: actions/checkout@v7
+              with:
+                  ref: ${{ inputs.ref || github.sha }}
             - uses: ./.github/actions/setup-monorepo
 
             - name: Download content DB
@@ -128,9 +137,9 @@ jobs:
                   ASTRO_BASE: ${{ inputs.portfolio_base }}
                   DATABASE_PATH: ${{ github.workspace }}/database/output/content.db
               run: |
-                  [ -n "${{ inputs.blog_url }}" ] && export PUBLIC_BLOG_URL="${{ inputs.blog_url }}"
-                  [ -n "${{ inputs.quiz_url }}" ] && export PUBLIC_QUIZ_URL="${{ inputs.quiz_url }}"
-                  [ -n "${{ inputs.news_url }}" ] && export PUBLIC_NEWS_URL="${{ inputs.news_url }}"
+                  [ -n "${{ inputs.blog_url }}" ] && export PUBLIC_BLOG_URL="${{ inputs.blog_url }}${{ inputs.blog_base }}"
+                  [ -n "${{ inputs.quiz_url }}" ] && export PUBLIC_QUIZ_URL="${{ inputs.quiz_url }}${{ inputs.quiz_base }}"
+                  [ -n "${{ inputs.news_url }}" ] && export PUBLIC_NEWS_URL="${{ inputs.news_url }}${{ inputs.news_base }}"
                   pnpm --filter @prj--personal-portfolio--v3/frontend--portfolio-site build
 
             - name: Upload portfolio artifact
@@ -147,6 +156,8 @@ jobs:
         timeout-minutes: 20
         steps:
             - uses: actions/checkout@v7
+              with:
+                  ref: ${{ inputs.ref || github.sha }}
             - uses: ./.github/actions/setup-monorepo
 
             - name: Download content DB
@@ -161,9 +172,9 @@ jobs:
                   ASTRO_BASE: ${{ inputs.blog_base }}
                   DATABASE_PATH: ${{ github.workspace }}/database/output/content.db
               run: |
-                  [ -n "${{ inputs.portfolio_url }}" ] && export PUBLIC_PORTFOLIO_URL="${{ inputs.portfolio_url }}"
-                  [ -n "${{ inputs.quiz_url }}" ] && export PUBLIC_QUIZ_URL="${{ inputs.quiz_url }}"
-                  [ -n "${{ inputs.news_url }}" ] && export PUBLIC_NEWS_URL="${{ inputs.news_url }}"
+                  [ -n "${{ inputs.portfolio_url }}" ] && export PUBLIC_PORTFOLIO_URL="${{ inputs.portfolio_url }}${{ inputs.portfolio_base }}"
+                  [ -n "${{ inputs.quiz_url }}" ] && export PUBLIC_QUIZ_URL="${{ inputs.quiz_url }}${{ inputs.quiz_base }}"
+                  [ -n "${{ inputs.news_url }}" ] && export PUBLIC_NEWS_URL="${{ inputs.news_url }}${{ inputs.news_base }}"
                   pnpm --filter @prj--personal-portfolio--v3/frontend--blog-site build
 
             - name: Upload blog artifact
@@ -180,6 +191,8 @@ jobs:
         timeout-minutes: 20
         steps:
             - uses: actions/checkout@v7
+              with:
+                  ref: ${{ inputs.ref || github.sha }}
             - uses: ./.github/actions/setup-monorepo
 
             - name: Download quiz data
@@ -192,9 +205,9 @@ jobs:
               env:
                   VITE_APP_BASE: ${{ inputs.quiz_base }}
               run: |
-                  [ -n "${{ inputs.portfolio_url }}" ] && export VITE_PORTFOLIO_URL="${{ inputs.portfolio_url }}"
-                  [ -n "${{ inputs.blog_url }}" ] && export VITE_BLOG_URL="${{ inputs.blog_url }}"
-                  [ -n "${{ inputs.news_url }}" ] && export VITE_NEWS_URL="${{ inputs.news_url }}"
+                  [ -n "${{ inputs.portfolio_url }}" ] && export VITE_PORTFOLIO_URL="${{ inputs.portfolio_url }}${{ inputs.portfolio_base }}"
+                  [ -n "${{ inputs.blog_url }}" ] && export VITE_BLOG_URL="${{ inputs.blog_url }}${{ inputs.blog_base }}"
+                  [ -n "${{ inputs.news_url }}" ] && export VITE_NEWS_URL="${{ inputs.news_url }}${{ inputs.news_base }}"
                   pnpm --filter @prj--personal-portfolio--v3/frontend--quiz-web-app build
 
             - name: Upload quiz artifact
@@ -211,6 +224,8 @@ jobs:
         timeout-minutes: 20
         steps:
             - uses: actions/checkout@v7
+              with:
+                  ref: ${{ inputs.ref || github.sha }}
             - uses: ./.github/actions/setup-monorepo
 
             - name: Download content DB
@@ -225,9 +240,9 @@ jobs:
                   ASTRO_BASE: ${{ inputs.news_base }}
                   DATABASE_PATH: ${{ github.workspace }}/database/output/content.db
               run: |
-                  [ -n "${{ inputs.portfolio_url }}" ] && export PUBLIC_PORTFOLIO_URL="${{ inputs.portfolio_url }}"
-                  [ -n "${{ inputs.blog_url }}" ] && export PUBLIC_BLOG_URL="${{ inputs.blog_url }}"
-                  [ -n "${{ inputs.quiz_url }}" ] && export PUBLIC_QUIZ_URL="${{ inputs.quiz_url }}"
+                  [ -n "${{ inputs.portfolio_url }}" ] && export PUBLIC_PORTFOLIO_URL="${{ inputs.portfolio_url }}${{ inputs.portfolio_base }}"
+                  [ -n "${{ inputs.blog_url }}" ] && export PUBLIC_BLOG_URL="${{ inputs.blog_url }}${{ inputs.blog_base }}"
+                  [ -n "${{ inputs.quiz_url }}" ] && export PUBLIC_QUIZ_URL="${{ inputs.quiz_url }}${{ inputs.quiz_base }}"
                   pnpm --filter @prj--personal-portfolio--v3/frontend--news-feed-site build
 
             - name: Upload news artifact
