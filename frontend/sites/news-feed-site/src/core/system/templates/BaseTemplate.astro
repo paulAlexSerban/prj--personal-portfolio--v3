@@ -17,6 +17,7 @@ const { title, description, ogTitle = title, ogDescription = description, canoni
 
 const pageDescription = description ?? 'Software engineering news digest by Paul Serban.';
 const canonical = canonicalUrl ?? new URL(Astro.url.pathname, Astro.site).href;
+const cfBeaconToken = import.meta.env.PUBLIC_CF_BEACON_TOKEN;
 ---
 
 <!doctype html>
@@ -46,5 +47,15 @@ const canonical = canonicalUrl ?? new URL(Astro.url.pathname, Astro.site).href;
             <slot />
         </main>
         <SiteFooter />
+        {
+            cfBeaconToken && (
+                <script
+                    is:inline
+                    defer
+                    src="https://static.cloudflareinsights.com/beacon.min.js"
+                    data-cf-beacon={JSON.stringify({ token: cfBeaconToken })}
+                ></script>
+            )
+        }
     </body>
 </html>

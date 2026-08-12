@@ -196,8 +196,23 @@ jobs:
                   echo "Stage deploys succeeded."
                   echo "Human approval received for production promotion."
 
-    build-site-prod:
+    # Reusable workflow jobs cannot set `environment:`, so production env vars
+    # are read here and passed as inputs. STAGE/TEST/DEV callers omit tokens.
+    read-prod-cf-beacon-tokens:
         needs: approve-prod
+        runs-on: ubuntu-latest
+        environment: production
+        outputs:
+            portfolio: ${{ vars.CF_BEACON_TOKEN_PORTFOLIO }}
+            blog: ${{ vars.CF_BEACON_TOKEN_BLOG }}
+            news: ${{ vars.CF_BEACON_TOKEN_NEWS }}
+            quiz: ${{ vars.CF_BEACON_TOKEN_QUIZ }}
+        steps:
+            - name: Read Cloudflare Web Analytics tokens
+              run: echo "Passing production CF beacon tokens into the prod build (empty if unset)."
+
+    build-site-prod:
+        needs: read-prod-cf-beacon-tokens
         uses: ./.github/workflows/_build-site.yaml
         with:
             environment: production
@@ -211,6 +226,10 @@ jobs:
             news_base: /
             emit_merged_bundle: false
             artifact_retention_days: 14
+            cf_beacon_token_portfolio: ${{ needs.read-prod-cf-beacon-tokens.outputs.portfolio }}
+            cf_beacon_token_blog: ${{ needs.read-prod-cf-beacon-tokens.outputs.blog }}
+            cf_beacon_token_news: ${{ needs.read-prod-cf-beacon-tokens.outputs.news }}
+            cf_beacon_token_quiz: ${{ needs.read-prod-cf-beacon-tokens.outputs.quiz }}
         secrets: inherit
 
     deploy-prod-portfolio:

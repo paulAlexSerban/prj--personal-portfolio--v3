@@ -67,6 +67,26 @@ on:
                 required: false
                 type: string
                 default: ''
+            cf_beacon_token_portfolio:
+                description: Cloudflare Web Analytics token for portfolio-site. Pass only on production; leave empty elsewhere.
+                required: false
+                type: string
+                default: ''
+            cf_beacon_token_blog:
+                description: Cloudflare Web Analytics token for blog-site. Pass only on production; leave empty elsewhere.
+                required: false
+                type: string
+                default: ''
+            cf_beacon_token_news:
+                description: Cloudflare Web Analytics token for news-feed-site. Pass only on production; leave empty elsewhere.
+                required: false
+                type: string
+                default: ''
+            cf_beacon_token_quiz:
+                description: Cloudflare Web Analytics token for quiz-web-app. Pass only on production; leave empty elsewhere.
+                required: false
+                type: string
+                default: ''
 
 env:
     DATABASE_PATH: ${{ github.workspace }}/database/output/content.db
@@ -136,6 +156,7 @@ jobs:
                   ASTRO_SITE: ${{ inputs.portfolio_url }}
                   ASTRO_BASE: ${{ inputs.portfolio_base }}
                   DATABASE_PATH: ${{ github.workspace }}/database/output/content.db
+                  PUBLIC_CF_BEACON_TOKEN: ${{ inputs.environment == 'production' && inputs.cf_beacon_token_portfolio || '' }}
               run: |
                   [ -n "${{ inputs.blog_url }}" ] && export PUBLIC_BLOG_URL="${{ inputs.blog_url }}${{ inputs.blog_base }}"
                   [ -n "${{ inputs.quiz_url }}" ] && export PUBLIC_QUIZ_URL="${{ inputs.quiz_url }}${{ inputs.quiz_base }}"
@@ -171,6 +192,7 @@ jobs:
                   ASTRO_SITE: ${{ inputs.blog_url }}
                   ASTRO_BASE: ${{ inputs.blog_base }}
                   DATABASE_PATH: ${{ github.workspace }}/database/output/content.db
+                  PUBLIC_CF_BEACON_TOKEN: ${{ inputs.environment == 'production' && inputs.cf_beacon_token_blog || '' }}
               run: |
                   [ -n "${{ inputs.portfolio_url }}" ] && export PUBLIC_PORTFOLIO_URL="${{ inputs.portfolio_url }}${{ inputs.portfolio_base }}"
                   [ -n "${{ inputs.quiz_url }}" ] && export PUBLIC_QUIZ_URL="${{ inputs.quiz_url }}${{ inputs.quiz_base }}"
@@ -204,6 +226,7 @@ jobs:
             - name: Build quiz-web-app
               env:
                   VITE_APP_BASE: ${{ inputs.quiz_base }}
+                  VITE_CF_BEACON_TOKEN: ${{ inputs.environment == 'production' && inputs.cf_beacon_token_quiz || '' }}
               run: |
                   [ -n "${{ inputs.portfolio_url }}" ] && export VITE_PORTFOLIO_URL="${{ inputs.portfolio_url }}${{ inputs.portfolio_base }}"
                   [ -n "${{ inputs.blog_url }}" ] && export VITE_BLOG_URL="${{ inputs.blog_url }}${{ inputs.blog_base }}"
@@ -239,6 +262,7 @@ jobs:
                   ASTRO_SITE: ${{ inputs.news_url }}
                   ASTRO_BASE: ${{ inputs.news_base }}
                   DATABASE_PATH: ${{ github.workspace }}/database/output/content.db
+                  PUBLIC_CF_BEACON_TOKEN: ${{ inputs.environment == 'production' && inputs.cf_beacon_token_news || '' }}
               run: |
                   [ -n "${{ inputs.portfolio_url }}" ] && export PUBLIC_PORTFOLIO_URL="${{ inputs.portfolio_url }}${{ inputs.portfolio_base }}"
                   [ -n "${{ inputs.blog_url }}" ] && export PUBLIC_BLOG_URL="${{ inputs.blog_url }}${{ inputs.blog_base }}"
