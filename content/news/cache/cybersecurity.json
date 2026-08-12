@@ -1,8 +1,348 @@
 {
   "category": "cybersecurity",
   "label": "Cybersecurity",
-  "fetchedAt": "2026-08-11T06:41:25.372Z",
+  "fetchedAt": "2026-08-12T07:01:11.122Z",
   "items": [
+    {
+      "slug": "727a0c70dda11073db25f9cd",
+      "guid": "https://www.cio.com/article/4208366/nvidias-half-trillion-dollar-ai-investment-fund-could-impact-enterprise-chip-pricing-availability-2.html",
+      "title": "Nvidia’s half-trillion-dollar AI investment fund could impact enterprise chip pricing, availability",
+      "link": "https://www.cio.com/article/4208366/nvidias-half-trillion-dollar-ai-investment-fund-could-impact-enterprise-chip-pricing-availability-2.html",
+      "source": "CIO",
+      "sourceUrl": "https://www.cio.com/feed/",
+      "summary": "In an attempt to facilitate the buildout of AI infrastructure over time, Nvidia and six financial partners said they are creating a fund of more than $500 billion of third-party capital. The impact of such a cash infusion on enterprise AI is uncertain, but analysts fear that it …",
+      "publishedAt": "2026-08-12T03:17:21.000Z"
+    },
+    {
+      "slug": "a0b8784b0aa53597f1788b22",
+      "guid": "https://www.darkreading.com/application-security/microsofts-patch-tuesday-deluge-continues",
+      "title": "Microsoft's Patch Tuesday Deluge Continues With August Updates",
+      "link": "https://www.darkreading.com/application-security/microsofts-patch-tuesday-deluge-continues",
+      "source": "Dark Reading",
+      "sourceUrl": "https://www.darkreading.com/rss.xml",
+      "summary": "Security experts say prioritization should be the main focus for the August updates, not the massive CVE volume.",
+      "publishedAt": "2026-08-11T21:42:34.000Z"
+    },
+    {
+      "slug": "caf6b0ff36039a21dc754726",
+      "guid": "https://krebsonsecurity.com/?p=74106",
+      "title": "Microsoft Plugs Nearly 400 Security Holes",
+      "link": "https://krebsonsecurity.com/2026/08/microsoft-plugs-nearly-400-security-holes/",
+      "source": "Krebson Security",
+      "sourceUrl": "https://krebsonsecurity.com/feed/",
+      "summary": "Microsoft today released updates to remedy at least 398 security vulnerabilities in its Windows operating systems and supported software, including one weakness that is already being actively exploited and two others that were publicly detailed prior to today.",
+      "publishedAt": "2026-08-11T21:28:35.000Z"
+    },
+    {
+      "slug": "5556828abfadd68d045e264b",
+      "guid": "https://www.darkreading.com/cyberattacks-data-breaches/gunra-ransomware-gang-fortinet-flaws-bypasses-mfa",
+      "title": "Gunra Ransomware Gang Exploits Fortinet Flaws, Bypasses MFA",
+      "link": "https://www.darkreading.com/cyberattacks-data-breaches/gunra-ransomware-gang-fortinet-flaws-bypasses-mfa",
+      "source": "Dark Reading",
+      "sourceUrl": "https://www.darkreading.com/rss.xml",
+      "summary": "The ransomware-as-a-service operation is finding success against critical infrastructure targets with leaked Conti code and old flaws in firewalls and VPN appliances.",
+      "publishedAt": "2026-08-11T21:16:25.000Z"
+    },
+    {
+      "slug": "28c101b8922617cc07f4c2d9",
+      "guid": "https://danielmiessler.com/blog/creativity-vs-consumption",
+      "title": "Creativity vs. Consumption",
+      "link": "https://danielmiessler.com/blog/creativity-vs-consumption?utm_source=rss&utm_medium=feed&utm_campaign=website",
+      "source": "Daniel Miessler",
+      "sourceUrl": "https://danielmiessler.com/feed.rss",
+      "summary": "Charcoal sketch of a seated figure whose left arm dissolves into a cascade of purple glowing phones while their right hand builds a warm wooden tower/images/creativity-vs-consumption-header.webp/images/creativity-vs-consumption-header.webp If there's one metric to watch for mana…",
+      "publishedAt": "2026-08-11T20:35:48.000Z"
+    },
+    {
+      "slug": "36069f37dfa6017d29252838",
+      "guid": "https://thehackernews.com/2026/08/microsoft-patches-398-flaws-including.html",
+      "title": "Microsoft Patches 398 Flaws Including a Windows Driver Zero-Day Under Active Attack",
+      "link": "https://thehackernews.com/2026/08/microsoft-patches-398-flaws-including.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "Microsoft released its monthly security updates on Tuesday, and one of the flaws it closed is already being used in attacks. The bug sits in a core Windows kernel driver that handles network socket operations. An attacker with code already running on a machine can use it to esca…",
+      "publishedAt": "2026-08-11T20:10:55.000Z"
+    },
+    {
+      "slug": "04af503b5714c1c91b1ef420",
+      "guid": "https://thehackernews.com/2026/08/kimwolf-v7-android-botnet-makes-http2.html",
+      "title": "Kimwolf v7 Android Botnet Makes HTTP/2 DDoS Traffic Look Like Legitimate Browsing",
+      "link": "https://thehackernews.com/2026/08/kimwolf-v7-android-botnet-makes-http2.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "Cybersecurity researchers have discovered a new version of the Kimwolf/AISURU Android and Internet of Things (IoT) botnet that comes with significant improvements to improve its operational resilience and conduct distributed denial-of-service (DDoS) attacks. The new version, tra…",
+      "publishedAt": "2026-08-11T19:36:37.000Z"
+    },
+    {
+      "slug": "be56bbf2c6cceb7decc37283",
+      "guid": "https://thehackernews.com/2026/08/zoom-annotation-flaws-could-let-meeting.html",
+      "title": "Zoom Annotation Flaws Could Let a Meeting Participant Hijack Another Attendee's Client",
+      "link": "https://thehackernews.com/2026/08/zoom-annotation-flaws-could-let-meeting.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "Anyone sharing their screen on a Zoom call could have taken over the computers of everyone watching, and anyone watching could have taken over the presenter's. The flaw sat in the annotation tool, the feature that lets participants draw and type on a shared screen, and it asked …",
+      "publishedAt": "2026-08-11T19:08:47.000Z"
+    },
+    {
+      "slug": "cf109a85f8e0dda535e98283",
+      "guid": "https://thehackernews.com/2026/08/sandworm-linked-uac-0145-uses-fake-job.html",
+      "title": "Sandworm-Linked UAC-0145 Uses Fake Job Interviews to Push VPN That Can Run Commands",
+      "link": "https://thehackernews.com/2026/08/sandworm-linked-uac-0145-uses-fake-job.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "The Computer Emergency Response Team of Ukraine (CERT-UA) has disclosed details of a new social engineering campaign orchestrated by Russian nation-state threat actors targeting IT workers in the country by masquerading as recruiters to trick them into installing malware. CERT-U…",
+      "publishedAt": "2026-08-11T18:36:47.000Z"
+    },
+    {
+      "slug": "37fee6a8015ee542abc0264a",
+      "guid": "https://www.cio.com/article/4208094/server-prices-to-rise-by-up-to-87-at-ovhcloud-2.html",
+      "title": "Server prices to rise by up to 87% at OVHcloud",
+      "link": "https://www.cio.com/article/4208094/server-prices-to-rise-by-up-to-87-at-ovhcloud-2.html",
+      "source": "CIO",
+      "sourceUrl": "https://www.cio.com/feed/",
+      "summary": "OVH is increasing the prices of its servers, some by as much as 87%, for both new and existing customers, blaming AI’s insatiable demand driving the rising cost of the RAM and storage it uses in its data centers. The European cloud operator specializes in low-cost bare metal and…",
+      "publishedAt": "2026-08-11T17:47:13.000Z"
+    },
+    {
+      "slug": "83f9b708b132a336fbed77b5",
+      "guid": "https://thehackernews.com/2026/08/researchers-disclose-ai-assisted.html",
+      "title": "Researchers Disclose AI-Assisted SharePoint Exploit Chain Reaching Unauthenticated RCE",
+      "link": "https://thehackernews.com/2026/08/researchers-disclose-ai-assisted.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "Security researchers found a way to enter Microsoft SharePoint servers as any user, including an administrator, with no valid account. A significant part of the work that found it was done through an AI agent. The flaw, tracked as CVE-2026-55040 (CVSS 9.1), affects SharePoint Se…",
+      "publishedAt": "2026-08-11T16:47:44.000Z"
+    },
+    {
+      "slug": "5eca0a7b43d27d46b66c3042",
+      "guid": "https://thehackernews.com/2026/08/deadlock-ransomware-uses-polygon-smart.html",
+      "title": "DeadLock Ransomware Uses Polygon Smart Contracts to Make Extortion Infra Harder to Disrupt",
+      "link": "https://thehackernews.com/2026/08/deadlock-ransomware-uses-polygon-smart.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "The ransomware group known as DeadLock has been observed using decentralized infrastructure to facilitate victim communications and data leak operations in a bid to improve operational resilience. \"Its recovery ecosystem combines the Session messaging network with blockchain-bac…",
+      "publishedAt": "2026-08-11T16:35:27.000Z"
+    },
+    {
+      "slug": "fc89dac8d15f7ed0f73ebe68",
+      "guid": "https://danielmiessler.com/blog/where-watermarks-hide-in-text",
+      "title": "Where an AI Watermark Can Hide in Plain Text",
+      "link": "https://danielmiessler.com/blog/where-watermarks-hide-in-text?utm_source=rss&utm_medium=feed&utm_campaign=website",
+      "source": "Daniel Miessler",
+      "sourceUrl": "https://danielmiessler.com/feed.rss",
+      "summary": "Diagram of the four layers a text watermark can live in, from encoding down to meaning, with the two bypasses canonical regeneration and prose rewriting crossing out the layers they strip/images/where-watermarks-hide-in-text-layers.webp/images/where-watermarks-hide-in-text-layer…",
+      "publishedAt": "2026-08-11T16:30:00.000Z"
+    },
+    {
+      "slug": "04c538869a81cdd518fea70c",
+      "guid": "https://orca.security/?p=74386",
+      "title": "5 Key Takeaways from Black Hat USA 2026",
+      "link": "https://orca.security/resources/blog/5-key-takeaways-from-black-hat-usa-2026/",
+      "source": "Orca Security Blog",
+      "sourceUrl": "https://orca.security/resources/blog/feed/",
+      "summary": "Black Hat USA 2026 ran August 1 through 6 in Las Vegas this year, days of training, briefings, presentations, and of course, the vendor showroom, that drew cybersecurity professionals and enthusiasts from across the industry. This year’s event spotlighted how quickly AI has move…",
+      "publishedAt": "2026-08-11T16:17:11.000Z"
+    },
+    {
+      "slug": "8b38c249ae79e73c3628becf",
+      "guid": "https://www.schneier.com/?p=72456",
+      "title": "AI Genie in the Wild",
+      "link": "https://www.schneier.com/blog/archives/2026/08/ai-genie-in-the-wild.html",
+      "source": "Schneier on Security",
+      "sourceUrl": "https://www.schneier.com/feed/",
+      "summary": "When I give talks about AI genies, I use this sort of example as a hypothetical. It’s happened. The story is from Australia. Someone named Andrew tasked OpenClaw to book gym classes for him. And…. Minutes later, his AI agent reported it had discovered a way to book Andrew into c…",
+      "publishedAt": "2026-08-11T15:55:11.000Z"
+    },
+    {
+      "slug": "bb4d846c5e2b301987d47eb9",
+      "guid": "https://www.cio.com/article/4208047/what-cios-must-get-right-before-ai-can-scale.html",
+      "title": "What CIOs must get right before AI can scale",
+      "link": "https://www.cio.com/article/4208047/what-cios-must-get-right-before-ai-can-scale.html",
+      "source": "CIO",
+      "sourceUrl": "https://www.cio.com/feed/",
+      "summary": "AI is reshaping operations faster than organizations can keep up. Technology leaders — from chief data officers to CIOs and CTOs — are under pressure to get the fundamentals right. That means building the data infrastructure AI requires, preparing workforces for roles that are c…",
+      "publishedAt": "2026-08-11T15:38:54.000Z"
+    },
+    {
+      "slug": "675e74d93fef14dcb83ed843",
+      "guid": "https://danielmiessler.com/blog/nobody-asked-for-ai",
+      "title": "\"Nobody Asked for A.I.\" Is a Stupid Argument",
+      "link": "https://danielmiessler.com/blog/nobody-asked-for-ai?utm_source=rss&utm_medium=feed&utm_campaign=website",
+      "source": "Daniel Miessler",
+      "sourceUrl": "https://danielmiessler.com/feed.rss",
+      "summary": "Charcoal sketch of a colossal kneeling figure made of hundreds of interlocking hands, reaching down with open palms toward a vast crowd of suffering people/images/nobody-asked-for-ai-header.webp/images/nobody-asked-for-ai-header.webp With lots of competition, the argument that \"…",
+      "publishedAt": "2026-08-11T15:31:40.000Z"
+    },
+    {
+      "slug": "989bd22c003062d55150a280",
+      "guid": "https://thehackernews.com/2026/08/openai-launches-gpt-56-cyber-with.html",
+      "title": "OpenAI Launches GPT-5.6-Cyber with Reduced Safeguards for Exploit Development",
+      "link": "https://thehackernews.com/2026/08/openai-launches-gpt-56-cyber-with.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "OpenAI on Monday unveiled a new cybersecurity-focused model called GPT‑5.6‑Cyber that it said is focused on vulnerability research, penetration testing, and incident response. \"Built on GPT‑5.6 Sol, it is trained to improve capabilities on several specialized cybersecurity tasks…",
+      "publishedAt": "2026-08-11T13:11:23.000Z"
+    },
+    {
+      "slug": "c2a228c2f2594c8b99db1b3c",
+      "guid": "https://thehackernews.com/2026/08/a-malicious-sim-card-can-run-attacker.html",
+      "title": "A Malicious SIM Card Can Run Attacker Code Inside the Modems Behind Cellular IoT Devices",
+      "link": "https://thehackernews.com/2026/08/a-malicious-sim-card-can-run-attacker.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "A malicious SIM card can order the device it sits in to run commands of the attacker's choosing. On the cellular modules built into electric-vehicle chargers, industrial routers, and car telematics units, that is enough to take the whole device over. Researchers at the Universit…",
+      "publishedAt": "2026-08-11T12:05:03.000Z"
+    },
+    {
+      "slug": "c0a1d300dc464a20f49ecf96",
+      "guid": "https://thehackernews.com/2026/08/mozilla-revokes-firefox-and-thunderbird.html",
+      "title": "Mozilla Revokes Firefox and Thunderbird Linux Signing Key After Key Lands in Private Repo",
+      "link": "https://thehackernews.com/2026/08/mozilla-revokes-firefox-and-thunderbird.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "Mozilla has scrapped the cryptographic key behind Firefox and Thunderbird downloads for Linux after an unencrypted copy of it was committed by mistake to one of the company's own private code repositories. That key is how a user, or a Linux distribution packaging the browser, co…",
+      "publishedAt": "2026-08-11T12:04:51.000Z"
+    },
+    {
+      "slug": "4e33775ec050933eec26c462",
+      "guid": "https://www.cio.com/article/4207908/openai-targets-heavy-users-with-premium-chatgpt-business-seats.html",
+      "title": "OpenAI targets heavy users with premium ChatGPT Business seats",
+      "link": "https://www.cio.com/article/4207908/openai-targets-heavy-users-with-premium-chatgpt-business-seats.html",
+      "source": "CIO",
+      "sourceUrl": "https://www.cio.com/feed/",
+      "summary": "OpenAI is introducing a higher-priced “Premium” tier for its ChatGPT Business offering, allowing enterprises to assign higher-capacity access to select users alongside standard licences – a move analysts said is about enterprise AI vendors redesigning pricing to capture more val…",
+      "publishedAt": "2026-08-11T12:00:00.000Z"
+    },
+    {
+      "slug": "5019d0f42a889b71cb4a45e0",
+      "guid": "https://thehackernews.com/2026/08/researchers-built-fake-crypto-startup.html",
+      "title": "Researchers Built a Fake Crypto Startup and Hired Three Suspected North Korean IT Workers",
+      "link": "https://thehackernews.com/2026/08/researchers-built-fake-crypto-startup.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "Security researchers invented a cryptocurrency startup, advertised developer jobs, and hired three people they believe were North Korean operatives. Every virtual machine the company issued was recording. The onboarding paperwork is the part hiring teams can use. The first hire …",
+      "publishedAt": "2026-08-11T11:35:03.000Z"
+    },
+    {
+      "slug": "388030a15ae9da7439f5c7c6",
+      "guid": "https://www.schneier.com/?p=72374",
+      "title": "AI for Military Support",
+      "link": "https://www.schneier.com/blog/archives/2026/08/ai-for-military-support.html",
+      "source": "Schneier on Security",
+      "sourceUrl": "https://www.schneier.com/feed/",
+      "summary": "Interesting empirical research: “Black Box Warfare: Human Judgment and Military Decision-Making in the Age of AI.” Abstract: How is AI transforming decision-making in modern conflict? This study provides a unique empirical window into that question by deploying a high-fidelity r…",
+      "publishedAt": "2026-08-11T11:18:07.000Z"
+    },
+    {
+      "slug": "907775511c55d7265813cfd5",
+      "guid": "https://www.cio.com/article/4207454/dont-automate-bad-workflows-why-ai-should-begin-with-redesign.html",
+      "title": "Don’t automate bad workflows: Why AI should begin with redesign",
+      "link": "https://www.cio.com/article/4207454/dont-automate-bad-workflows-why-ai-should-begin-with-redesign.html",
+      "source": "CIO",
+      "sourceUrl": "https://www.cio.com/feed/",
+      "summary": "Artificial intelligence has quickly become one of the biggest priorities in the executive suite. Organizations are investing heavily in new capabilities, employees are experimenting with AI every day, and technology leaders are under pressure to identify opportunities that impro…",
+      "publishedAt": "2026-08-11T11:00:00.000Z"
+    },
+    {
+      "slug": "cbe9dc6d5ced81791b3363fc",
+      "guid": "https://thehackernews.com/2026/08/researchers-turn-usb-auto-install-into.html",
+      "title": "Researchers Turn USB Auto-Install Into a Full SYSTEM Takeover on Windows 11",
+      "link": "https://thehackernews.com/2026/08/researchers-turn-usb-auto-install-into.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "Windows Plug and Play can be abused to fetch signed vendor software for an emulated USB device and execute privileged installation components that researchers chained to SYSTEM access on a fully updated Windows 11 machine. The same PnP path can be triggered over Remote Desktop w…",
+      "publishedAt": "2026-08-11T10:48:26.000Z"
+    },
+    {
+      "slug": "f80c6be54bb53b3b566439a1",
+      "guid": "https://orca.security/?p=74379",
+      "title": "Cloud Compliance Solutions for Enterprises: The Automation Checklist",
+      "link": "https://orca.security/resources/blog/cloud-compliance-solutions-for-enterprises/",
+      "source": "Orca Security Blog",
+      "sourceUrl": "https://orca.security/resources/blog/feed/",
+      "summary": "Enterprise teams managing cloud environments across multiple providers and regions know the pain of tracking compliance manually. Spreadsheets fall out of date within hours, evidence collection for a single audit can consume weeks of engineering time, and every new framework add…",
+      "publishedAt": "2026-08-11T10:25:02.000Z"
+    },
+    {
+      "slug": "6c0fe6acb311af0f2aff2d8d",
+      "guid": "https://thehackernews.com/2026/08/malicious-mcp-servers-can-split.html",
+      "title": "Malicious MCP Servers Can Split Instructions to Make AI Coding Agents Exfiltrate Secrets",
+      "link": "https://thehackernews.com/2026/08/malicious-mcp-servers-can-split.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "A malicious tool server connected to an AI coding assistant can quietly walk off with SSH keys, environment secrets, source code, and customer data without ever sending one obviously harmful instruction. The trick can work even after a blunt version of the same theft is refused:…",
+      "publishedAt": "2026-08-11T10:24:00.000Z"
+    },
+    {
+      "slug": "be078705fa6f074349eb14ac",
+      "guid": "https://www.cio.com/article/4206442/7-mistakes-it-leaders-make-when-deploying-ai-agents.html",
+      "title": "7 mistakes IT leaders make when deploying AI agents",
+      "link": "https://www.cio.com/article/4206442/7-mistakes-it-leaders-make-when-deploying-ai-agents.html",
+      "source": "CIO",
+      "sourceUrl": "https://www.cio.com/feed/",
+      "summary": "CIOs are under pressure to deploy more AI agents and demonstrate their business value. But a “move fast and break things” approach can lead to rogue AI agents, AI debt, business impacts, and compliance issues. Avoiding mistakes starts with a strong plan and foundational practice…",
+      "publishedAt": "2026-08-11T10:01:00.000Z"
+    },
+    {
+      "slug": "2ff601d35d3650dd84a4051a",
+      "guid": "https://www.cio.com/article/4207449/why-the-cio-is-becoming-the-most-commercial-role-in-the-boardroom.html",
+      "title": "Why the CIO is becoming the most commercial role in the boardroom",
+      "link": "https://www.cio.com/article/4207449/why-the-cio-is-becoming-the-most-commercial-role-in-the-boardroom.html",
+      "source": "CIO",
+      "sourceUrl": "https://www.cio.com/feed/",
+      "summary": "My mum has asked me the same question for almost 30 years. “So…what is it you actually do?” I’ve explained it hundreds of times. I lead the team that look after the network, the servers, the applications and cyber security that help the business work. And more recently, AI. She’…",
+      "publishedAt": "2026-08-11T10:00:00.000Z"
+    },
+    {
+      "slug": "f0346e89f695527d0f9ee5c3",
+      "guid": "https://www.cio.com/article/4206427/how-mercedes-benz-is-scaling-ai-powered-automation.html",
+      "title": "How Mercedes-Benz is scaling AI-powered business automation",
+      "link": "https://www.cio.com/article/4206427/how-mercedes-benz-is-scaling-ai-powered-automation.html",
+      "source": "CIO",
+      "sourceUrl": "https://www.cio.com/feed/",
+      "summary": "At Mercedes-Benz, “Digital First” has long been more than just a theoretical concept; it’s a lived strategy, as a visit to the Digital Factory Campus in Berlin demonstrated. Now, the automaker aims to take the next step in scaling artificial intelligence: Together with the Germa…",
+      "publishedAt": "2026-08-11T09:30:00.000Z"
+    },
+    {
+      "slug": "8b3f1bd3315e097f2c4030a0",
+      "guid": "https://thehackernews.com/2026/08/gunra-ransomware-exploits-fortinet-and.html",
+      "title": "Gunra Ransomware Exploits Fortinet and Schneider Electric Flaws to Breach Networks",
+      "link": "https://thehackernews.com/2026/08/gunra-ransomware-exploits-fortinet-and.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "Cybersecurity and intelligence agencies from South Korea and the U.S. warned of Gunra ransomware attacks targeting critical infrastructure sectors and organizations across the world. Targets of these attacks include healthcare and public health, financial services, government se…",
+      "publishedAt": "2026-08-11T09:16:24.000Z"
+    },
+    {
+      "slug": "b898cdf17bf099f3999a1e95",
+      "guid": "https://www.cio.com/article/4207438/the-code-review-crisis-and-how-you-should-rebuild-review-models.html",
+      "title": "The code review crisis and how you should rebuild review models",
+      "link": "https://www.cio.com/article/4207438/the-code-review-crisis-and-how-you-should-rebuild-review-models.html",
+      "source": "CIO",
+      "sourceUrl": "https://www.cio.com/feed/",
+      "summary": "“We’re generating more code than ever. My senior engineers are drowning in review,” a VP of engineering at a mid-sized software company told me. I hear this from engineering leaders almost every week. AI was supposed to fix delivery, but it just moved the bottleneck. If you feel…",
+      "publishedAt": "2026-08-11T09:00:00.000Z"
+    },
+    {
+      "slug": "fd63449583ede0dfad872d5e",
+      "guid": "https://www.cio.com/article/4207444/why-data-control-is-the-real-industry-5-0.html",
+      "title": "From ‘dumb iron’ to smart machines: Why data control is the real Industry 5.0",
+      "link": "https://www.cio.com/article/4207444/why-data-control-is-the-real-industry-5-0.html",
+      "source": "CIO",
+      "sourceUrl": "https://www.cio.com/feed/",
+      "summary": "On the modern factory floor, the phrase “industrial equipment” no longer tells the whole story. It conjures images of steel, hydraulics, conveyor belts and machinery built to perform the same task with unwavering precision day after day. Physical engineering remains fundamental,…",
+      "publishedAt": "2026-08-11T09:00:00.000Z"
+    },
+    {
+      "slug": "21ad1a2bf2fd1f2ae23eb848",
+      "guid": "https://thehackernews.com/2026/08/hackers-breach-polish-power-plant.html",
+      "title": "Hackers Breach Polish Power Plant Controls via Private Cellular Network and Shut Turbine",
+      "link": "https://thehackernews.com/2026/08/hackers-breach-polish-power-plant.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "Attackers shut down a steam turbine and the process-water treatment system at a Polish combined heat and power plant by coming in over the private cellular network the local grid operator uses to reach remote equipment. The plant supplies heat to roughly 50,000 residents. Recove…",
+      "publishedAt": "2026-08-11T06:55:45.000Z"
+    },
     {
       "slug": "39f20a787adea7b285cb8318",
       "guid": "https://thehackernews.com/2026/08/bdthemes-supply-chain-attack-poisons.html",
@@ -116,11 +456,11 @@
     {
       "slug": "365051d8aa91b23ad8f4a74f",
       "guid": "https://www.darkreading.com/cyber-risk/sherlock-holmes-was-the-og-social-engineer",
-      "title": "Sherlock Holmes was the “OG” Social Engineer",
+      "title": "Sherlock Holmes Was the 'OG' Social Engineer",
       "link": "https://www.darkreading.com/cyber-risk/sherlock-holmes-was-the-og-social-engineer",
       "source": "Dark Reading",
       "sourceUrl": "https://www.darkreading.com/rss.xml",
-      "summary": "The crime solver wore disguises, spied on targets, and built intelligence networks long before modern-day tactics emerged. He has lessons for today’s ethical- and nonethical-hat hackers.",
+      "summary": "The crime solver wore disguises, spied on targets, and built intelligence networks long before modern-day tactics emerged. He has lessons for today's ethical- and unethical hackers.",
       "publishedAt": "2026-08-10T15:59:27.000Z"
     },
     {
@@ -444,16 +784,6 @@
       "publishedAt": "2026-08-07T12:50:00.000Z"
     },
     {
-      "slug": "882234da8eb0a84151668d2b",
-      "guid": "https://www.cio.com/article/4206312/there-are-two-completely-different-roles-called-fde.html",
-      "title": "There are two completely different roles called ‘FDE’",
-      "link": "https://www.cio.com/article/4206312/there-are-two-completely-different-roles-called-fde.html",
-      "source": "CIO",
-      "sourceUrl": "https://www.cio.com/feed/",
-      "summary": "There’s something very attractive about saying “we embed very closely with our customers and just figure it out with them”, especially since the company that started “forward deploying engineers” is growing 84% with $5B+ revenue. But “forward deployed engineer” is a vague term a…",
-      "publishedAt": "2026-08-07T12:00:00.000Z"
-    },
-    {
       "slug": "b31d99cb8265a08d7049d64d",
       "guid": "https://thehackernews.com/2026/08/growing-up-hard-way.html",
       "title": "Growing Up The Hard Way",
@@ -464,16 +794,6 @@
       "publishedAt": "2026-08-07T11:55:26.000Z"
     },
     {
-      "slug": "d629de605027be15dd5868d6",
-      "guid": "https://www.cio.com/article/4206679/amd-wants-to-make-enterprise-inference-cheaper-and-faster-with-chips-from-taalas.html",
-      "title": "AMD wants to make enterprise inference cheaper and faster with chips from Taalas",
-      "link": "https://www.cio.com/article/4206679/amd-wants-to-make-enterprise-inference-cheaper-and-faster-with-chips-from-taalas.html",
-      "source": "CIO",
-      "sourceUrl": "https://www.cio.com/feed/",
-      "summary": "As enterprises look for ways to cut the cost of running AI models in production, AMD is betting that not every AI workload will be best served by a power-hungry general-purpose GPU. AMD has agreed to buy Taalas, the Canadian designer of chips that permanently embed a trained AI …",
-      "publishedAt": "2026-08-07T11:10:47.000Z"
-    },
-    {
       "slug": "897a98755e75ee3ffcc0387b",
       "guid": "https://thehackernews.com/2026/08/18-year-old-linux-sctp-flaw-could-let.html",
       "title": "18-Year-Old Linux SCTP Flaw Could Let Local Users Gain Root and Escape Containers",
@@ -482,16 +802,6 @@
       "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
       "summary": "A use-after-free bug in Linux's SCTP networking code can be turned into full root on a host, and Tencent researchers say they used it to escape a container and reach the machine underneath. The flaw has existed since 2008. The fix already shipped: stable kernels 7.1.6, 6.18.42, …",
       "publishedAt": "2026-08-07T11:10:33.000Z"
-    },
-    {
-      "slug": "caa50b73c425a3936dcff62f",
-      "guid": "https://www.cio.com/article/4206307/beyond-chatbots-how-embedded-genai-is-transforming-banking-application-development.html",
-      "title": "Beyond chatbots: How embedded GenAI is transforming banking application development",
-      "link": "https://www.cio.com/article/4206307/beyond-chatbots-how-embedded-genai-is-transforming-banking-application-development.html",
-      "source": "CIO",
-      "sourceUrl": "https://www.cio.com/feed/",
-      "summary": "Business application development is entering a new operating model. The traditional approach of gathering requirements, designing screens, writing services, integrating systems, testing, fixing defects and preparing release documentation still exists, but it is no longer suffici…",
-      "publishedAt": "2026-08-07T11:00:00.000Z"
     },
     {
       "slug": "db7fd783f4de3ba0565565c4",
@@ -534,56 +844,6 @@
       "publishedAt": "2026-08-07T10:09:54.000Z"
     },
     {
-      "slug": "8eef80f4dfaf01465ea25f92",
-      "guid": "https://www.cio.com/article/4201772/inside-the-post-merger-it-overhaul-at-alaska-airlines.html",
-      "title": "Inside the post-merger IT overhaul at Alaska Airlines",
-      "link": "https://www.cio.com/article/4201772/inside-the-post-merger-it-overhaul-at-alaska-airlines.html",
-      "source": "CIO",
-      "sourceUrl": "https://www.cio.com/feed/",
-      "summary": "As an aviation industry veteran with over 30 years of experience, Alaska Airlines CIO Charu Jain is all too familiar with the technology integration process that often follows a big airline merger. By her count, she’s been involved in four such projects. But none, she says, has …",
-      "publishedAt": "2026-08-07T10:01:00.000Z"
-    },
-    {
-      "slug": "301eec427be261f71789a7e9",
-      "guid": "https://www.cio.com/article/4206304/your-ai-hiring-tool-isnt-an-hr-problem-its-a-security-one.html",
-      "title": "Your AI hiring tool isn’t an HR problem. It’s a security one",
-      "link": "https://www.cio.com/article/4206304/your-ai-hiring-tool-isnt-an-hr-problem-its-a-security-one.html",
-      "source": "CIO",
-      "sourceUrl": "https://www.cio.com/feed/",
-      "summary": "For years, applicant tracking systems and recruiting platforms were treated as HR technology: Important for workflow, efficiency, compliance and candidate experience, but rarely viewed as core security infrastructure. That assumption no longer holds. Once AI begins reading resum…",
-      "publishedAt": "2026-08-07T10:00:00.000Z"
-    },
-    {
-      "slug": "d6aa47795754daedc41dae24",
-      "guid": "https://www.cio.com/article/4206393/how-ai-is-changing-the-business-analyst-role-for-the-better.html",
-      "title": "How AI is changing the business analyst role for the better",
-      "link": "https://www.cio.com/article/4206393/how-ai-is-changing-the-business-analyst-role-for-the-better.html",
-      "source": "CIO",
-      "sourceUrl": "https://www.cio.com/feed/",
-      "summary": "AI’s impact has been felt across nearly every industry, and its rise has already started to alter several roles in tech, including that of the business analyst. While the rise of agentic AI may have some questioning whether AI will replace business analyst jobs entirely, as we’v…",
-      "publishedAt": "2026-08-07T09:30:00.000Z"
-    },
-    {
-      "slug": "c1543eae9c54547031e09bc2",
-      "guid": "https://www.cio.com/article/4202993/enterprise-wide-ai-transformation-starts-with-change-management.html",
-      "title": "Enterprise-wide AI transformation starts with change management",
-      "link": "https://www.cio.com/article/4202993/enterprise-wide-ai-transformation-starts-with-change-management.html",
-      "source": "CIO",
-      "sourceUrl": "https://www.cio.com/feed/",
-      "summary": "Technology leaders are facing a sobering reality: They’re investing heavily in AI, yet many initiatives continue to struggle to move beyond experimentation and pilot programs. For example, Gartner found only 28% of AI use cases in infrastructure and operations fully succeed and …",
-      "publishedAt": "2026-08-07T09:00:00.000Z"
-    },
-    {
-      "slug": "05efd05c551b71107ec275d0",
-      "guid": "https://www.cio.com/article/4206260/deepfakes-are-targeting-your-executives-heres-what-actually-works.html",
-      "title": "Deepfakes are targeting your executives. Here’s what actually works",
-      "link": "https://www.cio.com/article/4206260/deepfakes-are-targeting-your-executives-heres-what-actually-works.html",
-      "source": "CIO",
-      "sourceUrl": "https://www.cio.com/feed/",
-      "summary": "Two years ago, I sat across from a chief financial officer who had just spent forty minutes on a video call authorizing what he believed was a legitimate acquisition payment. The call included his CEO and two board members, all speaking in familiar voices, all making the kind of…",
-      "publishedAt": "2026-08-07T09:00:00.000Z"
-    },
-    {
       "slug": "2749aa1817e210383a8864db",
       "guid": "https://thehackernews.com/2026/08/malware-can-abuse-windows-hello-for.html",
       "title": "Malware Can Abuse Windows Hello for Business Keys for Persistent Entra ID Access",
@@ -612,16 +872,6 @@
       "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
       "summary": "A new analysis has uncovered that the threat actor tracked as TeamPCP has been active on the cybercrime scene as far back as 2020, indicating the group has been compromising internet-facing infrastructure for years before training their sights on the software supply chain. \"The …",
       "publishedAt": "2026-08-07T06:50:05.000Z"
-    },
-    {
-      "slug": "804bc0cba059c63b4e58ddbc",
-      "guid": "https://www.cio.com/article/4206332/cloudflare-wants-to-provide-the-operating-system-for-the-ai-first-enterprise.html",
-      "title": "Cloudflare wants to provide the operating system for the AI-first enterprise",
-      "link": "https://www.cio.com/article/4206332/cloudflare-wants-to-provide-the-operating-system-for-the-ai-first-enterprise.html",
-      "source": "CIO",
-      "sourceUrl": "https://www.cio.com/feed/",
-      "summary": "Traditional operating systems (OS) were built to manage hardware, files, apps, and users on a device, but Cloudflare says the agentic AI era requires a whole new format. The company this week announced Cloudflare OS, which connects AI agents, enterprise data and context, interna…",
-      "publishedAt": "2026-08-07T00:25:18.000Z"
     },
     {
       "slug": "844584cc082091b1aaf52a94",
@@ -714,16 +964,6 @@
       "publishedAt": "2026-08-06T15:24:31.000Z"
     },
     {
-      "slug": "3c4506be8f97ebd194883ab0",
-      "guid": "https://www.cio.com/article/4206237/why-governance-is-the-accelerator-for-coding-agents.html",
-      "title": "Why governance is the accelerator for coding agents",
-      "link": "https://www.cio.com/article/4206237/why-governance-is-the-accelerator-for-coding-agents.html",
-      "source": "CIO",
-      "sourceUrl": "https://www.cio.com/feed/",
-      "summary": "Governance is what lets a team run coding agents and stand behind what they ship. As more code originates from agents, the question every engineering leader is now answering is not how fast the work moves, but who owns it and how it gets checked before it lands. The teams pullin…",
-      "publishedAt": "2026-08-06T14:12:53.000Z"
-    },
-    {
       "slug": "2f0aebf81dae7b013ce0c77f",
       "guid": "https://orca.security/?p=74233",
       "title": "Vulnerability Scanning Tools: Top 10 Compared for 2026",
@@ -762,246 +1002,6 @@
       "sourceUrl": "https://orca.security/resources/blog/feed/",
       "summary": "Key Takeaways A cloud security control is a mechanism that makes one security requirement true in a running environment. Default encryption on a storage account is a control. A policy that rejects a public bucket at deployment time is a control. The framework line saying data mu…",
       "publishedAt": "2026-08-06T12:50:00.000Z"
-    },
-    {
-      "slug": "5ebab680430f16a7131701f4",
-      "guid": "https://thehackernews.com/2026/08/over-4400-rockwell-plcs-exposed-online.html",
-      "title": "Over 4,400 Rockwell PLCs Exposed Online, 22 Found in Water Attack Cities",
-      "link": "https://thehackernews.com/2026/08/over-4400-rockwell-plcs-exposed-online.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "Forescout found 22 internet-facing Rockwell Automation programmable logic controllers (PLCs) in cities hit by recent cyberattacks on US water utilities. Nineteen used the same mobile carrier network. Its August 3 scan counted 4,407 exposed Rockwell controllers worldwide, includi…",
-      "publishedAt": "2026-08-06T12:16:58.000Z"
-    },
-    {
-      "slug": "4f4e67e509edb3c0d493c0d4",
-      "guid": "https://thehackernews.com/2026/08/cryptojs-weak-rng-behind-57-million-in.html",
-      "title": "CryptoJS Weak RNG Behind $5.7 Million in Drains Affects Five Crypto Wallet Apps",
-      "link": "https://thehackernews.com/2026/08/cryptojs-weak-rng-behind-57-million-in.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "Coinspect has identified CryptoJS.lib.WordArray.random() as the weak random number generator behind the Ill Bloom wallet drains. Introduced in the JavaScript cryptography library 12 years ago, the function supplied weak entropy that affected wallet apps used to generate recovery…",
-      "publishedAt": "2026-08-06T11:49:48.000Z"
-    },
-    {
-      "slug": "73f30e8ce33026a3376e8b9c",
-      "guid": "https://thehackernews.com/2026/08/webkit-proxy-bypasses-can-expose-real.html",
-      "title": "Apple iCloud Private Relay Can Expose Real IPs Through WebKit Proxy Bypasses",
-      "link": "https://thehackernews.com/2026/08/webkit-proxy-bypasses-can-expose-real.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "Cybersecurity researchers have disclosed a security issue with Apple's iCloud Private Relay tool that can expose a user's real IP address. Introduced with iOS 15, iCloud Private Relay employs a dual-hop architecture to ensure users' privacy by routing their Safari web traffic th…",
-      "publishedAt": "2026-08-06T11:33:08.000Z"
-    },
-    {
-      "slug": "376accbc001ddf742f0da6f6",
-      "guid": "https://thehackernews.com/2026/08/ai-recommendation-poisoning-how-ask-ai.html",
-      "title": "AI Recommendation Poisoning: How \"Ask AI\" Buttons Silently Alter LLM Memory",
-      "link": "https://thehackernews.com/2026/08/ai-recommendation-poisoning-how-ask-ai.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "A new class of prompt injection is spreading across commercial websites. It requires no malware, no stolen credentials, and no zero-day exploit. It abuses a standard feature built into almost every major AI assistant: pre-filled deep links. We observed production websites embedd…",
-      "publishedAt": "2026-08-06T11:30:00.000Z"
-    },
-    {
-      "slug": "926b046bebb4f9b9035b7b40",
-      "guid": "https://www.schneier.com/?p=72376",
-      "title": "Adversarial Clothing Designed to Fool Facial Recognition Systems",
-      "link": "https://www.schneier.com/blog/archives/2026/08/adversarial-clothing-designed-to-fool-facial-recognition-systems.html",
-      "source": "Schneier on Security",
-      "sourceUrl": "https://www.schneier.com/feed/",
-      "summary": "There are many companies manufacturing adversarial clothing designed to confuse facial recognition systems. It’s a cool idea, but I worry that it’s mostly security theater: “Our patterns play with that chaos, confuse algorithms and make it way harder to pin you down,” he said. B…",
-      "publishedAt": "2026-08-06T11:04:51.000Z"
-    },
-    {
-      "slug": "a15ab079dccc802b93e06e2f",
-      "guid": "https://grahamcluley.com/?p=17351881",
-      "title": "Apple’s bug bounty program is drowning in so much AI slop, it is in danger of missing serious exploits",
-      "link": "https://www.bitdefender.com/en-us/blog/hotforsecurity/apple-bug-bounty-ai-missing-exploits",
-      "source": "Graham Cluley",
-      "sourceUrl": "https://grahamcluley.com/feed/",
-      "summary": "Apple has imposed strict new submission limits on its bug bounty portal after finding itself overwhelmed by low-quality, AI generated vulnerability reports - many of which were found to be describing security flaws that simply didn't exist. Read more in my article on the Hot for…",
-      "publishedAt": "2026-08-06T10:26:02.000Z"
-    },
-    {
-      "slug": "4c338a28ee4465db8153a5a7",
-      "guid": "https://thehackernews.com/2026/08/attackers-compile-khunt-inside-oracle.html",
-      "title": "Attackers Compile khunt Inside Oracle to Turn SQL Injection Into Windows SYSTEM Access",
-      "link": "https://thehackernews.com/2026/08/attackers-compile-khunt-inside-oracle.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "Attackers broke into an organization's Oracle database through a SQL injection flaw in a public-facing web application, then installed a post-exploitation toolkit without writing an executable to disk. They fed Java source code to the database, let Oracle compile it into stored …",
-      "publishedAt": "2026-08-06T09:19:23.000Z"
-    },
-    {
-      "slug": "f0d571f1a1d49753b19f208c",
-      "guid": "https://thehackernews.com/2026/08/aws-google-and-vercel-patch-agent-flaws.html",
-      "title": "AWS, Google, and Vercel Agent Flaws Let Attackers Trigger Tools Without Running the Model",
-      "link": "https://thehackernews.com/2026/08/aws-google-and-vercel-patch-agent-flaws.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "Security flaws in agent infrastructure from Amazon Web Services (AWS), Google, and Vercel let untrusted or forged instructions reach an agent's tools with no check that a model turn had authorized them. In several of the attack paths, the model never ran at all, so system prompt…",
-      "publishedAt": "2026-08-06T08:57:30.000Z"
-    },
-    {
-      "slug": "869ad889d89225fb691b8dbf",
-      "guid": "https://thehackernews.com/2026/08/chinese-made-zbtlink-routers-ship-with.html",
-      "title": "Chinese-Made Zbtlink Routers Ship With Backdoor That Opens Unauthenticated Root Shells",
-      "link": "https://thehackernews.com/2026/08/chinese-made-zbtlink-routers-ship-with.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "Cybersecurity researchers have disclosed details of a \"factory-shipped backdoor\" implanted in at least 20 Chinese router models from Zbtlink. According to a new report from VulnCheck, the implant appears in all 21 firmware images currently available from Zbtlink that span more t…",
-      "publishedAt": "2026-08-06T08:05:22.000Z"
-    },
-    {
-      "slug": "ee969749e0fc37aac1b848cf",
-      "guid": "https://thehackernews.com/2026/08/ransom-cartel-creator-gets-16-years-in.html",
-      "title": "Ransom Cartel Creator Gets 16 Years in Prison for Operating Ransomware-as-a-Service",
-      "link": "https://thehackernews.com/2026/08/ransom-cartel-creator-gets-16-years-in.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "A federal judge in Alexandria, Virginia, sentenced Maksim Silnikau to 16 years in prison on August 5 for creating and running Ransom Cartel, the ransomware-as-a-service operation he stood up in 2021. Between 2021 and 2023, Ransom Cartel conspirators attacked at least 18 companie…",
-      "publishedAt": "2026-08-06T07:19:54.000Z"
-    },
-    {
-      "slug": "0024bf7a69c1bf7d874e6490",
-      "guid": "https://thehackernews.com/2026/08/cisa-flags-teamcity-cve-2026-63077-rce.html",
-      "title": "CISA Flags TeamCity CVE-2026-63077 RCE Flaw Under Active Exploitation in the Wild",
-      "link": "https://thehackernews.com/2026/08/cisa-flags-teamcity-cve-2026-63077-rce.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "A newly patched security flaw impacting on-premise versions of JetBrains TeamCity has come under active exploitation in the wild, according to the U.S. Cybersecurity and Infrastructure Security Agency (CISA). The vulnerability in question is CVE-2026-63077 (CVSS score: 9.8), a c…",
-      "publishedAt": "2026-08-06T06:51:43.000Z"
-    },
-    {
-      "slug": "b41d695ada7747c6903de3ba",
-      "guid": "https://thehackernews.com/2026/08/snowflake-hacker-pleads-guilty-over.html",
-      "title": "Snowflake Hacker Pleads Guilty Over Breaches Affecting at Least 100 Million People",
-      "link": "https://thehackernews.com/2026/08/snowflake-hacker-pleads-guilty-over.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "Connor Riley Moucka pleaded guilty in Seattle federal court on Wednesday to computer fraud, wire fraud, aggravated identity theft and a related conspiracy over the 2024 breaches of Snowflake customer accounts. The intrusions reached at least 165 organizations and exposed records…",
-      "publishedAt": "2026-08-06T06:04:30.000Z"
-    },
-    {
-      "slug": "96ec203c7324f913033e4ecb",
-      "guid": "https://www.darkreading.com/threat-intelligence/ai-global-crime-syndicates-fraud-nirvana",
-      "title": "AI Sends Global Crime Syndicates Into Fraud Nirvana",
-      "link": "https://www.darkreading.com/threat-intelligence/ai-global-crime-syndicates-fraud-nirvana",
-      "source": "Dark Reading",
-      "sourceUrl": "https://www.darkreading.com/rss.xml",
-      "summary": "Organized crime is convincingly scamming at scale, making billions thanks to AI-enabled voice cloning, deepfake real-time video overlays, LLM-driven persona management, and automated translation.",
-      "publishedAt": "2026-08-05T23:35:28.000Z"
-    },
-    {
-      "slug": "94fa4cff81804874ef22c35a",
-      "guid": "https://www.darkreading.com/cyber-risk/ai-browsers-zero-click-agent-hijacking",
-      "title": "AI Browsers Vulnerable to 'PleaseFix' Zero-Click Agent Hijacking",
-      "link": "https://www.darkreading.com/cyber-risk/ai-browsers-zero-click-agent-hijacking",
-      "source": "Dark Reading",
-      "sourceUrl": "https://www.darkreading.com/rss.xml",
-      "summary": "Attackers can take control of agents through malicious instructions hidden in content supplied to AI browsers, and there's no simple fix for the threat.",
-      "publishedAt": "2026-08-05T23:30:00.000Z"
-    },
-    {
-      "slug": "c43fe1e678e7bd976a2c80fe",
-      "guid": "https://grahamcluley.com/?p=17351871",
-      "title": "Smashing Security podcast #479: How a fake police officer nearly stole Graham’s cryptocurrency",
-      "link": "https://grahamcluley.com/smashing-security-podcast-479-how-a-fake-police-officer-nearly-stole-grahams-cryptocurrency/",
-      "source": "Graham Cluley",
-      "sourceUrl": "https://grahamcluley.com/feed/",
-      "summary": "Graham gets a phone call from the police. Well, someone who sounds convincingly like the police. There's just one small problem: what they really want is the 24-word seed key to Graham's cryptocurrency wallet. Meanwhile, if you've stayed in a hotel recently, the free Wi-Fi you c…",
-      "publishedAt": "2026-08-05T23:10:20.000Z"
-    },
-    {
-      "slug": "cc708ad7bf475114698f6efd",
-      "guid": "https://www.darkreading.com/application-security/no-perfect-fix-ai-browser-prompt-injection-flaws",
-      "title": "No Perfect Fix for AI Browser Prompt Injection Flaws",
-      "link": "https://www.darkreading.com/application-security/no-perfect-fix-ai-browser-prompt-injection-flaws",
-      "source": "Dark Reading",
-      "sourceUrl": "https://www.darkreading.com/rss.xml",
-      "summary": "AI browsers from top vendors remain vulnerable to prompt injection attacks despite multiple security guardrails, according to new research.",
-      "publishedAt": "2026-08-05T22:18:25.000Z"
-    },
-    {
-      "slug": "fd8aaf9651bd05511671da19",
-      "guid": "https://www.darkreading.com/cyberattacks-data-breaches/css-hidden-threat-lurking-inbox",
-      "title": "CSS: The Hidden Threat Lurking in Your Inbox",
-      "link": "https://www.darkreading.com/cyberattacks-data-breaches/css-hidden-threat-lurking-inbox",
-      "source": "Dark Reading",
-      "sourceUrl": "https://www.darkreading.com/rss.xml",
-      "summary": "CSS was once just about design. Now researchers warn it's powerful enough to exfiltrate data from webmail — and some vendors aren't prepared.",
-      "publishedAt": "2026-08-05T19:47:55.000Z"
-    },
-    {
-      "slug": "e29be7d49e1e22b574053f7c",
-      "guid": "https://www.darkreading.com/endpoint-security/15-tp-link-bugs-risks-zero-trust-provisioning",
-      "title": "15 TP-Link Bugs Expose Risks in Zero-Trust Provisioning",
-      "link": "https://www.darkreading.com/endpoint-security/15-tp-link-bugs-risks-zero-trust-provisioning",
-      "source": "Dark Reading",
-      "sourceUrl": "https://www.darkreading.com/rss.xml",
-      "summary": "Researchers are calling attention to the risks inherent in automated network device provisioning, using a world-leading device manufacturer as a case study.",
-      "publishedAt": "2026-08-05T19:08:36.000Z"
-    },
-    {
-      "slug": "f35a2396c40124f822cb2488",
-      "guid": "https://thehackernews.com/2026/08/over-250-clickfix-domains-use-browser.html",
-      "title": "Over 250 ClickFix Domains Use Browser Fingerprinting to Hide macOS Malware Lures",
-      "link": "https://thehackernews.com/2026/08/over-250-clickfix-domains-use-browser.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "A macOS ClickFix operation spanning more than 250 front-end domains now fingerprints visitors before deciding whether to show them a malware lure, a change Microsoft Threat Intelligence tracked on infrastructure it had been watching for weeks. The server-side gate hides the mali…",
-      "publishedAt": "2026-08-05T18:44:31.000Z"
-    },
-    {
-      "slug": "55ca866b1715118aff12e9dd",
-      "guid": "https://thehackernews.com/2026/08/openai-disrupts-poipet-scam-network.html",
-      "title": "OpenAI Disrupts Poipet Scam Network Using ChatGPT Across Multiple Fraud Schemes",
-      "link": "https://thehackernews.com/2026/08/openai-disrupts-poipet-scam-network.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "OpenAI said it disrupted a Cambodia-based scam operation that used its generative artificial intelligence (AI) chatbot ChatGPT to facilitate a wide range of investment, romance, gambling, and law enforcement impersonation schemes. To that end, it banned a coordinated network of …",
-      "publishedAt": "2026-08-05T18:33:47.000Z"
-    },
-    {
-      "slug": "74341b09f4aaa7dc765e73eb",
-      "guid": "https://www.darkreading.com/vulnerabilities-threats/flaws-google-apk-python-agent-to-agent-attack",
-      "title": "Flaws in Google APK for Python Unlock Agent-to-Agent Attack",
-      "link": "https://www.darkreading.com/vulnerabilities-threats/flaws-google-apk-python-agent-to-agent-attack",
-      "source": "Dark Reading",
-      "sourceUrl": "https://www.darkreading.com/rss.xml",
-      "summary": "Google has fixed the issues, which exploited a trust boundary between two AI agents with different privilege levels to trigger automation that could compromise the supply chain.",
-      "publishedAt": "2026-08-05T18:03:31.000Z"
-    },
-    {
-      "slug": "45c69e058649c376d611ed04",
-      "guid": "https://thehackernews.com/2026/08/poison-claude-sells-discounted-claude.html",
-      "title": "Poison Claude Sells Discounted Claude Access While Its Operator Sees Every Customer Prompt",
-      "link": "https://thehackernews.com/2026/08/poison-claude-sells-discounted-claude.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "Cybersecurity researchers have discovered more than half-a-dozen services advertisements for illegal access to artificial intelligence (AI) models on underground cybercrime forums and messaging platforms. One such service, Poison Claude, claims to offer access to Anthropic's lar…",
-      "publishedAt": "2026-08-05T15:36:03.000Z"
-    },
-    {
-      "slug": "0edaefefe6d3d073166eb96f",
-      "guid": "https://thehackernews.com/2026/08/paperclip-ai-flaws-let-attackers-run.html",
-      "title": "Paperclip AI Flaws Let Attackers Run Host Commands via Malicious Agent Imports",
-      "link": "https://thehackernews.com/2026/08/paperclip-ai-flaws-let-attackers-run.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "Two security flaws in Paperclip could let attackers execute commands on a network server or a developer's computer. Paperclip is an open-source control plane for teams of artificial intelligence (AI) agents, and both paths rely on importing a malicious agent and starting it. A t…",
-      "publishedAt": "2026-08-05T15:14:05.000Z"
-    },
-    {
-      "slug": "bf12718855e8aa2ad5138a00",
-      "guid": "https://thehackernews.com/2026/08/veeam-terraform-mcp-django-patch.html",
-      "title": "Veeam, Terraform MCP, Django Patch Critical Flaws, Led by CVSS 10.0 Cross-Tenant Bug",
-      "link": "https://thehackernews.com/2026/08/veeam-terraform-mcp-django-patch.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "HashiCorp, Veeam, and the Django Software Foundation have patched 11 vulnerabilities across Terraform MCP Server, Veeam Service Provider Console, and Django. The three most serious: An unauthenticated flaw in Veeam's console that hands over a managed agent's credentials, rated 9…",
-      "publishedAt": "2026-08-05T14:27:30.000Z"
     }
   ]
 }

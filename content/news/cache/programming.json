@@ -1,7 +1,7 @@
 {
   "category": "programming",
   "label": "Programming",
-  "fetchedAt": "2026-08-11T06:41:25.372Z",
+  "fetchedAt": "2026-08-12T07:01:11.122Z",
   "items": [
     {
       "slug": "13e3b548c70aa7407703ac05",
@@ -12,6 +12,36 @@
       "sourceUrl": "https://hynek.me/index.xml",
       "summary": "Python appears to be everywhere nowadays! How did it happen, that a language that almost died in the Python 2 to 3 process is now the lingua franca a default choice when people talk about programming? There must be some secret superpower and I think I found it!",
       "publishedAt": "2025-09-19T00:00:00.000Z"
+    },
+    {
+      "slug": "b3e73cd39d536b9f9c119756",
+      "guid": "https://scratchpad.blog/how-to-debug-rails-applications-and-tests-in-vs-code/",
+      "title": "How to Debug Rails Applications and Tests in VS Code",
+      "link": "https://scratchpad.blog/how-to-debug-rails-applications-and-tests-in-vs-code/",
+      "source": "ScratchPad",
+      "sourceUrl": "https://scratchpad.blog/feed.xml",
+      "summary": "Debugging is an essential yet often tedious task for software developers. While scattering print statements throughout your code is a common approach, using a proper debugger is far more efficient. For Ruby on Rails developers, VS Code offers robust debugging capabilities throug…",
+      "publishedAt": "2025-07-16T00:00:00.000Z"
+    },
+    {
+      "slug": "37d77c960cbb2c8efb668ae3",
+      "guid": "https://scratchpad.blog/effortless-sqlite-backups-for-rails-with-litestream/",
+      "title": "Effortless SQLite Backups for Rails with Litestream",
+      "link": "https://scratchpad.blog/effortless-sqlite-backups-for-rails-with-litestream/",
+      "source": "ScratchPad",
+      "sourceUrl": "https://scratchpad.blog/feed.xml",
+      "summary": "SQLite has experienced a remarkable renaissance in recent years, particularly in the Rails community. Since Rails 8, it is the default database for newly generated Rails applications. With its simplicity, performance, and zero-configuration setup, SQLite has become an attractive…",
+      "publishedAt": "2025-06-26T00:00:00.000Z"
+    },
+    {
+      "slug": "f988f9810e51519b5eaec079",
+      "guid": "https://scratchpad.blog/devops/howto/securely-authenticating-to-aws-from-github-actions-workflows/",
+      "title": "Securely Authenticating to AWS from GitHub Actions Workflows",
+      "link": "https://scratchpad.blog/devops/howto/securely-authenticating-to-aws-from-github-actions-workflows/",
+      "source": "ScratchPad",
+      "sourceUrl": "https://scratchpad.blog/feed.xml",
+      "summary": "GitHub Actions Workflows have become the go-to solution for running CI/CD workflows for projects hosted on GitHub. Its seamless integration with GitHub repositories makes it a natural choice for automating tasks like building, testing, and deploying applications. For Developers …",
+      "publishedAt": "2025-06-06T00:00:00.000Z"
     },
     {
       "slug": "9561714819c8be0544ac35a1",
@@ -884,6 +914,26 @@
       "publishedAt": "2019-08-27T00:00:00.000Z"
     },
     {
+      "slug": "03db52810026b53ed6cff660",
+      "guid": "https://scratchpad.blog/the-one-skill-every-software-developer-should-master/",
+      "title": "The one skill every Software Developer should master",
+      "link": "https://scratchpad.blog/the-one-skill-every-software-developer-should-master/",
+      "source": "ScratchPad",
+      "sourceUrl": "https://scratchpad.blog/feed.xml",
+      "summary": "There’s no doubt that the main skill of any software developer is to write good code regardless of the programming language and the platform he is specialized on. This means he must be able to write code that is concise, readable, testable, performant, etc. For this, a developer…",
+      "publishedAt": "2019-06-27T00:00:00.000Z"
+    },
+    {
+      "slug": "4b444d819e546eee3e9ffb0b",
+      "guid": "https://scratchpad.blog/theres-just-one-reason-for-using-the-cloud/",
+      "title": "There’s just one reason for using the Cloud",
+      "link": "https://scratchpad.blog/theres-just-one-reason-for-using-the-cloud/",
+      "source": "ScratchPad",
+      "sourceUrl": "https://scratchpad.blog/feed.xml",
+      "summary": "In the past years I’ve worked with various clients to migrate existing workloads to the cloud and to build new ones in a cloud-native fashion. Most of the time the most important goal for using the cloud were expectations regarding significant cost reductions. This might be a re…",
+      "publishedAt": "2019-06-23T00:00:00.000Z"
+    },
+    {
       "slug": "aea2ded6d523d47b82d45159",
       "guid": "https://hynek.me/articles/simple-python-azure-pipelines/",
       "title": "Python in Azure Pipelines, Step by Step",
@@ -904,6 +954,26 @@
       "publishedAt": "2019-05-28T00:00:00.000Z"
     },
     {
+      "slug": "a106a939d28d91b191f656c5",
+      "guid": "https://scratchpad.blog/devops/6-reasons-for-using-the-aws-devops-tools/",
+      "title": "6 reasons for using the AWS DevOps tools",
+      "link": "https://scratchpad.blog/devops/6-reasons-for-using-the-aws-devops-tools/",
+      "source": "ScratchPad",
+      "sourceUrl": "https://scratchpad.blog/feed.xml",
+      "summary": "AWS provides a set of services for supporting the DevOps tool chain. These services are CodeCommit, CodePipeline, CodeBuild and CodeDeploy. With these tools it’s easy to run the complete DevOps Pipeline on AWS. Why should you use these tools instead of the myriad other services …",
+      "publishedAt": "2019-05-25T00:00:00.000Z"
+    },
+    {
+      "slug": "a09ceced237041d3c235ab0f",
+      "guid": "https://scratchpad.blog/howto/how-to-use-codedeploy-with-aws-lightsail/",
+      "title": "How to use CodeDeploy with AWS Lightsail",
+      "link": "https://scratchpad.blog/howto/how-to-use-codedeploy-with-aws-lightsail/",
+      "source": "ScratchPad",
+      "sourceUrl": "https://scratchpad.blog/feed.xml",
+      "summary": "Automating the deployment of your application is key for fast development cycles. CodeDeploy is a service offered by AWS to perform this task. Unfortunately, AWS Lightsail Instances are not supported by default by CodeDeploy. This post shows how CodeDeplpy can be set up to deplo…",
+      "publishedAt": "2019-05-16T00:00:00.000Z"
+    },
+    {
       "slug": "9325af6e89a96e5ec51d6764",
       "guid": "https://hynek.me/articles/hallway-track/",
       "title": "The Price of the Hallway Track",
@@ -914,6 +984,16 @@
       "publishedAt": "2019-05-15T18:00:00.000Z"
     },
     {
+      "slug": "34abe6c96fb3f4449e0b77b5",
+      "guid": "https://scratchpad.blog/howto/how-to-use-efs-with-aws-lightsail/",
+      "title": "How to use EFS with AWS Lightsail",
+      "link": "https://scratchpad.blog/howto/how-to-use-efs-with-aws-lightsail/",
+      "source": "ScratchPad",
+      "sourceUrl": "https://scratchpad.blog/feed.xml",
+      "summary": "Update 2019-09-01: Integrating EFS with Lightsail instances does not seem to work anymore. The information described in this article might be helpful nevertheless. Please get into touch with me if you find a working solution. Scaling web applications can be tricky. One obstacle …",
+      "publishedAt": "2019-05-09T00:00:00.000Z"
+    },
+    {
       "slug": "c89d13944be8420958aabf4e",
       "guid": "https://hynek.me/talks/python-foss/",
       "title": "Maintaining a Python Project When It’s Not Your Job",
@@ -922,86 +1002,6 @@
       "sourceUrl": "https://hynek.me/index.xml",
       "summary": "PyPI is a gold mine of great packages but those packages have to be written first. More often than not, projects that millions of people depend on are written and maintained by only one person. If you’re unlucky, that person is you! This talk tries to lighten the burden by givin…",
       "publishedAt": "2019-05-03T00:00:00.000Z"
-    },
-    {
-      "slug": "818f3e241c6bf2db2e04beb7",
-      "guid": "https://bitsofco.de/removing-duplicate-objects-from-an-array-is-hard/",
-      "title": "Removing duplicate objects from an Array (is hard)",
-      "link": "https://bitsofco.de/removing-duplicate-objects-from-an-array-is-hard/",
-      "source": "Bits of Code",
-      "sourceUrl": "https://bitsofco.de/feed/feed.xml",
-      "summary": "Let’s say we have an array of objects such as the following: const books = [ { name: \"My Sister the Serial Killer\", author: \"Oyinkan Braithwaite\" }, { name: \"Educated\", author: \"Tara Westover\" }, { name: \"My Sister the Serial Killer\", author: \"Oyinkan Braithwaite\" } ]; The first…",
-      "publishedAt": "2019-03-12T00:00:00.000Z"
-    },
-    {
-      "slug": "ddf37538ac32e687b1173717",
-      "guid": "https://bitsofco.de/tips-for-making-interactive-elements-accessible-on-mobile-devices/",
-      "title": "Tips for making interactive elements accessible on mobile devices",
-      "link": "https://bitsofco.de/tips-for-making-interactive-elements-accessible-on-mobile-devices/",
-      "source": "Bits of Code",
-      "sourceUrl": "https://bitsofco.de/feed/feed.xml",
-      "summary": "The Web Content Accessibility Guidelines (WCAG) is a set a guidelines for how to make websites accessible. The second version was published in 2008, before websites were available on mobile devices in any meaningful way. A few months ago, the WCAG was updated to version 2.1, whi…",
-      "publishedAt": "2019-02-12T00:00:00.000Z"
-    },
-    {
-      "slug": "85914f4b422dc92c7d7f5f3a",
-      "guid": "https://bitsofco.de/revisiting-the-abbr-element/",
-      "title": "Revisiting the abbr element",
-      "link": "https://bitsofco.de/revisiting-the-abbr-element/",
-      "source": "Bits of Code",
-      "sourceUrl": "https://bitsofco.de/feed/feed.xml",
-      "summary": "A few weeks ago, I wrote about how to make the abbr element work for touchscreen, keyboard, and mouse. My suggestion involved making the element focusable with the tabindex attribute and using pseudo-elements to create a tooltip from the title attribute. CSS abbr[title]:hover::a…",
-      "publishedAt": "2019-02-05T00:00:00.000Z"
-    },
-    {
-      "slug": "e523f082adde4d0b6448fb51",
-      "guid": "https://bitsofco.de/what-self-skipwaiting-does-to-the-service-worker-lifecycle/",
-      "title": "What self.skipWaiting() does to the service worker lifecycle",
-      "link": "https://bitsofco.de/what-self-skipwaiting-does-to-the-service-worker-lifecycle/",
-      "source": "Bits of Code",
-      "sourceUrl": "https://bitsofco.de/feed/feed.xml",
-      "summary": "The ServiceWorker.skipWaiting() method is a life saver. It ensures that any new versions of a service worker will take over the page and become activated immediately. To understand why this is so important and useful, we need to revisit the service worker lifecycle. I have a mor…",
-      "publishedAt": "2019-01-29T00:00:00.000Z"
-    },
-    {
-      "slug": "b30b673973b78eb829081e2b",
-      "guid": "https://bitsofco.de/what-is-tree-shaking/",
-      "title": "What is tree shaking and how does it work?",
-      "link": "https://bitsofco.de/what-is-tree-shaking/",
-      "source": "Bits of Code",
-      "sourceUrl": "https://bitsofco.de/feed/feed.xml",
-      "summary": "When Javascript applications get to a certain size, it’s helpful to separate the code into modules. However, when we do so, we can end up with code imported that isn’t actually used. Tree shaking is a method of optimising our code bundles by eliminating any code from the final f…",
-      "publishedAt": "2019-01-22T00:00:00.000Z"
-    },
-    {
-      "slug": "b099be485dc57e333c0b9042",
-      "guid": "https://bitsofco.de/use-the-lang-pseudo-class-over-the-lang-attribute-for-language-specific-styles/",
-      "title": "Use the :lang pseudo-class over the lang attribute selector for language-specific styles",
-      "link": "https://bitsofco.de/use-the-lang-pseudo-class-over-the-lang-attribute-for-language-specific-styles/",
-      "source": "Bits of Code",
-      "sourceUrl": "https://bitsofco.de/feed/feed.xml",
-      "summary": "The content of HTML documents can be in many different languages. To specify the primary language of a document, we use the lang attribute on the root element. We can also use the lang attribute within the page to demarcate specific elements or sections that are in a different l…",
-      "publishedAt": "2019-01-16T00:00:00.000Z"
-    },
-    {
-      "slug": "53f96dad28be8d0d4d6f0ebb",
-      "guid": "https://bitsofco.de/a-siri-shortcut-to-generate-pwa-icons-and-web-app-manifest/",
-      "title": "A Siri Shortcut to Generate PWA Icons and Web App Manifest",
-      "link": "https://bitsofco.de/a-siri-shortcut-to-generate-pwa-icons-and-web-app-manifest/",
-      "source": "Bits of Code",
-      "sourceUrl": "https://bitsofco.de/feed/feed.xml",
-      "summary": "If you've been following along with my daily blogging challenge, this is my final article! I've done 30 articles in 42 days! Since Siri Shortcuts were announced in iOS 12, I’ve been trying to find some interesting and useful applications for it. Suprisingly, it packs a lot of po…",
-      "publishedAt": "2018-12-25T00:00:00.000Z"
-    },
-    {
-      "slug": "9c08ed88ba172d8bfec08147",
-      "guid": "https://bitsofco.de/understanding-the-virtual-dom/",
-      "title": "Understanding the Virtual DOM",
-      "link": "https://bitsofco.de/understanding-the-virtual-dom/",
-      "source": "Bits of Code",
-      "sourceUrl": "https://bitsofco.de/feed/feed.xml",
-      "summary": "I’ve recently been writing about what exactly the DOM and the shadow DOM are and how they differ. To recap, the Document Object Model is an object-based representation of an HTML document and an interface to manipulating that object. The shadow DOM can be thought of as a “lite” …",
-      "publishedAt": "2018-12-24T00:00:00.000Z"
     }
   ]
 }

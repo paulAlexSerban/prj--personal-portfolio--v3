@@ -1,8 +1,58 @@
 {
   "category": "javascript",
   "label": "JavaScript",
-  "fetchedAt": "2026-08-11T06:41:25.372Z",
+  "fetchedAt": "2026-08-12T07:01:11.122Z",
   "items": [
+    {
+      "slug": "690dda4626c52defafaefd0f",
+      "guid": "https://flaviocopes.com/exif-metadata-privacy/",
+      "title": "What your photos leak: EXIF metadata and GPS",
+      "link": "https://flaviocopes.com/exif-metadata-privacy/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Many photos embed EXIF metadata such as GPS coordinates, timestamps, and device information. Learn what it stores, who strips it, and how to check.",
+      "publishedAt": "2026-08-12T05:00:00.000Z"
+    },
+    {
+      "slug": "88e17dd9b59d3805e07ead64",
+      "guid": "https://flaviocopes.com/htmx-introduction/",
+      "title": "A deep dive into HTMX",
+      "link": "https://flaviocopes.com/htmx-introduction/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Learn how HTMX turns HTML attributes into requests and DOM swaps, with forms, partials, events, history, security, debugging, and real Astro projects.",
+      "publishedAt": "2026-08-12T05:00:00.000Z"
+    },
+    {
+      "slug": "5145bf381c613d1f0d6d56a2",
+      "guid": "https://flaviocopes.com/open-weight-models/",
+      "title": "A deep dive into open-weight AI models",
+      "link": "https://flaviocopes.com/open-weight-models/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Learn what AI model weights are, what open-weight releases let you do, how local inference works, and why open weights are not always open source.",
+      "publishedAt": "2026-08-11T13:35:00.000Z"
+    },
+    {
+      "slug": "5b1bf3534819c22362228f29",
+      "guid": "https://flaviocopes.com/how-hono-is-built/",
+      "title": "A deep dive into Hono",
+      "link": "https://flaviocopes.com/how-hono-is-built/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Follow one request through Hono to see how routing, middleware, context, Web Standards, and runtime adapters work together.",
+      "publishedAt": "2026-08-11T09:00:00.000Z"
+    },
+    {
+      "slug": "2ce78209c2e5ee5765313965",
+      "guid": "https://flaviocopes.com/herdr-vs-cmux/",
+      "title": "Herdr vs cmux: which one should you use?",
+      "link": "https://flaviocopes.com/herdr-vs-cmux/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Compare Herdr and cmux for coding agents: persistence, agent state, macOS UX, browser automation, SSH, and multi-agent workflows.",
+      "publishedAt": "2026-08-11T07:00:00.000Z"
+    },
     {
       "slug": "cd05248c2d572bc0fd1db62e",
       "guid": "https://flaviocopes.com/kysely/",
@@ -10,8 +60,28 @@
       "link": "https://flaviocopes.com/kysely/",
       "source": "Flavio Copes",
       "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Learn how Kysely turns typed TypeScript queries into parameterized SQL, with schema types, joins, transactions, migrations, testing, and real projects.",
+      "summary": "Build a small PostgreSQL-backed store with Kysely, from the first typed query to joins, transactions, migrations, debugging, and tests.",
       "publishedAt": "2026-08-11T05:00:00.000Z"
+    },
+    {
+      "slug": "5096200815fbd8dfb141bfa3",
+      "guid": "https://blog.appsignal.com/2026/08/11/your-render-migration-checklist-how-to-verify-everything-is-working.html",
+      "title": "Your Render Migration Checklist: How to Verify Everything Is Working",
+      "link": "https://blog.appsignal.com/2026/08/11/your-render-migration-checklist-how-to-verify-everything-is-working.html",
+      "source": "AppSignal",
+      "sourceUrl": "https://blog.appsignal.com/feed.xml",
+      "summary": "Migrating your app to a new service can be scary. Render makes the deployment side easy, but a green deploy doesn’t mean everything is working. Silent failures are often the most dangerous kind. They go unnoticed until a customer calls to report a broken webhook or you realize t…",
+      "publishedAt": "2026-08-11T00:00:00.000Z"
+    },
+    {
+      "slug": "092e7853f4a780f22fff55d0",
+      "guid": "https://javascriptweekly.com/issues/798",
+      "title": "Shipping less JavaScript with Baseline",
+      "link": "https://javascriptweekly.com/issues/798",
+      "source": "JavaScript Weekly",
+      "sourceUrl": "https://javascriptweekly.com/rss/1b4m1h9j",
+      "summary": "#​798 — August 11, 2026 Read on the Web 🏖️ A brief scheduling note: We're taking a summer break next week, so we'll be back in your inbox on August 25. Catch you then! __ Your editor, Peter Cooper JavaScript Weekly Migrating a Large Flow Monorepo to TypeScript — Over several ye…",
+      "publishedAt": "2026-08-11T00:00:00.000Z"
     },
     {
       "slug": "699069fc4c71cc9ef94729d3",
@@ -254,46 +324,6 @@
       "publishedAt": "2026-08-05T13:00:00.000Z"
     },
     {
-      "slug": "fb7f5dd12f66ff1ba9b8244a",
-      "guid": "https://flaviocopes.com/fix-stuck-cloudflare-pages-build-queue/",
-      "title": "How I fixed a stuck Cloudflare Pages build queue",
-      "link": "https://flaviocopes.com/fix-stuck-cloudflare-pages-build-queue/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "My Cloudflare Pages deploys froze: one build stuck for five hours and 35 queued behind it. How to inspect the build queue and cancel builds with the API.",
-      "publishedAt": "2026-08-05T09:00:00.000Z"
-    },
-    {
-      "slug": "d2d23ff0769675d50f23f822",
-      "guid": "https://flaviocopes.com/i-built-an-mcp-server-to-buy-cloudflare-domains/",
-      "title": "I built an MCP server to buy Cloudflare domains safely",
-      "link": "https://flaviocopes.com/i-built-an-mcp-server-to-buy-cloudflare-domains/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "I built a guarded MCP server that lets an AI search, quote, and buy Cloudflare domains only after an exact human approval.",
-      "publishedAt": "2026-08-05T06:45:00.000Z"
-    },
-    {
-      "slug": "ebda75d6457c41d4db78aa4c",
-      "guid": "https://flaviocopes.com/css-keyframes-reduced-motion/",
-      "title": "@keyframes and prefers-reduced-motion done right",
-      "link": "https://flaviocopes.com/css-keyframes-reduced-motion/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Build a CSS keyframes animation step by step, understand fill modes and per-keyframe timing, and respect prefers-reduced-motion properly.",
-      "publishedAt": "2026-08-05T05:00:00.000Z"
-    },
-    {
-      "slug": "d777320ac7fa45c7bf4cc074",
-      "guid": "https://flaviocopes.com/server-sent-events/",
-      "title": "Server-Sent Events: streaming from server to browser",
-      "link": "https://flaviocopes.com/server-sent-events/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Server-Sent Events push updates from server to browser over a plain HTTP stream. Learn EventSource, Node streams, and why AI chat apps use SSE.",
-      "publishedAt": "2026-08-05T05:00:00.000Z"
-    },
-    {
       "slug": "829eb35ddebcf37308107ff1",
       "guid": "https://blog.appsignal.com/2026/08/05/from-claude-code-to-production-a-monitoring-checklist-for-python-developers.html",
       "title": "From Claude Code to Production: A Monitoring Checklist for Python Developers",
@@ -302,16 +332,6 @@
       "sourceUrl": "https://blog.appsignal.com/feed.xml",
       "summary": "Python is the native language of AI-assisted development. Models are really good at writing it, and a lot of people are now shipping it without ever having written much Python themselves. The whole thing is really simple. You prompt an app, Claude Code or Cursor produces a worki…",
       "publishedAt": "2026-08-05T00:00:00.000Z"
-    },
-    {
-      "slug": "3b7cf2dcce97b2e935eda121",
-      "guid": "https://flaviocopes.com/vercel-blob/",
-      "title": "Vercel Blob tutorial: upload and serve files",
-      "link": "https://flaviocopes.com/vercel-blob/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Upload files to Vercel Blob from a server or browser, validate uploads, choose public or private storage, serve files, and delete them safely.",
-      "publishedAt": "2026-08-04T13:00:00.000Z"
     },
     {
       "slug": "a6948bff13efd593331ddeab",
@@ -332,16 +352,6 @@
       "sourceUrl": "https://blog.appsignal.com/feed.xml",
       "summary": "At AppSignal, we love talking to our customers to learn how they're using the product. Recently, one of them showed us something worth sharing: with a single chat prompt, his AI agent searches production logs, closes incidents, and checks whether a pull request has shipped. Auto…",
       "publishedAt": "2026-07-30T00:00:00.000Z"
-    },
-    {
-      "slug": "de091bb0bae4ec89f3b22866",
-      "guid": "https://blog.appsignal.com/2026/07/29/appsignal-mcp-server-get-started-in-your-ide.html",
-      "title": "AppSignal MCP Server: Get Started in your IDE",
-      "link": "https://blog.appsignal.com/2026/07/29/appsignal-mcp-server-get-started-in-your-ide.html",
-      "source": "AppSignal",
-      "sourceUrl": "https://blog.appsignal.com/feed.xml",
-      "summary": "Cursor, Claude, and their fellow tools are great when they are speaking code, but once that code hits production, they are not exactly native. However, if your code is monitored by AppSignal, an MCP server can bridge that gap and allow agents to poke around the production. TL;DR…",
-      "publishedAt": "2026-07-29T00:00:00.000Z"
     }
   ]
 }
