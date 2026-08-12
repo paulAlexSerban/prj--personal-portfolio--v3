@@ -36,7 +36,7 @@ locals {
     ManagedBy   = "terraform"
   }
 
-  # Shared destination for CloudFront standard access logs across site/blog/quiz.
+  # Shared destination for CloudFront standard access logs across site/blog/quiz/news.
   # Domain-prefixed keys keep logs queryable per distribution.
   cf_access_logs_bucket_name = "cf-access-logs.paulserban.eu"
 }
@@ -170,6 +170,9 @@ module "static_site_news" {
   domain_name    = var.news_domain_name
   hosted_zone_id = var.hosted_zone_id
   tags           = local.tags
+
+  access_logging_bucket = aws_s3_bucket.cf_access_logs.bucket_domain_name
+  access_logging_prefix = "${var.news_domain_name}/"
 }
 
 # Shared content media CDN. Bucket is owned/filled by content--paulserban.eu

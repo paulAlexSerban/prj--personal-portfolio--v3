@@ -1,5 +1,5 @@
 output "cf_access_logs_bucket_name" {
-  description = "Shared S3 bucket receiving CloudFront standard access logs (site/blog/quiz)."
+  description = "Shared S3 bucket receiving CloudFront standard access logs (site/blog/quiz/news)."
   value       = aws_s3_bucket.cf_access_logs.bucket
 }
 
