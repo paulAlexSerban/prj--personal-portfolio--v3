@@ -116,7 +116,6 @@ jobs:
               run: |
                   pnpm --filter @prj--personal-portfolio--v3/tools--mdx-ingest start
                   pnpm --filter @prj--personal-portfolio--v3/tools--json-ingest start
-                  pnpm --filter @prj--personal-portfolio--v3/tools--news-ingest start
                   pnpm --filter @prj--personal-portfolio--v3/tools--quiz-export start
 
             - name: Upload content DB
@@ -242,7 +241,6 @@ jobs:
                   retention-days: 1
 
     build-news:
-        needs: ingest-content
         runs-on: ubuntu-latest
         timeout-minutes: 20
         steps:
@@ -251,17 +249,11 @@ jobs:
                   ref: ${{ inputs.ref || github.sha }}
             - uses: ./.github/actions/setup-monorepo
 
-            - name: Download content DB
-              uses: actions/download-artifact@v8
-              with:
-                  name: content-db-${{ inputs.environment }}
-                  path: database/output/
-
             - name: Build news-feed-site
               env:
                   ASTRO_SITE: ${{ inputs.news_url }}
                   ASTRO_BASE: ${{ inputs.news_base }}
-                  DATABASE_PATH: ${{ github.workspace }}/database/output/content.db
+                  PUBLIC_NEWS_DATA_URL: https://news-data.paulserban.eu
                   PUBLIC_CF_BEACON_TOKEN: ${{ inputs.environment == 'production' && inputs.cf_beacon_token_news || '' }}
               run: |
                   [ -n "${{ inputs.portfolio_url }}" ] && export PUBLIC_PORTFOLIO_URL="${{ inputs.portfolio_url }}${{ inputs.portfolio_base }}"

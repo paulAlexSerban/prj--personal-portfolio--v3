@@ -11,11 +11,13 @@ concurrency:
 
 permissions:
     contents: write
+    id-token: write
 
 jobs:
     sync:
         runs-on: ubuntu-latest
         timeout-minutes: 30
+        environment: news-data
         steps:
             - name: Checkout repository
               uses: actions/checkout@v7
@@ -30,14 +32,51 @@ jobs:
                   NEWS_RETENTION_DAYS: '14'
               run: pnpm --filter @prj--personal-portfolio--v3/tools--news-sync sync
 
-            - name: Commit cache if changed
+            - name: Commit cache to news-cache branch
               run: |
                   git config user.name "github-actions[bot]"
                   git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+                  CACHE_TMP="${RUNNER_TEMP}/news-cache"
+                  mkdir -p "$CACHE_TMP"
+                  cp -a content/news/cache/. "$CACHE_TMP/"
+
+                  git fetch origin news-cache:news-cache || true
+                  if git show-ref --verify --quiet refs/heads/news-cache; then
+                    git checkout --force news-cache
+                  else
+                    git checkout -b news-cache
+                  fi
+
+                  mkdir -p content/news/cache
+                  find content/news/cache -name '*.json' -delete
+                  cp -a "$CACHE_TMP/." content/news/cache/
+
                   git add content/news/cache/
                   if git diff --staged --quiet; then
                     echo "No news cache changes."
-                    exit 0
+                  else
+                    git commit -m "chore(news): update RSS cache"
+                    git push origin news-cache
                   fi
-                  git commit -m "chore(news): update RSS cache"
-                  git push
+
+            - name: Configure AWS credentials
+              uses: aws-actions/configure-aws-credentials@v6
+              with:
+                  role-to-assume: ${{ vars.AWS_DEPLOY_ROLE_ARN }}
+                  aws-region: ${{ vars.AWS_REGION }}
+
+            - name: Sync JSON to S3
+              run: |
+                  aws s3 sync content/news/cache/ "s3://${{ vars.NEWS_DATA_S3_BUCKET_NAME }}/" \
+                    --delete \
+                    --exclude "*" \
+                    --include "*.json" \
+                    --content-type "application/json" \
+                    --cache-control "public, max-age=0, s-maxage=300, stale-while-revalidate=600"
+
+            - name: Invalidate CloudFront cache
+              run: |
+                  aws cloudfront create-invalidation \
+                    --distribution-id "${{ vars.NEWS_DATA_CLOUDFRONT_DISTRIBUTION_ID }}" \
+                    --paths "/*"
