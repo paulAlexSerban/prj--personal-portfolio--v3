@@ -1,16 +1,14 @@
 ---
 import { FooterSiteLinks, SocialLinks, buildSiteTabs } from '@prj--personal-portfolio--v3/shared--navigation';
-import { closeConnection, openDb } from '@/lib/db.ts';
-import { getCategories } from '@/lib/queries/news.ts';
+import { CATEGORY_LABEL, CATEGORY_ORDER } from '@/lib/queries/news.ts';
 import { externalLinkAttrs, siteUrls } from '@/lib/urls.ts';
-
-const db = openDb();
-const categories = getCategories(db);
-closeConnection(db);
 
 const footerLinks = [
     { label: 'Latest', href: siteUrls.home },
-    ...categories.slice(0, 4).map((c) => ({ label: c.label, href: siteUrls.category(c.slug) })),
+    ...CATEGORY_ORDER.slice(0, 4).map((slug) => ({
+        label: CATEGORY_LABEL[slug] ?? slug,
+        href: siteUrls.category(slug),
+    })),
 ];
 
 const siteTabs = buildSiteTabs({

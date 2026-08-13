@@ -1,71 +1,11 @@
 ---
-import NewsCard from '@/library/modules/NewsCard.astro';
-import { NewsPagination } from '@/library/modules/NewsPagination.tsx';
+import { NewsFeedApp } from '@/library/modules/NewsFeedApp.tsx';
 import BaseLayout from '@/system/templates/BaseTemplate.astro';
-import { closeConnection, openDb } from '@/lib/db.ts';
-import { countAllItems, getAllItems, getCategories, pageCount } from '@/lib/queries/news.ts';
-import { PAGE_SIZE, siteUrls } from '@/lib/urls.ts';
-
-const page = 1;
-const db = openDb();
-const total = countAllItems(db);
-const pages = pageCount(total, PAGE_SIZE);
-const items = getAllItems(db, { limit: PAGE_SIZE, offset: 0 });
-const categories = getCategories(db);
-closeConnection(db);
 ---
 
 <BaseLayout
     title="News Feed | Paul Serban"
     description="Daily software engineering news digest across tech, web, and systems."
 >
-    <section class="mb-10">
-        <div class="mb-5 border-b-[3px] border-ink pb-2">
-            <p class="kicker text-sm">Latest</p>
-            <h2 class="m-0 font-display text-4xl font-bold">Engineering Wire</h2>
-            <p class="deck mt-2 text-sm">
-                Aggregated headlines from curated RSS sources. Updated daily.
-            </p>
-        </div>
-
-        {
-            categories.length > 0 && (
-                <ul class="mb-8 m-0 flex list-none flex-wrap gap-2 p-0">
-                    {categories.map((c) => (
-                        <li>
-                            <a class="stamp stamp-ghost px-3 py-1.5 text-sm no-underline" href={siteUrls.category(c.slug)}>
-                                {c.label}
-                                <span class="ml-1 opacity-60">({c.count})</span>
-                            </a>
-                        </li>
-                    ))}
-                </ul>
-            )
-        }
-
-        {
-            items.length > 0 ? (
-                <ul class="m-0 list-none columns-1 gap-5 p-0 sm:columns-2 lg:columns-3">
-                    {items.map((item) => (
-                        <li class="mb-5 break-inside-avoid">
-                            <NewsCard item={item} />
-                        </li>
-                    ))}
-                </ul>
-            ) : (
-                <p class="deck">
-                    No articles yet. The daily news sync has not populated the feed cache.
-                </p>
-            )
-        }
-
-        <div class="mt-10 border-t border-rule pt-4">
-            <NewsPagination
-                page={page}
-                pages={pages}
-                total={total}
-                nextHref={pages > 1 ? siteUrls.homePage(2) : undefined}
-            />
-        </div>
-    </section>
+    <NewsFeedApp client:load />
 </BaseLayout>

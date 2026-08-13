@@ -22,9 +22,11 @@ const crossApp = createSiteUrls({
 export const siteUrls = {
     home: base,
     category: (slug: string) => `${base}category/${slug}/`,
-    categoryPage: (slug: string, page: number) =>
-        page <= 1 ? `${base}category/${slug}/` : `${base}category/${slug}/page/${page}/`,
-    homePage: (page: number) => (page <= 1 ? base : `${base}page/${page}/`),
+    categoryPage: (slug: string, page: number) => {
+        const href = `${base}category/${slug}/`;
+        return page <= 1 ? href : `${href}?page=${page}`;
+    },
+    homePage: (page: number) => (page <= 1 ? base : `${base}?page=${page}`),
     portfolio: import.meta.env.PUBLIC_PORTFOLIO_URL ?? crossApp.portfolio,
     blog: import.meta.env.PUBLIC_BLOG_URL ?? crossApp.blog,
     quiz: import.meta.env.PUBLIC_QUIZ_URL ?? crossApp.quiz,

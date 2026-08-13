@@ -1,16 +1,11 @@
 ---
 import { MobileNav, SiteSwitcher, SocialLinks, buildSiteTabs } from '@prj--personal-portfolio--v3/shared--navigation';
-import { closeConnection, openDb } from '@/lib/db.ts';
-import { getCategories } from '@/lib/queries/news.ts';
+import { CATEGORY_LABEL, CATEGORY_ORDER } from '@/lib/queries/news.ts';
 import { externalLinkAttrs, isNavLinkActive, siteUrls } from '@/lib/urls.ts';
-
-const db = openDb();
-const categories = getCategories(db);
-closeConnection(db);
 
 const navLinks = [
     { label: 'Latest', href: siteUrls.home },
-    ...categories.map((c) => ({ label: c.label, href: siteUrls.category(c.slug) })),
+    ...CATEGORY_ORDER.map((slug) => ({ label: CATEGORY_LABEL[slug] ?? slug, href: siteUrls.category(slug) })),
 ];
 
 const siteTabs = buildSiteTabs({
@@ -69,4 +64,3 @@ const year = new Date().getFullYear();
         </div>
     </div>
 </header>
-

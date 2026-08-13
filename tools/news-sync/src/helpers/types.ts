@@ -26,3 +26,15 @@ export type CategoryCacheFile = {
     fetchedAt: string;
     items: CachedNewsItem[];
 };
+
+export type NewsIndexCategory = {
+    slug: string;
+    label: string;
+    count: number;
+};
+
+/** Discovery file the news-feed client loads first from the JSON CDN. */
+export type NewsIndexFile = {
+    fetchedAt: string;
+    categories: NewsIndexCategory[];
+};
