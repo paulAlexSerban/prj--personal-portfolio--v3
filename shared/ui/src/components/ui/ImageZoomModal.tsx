@@ -115,6 +115,6 @@ export function ImageZoomModal({ open, onClose, children, label = 'Zoomed image'
                 {children}
             </div>
         </div>,
-        document.body,
+        document.body
     );
 }

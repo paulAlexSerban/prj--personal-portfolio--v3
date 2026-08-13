@@ -88,7 +88,12 @@ export function CoverImage({
 
     return (
         <>
-            <button type="button" onClick={() => setZoomOpen(true)} aria-label={zoomLabel} className="block w-full cursor-zoom-in touch-manipulation border-0 bg-transparent p-0 text-left">
+            <button
+                type="button"
+                onClick={() => setZoomOpen(true)}
+                aria-label={zoomLabel}
+                className="block w-full cursor-zoom-in touch-manipulation border-0 bg-transparent p-0 text-left"
+            >
                 {inlineImage}
             </button>
             <ImageZoomModal open={zoomOpen} onClose={() => setZoomOpen(false)} label={lightboxAlt || 'Zoomed image'}>
