@@ -10,29 +10,29 @@ A concent-pipeline parses MDX files into SQLite databases, which are then manage
 Flashcard quizes (Anki style spaced repetition) are surfaced as a blog widget, a standalone web app, and a cross-platofrm mobile app.
 
 > [!warning] IMPORTANT
-> No backend user accounts in v0.1 - all user state is client side only, stored in local storage.
+> No backend user accounts in v1.\* - all user state is client side only, stored in local storage.
 
 ## Goals & Non-Goals
 
-- **In Scope (v0.1)**
+- **In Scope (v1.\*)**
     - SSG blog (projects casestudues, posts, book-notes, snippets)
     - MDX -> SQLite conent pipeline (one-way: file -> DB)
     - Drizzle ORM for DB access and inspection
     - Flashcard Quiz Widget (blog-embeded via modal)
     - Flashcard Quiz Web App (standalone, browser-based)
     - Spaced Repetition Algorithm (SM-2, Anki compatible)
-    - All user state us browser/device local only (no backend user accounts in v0.1)
+    - All user state us browser/device local only (no backend user accounts in v1.\*)
     - Blog-to-quiz post selection via browser storage reference
     - Question-to-post slug correlation (1 post -> many questions, but each question references a single post)
 
-- **Out of Scope (v0.1)**
+- **Out of Scope (v1.\*)**
     - Flashcard Quiz Mobile App (cross-platform, React Native)
     - A headless CMS as content management UI for SQLite content
     - SQLite -> MDX sync (round-trip : DB-edited entities unlock MDX editing capabilities)
     - User accounts and authentication (all user state is client-side only, stored in local storage)
     - Real-time content updates (content is updated via the MDX -> SQLite pipeline, not real-time)
     - Remote status sync / backend for user progrss
-    - Server-side rendering (SSR) or API routes - SSG only for v0.1
+    - Server-side rendering (SSR) or API routes - SSG only for v1.\*
     - Advanced quiz features (e.g., multimedia questions, collaborative quizzing,leaderboards, etc.)
     - Non-flashcard quiz types (e.g., multiple choice, fill-in-the-blank, etc.)
     - Advanced content types (e.g., video, audio, interactive content, etc.)

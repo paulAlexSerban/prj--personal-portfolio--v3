@@ -1,6 +1,7 @@
 ---
 import SiteFooter from '@/library/modules/SiteFooter.astro';
 import SiteHeader from '@/library/modules/SiteHeader.astro';
+import { NewsIntroModal } from '@/library/modules/NewsIntroModal.tsx';
 import { assetUrl } from '@/lib/urls.ts';
 
 import '@/styles/global.css';
@@ -15,7 +16,7 @@ interface Props {
 
 const { title, description, ogTitle = title, ogDescription = description, canonicalUrl } = Astro.props;
 
-const pageDescription = description ?? 'Software engineering news digest by Paul Serban.';
+const pageDescription = description ?? 'Personal RSS digest of software-engineering headlines by Paul Serban.';
 const canonical = canonicalUrl ?? new URL(Astro.url.pathname, Astro.site).href;
 const cfBeaconToken = import.meta.env.PUBLIC_CF_BEACON_TOKEN;
 ---
@@ -47,6 +48,7 @@ const cfBeaconToken = import.meta.env.PUBLIC_CF_BEACON_TOKEN;
             <slot />
         </main>
         <SiteFooter />
+        <NewsIntroModal client:load />
         {
             cfBeaconToken && (
                 <script

@@ -1,5 +1,6 @@
 ---
 import { FooterSiteLinks, SocialLinks, buildSiteTabs } from '@prj--personal-portfolio--v3/shared--navigation';
+import { NewsIntroTrigger } from '@/library/modules/NewsIntroTrigger.tsx';
 import { CATEGORY_LABEL, CATEGORY_ORDER } from '@/lib/queries/news.ts';
 import { externalLinkAttrs, siteUrls } from '@/lib/urls.ts';
 
@@ -48,7 +49,14 @@ const year = new Date().getFullYear();
                 client:load
                 linkClassName="inline-flex items-center text-ink no-underline text-sm hover:opacity-70"
             />
-            <span>Paul Serban · Engineering Wire · {year}</span>
+            <span>
+                Paul Serban · Engineering Wire · {year}
+                {' · '}
+                <NewsIntroTrigger
+                    client:load
+                    className="kicker cursor-pointer border-0 bg-transparent p-0 text-sm text-ink underline decoration-rule underline-offset-2 hover:opacity-70"
+                />
+            </span>
         </div>
     </div>
 </footer>

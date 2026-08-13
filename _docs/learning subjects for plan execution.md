@@ -10,16 +10,16 @@ Three Terraform-managed static sites on S3 + CloudFront (portfolio, blog, quiz),
 
 ## 1. Core web hosting concepts
 
-| Topic | Why it matters for this plan |
-|---|---|
-| **Static site hosting** | Astro/Vite build to `dist/`; no server at runtime |
-| **CDN edge caching** | CloudFront serves cached copies close to users |
-| **Origin vs edge** | S3 is origin; CloudFront is edge; redirect runs before origin |
-| **Subdomain vs sub-path routing** | DEV uses `/home/`, `/blog/`, `/quiz/`; prod uses separate subdomains |
-| **SPA vs SSG routing** | Blog/portfolio are pre-built HTML; quiz needs 404 -> `index.html` fallback |
-| **HTTP redirects (301 vs 302)** | Plan uses 302 for legacy blog posts not in v3 |
-| **Cache-Control semantics** | `max-age`, `immutable`, `must-revalidate` - set at S3 upload time |
-| **Content hashing / cache busting** | Hashed assets (`app.abc123.js`) can be cached forever |
+| Topic                               | Why it matters for this plan                                               |
+| ----------------------------------- | -------------------------------------------------------------------------- |
+| **Static site hosting**             | Astro/Vite build to `dist/`; no server at runtime                          |
+| **CDN edge caching**                | CloudFront serves cached copies close to users                             |
+| **Origin vs edge**                  | S3 is origin; CloudFront is edge; redirect runs before origin              |
+| **Subdomain vs sub-path routing**   | DEV uses `/home/`, `/blog/`, `/quiz/`; prod uses separate subdomains       |
+| **SPA vs SSG routing**              | Blog/portfolio are pre-built HTML; quiz needs 404 -> `index.html` fallback |
+| **HTTP redirects (301 vs 302)**     | Plan uses 302 for legacy blog posts not in v3                              |
+| **Cache-Control semantics**         | `max-age`, `immutable`, `must-revalidate` - set at S3 upload time          |
+| **Content hashing / cache busting** | Hashed assets (`app.abc123.js`) can be cached forever                      |
 
 **Skills:** reason about request flow (browser -> DNS -> CloudFront -> S3), choose cache TTLs, debug “stale content after deploy.”
 
@@ -76,17 +76,17 @@ Three Terraform-managed static sites on S3 + CloudFront (portfolio, blog, quiz),
 
 ## 3. Infrastructure as Code - Terraform
 
-| Concept | Plan usage |
-|---|---|
-| **Providers** (`aws`, provider aliases) | `us-east-1` alias for ACM/CloudFront resources |
-| **Modules** | Reusable `static-site`, `blog-redirect-function` |
-| **Variables / outputs** | Domain names, bucket names, distribution IDs for CI |
-| **Remote state** | S3 backend + DynamoDB lock table (bootstrap) |
-| **Data sources** | `aws_route53_zone` for existing `paulserban.eu` zone |
-| **Resource dependencies** | Cert validation -> distribution -> DNS alias |
-| **Workspace / env layout** | `infrastructure/aws/envs/prod/` |
-| **State separation** | Bootstrap applied once manually; prod env separate |
-| **Import vs greenfield** | v2 infra stays external; you only add DNS alias + redirect target |
+| Concept                                 | Plan usage                                                        |
+| --------------------------------------- | ----------------------------------------------------------------- |
+| **Providers** (`aws`, provider aliases) | `us-east-1` alias for ACM/CloudFront resources                    |
+| **Modules**                             | Reusable `static-site`, `blog-redirect-function`                  |
+| **Variables / outputs**                 | Domain names, bucket names, distribution IDs for CI               |
+| **Remote state**                        | S3 backend + DynamoDB lock table (bootstrap)                      |
+| **Data sources**                        | `aws_route53_zone` for existing `paulserban.eu` zone              |
+| **Resource dependencies**               | Cert validation -> distribution -> DNS alias                      |
+| **Workspace / env layout**              | `infrastructure/aws/envs/prod/`                                   |
+| **State separation**                    | Bootstrap applied once manually; prod env separate                |
+| **Import vs greenfield**                | v2 infra stays external; you only add DNS alias + redirect target |
 
 **Skills:** `terraform plan/apply`, module I/O design, avoiding state drift, reading HCL for CloudFront + S3 + Route53.
 
@@ -94,16 +94,16 @@ Three Terraform-managed static sites on S3 + CloudFront (portfolio, blog, quiz),
 
 ## 4. CI/CD - GitHub Actions
 
-| Topic | Plan usage |
-|---|---|
-| **Workflow triggers** | Content deploy on push; infra deploy manual/path-filtered |
-| **Reusable actions** | Your existing `setup-monorepo` |
-| **Job dependencies / artifacts** | Ingest -> build -> deploy pipeline (like `deploy-dev.yaml`) |
-| **Environment variables at build** | `ASTRO_SITE`, `ASTRO_BASE=/`, `VITE_APP_BASE=/` |
-| **OIDC to AWS** | Assume deploy role without static keys |
-| **Deploy scripts** | S3 sync with cache-control split, CloudFront invalidation, KVS sync |
-| **Concurrency groups** | Avoid overlapping prod deploys |
-| **Secrets vs OIDC** | `CONTENT_REPO_TOKEN` stays; AWS uses OIDC |
+| Topic                              | Plan usage                                                          |
+| ---------------------------------- | ------------------------------------------------------------------- |
+| **Workflow triggers**              | Content deploy on push; infra deploy manual/path-filtered           |
+| **Reusable actions**               | Your existing `setup-monorepo`                                      |
+| **Job dependencies / artifacts**   | Ingest -> build -> deploy pipeline (like `deploy-dev.yaml`)         |
+| **Environment variables at build** | `ASTRO_SITE`, `ASTRO_BASE=/`, `VITE_APP_BASE=/`                     |
+| **OIDC to AWS**                    | Assume deploy role without static keys                              |
+| **Deploy scripts**                 | S3 sync with cache-control split, CloudFront invalidation, KVS sync |
+| **Concurrency groups**             | Avoid overlapping prod deploys                                      |
+| **Secrets vs OIDC**                | `CONTENT_REPO_TOKEN` stays; AWS uses OIDC                           |
 
 **Skills:** write a multi-job workflow, debug failed deploy steps, separate “app deploy” from “infra deploy.”
 
@@ -111,15 +111,15 @@ Three Terraform-managed static sites on S3 + CloudFront (portfolio, blog, quiz),
 
 ## 5. Your monorepo specifics
 
-| Area | What to understand |
-|---|---|
-| **Astro SSG** | `getStaticPaths()`, `trailingSlash: 'always'`, build output layout |
+| Area                  | What to understand                                                          |
+| --------------------- | --------------------------------------------------------------------------- |
+| **Astro SSG**         | `getStaticPaths()`, `trailingSlash: 'always'`, build output layout          |
 | **Blog gating logic** | Posts only built if they have quiz questions (`publishedQuestionPostSlugs`) |
-| **URL conventions** | v3: `/post/{slug}/`; v2: `/blog/post/{slug}` |
-| **`getAllSlugs()`** | Same query drives static paths and KVS population |
-| **Quiz SPA (Vite)** | Client-side routing, `base` path, `public/data/` JSON |
-| **Content pipeline** | `pnpm start` -> `content.db` -> build |
-| **pnpm workspaces** | Filter builds: `pnpm --filter ... build` |
+| **URL conventions**   | v3: `/post/{slug}/`; v2: `/blog/post/{slug}`                                |
+| **`getAllSlugs()`**   | Same query drives static paths and KVS population                           |
+| **Quiz SPA (Vite)**   | Client-side routing, `base` path, `public/data/` JSON                       |
+| **Content pipeline**  | `pnpm start` -> `content.db` -> build                                       |
+| **pnpm workspaces**   | Filter builds: `pnpm --filter ... build`                                    |
 
 **Skills:** trace “which slugs exist at build time” from DB query -> Astro routes -> KVS keys.
 
@@ -269,15 +269,15 @@ flowchart LR
 
 ## Resources worth studying
 
-| Resource | Focus |
-|---|---|
-| [AWS: Hosting static website on S3 + CloudFront](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/GettingStarted.SimpleDistribution.html) | OAC, basic distribution |
-| [CloudFront Functions](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-functions.html) | viewer-request, limits |
-| [CloudFront KeyValueStore](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/kvs-with-functions.html) | KVS + functions |
-| [Terraform AWS provider docs](https://registry.terraform.io/providers/hashicorp/aws/latest/docs) | `aws_cloudfront_distribution`, `aws_s3_bucket`, etc. |
-| [GitHub Actions OIDC with AWS](https://docs.github.com/en/actions/deployment/security-hardening-your-deployments/configuring-openid-connect-in-amazon-web-services) | No long-lived keys |
-| Your repo: `_docs/.../01 cloudfront caching.md` | Cache strategy already chosen |
-| Your repo: `.github/workflows/deploy-dev.yaml` | Pipeline pattern to mirror |
+| Resource                                                                                                                                                            | Focus                                                |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------- |
+| [AWS: Hosting static website on S3 + CloudFront](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/GettingStarted.SimpleDistribution.html)         | OAC, basic distribution                              |
+| [CloudFront Functions](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-functions.html)                                                | viewer-request, limits                               |
+| [CloudFront KeyValueStore](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/kvs-with-functions.html)                                              | KVS + functions                                      |
+| [Terraform AWS provider docs](https://registry.terraform.io/providers/hashicorp/aws/latest/docs)                                                                    | `aws_cloudfront_distribution`, `aws_s3_bucket`, etc. |
+| [GitHub Actions OIDC with AWS](https://docs.github.com/en/actions/deployment/security-hardening-your-deployments/configuring-openid-connect-in-amazon-web-services) | No long-lived keys                                   |
+| Your repo: `_docs/.../01 cloudfront caching.md`                                                                                                                     | Cache strategy already chosen                        |
+| Your repo: `.github/workflows/deploy-dev.yaml`                                                                                                                      | Pipeline pattern to mirror                           |
 
 ---
 
