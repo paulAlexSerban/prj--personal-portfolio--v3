@@ -1,5 +1,6 @@
 ---
 import { MobileNav, SiteSwitcher, SocialLinks, buildSiteTabs } from '@prj--personal-portfolio--v3/shared--navigation';
+import { NewsIntroTrigger } from '@/library/modules/NewsIntroTrigger.tsx';
 import { CATEGORY_LABEL, CATEGORY_ORDER } from '@/lib/queries/news.ts';
 import { externalLinkAttrs, isNavLinkActive, siteUrls } from '@/lib/urls.ts';
 
@@ -58,7 +59,15 @@ const year = new Date().getFullYear();
                             </a>
                         ))
                     }
+                    <NewsIntroTrigger
+                        client:load
+                        className="kicker cursor-pointer border-0 bg-transparent p-0 text-[11px] text-ink no-underline hover:underline smallcaps"
+                    />
                 </nav>
+                <NewsIntroTrigger
+                    client:load
+                    className="kicker cursor-pointer border-0 bg-transparent p-0 text-[11px] text-ink no-underline hover:underline smallcaps md:hidden"
+                />
                 <MobileNav client:load links={mobileNavLinks} />
             </div>
         </div>

@@ -79,10 +79,11 @@ export function NewsFeedApp({ category }: Props) {
             <div className="mb-5 flex flex-wrap items-end justify-between gap-3 border-b-[3px] border-ink pb-2">
                 <div>
                     <p className="kicker text-sm">{category ? 'Category' : 'Latest'}</p>
-                    <h2 className="m-0 font-display text-4xl font-bold">{label ?? 'Engineering Wire'}</h2>
+                    {category && <h2 className="m-0 font-display text-4xl font-bold">{label}</h2>}
                     {!category && (
                         <p className="deck mt-2 text-sm">
-                            Aggregated headlines from curated RSS sources. Updated daily.
+                            A personal RSS digest I maintain so I can skim what is new. Cards link to the original publishers — this is not a news outlet, and I do not host or
+                            author these articles.
                             {fetchedAt && (
                                 <>
                                     {' '}
