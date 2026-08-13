@@ -108,10 +108,8 @@ export function buildOnboardingSteps(): Step[] {
       title: "Open source and contact",
       content: (
         <Body>
-          The code is public:{" "}
-          <TourLink href={QUIZ_REPO_URL}>view the GitHub repo</TourLink>. The icons here go to my
-          GitHub profile and{" "}
-          <TourLink href={LINKEDIN_URL}>LinkedIn</TourLink>.
+          The code is public: <TourLink href={QUIZ_REPO_URL}>view the GitHub repo</TourLink>. The
+          icons here go to my GitHub profile and <TourLink href={LINKEDIN_URL}>LinkedIn</TourLink>.
         </Body>
       ),
     },
@@ -121,9 +119,7 @@ export function buildOnboardingSteps(): Step[] {
       placement: "top",
       title: "Replay anytime",
       content: (
-        <Body>
-          You can run this intro again from the footer whenever you want a refresher.
-        </Body>
+        <Body>You can run this intro again from the footer whenever you want a refresher.</Body>
       ),
     },
   ];

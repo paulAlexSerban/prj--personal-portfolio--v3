@@ -236,7 +236,9 @@ function HomeView() {
                           disabled={isLoading}
                           onClick={() => addToStudySet(post.slug)}
                           title={`Add ${post.title} to your study sets`}
-                          data-tour-target={post.slug === firstAddableSlug ? "add-first-set" : undefined}
+                          data-tour-target={
+                            post.slug === firstAddableSlug ? "add-first-set" : undefined
+                          }
                           className={stampClasses("solid", "sm")}
                         >
                           {isLoading ? "Loading…" : "Add to Study Set"}

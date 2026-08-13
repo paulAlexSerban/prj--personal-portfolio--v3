@@ -131,77 +131,81 @@ function StudySetsView() {
             {pageItems.map(({ slug, meta, stats, due }, index) => {
               const isWalkthroughSet = index === 0 && current === 1;
               return (
-              <article
-                key={slug}
-                className="border-t-[3px] border-[var(--ink-black)] pt-4"
-                data-tour-target={isWalkthroughSet ? "walkthrough-set" : undefined}
-              >
-                <p className="smallcaps text-[10px] text-[var(--slate)] mb-1">
-                  Study Set · {meta?.questionCount ?? stats.total} questions
-                </p>
-                <Link to="/sets/$postSlug" params={{ postSlug: slug }} className="hover:underline">
-                  <h3
-                    className="text-3xl font-bold leading-tight"
-                    style={{ fontFamily: "var(--font-display)" }}
-                  >
-                    {meta?.title ?? slug}
-                  </h3>
-                </Link>
-                <div className="rule-thin my-4" />
-                <div
-                  className="grid grid-cols-4 gap-2 text-center"
-                  style={{ fontFamily: "var(--font-mono)" }}
+                <article
+                  key={slug}
+                  className="border-t-[3px] border-[var(--ink-black)] pt-4"
+                  data-tour-target={isWalkthroughSet ? "walkthrough-set" : undefined}
                 >
-                  <div>
-                    <p className="text-[10px] smallcaps text-[var(--slate)]">New</p>
-                    <p className="text-xl font-bold">{stats.newCount}</p>
-                  </div>
-                  <div>
-                    <p className="text-[10px] smallcaps text-[var(--slate)]">Due</p>
-                    <p className="text-xl font-bold">
-                      {stats.reviewDueCount + stats.learningCount}
-                    </p>
-                  </div>
-                  <div>
-                    <p className="text-[10px] smallcaps text-[var(--slate)]">Ignored</p>
-                    <p className="text-xl font-bold">{stats.ignoredCount}</p>
-                  </div>
-                  <div>
-                    <p className="text-[10px] smallcaps text-[var(--slate)]">Total</p>
-                    <p className="text-xl font-bold">{stats.total}</p>
-                  </div>
-                </div>
-                <div className="mt-4 flex gap-2">
-                  {due > 0 || isWalkthroughSet ? (
-                    <Link
-                      to="/sets/$postSlug/study"
-                      params={{ postSlug: slug }}
-                      className={stampClasses("solid", "sm")}
-                      title={`Study ${due} due cards in ${meta?.title ?? slug}`}
-                      data-tour-target={isWalkthroughSet ? "study-first-set" : undefined}
-                    >
-                      {due > 0 ? `Study (${due})` : "Study"}
-                    </Link>
-                  ) : (
-                    <Link
-                      to="/sets/$postSlug"
-                      params={{ postSlug: slug }}
-                      className={stampClasses("solid", "sm")}
-                      title={`Browse questions in ${meta?.title ?? slug}`}
-                    >
-                      Browse
-                    </Link>
-                  )}
+                  <p className="smallcaps text-[10px] text-[var(--slate)] mb-1">
+                    Study Set · {meta?.questionCount ?? stats.total} questions
+                  </p>
                   <Link
                     to="/sets/$postSlug"
                     params={{ postSlug: slug }}
-                    className={stampClasses("ghost", "sm")}
-                    title={`View details for ${meta?.title ?? slug}`}
+                    className="hover:underline"
                   >
-                    Details
+                    <h3
+                      className="text-3xl font-bold leading-tight"
+                      style={{ fontFamily: "var(--font-display)" }}
+                    >
+                      {meta?.title ?? slug}
+                    </h3>
                   </Link>
-                </div>
-              </article>
+                  <div className="rule-thin my-4" />
+                  <div
+                    className="grid grid-cols-4 gap-2 text-center"
+                    style={{ fontFamily: "var(--font-mono)" }}
+                  >
+                    <div>
+                      <p className="text-[10px] smallcaps text-[var(--slate)]">New</p>
+                      <p className="text-xl font-bold">{stats.newCount}</p>
+                    </div>
+                    <div>
+                      <p className="text-[10px] smallcaps text-[var(--slate)]">Due</p>
+                      <p className="text-xl font-bold">
+                        {stats.reviewDueCount + stats.learningCount}
+                      </p>
+                    </div>
+                    <div>
+                      <p className="text-[10px] smallcaps text-[var(--slate)]">Ignored</p>
+                      <p className="text-xl font-bold">{stats.ignoredCount}</p>
+                    </div>
+                    <div>
+                      <p className="text-[10px] smallcaps text-[var(--slate)]">Total</p>
+                      <p className="text-xl font-bold">{stats.total}</p>
+                    </div>
+                  </div>
+                  <div className="mt-4 flex gap-2">
+                    {due > 0 || isWalkthroughSet ? (
+                      <Link
+                        to="/sets/$postSlug/study"
+                        params={{ postSlug: slug }}
+                        className={stampClasses("solid", "sm")}
+                        title={`Study ${due} due cards in ${meta?.title ?? slug}`}
+                        data-tour-target={isWalkthroughSet ? "study-first-set" : undefined}
+                      >
+                        {due > 0 ? `Study (${due})` : "Study"}
+                      </Link>
+                    ) : (
+                      <Link
+                        to="/sets/$postSlug"
+                        params={{ postSlug: slug }}
+                        className={stampClasses("solid", "sm")}
+                        title={`Browse questions in ${meta?.title ?? slug}`}
+                      >
+                        Browse
+                      </Link>
+                    )}
+                    <Link
+                      to="/sets/$postSlug"
+                      params={{ postSlug: slug }}
+                      className={stampClasses("ghost", "sm")}
+                      title={`View details for ${meta?.title ?? slug}`}
+                    >
+                      Details
+                    </Link>
+                  </div>
+                </article>
               );
             })}
           </div>

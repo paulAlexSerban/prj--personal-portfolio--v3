@@ -281,11 +281,7 @@ export function OnboardingTour() {
           styles={tourStyles}
         />
       )}
-      <Modal
-        open={phase === "opt-in"}
-        onClose={declineWalkthrough}
-        title="Try a first review?"
-      >
+      <Modal open={phase === "opt-in"} onClose={declineWalkthrough} title="Try a first review?">
         <p className="deck m-0 text-sm">
           Optional walkthrough: add a post to My Sets, start a session, reveal a card, and rate it.
           Everything still stays in this browser.

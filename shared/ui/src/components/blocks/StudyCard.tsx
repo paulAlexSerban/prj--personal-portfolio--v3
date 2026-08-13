@@ -93,10 +93,7 @@ export function StudyCard({
                 />
             </div>
 
-            <article
-                className="bg-[var(--aged-white)] border-[3px] border-[var(--ink-black)] grain p-3 md:p-8 min-h-[460px] flex flex-col"
-                data-tour-target="study-card"
-            >
+            <article className="bg-[var(--aged-white)] border-[3px] border-[var(--ink-black)] grain p-3 md:p-8 min-h-[460px] flex flex-col" data-tour-target="study-card">
                 <p className="smallcaps text-[10px] text-[var(--slate)] mb-1 md:mb-4">
                     {card.cardType} card · ease {card.easeFactor.toFixed(2)} · ivl {card.interval}d
                 </p>
