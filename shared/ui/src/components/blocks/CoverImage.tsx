@@ -79,11 +79,10 @@ export function CoverImage({
             widthsStr={ZOOM_WIDTHS}
             ratiosStr={ratiosStr}
             loading="eager"
-            className="h-full w-full"
-            imgClassName="h-full w-full object-contain"
+            imgClassName="max-h-[calc(100dvh-4rem)] max-w-full object-contain"
         />
     ) : (
-        <img src={coverImageUrl(cover, placeholder)} alt={lightboxAlt} loading="eager" draggable={false} className="h-full w-full min-h-0 min-w-0 object-contain" />
+        <img src={coverImageUrl(cover, placeholder)} alt={lightboxAlt} loading="eager" draggable={false} className="max-h-[calc(100dvh-4rem)] max-w-full object-contain" />
     );
 
     return (
