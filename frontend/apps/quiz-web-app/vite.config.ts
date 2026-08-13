@@ -33,7 +33,7 @@ export default defineConfig({
     tsconfigPaths(),
     VitePWA({
       registerType: "autoUpdate",
-      includeAssets: ["favicon.ico", "apple-touch-icon.png"],
+      includeAssets: ["favicon.ico", "favicon.svg", "apple-touch-icon.png"],
       manifest: {
         name: "The Typeset Review - Flashcards",
         short_name: "The Typeset Review",

@@ -37,6 +37,9 @@ const cfBeaconToken = import.meta.env.PUBLIC_CF_BEACON_TOKEN;
         <meta property="og:type" content="website" />
         <meta property="og:url" content={canonical} />
         <meta property="og:image" content={ogImageUrl} />
+        <link rel="icon" href={assetUrl('favicon.ico')} sizes="any" />
+        <link rel="icon" href={assetUrl('favicon.svg')} type="image/svg+xml" />
+        <link rel="apple-touch-icon" href={assetUrl('apple-touch-icon.png')} />
         <link rel="canonical" href={canonical} />
         <link rel="sitemap" href={sitemapUrl} />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
