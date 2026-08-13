@@ -19,7 +19,7 @@ export function NothingDueView({ counts, actions, onStudyAhead }: NothingDueView
     const cappedByLimit = totalAvailable > 0;
 
     return (
-        <>
+        <div data-tour-target="nothing-due">
             <div className="text-center mb-8">
                 <p className="smallcaps text-sm text-[var(--slate)]">Nothing Queued</p>
                 <h2 className="text-6xl font-black mt-2" style={{ fontFamily: 'var(--font-display)' }}>
@@ -59,6 +59,6 @@ export function NothingDueView({ counts, actions, onStudyAhead }: NothingDueView
             )}
 
             <div className="text-center mt-4 flex justify-center gap-3">{actions}</div>
-        </>
+        </div>
     );
 }

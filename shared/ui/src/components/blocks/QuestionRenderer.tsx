@@ -97,7 +97,7 @@ export function QuestionRenderer({ question, revealed, onReveal, onGraded, onRet
 
             {/* ── Answer controls ──────────────────────────────────────────── */}
             {question.answerFormat === 'true_false' && (
-                <div className="grid grid-cols-2 gap-3">
+                <div className="grid grid-cols-2 gap-3" data-tour-target="pick-option">
                     {[true, false].map((val) => {
                         const chosen = tfChoice === val;
                         const showCorrect = revealed && question.answer === val;
@@ -119,7 +119,7 @@ export function QuestionRenderer({ question, revealed, onReveal, onGraded, onRet
             )}
 
             {(question.answerFormat === 'multiple_choice' || question.answerFormat === 'multiple_select') && (
-                <div className="flex flex-col gap-2">
+                <div className="flex flex-col gap-2" data-tour-target="pick-option">
                     {question.answerFormat === 'multiple_select' && !revealed && <p className="smallcaps text-[10px] text-[var(--slate)]">Select all that apply</p>}
                     {question.options.map((opt) => {
                         const chosen = question.answerFormat === 'multiple_choice' ? selectedKey === opt.key : selectedKeys.has(opt.key);
@@ -153,6 +153,7 @@ export function QuestionRenderer({ question, revealed, onReveal, onGraded, onRet
                         size="lg"
                         disabled={!canSubmit}
                         onClick={onReveal}
+                        data-tour-target="reveal-card"
                         title={question.answerFormat === 'free_text' ? 'Reveal the answer and explanation' : 'Submit your answer and reveal the result'}
                     >
                         {question.answerFormat === 'free_text' ? 'Show Answer' : 'Submit'}

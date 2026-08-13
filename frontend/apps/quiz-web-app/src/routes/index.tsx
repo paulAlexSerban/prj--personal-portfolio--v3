@@ -81,6 +81,7 @@ function HomeView() {
   const pages = totalPages(rows.length, GRID_PAGE_SIZE);
   const current = clampPage(page, pages);
   const pageItems = paginate(rows, current, GRID_PAGE_SIZE);
+  const firstAddableSlug = pageItems.find((p) => !addedSet.has(p.slug))?.slug;
 
   useEffect(() => {
     setPage(1);
@@ -235,6 +236,7 @@ function HomeView() {
                           disabled={isLoading}
                           onClick={() => addToStudySet(post.slug)}
                           title={`Add ${post.title} to your study sets`}
+                          data-tour-target={post.slug === firstAddableSlug ? "add-first-set" : undefined}
                           className={stampClasses("solid", "sm")}
                         >
                           {isLoading ? "Loading…" : "Add to Study Set"}

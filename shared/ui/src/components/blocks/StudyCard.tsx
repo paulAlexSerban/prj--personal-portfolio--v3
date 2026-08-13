@@ -93,7 +93,10 @@ export function StudyCard({
                 />
             </div>
 
-            <article className="bg-[var(--aged-white)] border-[3px] border-[var(--ink-black)] grain p-3 md:p-8 min-h-[460px] flex flex-col">
+            <article
+                className="bg-[var(--aged-white)] border-[3px] border-[var(--ink-black)] grain p-3 md:p-8 min-h-[460px] flex flex-col"
+                data-tour-target="study-card"
+            >
                 <p className="smallcaps text-[10px] text-[var(--slate)] mb-1 md:mb-4">
                     {card.cardType} card · ease {card.easeFactor.toFixed(2)} · ivl {card.interval}d
                 </p>
@@ -103,7 +106,7 @@ export function StudyCard({
                 {revealed && (
                     <div className="mt-auto pt-8">
                         {gradedCorrect === false && <p className="smallcaps text-[10px] text-[var(--slate)] mb-2 text-center">Wrong answer - rate Again or Hard</p>}
-                        <div className="grid grid-cols-4 gap-2">
+                        <div className="grid grid-cols-4 gap-2" data-tour-target="rate-card">
                             {(
                                 [
                                     [1, 'Again'],

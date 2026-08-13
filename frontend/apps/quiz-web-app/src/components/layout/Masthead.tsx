@@ -63,6 +63,7 @@ export function Masthead() {
           </p>
           <div className="flex items-center gap-3 md:gap-5">
             <nav
+              data-tour-target="primary-nav"
               className="hidden md:flex flex-wrap items-center gap-5 text-[11px] smallcaps"
               aria-label="Primary"
             >
@@ -79,6 +80,7 @@ export function Masthead() {
                   variant="outline"
                   size="icon"
                   aria-label="Open navigation menu"
+                  data-tour-target="mobile-nav-button"
                   className="md:hidden rounded-none border-ink"
                 >
                   <Menu className="h-4 w-4" />

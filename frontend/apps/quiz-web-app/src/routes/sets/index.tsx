@@ -128,8 +128,14 @@ function StudySetsView() {
       ) : (
         <>
           <div className="grid md:grid-cols-2 gap-x-10 gap-y-8">
-            {pageItems.map(({ slug, meta, stats, due }) => (
-              <article key={slug} className="border-t-[3px] border-[var(--ink-black)] pt-4">
+            {pageItems.map(({ slug, meta, stats, due }, index) => {
+              const isWalkthroughSet = index === 0 && current === 1;
+              return (
+              <article
+                key={slug}
+                className="border-t-[3px] border-[var(--ink-black)] pt-4"
+                data-tour-target={isWalkthroughSet ? "walkthrough-set" : undefined}
+              >
                 <p className="smallcaps text-[10px] text-[var(--slate)] mb-1">
                   Study Set · {meta?.questionCount ?? stats.total} questions
                 </p>
@@ -166,14 +172,15 @@ function StudySetsView() {
                   </div>
                 </div>
                 <div className="mt-4 flex gap-2">
-                  {due > 0 ? (
+                  {due > 0 || isWalkthroughSet ? (
                     <Link
                       to="/sets/$postSlug/study"
                       params={{ postSlug: slug }}
                       className={stampClasses("solid", "sm")}
                       title={`Study ${due} due cards in ${meta?.title ?? slug}`}
+                      data-tour-target={isWalkthroughSet ? "study-first-set" : undefined}
                     >
-                      Study ({due})
+                      {due > 0 ? `Study (${due})` : "Study"}
                     </Link>
                   ) : (
                     <Link
@@ -195,7 +202,8 @@ function StudySetsView() {
                   </Link>
                 </div>
               </article>
-            ))}
+              );
+            })}
           </div>
           <PaginationBar
             page={current}
