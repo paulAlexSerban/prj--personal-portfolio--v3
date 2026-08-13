@@ -14,7 +14,7 @@ export function scanCacheFiles(cacheDir: string): ScannedCacheFile[] {
 
     return fs
         .readdirSync(cacheDir)
-        .filter((name) => name.endsWith('.json'))
+        .filter((name) => name.endsWith('.json') && name !== 'index.json')
         .sort((a, b) => a.localeCompare(b))
         .map((name) => ({
             path: path.join(cacheDir, name),

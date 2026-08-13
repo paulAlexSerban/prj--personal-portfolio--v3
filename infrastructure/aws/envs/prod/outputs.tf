@@ -69,3 +69,23 @@ output "github_actions_role_arn" {
   description = "IAM role ARN for the release.yaml production deploy jobs (set as AWS_DEPLOY_ROLE_ARN on the production GitHub Environment)."
   value       = module.github_oidc_deploy_role.role_arn
 }
+
+output "news_data_bucket_name" {
+  description = "S3 bucket holding RSS cache JSON (set as NEWS_DATA_S3_BUCKET_NAME on the news-data GitHub Environment)."
+  value       = module.news_data_cdn.bucket_name
+}
+
+output "news_data_cloudfront_distribution_id" {
+  description = "CloudFront distribution ID for news JSON (set as NEWS_DATA_CLOUDFRONT_DISTRIBUTION_ID on the news-data GitHub Environment)."
+  value       = module.news_data_cdn.cloudfront_distribution_id
+}
+
+output "news_data_url" {
+  description = "Public HTTPS base for news JSON (PUBLIC_NEWS_DATA_URL in the news-feed site)."
+  value       = module.news_data_cdn.news_data_url
+}
+
+output "github_actions_news_sync_role_arn" {
+  description = "IAM role ARN for news-sync.yaml (set as AWS_DEPLOY_ROLE_ARN on the news-data GitHub Environment)."
+  value       = module.github_oidc_news_sync_role.role_arn
+}

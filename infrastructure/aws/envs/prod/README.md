@@ -1,8 +1,8 @@
 # Production environment - Route 53 -> CloudFront -> S3 (per-app)
 
 Provisions **four** independent static-hosting stacks under the `paulserban.eu`
-zone, plus a shared **assets CDN** for content-pipeline media, plus a single
-GitHub Actions OIDC deploy role that can sync/invalidate the four sites.
+zone, plus a shared **assets CDN** for content-pipeline media, plus a **news JSON
+CDN** for the RSS cache, plus GitHub Actions OIDC roles (site deploy + news-sync).
 Production uses **live** content (private content-repo sync) and is
 **public** (no HTTP Basic Auth).
 
@@ -10,7 +10,8 @@ Production uses **live** content (private content-repo sync) and is
 paulserban.eu           -> CloudFront -> S3 (portfolio)
 blog.paulserban.eu      -> CloudFront -> S3 (blog)
 quiz.paulserban.eu      -> CloudFront -> S3 (quiz SPA)
-news-feed.paulserban.eu -> CloudFront -> S3 (news)
+news-feed.paulserban.eu -> CloudFront -> S3 (news HTML shell)
+news-data.paulserban.eu -> CloudFront -> S3 (RSS JSON, fetched by the news site at runtime)
 assets.paulserban.eu    -> CloudFront -> S3 website (existing assets.paulserban.eu bucket)
 
 ACM certs live in us-east-1 (DNS-validated against the shared hosted zone).
@@ -19,13 +20,25 @@ GitHub Actions (environment:production)
   -- OIDC token --> IAM role (gha-deploy-paulserban.eu)
                      -> s3:* on all four site buckets
                      -> cloudfront:CreateInvalidation on all four distributions
+
+GitHub Actions (environment:news-data)
+  -- OIDC token --> IAM role (gha-news-sync-paulserban.eu)
+                     -> s3:* on the news-data bucket only
+                     -> cloudfront:CreateInvalidation on the news-data distribution
 ```
 
 Content images/icons are written by `content--paulserban.eu` (`npm run push:assets`)
 into the existing `assets.paulserban.eu` bucket. Apps load them from
 `https://assets.paulserban.eu/assets/...` — site deploys never touch that bucket.
 
-Module code lives in [`../../modules/static-site`](../../modules/static-site)
+News JSON is written by `.github/workflows/news-sync.yaml` (daily RSS fetch) into
+the `news-data.paulserban.eu` bucket. The news-feed site fetches
+`https://news-data.paulserban.eu/*.json` in the browser, so new headlines do not
+require a site rebuild. Site deploys never touch that bucket.
+
+Module code lives in [`../../modules/static-site`](../../modules/static-site),
+[`../../modules/news-data-cdn`](../../modules/news-data-cdn),
+[`../../modules/assets-cdn`](../../modules/assets-cdn),
 and [`../../modules/github-oidc-deploy-role`](../../modules/github-oidc-deploy-role).
 This directory wires four `static_site*` module instances (portfolio uses the
 module name `static_site` for consistency with `envs/test` / `envs/stage`).
@@ -33,6 +46,11 @@ module name `static_site` for consistency with `envs/test` / `envs/stage`).
 Each site still uses the CloudFront viewer-request function for Astro
 directory-index rewrites (`trailingSlash: "always"`); Basic Auth is left
 disabled (module default).
+
+The news-data distribution uses a custom cache policy (`minTTL 0`, `defaultTTL 300`,
+`maxTTL 3600`) plus origin `Cache-Control` and a post-sync invalidation so clients
+do not keep stale JSON. CORS is `Access-Control-Allow-Origin: *` so GitHub Pages
+and localhost can fetch the same files.
 
 ## Prerequisites
 
@@ -130,6 +148,35 @@ No AWS secrets are required. Each deploy job has `permissions: id-token: write` 
 GitHub can mint an OIDC token; the IAM role trust policy only allows
 `repo:paulAlexSerban/prj--personal-portfolio--v3:environment:production`.
 
+### News-data environment (`.github/workflows/news-sync.yaml`)
+
+The news-sync workflow is **isolated** from site deploys: it does not trigger CI,
+release, or Pages. Create a GitHub **Environment** named `news-data` with **no**
+required reviewers, and set:
+
+**Variables** (`Settings -> Environments -> news-data -> Variables`):
+
+| Name                                   | Value                                                   | Source                     |
+| -------------------------------------- | ------------------------------------------------------- | -------------------------- |
+| `AWS_REGION`                           | e.g. `eu-central-1`                                     | same as `aws_region` above |
+| `AWS_DEPLOY_ROLE_ARN`                  | `terraform output github_actions_news_sync_role_arn`    |                            |
+| `NEWS_DATA_S3_BUCKET_NAME`             | `terraform output news_data_bucket_name`                |                            |
+| `NEWS_DATA_CLOUDFRONT_DISTRIBUTION_ID` | `terraform output news_data_cloudfront_distribution_id` |                            |
+
+Also create an empty `news-cache` branch once (the workflow will push cache
+commits there, never to `main`):
+
+```bash
+git checkout --orphan news-cache
+git rm -rf .
+git commit --allow-empty -m "chore(news): seed news-cache branch"
+git push origin news-cache
+git checkout main
+```
+
+The news-data IAM role trust policy only allows
+`repo:paulAlexSerban/prj--personal-portfolio--v3:environment:news-data`.
+
 ### OIDC provider note
 
 Only one IAM OIDC provider for `token.actions.githubusercontent.com` can exist per
@@ -145,4 +192,4 @@ terraform destroy
 
 Note this deletes the S3 buckets (must be empty - `terraform destroy` does not empty
 them first), the CloudFront distributions/DNS records, and the GitHub Actions deploy
-role. It does **not** delete the shared OIDC provider (prod did not create it).
+and news-sync roles. It does **not** delete the shared OIDC provider (prod did not create it).

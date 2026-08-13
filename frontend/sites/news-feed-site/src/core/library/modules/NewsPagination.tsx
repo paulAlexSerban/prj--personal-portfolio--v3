@@ -4,40 +4,39 @@ interface Props {
     page: number;
     pages: number;
     total: number;
-    prevHref?: string;
-    nextHref?: string;
+    onPageChange: (page: number) => void;
     itemLabel?: string;
 }
 
-export function NewsPagination({ page, pages, total, prevHref, nextHref, itemLabel = 'articles' }: Props) {
+export function NewsPagination({ page, pages, total, onPageChange, itemLabel = 'articles' }: Props) {
     return (
         <PaginationBar
             page={page}
             pages={pages}
             total={total}
-            onPageChange={() => {}}
+            onPageChange={onPageChange}
             itemLabel={itemLabel}
             labelClassName="kicker text-[11px]"
-            renderPrev={({ disabled }) =>
-                disabled || !prevHref ? (
+            renderPrev={({ disabled, onClick }) =>
+                disabled ? (
                     <span className="stamp stamp-ghost px-3 py-1.5 text-sm opacity-40" aria-disabled="true">
                         ← Prev
                     </span>
                 ) : (
-                    <a className="stamp stamp-ghost px-3 py-1.5 text-sm no-underline" href={prevHref}>
+                    <button type="button" className="stamp stamp-ghost appearance-none px-3 py-1.5 text-sm" onClick={onClick}>
                         ← Prev
-                    </a>
+                    </button>
                 )
             }
-            renderNext={({ disabled }) =>
-                disabled || !nextHref ? (
+            renderNext={({ disabled, onClick }) =>
+                disabled ? (
                     <span className="stamp stamp-ghost px-3 py-1.5 text-sm opacity-40" aria-disabled="true">
                         Next &gt;
                     </span>
                 ) : (
-                    <a className="stamp stamp-ghost px-3 py-1.5 text-sm no-underline" href={nextHref}>
+                    <button type="button" className="stamp stamp-ghost appearance-none px-3 py-1.5 text-sm" onClick={onClick}>
                         Next &gt;
-                    </a>
+                    </button>
                 )
             }
         />

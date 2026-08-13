@@ -36,7 +36,7 @@ locals {
     ManagedBy   = "terraform"
   }
 
-  # Shared destination for CloudFront standard access logs across site/blog/quiz/news.
+  # Shared destination for CloudFront standard access logs across site/blog/quiz/news/news-data.
   # Domain-prefixed keys keep logs queryable per distribution.
   cf_access_logs_bucket_name = "cf-access-logs.paulserban.eu"
 }
@@ -175,6 +175,23 @@ module "static_site_news" {
   access_logging_prefix = "${var.news_domain_name}/"
 }
 
+# News JSON CDN. Filled by .github/workflows/news-sync.yaml; the news-feed
+# site fetches these files at runtime so RSS updates do not require a rebuild.
+module "news_data_cdn" {
+  source = "../../modules/news-data-cdn"
+  providers = {
+    aws           = aws
+    aws.us_east_1 = aws.us_east_1
+  }
+
+  domain_name    = var.news_data_domain_name
+  hosted_zone_id = var.hosted_zone_id
+  tags           = merge(local.tags, { Purpose = "news-json" })
+
+  access_logging_bucket = aws_s3_bucket.cf_access_logs.bucket_domain_name
+  access_logging_prefix = "${var.news_data_domain_name}/"
+}
+
 # Shared content media CDN. Bucket is owned/filled by content--paulserban.eu
 # (npm run push:assets); this module only fronts it with CloudFront + DNS.
 module "assets_cdn" {
@@ -214,4 +231,28 @@ module "github_oidc_deploy_role" {
   ]
 
   tags = local.tags
+}
+
+# Least-privilege role for the isolated news-sync workflow (GitHub Environment
+# `news-data`). Can only write the news JSON bucket and invalidate its CDN —
+# not the four site buckets.
+module "github_oidc_news_sync_role" {
+  source = "../../modules/github-oidc-deploy-role"
+
+  github_org           = var.github_org
+  github_repo          = var.github_repo
+  github_environment   = "news-data"
+  create_oidc_provider = false
+  role_name            = "gha-news-sync-${var.domain_name}"
+
+  s3_bucket_arns = [
+    module.news_data_cdn.bucket_arn,
+  ]
+  cloudfront_distribution_arns = [
+    module.news_data_cdn.cloudfront_distribution_arn,
+  ]
+
+  tags = local.tags
+
+  depends_on = [module.github_oidc_deploy_role]
 }

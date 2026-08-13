@@ -1,43 +1,13 @@
 ---
-import NewsCard from '@/library/modules/NewsCard.astro';
-import { NewsPagination } from '@/library/modules/NewsPagination.tsx';
+import { NewsFeedApp } from '@/library/modules/NewsFeedApp.tsx';
 import BaseLayout from '@/system/templates/BaseTemplate.astro';
-import { closeConnection, openDb } from '@/lib/db.ts';
-import {
-    categoryLabel,
-    countItemsByCategory,
-    getItemsByCategory,
-    getStaticCategoryPaths,
-    pageCount,
-} from '@/lib/queries/news.ts';
-import { PAGE_SIZE, siteUrls } from '@/lib/urls.ts';
+import { CATEGORY_ORDER, categoryLabel } from '@/lib/queries/news.ts';
 
 export function getStaticPaths() {
-    const db = openDb();
-    const paths = getStaticCategoryPaths(db);
-    closeConnection(db);
-    // When DB is empty (before first sync), still emit known category shells so routes exist after ingest.
-    if (paths.length === 0) {
-        return [
-            'tech',
-            'web-dev',
-            'front-end',
-            'javascript',
-            'programming',
-            'system-design',
-            'cybersecurity',
-        ].map((category) => ({ params: { category } }));
-    }
-    return paths.map(({ category }) => ({ params: { category } }));
+    return CATEGORY_ORDER.map((category) => ({ params: { category } }));
 }
 
 const category = Astro.params.category!;
-const page = 1;
-const db = openDb();
-const total = countItemsByCategory(db, category);
-const pages = pageCount(total, PAGE_SIZE);
-const items = getItemsByCategory(db, category, { limit: PAGE_SIZE, offset: 0 });
-closeConnection(db);
 const label = categoryLabel(category);
 ---
 
@@ -45,38 +15,5 @@ const label = categoryLabel(category);
     title={`${label} News | Paul Serban`}
     description={`Software engineering headlines in ${label}.`}
 >
-    <section class="mb-10">
-        <div class="mb-5 flex flex-wrap items-end justify-between gap-3 border-b-[3px] border-ink pb-2">
-            <div>
-                <p class="kicker text-sm">Category</p>
-                <h2 class="m-0 font-display text-4xl font-bold">{label}</h2>
-            </div>
-            <a class="stamp stamp-ghost px-3 py-1.5 text-sm no-underline" href={siteUrls.home}>
-                All latest
-            </a>
-        </div>
-
-        {
-            items.length > 0 ? (
-                <ul class="m-0 list-none columns-1 gap-5 p-0 sm:columns-2 lg:columns-3">
-                    {items.map((item) => (
-                        <li class="mb-5 break-inside-avoid">
-                            <NewsCard item={item} showCategory={false} />
-                        </li>
-                    ))}
-                </ul>
-            ) : (
-                <p class="deck">No articles in this category yet.</p>
-            )
-        }
-
-        <div class="mt-10 border-t border-rule pt-4">
-            <NewsPagination
-                page={page}
-                pages={pages}
-                total={total}
-                nextHref={pages > 1 ? siteUrls.categoryPage(category, 2) : undefined}
-            />
-        </div>
-    </section>
+    <NewsFeedApp client:load category={category} />
 </BaseLayout>

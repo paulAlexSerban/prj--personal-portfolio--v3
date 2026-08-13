@@ -201,11 +201,11 @@ Required fields (missing -> skipped with warning):
 
 ## `@prj--personal-portfolio--v3/tools--news-sync` (`tools/news-sync/`)
 
-Fetches RSS/Atom feeds into `content/news/cache/*.json`. Runs from `.github/workflows/news-sync.yaml` daily (`pnpm --filter ...tools--news-sync sync`), **not** from root `pnpm start`.
+Fetches RSS/Atom feeds into `content/news/cache/*.json` (including `index.json`). Runs from `.github/workflows/news-sync.yaml` daily (`pnpm --filter ...tools--news-sync sync`), **not** from root `pnpm start`. The workflow commits the cache to the `news-cache` branch and uploads it to the `news-data.paulserban.eu` CDN.
 
 ## `@prj--personal-portfolio--v3/tools--news-ingest` (`tools/news-ingest/`)
 
-Reads `content/news/cache/*.json` and upserts into `news_items`. Runs as part of root `pnpm start`. Prunes unlocked RSS rows absent from the latest cache.
+Reads `content/news/cache/*.json` and upserts into `news_items`. Still available for local/SQLite use, but **not** invoked by site builds — the news-feed site loads CDN JSON in the browser. Prunes unlocked RSS rows absent from the latest cache.
 
 ## Agent notes
 

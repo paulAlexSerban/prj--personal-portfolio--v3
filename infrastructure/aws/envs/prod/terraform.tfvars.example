@@ -6,6 +6,7 @@ domain_name    = "paulserban.eu"
 # blog_domain_name = "blog.paulserban.eu"
 # quiz_domain_name = "quiz.paulserban.eu"
 # news_domain_name = "news-feed.paulserban.eu"
+# news_data_domain_name = "news-data.paulserban.eu"
 hosted_zone_id = "ZXXXXXXXXXXXXXX" # aws route53 list-hosted-zones-by-name --dns-name paulserban.eu
 
 # Reuse the IAM OIDC provider created by envs/test (default is already false).
