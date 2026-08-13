@@ -1,0 +1,19 @@
+extends: default
+
+ignore: |
+    pnpm-lock.yaml
+    **/node_modules/**
+    **/.pnpm-store/**
+    **/.terraform/**
+
+rules:
+    comments:
+        min-spaces-from-content: 1
+    document-start: disable
+    indentation:
+        spaces: 4
+        indent-sequences: consistent
+    line-length:
+        max: 180
+    truthy:
+        check-keys: false

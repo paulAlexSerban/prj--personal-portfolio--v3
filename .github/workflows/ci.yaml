@@ -36,6 +36,78 @@ jobs:
             - name: Apply database migrations
               run: pnpm db:migrate
 
+    yaml:
+        runs-on: ubuntu-latest
+        timeout-minutes: 10
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v7
+
+            - name: Set up Python
+              uses: actions/setup-python@v6
+              with:
+                  python-version: '3.12'
+
+            - name: Install yamllint
+              run: pip install yamllint==1.38.0
+
+            - name: Lint YAML files
+              run: yamllint --strict .
+
+            - name: Lint GitHub Actions workflows
+              uses: docker://rhysd/actionlint:1.7.12
+              with:
+                  args: -color
+
+            - name: Validate Docker Compose
+              run: docker compose -f infrastructure/local/docker-compose.local.yml config --quiet
+
+    terraform:
+        runs-on: ubuntu-latest
+        timeout-minutes: 15
+        env:
+            TF_PLUGIN_CACHE_DIR: ${{ github.workspace }}/.terraform.d/plugin-cache
+        defaults:
+            run:
+                working-directory: infrastructure/aws
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v7
+
+            - name: Setup Terraform
+              uses: hashicorp/setup-terraform@v4
+              with:
+                  terraform_version: 1.9.8
+                  terraform_wrapper: false
+
+            - name: Terraform format
+              run: terraform fmt -check -recursive -diff
+
+            - name: Setup TFLint
+              uses: terraform-linters/setup-tflint@v6
+              with:
+                  tflint_version: v0.63.1
+                  cache: true
+                  tflint_config_path: infrastructure/aws/.tflint.hcl
+
+            - name: Init TFLint
+              run: tflint --init
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+            - name: TFLint
+              run: tflint --recursive -f compact
+
+            - name: Terraform init and validate
+              run: |
+                  mkdir -p "$TF_PLUGIN_CACHE_DIR"
+                  for env in test stage prod; do
+                    echo "::group::validate ${env}"
+                    terraform -chdir="envs/${env}" init -backend=false -input=false -lockfile=readonly
+                    terraform -chdir="envs/${env}" validate
+                    echo "::endgroup::"
+                  done
+
     changeset-check:
         if: >
             github.event_name == 'pull_request' &&
