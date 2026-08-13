@@ -1,5 +1,12 @@
 # @prj--personal-portfolio--v3/frontend--news-feed-site
 
+## 0.3.1
+
+### Patch Changes
+
+- 861a58e: Add a branded PS monogram favicon (ico/svg/apple-touch-icon, plus PWA icons for the quiz app) and wire it into every site's document head so clients actually receive it, including under GitHub Pages sub-paths.
+- 9afd157: Declare isomorphic-dompurify (and shared--markdown) so Astro SSR can resolve the package when it is marked vite.ssr.external during CI builds.
+
 ## 0.3.0
 
 ### Minor Changes

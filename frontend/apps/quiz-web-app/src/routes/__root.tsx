@@ -2,6 +2,7 @@ import { createRootRoute, Outlet } from "@tanstack/react-router";
 import { Toaster } from "@prj--personal-portfolio--v3/shared--ui";
 import { ErrorPage } from "@prj--personal-portfolio--v3/shared--ui/blocks";
 import { PageLayout } from "@/components/layout/PageLayout";
+import { OnboardingTour } from "@/onboarding/OnboardingTour";
 
 function NotFoundComponent() {
   return (
@@ -35,6 +36,7 @@ function RootComponent() {
   return (
     <>
       <Outlet />
+      <OnboardingTour />
       <Toaster position="bottom-center" closeButton richColors />
     </>
   );

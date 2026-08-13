@@ -19,6 +19,9 @@ export const siteUrls = {
     news: import.meta.env.VITE_NEWS_URL ?? crossApp.news,
 } as const;
 
+/** Canonical GitHub repository for this platform. */
+export const QUIZ_REPO_URL = 'https://github.com/paulAlexSerban/prj--personal-portfolio--v3';
+
 /** Canonical blog detail URL for a post, snippet, or book note. */
 export function blogPostUrl(postType: string, slug: string): string {
     const segment = postType === 'book-note' ? 'booknote' : postType;
