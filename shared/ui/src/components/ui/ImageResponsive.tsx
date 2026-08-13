@@ -278,7 +278,7 @@ const ImageResponsive = ({
             data-zoom-sizes={ZOOM_SIZES}
             data-zoom-alt={alt}
             aria-label={zoomLabel}
-            className="block w-full cursor-zoom-in border-0 bg-transparent p-0 text-left"
+            className="block w-full cursor-zoom-in touch-manipulation border-0 bg-transparent p-0 text-left"
         >
             {inlineImage}
         </button>

@@ -79,15 +79,16 @@ export function CoverImage({
             widthsStr={ZOOM_WIDTHS}
             ratiosStr={ratiosStr}
             loading="eager"
-            imgClassName="max-h-[90vh] max-w-full object-contain"
+            className="h-full w-full"
+            imgClassName="h-full w-full object-contain"
         />
     ) : (
-        <img src={coverImageUrl(cover, placeholder)} alt={lightboxAlt} loading="eager" className="max-h-[90vh] max-w-full object-contain" />
+        <img src={coverImageUrl(cover, placeholder)} alt={lightboxAlt} loading="eager" draggable={false} className="h-full w-full min-h-0 min-w-0 object-contain" />
     );
 
     return (
         <>
-            <button type="button" onClick={() => setZoomOpen(true)} aria-label={zoomLabel} className="block w-full cursor-zoom-in border-0 bg-transparent p-0 text-left">
+            <button type="button" onClick={() => setZoomOpen(true)} aria-label={zoomLabel} className="block w-full cursor-zoom-in touch-manipulation border-0 bg-transparent p-0 text-left">
                 {inlineImage}
             </button>
             <ImageZoomModal open={zoomOpen} onClose={() => setZoomOpen(false)} label={lightboxAlt || 'Zoomed image'}>

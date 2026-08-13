@@ -44,7 +44,9 @@ export function ImageZoomRoot() {
 
     return (
         <ImageZoomModal open={open && Boolean(payload)} onClose={() => setOpen(false)} label={payload?.alt || 'Zoomed image'}>
-            {payload ? <img src={payload.src} srcSet={payload.srcSet} sizes={payload.sizes} alt={payload.alt} className="max-h-[90vh] max-w-full object-contain" /> : null}
+            {payload ? (
+                <img src={payload.src} srcSet={payload.srcSet} sizes={payload.sizes} alt={payload.alt} draggable={false} className="h-full w-full min-h-0 min-w-0 object-contain" />
+            ) : null}
         </ImageZoomModal>
     );
 }
