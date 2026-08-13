@@ -4,9 +4,12 @@ on:
     workflow_dispatch:
     push:
         branches: [main]
-    workflow_run:
-        workflows: [News Sync (daily RSS fetch)]
-        types: [completed]
+        paths:
+            - 'assets/**'
+            - 'backend/**'
+            - 'frontend/**'
+            - 'shared/**'
+            - 'tools/**'
 
 concurrency:
     group: pages
@@ -19,9 +22,6 @@ permissions:
 
 jobs:
     resolve-pages:
-        # Skip when triggered by a failed/cancelled News Sync run; still run for
-        # push, workflow_dispatch, and successful News Sync completions.
-        if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
         runs-on: ubuntu-latest
         outputs:
             origin: ${{ steps.pages.outputs.origin }}
@@ -46,7 +46,6 @@ jobs:
             news_base: ${{ needs.resolve-pages.outputs.base_path }}/news
             emit_merged_bundle: true
             content_source: live
-            ref: ${{ github.event.workflow_run.head_sha || github.sha }}
         secrets: inherit
 
     deploy:
