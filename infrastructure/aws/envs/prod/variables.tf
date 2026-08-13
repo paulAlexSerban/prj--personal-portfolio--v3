@@ -40,6 +40,12 @@ variable "assets_bucket_name" {
   default     = "assets.paulserban.eu"
 }
 
+variable "news_data_domain_name" {
+  description = "Fully-qualified domain name for the news JSON CDN (RSS cache files)."
+  type        = string
+  default     = "news-data.paulserban.eu"
+}
+
 variable "hosted_zone_id" {
   description = "Route 53 hosted zone ID for paulserban.eu. Find it with: aws route53 list-hosted-zones-by-name --dns-name paulserban.eu."
   type        = string

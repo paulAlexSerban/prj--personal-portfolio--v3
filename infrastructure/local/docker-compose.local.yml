@@ -121,12 +121,11 @@ services:
             ASTRO_HMR_HOST: local.news-feed.paulserban.eu
             ASTRO_HMR_CLIENT_PORT: '443'
             ASTRO_HMR_PROTOCOL: wss
-            DATABASE_PATH: /app/database/output/content.db
             PUBLIC_PORTFOLIO_URL: https://local.paulserban.eu/
             PUBLIC_BLOG_URL: https://local.blog.paulserban.eu/
             PUBLIC_QUIZ_URL: https://local.quiz.paulserban.eu/
         volumes:
-            - ../../database/output:/app/database/output
+            - ../../content/news/cache:/app/content/news/cache:ro
         networks:
             - local
         labels:
