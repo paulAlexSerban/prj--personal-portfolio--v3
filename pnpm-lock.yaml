@@ -362,6 +362,9 @@ importers:
       '@astrojs/sitemap':
         specifier: ^3.7.0
         version: 3.7.3
+      '@prj--personal-portfolio--v3/shared--markdown':
+        specifier: workspace:*
+        version: link:../../../shared/markdown
       '@prj--personal-portfolio--v3/shared--navigation':
         specifier: workspace:*
         version: link:../../../shared/navigation
@@ -371,6 +374,9 @@ importers:
       astro:
         specifier: ^5.16.15
         version: 5.18.2(@types/node@25.9.1)(jiti@2.7.0)(lightningcss@1.32.0)(rollup@4.62.2)(terser@5.48.0)(tsx@4.22.3)(typescript@5.9.3)(yaml@2.9.0)
+      isomorphic-dompurify:
+        specifier: ^2.25.0
+        version: 2.36.0
       lucide-react:
         specifier: ^0.575.0
         version: 0.575.0(react@19.2.7)

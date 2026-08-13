@@ -13,9 +13,11 @@
     "dependencies": {
         "@astrojs/react": "^4.4.2",
         "@astrojs/sitemap": "^3.7.0",
+        "@prj--personal-portfolio--v3/shared--markdown": "workspace:*",
         "@prj--personal-portfolio--v3/shared--navigation": "workspace:*",
         "@prj--personal-portfolio--v3/shared--ui": "workspace:*",
         "astro": "^5.16.15",
+        "isomorphic-dompurify": "^2.25.0",
         "lucide-react": "^0.575.0",
         "react": "^19.2.0",
         "react-dom": "^19.2.0",
