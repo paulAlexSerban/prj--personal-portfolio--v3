@@ -1,5 +1,12 @@
 # @prj--personal-portfolio--v3/shared--navigation
 
+## 1.2.1
+
+### Patch Changes
+
+- Updated dependencies [90b9b86]
+    - @prj--personal-portfolio--v3/shared--ui@1.3.0
+
 ## 1.2.0
 
 ### Minor Changes
