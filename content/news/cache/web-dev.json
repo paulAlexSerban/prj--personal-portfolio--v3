@@ -1,47 +1,177 @@
 {
   "category": "web-dev",
   "label": "Web Development",
-  "fetchedAt": "2026-08-13T07:05:28.975Z",
+  "fetchedAt": "2026-08-13T14:12:27.288Z",
   "items": [
     {
-      "slug": "48b85ab6927586484a6e20b9",
-      "guid": "https://dev.to/oleksandr_kuryzhev_42873f/cloudflare-origin-hardening-checklist-firewall-bots-strict-ssl-dan",
-      "title": "Cloudflare Origin Hardening Checklist: Firewall, Bots, Strict SSL",
-      "link": "https://dev.to/oleksandr_kuryzhev_42873f/cloudflare-origin-hardening-checklist-firewall-bots-strict-ssl-dan",
+      "slug": "350ba78d92c4156d52faae7b",
+      "guid": "https://dev.to/lav_vishwakarma/the-server-was-up-its-security-policy-wasnt-2kej",
+      "title": "The Server Was Up. Its Security Policy Wasn’t.",
+      "link": "https://dev.to/lav_vishwakarma/the-server-was-up-its-security-policy-wasnt-2kej",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "Originally published on kuryzhev.cloud Why this checklist A client of mine once showed me their Cloudflare dashboard during what they thought was a DDoS attack. Traffic graphs were flat. Zero anomalies. Meanwhile their origin server's CPU was pegged at 100% and the app was falli…",
-      "publishedAt": "2026-08-13T07:02:06.000Z"
+      "summary": "What CVE-2026-16584 in the AWS API MCP Server taught me about MCP security, fail-open systems, and the controls we place between AI agents and real infrastructure. On July 23, 2026, AWS published a security advisory for a vulnerability I reported in the AWS API MCP Server. It wa…",
+      "publishedAt": "2026-08-13T14:08:48.000Z"
     },
     {
-      "slug": "4b98db146f714948611e6be2",
-      "guid": "https://dev.to/shipsitself/an-ai-agent-read-13-invoices-and-blocked-141125-in-bad-payments-3npi",
-      "title": "An AI agent read 13 invoices and blocked $1,411.25 in bad payments",
-      "link": "https://dev.to/shipsitself/an-ai-agent-read-13-invoices-and-blocked-141125-in-bad-payments-3npi",
+      "slug": "d018ab58a9b2d3781573369c",
+      "guid": "https://dev.to/saltmire/how-to-add-motion-trails-and-afterimages-in-godot-4-281c",
+      "title": "How to add motion trails and afterimages in Godot 4",
+      "link": "https://dev.to/saltmire/how-to-add-motion-trails-and-afterimages-in-godot-4-281c",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "I handed an AI agent 13 invoices and a list of what we had actually ordered. It approved 10 of them, $9,049.05, and refused 3. The 3 it refused were the exact 3 I had rigged to be wrong: a padded total, an invoice nobody ordered, and a straight duplicate. Together they came to $…",
-      "publishedAt": "2026-08-13T07:02:01.000Z"
+      "summary": "Motion trails — those fading ghost copies left behind a dashing character — are one readable without any physics The idea is simple: every N milliseconds, take a snapshot of the character's current Create a new scene with a Sprite2D root. Name it TrailGhost. Give it this script:…",
+      "publishedAt": "2026-08-13T14:05:06.000Z"
     },
     {
-      "slug": "950f8ea52e5c7693cc3b8dea",
-      "guid": "https://dev.to/aimigo_57e64d6aeaf6a67a02/from-idea-to-deployed-bot-in-one-weekend-a-no-code-to-python-journey-1dcc",
-      "title": "From Idea to Deployed Bot in One Weekend: A No-Code-to-Python Journey",
-      "link": "https://dev.to/aimigo_57e64d6aeaf6a67a02/from-idea-to-deployed-bot-in-one-weekend-a-no-code-to-python-journey-1dcc",
+      "slug": "64a7a953f4bc28dfaa891611",
+      "guid": "https://dev.to/sbabas/first-days-of-nuxipros-launch-on-product-hunt-heres-what-it-revealed-20db",
+      "title": "First days of NuxiPro's launch on Product Hunt, here's what it revealed",
+      "link": "https://dev.to/sbabas/first-days-of-nuxipros-launch-on-product-hunt-heres-what-it-revealed-20db",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "From Idea to Deployed Bot in One Weekend: A No-Code-to-Python Journey You don’t need a development team to ship a functional trading or scraping bot in 48 hours. The fastest path is not “learn Python first,” but rather prototype with no-code tools, then translate only the core l…",
-      "publishedAt": "2026-08-13T07:00:16.000Z"
+      "summary": "NuxiPro is a tool that automatically archives your tasks to stop the \"Done\" column from turning into a graveyard of completed tasks, freeing up your workspace visually and keeping the tool clean and minimalist, without it trying to load tons of tasks into the Done column and sta…",
+      "publishedAt": "2026-08-13T14:01:16.000Z"
     },
     {
-      "slug": "deee33e73f4eef47bb7a0ba8",
-      "guid": "https://dev.to/begoodtool/why-a-tumbling-dice-animation-has-to-know-the-result-before-it-ever-starts-spinning-2bk2",
-      "title": "Why a tumbling dice animation has to know the result before it ever starts spinning",
-      "link": "https://dev.to/begoodtool/why-a-tumbling-dice-animation-has-to-know-the-result-before-it-ever-starts-spinning-2bk2",
+      "slug": "f274cc7ce820286c6b2f5311",
+      "guid": "https://dev.to/johnnylemonny/stop-parsing-ai-text-build-reliable-features-with-structured-outputs-8im",
+      "title": "Stop Parsing AI Text: Build Reliable Features with Structured Outputs",
+      "link": "https://dev.to/johnnylemonny/stop-parsing-ai-text-build-reliable-features-with-structured-outputs-8im",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "A while back I set out to build a simple \"roll N dice\" page — pick a quantity, hit a button, get a total. The random-number part is trivial, one line: Math.floor(Math.random() * 6) + 1 in a loop. What actually took thought was making the dice look like they're tumbling in pure C…",
-      "publishedAt": "2026-08-13T07:00:03.000Z"
+      "summary": "A model returns this response: Priority: high Team: billing Reason: The customer was charged twice. Your application needs this: { \"priority\": \"high\", \"team\": \"billing\", \"reason\": \"The customer was charged twice.\" } They look equivalent to a person. To software, they are complet…",
+      "publishedAt": "2026-08-13T14:00:00.000Z"
+    },
+    {
+      "slug": "ed017d5dbe1153bb5d1097da",
+      "guid": "https://dev.to/zediot/remote-diagnostics-for-low-power-iot-devices-stop-treating-them-like-servers-37j8",
+      "title": "Remote Diagnostics for Low-Power IoT Devices: Stop Treating Them Like Servers",
+      "link": "https://dev.to/zediot/remote-diagnostics-for-low-power-iot-devices-stop-treating-them-like-servers-37j8",
+      "source": "DEV Community",
+      "sourceUrl": "https://dev.to/rss",
+      "summary": "The hardest failures in low-power IoT are often not total silence. They show up as partial signals: battery voltage drifting down, RSSI getting worse, reports arriving later than expected, occasional reconnects, or one firmware version producing more resets than the rest of the …",
+      "publishedAt": "2026-08-13T14:00:00.000Z"
+    },
+    {
+      "slug": "2655d832b3936191ab46c334",
+      "guid": "https://dev.to/masonwritescode/detect-variable-frame-rate-uploads-with-ffprobe-and-normalize-them-before-they-break-your-pipeline-55cf",
+      "title": "Detect variable frame rate uploads with ffprobe and normalize them before they break your pipeline",
+      "link": "https://dev.to/masonwritescode/detect-variable-frame-rate-uploads-with-ffprobe-and-normalize-them-before-they-break-your-pipeline-55cf",
+      "source": "DEV Community",
+      "sourceUrl": "https://dev.to/rss",
+      "summary": "TL;DR Screen recordings from OBS, QuickTime, Loom and phone capture are variable frame rate. Feed them to a transcoder that assumes constant frame rate and you get audio drift that grows over the clip. We'll build a two-tier ffprobe gate (cheap header check, then a real per-fram…",
+      "publishedAt": "2026-08-13T13:57:11.000Z"
+    },
+    {
+      "slug": "0ea5316228f6fe544f615a57",
+      "guid": "https://dev.to/masonwritescode/build-a-directional-preload-window-for-a-scrolling-video-feed-with-hlsjs-310o",
+      "title": "Build a directional preload window for a scrolling video feed with hls.js",
+      "link": "https://dev.to/masonwritescode/build-a-directional-preload-window-for-a-scrolling-video-feed-with-hlsjs-310o",
+      "source": "DEV Community",
+      "sourceUrl": "https://dev.to/rss",
+      "summary": "TL;DR Vertical video feeds are fast on the first item and stutter on every one after. We'll build a preload window that follows scroll direction, attaches hls.js sources to off-screen items ahead of the user, and tears down everything outside the window so you stay under Safari'…",
+      "publishedAt": "2026-08-13T13:56:11.000Z"
+    },
+    {
+      "slug": "f9aa79686e6beed797c8da66",
+      "guid": "https://dev.to/masonwritescode/build-semantic-search-inside-video-shot-embeddings-transcript-chunks-fused-on-the-timeline-2nbb",
+      "title": "Build semantic search inside video: shot embeddings + transcript chunks, fused on the timeline",
+      "link": "https://dev.to/masonwritescode/build-semantic-search-inside-video-shot-embeddings-transcript-chunks-fused-on-the-timeline-2nbb",
+      "source": "DEV Community",
+      "sourceUrl": "https://dev.to/rss",
+      "summary": "TL;DR Frame-only video search can't find \"where she explains pricing.\" Transcript-only search can't find \"the architecture diagram slide.\" We'll build both indexes, key them to the same timeline, and fuse at query time so results are timestamps, not video IDs. Shot detection, Si…",
+      "publishedAt": "2026-08-13T13:55:46.000Z"
+    },
+    {
+      "slug": "c55784cb3ac023769f406611",
+      "guid": "https://dev.to/yadrorus/why-i-built-an-spa-router-for-html-and-web-components-2c09",
+      "title": "Why I Built an SPA Router for HTML and Web Components",
+      "link": "https://dev.to/yadrorus/why-i-built-an-spa-router-for-html-and-web-components-2c09",
+      "source": "DEV Community",
+      "sourceUrl": "https://dev.to/rss",
+      "summary": "I didn't set out to build a router. I had a project built with HTML and Web Components. It worked, and I was happy with that stack. Then a few sections needed client-side navigation. Most pages needed to remain HTML-first for SEO and the initial render, so rewriting the entire s…",
+      "publishedAt": "2026-08-13T13:45:10.000Z"
+    },
+    {
+      "slug": "84a9632c9b1745628c1e8178",
+      "guid": "https://dev.to/timevolt/sliding-window-the-neo-way-to-detect-patterns-21pl",
+      "title": "Sliding Window: The Neo Way to Detect Patterns",
+      "link": "https://dev.to/timevolt/sliding-window-the-neo-way-to-detect-patterns-21pl",
+      "source": "DEV Community",
+      "sourceUrl": "https://dev.to/rss",
+      "summary": "The Quest Begins (The \"Why\") Ever felt like you're stuck grinding through nested loops, watching your runtime balloon from O(n) to O(n^2) while the interviewer nods politely? I've been there. I remember a whiteboard interview where the problem was “find the longest substring wit…",
+      "publishedAt": "2026-08-13T13:39:49.000Z"
+    },
+    {
+      "slug": "6849b000ba1a3193b33b6a65",
+      "guid": "https://dev.to/solomon1029/crafting-hot-filter-kaapi-in-pure-css-gradients-steam-engines-hardware-acceleration-315o",
+      "title": "Crafting Hot Filter Kaapi in Pure CSS: Gradients, Steam Engines & Hardware Acceleration",
+      "link": "https://dev.to/solomon1029/crafting-hot-filter-kaapi-in-pure-css-gradients-steam-engines-hardware-acceleration-315o",
+      "source": "DEV Community",
+      "sourceUrl": "https://dev.to/rss",
+      "summary": "Inspiration My ultimate comfort food is South Indian Filter Kaapi (Coffee) paired with a golden, crispy Masala Dosa. There is something undeniably grounding about the rich aroma of chicory-infused coffee frothed to perfection in a traditional brass dabara set. It’s the official …",
+      "publishedAt": "2026-08-13T13:39:30.000Z"
+    },
+    {
+      "slug": "f681e9ec36d5f8ddf8e8f865",
+      "guid": "https://dev.to/thecurlyhairdev/the-client-asked-for-a-website-the-business-needed-something-else-2fhm",
+      "title": "The Client Asked for a Website. The Business Needed Something Else.",
+      "link": "https://dev.to/thecurlyhairdev/the-client-asked-for-a-website-the-business-needed-something-else-2fhm",
+      "source": "DEV Community",
+      "sourceUrl": "https://dev.to/rss",
+      "summary": "A case study on turning a grocery store's business workflow into a simple sales and inventory management system. A grocery store client approached me with what initially sounded like a straightforward request: \"I need a website for my store.\" My first assumption was e-commerce. …",
+      "publishedAt": "2026-08-13T13:38:23.000Z"
+    },
+    {
+      "slug": "199448b45f971f997bbcba4e",
+      "guid": "https://dzone.com/articles/3660944",
+      "title": "Why AWS and Azure Handle Data Perimeter Differently",
+      "link": "https://dzone.com/articles/aws-azure-data-perimeter",
+      "source": "DZone",
+      "sourceUrl": "https://feeds.dzone.com/home",
+      "summary": "AWS can send audit logs to an attacker’s account unless denials are enforced at the network layer, while Azure doesn’t log network-block requests at all. The concept of a data perimeter was popularized by AWS [1] to establish organizational boundaries around identities, resource…",
+      "publishedAt": "2026-08-13T13:00:17.000Z"
+    },
+    {
+      "slug": "f76c49e3cbcc722b6ef98ad0",
+      "guid": "https://tympanus.net/codrops/?p=118381",
+      "title": "From Motion to Meaning: Denis Avramenko’s Approach to Interactive Design",
+      "link": "https://tympanus.net/codrops/2026/08/13/from-motion-to-meaning-denis-avramenkos-approach-to-interactive-design/",
+      "source": "Codrops",
+      "sourceUrl": "https://tympanus.net/codrops/feed/",
+      "summary": "A behind-the-scenes look at Denis Avramenko’s creative process, exploring his approach to motion, typography, interaction, and technology through a selection of digital projects.",
+      "publishedAt": "2026-08-13T12:46:05.000Z"
+    },
+    {
+      "slug": "a31fc89f7fbee911818af426",
+      "guid": "https://dzone.com/articles/3659830",
+      "title": "Zone-Aware Routing in Kubernetes: Reducing Latency, Improving Resilience, and Lowering Cloud Costs",
+      "link": "https://dzone.com/articles/zone-aware-routing-kubernetes",
+      "source": "DZone",
+      "sourceUrl": "https://feeds.dzone.com/home",
+      "summary": "This guide explains zone-aware routing from a Kubernetes-first point of view. It covers:",
+      "publishedAt": "2026-08-13T12:00:01.000Z"
+    },
+    {
+      "slug": "b9ebb45a53c36397acb2d012",
+      "guid": "https://smashingmagazine.com/2026/08/eu-guidelines-ai-labelling/",
+      "title": "New EU Guidelines For AI Labelling",
+      "link": "https://smashingmagazine.com/2026/08/eu-guidelines-ai-labelling/",
+      "source": "Smashing Magazine",
+      "sourceUrl": "https://www.smashingmagazine.com/feed/",
+      "summary": "New EU guidelines, why AI sparkles aren’t enough, when AI labels are required, and what the rules mean for AI-powered features and products. Brought to you by Design Patterns For AI Interfaces, **friendly video courses on UX** and design patterns by Vitaly.",
+      "publishedAt": "2026-08-13T10:00:00.000Z"
+    },
+    {
+      "slug": "1997eae7b89f32e3334e38b8",
+      "guid": "https://medium.com/p/19abd0f36761",
+      "title": "The multiform read-write separation",
+      "link": "https://itnext.io/the-multiform-read-write-separation-19abd0f36761?source=rss----5b301f10ddcd---4",
+      "source": "itnext",
+      "sourceUrl": "https://itnext.io/feed",
+      "summary": "",
+      "publishedAt": "2026-08-13T09:54:25.000Z"
     },
     {
       "slug": "c89902032705475e8e7e3719",
@@ -52,86 +182,6 @@
       "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
       "summary": "null Secure by Design: Building AI data Analytics Platforms Enterprises Can Trust on SitePoint.",
       "publishedAt": "2026-08-13T06:56:18.000Z"
-    },
-    {
-      "slug": "3b9099eec88ac174b0e52831",
-      "guid": "https://dev.to/gokulnh/your-rate-limiter-is-broken-behind-a-tunnel-the-x-forwarded-for-problem-3923",
-      "title": "Your rate limiter is broken behind a tunnel — the X-Forwarded-For problem",
-      "link": "https://dev.to/gokulnh/your-rate-limiter-is-broken-behind-a-tunnel-the-x-forwarded-for-problem-3923",
-      "source": "DEV Community",
-      "sourceUrl": "https://dev.to/rss",
-      "summary": "You put your app behind a tunnel (or any reverse proxy) to test Congratulations, you've met the X-Forwarded-For problem. When a request flows through a tunnel, the TCP connection to your app comes from the relay, not the real client. So request.remote_addr — The consequences are…",
-      "publishedAt": "2026-08-13T06:46:41.000Z"
-    },
-    {
-      "slug": "0fdb021a5d4bb9c79c31eb71",
-      "guid": "https://dev.to/jackm-singularity/ai-agent-cost-forecasting-predict-workflow-spend-before-users-hit-run-190h",
-      "title": "AI Agent Cost Forecasting: Predict Workflow Spend Before Users Hit Run",
-      "link": "https://dev.to/jackm-singularity/ai-agent-cost-forecasting-predict-workflow-spend-before-users-hit-run-190h",
-      "source": "DEV Community",
-      "sourceUrl": "https://dev.to/rss",
-      "summary": "One failed AI workflow is annoying. One successful workflow that quietly costs more than the customer paid is worse. That is the uncomfortable gap many builders hit after the demo works. The agent can search, retrieve, call tools, draft outputs, and recover from errors. But befo…",
-      "publishedAt": "2026-08-13T06:46:24.000Z"
-    },
-    {
-      "slug": "f8a70a0ee900bf29a7acccee",
-      "guid": "https://dev.to/debashish_ghosal/i-stopped-trusting-ai-agents-with-tools-so-i-built-a-gatekeeper-26fb",
-      "title": "I Stopped Trusting AI Agents With Tools. So I Built a Gatekeeper.",
-      "link": "https://dev.to/debashish_ghosal/i-stopped-trusting-ai-agents-with-tools-so-i-built-a-gatekeeper-26fb",
-      "source": "DEV Community",
-      "sourceUrl": "https://dev.to/rss",
-      "summary": "github.com/deghosal-2026/agent-tooltrust · pip install agent-tooltrust · field test report · design decisions My last three projects taught me the same thing. Mock agents lie. Unit tests pass. Demos look clean. Then real agents run and everything breaks. On my eval harness, I ad…",
-      "publishedAt": "2026-08-13T06:43:24.000Z"
-    },
-    {
-      "slug": "135b2e465af530104cce0ae5",
-      "guid": "https://dev.to/srinivasankk/i-was-tired-of-losing-disk-space-to-nodemodules-so-i-built-artifactsweep-438p",
-      "title": "I Was Tired of Losing Disk Space to node_modules - So I Built ArtifactSweep",
-      "link": "https://dev.to/srinivasankk/i-was-tired-of-losing-disk-space-to-nodemodules-so-i-built-artifactsweep-438p",
-      "source": "DEV Community",
-      "sourceUrl": "https://dev.to/rss",
-      "summary": "Being a developer, we all create many projects for learning, work, and experiments. Over time my machine started filling up — not with source code, but with generated junk: node_modules target dist / build framework caches like .next, .angular, .nuxt and more of the same across …",
-      "publishedAt": "2026-08-13T06:40:00.000Z"
-    },
-    {
-      "slug": "a616b2b4996bab2d386be44d",
-      "guid": "https://dev.to/michaeltruong/build-looked-absurd-under-a-recruiter-deadline-1145",
-      "title": "Build looked absurd under a recruiter deadline",
-      "link": "https://dev.to/michaeltruong/build-looked-absurd-under-a-recruiter-deadline-1145",
-      "source": "DEV Community",
-      "sourceUrl": "https://dev.to/rss",
-      "summary": "Building a resume platform before replying to a recruiter sounded absurd. The rational move is an off-the-shelf resume builder. Implementation cost usually outweighs the benefit, especially when a reply is due in a few days. A Riot Games recruiter reached out while I was still p…",
-      "publishedAt": "2026-08-13T06:39:39.000Z"
-    },
-    {
-      "slug": "05323ee8f7b67caf6f936603",
-      "guid": "https://dev.to/janarthanan_soundararajan/the-dom-is-lying-to-your-types-3-subtle-react-zod-validation-traps-2a0p",
-      "title": "The DOM Is Lying to Your Types: 3 Subtle React + Zod Validation Traps",
-      "link": "https://dev.to/janarthanan_soundararajan/the-dom-is-lying-to-your-types-3-subtle-react-zod-validation-traps-2a0p",
-      "source": "DEV Community",
-      "sourceUrl": "https://dev.to/rss",
-      "summary": "A common production stack for React forms is React Hook Form for client-side state, Zod for schema validation, and Next.js Server Actions for the backend mutation. It feels incredibly robust. But beneath these excellent tools, a subtle friction point is waiting to corrupt your d…",
-      "publishedAt": "2026-08-13T06:38:47.000Z"
-    },
-    {
-      "slug": "5e969c234d310af286738fbd",
-      "guid": "https://dev.to/justpres/i-built-hackforpinas-to-make-philippine-hackathons-easier-to-discover-1n6g",
-      "title": "I Built HackForPinas to Make Philippine Hackathons Easier to Discover",
-      "link": "https://dev.to/justpres/i-built-hackforpinas-to-make-philippine-hackathons-easier-to-discover-1n6g",
-      "source": "DEV Community",
-      "sourceUrl": "https://dev.to/rss",
-      "summary": "In my previous article, I talked about Train Track, the transit app I built around Metro Manila's railway systems. This project started with a completely different problem. I kept thinking about how difficult it can be to discover hackathons and coding competitions. Not because …",
-      "publishedAt": "2026-08-13T06:34:00.000Z"
-    },
-    {
-      "slug": "86c1b1cd3ac6d3924019c106",
-      "guid": "https://dev.to/therealmrmumba/my-best-cli-alternatives-to-postman-for-api-testing-in-2026-1l8i",
-      "title": "My Best CLI Alternatives to Postman for API Testing in 2026",
-      "link": "https://dev.to/therealmrmumba/my-best-cli-alternatives-to-postman-for-api-testing-in-2026-1l8i",
-      "source": "DEV Community",
-      "sourceUrl": "https://dev.to/rss",
-      "summary": "When I first started testing APIs, Postman was one of the first tools I reached for. It was convenient. I could open a workspace, create a request, add some headers, hit Send, and immediately see what the API returned. For learning an API or debugging a few endpoints, that workf…",
-      "publishedAt": "2026-08-13T06:27:54.000Z"
     },
     {
       "slug": "97a0096c162099e56caeaf98",
@@ -874,16 +924,6 @@
       "publishedAt": "2026-08-08T13:31:46.000Z"
     },
     {
-      "slug": "b0ad15cde7e29efb94732508",
-      "guid": "https://medium.com/p/fade1e510391",
-      "title": "The Hand-Off Tax, Part 2: We Turned Off the Playbooks and Watched",
-      "link": "https://itnext.io/the-hand-off-tax-part-2-we-turned-off-the-playbooks-and-watched-fade1e510391?source=rss----5b301f10ddcd---4",
-      "source": "itnext",
-      "sourceUrl": "https://itnext.io/feed",
-      "summary": "",
-      "publishedAt": "2026-08-08T13:31:03.000Z"
-    },
-    {
       "slug": "b4d3b51eb7e8f9894cd34f07",
       "guid": "https://swizec.com/blog/beware-the-spaceships",
       "title": "Beware the spaceships",
@@ -962,46 +1002,6 @@
       "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
       "summary": "null WebMCP Explained: How Developers Can Prepare Websites for AI Agents on SitePoint.",
       "publishedAt": "2026-08-07T15:00:09.000Z"
-    },
-    {
-      "slug": "7b9fed5b349f8fd660df91db",
-      "guid": "https://dzone.com/articles/3666865",
-      "title": "Orchestration Meets MCP: Building Governed Agentic Workflows With Quarkus Flow and AGENTS.md",
-      "link": "https://dzone.com/articles/quarkus-agentic-workflows",
-      "source": "DZone",
-      "sourceUrl": "https://feeds.dzone.com/home",
-      "summary": "Building autonomous AI agents with large language models (LLMs) is easy when writing single-turn demo scripts. However, moving multi-agent loops into production introduces serious architectural challenges. Agents hallucinate, loop infinitely without reaching convergence, require…",
-      "publishedAt": "2026-08-07T15:00:06.000Z"
-    },
-    {
-      "slug": "71fc5e60c18371780e0df224",
-      "guid": "https://tympanus.net/codrops/?p=117952",
-      "title": "The Department Is Open: Building the PX PUSH Website",
-      "link": "https://tympanus.net/codrops/2026/08/07/the-department-is-open-building-the-px-push-website/",
-      "source": "Codrops",
-      "sourceUrl": "https://tympanus.net/codrops/feed/",
-      "summary": "How a design subscription studio built its website around a single governing idea: an old, always-on machine, running underneath a modern Nuxt and Three.js stack.",
-      "publishedAt": "2026-08-07T14:38:08.000Z"
-    },
-    {
-      "slug": "8def1cb6f6fb06185589e313",
-      "guid": "https://smashingmagazine.com/2026/08/how-baseline-can-help-ship-less-javascript/",
-      "title": "How Baseline Can Help You Ship Less JavaScript",
-      "link": "https://smashingmagazine.com/2026/08/how-baseline-can-help-ship-less-javascript/",
-      "source": "Smashing Magazine",
-      "sourceUrl": "https://www.smashingmagazine.com/feed/",
-      "summary": "The gap between “you need a library for this” and “the browser does this” keeps closing. A practical guide to auditing your dependencies and finding what the web platform can now handle for you.",
-      "publishedAt": "2026-08-07T13:00:00.000Z"
-    },
-    {
-      "slug": "b80059256036d3222665ded5",
-      "guid": "https://dzone.com/articles/3666525",
-      "title": "A Zero-Trust Implementation Framework for Cloud Migrations: Lessons From Enterprise Deployments",
-      "link": "https://dzone.com/articles/a-zero-trust-implementation-framework-for-cloud-mi",
-      "source": "DZone",
-      "sourceUrl": "https://feeds.dzone.com/home",
-      "summary": "Cloud migration projects almost always treat security as a downstream concern something to bolt on after workloads have already moved, once the “real” migration work is done. Across dozens of enterprise migrations spanning finance, healthcare, and manufacturing workloads, that o…",
-      "publishedAt": "2026-08-07T13:00:00.000Z"
     }
   ]
 }
