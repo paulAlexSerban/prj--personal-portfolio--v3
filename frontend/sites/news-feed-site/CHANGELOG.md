@@ -1,5 +1,13 @@
 # @prj--personal-portfolio--v3/frontend--news-feed-site
 
+## 0.3.2
+
+### Patch Changes
+
+- Updated dependencies [90b9b86]
+    - @prj--personal-portfolio--v3/shared--ui@1.3.0
+    - @prj--personal-portfolio--v3/shared--navigation@1.2.1
+
 ## 0.3.1
 
 ### Patch Changes

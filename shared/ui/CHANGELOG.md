@@ -1,5 +1,11 @@
 # @prj--personal-portfolio--v3/shared--ui
 
+## 1.3.0
+
+### Minor Changes
+
+- 90b9b86: added user onboarding to the quiz app
+
 ## 1.2.0
 
 ### Minor Changes
