@@ -110,8 +110,9 @@ The `Deploy PRODUCTION` workflow does **not** run Terraform - it assumes this
 stack already exists. On `workflow_dispatch` it waits for human approval, then
 builds each app **root-relative** (`base: /`) against **live** content (private
 content-repo sync; `content_source` defaults to `live`) with production URLs
-baked in, then deploys the four dist folders in parallel to their own buckets.
-Auth uses **GitHub OIDC** (short-lived credentials via
+baked in, then deploys each selected app's dist to its own bucket as soon as
+that build finishes (uncheck apps on dispatch to skip them; a one-app run does
+not update the others). Auth uses **GitHub OIDC** (short-lived credentials via
 `sts:AssumeRoleWithWebIdentity`); there are no long-lived AWS access keys.
 
 Production is independent of staging: you can deploy prod without a prior stage
