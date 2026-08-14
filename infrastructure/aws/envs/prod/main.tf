@@ -36,7 +36,8 @@ locals {
     ManagedBy   = "terraform"
   }
 
-  # Shared destination for CloudFront standard access logs across site/blog/quiz/news/news-data.
+  # Shared destination for CloudFront standard access logs across all six
+  # distributions (site/blog/quiz/news-feed/news-data/assets).
   # Domain-prefixed keys keep logs queryable per distribution.
   cf_access_logs_bucket_name = "cf-access-logs.paulserban.eu"
 }
@@ -206,6 +207,9 @@ module "assets_cdn" {
   bucket_region  = var.aws_region
   hosted_zone_id = var.hosted_zone_id
   tags           = local.tags
+
+  access_logging_bucket = aws_s3_bucket.cf_access_logs.bucket_domain_name
+  access_logging_prefix = "${var.assets_domain_name}/"
 }
 
 module "github_oidc_deploy_role" {
