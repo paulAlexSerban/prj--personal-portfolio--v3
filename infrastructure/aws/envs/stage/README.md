@@ -79,14 +79,17 @@ After `apply` succeeds, capture the outputs - CI needs them:
 terraform output
 ```
 
-## Wiring up CI (`.github/workflows/release.yaml`)
+## Wiring up CI (`.github/workflows/deploy-stage.yaml`)
 
-The `release` workflow does **not** run Terraform - it assumes this stack already
-exists. After a changeset publishes, it builds each app **root-relative** (`base: /`)
-against **live** content (private content-repo sync; `content_source` defaults to
-`live`), then deploys the four dist folders in parallel to their own buckets. Auth
-uses **GitHub OIDC** (short-lived credentials via `sts:AssumeRoleWithWebIdentity`);
-there are no long-lived AWS access keys.
+The `Deploy STAGE` workflow does **not** run Terraform - it assumes this stack
+already exists. On `workflow_dispatch` it builds each app **root-relative**
+(`base: /`) against **live** content (private content-repo sync; `content_source`
+defaults to `live`), then deploys the four dist folders in parallel to their own
+buckets. Auth uses **GitHub OIDC** (short-lived credentials via
+`sts:AssumeRoleWithWebIdentity`); there are no long-lived AWS access keys.
+
+Staging is independent of production: you can deploy stage without promoting to
+prod, and prod without a prior stage run.
 
 Configure a GitHub **Environment** named `stage` with:
 
