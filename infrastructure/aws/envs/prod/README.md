@@ -104,23 +104,27 @@ After `apply` succeeds, capture the outputs - CI needs them:
 terraform output
 ```
 
-## Wiring up CI (`.github/workflows/release.yaml`)
+## Wiring up CI (`.github/workflows/deploy-prod.yaml`)
 
-The `release` workflow does **not** run Terraform - it assumes this stack already
-exists. After stage deploys succeed, it builds each app **root-relative** (`base: /`)
-against **live** content (private content-repo sync; `content_source` defaults to
-`live`) with production URLs baked in, then deploys the four dist folders in
-parallel to their own buckets. Auth uses **GitHub OIDC** (short-lived credentials
-via `sts:AssumeRoleWithWebIdentity`); there are no long-lived AWS access keys.
+The `Deploy PRODUCTION` workflow does **not** run Terraform - it assumes this
+stack already exists. On `workflow_dispatch` it waits for human approval, then
+builds each app **root-relative** (`base: /`) against **live** content (private
+content-repo sync; `content_source` defaults to `live`) with production URLs
+baked in, then deploys the four dist folders in parallel to their own buckets.
+Auth uses **GitHub OIDC** (short-lived credentials via
+`sts:AssumeRoleWithWebIdentity`); there are no long-lived AWS access keys.
+
+Production is independent of staging: you can deploy prod without a prior stage
+run.
 
 ### Human approval gate
 
 Create a GitHub **Environment** named `production-approval` and enable
 **Required reviewers** on it (`Settings -> Environments -> production-approval
--> Protection rules`). The `approve-prod` job in `release.yaml` targets this
-environment, so the workflow pauses after stage succeeds until a reviewer
-approves. Deploy jobs use a separate `production` environment so you only
-approve once (not once per app).
+-> Protection rules`). The `approve-prod` job in `deploy-prod.yaml` targets this
+environment, so the workflow pauses at the start until a reviewer approves.
+Deploy jobs use a separate `production` environment so you only approve once
+(not once per app).
 
 ### Deploy environment
 

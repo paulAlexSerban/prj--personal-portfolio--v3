@@ -1,10 +1,10 @@
-name: Deploy TEST (AWS S3 + CloudFront)
+name: Deploy STAGE (AWS S3 + CloudFront)
 
 on:
     workflow_dispatch:
 
 concurrency:
-    group: deploy-test
+    group: deploy-stage
     cancel-in-progress: false
 
 permissions:
@@ -14,24 +14,24 @@ jobs:
     build-site:
         uses: ./.github/workflows/_build-site.yaml
         with:
-            environment: test
-            portfolio_url: https://test.paulserban.eu
-            blog_url: https://test.blog.paulserban.eu
-            quiz_url: https://test.quiz.paulserban.eu
-            news_url: https://test.news-feed.paulserban.eu
+            environment: stage
+            portfolio_url: https://stage.paulserban.eu
+            blog_url: https://stage.blog.paulserban.eu
+            quiz_url: https://stage.quiz.paulserban.eu
+            news_url: https://stage.news-feed.paulserban.eu
             portfolio_base: /
             blog_base: /
             quiz_base: /
             news_base: /
             emit_merged_bundle: false
-            content_source: test
+            artifact_retention_days: 14
         secrets: inherit
 
     deploy:
         needs: build-site
         uses: ./.github/workflows/_deploy-s3.yaml
         with:
-            environment: test
+            environment: stage
         secrets: inherit
         permissions:
             contents: read
