@@ -78,9 +78,10 @@ terraform output
 
 The `deploy-test` workflow does **not** run Terraform - it assumes this stack already
 exists. It builds each app **root-relative** (`base: /`) with cross-app absolute URLs,
-then deploys the four dist folders in parallel to their own buckets. Auth uses
-**GitHub OIDC** (short-lived credentials via `sts:AssumeRoleWithWebIdentity`); there
-are no long-lived AWS access keys.
+then deploys each selected app's dist to its own bucket as soon as that build finishes
+(uncheck apps on dispatch to skip them; a one-app run does not update the others).
+Auth uses **GitHub OIDC** (short-lived credentials via `sts:AssumeRoleWithWebIdentity`);
+there are no long-lived AWS access keys.
 
 Configure a GitHub **Environment** named `test` with:
 

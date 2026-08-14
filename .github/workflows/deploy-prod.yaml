@@ -2,6 +2,23 @@ name: Deploy PRODUCTION (AWS S3 + CloudFront)
 
 on:
     workflow_dispatch:
+        inputs:
+            portfolio:
+                description: Build and deploy portfolio-site
+                type: boolean
+                default: true
+            blog:
+                description: Build and deploy blog-site
+                type: boolean
+                default: true
+            quiz:
+                description: Build and deploy quiz-web-app
+                type: boolean
+                default: true
+            news:
+                description: Build and deploy news-feed-site
+                type: boolean
+                default: true
 
 concurrency:
     group: deploy-prod
@@ -59,13 +76,11 @@ jobs:
             cf_beacon_token_blog: ${{ needs.read-prod-cf-beacon-tokens.outputs.blog }}
             cf_beacon_token_news: ${{ needs.read-prod-cf-beacon-tokens.outputs.news }}
             cf_beacon_token_quiz: ${{ needs.read-prod-cf-beacon-tokens.outputs.quiz }}
-        secrets: inherit
-
-    deploy:
-        needs: build-site
-        uses: ./.github/workflows/_deploy-s3.yaml
-        with:
-            environment: production
+            s3_deploy: true
+            portfolio: ${{ inputs.portfolio }}
+            blog: ${{ inputs.blog }}
+            quiz: ${{ inputs.quiz }}
+            news: ${{ inputs.news }}
         secrets: inherit
         permissions:
             contents: read

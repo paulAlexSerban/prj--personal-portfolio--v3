@@ -87,6 +87,31 @@ on:
                 required: false
                 type: string
                 default: ''
+            s3_deploy:
+                description: If true, sync each selected app's dist to S3 and invalidate CloudFront after that app builds. Leave false for GitHub Pages.
+                required: false
+                type: boolean
+                default: false
+            portfolio:
+                description: Build (and S3-deploy if s3_deploy) portfolio-site
+                required: false
+                type: boolean
+                default: true
+            blog:
+                description: Build (and S3-deploy if s3_deploy) blog-site
+                required: false
+                type: boolean
+                default: true
+            quiz:
+                description: Build (and S3-deploy if s3_deploy) quiz-web-app
+                required: false
+                type: boolean
+                default: true
+            news:
+                description: Build (and S3-deploy if s3_deploy) news-feed-site
+                required: false
+                type: boolean
+                default: true
 
 env:
     DATABASE_PATH: ${{ github.workspace }}/database/output/content.db
@@ -94,6 +119,7 @@ env:
 
 jobs:
     ingest-content:
+        if: ${{ inputs.emit_merged_bundle || inputs.portfolio || inputs.blog || inputs.quiz }}
         runs-on: ubuntu-latest
         timeout-minutes: 30
         steps:
@@ -135,6 +161,7 @@ jobs:
                   retention-days: 1
 
     build-portfolio:
+        if: ${{ inputs.portfolio }}
         needs: ingest-content
         runs-on: ubuntu-latest
         timeout-minutes: 20
@@ -171,6 +198,7 @@ jobs:
                   retention-days: 1
 
     build-blog:
+        if: ${{ inputs.blog }}
         needs: ingest-content
         runs-on: ubuntu-latest
         timeout-minutes: 20
@@ -207,6 +235,7 @@ jobs:
                   retention-days: 1
 
     build-quiz:
+        if: ${{ inputs.quiz }}
         needs: ingest-content
         runs-on: ubuntu-latest
         timeout-minutes: 20
@@ -241,6 +270,7 @@ jobs:
                   retention-days: 1
 
     build-news:
+        if: ${{ inputs.news }}
         runs-on: ubuntu-latest
         timeout-minutes: 20
         steps:
@@ -268,6 +298,130 @@ jobs:
                   path: frontend/sites/news-feed-site/dist/
                   if-no-files-found: error
                   retention-days: 1
+
+    deploy-portfolio:
+        if: ${{ inputs.s3_deploy && inputs.portfolio }}
+        needs: build-portfolio
+        runs-on: ubuntu-latest
+        timeout-minutes: 10
+        environment: ${{ inputs.environment }}
+        permissions:
+            contents: read
+            id-token: write
+        steps:
+            - name: Download portfolio artifact
+              uses: actions/download-artifact@v8
+              with:
+                  name: portfolio-dist-${{ inputs.environment }}
+                  path: _site/
+
+            - name: Configure AWS credentials
+              uses: aws-actions/configure-aws-credentials@v6
+              with:
+                  role-to-assume: ${{ vars.AWS_DEPLOY_ROLE_ARN }}
+                  aws-region: ${{ vars.AWS_REGION }}
+
+            - name: Sync to S3
+              run: aws s3 sync _site/ "s3://${{ vars.PORTFOLIO_S3_BUCKET_NAME }}" --delete
+
+            - name: Invalidate CloudFront cache
+              run: |
+                  aws cloudfront create-invalidation \
+                    --distribution-id "${{ vars.PORTFOLIO_CLOUDFRONT_DISTRIBUTION_ID }}" \
+                    --paths "/*"
+
+    deploy-blog:
+        if: ${{ inputs.s3_deploy && inputs.blog }}
+        needs: build-blog
+        runs-on: ubuntu-latest
+        timeout-minutes: 10
+        environment: ${{ inputs.environment }}
+        permissions:
+            contents: read
+            id-token: write
+        steps:
+            - name: Download blog artifact
+              uses: actions/download-artifact@v8
+              with:
+                  name: blog-dist-${{ inputs.environment }}
+                  path: _site/
+
+            - name: Configure AWS credentials
+              uses: aws-actions/configure-aws-credentials@v6
+              with:
+                  role-to-assume: ${{ vars.AWS_DEPLOY_ROLE_ARN }}
+                  aws-region: ${{ vars.AWS_REGION }}
+
+            - name: Sync to S3
+              run: aws s3 sync _site/ "s3://${{ vars.BLOG_S3_BUCKET_NAME }}" --delete
+
+            - name: Invalidate CloudFront cache
+              run: |
+                  aws cloudfront create-invalidation \
+                    --distribution-id "${{ vars.BLOG_CLOUDFRONT_DISTRIBUTION_ID }}" \
+                    --paths "/*"
+
+    deploy-quiz:
+        if: ${{ inputs.s3_deploy && inputs.quiz }}
+        needs: build-quiz
+        runs-on: ubuntu-latest
+        timeout-minutes: 10
+        environment: ${{ inputs.environment }}
+        permissions:
+            contents: read
+            id-token: write
+        steps:
+            - name: Download quiz artifact
+              uses: actions/download-artifact@v8
+              with:
+                  name: quiz-dist-${{ inputs.environment }}
+                  path: _site/
+
+            - name: Configure AWS credentials
+              uses: aws-actions/configure-aws-credentials@v6
+              with:
+                  role-to-assume: ${{ vars.AWS_DEPLOY_ROLE_ARN }}
+                  aws-region: ${{ vars.AWS_REGION }}
+
+            - name: Sync to S3
+              run: aws s3 sync _site/ "s3://${{ vars.QUIZ_S3_BUCKET_NAME }}" --delete
+
+            - name: Invalidate CloudFront cache
+              run: |
+                  aws cloudfront create-invalidation \
+                    --distribution-id "${{ vars.QUIZ_CLOUDFRONT_DISTRIBUTION_ID }}" \
+                    --paths "/*"
+
+    deploy-news:
+        if: ${{ inputs.s3_deploy && inputs.news }}
+        needs: build-news
+        runs-on: ubuntu-latest
+        timeout-minutes: 10
+        environment: ${{ inputs.environment }}
+        permissions:
+            contents: read
+            id-token: write
+        steps:
+            - name: Download news artifact
+              uses: actions/download-artifact@v8
+              with:
+                  name: news-dist-${{ inputs.environment }}
+                  path: _site/
+
+            - name: Configure AWS credentials
+              uses: aws-actions/configure-aws-credentials@v6
+              with:
+                  role-to-assume: ${{ vars.AWS_DEPLOY_ROLE_ARN }}
+                  aws-region: ${{ vars.AWS_REGION }}
+
+            - name: Sync to S3
+              run: aws s3 sync _site/ "s3://${{ vars.NEWS_S3_BUCKET_NAME }}" --delete
+
+            - name: Invalidate CloudFront cache
+              run: |
+                  aws cloudfront create-invalidation \
+                    --distribution-id "${{ vars.NEWS_CLOUDFRONT_DISTRIBUTION_ID }}" \
+                    --paths "/*"
 
     merge:
         if: ${{ inputs.emit_merged_bundle }}

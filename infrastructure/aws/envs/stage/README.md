@@ -84,9 +84,11 @@ terraform output
 The `Deploy STAGE` workflow does **not** run Terraform - it assumes this stack
 already exists. On `workflow_dispatch` it builds each app **root-relative**
 (`base: /`) against **live** content (private content-repo sync; `content_source`
-defaults to `live`), then deploys the four dist folders in parallel to their own
-buckets. Auth uses **GitHub OIDC** (short-lived credentials via
-`sts:AssumeRoleWithWebIdentity`); there are no long-lived AWS access keys.
+defaults to `live`), then deploys each selected app's dist to its own bucket as
+soon as that build finishes (uncheck apps on dispatch to skip them; a one-app
+run does not update the others). Auth uses **GitHub OIDC** (short-lived
+credentials via `sts:AssumeRoleWithWebIdentity`); there are no long-lived AWS
+access keys.
 
 Staging is independent of production: you can deploy stage without promoting to
 prod, and prod without a prior stage run.
