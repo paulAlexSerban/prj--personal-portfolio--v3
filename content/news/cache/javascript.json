@@ -1,8 +1,18 @@
 {
   "category": "javascript",
   "label": "JavaScript",
-  "fetchedAt": "2026-08-15T06:15:33.288Z",
+  "fetchedAt": "2026-08-16T06:17:39.587Z",
   "items": [
+    {
+      "slug": "75a12cb47cea8ebdb5e46cf5",
+      "guid": "https://flaviocopes.com/intersection-observer/",
+      "title": "The Intersection Observer API",
+      "link": "https://flaviocopes.com/intersection-observer/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "An in-depth tutorial on the Intersection Observer API: entries, thresholds, rootMargin, lazy loading, infinite scroll, scrollspy, visibility tracking, and the pitfalls to avoid.",
+      "publishedAt": "2026-08-16T05:00:00.000Z"
+    },
     {
       "slug": "87fbe2cd30e36f43b8be514f",
       "guid": "https://flaviocopes.com/cloudflare-ai-gateway/",
@@ -10,7 +20,7 @@
       "link": "https://flaviocopes.com/cloudflare-ai-gateway/",
       "source": "Flavio Copes",
       "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Route OpenAI (or any provider) through Cloudflare AI Gateway from a Worker. Logs, caching, Authenticated Gateway, and the one header that stops the 401s.",
+      "summary": "Learn how Cloudflare AI Gateway sits between your application and AI models, then route and inspect a real request through a Worker.",
       "publishedAt": "2026-08-15T05:00:00.000Z"
     },
     {
@@ -20,7 +30,7 @@
       "link": "https://flaviocopes.com/cloudflare-workers-ai/",
       "source": "Flavio Copes",
       "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Run AI models on Cloudflare's GPUs directly from a Worker with the AI binding. Models, pricing in neurons, streaming, and a real production setup.",
+      "summary": "Learn what Cloudflare Workers AI is, connect its AI binding to a Worker, and build a small text summarization API step by step.",
       "publishedAt": "2026-08-15T05:00:00.000Z"
     },
     {
@@ -36,11 +46,11 @@
     {
       "slug": "e61de4b1df745e6497f0b2f7",
       "guid": "https://flaviocopes.com/webassembly/",
-      "title": "WebAssembly: an introduction",
+      "title": "WebAssembly tutorial",
       "link": "https://flaviocopes.com/webassembly/",
       "source": "Flavio Copes",
       "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "WebAssembly lets browsers run compiled code from Rust, C, and C++. What WASM is, where it shines, and when web developers should care.",
+      "summary": "Learn WebAssembly step by step by compiling a small module, loading it from JavaScript, and working with exports, imports, and memory.",
       "publishedAt": "2026-08-14T05:00:00.000Z"
     },
     {
@@ -322,16 +332,6 @@
       "sourceUrl": "https://flaviocopes.com/rss.xml",
       "summary": "A robots.txt refresher plus the new part: GPTBot, ClaudeBot, PerplexityBot and friends, blocking AI training vs AI search, and the tradeoffs.",
       "publishedAt": "2026-08-07T05:00:00.000Z"
-    },
-    {
-      "slug": "5a8bd8f8be7bcc4329d9f2a3",
-      "guid": "https://flaviocopes.com/track-transactional-email-delivery/",
-      "title": "What happens after your email API says accepted",
-      "link": "https://flaviocopes.com/track-transactional-email-delivery/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Follow one transactional email through provider acceptance, SMTP delivery, queues, duplicate and out-of-order events, reconciliation, bounces, and complaints.",
-      "publishedAt": "2026-08-06T13:00:00.000Z"
     },
     {
       "slug": "829eb35ddebcf37308107ff1",

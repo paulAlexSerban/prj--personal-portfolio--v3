@@ -1,8 +1,38 @@
 {
   "category": "cybersecurity",
   "label": "Cybersecurity",
-  "fetchedAt": "2026-08-15T06:15:33.288Z",
+  "fetchedAt": "2026-08-16T06:17:39.587Z",
   "items": [
+    {
+      "slug": "fd1b288ee5e304227c25797a",
+      "guid": "https://danielmiessler.com/blog/how-easy-to-hack-you",
+      "title": "How Easy It Would Be to Hack You",
+      "link": "https://danielmiessler.com/blog/how-easy-to-hack-you?utm_source=rss&utm_medium=feed&utm_campaign=website",
+      "source": "Daniel Miessler",
+      "sourceUrl": "https://danielmiessler.com/feed.rss",
+      "summary": "How Easy It Would Be to Hack You/images/how-easy-to-hack-you.webp/images/how-easy-to-hack-you.webp Have you ever thought about how easy it would be to hack you? To get into your accounts, mess with your finances, disrupt your business, leak customer data, reveal personal informa…",
+      "publishedAt": "2026-08-15T19:46:16.000Z"
+    },
+    {
+      "slug": "5be235f2c535cf6171cb768b",
+      "guid": "https://danielmiessler.com/blog/ai-fixed-my-mac",
+      "title": "Another Crazy Experience with AI",
+      "link": "https://danielmiessler.com/blog/ai-fixed-my-mac?utm_source=rss&utm_medium=feed&utm_campaign=website",
+      "source": "Daniel Miessler",
+      "sourceUrl": "https://danielmiessler.com/feed.rss",
+      "summary": "Another Crazy Experience with AI/images/ai-fixed-my-mac.webp/images/ai-fixed-my-mac.webp Just had another crazy experience with AI last week. One of the types that reminds me that we're living in different times. I have been suffering for months with some pretty serious macOS pe…",
+      "publishedAt": "2026-08-15T19:35:00.000Z"
+    },
+    {
+      "slug": "73c0b65f3ef9c5c5226f862c",
+      "guid": "https://danielmiessler.com/blog/only-one-technology",
+      "title": "There Is Only One Technology",
+      "link": "https://danielmiessler.com/blog/only-one-technology?utm_source=rss&utm_medium=feed&utm_campaign=website",
+      "source": "Daniel Miessler",
+      "sourceUrl": "https://danielmiessler.com/feed.rss",
+      "summary": "There Is Only One Technology/images/only-one-technology.webp/images/only-one-technology.webp Had a thought about technology yesterday: The moment we used plant twine to attach a chipped stone to a stick, AI became inevitable. There is only one \"technology\". There's randomness in…",
+      "publishedAt": "2026-08-15T19:30:00.000Z"
+    },
     {
       "slug": "a6a10a619f49bc0ae4b34736",
       "guid": "https://www.schneier.com/?p=72437",
@@ -624,6 +654,16 @@
       "publishedAt": "2026-08-12T06:15:58.000Z"
     },
     {
+      "slug": "64b9bbc0fd543e97d0665dbc",
+      "guid": "https://snyk.io/blog/agent-baseline-35-controls-where-should-you-start/",
+      "title": "The Agent Baseline: 35 Controls, But Where Should You Start?",
+      "link": "https://snyk.io/blog/agent-baseline-35-controls-where-should-you-start/",
+      "source": "Snyk Blog",
+      "sourceUrl": "https://snyk.io/blog/feed/",
+      "summary": "The Agent Baseline defines 35 controls across six security outcomes—but the right starting point depends on how your organization uses agents. Learn how to sequence controls for coding, internal, and production agents.",
+      "publishedAt": "2026-08-12T04:00:00.000Z"
+    },
+    {
       "slug": "a0b8784b0aa53597f1788b22",
       "guid": "https://www.darkreading.com/application-security/microsofts-patch-tuesday-deluge-continues",
       "title": "Microsoft's Patch Tuesday Deluge Continues With August Updates",
@@ -962,46 +1002,6 @@
       "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
       "summary": "A lot of security problems still begin with someone doing a completely normal thing. Cloning a repo. Answering a call. Leaving a box exposed. Trusting the default. That pretty much covers the mood this week. Old bugs are back, supply chains are getting stranger, and some exploit…",
       "publishedAt": "2026-08-10T15:00:29.000Z"
-    },
-    {
-      "slug": "e4cbe4f1c2f955e0940f09e8",
-      "guid": "https://thehackernews.com/2026/08/kimsuky-builds-offline-ai-stack-that.html",
-      "title": "Kimsuky Builds Offline AI Stack to Boost Phishing and Automate Malware Development",
-      "link": "https://thehackernews.com/2026/08/kimsuky-builds-offline-ai-stack-that.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "North Korea's state hackers are no longer content to type prompts into public chatbots. One of the country's main espionage groups has begun running artificial intelligence (AI) offline on its own servers, connecting document-search tools to files in its possession, and collecti…",
-      "publishedAt": "2026-08-10T13:19:58.000Z"
-    },
-    {
-      "slug": "cdcb04f053b50d7b593de00f",
-      "guid": "https://thehackernews.com/2026/08/new-passkey-attacks-can-recover-synced.html",
-      "title": "New Passkey Attacks Can Recover Synced Private Keys or Bypass Phishing-Resistant MFA",
-      "link": "https://thehackernews.com/2026/08/new-passkey-attacks-can-recover-synced.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "Three separate research efforts last week demonstrated ways to defeat passkey protections without breaking the cryptography they rest on. Passkeys are designed to replace reusable passwords and resist phishing. The attacks instead reused signed authentication material that Windo…",
-      "publishedAt": "2026-08-10T12:25:04.000Z"
-    },
-    {
-      "slug": "8cd19c7c9cd43bd13e6088bc",
-      "guid": "https://thehackernews.com/2026/08/head-mare-exploits-trueconf-flaws-to.html",
-      "title": "TrueConf Server Flaws Exploited to Replace Client Installers with PhantomCore",
-      "link": "https://thehackernews.com/2026/08/head-mare-exploits-trueconf-flaws-to.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "The threat actor known as Head Mare has been observed weaponizing security flaws in unpatched TrueConf servers once again in attacks targeting Russian companies spanning instrumentation, electronics, transport, energy, IT, and software development sectors. Russian cybersecurity …",
-      "publishedAt": "2026-08-10T11:33:41.000Z"
-    },
-    {
-      "slug": "8cb625a75017750d5a1d8caf",
-      "guid": "https://www.schneier.com/?p=72335",
-      "title": "Python Now Has a Post-Quantum Encryption Library",
-      "link": "https://www.schneier.com/blog/archives/2026/08/python-now-has-a-post-quantum-encryption-library.html",
-      "source": "Schneier on Security",
-      "sourceUrl": "https://www.schneier.com/feed/",
-      "summary": "This is good: Post-quantum cryptography is now one pip-install away for the entire Python ecosystem. With funding from the Sovereign Tech Agency, we implemented support for ML-KEM, the NIST-standard key-establishment primitive, and ML-DSA, the NIST-standard digital-signature pri…",
-      "publishedAt": "2026-08-10T11:02:26.000Z"
     }
   ]
 }

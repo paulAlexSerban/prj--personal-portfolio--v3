@@ -1,18 +1,8 @@
 {
   "category": "programming",
   "label": "Programming",
-  "fetchedAt": "2026-08-15T06:15:33.288Z",
+  "fetchedAt": "2026-08-16T06:17:39.587Z",
   "items": [
-    {
-      "slug": "13e3b548c70aa7407703ac05",
-      "guid": "https://hynek.me/talks/python-superpower/",
-      "title": "Python’s True Superpower",
-      "link": "https://hynek.me/talks/python-superpower/",
-      "source": "Hynek Schlawack",
-      "sourceUrl": "https://hynek.me/index.xml",
-      "summary": "Python appears to be everywhere nowadays! How did it happen, that a language that almost died in the Python 2 to 3 process is now the lingua franca a default choice when people talk about programming? There must be some secret superpower and I think I found it!",
-      "publishedAt": "2025-09-19T00:00:00.000Z"
-    },
     {
       "slug": "b3e73cd39d536b9f9c119756",
       "guid": "https://scratchpad.blog/how-to-debug-rails-applications-and-tests-in-vs-code/",
@@ -42,36 +32,6 @@
       "sourceUrl": "https://scratchpad.blog/feed.xml",
       "summary": "GitHub Actions Workflows have become the go-to solution for running CI/CD workflows for projects hosted on GitHub. Its seamless integration with GitHub repositories makes it a natural choice for automating tasks like building, testing, and deploying applications. For Developers …",
       "publishedAt": "2025-06-06T00:00:00.000Z"
-    },
-    {
-      "slug": "9561714819c8be0544ac35a1",
-      "guid": "https://hynek.me/talks/design-pressure/",
-      "title": "Design Pressure",
-      "link": "https://hynek.me/talks/design-pressure/",
-      "source": "Hynek Schlawack",
-      "sourceUrl": "https://hynek.me/index.xml",
-      "summary": "Ever had this weird gut feeling that something is off in your code, but couldn’t put the finger on why? Are you starting your projects with the best intentions, following all best practices, and still feel like your architecture turns weird eventually?",
-      "publishedAt": "2025-05-16T00:00:00.000Z"
-    },
-    {
-      "slug": "71749659f370dfbcdce53300",
-      "guid": "https://hynek.me/articles/docker-virtualenv/",
-      "title": "Why I Still Use Python Virtual Environments in Docker",
-      "link": "https://hynek.me/articles/docker-virtualenv/",
-      "source": "Hynek Schlawack",
-      "sourceUrl": "https://hynek.me/index.xml",
-      "summary": "Whenever I publish something about my Python Docker workflows, I invariably get challenged about whether it makes sense to use virtual environments in Docker containers. As always, it’s a trade-off, and I err on the side of standards and predictability.",
-      "publishedAt": "2024-09-02T11:00:00.000Z"
-    },
-    {
-      "slug": "2d58b1aca95dfc29cddc6b78",
-      "guid": "https://hynek.me/articles/docker-uv/",
-      "title": "Production-ready Python Docker Containers with uv",
-      "link": "https://hynek.me/articles/docker-uv/",
-      "source": "Hynek Schlawack",
-      "sourceUrl": "https://hynek.me/index.xml",
-      "summary": "Starting with 0.3.0 , Astral’s uv brought many great features, including support for cross-platform lock files uv.lock . Together with subsequent fixes, it has become Python’s finest workflow tool for my (non-scientific) use cases. Here’s how I build production-ready containers,…",
-      "publishedAt": "2024-08-28T11:00:00.000Z"
     },
     {
       "slug": "02c0dddd265fe203b693bc74",
@@ -172,16 +132,6 @@
       "sourceUrl": "https://vadimkravcenko.com/feed/",
       "summary": "Question: Hey Vadim, Here's the situation: from the moment my alarm clock interrupts my sleep, until I finally come home late at night, my life is essentially a never-ending cycle of sitting in front of the PC and stressing with a workload that feels like it's set to max. I feel…",
       "publishedAt": "2024-04-06T11:39:01.000Z"
-    },
-    {
-      "slug": "47228de8f313d265427dfdd9",
-      "guid": "https://hynek.me/articles/python-virtualenv-redux/",
-      "title": "Python Project-Local Virtualenv Management Redux",
-      "link": "https://hynek.me/articles/python-virtualenv-redux/",
-      "source": "Hynek Schlawack",
-      "sourceUrl": "https://hynek.me/index.xml",
-      "summary": "One of my first TIL entries was about how you can imitate Node’s node_modules semantics in Python on UNIX-like operating systems. A lot has happened since then (to the better!) and it’s time for an update. direnv still rocks, though.",
-      "publishedAt": "2024-04-02T00:00:00.000Z"
     },
     {
       "slug": "2b155dd1945ec36a2a7b9e4d",
@@ -322,16 +272,6 @@
       "sourceUrl": "https://vadimkravcenko.com/feed/",
       "summary": "Question: Answer: The post Security at Startup appeared first on Vadim Kravcenko.",
       "publishedAt": "2023-12-24T11:54:25.000Z"
-    },
-    {
-      "slug": "d0df05f9235456c1f08f292c",
-      "guid": "https://hynek.me/articles/pull-requests-branch/",
-      "title": "Don’t Start Pull Requests from Your Main Branch",
-      "link": "https://hynek.me/articles/pull-requests-branch/",
-      "source": "Hynek Schlawack",
-      "sourceUrl": "https://hynek.me/index.xml",
-      "summary": "When contributing to other users’ repositories, always start a new branch in your fork.",
-      "publishedAt": "2023-12-21T05:00:00.000Z"
     },
     {
       "slug": "33cd22ab4e697c3925a5d79d",
@@ -554,16 +494,6 @@
       "publishedAt": "2023-07-08T16:26:50.000Z"
     },
     {
-      "slug": "44d1018bf69f610ced75ae64",
-      "guid": "https://hynek.me/articles/turbo-charge-tox/",
-      "title": "Two Ways to Turbo-Charge tox",
-      "link": "https://hynek.me/articles/turbo-charge-tox/",
-      "source": "Hynek Schlawack",
-      "sourceUrl": "https://hynek.me/index.xml",
-      "summary": "No, it’s not (just) run-parallel – let’s cut the local tox runtime by 75%!",
-      "publishedAt": "2023-06-26T14:00:00.000Z"
-    },
-    {
       "slug": "fae963e80bce8271f4b584fd",
       "guid": "https://vadimkravcenko.com/?p=1453",
       "title": "Healthy Documentation",
@@ -582,16 +512,6 @@
       "sourceUrl": "https://vadimkravcenko.com/feed/",
       "summary": "Question: Answer: The post Rules of Thumb for Software Development Estimations appeared first on Vadim Kravcenko.",
       "publishedAt": "2023-05-01T19:32:21.000Z"
-    },
-    {
-      "slug": "a3375e6f36a6f5add65f8a2e",
-      "guid": "https://hynek.me/talks/subclassing/",
-      "title": "Subclassing, Composition, Python, and You",
-      "link": "https://hynek.me/talks/subclassing/",
-      "source": "Hynek Schlawack",
-      "sourceUrl": "https://hynek.me/index.xml",
-      "summary": "Ever seen a code base where understanding a simple method meant jumping through tangled class hierarchies? We all have! And while “Favor composition over inheritance!” is almost as old as object-oriented programming, strictly avoiding all types of subclassing leads to verbose, u…",
-      "publishedAt": "2023-04-22T00:00:00.000Z"
     },
     {
       "slug": "b241a684ec896b2a82c5ca32",
@@ -634,76 +554,6 @@
       "publishedAt": "2023-02-22T00:00:00.000Z"
     },
     {
-      "slug": "3c37982f3a911de741fbf44f",
-      "guid": "https://hynek.me/articles/why-i-like-nox/",
-      "title": "Why I Like Nox",
-      "link": "https://hynek.me/articles/why-i-like-nox/",
-      "source": "Hynek Schlawack",
-      "sourceUrl": "https://hynek.me/index.xml",
-      "summary": "Ever since I got involved with open-source Python projects, tox has been vital for testing packages across Python versions (and other factors). However, lately, I’ve been increasingly using Nox for my projects instead. Since I’ve been asked why repeatedly, I’ll sum up my thought…",
-      "publishedAt": "2023-01-18T12:00:00.000Z"
-    },
-    {
-      "slug": "d9254bd2242326d1f786c208",
-      "guid": "https://hynek.me/articles/macos-dyld-env/",
-      "title": "Surprising Consequences of macOS’s Environment Variable Sanitization",
-      "link": "https://hynek.me/articles/macos-dyld-env/",
-      "source": "Hynek Schlawack",
-      "sourceUrl": "https://hynek.me/index.xml",
-      "summary": "Why does DYLD_LIBRARY_PATH keep disappearing!?",
-      "publishedAt": "2023-01-09T08:00:00.000Z"
-    },
-    {
-      "slug": "1794d22a9b03e715bcd7227d",
-      "guid": "https://hynek.me/articles/productive-fruit-fly-programmer/",
-      "title": "How I’m a Productive Programmer With a Memory of a Fruit Fly",
-      "link": "https://hynek.me/articles/productive-fruit-fly-programmer/",
-      "source": "Hynek Schlawack",
-      "sourceUrl": "https://hynek.me/index.xml",
-      "summary": "A love letter to tools that changed everything for me.",
-      "publishedAt": "2022-09-19T00:00:00.000Z"
-    },
-    {
-      "slug": "4e33e3467f6300df92e182de",
-      "guid": "https://hynek.me/articles/python-recursive-optional-dependencies/",
-      "title": "Recursive Optional Dependencies in Python",
-      "link": "https://hynek.me/articles/python-recursive-optional-dependencies/",
-      "source": "Hynek Schlawack",
-      "sourceUrl": "https://hynek.me/index.xml",
-      "summary": "One of my (slowly evaporating) reasons why I like putting packaging metadata into an executable setup.py is the ability to have optional dependencies that are combinations of others. As of pip 21.2, this is possible without running code.",
-      "publishedAt": "2022-07-29T06:00:00.000Z"
-    },
-    {
-      "slug": "a4dd1b0e9cb627bb1a8bae1c",
-      "guid": "https://hynek.me/articles/what-to-mock-in-5-mins/",
-      "title": "“Don’t Mock What You Don’t Own” in 5 Minutes",
-      "link": "https://hynek.me/articles/what-to-mock-in-5-mins/",
-      "source": "Hynek Schlawack",
-      "sourceUrl": "https://hynek.me/index.xml",
-      "summary": "A common issue when writing tests for real-world software is how to deal with third-party dependencies. Let’s examine an old, but counter-intuitive principle.",
-      "publishedAt": "2022-06-21T09:00:00.000Z"
-    },
-    {
-      "slug": "c66f3fe06e028a1eca52ef73",
-      "guid": "https://hynek.me/articles/import-attrs/",
-      "title": "import attrs",
-      "link": "https://hynek.me/articles/import-attrs/",
-      "source": "Hynek Schlawack",
-      "sourceUrl": "https://hynek.me/index.xml",
-      "summary": "An attempt at catharsis. This is a deeply personal blog post about the most influential project I’ve ever created: attrs , the progenitor of modern Python class utilities. I’m retelling its history from my perspective, how it begot dataclasses , and how I’m leading it into the f…",
-      "publishedAt": "2021-12-28T00:00:00.000Z"
-    },
-    {
-      "slug": "713e44e508dc30625cb09e83",
-      "guid": "https://hynek.me/articles/ditch-codecov-python/",
-      "title": "How to Ditch Codecov for Python Projects",
-      "link": "https://hynek.me/articles/ditch-codecov-python/",
-      "source": "Hynek Schlawack",
-      "sourceUrl": "https://hynek.me/index.xml",
-      "summary": "Codecov’s unreliability breaking CI on my open source projects has been a constant source of frustration for me for years. I have found a way to enforce coverage over a whole GitHub Actions build matrix that doesn’t rely on third-party services.",
-      "publishedAt": "2021-11-18T08:00:00.000Z"
-    },
-    {
       "slug": "b13f5a094cd3320869fa17ed",
       "guid": "https://bitsofco.de/web-performance-metrics-cheatsheet/",
       "title": "Web Performance Metrics Cheatsheet",
@@ -712,26 +562,6 @@
       "sourceUrl": "https://bitsofco.de/feed/feed.xml",
       "summary": "I recently gave a talk on “Making Sense of Performance Metrics” at the Web Unleashed Conference, and it was suggested that I turn the breakdown of all the performance metrics into a cheatsheet; so here it is! The full cheatsheet, including a downloadable PDF version, are at the …",
       "publishedAt": "2021-10-25T00:00:00.000Z"
-    },
-    {
-      "slug": "766195d3fb4e2c563324173c",
-      "guid": "https://hynek.me/articles/til/",
-      "title": "Announcing a New Section: TIL",
-      "link": "https://hynek.me/articles/til/",
-      "source": "Hynek Schlawack",
-      "sourceUrl": "https://hynek.me/index.xml",
-      "summary": "Trying out something new: today I’m launching my own Today I Learned section. In this essay I will sum up what my plans and hopes are.",
-      "publishedAt": "2021-08-25T12:00:00.000Z"
-    },
-    {
-      "slug": "25ec6be7d1956ffe45715db8",
-      "guid": "https://hynek.me/articles/python-subclassing-redux/",
-      "title": "Subclassing in Python Redux",
-      "link": "https://hynek.me/articles/python-subclassing-redux/",
-      "source": "Hynek Schlawack",
-      "sourceUrl": "https://hynek.me/index.xml",
-      "summary": "The conflict between subclassing and composition is as old as object-oriented programming. The latest crop of languages like Go or Rust prove that you don’t need subclassing to successfully write code. But what’s a pragmatic approach to subclassing in Python, specifically?",
-      "publishedAt": "2021-06-22T15:00:00.000Z"
     },
     {
       "slug": "f95b68b2b1d042c3a0d97e82",
@@ -744,36 +574,6 @@
       "publishedAt": "2021-06-18T00:00:00.000Z"
     },
     {
-      "slug": "ba0c15c9e0cd0c1a77949c96",
-      "guid": "https://hynek.me/articles/canonical-seo-fail/",
-      "title": "Canonical SEO Failure",
-      "link": "https://hynek.me/articles/canonical-seo-fail/",
-      "source": "Hynek Schlawack",
-      "sourceUrl": "https://hynek.me/index.xml",
-      "summary": "This post is less about teaching and more about schadenfreude amusement for you, and catharsis for me. It’s the story of how one unfortunate HTML tag kicked me off almost all search engines and my months-long way back. And why it didn’t matter in the end.",
-      "publishedAt": "2021-04-28T00:00:00.000Z"
-    },
-    {
-      "slug": "0e84bd6637754afe4adb68dc",
-      "guid": "https://hynek.me/articles/semver-will-not-save-you/",
-      "title": "Semantic Versioning Will Not Save You",
-      "link": "https://hynek.me/articles/semver-will-not-save-you/",
-      "source": "Hynek Schlawack",
-      "sourceUrl": "https://hynek.me/index.xml",
-      "summary": "The widely used Python package cryptography changed their build system to use Rust for low-level code, which caused an emotional GitHub thread. Enthusiasts of 32-bit hardware from the 1990s aside, a vocal faction stipulated adherence to Semantic Versioning from the maintainers, …",
-      "publishedAt": "2021-03-02T00:00:00.000Z"
-    },
-    {
-      "slug": "75875ce2d2dd6b1e5760b51d",
-      "guid": "https://hynek.me/articles/lie-vs-lay/",
-      "title": "Lie vs Lay",
-      "link": "https://hynek.me/articles/lie-vs-lay/",
-      "source": "Hynek Schlawack",
-      "sourceUrl": "https://hynek.me/index.xml",
-      "summary": "Lie and lay are infamously confusing to non-native speakers. It’s so bad that it sparked a cottage industry of click-baity articles full of sketchy ads. Since English is my third language, I stumbled a lot myself until I wrote this cheatsheet.",
-      "publishedAt": "2021-02-03T00:00:00.000Z"
-    },
-    {
       "slug": "9fc18b6fbdeea68382855bf9",
       "guid": "https://bitsofco.de/chrome-dev-summit-2020/",
       "title": "Highlights from Chrome Dev Summit 2020",
@@ -784,36 +584,6 @@
       "publishedAt": "2020-12-14T00:00:00.000Z"
     },
     {
-      "slug": "3e37290acf2f7f406afaf713",
-      "guid": "https://hynek.me/articles/waiting-in-asyncio/",
-      "title": "Waiting in asyncio",
-      "link": "https://hynek.me/articles/waiting-in-asyncio/",
-      "source": "Hynek Schlawack",
-      "sourceUrl": "https://hynek.me/index.xml",
-      "summary": "One of the main appeals of using Python’s asyncio is being able to fire off many coroutines and run them concurrently. How many ways do you know for waiting for their results?",
-      "publishedAt": "2020-05-21T00:00:00.000Z"
-    },
-    {
-      "slug": "3dc8566274ae91d82386d944",
-      "guid": "https://hynek.me/talks/abstractions/",
-      "title": "Classy Abstractions",
-      "link": "https://hynek.me/talks/abstractions/",
-      "source": "Hynek Schlawack",
-      "sourceUrl": "https://hynek.me/index.xml",
-      "summary": "Let’s talk about abstractions and Pythonic code.",
-      "publishedAt": "2020-05-18T00:00:00.000Z"
-    },
-    {
-      "slug": "fc9e3754e69f0ce5a0e734ac",
-      "guid": "https://hynek.me/articles/document-your-tests/",
-      "title": "Why You Should Document Your Tests",
-      "link": "https://hynek.me/articles/document-your-tests/",
-      "source": "Hynek Schlawack",
-      "sourceUrl": "https://hynek.me/index.xml",
-      "summary": "Some projects have the policy that all tests must have an explanatory comment – including all of mine. At first, I found that baffling. If that’s you right now, this article is for you.",
-      "publishedAt": "2020-05-04T00:00:00.000Z"
-    },
-    {
       "slug": "cbe1f881570daa32d6daeec7",
       "guid": "https://bitsofco.de/what-i-wish-i-knew-about-react/",
       "title": "What I wish I knew about React",
@@ -822,36 +592,6 @@
       "sourceUrl": "https://bitsofco.de/feed/feed.xml",
       "summary": "A couple weeks ago I started working on my first React application. Not only was it my first React application, but it was also my first React Native application, so a lot was new to me all in one go. Coming from the Angular (and Ionic) world, it felt like all my preconceived no…",
       "publishedAt": "2020-04-28T00:00:00.000Z"
-    },
-    {
-      "slug": "6aa7296b2e1c161b857b63c2",
-      "guid": "https://hynek.me/articles/python-github-actions/",
-      "title": "Python in GitHub Actions",
-      "link": "https://hynek.me/articles/python-github-actions/",
-      "source": "Hynek Schlawack",
-      "sourceUrl": "https://hynek.me/index.xml",
-      "summary": "GitHub’s own CI called GitHub Actions has been out of closed beta for a while and offers generous free quotas and a seamless integration with the rest of the site. Let’s have a look at how to use it for an open source Python package.",
-      "publishedAt": "2020-03-09T00:00:00.000Z"
-    },
-    {
-      "slug": "526f8e590a2e101095556607",
-      "guid": "https://hynek.me/articles/python-in-production/",
-      "title": "Python in Production",
-      "link": "https://hynek.me/articles/python-in-production/",
-      "source": "Hynek Schlawack",
-      "sourceUrl": "https://hynek.me/index.xml",
-      "summary": "I’m missing a key part from the public Python discourse and I would like to help to change that.",
-      "publishedAt": "2020-02-23T16:45:00.000Z"
-    },
-    {
-      "slug": "bfb1ec7d4b9d3e3758144429",
-      "guid": "https://hynek.me/articles/packaging-metadata/",
-      "title": "Python Packaging Metadata",
-      "link": "https://hynek.me/articles/packaging-metadata/",
-      "source": "Hynek Schlawack",
-      "sourceUrl": "https://hynek.me/index.xml",
-      "summary": "Since this topic keeps coming up, I’d like to briefly share my thoughts on Python package metadata because it’s – as always – more complex than it seems.",
-      "publishedAt": "2020-02-14T00:00:00.000Z"
     },
     {
       "slug": "4f3179cb089ef559264227e1",
@@ -882,16 +622,6 @@
       "sourceUrl": "https://bitsofco.de/feed/feed.xml",
       "summary": "I recently gave a talk at JAMstack_conf San Francisco about how I used headless chrome (via Puppeteer) and Cloudinary to capture screenshots of my interactive caniuse embed. I did this to have a fallback image to use in case the embed couldn’t be loaded, for example in cases whe…",
       "publishedAt": "2019-10-28T00:00:00.000Z"
-    },
-    {
-      "slug": "806d552f455dc88e62d3d466",
-      "guid": "https://hynek.me/articles/books-that-changed-my-life/",
-      "title": "Books That Changed My Life",
-      "link": "https://hynek.me/articles/books-that-changed-my-life/",
-      "source": "Hynek Schlawack",
-      "sourceUrl": "https://hynek.me/index.xml",
-      "summary": "People always ask for book recommendations, so here’s my list of books that changed my life in one way or another. None of them is related to tech or programming, but all affect how I think and work.",
-      "publishedAt": "2019-09-23T00:00:00.000Z"
     },
     {
       "slug": "4fb66643b8d81a4c6d75b368",
@@ -934,16 +664,6 @@
       "publishedAt": "2019-06-23T00:00:00.000Z"
     },
     {
-      "slug": "aea2ded6d523d47b82d45159",
-      "guid": "https://hynek.me/articles/simple-python-azure-pipelines/",
-      "title": "Python in Azure Pipelines, Step by Step",
-      "link": "https://hynek.me/articles/simple-python-azure-pipelines/",
-      "source": "Hynek Schlawack",
-      "sourceUrl": "https://hynek.me/index.xml",
-      "summary": "Since the acquisition of Travis CI , the future of their free offering is unclear. Azure Pipelines has a generous free tier, but the examples I found are discouragingly complex and take advantage of features like templating that most projects don’t need. To close that gap, this …",
-      "publishedAt": "2019-06-03T09:14:00.000Z"
-    },
-    {
       "slug": "e10f193e3d0fa911877a0310",
       "guid": "https://bitsofco.de/your-first-performance-budget-with-lighthouse/",
       "title": "Your first performance budget with Lighthouse",
@@ -974,16 +694,6 @@
       "publishedAt": "2019-05-16T00:00:00.000Z"
     },
     {
-      "slug": "9325af6e89a96e5ec51d6764",
-      "guid": "https://hynek.me/articles/hallway-track/",
-      "title": "The Price of the Hallway Track",
-      "link": "https://hynek.me/articles/hallway-track/",
-      "source": "Hynek Schlawack",
-      "sourceUrl": "https://hynek.me/index.xml",
-      "summary": "There are many good reasons not to go to every talk possible when attending conferences. However, increasingly, it became hip to boast about avoiding going to talks – encouraging others to follow suit. That rubs me the wrong way as a speaker, and I’ll try to explain why.",
-      "publishedAt": "2019-05-15T18:00:00.000Z"
-    },
-    {
       "slug": "34abe6c96fb3f4449e0b77b5",
       "guid": "https://scratchpad.blog/howto/how-to-use-efs-with-aws-lightsail/",
       "title": "How to use EFS with AWS Lightsail",
@@ -994,14 +704,304 @@
       "publishedAt": "2019-05-09T00:00:00.000Z"
     },
     {
-      "slug": "c89d13944be8420958aabf4e",
-      "guid": "https://hynek.me/talks/python-foss/",
-      "title": "Maintaining a Python Project When It’s Not Your Job",
-      "link": "https://hynek.me/talks/python-foss/",
-      "source": "Hynek Schlawack",
-      "sourceUrl": "https://hynek.me/index.xml",
-      "summary": "PyPI is a gold mine of great packages but those packages have to be written first. More often than not, projects that millions of people depend on are written and maintained by only one person. If you’re unlucky, that person is you! This talk tries to lighten the burden by givin…",
-      "publishedAt": "2019-05-03T00:00:00.000Z"
+      "slug": "b25e94a49b21357289de1c6a",
+      "guid": "https://scratchpad.blog/howto/automate-infrastructure-setup-for-aws-lightsail/",
+      "title": "Automate Infrastructure Setup for AWS Lightsail",
+      "link": "https://scratchpad.blog/howto/automate-infrastructure-setup-for-aws-lightsail/",
+      "source": "ScratchPad",
+      "sourceUrl": "https://scratchpad.blog/feed.xml",
+      "summary": "AWS Lightsail is a set of services offered by AWS which can be used to run the infrastructure needed for hosting web applications: virtual servers, managed databases and load balancers. They are similar to the standard offerings from AWS but have a smaller feature set. As a resu…",
+      "publishedAt": "2019-05-02T00:00:00.000Z"
+    },
+    {
+      "slug": "b2df1dd757f085edb85a3a7f",
+      "guid": "https://scratchpad.blog/budget-notifications-for-aws-accounts/",
+      "title": "Budget Notifications for AWS Accounts",
+      "link": "https://scratchpad.blog/budget-notifications-for-aws-accounts/",
+      "source": "ScratchPad",
+      "sourceUrl": "https://scratchpad.blog/feed.xml",
+      "summary": "One of the fundamental characteristics of the cloud is metered billing: You only pay for what you actually use. In general, this a great concept because the costs scale according to your actual usage of the resources. This is especially useful when experimenting with new stuff o…",
+      "publishedAt": "2019-04-25T00:00:00.000Z"
+    },
+    {
+      "slug": "818f3e241c6bf2db2e04beb7",
+      "guid": "https://bitsofco.de/removing-duplicate-objects-from-an-array-is-hard/",
+      "title": "Removing duplicate objects from an Array (is hard)",
+      "link": "https://bitsofco.de/removing-duplicate-objects-from-an-array-is-hard/",
+      "source": "Bits of Code",
+      "sourceUrl": "https://bitsofco.de/feed/feed.xml",
+      "summary": "Let’s say we have an array of objects such as the following: const books = [ { name: \"My Sister the Serial Killer\", author: \"Oyinkan Braithwaite\" }, { name: \"Educated\", author: \"Tara Westover\" }, { name: \"My Sister the Serial Killer\", author: \"Oyinkan Braithwaite\" } ]; The first…",
+      "publishedAt": "2019-03-12T00:00:00.000Z"
+    },
+    {
+      "slug": "ddf37538ac32e687b1173717",
+      "guid": "https://bitsofco.de/tips-for-making-interactive-elements-accessible-on-mobile-devices/",
+      "title": "Tips for making interactive elements accessible on mobile devices",
+      "link": "https://bitsofco.de/tips-for-making-interactive-elements-accessible-on-mobile-devices/",
+      "source": "Bits of Code",
+      "sourceUrl": "https://bitsofco.de/feed/feed.xml",
+      "summary": "The Web Content Accessibility Guidelines (WCAG) is a set a guidelines for how to make websites accessible. The second version was published in 2008, before websites were available on mobile devices in any meaningful way. A few months ago, the WCAG was updated to version 2.1, whi…",
+      "publishedAt": "2019-02-12T00:00:00.000Z"
+    },
+    {
+      "slug": "85914f4b422dc92c7d7f5f3a",
+      "guid": "https://bitsofco.de/revisiting-the-abbr-element/",
+      "title": "Revisiting the abbr element",
+      "link": "https://bitsofco.de/revisiting-the-abbr-element/",
+      "source": "Bits of Code",
+      "sourceUrl": "https://bitsofco.de/feed/feed.xml",
+      "summary": "A few weeks ago, I wrote about how to make the abbr element work for touchscreen, keyboard, and mouse. My suggestion involved making the element focusable with the tabindex attribute and using pseudo-elements to create a tooltip from the title attribute. CSS abbr[title]:hover::a…",
+      "publishedAt": "2019-02-05T00:00:00.000Z"
+    },
+    {
+      "slug": "e523f082adde4d0b6448fb51",
+      "guid": "https://bitsofco.de/what-self-skipwaiting-does-to-the-service-worker-lifecycle/",
+      "title": "What self.skipWaiting() does to the service worker lifecycle",
+      "link": "https://bitsofco.de/what-self-skipwaiting-does-to-the-service-worker-lifecycle/",
+      "source": "Bits of Code",
+      "sourceUrl": "https://bitsofco.de/feed/feed.xml",
+      "summary": "The ServiceWorker.skipWaiting() method is a life saver. It ensures that any new versions of a service worker will take over the page and become activated immediately. To understand why this is so important and useful, we need to revisit the service worker lifecycle. I have a mor…",
+      "publishedAt": "2019-01-29T00:00:00.000Z"
+    },
+    {
+      "slug": "b30b673973b78eb829081e2b",
+      "guid": "https://bitsofco.de/what-is-tree-shaking/",
+      "title": "What is tree shaking and how does it work?",
+      "link": "https://bitsofco.de/what-is-tree-shaking/",
+      "source": "Bits of Code",
+      "sourceUrl": "https://bitsofco.de/feed/feed.xml",
+      "summary": "When Javascript applications get to a certain size, it’s helpful to separate the code into modules. However, when we do so, we can end up with code imported that isn’t actually used. Tree shaking is a method of optimising our code bundles by eliminating any code from the final f…",
+      "publishedAt": "2019-01-22T00:00:00.000Z"
+    },
+    {
+      "slug": "b099be485dc57e333c0b9042",
+      "guid": "https://bitsofco.de/use-the-lang-pseudo-class-over-the-lang-attribute-for-language-specific-styles/",
+      "title": "Use the :lang pseudo-class over the lang attribute selector for language-specific styles",
+      "link": "https://bitsofco.de/use-the-lang-pseudo-class-over-the-lang-attribute-for-language-specific-styles/",
+      "source": "Bits of Code",
+      "sourceUrl": "https://bitsofco.de/feed/feed.xml",
+      "summary": "The content of HTML documents can be in many different languages. To specify the primary language of a document, we use the lang attribute on the root element. We can also use the lang attribute within the page to demarcate specific elements or sections that are in a different l…",
+      "publishedAt": "2019-01-16T00:00:00.000Z"
+    },
+    {
+      "slug": "53f96dad28be8d0d4d6f0ebb",
+      "guid": "https://bitsofco.de/a-siri-shortcut-to-generate-pwa-icons-and-web-app-manifest/",
+      "title": "A Siri Shortcut to Generate PWA Icons and Web App Manifest",
+      "link": "https://bitsofco.de/a-siri-shortcut-to-generate-pwa-icons-and-web-app-manifest/",
+      "source": "Bits of Code",
+      "sourceUrl": "https://bitsofco.de/feed/feed.xml",
+      "summary": "If you've been following along with my daily blogging challenge, this is my final article! I've done 30 articles in 42 days! Since Siri Shortcuts were announced in iOS 12, I’ve been trying to find some interesting and useful applications for it. Suprisingly, it packs a lot of po…",
+      "publishedAt": "2018-12-25T00:00:00.000Z"
+    },
+    {
+      "slug": "9c08ed88ba172d8bfec08147",
+      "guid": "https://bitsofco.de/understanding-the-virtual-dom/",
+      "title": "Understanding the Virtual DOM",
+      "link": "https://bitsofco.de/understanding-the-virtual-dom/",
+      "source": "Bits of Code",
+      "sourceUrl": "https://bitsofco.de/feed/feed.xml",
+      "summary": "I’ve recently been writing about what exactly the DOM and the shadow DOM are and how they differ. To recap, the Document Object Model is an object-based representation of an HTML document and an interface to manipulating that object. The shadow DOM can be thought of as a “lite” …",
+      "publishedAt": "2018-12-24T00:00:00.000Z"
+    },
+    {
+      "slug": "fa6c30825a7d4dfedeb3b28c",
+      "guid": "https://bitsofco.de/my-css-reset-base/",
+      "title": "My CSS Reset/Base",
+      "link": "https://bitsofco.de/my-css-reset-base/",
+      "source": "Bits of Code",
+      "sourceUrl": "https://bitsofco.de/feed/feed.xml",
+      "summary": "Since writing about the state of CSS resets in 2018, I’ve had a few people ask what my modified CSS reset looks like. As I mentioned in that article, my reset is more like a base at this point because, in addition to resetting some default browser styles, I also include some uti…",
+      "publishedAt": "2018-12-21T00:00:00.000Z"
+    },
+    {
+      "slug": "352961c80ba02e660784c1b6",
+      "guid": "https://bitsofco.de/making-abbr-work-for-touchscreen-keyboard-mouse/",
+      "title": "Making the abbr element work for touchscreen, keyboard, and mouse",
+      "link": "https://bitsofco.de/making-abbr-work-for-touchscreen-keyboard-mouse/",
+      "source": "Bits of Code",
+      "sourceUrl": "https://bitsofco.de/feed/feed.xml",
+      "summary": "The element is used to denote and define an acronym. For example, if we want to write the acronym “CSS” anywhere on a web page, we can also provide the full name “Cascading Style Sheets” for readers unfamiliar with the acronym. This is done by wrapping the acronym in an element …",
+      "publishedAt": "2018-12-20T00:00:00.000Z"
+    },
+    {
+      "slug": "8fff58b19cff149958444e61",
+      "guid": "https://bitsofco.de/handling-broken-images-with-service-worker/",
+      "title": "Handling broken images with the service worker",
+      "link": "https://bitsofco.de/handling-broken-images-with-service-worker/",
+      "source": "Bits of Code",
+      "sourceUrl": "https://bitsofco.de/feed/feed.xml",
+      "summary": "A few years ago, I wrote about how we can use css to style broken images. The technique leveraged on the fact that any styling to the ::before or ::after pseudo-elements on the element will only be applied if the image doesn’t load. So, we could style those elements and they wou…",
+      "publishedAt": "2018-12-19T00:00:00.000Z"
+    },
+    {
+      "slug": "2bc7770528d3e73cbbb8af6e",
+      "guid": "https://bitsofco.de/a-one-line-solution-to-highlighting-search-matches/",
+      "title": "A one-line solution to highlighting search matches",
+      "link": "https://bitsofco.de/a-one-line-solution-to-highlighting-search-matches/",
+      "source": "Bits of Code",
+      "sourceUrl": "https://bitsofco.de/feed/feed.xml",
+      "summary": "I’ve recently been making some improvements to the search page of this blog, and wanted to implement a feature where the search term was highlighted everywhere it appeared in the results. Although libraries for this exist, I wanted to try to implement it myself as it seemed like…",
+      "publishedAt": "2018-12-18T00:00:00.000Z"
+    },
+    {
+      "slug": "9328fcf4b3194557a8ec02b2",
+      "guid": "https://bitsofco.de/theres-no-reason-to-use-pointer-events-for-html-elements/",
+      "title": "There’s no reason to use pointer-events for HTML elements",
+      "link": "https://bitsofco.de/theres-no-reason-to-use-pointer-events-for-html-elements/",
+      "source": "Bits of Code",
+      "sourceUrl": "https://bitsofco.de/feed/feed.xml",
+      "summary": "button:hover, button:focus { background-color: #ffdb3a; } UPDATE: Some people have pointed out some genuinely great use cases for this property which I've listed at the end of the article. I still stand by all the points I made against the use cases I pointed out in this article…",
+      "publishedAt": "2018-12-17T00:00:00.000Z"
+    },
+    {
+      "slug": "84c3de8a048070eb296d174e",
+      "guid": "https://bitsofco.de/using-aria-live/",
+      "title": "Using aria-live",
+      "link": "https://bitsofco.de/using-aria-live/",
+      "source": "Bits of Code",
+      "sourceUrl": "https://bitsofco.de/feed/feed.xml",
+      "summary": "Many web pages today have their content dynamically changed using Javascript. An example of this is the search page on this blog. When the page is initially loaded, the only content in the section of the page is a search form. But, when you type in a query such as “css” and sear…",
+      "publishedAt": "2018-12-14T00:00:00.000Z"
+    },
+    {
+      "slug": "49a72430c7775295e7796f3c",
+      "guid": "https://bitsofco.de/cache-api-101/",
+      "title": "Cache API 101",
+      "link": "https://bitsofco.de/cache-api-101/",
+      "source": "Bits of Code",
+      "sourceUrl": "https://bitsofco.de/feed/feed.xml",
+      "summary": "A cache is a form of storage for “requests” and “responses”. When you visited this page, you made a request for /cache-api-101. The response to that request was the HTML document you are viewing in your browser right now. The cache API allows us to store these requests and respo…",
+      "publishedAt": "2018-12-13T00:00:00.000Z"
+    },
+    {
+      "slug": "46ef720702a6225fe5bf2b3a",
+      "guid": "https://bitsofco.de/the-visibility-property-isnt-just-about-visibility/",
+      "title": "The visibility property isn’t just about visibility",
+      "link": "https://bitsofco.de/the-visibility-property-isnt-just-about-visibility/",
+      "source": "Bits of Code",
+      "sourceUrl": "https://bitsofco.de/feed/feed.xml",
+      "summary": ".example-one { width: 100px; display: inline-block; background-color: #ffdb3a; } I recently ran into an issue where the text content of a I created wasn’t in the accessibility tree and therefore wasn’t visible to screen readers. After some debugging, I realised that the reason w…",
+      "publishedAt": "2018-12-12T00:00:00.000Z"
+    },
+    {
+      "slug": "359b95a68c3cb1f31a32f1e9",
+      "guid": "https://bitsofco.de/when-do-the-hover-focus-and-active-pseudo-classes-apply/",
+      "title": "When do the :hover, :focus, and :active pseudo-classes apply?",
+      "link": "https://bitsofco.de/when-do-the-hover-focus-and-active-pseudo-classes-apply/",
+      "source": "Bits of Code",
+      "sourceUrl": "https://bitsofco.de/feed/feed.xml",
+      "summary": "#one:hover { background-color: #ffdb3a; } #two:focus { background-color: #ffdb3a; } #three:active { background-color: #ffdb3a; } #four:hover:focus:active { background-color: #ffdb3a; } #five:active { background-color: green; } #five:focus { background-color: blue; } #five:hover …",
+      "publishedAt": "2018-12-11T00:00:00.000Z"
+    },
+    {
+      "slug": "419b6e2e6316fe74c54857b8",
+      "guid": "https://bitsofco.de/what-is-the-shadow-dom/",
+      "title": "What is the Shadow DOM?",
+      "link": "https://bitsofco.de/what-is-the-shadow-dom/",
+      "source": "Bits of Code",
+      "sourceUrl": "https://bitsofco.de/feed/feed.xml",
+      "summary": "A couple of weeks ago, I wrote an article on what exactly the DOM is. To recap, the Document Object Model is a representation of an HTML document. It is used by browsers to determine what to render on the page, and by Javascript programs to modify the content, structure, or styl…",
+      "publishedAt": "2018-12-10T00:00:00.000Z"
+    },
+    {
+      "slug": "492715287fb84d0815f90f01",
+      "guid": "https://bitsofco.de/going-offline-first/",
+      "title": "Going Offline First (Video Series)",
+      "link": "https://bitsofco.de/going-offline-first/",
+      "source": "Bits of Code",
+      "sourceUrl": "https://bitsofco.de/feed/feed.xml",
+      "summary": "You may have noticed that I recently updated this blog to allow for users like yourself to save an article to view offline. You can do this by clicking the bookmark icon above. If you are ever offline, you will still be able to view articles previously bookmarked. If you try to …",
+      "publishedAt": "2018-12-05T00:00:00.000Z"
+    },
+    {
+      "slug": "36f99ae1f915f4b464513a09",
+      "guid": "https://bitsofco.de/a-look-at-css-resets-in-2018/",
+      "title": "A look at CSS Resets in 2018",
+      "link": "https://bitsofco.de/a-look-at-css-resets-in-2018/",
+      "source": "Bits of Code",
+      "sourceUrl": "https://bitsofco.de/feed/feed.xml",
+      "summary": "All browsers ship with a set of default styles that are applied to every web page in what is called the “user agent stylesheet”. Most of these stylesheets are open source so you can have a look through them: Chromium UA stylesheet - Google Chrome & Opera Mozilla UA stylesheet - …",
+      "publishedAt": "2018-11-30T00:00:00.000Z"
+    },
+    {
+      "slug": "472b42b2151095557948eaa3",
+      "guid": "https://bitsofco.de/how-and-when-to-use-the-tabindex-attribute/",
+      "title": "How and when to use the tabindex attribute",
+      "link": "https://bitsofco.de/how-and-when-to-use-the-tabindex-attribute/",
+      "source": "Bits of Code",
+      "sourceUrl": "https://bitsofco.de/feed/feed.xml",
+      "summary": "tabindex is a global attribute that can be applied to most HTML elements with content. It controls two things: If an element is focusable, either by an input method such as the keyboard, or programatically such as with the focus() method; and At what point an element becomes foc…",
+      "publishedAt": "2018-11-29T00:00:00.000Z"
+    },
+    {
+      "slug": "4fa54babb3dadfb57bbb0c2d",
+      "guid": "https://bitsofco.de/css-environment-variables/",
+      "title": "Everything about CSS environment variables",
+      "link": "https://bitsofco.de/css-environment-variables/",
+      "source": "Bits of Code",
+      "sourceUrl": "https://bitsofco.de/feed/feed.xml",
+      "summary": "When the iPhone X came out with the infamous notch, you may have heard of the new safe-area-inset values, which allowed browsers to detect the area of the screen that was covered by the notch and move content around appropriately. Recently, these values have been formalised as p…",
+      "publishedAt": "2018-11-28T00:00:00.000Z"
+    },
+    {
+      "slug": "f29365f0e86ce2ffff09e5fc",
+      "guid": "https://bitsofco.de/git-aliases-for-lazy-developers/",
+      "title": "Git aliases for lazy developers",
+      "link": "https://bitsofco.de/git-aliases-for-lazy-developers/",
+      "source": "Bits of Code",
+      "sourceUrl": "https://bitsofco.de/feed/feed.xml",
+      "summary": "I prefer to interface with git via the command line, at least for the simple commands. However, I’m a bit lazy, and don’t like having to repeatedly type out the same long commands multiple times a day. Over the years, I have created some short aliases that allow me to more quick…",
+      "publishedAt": "2018-11-27T00:00:00.000Z"
+    },
+    {
+      "slug": "c888b7a8908a14dfc0264667",
+      "guid": "https://bitsofco.de/what-exactly-is-the-dom/",
+      "title": "What, exactly, is the DOM?",
+      "link": "https://bitsofco.de/what-exactly-is-the-dom/",
+      "source": "Bits of Code",
+      "sourceUrl": "https://bitsofco.de/feed/feed.xml",
+      "summary": "The Document Object Model, or the “DOM”, is an interface to web pages. It is essentially an API to the page, allowing programs to read and manipulate the page’s content, structure, and styles. Let’s break this down. How is a web page built? # How a browser goes from a source HTM…",
+      "publishedAt": "2018-11-26T00:00:00.000Z"
+    },
+    {
+      "slug": "e12046183991399cd190619a",
+      "guid": "https://bitsofco.de/how-to-upload-a-screenshot-from-puppeteer-to-cloudinary/",
+      "title": "How to upload a screenshot from Puppeteer to Cloudinary",
+      "link": "https://bitsofco.de/how-to-upload-a-screenshot-from-puppeteer-to-cloudinary/",
+      "source": "Bits of Code",
+      "sourceUrl": "https://bitsofco.de/feed/feed.xml",
+      "summary": "In my article yesterday, I wrote about the problem I was trying to solve with my caniuse embed. To recap, I was trying to create a fallback image for the live embed and I did this by taking a screenshot of the page using puppeteer. Yesterday, I covered how to use headless Chrome…",
+      "publishedAt": "2018-11-23T00:00:00.000Z"
+    },
+    {
+      "slug": "a4c606ae32064f3ae27b2ac9",
+      "guid": "https://bitsofco.de/using-a-headless-browser-to-capture-page-screenshots/",
+      "title": "Using a headless browser to capture page screenshots",
+      "link": "https://bitsofco.de/using-a-headless-browser-to-capture-page-screenshots/",
+      "source": "Bits of Code",
+      "sourceUrl": "https://bitsofco.de/feed/feed.xml",
+      "summary": "A headless browser is a browser without the graphical user interface. It is a way to navigate the web via the command line. Headless browsers are useful for automating tests of websites as it allows us to navigate to a page and perform actions without having to manually open up …",
+      "publishedAt": "2018-11-22T00:00:00.000Z"
+    },
+    {
+      "slug": "c290477d1e3a461749ed0a02",
+      "guid": "https://bitsofco.de/why-and-how-to-use-webp-images-today/",
+      "title": "Why and how to use WebP images today",
+      "link": "https://bitsofco.de/why-and-how-to-use-webp-images-today/",
+      "source": "Bits of Code",
+      "sourceUrl": "https://bitsofco.de/feed/feed.xml",
+      "summary": "WebP is an image format developed by Google in 2010. It was created to be an alternative to formats like PNG and JPG, producing much smaller file sizes while maintaining similar image qualities. Why use WebP? # WebP is an incredibly useful format because it offers both performan…",
+      "publishedAt": "2018-11-21T00:00:00.000Z"
+    },
+    {
+      "slug": "cef9fd1d56f7f296fab5b5fa",
+      "guid": "https://bitsofco.de/web-workers-vs-service-workers-vs-worklets/",
+      "title": "Web workers vs Service workers vs Worklets",
+      "link": "https://bitsofco.de/web-workers-vs-service-workers-vs-worklets/",
+      "source": "Bits of Code",
+      "sourceUrl": "https://bitsofco.de/feed/feed.xml",
+      "summary": "Web workers, service workers, and worklets. All of these are what I would call “Javascript Workers”, and although they do have some similarities in how they work, they have very little overlap in what they are used for. Broadly speaking, a worker is a script that runs on a threa…",
+      "publishedAt": "2018-11-20T00:00:00.000Z"
     }
   ]
 }
