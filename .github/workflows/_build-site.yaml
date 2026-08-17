@@ -113,6 +113,9 @@ on:
                 type: boolean
                 default: true
         secrets:
+            CONTENT_REPO_TOKEN:
+                description: PAT that can clone the private content repo. Required when content_source is live.
+                required: false
             INDEX_NOW_API_KEY:
                 description: IndexNow ownership key (8-128 A-Za-z0-9-). Required for production Astro builds/submits. Same key is hosted on each site.
                 required: false
