@@ -221,16 +221,19 @@ resource "aws_cloudfront_distribution" "site" {
     }
   }
 
+  # Missing objects: S3+OAC typically returns 403; a missing key can also be 404.
+  # Static sites return a real 404 with the custom page body so crawlers see a
+  # hard 404 instead of a soft-200. Quiz SPA overrides the response code to 200.
   custom_error_response {
     error_code            = 403
-    response_code         = 200
+    response_code         = var.not_found_response_code
     response_page_path    = var.not_found_response_page
     error_caching_min_ttl = 10
   }
 
   custom_error_response {
     error_code            = 404
-    response_code         = 200
+    response_code         = var.not_found_response_code
     response_page_path    = var.not_found_response_page
     error_caching_min_ttl = 10
   }

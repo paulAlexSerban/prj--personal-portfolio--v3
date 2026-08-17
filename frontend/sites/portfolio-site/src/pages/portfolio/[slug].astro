@@ -1,6 +1,7 @@
 ---
 import { evaluate } from '@mdx-js/mdx';
 import { rehypePlugins, remarkPlugins } from '@prj--personal-portfolio--v3/shared--markdown/plugins';
+import { coverImageUrl } from '@prj--personal-portfolio--v3/shared--ui/cover-image';
 import { CoverImage } from '@prj--personal-portfolio--v3/shared--ui/cover-image-ui';
 import * as runtime from 'react/jsx-runtime';
 
@@ -44,7 +45,8 @@ const description = project.excerpt ?? project.problem ?? project.subheading ?? 
 const canonicalUrl = new URL(siteUrls.portfolioProject(slug), Astro.site).href;
 const metrics = parseMetrics(project.metrics);
 const PLACEHOLDER_COVER = assetUrl('placeholder-cover.png');
-const cover = project.cover_image ?? PLACEHOLDER_COVER;
+const ogImage = coverImageUrl(project.cover, assetUrl('og-default.png'));
+const publishedTime = project.updated_at instanceof Date ? project.updated_at.toISOString() : undefined;
 ---
 
 <BaseLayout
@@ -53,7 +55,18 @@ const cover = project.cover_image ?? PLACEHOLDER_COVER;
     ogTitle={project.title}
     ogDescription={description}
     canonicalUrl={canonicalUrl}
-    ogImage={cover}
+    ogImage={ogImage}
+    ogType="article"
+    publishedTime={publishedTime}
+    jsonLd={{
+        '@context': 'https://schema.org',
+        '@type': 'CreativeWork',
+        name: project.title,
+        description,
+        url: canonicalUrl,
+        image: ogImage,
+        author: { '@type': 'Person', name: 'Paul Serban', url: Astro.site?.href },
+    }}
 >
     <p class="mb-4">
         <a href={siteUrls.portfolio} class="kicker text-xs hover:underline">&larr; Back to portfolio</a>
@@ -62,7 +75,7 @@ const cover = project.cover_image ?? PLACEHOLDER_COVER;
     <div class="mb-6">
         <CoverImage
             client:load
-            cover={project.cover_image}
+            cover={project.cover}
             placeholder={PLACEHOLDER_COVER}
             alt={project.title}
             loading="eager"
@@ -74,7 +87,7 @@ const cover = project.cover_image ?? PLACEHOLDER_COVER;
 
     <header class="mb-8 border-b-2 border-ink pb-6">
         {project.pinned && <p class="kicker mb-2 text-[11px]">Featured</p>}
-        <h2 class="m-0 font-display text-[clamp(2rem,5vw,3rem)] font-bold">{project.title}</h2>
+        <h1 class="m-0 font-display text-[clamp(2rem,5vw,3rem)] font-bold">{project.title}</h1>
         {project.subheading && <p class="deck mt-2 text-lg">{project.subheading}</p>}
         {project.role && <p class="mt-1 text-sm text-slate-ink">Role: {project.role}</p>}
         <div class="mt-4"><TagList tags={tags} /></div>

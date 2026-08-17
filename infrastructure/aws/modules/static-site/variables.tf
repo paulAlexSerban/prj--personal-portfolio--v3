@@ -27,9 +27,15 @@ variable "default_root_object" {
 }
 
 variable "not_found_response_page" {
-  description = "Path (served from the bucket) returned for 403/404 responses, so client-side routed apps still get a 200."
+  description = "Path (served from the bucket) returned for 403/404 responses."
   type        = string
   default     = "/404.html"
+}
+
+variable "not_found_response_code" {
+  description = "HTTP status CloudFront returns with not_found_response_page. 404 for static sites so crawlers see hard 404s; 200 for the quiz SPA."
+  type        = number
+  default     = 404
 }
 
 variable "price_class" {

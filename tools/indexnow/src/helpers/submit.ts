@@ -8,12 +8,12 @@ export type SubmitOptions = {
 };
 
 class HttpStatusError extends Error {
-    constructor(
-        readonly status: number,
-        message: string
-    ) {
+    status: number;
+
+    constructor(status: number, message: string) {
         super(message);
         this.name = 'HttpStatusError';
+        this.status = status;
     }
 }
 

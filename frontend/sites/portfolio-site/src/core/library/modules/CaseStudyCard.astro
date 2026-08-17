@@ -20,8 +20,9 @@ const PLACEHOLDER_COVER = assetUrl('placeholder-cover.png');
 <article class="card-ruled flex flex-col">
     <a href={href} class="group mb-3 block overflow-hidden">
         <CoverImage
-            cover={project.cover_image}
+            cover={project.cover}
             placeholder={PLACEHOLDER_COVER}
+            alt={project.title}
             sizes="card"
             imgClassName="post-card-cover-img aspect-video w-full object-cover"
         />

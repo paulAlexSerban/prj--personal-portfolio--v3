@@ -27,11 +27,12 @@ const meta = [typeLabel[type], post.date].filter(Boolean).join(' · ');
 
 <article class="card-ruled border-b border-rule pb-4">
     {
-        post.cover_image && (
+        post.cover && (
             <a href={href} class="group mb-3 block overflow-hidden">
                 <CoverImage
-                    cover={post.cover_image}
+                    cover={post.cover}
                     placeholder=""
+                    alt={post.title}
                     sizes="card"
                     imgClassName="post-card-cover-img aspect-video w-full object-cover"
                 />
