@@ -33,7 +33,7 @@ function createTestDb() {
             body TEXT NOT NULL,
             subheading TEXT,
             excerpt TEXT,
-            cover_image TEXT,
+            cover TEXT,
             author TEXT,
             date TEXT,
             pinned INTEGER DEFAULT 0,

@@ -3,6 +3,12 @@ variable "domain_name" {
   type        = string
 }
 
+variable "alternate_domain_names" {
+  description = "Extra hostnames served by the same CloudFront distribution (e.g. www.example.com). Added to the ACM cert, distribution aliases, and Route 53."
+  type        = list(string)
+  default     = []
+}
+
 variable "hosted_zone_id" {
   description = "Route 53 hosted zone ID that owns domain_name (e.g. the zone for paulserban.eu)."
   type        = string
@@ -21,9 +27,15 @@ variable "default_root_object" {
 }
 
 variable "not_found_response_page" {
-  description = "Path (served from the bucket) returned for 403/404 responses, so client-side routed apps still get a 200."
+  description = "Path (served from the bucket) returned for 403/404 responses."
   type        = string
   default     = "/404.html"
+}
+
+variable "not_found_response_code" {
+  description = "HTTP status CloudFront returns with not_found_response_page. 404 for static sites so crawlers see hard 404s; 200 for the quiz SPA."
+  type        = number
+  default     = 404
 }
 
 variable "price_class" {

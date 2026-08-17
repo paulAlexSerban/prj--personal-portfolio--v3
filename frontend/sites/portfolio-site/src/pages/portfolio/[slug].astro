@@ -1,6 +1,7 @@
 ---
 import { evaluate } from '@mdx-js/mdx';
 import { rehypePlugins, remarkPlugins } from '@prj--personal-portfolio--v3/shared--markdown/plugins';
+import { coverImageUrl } from '@prj--personal-portfolio--v3/shared--ui/cover-image';
 import { CoverImage } from '@prj--personal-portfolio--v3/shared--ui/cover-image-ui';
 import * as runtime from 'react/jsx-runtime';
 
@@ -44,7 +45,8 @@ const description = project.excerpt ?? project.problem ?? project.subheading ?? 
 const canonicalUrl = new URL(siteUrls.portfolioProject(slug), Astro.site).href;
 const metrics = parseMetrics(project.metrics);
 const PLACEHOLDER_COVER = assetUrl('placeholder-cover.png');
-const cover = project.cover_image ?? PLACEHOLDER_COVER;
+const ogImage = coverImageUrl(project.cover, assetUrl('og-default.png'));
+const publishedTime = project.updated_at instanceof Date ? project.updated_at.toISOString() : undefined;
 ---
 
 <BaseLayout
@@ -53,7 +55,18 @@ const cover = project.cover_image ?? PLACEHOLDER_COVER;
     ogTitle={project.title}
     ogDescription={description}
     canonicalUrl={canonicalUrl}
-    ogImage={cover}
+    ogImage={ogImage}
+    ogType="article"
+    publishedTime={publishedTime}
+    jsonLd={{
+        '@context': 'https://schema.org',
+        '@type': 'CreativeWork',
+        name: project.title,
+        description,
+        url: canonicalUrl,
+        image: ogImage,
+        author: { '@type': 'Person', name: 'Paul Serban', url: Astro.site?.href },
+    }}
 >
     <p class="mb-4">
         <a href={siteUrls.portfolio} class="kicker text-xs hover:underline">&larr; Back to portfolio</a>
@@ -62,7 +75,7 @@ const cover = project.cover_image ?? PLACEHOLDER_COVER;
     <div class="mb-6">
         <CoverImage
             client:load
-            cover={project.cover_image}
+            cover={project.cover}
             placeholder={PLACEHOLDER_COVER}
             alt={project.title}
             loading="eager"

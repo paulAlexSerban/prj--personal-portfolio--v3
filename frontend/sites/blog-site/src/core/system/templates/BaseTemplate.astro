@@ -13,13 +13,42 @@ interface Props {
     ogTitle?: string;
     ogDescription?: string;
     canonicalUrl?: string;
+    ogImage?: string;
+    ogType?: 'website' | 'article';
+    publishedTime?: string;
+    modifiedTime?: string;
+    robots?: string;
+    jsonLd?: object | object[];
 }
 
-const { title, description, ogTitle = title, ogDescription = description, canonicalUrl } = Astro.props;
+const {
+    title,
+    description,
+    ogTitle = title,
+    ogDescription = description,
+    canonicalUrl,
+    ogImage = assetUrl('og-default.png'),
+    ogType = 'website',
+    publishedTime,
+    modifiedTime,
+    robots,
+    jsonLd,
+} = Astro.props;
 
 const pageDescription = description ?? 'Posts, snippets, and book notes by Paul Serban.';
 const canonical = canonicalUrl ?? new URL(Astro.url.pathname, Astro.site).href;
+const ogImageUrl = /^https?:\/\//i.test(ogImage) ? ogImage : new URL(ogImage, Astro.site).href;
 const cfBeaconToken = import.meta.env.PUBLIC_CF_BEACON_TOKEN;
+const siteUrl = Astro.site?.href ?? canonical;
+
+const websiteLd = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'Paul Serban',
+    url: siteUrl,
+};
+
+const extraLd = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
 ---
 
 <!doctype html>
@@ -29,10 +58,22 @@ const cfBeaconToken = import.meta.env.PUBLIC_CF_BEACON_TOKEN;
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>{title}</title>
         <meta name="description" content={pageDescription} />
+        {robots && <meta name="robots" content={robots} />}
         <meta property="og:title" content={ogTitle} />
         <meta property="og:description" content={ogDescription ?? pageDescription} />
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content={ogType} />
         <meta property="og:url" content={canonical} />
+        <meta property="og:image" content={ogImageUrl} />
+        {ogType === 'article' && publishedTime && (
+            <meta property="article:published_time" content={publishedTime} />
+        )}
+        {ogType === 'article' && modifiedTime && (
+            <meta property="article:modified_time" content={modifiedTime} />
+        )}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={ogTitle} />
+        <meta name="twitter:description" content={ogDescription ?? pageDescription} />
+        <meta name="twitter:image" content={ogImageUrl} />
         <link rel="icon" href={assetUrl('favicon.ico')} sizes="any" />
         <link rel="icon" href={assetUrl('favicon.svg')} type="image/svg+xml" />
         <link rel="apple-touch-icon" href={assetUrl('apple-touch-icon.png')} />
@@ -41,6 +82,10 @@ const cfBeaconToken = import.meta.env.PUBLIC_CF_BEACON_TOKEN;
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet" />
+        <script is:inline type="application/ld+json" set:html={JSON.stringify(websiteLd)} />
+        {extraLd.map((block) => (
+            <script is:inline type="application/ld+json" set:html={JSON.stringify(block)} />
+        ))}
         <slot name="head" />
     </head>
     <body class="min-h-screen bg-newsprint text-ink">

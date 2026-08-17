@@ -6,6 +6,7 @@ const navLinks = [
     { label: 'Home', href: siteUrls.home },
     { label: 'Experience', href: siteUrls.experience },
     { label: 'Portfolio', href: siteUrls.portfolio },
+    { label: 'CV', href: siteUrls.cv },
 ];
 
 const siteTabs = buildSiteTabs({
@@ -38,9 +39,9 @@ const year = new Date().getFullYear();
             </div>
         </div>
         <a href={siteUrls.home} class="mt-2 block text-center text-ink no-underline">
-            <h1 class="font-display font-black leading-none tracking-tight text-[clamp(2.5rem,8vw,5rem)]">
+            <span class="block font-display font-black leading-none tracking-tight text-[clamp(2.5rem,8vw,5rem)]">
                 Paul Serban
-            </h1>
+            </span>
         </a>
         <p class="deck mt-2 text-center text-sm">AI &amp; full-stack engineer &middot; agentic platforms &middot; distributed systems</p>
         <div class="rule-double mt-3"></div>

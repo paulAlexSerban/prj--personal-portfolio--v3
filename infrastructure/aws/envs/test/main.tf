@@ -81,8 +81,9 @@ module "static_site_quiz" {
   basic_auth_enabled  = true
   basic_auth_username = var.basic_auth_username
   basic_auth_password = var.basic_auth_password
-  # Quiz is an SPA - map 403/404 to index.html instead of a static 404 page.
+  # Quiz is an SPA - map 403/404 to index.html with HTTP 200 for client routing.
   not_found_response_page = "/index.html"
+  not_found_response_code = 200
 }
 
 module "static_site_news" {

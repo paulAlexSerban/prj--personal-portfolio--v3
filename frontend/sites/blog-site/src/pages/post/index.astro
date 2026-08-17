@@ -18,7 +18,7 @@ const posts: BlogPostFilterItem[] = items.map((item) => ({
     slug: item.slug,
     excerpt: item.excerpt ?? null,
     date: item.date ?? null,
-    cover: item.cover_image ?? null,
+    cover: item.cover ?? null,
     type: 'post',
     tags: (tagsMap.get(item.slug) ?? []).map((t) => ({ name: t.name, slug: t.slug })),
 }));

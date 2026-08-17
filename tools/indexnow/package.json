@@ -1,0 +1,23 @@
+{
+    "name": "@prj--personal-portfolio--v3/tools--indexnow",
+    "version": "1.0.0",
+    "private": true,
+    "type": "module",
+    "license": "MIT",
+    "packageManager": "pnpm@11.5.0",
+    "scripts": {
+        "start": "node --experimental-strip-types src/index.ts",
+        "start:dry-run": "node --experimental-strip-types src/index.ts --dry-run",
+        "test": "vitest run",
+        "typecheck": "tsc -b"
+    },
+    "dependencies": {
+        "@prj--personal-portfolio--v3/shared--task-manager": "workspace:*",
+        "@types/node": "^25.9.1",
+        "dotenv": "^17.4.2",
+        "typescript": "^6.0.3"
+    },
+    "devDependencies": {
+        "vitest": "^3.2.4"
+    }
+}

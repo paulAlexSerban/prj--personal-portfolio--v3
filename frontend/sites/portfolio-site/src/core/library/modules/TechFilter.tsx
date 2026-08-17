@@ -101,8 +101,9 @@ function ProjectCardInner({ project, tags, featured = false }: { project: Projec
         <article className="card-ruled flex flex-col">
             <a href={href} className="group mb-3 block overflow-hidden">
                 <CoverImage
-                    cover={project.cover_image}
+                    cover={project.cover}
                     placeholder={assetUrl('placeholder-cover.png')}
+                    alt={project.title}
                     sizes="card"
                     imgClassName="post-card-cover-img aspect-video w-full object-cover"
                 />

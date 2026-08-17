@@ -16,7 +16,7 @@ CREATE TABLE `experience` (
 );
 --> statement-breakpoint
 CREATE UNIQUE INDEX `experience_slug_unique` ON `experience` (`slug`);--> statement-breakpoint
-ALTER TABLE `projects` ADD `cover_image` text;--> statement-breakpoint
+ALTER TABLE `projects` ADD `cover` text;--> statement-breakpoint
 ALTER TABLE `projects` ADD `role` text;--> statement-breakpoint
 ALTER TABLE `projects` ADD `problem` text;--> statement-breakpoint
 ALTER TABLE `projects` ADD `approach` text;--> statement-breakpoint
