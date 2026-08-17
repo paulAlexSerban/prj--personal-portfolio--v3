@@ -37,7 +37,7 @@ const { title, subheading, tags = [], kicker, cover } = Astro.props;
         )
     }
     {kicker && <p class="kicker mb-2 text-sm">{kicker}</p>}
-    <h1 class="m-0 font-display text-[clamp(2rem,5vw,3rem)] font-bold leading-[1.1]">{title}</h1>
+    <h2 class="m-0 font-display text-[clamp(2rem,5vw,3rem)] font-bold leading-[1.1]">{title}</h2>
     {subheading && <p class="deck mt-2 mb-4 text-[1.1rem]">{subheading}</p>}
     {tags.length > 0 && <TagList tags={tags} />}
 </section>

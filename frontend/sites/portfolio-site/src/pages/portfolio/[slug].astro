@@ -74,7 +74,7 @@ const cover = project.cover_image ?? PLACEHOLDER_COVER;
 
     <header class="mb-8 border-b-2 border-ink pb-6">
         {project.pinned && <p class="kicker mb-2 text-[11px]">Featured</p>}
-        <h1 class="m-0 font-display text-[clamp(2rem,5vw,3rem)] font-bold">{project.title}</h1>
+        <h2 class="m-0 font-display text-[clamp(2rem,5vw,3rem)] font-bold">{project.title}</h2>
         {project.subheading && <p class="deck mt-2 text-lg">{project.subheading}</p>}
         {project.role && <p class="mt-1 text-sm text-slate-ink">Role: {project.role}</p>}
         <div class="mt-4"><TagList tags={tags} /></div>
