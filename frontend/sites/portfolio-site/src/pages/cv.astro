@@ -12,9 +12,22 @@ const experience = getExperienceTimeline(db);
 closeConnection(db);
 
 const name = profile?.name ?? 'Paul Serban';
+const sameAs = [profile?.github_url, profile?.linkedin_url].filter((url): url is string => Boolean(url));
 ---
 
-<BaseLayout title={`CV | ${name}`} description={`Curriculum vitae for ${name}.`}>
+<BaseLayout
+    title={`CV | ${name}`}
+    description={`Curriculum vitae for ${name}.`}
+    jsonLd={{
+        '@context': 'https://schema.org',
+        '@type': 'Person',
+        name,
+        url: Astro.site?.href,
+        jobTitle: profile?.headline ?? undefined,
+        description: profile?.bio ?? undefined,
+        sameAs,
+    }}
+>
     <section class="mb-8">
         <h1 class="m-0 font-display text-4xl font-bold">{name}</h1>
         {profile?.headline && <p class="deck mt-2 text-xl">{profile.headline}</p>}

@@ -3,6 +3,8 @@ import { evaluate } from '@mdx-js/mdx';
 import { rehypePlugins, remarkPlugins } from '@prj--personal-portfolio--v3/shared--markdown/plugins';
 import * as runtime from 'react/jsx-runtime';
 
+import { coverImageUrl } from '@prj--personal-portfolio--v3/shared--ui/cover-image';
+
 import HeroBanner from '@/library/modules/HeroBanner.astro';
 import BaseLayout from '@/system/templates/BaseTemplate.astro';
 
@@ -22,6 +24,7 @@ import {
     type BlogContentType,
 } from '@/lib/queries/posts.ts';
 import {
+    assetUrl,
     cheatSheetDetailPath,
     learningPlanDetailPath,
     postDetailPath,
@@ -56,6 +59,16 @@ const { default: Content } = await evaluate(post.body, {
 const description = post.excerpt ?? post.subheading ?? undefined;
 const canonicalUrl = new URL(postDetailPath(contentType, slug), Astro.site).href;
 const hasResources = cheatSheets.length > 0 || learningPlans.length > 0;
+const ogImage = coverImageUrl(post.cover, assetUrl('og-default.png'));
+
+function toIso(value: Date | string | null | undefined): string | undefined {
+    if (!value) return undefined;
+    const date = value instanceof Date ? value : new Date(value);
+    return Number.isNaN(date.getTime()) ? undefined : date.toISOString();
+}
+
+const publishedTime = toIso(post.published_at) ?? toIso(post.date);
+const modifiedTime = toIso(post.updated_at) ?? publishedTime;
 ---
 
 <BaseLayout
@@ -64,12 +77,31 @@ const hasResources = cheatSheets.length > 0 || learningPlans.length > 0;
     ogTitle={post.title}
     ogDescription={description}
     canonicalUrl={canonicalUrl}
+    ogImage={ogImage}
+    ogType="article"
+    publishedTime={publishedTime}
+    modifiedTime={modifiedTime}
+    jsonLd={{
+        '@context': 'https://schema.org',
+        '@type': 'BlogPosting',
+        headline: post.title,
+        description,
+        url: canonicalUrl,
+        image: ogImage,
+        datePublished: publishedTime,
+        dateModified: modifiedTime,
+        author: {
+            '@type': 'Person',
+            name: post.author ?? 'Paul Serban',
+            url: 'https://paulserban.eu',
+        },
+    }}
 >
     <HeroBanner
         title={post.title}
         subheading={post.subheading ?? undefined}
         tags={tags}
-        cover={post.cover_image ?? undefined}
+        cover={post.cover ?? undefined}
         kicker={post.date ?? undefined}
     />
     <article class="md-content mt-4">

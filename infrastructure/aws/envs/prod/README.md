@@ -8,6 +8,7 @@ Production uses **live** content (private content-repo sync) and is
 
 ```
 paulserban.eu           -> CloudFront -> S3 (portfolio)
+www.paulserban.eu       -> same CloudFront distribution as the apex
 blog.paulserban.eu      -> CloudFront -> S3 (blog)
 quiz.paulserban.eu      -> CloudFront -> S3 (quiz SPA)
 news-feed.paulserban.eu -> CloudFront -> S3 (news HTML shell)
@@ -15,6 +16,9 @@ news-data.paulserban.eu -> CloudFront -> S3 (RSS JSON, fetched by the news site 
 assets.paulserban.eu    -> CloudFront -> S3 website (existing assets.paulserban.eu bucket)
 
 ACM certs live in us-east-1 (DNS-validated against the shared hosted zone).
+The apex certificate includes `www.paulserban.eu` as a SAN. Adding that SAN
+reissues the cert and updates the portfolio distribution; Route 53 overwrites
+any leftover v2 `www` alias so it targets the same CloudFront as the apex.
 
 GitHub Actions (environment:production)
   -- OIDC token --> IAM role (gha-deploy-paulserban.eu)

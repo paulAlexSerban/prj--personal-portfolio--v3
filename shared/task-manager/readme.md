@@ -49,7 +49,7 @@ pnpm --filter @prj--personal-portfolio--v3/shared--task-manager test
 ## Where it sits
 
 - **Depends on:** nothing (standalone).
-- **Consumed by:** `tools/content-sync`, `tools/mdx-ingest`, `tools/json-ingest`, `tools/quiz-export`.
+- **Consumed by:** `tools/content-sync`, `tools/mdx-ingest`, `tools/json-ingest`, `tools/quiz-export`, `tools/indexnow`.
 
 ## Target pattern and conventions to adopt
 

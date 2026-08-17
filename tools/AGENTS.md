@@ -203,6 +203,37 @@ Required fields (missing -> skipped with warning):
 
 Fetches RSS/Atom feeds into `content/news/cache/*.json` (including `index.json`). Runs from `.github/workflows/news-sync.yaml` daily (`pnpm --filter ...tools--news-sync sync`), **not** from root `pnpm start`. The workflow commits the cache to the `news-cache` branch and uploads it to the `news-data.paulserban.eu` CDN.
 
+## `@prj--personal-portfolio--v3/tools--indexnow` (`tools/indexnow/`)
+
+Post-deploy CLI for Bing-family recrawl via `https://api.indexnow.org/indexnow`. **Not** part of the content ingest pipeline; **not** invoked by root `pnpm start`. Google does not consume IndexNow. Uses `shared--task-manager` like the ingest tools; flags choose which tasks are registered.
+
+**Task graph:**
+
+```
+Setup Environment ─┬─► Write Key File          (--write-key)
+                   └─► Parse Sitemap ─► Build Payload ─► Wait for Key Location ─► Submit IndexNow
+                       (--submit)
+```
+
+| Task                  | Helper          | Responsibility                                   |
+| --------------------- | --------------- | ------------------------------------------------ |
+| Setup Environment     | `key.ts`        | Validate `INDEX_NOW_API_KEY`, resolve `--dist`.  |
+| Write Key File        | `writeKey.ts`   | `{key}.txt` into dist; dry-run skips write.      |
+| Parse Sitemap         | `sitemap.ts`    | Collect same-host `<loc>` URLs from sitemap XML. |
+| Build Payload         | `payload.ts`    | IndexNow JSON; logs redacted payload.            |
+| Wait for Key Location | `waitForKey.ts` | Retry GET until 200; dry-run skips fetch.        |
+| Submit IndexNow       | `submit.ts`     | POST to `api.indexnow.org`; dry-run skips POST.  |
+
+`--write-key` in the production Astro **build** job; `--submit` **after** S3 deploy. Env: `INDEX_NOW_API_KEY` (8–128 `A-Za-z0-9-`). Skip quiz SPA, stage, test, and Pages.
+
+```bash
+pnpm --filter @prj--personal-portfolio--v3/tools--indexnow start -- --write-key --dist /abs/path/to/dist
+pnpm --filter @prj--personal-portfolio--v3/tools--indexnow start -- --submit --dist /abs/path/to/dist --site https://paulserban.eu
+pnpm --filter @prj--personal-portfolio--v3/tools--indexnow start:dry-run -- --write-key --submit --dist /abs/path/to/dist --site https://paulserban.eu
+```
+
+Helpers: `args.ts`, `key.ts`, `sitemap.ts`, `payload.ts`, `writeKey.ts`, `waitForKey.ts`, `submit.ts`, `tasks.ts` (`createTasks`).
+
 ## `@prj--personal-portfolio--v3/tools--news-ingest` (`tools/news-ingest/`)
 
 Reads `content/news/cache/*.json` and upserts into `news_items`. Still available for local/SQLite use, but **not** invoked by site builds — the news-feed site loads CDN JSON in the browser. Prunes unlocked RSS rows absent from the latest cache.

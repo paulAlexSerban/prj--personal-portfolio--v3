@@ -27,7 +27,7 @@ export const PostCardReact = ({ post }: PostCardReactProps) => {
         <article className="card-ruled border-b border-rule pb-4">
             {post.cover && (
                 <a href={href} className="group mb-3 block overflow-hidden">
-                    <CoverImage cover={post.cover} placeholder="" sizes="card" imgClassName="post-card-cover-img aspect-video w-full object-cover" />
+                    <CoverImage cover={post.cover} placeholder="" alt={post.title} sizes="card" imgClassName="post-card-cover-img aspect-video w-full object-cover" />
                 </a>
             )}
             <p className="kicker mb-1 text-[10px]">{meta}</p>

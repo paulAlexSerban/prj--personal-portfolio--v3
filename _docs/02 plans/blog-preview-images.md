@@ -1,7 +1,7 @@
 ---
 name: Blog preview images (cover) - cards + post hero, sketch placeholder fallback
 overview: >
-  Add an optional `cover` image to blog content. It flows MDX frontmatter -> new posts.cover_image
+  Add an optional `cover` image to blog content. It flows MDX frontmatter -> new posts.cover
   column (migration) -> ingest mapping -> a single tested URL resolver -> render sites: all three card
   types (post/snippet/book-note, both the Astro hub card and the React listing-island card) and the
   post/snippet/booknote detail hero. When a post has no cover, a locally-served sketch-style
@@ -9,7 +9,7 @@ overview: >
   reversible; the only new logic (URL resolution + placeholder fallback) is unit-tested in shared/ui.
 todos:
   - id: o1-pipeline
-    content: G1.O1 - schema cover_image column + migration + ingest mapping (S1-S3)
+    content: G1.O1 - schema cover column + migration + ingest mapping (S1-S3)
     status: completed
   - id: o2-resolver
     content: G1.O2 - shared tested coverImageUrl resolver + export path (S1-S2)
@@ -23,7 +23,7 @@ todos:
 isProject: false
 ---
 
-**Status:** ✅ implemented - `posts.cover_image` column, `shared/ui` `coverImageUrl` resolver, blog `public/placeholder-cover.png`, and card/hero rendering all shipped.
+**Status:** ✅ implemented - `posts.cover` column, `shared/ui` `coverImageUrl` resolver, blog `public/placeholder-cover.png`, and card/hero rendering all shipped.
 
 # Plan: blog post cards/teasers + post pages show preview (cover) images with a sketch placeholder
 
@@ -77,13 +77,13 @@ via 5 answered questions.
     so the untested surface is pure JSX wiring.
 - **Blast radius:** new column read by `PostCard.astro`, `PostCardReact.tsx`, `HeroBanner.astro`, the 3
   detail pages, and the 3 listing `.astro` mappers. `PostRow` type gains an optional field -> typecheck flags
-  any consumer that destructures exhaustively (none do). Quiz app does not read `posts.cover_image` (its data
+  any consumer that destructures exhaustively (none do). Quiz app does not read `posts.cover` (its data
   comes from `shared/quiz-export`; out of scope, unaffected).
 - **Baseline:** N/A - expand (new capability), not a metric-improve.
 
 ## Open Questions - all resolved
 - [resolved] Source = new `cover` frontmatter field -> resolved against `https://paulserban.eu/assets/` base.
-- [resolved] Add a `cover_image` DB column + migration + ingest mapping (yes).
+- [resolved] Add a `cover` DB column + migration + ingest mapping (yes).
 - [resolved] Placeholder = one generated sketch-style excalidraw **PNG**, committed to blog `public/`, served locally.
 - [resolved] Scope = all three card types (post, snippet, book-note).
 - [resolved] Detail placement = integrated into the existing `HeroBanner`.
@@ -92,7 +92,7 @@ via 5 answered questions.
 
 | Decision | Options (incl. leave-as-is) | Cost | Benefit | Chosen | Named force |
 |---|---|---|---|---|---|
-| Cover storage | derive-by-convention (no column); **DB column (chosen)** | migration + ingest line | queryable, SSG-friendly, explicit null->placeholder | `cover_image` column | user: yes_column; convention can't detect "missing" at build for clean fallback |
+| Cover storage | derive-by-convention (no column); **DB column (chosen)** | migration + ingest line | queryable, SSG-friendly, explicit null->placeholder | `cover` column | user: yes_column; convention can't detect "missing" at build for clean fallback |
 | URL resolution | inline in each render site; **one shared tested fn (chosen)** | tiny fn + test + export | 5+ consumers, absolute-vs-relative + null->placeholder branching | `coverImageUrl` in shared/ui | multiple consumers * real fallback defect class |
 | Asset base | hardcode per site (as ImageResponsive does); **single constant (chosen)** | one constant | one edit point if host/template changes | `ASSET_BASE_URL` const | the source template is the one ambiguous input |
 | Placeholder hosting | external CDN; CSS-only box; **local public/ PNG (chosen)** | commit a binary asset | works offline/SSG, no extra upload, deterministic | `public/placeholder-cover.png` | user choice; placeholder is app-chrome not content |
@@ -115,33 +115,33 @@ via 5 answered questions.
 - Gates: TDD (resolver unit tests); BDD N/A; Manual (cards + hero show cover when set, placeholder when not,
   light+dark, 3 breakpoints); Deliverable: `pnpm db:generate` clean, `pnpm typecheck` + blog `astro build`/`astro check` exit 0, shared/ui tests green.
 
-#### G1.O1 - Add `cover_image` to schema + migration + ingest  [expand]
+#### G1.O1 - Add `cover` to schema + migration + ingest  [expand]
 - Intent: persist an optional cover path on `posts`; additive, nullable, no existing-data risk.
 
 ##### G1.O1.P1 - Pipeline column · Depends-on: none · Rollback: revert PR (+ column is nullable, ignored if unread)
 
-- **G1.O1.P1.S1 - Add `cover_image` to the posts schema** [expand]
+- **G1.O1.P1.S1 - Add `cover` to the posts schema** [expand]
   - Intent: declare the nullable column on the Drizzle table.
   - References: `shared/db-schema/index.ts:62` (modify - add after `excerpt`)
-  - Add: `cover_image: text('cover_image'),`
+  - Add: `cover: text('cover'),`
   - Depends-on: none. Technique: parallel-change (additive). Reversible by: revert PR.
   - Gates: TDD N/A (declaration); Manual N/A; Deliverable: `pnpm -F shared--db-schema typecheck` exits 0. Done-when: green.
 
 - **G1.O1.P1.S2 - Generate + commit the migration** [expand]
-  - Intent: produce the `ALTER TABLE posts ADD cover_image` SQL + drizzle meta snapshot.
+  - Intent: produce the `ALTER TABLE posts ADD cover` SQL + drizzle meta snapshot.
   - References: `database/migrations/0005_*.sql` [NEW, generated], `database/migrations/meta/*` (generated)
   - Command: `pnpm db:generate` (from repo root), then `pnpm db:migrate` to apply to `content.db`.
   - Depends-on: S1. Technique: none. Reversible by: revert PR (drop migration file + meta entry; never edit meta by hand - regenerate).
-  - Gates: TDD N/A; Manual: open generated SQL, confirm it is a single additive `ALTER TABLE \`posts\` ADD \`cover_image\` text;` and touches nothing else. Deliverable: committed migration + meta. Done-when: `pnpm db:migrate` applies clean; `content.db` has the column.
+  - Gates: TDD N/A; Manual: open generated SQL, confirm it is a single additive `ALTER TABLE \`posts\` ADD \`cover\` text;` and touches nothing else. Deliverable: committed migration + meta. Done-when: `pnpm db:migrate` applies clean; `content.db` has the column.
 
 - **G1.O1.P1.S3 - Map `cover` frontmatter in ingest** [expand]
-  - Intent: copy frontmatter `cover` -> `cover_image` row field.
+  - Intent: copy frontmatter `cover` -> `cover` row field.
   - References: `tools/mdx-ingest/src/helpers/normalise.ts:95` (modify `normalisePost` - add after `excerpt`)
-  - Add: `cover_image: str(fm['cover']),`
+  - Add: `cover: str(fm['cover']),`
   - Depends-on: S1 (type), S2 (column exists). Technique: none. Reversible by: revert PR.
   - Gates: TDD N/A (one-line passthrough; no logic worth a test - coverage theatre avoided); Manual:
     `pnpm --filter @prj--personal-portfolio--v3/tools--mdx-ingest start:dry-run` runs without error and logs posts.
-    Deliverable: ingest writes `cover_image` when `cover` present (null otherwise). Done-when: dry-run clean; a
+    Deliverable: ingest writes `cover` when `cover` present (null otherwise). Done-when: dry-run clean; a
     manual `start` + a spot-check row shows null today (no content has `cover` yet).
 
 #### G1.O2 - Shared, tested cover URL resolver  [expand]
@@ -190,7 +190,7 @@ via 5 answered questions.
     during dev; visually sketch-style and theme-neutral. Deliverable: committed PNG. Done-when: served + looks right.
 
 #### G1.O4 - Render covers on cards and post hero  [expand]
-- Depends-on: G1.O1.P1.S1 (PostRow has `cover_image`), G1.O2.P1.S1 (resolver), G1.O3.P1.S1 (placeholder path).
+- Depends-on: G1.O1.P1.S1 (PostRow has `cover`), G1.O2.P1.S1 (resolver), G1.O3.P1.S1 (placeholder path).
 
 ##### G1.O4.P1 - Cards (hub + listing island)  [expand]
 - Rollback: revert PR.
@@ -199,7 +199,7 @@ via 5 answered questions.
   - Intent: carry the cover into the React island.
   - References: `shared/ui/src/lib/postFilters.ts` (add `cover: string | null` to `BlogPostFilterItem`);
     `pages/post/index.astro`, `pages/snippet/index.astro`, `pages/booknote/index.astro` (add
-    `cover: item.cover_image ?? null,` in each `posts.map(...)`)
+    `cover: item.cover ?? null,` in each `posts.map(...)`)
   - Depends-on: G1.O1.P1.S1. Reversible by: revert PR.
   - Gates: TDD N/A (type + passthrough); Manual N/A (covered by S2 render). Deliverable: `astro check` exits 0. Done-when: green.
 
@@ -219,10 +219,10 @@ via 5 answered questions.
     `astro build` + `astro check` exit 0. Done-when: green + manual ✓.
 
 - **G1.O4.P1.S3 - Render cover in `PostCard.astro` (hub)** [expand]
-  - Intent: same image block on the Astro hub card; uses `post.cover_image` directly.
+  - Intent: same image block on the Astro hub card; uses `post.cover` directly.
   - References: `frontend/sites/blog-site/src/components/PostCard.astro` (modify); import `coverImageUrl` in frontmatter
   - Add the equivalent `<a><img class="aspect-video w-full object-cover" …></a>` above the kicker, using
-    `coverImageUrl(post.cover_image, '/placeholder-cover.png')`.
+    `coverImageUrl(post.cover, '/placeholder-cover.png')`.
   - Depends-on: G1.O1.P1.S1, G1.O2.P1.S1, G1.O3.P1.S1. Reversible by: revert PR.
   - Gates: Manual: hub (`/`) cards show cover/placeholder. Deliverable: `astro build`/`astro check` exit 0. Done-when: green + ✓.
 
@@ -247,7 +247,7 @@ via 5 answered questions.
 - **G1.O4.P2.S2 - Pass cover from the 3 detail pages** [expand]
   - Intent: detail pages always pass a cover so the hero shows cover-or-placeholder.
   - References: `pages/post/[slug].astro:53`, `pages/snippet/[slug].astro`, `pages/booknote/[slug].astro`
-    (modify the `<HeroBanner …>` call - add `cover={post.cover_image ?? '/placeholder-cover.png'}`)
+    (modify the `<HeroBanner …>` call - add `cover={post.cover ?? '/placeholder-cover.png'}`)
   - Note: passing the placeholder explicitly here = detail pages always showcase an image (cover or placeholder),
     while listing heroes stay text-only. Matches "post pages should showcase preview image".
   - Depends-on: G1.O4.P2.S1, G1.O1.P1.S1. Reversible by: revert PR.
@@ -271,7 +271,7 @@ ingest run, but render wiring only needs the schema *type* (O1.P1.S1).
 ## Red-Team Notes
 - **Riskiest to existing behavior:** the migration (G1.O1.P1.S2). Mitigation: it's a single additive,
   nullable `ALTER TABLE … ADD` (same shape as the proven `0004` migration); existing rows untouched; the
-  manual gate reads the generated SQL to confirm it touches only `posts.cover_image`. Reversible by reverting
+  manual gate reads the generated SQL to confirm it touches only `posts.cover`. Reversible by reverting
   the migration + regenerating meta (never hand-edit `meta/`).
 - **Second:** `HeroBanner` is shared by listing and detail pages - a naive always-on image would put covers on
   listing heroes too. Mitigated by making the image block render only when the `cover` prop is truthy, and only

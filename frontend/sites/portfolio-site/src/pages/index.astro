@@ -26,9 +26,23 @@ closeConnection(db);
 
 const name = profile?.name ?? 'Paul Serban';
 const description = profile?.headline ?? 'Portfolio of Paul Serban.';
+const sameAs = [profile?.github_url, profile?.linkedin_url].filter((url): url is string => Boolean(url));
 ---
 
-<BaseLayout title={`${name} | Portfolio`} description={description} ogImage={profile?.photo_url ?? assetUrl('portrait.svg')}>
+<BaseLayout
+    title={`${name} | Portfolio`}
+    description={description}
+    ogImage={assetUrl('og-default.png')}
+    jsonLd={{
+        '@context': 'https://schema.org',
+        '@type': 'Person',
+        name,
+        url: Astro.site?.href,
+        jobTitle: profile?.headline ?? undefined,
+        description: profile?.bio ?? description,
+        sameAs,
+    }}
+>
     <HeroSplit profile={profile} />
 
     <ExperienceTimeline items={experience} />

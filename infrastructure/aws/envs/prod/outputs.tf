@@ -20,6 +20,11 @@ output "portfolio_site_url" {
   value = module.static_site.site_url
 }
 
+output "portfolio_www_url" {
+  description = "www hostname that aliases to the same CloudFront distribution as portfolio_site_url."
+  value       = "https://${var.www_domain_name}"
+}
+
 output "blog_bucket_name" {
   value = module.static_site_blog.bucket_name
 }

@@ -4,7 +4,7 @@ status: published
 subheading: Production-like HTTPS across three apps on one machine
 excerpt: A Docker Compose + Traefik setup that serves the portfolio, blog, and quiz app on trusted local HTTPS subdomains - no port numbers, no certificate warnings.
 role: Solo builder
-cover_image: /covers/local-traefik-dev.svg
+cover: /covers/local-traefik-dev.svg
 problem: Three monorepo frontends each wanted their own dev port; cross-site navigation broke, and nothing matched production TLS behaviour.
 approach: Traefik reverse proxy with mkcert TLS, per-app local.Dockerfiles, and env-driven cross-domain navigation.
 outcome: One `docker compose up` boots the full system at local.*.paulserban.eu on ports 80/443.

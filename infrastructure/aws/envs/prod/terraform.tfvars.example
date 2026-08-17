@@ -2,6 +2,8 @@
 
 aws_region     = "eu-central-1"
 domain_name    = "paulserban.eu"
+# www_domain_name aliases to the same CloudFront distribution as domain_name.
+# www_domain_name = "www.paulserban.eu"
 # Optional overrides (defaults match these values):
 # blog_domain_name = "blog.paulserban.eu"
 # quiz_domain_name = "quiz.paulserban.eu"

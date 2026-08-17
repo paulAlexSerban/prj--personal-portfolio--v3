@@ -59,6 +59,9 @@ jobs:
 
     build-site:
         needs: read-prod-cf-beacon-tokens
+        # Reusable workflow jobs cannot set `environment:` (GitHub then treats
+        # this as a normal job and rejects `uses`). Production env secrets are
+        # read by jobs inside `_build-site.yaml` that set `environment:` themselves.
         uses: ./.github/workflows/_build-site.yaml
         with:
             environment: production

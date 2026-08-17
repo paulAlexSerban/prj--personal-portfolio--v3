@@ -19,8 +19,8 @@
         "release:status": "changeset status --since=origin/main",
         "release:version": "changeset version",
         "release:tag": "changeset tag",
-        "start:dry-run": "pnpm -r start:dry-run",
-        "start": "pnpm -r start",
+        "start:dry-run": "pnpm -r --filter './tools/**' --filter '!./tools/indexnow' start:dry-run",
+        "start": "pnpm -r --filter './tools/**' --filter '!./tools/indexnow' start",
         "test": "pnpm -r test",
         "typecheck": "tsc -b",
         "deps:graph": "pnpm-workspace-graph"

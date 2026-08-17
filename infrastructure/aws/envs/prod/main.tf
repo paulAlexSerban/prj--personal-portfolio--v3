@@ -105,9 +105,10 @@ module "static_site" {
     aws.us_east_1 = aws.us_east_1
   }
 
-  domain_name    = var.domain_name
-  hosted_zone_id = var.hosted_zone_id
-  tags           = local.tags
+  domain_name            = var.domain_name
+  alternate_domain_names = [var.www_domain_name]
+  hosted_zone_id         = var.hosted_zone_id
+  tags                   = local.tags
 
   access_logging_bucket = aws_s3_bucket.cf_access_logs.bucket_domain_name
   access_logging_prefix = "${var.domain_name}/"
@@ -154,8 +155,9 @@ module "static_site_quiz" {
   domain_name    = var.quiz_domain_name
   hosted_zone_id = var.hosted_zone_id
   tags           = local.tags
-  # Quiz is an SPA - map 403/404 to index.html instead of a static 404 page.
+  # Quiz is an SPA - map 403/404 to index.html with HTTP 200 for client routing.
   not_found_response_page = "/index.html"
+  not_found_response_code = 200
 
   access_logging_bucket = aws_s3_bucket.cf_access_logs.bucket_domain_name
   access_logging_prefix = "${var.quiz_domain_name}/"

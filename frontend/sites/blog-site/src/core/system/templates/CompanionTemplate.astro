@@ -82,6 +82,7 @@ const canonicalUrl = new URL(canonicalPath, Astro.site).href;
     ogTitle={companion.title}
     ogDescription={`Companion ${kindLabel.toLowerCase()} for ${post.title}`}
     canonicalUrl={canonicalUrl}
+    robots="noindex, follow"
 >
     <HeroBanner title={companion.title} kicker={kicker} />
 

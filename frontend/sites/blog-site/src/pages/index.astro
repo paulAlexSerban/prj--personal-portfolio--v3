@@ -1,5 +1,6 @@
 ---
 import PostCard from '@/library/modules/PostCard/PostCard.astro';
+import HeroBanner from '@/library/modules/HeroBanner.astro';
 import BaseLayout from '@/system/templates/BaseTemplate.astro';
 import { closeConnection, openDb } from '@/lib/db.ts';
 import { buildTagsMap, getPinnedByType } from '@/lib/queries/posts.ts';
@@ -38,6 +39,7 @@ const sections = [
 ---
 
 <BaseLayout title="Blog | Paul Serban" description="Posts, snippets, and book notes by Paul Serban.">
+    <HeroBanner title="Blog" subheading="Pinned writing across posts, snippets, and book notes." kicker="Writing Edition" />
     {
         sections.map((section) => (
             <section class="mb-12">
