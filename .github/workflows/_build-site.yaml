@@ -169,6 +169,8 @@ jobs:
         needs: ingest-content
         runs-on: ubuntu-latest
         timeout-minutes: 20
+        # Production IndexNow write-key reads INDEX_NOW_API_KEY from this env.
+        environment: ${{ inputs.environment }}
         steps:
             - uses: actions/checkout@v7
               with:
@@ -214,6 +216,7 @@ jobs:
         needs: ingest-content
         runs-on: ubuntu-latest
         timeout-minutes: 20
+        environment: ${{ inputs.environment }}
         steps:
             - uses: actions/checkout@v7
               with:
@@ -293,6 +296,7 @@ jobs:
         if: ${{ inputs.news }}
         runs-on: ubuntu-latest
         timeout-minutes: 20
+        environment: ${{ inputs.environment }}
         steps:
             - uses: actions/checkout@v7
               with:
