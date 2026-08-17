@@ -1,8 +1,38 @@
 {
   "category": "javascript",
   "label": "JavaScript",
-  "fetchedAt": "2026-08-16T06:17:39.587Z",
+  "fetchedAt": "2026-08-17T06:24:56.103Z",
   "items": [
+    {
+      "slug": "e1c42ead3ad844d77c806c14",
+      "guid": "https://flaviocopes.com/css-container-queries/",
+      "title": "CSS Container Queries",
+      "link": "https://flaviocopes.com/css-container-queries/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "CSS container queries style a component by its own width, not the viewport. Learn container-type, named containers, query units, and the traps that break layouts.",
+      "publishedAt": "2026-08-17T05:00:00.000Z"
+    },
+    {
+      "slug": "4c822ba2b2b327e82b508656",
+      "guid": "https://flaviocopes.com/optional-local-llm-swift-app/",
+      "title": "Add a local LLM without making your app depend on it",
+      "link": "https://flaviocopes.com/optional-local-llm-swift-app/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Add optional Ollama-generated summaries to a Swift app while preserving deterministic fallback data, short health checks, failure backoff, caching, and testability.",
+      "publishedAt": "2026-08-16T13:00:00.000Z"
+    },
+    {
+      "slug": "37ccb2999b7e4731428ac035",
+      "guid": "https://flaviocopes.com/abortcontroller/",
+      "title": "AbortController: how to cancel a fetch request in JavaScript",
+      "link": "https://flaviocopes.com/abortcontroller/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Learn how to cancel fetch requests in JavaScript with AbortController, handle AbortError, set timeouts, and abort on unmount or superseded requests.",
+      "publishedAt": "2026-08-16T09:00:00.000Z"
+    },
     {
       "slug": "75a12cb47cea8ebdb5e46cf5",
       "guid": "https://flaviocopes.com/intersection-observer/",
@@ -302,36 +332,6 @@
       "sourceUrl": "https://flaviocopes.com/rss.xml",
       "summary": "Debug a slow or failing Vercel Function with structured runtime logs, route metrics, CLI filters, request traces, and a verified fix.",
       "publishedAt": "2026-08-07T13:00:00.000Z"
-    },
-    {
-      "slug": "5486b98b98f9dae34270afab",
-      "guid": "https://flaviocopes.com/i-launched-hostingpicker/",
-      "title": "I launched HostingPicker",
-      "link": "https://flaviocopes.com/i-launched-hostingpicker/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "I launched HostingPicker, a free hosting advisor with hand-checked prices, honest tradeoffs, and recommendations based on your project.",
-      "publishedAt": "2026-08-07T06:30:00.000Z"
-    },
-    {
-      "slug": "0905785ce16509e09db8c94c",
-      "guid": "https://flaviocopes.com/bun/",
-      "title": "Bun: a faster JavaScript runtime",
-      "link": "https://flaviocopes.com/bun/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Learn Bun from scratch: install the runtime, run TypeScript, manage packages, create an HTTP server, write tests, bundle code, and use SQLite.",
-      "publishedAt": "2026-08-07T05:00:00.000Z"
-    },
-    {
-      "slug": "b009301fef7209fdae5b8399",
-      "guid": "https://flaviocopes.com/robots-txt-ai-crawlers/",
-      "title": "robots.txt in the age of AI crawlers",
-      "link": "https://flaviocopes.com/robots-txt-ai-crawlers/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "A robots.txt refresher plus the new part: GPTBot, ClaudeBot, PerplexityBot and friends, blocking AI training vs AI search, and the tradeoffs.",
-      "publishedAt": "2026-08-07T05:00:00.000Z"
     },
     {
       "slug": "829eb35ddebcf37308107ff1",
