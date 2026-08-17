@@ -1,8 +1,7 @@
 # Tools (`tools/`)
 
-Node.js CLIs that make up the **content pipeline** - they pull content from the
-private content repo and load it into the SQLite database the rest of the project
-builds on. Each is a pnpm workspace package named
+Node.js CLIs used by the **content pipeline** (sync/ingest/export) and a few
+post-deploy jobs such as IndexNow. Each is a pnpm workspace package named
 `@prj--personal-portfolio--v3/tools--<name>`.
 
 For the agent-oriented version (scanner internals, tag handling, conventions), see
@@ -10,12 +9,13 @@ For the agent-oriented version (scanner internals, tag handling, conventions), s
 
 ## The tools
 
-| Tool                                       | Role                                                              |
-| ------------------------------------------ | ----------------------------------------------------------------- |
-| [`content-sync`](./content-sync/readme.md) | Clone the private content repo into `content/live/`.              |
-| [`mdx-ingest`](./mdx-ingest/readme.md)     | MDX (posts, projects, coursework, **questions**) -> `content.db`. |
-| [`json-ingest`](./json-ingest/readme.md)   | JSON (profile, skills, pages) -> `content.db`.                    |
-| [`quiz-export`](./quiz-export/readme.md)   | `content.db` -> static JSON for the quiz web app.                 |
+| Tool                                       | Role                                                                 |
+| ------------------------------------------ | -------------------------------------------------------------------- |
+| [`content-sync`](./content-sync/readme.md) | Clone the private content repo into `content/live/`.                 |
+| [`mdx-ingest`](./mdx-ingest/readme.md)     | MDX (posts, projects, coursework, **questions**) -> `content.db`.    |
+| [`json-ingest`](./json-ingest/readme.md)   | JSON (profile, skills, pages) -> `content.db`.                       |
+| [`quiz-export`](./quiz-export/readme.md)   | `content.db` -> static JSON for the quiz web app.                    |
+| [`indexnow`](./indexnow/readme.md)         | After prod deploy: write key file + submit sitemap URLs to IndexNow. |
 
 ## How they fit together
 

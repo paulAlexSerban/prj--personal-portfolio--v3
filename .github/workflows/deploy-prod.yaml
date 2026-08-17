@@ -59,6 +59,10 @@ jobs:
 
     build-site:
         needs: read-prod-cf-beacon-tokens
+        # Environment secrets (INDEX_NOW_API_KEY) are only inherited when the
+        # caller job specifies the environment. `production` has no required
+        # reviewers (those live on `production-approval`).
+        environment: production
         uses: ./.github/workflows/_build-site.yaml
         with:
             environment: production

@@ -112,6 +112,10 @@ on:
                 required: false
                 type: boolean
                 default: true
+        secrets:
+            INDEX_NOW_API_KEY:
+                description: IndexNow ownership key (8-128 A-Za-z0-9-). Required for production Astro builds/submits. Same key is hosted on each site.
+                required: false
 
 env:
     DATABASE_PATH: ${{ github.workspace }}/database/output/content.db
@@ -189,6 +193,14 @@ jobs:
                   [ -n "${{ inputs.news_url }}" ] && export PUBLIC_NEWS_URL="${{ inputs.news_url }}${{ inputs.news_base }}"
                   pnpm --filter @prj--personal-portfolio--v3/frontend--portfolio-site build
 
+            - name: Write IndexNow key
+              if: ${{ inputs.environment == 'production' }}
+              env:
+                  INDEX_NOW_API_KEY: ${{ secrets.INDEX_NOW_API_KEY }}
+              run: |
+                  pnpm --filter @prj--personal-portfolio--v3/tools--indexnow start -- \
+                    --write-key --dist "${{ github.workspace }}/frontend/sites/portfolio-site/dist"
+
             - name: Upload portfolio artifact
               uses: actions/upload-artifact@v7
               with:
@@ -225,6 +237,14 @@ jobs:
                   [ -n "${{ inputs.quiz_url }}" ] && export PUBLIC_QUIZ_URL="${{ inputs.quiz_url }}${{ inputs.quiz_base }}"
                   [ -n "${{ inputs.news_url }}" ] && export PUBLIC_NEWS_URL="${{ inputs.news_url }}${{ inputs.news_base }}"
                   pnpm --filter @prj--personal-portfolio--v3/frontend--blog-site build
+
+            - name: Write IndexNow key
+              if: ${{ inputs.environment == 'production' }}
+              env:
+                  INDEX_NOW_API_KEY: ${{ secrets.INDEX_NOW_API_KEY }}
+              run: |
+                  pnpm --filter @prj--personal-portfolio--v3/tools--indexnow start -- \
+                    --write-key --dist "${{ github.workspace }}/frontend/sites/blog-site/dist"
 
             - name: Upload blog artifact
               uses: actions/upload-artifact@v7
@@ -290,6 +310,14 @@ jobs:
                   [ -n "${{ inputs.blog_url }}" ] && export PUBLIC_BLOG_URL="${{ inputs.blog_url }}${{ inputs.blog_base }}"
                   [ -n "${{ inputs.quiz_url }}" ] && export PUBLIC_QUIZ_URL="${{ inputs.quiz_url }}${{ inputs.quiz_base }}"
                   pnpm --filter @prj--personal-portfolio--v3/frontend--news-feed-site build
+
+            - name: Write IndexNow key
+              if: ${{ inputs.environment == 'production' }}
+              env:
+                  INDEX_NOW_API_KEY: ${{ secrets.INDEX_NOW_API_KEY }}
+              run: |
+                  pnpm --filter @prj--personal-portfolio--v3/tools--indexnow start -- \
+                    --write-key --dist "${{ github.workspace }}/frontend/sites/news-feed-site/dist"
 
             - name: Upload news artifact
               uses: actions/upload-artifact@v7
@@ -422,6 +450,87 @@ jobs:
                   aws cloudfront create-invalidation \
                     --distribution-id "${{ vars.NEWS_CLOUDFRONT_DISTRIBUTION_ID }}" \
                     --paths "/*"
+
+    notify-indexnow-portfolio:
+        if: ${{ inputs.s3_deploy && inputs.portfolio && inputs.environment == 'production' }}
+        needs: deploy-portfolio
+        runs-on: ubuntu-latest
+        timeout-minutes: 10
+        environment: ${{ inputs.environment }}
+        permissions:
+            contents: read
+        steps:
+            - uses: actions/checkout@v7
+              with:
+                  ref: ${{ inputs.ref || github.sha }}
+            - uses: ./.github/actions/setup-monorepo
+
+            - name: Download portfolio artifact
+              uses: actions/download-artifact@v8
+              with:
+                  name: portfolio-dist-${{ inputs.environment }}
+                  path: _site/
+
+            - name: Submit IndexNow
+              env:
+                  INDEX_NOW_API_KEY: ${{ secrets.INDEX_NOW_API_KEY }}
+              run: |
+                  pnpm --filter @prj--personal-portfolio--v3/tools--indexnow start -- \
+                    --submit --dist "${{ github.workspace }}/_site" --site "${{ inputs.portfolio_url }}"
+
+    notify-indexnow-blog:
+        if: ${{ inputs.s3_deploy && inputs.blog && inputs.environment == 'production' }}
+        needs: deploy-blog
+        runs-on: ubuntu-latest
+        timeout-minutes: 10
+        environment: ${{ inputs.environment }}
+        permissions:
+            contents: read
+        steps:
+            - uses: actions/checkout@v7
+              with:
+                  ref: ${{ inputs.ref || github.sha }}
+            - uses: ./.github/actions/setup-monorepo
+
+            - name: Download blog artifact
+              uses: actions/download-artifact@v8
+              with:
+                  name: blog-dist-${{ inputs.environment }}
+                  path: _site/
+
+            - name: Submit IndexNow
+              env:
+                  INDEX_NOW_API_KEY: ${{ secrets.INDEX_NOW_API_KEY }}
+              run: |
+                  pnpm --filter @prj--personal-portfolio--v3/tools--indexnow start -- \
+                    --submit --dist "${{ github.workspace }}/_site" --site "${{ inputs.blog_url }}"
+
+    notify-indexnow-news:
+        if: ${{ inputs.s3_deploy && inputs.news && inputs.environment == 'production' }}
+        needs: deploy-news
+        runs-on: ubuntu-latest
+        timeout-minutes: 10
+        environment: ${{ inputs.environment }}
+        permissions:
+            contents: read
+        steps:
+            - uses: actions/checkout@v7
+              with:
+                  ref: ${{ inputs.ref || github.sha }}
+            - uses: ./.github/actions/setup-monorepo
+
+            - name: Download news artifact
+              uses: actions/download-artifact@v8
+              with:
+                  name: news-dist-${{ inputs.environment }}
+                  path: _site/
+
+            - name: Submit IndexNow
+              env:
+                  INDEX_NOW_API_KEY: ${{ secrets.INDEX_NOW_API_KEY }}
+              run: |
+                  pnpm --filter @prj--personal-portfolio--v3/tools--indexnow start -- \
+                    --submit --dist "${{ github.workspace }}/_site" --site "${{ inputs.news_url }}"
 
     merge:
         if: ${{ inputs.emit_merged_bundle }}
