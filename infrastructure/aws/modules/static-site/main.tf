@@ -14,6 +14,7 @@ locals {
   bucket_name = coalesce(var.bucket_name, var.domain_name)
   # CloudFront resource names allow only alphanumerics, dashes, and underscores.
   cloudfront_name_prefix = replace(local.bucket_name, ".", "-")
+  aliases                = concat([var.domain_name], var.alternate_domain_names)
 
   # Empty string when auth is off — do not use null + coalesce(..., "") because
   # Terraform's coalesce also rejects empty strings.
@@ -85,10 +86,11 @@ resource "aws_s3_bucket_versioning" "site" {
 # ---------------------------------------------------------------------------
 
 resource "aws_acm_certificate" "site" {
-  provider          = aws.us_east_1
-  domain_name       = var.domain_name
-  validation_method = "DNS"
-  tags              = var.tags
+  provider                  = aws.us_east_1
+  domain_name               = var.domain_name
+  subject_alternative_names = var.alternate_domain_names
+  validation_method         = "DNS"
+  tags                      = var.tags
 
   lifecycle {
     create_before_destroy = true
@@ -185,7 +187,7 @@ resource "aws_cloudfront_distribution" "site" {
   enabled             = true
   is_ipv6_enabled     = true
   default_root_object = var.default_root_object
-  aliases             = [var.domain_name]
+  aliases             = local.aliases
   price_class         = var.price_class
   tags                = var.tags
 
@@ -311,6 +313,36 @@ resource "aws_route53_record" "site_aaaa" {
   zone_id = var.hosted_zone_id
   name    = var.domain_name
   type    = "AAAA"
+
+  alias {
+    name                   = aws_cloudfront_distribution.site.domain_name
+    zone_id                = aws_cloudfront_distribution.site.hosted_zone_id
+    evaluate_target_health = false
+  }
+}
+
+resource "aws_route53_record" "alternate_a" {
+  for_each = toset(var.alternate_domain_names)
+
+  zone_id         = var.hosted_zone_id
+  name            = each.value
+  type            = "A"
+  allow_overwrite = true
+
+  alias {
+    name                   = aws_cloudfront_distribution.site.domain_name
+    zone_id                = aws_cloudfront_distribution.site.hosted_zone_id
+    evaluate_target_health = false
+  }
+}
+
+resource "aws_route53_record" "alternate_aaaa" {
+  for_each = toset(var.alternate_domain_names)
+
+  zone_id         = var.hosted_zone_id
+  name            = each.value
+  type            = "AAAA"
+  allow_overwrite = true
 
   alias {
     name                   = aws_cloudfront_distribution.site.domain_name

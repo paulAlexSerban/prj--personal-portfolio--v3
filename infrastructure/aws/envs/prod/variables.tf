@@ -10,6 +10,12 @@ variable "domain_name" {
   default     = "paulserban.eu"
 }
 
+variable "www_domain_name" {
+  description = "www hostname served by the same CloudFront distribution as domain_name."
+  type        = string
+  default     = "www.paulserban.eu"
+}
+
 variable "blog_domain_name" {
   description = "Fully-qualified domain name for the blog production site."
   type        = string

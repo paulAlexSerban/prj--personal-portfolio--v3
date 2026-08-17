@@ -3,6 +3,12 @@ variable "domain_name" {
   type        = string
 }
 
+variable "alternate_domain_names" {
+  description = "Extra hostnames served by the same CloudFront distribution (e.g. www.example.com). Added to the ACM cert, distribution aliases, and Route 53."
+  type        = list(string)
+  default     = []
+}
+
 variable "hosted_zone_id" {
   description = "Route 53 hosted zone ID that owns domain_name (e.g. the zone for paulserban.eu)."
   type        = string

@@ -105,9 +105,10 @@ module "static_site" {
     aws.us_east_1 = aws.us_east_1
   }
 
-  domain_name    = var.domain_name
-  hosted_zone_id = var.hosted_zone_id
-  tags           = local.tags
+  domain_name            = var.domain_name
+  alternate_domain_names = [var.www_domain_name]
+  hosted_zone_id         = var.hosted_zone_id
+  tags                   = local.tags
 
   access_logging_bucket = aws_s3_bucket.cf_access_logs.bucket_domain_name
   access_logging_prefix = "${var.domain_name}/"
