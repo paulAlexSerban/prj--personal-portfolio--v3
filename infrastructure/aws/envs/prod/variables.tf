@@ -57,6 +57,23 @@ variable "hosted_zone_id" {
   type        = string
 }
 
+variable "bing_site_verification_cname_name" {
+  description = "Host label for Bing Webmaster Tools CNAME verification. Creates {name}.{host} -> verify.bing.com for each bing_site_verification_hosts entry. Empty string skips the records."
+  type        = string
+  default     = "2ec0a14cd64662ec65477e7a2a2751e4"
+}
+
+variable "bing_site_verification_hosts" {
+  description = "Parent hostnames Bing may query as {cname_name}.{host}. Include apex and www because Bing properties are often the www URL."
+  type        = list(string)
+  default = [
+    "paulserban.eu",
+    "www.paulserban.eu",
+    "blog.paulserban.eu",
+    "news-feed.paulserban.eu",
+  ]
+}
+
 variable "github_org" {
   description = "GitHub organization or user that owns the repository."
   type        = string

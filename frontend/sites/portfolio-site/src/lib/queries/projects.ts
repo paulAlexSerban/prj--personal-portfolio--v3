@@ -6,9 +6,12 @@ import {
     type TagRow,
 } from '@prj--personal-portfolio--v3/shared--db-schema';
 import type { DrizzleDb } from '@prj--personal-portfolio--v3/shared--db';
-import { and, asc, desc, eq } from 'drizzle-orm';
+import { and, asc, desc, eq, inArray } from 'drizzle-orm';
 
-// Featured-first: pinned projects, then higher priority, then title.
+export const MATURITY_SHIPPED = ['implemented', 'production-grade'] as const;
+export const MATURITY_EARLY = ['concept', 'prototype'] as const;
+
+// Tie-breaker: pinned projects, then higher priority, then title.
 function featuredFirst() {
     return [desc(projects.pinned), desc(projects.priority), asc(projects.title)] as const;
 }
@@ -17,26 +20,26 @@ export function getFeaturedPreview(db: DrizzleDb, limit = 3): ProjectRow[] {
     return db
         .select()
         .from(projects)
-        .where(and(eq(projects.status, 'published'), eq(projects.pinned, true)))
+        .where(and(eq(projects.status, 'published'), inArray(projects.maturity, [...MATURITY_SHIPPED])))
         .orderBy(...featuredFirst())
         .limit(limit)
         .all();
 }
 
-export function getFeaturedProjects(db: DrizzleDb): ProjectRow[] {
+export function getShippedProjects(db: DrizzleDb): ProjectRow[] {
     return db
         .select()
         .from(projects)
-        .where(and(eq(projects.status, 'published'), eq(projects.pinned, true)))
+        .where(and(eq(projects.status, 'published'), inArray(projects.maturity, [...MATURITY_SHIPPED])))
         .orderBy(...featuredFirst())
         .all();
 }
 
-export function getArchiveProjects(db: DrizzleDb): ProjectRow[] {
+export function getEarlyStageProjects(db: DrizzleDb): ProjectRow[] {
     return db
         .select()
         .from(projects)
-        .where(and(eq(projects.status, 'published'), eq(projects.pinned, false)))
+        .where(and(eq(projects.status, 'published'), inArray(projects.maturity, [...MATURITY_EARLY])))
         .orderBy(...featuredFirst())
         .all();
 }

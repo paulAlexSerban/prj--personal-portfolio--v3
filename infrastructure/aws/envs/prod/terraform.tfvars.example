@@ -11,5 +11,8 @@ domain_name    = "paulserban.eu"
 # news_data_domain_name = "news-data.paulserban.eu"
 hosted_zone_id = "ZXXXXXXXXXXXXXX" # aws route53 list-hosted-zones-by-name --dns-name paulserban.eu
 
+# Bing Webmaster Tools / IndexNow CNAME: {name}.paulserban.eu -> verify.bing.com
+# bing_site_verification_cname_name = "2ec0a14cd64662ec65477e7a2a2751e4"
+
 # Reuse the IAM OIDC provider created by envs/test (default is already false).
 # create_oidc_provider = false

@@ -86,7 +86,6 @@ const publishedTime = project.updated_at instanceof Date ? project.updated_at.to
     </div>
 
     <header class="mb-8 border-b-2 border-ink pb-6">
-        {project.pinned && <p class="kicker mb-2 text-[11px]">Featured</p>}
         <h1 class="m-0 font-display text-[clamp(2rem,5vw,3rem)] font-bold">{project.title}</h1>
         {project.subheading && <p class="deck mt-2 text-lg">{project.subheading}</p>}
         {project.role && <p class="mt-1 text-sm text-slate-ink">Role: {project.role}</p>}
@@ -96,19 +95,19 @@ const publishedTime = project.updated_at instanceof Date ? project.updated_at.to
     <div class="mb-8 grid gap-0">
         {project.problem && (
             <div class="mb-6">
-                <p class="kicker mb-2 text-[11px]">Problem</p>
+                <p class="kicker mb-2 text-sm">Problem</p>
                 <p class="m-0 text-sm leading-relaxed">{project.problem}</p>
             </div>
         )}
         {project.approach && (
             <div class="mb-6">
-                <p class="kicker mb-2 text-[11px]">Approach</p>
+                <p class="kicker mb-2 text-sm">Approach</p>
                 <p class="m-0 text-sm leading-relaxed">{project.approach}</p>
             </div>
         )}
         {project.outcome && (
             <div class="mb-6">
-                <p class="kicker mb-2 text-[11px]">Outcome</p>
+                <p class="kicker mb-2 text-sm">Outcome</p>
                 <p class="m-0 text-sm leading-relaxed">{project.outcome}</p>
             </div>
         )}

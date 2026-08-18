@@ -3,29 +3,29 @@ import { TechFilter } from '@/library/modules/TechFilter.tsx';
 import BaseLayout from '@/system/templates/BaseTemplate.astro';
 
 import { closeConnection, openDb } from '@/lib/db.ts';
-import { buildProjectTagsMap, getArchiveProjects, getFeaturedProjects } from '@/lib/queries/projects.ts';
+import { buildProjectTagsMap, getEarlyStageProjects, getShippedProjects } from '@/lib/queries/projects.ts';
 
 const db = openDb();
-const featuredProjects = getFeaturedProjects(db);
-const archiveProjects = getArchiveProjects(db);
-const featuredTags = buildProjectTagsMap(db, featuredProjects);
-const archiveTags = buildProjectTagsMap(db, archiveProjects);
+const shippedProjects = getShippedProjects(db);
+const earlyProjects = getEarlyStageProjects(db);
+const shippedTags = buildProjectTagsMap(db, shippedProjects);
+const earlyTags = buildProjectTagsMap(db, earlyProjects);
 closeConnection(db);
 
-const featured = featuredProjects.map((p) => ({ project: p, tags: featuredTags.get(p.slug) ?? [] }));
-const archive = archiveProjects.map((p) => ({ project: p, tags: archiveTags.get(p.slug) ?? [] }));
+const shipped = shippedProjects.map((p) => ({ project: p, tags: shippedTags.get(p.slug) ?? [] }));
+const early = earlyProjects.map((p) => ({ project: p, tags: earlyTags.get(p.slug) ?? [] }));
 ---
 
 <BaseLayout
     title="Portfolio | Paul Serban"
-    description="Case studies & Projects, tech stacks, and links to Paul Serban's work."
+    description="Architecture & Design Labs portfolio, tech stacks, and links to Paul Serban's work."
 >
     <section class="mb-10">
         <p class="kicker text-sm">Selected work</p>
-        <h1 class="m-0 font-display text-[clamp(2rem,5vw,3.5rem)] font-bold">Portfolio</h1>
-        <p class="deck mt-2">Featured projects first, then the archive. Filter by tech stack.</p>
+        <h1 class="m-0 font-display text-[clamp(2rem,5vw,3.5rem)] font-bold">Architecture & Design Labs</h1>
+        <p class="deck mt-2">Shipped work first, then early-stage concepts. Filter by maturity or tech stack.</p>
         <div class="rule mt-6"></div>
     </section>
 
-    <TechFilter featured={featured} archive={archive} client:load />
+    <TechFilter shipped={shipped} early={early} client:load />
 </BaseLayout>
