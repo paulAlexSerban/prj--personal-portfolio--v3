@@ -94,3 +94,8 @@ output "github_actions_news_sync_role_arn" {
   description = "IAM role ARN for news-sync.yaml (set as AWS_DEPLOY_ROLE_ARN on the news-data GitHub Environment)."
   value       = module.github_oidc_news_sync_role.role_arn
 }
+
+output "bing_site_verification_fqdns" {
+  description = "CNAMEs Bing Webmaster Tools may query for domain verification (IndexNow)."
+  value       = { for host, rec in aws_route53_record.bing_site_verification : host => rec.fqdn }
+}

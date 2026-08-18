@@ -40,6 +40,17 @@ locals {
   # distributions (site/blog/quiz/news-feed/news-data/assets).
   # Domain-prefixed keys keep logs queryable per distribution.
   cf_access_logs_bucket_name = "cf-access-logs.paulserban.eu"
+
+  # Relative Route 53 names for Bing WMT CNAME checks. Apex stays
+  # {hash} so it remains {hash}.paulserban.eu, not a doubled FQDN.
+  bing_verification_relative_names = {
+    for host in var.bing_site_verification_hosts :
+    host => (
+      host == var.domain_name
+      ? var.bing_site_verification_cname_name
+      : "${var.bing_site_verification_cname_name}.${trimsuffix(host, ".${var.domain_name}")}"
+    )
+  }
 }
 
 # ---------------------------------------------------------------------------
@@ -212,6 +223,24 @@ module "assets_cdn" {
 
   access_logging_bucket = aws_s3_bucket.cf_access_logs.bucket_domain_name
   access_logging_prefix = "${var.assets_domain_name}/"
+}
+
+# Bing Webmaster Tools domain verification (IndexNow). Bing looks up
+# {hash}.{host} CNAME verify.bing.com for the exact URL added in WMT
+# (apex vs www vs a subdomain). This is a DNS check, not HTTP.
+moved {
+  from = aws_route53_record.bing_site_verification[0]
+  to   = aws_route53_record.bing_site_verification["paulserban.eu"]
+}
+
+resource "aws_route53_record" "bing_site_verification" {
+  for_each = var.bing_site_verification_cname_name == "" ? {} : local.bing_verification_relative_names
+
+  zone_id = var.hosted_zone_id
+  name    = each.value
+  type    = "CNAME"
+  ttl     = 300
+  records = ["verify.bing.com"]
 }
 
 module "github_oidc_deploy_role" {
