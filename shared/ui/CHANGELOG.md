@@ -1,5 +1,12 @@
 # @prj--personal-portfolio--v3/shared--ui
 
+## 1.3.1
+
+### Patch Changes
+
+- Updated dependencies [3f65af6]
+    - @prj--personal-portfolio--v3/tools--quiz-export@1.2.0
+
 ## 1.3.0
 
 ### Minor Changes
