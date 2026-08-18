@@ -115,9 +115,7 @@ export function TechFilter({ shipped, early }: Props) {
                     </ul>
                 </section>
             )}
-            {filteredShipped.length === 0 && filteredEarly.length === 0 && (
-                <p className="italic text-slate-ink">No projects match this filter.</p>
-            )}
+            {filteredShipped.length === 0 && filteredEarly.length === 0 && <p className="italic text-slate-ink">No projects match this filter.</p>}
         </div>
     );
 }
