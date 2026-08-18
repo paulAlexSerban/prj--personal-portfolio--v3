@@ -1,127 +1,337 @@
 {
   "category": "web-dev",
   "label": "Web Development",
-  "fetchedAt": "2026-08-17T06:24:56.103Z",
+  "fetchedAt": "2026-08-18T06:19:30.612Z",
   "items": [
     {
-      "slug": "1f5b462f4686138ec3cb5aec",
-      "guid": "https://dev.to/aiq_labs/i-spent-11-days-optimizing-a-search-ranking-that-only-i-could-see-4g28",
-      "title": "I spent 11 days optimizing a search ranking that only I could see",
-      "link": "https://dev.to/aiq_labs/i-spent-11-days-optimizing-a-search-ranking-that-only-i-could-see-4g28",
+      "slug": "c3d36401dea5be6f0582f9de",
+      "guid": "https://dev.to/primesieve/i-wrote-a-scraper-for-a-government-agencys-announcements-and-learned-why-boring-tools-win-2blk",
+      "title": "I wrote a scraper for a government agency's announcements — and learned why boring tools win",
+      "link": "https://dev.to/primesieve/i-wrote-a-scraper-for-a-government-agencys-announcements-and-learned-why-boring-tools-win-2blk",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "This is a submission for DEV's Summer Bug Smash: Smash Stories powered by Sentry. I publish small automation tools on a marketplace. By August I had 23 of them live. Store search looked fine — measured repeatedly, from a real browser, against the real production endpoint: Search…",
-      "publishedAt": "2026-08-17T06:16:22.000Z"
+      "summary": "I wrote a scraper for a government agency's announcements — and learned why boring tools win Every morning at 6 AM, a small Python script on one VPS checks the Indonesian food agency's announcement page. If there's something new, it saves the record to a JSON file. That's the wh…",
+      "publishedAt": "2026-08-18T06:02:08.000Z"
     },
     {
-      "slug": "3179cf97325fcb2c02e49c37",
-      "guid": "https://dev.to/aiq_labs/my-security-hook-silently-stopped-guarding-the-bug-was-one-line-of-encoding-1le8",
-      "title": "My security hook silently stopped guarding. The bug was one line of encoding.",
-      "link": "https://dev.to/aiq_labs/my-security-hook-silently-stopped-guarding-the-bug-was-one-line-of-encoding-1le8",
+      "slug": "d72a477c2d2e5b8a95173c02",
+      "guid": "https://dev.to/rusegal/scaling-webrtc-streams-with-engine-pooling-in-go-3a72",
+      "title": "Scaling WebRTC Streams with Engine Pooling in Go",
+      "link": "https://dev.to/rusegal/scaling-webrtc-streams-with-engine-pooling-in-go-3a72",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "This is a submission for DEV's Summer Bug Smash: Clear the Lineup powered by Sentry. I run a set of local policy guards around an AI coding agent. They are ordinary PreToolUse hooks: before the agent is allowed to perform an action, the proposed tool call is handed to a small Py…",
-      "publishedAt": "2026-08-17T06:15:30.000Z"
+      "summary": "FATAL: crypto/rand: blocked on getrandom() syscall, or 100% CPU at the 25th Client The title is catchy enough—now let’s get to the point. This error is a classic side effect of the default Pion WebRTC setup in Go. It is easy to reproduce: you read the usual Pion usage guides, de…",
+      "publishedAt": "2026-08-18T06:01:36.000Z"
     },
     {
-      "slug": "aa9ec6f46bd27f545d2e7162",
-      "guid": "https://dev.to/alok_krishali/is-ui-overdraw-killing-your-webgl-performance-2o92",
-      "title": "Is UI Overdraw Killing Your WebGL Performance?",
-      "link": "https://dev.to/alok_krishali/is-ui-overdraw-killing-your-webgl-performance-2o92",
+      "slug": "f33fd779338374d40d63c7f3",
+      "guid": "https://dev.to/tamizuddin/ai-agents-in-the-dev-workflow-riding-the-wave-of-eliza-airbyte-and-the-snowflake-autofix-breach-4dh6",
+      "title": "AI Agents in the Dev Workflow: Riding the Wave of Eliza, Airbyte, and the Snowflake 'Autofix' Breach",
+      "link": "https://dev.to/tamizuddin/ai-agents-in-the-dev-workflow-riding-the-wave-of-eliza-airbyte-and-the-snowflake-autofix-breach-4dh6",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "Why Is Overdraw Particularly Important in WebGL? UI overdraw. A UI may look simple to the player while the GPU is actually rendering the same pixels several times. A typical game interface might contain: A full-screen background Transparent panels Multiple decorative images Butt…",
-      "publishedAt": "2026-08-17T06:12:05.000Z"
+      "summary": "Originally published on tamiz.pro. The promise of AI agents in the developer workflow has never felt closer. Tools like Eliza promise autonomous agents that can handle routine tasks, Airbyte has made data integration feel almost magical, and Snowflake's new Autofix feature sugge…",
+      "publishedAt": "2026-08-18T06:00:47.000Z"
     },
     {
-      "slug": "f89e6bbaadefcfd869b3c817",
-      "guid": "https://dev.to/biozal/running-android-vms-on-arm-rebuilding-the-minisforum-ms-r1-kernel-for-cuttlefish-52a1",
-      "title": "Running Android VMs on ARM: Rebuilding the Minisforum MS-R1 Kernel for Cuttlefish",
-      "link": "https://dev.to/biozal/running-android-vms-on-arm-rebuilding-the-minisforum-ms-r1-kernel-for-cuttlefish-52a1",
+      "slug": "11e7177e3b8de356a297d7fc",
+      "guid": "https://dev.to/sinan_koak_4a6dea677278a/how-i-built-a-2400month-passive-income-stream-using-ai-to-automate-niche-newsletter-curation-d1j",
+      "title": "How I Built a $2,400/Month Passive Income Stream Using AI to Automate Niche Newsletter Curation",
+      "link": "https://dev.to/sinan_koak_4a6dea677278a/how-i-built-a-2400month-passive-income-stream-using-ai-to-automate-niche-newsletter-curation-d1j",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "Part 1 of 2. This part covers getting a kernel that can actually host virtual machines. I wanted a box that could run a dozen Android instances at once — real ones, not emulated-on-x86 ones — to benchmark peer-to-peer sync behaviour at scale. Native arm64 Android on native arm64…",
-      "publishedAt": "2026-08-17T06:06:10.000Z"
+      "summary": "The Opportunity Nobody Is Talking About While everyone races to build SaaS products, there's a quieter opportunity sitting in plain sight: automated niche newsletters. I'm generating $2,400/month from a newsletter I spend less than 20 minutes per week maintaining, and AI does 95…",
+      "publishedAt": "2026-08-18T06:00:32.000Z"
     },
     {
-      "slug": "35216f3724c3005894d79b9b",
-      "guid": "https://dev.to/vast-cow/how-to-standardize-line-endings-in-git-without-committing-gitattributes-1k29",
-      "title": "How to Standardize Line Endings in Git Without Committing `.gitattributes`",
-      "link": "https://dev.to/vast-cow/how-to-standardize-line-endings-in-git-without-committing-gitattributes-1k29",
+      "slug": "cc46ab43000b147635f6b6ad",
+      "guid": "https://dev.to/mecanik-dev/host-a-static-web-app-on-cloudflare-pages-a-2026-guide-8mg",
+      "title": "Host a Static Web App on Cloudflare Pages: A 2026 Guide",
+      "link": "https://dev.to/mecanik-dev/host-a-static-web-app-on-cloudflare-pages-a-2026-guide-8mg",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "When developing with Git, differences between CRLF and LF can become an issue when working across Windows and Linux/macOS. A common solution is to place a .gitattributes file in the repository to define line-ending rules. However, there are also cases where you may want to: Avoi…",
-      "publishedAt": "2026-08-17T06:02:23.000Z"
+      "summary": "Cloudflare Pages hosting lets frontend teams ship code that is fast, secure, and free of server administration. By using Cloudflare Pages, developers get a high-performance edge-native platform to deploy static web applications, single-page apps (SPAs), and server-side rendered …",
+      "publishedAt": "2026-08-18T06:00:00.000Z"
     },
     {
-      "slug": "5e6cfad3a8120724e000252c",
-      "guid": "https://dev.to/timevolt/recursion-vs-iteration-choosing-your-path-like-neo-in-the-matrix-n8m",
-      "title": "Recursion vs Iteration: Choosing Your Path Like Neo in The Matrix",
-      "link": "https://dev.to/timevolt/recursion-vs-iteration-choosing-your-path-like-neo-in-the-matrix-n8m",
+      "slug": "f8f4e9dec22ffa7c881cf675",
+      "guid": "https://dev.to/mitch_07/your-ai-isnt-the-problem-your-legacy-architecture-probably-is-3hjg",
+      "title": "Your AI Isn’t the Problem. Your Legacy Architecture Probably Is",
+      "link": "https://dev.to/mitch_07/your-ai-isnt-the-problem-your-legacy-architecture-probably-is-3hjg",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "The Quest Begins (The \"Why\") I was knee‑deep in a coding interview when the interviewer tossed me a seemingly innocent problem: “Given a binary tree, return the sum of all its nodes.” My first instinct? Fire off a tidy while‑loop, push nodes onto a stack, and iterate until the s…",
-      "publishedAt": "2026-08-17T06:01:00.000Z"
+      "summary": "I have a somewhat unpopular opinion about enterprise AI: Most companies don't need a better AI model. They need better infrastructure around the model they already have. There is a tendency to treat AI adoption as a model-selection problem. Should we use GPT? Claude? An open-sou…",
+      "publishedAt": "2026-08-18T05:58:16.000Z"
     },
     {
-      "slug": "a8addaea648e7bc619e48ef8",
-      "guid": "https://dev.to/ahmed_mahmoud360/web-push-in-the-nextjs-app-router-field-notes-on-service-workers-vapid-and-the-ios-rule-that-1oj2",
-      "title": "Web Push in the Next.js App Router: Field Notes on Service Workers, VAPID, and the iOS Rule That Silently Blocks Everything",
-      "link": "https://dev.to/ahmed_mahmoud360/web-push-in-the-nextjs-app-router-field-notes-on-service-workers-vapid-and-the-ios-rule-that-1oj2",
+      "slug": "e2d3d593f1883dc7d9e498d9",
+      "guid": "https://dev.to/realmarcuschen/your-asr-confidence-score-is-a-number-you-can-act-on-we-were-throwing-it-away-n0c",
+      "title": "Your ASR confidence score is a number you can act on. We were throwing it away.",
+      "link": "https://dev.to/realmarcuschen/your-asr-confidence-score-is-a-number-you-can-act-on-we-were-throwing-it-away-n0c",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "Headline: Web Push is a browser API that delivers a server-sent notification to a device while your site is closed, and in a Next.js App Router project it needs exactly three parts: a service worker served from the origin root, a VAPID key pair, and a Node.js-runtime route handl…",
-      "publishedAt": "2026-08-17T06:00:11.000Z"
+      "summary": "Voice agents treat the transcript as ground truth. The speech recognizer often tells you it is not sure, and we were ignoring it. TL;DR: When I went back through a month of \"the agent did the wrong thing\" incidents on our voice agent, close to a third of them started with a tran…",
+      "publishedAt": "2026-08-18T05:58:11.000Z"
     },
     {
-      "slug": "298edcaa2e968d7dbcaf687e",
-      "guid": "https://dev.to/thibault_monteiro/zhipu-va-ouvrir-les-poids-du-meilleur-chasseur-de-failles-16l5",
-      "title": "Zhipu va ouvrir les poids du meilleur chasseur de failles",
-      "link": "https://dev.to/thibault_monteiro/zhipu-va-ouvrir-les-poids-du-meilleur-chasseur-de-failles-16l5",
+      "slug": "2dcbccc11ce933498b7246cc",
+      "guid": "https://dev.to/vatana7/the-most-powerful-ai-skill-for-coders-5dn7",
+      "title": "the most powerful AI skill for coders",
+      "link": "https://dev.to/vatana7/the-most-powerful-ai-skill-for-coders-5dn7",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "L'essentiel Zhipu AI a publié GLM-5.3, entraîné sur un modèle de base de 743 milliards de paramètres et présenté comme dédié à la cyberdéfense et à la programmation. Le modèle obtient 84,5 points sur CyberGym, au-dessus de Mythos 5 et de GPT-5.6 Sol. L'éditeur annonce un accès A…",
-      "publishedAt": "2026-08-17T06:00:06.000Z"
+      "summary": "First of all, I'm going to declare that this is written with no AI help. This should be a 3 minutes read. Hey internet, I haven't published anything in 1 year. The last I wrote was something about Flutter related problem. Let's write some back story first. As much as I hate to a…",
+      "publishedAt": "2026-08-18T05:53:26.000Z"
     },
     {
-      "slug": "498b378050b8c9cc4bc9101e",
-      "guid": "https://dev.to/mecanik-dev/rest-api-vs-graphql-in-2026-how-to-choose-the-right-one-3k1a",
-      "title": "REST API vs GraphQL in 2026 - How to Choose the Right One",
-      "link": "https://dev.to/mecanik-dev/rest-api-vs-graphql-in-2026-how-to-choose-the-right-one-3k1a",
+      "slug": "7bc33c813283bebaa49e81ce",
+      "guid": "https://dev.to/micheljee/door-handles-are-the-original-user-interface-the-engineering-behind-better-hardware-2kdb",
+      "title": "Door Handles Are the Original User Interface: The Engineering Behind Better Hardware",
+      "link": "https://dev.to/micheljee/door-handles-are-the-original-user-interface-the-engineering-behind-better-hardware-2kdb",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "Search interest in \"REST vs GraphQL\" has remained consistently high throughout the 2020s, with the debate gaining renewed urgency as more teams build frontend-heavy products with complex data requirements. GraphQL has been in production since Facebook open-sourced it in 2015 and…",
-      "publishedAt": "2026-08-17T06:00:00.000Z"
+      "summary": "Ever pushed open a door and immediately felt that something was right? That experience usually isn't accidental. While we tend to focus on the door, colour, finish, or style, the hardware plays a major role in how a door feels in everyday use. As a developer, I think about door …",
+      "publishedAt": "2026-08-18T05:52:47.000Z"
     },
     {
-      "slug": "3a40b66394ea90e52fb580fa",
-      "guid": "https://dev.to/wyattdave/what-went-wrong-for-copilot-19f2",
-      "title": "What Went Wrong For Copilot",
-      "link": "https://dev.to/wyattdave/what-went-wrong-for-copilot-19f2",
+      "slug": "e76c04579f16739ecc01bbc0",
+      "guid": "https://dev.to/fcn06/introducing-swarm-multi-agent-orchestration-and-an-llm-gateway-in-pure-rust-54ha",
+      "title": "Introducing Swarm: Multi-Agent Orchestration and an LLM Gateway in Pure Rust 🦀",
+      "link": "https://dev.to/fcn06/introducing-swarm-multi-agent-orchestration-and-an-llm-gateway-in-pure-rust-54ha",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "There have been 3 amazing tools launched by Microsoft recently: Code Apps Cowork New Copilot Studio (aka GitHub Copilot Harness) These tools had me incredibly excited, as they not only allowed me to do my job better and quicker, but also enabled me to do things that weren't poss…",
-      "publishedAt": "2026-08-17T05:55:20.000Z"
+      "summary": "While experimenting with multi-agent systems, I kept ending up with two separate pieces of infrastructure: an orchestration layer for agents and tools, and a gateway layer for routing LLM requests. I wanted both to share the same runtime, provider abstractions, state management,…",
+      "publishedAt": "2026-08-18T05:48:26.000Z"
     },
     {
-      "slug": "7893b9b7613caa26b6d3990b",
-      "guid": "https://dev.to/alpeshkumbhare/aws-database-selection-guide-rds-vs-aurora-vs-dynamodb-vs-elasticache-choosing-the-right-13h0",
-      "title": "AWS Database Selection Guide: RDS vs Aurora vs DynamoDB vs ElastiCache — Choosing the Right Database for Every Workload",
-      "link": "https://dev.to/alpeshkumbhare/aws-database-selection-guide-rds-vs-aurora-vs-dynamodb-vs-elasticache-choosing-the-right-13h0",
+      "slug": "688f7bd5e60156accd539a68",
+      "guid": "https://dev.to/primesieve/i-shipped-a-tokopedia-scraper-that-undercuts-the-incumbents-5x-heres-the-boring-part-33lf",
+      "title": "I shipped a Tokopedia scraper that undercuts the incumbents 5x — here's the boring part",
+      "link": "https://dev.to/primesieve/i-shipped-a-tokopedia-scraper-that-undercuts-the-incumbents-5x-heres-the-boring-part-33lf",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "AWS offers 15+ managed database services. Each is purpose-built for specific data models and access patterns. Choosing wrong means either fighting the database's design (performance problems) or over-engineering a simple workload (cost problems). The key insight: start with your…",
-      "publishedAt": "2026-08-17T05:54:18.000Z"
+      "summary": "I shipped a Tokopedia scraper that undercuts the incumbents 5x — here's the boring part Indonesia's biggest marketplace has a data problem: everyone wants to know what sells, at what price, from which shops — but the official route is a walled garden. The existing scrapers work,…",
+      "publishedAt": "2026-08-18T05:45:31.000Z"
     },
     {
-      "slug": "70cccbed29cb253136ded382",
-      "guid": "https://dev.to/eleonorarocchi/claudes-watermark-are-we-measuring-the-wrong-thing-1ahj",
-      "title": "Claude's Watermark: Are We Measuring the Wrong Thing?",
-      "link": "https://dev.to/eleonorarocchi/claudes-watermark-are-we-measuring-the-wrong-thing-1ahj",
+      "slug": "b539007d1d0c237287d1b650",
+      "guid": "https://dev.to/pckrishnadas88/building-distributed-systems-in-elixir-part-5-supervisor-from-scratch-32mh",
+      "title": "Building Distributed Systems in Elixir: Part 5 — Supervisor From Scratch",
+      "link": "https://dev.to/pckrishnadas88/building-distributed-systems-in-elixir-part-5-supervisor-from-scratch-32mh",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "Since August 2, 2026, the EU AI Act has required certain AI-generated content to be detectable through machine-readable markings. Anthropic has chosen a technique for Claude derived from SynthID-Text, developed by Google DeepMind. The mechanism does not insert invisible characte…",
-      "publishedAt": "2026-08-17T05:53:00.000Z"
+      "summary": "In the previous part of this series, we explored process links. A linked worker that crashes sends an exit signal to the process linked to it. By default, that failure propagates and can terminate both processes. We also saw that a process can trap exits: Process.flag(:trap_exit…",
+      "publishedAt": "2026-08-18T05:41:06.000Z"
+    },
+    {
+      "slug": "cc683e045e57d716ada246f3",
+      "guid": "6a837db5b64d34f31873c306",
+      "title": "How to Work with Subqueries in SQL",
+      "link": "https://www.freecodecamp.org/news/how-to-work-with-subqueries-in-sql/",
+      "source": "Free Code Camp - News",
+      "sourceUrl": "https://www.freecodecamp.org/news/rss",
+      "summary": "Whenever you see a query nested inside another query in SQL, that's a subquery. A subquery is also known as an inner query while the one that contains it is called the main or outer query. Subqueries",
+      "publishedAt": "2026-08-17T21:31:33.000Z"
+    },
+    {
+      "slug": "e5be24c44a43164f3b0c22ee",
+      "guid": "6a8373e0eb96152ac540effb",
+      "title": "How to Scale LLM Inference for AI Agents Using vLLM",
+      "link": "https://www.freecodecamp.org/news/how-to-scale-llm-inference-for-ai-agents-using-vllm/",
+      "source": "Free Code Camp - News",
+      "sourceUrl": "https://www.freecodecamp.org/news/rss",
+      "summary": "In this tutorial, I’ll show you how to scale LLM inference for AI agents using vLLM. I'll help you build an intuition for how LLM inference works, explore why agent workloads create GPU scheduling and",
+      "publishedAt": "2026-08-17T20:49:36.000Z"
+    },
+    {
+      "slug": "cb755118e5e4c9e6f94b465b",
+      "guid": "https://master.dev/blog/?p=10691",
+      "title": "React Compiler Linting Just Got a Rust-Native Speedup in Oxlint",
+      "link": "https://master.dev/blog/react-compiler-linting-just-got-a-rust-native-speedup-in-oxlint/",
+      "source": "Frontend Masters",
+      "sourceUrl": "https://frontendmasters.com/blog/feed/",
+      "summary": "The React team made a big splash recently when it announced the release of the Rust rewrite of React Compiler and said that it would be the new canonical version of the compiler going forward. I’ve been on the React Compiler train to enable reliable performance on my AI website …",
+      "publishedAt": "2026-08-17T20:49:21.000Z"
+    },
+    {
+      "slug": "454a86499c402a05d4564749",
+      "guid": "https://medium.com/p/f7b8433dd0b8",
+      "title": "Managing variant drift with generic Helm templates",
+      "link": "https://itnext.io/managing-variant-drift-with-generic-helm-templates-f7b8433dd0b8?source=rss----5b301f10ddcd---4",
+      "source": "itnext",
+      "sourceUrl": "https://itnext.io/feed",
+      "summary": "",
+      "publishedAt": "2026-08-17T19:28:17.000Z"
+    },
+    {
+      "slug": "5841bfe23eadbd467ac3b404",
+      "guid": "https://medium.com/p/2dddd1e36fab",
+      "title": "The Unexpected AI Stack: C# + .NET (Part 2)",
+      "link": "https://itnext.io/the-unexpected-ai-stack-c-net-part-2-2dddd1e36fab?source=rss----5b301f10ddcd---4",
+      "source": "itnext",
+      "sourceUrl": "https://itnext.io/feed",
+      "summary": "",
+      "publishedAt": "2026-08-17T19:26:55.000Z"
+    },
+    {
+      "slug": "8a24373ede7d687e6f25ac9d",
+      "guid": "https://dzone.com/articles/3660976",
+      "title": "The Embedding Model You Choose Matters More Than Your LLM",
+      "link": "https://dzone.com/articles/choosing-the-right-embedding-model",
+      "source": "DZone",
+      "sourceUrl": "https://feeds.dzone.com/home",
+      "summary": "The Uncomfortable Truth You’ve spent days prompt-engineering your LLM. You’ve benchmarked Claude against GPT. You’ve debated whether to use Mixtral. But your RAG pipeline is still returning garbage answers, and you’re blaming the wrong component. The LLM is only as good as the c…",
+      "publishedAt": "2026-08-17T19:00:01.000Z"
+    },
+    {
+      "slug": "823a3f9d4424d03f41a8a5a4",
+      "guid": "https://dzone.com/articles/3669673",
+      "title": "Audit-Ready by Design: Building Lineage, Point-in-Time Reconstruction, and Immutability Into Data Architecture",
+      "link": "https://dzone.com/articles/audit-ready-by-design",
+      "source": "DZone",
+      "sourceUrl": "https://feeds.dzone.com/home",
+      "summary": "Compliance Checkbox vs. Architectural Constraint Most data platforms treat audit-readiness as a downstream concern. The pipelines are built, the warehouse is populated, the dashboards ship, and only then does someone ask how the platform would respond to a regulator's request to…",
+      "publishedAt": "2026-08-17T18:00:13.000Z"
+    },
+    {
+      "slug": "c58b2c3fe73ed450039acb58",
+      "guid": "6a82a791cd15540001f7246c",
+      "title": "Understanding Load Balancing for Beginners",
+      "link": "https://kodekloud.com/blog/understanding-load-balancing-for-beginners/",
+      "source": "KodeKloud",
+      "sourceUrl": "https://kodekloud.com/blog/rss/",
+      "summary": "Spreading traffic is the easy half of load balancing. The half that decides whether an outage lasts ten seconds or ten minutes is noticing that a backend has stopped working, and most health checks cannot.",
+      "publishedAt": "2026-08-17T17:00:34.000Z"
+    },
+    {
+      "slug": "c99ec599ee12410dbb114f48",
+      "guid": "https://dzone.com/articles/3661949",
+      "title": "Future-Proofing JWT Security: Crypto-Agility, Post-Quantum Signatures, and IAM Migration",
+      "link": "https://dzone.com/articles/future-proofing-jwt-systems",
+      "source": "DZone",
+      "sourceUrl": "https://feeds.dzone.com/home",
+      "summary": "Today, applications are built around identity systems. All API gateways, microservices, mobile backends, and single sign-on flows require some form of authentication and authorization. That trust is often conveyed via a JSON Web Token (JWT) in many systems. Their compactness, po…",
+      "publishedAt": "2026-08-17T17:00:00.000Z"
+    },
+    {
+      "slug": "6f765d002f23b9cce936a778",
+      "guid": "https://dzone.com/articles/3670005",
+      "title": "Engineering as a Service Is What Happens When You Let Vibe Coding Win",
+      "link": "https://dzone.com/articles/engineering-as-a-service-vibe-coding",
+      "source": "DZone",
+      "sourceUrl": "https://feeds.dzone.com/home",
+      "summary": "Vibe coding is not a programming technique. It's an organizational event dressed up as one. When GitHub Copilot launched in 2021, the narrative was \"AI as pair programmer.\" When ChatGPT arrived, it shifted to \"AI as junior developer.\" By the time Cursor and Windsurf and Devin en…",
+      "publishedAt": "2026-08-17T16:00:01.000Z"
+    },
+    {
+      "slug": "2c07e465f5e0e5e5e970f2a8",
+      "guid": "https://github.blog/?p=98309",
+      "title": "How canvases make agentic workflows visible, steerable, and cost-efficient",
+      "link": "https://github.blog/ai-and-ml/github-copilot/how-canvases-make-agentic-workflows-visible-steerable-and-cost-efficient/",
+      "source": "Github Blog",
+      "sourceUrl": "https://github.blog/feed/",
+      "summary": "Chat is great for intent, but agent work gets lost in the scroll. Here is how I use canvases with my agentic workflows—and why your workflow also deserves a canvas. The post How canvases make agentic workflows visible, steerable, and cost-efficient appeared first on The GitHub B…",
+      "publishedAt": "2026-08-17T16:00:00.000Z"
+    },
+    {
+      "slug": "f6a647579a73e638338401ba",
+      "guid": "https://medium.com/p/799004fff57d",
+      "title": "Observability Is Converging. Humans Aren’t the Only Ones Querying It Anymore",
+      "link": "https://itnext.io/observability-is-converging-humans-arent-the-only-ones-querying-it-anymore-799004fff57d?source=rss----5b301f10ddcd---4",
+      "source": "itnext",
+      "sourceUrl": "https://itnext.io/feed",
+      "summary": "",
+      "publishedAt": "2026-08-17T15:37:45.000Z"
+    },
+    {
+      "slug": "f47699019a45811872f4a7d1",
+      "guid": "https://medium.com/p/b35978782309",
+      "title": "React vs Vue vs Svelte for Modern Web Apps in 2026",
+      "link": "https://itnext.io/react-vs-vue-vs-svelte-for-modern-web-apps-in-2026-b35978782309?source=rss----5b301f10ddcd---4",
+      "source": "itnext",
+      "sourceUrl": "https://itnext.io/feed",
+      "summary": "",
+      "publishedAt": "2026-08-17T15:34:50.000Z"
+    },
+    {
+      "slug": "aaba94cfeeb0a6d5147ed829",
+      "guid": "https://dzone.com/articles/3671092",
+      "title": "From Agile to the Product Operating Model",
+      "link": "https://dzone.com/articles/agile-product-operating-model",
+      "source": "DZone",
+      "sourceUrl": "https://feeds.dzone.com/home",
+      "summary": "TL; DR: The “Agile to the Product Operating Model” Survey Results Between August 2 and August 10, 2026, 48 practitioners participated in my Agile to Product Operating Model (POM) survey, which tries to shed light on what is actually changing. Let me summarize the answers for you…",
+      "publishedAt": "2026-08-17T15:00:01.000Z"
+    },
+    {
+      "slug": "a97cbf86a829500eabe45caa",
+      "guid": "6a831663dcf9ac784c9eae7d",
+      "title": "How to Manage Context Files in Your Codebase and Get Better Output From AI Coding Agents",
+      "link": "https://www.freecodecamp.org/news/how-to-manage-context-files-in-your-codebase-and-get-better-agent-output/",
+      "source": "Free Code Camp - News",
+      "sourceUrl": "https://www.freecodecamp.org/news/rss",
+      "summary": "You ask a coding agent for a new endpoint, and ninety seconds later you have a working endpoint. Then you read the diff, and you find that it pulled in a validation library that's not in your package.",
+      "publishedAt": "2026-08-17T14:10:43.000Z"
+    },
+    {
+      "slug": "8424441cb76537219f69dc3d",
+      "guid": "https://dzone.com/articles/3667013",
+      "title": "Why Distributed Databases Fail at Coordination Boundaries",
+      "link": "https://dzone.com/articles/distributed-databases-coordination",
+      "source": "DZone",
+      "sourceUrl": "https://feeds.dzone.com/home",
+      "summary": "Distributed databases are often evaluated through familiar technical dimensions: replication factor, consistency model, partitioning strategy, throughput, latency, and recovery time. These characteristics matter, but they do not fully explain why systems that appear healthy at t…",
+      "publishedAt": "2026-08-17T14:00:00.000Z"
+    },
+    {
+      "slug": "d544b5e77fd010ff67a7de6a",
+      "guid": "https://tympanus.net/codrops/?p=119101",
+      "title": "Creativity at Enterprise-Scale, Without Compromise: The OFF+BRAND. Story",
+      "link": "https://tympanus.net/codrops/2026/08/17/creativity-at-enterprise-scale-without-compromise-the-offbrand-story/",
+      "source": "Codrops",
+      "sourceUrl": "https://tympanus.net/codrops/feed/",
+      "summary": "Telling stories on some of the biggest canvases on the web, from Awwwards Site of the Year to the front door of Microsoft.",
+      "publishedAt": "2026-08-17T13:09:24.000Z"
+    },
+    {
+      "slug": "2da860c51b807f7db21319c3",
+      "guid": "https://dzone.com/articles/3666849",
+      "title": "Your AI Agent Is a Distributed System, Not a Chatbot",
+      "link": "https://dzone.com/articles/ai-agents-distributed-systems",
+      "source": "DZone",
+      "sourceUrl": "https://feeds.dzone.com/home",
+      "summary": "Most teams are still building AI agents like chatbots. That is fine for demos. It is not fine for production. A chatbot answers a question. An enterprise AI agent executes work. That difference sounds small, but it changes the entire architecture.",
+      "publishedAt": "2026-08-17T13:00:01.000Z"
+    },
+    {
+      "slug": "f1d7846410f5fdce57ba4988",
+      "guid": "https://dzone.com/articles/3666939",
+      "title": "Using AIDLC to Build Documents (Not Just Code)",
+      "link": "https://dzone.com/articles/using-aidlc-to-build-documents",
+      "source": "DZone",
+      "sourceUrl": "https://feeds.dzone.com/home",
+      "summary": "I was answering requirements questions for a knowledge-transfer package when the AI stopped me cold. I had picked \"slide deck\" as the output format. Two questions later, I picked \"native web rendering\" for the diagrams. Instead of guessing which one I meant, the workflow halted:",
+      "publishedAt": "2026-08-17T12:00:01.000Z"
+    },
+    {
+      "slug": "e7be839e2c4c73664795b2fe",
+      "guid": "https://medium.com/p/e13a9ba97e3a",
+      "title": "Stop Rebuilding Your Kubernetes Platform: How kubara Catalogs Make Architecture Reusable",
+      "link": "https://itnext.io/stop-rebuilding-your-kubernetes-platform-how-kubara-catalogs-make-architecture-reusable-e13a9ba97e3a?source=rss----5b301f10ddcd---4",
+      "source": "itnext",
+      "sourceUrl": "https://itnext.io/feed",
+      "summary": "",
+      "publishedAt": "2026-08-17T06:41:21.000Z"
+    },
+    {
+      "slug": "e1ccace2522ca04ffb9ee357",
+      "guid": "https://medium.com/p/3f9a30ad3554",
+      "title": "AWS CDK v2 + TypeScript: The Ultimate Serverless Stack (API Gateway + Lambda + DynamoDB)",
+      "link": "https://itnext.io/aws-cdk-v2-typescript-the-ultimate-serverless-stack-api-gateway-lambda-dynamodb-3f9a30ad3554?source=rss----5b301f10ddcd---4",
+      "source": "itnext",
+      "sourceUrl": "https://itnext.io/feed",
+      "summary": "A complete, runnable serverless CRUD API on AWS CDK v2 — API Gateway, five single-purpose Lambdas, one DynamoDB table, with… Continue reading on ITNEXT »",
+      "publishedAt": "2026-08-17T06:39:20.000Z"
     },
     {
       "slug": "3f644182f708e1a57057c47a",
@@ -514,16 +724,6 @@
       "publishedAt": "2026-08-14T12:00:03.000Z"
     },
     {
-      "slug": "906a8a4726ecff0092455e77",
-      "guid": "https://medium.com/p/aadd2584b64d",
-      "title": "Kernel Context Switch Costs And Spin Locks In Perf Profile: A Practical Study",
-      "link": "https://itnext.io/kernel-context-switch-costs-and-spin-locks-in-perf-profile-a-practical-study-aadd2584b64d?source=rss----5b301f10ddcd---4",
-      "source": "itnext",
-      "sourceUrl": "https://itnext.io/feed",
-      "summary": "",
-      "publishedAt": "2026-08-14T09:14:09.000Z"
-    },
-    {
       "slug": "5e8fb15a441df14545c631fa",
       "guid": "6a7e4a380ee61c58fa48acb3",
       "title": "How to Modernize a Legacy Application with AI Without Turning It Into a Rewrite",
@@ -564,56 +764,6 @@
       "publishedAt": "2026-08-13T21:13:08.000Z"
     },
     {
-      "slug": "1477cac78cf92dd1bd7c7f7c",
-      "guid": "https://medium.com/p/5a45f46a1ff1",
-      "title": "The Unexpected AI Stack: C# + .NET (Part 1)",
-      "link": "https://itnext.io/the-unexpected-ai-stack-c-net-part-1-5a45f46a1ff1?source=rss----5b301f10ddcd---4",
-      "source": "itnext",
-      "sourceUrl": "https://itnext.io/feed",
-      "summary": "",
-      "publishedAt": "2026-08-13T19:41:21.000Z"
-    },
-    {
-      "slug": "dcc8ba9f078321afb012888e",
-      "guid": "https://medium.com/p/0aedb15bae1b",
-      "title": "Can ODC Consume Google’s Open Knowledge Format Natively?",
-      "link": "https://itnext.io/can-odc-consume-googles-open-knowledge-format-natively-0aedb15bae1b?source=rss----5b301f10ddcd---4",
-      "source": "itnext",
-      "sourceUrl": "https://itnext.io/feed",
-      "summary": "",
-      "publishedAt": "2026-08-13T19:39:54.000Z"
-    },
-    {
-      "slug": "0d60234abe086ac08362f7e2",
-      "guid": "https://medium.com/p/912ca95c4ccc",
-      "title": "Beyond Console.WriteLine: Mastering Structured Logging in .NET",
-      "link": "https://itnext.io/beyond-console-writeline-mastering-structured-logging-in-net-912ca95c4ccc?source=rss----5b301f10ddcd---4",
-      "source": "itnext",
-      "sourceUrl": "https://itnext.io/feed",
-      "summary": "",
-      "publishedAt": "2026-08-13T19:38:54.000Z"
-    },
-    {
-      "slug": "38a066b2d3eb74e193e4540e",
-      "guid": "https://medium.com/p/67eadc62021b",
-      "title": "10 .NET Middlewares That Will Supercharge Your Pipeline",
-      "link": "https://itnext.io/10-net-middlewares-that-will-supercharge-your-pipeline-67eadc62021b?source=rss----5b301f10ddcd---4",
-      "source": "itnext",
-      "sourceUrl": "https://itnext.io/feed",
-      "summary": "",
-      "publishedAt": "2026-08-13T19:38:05.000Z"
-    },
-    {
-      "slug": "9107b48b338c28a02a41db51",
-      "guid": "https://medium.com/p/94679a3e346a",
-      "title": "Amazon Is Betting on Proof. We’re Betting on Proof You Can Check.",
-      "link": "https://itnext.io/amazon-is-betting-on-proof-were-betting-on-proof-you-can-check-94679a3e346a?source=rss----5b301f10ddcd---4",
-      "source": "itnext",
-      "sourceUrl": "https://itnext.io/feed",
-      "summary": "",
-      "publishedAt": "2026-08-13T19:36:58.000Z"
-    },
-    {
       "slug": "0a7ddea6d17b0c674d60fbf2",
       "guid": "https://github.blog/?p=98265",
       "title": "Your guide to GitHub Universe 2026 is here: The schedule just launched!",
@@ -652,26 +802,6 @@
       "sourceUrl": "https://feeds.dzone.com/home",
       "summary": "Every B2B SaaS product team knows this moment. You're trying to close a deal, and the prospect says, \"We just need you to sync with our CRM. And our HRIS. Oh, and these three other tools. You can do that, right?\" Your roadmap takes a hit, and your engineering backlog doubles ove…",
       "publishedAt": "2026-08-13T18:00:00.000Z"
-    },
-    {
-      "slug": "4b48e0ae35fa5a8fb518120b",
-      "guid": "6a7e02796c61d1c629897f7c",
-      "title": "How the Chrome Dino Game Works Under the Hood: A Tour of Chromium's Source Code",
-      "link": "https://www.freecodecamp.org/news/how-the-chrome-dino-game-works/",
-      "source": "Free Code Camp - News",
-      "sourceUrl": "https://www.freecodecamp.org/news/rss",
-      "summary": "You've seen it a hundred times: the Wi-Fi drops, Chrome shrugs, and a little pixelated T-Rex appears, ready to sprint through a desert the moment you hit the spacebar. That tiny game, hidden behind th",
-      "publishedAt": "2026-08-13T17:44:25.000Z"
-    },
-    {
-      "slug": "173605d61f6561995d7597af",
-      "guid": "6a7e0113e19ef21c9188a0c1",
-      "title": "How to Build a Production-Ready AI Agent for $0/Month Using PHP, cPanel, and Gemini Flash",
-      "link": "https://www.freecodecamp.org/news/how-to-build-a-production-ready-ai-agent-for-0-month-using-php-cpanel-and-gemini-flash/",
-      "source": "Free Code Camp - News",
-      "sourceUrl": "https://www.freecodecamp.org/news/rss",
-      "summary": "In this tutorial, you’ll build a practical AI agent that can receive a user prompt, decide whether it needs to use a tool, execute that tool in PHP, store conversation history in MySQL, and continue r",
-      "publishedAt": "2026-08-13T17:38:27.000Z"
     },
     {
       "slug": "46701594a627b66d1461dda6",
@@ -732,16 +862,6 @@
       "sourceUrl": "https://feeds.dzone.com/home",
       "summary": "Reliable orchestration for small language models depends less on model sophistication than on the durability of event flow and state. Under the assumptions used here — small model instances, little or no local state, Kafka as the event backbone, Temporal as the orchestration lay…",
       "publishedAt": "2026-08-13T14:00:09.000Z"
-    },
-    {
-      "slug": "b8f644e76fe87abed815bcc0",
-      "guid": "6a7dcba2609882fca24e3ec0",
-      "title": "Python for Mechanical Engineering",
-      "link": "https://www.freecodecamp.org/news/python-for-mechanical-engineering/",
-      "source": "Free Code Camp - News",
-      "sourceUrl": "https://www.freecodecamp.org/news/rss",
-      "summary": "Whether you're designing robotics, analyzing fluid dynamics (CFD), or working through complex engineering data, learning to code is one of the most effective ways to boost your workflow and technical",
-      "publishedAt": "2026-08-13T13:50:26.000Z"
     },
     {
       "slug": "199448b45f971f997bbcba4e",
@@ -816,11 +936,11 @@
     {
       "slug": "e441d51cf775ece92b9d8bf8",
       "guid": "https://github.blog/?p=98221",
-      "title": "Write your first prompt with the GitHub Copilot app",
+      "title": "GitHub Copilot app for Beginners: Write your first prompt",
       "link": "https://github.blog/ai-and-ml/github-copilot/write-your-first-prompt-with-the-github-copilot-app/",
       "source": "Github Blog",
       "sourceUrl": "https://github.blog/feed/",
-      "summary": "Learn how to write your first prompt in the GitHub Copilot app, choose the right context and model, and start your first task with confidence. The post Write your first prompt with the GitHub Copilot app appeared first on The GitHub Blog.",
+      "summary": "Learn how to write your first prompt in the GitHub Copilot app, choose the right context and model, and start your first task with confidence. The post GitHub Copilot app for Beginners: Write your first prompt appeared first on The GitHub Blog.",
       "publishedAt": "2026-08-12T19:00:00.000Z"
     },
     {
@@ -882,126 +1002,6 @@
       "sourceUrl": "https://frontendmasters.com/blog/feed/",
       "summary": "Nice bookmarkable page with classy examples of two-state transitions from Jakub Antalik.",
       "publishedAt": "2026-08-12T16:14:18.000Z"
-    },
-    {
-      "slug": "aaec2d6d9808bd3467035270",
-      "guid": "https://dzone.com/articles/3659777",
-      "title": "Designing Enterprise-Grade Autonomous Agents With Microsoft Copilot Studio",
-      "link": "https://dzone.com/articles/enterprise-autonomous-agents",
-      "source": "DZone",
-      "sourceUrl": "https://feeds.dzone.com/home",
-      "summary": "Most Copilot Studio tutorials show you how to build a chatbot. This article is about something harder: building agents that actually work in production — across real enterprise data, real security boundaries, and real organizational complexity. The Gap Between Demo and Productio…",
-      "publishedAt": "2026-08-12T15:00:01.000Z"
-    },
-    {
-      "slug": "9ecdd4a86cdd0bda14b6125d",
-      "guid": "https://dzone.com/articles/3661925",
-      "title": "The Headless Operations Engine: Solving Small-Business Friction With Enterprise Architecture Principles",
-      "link": "https://dzone.com/articles/headless-operations-engine",
-      "source": "DZone",
-      "sourceUrl": "https://feeds.dzone.com/home",
-      "summary": "The Micro-Enterprise Bottleneck: When Core Delivery Collides With Operations The Business Case: The Friction of the \"Comfort Gap\" I have three primary alter egos. Early in the mornings, I teach Spanish. Nothing fancy, just a simple, online session, focused on one student at a ti…",
-      "publishedAt": "2026-08-12T14:00:00.000Z"
-    },
-    {
-      "slug": "32a811c71dfa5ceb09cae3d8",
-      "guid": "https://dzone.com/articles/3672075",
-      "title": "3 Million Strong: Celebrating the DZone Community",
-      "link": "https://dzone.com/articles/3-million-dzone-community",
-      "source": "DZone",
-      "sourceUrl": "https://feeds.dzone.com/home",
-      "summary": "And just like that, DZone has officially surpassed 3 million members! While that number is exciting, what it represents means a lot more. Behind every one of those 3 million members is someone who came to DZone for a reason. Some joined as beginners in the field, seeking knowled…",
-      "publishedAt": "2026-08-12T13:15:01.000Z"
-    },
-    {
-      "slug": "c4bcc4c8a7276df2cc9cee68",
-      "guid": "https://tympanus.net/codrops/?p=117948",
-      "title": "Creating an Interactive 3D Cluster with Three.js, TSL and Three Start",
-      "link": "https://tympanus.net/codrops/2026/08/12/creating-an-interactive-3d-cluster-with-three-js-tsl-and-three-start/",
-      "source": "Codrops",
-      "sourceUrl": "https://tympanus.net/codrops/feed/",
-      "summary": "A step-by-step tutorial on turning a simple icosahedron into a dynamic, interactive 3D cluster using Three.js, TSL, WebGPU, noise, interaction, and post-processing.",
-      "publishedAt": "2026-08-12T13:10:49.000Z"
-    },
-    {
-      "slug": "718861769cc3a9f1407d1d86",
-      "guid": "https://dzone.com/articles/3664504",
-      "title": "Building AI-Driven Service Operations: Integrating CRM, Inventory, and Field Service",
-      "link": "https://dzone.com/articles/crm-inventory-field-service",
-      "source": "DZone",
-      "sourceUrl": "https://feeds.dzone.com/home",
-      "summary": "Artificial intelligence has transformed customer relationship management from a record-keeping function into a data-driven decision support system. Across utilities, high-tech manufacturing, industrial equipment, telecommunications, and infrastructure services, AI capabilities a…",
-      "publishedAt": "2026-08-12T13:00:01.000Z"
-    },
-    {
-      "slug": "dc774015e71edffd954795ef",
-      "guid": "https://dzone.com/articles/3667032",
-      "title": "Machine Identity Debt",
-      "link": "https://dzone.com/articles/understanding-machine-identity-debt",
-      "source": "DZone",
-      "sourceUrl": "https://feeds.dzone.com/home",
-      "summary": "The Invisible Security Crisis Every Cloud-Native Organization Is Already Paying For Part 1 — The Deal That Told You Where This Is Going On July 30, 2025, Palo Alto Networks announced it was buying CyberArk for $25 billion. The deal closed February 11, 2026, becoming one of the l…",
-      "publishedAt": "2026-08-12T12:00:01.000Z"
-    },
-    {
-      "slug": "0b1fa33b39235880d3944653",
-      "guid": "https://www.sitepoint.com/beyond-digital-charts-how-developers-can-turn-ehr-data-into-actionable-healthcare-applications/",
-      "title": "Beyond Digital Charts: How Developers Can Turn EHR Data into Actionable Healthcare Applications",
-      "link": "https://www.sitepoint.com/beyond-digital-charts-how-developers-can-turn-ehr-data-into-actionable-healthcare-applications/?utm_source=rss",
-      "source": "SitePoint",
-      "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
-      "summary": "null Beyond Digital Charts: How Developers Can Turn EHR Data into Actionable Healthcare Applications on SitePoint.",
-      "publishedAt": "2026-08-12T07:00:09.000Z"
-    },
-    {
-      "slug": "a7f3a1172e89f74366e3aee5",
-      "guid": "6a7a9ce6cd15540001f6e99f",
-      "title": "Build Your Own Private Chat App With a Model Dropdown",
-      "link": "https://kodekloud.com/blog/multi-model-chat-app-streamlit/",
-      "source": "KodeKloud",
-      "sourceUrl": "https://kodekloud.com/blog/rss/",
-      "summary": "Build a Streamlit multi model chatbot with a dropdown of every model and switch models mid conversation without losing history, in 20 minutes.",
-      "publishedAt": "2026-08-12T05:16:46.000Z"
-    },
-    {
-      "slug": "af69239eeb1121a79ddcc829",
-      "guid": "https://master.dev/blog/?p=10643",
-      "title": "Reminder that `system-ui` is well supported, when you use it on macOS you get San Francisco which is a variable font, which is fun, and the fallbacks are pretty good.",
-      "link": "https://master.dev/blog/system-ui-san-francisco-fun/",
-      "source": "Frontend Masters",
-      "sourceUrl": "https://frontendmasters.com/blog/feed/",
-      "summary": "You can get pretty darn flexible with it.",
-      "publishedAt": "2026-08-11T22:56:29.000Z"
-    },
-    {
-      "slug": "6c9f6724a8726e86f8750256",
-      "guid": "https://www.sitepoint.com/zero-dependency-sqlite-time-machine/",
-      "title": "Zero-Dependency SQLite Time Machine for Local Debugging",
-      "link": "https://www.sitepoint.com/zero-dependency-sqlite-time-machine/?utm_source=rss",
-      "source": "SitePoint",
-      "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
-      "summary": "Introduces a lightweight, zero-dependency tool (`time-travel-sqlite-debugger`) that enables time-travel debugging for SQLite databases, filling a gap in local development workflows. Zero-Dependency SQLite Time Machine for Local Debugging on SitePoint.",
-      "publishedAt": "2026-08-11T22:54:39.000Z"
-    },
-    {
-      "slug": "33be7e4ae5ff2347869a55a0",
-      "guid": "https://dzone.com/articles/3667036",
-      "title": "The AI Software Supply Chain Blueprint",
-      "link": "https://dzone.com/articles/ai-supply-chain-blueprint",
-      "source": "DZone",
-      "sourceUrl": "https://feeds.dzone.com/home",
-      "summary": "Designing Trustworthy AI Pipelines from Data to Deployment Part 1 — The Backdoor That Didn't Need a Vulnerability In February 2024, JFrog's security research team found something that should have changed how the industry thinks about model repositories overnight: more than 100 m…",
-      "publishedAt": "2026-08-11T19:00:01.000Z"
-    },
-    {
-      "slug": "ee7bac14e71f1dd351b6448a",
-      "guid": "https://github.blog/?p=98090",
-      "title": "From coder to orchestrator: How agents shift the role of a developer",
-      "link": "https://github.blog/developer-skills/career-growth/from-coder-to-orchestrator-how-agents-shift-the-role-of-a-developer/",
-      "source": "Github Blog",
-      "sourceUrl": "https://github.blog/feed/",
-      "summary": "Developers are owning more of the delivery system around code, not just code itself. Join us during GitHub Universe to meet other devs, learn something new, and explore what's next. The post From coder to orchestrator: How agents shift the role of a developer appeared first on T…",
-      "publishedAt": "2026-08-11T18:38:17.000Z"
     }
   ]
 }

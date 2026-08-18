@@ -1,8 +1,38 @@
 {
   "category": "javascript",
   "label": "JavaScript",
-  "fetchedAt": "2026-08-17T06:24:56.103Z",
+  "fetchedAt": "2026-08-18T06:19:30.612Z",
   "items": [
+    {
+      "slug": "37eb07fcff3ff0f805078ca6",
+      "guid": "https://flaviocopes.com/html-dialog-tag/",
+      "title": "The HTML dialog tag",
+      "link": "https://flaviocopes.com/html-dialog-tag/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Learn the native HTML dialog element for accessible modals: showModal, close, form method dialog, backdrop styling, and why it beats div modals.",
+      "publishedAt": "2026-08-18T05:00:00.000Z"
+    },
+    {
+      "slug": "3a43c1ed87f3d4aabb8421cf",
+      "guid": "https://flaviocopes.com/css-has-selector/",
+      "title": "The CSS :has() selector",
+      "link": "https://flaviocopes.com/css-has-selector/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "The CSS parent selector styles an element from what is inside it. Forms, cards, previous siblings, quantity queries, and when JavaScript is still better.",
+      "publishedAt": "2026-08-17T09:00:00.000Z"
+    },
+    {
+      "slug": "eef6a7381c9672ec15906417",
+      "guid": "https://flaviocopes.com/claude-system-prompts/",
+      "title": "What I learned reading Claude's system prompts",
+      "link": "https://flaviocopes.com/claude-system-prompts/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Claude's published system prompts show how an AI product combines rules, current facts, safety checks, tools, and a model behind the scenes.",
+      "publishedAt": "2026-08-17T07:00:00.000Z"
+    },
     {
       "slug": "e1c42ead3ad844d77c806c14",
       "guid": "https://flaviocopes.com/css-container-queries/",
@@ -304,36 +334,6 @@
       "publishedAt": "2026-08-08T05:00:00.000Z"
     },
     {
-      "slug": "86a7635b3e06dacfb1a4a58b",
-      "guid": "https://flaviocopes.com/spf-dkim-dmarc-explained/",
-      "title": "SPF, DKIM, and DMARC explained for developers",
-      "link": "https://flaviocopes.com/spf-dkim-dmarc-explained/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Why email from your domain lands in spam, what SPF, DKIM and DMARC each verify, example DNS records dissected, and the rollout order.",
-      "publishedAt": "2026-08-08T05:00:00.000Z"
-    },
-    {
-      "slug": "e3c2a0f3fe181e447e38c91e",
-      "guid": "https://flaviocopes.com/celld/",
-      "title": "celld: self-hosted, distributed Durable Objects",
-      "link": "https://flaviocopes.com/celld/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "celld runs Workers and Durable Objects on your own machines, with one SQLite database per cell and S3-compatible storage.",
-      "publishedAt": "2026-08-07T18:00:00.000Z"
-    },
-    {
-      "slug": "88c4dbc0fa2685363c64c094",
-      "guid": "https://flaviocopes.com/vercel-observability/",
-      "title": "Vercel Observability tutorial: debug a slow or failing Function",
-      "link": "https://flaviocopes.com/vercel-observability/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Debug a slow or failing Vercel Function with structured runtime logs, route metrics, CLI filters, request traces, and a verified fix.",
-      "publishedAt": "2026-08-07T13:00:00.000Z"
-    },
-    {
       "slug": "829eb35ddebcf37308107ff1",
       "guid": "https://blog.appsignal.com/2026/08/05/from-claude-code-to-production-a-monitoring-checklist-for-python-developers.html",
       "title": "From Claude Code to Production: A Monitoring Checklist for Python Developers",
@@ -342,16 +342,6 @@
       "sourceUrl": "https://blog.appsignal.com/feed.xml",
       "summary": "Python is the native language of AI-assisted development. Models are really good at writing it, and a lot of people are now shipping it without ever having written much Python themselves. The whole thing is really simple. You prompt an app, Claude Code or Cursor produces a worki…",
       "publishedAt": "2026-08-05T00:00:00.000Z"
-    },
-    {
-      "slug": "a6948bff13efd593331ddeab",
-      "guid": "https://javascriptweekly.com/issues/797",
-      "title": "Reimplementing htmx from scratch",
-      "link": "https://javascriptweekly.com/issues/797",
-      "source": "JavaScript Weekly",
-      "sourceUrl": "https://javascriptweekly.com/rss/1b4m1h9j",
-      "summary": "#​797 — August 4, 2026 Read on the Web JavaScript Weekly Next.js 16.3 Released — The newly expanded Next.js team (now including Dan Abramov and 𝕏 Pete Hunt!) has dropped the latest version of the popular React framework, complete with faster builds, optional TypeScript 7 type c…",
-      "publishedAt": "2026-08-04T00:00:00.000Z"
     }
   ]
 }
