@@ -53,7 +53,7 @@ export function TechFilter({ featured, archive }: Props) {
                     >
                         All
                     </button>
-                    {allTags.map((slug) => (
+                    {allTags.slice(0, 100).map((slug) => (
                         <button
                             key={slug}
                             type="button"

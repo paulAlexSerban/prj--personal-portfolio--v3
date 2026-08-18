@@ -18,7 +18,7 @@ const db = openDb();
 const profile = getProfile(db);
 const experience = getExperienceTimeline(db);
 const skillGroups = getSkillsGrouped(db);
-const featured = getFeaturedPreview(db,8);
+const featured = getFeaturedPreview(db,6);
 const featuredTags = buildProjectTagsMap(db, featured);
 const featuredPost = getFeaturedPost(db);
 const recentPosts = getRecentPosts(db, 8);
@@ -69,9 +69,9 @@ const sameAs = [profile?.github_url, profile?.linkedin_url].filter((url): url is
                     </div>
                     <a class="stamp stamp-ghost px-4 py-1.5 text-sm" href={siteUrls.portfolio}>View all &rarr;</a>
                 </div>
-                <ul class="m-0 list-none columns-1 gap-5 p-0 sm:columns-2 lg:columns-3">
+                <ul class="m-0 grid list-none grid-cols-[repeat(auto-fill,minmax(18rem,1fr))] gap-8 p-0">
                     {featured.map((project) => (
-                        <li class="mb-5 break-inside-avoid">
+                        <li class="mb-5">
                             <CaseStudyCard project={project} tags={featuredTags.get(project.slug) ?? []} featured />
                         </li>
                     ))}
