@@ -107,6 +107,8 @@ export const projects = sqliteTable('projects', {
     metrics: text('metrics'), // JSON object of key metrics
     repo_url: text('repo_url'),
     demo_url: text('demo_url'),
+    maturity: text('maturity').notNull().default('implemented'), // concept | prototype | implemented | production-grade
+    scope: text('scope').notNull().default('service'), // component | service | system
     status: text('status').notNull(),
     pinned: integer('pinned', { mode: 'boolean' }).default(false),
     priority: integer('priority').default(0),

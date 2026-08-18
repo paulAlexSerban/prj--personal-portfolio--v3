@@ -116,6 +116,22 @@ const serialiseMetrics = (raw: unknown): string | undefined => {
     return undefined;
 };
 
+const PROJECT_MATURITY = ['concept', 'prototype', 'implemented', 'production-grade'] as const;
+const PROJECT_SCOPE = ['component', 'service', 'system'] as const;
+const DEFAULT_MATURITY = 'implemented';
+const DEFAULT_SCOPE = 'service';
+
+type ProjectMaturity = (typeof PROJECT_MATURITY)[number];
+type ProjectScope = (typeof PROJECT_SCOPE)[number];
+
+const enumValue = <T extends string>(raw: unknown, allowed: readonly T[], fallback: T, field: string, slug: string): T => {
+    const value = str(raw)?.toLowerCase().trim();
+    if (!value) return fallback;
+    if ((allowed as readonly string[]).includes(value)) return value as T;
+    console.warn(`[normalise] Project "${slug}": invalid ${field} "${raw}" - defaulting to "${fallback}"`);
+    return fallback;
+};
+
 const normaliseProject = (file: ParsedFile): NewProjectRow => {
     const fm = file.frontmatter;
     return {
@@ -133,6 +149,8 @@ const normaliseProject = (file: ParsedFile): NewProjectRow => {
         metrics: serialiseMetrics(fm['metrics']),
         repo_url: str(fm['repo_url']),
         demo_url: str(fm['demo_url']),
+        maturity: enumValue<ProjectMaturity>(fm['maturity'], PROJECT_MATURITY, DEFAULT_MATURITY, 'maturity', file.slug),
+        scope: enumValue<ProjectScope>(fm['scope'], PROJECT_SCOPE, DEFAULT_SCOPE, 'scope', file.slug),
         status: str(fm['status']) ?? 'draft',
         pinned: bool(fm['pinned']),
         priority: typeof fm['priority'] === 'number' ? fm['priority'] : 0,
