@@ -2,7 +2,7 @@ import { useMemo, useState } from 'react';
 import type { ProjectRow, TagRow } from '@prj--personal-portfolio--v3/shared--db-schema';
 import { CoverImage } from '@prj--personal-portfolio--v3/shared--ui/cover-image-ui';
 
-import { projectAxisBadge } from '@/lib/project-axis.ts';
+import { AxisBadge } from './AxisBadge.tsx';
 import { assetUrl, siteUrls } from '@/lib/urls.ts';
 
 export interface ProjectWithTags {
@@ -138,7 +138,7 @@ function ProjectCardInner({ project, tags }: { project: ProjectRow; tags: TagRow
                     {project.title}
                 </a>
             </h3>
-            <p className="kicker mt-1 text-[12px]">{projectAxisBadge(project)}</p>
+            <AxisBadge className="mt-1" scope={project.scope} maturity={project.maturity} />
             {project.problem && <p className="mt-2 text-sm text-charcoal line-clamp-2">{project.problem}</p>}
             <ul className="mt-3 flex list-none flex-wrap gap-[0.4rem] p-0">
                 {tags.slice(0, 4).map((t) => (
