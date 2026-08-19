@@ -6,6 +6,7 @@ export type FeedConfig = {
 export type CategoryFeedFile = {
     category: string;
     label: string;
+    sort_order?: number;
     feeds: FeedConfig[];
 };
 

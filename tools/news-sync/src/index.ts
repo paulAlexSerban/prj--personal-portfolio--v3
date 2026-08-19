@@ -10,6 +10,8 @@ import cleanRepoDir from './helpers/cleanRepoDir.ts';
 
 dotenv.config({ path: path.resolve('../../.env') });
 
+const CONTENT_DIR = path.resolve(process.env['CONTENT_DIR'] ?? '../../content/live/content/publish');
+const FEEDS_DIR = path.join(CONTENT_DIR, 'feeds');
 const CACHE_DIR = path.resolve(process.env['NEWS_CACHE_DIR'] ?? '../../content/news/cache');
 const RETENTION_DAYS = Number(process.env['NEWS_RETENTION_DAYS'] ?? 14);
 
@@ -21,7 +23,7 @@ const tasks: Task<unknown>[] = [
     },
     {
         name: 'Load Feed Configs',
-        action: () => loadFeedConfigs(),
+        action: () => loadFeedConfigs(FEEDS_DIR),
         dependsOn: ['Clean Cache Directory'],
     },
     {
@@ -51,7 +53,7 @@ const tasks: Task<unknown>[] = [
 ];
 
 const main = async () => {
-    console.log(`[news-sync] retention=${RETENTION_DAYS}d cache=${CACHE_DIR}`);
+    console.log(`[news-sync] retention=${RETENTION_DAYS}d cache=${CACHE_DIR} feeds=${FEEDS_DIR}`);
     const executor = taskManager().init(tasks);
     await executor.execute();
 };

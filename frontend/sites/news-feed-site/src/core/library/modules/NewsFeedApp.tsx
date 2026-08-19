@@ -3,7 +3,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { NewsCard } from '@/library/modules/NewsCard.tsx';
 import { NewsPagination } from '@/library/modules/NewsPagination.tsx';
 import { itemsForCategory, loadNewsBundle, type NewsIndexCategory, type NewsItem } from '@/lib/loadNews.ts';
-import { categoryLabel, pageCount } from '@/lib/queries/news.ts';
+import { pageCount } from '@/lib/queries/news.ts';
 import { PAGE_SIZE, siteUrls } from '@/lib/urls.ts';
 
 function pageFromSearch(): number {
@@ -21,9 +21,10 @@ function writePageToUrl(nextPage: number): void {
 
 interface Props {
     category?: string;
+    categoryLabel?: string;
 }
 
-export function NewsFeedApp({ category }: Props) {
+export function NewsFeedApp({ category, categoryLabel }: Props) {
     const [status, setStatus] = useState<'loading' | 'error' | 'ready'>('loading');
     const [categories, setCategories] = useState<NewsIndexCategory[]>([]);
     const [items, setItems] = useState<NewsItem[]>([]);
@@ -71,7 +72,7 @@ export function NewsFeedApp({ category }: Props) {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     };
 
-    const label = category ? categoryLabel(category) : null;
+    const label = category ? (categoryLabel ?? categories.find((c) => c.slug === category)?.label ?? category) : null;
     const showCategoryOnCards = !category;
 
     return (
