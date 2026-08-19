@@ -1,14 +1,15 @@
 ---
 import { FooterSiteLinks, SocialLinks, buildSiteTabs } from '@prj--personal-portfolio--v3/shared--navigation';
 import { NewsIntroTrigger } from '@/library/modules/NewsIntroTrigger.tsx';
-import { CATEGORY_LABEL, CATEGORY_ORDER } from '@/lib/queries/news.ts';
+import { loadNewsIndex } from '@/lib/loadNewsIndex.ts';
 import { externalLinkAttrs, siteUrls } from '@/lib/urls.ts';
 
+const index = await loadNewsIndex();
 const footerLinks = [
     { label: 'Latest', href: siteUrls.home },
-    ...CATEGORY_ORDER.slice(0, 4).map((slug) => ({
-        label: CATEGORY_LABEL[slug] ?? slug,
-        href: siteUrls.category(slug),
+    ...index.categories.slice(0, 4).map((category) => ({
+        label: category.label,
+        href: siteUrls.category(category.slug),
     })),
 ];
 

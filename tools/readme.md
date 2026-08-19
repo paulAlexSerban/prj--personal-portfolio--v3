@@ -15,6 +15,7 @@ For the agent-oriented version (scanner internals, tag handling, conventions), s
 | [`mdx-ingest`](./mdx-ingest/readme.md)     | MDX (posts, projects, coursework, **questions**) -> `content.db`.    |
 | [`json-ingest`](./json-ingest/readme.md)   | JSON (profile, skills, pages) -> `content.db`.                       |
 | [`quiz-export`](./quiz-export/readme.md)   | `content.db` -> static JSON for the quiz web app.                    |
+| [`news-sync`](./news-sync/readme.md)       | RSS lists from `publish/feeds/` -> `content/news/cache/`.            |
 | [`indexnow`](./indexnow/readme.md)         | After prod deploy: write key file + submit sitemap URLs to IndexNow. |
 
 ## How they fit together

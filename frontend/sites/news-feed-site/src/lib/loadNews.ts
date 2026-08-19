@@ -1,5 +1,3 @@
-import { CATEGORY_ORDER } from '@/lib/queries/news.ts';
-
 export type CachedNewsItem = {
     slug: string;
     guid: string;
@@ -13,6 +11,7 @@ export type CachedNewsItem = {
 
 export type NewsItem = CachedNewsItem & {
     category: string;
+    categoryLabel: string;
 };
 
 export type NewsIndexCategory = {
@@ -63,17 +62,6 @@ function sortItems(items: NewsItem[]): NewsItem[] {
     });
 }
 
-function sortCategories(categories: NewsIndexCategory[]): NewsIndexCategory[] {
-    const order = CATEGORY_ORDER as readonly string[];
-    return [...categories].sort((a, b) => {
-        const ia = order.indexOf(a.slug);
-        const ib = order.indexOf(b.slug);
-        const sa = ia === -1 ? Number.MAX_SAFE_INTEGER : ia;
-        const sb = ib === -1 ? Number.MAX_SAFE_INTEGER : ib;
-        return sa - sb;
-    });
-}
-
 /** Load index.json plus every category file. Cached for the lifetime of the page. */
 export async function loadNewsBundle(): Promise<NewsBundle> {
     if (bundleCache) return bundleCache;
@@ -87,12 +75,12 @@ export async function loadNewsBundle(): Promise<NewsBundle> {
     const items: NewsItem[] = [];
     for (const file of files) {
         for (const item of file.items) {
-            items.push({ ...item, category: file.category });
+            items.push({ ...item, category: file.category, categoryLabel: file.label });
         }
     }
 
     bundleCache = {
-        index: { ...index, categories: sortCategories(index.categories) },
+        index,
         items: sortItems(items),
     };
     return bundleCache;

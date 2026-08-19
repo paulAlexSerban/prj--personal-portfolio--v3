@@ -7,7 +7,7 @@ const MIN_ITEMS_PER_CATEGORY = 10;
 
 /**
  * Cross-category dedupe by guid, then by normalized link.
- * First-seen category wins (CATEGORY_ORDER from loadFeedConfigs).
+ * First-seen category wins (array order from loadFeedConfigs: sort_order then filename).
  */
 export function dedupeAcrossCategories(categories: FetchedCategory[]): FetchedCategory[] {
     const seenGuids = new Set<string>();

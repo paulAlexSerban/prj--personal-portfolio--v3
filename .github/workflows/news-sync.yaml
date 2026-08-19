@@ -27,8 +27,15 @@ jobs:
             - name: Setup monorepo
               uses: ./.github/actions/setup-monorepo
 
+            - name: Sync live content
+              env:
+                  GITHUB_TOKEN: ${{ secrets.CONTENT_REPO_TOKEN }}
+                  CONTENT_REPO_GIT_URL: https://github.com/paulAlexSerban/content--paulserban.eu.git
+              run: pnpm --filter @prj--personal-portfolio--v3/tools--content-sync start
+
             - name: Fetch RSS feeds into content/news/cache
               env:
+                  CONTENT_DIR: ${{ github.workspace }}/content/live/content/publish
                   NEWS_RETENTION_DAYS: '14'
               run: pnpm --filter @prj--personal-portfolio--v3/tools--news-sync sync
 

@@ -160,7 +160,8 @@ GitHub can mint an OIDC token; the IAM role trust policy only allows
 ### News-data environment (`.github/workflows/news-sync.yaml`)
 
 The news-sync workflow is **isolated** from site deploys: it does not trigger CI,
-release, or Pages. Create a GitHub **Environment** named `news-data` with **no**
+release, or Pages. It clones the private content repo (for `content/publish/feeds/`)
+then fetches RSS. Create a GitHub **Environment** named `news-data` with **no**
 required reviewers, and set:
 
 **Variables** (`Settings -> Environments -> news-data -> Variables`):
@@ -171,6 +172,9 @@ required reviewers, and set:
 | `AWS_DEPLOY_ROLE_ARN`                  | `terraform output github_actions_news_sync_role_arn`    |                            |
 | `NEWS_DATA_S3_BUCKET_NAME`             | `terraform output news_data_bucket_name`                |                            |
 | `NEWS_DATA_CLOUDFRONT_DISTRIBUTION_ID` | `terraform output news_data_cloudfront_distribution_id` |                            |
+
+Also ensure the repo secret `CONTENT_REPO_TOKEN` is available so the workflow can
+clone `content--paulserban.eu` (RSS feed lists live there under `content/publish/feeds/`).
 
 Also create an empty `news-cache` branch once (the workflow will push cache
 commits there, never to `main`):

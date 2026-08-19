@@ -1,6 +1,6 @@
 # JSON content authoring guide
 
-Guide for the **content repository** (`content--paulserban.eu`). Site config that is **not** prose - profile, skills, career experience, and standalone pages - is authored as **JSON** under `content/publish/`. The monorepo ingests it via `tools/json-ingest`.
+Guide for the **content repository** (`content--paulserban.eu`). Site config that is **not** prose - profile, skills, career experience, standalone pages, and news RSS feed lists - is authored as **JSON** under `content/publish/`. Profile / skills / experience / pages are ingested via `tools/json-ingest`. RSS feed lists are read by `tools/news-sync` (not SQLite).
 
 **Not JSON:** posts, book notes, snippets, projects, coursework, and **all quiz questions** are **MDX** (`tools/mdx-ingest`). See [migrating-question-mdx-content](./migrating-question-mdx-content.md).
 
@@ -22,6 +22,9 @@ content/
     pages/
       about.json            ← one JSON file per page (optional)
       …
+    feeds/
+      tech.json             ← one JSON file per news category (news-sync)
+      …
     posts/                  ← MDX (not json-ingest)
     projects/               ← MDX (not json-ingest)
     questions/              ← MDX (not json-ingest)
@@ -35,6 +38,7 @@ content/
 | `skills/`               | `json-ingest` | `skills`     |
 | `experience/`           | `json-ingest` | `experience` |
 | `pages/`                | `json-ingest` | `pages`      |
+| `feeds/`                | `news-sync`   | (none — RSS input for the news CDN) |
 | everything else         | `mdx-ingest`  | (varies)     |
 
 Invalid or incomplete JSON is **skipped with a warning** - ingest continues for other files.
@@ -217,6 +221,45 @@ Each item:
 
 ---
 
+## `feeds/` - RSS categories for the news digest
+
+**Path:** `content/publish/feeds/{category}.json` - **one category per file**.
+
+These files are **not** ingested into SQLite. After `content-sync`, `tools/news-sync` scans `{CONTENT_DIR}/feeds/*.json` (default `content/live/content/publish/feeds`) and fetches the listed RSS/Atom URLs.
+
+Adding a feed URL or a new category file is a content-repo change. Do not add slugs to the portfolio monorepo.
+
+**Required:** `category`, `label`, `feeds` (array of `{ title, url }`)
+
+**Optional:** `sort_order` - lower first; ties fall back to filename. Controls tab order and cross-category dedupe (first-seen wins).
+
+```json
+{
+  "category": "web-dev",
+  "label": "Web Development",
+  "sort_order": 2,
+  "feeds": [
+    { "title": "CSS Tricks", "url": "https://css-tricks.com/feed/" }
+  ]
+}
+```
+
+| Field        | Type     | Notes                                              |
+| ------------ | -------- | -------------------------------------------------- |
+| `category`   | string   | URL slug (`/category/{category}/`)                 |
+| `label`      | string   | Display name in nav and chips                      |
+| `sort_order` | number   | Display / dedupe order (lower first; default `0`)  |
+| `feeds`      | object[] | Each item needs `title` and `url`                  |
+
+Invalid files are skipped with a warning. Duplicate feed URLs inside a category are skipped.
+
+```bash
+pnpm --filter @prj--personal-portfolio--v3/tools--content-sync start
+pnpm --filter @prj--personal-portfolio--v3/tools--news-sync sync
+```
+
+---
+
 ## Validation summary
 
 | Content type | Required fields                          |
@@ -225,6 +268,7 @@ Each item:
 | skill        | `name`, `category` (per array item)      |
 | experience   | `role`, `company`, `start_date`, `status` |
 | page         | `title`, `status`                        |
+| feed category| `category`, `label`, `feeds`             |
 
 Empty string counts as missing. Files with missing required fields are skipped.
 
@@ -254,5 +298,6 @@ pnpm --filter @prj--personal-portfolio--v3/tools--json-ingest start
 
 - [migrating-question-mdx-content](./migrating-question-mdx-content.md) - quiz question MDX
 - `tools/json-ingest/readme.md` - ingest task graph and CLI
+- `tools/news-sync/readme.md` - RSS feed lists under `publish/feeds/`
 - `tools/AGENTS.md` - full content pipeline
 - `shared/db-schema/index.ts` - `profile`, `skills`, `experience`, `pages` columns

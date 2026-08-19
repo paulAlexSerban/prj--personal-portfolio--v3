@@ -1,19 +1,23 @@
 ---
 import { NewsFeedApp } from '@/library/modules/NewsFeedApp.tsx';
 import BaseLayout from '@/system/templates/BaseTemplate.astro';
-import { CATEGORY_ORDER, categoryLabel } from '@/lib/queries/news.ts';
+import { loadNewsIndex } from '@/lib/loadNewsIndex.ts';
 
-export function getStaticPaths() {
-    return CATEGORY_ORDER.map((category) => ({ params: { category } }));
+export async function getStaticPaths() {
+    const index = await loadNewsIndex();
+    return index.categories.map((category) => ({
+        params: { category: category.slug },
+        props: { label: category.label },
+    }));
 }
 
 const category = Astro.params.category!;
-const label = categoryLabel(category);
+const { label } = Astro.props;
 ---
 
 <BaseLayout
     title={`${label} News | Paul Serban`}
     description={`Software engineering headlines in ${label}.`}
 >
-    <NewsFeedApp client:load category={category} />
+    <NewsFeedApp client:load category={category} categoryLabel={label} />
 </BaseLayout>

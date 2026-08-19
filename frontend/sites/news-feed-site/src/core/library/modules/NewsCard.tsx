@@ -1,4 +1,4 @@
-import { categoryLabel, formatNewsDate, isPublishedToday } from '@/lib/queries/news.ts';
+import { formatNewsDate, isPublishedToday } from '@/lib/queries/news.ts';
 import { siteUrls } from '@/lib/urls.ts';
 import type { NewsItem } from '@/lib/loadNews.ts';
 
@@ -24,7 +24,7 @@ export function NewsCard({ item, showCategory = true }: Props) {
                         href={siteUrls.category(item.category)}
                         className="kicker inline-block border border-ink px-2 py-0.5 text-[10px] text-ink no-underline hover:bg-ink hover:text-aged"
                     >
-                        {categoryLabel(item.category)}
+                        {item.categoryLabel}
                     </a>
                 )}
                 <p className="kicker mb-0 text-[10px]">

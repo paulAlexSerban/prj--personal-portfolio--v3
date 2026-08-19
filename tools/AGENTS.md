@@ -201,7 +201,7 @@ Required fields (missing -> skipped with warning):
 
 ## `@prj--personal-portfolio--v3/tools--news-sync` (`tools/news-sync/`)
 
-Fetches RSS/Atom feeds into `content/news/cache/*.json` (including `index.json`). Runs from `.github/workflows/news-sync.yaml` daily (`pnpm --filter ...tools--news-sync sync`), **not** from root `pnpm start`. The workflow commits the cache to the `news-cache` branch and uploads it to the `news-data.paulserban.eu` CDN.
+Fetches RSS/Atom feeds listed in `{CONTENT_DIR}/feeds/*.json` (content repo `content/publish/feeds/`, after `content-sync`) into `content/news/cache/*.json` (including `index.json`). Runs from `.github/workflows/news-sync.yaml` daily: `content-sync` then `pnpm --filter ...tools--news-sync sync`. **Not** from root `pnpm start`. The workflow commits the cache to the `news-cache` branch and uploads it to the `news-data.paulserban.eu` CDN. Category order comes from each file's `sort_order`; do not hardcode slugs in this package.
 
 ## `@prj--personal-portfolio--v3/tools--indexnow` (`tools/indexnow/`)
 

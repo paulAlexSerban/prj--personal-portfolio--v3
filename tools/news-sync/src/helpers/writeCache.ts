@@ -1,6 +1,5 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import { CATEGORY_ORDER } from './loadFeedConfigs.ts';
 import type { CategoryCacheFile, NewsIndexFile } from './types.ts';
 import type { FetchedCategory } from './fetchFeeds.ts';
 
@@ -34,17 +33,9 @@ export function writeCategoryCaches(outDir: string, categories: FetchedCategory[
         console.log(`[news-sync] wrote ${filePath} (${cat.items.length} items)`);
     }
 
-    const bySlug = new Map(categories.map((c) => [c.category, c]));
-    const ordered = CATEGORY_ORDER.map((slug) => bySlug.get(slug)).filter((c): c is FetchedCategory => Boolean(c));
-    for (const cat of categories) {
-        if (!(CATEGORY_ORDER as readonly string[]).includes(cat.category)) {
-            ordered.push(cat);
-        }
-    }
-
     const index: NewsIndexFile = {
         fetchedAt,
-        categories: ordered.map((c) => ({
+        categories: categories.map((c) => ({
             slug: c.category,
             label: c.label,
             count: c.items.length,
