@@ -1,13 +1,7 @@
 import { useState } from 'react';
 import { Modal } from '@prj--personal-portfolio--v3/shared--ui';
 
-import {
-    formatAxisLabel,
-    getAxisTerm,
-    getAxisTerms,
-    projectAxisHint,
-    type AxisTerm,
-} from '@/lib/project-axis.ts';
+import { formatAxisLabel, getAxisTerm, getAxisTerms, projectAxisHint, type AxisTerm } from '@/lib/project-axis.ts';
 
 interface Props {
     scope: string;
@@ -40,42 +34,18 @@ export function AxisBadge({ scope, maturity, className }: Props) {
     );
 }
 
-function AxisLabel({
-    term,
-    fallback,
-    onOpen,
-    expanded,
-}: {
-    term: AxisTerm | undefined;
-    fallback: string;
-    onOpen: (id: string) => void;
-    expanded: boolean;
-}) {
+function AxisLabel({ term, fallback, onOpen, expanded }: { term: AxisTerm | undefined; fallback: string; onOpen: (id: string) => void; expanded: boolean }) {
     if (!term) {
         return <span className="kicker text-[12px]">{formatAxisLabel(fallback)}</span>;
     }
     return (
-        <button
-            type="button"
-            className={labelButtonClass}
-            aria-haspopup="dialog"
-            aria-expanded={expanded}
-            onClick={() => onOpen(term.id)}
-        >
+        <button type="button" className={labelButtonClass} aria-haspopup="dialog" aria-expanded={expanded} onClick={() => onOpen(term.id)}>
             {term.label}
         </button>
     );
 }
 
-function AxisGlossaryModal({
-    term,
-    onClose,
-    onSelect,
-}: {
-    term: AxisTerm | undefined;
-    onClose: () => void;
-    onSelect: (id: string) => void;
-}) {
+function AxisGlossaryModal({ term, onClose, onSelect }: { term: AxisTerm | undefined; onClose: () => void; onSelect: (id: string) => void }) {
     if (!term) return null;
 
     const siblings = getAxisTerms(term.axis);
@@ -96,15 +66,10 @@ function AxisGlossaryModal({
                             {sibling.label}
                         </span>
                     ) : (
-                        <button
-                            key={sibling.id}
-                            type="button"
-                            className={labelButtonClass}
-                            onClick={() => onSelect(sibling.id)}
-                        >
+                        <button key={sibling.id} type="button" className={labelButtonClass} onClick={() => onSelect(sibling.id)}>
                             {sibling.label}
                         </button>
-                    ),
+                    )
                 )}
             </div>
         </Modal>
