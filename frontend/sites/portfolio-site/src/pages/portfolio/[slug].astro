@@ -6,6 +6,7 @@ import { CoverImage } from '@prj--personal-portfolio--v3/shared--ui/cover-image-
 import * as runtime from 'react/jsx-runtime';
 
 import TagList from '@/library/components/TagList.astro';
+import { AxisBadge } from '@/library/modules/AxisBadge.tsx';
 import BaseLayout from '@/system/templates/BaseTemplate.astro';
 
 import { closeConnection, openDb } from '@/lib/db.ts';
@@ -87,6 +88,7 @@ const publishedTime = project.updated_at instanceof Date ? project.updated_at.to
 
     <header class="mb-8 border-b-2 border-ink pb-6">
         <h1 class="m-0 font-display text-[clamp(2rem,5vw,3rem)] font-bold">{project.title}</h1>
+        <AxisBadge client:load className="mt-2" scope={project.scope} maturity={project.maturity} />
         {project.subheading && <p class="deck mt-2 text-lg">{project.subheading}</p>}
         {project.role && <p class="mt-1 text-sm text-slate-ink">Role: {project.role}</p>}
         <div class="mt-4"><TagList tags={tags} /></div>
