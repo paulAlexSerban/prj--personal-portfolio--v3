@@ -1,5 +1,18 @@
 # @prj--personal-portfolio--v3/frontend--news-feed-site
 
+## 0.5.0
+
+### Minor Changes
+
+- e8b1b57: Read RSS feed lists from the content repo (`content/publish/feeds/`) instead of hardcoding categories in the news-sync package and news-feed site.
+
+### Patch Changes
+
+- bb56ac5: Import Modal from a shared-ui subpath so AxisBadge (and NewsIntroModal) do not pull isomorphic-dompurify into the client island.
+- Updated dependencies [bb56ac5]
+    - @prj--personal-portfolio--v3/shared--ui@1.3.2
+    - @prj--personal-portfolio--v3/shared--navigation@1.2.3
+
 ## 0.4.0
 
 ### Minor Changes

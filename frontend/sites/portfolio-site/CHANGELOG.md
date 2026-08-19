@@ -1,5 +1,14 @@
 # @prj--personal-portfolio--v3/frontend--portfolio-site
 
+## 0.3.1
+
+### Patch Changes
+
+- bb56ac5: Import Modal from a shared-ui subpath so AxisBadge (and NewsIntroModal) do not pull isomorphic-dompurify into the client island.
+- Updated dependencies [bb56ac5]
+    - @prj--personal-portfolio--v3/shared--ui@1.3.2
+    - @prj--personal-portfolio--v3/shared--navigation@1.2.3
+
 ## 0.3.0
 
 ### Minor Changes

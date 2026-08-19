@@ -1,5 +1,15 @@
 # @prj--personal-portfolio--v3/tools--news-sync
 
+## 1.3.0
+
+### Minor Changes
+
+- e8b1b57: Read RSS feed lists from the content repo (`content/publish/feeds/`) instead of hardcoding categories in the news-sync package and news-feed site.
+
+### Patch Changes
+
+- 9f1a587: add new feed - 30 seconds of code
+
 ## 1.2.1
 
 ### Patch Changes
