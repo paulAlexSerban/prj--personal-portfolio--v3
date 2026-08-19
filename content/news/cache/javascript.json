@@ -1,8 +1,28 @@
 {
   "category": "javascript",
   "label": "JavaScript",
-  "fetchedAt": "2026-08-18T06:19:30.612Z",
+  "fetchedAt": "2026-08-19T06:20:19.918Z",
   "items": [
+    {
+      "slug": "96193a2554d852bab3e303eb",
+      "guid": "https://flaviocopes.com/popover-api/",
+      "title": "The Popover API",
+      "link": "https://flaviocopes.com/popover-api/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Build native browser popovers with the Popover API using HTML attributes, auto and manual modes, CSS backdrop styling, and JavaScript show and hide methods.",
+      "publishedAt": "2026-08-19T05:00:00.000Z"
+    },
+    {
+      "slug": "a64163ddff0a3d32451a9640",
+      "guid": "https://flaviocopes.com/macos-app-command-line-tools-path/",
+      "title": "Find command-line tools from a macOS app",
+      "link": "https://flaviocopes.com/macos-app-command-line-tools-path/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Fix tools that work in Terminal but disappear from Finder-launched macOS apps by locating binaries and building an explicit child-process PATH.",
+      "publishedAt": "2026-08-18T13:00:00.000Z"
+    },
     {
       "slug": "37eb07fcff3ff0f805078ca6",
       "guid": "https://flaviocopes.com/html-dialog-tag/",
@@ -12,6 +32,16 @@
       "sourceUrl": "https://flaviocopes.com/rss.xml",
       "summary": "Learn the native HTML dialog element for accessible modals: showModal, close, form method dialog, backdrop styling, and why it beats div modals.",
       "publishedAt": "2026-08-18T05:00:00.000Z"
+    },
+    {
+      "slug": "2f1e4101f82d10667b62e9d0",
+      "guid": "https://blog.appsignal.com/2026/08/18/why-you-shouldnt-vibe-code-your-monitoring-tool.html",
+      "title": "Why You Shouldn't Vibe Code Your Monitoring Tool",
+      "link": "https://blog.appsignal.com/2026/08/18/why-you-shouldnt-vibe-code-your-monitoring-tool.html",
+      "source": "AppSignal",
+      "sourceUrl": "https://blog.appsignal.com/feed.xml",
+      "summary": "TL;DR Vibe coding makes a monitoring pipeline look finished in a single afternoon. The hard parts (scale, reliability, error grouping, compliance) show up months later, usually during the incident you’ve built the tool to catch. For most teams, a managed tool is the cheaper, fas…",
+      "publishedAt": "2026-08-18T00:00:00.000Z"
     },
     {
       "slug": "3a43c1ed87f3d4aabb8421cf",
@@ -312,36 +342,6 @@
       "sourceUrl": "https://flaviocopes.com/rss.xml",
       "summary": "Kitesurf is a browser built for AI agents. Learn how it runs on Cloudflare Workers, how it compares to Chromium, and how to use it.",
       "publishedAt": "2026-08-08T09:00:00.000Z"
-    },
-    {
-      "slug": "d126e1f4aa03968e90bfcb9e",
-      "guid": "https://flaviocopes.com/bb-agentic-ide/",
-      "title": "How bb, the programmable IDE for coding agents, is built",
-      "link": "https://flaviocopes.com/bb-agentic-ide/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "I read the bb source to follow one coding-agent task through its server, SQLite database, host daemon, provider runtime, event stream, and app.",
-      "publishedAt": "2026-08-08T07:30:00.000Z"
-    },
-    {
-      "slug": "9806ad7aa42196496ca604d2",
-      "guid": "https://flaviocopes.com/hono/",
-      "title": "Hono: a modern web framework for JavaScript",
-      "link": "https://flaviocopes.com/hono/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Hono is a lightweight JavaScript web framework built on Web Standards. Create an app with Bun, handle routing, read request bodies, and send responses.",
-      "publishedAt": "2026-08-08T05:00:00.000Z"
-    },
-    {
-      "slug": "829eb35ddebcf37308107ff1",
-      "guid": "https://blog.appsignal.com/2026/08/05/from-claude-code-to-production-a-monitoring-checklist-for-python-developers.html",
-      "title": "From Claude Code to Production: A Monitoring Checklist for Python Developers",
-      "link": "https://blog.appsignal.com/2026/08/05/from-claude-code-to-production-a-monitoring-checklist-for-python-developers.html",
-      "source": "AppSignal",
-      "sourceUrl": "https://blog.appsignal.com/feed.xml",
-      "summary": "Python is the native language of AI-assisted development. Models are really good at writing it, and a lot of people are now shipping it without ever having written much Python themselves. The whole thing is really simple. You prompt an app, Claude Code or Cursor produces a worki…",
-      "publishedAt": "2026-08-05T00:00:00.000Z"
     }
   ]
 }
