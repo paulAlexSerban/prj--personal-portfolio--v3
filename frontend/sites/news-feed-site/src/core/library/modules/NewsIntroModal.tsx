@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { Modal } from '@prj--personal-portfolio--v3/shared--ui';
+import { Modal } from '@prj--personal-portfolio--v3/shared--ui/modal';
 
 import { NEWS_INTRO_DISMISSED_KEY, NEWS_INTRO_OPEN_EVENT } from '@/library/modules/newsIntro.ts';
 

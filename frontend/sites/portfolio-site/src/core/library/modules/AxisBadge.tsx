@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Modal } from '@prj--personal-portfolio--v3/shared--ui';
+import { Modal } from '@prj--personal-portfolio--v3/shared--ui/modal';
 
 import { formatAxisLabel, getAxisTerm, getAxisTerms, projectAxisHint, type AxisTerm } from '@/lib/project-axis.ts';
 
