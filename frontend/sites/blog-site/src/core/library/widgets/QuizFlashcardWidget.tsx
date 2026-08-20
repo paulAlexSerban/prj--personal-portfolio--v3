@@ -77,7 +77,7 @@ export function QuizFlashcardWidget({ slug, questions, totalQuestionCount, quizA
                 />
             ) : (
                 <>
-                    <p className="smallcaps mb-3 text-[10px] text-slate-ink">
+                    <p className="smallcaps mb-3 text-base text-slate-ink">
                         A quick flashcard preview - one example of each question type in this post. This is a demo of what you&apos;ll find in the full quiz app.
                     </p>
                     <div className="mb-4 flex items-center justify-between text-xs" style={{ fontFamily: 'var(--font-mono)' }}>
