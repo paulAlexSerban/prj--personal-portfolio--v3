@@ -1,5 +1,11 @@
 # @prj--personal-portfolio--v3/shared--ui
 
+## 1.4.0
+
+### Minor Changes
+
+- 159da79: quiz widget and favicons
+
 ## 1.3.2
 
 ### Patch Changes

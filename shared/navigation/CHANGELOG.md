@@ -1,5 +1,12 @@
 # @prj--personal-portfolio--v3/shared--navigation
 
+## 1.2.4
+
+### Patch Changes
+
+- Updated dependencies [159da79]
+    - @prj--personal-portfolio--v3/shared--ui@1.4.0
+
 ## 1.2.3
 
 ### Patch Changes
