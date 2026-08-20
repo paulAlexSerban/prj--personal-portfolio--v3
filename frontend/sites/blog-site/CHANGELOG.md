@@ -1,5 +1,11 @@
 # @prj--personal-portfolio--v3/frontend--blog-site
 
+## 0.4.1
+
+### Patch Changes
+
+- 9ceb809: missing param issue
+
 ## 0.4.0
 
 ### Minor Changes
