@@ -33,7 +33,12 @@ export default defineConfig({
     tsconfigPaths(),
     VitePWA({
       registerType: "autoUpdate",
-      includeAssets: ["favicon.ico", "favicon.svg", "apple-touch-icon.png"],
+      includeAssets: [
+        "favicon.ico",
+        "favicon.svg",
+        "apple-touch-icon.png",
+        "maskable-icon-512x512.png",
+      ],
       manifest: {
         name: "The Typeset Review - Flashcards",
         short_name: "The Typeset Review",
@@ -47,7 +52,7 @@ export default defineConfig({
           { src: "pwa-192x192.png", sizes: "192x192", type: "image/png" },
           { src: "pwa-512x512.png", sizes: "512x512", type: "image/png" },
           {
-            src: "pwa-512x512.png",
+            src: "maskable-icon-512x512.png",
             sizes: "512x512",
             type: "image/png",
             purpose: "maskable",
