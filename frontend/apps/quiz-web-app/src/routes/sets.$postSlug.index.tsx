@@ -32,12 +32,25 @@ import { cardRetrievability } from "@/algorithms/scheduler";
 import type { PostConfigOverride } from "@/store/types";
 import { todayISO } from "@/utils/dates";
 
+type SetDetailSearch = {
+  add?: boolean;
+  [key: string]: unknown;
+};
+
 export const Route = createFileRoute("/sets/$postSlug/")({
+  validateSearch: (search: Record<string, unknown>): SetDetailSearch => {
+    const { add, ...rest } = search;
+    if (add === "1" || add === true) {
+      return { ...rest, add: true };
+    }
+    return rest;
+  },
   component: SetDetailPage,
 });
 
 function SetDetailPage() {
   const { postSlug } = Route.useParams();
+  const { add } = Route.useSearch();
   const nav = useNavigate();
 
   const cardStates = useStore((s) => s.cardStates);
@@ -51,7 +64,7 @@ function SetDetailPage() {
   const resetPost = useStore((s) => s.resetPost);
   const ignoreQuestion = useStore((s) => s.ignoreQuestion);
   const unignoreQuestion = useStore((s) => s.unignoreQuestion);
-  const { removeFromStudySet } = useStudySetActions();
+  const { addToStudySet, removeFromStudySet } = useStudySetActions();
 
   const [meta, setMeta] = useState<ExportedPostEntry | null>(null);
   const [questions, setQuestions] = useState<ExportedQuestion[]>([]);
@@ -62,8 +75,44 @@ function SetDetailPage() {
   const [confirmRemove, setConfirmRemove] = useState(false);
   const [confirmReset, setConfirmReset] = useState(false);
   const [preview, setPreview] = useState<ExportedQuestion | null>(null);
+  const [autoAdding, setAutoAdding] = useState(false);
 
   const isAdded = addedPosts.includes(postSlug);
+
+  function stripAddParam() {
+    nav({
+      from: "/sets/$postSlug/",
+      search: (prev) => {
+        const { add: _add, ...rest } = prev;
+        return rest;
+      },
+      replace: true,
+    });
+  }
+
+  useEffect(() => {
+    if (!add) return;
+    if (addedPosts.includes(postSlug)) {
+      stripAddParam();
+      return;
+    }
+    let cancelled = false;
+    setAutoAdding(true);
+    // NOTE: trusting a URL param to mutate local state is only safe because
+    // this writes to the current visitor's own unauthenticated localStorage.
+    // Once accounts/login exist, do NOT keep this pattern for server-side
+    // mutations - move the "add on arrival" intent into the post-login
+    // redirect flow instead of a client-trusted query flag.
+    addToStudySet(postSlug).finally(() => {
+      if (cancelled) return;
+      setAutoAdding(false);
+      stripAddParam();
+    });
+    return () => {
+      cancelled = true;
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [add, postSlug]);
 
   useEffect(() => {
     let cancelled = false;
@@ -153,7 +202,15 @@ function SetDetailPage() {
     setPage(1);
   }, [search]);
 
-  if (!isAdded && !loading) {
+  if ((add || autoAdding) && !isAdded) {
+    return (
+      <PageLayout>
+        <p className="italic text-[var(--slate)]">Adding this set for you…</p>
+      </PageLayout>
+    );
+  }
+
+  if (!isAdded && !loading && !add && !autoAdding) {
     return (
       <PageLayout>
         <p className="italic mb-4">This post is not in your study set.</p>
