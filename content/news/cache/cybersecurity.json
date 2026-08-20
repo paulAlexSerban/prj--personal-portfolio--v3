@@ -1,8 +1,228 @@
 {
   "category": "cybersecurity",
   "label": "Cybersecurity",
-  "fetchedAt": "2026-08-19T06:20:19.918Z",
+  "fetchedAt": "2026-08-20T06:21:38.492Z",
   "items": [
+    {
+      "slug": "b1da55ba01341c8882c40cb1",
+      "guid": "https://thehackernews.com/2026/08/elementor-pro-flaw-could-let.html",
+      "title": "Elementor Pro Flaw Could Let Unauthenticated Attackers Upload PHP and Execute Code",
+      "link": "https://thehackernews.com/2026/08/elementor-pro-flaw-could-let.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "Cybersecurity researchers have disclosed details of a critical flaw in the Elementor Pro WordPress plugin that, if successfully exploited, could lead to remote code execution. The vulnerability, tracked as CVE-2026-32475, carries a CVSS score of 9.0 out of 10.0. It has been desc…",
+      "publishedAt": "2026-08-20T06:04:34.000Z"
+    },
+    {
+      "slug": "c0ea9ea955ae8357d6bd1e66",
+      "guid": "https://www.cio.com/article/4211674/when-ai-explains-its-decision-humans-may-stop-thinking-independently.html",
+      "title": "When AI explains its decision, humans may stop thinking independently",
+      "link": "https://www.cio.com/article/4211674/when-ai-explains-its-decision-humans-may-stop-thinking-independently.html",
+      "source": "CIO",
+      "sourceUrl": "https://www.cio.com/feed/",
+      "summary": "AI is known to be confidently wrong, and now it’s influencing humans to be that way, too. In a new study, researchers tested AI’s influence on humans reviewing innovation proposals, and found that AI recommender tools were persuasive enough to convince the evaluators to reject d…",
+      "publishedAt": "2026-08-20T00:58:26.000Z"
+    },
+    {
+      "slug": "8a2683739d54f0db480cf4a5",
+      "guid": "https://grahamcluley.com/?p=17351921",
+      "title": "Smashing Security podcast #481: Never say this to a robot dog",
+      "link": "https://grahamcluley.com/smashing-security-podcast-481/",
+      "source": "Graham Cluley",
+      "sourceUrl": "https://grahamcluley.com/feed/",
+      "summary": "At Black Hat this month, a group of security researchers took a $9,000 robot dog, plugged Google's AI into its brain, and jailbroke it by telling it - with a completely straight face - that it was a Pokemon. What followed involved a wall, a blue ice chest, and anyone in the room…",
+      "publishedAt": "2026-08-19T23:10:23.000Z"
+    },
+    {
+      "slug": "f8f419ba570ed39956412e65",
+      "guid": "https://www.darkreading.com/application-security/no-filter-kriminal-ai-platform-cybercrime-concerns",
+      "title": "No-Filter 'Kriminal' AI Platform Raises Cybercrime Concerns",
+      "link": "https://www.darkreading.com/application-security/no-filter-kriminal-ai-platform-cybercrime-concerns",
+      "source": "Dark Reading",
+      "sourceUrl": "https://www.darkreading.com/rss.xml",
+      "summary": "The AI company officially forbids illicit use, while offering guardrail-free social engineering, offensive cybercrime, and OSINT scanning to anyone with a bit of cryptocurrency.",
+      "publishedAt": "2026-08-19T20:32:09.000Z"
+    },
+    {
+      "slug": "ef4c1d5e9e0fb7ea9b29a64b",
+      "guid": "https://thehackernews.com/2026/08/cloudflare-workers-spectre-attack-leaks.html",
+      "title": "Cloudflare Workers Spectre Attack Leaks JWT From Co-Located Worker at 12 Bits/Second",
+      "link": "https://thehackernews.com/2026/08/cloudflare-workers-spectre-attack-leaks.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "Cybersecurity researchers have disclosed details of a remote Spectre attack against Cloudflare Workers that leaked a JSON Web Token (JWT) from a co-located Worker in the production environment at up to 12 bits per second, 360 times the rate of an earlier attack demonstrated in 2…",
+      "publishedAt": "2026-08-19T19:02:40.000Z"
+    },
+    {
+      "slug": "542c6d33a2f5f9eebeca6644",
+      "guid": "https://thehackernews.com/2026/08/openai-pauses-frontier-rl-training-as.html",
+      "title": "OpenAI Pauses Frontier RL Training as It Tightens Defenses Against Unsafe AI Behavior",
+      "link": "https://thehackernews.com/2026/08/openai-pauses-frontier-rl-training-as.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "OpenAI on Tuesday revealed that it paused reinforcement learning (RL) training for its latest artificial intelligence (AI) models for two weeks while it shored up additional defenses and increased the scope of its monitoring to avert another Hugging Face-like incident. \"As model…",
+      "publishedAt": "2026-08-19T18:06:44.000Z"
+    },
+    {
+      "slug": "5a8b7d9689e37d7fa214c73d",
+      "guid": "https://orca.security/?p=74482",
+      "title": "Agentic Workflows: A Complete Guide for 2026",
+      "link": "https://orca.security/resources/blog/agentic-workflows/",
+      "source": "Orca Security Blog",
+      "sourceUrl": "https://orca.security/resources/blog/feed/",
+      "summary": "Key Takeaways An agentic workflow is an automated process in which a language model chooses the next step while the process runs. A person defines the goal, the tools, and the boundaries. The model decides the order. That one property separates it from the scripted automation al…",
+      "publishedAt": "2026-08-19T17:29:26.000Z"
+    },
+    {
+      "slug": "5790559cab4910b589325c73",
+      "guid": "https://www.darkreading.com/threat-intelligence/silkparasite-central-asian-orgs-flurry-rats",
+      "title": "SilkParasite Threatens Central Asian Orgs With Flurry of RATs",
+      "link": "https://www.darkreading.com/threat-intelligence/silkparasite-central-asian-orgs-flurry-rats",
+      "source": "Dark Reading",
+      "sourceUrl": "https://www.darkreading.com/rss.xml",
+      "summary": "A spear-phishing campaign by a Chinese-nexus group linked to FamousSparrow provides insight into geopolitical, technical, and strategic global moves by China's APTs.",
+      "publishedAt": "2026-08-19T16:58:23.000Z"
+    },
+    {
+      "slug": "c0675ecb34c9e43f3bf98fa2",
+      "guid": "https://orca.security/?p=74469",
+      "title": "Autonomous SOC: AI-Driven Security Operations Explained",
+      "link": "https://orca.security/resources/blog/autonomous-soc/",
+      "source": "Orca Security Blog",
+      "sourceUrl": "https://orca.security/resources/blog/feed/",
+      "summary": "Key Takeaways An autonomous SOC is a security operations center where software makes and executes operational decisions an analyst used to make. The label describes how much judgment has moved. Triage, closure, containment, and detection tuning are separate decisions, and a work…",
+      "publishedAt": "2026-08-19T15:28:22.000Z"
+    },
+    {
+      "slug": "9382709941ad2fa7c1c57683",
+      "guid": "https://thehackernews.com/2026/08/silkparasite-espionage-campaign-targets.html",
+      "title": "SilkParasite Espionage Campaign Targets Central Asian Governments with Five New RATs",
+      "link": "https://thehackernews.com/2026/08/silkparasite-espionage-campaign-targets.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "A previously unreported cyber espionage operation dubbed SilkParasite has been observed targeting government bodies in Central Asia. The intrusion set makes use of seven remote access tool (RAT) families, five of which have never been previously documented: DriveSilkRAT, CookiET…",
+      "publishedAt": "2026-08-19T13:12:17.000Z"
+    },
+    {
+      "slug": "b3d652ff51df4921b73299dc",
+      "guid": "https://thehackernews.com/2026/08/hackers-compromised-14500-dahua-devices.html",
+      "title": "Hackers Compromised 14,500+ Dahua Devices Using Credential Attacks, Auth Bypasses, and P2P",
+      "link": "https://thehackernews.com/2026/08/hackers-compromised-14500-dahua-devices.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "Cybersecurity researchers at Hunt.io have disclosed details of a campaign that they say compromised more than 14,530 Dahua devices between June 17 and July 22, 2026, using credential attacks, two authentication-bypass flaws, and a peer-to-peer (P2P) relay technique. The activity…",
+      "publishedAt": "2026-08-19T11:34:28.000Z"
+    },
+    {
+      "slug": "8feab542b039656c49a62c84",
+      "guid": "https://thehackernews.com/2026/08/phishing-30-fight-moves-to-agent-versus.html",
+      "title": "Phishing 3.0: The Fight Moves to Agent Versus Agent",
+      "link": "https://thehackernews.com/2026/08/phishing-30-fight-moves-to-agent-versus.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "Most email defenses still do the job they did a decade ago. Scan the message, look for something malicious, block it. That worked when the danger sat in the payload, a bad link or an attachment. It stopped working when the danger moved into the message's intent, and it is failin…",
+      "publishedAt": "2026-08-19T11:30:00.000Z"
+    },
+    {
+      "slug": "d147b16777527f66ac8b7744",
+      "guid": "https://thehackernews.com/2026/08/stopandprotect-uses-nearly-2000-hacked.html",
+      "title": "StopAndProtect Uses Nearly 2,000 Hacked WordPress Sites to Spread Malware and Steal Data",
+      "link": "https://thehackernews.com/2026/08/stopandprotect-uses-nearly-2000-hacked.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "Cybersecurity researchers have flagged a global cybercrime operation that abuses thousands of hacked WordPress websites as infrastructure to disseminate malware, commandeer infected hosts, store stolen documents, screenshots, and activity logs created to track the status of the …",
+      "publishedAt": "2026-08-19T11:25:28.000Z"
+    },
+    {
+      "slug": "d18e92ac17a19b129105f4f7",
+      "guid": "https://thehackernews.com/2026/08/critical-macos-sharepoint-vcenter-and.html",
+      "title": "Critical macOS, SharePoint, vCenter, and Microsoft IKE Flaws Under Active Exploitation",
+      "link": "https://thehackernews.com/2026/08/critical-macos-sharepoint-vcenter-and.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Tuesday added four critical vulnerabilities to its Known Exploited Vulnerabilities (KEV) catalog, stating they are being exploited in the wild. The shortcomings added to the KEV catalog are listed below - CVE-20…",
+      "publishedAt": "2026-08-19T11:01:48.000Z"
+    },
+    {
+      "slug": "0e348f47cbe8ea6462f2ae0e",
+      "guid": "https://www.schneier.com/?p=72440",
+      "title": "ICE Collecting DNA Samples",
+      "link": "https://www.schneier.com/blog/archives/2026/08/ice-collecting-dna-samples.html",
+      "source": "Schneier on Security",
+      "sourceUrl": "https://www.schneier.com/feed/",
+      "summary": "ICE collected nearly a million DNA samples last year.",
+      "publishedAt": "2026-08-19T10:46:37.000Z"
+    },
+    {
+      "slug": "432b94baaf2313b2e695d68f",
+      "guid": "https://www.cio.com/article/4203540/how-a-new-ai-value-framework-and-stakeholder-focus-keep-zoetis-ahead-of-the-pack.html",
+      "title": "How a new AI value framework and stakeholder focus keep Zoetis ahead of the pack",
+      "link": "https://www.cio.com/article/4203540/how-a-new-ai-value-framework-and-stakeholder-focus-keep-zoetis-ahead-of-the-pack.html",
+      "source": "CIO",
+      "sourceUrl": "https://www.cio.com/feed/",
+      "summary": "Most AI investment strategies fail not because the tool or platform underperforms, but because organizations didn’t clearly define what success looks like before they started building. Through a new approach to measuring value, Zoetis chief digital and technology officer Keith S…",
+      "publishedAt": "2026-08-19T10:00:00.000Z"
+    },
+    {
+      "slug": "655acda6456bb36c4bf3b242",
+      "guid": "https://www.cio.com/article/4204514/ways-cios-can-maintain-control-amid-changes-brought-by-ai.html",
+      "title": "Ways CIOs can maintain control amid changes brought by AI",
+      "link": "https://www.cio.com/article/4204514/ways-cios-can-maintain-control-amid-changes-brought-by-ai.html",
+      "source": "CIO",
+      "sourceUrl": "https://www.cio.com/feed/",
+      "summary": "It took nine seconds for an AI agent to destroy PocketOS’s production database. At work on a routine task in April, the coding agent, a variant of Cursor running on Claude Opus 4.6, ran into a credential mismatch and decided to fix the problem by triggering an API token. Little …",
+      "publishedAt": "2026-08-19T10:00:00.000Z"
+    },
+    {
+      "slug": "84aec08b01dca92e840e4797",
+      "guid": "https://www.cio.com/article/4211120/the-ceo-has-always-trusted-the-cio-to-say-no-thats-changed-with-ai.html",
+      "title": "The CEO has always trusted the CIO to say no. That’s changed with AI",
+      "link": "https://www.cio.com/article/4211120/the-ceo-has-always-trusted-the-cio-to-say-no-thats-changed-with-ai.html",
+      "source": "CIO",
+      "sourceUrl": "https://www.cio.com/feed/",
+      "summary": "I spent years as a CTO before founding Mindstone and one of the key learnings from my time in the role was that the CIOs and CTOs who are honest with themselves about what the role entails are the ones who will define the next decade of their function. Those who pretend the old …",
+      "publishedAt": "2026-08-19T10:00:00.000Z"
+    },
+    {
+      "slug": "a2d8bba0e7202848551bd1f5",
+      "guid": "https://www.cio.com/article/4211118/the-ai-leapfrog-effect-why-standardizing-now-could-be-your-costliest-mistake.html",
+      "title": "The AI leapfrog effect: Why standardizing now could be your costliest mistake",
+      "link": "https://www.cio.com/article/4211118/the-ai-leapfrog-effect-why-standardizing-now-could-be-your-costliest-mistake.html",
+      "source": "CIO",
+      "sourceUrl": "https://www.cio.com/feed/",
+      "summary": "Towards the end of 2022, something shifted in enterprise boardrooms. Convinced by the promise of a genuinely new class of technology, businesses began investing in AI across marketing, sales, developer platforms, analytics and automation. The experimentation was justified. Use c…",
+      "publishedAt": "2026-08-19T09:00:00.000Z"
+    },
+    {
+      "slug": "6b9ae52b00bfac44c4d87542",
+      "guid": "https://grahamcluley.com/?p=17351916",
+      "title": "Prison for data analyst who tried to extort $2.5 million from his employer",
+      "link": "https://www.bitdefender.com/en-us/blog/hotforsecurity/prison-data-analyst-extort-employer",
+      "source": "Graham Cluley",
+      "sourceUrl": "https://grahamcluley.com/feed/",
+      "summary": "When Cameron Curry discovered that his contract as a data analyst wasn't going to be renewed, he could have updated his LinkedIn profile. He could have started sending out his resume. But what the 27-year-old from Charlotte, North Carolina, did instead was turn to extortion. Rea…",
+      "publishedAt": "2026-08-19T07:26:50.000Z"
+    },
+    {
+      "slug": "c0cb35055ffec7a2b84b4d1d",
+      "guid": "https://thehackernews.com/2026/08/microsoft-links-30-rotating-domains-to.html",
+      "title": "Microsoft Links 30+ Rotating Domains to MacSync Stealer Infrastructure",
+      "link": "https://thehackernews.com/2026/08/microsoft-links-30-rotating-domains-to.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "Microsoft Defender Experts have linked more than 30 web domains to MacSync Stealer, a macOS-focused information stealer, after correlating recurring endpoint and network behaviors across changing infrastructure, tracing the malware from payload retrieval through data collection,…",
+      "publishedAt": "2026-08-19T06:01:53.000Z"
+    },
+    {
+      "slug": "0a363bcfbc5d957d8488e5be",
+      "guid": "https://thehackernews.com/2026/08/clop-linked-windchill-web-shell.html",
+      "title": "Clop-Linked Windchill Web Shell Decrypts Credentials and Maps Engineering Data",
+      "link": "https://thehackernews.com/2026/08/clop-linked-windchill-web-shell.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "A JavaServer Pages (JSP) web shell deployed following the exploitation of a critical security flaw in PTC Windchill and FlexPLM servers is specifically designed for the enterprise Product Lifecycle Management (PLM) software, according to new findings from ReliaQuest. The cyberse…",
+      "publishedAt": "2026-08-19T05:39:25.000Z"
+    },
     {
       "slug": "0032da56e28d4c6e5e3855a1",
       "guid": "https://danielmiessler.com/blog/prompt-injection-worm",
@@ -36,12 +256,22 @@
     {
       "slug": "cd21e9704a972128b9f663ce",
       "guid": "https://www.darkreading.com/vulnerabilities-threats/cosnitch-attack-copilot-mapping-out-architecture",
-      "title": "'CoSnitch' Attack Tricked Copilot into Mapping Out Architecture",
+      "title": "'CoSnitch' Attack Tricked Copilot Into Mapping Out Architecture",
       "link": "https://www.darkreading.com/vulnerabilities-threats/cosnitch-attack-copilot-mapping-out-architecture",
       "source": "Dark Reading",
       "sourceUrl": "https://www.darkreading.com/rss.xml",
       "summary": "Researchers discovered a \"meta-hacking\" technique that can manipulate the AI service into revealing its own security weaknesses.",
       "publishedAt": "2026-08-18T20:17:24.000Z"
+    },
+    {
+      "slug": "7a3389dd0d0e9cf065dfdb9d",
+      "guid": "https://www.darkreading.com/vulnerabilities-threats/industrial-accidents-rogue-ai-agent-attacks-sandbox-failures",
+      "title": "The 'Industrial Accidents' Behind Rogue AI Agent Attacks — and the Sandbox Failures Exposed",
+      "link": "https://www.darkreading.com/vulnerabilities-threats/industrial-accidents-rogue-ai-agent-attacks-sandbox-failures",
+      "source": "Dark Reading",
+      "sourceUrl": "https://www.darkreading.com/rss.xml",
+      "summary": "Rich Mogull, chief analyst with the Cloud Security Alliance, joins the Dark Reading News Desk with what defenders need to take away from AI agents escaping their environments to launch attacks.",
+      "publishedAt": "2026-08-18T19:09:51.000Z"
     },
     {
       "slug": "2da9958060b25bddb6f15524",
@@ -104,16 +334,6 @@
       "publishedAt": "2026-08-18T14:00:00.000Z"
     },
     {
-      "slug": "1f616d071c66b5ee2eb81603",
-      "guid": "https://www.darkreading.com/cyberattacks-data-breaches/ransom-busters-ransomware-actor-incident-recovery-service",
-      "title": "'Ransom Busters': Ransomware Actor Poses as Incident-Recovery Service",
-      "link": "https://www.darkreading.com/cyberattacks-data-breaches/ransom-busters-ransomware-actor-incident-recovery-service",
-      "source": "Dark Reading",
-      "sourceUrl": "https://www.darkreading.com/rss.xml",
-      "summary": "A ransomware affiliate appears to be sidling up to victims with offers of aid, masking its true intention of diverting ransom payments.",
-      "publishedAt": "2026-08-18T13:00:00.000Z"
-    },
-    {
       "slug": "f626add06be0c495b3fafa9d",
       "guid": "https://www.darkreading.com/cloud-security/silent-twinloot-threat-operates-microsoft-cloud",
       "title": "Silent 'TwinLoot' Cyber Threat Operates Entirely From Microsoft's Cloud",
@@ -121,6 +341,16 @@
       "source": "Dark Reading",
       "sourceUrl": "https://www.darkreading.com/rss.xml",
       "summary": "The Python-based malware framework takes living-off-the-land tactics to a new heights of stealth, with a modular implant that steals credentials and achieves persistence.",
+      "publishedAt": "2026-08-18T13:00:00.000Z"
+    },
+    {
+      "slug": "1f616d071c66b5ee2eb81603",
+      "guid": "https://www.darkreading.com/cyberattacks-data-breaches/ransom-busters-ransomware-actor-incident-recovery-service",
+      "title": "'Ransom Busters': Ransomware Actor Poses as Incident-Recovery Service",
+      "link": "https://www.darkreading.com/cyberattacks-data-breaches/ransom-busters-ransomware-actor-incident-recovery-service",
+      "source": "Dark Reading",
+      "sourceUrl": "https://www.darkreading.com/rss.xml",
+      "summary": "A ransomware affiliate appears to be sidling up to victims with offers of aid, masking its true intention of diverting ransom payments.",
       "publishedAt": "2026-08-18T13:00:00.000Z"
     },
     {
@@ -724,16 +954,6 @@
       "publishedAt": "2026-08-14T13:22:31.000Z"
     },
     {
-      "slug": "4b01a7ccb2dda7ce0a6ff16b",
-      "guid": "https://www.cio.com/article/4209776/5-critical-questions-that-define-ai-factory-economics.html",
-      "title": "5 critical questions that define AI factory economics",
-      "link": "https://www.cio.com/article/4209776/5-critical-questions-that-define-ai-factory-economics.html",
-      "source": "CIO",
-      "sourceUrl": "https://www.cio.com/feed/",
-      "summary": "As data centers evolve into AI factories, compute has shifted from a cost center to a revenue driver. “Compute is revenue,” said Jensen Huang, co-founder and CEO of NVIDIA. “Without compute, there is no way to generate tokens. Without tokens, there’s no way to generate revenue. …",
-      "publishedAt": "2026-08-14T13:14:48.000Z"
-    },
-    {
       "slug": "53b57e9b7662e0ece7122661",
       "guid": "https://thehackernews.com/2026/08/mustang-panda-adds-signed-windows.html",
       "title": "Mustang Panda Adds Signed Windows Rootkit to CoolClient Backdoor for Stealth",
@@ -752,16 +972,6 @@
       "sourceUrl": "https://www.darkreading.com/rss.xml",
       "summary": "The $1 billion deal aims to converge data security and identity into a single control plane for agents, with privileged access redefined around business context rather than static roles.",
       "publishedAt": "2026-08-14T12:17:21.000Z"
-    },
-    {
-      "slug": "130095d9c890d5250af569b7",
-      "guid": "https://www.cio.com/article/4209708/ibm-partners-with-openai-to-drive-enterprise-ai-deployment.html",
-      "title": "IBM partners with OpenAI to drive enterprise AI deployment",
-      "link": "https://www.cio.com/article/4209708/ibm-partners-with-openai-to-drive-enterprise-ai-deployment.html",
-      "source": "CIO",
-      "sourceUrl": "https://www.cio.com/feed/",
-      "summary": "IBM will embed OpenAI frontier models and products such as Codex and ChatGPT embedded into IBM’s AI consulting services platform, IBM Consulting Advantage, as well as expanding the companies’ existing collaboration in the cybersecurity realm, they announced Thursday. Joint initi…",
-      "publishedAt": "2026-08-14T11:38:40.000Z"
     },
     {
       "slug": "0dbcd50dbb5ce22631a81507",
@@ -792,216 +1002,6 @@
       "sourceUrl": "https://www.schneier.com/feed/",
       "summary": "This essay was written with Nathan E. Sanders, and originally appeared in The Guardian. OpenAI, and then Anthropic, were each formed by AI developers who feared unrestrained corporate AI development—specifically, that companies like Google and Meta would steer the technology tow…",
       "publishedAt": "2026-08-14T11:03:50.000Z"
-    },
-    {
-      "slug": "0046c3030fb9b309af8ee7f7",
-      "guid": "https://thehackernews.com/2026/08/ctm360-uncovers-over-3000-recruitment.html",
-      "title": "CTM360 Uncovers Over 3,000 Recruitment Phishing URLs Using Browser-in-the-Browser (BitB) Credential Traps",
-      "link": "https://thehackernews.com/2026/08/ctm360-uncovers-over-3000-recruitment.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "Cybersecurity researchers have uncovered a large-scale, global recruitment-themed phishing campaign that uses fake interview scheduling pages and Browser-in-the-Browser (BitB) windows to steal Google and Facebook credentials and, in more advanced cases, relay multi-factor authen…",
-      "publishedAt": "2026-08-14T10:57:00.000Z"
-    },
-    {
-      "slug": "1fa54606e9767c74021ba41a",
-      "guid": "https://thehackernews.com/2026/08/apple-warns-users-in-110-countries-they.html",
-      "title": "Apple Warns Users in 110 Countries They May Be Targets of Mercenary Spyware",
-      "link": "https://thehackernews.com/2026/08/apple-warns-users-in-110-countries-they.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "Apple on Thursday sent a fresh batch of notifications to customers whom it suspects may have been targeted by mercenary spyware attacks. In a statement shared with TechCrunch, the iPhone maker said it alerted an unspecified number of users targeted in 110 countries and that it h…",
-      "publishedAt": "2026-08-14T10:44:34.000Z"
-    },
-    {
-      "slug": "839a8147160a7674908c5c13",
-      "guid": "https://www.cio.com/article/4207524/ais-role-in-project-management-a-question-of-judgment.html",
-      "title": "AI’s role in project management? A question of judgment",
-      "link": "https://www.cio.com/article/4207524/ais-role-in-project-management-a-question-of-judgment.html",
-      "source": "CIO",
-      "sourceUrl": "https://www.cio.com/feed/",
-      "summary": "At the turn of the decade, Gartner predicted that by 2030, 80% of all project management tasks would be automated. It’s still too early to know whether this will be the case, but the rise of AI in the years since Gartner made this projection gives CIOs and project managers adequ…",
-      "publishedAt": "2026-08-14T10:01:00.000Z"
-    },
-    {
-      "slug": "3e49bf53b65c57c42e9266d7",
-      "guid": "https://www.cio.com/article/4209332/the-leadership-burnout-no-one-talks-about-it-executives-who-are-afraid-to-ask-for-help.html",
-      "title": "The leadership burnout no one talks about: IT executives who are afraid to ask for help",
-      "link": "https://www.cio.com/article/4209332/the-leadership-burnout-no-one-talks-about-it-executives-who-are-afraid-to-ask-for-help.html",
-      "source": "CIO",
-      "sourceUrl": "https://www.cio.com/feed/",
-      "summary": "A CIO client of mine drove himself to the emergency room recently, convinced he was having a heart attack. After many hours of testing, the doctor diagnosed him with a panic attack. IT executives are burning out at alarming rates. Foundry’s 2025 State of the CIO research found t…",
-      "publishedAt": "2026-08-14T10:00:00.000Z"
-    },
-    {
-      "slug": "f0981864eec6927a68b032ca",
-      "guid": "https://thehackernews.com/2026/08/trump-memo-paves-way-for-us-firms-to.html",
-      "title": "Trump Memo Paves Way for U.S. Firms to Hack and Disrupt Foreign Crime Groups",
-      "link": "https://thehackernews.com/2026/08/trump-memo-paves-way-for-us-firms-to.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "A new White House memo signed by U.S. President Donald Trump has instructed the National Coordination Center (NCC) to establish a program that would allow private sector companies to take advantage of their \"innovative capabilities\" to break into foreign Transnational Criminal O…",
-      "publishedAt": "2026-08-14T09:38:56.000Z"
-    },
-    {
-      "slug": "a80d04ffe11e9cba2e9326a5",
-      "guid": "https://www.cio.com/article/4209328/the-case-and-model-for-real-time-ai-cost-visibility-at-the-infrastructure-layer.html",
-      "title": "The case and model for real-time AI cost visibility at the infrastructure layer",
-      "link": "https://www.cio.com/article/4209328/the-case-and-model-for-real-time-ai-cost-visibility-at-the-infrastructure-layer.html",
-      "source": "CIO",
-      "sourceUrl": "https://www.cio.com/feed/",
-      "summary": "I spend most of my time inside other companies’ engineering teams, building systems to track and optimize AI spend. The conversation almost always starts the same way. Someone pulls up a dashboard, points at a number bigger than it should be, and says some version of “we know it…",
-      "publishedAt": "2026-08-14T09:00:00.000Z"
-    },
-    {
-      "slug": "8fdaa82dbfebac00ea3d908a",
-      "guid": "https://thehackernews.com/2026/08/china-linked-jewelbug-uses-xg-web-for.html",
-      "title": "China-Linked Jewelbug Uses XG-Web for Government Espionage and Crypto Fraud",
-      "link": "https://thehackernews.com/2026/08/china-linked-jewelbug-uses-xg-web-for.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "The China-linked threat actor known as Jewelbug has been observed carrying out cyber espionage operations targeting governments and militaries, while simultaneously engaging in cryptocurrency fraud. \"Both missions are administered from a single control panel, XG-Web, a browser-c…",
-      "publishedAt": "2026-08-14T07:54:18.000Z"
-    },
-    {
-      "slug": "7a20fee85e3db3a9b0a25fb5",
-      "guid": "https://www.darkreading.com/vulnerabilities-threats/global-threat-campaign-critical-vmware-vcenter-flaw",
-      "title": "Global Threat Campaign Hits Critical VMware vCenter Flaw",
-      "link": "https://www.darkreading.com/vulnerabilities-threats/global-threat-campaign-critical-vmware-vcenter-flaw",
-      "source": "Dark Reading",
-      "sourceUrl": "https://www.darkreading.com/rss.xml",
-      "summary": "Exploitation against CVE-2026–59310 began earlier this month, and patching the vulnerability may not be enough to fully mitigate the threat.",
-      "publishedAt": "2026-08-13T20:45:17.000Z"
-    },
-    {
-      "slug": "92db34388e8952707d9aa67b",
-      "guid": "https://thehackernews.com/2026/08/unpatched-geoserver-zero-day-targeted.html",
-      "title": "GeoServer Zero-Day Targeted in Active Exploitation Attempts, Can Lead to RCE",
-      "link": "https://thehackernews.com/2026/08/unpatched-geoserver-zero-day-targeted.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "A newly disclosed zero-day flaw in GeoServer is seeing active exploitation efforts, per watchTowr. The vulnerability, which has yet to be assigned a CVE identifier, is an SQL injection vulnerability in the open-source platform that can lead to remote code execution (RCE). The se…",
-      "publishedAt": "2026-08-13T18:45:12.000Z"
-    },
-    {
-      "slug": "fb164264aae8e9e0715d55cd",
-      "guid": "https://thehackernews.com/2026/08/threatsday-ghostjacking-ai-attacks.html",
-      "title": "ThreatsDay: GhostJacking AI Attacks, EtherHiding ClickFix, Cursor CLI Flaw + 17 More Stories",
-      "link": "https://thehackernews.com/2026/08/threatsday-ghostjacking-ai-attacks.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "Some weeks have one big security story. Others bring many smaller updates that are easy to miss but still matter. This week has plenty of them, covering cloud services, AI tools, malware, data breaches, scams, and new attack methods. The latest ThreatsDay Bulletin puts all of th…",
-      "publishedAt": "2026-08-13T18:17:10.000Z"
-    },
-    {
-      "slug": "86860522b4795715ac758b37",
-      "guid": "https://orca.security/?p=74445",
-      "title": "How to Improve Cloud Security Posture With CSPM: Visualizing the Attack Path",
-      "link": "https://orca.security/resources/blog/how-to-improve-cloud-security-posture-with-cspm/",
-      "source": "Orca Security Blog",
-      "sourceUrl": "https://orca.security/resources/blog/feed/",
-      "summary": "One dashboard for misconfigurations. A separate one for identities. Neither tells you what an attacker can actually reach. Most cloud security teams operate with fragmented visibility. Misconfiguration alerts fire from one tool, identity findings from another, and compliance rep…",
-      "publishedAt": "2026-08-13T17:24:47.000Z"
-    },
-    {
-      "slug": "e478dc0032594e36580ef1c9",
-      "guid": "https://thehackernews.com/2026/08/new-patchcord-backdoor-targets-afghan.html",
-      "title": "New PATCHCORD Backdoor Targets Afghan Telecom and Indian Critical Infrastructure",
-      "link": "https://thehackernews.com/2026/08/new-patchcord-backdoor-targets-afghan.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "Afghan telecom providers and South Asian critical infrastructure organizations have emerged as the target of a new ongoing campaign that delivers a previously undocumented backdoor called PATCHCORD. According to Acronis Threat Research Unit (TRU), the backdoor is a compiled C/C+…",
-      "publishedAt": "2026-08-13T15:00:29.000Z"
-    },
-    {
-      "slug": "31497e893ec1b4b43288be6b",
-      "guid": "https://orca.security/?p=74441",
-      "title": "Shadow AI: Risks, Detection, and Security Strategies",
-      "link": "https://orca.security/resources/blog/shadow-ai-security/",
-      "source": "Orca Security Blog",
-      "sourceUrl": "https://orca.security/resources/blog/feed/",
-      "summary": "Key Takeaways Shadow AI is any use of artificial intelligence inside an organization that no one approved, registered, or monitored. It covers consumer chat tools, AI features switched on inside approved software, desktop agents installed on laptops, and model endpoints running …",
-      "publishedAt": "2026-08-13T14:23:53.000Z"
-    },
-    {
-      "slug": "11de4e192b1bd0a999bb10dd",
-      "guid": "https://thehackernews.com/2026/08/amnesiastealer-hijacks-chromium.html",
-      "title": "AmnesiaStealer Hijacks Chromium Sessions to Give Attackers Live Browser Control on macOS",
-      "link": "https://thehackernews.com/2026/08/amnesiastealer-hijacks-chromium.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "Cybersecurity researchers have disclosed details of a new macOS-oriented, Rust-based information stealer called AmnesiaStealer that's capable of hijacking Chromium web browsers to steal session data. The multi-stage stealer is spread via a counterfeit GitHub download page titled…",
-      "publishedAt": "2026-08-13T13:43:14.000Z"
-    },
-    {
-      "slug": "62e8852e606f4c10aaf81fee",
-      "guid": "https://thehackernews.com/2026/08/windrelay-android-malware-turns-victims.html",
-      "title": "WindRelay Android Malware Turns Victims' Phones Into NFC Relays for Payment Fraud",
-      "link": "https://thehackernews.com/2026/08/windrelay-android-malware-turns-victims.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "A previously unseen Android near field communication (NFC) relay malware family dubbed WindRelay is being deployed in conjunction with a known remote access trojan (RAT) called SpyNote as part of a contactless payment fraud scheme. The purpose-built malware, according to Group-I…",
-      "publishedAt": "2026-08-13T11:53:14.000Z"
-    },
-    {
-      "slug": "b9b4425fac0b0dd56d7840d2",
-      "guid": "https://thehackernews.com/2026/08/north-korean-remote-workers-are.html",
-      "title": "North Korean Remote Workers Are Infiltrating Government and Businesses: How to Expose Them Before Hiring",
-      "link": "https://thehackernews.com/2026/08/north-korean-remote-workers-are.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "Companies are used to thinking about attackers as outsiders trying to break in. North Korean IT workers flip that model. They apply for jobs, pass interviews, receive legitimate credentials, and can end up inside the same systems companies spend millions trying to protect. That …",
-      "publishedAt": "2026-08-13T11:45:00.000Z"
-    },
-    {
-      "slug": "068e44ca271ae3035b824862",
-      "guid": "https://orca.security/?p=74427",
-      "title": "Cloud Infrastructure Security: Risks and Best Practices",
-      "link": "https://orca.security/resources/blog/cloud-infrastructure-security-best-practices-orca-security/",
-      "source": "Orca Security Blog",
-      "sourceUrl": "https://orca.security/resources/blog/feed/",
-      "summary": "Key Takeaways Cloud infrastructure security is the practice of protecting the compute, network, identity, storage, and control-plane layer your applications run on. It covers the resources you configure rather than the hardware the provider operates. Where that boundary sits dep…",
-      "publishedAt": "2026-08-13T11:38:53.000Z"
-    },
-    {
-      "slug": "a752640602fc2a1d9f323880",
-      "guid": "https://www.schneier.com/?p=72463",
-      "title": "Separating AI’s Technological Problems from Its Capitalism Problems",
-      "link": "https://www.schneier.com/blog/archives/2026/08/separating-ais-technological-problems-from-its-capitalism-problems.html",
-      "source": "Schneier on Security",
-      "sourceUrl": "https://www.schneier.com/feed/",
-      "summary": "This essay was written with Nathan E. Sanders, and originally appeared in Tech Policy Press. AI represents the first time we humans can do cognitive work outside of our bodies at scale. The only comparable moment is the early years of the industrial revolution, when new technolo…",
-      "publishedAt": "2026-08-13T11:07:19.000Z"
-    },
-    {
-      "slug": "0d9304a57c79cd9a5214df53",
-      "guid": "https://www.darkreading.com/threat-intelligence/jewelbug-apt-state-espionage-cryptocurrency-theft",
-      "title": "'Jewelbug' APT Balances State Espionage & Cryptocurrency Theft",
-      "link": "https://www.darkreading.com/threat-intelligence/jewelbug-apt-state-espionage-cryptocurrency-theft",
-      "source": "Dark Reading",
-      "sourceUrl": "https://www.darkreading.com/rss.xml",
-      "summary": "Researchers discovered hackers-for-hire performing cyber espionage and financially motivated heists from the same Web panel.",
-      "publishedAt": "2026-08-13T10:00:00.000Z"
-    },
-    {
-      "slug": "4368965199f80397b9c91a51",
-      "guid": "https://orca.security/?p=74418",
-      "title": "Automate Security Response Playbooks with Orca Workflows",
-      "link": "https://orca.security/resources/blog/automate-security-response-playbooks-with-orca-workflows/",
-      "source": "Orca Security Blog",
-      "sourceUrl": "https://orca.security/resources/blog/feed/",
-      "summary": "Orca Workflows turns your response process into an automated playbook: chain actions, delays, approvals, and scheduled runs into one seamless flow. It can even call in AI agents like Threat Investigator to dig into alerts instantly, no manual handoffs needed.",
-      "publishedAt": "2026-08-13T08:56:11.000Z"
-    },
-    {
-      "slug": "6ad3c57e750ed7781513d605",
-      "guid": "https://www.darkreading.com/application-security/belgium-eid-authentication-citizen-accounts-rce",
-      "title": "Belgium's eID Authentication Opens Citizen Accounts to RCE",
-      "link": "https://www.darkreading.com/application-security/belgium-eid-authentication-citizen-accounts-rce",
-      "source": "Dark Reading",
-      "sourceUrl": "https://www.darkreading.com/rss.xml",
-      "summary": "The trust framework underlying Belgium's electronic ID system was fully compromised by severe vulnerabilities in a key browser extension, showcasing bigger problems with extensions in general.",
-      "publishedAt": "2026-08-13T07:00:00.000Z"
     }
   ]
 }

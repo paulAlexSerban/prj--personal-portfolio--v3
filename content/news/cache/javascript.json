@@ -1,8 +1,28 @@
 {
   "category": "javascript",
   "label": "JavaScript",
-  "fetchedAt": "2026-08-19T06:20:19.918Z",
+  "fetchedAt": "2026-08-20T06:21:38.492Z",
   "items": [
+    {
+      "slug": "54d1e662248881706bf7a65e",
+      "guid": "https://flaviocopes.com/view-transitions-api/",
+      "title": "The View Transitions API",
+      "link": "https://flaviocopes.com/view-transitions-api/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Create smooth same-document animations with the View Transitions API using startViewTransition, CSS pseudo-elements, and view-transition-name on elements.",
+      "publishedAt": "2026-08-20T05:00:00.000Z"
+    },
+    {
+      "slug": "d8e6d0395d9f524e48c35b6b",
+      "guid": "https://flaviocopes.com/mutationobserver-resizeobserver/",
+      "title": "MutationObserver and ResizeObserver",
+      "link": "https://flaviocopes.com/mutationobserver-resizeobserver/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Use MutationObserver to watch DOM changes and ResizeObserver to track element size changes, with practical examples and cleanup via disconnect().",
+      "publishedAt": "2026-08-19T09:00:00.000Z"
+    },
     {
       "slug": "96193a2554d852bab3e303eb",
       "guid": "https://flaviocopes.com/popover-api/",
@@ -60,7 +80,7 @@
       "link": "https://flaviocopes.com/claude-system-prompts/",
       "source": "Flavio Copes",
       "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Claude's published system prompts show how an AI product combines rules, current facts, safety checks, tools, and a model behind the scenes.",
+      "summary": "I read Anthropic's published Claude system prompts. Most of the product lives in the rules, facts, tools, and safety checks around the model.",
       "publishedAt": "2026-08-17T07:00:00.000Z"
     },
     {
@@ -322,26 +342,6 @@
       "sourceUrl": "https://flaviocopes.com/rss.xml",
       "summary": "Run an Astro app, background queue consumer, and retention cron from one Cloudflare Worker by keeping each handler small and explicit.",
       "publishedAt": "2026-08-08T13:00:00.000Z"
-    },
-    {
-      "slug": "8bf228d3f9a690a798c246ea",
-      "guid": "https://flaviocopes.com/how-astro-is-built/",
-      "title": "How Astro is built",
-      "link": "https://flaviocopes.com/how-astro-is-built/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "I wanted to know what Astro does when we run astro build. Let's follow one page from its .astro file to the final HTML in dist.",
-      "publishedAt": "2026-08-08T09:00:00.000Z"
-    },
-    {
-      "slug": "116e44257eae381f48eea9be",
-      "guid": "https://flaviocopes.com/kitesurf-agentic-browser/",
-      "title": "Kitesurf: Cloudflare's browser built for AI agents",
-      "link": "https://flaviocopes.com/kitesurf-agentic-browser/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Kitesurf is a browser built for AI agents. Learn how it runs on Cloudflare Workers, how it compares to Chromium, and how to use it.",
-      "publishedAt": "2026-08-08T09:00:00.000Z"
     }
   ]
 }

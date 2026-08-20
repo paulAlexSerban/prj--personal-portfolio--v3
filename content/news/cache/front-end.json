@@ -1,8 +1,68 @@
 {
   "category": "front-end",
   "label": "Front-end",
-  "fetchedAt": "2026-08-19T06:20:19.918Z",
+  "fetchedAt": "2026-08-20T06:21:38.492Z",
   "items": [
+    {
+      "slug": "1e4e5cc609cf85bea215d8c1",
+      "guid": "https://csswizardry.com/2026/08/uno-is-underrated/",
+      "title": "Unattributed Navigation Overhead (UNO) Is Underrated",
+      "link": "https://csswizardry.com/2026/08/uno-is-underrated/",
+      "source": "CSS Wizardry",
+      "sourceUrl": "https://feeds.feedburner.com/csswizardry",
+      "summary": "Unattributed Navigation Overhead exposes the part of Time to First Byte that Navigation Timing cannot explain, including hidden cross-origin redirects.",
+      "publishedAt": "2026-08-20T11:30:00.000Z"
+    },
+    {
+      "slug": "41ffdf3e53905d1033cc437f",
+      "guid": "https://daverupert.com/2026/08/microlighter/",
+      "title": "Introducing Microlighter",
+      "link": "https://daverupert.com/2026/08/microlighter/",
+      "source": "Dave Rupert",
+      "sourceUrl": "https://daverupert.com/atom.xml",
+      "summary": "I made a smol client-side syntax highlighter that uses the CSS Custom Highlights API called MicroLighter. I’ll talk about why I made it in a bit but first I wanted to… ahem… highlight… some of the features. Zero-dependencies ~2kb minifed+gzipped Uses CSS ::highlight(token-name),…",
+      "publishedAt": "2026-08-19T15:22:00.000Z"
+    },
+    {
+      "slug": "1caffdb9b35cd77267ab93b9",
+      "guid": "https://css-tricks.com/?p=396428",
+      "title": "CSS Navigation Matching, Early Days",
+      "link": "https://css-tricks.com/css-navigation-matching-early-days/",
+      "source": "CSS Tricks",
+      "sourceUrl": "https://css-tricks.com/feed/",
+      "summary": "Apply a style when someone navigates from one specific page to another. The idea being it'd make the sources for cross-document view transitions declarative in CSS rather than managing that stuff in JavaScript. CSS Navigation Matching, Early Days originally handwritten and publi…",
+      "publishedAt": "2026-08-19T14:44:41.000Z"
+    },
+    {
+      "slug": "bb9158e880069329e4e152ed",
+      "guid": "https://gomakethings.com/articles/the-spirit-of-giving/",
+      "title": "The spirit of giving",
+      "link": "https://gomakethings.com/articles/the-spirit-of-giving/",
+      "source": "Go Make Things",
+      "sourceUrl": "https://gomakethings.com/feed/index.xml",
+      "summary": "I’m a huge fan of the Buy Nothing Project, a movement that promotes the sharing and giving economy over one where people buy ever more shit. The spirit of Buy Nothing is sharing with your neighbors. It’s wonderful. But as it’s popularity in my area has grown, I’ve noticed that s…",
+      "publishedAt": "2026-08-19T14:30:00.000Z"
+    },
+    {
+      "slug": "09ddd35ab9c31187337588c2",
+      "guid": "https://csswizardry.com/2026/08/web-perf-wednesday-005-rum-needs-more-than-a-percentile/",
+      "title": "Web-Perf Wednesday 005 – RUM Needs More Than a Percentile",
+      "link": "https://csswizardry.com/2026/08/web-perf-wednesday-005-rum-needs-more-than-a-percentile/",
+      "source": "CSS Wizardry",
+      "sourceUrl": "https://feeds.feedburner.com/csswizardry",
+      "summary": "LUX Sidecar adds context to RUM, while browser-tool fixes show why measurement conditions and small debugging details matter.",
+      "publishedAt": "2026-08-19T11:00:00.000Z"
+    },
+    {
+      "slug": "680fd5de4ef185305be39043",
+      "guid": "https://css-tricks.com/?p=396623",
+      "title": "WordPress.com Student Plan",
+      "link": "https://css-tricks.com/wordpress-student-plan/",
+      "source": "CSS Tricks",
+      "sourceUrl": "https://css-tricks.com/feed/",
+      "summary": "As someone who teaches beginning web development, I find that building a WordPress site makes for a great final project. Hosting those projects has always been a roadblock though. WordPress.com Student Plan originally handwritten and published with love on CSS-Tricks. You should…",
+      "publishedAt": "2026-08-19T08:50:00.000Z"
+    },
     {
       "slug": "02b6abfde7b60c3e400245c2",
       "guid": "https://gomakethings.com/articles/propaganda/",
@@ -44,6 +104,16 @@
       "publishedAt": "2026-08-17T15:14:00.000Z"
     },
     {
+      "slug": "5bd6608057c45be933b733cf",
+      "guid": "https://css-tricks.com/?p=396545",
+      "title": "Dark mode toggles: two states are enough",
+      "link": "https://css-tricks.com/dark-mode-toggles-two-states-are-enough/",
+      "source": "CSS Tricks",
+      "sourceUrl": "https://css-tricks.com/feed/",
+      "summary": "Lea's pushing back on light/dark mode implementations that display three state options for visitors: light, dark, and system. Dark mode toggles: two states are enough originally handwritten and published with love on CSS-Tricks. You should really get the newsletter as well.",
+      "publishedAt": "2026-08-17T14:15:50.000Z"
+    },
+    {
       "slug": "0609143c739e699ae13a1040",
       "guid": "https://webdesignerdepot.com/?p=65359",
       "title": "Figma is the New Dreamweaver: How Modern Prototyping Tools are Trapping Us in 2018",
@@ -52,6 +122,26 @@
       "sourceUrl": "https://www.webdesignerdepot.com/feed/",
       "summary": "Just like Dreamweaver convinced a generation they could ignore HTML and CSS, Figma's perfect canvas may be hiding the messy realities of how the web actually works. The future belongs to designers who understand systems, behavior, performance, and code—not just pixels.",
       "publishedAt": "2026-08-17T12:04:00.000Z"
+    },
+    {
+      "slug": "ebcd24055b376f6d4d9b44a6",
+      "guid": "https://css-tricks.com/?p=396557",
+      "title": "What’s !important #17: Custom Highlight API, CSS Navigation Matching, Fixing text-stroke, and More",
+      "link": "https://css-tricks.com/whats-important-17/",
+      "source": "CSS Tricks",
+      "sourceUrl": "https://css-tricks.com/feed/",
+      "summary": "Plus, how to style skeleton UIs, how to enable diagonal scrolling, how images can overflow themselves, and yet, still more. Basically, how to do a lot of really cool (CSS) stuff. What’s !important #17: Custom Highlight API, CSS Navigation Matching, Fixing text-stroke, and More o…",
+      "publishedAt": "2026-08-14T14:01:51.000Z"
+    },
+    {
+      "slug": "d3923a8a77527da27a3efcc4",
+      "guid": "https://css-tricks.com/?p=396255",
+      "title": "Blocked aria-hidden: The Warning is Right, and Every Fix You’ve Found is Wrong",
+      "link": "https://css-tricks.com/blocked-aria-hidden-fix/",
+      "source": "CSS Tricks",
+      "sourceUrl": "https://css-tricks.com/feed/",
+      "summary": "The warning is correct. And the recommended fixes you've probably seen are wrong. Here's what you can do instead to properly fix the issue. Blocked aria-hidden: The Warning is Right, and Every Fix You’ve Found is Wrong originally handwritten and published with love on CSS-Tricks…",
+      "publishedAt": "2026-08-12T13:43:56.000Z"
     },
     {
       "slug": "37ae6de9a65be7aae8c49d73",
@@ -82,6 +172,26 @@
       "sourceUrl": "https://feeds.feedburner.com/brad-frosts-blog",
       "summary": "Just You Wait, by Chris Shiflett is a fantastic read. While I'm slightly younger than Chris, his description of the journey of growing and evolving with technology feels very familiar. The whole article is well worth a read, but really loves how he closes it out: For the first t…",
       "publishedAt": "2026-08-11T00:00:00.000Z"
+    },
+    {
+      "slug": "97ffbea01ac929ffcf5cfc6d",
+      "guid": "https://css-tricks.com/?p=394978",
+      "title": "Animating CSS border-image",
+      "link": "https://css-tricks.com/animating-css-border-image/",
+      "source": "CSS Tricks",
+      "sourceUrl": "https://css-tricks.com/feed/",
+      "summary": "Border images are an overlooked feature. One neat fact is that border image slices can run across entire borders on an element, and animating it creates beautiful effects. Animating CSS border-image originally handwritten and published with love on CSS-Tricks. You should really …",
+      "publishedAt": "2026-08-10T15:58:47.000Z"
+    },
+    {
+      "slug": "b490b6e153c1f624a0e13ad6",
+      "guid": "https://css-tricks.com/?p=396506",
+      "title": "SmashingConf Freiburg 2026, September 7-10",
+      "link": "https://css-tricks.com/smashingconf-freiburg-2026-september-7-10/",
+      "source": "CSS Tricks",
+      "sourceUrl": "https://css-tricks.com/feed/",
+      "summary": "Smashing Magazine’s in-person conferences are back and returning to the wonderful city of Freiburg next month, September 7–10. SmashingConf Freiburg 2026, September 7-10 originally handwritten and published with love on CSS-Tricks. You should really get the newsletter as well.",
+      "publishedAt": "2026-08-10T15:57:39.000Z"
     },
     {
       "slug": "4b656fbecad70442edc18475",
@@ -122,6 +232,26 @@
       "sourceUrl": "https://gomakethings.com/feed/index.xml",
       "summary": "Last winter, I wrote about prefiguration: building the future you want within the shell of existing structures. Rather than focusing solely on tearing down systems you don’t like or pointing out what’s wrong with how things are, prefiguration aims to start laying the foundation …",
       "publishedAt": "2026-08-08T14:30:00.000Z"
+    },
+    {
+      "slug": "98edf409744969fb1902db0d",
+      "guid": "https://css-tricks.com/?p=394753",
+      "title": "Using and Styling the Dialog Element",
+      "link": "https://css-tricks.com/using-and-styling-the-dialog-element/",
+      "source": "CSS Tricks",
+      "sourceUrl": "https://css-tricks.com/feed/",
+      "summary": "There's a lot of nuance to the element, a seemingly little piece of web architecture. I've got some notes from digging into it. Using and Styling the Dialog Element originally handwritten and published with love on CSS-Tricks. You should really get the newsletter as well.",
+      "publishedAt": "2026-08-07T14:06:43.000Z"
+    },
+    {
+      "slug": "ebd0de78c1d686b27e780151",
+      "guid": "https://css-tricks.com/?p=396471",
+      "title": "2026 State of CSS, Devs Surveys",
+      "link": "https://css-tricks.com/2026-state-of-css-devs-surveys/",
+      "source": "CSS Tricks",
+      "sourceUrl": "https://css-tricks.com/feed/",
+      "summary": "A few notes and takeaways from the 2026 State of CSS survey results, including a nice CSS-Tricks cameo! 2026 State of CSS, Devs Surveys originally handwritten and published with love on CSS-Tricks. You should really get the newsletter as well.",
+      "publishedAt": "2026-08-06T15:54:52.000Z"
     }
   ]
 }
