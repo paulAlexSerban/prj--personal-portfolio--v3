@@ -53,10 +53,7 @@ export function QuizFlashcardWidget({ slug, questions, totalQuestionCount, quizA
     function advance() {
         if (!canAdvance) return;
         const correct = isSelfGraded ? selfReport === 'correct' : gradedCorrect === true;
-        const nextResults = [
-            ...results,
-            { slug: current.slug, typeLabel: current.typeLabel, correct },
-        ];
+        const nextResults = [...results, { slug: current.slug, typeLabel: current.typeLabel, correct }];
         setResults(nextResults);
         if (isLast) {
             setPhase('summary');
@@ -69,13 +66,7 @@ export function QuizFlashcardWidget({ slug, questions, totalQuestionCount, quizA
     const correctCount = results.filter((r) => r.correct).length;
 
     return (
-        <section
-            id="quiz-widget-mount"
-            className="quiz-widget-slot mt-12"
-            data-quiz-widget
-            data-post-slug={slug}
-            aria-label="Flashcard quiz preview"
-        >
+        <section id="quiz-widget-mount" className="quiz-widget-slot mt-12" data-quiz-widget data-post-slug={slug} aria-label="Flashcard quiz preview">
             {phase === 'summary' ? (
                 <QuizFlashcardSummary
                     previewCount={questions.length}
@@ -87,19 +78,13 @@ export function QuizFlashcardWidget({ slug, questions, totalQuestionCount, quizA
             ) : (
                 <>
                     <p className="smallcaps mb-3 text-[10px] text-slate-ink">
-                        A quick flashcard preview - one example of each question type in this post. This is a demo of
-                        what you&apos;ll find in the full quiz app.
+                        A quick flashcard preview - one example of each question type in this post. This is a demo of what you&apos;ll find in the full quiz app.
                     </p>
-                    <div
-                        className="mb-4 flex items-center justify-between text-xs"
-                        style={{ fontFamily: 'var(--font-mono)' }}
-                    >
+                    <div className="mb-4 flex items-center justify-between text-xs" style={{ fontFamily: 'var(--font-mono)' }}>
                         <span className="smallcaps">
                             Flashcard preview · {index + 1} / {questions.length}
                         </span>
-                        <span className="smallcaps border border-rule px-2 py-0.5 text-[10px]">
-                            {current.typeLabel}
-                        </span>
+                        <span className="smallcaps border border-rule px-2 py-0.5 text-[10px]">{current.typeLabel}</span>
                     </div>
                     <div className="relative mb-6 h-1 border-y-2 border-ink">
                         <div
