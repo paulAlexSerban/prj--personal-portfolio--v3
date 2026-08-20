@@ -1,5 +1,11 @@
 # @prj--personal-portfolio--v3/tools--news-sync
 
+## 1.4.0
+
+### Minor Changes
+
+- 159da79: quiz widget and favicons
+
 ## 1.3.0
 
 ### Minor Changes

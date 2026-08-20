@@ -1,5 +1,17 @@
 # @prj--personal-portfolio--v3/frontend--news-feed-site
 
+## 0.6.0
+
+### Minor Changes
+
+- 159da79: quiz widget and favicons
+
+### Patch Changes
+
+- Updated dependencies [159da79]
+    - @prj--personal-portfolio--v3/shared--ui@1.4.0
+    - @prj--personal-portfolio--v3/shared--navigation@1.2.4
+
 ## 0.5.0
 
 ### Minor Changes

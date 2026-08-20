@@ -1,5 +1,11 @@
 # @prj--personal-portfolio--v3/tools--news-ingest
 
+## 1.2.0
+
+### Minor Changes
+
+- 159da79: quiz widget and favicons
+
 ## 1.1.1
 
 ### Patch Changes
