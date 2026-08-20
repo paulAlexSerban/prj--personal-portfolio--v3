@@ -6,6 +6,7 @@ import * as runtime from 'react/jsx-runtime';
 import { coverImageUrl } from '@prj--personal-portfolio--v3/shared--ui/cover-image';
 
 import HeroBanner from '@/library/modules/HeroBanner.astro';
+import { QuizFlashcardWidget } from '@/library/widgets/QuizFlashcardWidget.tsx';
 import BaseLayout from '@/system/templates/BaseTemplate.astro';
 
 import { closeConnection, openDb } from '@/lib/db.ts';
@@ -23,11 +24,13 @@ import {
     getTagsForPost,
     type BlogContentType,
 } from '@/lib/queries/posts.ts';
+import { getWidgetQuestionsForPost } from '@/lib/queries/quizWidget.ts';
 import {
     assetUrl,
     cheatSheetDetailPath,
     learningPlanDetailPath,
     postDetailPath,
+    siteUrls,
 } from '@/lib/urls.ts';
 
 interface Props {
@@ -41,6 +44,7 @@ const db = openDb();
 const post = getPostBySlugAndType(db, slug, contentType);
 const tags = getTagsForPost(db, slug);
 const questionCount = getQuestionCountForPost(db, slug);
+const widgetQuestions = getWidgetQuestionsForPost(db, slug);
 const cheatSheets = getCheatSheetsForPost(db, slug);
 const learningPlans = getLearningPlansForPost(db, slug);
 const adjacent = getAdjacentPosts(db, slug, contentType);
@@ -60,6 +64,7 @@ const description = post.excerpt ?? post.subheading ?? undefined;
 const canonicalUrl = new URL(postDetailPath(contentType, slug), Astro.site).href;
 const hasResources = cheatSheets.length > 0 || learningPlans.length > 0;
 const ogImage = coverImageUrl(post.cover, assetUrl('og-default.png'));
+const quizAppHref = `${siteUrls.quiz.replace(/\/$/, '')}/sets/${post.slug}/`;
 
 function toIso(value: Date | string | null | undefined): string | undefined {
     if (!value) return undefined;
@@ -108,12 +113,13 @@ const modifiedTime = toIso(post.updated_at) ?? publishedTime;
         <Content components={mdxComponents} />
     </article>
     {
-        questionCount > 0 && (
-            <div
-                id="quiz-widget-mount"
-                class="quiz-widget-slot mt-12 min-h-16 border-2 border-dashed border-rule bg-highlight p-6"
-                data-quiz-widget
-                data-post-slug={post.slug}
+        widgetQuestions.length > 0 && (
+            <QuizFlashcardWidget
+                client:visible
+                slug={post.slug}
+                questions={widgetQuestions}
+                totalQuestionCount={questionCount}
+                quizAppHref={quizAppHref}
             />
         )
     }

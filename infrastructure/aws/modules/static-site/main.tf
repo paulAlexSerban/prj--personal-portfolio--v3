@@ -16,7 +16,7 @@ locals {
   cloudfront_name_prefix = replace(local.bucket_name, ".", "-")
   aliases                = concat([var.domain_name], var.alternate_domain_names)
 
-  # Empty string when auth is off — do not use null + coalesce(..., "") because
+  # Empty string when auth is off - do not use null + coalesce(..., "") because
   # Terraform's coalesce also rejects empty strings.
   basic_auth_header_value = (
     var.basic_auth_enabled

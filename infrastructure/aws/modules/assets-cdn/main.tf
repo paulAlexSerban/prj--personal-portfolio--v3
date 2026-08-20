@@ -56,7 +56,7 @@ resource "aws_acm_certificate_validation" "assets" {
 }
 
 # ---------------------------------------------------------------------------
-# CloudFront (immutable media CDN — no HTML error remapping)
+# CloudFront (immutable media CDN - no HTML error remapping)
 # ---------------------------------------------------------------------------
 
 resource "aws_cloudfront_response_headers_policy" "assets" {

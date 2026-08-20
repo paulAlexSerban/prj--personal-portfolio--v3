@@ -48,10 +48,10 @@ export const AXIS_TERMS: Record<AxisTermId, AxisTerm> = {
         id: 'concept',
         axis: 'maturity',
         label: 'Concept',
-        lead: 'Problem and proposed solution — no code yet.',
+        lead: 'Problem and proposed solution - no code yet.',
         body: 'Named situation, constraints, and an ADR-shaped decision. Legitimate at any scope, including System.',
         contrast:
-            'Not a Prototype: any code that exercises the core mechanism — even a spike — is already Prototype. Concept is written, not built.',
+            'Not a Prototype: any code that exercises the core mechanism - even a spike - is already Prototype. Concept is written, not built.',
     },
     prototype: {
         id: 'prototype',
@@ -78,15 +78,15 @@ export const AXIS_TERMS: Record<AxisTermId, AxisTerm> = {
         lead: 'Load-tested against stated SLOs.',
         body: 'Numbers in the write-up, not intuition or a dashboard screenshot. Reproducible methodology. Ceiling of the maturity axis.',
         contrast:
-            'Implemented does the job; this one has numbers. Promoting scope (Component to Service, Service to System) usually resets this — the new surrounding infra has not been measured yet.',
+            'Implemented does the job; this one has numbers. Promoting scope (Component to Service, Service to System) usually resets this - the new surrounding infra has not been measured yet.',
     },
 };
 
 const AXIS_HINT: Record<MaturityId, (scopeNoun: string) => string> = {
-    concept: (scopeNoun) => `Design for a ${scopeNoun} — written, not built`,
-    prototype: (scopeNoun) => `Partial ${scopeNoun} — core mechanism proven in code`,
-    implemented: (scopeNoun) => `Full working ${scopeNoun} — not yet load-tested`,
-    'production-grade': (scopeNoun) => `Load-tested ${scopeNoun} — measured against stated SLOs`,
+    concept: (scopeNoun) => `Design for a ${scopeNoun} - written, not built`,
+    prototype: (scopeNoun) => `Partial ${scopeNoun} - core mechanism proven in code`,
+    implemented: (scopeNoun) => `Full working ${scopeNoun} - not yet load-tested`,
+    'production-grade': (scopeNoun) => `Load-tested ${scopeNoun} - measured against stated SLOs`,
 };
 
 export function formatAxisLabel(value: string): string {

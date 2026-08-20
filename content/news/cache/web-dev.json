@@ -40,7 +40,7 @@
       "link": "https://dev.to/begoodtool/why-a-tumbling-dice-animation-has-to-know-the-result-before-it-ever-starts-spinning-2bk2",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "A while back I set out to build a simple \"roll N dice\" page — pick a quantity, hit a button, get a total. The random-number part is trivial, one line: Math.floor(Math.random() * 6) + 1 in a loop. What actually took thought was making the dice look like they're tumbling in pure C…",
+      "summary": "A while back I set out to build a simple \"roll N dice\" page - pick a quantity, hit a button, get a total. The random-number part is trivial, one line: Math.floor(Math.random() * 6) + 1 in a loop. What actually took thought was making the dice look like they're tumbling in pure C…",
       "publishedAt": "2026-08-13T07:00:03.000Z"
     },
     {
@@ -56,11 +56,11 @@
     {
       "slug": "3b9099eec88ac174b0e52831",
       "guid": "https://dev.to/gokulnh/your-rate-limiter-is-broken-behind-a-tunnel-the-x-forwarded-for-problem-3923",
-      "title": "Your rate limiter is broken behind a tunnel — the X-Forwarded-For problem",
+      "title": "Your rate limiter is broken behind a tunnel - the X-Forwarded-For problem",
       "link": "https://dev.to/gokulnh/your-rate-limiter-is-broken-behind-a-tunnel-the-x-forwarded-for-problem-3923",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "You put your app behind a tunnel (or any reverse proxy) to test Congratulations, you've met the X-Forwarded-For problem. When a request flows through a tunnel, the TCP connection to your app comes from the relay, not the real client. So request.remote_addr — The consequences are…",
+      "summary": "You put your app behind a tunnel (or any reverse proxy) to test Congratulations, you've met the X-Forwarded-For problem. When a request flows through a tunnel, the TCP connection to your app comes from the relay, not the real client. So request.remote_addr - The consequences are…",
       "publishedAt": "2026-08-13T06:46:41.000Z"
     },
     {
@@ -90,7 +90,7 @@
       "link": "https://dev.to/srinivasankk/i-was-tired-of-losing-disk-space-to-nodemodules-so-i-built-artifactsweep-438p",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "Being a developer, we all create many projects for learning, work, and experiments. Over time my machine started filling up — not with source code, but with generated junk: node_modules target dist / build framework caches like .next, .angular, .nuxt and more of the same across …",
+      "summary": "Being a developer, we all create many projects for learning, work, and experiments. Over time my machine started filling up - not with source code, but with generated junk: node_modules target dist / build framework caches like .next, .angular, .nuxt and more of the same across …",
       "publishedAt": "2026-08-13T06:40:00.000Z"
     },
     {
@@ -260,7 +260,7 @@
       "link": "https://dzone.com/articles/ai-memory-security-blueprint",
       "source": "DZone",
       "sourceUrl": "https://feeds.dzone.com/home",
-      "summary": "Designing Context Isolation, Retrieval Trust, and Vector Database Governance for Enterprise RAG Systems Part 1 — Five Documents Can Hijack a Frontier Model Here's a number worth sitting with before anything else in this piece: researchers demonstrated that injecting just five ma…",
+      "summary": "Designing Context Isolation, Retrieval Trust, and Vector Database Governance for Enterprise RAG Systems Part 1 - Five Documents Can Hijack a Frontier Model Here's a number worth sitting with before anything else in this piece: researchers demonstrated that injecting just five ma…",
       "publishedAt": "2026-08-12T17:00:05.000Z"
     },
     {
@@ -300,7 +300,7 @@
       "link": "https://dzone.com/articles/enterprise-autonomous-agents",
       "source": "DZone",
       "sourceUrl": "https://feeds.dzone.com/home",
-      "summary": "Most Copilot Studio tutorials show you how to build a chatbot. This article is about something harder: building agents that actually work in production — across real enterprise data, real security boundaries, and real organizational complexity. The Gap Between Demo and Productio…",
+      "summary": "Most Copilot Studio tutorials show you how to build a chatbot. This article is about something harder: building agents that actually work in production - across real enterprise data, real security boundaries, and real organizational complexity. The Gap Between Demo and Productio…",
       "publishedAt": "2026-08-12T15:00:01.000Z"
     },
     {
@@ -350,7 +350,7 @@
       "link": "https://dzone.com/articles/understanding-machine-identity-debt",
       "source": "DZone",
       "sourceUrl": "https://feeds.dzone.com/home",
-      "summary": "The Invisible Security Crisis Every Cloud-Native Organization Is Already Paying For Part 1 — The Deal That Told You Where This Is Going On July 30, 2025, Palo Alto Networks announced it was buying CyberArk for $25 billion. The deal closed February 11, 2026, becoming one of the l…",
+      "summary": "The Invisible Security Crisis Every Cloud-Native Organization Is Already Paying For Part 1 - The Deal That Told You Where This Is Going On July 30, 2025, Palo Alto Networks announced it was buying CyberArk for $25 billion. The deal closed February 11, 2026, becoming one of the l…",
       "publishedAt": "2026-08-12T12:00:01.000Z"
     },
     {
@@ -400,7 +400,7 @@
       "link": "https://dzone.com/articles/ai-supply-chain-blueprint",
       "source": "DZone",
       "sourceUrl": "https://feeds.dzone.com/home",
-      "summary": "Designing Trustworthy AI Pipelines from Data to Deployment Part 1 — The Backdoor That Didn't Need a Vulnerability In February 2024, JFrog's security research team found something that should have changed how the industry thinks about model repositories overnight: more than 100 m…",
+      "summary": "Designing Trustworthy AI Pipelines from Data to Deployment Part 1 - The Backdoor That Didn't Need a Vulnerability In February 2024, JFrog's security research team found something that should have changed how the industry thinks about model repositories overnight: more than 100 m…",
       "publishedAt": "2026-08-11T19:00:01.000Z"
     },
     {
@@ -600,7 +600,7 @@
       "link": "https://www.sitepoint.com/gpt-5-6-luna-tutorial/?utm_source=rss",
       "source": "SitePoint",
       "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
-      "summary": "Emergency brief — GPT-5.6 Luna launched today via OpenAI Getting Started with GPT-5.6 Luna: A Developer's Guide on SitePoint.",
+      "summary": "Emergency brief - GPT-5.6 Luna launched today via OpenAI Getting Started with GPT-5.6 Luna: A Developer's Guide on SitePoint.",
       "publishedAt": "2026-08-10T23:27:17.000Z"
     },
     {
@@ -610,7 +610,7 @@
       "link": "https://www.sitepoint.com/claude-opus-5-performance/?utm_source=rss",
       "source": "SitePoint",
       "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
-      "summary": "Emergency brief — Claude Opus 5 launched today via Anthropic Claude Opus 5: Performance Benchmarks for Developers on SitePoint.",
+      "summary": "Emergency brief - Claude Opus 5 launched today via Anthropic Claude Opus 5: Performance Benchmarks for Developers on SitePoint.",
       "publishedAt": "2026-08-10T23:20:05.000Z"
     },
     {
@@ -640,7 +640,7 @@
       "link": "https://github.blog/engineering/using-the-github-copilot-sdk-for-java/",
       "source": "Github Blog",
       "sourceUrl": "https://github.blog/feed/",
-      "summary": "Enterprise Java developers have a new superpower—drive GitHub Copilot from idiomatic Java code with annotations, virtual threads, and more. The post Using the GitHub Copilot SDK for Java appeared first on The GitHub Blog.",
+      "summary": "Enterprise Java developers have a new superpower-drive GitHub Copilot from idiomatic Java code with annotations, virtual threads, and more. The post Using the GitHub Copilot SDK for Java appeared first on The GitHub Blog.",
       "publishedAt": "2026-08-10T19:30:00.000Z"
     },
     {
@@ -706,7 +706,7 @@
     {
       "slug": "c8e0eeaa8e2bfc76599159ad",
       "guid": "https://medium.com/p/3ddc6ec53f66",
-      "title": "Building an LLM Playground Farm — Part 0: Setting the Ground",
+      "title": "Building an LLM Playground Farm - Part 0: Setting the Ground",
       "link": "https://itnext.io/building-an-llm-playground-farm-part-0-setting-the-ground-3ddc6ec53f66?source=rss----5b301f10ddcd---4",
       "source": "itnext",
       "sourceUrl": "https://itnext.io/feed",
@@ -736,7 +736,7 @@
     {
       "slug": "f476aaf1aef10cf53c86005c",
       "guid": "https://medium.com/p/42bdb24328e8",
-      "title": "Claude Code Now Has Opus 5 and Fable 5 — But They’re Almost Unusable",
+      "title": "Claude Code Now Has Opus 5 and Fable 5 - But They’re Almost Unusable",
       "link": "https://itnext.io/claude-code-now-has-opus-5-and-fable-5-but-theyre-almost-unusable-42bdb24328e8?source=rss----5b301f10ddcd---4",
       "source": "itnext",
       "sourceUrl": "https://itnext.io/feed",
@@ -800,7 +800,7 @@
       "link": "https://dzone.com/articles/spark-neo4j-supply-chain",
       "source": "DZone",
       "sourceUrl": "https://feeds.dzone.com/home",
-      "summary": "Supply chains are graphs. Suppliers feed into warehouses, warehouses feed into distribution centers, and distribution centers feed into retailers. When we model them that way — as nodes and relationships rather than rows and columns — we unlock a set of tools that gives us the a…",
+      "summary": "Supply chains are graphs. Suppliers feed into warehouses, warehouses feed into distribution centers, and distribution centers feed into retailers. When we model them that way - as nodes and relationships rather than rows and columns - we unlock a set of tools that gives us the a…",
       "publishedAt": "2026-08-10T12:00:15.000Z"
     },
     {
@@ -920,7 +920,7 @@
       "link": "https://dzone.com/articles/microsoft-foundry-tool-search",
       "source": "DZone",
       "sourceUrl": "https://feeds.dzone.com/home",
-      "summary": "Most agents are billed for tools they don't use. Not once — on every single turn. The mechanics are simple enough that it's easy to miss. When you give a model a set of tools, the full JSON schema for every tool goes into the request. Names, descriptions, parameter types, enum v…",
+      "summary": "Most agents are billed for tools they don't use. Not once - on every single turn. The mechanics are simple enough that it's easy to miss. When you give a model a set of tools, the full JSON schema for every tool goes into the request. Names, descriptions, parameter types, enum v…",
       "publishedAt": "2026-08-07T18:00:00.000Z"
     },
     {

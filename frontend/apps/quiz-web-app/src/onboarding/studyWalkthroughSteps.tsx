@@ -49,7 +49,7 @@ export function buildStudyWalkthroughSteps(
           content: (
             <Body>
               Next you will add a post to My Sets, start a session, reveal a card, and rate it.
-              Click the highlighted control at each step — nothing is sent to a server.
+              Click the highlighted control at each step - nothing is sent to a server.
             </Body>
           ),
           before: async () => {
@@ -131,7 +131,7 @@ export function buildStudyWalkthroughSteps(
       content: (
         <Body>
           This is one question. The counter is this session only. Bury, Suspend, and Ignore are
-          optional extras — skip them for now.
+          optional extras - skip them for now.
         </Body>
       ),
       ...waitForPage,
@@ -143,7 +143,7 @@ export function buildStudyWalkthroughSteps(
       title: "Pick an answer",
       content: (
         <Body>
-          Multiple-choice cards need an option first. Click any choice — the walkthrough continues
+          Multiple-choice cards need an option first. Click any choice - the walkthrough continues
           after you pick.
         </Body>
       ),
@@ -176,7 +176,7 @@ export function buildStudyWalkthroughSteps(
       title: "What you just revealed",
       content: (
         <Body>
-          Read the solution. Rating comes next — that is how the scheduler decides when this card
+          Read the solution. Rating comes next - that is how the scheduler decides when this card
           should return.
         </Body>
       ),

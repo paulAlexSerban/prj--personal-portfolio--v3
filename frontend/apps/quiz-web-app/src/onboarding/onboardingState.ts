@@ -16,7 +16,7 @@ function writeFlag(key: string): void {
   try {
     localStorage.setItem(key, "1");
   } catch {
-    // Private mode / blocked storage — still close the tour.
+    // Private mode / blocked storage - still close the tour.
   }
 }
 

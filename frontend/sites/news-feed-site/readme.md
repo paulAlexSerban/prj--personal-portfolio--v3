@@ -13,4 +13,4 @@ pnpm --filter @prj--personal-portfolio--v3/frontend--news-feed-site build
 
 Env:
 
-- `PUBLIC_NEWS_DATA_URL` — CDN origin (e.g. `https://news-data.paulserban.eu`). Unset in local dev so the app loads `/news-data/*.json` from the Vite middleware.
+- `PUBLIC_NEWS_DATA_URL` - CDN origin (e.g. `https://news-data.paulserban.eu`). Unset in local dev so the app loads `/news-data/*.json` from the Vite middleware.

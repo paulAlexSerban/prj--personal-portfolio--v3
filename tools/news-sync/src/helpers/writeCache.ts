@@ -11,7 +11,7 @@ export function writeCategoryCaches(outDir: string, categories: FetchedCategory[
     const knownSlugs = new Set(categories.map((c) => c.category));
 
     // Remove stale category files so deleted categories don't linger.
-    // Keep index.json — it is rewritten below.
+    // Keep index.json - it is rewritten below.
     for (const existing of fs.readdirSync(outDir)) {
         if (!existing.endsWith('.json') || existing === INDEX_FILE) continue;
         const slug = existing.replace(/\.json$/, '');

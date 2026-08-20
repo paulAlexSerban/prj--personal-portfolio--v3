@@ -82,7 +82,7 @@ export function buildOnboardingSteps(): Step[] {
       title: "Track your progress",
       content: (
         <Body>
-          Reviews are scheduled with SM-2 or FSRS-5 — you can switch in Settings. Open Progress to
+          Reviews are scheduled with SM-2 or FSRS-5 - you can switch in Settings. Open Progress to
           see how many cards are new, due, or already learned.
         </Body>
       ),

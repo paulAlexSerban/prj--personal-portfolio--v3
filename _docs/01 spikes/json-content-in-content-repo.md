@@ -38,7 +38,7 @@ content/
 | `skills/`               | `json-ingest` | `skills`     |
 | `experience/`           | `json-ingest` | `experience` |
 | `pages/`                | `json-ingest` | `pages`      |
-| `feeds/`                | `news-sync`   | (none — RSS input for the news CDN) |
+| `feeds/`                | `news-sync`   | (none - RSS input for the news CDN) |
 | everything else         | `mdx-ingest`  | (varies)     |
 
 Invalid or incomplete JSON is **skipped with a warning** - ingest continues for other files.
