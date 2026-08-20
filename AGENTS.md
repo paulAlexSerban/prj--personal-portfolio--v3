@@ -10,7 +10,7 @@ TypeScript pnpm monorepo for a portfolio, blog, flashcard-quiz, and news-feed pl
     2. `tools/mdx-ingest` parses MDX
     3. `tools/json-ingest` parses JSON
     4. upserts into `database/output/content.db` (SQLite).
-- **News feed**: RSS lists live in the content repo (`content/publish/feeds/`). `tools/news-sync` reads them from `content/live/content/publish` (after `content-sync`), writes `content/news/cache/*.json` (including `index.json`) on a daily GitHub Actions workflow, commits to the `news-cache` branch, and uploads to the `news-data.paulserban.eu` CDN. The news-feed site fetches those files in the browser — it does not read SQLite at build time.
+- **News feed**: RSS lists live in the content repo (`content/publish/feeds/`). `tools/news-sync` reads them from `content/live/content/publish` (after `content-sync`), writes `content/news/cache/*.json` (including `index.json`) on a daily GitHub Actions workflow, commits to the `news-cache` branch, and uploads to the `news-data.paulserban.eu` CDN. The news-feed site fetches those files in the browser - it does not read SQLite at build time.
 - **Build-time reads**: portfolio/blog SSG (Astro) query `content.db` at build time; MDX body is stored as text, compiled at build.
 - **Shared layer**: Drizzle schema (`shared/db-schema`), DB runtime (`shared/db`), and a dependency-aware task runner (`shared/task-manager`).
 - **Docs**: product requirements, ADRs, and implementation plans live in `_docs/`.

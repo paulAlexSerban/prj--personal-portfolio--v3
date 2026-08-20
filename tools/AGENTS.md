@@ -236,7 +236,7 @@ Helpers: `args.ts`, `key.ts`, `sitemap.ts`, `payload.ts`, `writeKey.ts`, `waitFo
 
 ## `@prj--personal-portfolio--v3/tools--news-ingest` (`tools/news-ingest/`)
 
-Reads `content/news/cache/*.json` and upserts into `news_items`. Still available for local/SQLite use, but **not** invoked by site builds — the news-feed site loads CDN JSON in the browser. Prunes unlocked RSS rows absent from the latest cache.
+Reads `content/news/cache/*.json` and upserts into `news_items`. Still available for local/SQLite use, but **not** invoked by site builds - the news-feed site loads CDN JSON in the browser. Prunes unlocked RSS rows absent from the latest cache.
 
 ## Agent notes
 

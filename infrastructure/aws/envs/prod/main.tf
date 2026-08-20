@@ -269,7 +269,7 @@ module "github_oidc_deploy_role" {
 }
 
 # Least-privilege role for the isolated news-sync workflow (GitHub Environment
-# `news-data`). Can only write the news JSON bucket and invalidate its CDN —
+# `news-data`). Can only write the news JSON bucket and invalidate its CDN -
 # not the four site buckets.
 module "github_oidc_news_sync_role" {
   source = "../../modules/github-oidc-deploy-role"

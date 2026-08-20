@@ -83,7 +83,7 @@ export function NewsFeedApp({ category, categoryLabel }: Props) {
                     {category && <h2 className="m-0 font-display text-4xl font-bold">{label}</h2>}
                     {!category && (
                         <p className="deck mt-2 text-sm">
-                            A personal RSS digest I maintain so I can skim what is new. Cards link to the original publishers — this is not a news outlet, and I do not host or
+                            A personal RSS digest I maintain so I can skim what is new. Cards link to the original publishers - this is not a news outlet, and I do not host or
                             author these articles.
                             {fetchedAt && (
                                 <>

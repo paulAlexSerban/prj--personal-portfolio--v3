@@ -33,7 +33,7 @@ GitHub Actions (environment:news-data)
 
 Content images/icons are written by `content--paulserban.eu` (`npm run push:assets`)
 into the existing `assets.paulserban.eu` bucket. Apps load them from
-`https://assets.paulserban.eu/assets/...` — site deploys never touch that bucket.
+`https://assets.paulserban.eu/assets/...` - site deploys never touch that bucket.
 
 News JSON is written by `.github/workflows/news-sync.yaml` (daily RSS fetch) into
 the `news-data.paulserban.eu` bucket. The news-feed site fetches

@@ -63,5 +63,5 @@ test, Pages, or the quiz SPA.
 
 ## Related
 
-- `_build-site.yaml` — write-key after Astro build; submit after S3+CloudFront.
-- Site `robots.txt.ts` — crawl policy + sitemap link (more important for Google).
+- `_build-site.yaml` - write-key after Astro build; submit after S3+CloudFront.
+- Site `robots.txt.ts` - crawl policy + sitemap link (more important for Google).

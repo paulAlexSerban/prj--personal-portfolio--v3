@@ -313,9 +313,15 @@ importers:
       '@prj--personal-portfolio--v3/shared--navigation':
         specifier: workspace:*
         version: link:../../../shared/navigation
+      '@prj--personal-portfolio--v3/shared--question-contract':
+        specifier: workspace:*
+        version: link:../../../shared/question-contract
       '@prj--personal-portfolio--v3/shared--ui':
         specifier: workspace:*
         version: link:../../../shared/ui
+      '@prj--personal-portfolio--v3/tools--quiz-export':
+        specifier: workspace:*
+        version: link:../../../tools/quiz-export
       astro:
         specifier: ^5.16.15
         version: 5.18.2(@types/node@25.9.1)(jiti@2.7.0)(lightningcss@1.32.0)(rollup@4.62.2)(terser@5.48.0)(tsx@4.22.3)(typescript@5.9.3)(yaml@2.9.0)
@@ -325,6 +331,9 @@ importers:
       drizzle-orm:
         specifier: ^0.45.2
         version: 0.45.2(@types/better-sqlite3@7.6.13)(better-sqlite3@12.10.0)
+      isomorphic-dompurify:
+        specifier: ^2.25.0
+        version: 2.36.0
       lucide-react:
         specifier: ^0.575.0
         version: 0.575.0(react@19.2.7)

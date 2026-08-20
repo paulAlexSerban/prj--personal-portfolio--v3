@@ -89,8 +89,8 @@ export function QuestionRenderer({ question, revealed, onReveal, onGraded, onRet
     return (
         <div className="flex flex-col gap-6">
             <div>
-                <p className="smallcaps text-[10px] text-[var(--slate)] mb-2">
-                    {question.answerFormat.replace(/_/g, ' ')} · {question.difficulty} · {question.gradingMode === 'auto' ? 'auto-graded' : 'self-graded'}
+                <p className="smallcaps text-sm text-[var(--slate)] mb-2">
+                    {question.answerFormat.replace(/_/g, ' ')} - {question.difficulty} - {question.gradingMode === 'auto' ? 'auto-graded' : 'self-graded'}
                 </p>
                 <CardRenderer html={question.stem} compiledHtml={question.stemHtml} reveal={revealed} dropcap className="text-lg md:text-xl leading-snug" />
             </div>
@@ -158,7 +158,7 @@ export function QuestionRenderer({ question, revealed, onReveal, onGraded, onRet
                     >
                         {question.answerFormat === 'free_text' ? 'Show Answer' : 'Submit'}
                     </Stamp>
-                    <p className="smallcaps text-[10px] text-[var(--slate)] mt-3">
+                    <p className="smallcaps text-sm text-[var(--slate)] mt-3">
                         {question.answerFormat === 'free_text' ? 'Press Space' : canSubmit ? 'Press Space to submit' : 'Choose an answer'}
                     </p>
                 </div>
