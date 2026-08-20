@@ -64,7 +64,7 @@ const description = post.excerpt ?? post.subheading ?? undefined;
 const canonicalUrl = new URL(postDetailPath(contentType, slug), Astro.site).href;
 const hasResources = cheatSheets.length > 0 || learningPlans.length > 0;
 const ogImage = coverImageUrl(post.cover, assetUrl('og-default.png'));
-const quizAppHref = `${siteUrls.quiz.replace(/\/$/, '')}/sets/${post.slug}/`;
+const quizAppHref = `${siteUrls.quiz.replace(/\/$/, '')}/sets/${post.slug}/?add=1`;
 
 function toIso(value: Date | string | null | undefined): string | undefined {
     if (!value) return undefined;
