@@ -1,8 +1,38 @@
 {
   "category": "javascript",
   "label": "JavaScript",
-  "fetchedAt": "2026-08-20T06:21:38.492Z",
+  "fetchedAt": "2026-08-21T06:21:45.307Z",
   "items": [
+    {
+      "slug": "a2562b052a42c1be015a8b0f",
+      "guid": "https://flaviocopes.com/javascript-immutable-array-methods/",
+      "title": "JavaScript immutable array methods: toSorted(), toReversed(), toSpliced(), with()",
+      "link": "https://flaviocopes.com/javascript-immutable-array-methods/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Need to sort or reverse an array without mutating it? Use toSorted(), toReversed(), toSpliced(), and with() to get a new copy instead.",
+      "publishedAt": "2026-08-21T05:00:00.000Z"
+    },
+    {
+      "slug": "38ace3370b36113745646d9b",
+      "guid": "https://flaviocopes.com/gracefully-stop-child-process-macos/",
+      "title": "Gracefully stop a child process before a macOS app quits",
+      "link": "https://flaviocopes.com/gracefully-stop-child-process-macos/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Interrupt a media process, escalate after a timeout, finalize its output, and defer macOS application termination until the file is safe.",
+      "publishedAt": "2026-08-20T13:00:00.000Z"
+    },
+    {
+      "slug": "cf5a208de6c4a1d7968fb06a",
+      "guid": "https://flaviocopes.com/css-nesting/",
+      "title": "Native CSS Nesting",
+      "link": "https://flaviocopes.com/css-nesting/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Native CSS nesting works without Sass. Learn basic nesting, the ampersand selector, nested media queries, specificity gotchas, and when to drop preprocessors.",
+      "publishedAt": "2026-08-20T09:00:00.000Z"
+    },
     {
       "slug": "54d1e662248881706bf7a65e",
       "guid": "https://flaviocopes.com/view-transitions-api/",
@@ -12,6 +42,16 @@
       "sourceUrl": "https://flaviocopes.com/rss.xml",
       "summary": "Create smooth same-document animations with the View Transitions API using startViewTransition, CSS pseudo-elements, and view-transition-name on elements.",
       "publishedAt": "2026-08-20T05:00:00.000Z"
+    },
+    {
+      "slug": "b0eecc3dd398b62811b721ba",
+      "guid": "https://blog.appsignal.com/2026/08/20/mcp-wont-replace-your-monitoring-tool.html",
+      "title": "MCP Won't Replace Your Monitoring Tool",
+      "link": "https://blog.appsignal.com/2026/08/20/mcp-wont-replace-your-monitoring-tool.html",
+      "source": "AppSignal",
+      "sourceUrl": "https://blog.appsignal.com/feed.xml",
+      "summary": "MCP is generating a lot of hype nowadays (but then again, almost anything that emerges in AI seems to attract hype). The anticipation around it is similar to the level of excitement that would break out if Apple were to finally introduce USB-C to iPhones. To be fair, though, som…",
+      "publishedAt": "2026-08-20T00:00:00.000Z"
     },
     {
       "slug": "d8e6d0395d9f524e48c35b6b",
@@ -312,36 +352,6 @@
       "sourceUrl": "https://flaviocopes.com/rss.xml",
       "summary": "I moved Prototyped to flaviocopes.com/software and made every product free to download when you subscribe to my newsletter.",
       "publishedAt": "2026-08-09T21:10:00.000Z"
-    },
-    {
-      "slug": "94f4b755f8a333e934d882d3",
-      "guid": "https://flaviocopes.com/workerd/",
-      "title": "How workerd, the Cloudflare Workers runtime, is built",
-      "link": "https://flaviocopes.com/workerd/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "I read the workerd source to explain its server, service graph, V8 isolates, JavaScript APIs, request contexts, and self-hosting model.",
-      "publishedAt": "2026-08-09T09:00:00.000Z"
-    },
-    {
-      "slug": "873a06ddae552da1515fdd47",
-      "guid": "https://flaviocopes.com/hono-middleware-cookies-headers/",
-      "title": "Hono: middleware, cookies, headers, redirects",
-      "link": "https://flaviocopes.com/hono-middleware-cookies-headers/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Hono middleware, cookies, headers, and redirects for everyday web apps. Built-in logger, basic auth, and CORS, plus custom middleware and signed cookies.",
-      "publishedAt": "2026-08-09T05:00:00.000Z"
-    },
-    {
-      "slug": "c2efc8ac0876ddf971aaa0fb",
-      "guid": "https://flaviocopes.com/cloudflare-worker-multiple-handlers/",
-      "title": "Use fetch, queue, and scheduled handlers in one Cloudflare Worker",
-      "link": "https://flaviocopes.com/cloudflare-worker-multiple-handlers/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Run an Astro app, background queue consumer, and retention cron from one Cloudflare Worker by keeping each handler small and explicit.",
-      "publishedAt": "2026-08-08T13:00:00.000Z"
     }
   ]
 }
