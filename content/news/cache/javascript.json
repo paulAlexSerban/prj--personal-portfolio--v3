@@ -1,8 +1,38 @@
 {
   "category": "javascript",
   "label": "JavaScript",
-  "fetchedAt": "2026-08-21T06:21:45.307Z",
+  "fetchedAt": "2026-08-22T06:16:33.785Z",
   "items": [
+    {
+      "slug": "3f343ed0a58ff36a2f6db8da",
+      "guid": "https://flaviocopes.com/css-subgrid/",
+      "title": "CSS Subgrid",
+      "link": "https://flaviocopes.com/css-subgrid/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "CSS subgrid lets nested grid items align to parent tracks. Build aligned cards and forms, understand spans and gaps, and add a practical fallback.",
+      "publishedAt": "2026-08-22T05:00:00.000Z"
+    },
+    {
+      "slug": "7b36393add9ced2d8fd470f5",
+      "guid": "https://flaviocopes.com/pstack/",
+      "title": "A deep dive into pstack",
+      "link": "https://flaviocopes.com/pstack/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "pstack is a Cursor plugin for rigorous agent work. The same SKILL.md files also load in Claude Code, Codex, and other coding agents.",
+      "publishedAt": "2026-08-21T09:00:00.000Z"
+    },
+    {
+      "slug": "08811855ddfa0fa5c69f93dc",
+      "guid": "https://flaviocopes.com/herdr-skills/",
+      "title": "How to use Herdr skills and herdr --skill",
+      "link": "https://flaviocopes.com/herdr-skills/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Learn how to install the Herdr agent skill, use herdr --skill, and let coding agents safely inspect, split, run, and wait in panes.",
+      "publishedAt": "2026-08-21T06:00:00.000Z"
+    },
     {
       "slug": "a2562b052a42c1be015a8b0f",
       "guid": "https://flaviocopes.com/javascript-immutable-array-methods/",
@@ -12,16 +42,6 @@
       "sourceUrl": "https://flaviocopes.com/rss.xml",
       "summary": "Need to sort or reverse an array without mutating it? Use toSorted(), toReversed(), toSpliced(), and with() to get a new copy instead.",
       "publishedAt": "2026-08-21T05:00:00.000Z"
-    },
-    {
-      "slug": "38ace3370b36113745646d9b",
-      "guid": "https://flaviocopes.com/gracefully-stop-child-process-macos/",
-      "title": "Gracefully stop a child process before a macOS app quits",
-      "link": "https://flaviocopes.com/gracefully-stop-child-process-macos/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Interrupt a media process, escalate after a timeout, finalize its output, and defer macOS application termination until the file is safe.",
-      "publishedAt": "2026-08-20T13:00:00.000Z"
     },
     {
       "slug": "cf5a208de6c4a1d7968fb06a",
@@ -332,26 +352,6 @@
       "sourceUrl": "https://flaviocopes.com/rss.xml",
       "summary": "How glob patterns work: star vs double star, question marks, character classes, brace expansion, and the gitignore rules that trip everyone up.",
       "publishedAt": "2026-08-10T05:00:00.000Z"
-    },
-    {
-      "slug": "2abea088dc21f85707489f69",
-      "guid": "https://flaviocopes.com/hono-cloudflare-workers/",
-      "title": "Deploying Hono on Cloudflare Workers",
-      "link": "https://flaviocopes.com/hono-cloudflare-workers/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Deploy a Hono API on Cloudflare Workers with wrangler dev, typed D1 bindings, and a tiny REST endpoint. The final post in the Bun and Hono series.",
-      "publishedAt": "2026-08-10T05:00:00.000Z"
-    },
-    {
-      "slug": "5215ff55834132baf05f85ce",
-      "guid": "https://flaviocopes.com/prototyped-is-now-free/",
-      "title": "Prototyped is now free",
-      "link": "https://flaviocopes.com/prototyped-is-now-free/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "I moved Prototyped to flaviocopes.com/software and made every product free to download when you subscribe to my newsletter.",
-      "publishedAt": "2026-08-09T21:10:00.000Z"
     }
   ]
 }

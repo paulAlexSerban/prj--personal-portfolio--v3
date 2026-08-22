@@ -1,17 +1,187 @@
 {
   "category": "cybersecurity",
   "label": "Cybersecurity",
-  "fetchedAt": "2026-08-21T06:21:45.307Z",
+  "fetchedAt": "2026-08-22T06:16:33.785Z",
   "items": [
     {
-      "slug": "fdc0a385d432f4262d908a1c",
-      "guid": "https://www.darkreading.com/cyber-risk/calling-on-cyber-pros-to-help-city-hall",
+      "slug": "e9645c2b6c6b93fc06fdd3de",
+      "guid": "https://www.schneier.com/?p=72508",
+      "title": "Friday Squid Blogging: Neon Flying Squid",
+      "link": "https://www.schneier.com/blog/archives/2026/08/friday-squid-blogging-neon-flying-squid.html",
+      "source": "Schneier on Security",
+      "sourceUrl": "https://www.schneier.com/feed/",
+      "summary": "The neon flying squid can fly in formation. The shoal of about 100 squid rose unexpectedly from a patch of the Pacific Ocean around 370 miles from Tokyo and glided near the boat for about 30 metres. The astonished researchers were the first to capture photographs of such a thing…",
+      "publishedAt": "2026-08-21T21:07:20.000Z"
+    },
+    {
+      "slug": "4b6135796923fbeac4f2ecc8",
+      "guid": "https://thehackernews.com/2026/08/14-trojanized-npm-packages-drop-redc2.html",
+      "title": "14 Trojanized npm Packages Drop RedC2 4.0 Linux Backdoor With AI-Assisted C2",
+      "link": "https://thehackernews.com/2026/08/14-trojanized-npm-packages-drop-redc2.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "Cybersecurity researchers have discovered a set of trojanized npm packages that masquerade as working calendar and streak utilities but are engineered to stealthily deliver an artificial intelligence (AI)-powered Linux implant dubbed RedC2 4.0. \"When the module loads, it locates…",
+      "publishedAt": "2026-08-21T18:53:00.000Z"
+    },
+    {
+      "slug": "52236a821b5452feb1efe1b5",
+      "guid": "https://www.darkreading.com/application-security/owasp-flags-top-ai-skill-risks-security-blueprint",
+      "title": "OWASP Flags Top AI Skill Risks in New Security Blueprint",
+      "link": "https://www.darkreading.com/application-security/owasp-flags-top-ai-skill-risks-security-blueprint",
+      "source": "Dark Reading",
+      "sourceUrl": "https://www.darkreading.com/rss.xml",
+      "summary": "The Open Worldwide Application Security Project has a brand-new top 10 security list tailored for the modern era, and it debuts a Universal Skill Format to add consistency and security to the AI add-ons.",
+      "publishedAt": "2026-08-21T17:36:53.000Z"
+    },
+    {
+      "slug": "314e8e1505749b3aa88d3e91",
+      "guid": "https://www.schneier.com/?p=72494",
+      "title": "AI Is Learning to Write Genetic Code",
+      "link": "https://www.schneier.com/blog/archives/2026/08/ai-is-learning-to-write-genetic-code.html",
+      "source": "Schneier on Security",
+      "sourceUrl": "https://www.schneier.com/feed/",
+      "summary": "This sort of research is both exciting and terrifying: The two models in question were told to generate complete genomes for a viable bacteriophage—a type of virus able to infect and replicate itself inside bacteria, destroying them from the inside. Using an existing bacteriopha…",
+      "publishedAt": "2026-08-21T16:51:50.000Z"
+    },
+    {
+      "slug": "befbe5399e8065d82429be59",
+      "guid": "https://thehackernews.com/2026/08/microsoft-defenders-own-driver-can-be.html",
+      "title": "Microsoft Defender's Own Driver Can Be Weaponized to Delete Security Software at Boot",
+      "link": "https://thehackernews.com/2026/08/microsoft-defenders-own-driver-can-be.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "Check Point Research has disclosed a technique that uses Microsoft Defender's own legitimately signed boot-time remediation driver to perform arbitrary kernel-level file and registry operations on Windows systems ranging from Windows 7 through Windows 11 25H2, with no software f…",
+      "publishedAt": "2026-08-21T15:52:10.000Z"
+    },
+    {
+      "slug": "a068075960f8a725980b4ad4",
+      "guid": "https://thehackernews.com/2026/08/android-car-malware-spreads-through.html",
+      "title": "Android Car Malware Spreads Through Built-In Updaters for Ad Fraud, Proxy Botnet",
+      "link": "https://thehackernews.com/2026/08/android-car-malware-spreads-through.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "Cybersecurity researchers have flagged a new malware family that's specifically designed to infect Android-based vehicle head unit firmware developed by DoFun. Kaspersky, which discovered the threat in June 2026, said the end goal of the malware is to serve a multi-stage downloa…",
+      "publishedAt": "2026-08-21T15:41:44.000Z"
+    },
+    {
+      "slug": "1771315afd3318ca7727cea3",
+      "guid": "https://www.darkreading.com/cyber-risk/cyber-pros-help-city-hall",
       "title": "Calling on Cyber Pros to Help Defend City Hall",
-      "link": "https://www.darkreading.com/cyber-risk/calling-on-cyber-pros-to-help-city-hall",
+      "link": "https://www.darkreading.com/cyber-risk/cyber-pros-help-city-hall",
       "source": "Dark Reading",
       "sourceUrl": "https://www.darkreading.com/rss.xml",
       "summary": "Government agencies with smaller budgets need support — and here's how you can help.",
       "publishedAt": "2026-08-21T14:00:00.000Z"
+    },
+    {
+      "slug": "742cf8651e8b5d40b0eb897a",
+      "guid": "https://www.darkreading.com/application-security/openai-adds-controls-already",
+      "title": "OpenAI Adds Controls That Should've Been There Already",
+      "link": "https://www.darkreading.com/application-security/openai-adds-controls-already",
+      "source": "Dark Reading",
+      "sourceUrl": "https://www.darkreading.com/rss.xml",
+      "summary": "The new AI security controls follow the Hugging Face incident last month, though many of these additions perhaps should have been in place prior to the frontier models escaping.",
+      "publishedAt": "2026-08-21T13:30:00.000Z"
+    },
+    {
+      "slug": "315a7872c69345e6b19d7963",
+      "guid": "https://thehackernews.com/2026/08/wazuh-and-ai-for-enhanced-soc-workflows.html",
+      "title": "Wazuh and AI For Enhanced SOC Workflows",
+      "link": "https://thehackernews.com/2026/08/wazuh-and-ai-for-enhanced-soc-workflows.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "Artificial Intelligence (AI) has become one of this decade's defining technologies. From healthcare and finance to manufacturing and education, organizations increasingly rely on AI to automate repetitive tasks, uncover patterns hidden within large datasets, and support faster d…",
+      "publishedAt": "2026-08-21T11:21:39.000Z"
+    },
+    {
+      "slug": "a7925affca23b04bfbdf7f24",
+      "guid": "https://www.cio.com/article/4212025/your-identity-governance-wasnt-built-for-ai-agents.html",
+      "title": "Your identity governance wasn’t built for AI agents",
+      "link": "https://www.cio.com/article/4212025/your-identity-governance-wasnt-built-for-ai-agents.html",
+      "source": "CIO",
+      "sourceUrl": "https://www.cio.com/feed/",
+      "summary": "Recently, I sat in on a conversation among CIOs about “the democratization of agents”: putting large language models directly in employees’ hands, connected to business logic so people could build on top of them. The mood was bullish, CIOs sketching out what their teams could do…",
+      "publishedAt": "2026-08-21T11:00:00.000Z"
+    },
+    {
+      "slug": "51c8d451f6eb936f08ac5896",
+      "guid": "https://thehackernews.com/2026/08/cisco-patches-nine-crosswork-and-secure.html",
+      "title": "Cisco Patches Nine Crosswork and Secure Workload Flaws, Five Scoring CVSS 10.0",
+      "link": "https://thehackernews.com/2026/08/cisco-patches-nine-crosswork-and-secure.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "Cisco has published another round of security updates for Crosswork platforms and Secure Workload Software as part of a continued comprehensive internal security review. Four of the security vulnerabilities affect Crosswork Data Gateway, Crosswork Network Controller, and Crosswo…",
+      "publishedAt": "2026-08-21T10:03:11.000Z"
+    },
+    {
+      "slug": "a87dc59432a8912a93bbc138",
+      "guid": "https://www.cio.com/article/4210980/wide-ranging-transformation-at-tiaa-enables-dozens-of-business-use-cases.html",
+      "title": "Inside TIAA’s massive IT transformation to fuel business growth",
+      "link": "https://www.cio.com/article/4210980/wide-ranging-transformation-at-tiaa-enables-dozens-of-business-use-cases.html",
+      "source": "CIO",
+      "sourceUrl": "https://www.cio.com/feed/",
+      "summary": "When Sastry Durvasula joined TIAA in early 2022, he saw an organization fighting against outdated legacy technologies and in need of a major IT refresh. Since then, the nonprofit has completed two phases of a comprehensive transformation initiative called Technology Ecosystem Tr…",
+      "publishedAt": "2026-08-21T10:01:00.000Z"
+    },
+    {
+      "slug": "8849788db99ae99905c59aa8",
+      "guid": "https://www.cio.com/article/4212022/the-decision-line.html",
+      "title": "The decision line",
+      "link": "https://www.cio.com/article/4212022/the-decision-line.html",
+      "source": "CIO",
+      "sourceUrl": "https://www.cio.com/feed/",
+      "summary": "Organizations are making one of the biggest decisions about AI without realizing it. Every time we automate a process… Every time we deploy a generative AI copilot… Every time we trust an AI recommendation… We’re answering a question that most leadership teams have never actuall…",
+      "publishedAt": "2026-08-21T10:00:00.000Z"
+    },
+    {
+      "slug": "f8b335c0f32b1b6c0801aabe",
+      "guid": "https://www.schneier.com/?p=72487",
+      "title": "More Incidents of AIs Going Rogue in Cybersecurity Challenges",
+      "link": "https://www.schneier.com/blog/archives/2026/08/more-incidents-of-ais-going-rogue-in-cybersecurity-challenges.html",
+      "source": "Schneier on Security",
+      "sourceUrl": "https://www.schneier.com/feed/",
+      "summary": "The AI Security Institute has a new report of AI systems engaging in “unsanctioned behavior”—what I have been calling “genie behavior—while being tested on their cybersecurity capabilities. The incident stemmed from a single evaluation where agents were given a task of solving a…",
+      "publishedAt": "2026-08-21T09:42:34.000Z"
+    },
+    {
+      "slug": "919f4b1d4ca5ef22f20605ee",
+      "guid": "https://www.cio.com/article/4212163/ransomware-takes-aim-at-enterprise-resilience-2.html",
+      "title": "Ransomware takes aim at enterprise resilience",
+      "link": "https://www.cio.com/article/4212163/ransomware-takes-aim-at-enterprise-resilience-2.html",
+      "source": "CIO",
+      "sourceUrl": "https://www.cio.com/feed/",
+      "summary": "Ransomware remains one of the most disruptive cyber threats organizations face. Companies have strengthened their cyber defenses over the years, but attackers in 2026 have become faster, more targeted, and increasingly reliant on AI, forcing the need for a change in how organiza…",
+      "publishedAt": "2026-08-21T09:30:00.000Z"
+    },
+    {
+      "slug": "ea5980e3f440e3951f8afcb3",
+      "guid": "https://www.cio.com/article/4212019/the-more-efficient-ai-makes-us-the-more-human-we-must-become.html",
+      "title": "The more efficient AI makes us, the more human we must become",
+      "link": "https://www.cio.com/article/4212019/the-more-efficient-ai-makes-us-the-more-human-we-must-become.html",
+      "source": "CIO",
+      "sourceUrl": "https://www.cio.com/feed/",
+      "summary": "Artificial intelligence is rapidly reshaping the business landscape. It can summarize meetings, generate presentations, personalize communications, analyze customer behavior, automate repetitive tasks and uncover insights that once took teams days to uncover. Organizations that …",
+      "publishedAt": "2026-08-21T09:00:00.000Z"
+    },
+    {
+      "slug": "7850fb529146db3c12d4cf5a",
+      "guid": "https://thehackernews.com/2026/08/gitlab-cve-2026-19478-comes-under.html",
+      "title": "GitLab CVE-2026-19478 Comes Under Active Exploitation Within Days of Disclosure",
+      "link": "https://thehackernews.com/2026/08/gitlab-cve-2026-19478-comes-under.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "A newly disclosed security flaw in GitLab has come under active exploitation within days of public disclosure, according to watchTowr. The vulnerability in question is CVE-2026-19478 (CVSS score: 9.4), a case of code injection that allows an unauthenticated attacker to modify or…",
+      "publishedAt": "2026-08-21T07:04:25.000Z"
+    },
+    {
+      "slug": "630ad3fed036364e1f3f4869",
+      "guid": "https://thehackernews.com/2026/08/microsoft-entra-id-flaw-cvss-100.html",
+      "title": "Microsoft Patches Severe Entra ID Flaw (CVSS 10.0) Allowing Remote Code Execution",
+      "link": "https://thehackernews.com/2026/08/microsoft-entra-id-flaw-cvss-100.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "Update: The story was updated after publication to note that the vulnerability has not been exploited. Although the security bulletin originally marked the \"Exploited\" field under the Exploitability Assessment table as \"Yes,\" on August 21, 2026, Microsoft corrected the \"Exploite…",
+      "publishedAt": "2026-08-21T06:06:11.000Z"
     },
     {
       "slug": "0c1b8ac4190705cb692e70f3",
@@ -54,6 +224,26 @@
       "publishedAt": "2026-08-20T19:11:15.000Z"
     },
     {
+      "slug": "25c6c8cc6fecb2a7fa07c845",
+      "guid": "https://orca.security/?p=74494",
+      "title": "BOD 26-04 Just Changed How Federal Agencies Prioritize Vulnerabilities.",
+      "link": "https://orca.security/resources/blog/bod-26-04-just-changed-how-federal-agencies-prioritize-vulnerabilities/",
+      "source": "Orca Security Blog",
+      "sourceUrl": "https://orca.security/resources/blog/feed/",
+      "summary": "Introduction Three days. That’s how long federal agencies now have to patch their riskiest vulnerabilities, and for the first time, a high CVSS score alone won’t land a vulnerability in that bucket. On June 10, 2026, CISA issued Binding Operational Directive (BOD) 26-04, “Priori…",
+      "publishedAt": "2026-08-20T18:44:46.000Z"
+    },
+    {
+      "slug": "ced1224eee7c94f623fd3d14",
+      "guid": "https://orca.security/?p=74498",
+      "title": "Critical Elementor Pro File Upload Flaw Enables Unauthenticated Remote Code Execution on WordPress Sites",
+      "link": "https://orca.security/resources/blog/elementor-pro-wordpress-rce-flaw/",
+      "source": "Orca Security Blog",
+      "sourceUrl": "https://orca.security/resources/blog/feed/",
+      "summary": "Executive Summary A critical vulnerability (CVE-2026-32475, CVSS 9.0) was disclosed affecting the Elementor Pro WordPress plugin, allowing attackers to upload arbitrary PHP files and achieve remote code execution via the Forms module’s File Upload handling. Due to the potential …",
+      "publishedAt": "2026-08-20T18:19:47.000Z"
+    },
+    {
       "slug": "14c01e496ad3a3dbb9c70986",
       "guid": "https://danielmiessler.com/blog/i-only-do-anything-once",
       "title": "I Only Do Anything Once",
@@ -90,7 +280,7 @@
       "link": "https://www.darkreading.com/cybersecurity-operations/money-and-mindset-the-two-biggest-roadblocks-to-cyber-policing",
       "source": "Dark Reading",
       "sourceUrl": "https://www.darkreading.com/rss.xml",
-      "summary": "Law enforcement training is not keeping pace with the volume and rapid evolution of cybercrimes, though officers really only need to learn the basics, but focus and budgets hinder progress.",
+      "summary": "Law enforcement training is falling behind the volume and rapid evolution of cybercrimes. Officers really only need to learn the basics, but lack of focus and budget hinder progress.",
       "publishedAt": "2026-08-20T17:32:51.000Z"
     },
     {
@@ -394,6 +584,16 @@
       "publishedAt": "2026-08-19T18:06:44.000Z"
     },
     {
+      "slug": "5a8b7d9689e37d7fa214c73d",
+      "guid": "https://orca.security/?p=74482",
+      "title": "Agentic Workflows: A Complete Guide for 2026",
+      "link": "https://orca.security/resources/blog/agentic-workflows/",
+      "source": "Orca Security Blog",
+      "sourceUrl": "https://orca.security/resources/blog/feed/",
+      "summary": "Key Takeaways An agentic workflow is an automated process in which a language model chooses the next step while the process runs. A person defines the goal, the tools, and the boundaries. The model decides the order. That one property separates it from the scripted automation al…",
+      "publishedAt": "2026-08-19T17:29:26.000Z"
+    },
+    {
       "slug": "5790559cab4910b589325c73",
       "guid": "https://www.darkreading.com/threat-intelligence/silkparasite-central-asian-orgs-flurry-rats",
       "title": "SilkParasite Threatens Central Asian Orgs With Flurry of RATs",
@@ -402,6 +602,16 @@
       "sourceUrl": "https://www.darkreading.com/rss.xml",
       "summary": "A spear-phishing campaign by a China-nexus group linked to FamousSparrow provides insight into geopolitical, technical, and strategic global moves by the country's APTs.",
       "publishedAt": "2026-08-19T16:58:23.000Z"
+    },
+    {
+      "slug": "c0675ecb34c9e43f3bf98fa2",
+      "guid": "https://orca.security/?p=74469",
+      "title": "Autonomous SOC: AI-Driven Security Operations Explained",
+      "link": "https://orca.security/resources/blog/autonomous-soc/",
+      "source": "Orca Security Blog",
+      "sourceUrl": "https://orca.security/resources/blog/feed/",
+      "summary": "Key Takeaways An autonomous SOC is a security operations center where software makes and executes operational decisions an analyst used to make. The label describes how much judgment has moved. Triage, closure, containment, and detection tuning are separate decisions, and a work…",
+      "publishedAt": "2026-08-19T15:28:22.000Z"
     },
     {
       "slug": "9382709941ad2fa7c1c57683",
@@ -744,26 +954,6 @@
       "publishedAt": "2026-08-18T10:40:16.000Z"
     },
     {
-      "slug": "aa0b91edfcad1dbaf9bf64ec",
-      "guid": "https://www.cio.com/article/4207540/cios-earn-ai-reprieve-but-roi-pressure-is-surging.html",
-      "title": "CIOs earn AI reprieve, but ROI pressure is surging",
-      "link": "https://www.cio.com/article/4207540/cios-earn-ai-reprieve-but-roi-pressure-is-surging.html",
-      "source": "CIO",
-      "sourceUrl": "https://www.cio.com/feed/",
-      "summary": "2026 arrived as the year AI ROI would need to get real. After years of experiments and pilots that largely failed to scale, CEOs’ No. 1 priority for CIOs was to achieve demonstrable benefits from AI investments. Under that pressure, CIOs started to feel the heat, with 71% of IT …",
-      "publishedAt": "2026-08-18T10:01:00.000Z"
-    },
-    {
-      "slug": "6380778f147ab5c27258e40b",
-      "guid": "https://www.cio.com/article/4210684/your-ai-bill-just-came-due-nobody-warned-you-it-would-look-like-this.html",
-      "title": "Your AI bill just came due. Nobody warned you it would look like this",
-      "link": "https://www.cio.com/article/4210684/your-ai-bill-just-came-due-nobody-warned-you-it-would-look-like-this.html",
-      "source": "CIO",
-      "sourceUrl": "https://www.cio.com/feed/",
-      "summary": "For most of the last two years, I priced AI the way I’ve priced every piece of software in thirty years of building technology: a number per seat, budgeted once, revisited once a year. It’s the only pricing model most IT leaders have ever had to plan around. Then I started build…",
-      "publishedAt": "2026-08-18T10:00:00.000Z"
-    },
-    {
       "slug": "5e10185b7da23e8ffcc9e9dc",
       "guid": "https://thehackernews.com/2026/08/safepal-hardware-wallet-maker-says-flaw.html",
       "title": "SafePal Hardware Wallet Maker Says Flaw Exposed Data of Nearly 40,000 Customers",
@@ -772,16 +962,6 @@
       "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
       "summary": "SafePal has disclosed that an authorization flaw in an order-tracking plug-in exposed the names, email addresses, shipping addresses, phone numbers, and purchase details of approximately 39,798 customers. The hardware wallet maker said all affected customers were notified indivi…",
       "publishedAt": "2026-08-18T09:10:45.000Z"
-    },
-    {
-      "slug": "6f9a02b470eb76c1613dc785",
-      "guid": "https://www.cio.com/article/4210669/why-people-not-technology-drive-digital-transformation.html",
-      "title": "Why people, not technology, drive digital transformation",
-      "link": "https://www.cio.com/article/4210669/why-people-not-technology-drive-digital-transformation.html",
-      "source": "CIO",
-      "sourceUrl": "https://www.cio.com/feed/",
-      "summary": "The concept of digital transformation (DX) has been around for quite some time now. Many companies are adopting digital technologies such as AI, IoT and the cloud to transform their businesses, operations and organizational cultures, striving to improve productivity and create n…",
-      "publishedAt": "2026-08-18T09:00:00.000Z"
     },
     {
       "slug": "c8f5936ef6e384974ae05113",
@@ -814,16 +994,6 @@
       "publishedAt": "2026-08-18T03:44:58.000Z"
     },
     {
-      "slug": "a5215bda2db9b10eb4e25a74",
-      "guid": "https://www.cio.com/article/4210792/ai-inference-is-getting-cheaper-but-your-agents-are-getting-more-expensive-2.html",
-      "title": "AI inference is getting cheaper, but your agents are getting more expensive",
-      "link": "https://www.cio.com/article/4210792/ai-inference-is-getting-cheaper-but-your-agents-are-getting-more-expensive-2.html",
-      "source": "CIO",
-      "sourceUrl": "https://www.cio.com/feed/",
-      "summary": "The good news is that large language model (LLM) token costs are coming down. The conundrum: The overall cost of AI workloads is going up. Gartner research predicts that, while token costs will fall by 95% by 2030, inference costs for agentic workflows will increase more than fi…",
-      "publishedAt": "2026-08-18T01:40:54.000Z"
-    },
-    {
       "slug": "41f91fb7fcb0459e6751b08f",
       "guid": "https://www.darkreading.com/mobile-security/video-call-exploit-chains-two-flaws-unisoc-modems",
       "title": "Video Call Exploit Chains Two Flaws in Unisoc Modems",
@@ -832,176 +1002,6 @@
       "sourceUrl": "https://www.darkreading.com/rss.xml",
       "summary": "Researchers found that by combining two vulnerabilities, they could take over an Android device by delivering a payload and getting the victim to answer their phone.",
       "publishedAt": "2026-08-17T21:37:23.000Z"
-    },
-    {
-      "slug": "7ed54789e434b230d764376a",
-      "guid": "https://thehackernews.com/2026/08/critical-gitlab-graphql-flaw-could-let.html",
-      "title": "Critical GitLab GraphQL Flaw Could Let Unauthenticated Attackers Delete Public Projects",
-      "link": "https://thehackernews.com/2026/08/critical-gitlab-graphql-flaw-could-let.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "GitLab has released security updates to address a critical vulnerability impacting its Community Edition (CE) and Enterprise Edition (EE) software that, under certain conditions, could allow an unauthenticated attacker to remotely modify or delete public projects and user data. …",
-      "publishedAt": "2026-08-17T21:03:04.000Z"
-    },
-    {
-      "slug": "9b6a27ccd9dd0af62062dfcf",
-      "guid": "https://www.darkreading.com/threat-intelligence/turf-war-claude-agents-self-replicating-malware",
-      "title": "'Turf War' Between Claude Agents Leads to Self-Replicating Malware",
-      "link": "https://www.darkreading.com/threat-intelligence/turf-war-claude-agents-self-replicating-malware",
-      "source": "Dark Reading",
-      "sourceUrl": "https://www.darkreading.com/rss.xml",
-      "summary": "Three testing models with the same goal but different directives engaged in \"increasingly aggressive\" territorial attacks on one another, according to Anthropic.",
-      "publishedAt": "2026-08-17T20:26:34.000Z"
-    },
-    {
-      "slug": "0c65fb83c27fa301d1e9dd3e",
-      "guid": "https://www.darkreading.com/vulnerabilities-threats/adam-shostack-talks-hugging-face-phantom-b",
-      "title": "Hugging Face Breach Raises Big Questions About AI Security Controls",
-      "link": "https://www.darkreading.com/vulnerabilities-threats/adam-shostack-talks-hugging-face-phantom-b",
-      "source": "Dark Reading",
-      "sourceUrl": "https://www.darkreading.com/rss.xml",
-      "summary": "Adam Shostack, president of Shostack & Associates and an affiliate professor at the University of Washington, talks with the Dark Reading News Desk about why he was \"blown away\" by OpenAI's revelations regarding the Hugging Face attack.",
-      "publishedAt": "2026-08-17T19:22:56.000Z"
-    },
-    {
-      "slug": "7cd643e66582af364b871157",
-      "guid": "https://danielmiessler.com/blog/how-to-get-started-in-cybersecurity-2026",
-      "title": "How to Get Started in Cybersecurity 2026",
-      "link": "https://danielmiessler.com/blog/how-to-get-started-in-cybersecurity-2026?utm_source=rss&utm_medium=feed&utm_campaign=website",
-      "source": "Daniel Miessler",
-      "sourceUrl": "https://danielmiessler.com/feed.rss",
-      "summary": "A person vaulting on a machine lever toward a glowing keyhole/images/how-to-get-started-in-cybersecurity-2026.webp/images/how-to-get-started-in-cybersecurity-2026.webp I've been writing versions of this guide since 2008. The most recent big one was the 2019 update/blog/build-suc…",
-      "publishedAt": "2026-08-17T19:00:00.000Z"
-    },
-    {
-      "slug": "499cd8c9d62306bc77f551b5",
-      "guid": "https://thehackernews.com/2026/08/snowflake-github-actions-flaw-lets_0330881554.html",
-      "title": "Snowflake GitHub Actions Flaw Lets Crafted Issues Trigger Command Injection",
-      "link": "https://thehackernews.com/2026/08/snowflake-github-actions-flaw-lets_0330881554.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "Cybersecurity researchers at Wiz have disclosed a new GitHub Actions workflow injection vulnerability in Snowflake's public snowflakedb/snowflake-connector-net repository that it said could be exploited through a crafted GitHub issue to execute commands in a workflow containing …",
-      "publishedAt": "2026-08-17T18:44:17.000Z"
-    },
-    {
-      "slug": "b83af1627135ddf9c33201da",
-      "guid": "https://thehackernews.com/2026/08/forminator-wordpress-flaw-can-enable.html",
-      "title": "Forminator WordPress Flaw Can Enable Unauthenticated RCE via Malicious PHP Uploads",
-      "link": "https://thehackernews.com/2026/08/forminator-wordpress-flaw-can-enable.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "A critical security flaw has been disclosed in Forminator Forms, a WordPress plugin with more than 600,000 active installations, that could be exploited to achieve arbitrary code execution on susceptible sites. The vulnerability, tracked as CVE-2026-15748, is rated 9.8 out of 10…",
-      "publishedAt": "2026-08-17T18:22:09.000Z"
-    },
-    {
-      "slug": "788b4d9b4fc14739feb63e0e",
-      "guid": "https://thehackernews.com/2026/08/cavern-c2-uses-dns-and-google-apps.html",
-      "title": "Cavern C2 Uses DNS and Google Apps Script to Blend Into Legitimate Traffic",
-      "link": "https://thehackernews.com/2026/08/cavern-c2-uses-dns-and-google-apps.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "Cybersecurity researchers have traced the continued evolution of the Cavern (aka Cav3rn) command-and-control (C2) framework used by Iranian nation-state hackers in attacks targeting entities in Israel. Russian cybersecurity company Kaspersky said its ongoing monitoring of the th…",
-      "publishedAt": "2026-08-17T17:41:06.000Z"
-    },
-    {
-      "slug": "e880f931e3a86a0e8e72c4e8",
-      "guid": "https://danielmiessler.com/blog/how-ai-builders-get-hacked",
-      "title": "How AI Builders Will Get Hacked",
-      "link": "https://danielmiessler.com/blog/how-ai-builders-get-hacked?utm_source=rss&utm_medium=feed&utm_campaign=website",
-      "source": "Daniel Miessler",
-      "sourceUrl": "https://danielmiessler.com/feed.rss",
-      "summary": "How AI Builders Will Get Hacked/images/how-ai-builders-get-hacked.webp/images/how-ai-builders-get-hacked.webp If you are building stuff with AI I have a critical security recommendation for you. Create a continuously-running security testing system that: 1. Maintains a list of a…",
-      "publishedAt": "2026-08-17T15:51:31.000Z"
-    },
-    {
-      "slug": "31464e819e005ffdb198f030",
-      "guid": "https://www.darkreading.com/cyber-risk/linux-botnet-evooo1bot-mirai-capabilities-beyond-ddos",
-      "title": "Linux Botnet Evooo1Bot Expands Mirai Capabilities Well Beyond DDoS",
-      "link": "https://www.darkreading.com/cyber-risk/linux-botnet-evooo1bot-mirai-capabilities-beyond-ddos",
-      "source": "Dark Reading",
-      "sourceUrl": "https://www.darkreading.com/rss.xml",
-      "summary": "The botnet adds exploitation modules, credential theft, and reverse SOCKS relays to turn compromised devices into persistent attacker infrastructure.",
-      "publishedAt": "2026-08-17T15:44:34.000Z"
-    },
-    {
-      "slug": "0490bcc406b69a847c79907c",
-      "guid": "https://grahamcluley.com/?p=17351911",
-      "title": "An “invisible” car? Researcher uses machine learning to hide vehicles from Flock cameras",
-      "link": "https://www.bitdefender.com/en-us/blog/hotforsecurity/invisible-car-machine-learning-hide-vehicle-flock-cameras",
-      "source": "Graham Cluley",
-      "sourceUrl": "https://grahamcluley.com/feed/",
-      "summary": "A cybersecurity expert has demonstrated how computer-generated patterns can successfully prevent surveillance cameras from detecting vehicles - such as the controversial AI-powered Flock licence plate readers that are becoming increasingly common on American streets. Read more i…",
-      "publishedAt": "2026-08-17T14:10:48.000Z"
-    },
-    {
-      "slug": "74a4bb0aafac04c075f5cb57",
-      "guid": "https://thehackernews.com/2026/08/weekly-recap-vmware-exploits-windows-0.html",
-      "title": "⚡ Weekly Recap: VMware Exploits, Windows 0-Day, MCP Attacks, Browser Hijacks and More",
-      "link": "https://thehackernews.com/2026/08/weekly-recap-vmware-exploits-windows-0.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "The expensive attacks are not always the clever ones. This week had plenty of proof. Exposed services got hit, old bugs found fresh use, browser sessions became attack paths, and supply-chain problems kept spreading farther than the original compromise. A lot of it came down to …",
-      "publishedAt": "2026-08-17T13:23:51.000Z"
-    },
-    {
-      "slug": "5ab36643acff495f0c492c55",
-      "guid": "https://thehackernews.com/2026/08/how-mcp-servers-can-expose-enterprise.html",
-      "title": "How MCP Servers Can Expose Enterprise Secrets",
-      "link": "https://thehackernews.com/2026/08/how-mcp-servers-can-expose-enterprise.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "MCP servers can expose enterprise secrets through plaintext configuration files, over-permissioned access and prompt injection, often before security teams even know the server is running. As more organizations adopt AI agents into their systems, that exposure can silently becom…",
-      "publishedAt": "2026-08-17T11:58:00.000Z"
-    },
-    {
-      "slug": "07b2c67dc623a19aa90ce744",
-      "guid": "https://www.schneier.com/?p=72433",
-      "title": "Hacking Public Wi-Fi DNS to Steal Credentials",
-      "link": "https://www.schneier.com/blog/archives/2026/08/hacking-public-wi-fi-dns-to-steal-credentials.html",
-      "source": "Schneier on Security",
-      "sourceUrl": "https://www.schneier.com/feed/",
-      "summary": "Criminals are hacking into public Wi-Fi devices—at hotels, conference centers, and so on—around the world and changing their DNS settings. The goal is to redirect users to fake login pages and steal their credentials.",
-      "publishedAt": "2026-08-17T11:18:03.000Z"
-    },
-    {
-      "slug": "b60862ebab35902792170b03",
-      "guid": "https://danielmiessler.com/blog/fix-execution-not-the-sop",
-      "title": "Fix Execution, Not the SOP",
-      "link": "https://danielmiessler.com/blog/fix-execution-not-the-sop?utm_source=rss&utm_medium=feed&utm_campaign=website",
-      "source": "Daniel Miessler",
-      "sourceUrl": "https://danielmiessler.com/feed.rss",
-      "summary": "A flood of documents pours into a funnel that drips onto a tiny model a man is polishing, while real unbuilt work waits through an open door/images/fix-execution-not-the-sop.webp/images/fix-execution-not-the-sop.webp AI is multiplying the problem of us having far too many inputs…",
-      "publishedAt": "2026-08-17T11:13:47.000Z"
-    },
-    {
-      "slug": "7bf9e1d2309f310ce86df37c",
-      "guid": "https://www.cio.com/article/4209896/your-enterprise-isnt-ready-for-enterprise-ai.html",
-      "title": "Your enterprise isn’t ready for enterprise AI",
-      "link": "https://www.cio.com/article/4209896/your-enterprise-isnt-ready-for-enterprise-ai.html",
-      "source": "CIO",
-      "sourceUrl": "https://www.cio.com/feed/",
-      "summary": "Let’s say one of your teams builds an AI agent that actually works. Word gets around, and seemingly overnight, there are twenty more built by people in finance, legal, HR, and support. Most of them are useful, but when someone suddenly gets a chatbot response showing customer da…",
-      "publishedAt": "2026-08-17T11:00:00.000Z"
-    },
-    {
-      "slug": "7979468895335d503f2bc6dd",
-      "guid": "https://thehackernews.com/2026/08/unisoc-volte-video-call-exploit-chain.html",
-      "title": "Unisoc VoLTE Video Call Exploit Chain Can Give Attackers Full Android Kernel Access",
-      "link": "https://thehackernews.com/2026/08/unisoc-volte-video-call-exploit-chain.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "Security researchers at SSD Secure Disclosure have published a two-stage exploit chain that achieves full Android kernel access on devices running Unisoc modem firmware through a VoLTE video call, with no fix from the chipset maker. The advisory, published August 17, 2026, is th…",
-      "publishedAt": "2026-08-17T10:52:34.000Z"
-    },
-    {
-      "slug": "7637e999c644164664d7c4b1",
-      "guid": "https://thehackernews.com/2026/08/evooo1bot-linux-botnet-exploits-known.html",
-      "title": "Evooo1Bot Linux Botnet Exploits Known Flaws to Turn Edge Devices Into SOCKS5 Proxies",
-      "link": "https://thehackernews.com/2026/08/evooo1bot-linux-botnet-exploits-known.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "Cybersecurity researchers have flagged a previously undocumented Linux botnet family dubbed Evooo1Bot that derives its core functionality from the Mirai botnet source code and is equipped to turn internet-facing devices into SOCKS proxies. \"While the malware reuses the DDoS engi…",
-      "publishedAt": "2026-08-17T09:29:55.000Z"
     }
   ]
 }
