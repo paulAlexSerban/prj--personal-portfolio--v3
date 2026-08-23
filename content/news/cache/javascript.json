@@ -1,8 +1,58 @@
 {
   "category": "javascript",
   "label": "JavaScript",
-  "fetchedAt": "2026-08-22T06:16:33.785Z",
+  "fetchedAt": "2026-08-23T06:18:33.863Z",
   "items": [
+    {
+      "slug": "0018fa8310a90b9f994896d4",
+      "guid": "https://flaviocopes.com/css-scroll-driven-animations/",
+      "title": "Scroll-driven CSS animations",
+      "link": "https://flaviocopes.com/css-scroll-driven-animations/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Animate elements from scroll position with animation-timeline scroll() and view(). No JavaScript needed. Check current browser support before shipping.",
+      "publishedAt": "2026-08-23T05:00:00.000Z"
+    },
+    {
+      "slug": "3aafc2254d8e24567ecd068d",
+      "guid": "https://flaviocopes.com/swamp/",
+      "title": "Swamp tutorial: make AI agent work repeatable",
+      "link": "https://flaviocopes.com/swamp/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Learn how Swamp turns one-off AI agent work into typed, repeatable automation with models, workflows, assertions, and versioned data.",
+      "publishedAt": "2026-08-22T13:00:00.000Z"
+    },
+    {
+      "slug": "3854f691deb89002304087d1",
+      "guid": "https://flaviocopes.com/javascript-object-groupby/",
+      "title": "How to group array items with Object.groupBy()",
+      "link": "https://flaviocopes.com/javascript-object-groupby/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Group an array by a property with Object.groupBy() instead of a reduce loop. See a realistic expense example and Map.groupBy() for object keys.",
+      "publishedAt": "2026-08-22T09:00:00.000Z"
+    },
+    {
+      "slug": "f6d34a429d50c8937d764dd5",
+      "guid": "https://flaviocopes.com/grok-bot/",
+      "title": "A deep dive into Grok Bot",
+      "link": "https://flaviocopes.com/grok-bot/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "A detailed Grok Bot guide covering setup, persistent computers, skills, routines, approvals, real use cases, limits, pricing, and alternatives.",
+      "publishedAt": "2026-08-22T08:00:00.000Z"
+    },
+    {
+      "slug": "70e8f61dd40acebc9bb7c90c",
+      "guid": "https://flaviocopes.com/herdr-plugins/",
+      "title": "A practical guide to Herdr plugins",
+      "link": "https://flaviocopes.com/herdr-plugins/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Install, inspect, configure, run, and build Herdr plugins, with practical commands and the security checks to make before trusting one.",
+      "publishedAt": "2026-08-22T06:00:00.000Z"
+    },
     {
       "slug": "3f343ed0a58ff36a2f6db8da",
       "guid": "https://flaviocopes.com/css-subgrid/",
@@ -284,26 +334,6 @@
       "publishedAt": "2026-08-11T09:00:00.000Z"
     },
     {
-      "slug": "2ce78209c2e5ee5765313965",
-      "guid": "https://flaviocopes.com/herdr-vs-cmux/",
-      "title": "Herdr vs cmux: which one should you use?",
-      "link": "https://flaviocopes.com/herdr-vs-cmux/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Compare Herdr and cmux for coding agents: persistence, agent state, macOS UX, browser automation, SSH, and multi-agent workflows.",
-      "publishedAt": "2026-08-11T07:00:00.000Z"
-    },
-    {
-      "slug": "cd05248c2d572bc0fd1db62e",
-      "guid": "https://flaviocopes.com/kysely/",
-      "title": "A deep dive into Kysely",
-      "link": "https://flaviocopes.com/kysely/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Build a small PostgreSQL-backed store with Kysely, from the first typed query to joins, transactions, migrations, debugging, and tests.",
-      "publishedAt": "2026-08-11T05:00:00.000Z"
-    },
-    {
       "slug": "5096200815fbd8dfb141bfa3",
       "guid": "https://blog.appsignal.com/2026/08/11/your-render-migration-checklist-how-to-verify-everything-is-working.html",
       "title": "Your Render Migration Checklist: How to Verify Everything Is Working",
@@ -322,36 +352,6 @@
       "sourceUrl": "https://javascriptweekly.com/rss/1b4m1h9j",
       "summary": "#​798 — August 11, 2026 Read on the Web 🏖️ A brief scheduling note: We're taking a summer break next week, so we'll be back in your inbox on August 25. Catch you then! __ Your editor, Peter Cooper JavaScript Weekly Migrating a Large Flow Monorepo to TypeScript — Over several ye…",
       "publishedAt": "2026-08-11T00:00:00.000Z"
-    },
-    {
-      "slug": "699069fc4c71cc9ef94729d3",
-      "guid": "https://flaviocopes.com/cloudflare-computer/",
-      "title": "A deep dive into Cloudflare Computer",
-      "link": "https://flaviocopes.com/cloudflare-computer/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "How Cloudflare Computer combines a Durable Object filesystem, Dynamic Worker runtimes, a container backend, FUSE mount, and sync protocol.",
-      "publishedAt": "2026-08-10T11:00:00.000Z"
-    },
-    {
-      "slug": "f968661995d690757223f473",
-      "guid": "https://flaviocopes.com/herdr/",
-      "title": "A deep dive into Herdr",
-      "link": "https://flaviocopes.com/herdr/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Herdr keeps coding agents in persistent terminal workspaces, shows which ones need attention, and exposes the whole system through a CLI and API.",
-      "publishedAt": "2026-08-10T07:00:00.000Z"
-    },
-    {
-      "slug": "3deb550ea36ad0e33f813c48",
-      "guid": "https://flaviocopes.com/glob-patterns-explained/",
-      "title": "Glob patterns explained (and why .gitignore behaves that way)",
-      "link": "https://flaviocopes.com/glob-patterns-explained/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "How glob patterns work: star vs double star, question marks, character classes, brace expansion, and the gitignore rules that trip everyone up.",
-      "publishedAt": "2026-08-10T05:00:00.000Z"
     }
   ]
 }
