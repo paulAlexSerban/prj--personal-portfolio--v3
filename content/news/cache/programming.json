@@ -1,7 +1,7 @@
 {
   "category": "programming",
   "label": "Programming",
-  "fetchedAt": "2026-08-23T06:18:33.863Z",
+  "fetchedAt": "2026-08-24T06:29:49.274Z",
   "items": [
     {
       "slug": "e8988c75c77eb4f85403166d",
@@ -314,6 +314,16 @@
       "publishedAt": "2025-07-17T00:00:00.000Z"
     },
     {
+      "slug": "b3e73cd39d536b9f9c119756",
+      "guid": "https://scratchpad.blog/how-to-debug-rails-applications-and-tests-in-vs-code/",
+      "title": "How to Debug Rails Applications and Tests in VS Code",
+      "link": "https://scratchpad.blog/how-to-debug-rails-applications-and-tests-in-vs-code/",
+      "source": "ScratchPad",
+      "sourceUrl": "https://scratchpad.blog/feed.xml",
+      "summary": "Debugging is an essential yet often tedious task for software developers. While scattering print statements throughout your code is a common approach, using a proper debugger is far more efficient. For Ruby on Rails developers, VS Code offers robust debugging capabilities throug…",
+      "publishedAt": "2025-07-16T00:00:00.000Z"
+    },
+    {
       "slug": "49f04f9d88eb8d761ef76cd3",
       "guid": "https://www.30secondsofcode.org/js/s/undirected-tree-from-edges",
       "title": "How can I build an undirected tree from an array of edges in JavaScript?",
@@ -352,6 +362,16 @@
       "sourceUrl": "https://www.30secondsofcode.org/feed.xml",
       "summary": "Using indexes can speed up querying object collections significantly, but it seems like a black box for many. Let's dive in!",
       "publishedAt": "2025-06-28T00:00:00.000Z"
+    },
+    {
+      "slug": "37d77c960cbb2c8efb668ae3",
+      "guid": "https://scratchpad.blog/effortless-sqlite-backups-for-rails-with-litestream/",
+      "title": "Effortless SQLite Backups for Rails with Litestream",
+      "link": "https://scratchpad.blog/effortless-sqlite-backups-for-rails-with-litestream/",
+      "source": "ScratchPad",
+      "sourceUrl": "https://scratchpad.blog/feed.xml",
+      "summary": "SQLite has experienced a remarkable renaissance in recent years, particularly in the Rails community. Since Rails 8, it is the default database for newly generated Rails applications. With its simplicity, performance, and zero-configuration setup, SQLite has become an attractive…",
+      "publishedAt": "2025-06-26T00:00:00.000Z"
     },
     {
       "slug": "be377e95357141ee8e8b7e74",
@@ -412,6 +432,16 @@
       "sourceUrl": "https://www.30secondsofcode.org/feed.xml",
       "summary": "Markdown is the most popular markup language for writing documentation. Here is a cheatsheet with the most common syntax.",
       "publishedAt": "2025-06-08T00:00:00.000Z"
+    },
+    {
+      "slug": "f988f9810e51519b5eaec079",
+      "guid": "https://scratchpad.blog/devops/howto/securely-authenticating-to-aws-from-github-actions-workflows/",
+      "title": "Securely Authenticating to AWS from GitHub Actions Workflows",
+      "link": "https://scratchpad.blog/devops/howto/securely-authenticating-to-aws-from-github-actions-workflows/",
+      "source": "ScratchPad",
+      "sourceUrl": "https://scratchpad.blog/feed.xml",
+      "summary": "GitHub Actions Workflows have become the go-to solution for running CI/CD workflows for projects hosted on GitHub. Its seamless integration with GitHub repositories makes it a natural choice for automating tasks like building, testing, and deploying applications. For Developers …",
+      "publishedAt": "2025-06-06T00:00:00.000Z"
     },
     {
       "slug": "75e518275e55d2804d8bb668",
@@ -724,16 +754,6 @@
       "publishedAt": "2024-07-15T00:00:00.000Z"
     },
     {
-      "slug": "02c0dddd265fe203b693bc74",
-      "guid": "https://vadimkravcenko.com/?p=2821",
-      "title": "What I learned building a $1K MRR SaaS in 6 weeks",
-      "link": "https://vadimkravcenko.com/shorts/building-1k-saas-in-6-weeks/",
-      "source": "Vadim Kravcenko",
-      "sourceUrl": "https://vadimkravcenko.com/feed/",
-      "summary": "Question: Answer: The post What I learned building a $1K MRR SaaS in 6 weeks appeared first on Vadim Kravcenko.",
-      "publishedAt": "2024-07-09T14:06:46.000Z"
-    },
-    {
       "slug": "d2578589f4d452f056f032e7",
       "guid": "https://www.hillelwayne.com/post/composing-tla/",
       "title": "Composing TLA+ Specifications with State Machines",
@@ -764,16 +784,6 @@
       "publishedAt": "2024-05-20T11:00:00.000Z"
     },
     {
-      "slug": "71288887da84813c398cf602",
-      "guid": "https://vadimkravcenko.com/?p=2798",
-      "title": "Stand Out and Dare to Disagree",
-      "link": "https://vadimkravcenko.com/shorts/stand-out-and-dare-to-disagree/",
-      "source": "Vadim Kravcenko",
-      "sourceUrl": "https://vadimkravcenko.com/feed/",
-      "summary": "Question: Answer: The post Stand Out and Dare to Disagree appeared first on Vadim Kravcenko.",
-      "publishedAt": "2024-05-16T10:19:36.000Z"
-    },
-    {
       "slug": "04e05b86f0ceab5d06edd382",
       "guid": "https://www.hillelwayne.com/comments/software-friction/",
       "title": "Comment Section: Software Friction",
@@ -782,16 +792,6 @@
       "sourceUrl": "https://www.hillelwayne.com/index.xml",
       "summary": "These are some of the responses to Software Friction. Blogs on a similar topic Laurie Tratt wrote What Factors Explain the Nature of Software? which touches on the topic of friction, too. Emails and Comments I’m an Infantry Officer in the US Marine Corps, we talk quite a bit abo…",
       "publishedAt": "2024-05-14T00:00:00.000Z"
-    },
-    {
-      "slug": "9d14dd8899bd7f9b225029a7",
-      "guid": "https://vadimkravcenko.com/?p=2765",
-      "title": "I’m sorry",
-      "link": "https://vadimkravcenko.com/shorts/building-a-tool-again/",
-      "source": "Vadim Kravcenko",
-      "sourceUrl": "https://vadimkravcenko.com/feed/",
-      "summary": "Question: Answer: The post I’m sorry appeared first on Vadim Kravcenko.",
-      "publishedAt": "2024-05-09T10:47:32.000Z"
     },
     {
       "slug": "4de331275d3b9fb6c13d5474",
@@ -804,46 +804,6 @@
       "publishedAt": "2024-05-01T00:00:00.000Z"
     },
     {
-      "slug": "87e37a4cd49845b82d0cdd4d",
-      "guid": "https://vadimkravcenko.com/?p=2712",
-      "title": "Valueless CTO: High Salary, No Return",
-      "link": "https://vadimkravcenko.com/shorts/cto-value-high-salary-no-return/",
-      "source": "Vadim Kravcenko",
-      "sourceUrl": "https://vadimkravcenko.com/feed/",
-      "summary": "Question: Answer: The post Valueless CTO: High Salary, No Return appeared first on Vadim Kravcenko.",
-      "publishedAt": "2024-04-30T09:37:08.000Z"
-    },
-    {
-      "slug": "ed60b99d5f26e73492d84161",
-      "guid": "https://vadimkravcenko.com/?p=2699",
-      "title": "How much a CTO makes and where can I find CTO Jobs?",
-      "link": "https://vadimkravcenko.com/qa/cto-salary-find-cto-jobs/",
-      "source": "Vadim Kravcenko",
-      "sourceUrl": "https://vadimkravcenko.com/feed/",
-      "summary": "Question: Here's the thing, I’m kind of stuck trying to figure out what a CTO actually makes in terms of $$$, most of the people in the field are secretive about how much they're getting. It's not just about the money (okay, it's a bit about the money), but also understanding if…",
-      "publishedAt": "2024-04-27T17:28:28.000Z"
-    },
-    {
-      "slug": "3c75648a9b0c49961ee6632a",
-      "guid": "https://vadimkravcenko.com/?p=2691",
-      "title": "How to become a CTO?",
-      "link": "https://vadimkravcenko.com/qa/how-to-become-a-cto-career-path/",
-      "source": "Vadim Kravcenko",
-      "sourceUrl": "https://vadimkravcenko.com/feed/",
-      "summary": "Question: Hey Vadim, Long-time reader, enjoy your content a lot. I've been a software engineer for about seven years now, doing mostly web development and taking over ownership of different modules step by step, expanding my people skills so to speak. Lately, I've been doing som…",
-      "publishedAt": "2024-04-27T16:59:37.000Z"
-    },
-    {
-      "slug": "05d065a33a53eda3dfcda75d",
-      "guid": "https://vadimkravcenko.com/?p=2661",
-      "title": "10x Engineers",
-      "link": "https://vadimkravcenko.com/shorts/10x-engineers/",
-      "source": "Vadim Kravcenko",
-      "sourceUrl": "https://vadimkravcenko.com/feed/",
-      "summary": "Question: Answer: The post 10x Engineers appeared first on Vadim Kravcenko.",
-      "publishedAt": "2024-04-20T14:44:52.000Z"
-    },
-    {
       "slug": "ac939053ebb9eaee7cfd806a",
       "guid": "https://www.hillelwayne.com/post/alloy-facts/",
       "title": "Don't let Alloy facts make your specs a fiction",
@@ -852,36 +812,6 @@
       "sourceUrl": "https://www.hillelwayne.com/index.xml",
       "summary": "I’ve recently done a lot of work in Alloy and it’s got me thinking about a common specification pitfall. Everything in the main post applies to all formal specifications, everything in dropdowns is for experienced Alloy users. Consider a simple model of a dependency tree. We hav…",
       "publishedAt": "2024-04-10T00:00:00.000Z"
-    },
-    {
-      "slug": "adf22c18515cccd4395f2fc8",
-      "guid": "https://vadimkravcenko.com/?p=2627",
-      "title": "How can you tell if you’re a good developer?",
-      "link": "https://vadimkravcenko.com/qa/how-can-you-tell-good-developer/",
-      "source": "Vadim Kravcenko",
-      "sourceUrl": "https://vadimkravcenko.com/feed/",
-      "summary": "Question: Hey Vadim, So, I've been coding for money for about 5 years now. I've jumped around a lot — Java, Javascript, Python, NodeJS — you name it. The job market's been great, making it super easy for me to switch between gigs. I've done both full-time and contract work acros…",
-      "publishedAt": "2024-04-06T12:53:56.000Z"
-    },
-    {
-      "slug": "d57ac718ad942ff59ba593a8",
-      "guid": "https://vadimkravcenko.com/?p=2620",
-      "title": "I’m finishing university, scared about future career prospects",
-      "link": "https://vadimkravcenko.com/qa/finishing-university-scared-about-future-career-prospects/",
-      "source": "Vadim Kravcenko",
-      "sourceUrl": "https://vadimkravcenko.com/feed/",
-      "summary": "Question: Hey, my name's Kalesh, I'm 22 and about to finish my bachelor's in August. Planning to be a software engineer. But, I keep hearing the job market's tough. Been reading online that lots of devs are struggling to find steady gigs. Is your company looking for any devs? Wh…",
-      "publishedAt": "2024-04-06T12:05:10.000Z"
-    },
-    {
-      "slug": "26bec7b3160e4dd87bd2be70",
-      "guid": "https://vadimkravcenko.com/?p=2612",
-      "title": "I have a very poor work-life balance. How can I escape the grind?",
-      "link": "https://vadimkravcenko.com/qa/poor-work-life-balance-escape-the-grind/",
-      "source": "Vadim Kravcenko",
-      "sourceUrl": "https://vadimkravcenko.com/feed/",
-      "summary": "Question: Hey Vadim, Here's the situation: from the moment my alarm clock interrupts my sleep, until I finally come home late at night, my life is essentially a never-ending cycle of sitting in front of the PC and stressing with a workload that feels like it's set to max. I feel…",
-      "publishedAt": "2024-04-06T11:39:01.000Z"
     },
     {
       "slug": "47228de8f313d265427dfdd9",
@@ -904,16 +834,6 @@
       "publishedAt": "2024-04-01T00:00:00.000Z"
     },
     {
-      "slug": "2b155dd1945ec36a2a7b9e4d",
-      "guid": "https://vadimkravcenko.com/?p=2587",
-      "title": "Mental Health in Software Engineering",
-      "link": "https://vadimkravcenko.com/shorts/mental-health-in-software-engineering/",
-      "source": "Vadim Kravcenko",
-      "sourceUrl": "https://vadimkravcenko.com/feed/",
-      "summary": "Question: Answer: The post Mental Health in Software Engineering appeared first on Vadim Kravcenko.",
-      "publishedAt": "2024-03-31T20:20:38.000Z"
-    },
-    {
       "slug": "f6d60cbe410119c2235e68c1",
       "guid": "https://www.hillelwayne.com/comments/graph-types/",
       "title": "Comment Section: The Hunt For The Missing Data Type",
@@ -922,16 +842,6 @@
       "sourceUrl": "https://www.hillelwayne.com/index.xml",
       "summary": "I got a lot of responses to The Hunt For the Missing Data Type. I’ve included some of the most interesting ones below. Response Blogs The “missing” graph datatype already exists. It was invented in the ‘70s, about datalog. Emails and Comments Everything in quotes is verbatim. Gr…",
       "publishedAt": "2024-03-18T00:00:00.000Z"
-    },
-    {
-      "slug": "c5ba22c11eea7c6a3b56959b",
-      "guid": "https://vadimkravcenko.com/?p=2483",
-      "title": "Why software projects fail",
-      "link": "https://vadimkravcenko.com/shorts/why-software-projects-fail/",
-      "source": "Vadim Kravcenko",
-      "sourceUrl": "https://vadimkravcenko.com/feed/",
-      "summary": "Question: Answer: The post Why software projects fail appeared first on Vadim Kravcenko.",
-      "publishedAt": "2024-03-14T16:13:51.000Z"
     },
     {
       "slug": "df46335e5038c80aa0cb73e7",
@@ -964,44 +874,134 @@
       "publishedAt": "2024-03-02T00:00:00.000Z"
     },
     {
-      "slug": "bab7168e2296b615b3880b7c",
-      "guid": "https://vadimkravcenko.com/?p=2459",
-      "title": "What is your unethical CS career’s advice?",
-      "link": "https://vadimkravcenko.com/qa/whats-your-unethical-cs-careers-advice/",
-      "source": "Vadim Kravcenko",
-      "sourceUrl": "https://vadimkravcenko.com/feed/",
-      "summary": "Question: Hey Vadim, I’m starting to question a lot of the conventional wisdom handed down to us about climbing the tech ladder. You know, the whole \"work hard, play fair, and success will come\" spiel. I’m not so sure anymore. It feels slow, I'm looking for shortcuts maybe? e.g.…",
-      "publishedAt": "2024-02-25T16:46:46.000Z"
+      "slug": "d0df05f9235456c1f08f292c",
+      "guid": "https://hynek.me/articles/pull-requests-branch/",
+      "title": "Don’t Start Pull Requests from Your Main Branch",
+      "link": "https://hynek.me/articles/pull-requests-branch/",
+      "source": "Hynek Schlawack",
+      "sourceUrl": "https://hynek.me/index.xml",
+      "summary": "When contributing to other users’ repositories, always start a new branch in your fork.",
+      "publishedAt": "2023-12-21T05:00:00.000Z"
     },
     {
-      "slug": "ea835aec274378d19ee7c449",
-      "guid": "https://vadimkravcenko.com/?p=2451",
-      "title": "My coworker rewrote all my code, what should I do?",
-      "link": "https://vadimkravcenko.com/qa/my-coworker-rewrote-all-my-code-what-should-i-do/",
-      "source": "Vadim Kravcenko",
-      "sourceUrl": "https://vadimkravcenko.com/feed/",
-      "summary": "Question: Hello Vadim, I'm reaching out to you for some advice, as something weird happened, and I'm not sure how to react. Here are the key points For the past six months, I've been working in my role as a Python Backend Developer, diligently maintaining and extending the Pytho…",
-      "publishedAt": "2024-02-24T19:05:07.000Z"
+      "slug": "2bdc9c117d2b583f8a2f54fa",
+      "guid": "6568ddedef9e2c0001ae4e8b",
+      "title": "I Fight For The Users",
+      "link": "https://blog.codinghorror.com/i-fight-for-the-users/",
+      "source": "Jeff Atwood",
+      "sourceUrl": "https://blog.codinghorror.com/rss/",
+      "summary": "If you haven’t been able to keep up with my blistering pace of one blog post per year, I don’t blame you. There’s a lot going on right now. It’s a busy time. But let’s pause and take a moment",
+      "publishedAt": "2023-11-30T20:11:05.000Z"
     },
     {
-      "slug": "0b71aee6c83ee8c06faa199a",
-      "guid": "https://vadimkravcenko.com/?p=2423",
-      "title": "Falsehoods Junior Developers believe about becoming Senior",
-      "link": "https://vadimkravcenko.com/shorts/falsehoods-junior-developers-believe-about-becoming-senior/",
-      "source": "Vadim Kravcenko",
-      "sourceUrl": "https://vadimkravcenko.com/feed/",
-      "summary": "Question: Answer: The post Falsehoods Junior Developers believe about becoming Senior appeared first on Vadim Kravcenko.",
-      "publishedAt": "2024-02-20T21:23:21.000Z"
+      "slug": "ba8142a4d7b6650f4455e9e6",
+      "guid": "https://jaredsinclair.com/2023/10/29/dagmar-doxo.html",
+      "title": "Dagmar Chili Pitas & Doxowox: Now With Slightly-Less Unofficial Mirrors",
+      "link": "https://jaredsinclair.com/2023/10/29/dagmar-doxo.html",
+      "source": "Jared Sinclair",
+      "sourceUrl": "https://jaredsinclair.com/feed.xml",
+      "summary": "It is with great pleasure that I share that the following two Internet classics have been brought back to life at their own blessed domain names, with TLS and everything, honest to God 21st century websites: Dagmar Chili Pitas, the Two-Year Chili, demonstrably the peak of what’s…",
+      "publishedAt": "2023-10-29T11:00:00.000Z"
     },
     {
-      "slug": "731d7101a8ac691cb26f078b",
-      "guid": "https://vadimkravcenko.com/?p=2403",
-      "title": "How do you know when to use which programming language?",
-      "link": "https://vadimkravcenko.com/qa/how-you-know-when-to-use-what-programming-language/",
-      "source": "Vadim Kravcenko",
-      "sourceUrl": "https://vadimkravcenko.com/feed/",
-      "summary": "Question: Hi, My name is Alex. I just graduated university, I'm confused, how do I choose a programming language for a job? Does it matter? Will I be assigned a programming language? Thanks for the help. Answer: The post How do you know when to use which programming language? ap…",
-      "publishedAt": "2024-02-11T18:32:45.000Z"
+      "slug": "44d1018bf69f610ced75ae64",
+      "guid": "https://hynek.me/articles/turbo-charge-tox/",
+      "title": "Two Ways to Turbo-Charge tox",
+      "link": "https://hynek.me/articles/turbo-charge-tox/",
+      "source": "Hynek Schlawack",
+      "sourceUrl": "https://hynek.me/index.xml",
+      "summary": "No, it’s not (just) run-parallel – let’s cut the local tox runtime by 75%!",
+      "publishedAt": "2023-06-26T14:00:00.000Z"
+    },
+    {
+      "slug": "a3375e6f36a6f5add65f8a2e",
+      "guid": "https://hynek.me/talks/subclassing/",
+      "title": "Subclassing, Composition, Python, and You",
+      "link": "https://hynek.me/talks/subclassing/",
+      "source": "Hynek Schlawack",
+      "sourceUrl": "https://hynek.me/index.xml",
+      "summary": "Ever seen a code base where understanding a simple method meant jumping through tangled class hierarchies? We all have! And while “Favor composition over inheritance!” is almost as old as object-oriented programming, strictly avoiding all types of subclassing leads to verbose, u…",
+      "publishedAt": "2023-04-22T00:00:00.000Z"
+    },
+    {
+      "slug": "0dc24d639b3e4380668acf5e",
+      "guid": "https://bitsofco.de/when-is-focus-visible-visible/",
+      "title": "When is :focus-visible visible?",
+      "link": "https://bitsofco.de/when-is-focus-visible-visible/",
+      "source": "Bits of Code",
+      "sourceUrl": "https://bitsofco.de/feed/feed.xml",
+      "summary": "Focus outlines (and their styling) have frequently been a point of contention between aesthetics and usability. On the one hand, focus outlines are incredibly important for navigation, particularly by users navigating via keyboard or other non-pointer devices. On the other hand,…",
+      "publishedAt": "2023-03-21T00:00:00.000Z"
+    },
+    {
+      "slug": "02f4f3d869504f2ebe91a9a7",
+      "guid": "https://bitsofco.de/from-ghost-to-11ty/",
+      "title": "From Ghost to 11ty",
+      "link": "https://bitsofco.de/from-ghost-to-11ty/",
+      "source": "Bits of Code",
+      "sourceUrl": "https://bitsofco.de/feed/feed.xml",
+      "summary": "Over 5 years ago, I migrated this blog From Jekyll to Ghost. Back then, my reasons for moving to Ghost were because - I wanted a CMS Managing all the posts’ raw markdown files in one folder was getting clunky The Jekyll build process was starting to significantly lag I no longer…",
+      "publishedAt": "2023-02-22T00:00:00.000Z"
+    },
+    {
+      "slug": "3c37982f3a911de741fbf44f",
+      "guid": "https://hynek.me/articles/why-i-like-nox/",
+      "title": "Why I Like Nox",
+      "link": "https://hynek.me/articles/why-i-like-nox/",
+      "source": "Hynek Schlawack",
+      "sourceUrl": "https://hynek.me/index.xml",
+      "summary": "Ever since I got involved with open-source Python projects, tox has been vital for testing packages across Python versions (and other factors). However, lately, I’ve been increasingly using Nox for my projects instead. Since I’ve been asked why repeatedly, I’ll sum up my thought…",
+      "publishedAt": "2023-01-18T12:00:00.000Z"
+    },
+    {
+      "slug": "d9254bd2242326d1f786c208",
+      "guid": "https://hynek.me/articles/macos-dyld-env/",
+      "title": "Surprising Consequences of macOS’s Environment Variable Sanitization",
+      "link": "https://hynek.me/articles/macos-dyld-env/",
+      "source": "Hynek Schlawack",
+      "sourceUrl": "https://hynek.me/index.xml",
+      "summary": "Why does DYLD_LIBRARY_PATH keep disappearing!?",
+      "publishedAt": "2023-01-09T08:00:00.000Z"
+    },
+    {
+      "slug": "84acbd39c603ecb1fd938a6a",
+      "guid": "https://jaredsinclair.com/2022/11/11/deep-fakes-repost-nov-22.html",
+      "title": "Deep Fake",
+      "link": "https://jaredsinclair.com/2022/11/11/deep-fakes-repost-nov-22.html",
+      "source": "Jared Sinclair",
+      "sourceUrl": "https://jaredsinclair.com/feed.xml",
+      "summary": "Deleted.",
+      "publishedAt": "2022-11-11T02:35:30.000Z"
+    },
+    {
+      "slug": "1794d22a9b03e715bcd7227d",
+      "guid": "https://hynek.me/articles/productive-fruit-fly-programmer/",
+      "title": "How I’m a Productive Programmer With a Memory of a Fruit Fly",
+      "link": "https://hynek.me/articles/productive-fruit-fly-programmer/",
+      "source": "Hynek Schlawack",
+      "sourceUrl": "https://hynek.me/index.xml",
+      "summary": "A love letter to tools that changed everything for me.",
+      "publishedAt": "2022-09-19T00:00:00.000Z"
+    },
+    {
+      "slug": "4e33e3467f6300df92e182de",
+      "guid": "https://hynek.me/articles/python-recursive-optional-dependencies/",
+      "title": "Recursive Optional Dependencies in Python",
+      "link": "https://hynek.me/articles/python-recursive-optional-dependencies/",
+      "source": "Hynek Schlawack",
+      "sourceUrl": "https://hynek.me/index.xml",
+      "summary": "One of my (slowly evaporating) reasons why I like putting packaging metadata into an executable setup.py is the ability to have optional dependencies that are combinations of others. As of pip 21.2, this is possible without running code.",
+      "publishedAt": "2022-07-29T06:00:00.000Z"
+    },
+    {
+      "slug": "a4dd1b0e9cb627bb1a8bae1c",
+      "guid": "https://hynek.me/articles/what-to-mock-in-5-mins/",
+      "title": "“Don’t Mock What You Don’t Own” in 5 Minutes",
+      "link": "https://hynek.me/articles/what-to-mock-in-5-mins/",
+      "source": "Hynek Schlawack",
+      "sourceUrl": "https://hynek.me/index.xml",
+      "summary": "A common issue when writing tests for real-world software is how to deal with third-party dependencies. Let’s examine an old, but counter-intuitive principle.",
+      "publishedAt": "2022-06-21T09:00:00.000Z"
     }
   ]
 }

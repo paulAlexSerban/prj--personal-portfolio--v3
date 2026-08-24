@@ -1,127 +1,137 @@
 {
   "category": "web-dev",
   "label": "Web Development",
-  "fetchedAt": "2026-08-23T06:18:33.863Z",
+  "fetchedAt": "2026-08-24T06:29:49.274Z",
   "items": [
     {
-      "slug": "5bc6c67e401a3396b75becd0",
-      "guid": "https://dev.to/bhagya_prasad_f073499f6f6/this-was-an-increadible-package-it-was-appearing-on-pubdev-for-just-a-single-word-like-sos-1dg2",
-      "title": "This was an increadible package!! It was appearing on pub.dev for just a single word like \"SOS\" search!! Go check this out!",
-      "link": "https://dev.to/bhagya_prasad_f073499f6f6/this-was-an-increadible-package-it-was-appearing-on-pubdev-for-just-a-single-word-like-sos-1dg2",
+      "slug": "fdbe3f0af4cfa8b21b231a24",
+      "guid": "https://dev.to/moputa/nodejs-interview-deep-dive-what-they-are-really-testing-1m6o",
+      "title": "Node.js interview deep dive: what they are really testing",
+      "link": "https://dev.to/moputa/nodejs-interview-deep-dive-what-they-are-really-testing-1m6o",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "I was tired of SOS apps failing in dead zones, so I built a pure Dart, 100% offline TFLite crash detection engine. Bhagya Prasad Dannina Jun 28 #showdev #flutter #machinelearning #opensource 26 reactions comments 1 min read",
-      "publishedAt": "2026-08-23T06:05:42.000Z"
+      "summary": "Almost every senior Node question is the same question wearing a different hat: do you understand that there is one thread doing your work, and do you know what happens when you block it. Node interviews look varied and are not. Streams, timers, clustering, memory, async error h…",
+      "publishedAt": "2026-08-24T06:19:00.000Z"
     },
     {
-      "slug": "bb50ac6949189be2bee2190b",
-      "guid": "https://dev.to/kriss_sachintha/my-experience-running-a-homelab-on-oracle-clouds-free-vps-8a7",
-      "title": "My Experience Running a Homelab on Oracle Cloud’s Free VPS",
-      "link": "https://dev.to/kriss_sachintha/my-experience-running-a-homelab-on-oracle-clouds-free-vps-8a7",
+      "slug": "a8129a951d827a129c974a0a",
+      "guid": "https://dev.to/zop_8abedcc7e12/a-finops-mcp-server-what-your-ai-assistant-can-ask-about-your-cloud-bill-and-what-it-can-never-5ak8",
+      "title": "A FinOps MCP Server: What Your AI Assistant Can Ask About Your Cloud Bill, and What It Can Never Change",
+      "link": "https://dev.to/zop_8abedcc7e12/a-finops-mcp-server-what-your-ai-assistant-can-ask-about-your-cloud-bill-and-what-it-can-never-5ak8",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "It’s been a while since I wrote a blog post. Recently, I decided to get back into writing and document something I’ve been playing around with: setting up a small homelab environment on an Oracle Cloud Free Tier VPS. The fact that I could do all of this on a free VPS made it eve…",
-      "publishedAt": "2026-08-23T06:01:59.000Z"
+      "summary": "Quick Answer (TL;DR) An MCP (Model Context Protocol) server for FinOps gives your AI assistant (Claude, Cursor, and other MCP clients) tools to query real cloud cost data, so \"what's costing us money this month\" gets answered from the bill instead of from the model's imagination…",
+      "publishedAt": "2026-08-24T06:18:19.000Z"
     },
     {
-      "slug": "5ad486b42d90f375e3b89e16",
-      "guid": "https://dev.to/tamizuddin/building-a-private-agentic-os-with-local-llms-lessons-from-eliza-hister-and-the-planning-problem-mel",
-      "title": "Building a Private Agentic OS with Local LLMs: Lessons from Eliza, Hister, and the Planning Problem",
-      "link": "https://dev.to/tamizuddin/building-a-private-agentic-os-with-local-llms-lessons-from-eliza-hister-and-the-planning-problem-mel",
+      "slug": "a8bd2141bc9ced49948f68ca",
+      "guid": "https://dev.to/wyattdave/ai-fairys-and-agile-44cc",
+      "title": "AI, Fairy's, and Agile",
+      "link": "https://dev.to/wyattdave/ai-fairys-and-agile-44cc",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "Originally published on tamiz.pro. We are witnessing a fundamental shift in software architecture: the transition from passive APIs to active agents. While the industry has been obsessed with the race for Artificial General Intelligence (AGI) through massive cloud models, a para…",
-      "publishedAt": "2026-08-23T06:00:55.000Z"
+      "summary": "Now hose 3 words don't generally go together, but trust me its not just clickbait (well just a little). I had an epiphany recently, and I want to take you on that journey. Vibe coding has become a key part of nearly all my workflows for a while now, and most of the time its not …",
+      "publishedAt": "2026-08-24T06:07:45.000Z"
     },
     {
-      "slug": "c9e8c83d56a38af5d0f33211",
-      "guid": "https://dev.to/tanmay_bhurkunde/a-developers-checklist-for-every-rag-lifecycle-beyond-chunk-embed-search-5ab9",
-      "title": "A Developer's Checklist for Every RAG Lifecycle (Beyond Chunk-Embed-Search)",
-      "link": "https://dev.to/tanmay_bhurkunde/a-developers-checklist-for-every-rag-lifecycle-beyond-chunk-embed-search-5ab9",
+      "slug": "4d5d6ffb536c2fd11cf0304c",
+      "guid": "https://dev.to/adilaidev/why-claude-loses-users-to-cheaper-ai-tools-44cn",
+      "title": "Why Claude Loses Users to Cheaper AI Tools",
+      "link": "https://dev.to/adilaidev/why-claude-loses-users-to-cheaper-ai-tools-44cn",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "If your mental model of RAG is \"chunk → embed → search → LLM,\" you're missing about 80% of what actually makes a RAG system production-ready. Here's a practical checklist across all 10 lifecycles I ran into while building one. Full technical breakdown with diagrams is on Hashnod…",
-      "publishedAt": "2026-08-23T05:55:11.000Z"
+      "summary": "Claude 3.5 Sonnet is fast, accurate, and handles complex tasks better than most models out there. Yet, when you check usage stats or talk to teams actually deploying AI, you’ll notice something odd. The cheaper options, often half the price or less, are winning. This isn’t about…",
+      "publishedAt": "2026-08-24T06:01:05.000Z"
     },
     {
-      "slug": "9e82bcadb38891eadf7f7ce6",
-      "guid": "https://dev.to/sam_manox/understanding-the-git-workflow-working-directory-staging-commit-and-push-14c9",
-      "title": "Understanding the Git Workflow: Working Directory, Staging, Commit, and Push",
-      "link": "https://dev.to/sam_manox/understanding-the-git-workflow-working-directory-staging-commit-and-push-14c9",
+      "slug": "515eade9b316c04f820dec98",
+      "guid": "https://dev.to/tamizuddin/the-solo-founder-simulation-lessons-from-letting-an-ai-agent-run-a-saas-while-i-audited-its-48cc",
+      "title": "The Solo Founder Simulation: Lessons from Letting an AI Agent Run a SaaS While I Audited Its Human-Like Mistakes",
+      "link": "https://dev.to/tamizuddin/the-solo-founder-simulation-lessons-from-letting-an-ai-agent-run-a-saas-while-i-audited-its-48cc",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "The first time we were introduced to Git, we really didn't know where our code was going to be saved until I learned that Git is part of a control system. It keeps track of changes made to files in a project so you can: track what changed, see previous versions of what you were …",
-      "publishedAt": "2026-08-23T05:51:48.000Z"
+      "summary": "Originally published on tamiz.pro. I spent six weeks delegating the operational backbone of my SaaS to a multi-agent system. The goal was to test the limits of autonomous software engineering—could an AI agent actually run a business, or does it merely simulate competence until …",
+      "publishedAt": "2026-08-24T06:00:45.000Z"
     },
     {
-      "slug": "9f77de850d14a19cfe452818",
-      "guid": "https://dev.to/fuadhusnan_f44f3e13/tracking-heart-health-with-wearable-iot-sensors-3ak9",
-      "title": "Tracking Heart Health with Wearable IoT Sensors",
-      "link": "https://dev.to/fuadhusnan_f44f3e13/tracking-heart-health-with-wearable-iot-sensors-3ak9",
+      "slug": "5d1dc7a31660738b24c59b03",
+      "guid": "https://dev.to/mecanik-dev/linux-server-hardening-guide-for-2026-2be9",
+      "title": "Linux Server Hardening Guide for 2026",
+      "link": "https://dev.to/mecanik-dev/linux-server-hardening-guide-for-2026-2be9",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "Tracking heart health with wearable IoT sensors has moved from a niche research exercise to something a consumer smartwatch does before breakfast. A photoplethysmography sensor no bigger than a fingernail can now estimate heart rate, detect irregular rhythms, and flag potential …",
-      "publishedAt": "2026-08-23T05:49:12.000Z"
+      "summary": "A default Linux install is convenient, not secure. Hardening is the process of reducing a server's attack surface and tightening its configuration so that the inevitable probing from the internet finds nothing easy to exploit. This guide covers the hardening steps that matter mo…",
+      "publishedAt": "2026-08-24T06:00:00.000Z"
     },
     {
-      "slug": "d5d903d91e338878aa51049c",
-      "guid": "https://dev.to/mashhadi/idempotency-is-not-a-key-its-a-contract-534h",
-      "title": "Idempotency is not a key, it's a contract",
-      "link": "https://dev.to/mashhadi/idempotency-is-not-a-key-its-a-contract-534h",
+      "slug": "994caa0d3a9d26f63e3a714b",
+      "guid": "https://dev.to/muskan_bandta/stop-comparing-gpu-clouds-only-by-hour-39ko",
+      "title": "Stop Comparing GPU Clouds Only by $/Hour",
+      "link": "https://dev.to/muskan_bandta/stop-comparing-gpu-clouds-only-by-hour-39ko",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "Every payments API has an Idempotency-Key header. Far fewer have written down what it means, and the ones that haven't are usually running a SELECT … WHERE key = ? before the insert and calling the job done. A key is a token. A contract is a set of answers: what counts as the sa…",
-      "publishedAt": "2026-08-23T05:35:45.000Z"
+      "summary": "Every GPU cloud comparison I see is a table of dollars per hour. Provider A is $2.10 an hour for an H100, provider B is $1.89, the newcomer is $1.40, therefore the newcomer wins. I understand the appeal, one number, easy to sort. It is also how teams end up paying more for GPUs …",
+      "publishedAt": "2026-08-24T05:53:30.000Z"
     },
     {
-      "slug": "194a3f3358c33d5e1ffd0780",
-      "guid": "https://dev.to/pagewright/your-amazon-scraper-is-returning-mixed-currencies-and-wont-tell-you-ohc",
-      "title": "Your Amazon scraper is returning mixed currencies and won't tell you",
-      "link": "https://dev.to/pagewright/your-amazon-scraper-is-returning-mixed-currencies-and-wont-tell-you-ohc",
+      "slug": "5b66bb4710d46ff15beb814e",
+      "guid": "https://dev.to/muskan_bandta/finops-cant-stop-at-the-cloud-bill-anymore-tracking-ai-token-spend-3chf",
+      "title": "FinOps Can't Stop at the Cloud Bill Anymore: Tracking AI Token Spend",
+      "link": "https://dev.to/muskan_bandta/finops-cant-stop-at-the-cloud-bill-anymore-tracking-ai-token-spend-3chf",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "If you scrape Amazon through rotating residential proxies, your price column I spent a week measuring what an Amazon scraper actually gets back. Below are the Amazon decides your country from the IP address of the request and returns prices amazon.com from a European IP -> 8.63 …",
-      "publishedAt": "2026-08-23T05:31:13.000Z"
+      "summary": "FinOps grew up managing one kind of cost: cloud infrastructure. Instances, storage, data transfer, the stuff on your AWS or GCP or Azure bill. That scope is now too narrow, because a new operational cost has shown up that behaves differently from everything FinOps was built for,…",
+      "publishedAt": "2026-08-24T05:53:09.000Z"
     },
     {
-      "slug": "32f1c683c429ebca289129f3",
-      "guid": "https://dev.to/santattech/how-to-create-an-mcp-server-tutorial-5dj5",
-      "title": "How to Create an MCP Server: Tutorial",
-      "link": "https://dev.to/santattech/how-to-create-an-mcp-server-tutorial-5dj5",
+      "slug": "9bd1f3335cfcd3ef5ad9caec",
+      "guid": "https://dev.to/edikka/a-technical-seo-audit-should-end-in-a-decision-not-a-score-b6i",
+      "title": "A Technical SEO Audit Should End in a Decision, Not a Score",
+      "link": "https://dev.to/edikka/a-technical-seo-audit-should-end-in-a-decision-not-a-score-b6i",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "Model Context Protocol (MCP): Building an AI-to-API Bridge 1. What Is MCP? Model Context Protocol (MCP) allows an AI assistant such as Kiro, Codex, Claude, or another MCP-compatible agent to interact with external systems in a structured way. A useful mental model is: AI Agent -…",
-      "publishedAt": "2026-08-23T05:27:07.000Z"
+      "summary": "A technical SEO audit can report 97% health and still miss the one defect that should stop a release. An accidental noindex on a key template, an empty application shell, a canonical pointing at a redirect, or a production firewall blocking required resources does not become les…",
+      "publishedAt": "2026-08-24T05:52:53.000Z"
     },
     {
-      "slug": "94ac3cc48a1835a91167fbf8",
-      "guid": "https://dev.to/annaraokoduri/offlinesossystem-2bdp",
-      "title": "Offline_SOS_System",
-      "link": "https://dev.to/annaraokoduri/offlinesossystem-2bdp",
+      "slug": "99378e574cb65bbdffbad7fd",
+      "guid": "https://dev.to/muskan_bandta/kubernetes-at-the-edge-hit-a-wall-fleet-management-is-the-way-through-28nh",
+      "title": "Kubernetes at the Edge Hit a Wall. Fleet Management Is the Way Through.",
+      "link": "https://dev.to/muskan_bandta/kubernetes-at-the-edge-hit-a-wall-fleet-management-is-the-way-through-28nh",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "Pub.dev Package: Link GitHub Repository: Link zero cell signal. You open your safety app, or its automated background trigger fires... only to hang indefinitely because it relies on a cloud API to process sensor data or verify the crash. That single point of failure bugged me fo…",
-      "publishedAt": "2026-08-23T05:24:26.000Z"
+      "summary": "Kubernetes at the edge has been \"the next big thing\" for a few years now, and this month the honest assessment showed up in the reporting: edge Kubernetes has hit a wall, and fleet management is emerging as the way through. That matches what I have seen. The moment you go from o…",
+      "publishedAt": "2026-08-24T05:52:53.000Z"
     },
     {
-      "slug": "1917bd07b284745a1934ced6",
-      "guid": "https://dev.to/koda2026/i-checked-my-database-logs-and-found-a-senior-engineer-stress-testing-my-ai-24p",
-      "title": "I checked my database logs and found a Senior Engineer stress-testing my AI 🕵️‍♂️",
-      "link": "https://dev.to/koda2026/i-checked-my-database-logs-and-found-a-senior-engineer-stress-testing-my-ai-24p",
+      "slug": "675a14b71ad5b45febeb423d",
+      "guid": "https://dev.to/ugliai/your-agent-framework-cant-un-send-that-email-54h0",
+      "title": "Your Agent Framework Can't Un-Send That Email",
+      "link": "https://dev.to/ugliai/your-agent-framework-cant-un-send-that-email-54h0",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "Hey everyone, Harun here again. I’m the 12-year-old solo dev from Anthiyur, India, building an AI coding mentor (KODA) entirely on my POCO C55 Android phone. Yesterday, I posted about getting my first 5 stranger users. But today, I did something every founder needs to do: I went…",
-      "publishedAt": "2026-08-23T05:19:28.000Z"
+      "summary": "An agent run dies halfway through. You restart it. The customer receives a second onboarding email. Nothing in that sentence is a framework bug. AutoGen, CrewAI, LangGraph, and Flowise will all let it happen, because none of them can reach into your mail provider and pull the me…",
+      "publishedAt": "2026-08-24T05:47:00.000Z"
     },
     {
-      "slug": "1138d44c0733f47238ec0a3a",
-      "guid": "https://dev.to/suseela_koduri_5a3086999a/brilliant-work-by-bhagya-prasad-on-dev-a-100-offline-headless-tflite-crash-detection-engine-for-3edj",
-      "title": "Brilliant work by Bhagya Prasad on DEV: a 100% offline, headless TFLite crash detection engine for Flutter. Zero latency, purely on-device Edge AI using raw sensor telemetry in RAM!! #Flutter",
-      "link": "https://dev.to/suseela_koduri_5a3086999a/brilliant-work-by-bhagya-prasad-on-dev-a-100-offline-headless-tflite-crash-detection-engine-for-3edj",
+      "slug": "9b5a9a556b1fae65cce89f6b",
+      "guid": "https://dev.to/roushan71262/building-an-open-source-zero-knowledge-docsend-alternative-with-react-19-and-supabase-3oap",
+      "title": "Building an Open-Source, Zero-Knowledge DocSend Alternative with React 19 and Supabase",
+      "link": "https://dev.to/roushan71262/building-an-open-source-zero-knowledge-docsend-alternative-with-react-19-and-supabase-3oap",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "I was tired of SOS apps failing in dead zones, so I built a pure Dart, 100% offline TFLite crash detection engine. Bhagya Prasad Dannina Jun 28 #showdev #flutter #machinelearning #opensource 26 reactions comments 1 min read",
-      "publishedAt": "2026-08-23T05:12:51.000Z"
+      "summary": "Why We Built DocTransfer Sharing sensitive documents like pitch decks, financial reports, or legal contracts shouldn't require paying $250+/month for platforms that store your unencrypted files on their servers. We built DocTransfer (and open-sourced it on GitHub) as a privacy-f…",
+      "publishedAt": "2026-08-24T05:45:47.000Z"
+    },
+    {
+      "slug": "643207d9b769eee04bf8d8ca",
+      "guid": "https://medium.com/p/5522847cbc6b",
+      "title": "Maintaining Apache Iceberg Tables: Compaction, Snapshots, Metadata and Orphan Files",
+      "link": "https://itnext.io/maintaining-apache-iceberg-tables-compaction-snapshots-metadata-and-orphan-files-5522847cbc6b?source=rss----5b301f10ddcd---4",
+      "source": "itnext",
+      "sourceUrl": "https://itnext.io/feed",
+      "summary": "",
+      "publishedAt": "2026-08-23T21:41:51.000Z"
     },
     {
       "slug": "0598464f443294735fd2a8b0",
@@ -132,6 +142,16 @@
       "sourceUrl": "https://kodekloud.com/blog/rss/",
       "summary": "Schedule a reboot in Linux with the shutdown command: an exact time within 24 hours, +minutes for days ahead, and -c to cancel. Real outputs.",
       "publishedAt": "2026-08-23T04:38:37.000Z"
+    },
+    {
+      "slug": "f8ded8255577315ac9a512b2",
+      "guid": "https://www.sitepoint.com/how-to-design-automation-triggers-that-don-t-fail-silently-in-production/",
+      "title": "How to Design Automation Triggers That Don't Fail Silently in Production",
+      "link": "https://www.sitepoint.com/how-to-design-automation-triggers-that-don-t-fail-silently-in-production/?utm_source=rss",
+      "source": "SitePoint",
+      "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
+      "summary": "null How to Design Automation Triggers That Don't Fail Silently in Production on SitePoint.",
+      "publishedAt": "2026-08-23T00:41:46.000Z"
     },
     {
       "slug": "d533d00cf7171fb70be6f3ce",
@@ -684,16 +704,6 @@
       "publishedAt": "2026-08-20T07:32:02.000Z"
     },
     {
-      "slug": "1567c7d45d85ad6d800eca08",
-      "guid": "https://medium.com/p/c938db38904d",
-      "title": "Common mistakes even large open-sources make",
-      "link": "https://itnext.io/5-common-mistakes-in-saps-frontend-framework-c938db38904d?source=rss----5b301f10ddcd---4",
-      "source": "itnext",
-      "sourceUrl": "https://itnext.io/feed",
-      "summary": "Let’s learn from SAP’s frontend framework Continue reading on ITNEXT »",
-      "publishedAt": "2026-08-20T07:30:29.000Z"
-    },
-    {
       "slug": "790f165bfc7c654a2fc38322",
       "guid": "https://dzone.com/articles/3663013",
       "title": "Securing AI Retrieval Pipelines and Adding Identity-Aware Access Controls to RAG Systems",
@@ -992,16 +1002,6 @@
       "sourceUrl": "https://frontendmasters.com/blog/feed/",
       "summary": "Update! This is a re-written version of this recently-published post about linting code bound for the React Compiler with Oxlint. Oxlint just published a new guide to this, so this post reflects that new information. The React team made a big splash recently when it announced th…",
       "publishedAt": "2026-08-17T20:49:21.000Z"
-    },
-    {
-      "slug": "6f981cb871d86cec7ce643bb",
-      "guid": "https://www.sitepoint.com/from-idea-to-prototype-in-minutes-claude-sonnet-3-5/",
-      "title": "From Idea to Prototype in Minutes: Claude Sonnet 3.5",
-      "link": "https://www.sitepoint.com/from-idea-to-prototype-in-minutes-claude-sonnet-3-5/?utm_source=rss",
-      "source": "SitePoint",
-      "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
-      "summary": "Check out how easier it has become to go from doc to design and prototype with Claude's latest model: Sonnet 3.5 From Idea to Prototype in Minutes: Claude Sonnet 3.5 on SitePoint.",
-      "publishedAt": "2026-08-17T19:45:00.000Z"
     }
   ]
 }
