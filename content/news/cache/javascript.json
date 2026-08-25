@@ -1,8 +1,28 @@
 {
   "category": "javascript",
   "label": "JavaScript",
-  "fetchedAt": "2026-08-24T06:29:49.274Z",
+  "fetchedAt": "2026-08-25T06:21:54.923Z",
   "items": [
+    {
+      "slug": "139ae245c31e253001709e8f",
+      "guid": "https://flaviocopes.com/zoxide/",
+      "title": "How to use zoxide",
+      "link": "https://flaviocopes.com/zoxide/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Learn how to install and set up zoxide, then jump between frequently used directories with z, interactive selection, and frecency ranking.",
+      "publishedAt": "2026-08-24T13:00:00.000Z"
+    },
+    {
+      "slug": "9cef6c27a590b9d6d975e050",
+      "guid": "https://flaviocopes.com/cloudflare-email-service/",
+      "title": "How to send email with Cloudflare Email Service",
+      "link": "https://flaviocopes.com/cloudflare-email-service/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Send transactional email from a Cloudflare Worker using the native Email Service binding, with domain setup, local testing, and error handling.",
+      "publishedAt": "2026-08-24T09:00:00.000Z"
+    },
     {
       "slug": "9a7519faf6d98a976be02faf",
       "guid": "https://flaviocopes.com/nurb/",
@@ -304,26 +324,6 @@
       "publishedAt": "2026-08-14T09:00:00.000Z"
     },
     {
-      "slug": "e61de4b1df745e6497f0b2f7",
-      "guid": "https://flaviocopes.com/webassembly/",
-      "title": "WebAssembly tutorial",
-      "link": "https://flaviocopes.com/webassembly/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Learn WebAssembly step by step by compiling a small module, loading it from JavaScript, and working with exports, imports, and memory.",
-      "publishedAt": "2026-08-14T05:00:00.000Z"
-    },
-    {
-      "slug": "a0c0d6cb22848e6dca74a83d",
-      "guid": "https://flaviocopes.com/cmux/",
-      "title": "A deep dive into cmux",
-      "link": "https://flaviocopes.com/cmux/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Learn how cmux combines terminals, browsers, notifications, SSH, session restore, and automation into one native workspace for coding agents.",
-      "publishedAt": "2026-08-13T09:00:00.000Z"
-    },
-    {
       "slug": "8f6f203bb26901a961a2ddd7",
       "guid": "https://blog.appsignal.com/2026/08/13/how-to-investigate-a-production-incident-using-an-ai-agent-appsignal-mcp.html",
       "title": "How to Investigate a Production Incident Using an AI Agent (AppSignal MCP)",
@@ -332,26 +332,6 @@
       "sourceUrl": "https://blog.appsignal.com/feed.xml",
       "summary": "An incident has hit your product. I've been there: you're context-switching between hosting, CI/CD, codebase, AppSignal for monitoring, and whatever else your product depends on to minimize downtime and potential losses. You're trying to piece everything together, but it takes a…",
       "publishedAt": "2026-08-13T00:00:00.000Z"
-    },
-    {
-      "slug": "5096200815fbd8dfb141bfa3",
-      "guid": "https://blog.appsignal.com/2026/08/11/your-render-migration-checklist-how-to-verify-everything-is-working.html",
-      "title": "Your Render Migration Checklist: How to Verify Everything Is Working",
-      "link": "https://blog.appsignal.com/2026/08/11/your-render-migration-checklist-how-to-verify-everything-is-working.html",
-      "source": "AppSignal",
-      "sourceUrl": "https://blog.appsignal.com/feed.xml",
-      "summary": "Migrating your app to a new service can be scary. Render makes the deployment side easy, but a green deploy doesn’t mean everything is working. Silent failures are often the most dangerous kind. They go unnoticed until a customer calls to report a broken webhook or you realize t…",
-      "publishedAt": "2026-08-11T00:00:00.000Z"
-    },
-    {
-      "slug": "092e7853f4a780f22fff55d0",
-      "guid": "https://javascriptweekly.com/issues/798",
-      "title": "Shipping less JavaScript with Baseline",
-      "link": "https://javascriptweekly.com/issues/798",
-      "source": "JavaScript Weekly",
-      "sourceUrl": "https://javascriptweekly.com/rss/1b4m1h9j",
-      "summary": "#​798 — August 11, 2026 Read on the Web 🏖️ A brief scheduling note: We're taking a summer break next week, so we'll be back in your inbox on August 25. Catch you then! __ Your editor, Peter Cooper JavaScript Weekly Migrating a Large Flow Monorepo to TypeScript — Over several ye…",
-      "publishedAt": "2026-08-11T00:00:00.000Z"
     }
   ]
 }
