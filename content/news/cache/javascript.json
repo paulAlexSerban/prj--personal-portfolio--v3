@@ -1,8 +1,48 @@
 {
   "category": "javascript",
   "label": "JavaScript",
-  "fetchedAt": "2026-08-25T06:21:54.923Z",
+  "fetchedAt": "2026-08-26T06:23:12.308Z",
   "items": [
+    {
+      "slug": "72654f8824fc5431eb3ac3ea",
+      "guid": "https://flaviocopes.com/idempotent-scheduled-job-cloudflare-queues-d1/",
+      "title": "Build an idempotent scheduled job with Cloudflare Queues and D1",
+      "link": "https://flaviocopes.com/idempotent-scheduled-job-cloudflare-queues-d1/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Build a reliable Cloudflare scheduled job with Queues and D1, using stable work IDs, expiring leases, safe retries, and fixed cadence.",
+      "publishedAt": "2026-08-25T13:00:00.000Z"
+    },
+    {
+      "slug": "cde1fd6e012a55fee64ae6b0",
+      "guid": "https://flaviocopes.com/cursor-origin/",
+      "title": "A deep dive into Cursor Origin",
+      "link": "https://flaviocopes.com/cursor-origin/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Cursor Origin hosts Git repositories inside Cursor. Learn how its repos, GitHub sync, pull requests, agents, apps, CLI, and early-beta limits work.",
+      "publishedAt": "2026-08-25T10:00:00.000Z"
+    },
+    {
+      "slug": "05e16dc2e0114ebf73ed6ea8",
+      "guid": "https://flaviocopes.com/herdr-phone/",
+      "title": "Using Herdr from a phone",
+      "link": "https://flaviocopes.com/herdr-phone/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Connect to a persistent Herdr session from a phone over SSH, use the narrow-screen interface, and safely check running coding agents.",
+      "publishedAt": "2026-08-25T06:00:00.000Z"
+    },
+    {
+      "slug": "afd0cdad8f76886687f824d3",
+      "guid": "https://javascriptweekly.com/issues/799",
+      "title": "Bun 1.4 is (finally) fresh out of the oven",
+      "link": "https://javascriptweekly.com/issues/799",
+      "source": "JavaScript Weekly",
+      "sourceUrl": "https://javascriptweekly.com/rss/1b4m1h9j",
+      "summary": "#​799 — August 25, 2026 Read on the Web 🏖️ I'm back from an intense week of Disney vacationing with the family, so I feel more tired than before I left 😅… but it's time to catch up with all things JavaScript! __ Your editor, Peter Cooper JavaScript Weekly Bun 1.4: Now More Nod…",
+      "publishedAt": "2026-08-25T00:00:00.000Z"
+    },
     {
       "slug": "139ae245c31e253001709e8f",
       "guid": "https://flaviocopes.com/zoxide/",
@@ -292,36 +332,6 @@
       "sourceUrl": "https://flaviocopes.com/rss.xml",
       "summary": "An in-depth tutorial on the Intersection Observer API: entries, thresholds, rootMargin, lazy loading, infinite scroll, scrollspy, visibility tracking, and the pitfalls to avoid.",
       "publishedAt": "2026-08-16T05:00:00.000Z"
-    },
-    {
-      "slug": "87fbe2cd30e36f43b8be514f",
-      "guid": "https://flaviocopes.com/cloudflare-ai-gateway/",
-      "title": "Cloudflare AI Gateway: put a proxy in front of your LLM calls",
-      "link": "https://flaviocopes.com/cloudflare-ai-gateway/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Learn how Cloudflare AI Gateway sits between your application and AI models, then route and inspect a real request through a Worker.",
-      "publishedAt": "2026-08-15T05:00:00.000Z"
-    },
-    {
-      "slug": "190ce1064028a84511373492",
-      "guid": "https://flaviocopes.com/cloudflare-workers-ai/",
-      "title": "Cloudflare Workers AI: run LLMs without API keys",
-      "link": "https://flaviocopes.com/cloudflare-workers-ai/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Learn what Cloudflare Workers AI is, connect its AI binding to a Worker, and build a small text summarization API step by step.",
-      "publishedAt": "2026-08-15T05:00:00.000Z"
-    },
-    {
-      "slug": "aed98379c3d5035ad8203752",
-      "guid": "https://flaviocopes.com/http2-http3/",
-      "title": "HTTP/2 and HTTP/3: what changed and why it matters",
-      "link": "https://flaviocopes.com/http2-http3/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Learn how HTTP/2 and HTTP/3 changed connections, multiplexing, compression, QUIC, deployment, and the web performance decisions you make today.",
-      "publishedAt": "2026-08-14T09:00:00.000Z"
     },
     {
       "slug": "8f6f203bb26901a961a2ddd7",
