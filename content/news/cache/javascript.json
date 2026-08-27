@@ -1,8 +1,68 @@
 {
   "category": "javascript",
   "label": "JavaScript",
-  "fetchedAt": "2026-08-26T06:23:12.308Z",
+  "fetchedAt": "2026-08-27T16:52:46.973Z",
   "items": [
+    {
+      "slug": "e8d548e084473be4fa7a51d4",
+      "guid": "https://flaviocopes.com/bootcamp-september-2026/",
+      "title": "Build and ship real software with AI",
+      "link": "https://flaviocopes.com/bootcamp-september-2026/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "The September 2026 Bootcamp is a 10-week, beginner-friendly program for building and shipping real software with AI coding agents.",
+      "publishedAt": "2026-08-27T14:00:00.000Z"
+    },
+    {
+      "slug": "ccd4e171b58ca2d6ddaf9082",
+      "guid": "https://flaviocopes.com/stylex/",
+      "title": "A deep dive into StyleX",
+      "link": "https://flaviocopes.com/stylex/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Learn how StyleX turns JavaScript style objects into regular CSS classes at build time, with React and Astro setup, variants, themes, and responsive styles.",
+      "publishedAt": "2026-08-27T13:00:00.000Z"
+    },
+    {
+      "slug": "f426daf4bb5ab96b12cd2b66",
+      "guid": "https://flaviocopes.com/github-actions-introduction/",
+      "title": "A deep dive into GitHub Actions",
+      "link": "https://flaviocopes.com/github-actions-introduction/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "A practical deep dive into GitHub Actions: workflows, runners, job graphs, artifacts, caching, security, deployments, and debugging.",
+      "publishedAt": "2026-08-27T09:00:00.000Z"
+    },
+    {
+      "slug": "595dd8b402a26c372de98829",
+      "guid": "https://flaviocopes.com/hey-cli/",
+      "title": "A deep dive into hey-cli",
+      "link": "https://flaviocopes.com/hey-cli/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "hey-cli brings HEY email, contacts, calendars, todos, habits, time tracking, journal entries, automation, and AI agent workflows to your terminal.",
+      "publishedAt": "2026-08-26T15:08:19.000Z"
+    },
+    {
+      "slug": "50379acad21c1dbcddac0e9b",
+      "guid": "https://flaviocopes.com/ponytail/",
+      "title": "A deep dive into Ponytail",
+      "link": "https://flaviocopes.com/ponytail/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Learn how Ponytail stops AI coding agents from over-engineering: install it in ChatGPT, Codex, or Claude Code, choose a mode, and review diffs.",
+      "publishedAt": "2026-08-26T13:00:00.000Z"
+    },
+    {
+      "slug": "f654f0219fbe27d081019f1f",
+      "guid": "https://flaviocopes.com/exit-herdr/",
+      "title": "How to exit, close, and detach from Herdr",
+      "link": "https://flaviocopes.com/exit-herdr/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Learn the difference between detaching, closing a pane, stopping a session, and exiting Herdr without accidentally killing running work.",
+      "publishedAt": "2026-08-26T06:00:00.000Z"
+    },
     {
       "slug": "72654f8824fc5431eb3ac3ea",
       "guid": "https://flaviocopes.com/idempotent-scheduled-job-cloudflare-queues-d1/",
@@ -272,76 +332,6 @@
       "sourceUrl": "https://blog.appsignal.com/feed.xml",
       "summary": "TL;DR Vibe coding makes a monitoring pipeline look finished in a single afternoon. The hard parts (scale, reliability, error grouping, compliance) show up months later, usually during the incident you’ve built the tool to catch. For most teams, a managed tool is the cheaper, fas…",
       "publishedAt": "2026-08-18T00:00:00.000Z"
-    },
-    {
-      "slug": "3a43c1ed87f3d4aabb8421cf",
-      "guid": "https://flaviocopes.com/css-has-selector/",
-      "title": "The CSS :has() selector",
-      "link": "https://flaviocopes.com/css-has-selector/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "The CSS parent selector styles an element from what is inside it. Forms, cards, previous siblings, quantity queries, and when JavaScript is still better.",
-      "publishedAt": "2026-08-17T09:00:00.000Z"
-    },
-    {
-      "slug": "eef6a7381c9672ec15906417",
-      "guid": "https://flaviocopes.com/claude-system-prompts/",
-      "title": "What I learned reading Claude's system prompts",
-      "link": "https://flaviocopes.com/claude-system-prompts/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "I read Anthropic's published Claude system prompts. Most of the product lives in the rules, facts, tools, and safety checks around the model.",
-      "publishedAt": "2026-08-17T07:00:00.000Z"
-    },
-    {
-      "slug": "e1c42ead3ad844d77c806c14",
-      "guid": "https://flaviocopes.com/css-container-queries/",
-      "title": "CSS Container Queries",
-      "link": "https://flaviocopes.com/css-container-queries/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "CSS container queries style a component by its own width, not the viewport. Learn container-type, named containers, query units, and the traps that break layouts.",
-      "publishedAt": "2026-08-17T05:00:00.000Z"
-    },
-    {
-      "slug": "4c822ba2b2b327e82b508656",
-      "guid": "https://flaviocopes.com/optional-local-llm-swift-app/",
-      "title": "Add a local LLM without making your app depend on it",
-      "link": "https://flaviocopes.com/optional-local-llm-swift-app/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Add optional Ollama-generated summaries to a Swift app while preserving deterministic fallback data, short health checks, failure backoff, caching, and testability.",
-      "publishedAt": "2026-08-16T13:00:00.000Z"
-    },
-    {
-      "slug": "37ccb2999b7e4731428ac035",
-      "guid": "https://flaviocopes.com/abortcontroller/",
-      "title": "AbortController: how to cancel a fetch request in JavaScript",
-      "link": "https://flaviocopes.com/abortcontroller/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Learn how to cancel fetch requests in JavaScript with AbortController, handle AbortError, set timeouts, and abort on unmount or superseded requests.",
-      "publishedAt": "2026-08-16T09:00:00.000Z"
-    },
-    {
-      "slug": "75a12cb47cea8ebdb5e46cf5",
-      "guid": "https://flaviocopes.com/intersection-observer/",
-      "title": "The Intersection Observer API",
-      "link": "https://flaviocopes.com/intersection-observer/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "An in-depth tutorial on the Intersection Observer API: entries, thresholds, rootMargin, lazy loading, infinite scroll, scrollspy, visibility tracking, and the pitfalls to avoid.",
-      "publishedAt": "2026-08-16T05:00:00.000Z"
-    },
-    {
-      "slug": "8f6f203bb26901a961a2ddd7",
-      "guid": "https://blog.appsignal.com/2026/08/13/how-to-investigate-a-production-incident-using-an-ai-agent-appsignal-mcp.html",
-      "title": "How to Investigate a Production Incident Using an AI Agent (AppSignal MCP)",
-      "link": "https://blog.appsignal.com/2026/08/13/how-to-investigate-a-production-incident-using-an-ai-agent-appsignal-mcp.html",
-      "source": "AppSignal",
-      "sourceUrl": "https://blog.appsignal.com/feed.xml",
-      "summary": "An incident has hit your product. I've been there: you're context-switching between hosting, CI/CD, codebase, AppSignal for monitoring, and whatever else your product depends on to minimize downtime and potential losses. You're trying to piece everything together, but it takes a…",
-      "publishedAt": "2026-08-13T00:00:00.000Z"
     }
   ]
 }
