@@ -1,8 +1,58 @@
 {
   "category": "javascript",
   "label": "JavaScript",
-  "fetchedAt": "2026-08-27T16:52:46.973Z",
+  "fetchedAt": "2026-08-28T17:44:32.782Z",
   "items": [
+    {
+      "slug": "69daab3c871d5bc1b3ebdb4d",
+      "guid": "https://flaviocopes.com/darp/",
+      "title": "DARP: Durable Activity Record Protocol",
+      "link": "https://flaviocopes.com/darp/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "I created DARP so coding agents can send meaningful work records to Factory Log through a small, open protocol without surveillance.",
+      "publishedAt": "2026-08-28T15:00:00.000Z"
+    },
+    {
+      "slug": "b7b55b37f82803f8f093c54c",
+      "guid": "https://flaviocopes.com/1password-cursor/",
+      "title": "Use 1Password Developer Environments with Cursor",
+      "link": "https://flaviocopes.com/1password-cursor/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Learn how the 1Password Cursor plugin mounts secrets without plaintext .env files, what its skill and validation hook do, and how to use it safely.",
+      "publishedAt": "2026-08-28T13:00:00.000Z"
+    },
+    {
+      "slug": "e6cfcce272d9c70a90ddc356",
+      "guid": "https://flaviocopes.com/t3-code/",
+      "title": "A deep dive into T3 Code",
+      "link": "https://flaviocopes.com/t3-code/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Learn how T3 Code runs Codex, Claude Code, Cursor, Grok, and OpenCode through one local web, desktop, and mobile control plane.",
+      "publishedAt": "2026-08-28T09:00:00.000Z"
+    },
+    {
+      "slug": "d6baf085f50742df63a22e4e",
+      "guid": "https://flaviocopes.com/1password-environments/",
+      "title": "A deep dive into 1Password Developer Environments",
+      "link": "https://flaviocopes.com/1password-environments/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Learn how 1Password Developer Environments store, share, mount, and inject project secrets, including their security model and practical limits.",
+      "publishedAt": "2026-08-28T07:00:00.000Z"
+    },
+    {
+      "slug": "6936f8a4cd676962c136f2a5",
+      "guid": "https://flaviocopes.com/docker-compose/",
+      "title": "Introduction to Docker Compose",
+      "link": "https://flaviocopes.com/docker-compose/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Introduction to Docker Compose: run multi-container apps from one file, with services, volumes, ports, and a Node plus Postgres example.",
+      "publishedAt": "2026-08-28T05:00:00.000Z"
+    },
     {
       "slug": "e8d548e084473be4fa7a51d4",
       "guid": "https://flaviocopes.com/bootcamp-september-2026/",
@@ -200,7 +250,7 @@
       "link": "https://flaviocopes.com/grok-bot/",
       "source": "Flavio Copes",
       "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "A detailed Grok Bot guide covering setup, persistent computers, skills, routines, approvals, real use cases, limits, pricing, and alternatives.",
+      "summary": "A detailed Grok Bot guide covering setup, persistent computers, skills, routines, templates, approvals, real use cases, limits, pricing, and alternatives.",
       "publishedAt": "2026-08-22T08:00:00.000Z"
     },
     {
@@ -264,16 +314,6 @@
       "publishedAt": "2026-08-20T09:00:00.000Z"
     },
     {
-      "slug": "54d1e662248881706bf7a65e",
-      "guid": "https://flaviocopes.com/view-transitions-api/",
-      "title": "The View Transitions API",
-      "link": "https://flaviocopes.com/view-transitions-api/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Create smooth same-document animations with the View Transitions API using startViewTransition, CSS pseudo-elements, and view-transition-name on elements.",
-      "publishedAt": "2026-08-20T05:00:00.000Z"
-    },
-    {
       "slug": "b0eecc3dd398b62811b721ba",
       "guid": "https://blog.appsignal.com/2026/08/20/mcp-wont-replace-your-monitoring-tool.html",
       "title": "MCP Won't Replace Your Monitoring Tool",
@@ -282,46 +322,6 @@
       "sourceUrl": "https://blog.appsignal.com/feed.xml",
       "summary": "MCP is generating a lot of hype nowadays (but then again, almost anything that emerges in AI seems to attract hype). The anticipation around it is similar to the level of excitement that would break out if Apple were to finally introduce USB-C to iPhones. To be fair, though, som…",
       "publishedAt": "2026-08-20T00:00:00.000Z"
-    },
-    {
-      "slug": "d8e6d0395d9f524e48c35b6b",
-      "guid": "https://flaviocopes.com/mutationobserver-resizeobserver/",
-      "title": "MutationObserver and ResizeObserver",
-      "link": "https://flaviocopes.com/mutationobserver-resizeobserver/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Use MutationObserver to watch DOM changes and ResizeObserver to track element size changes, with practical examples and cleanup via disconnect().",
-      "publishedAt": "2026-08-19T09:00:00.000Z"
-    },
-    {
-      "slug": "96193a2554d852bab3e303eb",
-      "guid": "https://flaviocopes.com/popover-api/",
-      "title": "The Popover API",
-      "link": "https://flaviocopes.com/popover-api/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Build native browser popovers with the Popover API using HTML attributes, auto and manual modes, CSS backdrop styling, and JavaScript show and hide methods.",
-      "publishedAt": "2026-08-19T05:00:00.000Z"
-    },
-    {
-      "slug": "a64163ddff0a3d32451a9640",
-      "guid": "https://flaviocopes.com/macos-app-command-line-tools-path/",
-      "title": "Find command-line tools from a macOS app",
-      "link": "https://flaviocopes.com/macos-app-command-line-tools-path/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Fix tools that work in Terminal but disappear from Finder-launched macOS apps by locating binaries and building an explicit child-process PATH.",
-      "publishedAt": "2026-08-18T13:00:00.000Z"
-    },
-    {
-      "slug": "37eb07fcff3ff0f805078ca6",
-      "guid": "https://flaviocopes.com/html-dialog-tag/",
-      "title": "The HTML dialog tag",
-      "link": "https://flaviocopes.com/html-dialog-tag/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Learn the native HTML dialog element for accessible modals: showModal, close, form method dialog, backdrop styling, and why it beats div modals.",
-      "publishedAt": "2026-08-18T05:00:00.000Z"
     },
     {
       "slug": "2f1e4101f82d10667b62e9d0",
