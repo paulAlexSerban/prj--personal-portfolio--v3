@@ -1,127 +1,177 @@
 {
   "category": "web-dev",
   "label": "Web Development",
-  "fetchedAt": "2026-08-28T17:44:32.782Z",
+  "fetchedAt": "2026-08-29T11:49:15.193Z",
   "items": [
     {
-      "slug": "656b91f4a0f64bb166e367a5",
-      "guid": "https://dev.to/gerale30/the-ai-api-will-fail-on-you-heres-how-i-structure-fastapi-to-handle-it-53ia",
-      "title": "The AI API Will Fail on You — Here's How I Structure FastAPI to Handle It",
-      "link": "https://dev.to/gerale30/the-ai-api-will-fail-on-you-heres-how-i-structure-fastapi-to-handle-it-53ia",
+      "slug": "1efe14e8811dcce0418e17c1",
+      "guid": "https://dev.to/kingsleyonoh/a-simulation-id-is-not-a-running-simulation-787",
+      "title": "A Simulation ID Is Not a Running Simulation",
+      "link": "https://dev.to/kingsleyonoh/a-simulation-id-is-not-a-running-simulation-787",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "A few weeks ago I was demoing a small FastAPI service that called an LLM to summarize text. Worked great in every test I ran. Then, live, the provider API took almost 9 seconds to respond and my endpoint just... hung. No error, no timeout, just silence while I sat there making s…",
-      "publishedAt": "2026-08-28T17:25:35.000Z"
+      "summary": "createSimulation() returned an ID. startSimulation() still failed. That was the sixth version of the gateway's live MiroFish path. Five earlier runs had already found a wrong Redis instance, a duplicate simulation record, a synchronous ontology response mistaken for an asynchron…",
+      "publishedAt": "2026-08-29T11:35:23.000Z"
     },
     {
-      "slug": "357fb84463fa4cee03c1946c",
-      "guid": "https://dev.to/ptokito/bedrock-guardrails-blocked-my-rag-bots-own-questions-denied-topics-and-contextual-grounding-tested-20m9",
-      "title": "Bedrock Guardrails Blocked My RAG Bot's Own Questions: Denied Topics and Contextual Grounding Tested",
-      "link": "https://dev.to/ptokito/bedrock-guardrails-blocked-my-rag-bots-own-questions-denied-topics-and-contextual-grounding-tested-20m9",
+      "slug": "04998b5197df21bf6c5f8e3b",
+      "guid": "https://dev.to/kingsleyonoh/why-i-put-swarm-memory-in-postgresql-instead-of-zep-e61",
+      "title": "Why I Put Swarm Memory in PostgreSQL Instead of Zep",
+      "link": "https://dev.to/kingsleyonoh/why-i-put-swarm-memory-in-postgresql-instead-of-zep-e61",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "By Tim O. I am studying for the AWS Certified AI Practitioner exam, and I wanted something to build rather than another set of flashcards. The 2026 World Cup made the choice easy. I am a big soccer fan, and this tournament was the first with the new 48-team format: more teams, m…",
-      "publishedAt": "2026-08-28T17:17:18.000Z"
+      "summary": "A completed simulation left me with a report and an ownership problem. MiroFish had built the graph, generated the agents, and run their interactions, but the useful memory still lived behind somebody else's service boundary. The gateway could display the final answer. It couldn…",
+      "publishedAt": "2026-08-29T11:35:10.000Z"
     },
     {
-      "slug": "c7d17b55c249b981b55f2223",
-      "guid": "https://dev.to/debashish_ghosal/most-ai-second-opinions-are-theater-i-built-a-system-that-actually-fights-back-1994",
-      "title": "Most AI Second Opinions Are Theater. I Built a System That Actually Fights Back.",
-      "link": "https://dev.to/debashish_ghosal/most-ai-second-opinions-are-theater-i-built-a-system-that-actually-fights-back-1994",
+      "slug": "9b53e2914d43a974603b4a6d",
+      "guid": "https://dev.to/mehrab_ali/crc32-vs-sha-256-vs-xxhash-which-checksum-should-you-use-2mp2",
+      "title": "CRC32 vs SHA-256 vs XXHash: Which Checksum Should You Use?",
+      "link": "https://dev.to/mehrab_ali/crc32-vs-sha-256-vs-xxhash-which-checksum-should-you-use-2mp2",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "The first time I ran two LLMs against the same pull request, 89% of their \"debate\" was fake. Not wrong. Not low-quality. Fake. The second model was replaying pre-generated text. Both models were exchanging messages, no positions were changing, no evidence was being cited — and t…",
-      "publishedAt": "2026-08-28T17:16:00.000Z"
+      "summary": "If you've ever needed to verify a download, find duplicate files, or prove a folder hasn't changed, you've met checksums. But which one should you actually use? The answer changes completely depending on what you're doing. CRC32 — the old workhorse. Fast, tiny (32 bits), support…",
+      "publishedAt": "2026-08-29T11:30:40.000Z"
     },
     {
-      "slug": "098432db11658593ae94818c",
-      "guid": "https://dev.to/_83efaf1d4a55490b047f1/show-dev-i-built-an-ai-tts-with-1000-voices-and-im-giving-everyone-2000-free-credits-to-try-1ia4",
-      "title": "Show DEV: I built an AI TTS with 1,000+ voices — and I’m giving everyone 2,000 free credits to try it! 🎙️",
-      "link": "https://dev.to/_83efaf1d4a55490b047f1/show-dev-i-built-an-ai-tts-with-1000-voices-and-im-giving-everyone-2000-free-credits-to-try-1ia4",
+      "slug": "1e84a6edb3e0de4ba357f9dd",
+      "guid": "https://dev.to/mnemehq/anthropics-ai-native-sdlc-has-three-controls-its-missing-a-fourth-5254",
+      "title": "Anthropic's AI-Native SDLC Has Three Controls. It's Missing a Fourth.",
+      "link": "https://dev.to/mnemehq/anthropics-ai-native-sdlc-has-three-controls-its-missing-a-fourth-5254",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "Hey DEV community! 👋 As a developer, I’ve always been frustrated by how expensive or \"robotic\" most Text-to-Speech (TTS) services are. Whether I'm making a demo video for a project or trying to listen to long documentation, I wanted something that sounds human. So, I built Text…",
-      "publishedAt": "2026-08-28T17:15:05.000Z"
+      "summary": "Anthropic published an AI-Native SDLC playbook last week. Its central claim: code generation is no longer the slow part of delivery. The stages around it, planning, review, security sign-off, release, still run at human speed. Once agents write most of the diff, that mismatch ha…",
+      "publishedAt": "2026-08-29T11:28:02.000Z"
     },
     {
-      "slug": "9f7d2f17ab17d6795d556da6",
-      "guid": "https://dev.to/milkyway008/your-browser-automation-hangs-after-an-update-check-the-keychain-flags-341h",
-      "title": "Your Browser Automation Hangs After an Update? Check the Keychain Flags",
-      "link": "https://dev.to/milkyway008/your-browser-automation-hangs-after-an-update-check-the-keychain-flags-341h",
+      "slug": "c159d9e1eed9f91fdbca6364",
+      "guid": "https://dev.to/malik_rashid/how-to-find-out-what-technology-a-website-uses-1135",
+      "title": "How to Find Out What Technology a Website Uses",
+      "link": "https://dev.to/malik_rashid/how-to-find-out-what-technology-a-website-uses-1135",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "Your Browser Automation Started Hanging After an Update? Blame the Keychain If you run browser automation on a Mac or Linux box, you may have hit this one recently: your script worked fine for months, then after a library update the headless browser just... never starts. No erro…",
-      "publishedAt": "2026-08-28T17:14:43.000Z"
+      "summary": "Ever landed on a website and wondered, \"What is this built with?\" Maybe a competitor's site loads absurdly fast. Maybe a client wants you to rebuild something similar. Whatever the reason, figuring out a site's tech stack is easier than most people think. I build detection tools…",
+      "publishedAt": "2026-08-29T11:27:38.000Z"
     },
     {
-      "slug": "ab978f10948c41c5ad52883c",
-      "guid": "https://dev.to/venkata_reddykummitha_d5/building-end-to-end-genai-agents-on-google-cloud-my-google-gen-ai-apac-academy-49mn",
-      "title": "Building End-to-End GenAI Agents on Google Cloud: My Google Gen AI APAC Academy",
-      "link": "https://dev.to/venkata_reddykummitha_d5/building-end-to-end-genai-agents-on-google-cloud-my-google-gen-ai-apac-academy-49mn",
+      "slug": "8653d9a43bc0ead457385cf8",
+      "guid": "https://dev.to/linguapilot-ai/qwen25-7b-vs-qwen3-4b-8b-for-writing-correction-60-local-ollama-responses-on-windows-12ff",
+      "title": "Qwen2.5 7B vs Qwen3 4B & 8B for Writing Correction: 60 Local Ollama Responses on Windows",
+      "link": "https://dev.to/linguapilot-ai/qwen25-7b-vs-qwen3-4b-8b-for-writing-correction-60-local-ollama-responses-on-windows-12ff",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "Over the past few weeks, I had the opportunity to participate in the Google Gen AI APAC Academy – Cohort 3, where I worked through hands-on codelabs focused on building and deploying Generative AI agents on Google Cloud. What made this experience valuable for me was that it wasn…",
-      "publishedAt": "2026-08-28T17:10:57.000Z"
+      "summary": "I expected Qwen2.5 7B to retain a noticeable advantage over the smaller Qwen3 4B model for writing correction. In this experiment, it didn't. Across the same 20 paired writing cases, Qwen2.5 7B and Qwen3 4B produced exactly the same complete-case outcome: both succeeded on the s…",
+      "publishedAt": "2026-08-29T11:26:17.000Z"
     },
     {
-      "slug": "3eee37b0670dfcafdfd610ed",
-      "guid": "https://dev.to/schiff_heimlich/when-no-space-left-on-device-has-nothing-to-do-with-disk-space-10jj",
-      "title": "When 'No space left on device' has nothing to do with disk space",
-      "link": "https://dev.to/schiff_heimlich/when-no-space-left-on-device-has-nothing-to-do-with-disk-space-10jj",
+      "slug": "5787d2fb84fcd41d9519eba2",
+      "guid": "https://dev.to/edgaremmanuel/implementing-domain-driven-design-domain-events-1-definition-and-modeling-ggo",
+      "title": "Implementing Domain Driven Design - Domain Events ( 1 ) - Definition and Modeling",
+      "link": "https://dev.to/edgaremmanuel/implementing-domain-driven-design-domain-events-1-definition-and-modeling-ggo",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "You're running a log shipper or a config reloader and suddenly it starts failing with ENOSPC — \"No space left on device.\" You check df -h, and the disk is fine. Plenty of inodes, plenty of blocks. So why is the kernel refusing to do work? Chances are it's not disk space at all. …",
-      "publishedAt": "2026-08-28T17:10:40.000Z"
+      "summary": "I know it has been a long time, i was finishing some work, Can we talk about << domain events >> today ? 😄 There is no direct definition, we can say that they are the result of listening to domain experts. And the final point is something happened and the domain experts want to…",
+      "publishedAt": "2026-08-29T11:23:18.000Z"
     },
     {
-      "slug": "351a9b7de23efda6d8056b2b",
-      "guid": "https://dev.to/josemariairiarte/performance-engineering-what-is-the-system-waiting-for-483i",
-      "title": "Performance Engineering: What Is the System Waiting For?",
-      "link": "https://dev.to/josemariairiarte/performance-engineering-what-is-the-system-waiting-for-483i",
+      "slug": "1f2f21b10b5620314f964c3b",
+      "guid": "https://dev.to/ayushsrtv/youre-paying-a-40-syntax-tax-on-every-single-llm-prompt-heres-the-fix-mok",
+      "title": "You’re Paying a 40% Syntax Tax on Every Single LLM Prompt. Here’s the Fix.",
+      "link": "https://dev.to/ayushsrtv/youre-paying-a-40-syntax-tax-on-every-single-llm-prompt-heres-the-fix-mok",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "When a request takes five seconds, the obvious question is what to make faster. The more useful question is what, precisely, the system spent those five seconds doing — or waiting to do. The answer may lie in unnecessary database work, excessive data movement, an execution plan,…",
-      "publishedAt": "2026-08-28T17:09:38.000Z"
+      "summary": "Every engineer building autonomous agent loops or heavy RAG pipelines eventually encounters a painful reality. It isn’t semantic hallucination. It isn’t baseline query latency. It’s the monthly API token bill. When feeding massive data arrays—such as database logs, product catal…",
+      "publishedAt": "2026-08-29T11:22:50.000Z"
     },
     {
-      "slug": "b5094357379473c96171c839",
-      "guid": "https://dev.to/arnab_dutta_8c6739583bf34/heatsentry-combating-urban-heat-with-multi-agent-ai-and-google-gemini-p74",
-      "title": "HeatSentry : Combating Urban Heat with Multi-Agent AI and Google Gemini",
-      "link": "https://dev.to/arnab_dutta_8c6739583bf34/heatsentry-combating-urban-heat-with-multi-agent-ai-and-google-gemini-p74",
+      "slug": "1efc728f320414a5539aead8",
+      "guid": "https://dev.to/ankit_verma_e2fa7fb2aa95d/transaction-propagation-required-requiresnew-nested-part-2-of-2-41fj",
+      "title": "Transaction propagation (REQUIRED / REQUIRES_NEW / NESTED ...) (Part 2 of 2)",
+      "link": "https://dev.to/ankit_verma_e2fa7fb2aa95d/transaction-propagation-required-requiresnew-nested-part-2-of-2-41fj",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "Building HeatSentry : Multi-Agent Urban Heat Resilience with Google Gemini. *Disclaimer: I created this piece of content for the purpose of entering the Google #AllThingsAgentic Hackathon . Extreme heat is among the deadliest climate hazards facing cities. In Phoenix, asphalt te…",
-      "publishedAt": "2026-08-28T17:09:35.000Z"
+      "summary": "Picking up between \"join\" and \"start fresh\" Part 1 left you with two propagation modes and a clean way to think about them. REQUIRED joins whatever transaction is already running, so everything shares one all-or-nothing boundary. REQUIRES_NEW ignores the outer transaction, suspe…",
+      "publishedAt": "2026-08-29T11:17:44.000Z"
     },
     {
-      "slug": "0551a96dadd81998b195f3bd",
-      "guid": "https://dev.to/aditya_d_sharma/why-is-null-more-than-just-no-value-the-problem-with-null-references-4bep",
-      "title": "Why Is null More Than Just \"No Value\"? The Problem With null References.",
-      "link": "https://dev.to/aditya_d_sharma/why-is-null-more-than-just-no-value-the-problem-with-null-references-4bep",
+      "slug": "46ed15f304d1565dd90cb499",
+      "guid": "https://dev.to/mqasimca/shadow-test-a-new-ai-email-agent-on-live-threads-with-nylas-2mjd",
+      "title": "Shadow-test a new AI email agent on live threads with Nylas",
+      "link": "https://dev.to/mqasimca/shadow-test-a-new-ai-email-agent-on-live-threads-with-nylas-2mjd",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "Look at this line: let user = null; There's something quietly strange about it. You have a variable. You have a value assigned to it. And that value is being used to express the idea that there is no value. A missing value is being represented as a value. That contradiction is w…",
-      "publishedAt": "2026-08-28T17:08:22.000Z"
+      "summary": "You have an email agent that works in a test inbox. It classifies a support request, pulls the relevant context, and drafts a plausible reply. The risky next step is turning it loose on support@yourcompany.com: a new prompt can misunderstand a frustrated customer, a new model ca…",
+      "publishedAt": "2026-08-29T11:16:27.000Z"
     },
     {
-      "slug": "952f2ba62fd8bb10d1a73c49",
-      "guid": "https://dev.to/bibekkakati/docker-demystified-the-ultimate-guide-to-containers-and-architecture-h18",
-      "title": "Docker Demystified: The Ultimate Guide to Containers and Architecture",
-      "link": "https://dev.to/bibekkakati/docker-demystified-the-ultimate-guide-to-containers-and-architecture-h18",
+      "slug": "c19c68de5fcb70d729648863",
+      "guid": "https://dev.to/impossibru/zero-backend-6-languages-one-repo-the-architecture-of-a-browser-only-tools-site-1kfd",
+      "title": "Zero backend, 6 languages, one repo: the architecture of a browser-only tools site",
+      "link": "https://dev.to/impossibru/zero-backend-6-languages-one-repo-the-architecture-of-a-browser-only-tools-site-1kfd",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "If you have ever dealt with the nightmare of \"it works on my machine but crashes in production,\" you have felt the pain that containerization was built to solve. This post breaks down exactly what Docker is, how it works under the hood, and how it compares to its modern rival, P…",
-      "publishedAt": "2026-08-28T17:08:18.000Z"
+      "summary": "I run a little site called Webtoolio (https://webtoolio.org). Image compressor, unit converters, password generator, JSON formatter, that kind of thing. 48 tools at last count, all that without a server. Not \"serverless functions\", I mean nothing. The whole site is static files,…",
+      "publishedAt": "2026-08-29T11:14:37.000Z"
     },
     {
-      "slug": "52aefa44eb279894c5ab7ff6",
-      "guid": "https://dev.to/sandhipveera/cross-sector-threat-intelligence-fusion-building-a-unified-ti-program-across-it-ot-and-3b80",
-      "title": "Cross-Sector Threat Intelligence Fusion: Building a Unified TI Program Across IT, OT, and Healthcare Environments",
-      "link": "https://dev.to/sandhipveera/cross-sector-threat-intelligence-fusion-building-a-unified-ti-program-across-it-ot-and-3b80",
+      "slug": "9175b7ed227b182ae141d47b",
+      "guid": "https://dev.to/dariusz_newecki_e35b0924c/i-gave-the-same-governance-audit-to-one-ai-and-an-ai-swarm-they-missed-the-same-bug-2aa7",
+      "title": "I Gave the Same Governance Audit to One AI and an AI Swarm. They Missed the Same Bug.",
+      "link": "https://dev.to/dariusz_newecki_e35b0924c/i-gave-the-same-governance-audit-to-one-ai-and-an-ai-swarm-they-missed-the-same-bug-2aa7",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "Nation-state actors don't respect the boundaries your organization draws between its IT helpdesk, industrial control systems, and clinical networks. They map your entire attack surface — and they pivot freely across it. Yet most enterprise threat intelligence (TI) programs remai…",
-      "publishedAt": "2026-08-28T17:03:36.000Z"
+      "summary": "I Gave the Same Governance Audit to One AI and an AI Swarm. They Missed the Same Bug. I started the experiment wondering whether rapidly improving AI was making my deterministic governance architecture obsolete. The answer was more uncomfortable - and more interesting. I have be…",
+      "publishedAt": "2026-08-29T11:09:02.000Z"
+    },
+    {
+      "slug": "991ffb27dcc248a150224cb2",
+      "guid": "https://medium.com/p/e9d510165f9f",
+      "title": "AI makes code cheap to create, not cheap to own",
+      "link": "https://itnext.io/ai-makes-code-cheap-to-create-not-cheap-to-own-e9d510165f9f?source=rss----5b301f10ddcd---4",
+      "source": "itnext",
+      "sourceUrl": "https://itnext.io/feed",
+      "summary": "",
+      "publishedAt": "2026-08-29T08:07:17.000Z"
+    },
+    {
+      "slug": "78ba158bd4e8651f44e4c13a",
+      "guid": "https://medium.com/p/b5cadf87fd3e",
+      "title": "Software Engineering in the Time of Vibe Coding",
+      "link": "https://itnext.io/software-engineering-in-the-time-of-vibe-coding-b5cadf87fd3e?source=rss----5b301f10ddcd---4",
+      "source": "itnext",
+      "sourceUrl": "https://itnext.io/feed",
+      "summary": "",
+      "publishedAt": "2026-08-28T22:35:18.000Z"
+    },
+    {
+      "slug": "57fc80d929777f5a934e1ca5",
+      "guid": "https://dzone.com/articles/3665473",
+      "title": "How to Monitor AI Models Without Drowning in Alerts",
+      "link": "https://dzone.com/articles/monitor-ai-models-alerts",
+      "source": "DZone",
+      "sourceUrl": "https://feeds.dzone.com/home",
+      "summary": "When putting their model into production, every team or organization encounters the same issue. Failures go unnoticed for days at first because there is no monitoring. As teams begin to fix the issues, they identify areas where production results deviate from the training data, …",
+      "publishedAt": "2026-08-28T19:00:01.000Z"
+    },
+    {
+      "slug": "ebe3829e6a01f5f8cdc2ea3e",
+      "guid": "https://dzone.com/articles/3666060",
+      "title": "The Reasoning Control Plane: The Missing Architectural Layer in Multi-Agent Systems",
+      "link": "https://dzone.com/articles/reasoning-control-plane",
+      "source": "DZone",
+      "sourceUrl": "https://feeds.dzone.com/home",
+      "summary": "We have spent the last two years learning how to ground a single AI agent in enterprise data. That was the easy part. Coordinating a fleet of them turns out to be a different problem entirely. Multi-agent systems ask questions our current platforms weren't built to answer. How d…",
+      "publishedAt": "2026-08-28T18:00:01.000Z"
+    },
+    {
+      "slug": "d3c35e91e05cf7f08c834410",
+      "guid": "https://dzone.com/articles/3664061",
+      "title": "Pragmatic Premature Optimization",
+      "link": "https://dzone.com/articles/pragmatic-premature-optimization",
+      "source": "DZone",
+      "sourceUrl": "https://feeds.dzone.com/home",
+      "summary": "“...premature optimization is the root of all evil…” Donald Ervin Knuth",
+      "publishedAt": "2026-08-28T17:00:01.000Z"
     },
     {
       "slug": "623a858a0abbd6649f3c2901",
@@ -132,6 +182,26 @@
       "sourceUrl": "https://kodekloud.com/blog/rss/",
       "summary": "Why is my SQL query slow? Watch EXPLAIN ANALYZE turn a million-row scan into ten block reads with one index, and count an N+1 loop in the act.",
       "publishedAt": "2026-08-28T16:36:51.000Z"
+    },
+    {
+      "slug": "b9c86597603adf252300a833",
+      "guid": "https://dzone.com/articles/3663959",
+      "title": "Deliberate Decoupling: 6 Architectural Patterns From a Regulated WAS-to-AWS Migration",
+      "link": "https://dzone.com/articles/regulated-was-aws-migration-patterns",
+      "source": "DZone",
+      "sourceUrl": "https://feeds.dzone.com/home",
+      "summary": "Key Takeaways In regulated industries, cloud migration success is determined less by technology selection and more by how deliberately you decouple risk vectors — compliance risk, organizational hesitation, user adoption gaps, and integration changes — so no single failure can d…",
+      "publishedAt": "2026-08-28T16:00:01.000Z"
+    },
+    {
+      "slug": "f5b1ac89efc939f06597d884",
+      "guid": "6a91aa2c85465e213741c4de",
+      "title": "How to Automate Your Tests in Express Using Vitest",
+      "link": "https://www.freecodecamp.org/news/how-to-automate-your-tests-in-express-using-vitest/",
+      "source": "Free Code Camp - News",
+      "sourceUrl": "https://www.freecodecamp.org/news/rss",
+      "summary": "Thinking through API logic while constantly switching tabs to test application integration can be overwhelming and time-consuming. Well, you can save your time and energy by writing tests for your app",
+      "publishedAt": "2026-08-28T15:33:00.000Z"
     },
     {
       "slug": "7dd8332f3b395d20bf6d089f",
@@ -534,26 +604,6 @@
       "publishedAt": "2026-08-26T21:11:26.000Z"
     },
     {
-      "slug": "565c45b0b8dd779d04faefce",
-      "guid": "https://medium.com/p/3ae2cf4dd266",
-      "title": "Inside the TypeScript Checker: From Text to Types",
-      "link": "https://itnext.io/inside-the-typescript-checker-from-text-to-types-3ae2cf4dd266?source=rss----5b301f10ddcd---4",
-      "source": "itnext",
-      "sourceUrl": "https://itnext.io/feed",
-      "summary": "Tokens, symbols, flow nodes, and the moment a type first exists Continue reading on ITNEXT »",
-      "publishedAt": "2026-08-26T20:23:40.000Z"
-    },
-    {
-      "slug": "40abc96f9a30ff211575d02e",
-      "guid": "https://medium.com/p/c04c7b225813",
-      "title": "Code Review Was the Safeguard. AI Is Wearing It Down.",
-      "link": "https://itnext.io/code-review-was-the-safeguard-ai-is-wearing-it-down-c04c7b225813?source=rss----5b301f10ddcd---4",
-      "source": "itnext",
-      "sourceUrl": "https://itnext.io/feed",
-      "summary": "",
-      "publishedAt": "2026-08-26T20:22:16.000Z"
-    },
-    {
       "slug": "144f0366c58844d24c3c7568",
       "guid": "https://github.blog/?p=98460",
       "title": "GitHub Copilot app for Beginners: Automate Dependabot pull request triage",
@@ -592,16 +642,6 @@
       "sourceUrl": "https://feeds.dzone.com/home",
       "summary": "Goose — the open-source, Rust-based AI developer agent from Block (donated to the Linux Foundation’s Agentic AI Foundation) — interacts natively with your local development environment via the Model Context Protocol (MCP). In this tutorial, you will learn how to build stateless,…",
       "publishedAt": "2026-08-26T18:00:01.000Z"
-    },
-    {
-      "slug": "b22ac9bc03347ee49d0655ab",
-      "guid": "6a8f26c8d7f59479db2c21fd",
-      "title": "How to Build a Flashcard Study App with Next.js and MongoDB",
-      "link": "https://www.freecodecamp.org/news/how-to-build-a-flashcard-study-app-with-next-js-and-mongodb/",
-      "source": "Free Code Camp - News",
-      "sourceUrl": "https://www.freecodecamp.org/news/rss",
-      "summary": "If you've ever crammed for an exam the night before, you know how hard it is to remember everything. Flashcards are one of the most effective study tools because they use active recall: you actively t",
-      "publishedAt": "2026-08-26T17:47:52.000Z"
     },
     {
       "slug": "60275cee09b01bb2aba8468d",
@@ -794,36 +834,6 @@
       "publishedAt": "2026-08-25T14:48:42.000Z"
     },
     {
-      "slug": "d11d0486e5ee3ce84fb7c912",
-      "guid": "https://dzone.com/articles/3666637",
-      "title": "Demystifying Thread Hopping With Swift 6.2",
-      "link": "https://dzone.com/articles/swift-demystifies-tread-hopping",
-      "source": "DZone",
-      "sourceUrl": "https://feeds.dzone.com/home",
-      "summary": "Ever since Swift Concurrency was introduced, its main mission has been clear: keep memory safe without making us write callback hell. But if we’re being honest, context switching-specifically thread hopping-has always been a bit of a head-scratcher. How many times have you marke…",
-      "publishedAt": "2026-08-25T14:00:14.000Z"
-    },
-    {
-      "slug": "7246306fa292a203d321be78",
-      "guid": "https://dzone.com/articles/3664417",
-      "title": "LLM Judgment for Document Pipelines: Bounded Pools and Typed Verdicts",
-      "link": "https://dzone.com/articles/document-pipeline-llm-judgement",
-      "source": "DZone",
-      "sourceUrl": "https://feeds.dzone.com/home",
-      "summary": "This project creates a daily digest for sellers in an enterprise system. Each seller handles accounts at a set of companies and needs to know when something happens at one of them: a product launch, leadership change, new contract, or funding round. That news is often an opening…",
-      "publishedAt": "2026-08-25T13:00:13.000Z"
-    },
-    {
-      "slug": "00b17faed052397d45bc86a3",
-      "guid": "https://dzone.com/articles/3665869",
-      "title": "The New Technical Debt: Working Code No One Can Explain",
-      "link": "https://dzone.com/articles/working-code-technical-debt",
-      "source": "DZone",
-      "sourceUrl": "https://feeds.dzone.com/home",
-      "summary": "For the past several years, technical debt was something that was easy to identify. It came in the form of outdated frameworks, missing documentation, messy databases, etc. It was something companies racked up by moving too fast, skipping the best course of action, and patching …",
-      "publishedAt": "2026-08-25T12:00:13.000Z"
-    },
-    {
       "slug": "416b66342cda8790de71c8d1",
       "guid": "https://tympanus.net/codrops/?p=119046",
       "title": "Building a Mouse-Following Square Lens Effect with Three.js and GLSL",
@@ -902,16 +912,6 @@
       "sourceUrl": "https://github.blog/feed/",
       "summary": "We built a plugin for the GitHub Accessibility Scanner to make sure your alt text is actually accessible. Here's how it works. The post Your alt text passes automated checks. That doesn’t mean it’s any good. appeared first on The GitHub Blog.",
       "publishedAt": "2026-08-24T20:56:32.000Z"
-    },
-    {
-      "slug": "5728ac080f2ea317621c7c94",
-      "guid": "https://dzone.com/articles/3669741",
-      "title": "Multi-Account AWS Architecture: Isolating PHI Workloads Without Slowing Down Engineering Teams",
-      "link": "https://dzone.com/articles/aws-phi-isolation",
-      "source": "DZone",
-      "sourceUrl": "https://feeds.dzone.com/home",
-      "summary": "Most engineering teams working on healthtech applications reach a point where someone asks a question that sounds simple but isn't: How do we make sure a developer testing a new feature can't accidentally access production patient data? The answer determines whether the architec…",
-      "publishedAt": "2026-08-24T19:00:01.000Z"
     },
     {
       "slug": "381adff932b09f4e5c608b48",

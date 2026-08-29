@@ -1,8 +1,38 @@
 {
   "category": "javascript",
   "label": "JavaScript",
-  "fetchedAt": "2026-08-28T17:44:32.782Z",
+  "fetchedAt": "2026-08-29T11:49:15.193Z",
   "items": [
+    {
+      "slug": "1daa167057b5e061feff1d29",
+      "guid": "https://flaviocopes.com/node-test-runner/",
+      "title": "The Node.js built-in test runner",
+      "link": "https://flaviocopes.com/node-test-runner/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Use Node.js built-in test runner with node:test and node:assert. Write tests, run with node --test, watch mode, mocking, and coverage without Jest.",
+      "publishedAt": "2026-08-29T09:00:00.000Z"
+    },
+    {
+      "slug": "91eb0545a706b93aea2f8e17",
+      "guid": "https://flaviocopes.com/htmx-4/",
+      "title": "HTMX 4 is here",
+      "link": "https://flaviocopes.com/htmx-4/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "HTMX 4 moves to fetch, makes inheritance explicit, cleans up events and history, and adds morph swaps and multi-target partials.",
+      "publishedAt": "2026-08-29T07:00:00.000Z"
+    },
+    {
+      "slug": "e906285ae862c46a7102cdcb",
+      "guid": "https://flaviocopes.com/run-cloudflare-d1-locally/",
+      "title": "How to run a Cloudflare D1 database locally",
+      "link": "https://flaviocopes.com/run-cloudflare-d1-locally/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Run Cloudflare D1 locally with Wrangler and Miniflare, apply migrations, seed data, inspect SQLite state, and keep development separate from production.",
+      "publishedAt": "2026-08-29T05:00:00.000Z"
+    },
     {
       "slug": "69daab3c871d5bc1b3ebdb4d",
       "guid": "https://flaviocopes.com/darp/",
@@ -282,36 +312,6 @@
       "sourceUrl": "https://flaviocopes.com/rss.xml",
       "summary": "pstack is a Cursor plugin for rigorous agent work. The same SKILL.md files also load in Claude Code, Codex, and other coding agents.",
       "publishedAt": "2026-08-21T09:00:00.000Z"
-    },
-    {
-      "slug": "08811855ddfa0fa5c69f93dc",
-      "guid": "https://flaviocopes.com/herdr-skills/",
-      "title": "How to use Herdr skills and herdr --skill",
-      "link": "https://flaviocopes.com/herdr-skills/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Learn how to install the Herdr agent skill, use herdr --skill, and let coding agents safely inspect, split, run, and wait in panes.",
-      "publishedAt": "2026-08-21T06:00:00.000Z"
-    },
-    {
-      "slug": "a2562b052a42c1be015a8b0f",
-      "guid": "https://flaviocopes.com/javascript-immutable-array-methods/",
-      "title": "JavaScript immutable array methods: toSorted(), toReversed(), toSpliced(), with()",
-      "link": "https://flaviocopes.com/javascript-immutable-array-methods/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Need to sort or reverse an array without mutating it? Use toSorted(), toReversed(), toSpliced(), and with() to get a new copy instead.",
-      "publishedAt": "2026-08-21T05:00:00.000Z"
-    },
-    {
-      "slug": "cf5a208de6c4a1d7968fb06a",
-      "guid": "https://flaviocopes.com/css-nesting/",
-      "title": "Native CSS Nesting",
-      "link": "https://flaviocopes.com/css-nesting/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Native CSS nesting works without Sass. Learn basic nesting, the ampersand selector, nested media queries, specificity gotchas, and when to drop preprocessors.",
-      "publishedAt": "2026-08-20T09:00:00.000Z"
     },
     {
       "slug": "b0eecc3dd398b62811b721ba",
