@@ -1,127 +1,137 @@
 {
   "category": "web-dev",
   "label": "Web Development",
-  "fetchedAt": "2026-08-29T11:49:15.193Z",
+  "fetchedAt": "2026-08-30T10:45:24.844Z",
   "items": [
     {
-      "slug": "1efe14e8811dcce0418e17c1",
-      "guid": "https://dev.to/kingsleyonoh/a-simulation-id-is-not-a-running-simulation-787",
-      "title": "A Simulation ID Is Not a Running Simulation",
-      "link": "https://dev.to/kingsleyonoh/a-simulation-id-is-not-a-running-simulation-787",
+      "slug": "09f515428eea4b955ffde556",
+      "guid": "https://dev.to/agentopsnotes/17-ways-your-ai-agent-quietly-lies-to-you-4bf9",
+      "title": "17 Ways Your AI Agent Quietly Lies to You",
+      "link": "https://dev.to/agentopsnotes/17-ways-your-ai-agent-quietly-lies-to-you-4bf9",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "createSimulation() returned an ID. startSimulation() still failed. That was the sixth version of the gateway's live MiroFish path. Five earlier runs had already found a wrong Redis instance, a duplicate simulation record, a synchronous ontology response mistaken for an asynchron…",
-      "publishedAt": "2026-08-29T11:35:23.000Z"
+      "summary": "Field notes from two weeks of running an autonomous agent on real money Base64 uploads fail without an error Uploading a binary file (xlsx, zip, PDF) by having the model emit a base64 string fails above a certain size. Not with an exception — with slightly wrong content. Observe…",
+      "publishedAt": "2026-08-30T10:43:24.000Z"
     },
     {
-      "slug": "04998b5197df21bf6c5f8e3b",
-      "guid": "https://dev.to/kingsleyonoh/why-i-put-swarm-memory-in-postgresql-instead-of-zep-e61",
-      "title": "Why I Put Swarm Memory in PostgreSQL Instead of Zep",
-      "link": "https://dev.to/kingsleyonoh/why-i-put-swarm-memory-in-postgresql-instead-of-zep-e61",
+      "slug": "faf5373ad3b2195f5046535a",
+      "guid": "https://dev.to/xiuai-lab/one-api-does-not-mean-one-protocol-chat-completions-responses-messages-and-gemini-39kd",
+      "title": "One API Does Not Mean One Protocol: Chat Completions, Responses, Messages, and Gemini",
+      "link": "https://dev.to/xiuai-lab/one-api-does-not-mean-one-protocol-chat-completions-responses-messages-and-gemini-39kd",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "A completed simulation left me with a report and an ownership problem. MiroFish had built the graph, generated the agents, and run their interactions, but the useful memory still lived behind somebody else's service boundary. The gateway could display the final answer. It couldn…",
-      "publishedAt": "2026-08-29T11:35:10.000Z"
+      "summary": "\"OpenAI compatible\" is useful shorthand, but it is not a complete integration contract. Two clients can accept the same API key and base domain while sending different request paths, authentication headers, payload shapes, streaming events, and tool-call formats. That difference…",
+      "publishedAt": "2026-08-30T10:40:07.000Z"
     },
     {
-      "slug": "9b53e2914d43a974603b4a6d",
-      "guid": "https://dev.to/mehrab_ali/crc32-vs-sha-256-vs-xxhash-which-checksum-should-you-use-2mp2",
-      "title": "CRC32 vs SHA-256 vs XXHash: Which Checksum Should You Use?",
-      "link": "https://dev.to/mehrab_ali/crc32-vs-sha-256-vs-xxhash-which-checksum-should-you-use-2mp2",
+      "slug": "ee0ce06be39517268a55a26a",
+      "guid": "https://dev.to/abhisimplified/i-built-a-job-risk-checker-that-never-calls-an-llm-it-reads-your-github-instead-1393",
+      "title": "I built a job-risk checker that never calls an LLM — it reads your GitHub instead",
+      "link": "https://dev.to/abhisimplified/i-built-a-job-risk-checker-that-never-calls-an-llm-it-reads-your-github-instead-1393",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "If you've ever needed to verify a download, find duplicate files, or prove a folder hasn't changed, you've met checksums. But which one should you actually use? The answer changes completely depending on what you're doing. CRC32 — the old workhorse. Fast, tiny (32 bits), support…",
-      "publishedAt": "2026-08-29T11:30:40.000Z"
+      "summary": "A few weeks ago I sat down to build \"will AI take my job,\" the tool. The honest first question I asked myself wasn't \"how do I build this\" — it was \"why would anyone use this instead of just asking Claude?\" Because they wouldn't. Not if all I built was five text boxes (title, ye…",
+      "publishedAt": "2026-08-30T10:36:19.000Z"
     },
     {
-      "slug": "1e84a6edb3e0de4ba357f9dd",
-      "guid": "https://dev.to/mnemehq/anthropics-ai-native-sdlc-has-three-controls-its-missing-a-fourth-5254",
-      "title": "Anthropic's AI-Native SDLC Has Three Controls. It's Missing a Fourth.",
-      "link": "https://dev.to/mnemehq/anthropics-ai-native-sdlc-has-three-controls-its-missing-a-fourth-5254",
+      "slug": "aa8579b932b1445988e5b046",
+      "guid": "https://dev.to/adioof/meta-reassigned-engineers-to-data-labeling-and-the-good-ones-walked-4oob",
+      "title": "Meta reassigned engineers to data labeling and the good ones walked",
+      "link": "https://dev.to/adioof/meta-reassigned-engineers-to-data-labeling-and-the-good-ones-walked-4oob",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "Anthropic published an AI-Native SDLC playbook last week. Its central claim: code generation is no longer the slow part of delivery. The stages around it, planning, review, security sign-off, release, still run at human speed. Once agents write most of the diff, that mismatch ha…",
-      "publishedAt": "2026-08-29T11:28:02.000Z"
+      "summary": "Losing your best employees doesn't always happen through direct action. Simply de-soul the job. Meta learned this the hard way, and the receipts are ugly. ## What actually happened From March to June 2026, Meta relocated approximately 6,500 engineers and product managers to a ne…",
+      "publishedAt": "2026-08-30T10:33:39.000Z"
     },
     {
-      "slug": "c159d9e1eed9f91fdbca6364",
-      "guid": "https://dev.to/malik_rashid/how-to-find-out-what-technology-a-website-uses-1135",
-      "title": "How to Find Out What Technology a Website Uses",
-      "link": "https://dev.to/malik_rashid/how-to-find-out-what-technology-a-website-uses-1135",
+      "slug": "42a007b94766e7b3bb93b2e8",
+      "guid": "https://dev.to/serguey_shinder_4ab9b87b1/write-the-runbook-before-you-need-it-not-after-5dbp",
+      "title": "Write the Runbook Before You Need It, Not After",
+      "link": "https://dev.to/serguey_shinder_4ab9b87b1/write-the-runbook-before-you-need-it-not-after-5dbp",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "Ever landed on a website and wondered, \"What is this built with?\" Maybe a competitor's site loads absurdly fast. Maybe a client wants you to rebuild something similar. Whatever the reason, figuring out a site's tech stack is easier than most people think. I build detection tools…",
-      "publishedAt": "2026-08-29T11:27:38.000Z"
+      "summary": "Every ops team I have worked on has the same folklore: the one senior who \"just knows\" how to restart the payment gateway, drain the queue, or fail over the database. That knowledge feels like an asset. It is actually a liability, and it becomes obvious the moment that person is…",
+      "publishedAt": "2026-08-30T10:22:19.000Z"
     },
     {
-      "slug": "8653d9a43bc0ead457385cf8",
-      "guid": "https://dev.to/linguapilot-ai/qwen25-7b-vs-qwen3-4b-8b-for-writing-correction-60-local-ollama-responses-on-windows-12ff",
-      "title": "Qwen2.5 7B vs Qwen3 4B & 8B for Writing Correction: 60 Local Ollama Responses on Windows",
-      "link": "https://dev.to/linguapilot-ai/qwen25-7b-vs-qwen3-4b-8b-for-writing-correction-60-local-ollama-responses-on-windows-12ff",
+      "slug": "cfca7be3601da8c376ba1ecc",
+      "guid": "https://dev.to/renga154/i-published-three-posts-in-one-day-and-two-of-them-were-never-seen-by-anyone-402n",
+      "title": "I published three posts in one day and two of them were never seen by anyone",
+      "link": "https://dev.to/renga154/i-published-three-posts-in-one-day-and-two-of-them-were-never-seen-by-anyone-402n",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "I expected Qwen2.5 7B to retain a noticeable advantage over the smaller Qwen3 4B model for writing correction. In this experiment, it didn't. Across the same 20 paired writing cases, Qwen2.5 7B and Qwen3 4B produced exactly the same complete-case outcome: both succeeded on the s…",
-      "publishedAt": "2026-08-29T11:26:17.000Z"
+      "summary": "I wrote eight technical posts and put them on dev.to. Then I pulled the view counts from the API. Published Posts that day Views per post Aug 11 1 12 Aug 14 3 0 / 62 / 0 Aug 15 1 35 Aug 16 1 23 Aug 21 1 10 Aug 22 1 11 Every day I published once, the post got views. The one day I…",
+      "publishedAt": "2026-08-30T10:20:08.000Z"
     },
     {
-      "slug": "5787d2fb84fcd41d9519eba2",
-      "guid": "https://dev.to/edgaremmanuel/implementing-domain-driven-design-domain-events-1-definition-and-modeling-ggo",
-      "title": "Implementing Domain Driven Design - Domain Events ( 1 ) - Definition and Modeling",
-      "link": "https://dev.to/edgaremmanuel/implementing-domain-driven-design-domain-events-1-definition-and-modeling-ggo",
+      "slug": "d18523f891f85b69badd6341",
+      "guid": "https://dev.to/sayan9168/i-built-a-self-hosting-language-a-db-engine-and-a-microkernel-entirely-on-my-phone-2edc",
+      "title": "I Built a Self-Hosting Language, a DB Engine and a Microkernel — Entirely on My Phone",
+      "link": "https://dev.to/sayan9168/i-built-a-self-hosting-language-a-db-engine-and-a-microkernel-entirely-on-my-phone-2edc",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "I know it has been a long time, i was finishing some work, Can we talk about << domain events >> today ? 😄 There is no direct definition, we can say that they are the result of listening to domain experts. And the final point is something happened and the domain experts want to…",
-      "publishedAt": "2026-08-29T11:23:18.000Z"
+      "summary": "No laptop. No IDE. Just Termux and a text editor. Over the past year I shipped five systems from my Android phone: SahajCore — a self-hosting programming language SahajQL — a natural-language query language SahajDB / SahajGame / SahajOS — a DB engine, game engine, microkernel He…",
+      "publishedAt": "2026-08-30T10:17:41.000Z"
     },
     {
-      "slug": "1f2f21b10b5620314f964c3b",
-      "guid": "https://dev.to/ayushsrtv/youre-paying-a-40-syntax-tax-on-every-single-llm-prompt-heres-the-fix-mok",
-      "title": "You’re Paying a 40% Syntax Tax on Every Single LLM Prompt. Here’s the Fix.",
-      "link": "https://dev.to/ayushsrtv/youre-paying-a-40-syntax-tax-on-every-single-llm-prompt-heres-the-fix-mok",
+      "slug": "778bf5d007b084675ebaf5b9",
+      "guid": "https://dev.to/keerthivasan_s_68668f68a5/building-cryptoflex-an-offline-quantum-safe-policy-engine-for-python--op3",
+      "title": "\"Building CryptoFlex: An Offline, Quantum-Safe Policy Engine for Python 🔐\"",
+      "link": "https://dev.to/keerthivasan_s_68668f68a5/building-cryptoflex-an-offline-quantum-safe-policy-engine-for-python--op3",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "Every engineer building autonomous agent loops or heavy RAG pipelines eventually encounters a painful reality. It isn’t semantic hallucination. It isn’t baseline query latency. It’s the monthly API token bill. When feeding massive data arrays—such as database logs, product catal…",
-      "publishedAt": "2026-08-29T11:22:50.000Z"
+      "summary": "Most modern post-quantum cryptography (PQC) discussions focus heavily on live network traffic—like Signal’s PQXDH or Chrome's X25519Kyber768. But what about local, offline, file-based applications? Desktop tools, local backup vaults, and offline embedded/IoT systems are often le…",
+      "publishedAt": "2026-08-30T10:14:50.000Z"
     },
     {
-      "slug": "1efc728f320414a5539aead8",
-      "guid": "https://dev.to/ankit_verma_e2fa7fb2aa95d/transaction-propagation-required-requiresnew-nested-part-2-of-2-41fj",
-      "title": "Transaction propagation (REQUIRED / REQUIRES_NEW / NESTED ...) (Part 2 of 2)",
-      "link": "https://dev.to/ankit_verma_e2fa7fb2aa95d/transaction-propagation-required-requiresnew-nested-part-2-of-2-41fj",
+      "slug": "5c1f25cbee09423210f55123",
+      "guid": "https://dev.to/abdelrahman_gawad_5000642/fixed-fhe-mobile-view-and-some-bugs-29dc",
+      "title": "Fixed fhe mobile view and some bugs",
+      "link": "https://dev.to/abdelrahman_gawad_5000642/fixed-fhe-mobile-view-and-some-bugs-29dc",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "Picking up between \"join\" and \"start fresh\" Part 1 left you with two propagation modes and a clean way to think about them. REQUIRED joins whatever transaction is already running, so everything shares one all-or-nothing boundary. REQUIRES_NEW ignores the outer transaction, suspe…",
-      "publishedAt": "2026-08-29T11:17:44.000Z"
+      "summary": "My New Portfolio. Abdelrahman Gawad Aug 29 #webdev #programming #productivity #javascript Add Comment 2 min read",
+      "publishedAt": "2026-08-30T10:14:22.000Z"
     },
     {
-      "slug": "46ed15f304d1565dd90cb499",
-      "guid": "https://dev.to/mqasimca/shadow-test-a-new-ai-email-agent-on-live-threads-with-nylas-2mjd",
-      "title": "Shadow-test a new AI email agent on live threads with Nylas",
-      "link": "https://dev.to/mqasimca/shadow-test-a-new-ai-email-agent-on-live-threads-with-nylas-2mjd",
+      "slug": "c382687aedebcfb9acbfbd16",
+      "guid": "https://dev.to/juanita_mumbi_25179d5689f/overcoming-imposter-syndrome-in-my-first-mlh-hackathon-1836",
+      "title": "Overcoming Imposter Syndrome in My First MLH Hackathon",
+      "link": "https://dev.to/juanita_mumbi_25179d5689f/overcoming-imposter-syndrome-in-my-first-mlh-hackathon-1836",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "You have an email agent that works in a test inbox. It classifies a support request, pulls the relevant context, and drafts a plausible reply. The risky next step is turning it loose on support@yourcompany.com: a new prompt can misunderstand a frustrated customer, a new model ca…",
-      "publishedAt": "2026-08-29T11:16:27.000Z"
+      "summary": "If you’ve ever looked at a major hackathon page, hovered your mouse over the \"Register\" button, and hesitated—this post is for you. Having participated in local, physical hackathons before, I was no stranger to coding under a deadline. But when I signed up for my first Major Lea…",
+      "publishedAt": "2026-08-30T10:13:59.000Z"
     },
     {
-      "slug": "c19c68de5fcb70d729648863",
-      "guid": "https://dev.to/impossibru/zero-backend-6-languages-one-repo-the-architecture-of-a-browser-only-tools-site-1kfd",
-      "title": "Zero backend, 6 languages, one repo: the architecture of a browser-only tools site",
-      "link": "https://dev.to/impossibru/zero-backend-6-languages-one-repo-the-architecture-of-a-browser-only-tools-site-1kfd",
+      "slug": "6e1cbfb73f926f3d9d7a3bb3",
+      "guid": "https://dev.to/alextaylar12/5-practical-performance-tweaks-that-actually-sped-up-our-web-app-4d93",
+      "title": "5 Practical Performance Tweaks That Actually Sped Up Our Web App",
+      "link": "https://dev.to/alextaylar12/5-practical-performance-tweaks-that-actually-sped-up-our-web-app-4d93",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "I run a little site called Webtoolio (https://webtoolio.org). Image compressor, unit converters, password generator, JSON formatter, that kind of thing. 48 tools at last count, all that without a server. Not \"serverless functions\", I mean nothing. The whole site is static files,…",
-      "publishedAt": "2026-08-29T11:14:37.000Z"
+      "summary": "When optimizing web applications, it's easy to get lost in micro-optimizations that don't move the needle for end users. After auditing our stack recently, here are 5 simple, high-impact changes that made the biggest difference in real-world load times and server response: Offlo…",
+      "publishedAt": "2026-08-30T10:10:00.000Z"
     },
     {
-      "slug": "9175b7ed227b182ae141d47b",
-      "guid": "https://dev.to/dariusz_newecki_e35b0924c/i-gave-the-same-governance-audit-to-one-ai-and-an-ai-swarm-they-missed-the-same-bug-2aa7",
-      "title": "I Gave the Same Governance Audit to One AI and an AI Swarm. They Missed the Same Bug.",
-      "link": "https://dev.to/dariusz_newecki_e35b0924c/i-gave-the-same-governance-audit-to-one-ai-and-an-ai-swarm-they-missed-the-same-bug-2aa7",
+      "slug": "9cbf7a133e18e4de63db3471",
+      "guid": "https://dev.to/daemonic01/you-dont-need-another-productivity-tool-1b39",
+      "title": "You Don’t Need Another Productivity Tool",
+      "link": "https://dev.to/daemonic01/you-dont-need-another-productivity-tool-1b39",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "I Gave the Same Governance Audit to One AI and an AI Swarm. They Missed the Same Bug. I started the experiment wondering whether rapidly improving AI was making my deterministic governance architecture obsolete. The answer was more uncomfortable - and more interesting. I have be…",
-      "publishedAt": "2026-08-29T11:09:02.000Z"
+      "summary": "I like tools, probably more than I should. Task managers, note-taking apps, calendars, dashboards, automation tools, and workflow systems all promise some version of the same thing: less friction, better focus, more control. Sometimes they actually deliver it. The problem starts…",
+      "publishedAt": "2026-08-30T10:09:43.000Z"
+    },
+    {
+      "slug": "536b67f6ee4d01dddd738b21",
+      "guid": "6a9318633bc8ca00018105ef",
+      "title": "Build a Custom PyTorch Dataset and DataLoader for Your Own Image Folder",
+      "link": "https://kodekloud.com/blog/pytorch-custom-dataset-dataloader/",
+      "source": "KodeKloud",
+      "sourceUrl": "https://kodekloud.com/blog/rss/",
+      "summary": "Bundled datasets make PyTorch look easy right up to the moment you point it at your own folder of images. This walkthrough builds a custom Dataset class from scratch, generates its own sample data, and explains why augmentation belongs on training data only.",
+      "publishedAt": "2026-08-29T18:00:51.000Z"
     },
     {
       "slug": "991ffb27dcc248a150224cb2",
@@ -992,16 +1002,6 @@
       "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
       "summary": "null Designing Ephemeral Video Chat Sessions with WebRTC and JavaScript on SitePoint.",
       "publishedAt": "2026-08-23T15:16:36.000Z"
-    },
-    {
-      "slug": "0598464f443294735fd2a8b0",
-      "guid": "6a87c44bdce6f60001e2cf8a",
-      "title": "How to Schedule a Reboot in Linux (Even 3 Days From Now)",
-      "link": "https://kodekloud.com/blog/schedule-a-reboot-in-linux/",
-      "source": "KodeKloud",
-      "sourceUrl": "https://kodekloud.com/blog/rss/",
-      "summary": "Schedule a reboot in Linux with the shutdown command: an exact time within 24 hours, +minutes for days ahead, and -c to cancel. Real outputs.",
-      "publishedAt": "2026-08-23T04:38:37.000Z"
     }
   ]
 }

@@ -1,7 +1,7 @@
 {
   "category": "cybersecurity",
   "label": "Cybersecurity",
-  "fetchedAt": "2026-08-29T11:49:15.193Z",
+  "fetchedAt": "2026-08-30T10:45:24.844Z",
   "items": [
     {
       "slug": "a5c502fdcf06e38109de03e2",
@@ -22,6 +22,26 @@
       "sourceUrl": "https://www.darkreading.com/rss.xml",
       "summary": "",
       "publishedAt": "2026-10-08T15:00:00.000Z"
+    },
+    {
+      "slug": "e7fd30e89bca0fc1e82164ea",
+      "guid": "https://thehackernews.com/2026/08/terminalfix-uses-fake-cloudflare.html",
+      "title": "TerminalFix Uses Fake Cloudflare CAPTCHAs to Deploy Reverse-Tunnel Backdoor",
+      "link": "https://thehackernews.com/2026/08/terminalfix-uses-fake-cloudflare.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "Microsoft has disclosed details of a new ClickFix variant, dubbed TerminalFix, that aims to trick users into running a malicious command in Windows Terminal or PowerShell. \"While traditional ClickFix campaigns direct victims to the Windows Run dialog, TerminalFix campaigns apply…",
+      "publishedAt": "2026-08-30T07:36:33.000Z"
+    },
+    {
+      "slug": "20d327a204a5298e63074340",
+      "guid": "https://thehackernews.com/2026/08/five-critical-wordpress-plugin-and.html",
+      "title": "Five Critical WordPress Plugin and Theme Flaws Enable Site Takeover or RCE",
+      "link": "https://thehackernews.com/2026/08/five-critical-wordpress-plugin-and.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "Multiple critical security flaws have been disclosed in WordPress plugins and themes, including WPMU DEV Dashboard, Avada, TranslatePress, Pods, and GiveWP, that could lead to authentication bypass, account takeover, and arbitrary code execution. The vulnerabilities, according t…",
+      "publishedAt": "2026-08-29T16:25:03.000Z"
     },
     {
       "slug": "2ac80c657999bd25bd32e08d",
@@ -982,26 +1002,6 @@
       "sourceUrl": "https://www.schneier.com/feed/",
       "summary": "Andy Ellis has a roundup of the security vendors at Black Hat this year. Key Takeaways: We have entered into an AI world. While nearly half of booths didn’t directly mention AI or agents in their taglines, the effects of AI are everywhere. Multiple spaces (Identity, SaaS, AppSec…",
       "publishedAt": "2026-08-25T10:54:50.000Z"
-    },
-    {
-      "slug": "91c61774da1356e26b344290",
-      "guid": "https://thehackernews.com/2026/08/attackers-target-miniorange-saml-flaws.html",
-      "title": "Attackers Target miniOrange SAML Flaws That Can Grant WordPress Admin Access",
-      "link": "https://thehackernews.com/2026/08/attackers-target-miniorange-saml-flaws.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "Bad actors are attempting to exploit two severe unauthenticated authentication bypasses in the Xecurify miniOrange SAML 2.0 Single Sign On plugin that make it possible for an attacker to sign in as any WordPress user, including administrators. The vulnerabilities, as disclosed b…",
-      "publishedAt": "2026-08-25T08:34:07.000Z"
-    },
-    {
-      "slug": "62298a83d4d48134e5c97f1c",
-      "guid": "https://thehackernews.com/2026/08/actively-exploited-oracle-weblogic-flaw.html",
-      "title": "Actively Exploited Oracle WebLogic Flaw Lets Unauthenticated Attackers Access Critical Data",
-      "link": "https://thehackernews.com/2026/08/actively-exploited-oracle-weblogic-flaw.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Monday added a maximum-severity security flaw impacting Oracle HTTP Server and Oracle WebLogic Server to its Known Exploited Vulnerabilities (KEV) catalog, citing evidence of active exploitation. The vulnerabili…",
-      "publishedAt": "2026-08-25T06:12:35.000Z"
     }
   ]
 }
