@@ -1,8 +1,38 @@
 {
   "category": "javascript",
   "label": "JavaScript",
-  "fetchedAt": "2026-08-31T11:54:19.965Z",
+  "fetchedAt": "2026-09-01T10:33:54.885Z",
   "items": [
+    {
+      "slug": "7552568d5a9b7f44a9e6d5af",
+      "guid": "https://flaviocopes.com/webmcp/",
+      "title": "A deep dive into WebMCP",
+      "link": "https://flaviocopes.com/webmcp/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Learn how WebMCP lets browser agents discover and call tools inside a live web page, using JavaScript, HTML forms, secure boundaries, and tests.",
+      "publishedAt": "2026-09-01T09:00:00.000Z"
+    },
+    {
+      "slug": "ecee09af40d4115a5ec114f6",
+      "guid": "https://flaviocopes.com/jq-command/",
+      "title": "The jq command",
+      "link": "https://flaviocopes.com/jq-command/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Learn the jq command to filter and transform JSON from curl on the CLI. Covers fields, select, map, and raw output with a real API example.",
+      "publishedAt": "2026-09-01T05:00:00.000Z"
+    },
+    {
+      "slug": "8002096ec2c68a0da0d10f2d",
+      "guid": "https://flaviocopes.com/zcode/",
+      "title": "A deep dive into ZCode",
+      "link": "https://flaviocopes.com/zcode/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "I tried ZCode with GLM-5.3 on a real project. Here's how the coding agent works, what it costs, its permission modes, automations, API, and limits.",
+      "publishedAt": "2026-08-31T13:00:00.000Z"
+    },
     {
       "slug": "de1f9abf39b2a20796372f1b",
       "guid": "https://flaviocopes.com/executor/",
@@ -16,11 +46,11 @@
     {
       "slug": "0dfa45bb1e3a78aa10a768d0",
       "guid": "https://flaviocopes.com/git-hooks/",
-      "title": "Git hooks",
+      "title": "Git hooks for AI engineering",
       "link": "https://flaviocopes.com/git-hooks/",
       "source": "Flavio Copes",
       "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Learn Git hooks: where they live, write a pre-commit hook by hand, share hooks with core.hooksPath or Husky, and when to skip with --no-verify.",
+      "summary": "Use Git hooks as deterministic guardrails for AI coding agents, with fast checks before commits, stronger checks before pushes, and CI as the final gate.",
       "publishedAt": "2026-08-31T05:00:00.000Z"
     },
     {
@@ -284,36 +314,6 @@
       "publishedAt": "2026-08-23T09:00:00.000Z"
     },
     {
-      "slug": "f55259f9556b04d6ba478954",
-      "guid": "https://flaviocopes.com/anti-slop/",
-      "title": "Why I use anti-slop skills",
-      "link": "https://flaviocopes.com/anti-slop/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Anti-slop skills catch common AI habits before they reach the final result. Here's how I use them as a separate review pass for writing and code.",
-      "publishedAt": "2026-08-23T07:00:00.000Z"
-    },
-    {
-      "slug": "99db7686d71892b89e0a9499",
-      "guid": "https://flaviocopes.com/herdr-vs-tmux-zellij/",
-      "title": "Herdr vs tmux vs Zellij",
-      "link": "https://flaviocopes.com/herdr-vs-tmux-zellij/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Compare Herdr, tmux, and Zellij for persistent terminal sessions, remote work, layouts, plugins, and running multiple coding agents.",
-      "publishedAt": "2026-08-23T06:00:00.000Z"
-    },
-    {
-      "slug": "0018fa8310a90b9f994896d4",
-      "guid": "https://flaviocopes.com/css-scroll-driven-animations/",
-      "title": "Scroll-driven CSS animations",
-      "link": "https://flaviocopes.com/css-scroll-driven-animations/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Animate elements from scroll position with animation-timeline scroll() and view(). No JavaScript needed. Check current browser support before shipping.",
-      "publishedAt": "2026-08-23T05:00:00.000Z"
-    },
-    {
       "slug": "b0eecc3dd398b62811b721ba",
       "guid": "https://blog.appsignal.com/2026/08/20/mcp-wont-replace-your-monitoring-tool.html",
       "title": "MCP Won't Replace Your Monitoring Tool",
@@ -322,16 +322,6 @@
       "sourceUrl": "https://blog.appsignal.com/feed.xml",
       "summary": "MCP is generating a lot of hype nowadays (but then again, almost anything that emerges in AI seems to attract hype). The anticipation around it is similar to the level of excitement that would break out if Apple were to finally introduce USB-C to iPhones. To be fair, though, som…",
       "publishedAt": "2026-08-20T00:00:00.000Z"
-    },
-    {
-      "slug": "2f1e4101f82d10667b62e9d0",
-      "guid": "https://blog.appsignal.com/2026/08/18/why-you-shouldnt-vibe-code-your-monitoring-tool.html",
-      "title": "Why You Shouldn't Vibe Code Your Monitoring Tool",
-      "link": "https://blog.appsignal.com/2026/08/18/why-you-shouldnt-vibe-code-your-monitoring-tool.html",
-      "source": "AppSignal",
-      "sourceUrl": "https://blog.appsignal.com/feed.xml",
-      "summary": "TL;DR Vibe coding makes a monitoring pipeline look finished in a single afternoon. The hard parts (scale, reliability, error grouping, compliance) show up months later, usually during the incident you’ve built the tool to catch. For most teams, a managed tool is the cheaper, fas…",
-      "publishedAt": "2026-08-18T00:00:00.000Z"
     }
   ]
 }
