@@ -1,7 +1,7 @@
 {
   "category": "cybersecurity",
   "label": "Cybersecurity",
-  "fetchedAt": "2026-09-01T10:33:54.885Z",
+  "fetchedAt": "2026-09-02T10:00:16.032Z",
   "items": [
     {
       "slug": "a5c502fdcf06e38109de03e2",
@@ -22,6 +22,246 @@
       "sourceUrl": "https://www.darkreading.com/rss.xml",
       "summary": "",
       "publishedAt": "2026-10-08T15:00:00.000Z"
+    },
+    {
+      "slug": "71a0dd93eefe3ff23edf07e2",
+      "guid": "https://thehackernews.com/2026/09/geonetwork-fixes-unauthenticated-rce.html",
+      "title": "GeoNetwork Fixes Unauthenticated RCE Chain Affecting Government Geoportal Backends",
+      "link": "https://thehackernews.com/2026/09/geonetwork-fixes-unauthenticated-rce.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "Two vulnerabilities in GeoNetwork can be chained to achieve unauthenticated remote code execution (RCE) on the open-source geospatial metadata catalog, which sits behind many government and agency geoportals. The project shipped fixes in versions 4.4.12 and 4.2.17 on July 8, 202…",
+      "publishedAt": "2026-09-02T09:18:02.000Z"
+    },
+    {
+      "slug": "eb3bb052eba218a5d3c4065e",
+      "guid": "https://thehackernews.com/2026/09/extradited-russian-hacker-faces-charges.html",
+      "title": "Extradited Russian Hacker Faces Charges Over Excel Malware Campaign That Infected Thousands",
+      "link": "https://thehackernews.com/2026/09/extradited-russian-hacker-faces-charges.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "The U.S. Department of Justice (DoJ) has charged a Russian national, extradited from Cyprus on August 28, with using roughly 255 fake accounts on a freelance platform to send malware-laced Excel attachments to about 80,000 of its users in 2016 and 2017. Searzhudin Tamirlanovich …",
+      "publishedAt": "2026-09-02T09:10:23.000Z"
+    },
+    {
+      "slug": "fa6c377316e85ebf24548d82",
+      "guid": "https://www.cio.com/article/4217070/cyber-resilience-is-a-very-human-decision-problem-not-just-a-technology-one.html",
+      "title": "Cyber resilience is a very human decision problem, not just a technology one",
+      "link": "https://www.cio.com/article/4217070/cyber-resilience-is-a-very-human-decision-problem-not-just-a-technology-one.html",
+      "source": "CIO",
+      "sourceUrl": "https://www.cio.com/feed/",
+      "summary": "Organizations today are not short of data, particularly in the domain of cyber. What many lack is a timely, trusted assessment that can help leaders act with greater confidence. When a cyber incident begins, the technical questions surface first. What happened? Which systems are…",
+      "publishedAt": "2026-09-02T09:00:00.000Z"
+    },
+    {
+      "slug": "fd47abd976ef000e6b0d6e16",
+      "guid": "https://thehackernews.com/2026/09/researchers-use-claude-to-port-pre-auth.html",
+      "title": "Researchers Use Claude to Port Pre-Auth RCE Exploit From One PLC Model to Another",
+      "link": "https://thehackernews.com/2026/09/researchers-use-claude-to-port-pre-auth.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "Forescout Research - Vedere Labs said it used Anthropic's Claude to port a working pre-authentication remote code execution (RCE) exploit from one WAGO programmable logic controller (PLC) to another, executing attacker-supplied ARM shellcode on live hardware. The exploit targets…",
+      "publishedAt": "2026-09-02T07:47:13.000Z"
+    },
+    {
+      "slug": "9b6ec5da131924153511697a",
+      "guid": "https://thehackernews.com/2026/09/attackers-exploit-critical-switchvox.html",
+      "title": "Attackers Exploit Critical Switchvox Flaw to Deploy Reverse Shells Without Credentials",
+      "link": "https://thehackernews.com/2026/09/attackers-exploit-critical-switchvox.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "Threat actors are exploiting a severe security vulnerability in Sangoma Switchvox, an enterprise VoIP platform, that could allow unauthenticated remote code execution. The vulnerability in question is CVE-2026-9586 (CVSS score: 9.3), a critical unauthenticated SQL injection vuln…",
+      "publishedAt": "2026-09-02T07:08:50.000Z"
+    },
+    {
+      "slug": "81c96cc8da0f6b72bc0783ed",
+      "guid": "https://thehackernews.com/2026/09/authorities-turn-salitys-p2p-network.html",
+      "title": "Authorities Turn Sality's P2P Network Against Itself, Cutting Off New Malware Payloads",
+      "link": "https://thehackernews.com/2026/09/authorities-turn-salitys-p2p-network.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "The U.S. Department of Justice (DoJ) on Tuesday announced the takedown of a long-standing peer-to-peer (P2P) botnet known as Sality as part of a coordinated law enforcement operation. The effort was undertaken on August 31, 2026, by authorities from the U.S., Bulgaria, Hungary, …",
+      "publishedAt": "2026-09-02T06:56:30.000Z"
+    },
+    {
+      "slug": "1c58c50319dd219bebcc9335",
+      "guid": "https://www.darkreading.com/cyberattacks-data-breaches/old-unpatched-flaws-attackers-philippines-nuclear-agency",
+      "title": "Old, Unpatched Flaws Give Attackers Access to Philippines Nuclear Agency",
+      "link": "https://www.darkreading.com/cyberattacks-data-breaches/old-unpatched-flaws-attackers-philippines-nuclear-agency",
+      "source": "Dark Reading",
+      "sourceUrl": "https://www.darkreading.com/rss.xml",
+      "summary": "Threat actors exploited commodity in ownCloud to gain initial access, resulting in stolen reactor databases, personnel records, and credential stores.",
+      "publishedAt": "2026-09-02T01:00:00.000Z"
+    },
+    {
+      "slug": "fafec0fee779554f8966fc2c",
+      "guid": "https://www.cio.com/article/4217233/citrix-buys-company-that-containerizes-windows-desktop-apps-independently-of-the-os-2.html",
+      "title": "Citrix buys company that containerizes Windows desktop apps independently of the OS",
+      "link": "https://www.cio.com/article/4217233/citrix-buys-company-that-containerizes-windows-desktop-apps-independently-of-the-os-2.html",
+      "source": "CIO",
+      "sourceUrl": "https://www.cio.com/feed/",
+      "summary": "Citrix on Tuesday announced that it has completed the acquisition of longtime partner Numecent, producer of technology that containerizes and manages Windows applications. The acquisition builds on joint efforts to integrate Numecent’s management tool, Cloudpager, with Citrix De…",
+      "publishedAt": "2026-09-02T00:53:07.000Z"
+    },
+    {
+      "slug": "4400ec19cc9da49d8752dc35",
+      "guid": "https://krebsonsecurity.com/?p=74231",
+      "title": "FBI Probes Service Selling 153M+ Drivers Licenses",
+      "link": "https://krebsonsecurity.com/2026/09/fbi-probes-service-selling-153m-drivers-licenses/",
+      "source": "Krebson Security",
+      "sourceUrl": "https://krebsonsecurity.com/feed/",
+      "summary": "A new identity theft service launched on the dark web this week is selling digital scans of more than 153 million drivers licenses from people in the United States and Canada. Based on interviews with individuals whose licenses are available for purchase on this service, it appe…",
+      "publishedAt": "2026-09-01T22:40:28.000Z"
+    },
+    {
+      "slug": "fcaa4747000f117560579a6d",
+      "guid": "6a974fa322597d0001a8f2e8",
+      "title": "Weekly Update 519: Breaches & Data Integrity",
+      "link": "https://www.troyhunt.com/weekly-update-519/",
+      "source": "Troy Hunt",
+      "sourceUrl": "https://www.troyhunt.com/rss/",
+      "summary": "It does feel like I've bitten off too much and am now chewing like crazy this week. The 3D printing talk with Elle in Oslo, the \"normal\" NDC infosec talk, the cyber-broken talk with Scott in Copenhagen and then those ratbag hackers keep dumping more",
+      "publishedAt": "2026-09-01T22:26:38.000Z"
+    },
+    {
+      "slug": "a73d4ab6e1d564a1ce40d8f6",
+      "guid": "https://www.darkreading.com/application-security/attackers-pounce-critical-artifactory-flaw-disclosure",
+      "title": "Attackers Pounce on Critical Artifactory Flaw Following Disclosure",
+      "link": "https://www.darkreading.com/application-security/attackers-pounce-critical-artifactory-flaw-disclosure",
+      "source": "Dark Reading",
+      "sourceUrl": "https://www.darkreading.com/rss.xml",
+      "summary": "CVE-2026-82329 is an authentication bypass flaw in JFrog's repository manager that enables bad actors to gain admin-level access on affected systems.",
+      "publishedAt": "2026-09-01T21:05:53.000Z"
+    },
+    {
+      "slug": "2d2ba1572e7b24962c870813",
+      "guid": "https://www.darkreading.com/cyber-risk/stronger-security-drives-ransomware-groups-to-recruit-from-within",
+      "title": "Stronger Security Drives Ransomware Groups to Recruit From Within",
+      "link": "https://www.darkreading.com/cyber-risk/stronger-security-drives-ransomware-groups-to-recruit-from-within",
+      "source": "Dark Reading",
+      "sourceUrl": "https://www.darkreading.com/rss.xml",
+      "summary": "Some security researchers have observed an uptick in insider-assisted ransomware attacks, but malicious insiders pose other threats that cost companies millions.",
+      "publishedAt": "2026-09-01T21:03:19.000Z"
+    },
+    {
+      "slug": "f8a09cf47f83f9efb20903b9",
+      "guid": "https://www.darkreading.com/vulnerabilities-threats/critical-langflow-flaw-exploited-attacks-rise",
+      "title": "Critical Langflow Flaw Exploited as Attacks on AI Platform Rise",
+      "link": "https://www.darkreading.com/vulnerabilities-threats/critical-langflow-flaw-exploited-attacks-rise",
+      "source": "Dark Reading",
+      "sourceUrl": "https://www.darkreading.com/rss.xml",
+      "summary": "The attacks targeting CVE-2026-0768 are the latest threat against the low-code AI development platform, which is receiving more attention from adversaries this year.",
+      "publishedAt": "2026-09-01T20:48:52.000Z"
+    },
+    {
+      "slug": "19d1bd440ccb395f1a51db1e",
+      "guid": "https://www.darkreading.com/identity-access-management-security/ai-model-evaluator-metr-credential-theft-probing",
+      "title": "AI Model Evaluator METR Hit by Credential Theft, Probing",
+      "link": "https://www.darkreading.com/identity-access-management-security/ai-model-evaluator-metr-credential-theft-probing",
+      "source": "Dark Reading",
+      "sourceUrl": "https://www.darkreading.com/rss.xml",
+      "summary": "In one attack, threat actors stole an API key that ultimately led to the consumption of $600,000 in public AI model credits for the security nonprofit.",
+      "publishedAt": "2026-09-01T20:13:09.000Z"
+    },
+    {
+      "slug": "5d60f3c3ebe6483c7e77cf92",
+      "guid": "https://thehackernews.com/2026/09/attackers-exploit-critical-jfrog.html",
+      "title": "Attackers Exploit Critical JFrog Artifactory Flaw to Mint Admin Tokens Days After Disclosure",
+      "link": "https://thehackernews.com/2026/09/attackers-exploit-critical-jfrog.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "Threat actors are exploiting a newly patched critical security flaw impacting JFrog Artifactory merely days after public disclosure, according to watchTowr. The vulnerability in question is CVE-2026-82329 (CVSS score: 9.8), a case of authentication bypass that could lead to admi…",
+      "publishedAt": "2026-09-01T17:53:11.000Z"
+    },
+    {
+      "slug": "6ef14a9c0db6ebc859a03532",
+      "guid": "https://www.schneier.com/?p=72576",
+      "title": "What’s the Scam?",
+      "link": "https://www.schneier.com/blog/archives/2026/09/whats-the-scam.html",
+      "source": "Schneier on Security",
+      "sourceUrl": "https://www.schneier.com/feed/",
+      "summary": "To subscribe to my monthly email newsletter, you have to enter your information on the webpage, and then reply to an automatically generated email. This is, of course, to prevent people from subscribing addresses other than their own. Starting last weekend, I have been receiving…",
+      "publishedAt": "2026-09-01T17:36:13.000Z"
+    },
+    {
+      "slug": "dff23f3c8b114063949c38cd",
+      "guid": "https://thehackernews.com/2026/09/breeze-comet-executes-hundreds-of.html",
+      "title": "Breeze Comet Executes Hundreds of Fraudulent Transactions via Brazilian Payment Systems",
+      "link": "https://thehackernews.com/2026/09/breeze-comet-executes-hundreds-of.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "Brazilian financial services, retail, and e-commerce organizations have become the target of a financially motivated threat actor dubbed Breeze Comet (formerly UNC5669) since 2024. Google Threat Intelligence Group (GTIG) and Mandiant teams described the threat actor as \"speciali…",
+      "publishedAt": "2026-09-01T17:19:24.000Z"
+    },
+    {
+      "slug": "9d29ebd55d1f578ab4564ef8",
+      "guid": "https://www.schneier.com/?p=72564",
+      "title": "Leaked Russian Cyber-Operations Training Materials",
+      "link": "https://www.schneier.com/blog/archives/2026/09/leaked-russian-cyber-operations-training-materials.html",
+      "source": "Schneier on Security",
+      "sourceUrl": "https://www.schneier.com/feed/",
+      "summary": "This is interesting: The records describe a force-generation mechanism for several General Staff components, including the GRU, Main Operational Directorate, and 8th Directorate, which is associated with protected communications, cryptography, and information security. […] The r…",
+      "publishedAt": "2026-09-01T16:29:10.000Z"
+    },
+    {
+      "slug": "2e1433965ded5055aabb83ee",
+      "guid": "https://thehackernews.com/2026/09/13-malicious-packagist-packages-target.html",
+      "title": "13 Malicious Packagist Packages Target Unpatched iPhones to Steal Crypto Wallet Seeds",
+      "link": "https://thehackernews.com/2026/09/13-malicious-packagist-packages-target.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "Cybersecurity researchers have identified a set of 13 malicious Composer theme packages on Packagist that are designed to inject JavaScript into Vietnamese movie and comic streaming sites that install those libraries and initiate the deployment of spyware aimed at unpatched iOS …",
+      "publishedAt": "2026-09-01T14:07:20.000Z"
+    },
+    {
+      "slug": "c4b7fed7bc1904185f966c93",
+      "guid": "https://www.darkreading.com/endpoint-security/clickfix-campaign-comprises-31-orgs-abuses-polygon-blockchain",
+      "title": "ClickFix Campaign Compromises 31 Orgs, Abuses Polygon Blockchain",
+      "link": "https://www.darkreading.com/endpoint-security/clickfix-campaign-comprises-31-orgs-abuses-polygon-blockchain",
+      "source": "Dark Reading",
+      "sourceUrl": "https://www.darkreading.com/rss.xml",
+      "summary": "The campaign uses EtherHiding to dynamically update its command-and-control server, abusing the blockchain as an attacker-controlled address book.",
+      "publishedAt": "2026-09-01T13:56:42.000Z"
+    },
+    {
+      "slug": "733c36767b10aa780d58b7c4",
+      "guid": "https://thehackernews.com/2026/09/iranian-hackers-pose-as-recruiters-to.html",
+      "title": "Iranian Hackers Pose as Recruiters to Deliver Cross-Platform RATs Through Coding Tests",
+      "link": "https://thehackernews.com/2026/09/iranian-hackers-pose-as-recruiters-to.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "The Iranian Nimbus Manticore hacking group has been attributed to two previously undocumented malware families that highlight the continued evolution of its toolset and likely expand its targeting footprint to infect Linux and Apple macOS systems using cross-platform remote acce…",
+      "publishedAt": "2026-09-01T13:08:58.000Z"
+    },
+    {
+      "slug": "659e69c33ed66b8421fe3a12",
+      "guid": "https://www.cio.com/article/4216554/economic-process-modeling-business-cases-beyond-cost-accounting.html",
+      "title": "Economic process modeling: Business cases beyond cost accounting",
+      "link": "https://www.cio.com/article/4216554/economic-process-modeling-business-cases-beyond-cost-accounting.html",
+      "source": "CIO",
+      "sourceUrl": "https://www.cio.com/feed/",
+      "summary": "Cortney Pagel has learned to expect a particular question whenever she proposes changing how work gets done. Pagel, a senior business analyst and change manager at ENGIE Impact, often hears it from the digital side of the organization before she has finished explaining the chang…",
+      "publishedAt": "2026-09-01T12:00:00.000Z"
+    },
+    {
+      "slug": "6a32dcc2b873f1220704b7f3",
+      "guid": "https://thehackernews.com/2026/09/threat-actors-dont-want-better-attacks.html",
+      "title": "Threat Actors Don’t Want Better Attacks. They Want Repeatable Ones",
+      "link": "https://thehackernews.com/2026/09/threat-actors-dont-want-better-attacks.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "The most common way into a company last year was to ask. A web page tells the visitor to prove they are not a robot. While they read the instructions, it quietly places a command on their clipboard. Then it talks them through opening a terminal and pasting it in. The technique i…",
+      "publishedAt": "2026-09-01T11:30:00.000Z"
+    },
+    {
+      "slug": "f634e7a7a1e8de7e1f0028cc",
+      "guid": "https://www.cio.com/article/4216547/if-we-want-to-implement-ai-successfully-we-need-to-completely-change-how-we-do-businesses.html",
+      "title": "If we want to implement AI successfully, we need to completely change how we do businesses",
+      "link": "https://www.cio.com/article/4216547/if-we-want-to-implement-ai-successfully-we-need-to-completely-change-how-we-do-businesses.html",
+      "source": "CIO",
+      "sourceUrl": "https://www.cio.com/feed/",
+      "summary": "I’ve always thought it was interesting that we’re willing to fight and die to live in a democracy, but everyone is happy to work in a company which is structured like a dictatorship. This thought feels even more pertinent given the rise of AI. As AI continues to transform the wo…",
+      "publishedAt": "2026-09-01T11:00:00.000Z"
     },
     {
       "slug": "e4a794394af6e8b0da58f4f3",
@@ -122,6 +362,16 @@
       "sourceUrl": "https://www.darkreading.com/rss.xml",
       "summary": "The ClickFix-style campaign features a sophisticated, multistage attack chain that includes reverse tunnels into victim organizations' networks.",
       "publishedAt": "2026-08-31T20:25:36.000Z"
+    },
+    {
+      "slug": "6f14d9f028f95c8ad38ecf3d",
+      "guid": "https://www.darkreading.com/cyber-risk/the-guardrails-debate-security-researcher-changes-his-mind",
+      "title": "The Guardrails Debate: Security Researcher Changes His Mind",
+      "link": "https://www.darkreading.com/cyber-risk/the-guardrails-debate-security-researcher-changes-his-mind",
+      "source": "Dark Reading",
+      "sourceUrl": "https://www.darkreading.com/rss.xml",
+      "summary": "While guardrails are critical, as evidenced by recent high-profile incidents, defenders need help staying ahead of attackers who do not play by the rules.",
+      "publishedAt": "2026-08-31T20:09:24.000Z"
     },
     {
       "slug": "a4587ec48fc3d8c11e0f2311",
@@ -534,16 +784,6 @@
       "publishedAt": "2026-08-28T10:58:29.000Z"
     },
     {
-      "slug": "294fb45574c676bd0b33a7cc",
-      "guid": "https://grahamcluley.com/?p=17351984",
-      "title": "Shai-Hulud hackers: two men charged over TeamPCP’s global supply chain crime spree that hit OpenAI, and thousands more",
-      "link": "https://www.bitdefender.com/en-us/blog/hotforsecurity/shai-hulud-hackers-charged-teampcps",
-      "source": "Graham Cluley",
-      "sourceUrl": "https://grahamcluley.com/feed/",
-      "summary": "More than 1,000 organisations, 500,000 stolen credentials, and one self-propagating worm named after a Dune sandworm - two men now face charges over TeamPCP's global hacking spree. Read more in my article on the Hot for Security blog.",
-      "publishedAt": "2026-08-28T10:23:57.000Z"
-    },
-    {
       "slug": "8846ef9a5acfae5c25f7c161",
       "guid": "https://www.cio.com/article/4215080/shrewd-it-hiring-strategies-have-never-been-more-critical.html",
       "title": "Shrewd IT hiring strategies have never been more critical",
@@ -554,26 +794,6 @@
       "publishedAt": "2026-08-28T10:01:00.000Z"
     },
     {
-      "slug": "67ef243bce48d319de6e0c7e",
-      "guid": "https://www.cio.com/article/193539/tableau-certification-guide.html",
-      "title": "Tableau certification guide: How to boost your data analytics skills",
-      "link": "https://www.cio.com/article/193539/tableau-certification-guide.html",
-      "source": "CIO",
-      "sourceUrl": "https://www.cio.com/feed/",
-      "summary": "Data visualization platform Tableau is one of the most widely used tools in the rapidly growing business intelligence (BI) space, and individuals with skills in Tableau are in high demand. In its Data Visualization Tools Market Report 2026, released in July, The Business Researc…",
-      "publishedAt": "2026-08-28T10:00:00.000Z"
-    },
-    {
-      "slug": "18abaf03ca70877f0552e360",
-      "guid": "https://www.cio.com/article/4214992/shadow-agents-make-the-old-shadow-it-problem-worse.html",
-      "title": "Shadow agents make the old shadow IT problem worse",
-      "link": "https://www.cio.com/article/4214992/shadow-agents-make-the-old-shadow-it-problem-worse.html",
-      "source": "CIO",
-      "sourceUrl": "https://www.cio.com/feed/",
-      "summary": "Companies are running into a new version of an old problem. Take, for example, a marketing executive turns on an agent from Marketo but doesn’t tell their IT team. That shadow agent now has access to customer data with little oversight and no clear adherence to the company’s sec…",
-      "publishedAt": "2026-08-28T10:00:00.000Z"
-    },
-    {
       "slug": "c079f13fec47f90b7c10669b",
       "guid": "https://thehackernews.com/2026/08/critical-cpanel-flaw-could-let-one.html",
       "title": "Critical cPanel Flaw Could Let One Hosting Customer Take Root Control of a Whole Server",
@@ -582,16 +802,6 @@
       "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
       "summary": "cPanel has released patches for a security flaw affecting domain parking and addon domain functionality in cPanel and WebHost Manager (WHM), which could allow code execution as the root user. The vulnerability, assigned the CVE identifier CVE-2026-65643, impacts all supported ve…",
       "publishedAt": "2026-08-28T09:45:15.000Z"
-    },
-    {
-      "slug": "98b374e9b3aa3c9978589b84",
-      "guid": "https://www.cio.com/article/4214990/aligning-roadmaps-for-acquisitional-growth.html",
-      "title": "Aligning roadmaps for acquisitional growth",
-      "link": "https://www.cio.com/article/4214990/aligning-roadmaps-for-acquisitional-growth.html",
-      "source": "CIO",
-      "sourceUrl": "https://www.cio.com/feed/",
-      "summary": "Companies grow in many ways, and physical security must keep pace. Sometimes growth occurs naturally through the evolution of internal business programs, but other times one company grows by acquiring another one, and it’s often a company that’s very different from the one that’…",
-      "publishedAt": "2026-08-28T09:00:00.000Z"
     },
     {
       "slug": "f774114eb52e3b3c8954f49c",
@@ -612,16 +822,6 @@
       "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
       "summary": "Cybersecurity researchers have flagged a fresh set of campaigns targeting government and diplomatic organizations in Romania, Spain, and Türkiye between late September 2025 and early April 2026. These campaigns, per Recorded Future Insikt Group, have led to the deployment of a p…",
       "publishedAt": "2026-08-28T08:20:59.000Z"
-    },
-    {
-      "slug": "cbc8a5b4c6583889b08b0cd9",
-      "guid": "https://www.cio.com/article/4215197/how-it-can-scale-self-service-without-losing-control.html",
-      "title": "How IT can scale self-service without losing control",
-      "link": "https://www.cio.com/article/4215197/how-it-can-scale-self-service-without-losing-control.html",
-      "source": "CIO",
-      "sourceUrl": "https://www.cio.com/feed/",
-      "summary": "Every IT leader knows the pattern. One team builds a report in a spreadsheet. Another spins up a workflow with slightly different logic to answer the same question. A dashboard is shared across three departments, and within a week, nobody can say for certain where the underlying…",
-      "publishedAt": "2026-08-28T07:31:10.000Z"
     },
     {
       "slug": "6ba707d160a3ad4fd1f0a3da",
@@ -650,7 +850,7 @@
       "link": "https://orca.security/resources/webinar-recap/zero-breach-vs-zero-impact-cloud-security-live-2026/",
       "source": "Orca Security Blog",
       "sourceUrl": "https://orca.security/resources/blog/feed/",
-      "summary": "Most security programs still measure success by counting blocked attacks. At Cloud Security LIVE 2026, Ariel Panas, co-founder at Mediga, and Roee, field CTO at Orca, made the case for a different metric entirely. Prevention will never reach zero probability, and both of them we…",
+      "summary": "Most security programs still measure success by counting blocked attacks. At Cloud Security LIVE 2026, Ariel Parnes, Co-Founder at Mitiga, and Roee, field CTO at Orca, made the case for a different metric entirely. Prevention will never reach zero probability, and both of them w…",
       "publishedAt": "2026-08-27T17:59:21.000Z"
     },
     {
@@ -784,16 +984,6 @@
       "publishedAt": "2026-08-27T09:56:56.000Z"
     },
     {
-      "slug": "ebc3aa4524e47973b59447bc",
-      "guid": "https://grahamcluley.com/?p=17351978",
-      "title": "US Navy tells sailors and their families: scrub your social media, enemies are watching",
-      "link": "https://www.bitdefender.com/en-us/blog/hotforsecurity/us-navy-sailors-families-scrub-social-media-enemies-watching",
-      "source": "Graham Cluley",
-      "sourceUrl": "https://grahamcluley.com/feed/",
-      "summary": "The US Navy has told its entire workforce of 340,000 active-duty personnel, 58,000 reservists, and 210,000 civilian employees to clean up their social media profiles, because adversaries might be using them to determine who they are, where they live, and when they may not be at …",
-      "publishedAt": "2026-08-27T09:46:39.000Z"
-    },
-    {
       "slug": "cb4f10f8a9c661e9f0854189",
       "guid": "https://thehackernews.com/2026/08/gocaracal-malware-uses-ethereum-smart.html",
       "title": "GoCaracal Malware Uses Ethereum Smart Contract to Fetch Replacement C2 Address",
@@ -812,196 +1002,6 @@
       "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
       "summary": "Academic researchers have disclosed a Rowhammer attack impacting NVIDIA workstation GPUs with GDDR6 memory that defeats error correction codes (ECC), the mitigation NVIDIA recommends against GPU Rowhammer, and enables denial-of-service (DoS) and privilege escalation to a root sh…",
       "publishedAt": "2026-08-27T08:13:11.000Z"
-    },
-    {
-      "slug": "038c6cd0b2efdcfa57a79b6c",
-      "guid": "https://thehackernews.com/2026/08/cisa-adds-six-exploited-flaws-to-kev.html",
-      "title": "CISA Adds Six Exploited Flaws to KEV, Including NetScaler, Linux, and SQL Server Bugs",
-      "link": "https://thehackernews.com/2026/08/cisa-adds-six-exploited-flaws-to-kev.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Wednesday added six flaws to its Known Exploited Vulnerabilities (KEV) catalog, including a high-severity security vulnerability impacting Citrix NetScaler ADC and NetScaler Gateway, citing evidence of active ex…",
-      "publishedAt": "2026-08-27T07:05:28.000Z"
-    },
-    {
-      "slug": "b348c4a187f7e33ad4ddbbee",
-      "guid": "https://grahamcluley.com/?p=17351960",
-      "title": "Smashing Security podcast #482: This hacker leaked GTA 6 – and launched their own cryptocurrency",
-      "link": "https://grahamcluley.com/smashing-security-podcast-482/",
-      "source": "Graham Cluley",
-      "sourceUrl": "https://grahamcluley.com/feed/",
-      "summary": "A hacker calling themselves \"CYBERLEEK\" has been leaking gameplay footage from GTA 6 ahead of its official reveal this week - but they're not asking Rockstar Games for a ransom. Instead, they've launched their own cryptocurrency, promising to release ever more juicy clips from a…",
-      "publishedAt": "2026-08-26T23:10:11.000Z"
-    },
-    {
-      "slug": "8c2afd7b565c7abc02e8ae7e",
-      "guid": "https://www.darkreading.com/cyberattacks-data-breaches/dark-caracal-adds-new-malware-cyber-espionage-arsenal",
-      "title": "Dark Caracal Adds New Malware to Cyber Espionage Arsenal",
-      "link": "https://www.darkreading.com/cyberattacks-data-breaches/dark-caracal-adds-new-malware-cyber-espionage-arsenal",
-      "source": "Dark Reading",
-      "sourceUrl": "https://www.darkreading.com/rss.xml",
-      "summary": "GoCaracal is a new modular malware framework that broadens Dark Caracal's capabilities to steal data and maintain access to victims.",
-      "publishedAt": "2026-08-26T21:33:06.000Z"
-    },
-    {
-      "slug": "655861f4947a910edfd683fe",
-      "guid": "https://www.darkreading.com/application-security/http-terminator-hunts-novel-desync-attacks",
-      "title": "'HTTP Terminator' Hunts for Novel Desync Attacks",
-      "link": "https://www.darkreading.com/application-security/http-terminator-hunts-novel-desync-attacks",
-      "source": "Dark Reading",
-      "sourceUrl": "https://www.darkreading.com/rss.xml",
-      "summary": "James Kettle of PortSwigger talks with the Dark Reading News Desk about his AI-powered open source tool, which found new HTTP request-smuggling techniques.",
-      "publishedAt": "2026-08-26T19:54:34.000Z"
-    },
-    {
-      "slug": "e02fbfa9a5a32ba77586621d",
-      "guid": "https://www.darkreading.com/insider-threats/red-flags-expose-fake-north-korean-it-workers",
-      "title": "Red Flags That Expose Fake North Korean IT Workers",
-      "link": "https://www.darkreading.com/insider-threats/red-flags-expose-fake-north-korean-it-workers",
-      "source": "Dark Reading",
-      "sourceUrl": "https://www.darkreading.com/rss.xml",
-      "summary": "North Korean operatives posing as IT workers are improving their tactics, but researchers say there are still ways to spot them before they do damage.",
-      "publishedAt": "2026-08-26T19:21:24.000Z"
-    },
-    {
-      "slug": "8e8e9446b9557ed218577505",
-      "guid": "https://www.darkreading.com/cyberattacks-data-breaches/android-malware-hijacks-update-system-car-head-units",
-      "title": "Android Malware Hijacks Update System for Car Head Units",
-      "link": "https://www.darkreading.com/cyberattacks-data-breaches/android-malware-hijacks-update-system-car-head-units",
-      "source": "Dark Reading",
-      "sourceUrl": "https://www.darkreading.com/rss.xml",
-      "summary": "Threat actors behind a notorious click-fraud botnet have set their sights on vehicle infotainment modules and are abusing legitimate functionality to spread infections.",
-      "publishedAt": "2026-08-26T17:33:45.000Z"
-    },
-    {
-      "slug": "607917c11c838a5405f5bb09",
-      "guid": "https://thehackernews.com/2026/08/fbi-disrupts-china-linked-qtfy.html",
-      "title": "FBI Disrupts China-Linked QTFY Infrastructure Used to Steal Data From U.S. Organizations",
-      "link": "https://thehackernews.com/2026/08/fbi-disrupts-china-linked-qtfy.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "The U.S. Department of Justice (DoJ) on Wednesday announced the disruption of two hacking platforms named QScan and QTRouter operated by Chinese threat actors to target critical infrastructure and other sensitive networks in the country. The activity has been attributed to a Chi…",
-      "publishedAt": "2026-08-26T16:42:03.000Z"
-    },
-    {
-      "slug": "58d51be061518586b4d4472f",
-      "guid": "https://thehackernews.com/2026/08/nimbus-manticore-expands-toolset-with.html",
-      "title": "Nimbus Manticore Expands Toolset With TWOSTROKE-Like Backdoor and SSH Tunneler",
-      "link": "https://thehackernews.com/2026/08/nimbus-manticore-expands-toolset-with.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "Cybersecurity researchers have discovered additional infrastructure and previously undocumented malware associated with Nimbus Manticore, an Iranian state-sponsored hacking group affiliated with the Islamic Revolutionary Guard Corps (IRGC). Group-IB, in a new analysis published …",
-      "publishedAt": "2026-08-26T15:35:05.000Z"
-    },
-    {
-      "slug": "26c52789df0be9e6ea0ae81b",
-      "guid": "https://thehackernews.com/2026/08/novacookies-campaigns-abuse-genuine.html",
-      "title": "NovaCookies Campaigns Abuse Genuine Docusign Notifications to Steal Microsoft 365 Sessions",
-      "link": "https://thehackernews.com/2026/08/novacookies-campaigns-abuse-genuine.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "Cybersecurity researchers have disclosed details of a new adversary-in-the-middle (AitM) phishing toolkit called NovaCookies that's used as a proxy to redirect Microsoft 365 sign-ins, while capturing authenticated sessions in the process. In a report shared with The Hacker News …",
-      "publishedAt": "2026-08-26T13:44:31.000Z"
-    },
-    {
-      "slug": "1c8cb498dea5c85b12cbee92",
-      "guid": "https://thehackernews.com/2026/08/cisa-red-team-compromised-two-critical.html",
-      "title": "CISA Red Team Compromised Two Critical Infrastructure Orgs, One Detected Nothing",
-      "link": "https://thehackernews.com/2026/08/cisa-red-team-compromised-two-critical.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) has published the results of two red team assessments it conducted simultaneously against two critical infrastructure organizations, using what it described as similar tradecraft while recording sharply different d…",
-      "publishedAt": "2026-08-26T13:07:02.000Z"
-    },
-    {
-      "slug": "be8e3e6d33b02d7e05f3871e",
-      "guid": "https://www.schneier.com/?p=72504",
-      "title": "Spyware for Babies",
-      "link": "https://www.schneier.com/blog/archives/2026/08/spyware-for-babies.html",
-      "source": "Schneier on Security",
-      "sourceUrl": "https://www.schneier.com/feed/",
-      "summary": "The New York Times has a long article (alt link) on surveillance systems aimed at babies. They are increasingly using AI. Nanit and its rivals want to own 24/7 health tracking for the sub-four-foot set. And their already astonishing levels of baby data collection are just the be…",
-      "publishedAt": "2026-08-26T12:05:52.000Z"
-    },
-    {
-      "slug": "f601fe4cfa27db520c709e14",
-      "guid": "https://thehackernews.com/2026/08/unpatched-kaltura-mwembed-flaws-could.html",
-      "title": "Unpatched Kaltura mwEmbed Flaws Could Let Remote Attackers Read Files and Run Code",
-      "link": "https://thehackernews.com/2026/08/unpatched-kaltura-mwembed-flaws-could.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "The CERT Coordination Center (CERT/CC) has disclosed two unpatched vulnerabilities in Kaltura's HTML5 video player library that allow a remote, unauthenticated attacker to read arbitrary files from a server and execute code on it. The flaws, tracked as CVE-2026-19913 and CVE-202…",
-      "publishedAt": "2026-08-26T11:55:00.000Z"
-    },
-    {
-      "slug": "ca41f1613046227896dbba92",
-      "guid": "https://thehackernews.com/2026/08/imagine-soc-without-queue-from-alert.html",
-      "title": "Imagine the SOC Without a Queue: From Alert Backlog to AI Hypothesis Engine",
-      "link": "https://thehackernews.com/2026/08/imagine-soc-without-queue-from-alert.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "The SOC we've always known was built around a model that guarantees most of the alert queue will never receive analyst review. There's never time. In a traditional SOC, the typical progression follows a well-known pattern: an alert arrives; a detection engine assigns a severity …",
-      "publishedAt": "2026-08-26T11:36:49.000Z"
-    },
-    {
-      "slug": "669b2ac8cf46169a0e3d11be",
-      "guid": "https://www.darkreading.com/endpoint-security/novacookies-steals-microsoft-365-sessions-320-a-month",
-      "title": "'NovaCookies' Kit Steals Microsoft 365 Sessions for $320 a Month",
-      "link": "https://www.darkreading.com/endpoint-security/novacookies-steals-microsoft-365-sessions-320-a-month",
-      "source": "Dark Reading",
-      "sourceUrl": "https://www.darkreading.com/rss.xml",
-      "summary": "The adversary-in-the-middle (AitM) phishing service lowers the barrier to entry for actors to create attacks and steal more than just user credentials.",
-      "publishedAt": "2026-08-26T11:33:40.000Z"
-    },
-    {
-      "slug": "621ca1c7245aff5bfeb9fa5f",
-      "guid": "https://thehackernews.com/2026/08/claude-opus-46-bypasses-gym-booking.html",
-      "title": "Claude Opus 4.6 Bypasses Gym Booking Limit, Cancels Other Users' Reservations in Tests",
-      "link": "https://thehackernews.com/2026/08/claude-opus-46-bypasses-gym-booking.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "Aikido Security has published research that recreates the Australian gym-booking incident in a synthetic environment, finding that Claude Opus 4.6, running on the OpenClaw agent harness, exploited a client-side-only booking restriction in 9 of 10 runs. The original incident was …",
-      "publishedAt": "2026-08-26T10:27:23.000Z"
-    },
-    {
-      "slug": "b88f84fc0f9d58d8504eff61",
-      "guid": "https://thehackernews.com/2026/08/openai-bans-russian-chatgpt-accounts.html",
-      "title": "OpenAI Bans Russian ChatGPT Accounts Used to Run Influence Operation",
-      "link": "https://thehackernews.com/2026/08/openai-bans-russian-chatgpt-accounts.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "OpenAI on Tuesday said it banned a cluster of Russian ChatGPT accounts that used VPNs to bypass access restrictions and run an influence operation, which relied on its artificial intelligence (AI) tool to generate social media posts and comments that were shared on Substack, Tel…",
-      "publishedAt": "2026-08-26T09:38:45.000Z"
-    },
-    {
-      "slug": "53a9ade4ffbe934a408984de",
-      "guid": "https://www.darkreading.com/threat-intelligence/interpols-jackal-iv-west-african-crime-infrastructure",
-      "title": "Interpol's Jackal IV Disrupts West African Crime Infrastructure",
-      "link": "https://www.darkreading.com/threat-intelligence/interpols-jackal-iv-west-african-crime-infrastructure",
-      "source": "Dark Reading",
-      "sourceUrl": "https://www.darkreading.com/rss.xml",
-      "summary": "The international law enforcement operation focused on disrupting crime-as-a-service networks and infrastructure behind groups like Black Axe.",
-      "publishedAt": "2026-08-26T08:30:00.000Z"
-    },
-    {
-      "slug": "4067feb894601fe0d8542f71",
-      "guid": "https://www.darkreading.com/cybersecurity-operations/nigeria-sovereign-cloud-cyber-national-security",
-      "title": "Nigeria Looks to Sovereign Cloud for Cyber, National Security",
-      "link": "https://www.darkreading.com/cybersecurity-operations/nigeria-sovereign-cloud-cyber-national-security",
-      "source": "Dark Reading",
-      "sourceUrl": "https://www.darkreading.com/rss.xml",
-      "summary": "The West African nation launched financing, procurement, and infrastructure policies to boost its sovereign cloud initiative and increase domestic technical knowledge.",
-      "publishedAt": "2026-08-26T08:00:00.000Z"
-    },
-    {
-      "slug": "635b3ba14547f07bcd331f2b",
-      "guid": "https://thehackernews.com/2026/08/interpol-operation-jackal-iv-arrests-58.html",
-      "title": "INTERPOL Operation Jackal IV Arrests 58, Identifies 263 in Global Cyber Fraud Crackdown",
-      "link": "https://thehackernews.com/2026/08/interpol-operation-jackal-iv-arrests-58.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "An eight-month INTERPOL operation targeting West African organized crime groups has led to arrests of 58 people and the identification of 263 suspects. \"The operation, which brought together 22 countries from six continents, is a response to the escalating global threat posed by…",
-      "publishedAt": "2026-08-26T07:54:12.000Z"
     }
   ]
 }
