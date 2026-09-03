@@ -1,8 +1,28 @@
 {
   "category": "front-end",
   "label": "Front-end",
-  "fetchedAt": "2026-09-02T10:00:16.032Z",
+  "fetchedAt": "2026-09-03T10:10:31.184Z",
   "items": [
+    {
+      "slug": "8daf019777290940cd0b39b0",
+      "guid": "https://csswizardry.com/2026/09/web-perf-wednesday-007-chrome-makes-busy-workers-measurable/",
+      "title": "Web-Perf Wednesday 007 – Chrome Makes Busy Workers Measurable",
+      "link": "https://csswizardry.com/2026/09/web-perf-wednesday-007-chrome-makes-busy-workers-measurable/",
+      "source": "CSS Wizardry",
+      "sourceUrl": "https://feeds.feedburner.com/csswizardry",
+      "summary": "Chrome 153 starts exposing dedicated-worker congestion to RUM, while browser releases tighten privacy, module recovery, and image preloading.",
+      "publishedAt": "2026-09-02T11:00:00.000Z"
+    },
+    {
+      "slug": "7069d3da40897bf85e2d57ef",
+      "guid": "https://bradfrost.com/links/post/github-cli-media-in-issues-pull-requests-and-comments-github-changelog/",
+      "title": "GitHub CLI: Media in issues, pull requests, and comments - GitHub Changelog",
+      "link": "https://bradfrost.com/links/post/github-cli-media-in-issues-pull-requests-and-comments-github-changelog/",
+      "source": "Brad Frost",
+      "sourceUrl": "https://feeds.feedburner.com/brad-frosts-blog",
+      "summary": "The ability to use GitHub CLI and add Media in issues, pull requests, and comments is an absolute game-changer for people working in AI & Design Systems. Throughout our course (and especially in Chapter 2) we talk about the fundamental shift of how git and services like GitHub a…",
+      "publishedAt": "2026-09-02T00:00:00.000Z"
+    },
     {
       "slug": "1e0ea401d892992396a0aaae",
       "guid": "https://webdesignerdepot.com/?p=65372",
@@ -242,46 +262,6 @@
       "sourceUrl": "https://feeds.feedburner.com/csswizardry",
       "summary": "Unattributed Navigation Overhead exposes the part of Time to First Byte that Navigation Timing cannot explain, including hidden cross-origin redirects.",
       "publishedAt": "2026-08-20T11:30:00.000Z"
-    },
-    {
-      "slug": "41ffdf3e53905d1033cc437f",
-      "guid": "https://daverupert.com/2026/08/microlighter/",
-      "title": "Introducing Microlighter",
-      "link": "https://daverupert.com/2026/08/microlighter/",
-      "source": "Dave Rupert",
-      "sourceUrl": "https://daverupert.com/atom.xml",
-      "summary": "I made a smol client-side syntax highlighter that uses the CSS Custom Highlights API called MicroLighter. I’ll talk about why I made it in a bit but first I wanted to… ahem… highlight… some of the features. Zero-dependencies ~2kb minifed+gzipped Uses CSS ::highlight(token-name),…",
-      "publishedAt": "2026-08-19T15:22:00.000Z"
-    },
-    {
-      "slug": "1caffdb9b35cd77267ab93b9",
-      "guid": "https://css-tricks.com/?p=396428",
-      "title": "CSS Navigation Matching, Early Days",
-      "link": "https://css-tricks.com/css-navigation-matching-early-days/",
-      "source": "CSS Tricks",
-      "sourceUrl": "https://css-tricks.com/feed/",
-      "summary": "Apply a style when someone navigates from one specific page to another. The idea being it'd make the sources for cross-document view transitions declarative in CSS rather than managing that stuff in JavaScript. CSS Navigation Matching, Early Days originally handwritten and publi…",
-      "publishedAt": "2026-08-19T14:44:41.000Z"
-    },
-    {
-      "slug": "bb9158e880069329e4e152ed",
-      "guid": "https://gomakethings.com/articles/the-spirit-of-giving/",
-      "title": "The spirit of giving",
-      "link": "https://gomakethings.com/articles/the-spirit-of-giving/",
-      "source": "Go Make Things",
-      "sourceUrl": "https://gomakethings.com/feed/index.xml",
-      "summary": "I’m a huge fan of the Buy Nothing Project, a movement that promotes the sharing and giving economy over one where people buy ever more shit. The spirit of Buy Nothing is sharing with your neighbors. It’s wonderful. But as it’s popularity in my area has grown, I’ve noticed that s…",
-      "publishedAt": "2026-08-19T14:30:00.000Z"
-    },
-    {
-      "slug": "09ddd35ab9c31187337588c2",
-      "guid": "https://csswizardry.com/2026/08/web-perf-wednesday-005-rum-needs-more-than-a-percentile/",
-      "title": "Web-Perf Wednesday 005 – RUM Needs More Than a Percentile",
-      "link": "https://csswizardry.com/2026/08/web-perf-wednesday-005-rum-needs-more-than-a-percentile/",
-      "source": "CSS Wizardry",
-      "sourceUrl": "https://feeds.feedburner.com/csswizardry",
-      "summary": "LUX Sidecar adds context to RUM, while browser-tool fixes show why measurement conditions and small debugging details matter.",
-      "publishedAt": "2026-08-19T11:00:00.000Z"
     }
   ]
 }
