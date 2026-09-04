@@ -2,6 +2,8 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useMemo, useState } from "react";
 import type { ExportedPostEntry } from "@prj--personal-portfolio--v3/tools--quiz-export/contract";
 import { PageLayout } from "@/components/layout/PageLayout";
+import { CategoryChips, CategoryPicker } from "@/containers/CategoryPicker";
+import { ManageCategoriesModal } from "@/containers/ManageCategoriesModal";
 import { stampClasses } from "@prj--personal-portfolio--v3/shared--ui";
 import { PaginationBar } from "@prj--personal-portfolio--v3/shared--ui/pagination-bar";
 import {
@@ -17,22 +19,27 @@ import {
   stampPaginationLabelClassName,
 } from "@/lib/paginationUi";
 import { useStore } from "@/store";
-import type { QuizState } from "@/store";
-import { getPostStats } from "@/store/selectors";
+import { getCategoryPostSlugs, getPostStats } from "@/store/selectors";
 
 export const Route = createFileRoute("/sets/")({
   component: StudySetsView,
 });
 
+const ALL = "all";
+
 function StudySetsView() {
   const addedPosts = useStore((s) => s.addedPosts);
   const cardStates = useStore((s) => s.cardStates);
   const ignored = useStore((s) => s.ignored);
+  const categories = useStore((s) => s.categories);
+  const postCategories = useStore((s) => s.postCategories);
 
   const [posts, setPosts] = useState<ExportedPostEntry[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [page, setPage] = useState(1);
+  const [filter, setFilter] = useState<string>(ALL);
+  const [manageOpen, setManageOpen] = useState(false);
 
   useEffect(() => {
     let cancelled = false;
@@ -51,10 +58,14 @@ function StudySetsView() {
     };
   }, []);
 
+  const activeCategory = categories.find((c) => c.id === filter) ?? null;
+
   const rows = useMemo(() => {
     const bySlug = new Map(posts.map((p) => [p.slug, p]));
-    const statsState = { cardStates, ignored } as QuizState;
-    return addedPosts
+    const statsState = { cardStates, ignored };
+    const scoped =
+      filter === ALL ? addedPosts : getCategoryPostSlugs({ addedPosts, postCategories }, filter);
+    return scoped
       .map((slug) => {
         const meta = bySlug.get(slug);
         const stats = getPostStats(statsState, slug);
@@ -64,13 +75,19 @@ function StudySetsView() {
       .sort(
         (a, b) => b.due - a.due || (a.meta?.title ?? a.slug).localeCompare(b.meta?.title ?? b.slug),
       );
-  }, [addedPosts, posts, cardStates, ignored]);
+  }, [addedPosts, posts, cardStates, ignored, filter, postCategories]);
 
   const pages = totalPages(rows.length, GRID_PAGE_SIZE);
   const current = clampPage(page, pages);
   const pageItems = paginate(rows, current, GRID_PAGE_SIZE);
 
+  useEffect(() => {
+    setPage(1);
+  }, [filter]);
+
   const totalDue = rows.reduce((n, r) => n + r.due, 0);
+  const emptyCollection = addedPosts.length === 0;
+  const emptyFilter = !emptyCollection && rows.length === 0;
 
   return (
     <PageLayout>
@@ -88,20 +105,63 @@ function StudySetsView() {
               {totalDue}
             </p>
           </div>
-          {totalDue > 0 && (
-            <Link
-              to="/study"
-              className={stampClasses("solid", "md")}
-              title={`Study all ${totalDue} due cards across every set`}
-            >
-              Study All ({totalDue})
-            </Link>
-          )}
+          {totalDue > 0 &&
+            (activeCategory ? (
+              <Link
+                to="/sets/categories/$categoryId/study"
+                params={{ categoryId: activeCategory.id }}
+                className={stampClasses("solid", "md")}
+                title={`Study all ${totalDue} due cards in ${activeCategory.name}`}
+              >
+                Study {activeCategory.name} ({totalDue})
+              </Link>
+            ) : (
+              <Link
+                to="/study"
+                className={stampClasses("solid", "md")}
+                title={`Study all ${totalDue} due cards across every set`}
+              >
+                Study All ({totalDue})
+              </Link>
+            ))}
           <Link to="/" className={stampClasses("ghost", "md")} title="Go to the posts catalogue">
             Browse Posts
           </Link>
         </div>
       </section>
+
+      {!emptyCollection && (
+        <div className="flex flex-wrap items-center gap-3 mb-6 text-sm smallcaps">
+          <span className="text-[var(--slate)]">Show:</span>
+          <button
+            type="button"
+            onClick={() => setFilter(ALL)}
+            title="Show every study set"
+            className={`underline-offset-4 ${filter === ALL ? "underline font-bold" : "hover:underline"}`}
+          >
+            All
+          </button>
+          {categories.map((cat) => (
+            <button
+              key={cat.id}
+              type="button"
+              onClick={() => setFilter(cat.id)}
+              title={`Show sets in ${cat.name}`}
+              className={`underline-offset-4 ${filter === cat.id ? "underline font-bold" : "hover:underline"}`}
+            >
+              {cat.name}
+            </button>
+          ))}
+          <button
+            type="button"
+            onClick={() => setManageOpen(true)}
+            title="Create, rename, or delete categories"
+            className={`${stampClasses("ghost", "sm")} ml-auto`}
+          >
+            Manage Categories
+          </button>
+        </div>
+      )}
 
       {error && (
         <div className="mb-6 border-2 border-[var(--ink-black)] bg-[var(--highlight)] p-4 text-base">
@@ -111,7 +171,7 @@ function StudySetsView() {
 
       {loading ? (
         <p className="italic text-[var(--slate)]">Loading…</p>
-      ) : rows.length === 0 ? (
+      ) : emptyCollection ? (
         <div className="text-center py-24 border-y-[3px] border-[var(--ink-black)]">
           <p
             className="italic text-2xl max-w-2xl mx-auto"
@@ -125,11 +185,30 @@ function StudySetsView() {
             </Link>
           </div>
         </div>
+      ) : emptyFilter ? (
+        <div className="text-center py-16 border-y-[3px] border-[var(--ink-black)]">
+          <p className="italic text-xl" style={{ fontFamily: "var(--font-display)" }}>
+            No sets in {activeCategory?.name ?? "this category"} yet.
+          </p>
+          <div className="mt-6 flex flex-wrap justify-center gap-3">
+            <button
+              type="button"
+              onClick={() => setFilter(ALL)}
+              className={stampClasses("solid", "md")}
+              title="Show every study set"
+            >
+              Show All Sets
+            </button>
+            <Link to="/" className={stampClasses("ghost", "md")} title="Go to the posts catalogue">
+              Browse Posts
+            </Link>
+          </div>
+        </div>
       ) : (
         <>
           <div className="grid md:grid-cols-2 gap-x-10 gap-y-8">
             {pageItems.map(({ slug, meta, stats, due }, index) => {
-              const isWalkthroughSet = index === 0 && current === 1;
+              const isWalkthroughSet = index === 0 && current === 1 && filter === ALL;
               return (
                 <article
                   key={slug}
@@ -151,6 +230,7 @@ function StudySetsView() {
                       {meta?.title ?? slug}
                     </h3>
                   </Link>
+                  <CategoryChips postSlug={slug} />
                   <div className="rule-thin my-4" />
                   <div
                     className="grid grid-cols-4 gap-2 text-center"
@@ -175,7 +255,7 @@ function StudySetsView() {
                       <p className="text-xl font-bold">{stats.total}</p>
                     </div>
                   </div>
-                  <div className="mt-4 flex gap-2">
+                  <div className="mt-4 flex flex-wrap gap-2">
                     {due > 0 || isWalkthroughSet ? (
                       <Link
                         to="/sets/$postSlug/study"
@@ -204,6 +284,7 @@ function StudySetsView() {
                     >
                       Details
                     </Link>
+                    <CategoryPicker postSlug={slug} isAdded />
                   </div>
                 </article>
               );
@@ -222,6 +303,14 @@ function StudySetsView() {
           />
         </>
       )}
+
+      <ManageCategoriesModal
+        open={manageOpen}
+        onClose={() => setManageOpen(false)}
+        onDeleted={(id) => {
+          if (filter === id) setFilter(ALL);
+        }}
+      />
     </PageLayout>
   );
 }

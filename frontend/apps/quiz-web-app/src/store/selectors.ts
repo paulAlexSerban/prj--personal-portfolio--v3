@@ -120,7 +120,11 @@ export function selectStudyQueue(state: QuizState, scope: QueueScope = {}): Card
 }
 
 /** Per-post counts for the browse / study-set screens. Ignored questions are excluded from active counts. */
-export function getPostStats(state: QuizState, postSlug: string, today = todayISO(0)): PostStats {
+export function getPostStats(
+  state: Pick<QuizState, "cardStates" | "ignored">,
+  postSlug: string,
+  today = todayISO(0),
+): PostStats {
   const cards = Object.values(state.cardStates).filter((c) => c.postSlug === postSlug);
   const active = cards.filter((c) => !state.ignored[c.questionSlug]);
   return {
@@ -131,6 +135,21 @@ export function getPostStats(state: QuizState, postSlug: string, today = todayIS
     reviewDueCount: active.filter((c) => c.cardType === "review" && c.dueDate <= today).length,
     ignoredCount: cards.filter((c) => state.ignored[c.questionSlug]).length,
   };
+}
+
+/** Added posts that currently belong to a category. */
+export function getCategoryPostSlugs(
+  state: Pick<QuizState, "addedPosts" | "postCategories">,
+  categoryId: string,
+): string[] {
+  return state.addedPosts.filter((slug) => state.postCategories[slug]?.includes(categoryId));
+}
+
+/** Added posts that are not in any category. */
+export function getUncategorizedPostSlugs(
+  state: Pick<QuizState, "addedPosts" | "postCategories">,
+): string[] {
+  return state.addedPosts.filter((slug) => !state.postCategories[slug]?.length);
 }
 
 /** Total cards due across all (or scoped) added posts - for the progress screen. */

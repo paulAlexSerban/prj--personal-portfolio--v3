@@ -44,6 +44,8 @@ function SettingsView() {
     const snapshot: Partial<QuizState> = {
       cardStates: state.cardStates,
       addedPosts: state.addedPosts,
+      categories: state.categories,
+      postCategories: state.postCategories,
       ignored: state.ignored,
       suspended: state.suspended,
       postConfigs: state.postConfigs,

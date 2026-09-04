@@ -4,23 +4,7 @@ import { selectStudyQueue, getPostStats } from "./selectors";
 import { todayISO } from "../utils/dates";
 
 function resetStore() {
-  useStore.setState(
-    {
-      cardStates: {},
-      addedPosts: [],
-      ignored: {},
-      suspended: {},
-      postConfigs: {},
-      dailyByPost: {},
-      reviewLogs: [],
-      studySessions: [],
-      settings: initialState.settings,
-      config: initialState.config,
-      daily: { date: todayISO(0), new: 0, reviews: 0 },
-      lastReview: null,
-    },
-    false,
-  );
+  useStore.setState({ ...initialState, daily: { date: todayISO(0), new: 0, reviews: 0 } });
 }
 
 beforeEach(() => {
@@ -70,6 +54,7 @@ describe("removePost", () => {
     expect(s.addedPosts).toEqual([]);
     // progress kept
     expect(s.cardStates["react-hooks--a"]).toEqual(before);
+    expect(s.postCategories["react-hooks"]).toBeUndefined();
 
     // re-adding keeps the previous progress
     useStore.getState().addPost("react-hooks", ["react-hooks--a"]);
@@ -283,5 +268,79 @@ describe("sessions", () => {
     expect(session.cardsStudied).toBe(2);
     expect(session.cardsGood).toBe(1);
     expect(session.cardsAgain).toBe(1);
+  });
+});
+
+describe("categories", () => {
+  it("seeds Favorites as a default category", () => {
+    const s = useStore.getState();
+    expect(s.categories).toHaveLength(1);
+    expect(s.categories[0]!.id).toBe("favorites");
+    expect(s.categories[0]!.isDefault).toBe(true);
+  });
+
+  it("createCategory trims, rejects duplicates, and returns a stable id", () => {
+    const store = useStore.getState();
+    const id = store.createCategory("  AI Engineering  ");
+    expect(id).toBe("ai-engineering");
+    expect(useStore.getState().categories.map((c) => c.name)).toEqual([
+      "Favorites",
+      "AI Engineering",
+    ]);
+    expect(store.createCategory("ai engineering")).toBe("");
+    expect(store.createCategory("   ")).toBe("");
+  });
+
+  it("renameCategory is a no-op for Favorites and for duplicate names", () => {
+    const store = useStore.getState();
+    const id = store.createCategory("MCP");
+    store.renameCategory("favorites", "Starred");
+    expect(useStore.getState().categories.find((c) => c.id === "favorites")!.name).toBe(
+      "Favorites",
+    );
+    store.renameCategory(id, "Favorites");
+    expect(useStore.getState().categories.find((c) => c.id === id)!.name).toBe("MCP");
+    store.renameCategory(id, "  Model Context  ");
+    expect(useStore.getState().categories.find((c) => c.id === id)!.name).toBe("Model Context");
+  });
+
+  it("deleteCategory is blocked for Favorites and strips memberships for custom ones", () => {
+    const store = useStore.getState();
+    store.addPost("p", ["p--1"]);
+    const id = store.createCategory("Software Architecture");
+    store.addPostToCategory("p", id);
+    store.addPostToCategory("p", "favorites");
+    store.deleteCategory("favorites");
+    expect(useStore.getState().categories.some((c) => c.id === "favorites")).toBe(true);
+    store.deleteCategory(id);
+    const s = useStore.getState();
+    expect(s.categories.map((c) => c.id)).toEqual(["favorites"]);
+    expect(s.postCategories["p"]).toEqual(["favorites"]);
+  });
+
+  it("addPostToCategory is many-to-many and removePost clears membership", () => {
+    const store = useStore.getState();
+    store.addPost("p", ["p--1"]);
+    const arch = store.createCategory("Software Architecture");
+    store.addPostToCategory("p", "favorites");
+    store.addPostToCategory("p", arch);
+    expect(useStore.getState().postCategories["p"]!.sort()).toEqual(["favorites", arch].sort());
+    store.removePostFromCategory("p", "favorites");
+    expect(useStore.getState().postCategories["p"]).toEqual([arch]);
+    store.removePost("p");
+    expect(useStore.getState().postCategories["p"]).toBeUndefined();
+  });
+
+  it("clearAll restores the default Favorites category", () => {
+    const store = useStore.getState();
+    store.addPost("p", ["p--1"]);
+    store.createCategory("MCP");
+    store.addPostToCategory("p", "favorites");
+    store.clearAll();
+    const s = useStore.getState();
+    expect(s.addedPosts).toEqual([]);
+    expect(s.postCategories).toEqual({});
+    expect(s.categories).toHaveLength(1);
+    expect(s.categories[0]!.id).toBe("favorites");
   });
 });
