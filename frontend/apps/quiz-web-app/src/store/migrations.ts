@@ -1,5 +1,5 @@
-import type { CardState, StudyConfig } from "./types";
-import { DEFAULT_CONFIG } from "./types";
+import type { CardState, Category, StudyConfig } from "./types";
+import { DEFAULT_CONFIG, ensureDefaultCategories } from "./types";
 import { addDaysISO, daysBetween, todayISO } from "../utils/dates";
 
 /** Previous default interval ceiling before the 30-day cap migration. */
@@ -10,6 +10,8 @@ export const PERSIST_BACKUP_KEY_SUFFIX = ":backup-v0";
 export type MigratablePersistedState = {
   cardStates?: Record<string, CardState>;
   config?: StudyConfig;
+  categories?: Category[];
+  postCategories?: Record<string, string[]>;
 };
 
 export interface MigratePersistedStateOpts {
@@ -20,8 +22,8 @@ export interface MigratePersistedStateOpts {
 
 /**
  * One-shot migration for persisted quiz state: bump a legacy default
- * `config.maximumInterval`, clamp card intervals, and pull far-future due
- * dates within the effective cap. Idempotent - safe to run more than once.
+ * `config.maximumInterval`, clamp card intervals, pull far-future due dates
+ * within the effective cap, and seed the Favorites category. Idempotent.
  */
 export function migratePersistedState<T extends MigratablePersistedState>(
   state: T,
@@ -31,7 +33,13 @@ export function migratePersistedState<T extends MigratablePersistedState>(
   const legacyMax = opts.legacyMaximumInterval ?? LEGACY_MAXIMUM_INTERVAL;
   const newMax = opts.newMaximumInterval ?? DEFAULT_CONFIG.maximumInterval;
 
-  if (!state.config && !state.cardStates) return state;
+  const seeded = {
+    ...state,
+    categories: ensureDefaultCategories(state.categories),
+    postCategories: state.postCategories ?? {},
+  };
+
+  if (!state.config && !state.cardStates) return seeded;
 
   const config = state.config ? { ...state.config } : undefined;
   const effectiveMax =
@@ -51,7 +59,7 @@ export function migratePersistedState<T extends MigratablePersistedState>(
     : undefined;
 
   return {
-    ...state,
+    ...seeded,
     ...(config ? { config } : {}),
     ...(cardStates ? { cardStates } : {}),
   };

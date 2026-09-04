@@ -16,6 +16,7 @@ import {
 } from "@prj--personal-portfolio--v3/shared--ui/post-filters";
 import { loadPostsIndex } from "@/data/loadQuizData";
 import { useStudySetActions } from "@/hooks/useStudySetActions";
+import { CategoryChips, CategoryPicker } from "@/containers/CategoryPicker";
 import {
   GRID_PAGE_SIZE,
   renderStampNext,
@@ -196,6 +197,7 @@ function HomeView() {
                       {post.tags.length > 4 ? " …" : ""}
                     </p>
                   )}
+                  {isAdded && <CategoryChips postSlug={post.slug} />}
                   <div className="rule-thin my-4" />
                   <div className="flex gap-2">
                     {isAdded ? (
@@ -208,6 +210,7 @@ function HomeView() {
                         >
                           Open Set
                         </Link>
+                        <CategoryPicker postSlug={post.slug} isAdded />
                         <button
                           type="button"
                           disabled={isLoading}
@@ -243,6 +246,12 @@ function HomeView() {
                         >
                           {isLoading ? "Loading…" : "Add to Study Set"}
                         </button>
+                        <CategoryPicker
+                          postSlug={post.slug}
+                          isAdded={false}
+                          loading={isLoading}
+                          onEnsureAdded={(categoryId) => addToStudySet(post.slug, { categoryId })}
+                        />
                         {blogHref && (
                           <a
                             href={blogHref}

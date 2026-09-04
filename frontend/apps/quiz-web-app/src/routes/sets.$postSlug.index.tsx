@@ -25,7 +25,6 @@ import {
 import { blogCheatSheetUrl, blogLearningPlanUrl, blogPostUrl } from "@/lib/urls";
 import { useStudySetActions } from "@/hooks/useStudySetActions";
 import { useStore } from "@/store";
-import type { QuizState } from "@/store";
 import { getPostStats } from "@/store/selectors";
 import { resolvePostConfig } from "@/lib/postConfig";
 import { cardRetrievability } from "@/algorithms/scheduler";
@@ -135,21 +134,7 @@ function SetDetailPage() {
     };
   }, [postSlug]);
 
-  const statsState = {
-    cardStates,
-    ignored,
-    addedPosts,
-    postConfigs,
-    dailyByPost,
-    config,
-    settings,
-    suspended: {},
-    reviewLogs: [],
-    studySessions: [],
-    daily: { date: todayISO(0, settings.dayStartHour), new: 0, reviews: 0 },
-    lastReview: null,
-  } as QuizState;
-  const stats = getPostStats(statsState, postSlug, todayISO(0, settings.dayStartHour));
+  const stats = getPostStats({ cardStates, ignored }, postSlug, todayISO(0, settings.dayStartHour));
   const effectiveConfig = resolvePostConfig(config, postConfigs[postSlug]);
   const postOverride = postConfigs[postSlug];
   const postDaily = dailyByPost[postSlug];
