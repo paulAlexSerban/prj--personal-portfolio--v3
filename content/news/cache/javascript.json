@@ -1,8 +1,38 @@
 {
   "category": "javascript",
   "label": "JavaScript",
-  "fetchedAt": "2026-09-03T10:10:31.184Z",
+  "fetchedAt": "2026-09-04T10:01:19.474Z",
   "items": [
+    {
+      "slug": "a15b247e518e0462b8e96c7a",
+      "guid": "https://flaviocopes.com/build-llm-from-scratch/",
+      "title": "How to build an LLM from scratch",
+      "link": "https://flaviocopes.com/build-llm-from-scratch/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "A practical guide for software engineers to build and train a small GPT-style language model on a Mac with Language Model Builder.",
+      "publishedAt": "2026-09-04T09:00:00.000Z"
+    },
+    {
+      "slug": "2ab7f1a64e09f4dcaae9ac99",
+      "guid": "https://flaviocopes.com/biome/",
+      "title": "Biome: one tool for linting and formatting",
+      "link": "https://flaviocopes.com/biome/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Biome replaces ESLint and Prettier with one fast Rust tool. Install with biome init, run biome check, and migrate your existing config.",
+      "publishedAt": "2026-09-04T05:00:00.000Z"
+    },
+    {
+      "slug": "5d85772d891525d89757f5d8",
+      "guid": "https://flaviocopes.com/email-for-developers/",
+      "title": "Email for developers and AI agents: how to choose a provider",
+      "link": "https://flaviocopes.com/email-for-developers/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Compare Resend, Cloudflare Email Service, Postmark, Mailgun, SendGrid, Amazon SES, Mailtrap and AgentMail for sending, receiving, and giving AI agents an inbox.",
+      "publishedAt": "2026-09-03T14:30:00.000Z"
+    },
     {
       "slug": "713a1e34fb9b3b1304fcfa0e",
       "guid": "https://flaviocopes.com/agents-md/",
@@ -282,36 +312,6 @@
       "sourceUrl": "https://flaviocopes.com/rss.xml",
       "summary": "hey-cli brings HEY email, contacts, calendars, todos, habits, time tracking, journal entries, automation, and AI agent workflows to your terminal.",
       "publishedAt": "2026-08-26T15:08:19.000Z"
-    },
-    {
-      "slug": "50379acad21c1dbcddac0e9b",
-      "guid": "https://flaviocopes.com/ponytail/",
-      "title": "A deep dive into Ponytail",
-      "link": "https://flaviocopes.com/ponytail/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Learn how Ponytail stops AI coding agents from over-engineering: install it in ChatGPT, Codex, or Claude Code, choose a mode, and review diffs.",
-      "publishedAt": "2026-08-26T13:00:00.000Z"
-    },
-    {
-      "slug": "f654f0219fbe27d081019f1f",
-      "guid": "https://flaviocopes.com/exit-herdr/",
-      "title": "How to exit, close, and detach from Herdr",
-      "link": "https://flaviocopes.com/exit-herdr/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Learn the difference between detaching, closing a pane, stopping a session, and exiting Herdr without accidentally killing running work.",
-      "publishedAt": "2026-08-26T06:00:00.000Z"
-    },
-    {
-      "slug": "72654f8824fc5431eb3ac3ea",
-      "guid": "https://flaviocopes.com/idempotent-scheduled-job-cloudflare-queues-d1/",
-      "title": "Build an idempotent scheduled job with Cloudflare Queues and D1",
-      "link": "https://flaviocopes.com/idempotent-scheduled-job-cloudflare-queues-d1/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Build a reliable Cloudflare scheduled job with Queues and D1, using stable work IDs, expiring leases, safe retries, and fixed cadence.",
-      "publishedAt": "2026-08-25T13:00:00.000Z"
     },
     {
       "slug": "afd0cdad8f76886687f824d3",
