@@ -1,5 +1,11 @@
 # @prj--personal-portfolio--v3/frontend--quiz-web-app
 
+## 0.5.0
+
+### Minor Changes
+
+- 2d39b05: add categories
+
 ## 0.4.1
 
 ### Patch Changes
