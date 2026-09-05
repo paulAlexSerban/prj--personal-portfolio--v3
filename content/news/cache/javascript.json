@@ -1,8 +1,48 @@
 {
   "category": "javascript",
   "label": "JavaScript",
-  "fetchedAt": "2026-09-04T10:01:19.474Z",
+  "fetchedAt": "2026-09-05T09:30:23.637Z",
   "items": [
+    {
+      "slug": "b4dd0a82c00f33cd392bc72a",
+      "guid": "https://flaviocopes.com/cloudflare-images/",
+      "title": "A deep dive into Cloudflare Images",
+      "link": "https://flaviocopes.com/cloudflare-images/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "How Cloudflare Images works: resize, convert and crop images with a URL or a Worker, store uploads, serve private images, and what it costs. Lots of examples.",
+      "publishedAt": "2026-09-05T09:00:00.000Z"
+    },
+    {
+      "slug": "a33a51be209240922213cb41",
+      "guid": "https://flaviocopes.com/streaming-llm-responses-sse/",
+      "title": "How to stream LLM responses with server-sent events",
+      "link": "https://flaviocopes.com/streaming-llm-responses-sse/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Stream LLM text from a provider through your server to the browser with SSE, a correct buffered parser, cancellation, errors, security, and production checks.",
+      "publishedAt": "2026-09-05T07:00:00.000Z"
+    },
+    {
+      "slug": "b9f03c1ac34f3f6291b71bef",
+      "guid": "https://flaviocopes.com/ollama-local-llm/",
+      "title": "Run a local LLM with Ollama",
+      "link": "https://flaviocopes.com/ollama-local-llm/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Run an LLM locally with Ollama, choose a model that fits, call the chat API from Node.js, stream replies, request JSON, and understand the limits.",
+      "publishedAt": "2026-09-05T05:00:00.000Z"
+    },
+    {
+      "slug": "eb7b01268b072ad86ab65595",
+      "guid": "https://flaviocopes.com/understand-code-with-ai/",
+      "title": "Use AI to understand code",
+      "link": "https://flaviocopes.com/understand-code-with-ai/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "The best use of AI is not generating more code. Ask focused questions, attack a change from every angle, and keep the mental model. Code is the byproduct.",
+      "publishedAt": "2026-09-04T13:00:00.000Z"
+    },
     {
       "slug": "a15b247e518e0462b8e96c7a",
       "guid": "https://flaviocopes.com/build-llm-from-scratch/",
@@ -272,46 +312,6 @@
       "sourceUrl": "https://flaviocopes.com/rss.xml",
       "summary": "Introduction to Docker Compose: run multi-container apps from one file, with services, volumes, ports, and a Node plus Postgres example.",
       "publishedAt": "2026-08-28T05:00:00.000Z"
-    },
-    {
-      "slug": "e8d548e084473be4fa7a51d4",
-      "guid": "https://flaviocopes.com/bootcamp-september-2026/",
-      "title": "Build and ship real software with AI",
-      "link": "https://flaviocopes.com/bootcamp-september-2026/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "The September 2026 Bootcamp is a 10-week, beginner-friendly program for building and shipping real software with AI coding agents.",
-      "publishedAt": "2026-08-27T14:00:00.000Z"
-    },
-    {
-      "slug": "ccd4e171b58ca2d6ddaf9082",
-      "guid": "https://flaviocopes.com/stylex/",
-      "title": "A deep dive into StyleX",
-      "link": "https://flaviocopes.com/stylex/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Learn how StyleX turns JavaScript style objects into regular CSS classes at build time, with React and Astro setup, variants, themes, and responsive styles.",
-      "publishedAt": "2026-08-27T13:00:00.000Z"
-    },
-    {
-      "slug": "f426daf4bb5ab96b12cd2b66",
-      "guid": "https://flaviocopes.com/github-actions-introduction/",
-      "title": "A deep dive into GitHub Actions",
-      "link": "https://flaviocopes.com/github-actions-introduction/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "A practical deep dive into GitHub Actions: workflows, runners, job graphs, artifacts, caching, security, deployments, and debugging.",
-      "publishedAt": "2026-08-27T09:00:00.000Z"
-    },
-    {
-      "slug": "595dd8b402a26c372de98829",
-      "guid": "https://flaviocopes.com/hey-cli/",
-      "title": "A deep dive into hey-cli",
-      "link": "https://flaviocopes.com/hey-cli/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "hey-cli brings HEY email, contacts, calendars, todos, habits, time tracking, journal entries, automation, and AI agent workflows to your terminal.",
-      "publishedAt": "2026-08-26T15:08:19.000Z"
     },
     {
       "slug": "afd0cdad8f76886687f824d3",
