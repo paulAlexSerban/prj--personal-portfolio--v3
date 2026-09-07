@@ -36,6 +36,7 @@ export function CategoryPicker({
   const { create, addTo, removeFrom } = useCategoryActions();
   const [draft, setDraft] = useState("");
   const [busy, setBusy] = useState(false);
+  const [open, setOpen] = useState(false);
 
   const memberSet = new Set(membership);
 
@@ -72,7 +73,7 @@ export function CategoryPicker({
   }
 
   return (
-    <DropdownMenu>
+    <DropdownMenu open={open} onOpenChange={setOpen}>
       <DropdownMenuTrigger asChild>
         <button
           type="button"
@@ -129,6 +130,17 @@ export function CategoryPicker({
             Add
           </button>
         </form>
+        <DropdownMenuSeparator className="bg-[var(--ink-black)]" />
+        <div className="px-2 py-1.5">
+          <button
+            type="button"
+            onClick={() => setOpen(false)}
+            title="Close categories menu"
+            className={stampClasses("solid", "sm", "w-full justify-center")}
+          >
+            Done
+          </button>
+        </div>
       </DropdownMenuContent>
     </DropdownMenu>
   );
