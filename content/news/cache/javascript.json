@@ -1,8 +1,48 @@
 {
   "category": "javascript",
   "label": "JavaScript",
-  "fetchedAt": "2026-09-06T09:43:58.075Z",
+  "fetchedAt": "2026-09-07T10:47:24.054Z",
   "items": [
+    {
+      "slug": "fac138afc1471a2714cac093",
+      "guid": "https://flaviocopes.com/zustand/",
+      "title": "Zustand: simple React state management",
+      "link": "https://flaviocopes.com/zustand/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Learn Zustand through a React store: actions, selectors, immutable updates, persistence, testing, SSR boundaries, and when local or server state is better.",
+      "publishedAt": "2026-09-07T09:00:00.000Z"
+    },
+    {
+      "slug": "7b34ff48dffcc1556617c9cb",
+      "guid": "https://flaviocopes.com/content-security-policy/",
+      "title": "Content Security Policy (CSP) explained",
+      "link": "https://flaviocopes.com/content-security-policy/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Build and deploy a Content Security Policy with source directives, nonces or hashes, report-only rollout, framing protection, testing, and common CSP mistakes.",
+      "publishedAt": "2026-09-07T07:00:00.000Z"
+    },
+    {
+      "slug": "54b23d81bd8ae077b14f0cac",
+      "guid": "https://flaviocopes.com/passkeys-webauthn/",
+      "title": "Passkeys and WebAuthn explained",
+      "link": "https://flaviocopes.com/passkeys-webauthn/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Understand passkeys and WebAuthn, then build registration and login with server challenges, stored public keys, SimpleWebAuthn, recovery, and tests.",
+      "publishedAt": "2026-09-07T05:00:00.000Z"
+    },
+    {
+      "slug": "1b495771a77c22d86f4c4f81",
+      "guid": "https://flaviocopes.com/tanstack-query/",
+      "title": "Introduction to TanStack Query",
+      "link": "https://flaviocopes.com/tanstack-query/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Learn TanStack Query from the server-state mental model through query keys, freshness, errors, mutations, invalidation, optimistic updates, and common mistakes.",
+      "publishedAt": "2026-09-06T13:00:00.000Z"
+    },
     {
       "slug": "b28e06e1a7a205a8fa522bde",
       "guid": "https://flaviocopes.com/astro-documentation-site/",
@@ -272,46 +312,6 @@
       "sourceUrl": "https://flaviocopes.com/rss.xml",
       "summary": "How out-of-office replies exposed a bot attack on my newsletter, why double opt-in was not enough, and how I protected the signup flow.",
       "publishedAt": "2026-08-29T13:00:00.000Z"
-    },
-    {
-      "slug": "1daa167057b5e061feff1d29",
-      "guid": "https://flaviocopes.com/node-test-runner/",
-      "title": "The Node.js built-in test runner",
-      "link": "https://flaviocopes.com/node-test-runner/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Use Node.js built-in test runner with node:test and node:assert. Write tests, run with node --test, watch mode, mocking, and coverage without Jest.",
-      "publishedAt": "2026-08-29T09:00:00.000Z"
-    },
-    {
-      "slug": "91eb0545a706b93aea2f8e17",
-      "guid": "https://flaviocopes.com/htmx-4/",
-      "title": "HTMX 4 is here",
-      "link": "https://flaviocopes.com/htmx-4/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "HTMX 4 moves to fetch, makes inheritance explicit, cleans up events and history, and adds morph swaps and multi-target partials.",
-      "publishedAt": "2026-08-29T07:00:00.000Z"
-    },
-    {
-      "slug": "e906285ae862c46a7102cdcb",
-      "guid": "https://flaviocopes.com/run-cloudflare-d1-locally/",
-      "title": "How to run a Cloudflare D1 database locally",
-      "link": "https://flaviocopes.com/run-cloudflare-d1-locally/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Run Cloudflare D1 locally with Wrangler and Miniflare, apply migrations, seed data, inspect SQLite state, and keep development separate from production.",
-      "publishedAt": "2026-08-29T05:00:00.000Z"
-    },
-    {
-      "slug": "69daab3c871d5bc1b3ebdb4d",
-      "guid": "https://flaviocopes.com/darp/",
-      "title": "DARP: Durable Activity Record Protocol",
-      "link": "https://flaviocopes.com/darp/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "I created DARP so coding agents can send meaningful work records to Factory Log through a small, open protocol without surveillance.",
-      "publishedAt": "2026-08-28T15:00:00.000Z"
     },
     {
       "slug": "afd0cdad8f76886687f824d3",
