@@ -1,8 +1,48 @@
 {
   "category": "javascript",
   "label": "JavaScript",
-  "fetchedAt": "2026-09-07T10:47:24.054Z",
+  "fetchedAt": "2026-09-08T10:07:55.331Z",
   "items": [
+    {
+      "slug": "acd4c78c1feee748ef78b0da",
+      "guid": "https://flaviocopes.com/macbook-altitude/",
+      "title": "Why your MacBook runs hotter at high altitude",
+      "link": "https://flaviocopes.com/macbook-altitude/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "MacBooks run hotter above 1800 meters because thin air carries away less heat. Learn the physics behind it and simple ways to keep your laptop cool.",
+      "publishedAt": "2026-09-08T09:00:00.000Z"
+    },
+    {
+      "slug": "cf79a5a5c7ff025828951968",
+      "guid": "https://flaviocopes.com/vercel-ai-gateway/",
+      "title": "Vercel AI Gateway tutorial",
+      "link": "https://flaviocopes.com/vercel-ai-gateway/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Use Vercel AI Gateway with the AI SDK and OpenAI client, then add model routing, fallbacks, caching, budgets, BYOK, and observability.",
+      "publishedAt": "2026-09-08T07:00:00.000Z"
+    },
+    {
+      "slug": "6e6282e792432c0c007274cc",
+      "guid": "https://flaviocopes.com/ai-agent-passwords/",
+      "title": "How AI agents can log in without seeing your passwords",
+      "link": "https://flaviocopes.com/ai-agent-passwords/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Compare 1Password Agentic Autofill, Bitwarden's Agent Access SDK, Browser Use sensitive data, OAuth token vaults, and why passkeys still block AI agents.",
+      "publishedAt": "2026-09-08T05:00:00.000Z"
+    },
+    {
+      "slug": "02e3dbb8c54d49cacaece9f6",
+      "guid": "https://flaviocopes.com/exe-dev/",
+      "title": "A deep dive into exe.dev",
+      "link": "https://flaviocopes.com/exe-dev/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "exe.dev gives you persistent Linux VMs over SSH, each with an HTTPS URL, private-by-default sharing, and a built-in coding agent. How it works, what it costs, and how I use it.",
+      "publishedAt": "2026-09-07T13:00:00.000Z"
+    },
     {
       "slug": "fac138afc1471a2714cac093",
       "guid": "https://flaviocopes.com/zustand/",
@@ -272,56 +312,6 @@
       "sourceUrl": "https://flaviocopes.com/rss.xml",
       "summary": "Use Git hooks as deterministic guardrails for AI coding agents, with fast checks before commits, stronger checks before pushes, and CI as the final gate.",
       "publishedAt": "2026-08-31T05:00:00.000Z"
-    },
-    {
-      "slug": "fafd4318ef65496fcc5c4bcd",
-      "guid": "https://flaviocopes.com/deepsec/",
-      "title": "A deep dive into DeepSec",
-      "link": "https://flaviocopes.com/deepsec/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Learn how DeepSec scans a repository with AI agents, then follow a real 729-file review that produced 504 findings and a short action list.",
-      "publishedAt": "2026-08-30T09:00:00.000Z"
-    },
-    {
-      "slug": "a5d57a9edba1c9d6669c8bf6",
-      "guid": "https://flaviocopes.com/terminal-text-effects-javascript/",
-      "title": "I built 37 terminal text effects in pure JavaScript",
-      "link": "https://flaviocopes.com/terminal-text-effects-javascript/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "I built tte.js, a dependency-free browser library that animates text and ASCII art with 37 Canvas effects.",
-      "publishedAt": "2026-08-30T07:00:00.000Z"
-    },
-    {
-      "slug": "ad594a71e6965c873c334843",
-      "guid": "https://flaviocopes.com/node-sqlite/",
-      "title": "node:sqlite: SQLite built into Node.js",
-      "link": "https://flaviocopes.com/node-sqlite/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Use node:sqlite in Node.js to open a database, run prepared statements, query rows, and use in-memory databases for tests without npm packages.",
-      "publishedAt": "2026-08-30T05:00:00.000Z"
-    },
-    {
-      "slug": "27f8b56bae9d4424dc35b10d",
-      "guid": "https://flaviocopes.com/newsletter-spam-attack/",
-      "title": "A bot added around 5,000 addresses to my newsletter",
-      "link": "https://flaviocopes.com/newsletter-spam-attack/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "How out-of-office replies exposed a bot attack on my newsletter, why double opt-in was not enough, and how I protected the signup flow.",
-      "publishedAt": "2026-08-29T13:00:00.000Z"
-    },
-    {
-      "slug": "afd0cdad8f76886687f824d3",
-      "guid": "https://javascriptweekly.com/issues/799",
-      "title": "Bun 1.4 is (finally) fresh out of the oven",
-      "link": "https://javascriptweekly.com/issues/799",
-      "source": "JavaScript Weekly",
-      "sourceUrl": "https://javascriptweekly.com/rss/1b4m1h9j",
-      "summary": "#​799 — August 25, 2026 Read on the Web 🏖️ I'm back from an intense week of Disney vacationing with the family, so I feel more tired than before I left 😅… but it's time to catch up with all things JavaScript! __ Your editor, Peter Cooper JavaScript Weekly Bun 1.4: Now More Nod…",
-      "publishedAt": "2026-08-25T00:00:00.000Z"
     }
   ]
 }
