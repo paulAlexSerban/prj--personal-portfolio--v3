@@ -170,7 +170,7 @@ export function CategoryChips({ postSlug }: { postSlug: string }) {
               className="leading-none hover:opacity-60"
               onClick={() => removeFrom(postSlug, id)}
             >
-              ×
+              x
             </button>
           </span>
         );

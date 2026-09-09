@@ -41,7 +41,7 @@ export function ImageZoomModal({ open, onClose, children, label = 'Zoomed image'
                 aria-label="Close zoomed image"
                 className="absolute top-[max(0.75rem,env(safe-area-inset-top))] right-[max(0.75rem,env(safe-area-inset-right))] z-10 flex h-10 w-10 shrink-0 cursor-pointer items-center justify-center border-2 border-[var(--ink-black)] bg-[var(--aged-white)] text-2xl leading-none text-[var(--ink-black)] hover:bg-[var(--highlight)]"
             >
-                ×
+                x
             </button>
             <div
                 className="flex max-h-[calc(100dvh-4rem)] max-w-full min-w-0 items-center justify-center [&_img]:max-h-[calc(100dvh-4rem)] [&_img]:max-w-full [&_img]:object-contain"
