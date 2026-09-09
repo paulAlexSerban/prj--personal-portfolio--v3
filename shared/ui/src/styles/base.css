@@ -28,4 +28,9 @@
         outline: 3px solid var(--ink-black);
         outline-offset: 2px;
     }
+
+    a {
+        overflow-wrap: break-word;
+        word-break: break-word;
+    }
 }
