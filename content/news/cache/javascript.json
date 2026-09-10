@@ -1,8 +1,58 @@
 {
   "category": "javascript",
   "label": "JavaScript",
-  "fetchedAt": "2026-09-09T10:10:22.463Z",
+  "fetchedAt": "2026-09-10T10:06:12.141Z",
   "items": [
+    {
+      "slug": "b70f23bc07244221b45caa25",
+      "guid": "https://flaviocopes.com/ai-and-the-joy-of-programming/",
+      "title": "AI and the joy of programming",
+      "link": "https://flaviocopes.com/ai-and-the-joy-of-programming/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "AI made me more productive than I've ever been, but the way building software feels has changed. Some honest thoughts on where the joy went.",
+      "publishedAt": "2026-09-10T09:00:00.000Z"
+    },
+    {
+      "slug": "5240a9a9a75c46eb9f6165d7",
+      "guid": "https://flaviocopes.com/ahastack-update/",
+      "title": "I updated ahastack.dev for htmx 4",
+      "link": "https://flaviocopes.com/ahastack-update/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "ahastack.dev now runs on Astro 7 and htmx 4, has 18 live demos on Cloudflare, and ships a skill file so coding agents know how to build with the AHA stack.",
+      "publishedAt": "2026-09-10T08:00:00.000Z"
+    },
+    {
+      "slug": "716481b8a29b38eec8f6ed06",
+      "guid": "https://flaviocopes.com/native-email-password-authentication-cloudflare-workers/",
+      "title": "Native email and password authentication on Cloudflare Workers",
+      "link": "https://flaviocopes.com/native-email-password-authentication-cloudflare-workers/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Build native email/password auth on Cloudflare Workers with peppered PBKDF2 hashes, D1 sessions, and hardened HttpOnly cookies.",
+      "publishedAt": "2026-09-10T05:00:00.000Z"
+    },
+    {
+      "slug": "fb905801950814a84f8ebee0",
+      "guid": "https://flaviocopes.com/tmux/",
+      "title": "A deep dive into tmux",
+      "link": "https://flaviocopes.com/tmux/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Learn tmux from scratch: create persistent sessions, use windows and panes, copy text, customize key bindings, and work safely over SSH.",
+      "publishedAt": "2026-09-09T13:00:00.000Z"
+    },
+    {
+      "slug": "7a3dd8219feb7a3372a096b3",
+      "guid": "https://flaviocopes.com/software-on-github/",
+      "title": "My software is now on GitHub",
+      "link": "https://flaviocopes.com/software-on-github/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "The eight packages in my software catalog are now public MIT repositories on GitHub, with the full source, tests, and documentation in one README each.",
+      "publishedAt": "2026-09-09T10:00:00.000Z"
+    },
     {
       "slug": "36e664dd86b0cc10196f1977",
       "guid": "https://flaviocopes.com/cli-tools/",
@@ -240,7 +290,7 @@
       "link": "https://flaviocopes.com/understand-code-with-ai/",
       "source": "Flavio Copes",
       "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "The best use of AI is not generating more code. Ask focused questions, attack a change from every angle, and keep the mental model. Code is the byproduct.",
+      "summary": "How I use coding agents to understand existing code before changing it: focused questions, tracing data and side effects, and reviews in a fresh session.",
       "publishedAt": "2026-09-04T13:00:00.000Z"
     },
     {
@@ -282,56 +332,6 @@
       "sourceUrl": "https://flaviocopes.com/rss.xml",
       "summary": "Use AGENTS.md to give coding agents durable project instructions, from commands and conventions to scoped rules, verification, maintenance, and common mistakes.",
       "publishedAt": "2026-09-03T09:00:00.000Z"
-    },
-    {
-      "slug": "416a0c81a471e5c3c7896389",
-      "guid": "https://flaviocopes.com/build-mcp-server/",
-      "title": "How to build an MCP server",
-      "link": "https://flaviocopes.com/build-mcp-server/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Build and test a TypeScript MCP server with one useful tool, stdio transport, input validation, clear errors, timeouts, and client configuration.",
-      "publishedAt": "2026-09-03T05:00:00.000Z"
-    },
-    {
-      "slug": "9613a2007f6dff5f9e2d24b1",
-      "guid": "https://flaviocopes.com/ssh-for-developers/",
-      "title": "SSH for developers",
-      "link": "https://flaviocopes.com/ssh-for-developers/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "SSH for developers: connect to VPS servers, create keys with ssh-keygen, use ~/.ssh/config aliases, and copy files with scp or rsync.",
-      "publishedAt": "2026-09-02T07:00:00.000Z"
-    },
-    {
-      "slug": "652be7bc7ff1a282f93a7926",
-      "guid": "https://flaviocopes.com/codex-security-cli/",
-      "title": "How to scan your code with the Codex Security CLI",
-      "link": "https://flaviocopes.com/codex-security-cli/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Use OpenAI's Codex Security CLI to scan repositories, track vulnerabilities, verify fixes, review changes, and add security checks to CI.",
-      "publishedAt": "2026-09-02T05:00:00.000Z"
-    },
-    {
-      "slug": "6480992460dafd10198909eb",
-      "guid": "https://flaviocopes.com/bootcamp-enrollment-open/",
-      "title": "Enrollment for the September bootcamp is open",
-      "link": "https://flaviocopes.com/bootcamp-enrollment-open/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Enrollment is open for the 10-week September bootcamp. Build and ship real software with AI coding agents, starting from zero.",
-      "publishedAt": "2026-09-01T16:01:00.000Z"
-    },
-    {
-      "slug": "c3ee453adb01c5678d8ca6b9",
-      "guid": "https://flaviocopes.com/cursor-self-hosted-agents/",
-      "title": "Run Cursor cloud agents on your own Mac mini",
-      "link": "https://flaviocopes.com/cursor-self-hosted-agents/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Run Cursor cloud agents on your own Mac mini: install the Cursor CLI, start a self-hosted worker, and send it tasks that run on your hardware.",
-      "publishedAt": "2026-09-01T13:00:00.000Z"
     },
     {
       "slug": "db14c28728290e125ae5e130",
