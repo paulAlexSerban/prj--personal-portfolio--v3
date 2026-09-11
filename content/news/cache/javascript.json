@@ -1,8 +1,48 @@
 {
   "category": "javascript",
   "label": "JavaScript",
-  "fetchedAt": "2026-09-10T10:06:12.141Z",
+  "fetchedAt": "2026-09-11T10:03:37.471Z",
   "items": [
+    {
+      "slug": "da9a58a9d2432768de13e387",
+      "guid": "https://flaviocopes.com/langchain-langgraph/",
+      "title": "A deep dive into LangChain and LangGraph",
+      "link": "https://flaviocopes.com/langchain-langgraph/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Learn LangChain and LangGraph with TypeScript: models, prompts, tools, agents, memory, streaming, RAG, graphs, persistence, and human approval.",
+      "publishedAt": "2026-09-11T09:00:00.000Z"
+    },
+    {
+      "slug": "d1e50b9ac5ff6352fc6e5f69",
+      "guid": "https://flaviocopes.com/cursor-projects/",
+      "title": "How to use Cursor Projects",
+      "link": "https://flaviocopes.com/cursor-projects/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Cursor Projects gives you a coordinator agent that plans work, delegates it to subagents, keeps shared context, and watches your PRs. Here is how to use it.",
+      "publishedAt": "2026-09-11T08:00:00.000Z"
+    },
+    {
+      "slug": "23524bea429ec377db22b476",
+      "guid": "https://flaviocopes.com/jsonl/",
+      "title": "JSONL: a practical guide to JSON Lines",
+      "link": "https://flaviocopes.com/jsonl/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Learn how JSONL stores one JSON value per line, how to write, stream, and query it, and why I use it as Factory Log's event store.",
+      "publishedAt": "2026-09-11T05:00:00.000Z"
+    },
+    {
+      "slug": "72802d06f27d448cf94ff5a2",
+      "guid": "https://flaviocopes.com/ghostty/",
+      "title": "A deep dive into Ghostty",
+      "link": "https://flaviocopes.com/ghostty/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Ghostty from scratch: install it, learn the shortcuts, write the config, pick fonts and themes, use splits, build keybindings, set up shell integration and SSH.",
+      "publishedAt": "2026-09-10T20:00:00.000Z"
+    },
     {
       "slug": "b70f23bc07244221b45caa25",
       "guid": "https://flaviocopes.com/ai-and-the-joy-of-programming/",
@@ -32,6 +72,16 @@
       "sourceUrl": "https://flaviocopes.com/rss.xml",
       "summary": "Build native email/password auth on Cloudflare Workers with peppered PBKDF2 hashes, D1 sessions, and hardened HttpOnly cookies.",
       "publishedAt": "2026-09-10T05:00:00.000Z"
+    },
+    {
+      "slug": "9b637e41198e1e003cff682e",
+      "guid": "https://blog.appsignal.com/2026/09/10/appsignal-at-elixirconf-2026.html",
+      "title": "AppSignal at ElixirConf 2026",
+      "link": "https://blog.appsignal.com/2026/09/10/appsignal-at-elixirconf-2026.html",
+      "source": "AppSignal",
+      "sourceUrl": "https://blog.appsignal.com/feed.xml",
+      "summary": "Today marks the start of ElixirConf 2026 in Chicago. We here at AppSignal couldn’t be more excited to see the sessions and see what’s new. Several of our team members are attending in person and virtually. If you’re at the event and you see our CEO, Brandon, say hi! We’d love to…",
+      "publishedAt": "2026-09-10T00:00:00.000Z"
     },
     {
       "slug": "fb905801950814a84f8ebee0",
@@ -292,46 +342,6 @@
       "sourceUrl": "https://flaviocopes.com/rss.xml",
       "summary": "How I use coding agents to understand existing code before changing it: focused questions, tracing data and side effects, and reviews in a fresh session.",
       "publishedAt": "2026-09-04T13:00:00.000Z"
-    },
-    {
-      "slug": "a15b247e518e0462b8e96c7a",
-      "guid": "https://flaviocopes.com/build-llm-from-scratch/",
-      "title": "How to build an LLM from scratch",
-      "link": "https://flaviocopes.com/build-llm-from-scratch/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "A practical guide for software engineers to build and train a small GPT-style language model on a Mac with Language Model Builder.",
-      "publishedAt": "2026-09-04T09:00:00.000Z"
-    },
-    {
-      "slug": "2ab7f1a64e09f4dcaae9ac99",
-      "guid": "https://flaviocopes.com/biome/",
-      "title": "Biome: one tool for linting and formatting",
-      "link": "https://flaviocopes.com/biome/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Biome replaces ESLint and Prettier with one fast Rust tool. Install with biome init, run biome check, and migrate your existing config.",
-      "publishedAt": "2026-09-04T05:00:00.000Z"
-    },
-    {
-      "slug": "5d85772d891525d89757f5d8",
-      "guid": "https://flaviocopes.com/email-for-developers/",
-      "title": "Email for developers and AI agents: how to choose a provider",
-      "link": "https://flaviocopes.com/email-for-developers/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Compare Resend, Cloudflare Email Service, Postmark, Mailgun, SendGrid, Amazon SES, Mailtrap and AgentMail for sending, receiving, and giving AI agents an inbox.",
-      "publishedAt": "2026-09-03T14:30:00.000Z"
-    },
-    {
-      "slug": "713a1e34fb9b3b1304fcfa0e",
-      "guid": "https://flaviocopes.com/agents-md/",
-      "title": "What is an AGENTS.md file",
-      "link": "https://flaviocopes.com/agents-md/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Use AGENTS.md to give coding agents durable project instructions, from commands and conventions to scoped rules, verification, maintenance, and common mistakes.",
-      "publishedAt": "2026-09-03T09:00:00.000Z"
     },
     {
       "slug": "db14c28728290e125ae5e130",
