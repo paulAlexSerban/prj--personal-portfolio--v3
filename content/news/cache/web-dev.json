@@ -1,97 +1,137 @@
 {
   "category": "web-dev",
   "label": "Web Development",
-  "fetchedAt": "2026-09-12T09:39:15.051Z",
+  "fetchedAt": "2026-09-13T10:40:17.596Z",
   "items": [
     {
-      "slug": "2d53b12e2fcbdcc5e6811fb2",
-      "guid": "https://dev.to/clavioapp/building-per-app-dictation-on-macos-focus-profiles-and-optional-send-2ge4",
-      "title": "Building per-app dictation on macOS: focus, profiles, and optional send",
-      "link": "https://dev.to/clavioapp/building-per-app-dictation-on-macos-focus-profiles-and-optional-send-2ge4",
+      "slug": "d459d04f9732678af48259e3",
+      "guid": "https://dev.to/haseeb_sheikh_0f627e74ba7/how-much-does-it-actually-cost-to-build-a-saas-in-2026-a-technical-breakdown-6hd",
+      "title": "How Much Does It Actually Cost to Build a SaaS in 2026? A Technical Breakdown",
+      "link": "https://dev.to/haseeb_sheikh_0f627e74ba7/how-much-does-it-actually-cost-to-build-a-saas-in-2026-a-technical-breakdown-6hd",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "Dictating a coding prompt and dictating an email can involve the same microphone and speech recognizer. They should not necessarily involve the same writing style—or the same action after the text appears. We build Clavio, hands-free dictation for Mac, at Just Tools LTD. This is…",
-      "publishedAt": "2026-09-12T09:31:41.000Z"
+      "summary": "A SaaS application can look simple from the outside and still require significant backend engineering. A dashboard with ten screens might be cheap to build. A dashboard with multi-tenant data, role-based permissions, Stripe subscriptions, webhooks, integrations, background jobs,…",
+      "publishedAt": "2026-09-13T10:35:45.000Z"
     },
     {
-      "slug": "14049543147dc65bc077cb43",
-      "guid": "https://dev.to/paul-brooks/bdd-without-gherkin-558b",
-      "title": "BDD Without Gherkin",
-      "link": "https://dev.to/paul-brooks/bdd-without-gherkin-558b",
+      "slug": "d6e54d5fab229ba69a9705d7",
+      "guid": "https://dev.to/vormlyai/building-was-the-easy-part-distribution-is-the-10x-problem-1bp7",
+      "title": "Building was the easy part. Distribution is the 10x problem.",
+      "link": "https://dev.to/vormlyai/building-was-the-easy-part-distribution-is-the-10x-problem-1bp7",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "I've been writing acceptance tests in Given-When-Then since 2009 and I've never written a feature file by choice. So when someone asks whether you can do BDD without Gherkin, my answer is that I've never done it any other way. Cucumber has been the default for long enough that t…",
-      "publishedAt": "2026-09-12T09:23:52.000Z"
+      "summary": "I shipped a AI creation saas platform solo — image, video, music and 3D generation, 30+ models behind a routing layer, subscription billing with two payment adapters, an admin backend, a Chrome extension. Then I launch, and nothing happens. There's no pnpm deploy for \"people kno…",
+      "publishedAt": "2026-09-13T10:30:20.000Z"
     },
     {
-      "slug": "2d34ee05601c99600ccece65",
-      "guid": "https://dev.to/aditya_soni_e5b9d5213e544/an-attackers-multi-agent-framework-stole-thousands-of-credentials-in-under-six-hours-4kgh",
-      "title": "An Attacker's Multi-Agent Framework Stole Thousands of Credentials in Under Six Hours",
-      "link": "https://dev.to/aditya_soni_e5b9d5213e544/an-attackers-multi-agent-framework-stole-thousands-of-credentials-in-under-six-hours-4kgh",
+      "slug": "6af5583e3b95ee0305358e3c",
+      "guid": "https://dev.to/iancowley/why-local-llms-dont-need-c-or-python-building-a-15mb-native-aot-inference-engine-in-net-10-1m2d",
+      "title": "Why Local LLMs Don't Need C++ or Python: Building a 15MB Native AOT Inference Engine in .NET 10",
+      "link": "https://dev.to/iancowley/why-local-llms-dont-need-c-or-python-building-a-15mb-native-aot-inference-engine-in-net-10-1m2d",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "A financially motivated attacker ran reconnaissance, exploitation, and cleanup with almost no human in the loop — using the same design patterns you'd use to build a helpful agent. That symmetry is the actual story. Google's Threat Intelligence Group (GTIG) published its Q3 2026…",
-      "publishedAt": "2026-09-12T09:21:16.000Z"
+      "summary": "Bare-Metal LLM Inference in Pure C#: Bypassing CUDA Toolkits and Native C++ DLLs The conventional consensus across AI engineering is simple: high-performance local LLM execution belongs exclusively to C++ runtimes, multi-gigabyte CUDA toolkits, and bindings over llama.cpp or vLL…",
+      "publishedAt": "2026-09-13T10:27:57.000Z"
     },
     {
-      "slug": "99a55c7fe3b5a39ef977e7fd",
-      "guid": "https://dev.to/jack_ford_53b5dc5cb14901f/how-i-built-a-fast-clean-wiki-database-for-steal-an-egg-m1n",
-      "title": "How I Built a Fast, Clean Wiki & Database for Steal an Egg",
-      "link": "https://dev.to/jack_ford_53b5dc5cb14901f/how-i-built-a-fast-clean-wiki-database-for-steal-an-egg-m1n",
+      "slug": "00c898c6cb67492379e610a2",
+      "guid": "https://dev.to/ajmal_hasan/rag-for-beginners-5-levels-of-building-an-ai-that-actually-knows-your-stuff-4mmg",
+      "title": "RAG for Beginners: 5 Levels of Building an AI That Actually Knows Your Stuff",
+      "link": "https://dev.to/ajmal_hasan/rag-for-beginners-5-levels-of-building-an-ai-that-actually-knows-your-stuff-4mmg",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "Introduction Start with the problem. Mention that you wanted to dive into the Steal an Egg gaming community, but existing resources were cluttered with heavy ads, slow load times, or SEO spam. Explain your goal: to build a lightning-fast, minimalist, and developer-friendly alter…",
-      "publishedAt": "2026-09-12T09:13:56.000Z"
+      "summary": "Have you ever wished ChatGPT could answer questions about your documents — your company's HR policy, your class notes, your product manual — instead of just whatever it happened to learn from the internet? That's exactly the problem RAG solves. If you've seen the term \"RAG\" floa…",
+      "publishedAt": "2026-09-13T10:26:44.000Z"
     },
     {
-      "slug": "5e44fce6e5a944d7daf536dd",
-      "guid": "https://dev.to/erenelagz/how-i-unified-stripe-revenuecat-and-gumroad-revenue-into-one-dashboard-3clk",
-      "title": "I Built a Financial Dashboard for Indie Devs and Digital Creators and It is Free",
-      "link": "https://dev.to/erenelagz/how-i-unified-stripe-revenuecat-and-gumroad-revenue-into-one-dashboard-3clk",
+      "slug": "9163144840826b26e48db998",
+      "guid": "https://dev.to/yyt0901/rbac-sql-table-create-2ii7",
+      "title": "RBAC SQL table create",
+      "link": "https://dev.to/yyt0901/rbac-sql-table-create-2ii7",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "As a digital creator, indie hacker, freelancer, or digital nomad, your income can end up scattered across multiple platforms. You might use: Stripe for SaaS or freelance payments RevenueCat for mobile app subscriptions Gumroad for digital products Stocks and crypto for investmen…",
-      "publishedAt": "2026-09-12T09:13:04.000Z"
+      "summary": "the core is: User ↔ Role ↔ Permission sys_user 用户表 sys_role 角色表 sys_permission 权限表（菜单/按钮/接口） sys_user_role 用户-角色关联表（多对多） sys_role_permission 角色-权限关联表（多对多） CREATE TABLE `sys_user` ( `id` bigint NOT NULL COMMENT '用户ID', `username` varchar(50) NOT NULL COMMENT '登录账号', `password` va…",
+      "publishedAt": "2026-09-13T10:22:46.000Z"
     },
     {
-      "slug": "da3a9f2ae0b01800e3eb43a7",
-      "guid": "https://dev.to/sanjaysah/google-sign-in-works-in-debug-but-fails-in-production-on-android-check-this-hidden-sha-1-18nn",
-      "title": "Google Sign-In Works in Debug but Fails in Production on Android? Check This Hidden SHA-1",
-      "link": "https://dev.to/sanjaysah/google-sign-in-works-in-debug-but-fails-in-production-on-android-check-this-hidden-sha-1-18nn",
+      "slug": "6a960be9d98da4ef75cdd196",
+      "guid": "https://dev.to/gunalan22082002/restart-python-class2-kdc",
+      "title": "Restart Python class2",
+      "link": "https://dev.to/gunalan22082002/restart-python-class2-kdc",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "Google Sign-In worked on my development build. It worked on my preview build. On the version Google Play delivered to real testers, tapping \"Sign in with Google\" did absolutely nothing — no account picker, no error message, no crash. Just a button that did nothing. It took me se…",
-      "publishedAt": "2026-09-12T09:12:30.000Z"
+      "summary": "What is predefined? >>> print(\"Gunalan\") Gunalan >>> len(\"karthi\") 6 >>> len is also a predefined function in Python, and it is used to find the length of a sequence. print is also a predefined function in Python, and it is used to print the sequence. If you want to see how many…",
+      "publishedAt": "2026-09-13T10:21:50.000Z"
     },
     {
-      "slug": "15b4a5e11537c0a18f149a50",
-      "guid": "https://dev.to/mohamed_fysil_9ba38502093/history-of-the-model-context-protocol-mcp-3n1g",
-      "title": "History of the Model Context Protocol (MCP)",
-      "link": "https://dev.to/mohamed_fysil_9ba38502093/history-of-the-model-context-protocol-mcp-3n1g",
+      "slug": "0d6355900ad6007af9da1ea5",
+      "guid": "https://dev.to/kielltampubolon/bayaran-sudah-masuk-tapi-status-masih-belum-dibayar-kenapa-webhook-pembayaran-gagal-diam-diam-5e9p",
+      "title": "Bayaran Sudah Masuk tapi Status Masih Belum Dibayar: Kenapa Webhook Pembayaran Gagal Diam-diam",
+      "link": "https://dev.to/kielltampubolon/bayaran-sudah-masuk-tapi-status-masih-belum-dibayar-kenapa-webhook-pembayaran-gagal-diam-diam-5e9p",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "History of the Model Context Protocol (MCP) Origins (mid-2024) MCP started as an internal fix for an annoyance. In July 2024, Anthropic engineer David Soria Parra got tired of manually copying answers from Claude into his code editor because the model had no way to reach outside…",
-      "publishedAt": "2026-09-12T09:03:36.000Z"
+      "summary": "Cerita ini terjadi di hampir setiap toko online kecil yang baru pasang pembayaran otomatis. Pelanggan bayar. M-banking bilang masuk. Admin cek saldo, iya, uangnya sudah ada. Tapi di dashboard toko, status pesanan masih \"menunggu pembayaran\". Staf yang sabar mengubah status manua…",
+      "publishedAt": "2026-09-13T10:21:43.000Z"
     },
     {
-      "slug": "0959ab6445ec31dd28af3e0f",
-      "guid": "https://dev.to/yadhubuilds/how-to-catch-the-frozen-tabs-and-jank-your-monitoring-misses-3h2a",
-      "title": "How to catch the frozen tabs and jank your monitoring misses",
-      "link": "https://dev.to/yadhubuilds/how-to-catch-the-frozen-tabs-and-jank-your-monitoring-misses-3h2a",
+      "slug": "fe7aa4e09b3d4b62fc70b3ca",
+      "guid": "https://dev.to/sunnydachs/audit-your-excel-pivot-tables-before-they-break-a-read-only-cli-with-zero-dependencies-2794",
+      "title": "Audit your Excel pivot tables before they break — a read-only CLI with zero dependencies",
+      "link": "https://dev.to/sunnydachs/audit-your-excel-pivot-tables-before-they-break-a-read-only-cli-with-zero-dependencies-2794",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "One user's page froze, and every dashboard stayed green. It was a long-lived single-page app, the kind of tab someone keeps open for hours. A customer writes in: yesterday the page locked up and they lost work. You open your monitoring to pull that exact session, and it is not t…",
-      "publishedAt": "2026-09-12T09:03:32.000Z"
+      "summary": "If you work with Excel workbooks that have multiple pivot tables, you know the drill: a refresh breaks, Excel throws \"A PivotTable report cannot overlap another PivotTable report\", and nobody can say which pivot's configuration caused it. pivot-diag is a CLI that audits the pivo…",
+      "publishedAt": "2026-09-13T10:20:56.000Z"
     },
     {
-      "slug": "ce3acc66038547b208017043",
-      "guid": "https://dev.to/_anubhav/should-your-thread-keep-the-jvm-alive-3khn",
-      "title": "Should Your Thread Keep the JVM Alive?",
-      "link": "https://dev.to/_anubhav/should-your-thread-keep-the-jvm-alive-3khn",
+      "slug": "0c87efd7936372c2132fde25",
+      "guid": "https://dev.to/darshan_dev/why-do-so-many-people-use-whatsapp-understanding-the-technology-and-network-effect-3312",
+      "title": "Why Do So Many People Use WhatsApp? Understanding the Technology and Network Effect",
+      "link": "https://dev.to/darshan_dev/why-do-so-many-people-use-whatsapp-understanding-the-technology-and-network-effect-3312",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "Understanding daemon vs non-daemon threads Daemon vs non-daemon is one of those distinctions that seems trivial (\"just a boolean flag\") until you get bitten by it, and then you never forget it. The JVM has one simple rule for when to shut down: the JVM exits when all non-daemon …",
-      "publishedAt": "2026-09-12T08:55:28.000Z"
+      "summary": "Have you ever wondered why so many people use WhatsApp instead of Telegram, Signal, or other messaging apps? Most people use WhatsApp to send messages, make voice and video calls, share photos, send documents, and communicate through groups. But WhatsApp became popular for more …",
+      "publishedAt": "2026-09-13T10:19:44.000Z"
+    },
+    {
+      "slug": "c87e9ad051d7a1e71ad023b9",
+      "guid": "https://dev.to/sam_manox/power-bi-technical-article-data-modelling-relationships-joins-21c7",
+      "title": "Power BI Technical Article: Data Modelling, Relationships & Joins",
+      "link": "https://dev.to/sam_manox/power-bi-technical-article-data-modelling-relationships-joins-21c7",
+      "source": "DEV Community",
+      "sourceUrl": "https://dev.to/rss",
+      "summary": "Introduction Power BI is a business intelligence tool that enables the conversion of raw data into reports and dashboards. However, the quality of the Power BI report is influenced by how the data is prepared and structured in advance. Data modelling in Power BI involves designi…",
+      "publishedAt": "2026-09-13T10:18:07.000Z"
+    },
+    {
+      "slug": "d5caea23accae0e1ffe09da5",
+      "guid": "https://dev.to/adioof/astral-endorsing-python-council-candidates-is-corporate-capture-in-slow-motion-3aa2",
+      "title": "Astral endorsing Python Council candidates is corporate capture in slow motion",
+      "link": "https://dev.to/adioof/astral-endorsing-python-council-candidates-is-corporate-capture-in-slow-motion-3aa2",
+      "source": "DEV Community",
+      "sourceUrl": "https://dev.to/rss",
+      "summary": "Recently, a venture-backed company implied to the Python community that they know best who should be governing Python packaging. A surprising move, right? Astral, the organization responsible for uv, openly supported four of the five individuals who stood for election to the fir…",
+      "publishedAt": "2026-09-13T10:17:31.000Z"
+    },
+    {
+      "slug": "55c9dc9ecf5c084dd698d317",
+      "guid": "https://dev.to/aditya_d_sharma/what-is-http-request-smuggling-how-can-two-servers-disagree-about-one-request-ljg",
+      "title": "What Is HTTP Request Smuggling? How Can Two Servers Disagree About One Request?",
+      "link": "https://dev.to/aditya_d_sharma/what-is-http-request-smuggling-how-can-two-servers-disagree-about-one-request-ljg",
+      "source": "DEV Community",
+      "sourceUrl": "https://dev.to/rss",
+      "summary": "Here's a situation that should be impossible. A browser sends one HTTP request. That request passes through a reverse proxy on its way to a backend application server. Both components receive the same byte stream. Both speak HTTP/1.1. And yet the proxy thinks the request ends at…",
+      "publishedAt": "2026-09-13T10:07:47.000Z"
+    },
+    {
+      "slug": "31f9baaafca83cc4e85c6275",
+      "guid": "https://medium.com/p/138085295c1b",
+      "title": "The Corruption That Wasn’t There",
+      "link": "https://itnext.io/the-corruption-that-wasnt-there-138085295c1b?source=rss----5b301f10ddcd---4",
+      "source": "itnext",
+      "sourceUrl": "https://itnext.io/feed",
+      "summary": "",
+      "publishedAt": "2026-09-13T07:59:28.000Z"
     },
     {
       "slug": "af9fb94d14bae8e862b19003",
@@ -102,36 +142,6 @@
       "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
       "summary": "Give your AI agent live web search with a tool-calling loop, then cut your token cost by feeding it Markdown instead of raw JSON search results. Power Up Your AI Agent With Live Web Search, for Fewer Tokens on SitePoint.",
       "publishedAt": "2026-09-12T08:48:30.000Z"
-    },
-    {
-      "slug": "9659c51c31238d4d689358b3",
-      "guid": "https://dev.to/yaseenyk04/the-94-decision-one-architecture-call-that-made-integratex-feel-instant-675",
-      "title": "The 94% Decision: One Architecture Call That Made IntegrateX Feel Instant",
-      "link": "https://dev.to/yaseenyk04/the-94-decision-one-architecture-call-that-made-integratex-feel-instant-675",
-      "source": "DEV Community",
-      "sourceUrl": "https://dev.to/rss",
-      "summary": "[ EXECUTIVE TEARDOWN // TL;DR ] The near-fatal trap: JSON.stringify-ing React Flow nodes persists the view — 90%+ renderer state the client can reconstruct for free. A lossless, schema-aware Serialization Adapter maps UI objects to compact domain structs, cutting payloads 94% ro…",
-      "publishedAt": "2026-09-12T08:46:16.000Z"
-    },
-    {
-      "slug": "6ccaf0c339db60883b217af0",
-      "guid": "https://dev.to/yaseenyk04/i-built-an-ai-money-agent-thats-structurally-incapable-of-touching-the-money-5h0j",
-      "title": "I Built an AI Money Agent That's Structurally Incapable of Touching the Money",
-      "link": "https://dev.to/yaseenyk04/i-built-an-ai-money-agent-thats-structurally-incapable-of-touching-the-money-5h0j",
-      "source": "DEV Community",
-      "sourceUrl": "https://dev.to/rss",
-      "summary": "[ EXECUTIVE TEARDOWN // TL;DR ] Sable has no cloud backend: every financial record lives in on-device SQLite, so privacy is a topology, not a policy. Every model function call is a dry run rendered as a Review & Confirm card — the human commits, so a hallucination's blast radius…",
-      "publishedAt": "2026-09-12T08:46:14.000Z"
-    },
-    {
-      "slug": "f19e8fa0e1fe24de5833df59",
-      "guid": "https://dev.to/yaseenyk04/mongodb-aggregation-pipelines-stage-order-is-the-win-3cfk",
-      "title": "MongoDB Aggregation Pipelines: Stage Order Is the Win",
-      "link": "https://dev.to/yaseenyk04/mongodb-aggregation-pipelines-stage-order-is-the-win-3cfk",
-      "source": "DEV Community",
-      "sourceUrl": "https://dev.to/rss",
-      "summary": "[ EXECUTIVE TEARDOWN // TL;DR ] Put $match first and on indexed fields — every document eliminated early is one the rest of the pipeline never touches. $lookup is a join: run it late (after match/limit) and index the foreign field, or it degrades to repeated scans. Profile with …",
-      "publishedAt": "2026-09-12T08:45:45.000Z"
     },
     {
       "slug": "e1a2371d5002eb82a8e4fe58",
@@ -702,16 +712,6 @@
       "sourceUrl": "https://tympanus.net/codrops/feed/",
       "summary": "A look inside the first-ever Three.js Conference, straight from Paris.",
       "publishedAt": "2026-09-10T08:30:11.000Z"
-    },
-    {
-      "slug": "4fe0bd83ae77590bcf706977",
-      "guid": "https://medium.com/p/97b94d827d8a",
-      "title": "HIPAA Security for HealthTech: How to Protect ePHI from a Single Compromise",
-      "link": "https://itnext.io/hipaa-security-for-healthtech-how-to-protect-ephi-from-a-single-compromise-97b94d827d8a?source=rss----5b301f10ddcd---4",
-      "source": "itnext",
-      "sourceUrl": "https://itnext.io/feed",
-      "summary": "",
-      "publishedAt": "2026-09-10T08:02:32.000Z"
     },
     {
       "slug": "575647c69f612aea496d6038",

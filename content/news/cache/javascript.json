@@ -1,8 +1,38 @@
 {
   "category": "javascript",
   "label": "JavaScript",
-  "fetchedAt": "2026-09-12T09:39:15.051Z",
+  "fetchedAt": "2026-09-13T10:40:17.596Z",
   "items": [
+    {
+      "slug": "2d593b8d6c91a67cb65001c0",
+      "guid": "https://flaviocopes.com/software-was-never-worth-the-hours/",
+      "title": "Software was never worth the hours it took",
+      "link": "https://flaviocopes.com/software-was-never-worth-the-hours/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "AI can compress months of development into days. The cost of producing software is falling, but its value was never a tally of engineering hours.",
+      "publishedAt": "2026-09-13T09:00:00.000Z"
+    },
+    {
+      "slug": "7fc714267f087fe679a0df5e",
+      "guid": "https://flaviocopes.com/when-more-people-build-software/",
+      "title": "When more people are building software, what's the value of software?",
+      "link": "https://flaviocopes.com/when-more-people-build-software/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "AI is making software cheaper to create. That does not make software worthless, but it changes what people will pay for and where builders need to create value.",
+      "publishedAt": "2026-09-13T05:00:00.000Z"
+    },
+    {
+      "slug": "c5d7b89d93cda3669f002770",
+      "guid": "https://flaviocopes.com/concise-coding-agents/",
+      "title": "How to make AI harnesses talk less",
+      "link": "https://flaviocopes.com/concise-coding-agents/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Claude Code, Codex, and Cursor write too much? Turn on concise output styles, hide reasoning summaries, and write short output rules that stick.",
+      "publishedAt": "2026-09-12T13:00:00.000Z"
+    },
     {
       "slug": "3d09e2d9acac5b6675cb4d58",
       "guid": "https://flaviocopes.com/tldraw/",
@@ -312,36 +342,6 @@
       "sourceUrl": "https://flaviocopes.com/rss.xml",
       "summary": "Follow bun run app.ts through CLI dispatch, module resolution, TypeScript transpilation, JavaScriptCore, Node compatibility, and the event loop.",
       "publishedAt": "2026-09-05T13:00:00.000Z"
-    },
-    {
-      "slug": "b4dd0a82c00f33cd392bc72a",
-      "guid": "https://flaviocopes.com/cloudflare-images/",
-      "title": "A deep dive into Cloudflare Images",
-      "link": "https://flaviocopes.com/cloudflare-images/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "How Cloudflare Images works: resize, convert and crop images with a URL or a Worker, store uploads, serve private images, and what it costs. Lots of examples.",
-      "publishedAt": "2026-09-05T09:00:00.000Z"
-    },
-    {
-      "slug": "a33a51be209240922213cb41",
-      "guid": "https://flaviocopes.com/streaming-llm-responses-sse/",
-      "title": "How to stream LLM responses with server-sent events",
-      "link": "https://flaviocopes.com/streaming-llm-responses-sse/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Stream LLM text from a provider through your server to the browser with SSE, a correct buffered parser, cancellation, errors, security, and production checks.",
-      "publishedAt": "2026-09-05T07:00:00.000Z"
-    },
-    {
-      "slug": "b9f03c1ac34f3f6291b71bef",
-      "guid": "https://flaviocopes.com/ollama-local-llm/",
-      "title": "Run a local LLM with Ollama",
-      "link": "https://flaviocopes.com/ollama-local-llm/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Run an LLM locally with Ollama, choose a model that fits, call the chat API from Node.js, stream replies, request JSON, and understand the limits.",
-      "publishedAt": "2026-09-05T05:00:00.000Z"
     },
     {
       "slug": "db14c28728290e125ae5e130",
