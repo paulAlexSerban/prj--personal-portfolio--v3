@@ -1,127 +1,187 @@
 {
   "category": "web-dev",
   "label": "Web Development",
-  "fetchedAt": "2026-09-13T10:40:17.596Z",
+  "fetchedAt": "2026-09-14T11:00:59.519Z",
   "items": [
     {
-      "slug": "d459d04f9732678af48259e3",
-      "guid": "https://dev.to/haseeb_sheikh_0f627e74ba7/how-much-does-it-actually-cost-to-build-a-saas-in-2026-a-technical-breakdown-6hd",
-      "title": "How Much Does It Actually Cost to Build a SaaS in 2026? A Technical Breakdown",
-      "link": "https://dev.to/haseeb_sheikh_0f627e74ba7/how-much-does-it-actually-cost-to-build-a-saas-in-2026-a-technical-breakdown-6hd",
+      "slug": "7a3dc2a1c3e1e13700ea9cd8",
+      "guid": "https://dev.to/ransford_01/what-does-your-version-20-look-like-35ge",
+      "title": "What does your version 2.0 look like?",
+      "link": "https://dev.to/ransford_01/what-does-your-version-20-look-like-35ge",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "A SaaS application can look simple from the outside and still require significant backend engineering. A dashboard with ten screens might be cheap to build. A dashboard with multi-tenant data, role-based permissions, Stripe subscriptions, webhooks, integrations, background jobs,…",
-      "publishedAt": "2026-09-13T10:35:45.000Z"
+      "summary": "What does your version 2.0 look like? The above will sound like a software upgrade being spoken about by an Engineer, but in this case, it is not. This is a self-reflecting and thought-provoking question about one’s personal and professional growth. Well, after thinking about it…",
+      "publishedAt": "2026-09-14T10:58:23.000Z"
     },
     {
-      "slug": "d6e54d5fab229ba69a9705d7",
-      "guid": "https://dev.to/vormlyai/building-was-the-easy-part-distribution-is-the-10x-problem-1bp7",
-      "title": "Building was the easy part. Distribution is the 10x problem.",
-      "link": "https://dev.to/vormlyai/building-was-the-easy-part-distribution-is-the-10x-problem-1bp7",
+      "slug": "ee8321875c37e7567b0a6905",
+      "guid": "https://dev.to/fairdraftstudio/how-i-designed-a-claude-skill-that-turns-call-notes-into-action-items-146e",
+      "title": "How I designed a Claude skill that turns call notes into action items",
+      "link": "https://dev.to/fairdraftstudio/how-i-designed-a-claude-skill-that-turns-call-notes-into-action-items-146e",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "I shipped a AI creation saas platform solo — image, video, music and 3D generation, 30+ models behind a routing layer, subscription billing with two payment adapters, an admin backend, a Chrome extension. Then I launch, and nothing happens. There's no pnpm deploy for \"people kno…",
-      "publishedAt": "2026-09-13T10:30:20.000Z"
+      "summary": "After a client call, the same admin always follows: reread the notes, work out what was actually decided, write down who owes what by when, and send a recap before memories drift. That job is repetitive and has a clear right answer, which makes it a good fit for a Claude skill. …",
+      "publishedAt": "2026-09-14T10:55:35.000Z"
     },
     {
-      "slug": "6af5583e3b95ee0305358e3c",
-      "guid": "https://dev.to/iancowley/why-local-llms-dont-need-c-or-python-building-a-15mb-native-aot-inference-engine-in-net-10-1m2d",
-      "title": "Why Local LLMs Don't Need C++ or Python: Building a 15MB Native AOT Inference Engine in .NET 10",
-      "link": "https://dev.to/iancowley/why-local-llms-dont-need-c-or-python-building-a-15mb-native-aot-inference-engine-in-net-10-1m2d",
+      "slug": "5fe794fb46debb26ff76d36b",
+      "guid": "https://dev.to/lucian_lkb_1f009d/do-the-top-domains-actually-protect-their-email-spf-dmarc-and-mta-sts-measured-3n68",
+      "title": "Do the Top Domains Actually Protect Their Email? SPF, DMARC and MTA-STS, Measured",
+      "link": "https://dev.to/lucian_lkb_1f009d/do-the-top-domains-actually-protect-their-email-spf-dmarc-and-mta-sts-measured-3n68",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "Bare-Metal LLM Inference in Pure C#: Bypassing CUDA Toolkits and Native C++ DLLs The conventional consensus across AI engineering is simple: high-performance local LLM execution belongs exclusively to C++ runtimes, multi-gigabyte CUDA toolkits, and bindings over llama.cpp or vLL…",
-      "publishedAt": "2026-09-13T10:27:57.000Z"
+      "summary": "SPF, DMARC and MTA-STS are the DNS records that stop someone spoofing mail from your domain. 152 of the most-used domains to see enforce rather than just monitor, and one newer standard is still almost entirely missing. Of the 152 domains, 146 actually receive mail (they publish…",
+      "publishedAt": "2026-09-14T10:53:32.000Z"
     },
     {
-      "slug": "00c898c6cb67492379e610a2",
-      "guid": "https://dev.to/ajmal_hasan/rag-for-beginners-5-levels-of-building-an-ai-that-actually-knows-your-stuff-4mmg",
-      "title": "RAG for Beginners: 5 Levels of Building an AI That Actually Knows Your Stuff",
-      "link": "https://dev.to/ajmal_hasan/rag-for-beginners-5-levels-of-building-an-ai-that-actually-knows-your-stuff-4mmg",
+      "slug": "33c7ba7704013f9e92e04ae2",
+      "guid": "https://dev.to/ivanyatsenko/rails-escaped-the-input-the-xss-fired-anyway-3fo1",
+      "title": "Rails escaped the input. The XSS fired anyway.",
+      "link": "https://dev.to/ivanyatsenko/rails-escaped-the-input-the-xss-fired-anyway-3fo1",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "Have you ever wished ChatGPT could answer questions about your documents — your company's HR policy, your class notes, your product manual — instead of just whatever it happened to learn from the internet? That's exactly the problem RAG solves. If you've seen the term \"RAG\" floa…",
-      "publishedAt": "2026-09-13T10:26:44.000Z"
+      "summary": "A while back I was building a plain UTM-tracking feature on a large Rails + Vue app. Nothing exotic: read a query param, keep it in the session, drop it into the page. Rails escaped the value on the way out, the way it always does. I still got arbitrary JavaScript running in a v…",
+      "publishedAt": "2026-09-14T10:50:17.000Z"
     },
     {
-      "slug": "9163144840826b26e48db998",
-      "guid": "https://dev.to/yyt0901/rbac-sql-table-create-2ii7",
-      "title": "RBAC SQL table create",
-      "link": "https://dev.to/yyt0901/rbac-sql-table-create-2ii7",
+      "slug": "c1722162b7e9a2f92772d97d",
+      "guid": "https://dev.to/dusky_memom3103/we-deployed-a-voice-ai-agent-in-a-week-proving-its-roi-took-months-30ea",
+      "title": "We deployed a voice AI agent in a week. Proving its ROI took months.",
+      "link": "https://dev.to/dusky_memom3103/we-deployed-a-voice-ai-agent-in-a-week-proving-its-roi-took-months-30ea",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "the core is: User ↔ Role ↔ Permission sys_user 用户表 sys_role 角色表 sys_permission 权限表（菜单/按钮/接口） sys_user_role 用户-角色关联表（多对多） sys_role_permission 角色-权限关联表（多对多） CREATE TABLE `sys_user` ( `id` bigint NOT NULL COMMENT '用户ID', `username` varchar(50) NOT NULL COMMENT '登录账号', `password` va…",
-      "publishedAt": "2026-09-13T10:22:46.000Z"
+      "summary": "We rolled out a voice AI agent for our support line and had it live in about a week — the vendor demo was smooth, setup was mostly config, no big engineering lift. Then leadership asked the obvious question: \"so what's it actually saving us?\" That question took us months to answ…",
+      "publishedAt": "2026-09-14T10:40:25.000Z"
     },
     {
-      "slug": "6a960be9d98da4ef75cdd196",
-      "guid": "https://dev.to/gunalan22082002/restart-python-class2-kdc",
-      "title": "Restart Python class2",
-      "link": "https://dev.to/gunalan22082002/restart-python-class2-kdc",
+      "slug": "0b0037259fbec353e84b75d2",
+      "guid": "https://dev.to/mervyx/how-to-keep-unknowns-in-ai-assisted-company-research-1e26",
+      "title": "How to Keep Unknowns in AI-Assisted Company Research",
+      "link": "https://dev.to/mervyx/how-to-keep-unknowns-in-ai-assisted-company-research-1e26",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "What is predefined? >>> print(\"Gunalan\") Gunalan >>> len(\"karthi\") 6 >>> len is also a predefined function in Python, and it is used to find the length of a sequence. print is also a predefined function in Python, and it is used to print the sequence. If you want to see how many…",
-      "publishedAt": "2026-09-13T10:21:50.000Z"
+      "summary": "An AI-assisted CRM workflow can look more complete while becoming less trustworthy. The dangerous value is not an empty field; it is a plausible answer with no traceable evidence. This guide describes a small, evidence-bounded method for company research. It is a workflow recomm…",
+      "publishedAt": "2026-09-14T10:37:51.000Z"
     },
     {
-      "slug": "0d6355900ad6007af9da1ea5",
-      "guid": "https://dev.to/kielltampubolon/bayaran-sudah-masuk-tapi-status-masih-belum-dibayar-kenapa-webhook-pembayaran-gagal-diam-diam-5e9p",
-      "title": "Bayaran Sudah Masuk tapi Status Masih Belum Dibayar: Kenapa Webhook Pembayaran Gagal Diam-diam",
-      "link": "https://dev.to/kielltampubolon/bayaran-sudah-masuk-tapi-status-masih-belum-dibayar-kenapa-webhook-pembayaran-gagal-diam-diam-5e9p",
+      "slug": "6a91a4a7cf522d283addcf9e",
+      "guid": "https://dev.to/aliaksandrbandziuk/every-ai-assistant-reads-a-different-web-i-counted-the-citations-in-141-answers-387c",
+      "title": "Every AI assistant reads a different web. I counted the citations in 141 answers",
+      "link": "https://dev.to/aliaksandrbandziuk/every-ai-assistant-reads-a-different-web-i-counted-the-citations-in-141-answers-387c",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "Cerita ini terjadi di hampir setiap toko online kecil yang baru pasang pembayaran otomatis. Pelanggan bayar. M-banking bilang masuk. Admin cek saldo, iya, uangnya sudah ada. Tapi di dashboard toko, status pesanan masih \"menunggu pembayaran\". Staf yang sabar mengubah status manua…",
-      "publishedAt": "2026-09-13T10:21:43.000Z"
+      "summary": "I put the same 47 buying questions to ChatGPT, Perplexity and Google AI Mode on the same day, and classified every citation across the resulting 141 answers. The engineering-relevant part of the result is not the ranking. It is how differently the three engines behave as clients…",
+      "publishedAt": "2026-09-14T10:37:45.000Z"
     },
     {
-      "slug": "fe7aa4e09b3d4b62fc70b3ca",
-      "guid": "https://dev.to/sunnydachs/audit-your-excel-pivot-tables-before-they-break-a-read-only-cli-with-zero-dependencies-2794",
-      "title": "Audit your Excel pivot tables before they break — a read-only CLI with zero dependencies",
-      "link": "https://dev.to/sunnydachs/audit-your-excel-pivot-tables-before-they-break-a-read-only-cli-with-zero-dependencies-2794",
+      "slug": "2d352cb63cdad4dfe2005cf5",
+      "guid": "https://dev.to/meharshit/docs-as-evals-the-new-job-technical-writers-didnt-expect-269o",
+      "title": "Docs-as-Evals: The New Job Technical Writers Didn’t Expect",
+      "link": "https://dev.to/meharshit/docs-as-evals-the-new-job-technical-writers-didnt-expect-269o",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "If you work with Excel workbooks that have multiple pivot tables, you know the drill: a refresh breaks, Excel throws \"A PivotTable report cannot overlap another PivotTable report\", and nobody can say which pivot's configuration caused it. pivot-diag is a CLI that audits the pivo…",
-      "publishedAt": "2026-09-13T10:20:56.000Z"
+      "summary": "When I started my career in technical writing, the requirements and expectations were simple: learn the product, talk to some SMEs or engineers, get the job done by completing the documentation work, and work on the collected feedback. But with AI coming in, it doesn’t feel the …",
+      "publishedAt": "2026-09-14T10:37:34.000Z"
     },
     {
-      "slug": "0c87efd7936372c2132fde25",
-      "guid": "https://dev.to/darshan_dev/why-do-so-many-people-use-whatsapp-understanding-the-technology-and-network-effect-3312",
-      "title": "Why Do So Many People Use WhatsApp? Understanding the Technology and Network Effect",
-      "link": "https://dev.to/darshan_dev/why-do-so-many-people-use-whatsapp-understanding-the-technology-and-network-effect-3312",
+      "slug": "a550ec3d4074d3c5d507a41b",
+      "guid": "https://dev.to/lafine_systemsdesign/building-a-hardened-personal-linux-os-with-only-proven-tools-and-why-i-ultimately-abandoned-458h",
+      "title": "Building a hardened personal Linux OS with only proven tools, and why I ultimately abandoned cryptographic rootfs protection",
+      "link": "https://dev.to/lafine_systemsdesign/building-a-hardened-personal-linux-os-with-only-proven-tools-and-why-i-ultimately-abandoned-458h",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "Have you ever wondered why so many people use WhatsApp instead of Telegram, Signal, or other messaging apps? Most people use WhatsApp to send messages, make voice and video calls, share photos, send documents, and communicate through groups. But WhatsApp became popular for more …",
-      "publishedAt": "2026-09-13T10:19:44.000Z"
+      "summary": "I build a defensive security app for Linux called RoamSwitch as an independent developer. Lately I've been going a step further and building a hardened Linux OS from scratch, RoamSwitch OS. This post pulls together two things I wrote about it separately in Japanese, why I'm buil…",
+      "publishedAt": "2026-09-14T10:36:38.000Z"
     },
     {
-      "slug": "c87e9ad051d7a1e71ad023b9",
-      "guid": "https://dev.to/sam_manox/power-bi-technical-article-data-modelling-relationships-joins-21c7",
-      "title": "Power BI Technical Article: Data Modelling, Relationships & Joins",
-      "link": "https://dev.to/sam_manox/power-bi-technical-article-data-modelling-relationships-joins-21c7",
+      "slug": "ed5fd119290a4478fe3ec815",
+      "guid": "https://dev.to/objc_coder/certificate-configuration-management-and-installation-for-https-proxy-capture-with-traceeagle-52d7",
+      "title": "Certificate Configuration, Management, and Installation for HTTPS Proxy Capture with TraceEagle",
+      "link": "https://dev.to/objc_coder/certificate-configuration-management-and-installation-for-https-proxy-capture-with-traceeagle-52d7",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "Introduction Power BI is a business intelligence tool that enables the conversion of raw data into reports and dashboards. However, the quality of the Power BI report is influenced by how the data is prepared and structured in advance. Data modelling in Power BI involves designi…",
-      "publishedAt": "2026-09-13T10:18:07.000Z"
+      "summary": "Certificate Management and Installation To capture HTTPS with a proxy, the first step is to make devices and software trust this tool's root certificate—if not trusted, TLS errors occur, and you can only see garbled ciphertext. This article walks you through installing the certi…",
+      "publishedAt": "2026-09-14T10:35:49.000Z"
     },
     {
-      "slug": "d5caea23accae0e1ffe09da5",
-      "guid": "https://dev.to/adioof/astral-endorsing-python-council-candidates-is-corporate-capture-in-slow-motion-3aa2",
-      "title": "Astral endorsing Python Council candidates is corporate capture in slow motion",
-      "link": "https://dev.to/adioof/astral-endorsing-python-council-candidates-is-corporate-capture-in-slow-motion-3aa2",
+      "slug": "05bbc96a751de9960a96a8c4",
+      "guid": "https://dev.to/pckrishnadas88/building-distributed-systems-in-elixir-part-8-publish-subscribe-cl3",
+      "title": "Building Distributed Systems in Elixir: Part 8 — Publish / Subscribe",
+      "link": "https://dev.to/pckrishnadas88/building-distributed-systems-in-elixir-part-8-publish-subscribe-cl3",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "Recently, a venture-backed company implied to the Python community that they know best who should be governing Python packaging. A surprising move, right? Astral, the organization responsible for uv, openly supported four of the five individuals who stood for election to the fir…",
-      "publishedAt": "2026-09-13T10:17:31.000Z"
+      "summary": "In the previous part of this series, we built a Worker Pool from scratch. We saw how a coordinator process could distribute pending jobs one by one to a pool of available workers, strictly bounding concurrency and establishing demand-driven coordination: Job 1 ---> [ Coordinator…",
+      "publishedAt": "2026-09-14T10:35:43.000Z"
     },
     {
-      "slug": "55c9dc9ecf5c084dd698d317",
-      "guid": "https://dev.to/aditya_d_sharma/what-is-http-request-smuggling-how-can-two-servers-disagree-about-one-request-ljg",
-      "title": "What Is HTTP Request Smuggling? How Can Two Servers Disagree About One Request?",
-      "link": "https://dev.to/aditya_d_sharma/what-is-http-request-smuggling-how-can-two-servers-disagree-about-one-request-ljg",
+      "slug": "da5f7876bae67938b6f20a79",
+      "guid": "https://dev.to/im_nishant/dynamic-programming-isnt-hard-youve-just-been-introduced-to-it-wrong-g8h",
+      "title": "Dynamic Programming Isn't Hard. You've Just Been Introduced to It Wrong.",
+      "link": "https://dev.to/im_nishant/dynamic-programming-isnt-hard-youve-just-been-introduced-to-it-wrong-g8h",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "Here's a situation that should be impossible. A browser sends one HTTP request. That request passes through a reverse proxy on its way to a backend application server. Both components receive the same byte stream. Both speak HTTP/1.1. And yet the proxy thinks the request ends at…",
-      "publishedAt": "2026-09-13T10:07:47.000Z"
+      "summary": "Most people meet Dynamic Programming through a problem that looks like this: a 2D array, a nested loop, indices everywhere, and code that somehow produces a correct answer with no obvious explanation of why. They memorize the pattern, pass the interview, and still have no idea w…",
+      "publishedAt": "2026-09-14T10:34:42.000Z"
+    },
+    {
+      "slug": "f657dfde2d3e1240b82834b0",
+      "guid": "https://medium.com/p/a3bd26c9f284",
+      "title": "Life at the Port: Arrow, Parquet, Iceberg, and Polaris, Explained",
+      "link": "https://itnext.io/life-at-the-port-arrow-parquet-iceberg-and-polaris-explained-a3bd26c9f284?source=rss----5b301f10ddcd---4",
+      "source": "itnext",
+      "sourceUrl": "https://itnext.io/feed",
+      "summary": "A short story that walks through how these four Apache projects work together Continue reading on ITNEXT »",
+      "publishedAt": "2026-09-14T08:11:07.000Z"
+    },
+    {
+      "slug": "b948639a5ca91e56a43c758f",
+      "guid": "https://www.sitepoint.com/avif-jpg-image-format-workflow/",
+      "title": "Serving AVIF, Working in JPG: A Developer's Guide to Living Between Image Formats",
+      "link": "https://www.sitepoint.com/avif-jpg-image-format-workflow/?utm_source=rss",
+      "source": "SitePoint",
+      "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
+      "summary": "A developer's guide to living between AVIF and JPG - why serving AVIF is solved but working with it isn't, and how to bridge the gap without losing time. Serving AVIF, Working in JPG: A Developer's Guide to Living Between Image Formats on SitePoint.",
+      "publishedAt": "2026-09-14T06:22:57.000Z"
+    },
+    {
+      "slug": "029859cfe7c417fd5c913389",
+      "guid": "https://medium.com/p/ca6219e73b7f",
+      "title": "The Unexpected AI Stack: C# + .NET (Part 4)",
+      "link": "https://itnext.io/the-unexpected-ai-stack-c-net-part-4-ca6219e73b7f?source=rss----5b301f10ddcd---4",
+      "source": "itnext",
+      "sourceUrl": "https://itnext.io/feed",
+      "summary": "",
+      "publishedAt": "2026-09-13T22:07:27.000Z"
+    },
+    {
+      "slug": "4b62c09694d77e6158323ecb",
+      "guid": "https://www.sitepoint.com/tailwind-css-v4-migration-decouple-vite-postcss/",
+      "title": "Tailwind CSS v4 Migration: Decouple Vite and PostCSS Pipelines",
+      "link": "https://www.sitepoint.com/tailwind-css-v4-migration-decouple-vite-postcss/?utm_source=rss",
+      "source": "SitePoint",
+      "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
+      "summary": "Migrate your web application to Tailwind CSS v4 by decoupling Vite and PostCSS pipelines into native CSS toolchains. Tailwind CSS v4 Migration: Decouple Vite and PostCSS Pipelines on SitePoint.",
+      "publishedAt": "2026-09-13T20:27:24.000Z"
+    },
+    {
+      "slug": "6222ab093ed3df6488acb8c3",
+      "guid": "6aa6acdbc2e7110001d3fcad",
+      "title": "How to Ground LLM Answers With Citations and Cut Hallucinations",
+      "link": "https://kodekloud.com/blog/ground-llm-answers-with-citations/",
+      "source": "KodeKloud",
+      "sourceUrl": "https://kodekloud.com/blog/rss/",
+      "summary": "One sentence in a prompt stopped a model inventing answers entirely. Adding citations on top made it slightly worse, and the citations it did produce could not be trusted without checking them.",
+      "publishedAt": "2026-09-13T17:30:03.000Z"
+    },
+    {
+      "slug": "c18cb6c184a807044ef79744",
+      "guid": "https://tympanus.net/codrops/?p=120036",
+      "title": "Building Depth: Designing and Developing a 3D Renderer Inside Figma",
+      "link": "https://tympanus.net/codrops/2026/09/13/building-depth-designing-and-developing-a-3d-renderer-inside-figma/",
+      "source": "Codrops",
+      "sourceUrl": "https://tympanus.net/codrops/feed/",
+      "summary": "A look at how Depth came together, from building a 3D renderer inside Figma to designing a website that explores what it can do.",
+      "publishedAt": "2026-09-13T11:34:39.000Z"
     },
     {
       "slug": "31f9baaafca83cc4e85c6275",
@@ -564,26 +624,6 @@
       "publishedAt": "2026-09-10T17:58:04.000Z"
     },
     {
-      "slug": "a8dd1d4ce8257e16779daecc",
-      "guid": "https://medium.com/p/8b17e44be9cb",
-      "title": "Stop Juggling .NET SDKs: Meet dotnetup, the rustup for .NET",
-      "link": "https://itnext.io/dotnetup-dotnet-sdk-version-manager-8b17e44be9cb?source=rss----5b301f10ddcd---4",
-      "source": "itnext",
-      "sourceUrl": "https://itnext.io/feed",
-      "summary": "A cross-platform tool that installs and manages .NET SDKs and runtimes per repo from the global.json you already commit, with no admin… Continue reading on ITNEXT »",
-      "publishedAt": "2026-09-10T17:56:04.000Z"
-    },
-    {
-      "slug": "23c0c131b7ab6fae78eb3eaf",
-      "guid": "https://medium.com/p/6075d1888683",
-      "title": "The Model Is the Engine. The Harnes Makes It Reliable.",
-      "link": "https://itnext.io/the-model-is-the-engine-the-harness-makes-it-reliable-6075d1888683?source=rss----5b301f10ddcd---4",
-      "source": "itnext",
-      "sourceUrl": "https://itnext.io/feed",
-      "summary": "",
-      "publishedAt": "2026-09-10T17:53:53.000Z"
-    },
-    {
       "slug": "c4644dda2b10ce79b8b1cc09",
       "guid": "6aa2d8869b2d9f0001d262b5",
       "title": "How to Stream LLM Responses Token by Token With Server Sent Events",
@@ -962,46 +1002,6 @@
       "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
       "summary": "null Why Your JAR Analyzer Keeps Throwing OutOfMemoryError (And It's Not the JAR's Fault) on SitePoint.",
       "publishedAt": "2026-09-09T09:48:29.000Z"
-    },
-    {
-      "slug": "45c1b89729a6a1d6fbfa6396",
-      "guid": "https://dzone.com/articles/3682412",
-      "title": "Cutting Telemetry Volume Is Not the Same as Cutting Noise",
-      "link": "https://dzone.com/articles/telemetry-volume-noise",
-      "source": "DZone",
-      "sourceUrl": "https://feeds.dzone.com/home",
-      "summary": "Almost every conversation about observability budgets I have been in ultimately arrives at the same conclusion: “we need to reduce our telemetry volume.” That sentence is usually followed by a number. Thirty percent. Half. Whatever the finance spreadsheet needs it to be. Then so…",
-      "publishedAt": "2026-09-08T22:08:56.000Z"
-    },
-    {
-      "slug": "fb943fc19ffbcf7bcfaf9cb9",
-      "guid": "https://www.sitepoint.com/enforcing-architectural-boundaries-in-typescript-via-ast-import-graphs/",
-      "title": "Enforcing Architectural Boundaries in TypeScript via AST Import Graphs",
-      "link": "https://www.sitepoint.com/enforcing-architectural-boundaries-in-typescript-via-ast-import-graphs/?utm_source=rss",
-      "source": "SitePoint",
-      "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
-      "summary": "Large TypeScript codebases and monorepos frequently suffer from boundary rot and circular cross-domain imports when growing teams or AI codegen tools bypass layer encapsulation. Enforcing Architectural Boundaries in TypeScript via AST Import Graphs on SitePoint.",
-      "publishedAt": "2026-09-08T21:08:08.000Z"
-    },
-    {
-      "slug": "6007deb28348d5f9dc20cfca",
-      "guid": "https://www.sitepoint.com/dual-read-cache-consistency-for-live-database-migrations/",
-      "title": "Dual-Read Cache Consistency for Live Database Migrations",
-      "link": "https://www.sitepoint.com/dual-read-cache-consistency-for-live-database-migrations/?utm_source=rss",
-      "source": "SitePoint",
-      "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
-      "summary": "Decoupling databases during monolith-to-microservice refactoring risks dirty reads, stale cache hits, and silent data drift across data stores during live cutovers. Dual-Read Cache Consistency for Live Database Migrations on SitePoint.",
-      "publishedAt": "2026-09-08T21:08:06.000Z"
-    },
-    {
-      "slug": "8d6e072e5a7ae4bc77b66b60",
-      "guid": "https://dzone.com/articles/3681589",
-      "title": "Apple-OpenAI Fight Escalates With New MacBook Evidence",
-      "link": "https://dzone.com/articles/apple-openai-fight-escalates-with-new-macbook-evid",
-      "source": "DZone",
-      "sourceUrl": "https://feeds.dzone.com/home",
-      "summary": "Apple is turning a former engineer’s old MacBook into the latest flashpoint in its increasingly bitter fight with OpenAI. Apple told a federal court Monday that evidence recovered from former engineer Chang Liu’s Apple-issued MacBook strengthens its claims that confidential comp…",
-      "publishedAt": "2026-09-08T19:23:59.000Z"
     }
   ]
 }
