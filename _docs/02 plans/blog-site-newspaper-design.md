@@ -75,21 +75,21 @@ isProject: false
 ##### G1.O1.P1 - Quiz visual baseline (net)
 - **S1** - Capture quiz screenshots (`/`,`/browse`,`/sets`,`/stats`,`/settings`) @375/1280, light+dark -> `.parity-baseline-quiz/` [NEW]. (Manual; human step.)
 
-##### G1.O1.P2 - Shared component classes · Depends-on: P1.S1
+##### G1.O1.P2 - Shared component classes - Depends-on: P1.S1
 - **S1** - Add to `shared/ui/src/styles/theme.css` `@layer components`: `.kicker` (small-caps + `text-slate-ink`), `.deck` (`italic text-charcoal`), `.card-ruled` (`border-t-[3px] border-ink pt-4`). Reversible: revert PR. Done-when: `shared--ui` typecheck green.
 
-##### G1.O1.P3 - Route quiz chrome through vocabulary · Depends-on: P2.S1
+##### G1.O1.P3 - Route quiz chrome through vocabulary - Depends-on: P2.S1
 - **S1** - Normalize `Masthead.tsx:8-34`: inline display-font `style`->`font-display`; `text-[var(--ink-black)]`->`text-ink`; `text-[var(--slate)]`->`text-slate-ink`; `smallcaps text-[var(--slate)]`->`kicker`. Visual-neutral. Done-when: matches baseline + vitest green.
 - **S2** - Normalize `PageLayout.tsx:8-15`: `bg-[var(--newsprint)]`->`bg-newsprint`, `text-[var(--ink-black)]`->`text-ink`, footer `smallcaps`->`kicker`. Done-when: matches baseline.
 - Remaining quiz routes: leave-as-is (incremental adoption).
 
 #### G1.O2 - Blog adopts the newspaper design  [expand/improve]
 
-##### G1.O2.P1 - Masthead + shell · Depends-on: O1.P2.S1
+##### G1.O2.P1 - Masthead + shell - Depends-on: O1.P2.S1
 - **S1** - `SiteHeader.astro` -> masthead: `grain`, dateline row (`kicker`), centered "Paul Serban" `font-display font-black text-[clamp(2.5rem,8vw,5rem)]` + tagline `deck`, `rule-double`, smallcaps nav (`kicker`), `border-b-[3px] border-ink`. Preserve nav links + active state.
 - **S2** - `BaseLayout.astro` body -> `bg-newsprint text-ink min-h-screen`.
 
-##### G1.O2.P2 - Cards & headers · Depends-on: O1.P2.S1
+##### G1.O2.P2 - Cards & headers - Depends-on: O1.P2.S1
 - **S1** - `PostCard.astro` -> `card-ruled` + `kicker` meta + `font-display text-2xl` title + `deck` excerpt + `rule-thin`.
 - **S2** - `index.astro` + listings + `tags/[tag].astro` section headers -> `kicker` + `font-display text-4xl` + `deck`; "View all" -> `stamp stamp-ghost text-sm px-3 py-1.5`.
 - **S3** - `HeroBanner.astro` -> kicker/headline/deck.
@@ -97,7 +97,7 @@ isProject: false
 ##### G1.O2.P3 - Footer
 - **S1** - `SiteFooter.astro` -> centered `kicker` tagline + `border-t-2 border-ink`.
 
-#### G1.O3 - Blog dark mode toggle  [expand] · Depends-on: O2.P1.S1
+#### G1.O3 - Blog dark mode toggle  [expand] - Depends-on: O2.P1.S1
 - **S1** - `global.css`: add `@custom-variant dark (&:is(.dark *));` + `@import 'tw-animate-css';`; add `tw-animate-css` to blog `package.json`.
 - **S2** - `BaseLayout.astro` `<head>`: `<script is:inline>` reading `localStorage.theme`/`prefers-color-scheme`, toggling `documentElement.classList` pre-paint (no FOUC). Mirrors `lib/theme.ts:7-17`.
 - **S3** - Theme toggle `<button class="kicker">` in masthead with inline script flipping `.dark` + persisting `localStorage.theme`.

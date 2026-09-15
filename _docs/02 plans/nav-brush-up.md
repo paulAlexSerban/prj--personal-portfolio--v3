@@ -12,9 +12,9 @@ Now I have all the context I need.
 - `shared/navigation/src/types.ts:1-5` - `NavLink = { label, href, active? }`; no discriminated-union support
 - `shared/navigation/src/MobileNav.tsx:8-43` - takes `links: NavLink[]`, renders flat `<a>` list inside a Sheet
 - `shared/navigation/index.ts:1-3` - exports `MobileNav`, `urls.ts`, `types.ts`; no dropdown exported yet
-- `frontend/sites/portfolio-site/src/components/SiteHeader.astro:5-11` - 6 links: Home · Experience · Portfolio · Blog · Quiz · CV; `MobileNav` hydrated as `client:load`
+- `frontend/sites/portfolio-site/src/components/SiteHeader.astro:5-11` - 6 links: Home - Experience - Portfolio - Blog - Quiz - CV; `MobileNav` hydrated as `client:load`
 - `frontend/sites/portfolio-site/src/components/SiteFooter.astro:4-11` - same 6 links including CV
-- `frontend/sites/blog-site/src/components/SiteHeader.astro:5-11` - 5 links: Posts · Snippets · Book Notes · Portfolio · Quiz; `MobileNav` as `client:load`
+- `frontend/sites/blog-site/src/components/SiteHeader.astro:5-11` - 5 links: Posts - Snippets - Book Notes - Portfolio - Quiz; `MobileNav` as `client:load`
 - `frontend/apps/quiz-web-app/src/components/layout/Masthead.tsx:15-22` - 6 internal `navItems` (TanStack `Link`), then 2 cross-app `<a>` tags; Sheet inline (does **not** use shared `MobileNav`)
 - `shared/navigation/src/urls.ts:53-54` - `externalLinkAttrs` already handles `target`/`rel` for cross-app links
 - Portfolio's `SiteHeader.astro` + `SiteFooter.astro` already import `siteUrls.cv` - CV page exists at `/cv/`; removing it from nav does not delete the route
@@ -99,7 +99,7 @@ All `[BLOCKING]` questions were answered interactively. No open questions remain
 
 **Intent:** Add a new export without touching any existing export; callers can adopt it independently.
 
-**References:** `shared/navigation/src/NavDropdown.tsx` [NEW] · `shared/navigation/index.ts:3` (append export)
+**References:** `shared/navigation/src/NavDropdown.tsx` [NEW] - `shared/navigation/index.ts:3` (append export)
 
 **Gates:** Zero existing behavior changed; no characterization net needed.
 
@@ -115,7 +115,7 @@ All `[BLOCKING]` questions were answered interactively. No open questions remain
 **G1.O1.P1.S1 - Create `shared/navigation/src/NavDropdown.tsx`** [expand]
 
 - **Intent:** Implement a pure-CSS hover+focus-within dropdown React component, consistent with existing `MobileNav` styling conventions.
-- **References:** `shared/navigation/src/NavDropdown.tsx` [NEW] · `shared/navigation/src/urls.ts:53-54` (import `externalLinkAttrs`) · `shared/navigation/src/types.ts:1-5` (import `NavLink`)
+- **References:** `shared/navigation/src/NavDropdown.tsx` [NEW] - `shared/navigation/src/urls.ts:53-54` (import `externalLinkAttrs`) - `shared/navigation/src/types.ts:1-5` (import `NavLink`)
 - **Depends-on:** none
 - **Technique:** none (new file)
 - **Reversible by:** delete the file; no callers yet
@@ -148,7 +148,7 @@ The component accepts `{ label: string; links: NavLink[] }`. It wraps a `<div cl
 
 **Intent:** CV appears in neither the stated nav spec nor the confirmed target set. Removing two link entries reduces nav items from 6 to 5 and eliminates the inconsistency. The `/cv/` route is **not** removed.
 
-**References:** `frontend/sites/portfolio-site/src/components/SiteHeader.astro:5-11` · `frontend/sites/portfolio-site/src/components/SiteFooter.astro:4-11`
+**References:** `frontend/sites/portfolio-site/src/components/SiteHeader.astro:5-11` - `frontend/sites/portfolio-site/src/components/SiteFooter.astro:4-11`
 
 **Safety-net assessment:** Unprotected markup - justified above (visual-only change, CI build catches TypeScript errors, manual gate covers rendering).
 
@@ -193,9 +193,9 @@ The component accepts `{ label: string; links: NavLink[] }`. It wraps a `<div cl
 
 #### G1.O3 - Add "Sites ▾" hover dropdown to portfolio desktop nav [expand]
 
-**Intent:** Replace the standalone Blog and Quiz cross-app links with a single `NavDropdown` island, reducing top-level nav items from 5 (post-CV removal) to 4 (Home · Experience · Portfolio · Sites ▾).
+**Intent:** Replace the standalone Blog and Quiz cross-app links with a single `NavDropdown` island, reducing top-level nav items from 5 (post-CV removal) to 4 (Home - Experience - Portfolio - Sites ▾).
 
-**References:** `frontend/sites/portfolio-site/src/components/SiteHeader.astro` · `shared/navigation/src/NavDropdown.tsx` [NEW] · `frontend/sites/portfolio-site/astro.config.mjs` (already has `shared--navigation` in `noExternal` and `react.include`)
+**References:** `frontend/sites/portfolio-site/src/components/SiteHeader.astro` - `shared/navigation/src/NavDropdown.tsx` [NEW] - `frontend/sites/portfolio-site/astro.config.mjs` (already has `shared--navigation` in `noExternal` and `react.include`)
 
 ---
 
@@ -209,7 +209,7 @@ The component accepts `{ label: string; links: NavLink[] }`. It wraps a `<div cl
 **G1.O3.P1.S1 - Rewrite navLinks in portfolio SiteHeader to use NavDropdown** [expand]
 
 - **Intent:** Remove Blog and Quiz from the flat `navLinks` array; import `NavDropdown` from the shared package; render it `client:load` after the desktop nav links; keep `mobileLinks` (passed to `MobileNav`) intact with Blog and Quiz still present as flat links for the mobile Sheet.
-- **References:** `frontend/sites/portfolio-site/src/components/SiteHeader.astro:2` (add import) · `:5-11` (remove Blog, Quiz entries from navLinks) · `:36-50` (desktop nav block - add `NavDropdown` after mapped links) · `:16` (mobileLinks - keep Blog+Quiz by building a separate `crossAppLinks` array passed to MobileNav at the bottom of the mobile list)
+- **References:** `frontend/sites/portfolio-site/src/components/SiteHeader.astro:2` (add import) - `:5-11` (remove Blog, Quiz entries from navLinks) - `:36-50` (desktop nav block - add `NavDropdown` after mapped links) - `:16` (mobileLinks - keep Blog+Quiz by building a separate `crossAppLinks` array passed to MobileNav at the bottom of the mobile list)
 - **Depends-on:** G1.O1.P1.S2
 - **Technique:** expand (new island rendered alongside existing links)
 - **Reversible by:** revert SiteHeader.astro
@@ -239,8 +239,8 @@ The component accepts `{ label: string; links: NavLink[] }`. It wraps a `<div cl
 
 **G1.O4.P1.S1 - Rewrite navLinks in blog SiteHeader to use NavDropdown** [expand]
 
-- **Intent:** Remove Portfolio and Quiz from the flat `navLinks` (leaving Posts · Snippets · Book Notes); import `NavDropdown`; render it `client:load` with `[{ label:'Portfolio', href: siteUrls.portfolio }, { label:'Quiz', href: siteUrls.quiz }]`; keep both in `mobileLinks` via a `crossAppLinks` array identical in pattern to G1.O3.P1.S1.
-- **References:** `frontend/sites/blog-site/src/components/SiteHeader.astro:2` (import) · `:5-11` (remove Portfolio, Quiz from navLinks) · `:38-51` (desktop nav block)
+- **Intent:** Remove Portfolio and Quiz from the flat `navLinks` (leaving Posts - Snippets - Book Notes); import `NavDropdown`; render it `client:load` with `[{ label:'Portfolio', href: siteUrls.portfolio }, { label:'Quiz', href: siteUrls.quiz }]`; keep both in `mobileLinks` via a `crossAppLinks` array identical in pattern to G1.O3.P1.S1.
+- **References:** `frontend/sites/blog-site/src/components/SiteHeader.astro:2` (import) - `:5-11` (remove Portfolio, Quiz from navLinks) - `:38-51` (desktop nav block)
 - **Depends-on:** G1.O1.P1.S2
 - **Technique:** expand
 - **Reversible by:** revert blog SiteHeader.astro
@@ -270,14 +270,14 @@ The component accepts `{ label: string; links: NavLink[] }`. It wraps a `<div cl
 **G1.O5.P1.S1 - Restructure quiz Masthead.tsx into two-row nav** [improve]
 
 - **Intent:** Split the current single `<div className="flex items-center justify-between mt-2 ...">` block into two blocks: (1) a row with `formatDateline()` on the left and a `NavDropdown` + mobile Sheet trigger on the right; (2) a `<nav>` with only the 6 internal TanStack `Link` items, visible `md:flex` below the separator. In the mobile Sheet, add a `<p className="kicker ...">Other Sites</p>` label before the cross-app `<a>` links.
-- **References:** `frontend/apps/quiz-web-app/src/components/layout/Masthead.tsx:1` (add `NavDropdown` import) · `:15-22` (`navItems` unchanged) · `:41-67` (replace the single nav row block) · `:85-111` (mobile Sheet - add section divider before cross-app links)
+- **References:** `frontend/apps/quiz-web-app/src/components/layout/Masthead.tsx:1` (add `NavDropdown` import) - `:15-22` (`navItems` unchanged) - `:41-67` (replace the single nav row block) - `:85-111` (mobile Sheet - add section divider before cross-app links)
 - **Depends-on:** G1.O1.P1.S2
 - **Technique:** parallel-change - new rows added, old row removed, in one atomic step (small enough; single file)
 - **Reversible by:** revert Masthead.tsx
 - **Gates:**
   - TDD: N/A - layout change; no routing or business logic changed
   - BDD: N/A
-  - Manual: desktop - confirm two visible rows; "Sites ▾" in row 1 hover-reveals Portfolio and Blog; row 2 shows Posts · Questions · Tags · My Sets · Progress · Settings with TanStack active-link styling intact. Mobile - Sheet shows internal items, then a "Other Sites" label, then Portfolio and Blog links.
+  - Manual: desktop - confirm two visible rows; "Sites ▾" in row 1 hover-reveals Portfolio and Blog; row 2 shows Posts - Questions - Tags - My Sets - Progress - Settings with TanStack active-link styling intact. Mobile - Sheet shows internal items, then a "Other Sites" label, then Portfolio and Blog links.
   - Deliverable: `pnpm typecheck` green; browser manual check passes on both desktop and mobile viewport. Done-when: both conditions true.
 
 ---

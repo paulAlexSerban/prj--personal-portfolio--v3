@@ -22,7 +22,7 @@ const typeLabel: Record<BlogContentType, string> = {
 };
 
 const href = postDetailPath(type, post.slug);
-const meta = [typeLabel[type], post.date].filter(Boolean).join(' · ');
+const meta = [typeLabel[type], post.date].filter(Boolean).join(' - ');
 ---
 
 <article class="card-ruled border-b border-rule pb-4">

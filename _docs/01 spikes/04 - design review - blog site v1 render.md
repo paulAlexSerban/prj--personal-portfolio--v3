@@ -19,7 +19,7 @@ The problems are specific and fixable without a design rethink.
 
 ### F1 - Tags are visually invisible [HIGH]
 
-**What the screen shows:** Tags render as plain lowercase text (`#active-recall · #bloom-s-taxonomy…`) with no border, no background, no visual weight. They look like a continuation of the excerpt body copy.
+**What the screen shows:** Tags render as plain lowercase text (`#active-recall - #bloom-s-taxonomy…`) with no border, no background, no visual weight. They look like a continuation of the excerpt body copy.
 
 **Why it happened:** `TagList.astro:19` uses `hover:bg-highlight` (only on hover) + `rounded-md` (which is `border-radius: 0` because the design system sets `--radius: 0`) and no persistent border or background. The result is unbordered, backgroundless links that are indistinguishable from surrounding text.
 

@@ -145,8 +145,8 @@ function MetaRow({
             )}
             {(isIgnored || isSuspended) && (
                 <div className="col-span-full">
-                    <span className="smallcaps text-[10px] text-[var(--slate)]">Status · </span>
-                    <span className="font-bold">{[isIgnored && 'Ignored', isSuspended && 'Suspended'].filter(Boolean).join(' · ')}</span>
+                    <span className="smallcaps text-[10px] text-[var(--slate)]">Status - </span>
+                    <span className="font-bold">{[isIgnored && 'Ignored', isSuspended && 'Suspended'].filter(Boolean).join(' - ')}</span>
                 </div>
             )}
             {question.tags.length > 0 && (
@@ -208,7 +208,7 @@ function AnswerSection({ question }: { question: ExportedQuestion }) {
                         >
                             <span className="smallcaps text-[10px] mr-2 text-[var(--slate)]">{opt.key}</span>
                             <CardRenderer html={opt.label} compiledHtml={opt.labelHtml} inline />
-                            {opt.isCorrect && <span className="smallcaps text-[10px] ml-2 text-[var(--slate)]">· correct</span>}
+                            {opt.isCorrect && <span className="smallcaps text-[10px] ml-2 text-[var(--slate)]">- correct</span>}
                         </li>
                     ))}
                 </ul>

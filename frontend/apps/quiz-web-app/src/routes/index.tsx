@@ -92,7 +92,7 @@ function HomeView() {
     <PageLayout>
       <section className="flex flex-wrap items-end justify-between gap-4 mb-6">
         <div>
-          <p className="smallcaps text-sm text-[var(--slate)]">Front Page · The Catalogue</p>
+          <p className="smallcaps text-sm text-[var(--slate)]">Front Page - The Catalogue</p>
           <h2 className="text-4xl font-bold" style={{ fontFamily: "var(--font-display)" }}>
             Browse Posts
           </h2>
@@ -163,7 +163,7 @@ function HomeView() {
               return (
                 <article key={post.slug} className="border-t-[3px] border-[var(--ink-black)] pt-4">
                   <p className="smallcaps text-[10px] text-[var(--slate)] mb-1">
-                    {post.type} · {post.questionCount} questions
+                    {post.type} - {post.questionCount} questions
                   </p>
                   {isAdded ? (
                     <Link
@@ -193,7 +193,7 @@ function HomeView() {
                   )}
                   {post.tags.length > 0 && (
                     <p className="mt-2 text-xs smallcaps text-[var(--slate)]">
-                      {post.tags.slice(0, 4).join(" · ")}
+                      {post.tags.slice(0, 4).join(" - ")}
                       {post.tags.length > 4 ? " …" : ""}
                     </p>
                   )}

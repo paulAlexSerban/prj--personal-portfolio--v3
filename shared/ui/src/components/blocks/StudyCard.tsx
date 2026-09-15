@@ -95,7 +95,7 @@ export function StudyCard({
 
             <article className="bg-[var(--aged-white)] border-[3px] border-[var(--ink-black)] grain p-3 md:p-8 min-h-[460px] flex flex-col" data-tour-target="study-card">
                 <p className="smallcaps text-[10px] text-[var(--slate)] mb-1 md:mb-4">
-                    {card.cardType} card · ease {card.easeFactor.toFixed(2)} · ivl {card.interval}d
+                    {card.cardType} card - ease {card.easeFactor.toFixed(2)} - ivl {card.interval}d
                 </p>
 
                 <QuestionRenderer key={question.slug} question={question} revealed={revealed} onReveal={onReveal} onGraded={onGraded} onRetry={onRetry} />
@@ -125,17 +125,17 @@ export function StudyCard({
                                             {label}
                                         </Stamp>
                                         <p className="smallcaps text-[10px] text-[var(--slate)] mt-1" style={{ fontFamily: 'var(--font-mono)' }}>
-                                            {disabled ? '-' : `${ratingPreview(r)} · ${r}`}
+                                            {disabled ? '-' : `${ratingPreview(r)} - ${r}`}
                                         </p>
                                     </div>
                                 );
                             })}
                         </div>
                         <p className="smallcaps text-sm text-[var(--slate)] mt-3 text-center italic" title="Content is read-only - edit in the source content repo">
-                            Read-only · content edited in source
+                            Read-only - content edited in source
                             {blogPostHref && (
                                 <>
-                                    {' · '}
+                                    {' - '}
                                     <a
                                         href={blogPostHref}
                                         target="_blank"

@@ -10,7 +10,7 @@ import {
 } from "./learning";
 import { addDaysISO, daysBetween } from "../utils/dates";
 
-/** FSRS-5 forgetting-curve constants. R(t) = (1 + FACTOR·t/S)^DECAY. */
+/** FSRS-5 forgetting-curve constants. R(t) = (1 + FACTOR-t/S)^DECAY. */
 export const DECAY = -0.5;
 export const FACTOR = 19 / 81;
 

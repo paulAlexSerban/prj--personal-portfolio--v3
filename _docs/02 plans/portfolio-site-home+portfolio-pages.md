@@ -65,56 +65,56 @@
 
 - **G1.O1.P1.S1 - Create `package.json`**
   - Intent: Register the workspace package with the same toolchain as blog-site.
-  - References: `frontend/sites/blog-site/package.json:1-39` (copy) · `frontend/sites/portfolio-site/package.json` [NEW]
+  - References: `frontend/sites/blog-site/package.json:1-39` (copy) - `frontend/sites/portfolio-site/package.json` [NEW]
   - Depends-on: none
   - Gates: TDD N/A (manifest). BDD N/A. Manual N/A. Deliverable: `package.json` with `name:"@prj--personal-portfolio--v3/frontend--portfolio-site"`, same scripts/deps/devDeps as blog-site. Done-when: `pnpm install` completes and the package resolves under the workspace.
 
 - **G1.O1.P1.S2 - Create `astro.config.mjs`**
   - Intent: Static SSG config with portfolio `site` URL.
-  - References: `frontend/sites/blog-site/astro.config.mjs:9-33` (copy, change `site:'https://paulserban.eu'`, change react `include` to `'**/frontend/sites/portfolio-site/**'`, `mdx()` with no components map) · `frontend/sites/portfolio-site/astro.config.mjs` [NEW]
+  - References: `frontend/sites/blog-site/astro.config.mjs:9-33` (copy, change `site:'https://paulserban.eu'`, change react `include` to `'**/frontend/sites/portfolio-site/**'`, `mdx()` with no components map) - `frontend/sites/portfolio-site/astro.config.mjs` [NEW]
   - Depends-on: S1
   - Gates: TDD N/A. BDD N/A. Manual N/A. Deliverable: config file. Done-when: `astro check` loads config without error (after S10).
 
 - **G1.O1.P1.S3 - Create `tsconfig.json`, `src/env.d.ts`, `.gitignore`**
   - Intent: Strict TS + Astro client types + ignore `dist`/`.astro`.
-  - References: `frontend/sites/blog-site/tsconfig.json:1-11`, `frontend/sites/blog-site/src/env.d.ts:1-2` (copy) · `frontend/sites/portfolio-site/{tsconfig.json,src/env.d.ts,.gitignore}` [NEW]
+  - References: `frontend/sites/blog-site/tsconfig.json:1-11`, `frontend/sites/blog-site/src/env.d.ts:1-2` (copy) - `frontend/sites/portfolio-site/{tsconfig.json,src/env.d.ts,.gitignore}` [NEW]
   - Depends-on: S1
   - Gates: TDD N/A. BDD N/A. Manual N/A. Deliverable: three files. Done-when: files exist; `tsc --noEmit` runnable (after pages exist).
 
 - **G1.O1.P1.S4 - Create `src/styles/global.css` + `public/placeholder-cover.png`**
   - Intent: Tailwind v4 entry importing the shared newspaper theme; cover placeholder for cards/hero.
-  - References: `frontend/sites/blog-site/src/styles/global.css:1-21` (copy; drop the `.quiz-widget-slot` block - no quiz widget here) · copy `frontend/sites/blog-site/public/placeholder-cover.png` · `frontend/sites/portfolio-site/src/styles/global.css` [NEW] · `frontend/sites/portfolio-site/public/placeholder-cover.png` [NEW]
+  - References: `frontend/sites/blog-site/src/styles/global.css:1-21` (copy; drop the `.quiz-widget-slot` block - no quiz widget here) - copy `frontend/sites/blog-site/public/placeholder-cover.png` - `frontend/sites/portfolio-site/src/styles/global.css` [NEW] - `frontend/sites/portfolio-site/public/placeholder-cover.png` [NEW]
   - Depends-on: S1
   - Gates: TDD N/A. BDD N/A. Manual: theme tokens (`bg-newsprint`, `text-ink`) apply after S10. Deliverable: css + asset. Done-when: files exist; `@source` globs resolve at build.
 
 - **G1.O1.P1.S5 - Create `src/lib/db.ts`**
   - Intent: Build-time SQLite opener (identical depth ⇒ identical path).
-  - References: `frontend/sites/blog-site/src/lib/db.ts:1-17` (copy verbatim) · `frontend/sites/portfolio-site/src/lib/db.ts` [NEW]
+  - References: `frontend/sites/blog-site/src/lib/db.ts:1-17` (copy verbatim) - `frontend/sites/portfolio-site/src/lib/db.ts` [NEW]
   - Depends-on: S1
   - Gates: TDD N/A - copy of verified file; behavior exercised by O3/O4 builds. BDD N/A. Manual N/A. Deliverable: `db.ts`. Done-when: imports type-check; `openDb()` returns a connection in a smoke build.
 
 - **G1.O1.P1.S6 - Create `SiteHeader.astro` + `MobileNav.tsx` + `components.json`**
   - Intent: Persistent responsive nav (NAV-01/04) with Home/Portfolio/Blog/Quiz (NAV-02) and active-state (NAV-03).
-  - References: `frontend/sites/blog-site/src/components/SiteHeader.astro:1-89`, `MobileNav.tsx:1-46`, `components.json:1-22` (copy; set `navLinks=[{Home,'/'},{Portfolio,'/portfolio/'},{Blog,'https://blog.paulserban.eu/'},{Quiz App, QUIZ_APP_URL}]`; add `const QUIZ_APP_URL='https://quiz.paulserban.eu/'; // TODO confirm`; `isActive` only for internal `/` paths) · `frontend/sites/portfolio-site/src/components/{SiteHeader.astro,MobileNav.tsx}` [NEW] · `frontend/sites/portfolio-site/components.json` [NEW]
+  - References: `frontend/sites/blog-site/src/components/SiteHeader.astro:1-89`, `MobileNav.tsx:1-46`, `components.json:1-22` (copy; set `navLinks=[{Home,'/'},{Portfolio,'/portfolio/'},{Blog,'https://blog.paulserban.eu/'},{Quiz App, QUIZ_APP_URL}]`; add `const QUIZ_APP_URL='https://quiz.paulserban.eu/'; // TODO confirm`; `isActive` only for internal `/` paths) - `frontend/sites/portfolio-site/src/components/{SiteHeader.astro,MobileNav.tsx}` [NEW] - `frontend/sites/portfolio-site/components.json` [NEW]
   - Depends-on: S1
   - Trade-off: external links (Blog/Quiz) get no active state (correct - different origins).
   - Gates: TDD N/A. BDD N/A. Manual: on `/`, "Home" shows `aria-current="page"`; mobile `Sheet` opens/closes. Deliverable: header + island + shadcn aliases. Done-when: header renders with 4 links; toggling dark mode persists across reload.
 
 - **G1.O1.P1.S7 - Create `SiteFooter.astro`**
   - Intent: Footer nav + credit line.
-  - References: `frontend/sites/blog-site/src/components/SiteFooter.astro:1-29` (copy; set links Home/Portfolio/Blog/Quiz) · `frontend/sites/portfolio-site/src/components/SiteFooter.astro` [NEW]
+  - References: `frontend/sites/blog-site/src/components/SiteFooter.astro:1-29` (copy; set links Home/Portfolio/Blog/Quiz) - `frontend/sites/portfolio-site/src/components/SiteFooter.astro` [NEW]
   - Depends-on: S1
   - Gates: TDD N/A. BDD N/A. Manual N/A. Deliverable: footer. Done-when: renders within BaseLayout.
 
 - **G1.O1.P1.S8 - Create `TagList.astro` + `HeroBanner.astro`**
   - Intent: Shared display components reused by project cards and the detail page.
-  - References: `frontend/sites/blog-site/src/components/TagList.astro:1-27`, `HeroBanner.astro:1-35` (copy verbatim; both use `shared--ui/cover-image` + `TagRow`) · `frontend/sites/portfolio-site/src/components/{TagList.astro,HeroBanner.astro}` [NEW]
+  - References: `frontend/sites/blog-site/src/components/TagList.astro:1-27`, `HeroBanner.astro:1-35` (copy verbatim; both use `shared--ui/cover-image` + `TagRow`) - `frontend/sites/portfolio-site/src/components/{TagList.astro,HeroBanner.astro}` [NEW]
   - Depends-on: S1
   - Gates: TDD N/A. BDD N/A. Manual N/A. Deliverable: two components. Done-when: type-check passes; render in a consuming page.
 
 - **G1.O1.P1.S9 - Create `src/layouts/BaseLayout.astro`**
   - Intent: HTML shell, SEO/OG head, dark-mode boot script, header/main/footer.
-  - References: `frontend/sites/blog-site/src/layouts/BaseLayout.astro:1-59` (copy; change default `pageDescription` to a portfolio string) · `frontend/sites/portfolio-site/src/layouts/BaseLayout.astro` [NEW]
+  - References: `frontend/sites/blog-site/src/layouts/BaseLayout.astro:1-59` (copy; change default `pageDescription` to a portfolio string) - `frontend/sites/portfolio-site/src/layouts/BaseLayout.astro` [NEW]
   - Depends-on: S4, S6, S7
   - Gates: TDD N/A. BDD N/A. Manual: `<html>` gets `.dark` per stored/preferred theme. Deliverable: layout. Done-when: imports resolve; used by S10.
 
@@ -136,19 +136,19 @@
 
 - **G1.O2.P1.S1 - Author `profile` fixture**
   - Intent: Singleton profile JSON.
-  - References: required keys `name,headline,bio`; optional `photo_url,github_url,linkedin_url` (`tools/json-ingest/src/helpers/normalise.ts:23-37`) · `frontend/sites/portfolio-site/test-content/publish/profile/profile.json` [NEW]
+  - References: required keys `name,headline,bio`; optional `photo_url,github_url,linkedin_url` (`tools/json-ingest/src/helpers/normalise.ts:23-37`) - `frontend/sites/portfolio-site/test-content/publish/profile/profile.json` [NEW]
   - Depends-on: none
   - Gates: TDD N/A. BDD N/A. Manual N/A. Deliverable: `profile.json`. Done-when: valid JSON with the 3 required keys + a `photo_url` pointing to `/placeholder-cover.png` (or an asset URL).
 
 - **G1.O2.P1.S2 - Author `skills` fixture**
   - Intent: Skills across ≥2 categories with `sort_order`.
-  - References: array form, required `name,category` per item (`normalise.ts:40-51`) · `frontend/sites/portfolio-site/test-content/publish/skills/skills.json` [NEW]
+  - References: array form, required `name,category` per item (`normalise.ts:40-51`) - `frontend/sites/portfolio-site/test-content/publish/skills/skills.json` [NEW]
   - Depends-on: none
   - Gates: TDD N/A. BDD N/A. Manual N/A. Deliverable: `skills.json` (≥6 items, ≥2 categories). Done-when: valid JSON; each item has `name`+`category`.
 
 - **G1.O2.P1.S3 - Author ≥3 `project` MDX fixtures**
   - Intent: Mix of pinned/priority and tags for featured-first + preview behavior.
-  - References: required `title,status`; optional `subheading,excerpt,repo_url,demo_url,pinned,priority,tags` (`tools/mdx-ingest/src/helpers/normalise.ts:108-126`) · `frontend/sites/portfolio-site/test-content/publish/projects/<slug>.mdx` *3 [NEW]
+  - References: required `title,status`; optional `subheading,excerpt,repo_url,demo_url,pinned,priority,tags` (`tools/mdx-ingest/src/helpers/normalise.ts:108-126`) - `frontend/sites/portfolio-site/test-content/publish/projects/<slug>.mdx` *3 [NEW]
   - Depends-on: none
   - Gates: TDD N/A. BDD N/A. Manual N/A. Deliverable: ≥3 MDX files, all `status: published`, ≥1 with `pinned: true`, each with `tags:` array, ≥2 paragraphs of prose body. Done-when: files parse (valid YAML frontmatter + MDX body).
 
@@ -170,40 +170,40 @@
 
 - **G1.O3.P1.S1 - `src/lib/queries/profile.ts`**
   - Intent: Fetch the singleton profile.
-  - References: pattern `posts.ts:75-77`; `profile` table, `ProfileRow` · `frontend/sites/portfolio-site/src/lib/queries/profile.ts` [NEW]
+  - References: pattern `posts.ts:75-77`; `profile` table, `ProfileRow` - `frontend/sites/portfolio-site/src/lib/queries/profile.ts` [NEW]
   - Depends-on: O1.P1.S1
   - Gates: TDD N/A - single `.get()`; defect surfaces at build/render. BDD N/A. Manual N/A. Deliverable: `getProfile(db): ProfileRow | undefined`. Done-when: type-checks; returns the row in a smoke build.
 
 - **G1.O3.P1.S2 - `src/lib/queries/skills.ts`**
   - Intent: Skills grouped by `category`, ordered by `sort_order`.
-  - References: `skills` table (`shared/db-schema/index.ts:44-52`), `SkillRow` · `frontend/sites/portfolio-site/src/lib/queries/skills.ts` [NEW]
+  - References: `skills` table (`shared/db-schema/index.ts:44-52`), `SkillRow` - `frontend/sites/portfolio-site/src/lib/queries/skills.ts` [NEW]
   - Depends-on: O1.P1.S1
   - Trade-off: grouping done in TS (`Map<category, SkillRow[]>`) after an ordered `.all()` - simplest; no SQL GROUP BY needed.
   - Gates: TDD N/A (see Red-Team - grouping/order is the one candidate; deferred, no runner). BDD N/A. Manual: categories appear in order on `/`. Deliverable: `getSkillsGrouped(db): {category:string; skills:SkillRow[]}[]`. Done-when: type-checks; render shows ≥2 category groups.
 
 - **G1.O3.P1.S3 - `src/lib/queries/projects.ts`**
   - Intent: All project read paths (shared with O4).
-  - References: pattern `posts.ts:35-77` + `getTagsForPost:79-90` (adapt to `content_slug`); `projects` table, `ProjectRow`, `TagRow` · `frontend/sites/portfolio-site/src/lib/queries/projects.ts` [NEW]
+  - References: pattern `posts.ts:35-77` + `getTagsForPost:79-90` (adapt to `content_slug`); `projects` table, `ProjectRow`, `TagRow` - `frontend/sites/portfolio-site/src/lib/queries/projects.ts` [NEW]
   - Depends-on: O1.P1.S1
   - Trade-off: "featured-first" = ORDER BY `pinned` desc, `priority` desc, `title` asc.
   - Gates: TDD N/A (convention). BDD N/A. Manual: ordering verified on `/portfolio`. Deliverable: exports `getFeaturedPreview(db, limit=3)`, `getAllProjects(db)`, `getProjectBySlug(db, slug)`, `getAllProjectSlugs(db)`, `getTagsForProject(db, slug)`. Done-when: type-checks; functions return rows from the populated DB.
 
 - **G1.O3.P1.S4 - `src/lib/queries/posts.ts` (recent only)**
   - Intent: Recent published posts for HOME-07, no quiz gating.
-  - References: adapt `blog-site/src/lib/queries/posts.ts:35-48` but drop `inArray(...publishedQuestionPostSlugs)`; `posts` table, `PostRow` · `frontend/sites/portfolio-site/src/lib/queries/posts.ts` [NEW]
+  - References: adapt `blog-site/src/lib/queries/posts.ts:35-48` but drop `inArray(...publishedQuestionPostSlugs)`; `posts` table, `PostRow` - `frontend/sites/portfolio-site/src/lib/queries/posts.ts` [NEW]
   - Depends-on: O1.P1.S1
   - Trade-off: explicitly omits blog's question-gate (documented above).
   - Gates: TDD N/A. BDD N/A. Manual: recent posts list shows newest-first. Deliverable: `getRecentPosts(db, limit=4): PostRow[]`. Done-when: type-checks; returns ≤4 published posts by date desc (empty array tolerated if none).
 
 - **G1.O3.P1.S5 - `ProjectCard.astro`**
   - Intent: Reusable card linking to `/portfolio/[slug]/` with title, excerpt, tags, primary link (HOME-04/08).
-  - References: copy/adapt `blog-site/src/components/PostCard.astro:1-53` (href -> `/portfolio/${slug}/`; show `repo_url`/`demo_url` when present; `cover` via `shared--ui/cover-image`) · `frontend/sites/portfolio-site/src/components/ProjectCard.astro` [NEW]
+  - References: copy/adapt `blog-site/src/components/PostCard.astro:1-53` (href -> `/portfolio/${slug}/`; show `repo_url`/`demo_url` when present; `cover` via `shared--ui/cover-image`) - `frontend/sites/portfolio-site/src/components/ProjectCard.astro` [NEW]
   - Depends-on: O1.P1.S8 (TagList), O3.P1.S3 (types)
   - Gates: TDD N/A. BDD N/A. Manual: card shows ≥1 external link and links to the detail route. Deliverable: component. Done-when: renders a project with tags + a working detail link.
 
 - **G1.O3.P1.S6 - `src/pages/index.astro` (replace placeholder)**
   - Intent: Compose all five home sections from the queries; CTA to `/portfolio/`.
-  - References: page pattern `blog-site/src/pages/index.astro:1-70`; uses S1-S5 + `BaseLayout` + `HeroBanner`/inline About-Me; null-guards when `getProfile` is undefined · `frontend/sites/portfolio-site/src/pages/index.astro` [NEW] (replaces O1.P1.S10 placeholder)
+  - References: page pattern `blog-site/src/pages/index.astro:1-70`; uses S1-S5 + `BaseLayout` + `HeroBanner`/inline About-Me; null-guards when `getProfile` is undefined - `frontend/sites/portfolio-site/src/pages/index.astro` [NEW] (replaces O1.P1.S10 placeholder)
   - Depends-on: O3.P1.S1,S2,S3,S4,S5; O2.P1.S4 (data)
   - Trade-off: one-use About-Me/Skills sections kept **inline** in the page (no premature component extraction).
   - Gates: TDD N/A. BDD: G1 acceptance (home portion). Manual: keyboard tab order through nav->sections->CTA; AA contrast on tokens; empty-data degrades gracefully. Deliverable: home page. Done-when: `astro check` passes and `dist/index.html` contains `profile.name`, a skill, a project title, and an `href="/portfolio/"` CTA.
@@ -220,13 +220,13 @@
 
 - **G1.O4.P1.S1 - `src/pages/portfolio/index.astro`**
   - Intent: Grid of all projects, featured-first, with tech-stack tags.
-  - References: `getAllProjects` + `getTagsForProject` (O3.P1.S3); `ProjectCard.astro`; grid markup from `blog-site/src/pages/index.astro:52-66` · `frontend/sites/portfolio-site/src/pages/portfolio/index.astro` [NEW]
+  - References: `getAllProjects` + `getTagsForProject` (O3.P1.S3); `ProjectCard.astro`; grid markup from `blog-site/src/pages/index.astro:52-66` - `frontend/sites/portfolio-site/src/pages/portfolio/index.astro` [NEW]
   - Depends-on: O3.P1.S3, O3.P1.S5
   - Gates: TDD N/A. BDD N/A (covered by G1). Manual: pinned project appears before non-pinned; empty state renders a message. Deliverable: listing page. Done-when: `dist/portfolio/index.html` lists all `projects` rows with the pinned one first.
 
 - **G1.O4.P1.S2 - `src/pages/portfolio/[slug].astro`**
   - Intent: Static per-project detail rendering MDX body + tags + repo/demo links.
-  - References: copy/adapt `blog-site/src/pages/post/[slug].astro:18-61` (`getAllProjectSlugs`/`getProjectBySlug`/`getTagsForProject`; `evaluate(project.body, {...runtime, remarkPlugins:[remarkGfm], rehypePlugins:[rehypeHighlight]})` with **no** component map; `HeroBanner`; drop quiz-widget block; add repo/demo link buttons; "← Back to portfolio") · `frontend/sites/portfolio-site/src/pages/portfolio/[slug].astro` [NEW]
+  - References: copy/adapt `blog-site/src/pages/post/[slug].astro:18-61` (`getAllProjectSlugs`/`getProjectBySlug`/`getTagsForProject`; `evaluate(project.body, {...runtime, remarkPlugins:[remarkGfm], rehypePlugins:[rehypeHighlight]})` with **no** component map; `HeroBanner`; drop quiz-widget block; add repo/demo link buttons; "← Back to portfolio") - `frontend/sites/portfolio-site/src/pages/portfolio/[slug].astro` [NEW]
   - Depends-on: O3.P1.S3, O1.P1.S8 (HeroBanner)
   - Trade-off: no custom MDX components (prose-only assumption).
   - Gates: TDD N/A. BDD: `Given a published project, When I open /portfolio/<slug>/, Then its MDX body, tech-stack tags, and links render`. Manual: headings/links/code render via gfm+highlight; back-link works; nav "Portfolio" shows active. Deliverable: detail route. Done-when: `dist/portfolio/<slug>/index.html` contains the rendered MDX body and the project's tags.

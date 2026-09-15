@@ -118,7 +118,7 @@ via 5 answered questions.
 #### G1.O1 - Add `cover` to schema + migration + ingest  [expand]
 - Intent: persist an optional cover path on `posts`; additive, nullable, no existing-data risk.
 
-##### G1.O1.P1 - Pipeline column · Depends-on: none · Rollback: revert PR (+ column is nullable, ignored if unread)
+##### G1.O1.P1 - Pipeline column - Depends-on: none - Rollback: revert PR (+ column is nullable, ignored if unread)
 
 - **G1.O1.P1.S1 - Add `cover` to the posts schema** [expand]
   - Intent: declare the nullable column on the Drizzle table.
@@ -148,7 +148,7 @@ via 5 answered questions.
 - Intent: one pure function both Astro and React render sites import; handles absolute passthrough, relative
   prefix, and null/empty -> placeholder.
 
-##### G1.O2.P1 - Resolver + export + tests · Depends-on: none · Rollback: revert PR
+##### G1.O2.P1 - Resolver + export + tests - Depends-on: none - Rollback: revert PR
 
 - **G1.O2.P1.S1 - Create `shared/ui/src/lib/coverImage.ts` + export path** [expand]
   - Intent: define `ASSET_BASE_URL` + `coverImageUrl(cover, placeholder)`.
@@ -177,7 +177,7 @@ via 5 answered questions.
     leading-slash dedupe. Each fails on a real defect. BDD/Manual N/A. Deliverable: `pnpm -F shared--ui test` green. Done-when: green.
 
 #### G1.O3 - Sketch-style placeholder asset  [expand]
-##### G1.O3.P1 - Placeholder PNG · Depends-on: none · Rollback: revert PR (delete asset)
+##### G1.O3.P1 - Placeholder PNG - Depends-on: none - Rollback: revert PR (delete asset)
 
 - **G1.O3.P1.S1 - Generate + commit `placeholder-cover.png`** [expand]
   - Intent: a hand-drawn/excalidraw-style neutral cover served locally at `/placeholder-cover.png`.

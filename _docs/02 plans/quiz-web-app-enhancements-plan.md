@@ -53,7 +53,7 @@ problems, in order of severity (-> fixing phase):
 | C11 | Low      | Leeches         | `lapses` is tracked but never acted on. Anki auto-suspends/tags **leeches** (lapses ≥ N). We don't surface or act on them.                                                                                                       |
 | C12 | Low      | Mobile/a11y     | Wide tables overflow on mobile; stats heatmap is fixed at 53 columns; limited ARIA; reveal/rate flow is keyboard-only-friendly but not screen-reader-announced.                                                                   |
 
-**Fixed by:** C1 -> P1 · C2,C10 -> P2/P6 · C4 -> P3 · C8,C9,C12 -> P4 · C3,C5,C6,C11 -> P5 · C7 -> P7.
+**Fixed by:** C1 -> P1 - C2,C10 -> P2/P6 - C4 -> P3 - C8,C9,C12 -> P4 - C3,C5,C6,C11 -> P5 - C7 -> P7.
 
 What's **good** and was preserved: clean content/progress separation (slug-keyed
 state), additive `addPost`, deterministic pure SM-2 engine + tests, the JSON contract,
@@ -308,13 +308,13 @@ The store reads `settings.scheduler` and calls `getScheduler()` inside `reviewCa
 **FSRS-5** (Free Spaced Repetition Scheduler, v5 - open algorithm behind modern Anki) models memory as *stability* (S: expected half-life in days) and *difficulty* (D: 0-10 scale). The retrieval probability at time *t* after last review is:
 
 ```
-R(t) = (1 + FACTOR · t / S)^DECAY     where FACTOR ≈ 19/81, DECAY ≈ -0.5
+R(t) = (1 + FACTOR - t / S)^DECAY     where FACTOR ≈ 19/81, DECAY ≈ -0.5
 ```
 
 The target retention rate `R₀` (e.g. 0.9) implies a next interval of:
 
 ```
-I = S · ( (R₀^(1/DECAY) - 1) / FACTOR )
+I = S - ( (R₀^(1/DECAY) - 1) / FACTOR )
 ```
 
 **Card state additions** (added to `CardState`):
@@ -396,7 +396,7 @@ Switching is **lossless and reversible**:
 
 | From -> To | What happens |
 |---|---|
-| SM-2 -> FSRS | For each `review` card: seed `fsrsStability` from `interval` (identity mapping: `S = interval`), seed `fsrsDifficulty` from `easeFactor` (linear remap: `D = (3.5 - EF) · 10/2.2 + 1`, clamped [1, 10]). Card states aren't reset. |
+| SM-2 -> FSRS | For each `review` card: seed `fsrsStability` from `interval` (identity mapping: `S = interval`), seed `fsrsDifficulty` from `easeFactor` (linear remap: `D = (3.5 - EF) - 10/2.2 + 1`, clamped [1, 10]). Card states aren't reset. |
 | FSRS -> SM-2 | Drop `fsrsStability`/`fsrsDifficulty` from state; card reverts to SM-2 using existing `interval` and `easeFactor`. No data loss. |
 
 Migration is triggered automatically when the user changes `settings.scheduler` in the store (`setSettings` calls `migrateScheduler()` which maps every card state). A toast confirms completion.
