@@ -1,8 +1,38 @@
 {
   "category": "javascript",
   "label": "JavaScript",
-  "fetchedAt": "2026-09-14T11:00:59.519Z",
+  "fetchedAt": "2026-09-15T10:31:33.903Z",
   "items": [
+    {
+      "slug": "d0eb862ecda81d2a3e8a2e77",
+      "guid": "https://flaviocopes.com/devops-mistakes-ai/",
+      "title": "How I fixed my DevOps mistakes with AI",
+      "link": "https://flaviocopes.com/devops-mistakes-ai/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "I resized a DigitalOcean droplet the wrong way and locked myself into a $48/month plan. Codex migrated my Sendy server to a new $12 droplet over SSH, database included, while I changed DNS.",
+      "publishedAt": "2026-09-15T10:00:00.000Z"
+    },
+    {
+      "slug": "b0a54214c123e1ef7fea960e",
+      "guid": "https://flaviocopes.com/codex/",
+      "title": "The complete guide to Codex",
+      "link": "https://flaviocopes.com/codex/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Learn how to use the Codex desktop app from your first prompt to review and browser testing, then go deeper with the CLI, skills, plugins, worktrees, and scheduled tasks.",
+      "publishedAt": "2026-09-15T07:45:00.000Z"
+    },
+    {
+      "slug": "4a1c9fd17c7e50d2b695a442",
+      "guid": "https://flaviocopes.com/server-process-killed/",
+      "title": "Debugging a process killed on my server with Codex",
+      "link": "https://flaviocopes.com/server-process-killed/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Claude Code kept dying a few seconds after starting on my Ubuntu server. I pointed Codex CLI at the server over SSH and it found the Linux OOM killer in the kernel logs. Here is the whole session.",
+      "publishedAt": "2026-09-15T07:00:00.000Z"
+    },
     {
       "slug": "d8221c93a1a9e8bb443249e1",
       "guid": "https://flaviocopes.com/merchant-of-record/",
@@ -12,6 +42,16 @@
       "sourceUrl": "https://flaviocopes.com/rss.xml",
       "summary": "The first payment decision most guides skip: sell through a Merchant of Record like Creem or Paddle, or stay the merchant with Stripe? What each one handles, what it costs, and how to choose.",
       "publishedAt": "2026-09-14T09:00:00.000Z"
+    },
+    {
+      "slug": "5afbf2b809f5642e8236c40e",
+      "guid": "https://philipwalton.com/articles/modern-web-types/",
+      "title": "Modern Web Types",
+      "link": "https://philipwalton.com/articles/modern-web-types/",
+      "source": "Philip Walton",
+      "sourceUrl": "https://feeds.feedburner.com/philipwalton",
+      "summary": "",
+      "publishedAt": "2026-09-14T07:22:45.000Z"
     },
     {
       "slug": "3c81a62a0d4c7e065628f136",
@@ -312,46 +352,6 @@
       "sourceUrl": "https://flaviocopes.com/rss.xml",
       "summary": "Build and deploy a Content Security Policy with source directives, nonces or hashes, report-only rollout, framing protection, testing, and common CSP mistakes.",
       "publishedAt": "2026-09-07T07:00:00.000Z"
-    },
-    {
-      "slug": "54b23d81bd8ae077b14f0cac",
-      "guid": "https://flaviocopes.com/passkeys-webauthn/",
-      "title": "Passkeys and WebAuthn explained",
-      "link": "https://flaviocopes.com/passkeys-webauthn/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Understand passkeys and WebAuthn, then build registration and login with server challenges, stored public keys, SimpleWebAuthn, recovery, and tests.",
-      "publishedAt": "2026-09-07T05:00:00.000Z"
-    },
-    {
-      "slug": "1b495771a77c22d86f4c4f81",
-      "guid": "https://flaviocopes.com/tanstack-query/",
-      "title": "Introduction to TanStack Query",
-      "link": "https://flaviocopes.com/tanstack-query/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Learn TanStack Query from the server-state mental model through query keys, freshness, errors, mutations, invalidation, optimistic updates, and common mistakes.",
-      "publishedAt": "2026-09-06T13:00:00.000Z"
-    },
-    {
-      "slug": "b28e06e1a7a205a8fa522bde",
-      "guid": "https://flaviocopes.com/astro-documentation-site/",
-      "title": "Build a documentation site with Astro and Markdown",
-      "link": "https://flaviocopes.com/astro-documentation-site/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Build a fast documentation site with Astro, Markdown collections, generated navigation, previous and next links, search, and a sitemap.",
-      "publishedAt": "2026-09-06T09:00:00.000Z"
-    },
-    {
-      "slug": "db14c28728290e125ae5e130",
-      "guid": "https://javascriptweekly.com/issues/800",
-      "title": "How to fit Minesweeper into 247 bytes",
-      "link": "https://javascriptweekly.com/issues/800",
-      "source": "JavaScript Weekly",
-      "sourceUrl": "https://javascriptweekly.com/rss/1b4m1h9j",
-      "summary": "#​800 — September 1, 2026 Read on the Web Issue 800! I'm not doing anything to celebrate, but I know many of you have been here for years, so thanks for your continued support. Maybe I'll do something for issue 1000, though at current velocity that'll be late 2030... ;-) __ Your…",
-      "publishedAt": "2026-09-01T00:00:00.000Z"
     }
   ]
 }
