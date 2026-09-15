@@ -1,5 +1,19 @@
 # @prj--personal-portfolio--v3/frontend--quiz-web-app
 
+## 0.5.1
+
+### Patch Changes
+
+- 9a7b811: adjust styles
+- 78c6103: styel chanegs
+- 13da900: add done button
+- 8689620: small fix
+- Updated dependencies [9a7b811]
+- Updated dependencies [78c6103]
+- Updated dependencies [8689620]
+  - @prj--personal-portfolio--v3/shared--ui@1.4.1
+  - @prj--personal-portfolio--v3/shared--navigation@1.2.5
+
 ## 0.5.0
 
 ### Minor Changes
