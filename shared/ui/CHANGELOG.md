@@ -1,5 +1,13 @@
 # @prj--personal-portfolio--v3/shared--ui
 
+## 1.4.1
+
+### Patch Changes
+
+- 9a7b811: adjust styles
+- 78c6103: styel chanegs
+- 8689620: small fix
+
 ## 1.4.0
 
 ### Minor Changes
