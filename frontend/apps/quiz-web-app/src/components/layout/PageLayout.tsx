@@ -43,7 +43,7 @@ export function PageLayout({ children }: { children: React.ReactNode }) {
               >
                 Replay intro
               </button>
-              <span aria-hidden="true">·</span>
+              <span aria-hidden="true">-</span>
               <button
                 type="button"
                 data-tour-target="replay-walkthrough"

@@ -378,8 +378,8 @@ function SetDetailPage() {
                   <dt className="smallcaps text-[var(--slate)]">Studied today</dt>
                   <dd>
                     {postDaily?.date === today
-                      ? `${postDaily.new} new · ${postDaily.reviews} reviews`
-                      : "0 new · 0 reviews"}
+                      ? `${postDaily.new} new - ${postDaily.reviews} reviews`
+                      : "0 new - 0 reviews"}
                   </dd>
                 </div>
                 <div className="flex justify-between border-b border-dotted border-[var(--column-rule)] py-1">
@@ -398,7 +398,7 @@ function SetDetailPage() {
                 </button>
               )}
               <p className="text-sm italic text-[var(--slate)] mt-2">
-                Per-set overrides · global defaults in{" "}
+                Per-set overrides - global defaults in{" "}
                 <Link to="/settings" className="underline">
                   Settings
                 </Link>

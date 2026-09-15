@@ -258,7 +258,7 @@ function FilterBar({
         <option value="ignored">Ignored</option>
       </select>
       <p className="col-span-2 md:col-span-6 text-[10px] smallcaps text-[var(--slate)] pt-1">
-        {resultCount} question{resultCount === 1 ? "" : "s"} · click a row to preview
+        {resultCount} question{resultCount === 1 ? "" : "s"} - click a row to preview
       </p>
     </div>
   );

@@ -96,7 +96,7 @@ function TagDetailView() {
       </h2>
       <p className="text-base italic text-[var(--charcoal)] mb-6">
         {tagMeta
-          ? `${tagMeta.questionCount} in export · ${questions.length} in your sets`
+          ? `${tagMeta.questionCount} in export - ${questions.length} in your sets`
           : `${questions.length} in your sets`}
       </p>
 

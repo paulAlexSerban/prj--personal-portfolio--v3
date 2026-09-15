@@ -112,7 +112,7 @@ export function isMaturityId(value: string): value is MaturityId {
 export function projectAxisHint(scope: string, maturity: string): string {
     const scopeNoun = getAxisTerm(scope)?.label.toLowerCase() ?? scope;
     if (!isMaturityId(maturity)) {
-        return `${formatAxisLabel(scope)} · ${formatAxisLabel(maturity)}`;
+        return `${formatAxisLabel(scope)} - ${formatAxisLabel(maturity)}`;
     }
     return AXIS_HINT[maturity](scopeNoun);
 }

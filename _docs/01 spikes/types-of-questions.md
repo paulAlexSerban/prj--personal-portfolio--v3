@@ -11,7 +11,7 @@ Two **independent** axes describe each question:
 | **How the user answers**            | `answer_format`   | Interaction and whether the app can auto-grade |
 | **What kind of thinking is tested** | `cognitive_style` | Pedagogy (orthogonal to format)                |
 
-**Related docs:** [MDX authoring guide](./migrating-question-mdx-content.md) · [implementation plan](../02%20plans/question-types-implementation-plan.md) · [SRS PRD](../product/01%20prd%20-%20feature%20requirements%20-%20spaced%20repetition%20behavior.md)
+**Related docs:** [MDX authoring guide](./migrating-question-mdx-content.md) - [implementation plan](../02%20plans/question-types-implementation-plan.md) - [SRS PRD](../product/01%20prd%20-%20feature%20requirements%20-%20spaced%20repetition%20behavior.md)
 
 ---
 

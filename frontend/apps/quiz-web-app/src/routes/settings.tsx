@@ -491,7 +491,7 @@ function SettingsView() {
           >
             SM-2 reference
           </a>
-          {" · "}
+          {" - "}
           <a
             className="underline"
             href="https://github.com/open-spaced-repetition/fsrs4anki/wiki/The-Algorithm"

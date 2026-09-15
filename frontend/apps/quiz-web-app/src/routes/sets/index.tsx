@@ -93,7 +93,7 @@ function StudySetsView() {
     <PageLayout>
       <section className="flex flex-wrap items-end justify-between gap-4 mb-6">
         <div>
-          <p className="smallcaps text-sm text-[var(--slate)]">Front Page · My Collection</p>
+          <p className="smallcaps text-sm text-[var(--slate)]">Front Page - My Collection</p>
           <h2 className="text-4xl font-bold" style={{ fontFamily: "var(--font-display)" }}>
             Study Sets
           </h2>
@@ -216,7 +216,7 @@ function StudySetsView() {
                   data-tour-target={isWalkthroughSet ? "walkthrough-set" : undefined}
                 >
                   <p className="smallcaps text-[10px] text-[var(--slate)] mb-1">
-                    Study Set · {meta?.questionCount ?? stats.total} questions
+                    Study Set - {meta?.questionCount ?? stats.total} questions
                   </p>
                   <Link
                     to="/sets/$postSlug"

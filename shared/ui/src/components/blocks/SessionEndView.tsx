@@ -50,7 +50,7 @@ export function SessionEndView({ stats, subtitle, actions }: SessionEndViewProps
             </div>
 
             <p className="text-center smallcaps text-base text-[var(--slate)]" style={{ fontFamily: 'var(--font-mono)' }}>
-                {total} cards · {mins.toFixed(1)} min · {(total / Math.max(mins, 0.1)).toFixed(1)} cards/min
+                {total} cards - {mins.toFixed(1)} min - {(total / Math.max(mins, 0.1)).toFixed(1)} cards/min
             </p>
 
             <div className="text-center mt-8 flex justify-center gap-3">{actions}</div>

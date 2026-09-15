@@ -29,7 +29,7 @@ export function PaginationBar({ page, pages, total, onPageChange, itemLabel = 't
     return (
         <div className={cn('flex items-center justify-between', className)} role="navigation" aria-label="Pagination">
             <span className={labelClassName}>
-                Page {page} of {pages} · {total} {itemLabel}
+                Page {page} of {pages} - {total} {itemLabel}
             </span>
             <div className="flex gap-2">
                 {renderPrev({

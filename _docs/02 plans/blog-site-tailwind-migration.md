@@ -105,7 +105,7 @@ Tokens defined at `shared/ui/src/styles/theme.css:44-54`. Tailwind scans blog `s
 
 #### G1.O1 - Establish the manual parity net  [refactor-prep]
 
-##### G1.O1.P1 - Baseline capture · Depends-on: none · Rollback: delete baseline dir
+##### G1.O1.P1 - Baseline capture - Depends-on: none - Rollback: delete baseline dir
 
 - **G1.O1.P1.S1 - Capture baseline screenshots + parity checklist**
   - References: build (`package.json:9`) + `astro preview`; pages `index`, `post/index`, `tags/[tag]`, two `post/[slug]` (one with quiz slot per `post/[slug].astro:57-66`, one without; one containing code block + `<Callout>` + `<Figure>` + `<Heading hasSeparator>`/`<LinkList>`). Artifact dir `.parity-baseline/` [NEW].
@@ -113,7 +113,7 @@ Tokens defined at `shared/ui/src/styles/theme.css:44-54`. Tailwind scans blog `s
 
 #### G1.O2 - Migrate blog-local chrome + pages -> inline utilities  [refactor]
 
-##### G1.O2.P1 - Chrome components · Depends-on: G1.O1.P1.S1 · Rollback: revert PR
+##### G1.O2.P1 - Chrome components - Depends-on: G1.O1.P1.S1 - Rollback: revert PR
 
 - **S1 - `SiteHeader.astro`** (`:19-35` ↔ `layout.css:1-46`). Nav states: `hover:text-ink hover:font-bold aria-[current=page]:text-ink aria-[current=page]:font-bold`.
 - **S2 - `SiteFooter.astro`** (`:10-24` ↔ `layout.css:54-81`).
@@ -122,23 +122,23 @@ Tokens defined at `shared/ui/src/styles/theme.css:44-54`. Tailwind scans blog `s
 - **S5 - `TagList.astro`** (`:13-19` ↔ `layout.css:180-201`).
 - **S6 - `BaseLayout.astro` `.site-main`** (`:43` ↔ `layout.css:48-52`): `max-w-[72rem] mx-auto px-6 pt-8 pb-16`.
 
-##### G1.O2.P2 - Pages · Depends-on: G1.O2.P1.S4 · Rollback: revert PR
+##### G1.O2.P2 - Pages - Depends-on: G1.O2.P1.S4 - Rollback: revert PR
 
 - **S7 - `index.astro`** (`:42-50` ↔ `layout.css:102-140`). Grid: `grid grid-cols-[repeat(auto-fill,minmax(18rem,1fr))] gap-5 list-none m-0 p-0`.
 - **S8 - `{post,snippet,booknote}/index.astro`** (`:18` ↔ `layout.css:102-140`).
 - **S9 - `tags/[tag].astro`** (`:48-50` ↔ `layout.css:102-140`).
 - **S10 - `post/[slug].astro`** (`:54,61` ↔ `layout.css:203-220`). Keep `class="md-content"`; `post-detail` -> `mt-4`; quiz box -> `mt-12 p-6 border-2 border-dashed border-rule bg-highlight min-h-16` (retain `id`/`data-*`).
 
-##### G1.O2.P3 - Teardown · Depends-on: all O2.P1/P2 + O3 · Rollback: revert PR
+##### G1.O2.P3 - Teardown - Depends-on: all O2.P1/P2 + O3 - Rollback: revert PR
 
 - **S11 - Delete `src/styles/layout.css`; relocate ONLY `.quiz-widget-slot:empty::before` (`layout.css:215-220`) into `global.css` `@layer components`; remove `@import './layout.css'` (`global.css:7`).** Done-when: build green; `rg` finds no BEM classes except the relocated pseudo.
 
-#### G1.O3 - Migrate blog-local MDX component classes  [refactor] · Depends-on: G1.O1.P1.S1
+#### G1.O3 - Migrate blog-local MDX component classes  [refactor] - Depends-on: G1.O1.P1.S1
 
 - **S1 - `LinkList.tsx`** (`:25` ↔ `layout.css:222-235`): `list-none my-4 p-0`; items `my-[0.35em]`; links `text-ink font-bold`.
 - **S2 - `Heading.tsx`** (`:14-17` ↔ `layout.css:237-249`): separator `border-b border-dashed border-rule pb-[0.35em] mb-3`; sub `block text-[0.85em] font-normal text-slate-ink mt-1`.
 
-#### G1.O4 - Express shared `.md-content` typography via `@apply`  [refactor] - OPTIONAL / cross-package · Depends-on: G1.O2.P3.S11
+#### G1.O4 - Express shared `.md-content` typography via `@apply`  [refactor] - OPTIONAL / cross-package - Depends-on: G1.O2.P3.S11
 
 - **S1 - Capture shared-consumer baseline**: quiz app key screens + Storybook md-content stories (`shared/ui/src/components/blocks/*.stories.tsx`).
 - **S2 - Rewrite token-backed `.md-content` declarations with `@apply`** (`theme.css:288-427`): headings `@apply font-display font-bold`; links `@apply underline underline-offset-2`; inline code `@apply font-mono bg-highlight border border-rule`; blockquote `@apply border-l-[3px] border-ink italic text-charcoal`; callouts `@apply border-2 border-ink bg-highlight`. Leave raw (no equivalent): hljs palette (`:461-521`), KaTeX (`:442-459`), grain gradients, dropcap (`:264-272`), keyframes (`:273-285`), `em` dimensions. Done-when: blog + quiz app + Storybook match baseline; `shared--ui typecheck` + both builds green.

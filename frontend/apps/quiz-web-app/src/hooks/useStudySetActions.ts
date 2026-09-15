@@ -24,7 +24,7 @@ export function useStudySetActions() {
           .categories.find((c) => c.id === (options?.categoryId ?? FAVORITES_CATEGORY_ID));
         toast.success("Added to your study sets", {
           description: category
-            ? `${slugs.length} questions · ${category.name}`
+            ? `${slugs.length} questions - ${category.name}`
             : `${slugs.length} questions`,
         });
       } catch (e) {
