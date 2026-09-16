@@ -1,7 +1,7 @@
 {
   "category": "programming",
   "label": "Programming",
-  "fetchedAt": "2026-09-15T10:31:33.903Z",
+  "fetchedAt": "2026-09-16T10:20:52.995Z",
   "items": [
     {
       "slug": "0740628ce102944e785247d4",
@@ -192,16 +192,6 @@
       "sourceUrl": "https://www.30secondsofcode.org/feed.xml",
       "summary": "Pair programming can be valuable for junior and senior developers alike, fostering collaboration and knowledge sharing.",
       "publishedAt": "2025-09-20T00:00:00.000Z"
-    },
-    {
-      "slug": "13e3b548c70aa7407703ac05",
-      "guid": "https://hynek.me/talks/python-superpower/",
-      "title": "Python’s True Superpower",
-      "link": "https://hynek.me/talks/python-superpower/",
-      "source": "Hynek Schlawack",
-      "sourceUrl": "https://hynek.me/index.xml",
-      "summary": "Python appears to be everywhere nowadays! How did it happen, that a language that almost died in the Python 2 to 3 process is now the lingua franca a default choice when people talk about programming? There must be some secret superpower and I think I found it!",
-      "publishedAt": "2025-09-19T00:00:00.000Z"
     },
     {
       "slug": "0d196b00d4e92f5a9bdf5d41",
@@ -524,16 +514,6 @@
       "publishedAt": "2025-05-19T00:00:00.000Z"
     },
     {
-      "slug": "9561714819c8be0544ac35a1",
-      "guid": "https://hynek.me/talks/design-pressure/",
-      "title": "Design Pressure",
-      "link": "https://hynek.me/talks/design-pressure/",
-      "source": "Hynek Schlawack",
-      "sourceUrl": "https://hynek.me/index.xml",
-      "summary": "Ever had this weird gut feeling that something is off in your code, but couldn’t put the finger on why? Are you starting your projects with the best intentions, following all best practices, and still feel like your architecture turns weird eventually?",
-      "publishedAt": "2025-05-16T00:00:00.000Z"
-    },
-    {
       "slug": "7eb0f76f0b3d0116721701c1",
       "guid": "https://www.30secondsofcode.org/css/s/inset",
       "title": "Using the inset CSS property",
@@ -744,26 +724,6 @@
       "publishedAt": "2024-09-11T00:00:00.000Z"
     },
     {
-      "slug": "71749659f370dfbcdce53300",
-      "guid": "https://hynek.me/articles/docker-virtualenv/",
-      "title": "Why I Still Use Python Virtual Environments in Docker",
-      "link": "https://hynek.me/articles/docker-virtualenv/",
-      "source": "Hynek Schlawack",
-      "sourceUrl": "https://hynek.me/index.xml",
-      "summary": "Whenever I publish something about my Python Docker workflows, I invariably get challenged about whether it makes sense to use virtual environments in Docker containers. As always, it’s a trade-off, and I err on the side of standards and predictability.",
-      "publishedAt": "2024-09-02T11:00:00.000Z"
-    },
-    {
-      "slug": "2d58b1aca95dfc29cddc6b78",
-      "guid": "https://hynek.me/articles/docker-uv/",
-      "title": "Production-ready Python Docker Containers with uv",
-      "link": "https://hynek.me/articles/docker-uv/",
-      "source": "Hynek Schlawack",
-      "sourceUrl": "https://hynek.me/index.xml",
-      "summary": "Starting with 0.3.0 , Astral’s uv brought many great features, including support for cross-platform lock files uv.lock . Together with subsequent fixes, it has become Python’s finest workflow tool for my (non-scientific) use cases. Here’s how I build production-ready containers,…",
-      "publishedAt": "2024-08-28T11:00:00.000Z"
-    },
-    {
       "slug": "c29df950b749d36516708482",
       "guid": "https://www.hillelwayne.com/post/toolbox-languages/",
       "title": "Toolbox languages",
@@ -934,16 +894,6 @@
       "publishedAt": "2024-04-06T11:39:01.000Z"
     },
     {
-      "slug": "47228de8f313d265427dfdd9",
-      "guid": "https://hynek.me/articles/python-virtualenv-redux/",
-      "title": "Python Project-Local Virtualenv Management Redux",
-      "link": "https://hynek.me/articles/python-virtualenv-redux/",
-      "source": "Hynek Schlawack",
-      "sourceUrl": "https://hynek.me/index.xml",
-      "summary": "One of my first TIL entries was about how you can imitate Node’s node_modules semantics in Python on UNIX-like operating systems. A lot has happened since then (to the better!) and it’s time for an update. direnv still rocks, though.",
-      "publishedAt": "2024-04-02T00:00:00.000Z"
-    },
-    {
       "slug": "2a3fa0e6b7bb907bde1559be",
       "guid": "https://www.hillelwayne.com/post/tale-of-daniel/",
       "title": "How old is the name 'Daniel'?",
@@ -1002,6 +952,56 @@
       "sourceUrl": "https://jaredsinclair.com/feed.xml",
       "summary": "UIKit’s UIFontMetrics.scaledValue(for:) and SwiftUI’s @ScaledMetric property wrapper offer third-party developers a public means to scale arbitrary design reference values up and down relative to dynamic type size changes. Please be aware, however, that scaled values are not sca…",
       "publishedAt": "2024-03-02T11:00:00.000Z"
+    },
+    {
+      "slug": "bab7168e2296b615b3880b7c",
+      "guid": "https://vadimkravcenko.com/?p=2459",
+      "title": "What is your unethical CS career’s advice?",
+      "link": "https://vadimkravcenko.com/qa/whats-your-unethical-cs-careers-advice/",
+      "source": "Vadim Kravcenko",
+      "sourceUrl": "https://vadimkravcenko.com/feed/",
+      "summary": "Question: Hey Vadim, I’m starting to question a lot of the conventional wisdom handed down to us about climbing the tech ladder. You know, the whole \"work hard, play fair, and success will come\" spiel. I’m not so sure anymore. It feels slow, I'm looking for shortcuts maybe? e.g.…",
+      "publishedAt": "2024-02-25T16:46:46.000Z"
+    },
+    {
+      "slug": "ea835aec274378d19ee7c449",
+      "guid": "https://vadimkravcenko.com/?p=2451",
+      "title": "My coworker rewrote all my code, what should I do?",
+      "link": "https://vadimkravcenko.com/qa/my-coworker-rewrote-all-my-code-what-should-i-do/",
+      "source": "Vadim Kravcenko",
+      "sourceUrl": "https://vadimkravcenko.com/feed/",
+      "summary": "Question: Hello Vadim, I'm reaching out to you for some advice, as something weird happened, and I'm not sure how to react. Here are the key points For the past six months, I've been working in my role as a Python Backend Developer, diligently maintaining and extending the Pytho…",
+      "publishedAt": "2024-02-24T19:05:07.000Z"
+    },
+    {
+      "slug": "0b71aee6c83ee8c06faa199a",
+      "guid": "https://vadimkravcenko.com/?p=2423",
+      "title": "Falsehoods Junior Developers believe about becoming Senior",
+      "link": "https://vadimkravcenko.com/shorts/falsehoods-junior-developers-believe-about-becoming-senior/",
+      "source": "Vadim Kravcenko",
+      "sourceUrl": "https://vadimkravcenko.com/feed/",
+      "summary": "Question: Answer: The post Falsehoods Junior Developers believe about becoming Senior appeared first on Vadim Kravcenko.",
+      "publishedAt": "2024-02-20T21:23:21.000Z"
+    },
+    {
+      "slug": "731d7101a8ac691cb26f078b",
+      "guid": "https://vadimkravcenko.com/?p=2403",
+      "title": "How do you know when to use which programming language?",
+      "link": "https://vadimkravcenko.com/qa/how-you-know-when-to-use-what-programming-language/",
+      "source": "Vadim Kravcenko",
+      "sourceUrl": "https://vadimkravcenko.com/feed/",
+      "summary": "Question: Hi, My name is Alex. I just graduated university, I'm confused, how do I choose a programming language for a job? Does it matter? Will I be assigned a programming language? Thanks for the help. Answer: The post How do you know when to use which programming language? ap…",
+      "publishedAt": "2024-02-11T18:32:45.000Z"
+    },
+    {
+      "slug": "36b0ff45f91271ad4591bd77",
+      "guid": "https://vadimkravcenko.com/?p=2400",
+      "title": "How to get programming experience when you can’t find a job?",
+      "link": "https://vadimkravcenko.com/qa/how-to-get-programming-experience-when-you-cant-find-a-job/",
+      "source": "Vadim Kravcenko",
+      "sourceUrl": "https://vadimkravcenko.com/feed/",
+      "summary": "Question: Hello Vadim, It's been almost a year since I graduated as a CS major and was high on enthusiasm, ready to dive into the tech industry. Yet, here I am, feeling like shit, like I've hit a wall, my initial excitement replaced with a growing sense of frustration and, if I'…",
+      "publishedAt": "2024-02-11T17:25:06.000Z"
     }
   ]
 }

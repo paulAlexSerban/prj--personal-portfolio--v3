@@ -1,8 +1,38 @@
 {
   "category": "javascript",
   "label": "JavaScript",
-  "fetchedAt": "2026-09-15T10:31:33.903Z",
+  "fetchedAt": "2026-09-16T10:20:52.995Z",
   "items": [
+    {
+      "slug": "d512d8d4acea02850556d179",
+      "guid": "https://flaviocopes.com/vercel/",
+      "title": "Vercel tutorial: deploy a web app from Git or the CLI",
+      "link": "https://flaviocopes.com/vercel/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Learn how to deploy a web app to Vercel, use preview and production deployments, add environment variables, Functions, domains, logs, and rollbacks.",
+      "publishedAt": "2026-09-16T10:00:00.000Z"
+    },
+    {
+      "slug": "e78e8c58ad67e808a79b7568",
+      "guid": "https://flaviocopes.com/ide-cli-or-vibe-coding-tool/",
+      "title": "IDE, CLI, vibe coding tool, …how to decide?",
+      "link": "https://flaviocopes.com/ide-cli-or-vibe-coding-tool/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Vibe coding tools, AI-powered IDEs, or CLI coding agents? How to pick the right one for this project, today, based on your experience and what you need.",
+      "publishedAt": "2026-09-16T07:00:00.000Z"
+    },
+    {
+      "slug": "d4d49673413f7abc11aa05fb",
+      "guid": "https://flaviocopes.com/securing-a-server-with-ai/",
+      "title": "Securing a server using AI",
+      "link": "https://flaviocopes.com/securing-a-server-with-ai/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "I asked Codex to audit a freshly migrated Ubuntu server. It enabled the firewall, hardened SSH and Apache, removed installer files, applied 124 security updates and rebooted. Here is what it found and what I learned.",
+      "publishedAt": "2026-09-15T13:00:00.000Z"
+    },
     {
       "slug": "d0eb862ecda81d2a3e8a2e77",
       "guid": "https://flaviocopes.com/devops-mistakes-ai/",
@@ -20,7 +50,7 @@
       "link": "https://flaviocopes.com/codex/",
       "source": "Flavio Copes",
       "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Learn how to use the Codex desktop app from your first prompt to review and browser testing, then go deeper with the CLI, skills, plugins, worktrees, and scheduled tasks.",
+      "summary": "How to use Codex, OpenAI's coding agent: the desktop app from first prompt to review, then the CLI, skills, plugins, worktrees, and scheduled tasks.",
       "publishedAt": "2026-09-15T07:45:00.000Z"
     },
     {
@@ -312,46 +342,6 @@
       "sourceUrl": "https://blog.appsignal.com/feed.xml",
       "summary": "There’s no scenario in which you should be required to run six monitoring tools at once. OK, I may have been a bit dramatic there, you might actually be at a scale where you need it. But for the rest of us, it’s certainly overkill. Using UptimeRobot for, “Is the site up?”, Paper…",
       "publishedAt": "2026-09-08T00:00:00.000Z"
-    },
-    {
-      "slug": "22032e701dc752b6b8513d7a",
-      "guid": "https://javascriptweekly.com/issues/801",
-      "title": "When 8 chunks weigh more than 355",
-      "link": "https://javascriptweekly.com/issues/801",
-      "source": "JavaScript Weekly",
-      "sourceUrl": "https://javascriptweekly.com/rss/1b4m1h9j",
-      "summary": "#​801 — September 8, 2026 Read on the Web JavaScript Weekly How Turbopack Chunks Your JavaScript — Starting from the Network tab and working up, a look at chunking strategy and the tradeoffs bundlers make between fewer requests and less code (e.g. 8 chunks can weigh more than 35…",
-      "publishedAt": "2026-09-08T00:00:00.000Z"
-    },
-    {
-      "slug": "02e3dbb8c54d49cacaece9f6",
-      "guid": "https://flaviocopes.com/exe-dev/",
-      "title": "A deep dive into exe.dev",
-      "link": "https://flaviocopes.com/exe-dev/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "exe.dev gives you persistent Linux VMs over SSH, each with an HTTPS URL, private-by-default sharing, and a built-in coding agent. How it works, what it costs, and how I use it.",
-      "publishedAt": "2026-09-07T13:00:00.000Z"
-    },
-    {
-      "slug": "fac138afc1471a2714cac093",
-      "guid": "https://flaviocopes.com/zustand/",
-      "title": "Zustand: simple React state management",
-      "link": "https://flaviocopes.com/zustand/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Learn Zustand through a React store: actions, selectors, immutable updates, persistence, testing, SSR boundaries, and when local or server state is better.",
-      "publishedAt": "2026-09-07T09:00:00.000Z"
-    },
-    {
-      "slug": "7b34ff48dffcc1556617c9cb",
-      "guid": "https://flaviocopes.com/content-security-policy/",
-      "title": "Content Security Policy (CSP) explained",
-      "link": "https://flaviocopes.com/content-security-policy/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Build and deploy a Content Security Policy with source directives, nonces or hashes, report-only rollout, framing protection, testing, and common CSP mistakes.",
-      "publishedAt": "2026-09-07T07:00:00.000Z"
     }
   ]
 }
