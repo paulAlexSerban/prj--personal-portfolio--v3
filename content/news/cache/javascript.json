@@ -1,8 +1,48 @@
 {
   "category": "javascript",
   "label": "JavaScript",
-  "fetchedAt": "2026-09-16T10:20:52.995Z",
+  "fetchedAt": "2026-09-17T10:29:54.558Z",
   "items": [
+    {
+      "slug": "24cedc4cf2669553dea206fb",
+      "guid": "https://flaviocopes.com/desktop-ai-costs/",
+      "title": "How to safely add paid AI features to a desktop app",
+      "link": "https://flaviocopes.com/desktop-ai-costs/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Protect your AI API keys and margins with server-side authentication, per-user budgets, rate limits, and a global spending cap.",
+      "publishedAt": "2026-09-17T10:00:00.000Z"
+    },
+    {
+      "slug": "c3c702a07ff62eb2eb556cbd",
+      "guid": "https://flaviocopes.com/cap-business-model/",
+      "title": "How Cap makes money from open source software",
+      "link": "https://flaviocopes.com/cap-business-model/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Cap gives away the code of its screen recorder under AGPL and still charges for it. A look at the pricing, the license, and what an indie developer can copy.",
+      "publishedAt": "2026-09-17T07:00:00.000Z"
+    },
+    {
+      "slug": "8db798388c7a6167df5da4a7",
+      "guid": "https://flaviocopes.com/hosting-costs/",
+      "title": "What will your app cost to run? Estimating hosting costs from 100 to 100,000 users",
+      "link": "https://flaviocopes.com/hosting-costs/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "How to turn a number of users into a hosting bill: requests, bandwidth, CPU time and database writes, priced on Cloudflare, Vercel, a VPS and a PaaS, with the cost cliffs to watch for.",
+      "publishedAt": "2026-09-17T05:00:00.000Z"
+    },
+    {
+      "slug": "141f115016207e69f13267a7",
+      "guid": "https://flaviocopes.com/membership-site/",
+      "title": "How I built a paid membership site with Astro and Convex",
+      "link": "https://flaviocopes.com/membership-site/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Build a paid membership site with Astro SSR, Convex, Resend magic links, Paddle Classic webhooks, and Cloudflare Workers. Step-by-step walkthrough.",
+      "publishedAt": "2026-09-16T13:00:00.000Z"
+    },
     {
       "slug": "d512d8d4acea02850556d179",
       "guid": "https://flaviocopes.com/vercel/",
@@ -62,6 +102,16 @@
       "sourceUrl": "https://flaviocopes.com/rss.xml",
       "summary": "Claude Code kept dying a few seconds after starting on my Ubuntu server. I pointed Codex CLI at the server over SSH and it found the Linux OOM killer in the kernel logs. Here is the whole session.",
       "publishedAt": "2026-09-15T07:00:00.000Z"
+    },
+    {
+      "slug": "f2779a1c6c12d3e71f54a844",
+      "guid": "https://javascriptweekly.com/issues/802",
+      "title": "Functional programming jargon, mapped out",
+      "link": "https://javascriptweekly.com/issues/802",
+      "source": "JavaScript Weekly",
+      "sourceUrl": "https://javascriptweekly.com/rss/1b4m1h9j",
+      "summary": "#​802 — September 15, 2026 Read on the Web JavaScript Weekly Functional Programming Jargon, Mapped and Explained — Currying, purity, functors, monads…? If FP terms ever go over your head, TC39 delegate Hemanth HM's popular jargon reference is now an explorable map of concepts sh…",
+      "publishedAt": "2026-09-15T00:00:00.000Z"
     },
     {
       "slug": "d8221c93a1a9e8bb443249e1",
@@ -284,46 +334,6 @@
       "publishedAt": "2026-09-08T17:00:00.000Z"
     },
     {
-      "slug": "ff8a745bd7416cc274e05646",
-      "guid": "https://flaviocopes.com/language-model-builder/",
-      "title": "Build a language model on your Mac with Language Model Builder",
-      "link": "https://flaviocopes.com/language-model-builder/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Language Model Builder teaches how LLMs work and lets you train a small GPT locally on an Apple Silicon Mac, without writing code.",
-      "publishedAt": "2026-09-08T13:00:00.000Z"
-    },
-    {
-      "slug": "acd4c78c1feee748ef78b0da",
-      "guid": "https://flaviocopes.com/macbook-altitude/",
-      "title": "Why your MacBook runs hotter at high altitude",
-      "link": "https://flaviocopes.com/macbook-altitude/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "MacBooks run hotter above 1800 meters because thin air carries away less heat. Learn the physics behind it and simple ways to keep your laptop cool.",
-      "publishedAt": "2026-09-08T09:00:00.000Z"
-    },
-    {
-      "slug": "cf79a5a5c7ff025828951968",
-      "guid": "https://flaviocopes.com/vercel-ai-gateway/",
-      "title": "Vercel AI Gateway tutorial",
-      "link": "https://flaviocopes.com/vercel-ai-gateway/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Use Vercel AI Gateway with the AI SDK and OpenAI client, then add model routing, fallbacks, caching, budgets, BYOK, and observability.",
-      "publishedAt": "2026-09-08T07:00:00.000Z"
-    },
-    {
-      "slug": "6e6282e792432c0c007274cc",
-      "guid": "https://flaviocopes.com/ai-agent-passwords/",
-      "title": "How AI agents can log in without seeing your passwords",
-      "link": "https://flaviocopes.com/ai-agent-passwords/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Compare 1Password Agentic Autofill, Bitwarden's Agent Access SDK, Browser Use sensitive data, OAuth token vaults, and why passkeys still block AI agents.",
-      "publishedAt": "2026-09-08T05:00:00.000Z"
-    },
-    {
       "slug": "e761312e4e066da2bb97f422",
       "guid": "https://blog.appsignal.com/2026/09/08/top-17-ai-testing-tools.html",
       "title": "Top 17 AI Testing Tools",
@@ -341,6 +351,16 @@
       "source": "AppSignal",
       "sourceUrl": "https://blog.appsignal.com/feed.xml",
       "summary": "There’s no scenario in which you should be required to run six monitoring tools at once. OK, I may have been a bit dramatic there, you might actually be at a scale where you need it. But for the rest of us, it’s certainly overkill. Using UptimeRobot for, “Is the site up?”, Paper…",
+      "publishedAt": "2026-09-08T00:00:00.000Z"
+    },
+    {
+      "slug": "22032e701dc752b6b8513d7a",
+      "guid": "https://javascriptweekly.com/issues/801",
+      "title": "When 8 chunks weigh more than 355",
+      "link": "https://javascriptweekly.com/issues/801",
+      "source": "JavaScript Weekly",
+      "sourceUrl": "https://javascriptweekly.com/rss/1b4m1h9j",
+      "summary": "#​801 — September 8, 2026 Read on the Web JavaScript Weekly How Turbopack Chunks Your JavaScript — Starting from the Network tab and working up, a look at chunking strategy and the tradeoffs bundlers make between fewer requests and less code (e.g. 8 chunks can weigh more than 35…",
       "publishedAt": "2026-09-08T00:00:00.000Z"
     }
   ]
