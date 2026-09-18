@@ -1,127 +1,287 @@
 {
   "category": "web-dev",
   "label": "Web Development",
-  "fetchedAt": "2026-09-17T10:29:54.558Z",
+  "fetchedAt": "2026-09-18T10:06:29.486Z",
   "items": [
     {
-      "slug": "628bf813303582e949e01226",
-      "guid": "https://dev.to/ponmiledaniel/learn-how-to-query-from-unlabeled-data-streams-in-federated-learning-51i3",
-      "title": "Learn How to Query from Unlabeled Data Streams in Federated Learning.",
-      "link": "https://dev.to/ponmiledaniel/learn-how-to-query-from-unlabeled-data-streams-in-federated-learning-51i3",
+      "slug": "2f26874fb4e562f505553a0a",
+      "guid": "https://dev.to/iurii_rogulia/caching-vat-and-fx-rates-at-build-time-not-on-the-request-path-4jpa",
+      "title": "Caching VAT and FX Rates at Build Time, Not on the Request Path",
+      "link": "https://dev.to/iurii_rogulia/caching-vat-and-fx-rates-at-build-time-not-on-the-request-path-4jpa",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "1. The Problem The authors start from a realistic problem. Most Federated Learning research assumes that clients already have a labeled dataset. But what happens when data is continuously arriving at the client without labels? For example: Hospital ↓ Patient image arrives ↓ No l…",
-      "publishedAt": "2026-09-17T10:27:17.000Z"
+      "summary": "Two ways to get exchange rates or VAT tables into an application, and both are wrong in a familiar way. Call a rates API on every request or every checkout, and you’ve added latency plus a new third-party dependency to a path where a customer is trying to pay you money. Or hardc…",
+      "publishedAt": "2026-09-18T10:00:58.000Z"
     },
     {
-      "slug": "5d914f11ad15aa8a801e0a4e",
-      "guid": "https://dev.to/arcaneproject/kyb-kyc-architecting-know-your-business-entity-graph-traversal-pii-orchestration-2c15",
-      "title": "KYB + KYC : Architecting 'Know Your Business', 'Entity Graph Traversal' & 'PII Orchestration'",
-      "link": "https://dev.to/arcaneproject/kyb-kyc-architecting-know-your-business-entity-graph-traversal-pii-orchestration-2c15",
+      "slug": "ea8c7d30677e2732827ff2cd",
+      "guid": "https://dev.to/margoneto/the-rule-that-killed-just-start-coding-at-our-hackathon-jeb",
+      "title": "The rule that killed \"Just Start Coding\" at our Hackathon",
+      "link": "https://dev.to/margoneto/the-rule-that-killed-just-start-coding-at-our-hackathon-jeb",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "KYB and KYC get bundled into the same dashboard and the same sentence, but they verify different things for different customer types. Here's what Know Your Business actually means, how it differs from KYC, what a compliant KYB check has to include, and why regulators require it.…",
-      "publishedAt": "2026-09-17T10:23:10.000Z"
+      "summary": "GDG Basilicata and the IEEE Student Branch at the University of Basilicata, together with the university's Department of Sciences, booked a room built for fifty to eighty students, split them into teams of three or four, and gave them eight hours to build something with Google's…",
+      "publishedAt": "2026-09-18T10:00:53.000Z"
     },
     {
-      "slug": "f61b04c755a8c7cfd2a140ba",
-      "guid": "https://dev.to/nventory/we-evaluated-40-inventory-sync-tools-before-building-our-own-heres-the-architectural-pattern-1kpg",
-      "title": "We evaluated 40+ inventory sync tools before building our own. Here's the architectural pattern that separates the good from the broken.",
-      "link": "https://dev.to/nventory/we-evaluated-40-inventory-sync-tools-before-building-our-own-heres-the-architectural-pattern-1kpg",
+      "slug": "b2adbcaa6e410b215180c640",
+      "guid": "https://dev.to/alifar/modelair-uses-ai-powered-3d-digital-twins-for-street-level-air-quality-insights-3mc1",
+      "title": "MODELAIR Uses AI-Powered 3D Digital Twins for Street-Level Air Quality Insights",
+      "link": "https://dev.to/alifar/modelair-uses-ai-powered-3d-digital-twins-for-street-level-air-quality-insights-3mc1",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "Before building Nventory we spent three months evaluating every inventory sync tool in the market. Not as potential customers. As engineers trying to understand why the problem remained unsolved despite dozens of tools claiming to solve it. The pattern we found was consistent an…",
-      "publishedAt": "2026-09-17T10:20:54.000Z"
+      "summary": "The EU-funded MODELAIR project is developing AI-enabled 3D digital twins designed to predict urban air pollution at street level in real time. Rather than treating air quality as a city-wide average, the project combines city geometry, simulations and observed data to give autho…",
+      "publishedAt": "2026-09-18T10:00:30.000Z"
     },
     {
-      "slug": "06c9556dafa0caf7d9285836",
-      "guid": "https://dev.to/thebitforge/ai-can-write-code-it-still-cant-think-like-an-engineer-2l19",
-      "title": "AI Can Write Code. It Still Can't Think Like an Engineer.",
-      "link": "https://dev.to/thebitforge/ai-can-write-code-it-still-cant-think-like-an-engineer-2l19",
+      "slug": "38e06871d66437bf06291a84",
+      "guid": "https://dev.to/alexgeorgiev17/nodejs-269-turns-nodeffi-on-by-default-at-37-nanoseconds-a-call-ngj",
+      "title": "Node.js 26.9 turns node:ffi on by default at 37 nanoseconds a call",
+      "link": "https://dev.to/alexgeorgiev17/nodejs-269-turns-nodeffi-on-by-default-at-37-nanoseconds-a-call-ngj",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "The bug that doesn't look like a bug There's a specific kind of bug that has started showing up more often over the last two years, and it doesn't behave like the bugs engineers are used to. It doesn't look sloppy. It doesn't have a typo in it. It reads like someone who knew exa…",
-      "publishedAt": "2026-09-17T10:20:32.000Z"
+      "summary": "Node.js 26.9.0 came out on 16 September, and one line in the changelog changes what \"just call a C library\" means in Node: node:ffi, the module for calling native functions without writing a compiled addon, is now on by default. Up to 26.8.2 you needed --experimental-ffi to touc…",
+      "publishedAt": "2026-09-18T10:00:00.000Z"
     },
     {
-      "slug": "b8bbc4f2cd751544d4fe0410",
-      "guid": "https://dev.to/turyakalburgi/how-i-built-a-lightweight-github-action-to-stop-breaking-api-changes-in-ci-3jam",
-      "title": "How I built a lightweight GitHub Action to stop breaking API changes in CI",
-      "link": "https://dev.to/turyakalburgi/how-i-built-a-lightweight-github-action-to-stop-breaking-api-changes-in-ci-3jam",
+      "slug": "1fb7497bc1aa064bd04684e4",
+      "guid": "https://dev.to/timmkal01/a-raw-json-textarea-was-quietly-costing-me-users-4nek",
+      "title": "\"A Raw JSON Textarea Was Quietly Costing Me Users\"",
+      "link": "https://dev.to/timmkal01/a-raw-json-textarea-was-quietly-costing-me-users-4nek",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "Breaking API contracts silently slipping into production is a pain point almost every engineering team hits eventually. A backend PR renames a field, drops a property, or mutates a type—and downstream services or frontends immediately break. To catch this before merges happen, I…",
-      "publishedAt": "2026-09-17T10:20:32.000Z"
+      "summary": "I almost missed this one because the actor itself worked fine. The bug wasn't in the code, it was in the input form. Looking at usage funnels across a portfolio of small data-fetching actors (Apify calls them Actors — serverless scrapers/API tools), one number stood out: for com…",
+      "publishedAt": "2026-09-18T09:57:34.000Z"
     },
     {
-      "slug": "f0edd5c6404bef53a0a888c4",
-      "guid": "https://dev.to/oleksandr_kuryzhev_42873f/alertmanager-routing-fixes-to-cut-prometheus-alert-fatigue-1782",
-      "title": "Alertmanager Routing Fixes to Cut Prometheus Alert Fatigue",
-      "link": "https://dev.to/oleksandr_kuryzhev_42873f/alertmanager-routing-fixes-to-cut-prometheus-alert-fatigue-1782",
+      "slug": "34b2d02095c47585641cfe1e",
+      "guid": "https://dev.to/kozhevniko/proxmox-ve-exposure-why-the-port-8006-count-is-not-the-number-that-matters-1295",
+      "title": "Proxmox VE Exposure: Why the Port 8006 Count Is Not the Number That Matters",
+      "link": "https://dev.to/kozhevniko/proxmox-ve-exposure-why-the-port-8006-count-is-not-the-number-that-matters-1295",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "Originally published on kuryzhev.cloud A pager goes off at 3 a.m. with dozens of notifications for the same disk-pressure event on one node, spread across three teams who all have the node exporter alert wired to their phones. By the time someone actually reads one of them, the …",
-      "publishedAt": "2026-09-17T10:18:50.000Z"
+      "summary": "Proxmox VE Exposure: Why the Port 8006 Count Is Not the Number That Matters Internet measurement is most useful when it corrects a first impression. For the Proxmox VE authentication bypass, the obvious query returns a number so large that it is misleading, and the more useful q…",
+      "publishedAt": "2026-09-18T09:56:17.000Z"
     },
     {
-      "slug": "ab7dcec11f24756bfe62131b",
-      "guid": "https://dev.to/datacpp_8185/if-the-patch-authored-the-test-score-the-overlap-2ojj",
-      "title": "If the Patch Authored the Test, Score the Overlap",
-      "link": "https://dev.to/datacpp_8185/if-the-patch-authored-the-test-score-the-overlap-2ojj",
+      "slug": "a255a00e2566e2c79a14469e",
+      "guid": "https://dev.to/abhishek_sharma_a9792aee8/what-22-days-of-building-ai-systems-taught-me-grounding-evals-and-control-83",
+      "title": "\"What 22 Days of Building AI Systems Taught Me: Grounding, Evals, and Control\"",
+      "link": "https://dev.to/abhishek_sharma_a9792aee8/what-22-days-of-building-ai-systems-taught-me-grounding-evals-and-control-83",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "Same-session tests are not evidence. If an agent writes a production hunk and the assertions in one pass, a green build often means the two files agreed on a private story, not that the public contract holds. Score the overlap first. Then rewrite the oracle in a session that nev…",
-      "publishedAt": "2026-09-17T10:18:19.000Z"
+      "summary": "What 22 Days of Building AI Systems Taught Me: Grounding, Evals, and Control I started this learning sprint with a familiar but incomplete idea: an LLM was a powerful chatbot, and the hard part of using one was writing a clever prompt. Twenty-two days later, I have a different m…",
+      "publishedAt": "2026-09-18T09:50:45.000Z"
     },
     {
-      "slug": "5f05bf42fc56b3b3189cafe7",
-      "guid": "https://dev.to/billfastapp/getting-paid-faster-starts-before-you-send-the-invoice-26c5",
-      "title": "Getting Paid Faster Starts Before You Send the Invoice",
-      "link": "https://dev.to/billfastapp/getting-paid-faster-starts-before-you-send-the-invoice-26c5",
+      "slug": "143c0df23b28af0d6b473b84",
+      "guid": "https://dev.to/abhishek_kadlii_9ef4ca8bc/stopping-rogue-deployments-how-i-programmed-azure-api-guardrails-to-protect-the-cloud-wallet-340m",
+      "title": "Stopping Rogue Deployments: How I Programmed Azure API Guardrails to Protect the Cloud Wallet",
+      "link": "https://dev.to/abhishek_kadlii_9ef4ca8bc/stopping-rogue-deployments-how-i-programmed-azure-api-guardrails-to-protect-the-cloud-wallet-340m",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "A lot of “late payment” problems begin before the invoice exists. The client is busy, your work is done, and the payment date is suddenly a negotiation. A few small decisions at the start of a project can make getting paid much more predictable: Don’t leave “due soon” in a propo…",
-      "publishedAt": "2026-09-17T10:18:17.000Z"
+      "summary": "Every cloud architect knows the sudden wave of anxiety that comes with opening a billing dashboard and seeing an unexpected cost spike. In large enterprise environments, these spikes rarely happen due to malicious attacks—they happen due to human error. A junior developer spinni…",
+      "publishedAt": "2026-09-18T09:49:58.000Z"
     },
     {
-      "slug": "f3e1006e294864bf1a97e2f2",
-      "guid": "https://dev.to/makeitrun/reduce-expo-monorepo-ci-build-time-2hna",
-      "title": "Reduce Expo Monorepo CI Build Time",
-      "link": "https://dev.to/makeitrun/reduce-expo-monorepo-ci-build-time-2hna",
+      "slug": "d27b42cb1101bdf56f42c2ee",
+      "guid": "https://dev.to/julianrubisch/audio-previews-in-rails-without-a-job-queue-4k2e",
+      "title": "Audio previews in Rails without a job queue",
+      "link": "https://dev.to/julianrubisch/audio-previews-in-rails-without-a-job-queue-4k2e",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "Expo monorepo CI gets slow and flaky for the same reason: we treat all caches as one thing. Then builds run from the repo root, one app reuses another app’s Metro state, or native cache is blamed for a problem in dependency install. The result is a pipeline that looks fast until…",
-      "publishedAt": "2026-09-17T10:14:54.000Z"
+      "summary": "Suppose you have this model: class Recording < ApplicationRecord has_one_attached :audio end Users upload 40-minute WAV files to it. Your app has a couple of different requirements: The feed needs a 30-second preview, the player needs a waveform, downloads should be MP3, streami…",
+      "publishedAt": "2026-09-18T09:42:02.000Z"
     },
     {
-      "slug": "b83912d8f1e2acca86ab750f",
-      "guid": "https://dev.to/onaeiuspkz/finding-the-exposed-controllers-using-zoomeye-to-locate-internet-reachable-ethernetip-assets-fca",
-      "title": "Finding the Exposed Controllers: Using ZoomEye to Locate Internet-Reachable EtherNet/IP Assets",
-      "link": "https://dev.to/onaeiuspkz/finding-the-exposed-controllers-using-zoomeye-to-locate-internet-reachable-ethernetip-assets-fca",
+      "slug": "5d400c31a7fe44048e134abb",
+      "guid": "https://dev.to/krish_gulati_7d8c934b8b1a/the-mute-led-that-wouldnt-light-chasing-a-reddit-hack-into-a-kernel-patch-3892",
+      "title": "The Mute LED That Wouldn't Light: Chasing a Reddit Hack Into a Kernel Patch",
+      "link": "https://dev.to/krish_gulati_7d8c934b8b1a/the-mute-led-that-wouldnt-light-chasing-a-reddit-hack-into-a-kernel-patch-3892",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "Finding the Exposed Controllers: Using ZoomEye to Locate Internet-Reachable EtherNet/IP Assets On 30 July 2026, the U.S. Cybersecurity and Infrastructure Security Agency (CISA) published an alert stating that it was observing a significant increase in cyber threat actors targeti…",
-      "publishedAt": "2026-09-17T10:11:49.000Z"
+      "summary": "So this one's not about hid_guard. While that saga sits in maintainer-review limbo, I got sidetracked by something smaller. The fix itself is simple and genuinely nothing to look at. But I like how I got there, because it's a pretty honest example of what \"just Google it\" actual…",
+      "publishedAt": "2026-09-18T09:34:22.000Z"
     },
     {
-      "slug": "6f3dd1fc9cbb5b73d4d79bbc",
-      "guid": "https://dev.to/granite-so/kubernetes-audit-policy-a-checklist-against-common-blind-spots-in-your-rules-3ko8",
-      "title": "Kubernetes Audit Policy: A Checklist Against Common Blind Spots in Your Rules",
-      "link": "https://dev.to/granite-so/kubernetes-audit-policy-a-checklist-against-common-blind-spots-in-your-rules-3ko8",
+      "slug": "0a13612f21276b3db0ada19f",
+      "guid": "https://dev.to/zeromathai/diffusion-models-from-noise-corruption-to-reverse-generation-1jic",
+      "title": "Diffusion Models: From Noise Corruption to Reverse Generation",
+      "link": "https://dev.to/zeromathai/diffusion-models-from-noise-corruption-to-reverse-generation-1jic",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "Hi everyone! We want to share our experience writing and reviewing a Kubernetes audit policy. A Kubernetes audit policy is one of those things that gets written once during cluster setup and then lives \"as is\" for years, accumulating exceptions for new components and almost neve…",
-      "publishedAt": "2026-09-17T10:11:43.000Z"
+      "summary": "A diffusion model does not try to solve generation from a complex data distribution in one step. Instead, it defines a Forward Diffusion Process that gradually corrupts real data with Gaussian noise, then learns a Reverse Diffusion Process that moves in the opposite direction, f…",
+      "publishedAt": "2026-09-18T09:31:21.000Z"
     },
     {
-      "slug": "f872509999db4061b20d269b",
-      "guid": "https://dev.to/maker-rayaoi/building-a-measurable-pcba-inspection-feedback-loop-55lg",
-      "title": "Building a Measurable PCBA Inspection Feedback Loop",
-      "link": "https://dev.to/maker-rayaoi/building-a-measurable-pcba-inspection-feedback-loop-55lg",
+      "slug": "db8578f19482318784f44504",
+      "guid": "https://dev.to/woochan/an-introduction-to-wontopos-the-memory-api-i-work-on-4o1e",
+      "title": "An Introduction to Wontopos, the Memory API I Work On",
+      "link": "https://dev.to/woochan/an-introduction-to-wontopos-the-memory-api-i-work-on-4o1e",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "Paste, placement, and reflow are coupled processes. A bridge seen after reflow may begin as excess paste, a shifted placement, or a thermal profile interaction. The loop therefore starts by preserving evidence at each station, not by asking one inspection station to explain ever…",
-      "publishedAt": "2026-09-17T10:03:23.000Z"
+      "summary": "My posts here so far have only been about the benchmark I'm working on. This time I want to introduce the company I work at, Wontopos. Wontopos builds WOS: long-term memory for AI agents. It stores an end user's memories once, then recalls only the relevant ones per query so you…",
+      "publishedAt": "2026-09-18T09:30:14.000Z"
+    },
+    {
+      "slug": "724b4a24aaa8dbedfa91b2cb",
+      "guid": "6aac7747d406d7c207351312",
+      "title": "How to Migrate a Legacy Monolith Incrementally Without a Big-Bang Rewrite",
+      "link": "https://www.freecodecamp.org/news/migrate-legacy-monolith-incrementally/",
+      "source": "Free Code Camp - News",
+      "sourceUrl": "https://www.freecodecamp.org/news/rss",
+      "summary": "Large legacy migrations often fail long before the final cutover. The failure usually starts when the migration is framed as a single event. Move the application. Move the database. Move all the users",
+      "publishedAt": "2026-09-17T23:27:03.000Z"
+    },
+    {
+      "slug": "54222dd2e74dc4391ea0940f",
+      "guid": "https://blog.master.dev/?p=11075",
+      "title": "Better Centering with CSS text-box",
+      "link": "https://blog.master.dev/better-centering-with-css-text-box/",
+      "source": "Frontend Masters",
+      "sourceUrl": "https://frontendmasters.com/blog/feed/",
+      "summary": "Jake has a very nice, clear video about what text-box solves in CSS. It essentially makes even padding on an element (like a button) doable without magic numbers, and that will work across any font (sick). Temani made a tool to help pick the right values.",
+      "publishedAt": "2026-09-17T23:08:08.000Z"
+    },
+    {
+      "slug": "60460a8b7d3bb2cab3f0ffe5",
+      "guid": "https://medium.com/p/7d810d670f42",
+      "title": "The GitHub Copilot App Turns Issue to Merge Into One Screen",
+      "link": "https://itnext.io/github-copilot-app-issue-to-merge-7d810d670f42?source=rss----5b301f10ddcd---4",
+      "source": "itnext",
+      "sourceUrl": "https://itnext.io/feed",
+      "summary": "A technical walkthrough of the agent native desktop app: parallel worktree sessions, Quick chats, My Work, and Canvas, and when to use it… Continue reading on ITNEXT »",
+      "publishedAt": "2026-09-17T19:42:11.000Z"
+    },
+    {
+      "slug": "ea86575f7ffb2dd215ca03bc",
+      "guid": "https://dzone.com/articles/3663587",
+      "title": "Common Pitfalls in RAG Applications: What to Avoid When Using Vector Search and Embeddings",
+      "link": "https://dzone.com/articles/common-pitfalls-rag-applications",
+      "source": "DZone",
+      "sourceUrl": "https://feeds.dzone.com/home",
+      "summary": "Here's the demo that always works: you point a notebook at a vector index, ask it a question, and it answers perfectly. Everyone claps. Three weeks later, the same system tells a customer that your refund window is 90 days when it's 30, cites a document that doesn't exist, and o…",
+      "publishedAt": "2026-09-17T19:00:00.000Z"
+    },
+    {
+      "slug": "cff2606780096e9e22ee3ee9",
+      "guid": "6aac1b5a4af2fb000147e49b",
+      "title": "Temperature, Top P, and Max Tokens Explained With Runnable Experiments",
+      "link": "https://kodekloud.com/blog/temperature-top-p-max-tokens-explained/",
+      "source": "KodeKloud",
+      "sourceUrl": "https://kodekloud.com/blog/rss/",
+      "summary": "Turning temperature up does not make a model more creative. It makes it less likely to pick the right word, which on a factual question means a wrong answer delivered with confidence.",
+      "publishedAt": "2026-09-17T18:00:46.000Z"
+    },
+    {
+      "slug": "5ce062e2a3c40b9251398e35",
+      "guid": "6aac2aabd02a5d838577063a",
+      "title": "Hands-On Evolution of Deep Learning – Geoffrey Hinton’s AI Legacy",
+      "link": "https://www.freecodecamp.org/news/hands-on-evolution-of-deep-learning-geoffrey-hinton-s-ai-legacy/",
+      "source": "Free Code Camp - News",
+      "sourceUrl": "https://www.freecodecamp.org/news/rss",
+      "summary": "Geoffrey Hinton is known as the \"the Godfather of AI\". We just published a course on the freeCodeCamp.org YouTube channel that will help you master modern neural networks by recreating the groundbreak",
+      "publishedAt": "2026-09-17T18:00:11.000Z"
+    },
+    {
+      "slug": "0df86e465f47fd8020754c17",
+      "guid": "https://dzone.com/articles/3666440",
+      "title": "Federated MCP Control Plane: Policy-Aware Access to Multi-Backend Tool Servers",
+      "link": "https://dzone.com/articles/mcp-control-plane",
+      "source": "DZone",
+      "sourceUrl": "https://feeds.dzone.com/home",
+      "summary": "A federated gateway provides secure, policy-aware access to tool servers. The thing that made me stop and rethink our whole approach to agentic tooling was a text file.",
+      "publishedAt": "2026-09-17T18:00:00.000Z"
+    },
+    {
+      "slug": "2315e4eb57f81a6e8c8980bd",
+      "guid": "https://www.sitepoint.com/adaptive-server-monitoring-vs-static-thresholds/",
+      "title": "Server Monitoring in the age of AI: What static thresholds miss and how adaptive monitoring fixes it?",
+      "link": "https://www.sitepoint.com/adaptive-server-monitoring-vs-static-thresholds/?utm_source=rss",
+      "source": "SitePoint",
+      "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
+      "summary": "Why static CPU and memory thresholds cause alert fatigue, and how adaptive monitoring with machine learning baselines fixes false positives and missed outages. Server Monitoring in the age of AI: What static thresholds miss and how adaptive monitoring fixes it? on SitePoint.",
+      "publishedAt": "2026-09-17T17:18:56.000Z"
+    },
+    {
+      "slug": "df010dd980acaae2a0b9c5da",
+      "guid": "https://dzone.com/articles/3666473",
+      "title": "The New API Contract Is Probabilistic: Building Reliable Systems Around Unreliable Model Outputs",
+      "link": "https://dzone.com/articles/probabilistic-api-contracts",
+      "source": "DZone",
+      "sourceUrl": "https://feeds.dzone.com/home",
+      "summary": "For decades, API design rested on a reassuring assumption: given valid input and a stable dependency, software should return a predictable result. Large language models break that assumption without breaking the API. A request can receive HTTP 200, perfectly valid JSON, and a co…",
+      "publishedAt": "2026-09-17T17:00:00.000Z"
+    },
+    {
+      "slug": "928d973988b731b7b2eaf067",
+      "guid": "https://dzone.com/articles/3683529",
+      "title": "A Senior Engineer’s Guide to Foundry IQ, MCP, and the OpenAI Agents SDK",
+      "link": "https://dzone.com/articles/foundry-iq-openai-agents",
+      "source": "DZone",
+      "sourceUrl": "https://feeds.dzone.com/home",
+      "summary": "Most Foundry writeups assume you're all in on Microsoft's stack end to end: the Agent Framework for orchestration, the Foundry Agent Service for hosting, and the Responses API wrapped in Microsoft's own client. That's a reasonable default, but it's not the only shape this can ta…",
+      "publishedAt": "2026-09-17T16:00:00.000Z"
+    },
+    {
+      "slug": "37e8a1302829782d06b9fa5a",
+      "guid": "6aabf0c04af2fb000147dfd5",
+      "title": "Designing a Caching System and Where It Breaks",
+      "link": "https://kodekloud.com/blog/database-caching-ttl-invalidation-cache-stampede/",
+      "source": "KodeKloud",
+      "sourceUrl": "https://kodekloud.com/blog/rss/",
+      "summary": "Learn to design a database caching system with cache-aside, TTL, invalidation, single-flight and jitter to prevent cache stampedes.",
+      "publishedAt": "2026-09-17T15:25:02.000Z"
+    },
+    {
+      "slug": "7533d6f61c7beb83d7388b46",
+      "guid": "https://dzone.com/articles/3682443",
+      "title": "Understand the Sidecar Pattern by Deploying n8n to AWS Fargate",
+      "link": "https://dzone.com/articles/n8n-aws-fargate-sidecar",
+      "source": "DZone",
+      "sourceUrl": "https://feeds.dzone.com/home",
+      "summary": "A sidecar is a container that runs alongside another container as part of the same deployment unit. Just because two containers are in the same cluster or deployed around the same time doesn't make one a sidecar. There are two things that make a sidecar. First is that they share…",
+      "publishedAt": "2026-09-17T15:00:01.000Z"
+    },
+    {
+      "slug": "508eaa0464f19bfb495af44b",
+      "guid": "https://www.sitepoint.com/how-to-build-an-event-driven-lead-scoring-pipeline-with-node-js-and-postgresql/",
+      "title": "How to Build an Event-Driven Lead Scoring Pipeline with Node.js and PostgreSQL",
+      "link": "https://www.sitepoint.com/how-to-build-an-event-driven-lead-scoring-pipeline-with-node-js-and-postgresql/?utm_source=rss",
+      "source": "SitePoint",
+      "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
+      "summary": "null How to Build an Event-Driven Lead Scoring Pipeline with Node.js and PostgreSQL on SitePoint.",
+      "publishedAt": "2026-09-17T14:06:02.000Z"
+    },
+    {
+      "slug": "d3c0ebd528e03259bfe03d2e",
+      "guid": "https://dzone.com/articles/3682444",
+      "title": "Stop Overfeeding Your AI Agent's Context Window",
+      "link": "https://dzone.com/articles/agent-context-window",
+      "source": "DZone",
+      "sourceUrl": "https://feeds.dzone.com/home",
+      "summary": "Picture a checkout page throwing the dreaded 500 error at 2 a.m. Someone opens an AI agent and asks it to fix things. The instinct is to be generous. Paste in the runbooks. Drop in three dashboards. Attach a pile of customer complaints. Let the model sort it out. More context sh…",
+      "publishedAt": "2026-09-17T14:00:09.000Z"
+    },
+    {
+      "slug": "58e1daf894a0aadf9f1a38e7",
+      "guid": "https://dzone.com/articles/3681559",
+      "title": "Context Engineering: The Missing Piece in Agentic Systems",
+      "link": "https://dzone.com/articles/understanding-context-engineering",
+      "source": "DZone",
+      "sourceUrl": "https://feeds.dzone.com/home",
+      "summary": "Context engineering is becoming essential as AI agents take on more software development work. An agent can plan, code, test, investigate incidents, trigger CI, and help deploy software. But none of that matters if it is operating without the right information. This is the main …",
+      "publishedAt": "2026-09-17T13:00:00.000Z"
+    },
+    {
+      "slug": "23b1de43523b6d9be8a47226",
+      "guid": "https://dzone.com/articles/3682479",
+      "title": "AI Architectures That Drive Real Business ROI",
+      "link": "https://dzone.com/articles/ai-architectures-business-roi",
+      "source": "DZone",
+      "sourceUrl": "https://feeds.dzone.com/home",
+      "summary": "In this article, I'll try to give practical insights for choosing the right AI architecture for impact, not just experimentation. Companies are spending heavily on AI. Many are still struggling to show clear business returns. The most common reason is not the model; it is the ar…",
+      "publishedAt": "2026-09-17T12:00:06.000Z"
     },
     {
       "slug": "ce800a4dd4797a2644f4727d",
@@ -614,16 +774,6 @@
       "publishedAt": "2026-09-15T11:47:54.000Z"
     },
     {
-      "slug": "69b0ddc69809c0b141da367e",
-      "guid": "https://medium.com/p/53957728a3a1",
-      "title": "Concerns Were Raised",
-      "link": "https://itnext.io/ai-adoption-vibe-engineering-53957728a3a1?source=rss----5b301f10ddcd---4",
-      "source": "itnext",
-      "sourceUrl": "https://itnext.io/feed",
-      "summary": "",
-      "publishedAt": "2026-09-15T11:46:43.000Z"
-    },
-    {
       "slug": "371904a0ab3c9d56d951debc",
       "guid": "https://www.sitepoint.com/microservices-vs-monolithic-architecture-what-nobody-tells-you-until-you-ve-lived-through-both/",
       "title": "Microservices vs Monolithic Architecture: What Nobody Tells You Until You've Lived Through Both",
@@ -814,16 +964,6 @@
       "publishedAt": "2026-09-14T17:33:10.000Z"
     },
     {
-      "slug": "3c545aa78a270d8bfaf9324f",
-      "guid": "https://dzone.com/articles/3681236",
-      "title": "Data Governance for the Agentic Era",
-      "link": "https://dzone.com/articles/data-governance-agentic-era",
-      "source": "DZone",
-      "sourceUrl": "https://feeds.dzone.com/home",
-      "summary": "The modern enterprise generates and consumes unprecedented volumes of data across operational systems, customer interactions, partner ecosystems, cloud applications, IoT devices, and AI platforms. At the same time, AI systems are becoming major consumers of enterprise data, maki…",
-      "publishedAt": "2026-09-14T17:00:00.000Z"
-    },
-    {
       "slug": "0d71a49a52aab7820c6ec25b",
       "guid": "6aa8200e59dfce663a0e73bd",
       "title": "How to Use Differential Testing During a Legacy Migration",
@@ -832,36 +972,6 @@
       "sourceUrl": "https://www.freecodecamp.org/news/rss",
       "summary": "The most dangerous moment in a legacy migration isn't necessarily when you start writing the new implementation. It's when the new implementation looks finished. The code compiles, the tests pass, the",
       "publishedAt": "2026-09-14T16:25:50.000Z"
-    },
-    {
-      "slug": "5d3434e22b8f95b440b63185",
-      "guid": "https://dzone.com/articles/3664893",
-      "title": "Porting GPU Drivers to Rust on ARM64: The Hardest Trial for Kernel-Level Computing",
-      "link": "https://dzone.com/articles/porting-GPU-drivers-to-rust-on-arm64",
-      "source": "DZone",
-      "sourceUrl": "https://feeds.dzone.com/home",
-      "summary": "Rust Has Entered the Kernel. Now Comes the Dangerous Part. A kernel driver does not fail politely. It does not throw a friendly exception, generate a neat stack trace, and ask whether you would like to restart. It corrupts memory, wedges hardware, leaks secrets, freezes the comp…",
-      "publishedAt": "2026-09-14T16:00:00.000Z"
-    },
-    {
-      "slug": "6b6bcf2fd30a900fe2231f3c",
-      "guid": "https://dzone.com/articles/3665893",
-      "title": "Building a 2KB Histogram with Sub-0.2% Percentile Error",
-      "link": "https://dzone.com/articles/2kb-histogram-with-sub-point-two-percentile-error",
-      "source": "DZone",
-      "sourceUrl": "https://feeds.dzone.com/home",
-      "summary": "The Problem: Tracking Request Latency Without Slowing Things Down For a cloud data warehouse, performance is not just about average query time. What often matters more is tail latency, predictability, and the ability to pinpoint where things go wrong. In a cloud-native data ware…",
-      "publishedAt": "2026-09-14T15:00:00.000Z"
-    },
-    {
-      "slug": "d2fc8dd1ade9457021bbdd98",
-      "guid": "6aa80baffb20ceef80e8afa4",
-      "title": "How to Implement Feature Flags for Safe and Gradual Rollouts",
-      "link": "https://www.freecodecamp.org/news/how-to-implement-feature-flags-for-safe-and-gradual-rollouts/",
-      "source": "Free Code Camp - News",
-      "sourceUrl": "https://www.freecodecamp.org/news/rss",
-      "summary": "Feature flags are one of the most powerful tools in a team's deployment arsenal. They decouple deployment from release, meaning your CI/CD pipeline can push code to production servers on every merge,",
-      "publishedAt": "2026-09-14T14:58:55.000Z"
     },
     {
       "slug": "815c2340116c1e7307289369",
@@ -874,36 +984,6 @@
       "publishedAt": "2026-09-14T14:58:41.000Z"
     },
     {
-      "slug": "72b8505998c5bd77d530b5a5",
-      "guid": "https://dzone.com/articles/3664107",
-      "title": "A Practical Framework for Scoping an AI Proof of Concept",
-      "link": "https://dzone.com/articles/ai-poc-practical-framework",
-      "source": "DZone",
-      "sourceUrl": "https://feeds.dzone.com/home",
-      "summary": "Most AI proof-of-concept projects don't break down while they're building. They fall down on scoping, weeks before coding is even written. If the objective is unclear, data is unavailable, or a success is not defined, a two-week experiment becomes a two-month drift, showing no r…",
-      "publishedAt": "2026-09-14T14:00:00.000Z"
-    },
-    {
-      "slug": "f0930f5655ea7978a5bac9e4",
-      "guid": "6aa7fd8e205aecde15149ec4",
-      "title": "How to Design Gifting Features People Actually Use: Evidence from 58 Apps",
-      "link": "https://www.freecodecamp.org/news/how-to-design-gifting-features-people-actually-use-evidence-from-58-apps/",
-      "source": "Free Code Camp - News",
-      "sourceUrl": "https://www.freecodecamp.org/news/rss",
-      "summary": "American shoppers spent about $29 billion on gift cards over the 2025 holiday season, and 43 percent of them bought at least one. This put gift cards at the top of what people said they wanted accordi",
-      "publishedAt": "2026-09-14T13:58:38.000Z"
-    },
-    {
-      "slug": "8de03d441bbba92945899476",
-      "guid": "https://dzone.com/articles/3665216",
-      "title": "A Firewall for AI Agents: Enforce Authority at Every Tool Call",
-      "link": "https://dzone.com/articles/ai-agent-firewall-enforces-authority",
-      "source": "DZone",
-      "sourceUrl": "https://feeds.dzone.com/home",
-      "summary": "The right firewall for an AI agent goes between the model and every tool that can cause a side effect. Not a prompt filter, an action firewall. An AI agent is a model-driven program that chooses and calls external tools. Once it can send email, update a ticket, run code, query a…",
-      "publishedAt": "2026-09-14T13:00:07.000Z"
-    },
-    {
       "slug": "95746092e0fca9f347792d7f",
       "guid": "https://www.sitepoint.com/how-to-test-region-dependent-web-apps-on-windows-without-fooling-yourself/",
       "title": "How to Test Region-Dependent Web Apps on Windows Without Fooling Yourself",
@@ -914,16 +994,6 @@
       "publishedAt": "2026-09-14T12:33:07.000Z"
     },
     {
-      "slug": "188f160fa60e7b2cc2f0133a",
-      "guid": "https://dzone.com/articles/3666213",
-      "title": "Freshness as a First-Class Schema Concern: Modeling Data Staleness Across 83 Data Sources",
-      "link": "https://dzone.com/articles/freshness-first-class-schema-concern",
-      "source": "DZone",
-      "sourceUrl": "https://feeds.dzone.com/home",
-      "summary": "I am not a developer, and I built a public reef atlas with AI agents. It pulls from 83 data sources that each update on their own schedule, some daily, some weekly, some once a decade. The hardest problem in the whole build was staleness, harder than the ocean science and harder…",
-      "publishedAt": "2026-09-14T12:00:06.000Z"
-    },
-    {
       "slug": "b948639a5ca91e56a43c758f",
       "guid": "https://www.sitepoint.com/avif-jpg-image-format-workflow/",
       "title": "Serving AVIF, Working in JPG: A Developer's Guide to Living Between Image Formats",
@@ -932,76 +1002,6 @@
       "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
       "summary": "A developer's guide to living between AVIF and JPG - why serving AVIF is solved but working with it isn't, and how to bridge the gap without losing time. Serving AVIF, Working in JPG: A Developer's Guide to Living Between Image Formats on SitePoint.",
       "publishedAt": "2026-09-14T06:22:57.000Z"
-    },
-    {
-      "slug": "4b62c09694d77e6158323ecb",
-      "guid": "https://www.sitepoint.com/tailwind-css-v4-migration-decouple-vite-postcss/",
-      "title": "Tailwind CSS v4 Migration: Decouple Vite and PostCSS Pipelines",
-      "link": "https://www.sitepoint.com/tailwind-css-v4-migration-decouple-vite-postcss/?utm_source=rss",
-      "source": "SitePoint",
-      "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
-      "summary": "Migrate your web application to Tailwind CSS v4 by decoupling Vite and PostCSS pipelines into native CSS toolchains. Tailwind CSS v4 Migration: Decouple Vite and PostCSS Pipelines on SitePoint.",
-      "publishedAt": "2026-09-13T20:27:24.000Z"
-    },
-    {
-      "slug": "6222ab093ed3df6488acb8c3",
-      "guid": "6aa6acdbc2e7110001d3fcad",
-      "title": "How to Ground LLM Answers With Citations and Cut Hallucinations",
-      "link": "https://kodekloud.com/blog/ground-llm-answers-with-citations/",
-      "source": "KodeKloud",
-      "sourceUrl": "https://kodekloud.com/blog/rss/",
-      "summary": "One sentence in a prompt stopped a model inventing answers entirely. Adding citations on top made it slightly worse, and the citations it did produce could not be trusted without checking them.",
-      "publishedAt": "2026-09-13T17:30:03.000Z"
-    },
-    {
-      "slug": "af9fb94d14bae8e862b19003",
-      "guid": "https://www.sitepoint.com/ai-agent-live-web-search-fewer-tokens/",
-      "title": "Power Up Your AI Agent With Live Web Search, for Fewer Tokens",
-      "link": "https://www.sitepoint.com/ai-agent-live-web-search-fewer-tokens/?utm_source=rss",
-      "source": "SitePoint",
-      "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
-      "summary": "Give your AI agent live web search with a tool-calling loop, then cut your token cost by feeding it Markdown instead of raw JSON search results. Power Up Your AI Agent With Live Web Search, for Fewer Tokens on SitePoint.",
-      "publishedAt": "2026-09-12T08:48:30.000Z"
-    },
-    {
-      "slug": "b08946e485064dc1d79db2ff",
-      "guid": "https://www.sitepoint.com/juicebox-vs-hireez-comparison/",
-      "title": "Juicebox vs hireEZ: An honest comparison for recruiting teams",
-      "link": "https://www.sitepoint.com/juicebox-vs-hireez-comparison/?utm_source=rss",
-      "source": "SitePoint",
-      "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
-      "summary": "Compare Juicebox and hireEZ for AI recruiting — search method, agent autonomy, contact data accuracy, rollout time, and AI governance — to find the right fit. Juicebox vs hireEZ: An honest comparison for recruiting teams on SitePoint.",
-      "publishedAt": "2026-09-12T07:56:04.000Z"
-    },
-    {
-      "slug": "84f392e045f462eb11bc53a4",
-      "guid": "https://www.sitepoint.com/predicting-health-plan-member-behavior-with-neural-networks-building-a-privacy-first-pipeline-for-medicare-medicaid-and-aca-data/",
-      "title": "Predicting Health Plan Member Behavior with Neural Networks: Building a Privacy-First Pipeline for Medicare, Medicaid, and ACA Data",
-      "link": "https://www.sitepoint.com/predicting-health-plan-member-behavior-with-neural-networks-building-a-privacy-first-pipeline-for-medicare-medicaid-and-aca-data/?utm_source=rss",
-      "source": "SitePoint",
-      "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
-      "summary": "null Predicting Health Plan Member Behavior with Neural Networks: Building a Privacy-First Pipeline for Medicare, Medicaid, and ACA Data on SitePoint.",
-      "publishedAt": "2026-09-11T19:09:12.000Z"
-    },
-    {
-      "slug": "0b53f26f03b292a3e80eb8f4",
-      "guid": "https://dzone.com/articles/3681436",
-      "title": "How to Perform Response Verification in REST-Assured Java for API Testing: Part 2",
-      "link": "https://dzone.com/articles/rest-assured-response-verification",
-      "source": "DZone",
-      "sourceUrl": "https://feeds.dzone.com/home",
-      "summary": "API testing is an essential part of modern software development. While sending requests and receiving responses is straightforward, the real value of API automation comes from response verification. A test is meaningful only when it validates that the API returns the correct dat…",
-      "publishedAt": "2026-09-11T19:00:01.000Z"
-    },
-    {
-      "slug": "bf01fe4e65567def1cb47fbc",
-      "guid": "https://github.blog/?p=98799",
-      "title": "Marketing ops as code: Automating events from planning to follow-up on GitHub",
-      "link": "https://github.blog/ai-and-ml/github-copilot/marketing-ops-as-code-automating-events-from-planning-to-follow-up-on-github/",
-      "source": "Github Blog",
-      "sourceUrl": "https://github.blog/feed/",
-      "summary": "If you can write down how you do your work, you can automate it. Here's what I did to support GitHub's APAC marketing team. The post Marketing ops as code: Automating events from planning to follow-up on GitHub appeared first on The GitHub Blog.",
-      "publishedAt": "2026-09-11T18:26:10.000Z"
     }
   ]
 }
