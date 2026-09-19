@@ -1,8 +1,38 @@
 {
   "category": "javascript",
   "label": "JavaScript",
-  "fetchedAt": "2026-09-18T10:06:29.486Z",
+  "fetchedAt": "2026-09-19T09:47:15.222Z",
   "items": [
+    {
+      "slug": "dd2de472e58d97fb9c516383",
+      "guid": "https://flaviocopes.com/grok-bot-vs-cursor-projects/",
+      "title": "Grok Bot vs Cursor Projects: when to use which",
+      "link": "https://flaviocopes.com/grok-bot-vs-cursor-projects/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Grok Bot and Cursor Projects both give an agent its own computer and jobs that run without you. Here is how I decide which one gets a task, with examples from my own work.",
+      "publishedAt": "2026-09-19T07:00:00.000Z"
+    },
+    {
+      "slug": "5c5c5bf4f4445fe937b9e0b4",
+      "guid": "https://flaviocopes.com/sendy-slow-emails-ai/",
+      "title": "Solving an issue with sending emails on my server",
+      "link": "https://flaviocopes.com/sendy-slow-emails-ai/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "My newsletter took 8 hours to send and the open rate dropped from 24% to 16%. Codex found a Sendy send rate stuck at 20/sec and AWS SNS webhooks blocked by the Cloudflare proxy. Here is the full debugging session.",
+      "publishedAt": "2026-09-18T13:00:00.000Z"
+    },
+    {
+      "slug": "ddab28bac5515a0e0cec9159",
+      "guid": "https://flaviocopes.com/updating-plausible-with-ai/",
+      "title": "Updating self-hosted Plausible Analytics using AI",
+      "link": "https://flaviocopes.com/updating-plausible-with-ai/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "My self-hosted Plausible instance sat untouched for years on a $6 droplet. Codex upgraded Ubuntu, Docker, PostgreSQL 14 to 16, ClickHouse and Plausible v2 to v3 in ten minutes, then fixed the Nginx websocket config.",
+      "publishedAt": "2026-09-18T10:00:00.000Z"
+    },
     {
       "slug": "b0924a8ff37ce16e6a547215",
       "guid": "https://flaviocopes.com/jev/",
@@ -302,36 +332,6 @@
       "sourceUrl": "https://flaviocopes.com/rss.xml",
       "summary": "The eight packages in my software catalog are now public MIT repositories on GitHub, with the full source, tests, and documentation in one README each.",
       "publishedAt": "2026-09-09T10:00:00.000Z"
-    },
-    {
-      "slug": "36e664dd86b0cc10196f1977",
-      "guid": "https://flaviocopes.com/cli-tools/",
-      "title": "I launched CLI Tools",
-      "link": "https://flaviocopes.com/cli-tools/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "CLI Tools is a free, open source macOS app that catalogs every command-line tool you installed with Homebrew, npm, and Cargo, with examples, shell history, and a JSON CLI for coding agents.",
-      "publishedAt": "2026-09-09T09:00:00.000Z"
-    },
-    {
-      "slug": "9a2b9bcd6c64541e8003a8fa",
-      "guid": "https://flaviocopes.com/cloudflare-products-i-use/",
-      "title": "The Cloudflare products I actually use",
-      "link": "https://flaviocopes.com/cloudflare-products-i-use/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "An honest report on the Cloudflare products I use in real projects, what each one solves, the gotchas I found, and what I do not use yet.",
-      "publishedAt": "2026-09-09T07:00:00.000Z"
-    },
-    {
-      "slug": "074dfb047a663cd295223122",
-      "guid": "https://flaviocopes.com/thinking-by-typing/",
-      "title": "Why I think more clearly when I type",
-      "link": "https://flaviocopes.com/thinking-by-typing/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Typing is slower than speaking, but that friction helps me develop ideas, notice weak sentences, and turn rough thoughts into useful writing.",
-      "publishedAt": "2026-09-09T05:00:00.000Z"
     },
     {
       "slug": "e761312e4e066da2bb97f422",
