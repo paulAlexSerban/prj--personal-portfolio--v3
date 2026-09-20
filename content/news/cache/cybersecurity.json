@@ -1,7 +1,7 @@
 {
   "category": "cybersecurity",
   "label": "Cybersecurity",
-  "fetchedAt": "2026-09-19T09:47:15.222Z",
+  "fetchedAt": "2026-09-20T10:09:34.363Z",
   "items": [
     {
       "slug": "9afee5454d8f6003bfb4ece5",
@@ -12,6 +12,46 @@
       "sourceUrl": "https://www.darkreading.com/rss.xml",
       "summary": "",
       "publishedAt": "2026-12-03T16:00:00.000Z"
+    },
+    {
+      "slug": "cccf7b5fb8fe09a0cf8ced87",
+      "guid": "https://thehackernews.com/2026/09/claude-opus-5-helped-researchers-take.html",
+      "title": "Claude Opus 5 Helped Researchers Take Over OpenAI Staff Accounts via Chained Flaws",
+      "link": "https://thehackernews.com/2026/09/claude-opus-5-helped-researchers-take.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "Three researchers at the security firm Hacktron used Anthropic's Claude Opus 5 to chain two flaws and take over the ChatGPT and Codex accounts of several OpenAI employees, then reach an internal OpenAI code repository. The chain began with a bug in the software that runs OpenAI'…",
+      "publishedAt": "2026-09-19T18:36:53.000Z"
+    },
+    {
+      "slug": "852ff302b4ad29e14138d39b",
+      "guid": "https://thehackernews.com/2026/09/can-you-prove-new-cve-is-exploitable.html",
+      "title": "Can You Prove a New CVE Is Exploitable Before Attackers Do? Learn How in This Webinar",
+      "link": "https://thehackernews.com/2026/09/can-you-prove-new-cve-is-exploitable.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "A new CVE drops. Your scanner finds it. The severity score looks ugly. But that still does not answer the question that matters: Can it actually be exploited in your environment? Mythos-class AI is compressing the time between disclosure and working exploitation, while many secu…",
+      "publishedAt": "2026-09-19T13:28:48.000Z"
+    },
+    {
+      "slug": "830c117275ef8fb3a00ef0cc",
+      "guid": "https://thehackernews.com/2026/09/identity-visibility-in-2026-foundation.html",
+      "title": "Identity Visibility in 2026: The Foundation of Identity Security",
+      "link": "https://thehackernews.com/2026/09/identity-visibility-in-2026-foundation.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "Identity visibility is a starting point for modern identity security, because stolen and misused credentials are among the most frequently reported initial access vectors in breach research, including Verizon's annual Data Breach Investigations Report. This article explains what…",
+      "publishedAt": "2026-09-19T13:28:41.000Z"
+    },
+    {
+      "slug": "531e97a39e7b550ac33407ac",
+      "guid": "https://thehackernews.com/2026/09/solarwinds-patches-arm-hard-coded-key.html",
+      "title": "SolarWinds Patches ARM Hard-Coded Key Flaw Enabling Unauthenticated RCE",
+      "link": "https://thehackernews.com/2026/09/solarwinds-patches-arm-hard-coded-key.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "SolarWinds has released security updates to address a high-severity flaw in Access Rights Manager (ARM) that, if successfully exploited, could lead to an unauthenticated remote code execution vulnerability. The vulnerability, tracked as CVE-2026-28326, is rated 8.8 out of 10.0 o…",
+      "publishedAt": "2026-09-19T09:31:17.000Z"
     },
     {
       "slug": "c8cb9ca3b0db57d241ce2a34",
@@ -452,16 +492,6 @@
       "sourceUrl": "https://www.cio.com/feed/",
       "summary": "Many companies are rushing into “AI-first” mandates right now. We’ve seen this pattern before. A decade ago, it was “cloud-first,” and it led to the same outcome: Fast adoption, thin governance and a wave of security and cost problems that took years to unwind. By 2019, OMB had …",
       "publishedAt": "2026-09-17T12:00:00.000Z"
-    },
-    {
-      "slug": "852ff302b4ad29e14138d39b",
-      "guid": "https://thehackernews.com/2026/09/can-you-prove-new-cve-is-exploitable.html",
-      "title": "Can You Prove a New CVE Is Exploitable Before Attackers Do? Learn How in This Webinar",
-      "link": "https://thehackernews.com/2026/09/can-you-prove-new-cve-is-exploitable.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "A new CVE drops. Your scanner finds it. The severity score looks ugly. But that still does not answer the question that matters: Can it actually be exploited in your environment? Mythos-class AI is compressing the time between disclosure and working exploitation, while many secu…",
-      "publishedAt": "2026-09-17T11:50:00.000Z"
     },
     {
       "slug": "39e2295943a4aa7cf5b59e17",
@@ -972,36 +1002,6 @@
       "sourceUrl": "https://www.darkreading.com/rss.xml",
       "summary": "CVE-2026-85706 is a path traversal vulnerability with a 10 out of 10 CVSS score, affecting both GitLab Community Edition and Enterprise Edition instances.",
       "publishedAt": "2026-09-14T20:19:22.000Z"
-    },
-    {
-      "slug": "cbba34d8b25ed5e59942d53f",
-      "guid": "https://www.schneier.com/?p=72636",
-      "title": "Upcoming Speaking Engagements",
-      "link": "https://www.schneier.com/blog/archives/2026/09/upcoming-speaking-engagements-60.html",
-      "source": "Schneier on Security",
-      "sourceUrl": "https://www.schneier.com/feed/",
-      "summary": "This is a current list of where and when I am scheduled to speak: I’m speaking online (via Zoom) at a League of Women Voters event on Tuesday, September 22, 2026 at 5 PM ET. I’m speaking at CanSecWest 2026 in Vancouver, Canada. The conference runs September 30–October 1, 2026; t…",
-      "publishedAt": "2026-09-14T19:02:45.000Z"
-    },
-    {
-      "slug": "d1e3ec21956720a9ee1f45d3",
-      "guid": "https://thehackernews.com/2026/09/new-ddrop-attack-breaks-intel-tdx-and.html",
-      "title": "New DDRop Attack Breaks Intel TDX and AMD SEV-SNP Confidential Computing",
-      "link": "https://thehackernews.com/2026/09/new-ddrop-attack-breaks-intel-tdx-and.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "Researchers have disclosed a new hardware attack, called DDRop, that breaks the memory protection in Intel and AMD confidential computing by silently dropping writes to a server's memory, so the processor keeps reading old encrypted data as if it were current. The attack require…",
-      "publishedAt": "2026-09-14T18:02:13.000Z"
-    },
-    {
-      "slug": "2e4ea22accc39550c1ec2a6a",
-      "guid": "https://thehackernews.com/2026/09/3bb-attacker-used-meshcentral-backdoor.html",
-      "title": "3BB Attacker Used MeshCentral Backdoor for Root Access, Targeted Subscriber Credentials",
-      "link": "https://thehackernews.com/2026/09/3bb-attacker-used-meshcentral-backdoor.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "An attacker was operating inside the network of 3BB, one of Thailand's largest broadband providers, and maintained remote control of internal machines using a legitimate management tool called MeshCentral, threat intelligence firm Hunt.io said. The company uncovered the intrusio…",
-      "publishedAt": "2026-09-14T18:01:49.000Z"
     }
   ]
 }

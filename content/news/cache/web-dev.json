@@ -1,127 +1,227 @@
 {
   "category": "web-dev",
   "label": "Web Development",
-  "fetchedAt": "2026-09-19T09:47:15.222Z",
+  "fetchedAt": "2026-09-20T10:09:34.363Z",
   "items": [
     {
-      "slug": "6873f1d87ff2bd9ee1d8c352",
-      "guid": "https://dev.to/hackrs_3352/time-in-queue-is-not-free-3fo0",
-      "title": "Time in Queue Is Not Free",
-      "link": "https://dev.to/hackrs_3352/time-in-queue-is-not-free-3fo0",
+      "slug": "96ab48fba4b68ff4f161f12f",
+      "guid": "https://dev.to/amorizz/point-the-official-sentry-sdk-at-self-hosted-ingest-dsn-only-3ij2",
+      "title": "Point the official Sentry SDK at self-hosted ingest (DSN only)",
+      "link": "https://dev.to/amorizz/point-the-official-sentry-sdk-at-self-hosted-ingest-dsn-only-3ij2",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "Free capacity is cheap only when nobody is waiting on it. The moment a job sits in a shared queue, you start paying in wall-clock time: CI runners stay reserved, reviewers refresh a spinner, and retries take another ticket in the same line. The token meter can read zero while th…",
-      "publishedAt": "2026-09-19T09:44:30.000Z"
+      "summary": "You don’t need a forked Sentry SDK. Keep @sentry/browser or @sentry/node, change only dsn, then prove /health → HTTP 202 → Issues. Two containers (app + Postgres 16); leave replay, traces, and profiles at sample rate 0 — those envelope items are out of scope. Clone and docker co…",
+      "publishedAt": "2026-09-20T10:00:44.000Z"
     },
     {
-      "slug": "23c1629e1bff94c9fc362cd0",
-      "guid": "https://dev.to/iabdsam/linux-permissions-made-easy-2i58",
-      "title": "Linux Permissions made easy",
-      "link": "https://dev.to/iabdsam/linux-permissions-made-easy-2i58",
+      "slug": "e3b2fdfe9ba28761b88a8f87",
+      "guid": "https://dev.to/alexgeorgiev17/fastapis-new-appfrontend-fixes-a-route-order-bug-in-manual-spa-serving-4mm8",
+      "title": "FastAPI's new app.frontend() fixes a route-order bug in manual SPA serving",
+      "link": "https://dev.to/alexgeorgiev17/fastapis-new-appfrontend-fixes-a-route-order-bug-in-manual-spa-serving-4mm8",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "The Quick Part Linux, like every machine, is used by users (real or not) each with their own UID. The normal ones are the humans like you and me, the root, and some psuedo users that are used to isolate system level services such daemons, nvidia, systemd-* etc (check cat /etc/pa…",
-      "publishedAt": "2026-09-19T09:44:07.000Z"
+      "summary": "Put a FastAPI catch-all route above your API route by mistake and a request to /api/ping returns HTTP 200. The body is your single-page app's index.html, not your JSON. No error, no 404, nothing in the logs that looks wrong. I found this while testing app.frontend(), the new cal…",
+      "publishedAt": "2026-09-20T10:00:00.000Z"
     },
     {
-      "slug": "6c51f0a5b591b3b07c1b1847",
-      "guid": "https://dev.to/codepro_4664/every-prompt-is-an-egress-event-4g39",
-      "title": "Every Prompt Is an Egress Event",
-      "link": "https://dev.to/codepro_4664/every-prompt-is-an-egress-event-4g39",
+      "slug": "704eee782dd5f5db40aa9af3",
+      "guid": "https://dev.to/codecowboydotio/using-claude-routines-with-github-501f",
+      "title": "Using claude routines with github",
+      "link": "https://dev.to/codecowboydotio/using-claude-routines-with-github-501f",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "Every prompt you send is an egress event. Treat that generator like any other foreign network. You cannot unsay a secret after the packet leaves. Architecture reviews start with constraints, not with models. Your working tree holds tokens, hostnames, and private paths. A remote …",
-      "publishedAt": "2026-09-19T09:42:17.000Z"
+      "summary": "Intro I've been using claude for some time now. I haven't touched on routines in claude yet, and thought that this would be a good opportunity to play around with them and explore them. The official claude docs say this: Put Claude Code on autopilot. Define routines that run on …",
+      "publishedAt": "2026-09-20T09:59:11.000Z"
     },
     {
-      "slug": "f9f7b457b56366ad9f84b7e3",
-      "guid": "https://dev.to/devrs_9381/case-study-a-daily-digest-job-that-refuses-implicit-timezones-3gff",
-      "title": "Case Study: A Daily Digest Job That Refuses Implicit Timezones",
-      "link": "https://dev.to/devrs_9381/case-study-a-daily-digest-job-that-refuses-implicit-timezones-3gff",
+      "slug": "1f295f3b37d717118c76cfb5",
+      "guid": "https://dev.to/redcapra/the-secret-was-correct-the-first-byte-wasnt-6p9",
+      "title": "The secret was correct. The first byte wasn't.",
+      "link": "https://dev.to/redcapra/the-secret-was-correct-the-first-byte-wasnt-6p9",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "Agents will invent a start-of-day if you leave the digest window unspecified, and that guess double-counts late events. This case study turns a vague daily-digest request into a timezone-strict calculator and a pytest suite. You run those tests before any model is allowed to wri…",
-      "publishedAt": "2026-09-19T09:41:36.000Z"
+      "summary": "Our deploy tool pushed a fresh API token to production. It reported success. The token was correct. Every request then failed with this: Cannot convert argument to a ByteString because the character at index 7 has a value of 65279 which is greater than 255. Character 65279 is U+…",
+      "publishedAt": "2026-09-20T09:53:07.000Z"
     },
     {
-      "slug": "9f10429bcd530cc0bb650518",
-      "guid": "https://dev.to/mohamed_bal/connect-devup-ai-to-vs-code-no-extension-required-2ff9",
-      "title": "Connect DEVUP AI to VS Code—No Extension Required",
-      "link": "https://dev.to/mohamed_bal/connect-devup-ai-to-vs-code-no-extension-required-2ff9",
+      "slug": "093664150d72c3078e06b1d3",
+      "guid": "https://dev.to/makeev/build-an-insider-buying-screener-with-python-and-sec-form-4-data-4eg1",
+      "title": "Build an insider-buying screener with Python and SEC Form 4 data",
+      "link": "https://dev.to/makeev/build-an-insider-buying-screener-with-python-and-sec-form-4-data-4eg1",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "Disclosure: Visual Studio Code is a third-party product. DEVUP AI is an independent platform and is not affiliated with or endorsed by its publisher. AI-assisted development does not have to begin with another extension, another proprietary workflow, or another foreign billing a…",
-      "publishedAt": "2026-09-19T09:39:28.000Z"
+      "summary": "A director bought $101,760 of Tenax Therapeutics. Another bought $500,000 of Inhibrx Biosciences. Sorted by dollars, the second purchase comes first. Measured against the holding reported with each transaction, the increases were 2330.7% and 1.2%. Both numbers came back in the s…",
+      "publishedAt": "2026-09-20T09:52:13.000Z"
     },
     {
-      "slug": "699dfcd9d7fa9cd98382f994",
-      "guid": "https://dev.to/codecpp_5026/cut-over-the-model-path-or-dont-ship-a-fail-closed-inference-checklist-39l9",
-      "title": "Cut Over the Model Path or Don't Ship: A Fail-Closed Inference Checklist",
-      "link": "https://dev.to/codecpp_5026/cut-over-the-model-path-or-dont-ship-a-fail-closed-inference-checklist-39l9",
+      "slug": "2b06a4be5b0049a39bc54d66",
+      "guid": "https://dev.to/tiaya/a-real-world-case-of-recursion-done-right-in-php-428k",
+      "title": "A real world case of recursion done right in PHP",
+      "link": "https://dev.to/tiaya/a-real-world-case-of-recursion-done-right-in-php-428k",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "If production can still reach the model endpoint you used while drafting, you did not cut over. A green deploy does not prove that. It only proves the process started. Treat the inference path as a promotion surface. Pin the base URL, the model identity, the timeout, and the fal…",
-      "publishedAt": "2026-09-19T09:39:15.000Z"
+      "summary": "Nick Cosentino @DevLeaderCa posted this message about recursion on X, ex Twitter, in October 2025, which received over 460 replies. // Detect dark theme var iframe = document.getElementById('tweet-1984123215170421060-448'); if (document.body.className.includes('dark-theme')) { i…",
+      "publishedAt": "2026-09-20T09:51:49.000Z"
     },
     {
-      "slug": "6bb555b8e2e56141c2fb9f11",
-      "guid": "https://dev.to/sarath_kumar_516e5e5ce2ce/team-building-for-engineering-teams-what-actually-works-not-trust-falls-326a",
-      "title": "Team Building for Engineering Teams: What Actually Works (Not Trust Falls)",
-      "link": "https://dev.to/sarath_kumar_516e5e5ce2ce/team-building-for-engineering-teams-what-actually-works-not-trust-falls-326a",
+      "slug": "6cec5db1f839c30846d38444",
+      "guid": "https://dev.to/alexv_data/limewires-new-manifesto-is-a-masterclass-in-webgpu-local-ai-and-cloud-nihilism-1jh9",
+      "title": "LimeWire's New Manifesto Is a Masterclass in WebGPU, Local AI, and Cloud Nihilism",
+      "link": "https://dev.to/alexv_data/limewires-new-manifesto-is-a-masterclass-in-webgpu-local-ai-and-cloud-nihilism-1jh9",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "Most team building advice wasn't written for engineers, and it shows. Here's what actually helps a dev team function better, based on what the work itself requires. Most engineering teams have sat through at least one team building session that felt completely disconnected from …",
-      "publishedAt": "2026-09-19T09:37:14.000Z"
+      "summary": "If you thought LimeWire’s return was just a tired exercise in retro branding, their editorial column C:\\LimeWire\\Shared is proving to be something far stranger and significantly more dangerous. Following up on their first viral dispatch (which dissected the Microsoft/OpenAI scra…",
+      "publishedAt": "2026-09-20T09:51:23.000Z"
     },
     {
-      "slug": "b3faeb1eb4a0e84af0fdd6f8",
-      "guid": "https://dev.to/apppro_4800/i-split-the-wait-the-wire-ate-p99-5eo5",
-      "title": "I Split the Wait. The Wire Ate P99.",
-      "link": "https://dev.to/apppro_4800/i-split-the-wait-the-wire-ate-p99-5eo5",
+      "slug": "78b7baae42e7eb96ff0e10a3",
+      "guid": "https://dev.to/yaroslav_klochnyk/did-you-know-that-your-presentation-and-your-ai-knowledge-source-can-be-the-same-file-232k",
+      "title": "Did you know that Your presentation and Your AI knowledge source can be the same file.",
+      "link": "https://dev.to/yaroslav_klochnyk/did-you-know-that-your-presentation-and-your-ai-knowledge-source-can-be-the-same-file-232k",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "The generate call was not the slow part. The wait around it was. I stopped saying the model felt slow. That sentence is a shrug. It hides DNS, TLS, queueing, and decode together. You ever stare at a spinner and blame tokens? I did, for too long. Then I split the wait into clocks…",
-      "publishedAt": "2026-09-19T09:32:00.000Z"
+      "summary": "Recently, I’ve noticed the same loop when creating presentations with #AI. Usually, we are asking Claude or CoPilot or ChatGPT to create a PowerPoint presentation, spend tokens generating the PPTX, then spend more tokens adjusting fonts, content and layout. Later, the same prese…",
+      "publishedAt": "2026-09-20T09:50:50.000Z"
     },
     {
-      "slug": "43dd7a983a963f428532f540",
-      "guid": "https://dev.to/royalpinto007/from-open-source-programs-to-shipping-my-own-ai-tools-2gf6",
-      "title": "From Open-Source Programs to Shipping My Own AI Tools",
-      "link": "https://dev.to/royalpinto007/from-open-source-programs-to-shipping-my-own-ai-tools-2gf6",
+      "slug": "2688770f1eba0085fecea107",
+      "guid": "https://dev.to/anas_sheikh_2/that-bcrypthashpassword-10-you-copy-pasted-might-not-be-as-secure-as-you-think-1jei",
+      "title": "That bcrypt.hash(password, 10) You Copy-Pasted Might Not Be as Secure as You Think",
+      "link": "https://dev.to/anas_sheikh_2/that-bcrypthashpassword-10-you-copy-pasted-might-not-be-as-secure-as-you-think-1jei",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "I did not start out knowing how to build things. I started out reading other people's code, getting confused, and slowly learning how real software actually gets made. A lot of that learning happened inside open-source mentorship programs, and looking back, those programs shaped…",
-      "publishedAt": "2026-09-19T09:30:29.000Z"
+      "summary": "Almost every auth tutorial, including some of my own examples in earlier posts, uses bcrypt.hash(password, 10) without much explanation of what that number actually controls or why it's 10 specifically rather than some other value. It's worth understanding, because the right num…",
+      "publishedAt": "2026-09-20T09:48:24.000Z"
     },
     {
-      "slug": "46faef564e11f87d14c76dfe",
-      "guid": "https://dev.to/sarantoon/12-claude-skills-ydniym-aelatawelkhcchringthiiphmduengcchaak-github-5dh6",
-      "title": "12 Claude Skills ยอดนิยม และตัวเลขจริงที่ผมดึงจาก GitHub",
-      "link": "https://dev.to/sarantoon/12-claude-skills-ydniym-aelatawelkhcchringthiiphmduengcchaak-github-5dh6",
+      "slug": "f9d2c88cd377e5e2e5b4fa71",
+      "guid": "https://dev.to/sergey_shinder_ab2d943365/our-rate-limit-punished-everyone-except-the-customer-causing-the-problem-i7e",
+      "title": "Our rate limit punished everyone except the customer causing the problem",
+      "link": "https://dev.to/sergey_shinder_ab2d943365/our-rate-limit-punished-everyone-except-the-customer-causing-the-problem-i7e",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "12 Claude Skills ยอดนิยม และตัวเลขจริงที่ผมดึงจาก GitHub โดย Nokka (นก-กา) | 19 กันยายน 2026 บทความนี้เขียนโดย AI (โมเดล deepseek-v4.1-flash ของผู้ให้บริการ ollama-cloud) ผ่าน Hermes Agent จาก Nous Research ตรวจสอบและเรียบเรียงโดย Nokka ข้อความในเครื่องหมายคำพูดที่เป็นคำแปลเป็นค…",
-      "publishedAt": "2026-09-19T09:26:12.000Z"
+      "summary": "At twenty past two on a Tuesday morning one customer began a historical backfill against our API. Within ten minutes a hundred and twelve other customers were being rejected, and the customer who started it was getting most of the throughput they had asked for. Our edge holds a …",
+      "publishedAt": "2026-09-20T09:45:46.000Z"
     },
     {
-      "slug": "6ef860ea9df4a7740c0cdd19",
-      "guid": "https://dev.to/wesley_wong_21f35bb258df3/aws-iot-step-by-step-guide-on-fleet-provisioning-with-csr-using-esp32-s3-2pjk",
-      "title": "AWS IoT: Step by step guide on fleet provisioning with CSR using ESP32-S3",
-      "link": "https://dev.to/wesley_wong_21f35bb258df3/aws-iot-step-by-step-guide-on-fleet-provisioning-with-csr-using-esp32-s3-2pjk",
+      "slug": "2e9cab29baee5afcccd21f50",
+      "guid": "https://dev.to/antonioprosperi2svg/today-i-spent-4-5-hours-chasing-a-bug-that-looked-like-three-different-problems-they-were-all-36ei",
+      "title": "\"Today I spent 4-5 hours chasing a bug that looked like three different problems. They were all connected: a caching plugin hiding images from Googlebot, a forgotten script blocking the thread, and a wild-goose chase involving PageSpeed warnings about CORS",
+      "link": "https://dev.to/antonioprosperi2svg/today-i-spent-4-5-hours-chasing-a-bug-that-looked-like-three-different-problems-they-were-all-36ei",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "1. Introduction: Fleet provisioning with CSR Fleet provisioning is a secure method where an IoT device generates its own private key locally and sends a CSR to AWS to obtain a uniquely signed X.509 client certificate upon its first connection. How it works: Local Key Generation:…",
-      "publishedAt": "2026-09-19T09:21:44.000Z"
+      "summary": "How a Caching Plugin and an Analytics Script Silently Destroyed My SEO and Page Speed Antonio Sep 20 #wordpress #webdev #performance #seo Add Comment 3 min read",
+      "publishedAt": "2026-09-20T09:41:44.000Z"
     },
     {
-      "slug": "3c71ad07c946af6773252a25",
-      "guid": "https://dev.to/mittens420/quick-revisit-mongodb-indexes-b-trees-o7h",
-      "title": "[quick-revisit]: MongoDB Indexes & B-Trees",
-      "link": "https://dev.to/mittens420/quick-revisit-mongodb-indexes-b-trees-o7h",
+      "slug": "71090ebb2f2756dbc3651eb4",
+      "guid": "https://dev.to/whotarusharora/why-hire-a-virtual-ciso-strategic-security-leadershipwithout-the-executive-price-tag-5d5d",
+      "title": "Why Hire a Virtual CISO: Strategic Security Leadership Without the Executive Price Tag",
+      "link": "https://dev.to/whotarusharora/why-hire-a-virtual-ciso-strategic-security-leadershipwithout-the-executive-price-tag-5d5d",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "The Mental Model A MongoDB collection without an index is like a cookbook without an index section—finding a single recipe requires flipping through all 500 pages. An index extracts a small subset of fields, sorts them, and maps them to exact disk locations so MongoDB can turn d…",
-      "publishedAt": "2026-09-19T09:21:41.000Z"
+      "summary": "Hiring a Virtual CISO (vCISO) gives your organization senior security leadership — strategy, compliance, incident response, and board-level communication — on a part-time or contract basis, at a fraction of what a full-time Chief Information Security Officer costs. It is the rig…",
+      "publishedAt": "2026-09-20T09:38:44.000Z"
+    },
+    {
+      "slug": "c0d70c5cc48538aeee46da57",
+      "guid": "https://www.sitepoint.com/how-to-build-a-scalable-svg-icon-system-for-your-web-app/",
+      "title": "How to Build a Scalable SVG Icon System for Your Web App",
+      "link": "https://www.sitepoint.com/how-to-build-a-scalable-svg-icon-system-for-your-web-app/?utm_source=rss",
+      "source": "SitePoint",
+      "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
+      "summary": "null How to Build a Scalable SVG Icon System for Your Web App on SitePoint.",
+      "publishedAt": "2026-09-19T19:32:22.000Z"
+    },
+    {
+      "slug": "bd2861e054cfd889d3dad447",
+      "guid": "6aaebf9e4af2fb000147eefa",
+      "title": "How to Cut LLM Costs and Latency With Prompt and Response Caching",
+      "link": "https://kodekloud.com/blog/cut-llm-costs-and-latency-with-caching/",
+      "source": "KodeKloud",
+      "sourceUrl": "https://kodekloud.com/blog/rss/",
+      "summary": "Most people cache the whole prompt, which catches almost nothing because real prompts carry timestamps and request IDs. The fix is four lines, and the clever upgrade after it is a trap.",
+      "publishedAt": "2026-09-19T18:10:29.000Z"
+    },
+    {
+      "slug": "19385c26a33da1e0f1086e19",
+      "guid": "6aaec6a4bd97d368f64a3819",
+      "title": "How to Build a GraphRAG System with Python, Neo4j and ServiceNow",
+      "link": "https://www.freecodecamp.org/news/how-to-build-a-graphrag-system-with-python-neo4j-and-servicenow/",
+      "source": "Free Code Camp - News",
+      "sourceUrl": "https://www.freecodecamp.org/news/rss",
+      "summary": "Somewhere in your company's ServiceNow instance is the answer to the question an engineer asks at two in the morning: if this is broken, what else is about to break? Every fact needed to answer it has",
+      "publishedAt": "2026-09-19T17:30:12.000Z"
+    },
+    {
+      "slug": "0f147f861a8276bcfad1c434",
+      "guid": "6aaec60b559dfa1d9e4f1ddc",
+      "title": "How to Detect Hidden Target Leakage in Public Datasets with Python and a Dependency Graph",
+      "link": "https://www.freecodecamp.org/news/how-to-detect-hidden-target-leakage-in-public-datasets-with-python-and-a-dependency-graph/",
+      "source": "Free Code Camp - News",
+      "sourceUrl": "https://www.freecodecamp.org/news/rss",
+      "summary": "Some time ago, I gave a machine learning model five columns from a public CDC dataset and asked it to predict a sixth column from the same file. The model scored an R² of 0.998, which is about as clos",
+      "publishedAt": "2026-09-19T17:27:39.000Z"
+    },
+    {
+      "slug": "de04203e1ddf98b52e48e75c",
+      "guid": "6aaec3412b999a8f7cf63f8f",
+      "title": "The iOS NFC Handbook: How to Read, Write and Lock NFC Tags with React Native",
+      "link": "https://www.freecodecamp.org/news/the-ios-nfc-handbook-how-to-read-write-and-lock-nfc-tags-with-react-native/",
+      "source": "Free Code Camp - News",
+      "sourceUrl": "https://www.freecodecamp.org/news/rss",
+      "summary": "Hold an iPhone near a sticker and something happens. A business card lands in your contacts, a focus session ends, or a door opens. The chip costs about twenty pence and holds roughly a hundred and th",
+      "publishedAt": "2026-09-19T17:15:45.000Z"
+    },
+    {
+      "slug": "f1db5a4c06345c10336177f4",
+      "guid": "https://www.sitepoint.com/e-signature-pricing-models-that-bite-in-production/",
+      "title": "E-Signature Pricing Models That Bite in Production",
+      "link": "https://www.sitepoint.com/e-signature-pricing-models-that-bite-in-production/?utm_source=rss",
+      "source": "SitePoint",
+      "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
+      "summary": "null E-Signature Pricing Models That Bite in Production on SitePoint.",
+      "publishedAt": "2026-09-19T14:48:11.000Z"
+    },
+    {
+      "slug": "74d3b0dc4c8b9ee98394d250",
+      "guid": "https://www.sitepoint.com/setting-up-cloudflare-tunnels-docker-compose-persistent-webhook-debugging/",
+      "title": "Setting Up Cloudflare Tunnels with Docker Compose for Persistent Webhook Debugging",
+      "link": "https://www.sitepoint.com/setting-up-cloudflare-tunnels-docker-compose-persistent-webhook-debugging/?utm_source=rss",
+      "source": "SitePoint",
+      "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
+      "summary": "Set up persistent Cloudflare Tunnels with Docker Compose for local webhook debugging: no session timeouts, no port forwarding, no paid ngrok subscription. Setting Up Cloudflare Tunnels with Docker Compose for Persistent Webhook Debugging on SitePoint.",
+      "publishedAt": "2026-09-19T14:38:27.000Z"
+    },
+    {
+      "slug": "201cf530c8d84d6f8aa3832a",
+      "guid": "https://www.sitepoint.com/streaming-encrypted-files-p2p-webrtc-datachannels-webcrypto-typescript/",
+      "title": "Streaming Encrypted Files P2P with WebRTC DataChannels and WebCrypto in TypeScript",
+      "link": "https://www.sitepoint.com/streaming-encrypted-files-p2p-webrtc-datachannels-webcrypto-typescript/?utm_source=rss",
+      "source": "SitePoint",
+      "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
+      "summary": "Build a serverless P2P browser file-transfer engine with WebRTC DataChannels, bufferedAmountLowThreshold backpressure, and AES-GCM encryption via WebCrypto. Streaming Encrypted Files P2P with WebRTC DataChannels and WebCrypto in TypeScript on SitePoint.",
+      "publishedAt": "2026-09-19T14:38:08.000Z"
+    },
+    {
+      "slug": "33208cea12790f27a324a7c3",
+      "guid": "https://www.sitepoint.com/securing-ai-pull-requests-ast-audit-harness-github-actions/",
+      "title": "Securing AI Pull Requests: Building a Deterministic AST Audit Harness in GitHub Actions",
+      "link": "https://www.sitepoint.com/securing-ai-pull-requests-ast-audit-harness-github-actions/?utm_source=rss",
+      "source": "SitePoint",
+      "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
+      "summary": "Build a deterministic CI/CD audit harness that checks AI coding-agent pull requests for AST prototype pollution, secret leakage, and unsafe egress before merge. Securing AI Pull Requests: Building a Deterministic AST Audit Harness in GitHub Actions on SitePoint.",
+      "publishedAt": "2026-09-19T14:37:53.000Z"
+    },
+    {
+      "slug": "902e2ac27b58e1c5e272f620",
+      "guid": "https://www.sitepoint.com/probabilistic-data-structures-typescript-hyperloglog-count-min-sketch/",
+      "title": "Cutting Node.js Memory Footprint with HyperLogLog and Count-Min Sketch in TypeScript",
+      "link": "https://www.sitepoint.com/probabilistic-data-structures-typescript-hyperloglog-count-min-sketch/?utm_source=rss",
+      "source": "SitePoint",
+      "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
+      "summary": "Ingest and aggregate millions of streaming events in Node.js with sub-megabyte RAM using HyperLogLog and Count-Min Sketch written in pure TypeScript. Cutting Node.js Memory Footprint with HyperLogLog and Count-Min Sketch in TypeScript on SitePoint.",
+      "publishedAt": "2026-09-19T14:37:36.000Z"
     },
     {
       "slug": "ff4a5a569b90707e656027fe",
@@ -132,6 +232,16 @@
       "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
       "summary": "null **Data-Driven vs Event-Driven Architecture: How to Pick the Right One** on SitePoint.",
       "publishedAt": "2026-09-19T05:38:46.000Z"
+    },
+    {
+      "slug": "2865704581d7136ff5c52635",
+      "guid": "https://swizec.com/blog/we-now-auto-approve-and-merge-15p-of-prs",
+      "title": "We now auto-approve and merge 15% of PRs",
+      "link": "https://swizec.com/blog/we-now-auto-approve-and-merge-15p-of-prs",
+      "source": "Swizec Teller",
+      "sourceUrl": "https://swizec.com/rss.xml",
+      "summary": "'ve been on a quest lately to reclaim my sanity at work. The latest advancement is a bot that auto-approves and merges low risk PRs with no oversight 😈",
+      "publishedAt": "2026-09-19T00:00:00.000Z"
     },
     {
       "slug": "11a0fad410c6201436d3d5c5",
@@ -392,16 +502,6 @@
       "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
       "summary": "null From support ticket to GitHub issue: Building a reliable escalation workflow on SitePoint.",
       "publishedAt": "2026-09-18T09:55:40.000Z"
-    },
-    {
-      "slug": "a54241a7fc8f18e5a4d3cf5d",
-      "guid": "https://overreacted.io/how-i-vibed-a-proof-of-conways-conjecture/",
-      "title": "How I Vibed a Proof of Conway’s Conjecture",
-      "link": "https://overreacted.io/how-i-vibed-a-proof-of-conways-conjecture/",
-      "source": "overreacted.io by Dan Abramov",
-      "sourceUrl": "https://overreacted.io/rss.xml",
-      "summary": "You can just prove things, apparently.",
-      "publishedAt": "2026-09-18T00:00:00.000Z"
     },
     {
       "slug": "724b4a24aaa8dbedfa91b2cb",
@@ -834,36 +934,6 @@
       "publishedAt": "2026-09-16T03:03:22.000Z"
     },
     {
-      "slug": "c67df5df503a82d9e3751326",
-      "guid": "6aa9b46181fb07630380c2e8",
-      "title": "How to Write a Linux Kernel Module That Actually Builds",
-      "link": "https://www.freecodecamp.org/news/how-to-write-a-linux-kernel-module-that-actually-builds/",
-      "source": "Free Code Camp - News",
-      "sourceUrl": "https://www.freecodecamp.org/news/rss",
-      "summary": "A Linux kernel module is a small piece of code that can be loaded into the running kernel without rebuilding the entire kernel. That sounds simple enough, but even a minimal module produces a surprisi",
-      "publishedAt": "2026-09-15T21:10:57.000Z"
-    },
-    {
-      "slug": "5081d44f7b22ac0692d9577c",
-      "guid": "6aa9b393e892e731e337e0e3",
-      "title": "The 7 Essential Parts of Your Online Presence",
-      "link": "https://www.freecodecamp.org/news/the-7-essential-parts-of-your-online-presence/",
-      "source": "Free Code Camp - News",
-      "sourceUrl": "https://www.freecodecamp.org/news/rss",
-      "summary": "Your online presence often gives potential employers, clients, partners, and recruiters their first impression of you. It's likely what they see before they ever meet you. They search your name, read",
-      "publishedAt": "2026-09-15T21:07:31.000Z"
-    },
-    {
-      "slug": "e8fdefbda6e1038ee2c45638",
-      "guid": "6aa9b28d96b8eb1b8b1475f0",
-      "title": "How to Build an Endpoint Data Loss Prevention Strategy for Your Development Team",
-      "link": "https://www.freecodecamp.org/news/build-an-endpoint-data-loss-prevention-strategy-for-your-dev-team/",
-      "source": "Free Code Camp - News",
-      "sourceUrl": "https://www.freecodecamp.org/news/rss",
-      "summary": "A developer's laptop holds more sensitive data than most people realize: API keys, database credentials, staging environment secrets, and sometimes entire copies of production data pulled down \"just f",
-      "publishedAt": "2026-09-15T21:03:09.000Z"
-    },
-    {
       "slug": "8ec32fc30416084f225f96cd",
       "guid": "https://medium.com/p/95081bd631bb",
       "title": "celld: Durable Objects, Unbundled",
@@ -932,76 +1002,6 @@
       "sourceUrl": "https://feeds.dzone.com/home",
       "summary": "The Index Can Be Fast and Still Be Wrong Vector search teams usually define performance with query latency, recall, and throughput. Those measures matter, but they can all look healthy while the system returns a stale version of a document that changed minutes ago. The index is …",
       "publishedAt": "2026-09-15T18:00:00.000Z"
-    },
-    {
-      "slug": "45108a715046ca911d033333",
-      "guid": "https://dzone.com/articles/3669952",
-      "title": "KV Cache vs Prompt Cache: What's the Difference, and How Are They Related?",
-      "link": "https://dzone.com/articles/kv-cache-vs-prompt-cache",
-      "source": "DZone",
-      "sourceUrl": "https://feeds.dzone.com/home",
-      "summary": "This article was originally published on my blog. For the latest version and future updates, please visit the original post: https://jaketao.com/language/en/kv-cache-vs-prompt-cache/. Every time a large language model generates a token, it draws on the content that came before i…",
-      "publishedAt": "2026-09-15T17:00:00.000Z"
-    },
-    {
-      "slug": "a29ee671d6dad9e478b0024d",
-      "guid": "https://dzone.com/refcardz/3685814",
-      "title": "Agentic AI Threat Intelligence Essentials",
-      "link": "https://dzone.com/refcardz/agentic-ai-threat-intelligence-essentials",
-      "source": "DZone",
-      "sourceUrl": "https://feeds.dzone.com/home",
-      "summary": "Agentic AI can help threat intelligence teams move faster across collection, enrichment, correlation, and drafting while keeping critical judgments in human hands. This Refcard covers the essentials of building agent-supported intelligence workflows, including how to preserve pr…",
-      "publishedAt": "2026-09-15T16:57:18.000Z"
-    },
-    {
-      "slug": "fa40ec4a8cbf2106e09e2252",
-      "guid": "https://blog.master.dev/?p=11004",
-      "title": "Code Snacks",
-      "link": "https://blog.master.dev/code-snacks/",
-      "source": "Frontend Masters",
-      "sourceUrl": "https://frontendmasters.com/blog/feed/",
-      "summary": "Love these little animations (“code snacks”) from Lauren Basser that illustrate basic technological concepts. Check out the ones for Working Directory and Shadow DOM — not the easiest concepts to illustrate as simply as this!",
-      "publishedAt": "2026-09-15T15:19:26.000Z"
-    },
-    {
-      "slug": "d83f81bbfa1b7438a26a811a",
-      "guid": "https://www.sitepoint.com/building-a-reliable-script-to-video-pipeline-for-modern-web-applications/",
-      "title": "Building a Reliable Script-to-Video Pipeline for Modern Web Applications",
-      "link": "https://www.sitepoint.com/building-a-reliable-script-to-video-pipeline-for-modern-web-applications/?utm_source=rss",
-      "source": "SitePoint",
-      "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
-      "summary": "null Building a Reliable Script-to-Video Pipeline for Modern Web Applications on SitePoint.",
-      "publishedAt": "2026-09-15T12:03:30.000Z"
-    },
-    {
-      "slug": "371904a0ab3c9d56d951debc",
-      "guid": "https://www.sitepoint.com/microservices-vs-monolithic-architecture-what-nobody-tells-you-until-you-ve-lived-through-both/",
-      "title": "Microservices vs Monolithic Architecture: What Nobody Tells You Until You've Lived Through Both",
-      "link": "https://www.sitepoint.com/microservices-vs-monolithic-architecture-what-nobody-tells-you-until-you-ve-lived-through-both/?utm_source=rss",
-      "source": "SitePoint",
-      "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
-      "summary": "null Microservices vs Monolithic Architecture: What Nobody Tells You Until You've Lived Through Both on SitePoint.",
-      "publishedAt": "2026-09-15T07:25:35.000Z"
-    },
-    {
-      "slug": "38b1b381925ba6f66c116f8d",
-      "guid": "https://www.sitepoint.com/juicebox-vs-metaview-comparison/",
-      "title": "Juicebox vs Metaview: Sourcing engine or interview-intelligence suite?",
-      "link": "https://www.sitepoint.com/juicebox-vs-metaview-comparison/?utm_source=rss",
-      "source": "SitePoint",
-      "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
-      "summary": "uicebox vs Metaview: compare AI sourcing versus interview intelligence to see which recruiting tool fits your team's biggest bottleneck - or whether you need both. Juicebox vs Metaview: Sourcing engine or interview-intelligence suite? on SitePoint.",
-      "publishedAt": "2026-09-15T07:18:30.000Z"
-    },
-    {
-      "slug": "e6fc5bf89cd9663b87bb22e7",
-      "guid": "https://www.sitepoint.com/keyword-research-tools-api-automation/",
-      "title": "8 Keyword Research Tools Compared by API and Automation (2026)",
-      "link": "https://www.sitepoint.com/keyword-research-tools-api-automation/?utm_source=rss",
-      "source": "SitePoint",
-      "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
-      "summary": "Compare 8 keyword research tools by API access, rate limits, and MCP support for AI agents. See which fits your automation stack and read the full matrix below. 8 Keyword Research Tools Compared by API and Automation (2026) on SitePoint.",
-      "publishedAt": "2026-09-15T06:55:38.000Z"
     }
   ]
 }
