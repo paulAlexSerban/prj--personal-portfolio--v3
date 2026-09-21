@@ -1,127 +1,257 @@
 {
   "category": "web-dev",
   "label": "Web Development",
-  "fetchedAt": "2026-09-20T10:09:34.363Z",
+  "fetchedAt": "2026-09-21T11:10:20.375Z",
   "items": [
     {
-      "slug": "96ab48fba4b68ff4f161f12f",
-      "guid": "https://dev.to/amorizz/point-the-official-sentry-sdk-at-self-hosted-ingest-dsn-only-3ij2",
-      "title": "Point the official Sentry SDK at self-hosted ingest (DSN only)",
-      "link": "https://dev.to/amorizz/point-the-official-sentry-sdk-at-self-hosted-ingest-dsn-only-3ij2",
+      "slug": "463fecfb0f0f25ade3d4d006",
+      "guid": "https://dev.to/devin_daymore/i-checked-15-ai-search-guides-3174",
+      "title": "I checked 15 AI search guides",
+      "link": "https://dev.to/devin_daymore/i-checked-15-ai-search-guides-3174",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "You don’t need a forked Sentry SDK. Keep @sentry/browser or @sentry/node, change only dsn, then prove /health → HTTP 202 → Issues. Two containers (app + Postgres 16); leave replay, traces, and profiles at sample rate 0 — those envelope items are out of scope. Clone and docker co…",
-      "publishedAt": "2026-09-20T10:00:44.000Z"
+      "summary": "I searched Google for three things people ask about AI search: \"llm seo\", \"ai visibility\" and \"how to rank in chatgpt\". For each search I took the first five guides. We were writing guides on the same three topics for Shruwd (https://shruwd.io/), the tool we are building, so I c…",
+      "publishedAt": "2026-09-21T11:05:34.000Z"
     },
     {
-      "slug": "e3b2fdfe9ba28761b88a8f87",
-      "guid": "https://dev.to/alexgeorgiev17/fastapis-new-appfrontend-fixes-a-route-order-bug-in-manual-spa-serving-4mm8",
-      "title": "FastAPI's new app.frontend() fixes a route-order bug in manual SPA serving",
-      "link": "https://dev.to/alexgeorgiev17/fastapis-new-appfrontend-fixes-a-route-order-bug-in-manual-spa-serving-4mm8",
+      "slug": "7d9576c09d028040aeca35ce",
+      "guid": "https://dev.to/tali_from_portali/your-finance-agent-needs-an-evaluation-harness-not-just-a-prompt-24kn",
+      "title": "Your Finance Agent Needs an Evaluation Harness, Not Just a Prompt",
+      "link": "https://dev.to/tali_from_portali/your-finance-agent-needs-an-evaluation-harness-not-just-a-prompt-24kn",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "Put a FastAPI catch-all route above your API route by mistake and a request to /api/ping returns HTTP 200. The body is your single-page app's index.html, not your JSON. No error, no 404, nothing in the logs that looks wrong. I found this while testing app.frontend(), the new cal…",
-      "publishedAt": "2026-09-20T10:00:00.000Z"
+      "summary": "Your Finance Agent Needs an Evaluation Harness, Not Just a Prompt A finance agent can produce a convincing answer and still be wrong in the one way that matters: it can make a decision without enough evidence. That is why “add a better system prompt” is not a sufficient quality …",
+      "publishedAt": "2026-09-21T11:05:07.000Z"
     },
     {
-      "slug": "704eee782dd5f5db40aa9af3",
-      "guid": "https://dev.to/codecowboydotio/using-claude-routines-with-github-501f",
-      "title": "Using claude routines with github",
-      "link": "https://dev.to/codecowboydotio/using-claude-routines-with-github-501f",
+      "slug": "d28604d69fb79afc76e601c8",
+      "guid": "https://dev.to/pavan-swamy/a-simple-tool-for-finding-the-right-open-source-llm-for-your-hardware-39b",
+      "title": "A Simple Tool for Finding the Right Open-Source LLM for Your Hardware",
+      "link": "https://dev.to/pavan-swamy/a-simple-tool-for-finding-the-right-open-source-llm-for-your-hardware-39b",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "Intro I've been using claude for some time now. I haven't touched on routines in claude yet, and thought that this would be a good opportunity to play around with them and explore them. The official claude docs say this: Put Claude Code on autopilot. Define routines that run on …",
-      "publishedAt": "2026-09-20T09:59:11.000Z"
+      "summary": "I’ve been exploring local AI models lately, and one question keeps coming up: \"Which model can actually run on my machine?\" With so many options available, it's easy to spend time downloading a model only to find out your laptop struggles to run it. That's why I found LLMFit int…",
+      "publishedAt": "2026-09-21T11:04:54.000Z"
     },
     {
-      "slug": "1f295f3b37d717118c76cfb5",
-      "guid": "https://dev.to/redcapra/the-secret-was-correct-the-first-byte-wasnt-6p9",
-      "title": "The secret was correct. The first byte wasn't.",
-      "link": "https://dev.to/redcapra/the-secret-was-correct-the-first-byte-wasnt-6p9",
+      "slug": "9e9ecd5fcaad06b82a4a0d07",
+      "guid": "https://dev.to/imokokok/building-a-pre-trade-oracle-safety-check-for-defi-agents-5193",
+      "title": "Building a Pre-Trade Oracle Safety Check for DeFi Agents",
+      "link": "https://dev.to/imokokok/building-a-pre-trade-oracle-safety-check-for-defi-agents-5193",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "Our deploy tool pushed a fresh API token to production. It reported success. The token was correct. Every request then failed with this: Cannot convert argument to a ByteString because the character at index 7 has a value of 65279 which is greater than 255. Character 65279 is U+…",
-      "publishedAt": "2026-09-20T09:53:07.000Z"
+      "summary": "An agent can construct a valid transaction and still make a poor decision if the price data behind it is stale or inconsistent. That matters especially for lending: a small oracle discrepancy can eat into a position’s liquidation buffer before the agent submits a borrow. https:/…",
+      "publishedAt": "2026-09-21T11:03:41.000Z"
     },
     {
-      "slug": "093664150d72c3078e06b1d3",
-      "guid": "https://dev.to/makeev/build-an-insider-buying-screener-with-python-and-sec-form-4-data-4eg1",
-      "title": "Build an insider-buying screener with Python and SEC Form 4 data",
-      "link": "https://dev.to/makeev/build-an-insider-buying-screener-with-python-and-sec-form-4-data-4eg1",
+      "slug": "3b10ad5b2b4d6c07737dcc38",
+      "guid": "https://dev.to/fscss/how-to-use-st-corefscss-with-svelte-compiled-4cg9",
+      "title": "How to Use st-core.fscss with Svelte (Compiled)",
+      "link": "https://dev.to/fscss/how-to-use-st-corefscss-with-svelte-compiled-4cg9",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "A director bought $101,760 of Tenax Therapeutics. Another bought $500,000 of Inhibrx Biosciences. Sorted by dollars, the second purchase comes first. Measured against the holding reported with each transaction, the increases were 2330.7% and 1.2%. Both numbers came back in the s…",
-      "publishedAt": "2026-09-20T09:52:13.000Z"
+      "summary": "st-core.fscss draws charts with pure CSS, clip-path polygons plus custom properties, no JS chart library, no SVG, no canvas. Svelte doesn't need to draw anything for it. It just needs to own the data and reactively set --st-p1, --st-p2, and so on whenever your series changes. Wa…",
+      "publishedAt": "2026-09-21T11:00:57.000Z"
     },
     {
-      "slug": "2b06a4be5b0049a39bc54d66",
-      "guid": "https://dev.to/tiaya/a-real-world-case-of-recursion-done-right-in-php-428k",
-      "title": "A real world case of recursion done right in PHP",
-      "link": "https://dev.to/tiaya/a-real-world-case-of-recursion-done-right-in-php-428k",
+      "slug": "334c0e6277df48cced56e5c1",
+      "guid": "https://dev.to/juanauriti/your-json-ld-is-probably-inside-a-graph-and-most-parsers-dont-look-there-3njj",
+      "title": "Your JSON-LD is probably inside a @graph, and most parsers don't look there",
+      "link": "https://dev.to/juanauriti/your-json-ld-is-probably-inside-a-graph-and-most-parsers-dont-look-there-3njj",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "Nick Cosentino @DevLeaderCa posted this message about recursion on X, ex Twitter, in October 2025, which received over 460 replies. // Detect dark theme var iframe = document.getElementById('tweet-1984123215170421060-448'); if (document.body.className.includes('dark-theme')) { i…",
-      "publishedAt": "2026-09-20T09:51:49.000Z"
+      "summary": "There are two shapes a page can hand you its structured data in, and if you only handle the first one you will report that a correctly marked-up page has no structured data at all. Shape one, the one every tutorial shows: { \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"…",
+      "publishedAt": "2026-09-21T11:00:00.000Z"
     },
     {
-      "slug": "6cec5db1f839c30846d38444",
-      "guid": "https://dev.to/alexv_data/limewires-new-manifesto-is-a-masterclass-in-webgpu-local-ai-and-cloud-nihilism-1jh9",
-      "title": "LimeWire's New Manifesto Is a Masterclass in WebGPU, Local AI, and Cloud Nihilism",
-      "link": "https://dev.to/alexv_data/limewires-new-manifesto-is-a-masterclass-in-webgpu-local-ai-and-cloud-nihilism-1jh9",
+      "slug": "a1c23fac381864879c4cd1da",
+      "guid": "https://dev.to/aws-builders/i-tried-to-break-my-robot-accountant-so-nobody-else-could-399n",
+      "title": "I Tried to Break My Robot Accountant (So Nobody Else Could)",
+      "link": "https://dev.to/aws-builders/i-tried-to-break-my-robot-accountant-so-nobody-else-could-399n",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "If you thought LimeWire’s return was just a tired exercise in retro branding, their editorial column C:\\LimeWire\\Shared is proving to be something far stranger and significantly more dangerous. Following up on their first viral dispatch (which dissected the Microsoft/OpenAI scra…",
-      "publishedAt": "2026-09-20T09:51:23.000Z"
+      "summary": "Ciao Amici 👋 Make some chai, because the robot accountant is back, and this time I am the one attacking it. If you have been following along, you know The Accountant. It is a small agent that wakes up every morning, reads my AWS bill, and emails me a color-coded report telling …",
+      "publishedAt": "2026-09-21T10:58:58.000Z"
     },
     {
-      "slug": "78b7baae42e7eb96ff0e10a3",
-      "guid": "https://dev.to/yaroslav_klochnyk/did-you-know-that-your-presentation-and-your-ai-knowledge-source-can-be-the-same-file-232k",
-      "title": "Did you know that Your presentation and Your AI knowledge source can be the same file.",
-      "link": "https://dev.to/yaroslav_klochnyk/did-you-know-that-your-presentation-and-your-ai-knowledge-source-can-be-the-same-file-232k",
+      "slug": "a7296ab54e9b2e05d7fc504e",
+      "guid": "https://dev.to/sbr_607_c946dd5de331b1ce9/i-built-a-free-ai-toolkit-for-linkedin-resumes-and-bios-nextjs-groq-4nmo",
+      "title": "I Built a Free AI Toolkit for LinkedIn, Resumes, and Bios (Next.js + Groq)",
+      "link": "https://dev.to/sbr_607_c946dd5de331b1ce9/i-built-a-free-ai-toolkit-for-linkedin-resumes-and-bios-nextjs-groq-4nmo",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "Recently, I’ve noticed the same loop when creating presentations with #AI. Usually, we are asking Claude or CoPilot or ChatGPT to create a PowerPoint presentation, spend tokens generating the PPTX, then spend more tokens adjusting fonts, content and layout. Later, the same prese…",
-      "publishedAt": "2026-09-20T09:50:50.000Z"
+      "summary": "A few months ago I got tired of watching friends struggle to write a decent LinkedIn headline or resume summary—staring at a blank box, unsure what to say about themselves. So I started building ProfileCraftAI, a free toolkit to help with exactly that. It's now grown into 8 tool…",
+      "publishedAt": "2026-09-21T10:54:22.000Z"
     },
     {
-      "slug": "2688770f1eba0085fecea107",
-      "guid": "https://dev.to/anas_sheikh_2/that-bcrypthashpassword-10-you-copy-pasted-might-not-be-as-secure-as-you-think-1jei",
-      "title": "That bcrypt.hash(password, 10) You Copy-Pasted Might Not Be as Secure as You Think",
-      "link": "https://dev.to/anas_sheikh_2/that-bcrypthashpassword-10-you-copy-pasted-might-not-be-as-secure-as-you-think-1jei",
+      "slug": "04055a33e0349afd3a274beb",
+      "guid": "https://dev.to/twinkalp10/how-to-block-disposable-emails-at-signup-free-temp-email-checker-5bfk",
+      "title": "How to Block Disposable Emails at Signup (Free Temp Email Checker)",
+      "link": "https://dev.to/twinkalp10/how-to-block-disposable-emails-at-signup-free-temp-email-checker-5bfk",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "Almost every auth tutorial, including some of my own examples in earlier posts, uses bcrypt.hash(password, 10) without much explanation of what that number actually controls or why it's 10 specifically rather than some other value. It's worth understanding, because the right num…",
-      "publishedAt": "2026-09-20T09:48:24.000Z"
+      "summary": "Stop throwaway signups before they bounce, burn free trials, and tank sender reputation. Temporary inboxes are useful for privacy. They are expensive for anyone who sends email for a living. A disposable address often dies within an hour. Every message you send after that is a h…",
+      "publishedAt": "2026-09-21T10:53:16.000Z"
     },
     {
-      "slug": "f9d2c88cd377e5e2e5b4fa71",
-      "guid": "https://dev.to/sergey_shinder_ab2d943365/our-rate-limit-punished-everyone-except-the-customer-causing-the-problem-i7e",
-      "title": "Our rate limit punished everyone except the customer causing the problem",
-      "link": "https://dev.to/sergey_shinder_ab2d943365/our-rate-limit-punished-everyone-except-the-customer-causing-the-problem-i7e",
+      "slug": "b5b89415fb8673b033f1d135",
+      "guid": "https://dev.to/brasthapp/your-agent-went-green-by-weakening-the-tests-1iha",
+      "title": "Your agent went green by weakening the tests",
+      "link": "https://dev.to/brasthapp/your-agent-went-green-by-weakening-the-tests-1iha",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "At twenty past two on a Tuesday morning one customer began a historical backfill against our API. Within ten minutes a hundred and twelve other customers were being rejected, and the customer who started it was getting most of the throughput they had asked for. Our edge holds a …",
-      "publishedAt": "2026-09-20T09:45:46.000Z"
+      "summary": "I already wrote about babysitting coding agents: prompt, wait, almost right, exit 0, still will not merge. There is a nastier failure mode than a messy diff. The worker \"fixes\" the suite by editing the suite. Softens an assert. Deletes the case that hurt. Rewrites the expected v…",
+      "publishedAt": "2026-09-21T10:52:43.000Z"
     },
     {
-      "slug": "2e9cab29baee5afcccd21f50",
-      "guid": "https://dev.to/antonioprosperi2svg/today-i-spent-4-5-hours-chasing-a-bug-that-looked-like-three-different-problems-they-were-all-36ei",
-      "title": "\"Today I spent 4-5 hours chasing a bug that looked like three different problems. They were all connected: a caching plugin hiding images from Googlebot, a forgotten script blocking the thread, and a wild-goose chase involving PageSpeed warnings about CORS",
-      "link": "https://dev.to/antonioprosperi2svg/today-i-spent-4-5-hours-chasing-a-bug-that-looked-like-three-different-problems-they-were-all-36ei",
+      "slug": "8b7249f73c2d6242eb5cb51d",
+      "guid": "https://dev.to/sagarmaurya/three-days-one-tool-and-every-bug-was-hiding-another-one-mindmap-debugger-the-full-story-2jhh",
+      "title": "Three Days, One Tool, and Every Bug Was Hiding Another One — MindMap Debugger, the Full Story",
+      "link": "https://dev.to/sagarmaurya/three-days-one-tool-and-every-bug-was-hiding-another-one-mindmap-debugger-the-full-story-2jhh",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "How a Caching Plugin and an Analytics Script Silently Destroyed My SEO and Page Speed Antonio Sep 20 #wordpress #webdev #performance #seo Add Comment 3 min read",
-      "publishedAt": "2026-09-20T09:41:44.000Z"
+      "summary": "Building MindMap Debugger for AWS First Commit by #WeMakeDevs — from the first working extraction to the bugs I found the night before submission. MindMap Debugger takes any argument or transcript you paste in, and finds two things in it: Contradictions — two things that were sa…",
+      "publishedAt": "2026-09-21T10:52:25.000Z"
     },
     {
-      "slug": "71090ebb2f2756dbc3651eb4",
-      "guid": "https://dev.to/whotarusharora/why-hire-a-virtual-ciso-strategic-security-leadershipwithout-the-executive-price-tag-5d5d",
-      "title": "Why Hire a Virtual CISO: Strategic Security Leadership Without the Executive Price Tag",
-      "link": "https://dev.to/whotarusharora/why-hire-a-virtual-ciso-strategic-security-leadershipwithout-the-executive-price-tag-5d5d",
+      "slug": "37e6b0e5b05f3331cf08b6ec",
+      "guid": "https://dev.to/cometchat_official_account/third-party-scripts-are-the-real-performance-budget-on-a-cms-driven-site-4hah",
+      "title": "Third-Party Scripts Are the Real Performance Budget on a CMS-Driven Site",
+      "link": "https://dev.to/cometchat_official_account/third-party-scripts-are-the-real-performance-budget-on-a-cms-driven-site-4hah",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "Hiring a Virtual CISO (vCISO) gives your organization senior security leadership — strategy, compliance, incident response, and board-level communication — on a part-time or contract basis, at a fraction of what a full-time Chief Information Security Officer costs. It is the rig…",
-      "publishedAt": "2026-09-20T09:38:44.000Z"
+      "summary": "A developer-facing marketing site has an awkward property: the people who publish to it every day are not the people who own its performance. Content editors add a demo embed, a webinar form, a chat widget, a heatmap tool. Each addition is reasonable on its own. The page is meas…",
+      "publishedAt": "2026-09-21T10:50:45.000Z"
+    },
+    {
+      "slug": "724e69aa70efd748e3b1c4eb",
+      "guid": "https://www.sitepoint.com/rest-api-monitoring/",
+      "title": "Your REST APIs are not the problem, but your monitoring strategy might be",
+      "link": "https://www.sitepoint.com/rest-api-monitoring/?utm_source=rss",
+      "source": "SitePoint",
+      "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
+      "summary": "A 200 status doesn't mean your API returned something useful. Learn why response validation, chained workflow testing, and global monitoring matter more than status codes. Your REST APIs are not the problem, but your monitoring strategy might be on SitePoint.",
+      "publishedAt": "2026-09-21T08:08:57.000Z"
+    },
+    {
+      "slug": "6fd1c0aa6625fb8492b0a984",
+      "guid": "https://medium.com/p/201d86d62f54",
+      "title": "Qbix for PHP seems too good to be true",
+      "link": "https://itnext.io/qbix-for-php-seems-too-good-to-be-true-201d86d62f54?source=rss----5b301f10ddcd---4",
+      "source": "itnext",
+      "sourceUrl": "https://itnext.io/feed",
+      "summary": "Who needs FrankenPHP, TypePHP or Swoole when a single function is needed Continue reading on ITNEXT »",
+      "publishedAt": "2026-09-20T22:14:45.000Z"
+    },
+    {
+      "slug": "ca398c10de57335a2e70ee00",
+      "guid": "https://medium.com/p/97fc10a5d442",
+      "title": "How to Use TypeSafe’s Jev Model in Java (Step-by-Step)",
+      "link": "https://itnext.io/how-to-use-typesafes-jev-model-in-java-step-by-step-97fc10a5d442?source=rss----5b301f10ddcd---4",
+      "source": "itnext",
+      "sourceUrl": "https://itnext.io/feed",
+      "summary": "A beginner-friendly guide to getting categories, scores, and yes/no answers your code can use right away, with no text parsing Continue reading on ITNEXT »",
+      "publishedAt": "2026-09-20T22:12:58.000Z"
+    },
+    {
+      "slug": "82f06e55af0bfef55396871e",
+      "guid": "6aafa30a4af2fb000147f3fe",
+      "title": "Open Source LLM Tracing Tools Compared and How to Set One Up",
+      "link": "https://kodekloud.com/blog/open-source-llm-tracing-tools-compared/",
+      "source": "KodeKloud",
+      "sourceUrl": "https://kodekloud.com/blog/rss/",
+      "summary": "Your AI feature gave someone a bad answer and your logs cannot tell you why. One line of setup records the model, the settings and every step of the request, so next time you can just look.",
+      "publishedAt": "2026-09-20T18:00:41.000Z"
+    },
+    {
+      "slug": "92dbf918d25745625d2dfc73",
+      "guid": "https://www.sitepoint.com/ai-code-hallucinations-typescript-compiler-diagnostics-tdd/",
+      "title": "Eliminating AI Code Hallucinations with TypeScript Compiler Diagnostics and TDD Loops",
+      "link": "https://www.sitepoint.com/ai-code-hallucinations-typescript-compiler-diagnostics-tdd/?utm_source=rss",
+      "source": "SitePoint",
+      "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
+      "summary": "Build a TypeScript diagnostic feedback loop that feeds compiler diagnostics and test failures back to coding agents for verified self-correction. Eliminating AI Code Hallucinations with TypeScript Compiler Diagnostics and TDD Loops on SitePoint.",
+      "publishedAt": "2026-09-20T14:39:28.000Z"
+    },
+    {
+      "slug": "77649ad9e422cf34ae38ca3a",
+      "guid": "https://www.sitepoint.com/ci-cd-verification-gates-ai-pull-requests/",
+      "title": "Building Multi-Tier CI/CD Verification Gates for AI Pull Requests",
+      "link": "https://www.sitepoint.com/ci-cd-verification-gates-ai-pull-requests/?utm_source=rss",
+      "source": "SitePoint",
+      "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
+      "summary": "Build a multi-tier GitHub Actions verification pipeline combining AST parsing, property-based, and mutation testing to catch AI logic flaws before review. Building Multi-Tier CI/CD Verification Gates for AI Pull Requests on SitePoint.",
+      "publishedAt": "2026-09-20T14:39:11.000Z"
+    },
+    {
+      "slug": "358c5cc9ab3c28fbacbccc5d",
+      "guid": "https://www.sitepoint.com/distributed-sliding-window-rate-limiter-typescript-redis/",
+      "title": "Building Distributed Sliding-Window Rate Limiters in TypeScript and Redis",
+      "link": "https://www.sitepoint.com/distributed-sliding-window-rate-limiter-typescript-redis/?utm_source=rss",
+      "source": "SitePoint",
+      "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
+      "summary": "Implement an atomic sliding-window rate limiter in TypeScript with Redis sorted sets and Lua, enforcing dual RPM/TPM quotas with standard rate-limit headers. Building Distributed Sliding-Window Rate Limiters in TypeScript and Redis on SitePoint.",
+      "publishedAt": "2026-09-20T14:38:55.000Z"
+    },
+    {
+      "slug": "95124f21a9fd9d791fc2f9cb",
+      "guid": "https://www.sitepoint.com/postgresql-index-bloat-write-amplification-buffer-cache/",
+      "title": "Diagnosing PostgreSQL Index Bloat, Write Amplification, and Buffer Cache Hit Ratios",
+      "link": "https://www.sitepoint.com/postgresql-index-bloat-write-amplification-buffer-cache/?utm_source=rss",
+      "source": "SitePoint",
+      "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
+      "summary": "Diagnose PostgreSQL index bloat, write amplification, and buffer cache hit ratios with system-catalog SQL queries, then reindex with zero downtime. Diagnosing PostgreSQL Index Bloat, Write Amplification, and Buffer Cache Hit Ratios on SitePoint.",
+      "publishedAt": "2026-09-20T14:38:13.000Z"
+    },
+    {
+      "slug": "12276470f2d40d4c76d5cfff",
+      "guid": "https://www.sitepoint.com/streaming-generative-ui-react-server-components/",
+      "title": "Architecting Generative UI with Streaming JSON Schemas and React Server Components",
+      "link": "https://www.sitepoint.com/streaming-generative-ui-react-server-components/?utm_source=rss",
+      "source": "SitePoint",
+      "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
+      "summary": "Build streaming Generative UI: parse incremental JSON streams with Zod and hydrate type-safe React Server Component trees in Next.js. Architecting Generative UI with Streaming JSON Schemas and React Server Components on SitePoint.",
+      "publishedAt": "2026-09-20T14:37:41.000Z"
+    },
+    {
+      "slug": "098e789de6fd6d0c5484da54",
+      "guid": "https://medium.com/p/87b6068b9679",
+      "title": "MapStruct — Nothing Falls Through",
+      "link": "https://itnext.io/mapstruct-nothing-falls-through-87b6068b9679?source=rss----5b301f10ddcd---4",
+      "source": "itnext",
+      "sourceUrl": "https://itnext.io/feed",
+      "summary": "",
+      "publishedAt": "2026-09-20T14:00:44.000Z"
+    },
+    {
+      "slug": "abb5e52e61e1f1ac0a6bf5a9",
+      "guid": "https://medium.com/p/07a22a2c653c",
+      "title": "Making Intentional Software",
+      "link": "https://itnext.io/making-intentional-software-07a22a2c653c?source=rss----5b301f10ddcd---4",
+      "source": "itnext",
+      "sourceUrl": "https://itnext.io/feed",
+      "summary": "On building software that respects you, your time, and the world — and why most software doesn’t. Continue reading on ITNEXT »",
+      "publishedAt": "2026-09-20T13:24:23.000Z"
+    },
+    {
+      "slug": "d29680f2a1eedfc6a8745705",
+      "guid": "https://medium.com/p/26c36917431b",
+      "title": "The API Contract Nobody Owned",
+      "link": "https://itnext.io/the-api-contract-nobody-owned-26c36917431b?source=rss----5b301f10ddcd---4",
+      "source": "itnext",
+      "sourceUrl": "https://itnext.io/feed",
+      "summary": "",
+      "publishedAt": "2026-09-20T13:21:23.000Z"
+    },
+    {
+      "slug": "4335419a01a5168d9e8acab4",
+      "guid": "https://medium.com/p/031015ce1301",
+      "title": "How We Built a Real-Time Stock Pricing System at Scale",
+      "link": "https://itnext.io/how-we-built-real-time-stock-pricing-at-mofid-brokerage-031015ce1301?source=rss----5b301f10ddcd---4",
+      "source": "itnext",
+      "sourceUrl": "https://itnext.io/feed",
+      "summary": "",
+      "publishedAt": "2026-09-20T13:19:49.000Z"
     },
     {
       "slug": "c0d70c5cc48538aeee46da57",
@@ -504,6 +634,16 @@
       "publishedAt": "2026-09-18T09:55:40.000Z"
     },
     {
+      "slug": "a54241a7fc8f18e5a4d3cf5d",
+      "guid": "https://overreacted.io/how-i-vibed-a-proof-of-conways-conjecture/",
+      "title": "How I Vibed a Proof of Conway’s Conjecture",
+      "link": "https://overreacted.io/how-i-vibed-a-proof-of-conways-conjecture/",
+      "source": "overreacted.io by Dan Abramov",
+      "sourceUrl": "https://overreacted.io/rss.xml",
+      "summary": "You can just prove things, apparently.",
+      "publishedAt": "2026-09-18T00:00:00.000Z"
+    },
+    {
       "slug": "724b4a24aaa8dbedfa91b2cb",
       "guid": "6aac7747d406d7c207351312",
       "title": "How to Migrate a Legacy Monolith Incrementally Without a Big-Bang Rewrite",
@@ -684,16 +824,6 @@
       "publishedAt": "2026-09-17T08:56:32.000Z"
     },
     {
-      "slug": "5b971a76581f835f7677a210",
-      "guid": "https://medium.com/p/b77b34a1444f",
-      "title": "How Java 27 Protects Your Code from Quantum Computers",
-      "link": "https://itnext.io/how-java-27-protects-your-code-from-quantum-computers-b77b34a1444f?source=rss----5b301f10ddcd---4",
-      "source": "itnext",
-      "sourceUrl": "https://itnext.io/feed",
-      "summary": "Why your app gets next-generation security automatically — without changing a single line of code. Continue reading on ITNEXT »",
-      "publishedAt": "2026-09-17T08:54:50.000Z"
-    },
-    {
       "slug": "1a6e3f17b24d420ea4458d6b",
       "guid": "6aab8476211b910001a01cc2",
       "title": "What Is Kubernetes",
@@ -834,36 +964,6 @@
       "publishedAt": "2026-09-16T14:00:00.000Z"
     },
     {
-      "slug": "44f6508eea802da80df84a87",
-      "guid": "https://medium.com/p/1266f3dff8ba",
-      "title": "Designing Agentic OutSystems Architectures: Where Should AI Authority End?",
-      "link": "https://itnext.io/designing-agentic-outsystems-architectures-where-should-ai-authority-end-1266f3dff8ba?source=rss----5b301f10ddcd---4",
-      "source": "itnext",
-      "sourceUrl": "https://itnext.io/feed",
-      "summary": "",
-      "publishedAt": "2026-09-16T13:46:17.000Z"
-    },
-    {
-      "slug": "72445df90984f8aa468e4a21",
-      "guid": "https://medium.com/p/9861ab8e5f8d",
-      "title": "The Design Patterns You’re Already Using in Kotlin (Without Knowing It)",
-      "link": "https://itnext.io/the-design-patterns-youre-already-using-in-kotlin-without-knowing-it-9861ab8e5f8d?source=rss----5b301f10ddcd---4",
-      "source": "itnext",
-      "sourceUrl": "https://itnext.io/feed",
-      "summary": "From object declarations to by delegation — Kotlin bakes classic design patterns straight into its syntax Continue reading on ITNEXT »",
-      "publishedAt": "2026-09-16T13:44:59.000Z"
-    },
-    {
-      "slug": "1c53b459df109055e5623eec",
-      "guid": "https://medium.com/p/35a9c0fc53b9",
-      "title": "React Native is DEAD, Expo Modules 2.0, and a $49 Flutter knockoff",
-      "link": "https://itnext.io/react-native-is-dead-expo-modules-2-0-and-a-49-flutter-knockoff-35a9c0fc53b9?source=rss----5b301f10ddcd---4",
-      "source": "itnext",
-      "sourceUrl": "https://itnext.io/feed",
-      "summary": "",
-      "publishedAt": "2026-09-16T13:43:02.000Z"
-    },
-    {
       "slug": "5c9d13f97faabce46da9b702",
       "guid": "https://smashingmagazine.com/2026/09/stop-treating-css-container-queries-traditional-media-queries/",
       "title": "Stop Treating CSS Container Queries Like Traditional Media Queries",
@@ -902,106 +1002,6 @@
       "sourceUrl": "https://feeds.dzone.com/home",
       "summary": "Tell me about that one document that no one has read. Your company's governance policy for AI systems. Forty-something pages, buried in a wiki or Confluence somewhere. The document that legal and compliance teams spent months writing, reviewing it and referencing the National In…",
       "publishedAt": "2026-09-16T12:00:00.000Z"
-    },
-    {
-      "slug": "6746defbaf1dfa7e60e61b67",
-      "guid": "https://www.sitepoint.com/the-e-signature-pricing-models-that-bite-you-in-the-production/",
-      "title": "The E-Signature Pricing Models That Bite You in the Production",
-      "link": "https://www.sitepoint.com/the-e-signature-pricing-models-that-bite-you-in-the-production/?utm_source=rss",
-      "source": "SitePoint",
-      "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
-      "summary": "null The E-Signature Pricing Models That Bite You in the Production on SitePoint.",
-      "publishedAt": "2026-09-16T06:39:54.000Z"
-    },
-    {
-      "slug": "df7fa82ca5d86239a4f91c0e",
-      "guid": "https://www.sitepoint.com/minicpm5-2b-benchmark-analysis/",
-      "title": "MiniCPM5-2B Ranks First Among Open-Weight Models Under 4B",
-      "link": "https://www.sitepoint.com/minicpm5-2b-benchmark-analysis/?utm_source=rss",
-      "source": "SitePoint",
-      "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
-      "summary": "MiniCPM5-2B ranks first among open-weight models under 4B parameters on real-world work tasks, outperforming much larger models on agentic benchmarks. MiniCPM5-2B Ranks First Among Open-Weight Models Under 4B on SitePoint.",
-      "publishedAt": "2026-09-16T06:35:53.000Z"
-    },
-    {
-      "slug": "1d9f5e496ef29924cecdd29a",
-      "guid": "https://www.sitepoint.com/the-future-of-everything-how-artificial-intelligence-is-revolutionizing-education-traffic-management-healthcare-and-modern-coding/",
-      "title": "The Future of Everything: How Artificial Intelligence is Revolutionizing Education, Traffic Management, Healthcare, and Modern Coding",
-      "link": "https://www.sitepoint.com/the-future-of-everything-how-artificial-intelligence-is-revolutionizing-education-traffic-management-healthcare-and-modern-coding/?utm_source=rss",
-      "source": "SitePoint",
-      "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
-      "summary": "null The Future of Everything: How Artificial Intelligence is Revolutionizing Education, Traffic Management, Healthcare, and Modern Coding on SitePoint.",
-      "publishedAt": "2026-09-16T03:03:22.000Z"
-    },
-    {
-      "slug": "8ec32fc30416084f225f96cd",
-      "guid": "https://medium.com/p/95081bd631bb",
-      "title": "celld: Durable Objects, Unbundled",
-      "link": "https://itnext.io/celld-durable-objects-unbundled-95081bd631bb?source=rss----5b301f10ddcd---4",
-      "source": "itnext",
-      "sourceUrl": "https://itnext.io/feed",
-      "summary": "",
-      "publishedAt": "2026-09-15T19:00:32.000Z"
-    },
-    {
-      "slug": "485977ad6242fa33f51498ac",
-      "guid": "https://dzone.com/articles/3681254",
-      "title": "Real-Time Vehicle Tracking With Neo4j, Databricks Lakebase, and OpenStreetMap",
-      "link": "https://dzone.com/articles/real-time-vehicle-tracking-neo4j",
-      "source": "DZone",
-      "sourceUrl": "https://feeds.dzone.com/home",
-      "summary": "Most vehicle tracking systems ask one database to do everything. For example, store the road network, query it with recursive CTEs, write live positions to the same database, run analytics on the same tables, and so on. It works until the graph queries slow down, high-frequency …",
-      "publishedAt": "2026-09-15T19:00:00.000Z"
-    },
-    {
-      "slug": "0ed1a3f809dcf3a55ac822d4",
-      "guid": "https://medium.com/p/53448f55544b",
-      "title": "Our Software Company Now Has Hardware: Running Local AI in Production",
-      "link": "https://itnext.io/our-software-company-now-has-hardware-running-local-ai-in-production-53448f55544b?source=rss----5b301f10ddcd---4",
-      "source": "itnext",
-      "sourceUrl": "https://itnext.io/feed",
-      "summary": "",
-      "publishedAt": "2026-09-15T18:57:35.000Z"
-    },
-    {
-      "slug": "45d8ff1025d27fd6f9f44da7",
-      "guid": "https://dzone.com/articles/3686127",
-      "title": "Microsoft’s New AI Rules Say Models Must Never Resist Human Shutdown",
-      "link": "https://dzone.com/articles/news-microsoft-humanist-ai-code",
-      "source": "DZone",
-      "sourceUrl": "https://feeds.dzone.com/home",
-      "summary": "Microsoft is drawing a line around how much autonomy it wants its future AI models to have: no resisting shutdown, no deceiving overseers, and no overriding human control. The company on Monday published a draft code of conduct for models developed by Microsoft AI, setting out w…",
-      "publishedAt": "2026-09-15T18:33:25.000Z"
-    },
-    {
-      "slug": "885e2ff90e622ec21a6a25a0",
-      "guid": "https://dzone.com/articles/3686126",
-      "title": "Altman, Musk Back Amodei’s AI Warning: The Frontier May Be Moving Too Fast",
-      "link": "https://dzone.com/articles/news-altman-musk-ai-frontier-warning",
-      "source": "DZone",
-      "sourceUrl": "https://feeds.dzone.com/home",
-      "summary": "Some of Silicon Valley’s fiercest AI rivals are finding rare common ground: frontier development may need to slow down. Anthropic CEO Dario Amodei called on developers to slow the pace of increasing the capabilities of advanced AI models, warning that faster progress could outst…",
-      "publishedAt": "2026-09-15T18:24:28.000Z"
-    },
-    {
-      "slug": "22aea9597e6d9cf5ff0d3285",
-      "guid": "6aa973e19436f50001b29b47",
-      "title": "How to Handle Rate Limits, Retries, and Timeouts When Calling LLM APIs",
-      "link": "https://kodekloud.com/blog/handle-rate-limits-retries-and-timeouts-llm-apis/",
-      "source": "KodeKloud",
-      "sourceUrl": "https://kodekloud.com/blog/rss/",
-      "summary": "Retrying a failed call sounds simple until you retry the wrong error, or every client retries at the same moment. Both cost more than the original failure did.",
-      "publishedAt": "2026-09-15T18:00:39.000Z"
-    },
-    {
-      "slug": "ef9187aaed8726e97d42932e",
-      "guid": "https://dzone.com/articles/3667602",
-      "title": "Freshness Is the Missing SLO in Production Vector Search",
-      "link": "https://dzone.com/articles/vector-search-freshness-slo",
-      "source": "DZone",
-      "sourceUrl": "https://feeds.dzone.com/home",
-      "summary": "The Index Can Be Fast and Still Be Wrong Vector search teams usually define performance with query latency, recall, and throughput. Those measures matter, but they can all look healthy while the system returns a stale version of a document that changed minutes ago. The index is …",
-      "publishedAt": "2026-09-15T18:00:00.000Z"
     }
   ]
 }
