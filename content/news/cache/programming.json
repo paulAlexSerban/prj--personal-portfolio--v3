@@ -1,7 +1,7 @@
 {
   "category": "programming",
   "label": "Programming",
-  "fetchedAt": "2026-09-21T11:10:20.375Z",
+  "fetchedAt": "2026-09-22T10:24:19.685Z",
   "items": [
     {
       "slug": "0740628ce102944e785247d4",
@@ -216,7 +216,7 @@
     {
       "slug": "b8382e55471bc831cd4bb300",
       "guid": "https://jaredsinclair.com/2025/09/10/observation.html",
-      "title": "We Need to Talk About Observation",
+      "title": "Observation. No, the framework. No, the class. Which one ends with ess?",
       "link": "https://jaredsinclair.com/2025/09/10/observation.html",
       "source": "Jared Sinclair",
       "sourceUrl": "https://jaredsinclair.com/feed.xml",
@@ -334,6 +334,16 @@
       "publishedAt": "2025-07-17T00:00:00.000Z"
     },
     {
+      "slug": "b3e73cd39d536b9f9c119756",
+      "guid": "https://scratchpad.blog/how-to-debug-rails-applications-and-tests-in-vs-code/",
+      "title": "How to Debug Rails Applications and Tests in VS Code",
+      "link": "https://scratchpad.blog/how-to-debug-rails-applications-and-tests-in-vs-code/",
+      "source": "ScratchPad",
+      "sourceUrl": "https://scratchpad.blog/feed.xml",
+      "summary": "Debugging is an essential yet often tedious task for software developers. While scattering print statements throughout your code is a common approach, using a proper debugger is far more efficient. For Ruby on Rails developers, VS Code offers robust debugging capabilities throug…",
+      "publishedAt": "2025-07-16T00:00:00.000Z"
+    },
+    {
       "slug": "49f04f9d88eb8d761ef76cd3",
       "guid": "https://www.30secondsofcode.org/js/s/undirected-tree-from-edges",
       "title": "How can I build an undirected tree from an array of edges in JavaScript?",
@@ -372,6 +382,16 @@
       "sourceUrl": "https://www.30secondsofcode.org/feed.xml",
       "summary": "Using indexes can speed up querying object collections significantly, but it seems like a black box for many. Let's dive in!",
       "publishedAt": "2025-06-28T00:00:00.000Z"
+    },
+    {
+      "slug": "37d77c960cbb2c8efb668ae3",
+      "guid": "https://scratchpad.blog/effortless-sqlite-backups-for-rails-with-litestream/",
+      "title": "Effortless SQLite Backups for Rails with Litestream",
+      "link": "https://scratchpad.blog/effortless-sqlite-backups-for-rails-with-litestream/",
+      "source": "ScratchPad",
+      "sourceUrl": "https://scratchpad.blog/feed.xml",
+      "summary": "SQLite has experienced a remarkable renaissance in recent years, particularly in the Rails community. Since Rails 8, it is the default database for newly generated Rails applications. With its simplicity, performance, and zero-configuration setup, SQLite has become an attractive…",
+      "publishedAt": "2025-06-26T00:00:00.000Z"
     },
     {
       "slug": "be377e95357141ee8e8b7e74",
@@ -432,6 +452,16 @@
       "sourceUrl": "https://www.30secondsofcode.org/feed.xml",
       "summary": "Markdown is the most popular markup language for writing documentation. Here is a cheatsheet with the most common syntax.",
       "publishedAt": "2025-06-08T00:00:00.000Z"
+    },
+    {
+      "slug": "f988f9810e51519b5eaec079",
+      "guid": "https://scratchpad.blog/devops/howto/securely-authenticating-to-aws-from-github-actions-workflows/",
+      "title": "Securely Authenticating to AWS from GitHub Actions Workflows",
+      "link": "https://scratchpad.blog/devops/howto/securely-authenticating-to-aws-from-github-actions-workflows/",
+      "source": "ScratchPad",
+      "sourceUrl": "https://scratchpad.blog/feed.xml",
+      "summary": "GitHub Actions Workflows have become the go-to solution for running CI/CD workflows for projects hosted on GitHub. Its seamless integration with GitHub repositories makes it a natural choice for automating tasks like building, testing, and deploying applications. For Developers …",
+      "publishedAt": "2025-06-06T00:00:00.000Z"
     },
     {
       "slug": "75e518275e55d2804d8bb668",
@@ -972,36 +1002,6 @@
       "sourceUrl": "https://jaredsinclair.com/feed.xml",
       "summary": "UIKit’s UIFontMetrics.scaledValue(for:) and SwiftUI’s @ScaledMetric property wrapper offer third-party developers a public means to scale arbitrary design reference values up and down relative to dynamic type size changes. Please be aware, however, that scaled values are not sca…",
       "publishedAt": "2024-03-02T11:00:00.000Z"
-    },
-    {
-      "slug": "bab7168e2296b615b3880b7c",
-      "guid": "https://vadimkravcenko.com/?p=2459",
-      "title": "What is your unethical CS career’s advice?",
-      "link": "https://vadimkravcenko.com/qa/whats-your-unethical-cs-careers-advice/",
-      "source": "Vadim Kravcenko",
-      "sourceUrl": "https://vadimkravcenko.com/feed/",
-      "summary": "Question: Hey Vadim, I’m starting to question a lot of the conventional wisdom handed down to us about climbing the tech ladder. You know, the whole \"work hard, play fair, and success will come\" spiel. I’m not so sure anymore. It feels slow, I'm looking for shortcuts maybe? e.g.…",
-      "publishedAt": "2024-02-25T16:46:46.000Z"
-    },
-    {
-      "slug": "ea835aec274378d19ee7c449",
-      "guid": "https://vadimkravcenko.com/?p=2451",
-      "title": "My coworker rewrote all my code, what should I do?",
-      "link": "https://vadimkravcenko.com/qa/my-coworker-rewrote-all-my-code-what-should-i-do/",
-      "source": "Vadim Kravcenko",
-      "sourceUrl": "https://vadimkravcenko.com/feed/",
-      "summary": "Question: Hello Vadim, I'm reaching out to you for some advice, as something weird happened, and I'm not sure how to react. Here are the key points For the past six months, I've been working in my role as a Python Backend Developer, diligently maintaining and extending the Pytho…",
-      "publishedAt": "2024-02-24T19:05:07.000Z"
-    },
-    {
-      "slug": "0b71aee6c83ee8c06faa199a",
-      "guid": "https://vadimkravcenko.com/?p=2423",
-      "title": "Falsehoods Junior Developers believe about becoming Senior",
-      "link": "https://vadimkravcenko.com/shorts/falsehoods-junior-developers-believe-about-becoming-senior/",
-      "source": "Vadim Kravcenko",
-      "sourceUrl": "https://vadimkravcenko.com/feed/",
-      "summary": "Question: Answer: The post Falsehoods Junior Developers believe about becoming Senior appeared first on Vadim Kravcenko.",
-      "publishedAt": "2024-02-20T21:23:21.000Z"
     }
   ]
 }

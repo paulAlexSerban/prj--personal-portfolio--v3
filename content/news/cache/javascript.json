@@ -1,8 +1,38 @@
 {
   "category": "javascript",
   "label": "JavaScript",
-  "fetchedAt": "2026-09-21T11:10:20.375Z",
+  "fetchedAt": "2026-09-22T10:24:19.685Z",
   "items": [
+    {
+      "slug": "1dde286ba9b3bf2699c12b89",
+      "guid": "https://flaviocopes.com/ssh-apps/",
+      "title": "How to build an SSH app like superlogical.jobs",
+      "link": "https://flaviocopes.com/ssh-apps/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Build an app people can ssh into, like the superlogical.jobs board: how SSH apps work, the Go and Node.js stacks behind them, hosting, and more sites to try.",
+      "publishedAt": "2026-09-22T10:00:00.000Z"
+    },
+    {
+      "slug": "96f7426110bc1698a1add236",
+      "guid": "https://flaviocopes.com/blog-stack-2026/",
+      "title": "The stack I use to run this blog, 2026 edition",
+      "link": "https://flaviocopes.com/blog-stack-2026/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "How I run flaviocopes.com in 2026: Astro, Tailwind, Cloudflare Pages, and the small services around a folder of Markdown files.",
+      "publishedAt": "2026-09-22T07:00:00.000Z"
+    },
+    {
+      "slug": "1851b7776fce87be3e27a1d6",
+      "guid": "https://flaviocopes.com/fx/",
+      "title": "A deep dive into fx",
+      "link": "https://flaviocopes.com/fx/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "fx is Vercel Labs' coding agent, a small Zig binary. Run it in the terminal, call it from scripts, or embed the same agent in an app.",
+      "publishedAt": "2026-09-21T17:00:00.000Z"
+    },
     {
       "slug": "7d29ff34e2cb57861dc07b2b",
       "guid": "https://flaviocopes.com/slop-grenades/",
@@ -22,6 +52,16 @@
       "sourceUrl": "https://flaviocopes.com/rss.xml",
       "summary": "Modern CSS features that replace Sass, PostCSS plugins and JavaScript hacks: nesting, :has(), container queries, subgrid and more, checked in September 2026.",
       "publishedAt": "2026-09-21T07:00:00.000Z"
+    },
+    {
+      "slug": "3f960b1663cbf0430585c365",
+      "guid": "https://blog.appsignal.com/2026/09/21/expert-context-built-with-gorails.html",
+      "title": "AppSignal Intelligence Just Got More Rails Context",
+      "link": "https://blog.appsignal.com/2026/09/21/expert-context-built-with-gorails.html",
+      "source": "AppSignal",
+      "sourceUrl": "https://blog.appsignal.com/feed.xml",
+      "summary": "Today we’re taking our partnership with Chris Oliver (founder of Hatchbox and GoRails) one step further. With AppSignal, you can already store enriched telemetry about your applications, services, and infrastructure, along with your user context, in your AppSignal context store.…",
+      "publishedAt": "2026-09-21T00:00:00.000Z"
     },
     {
       "slug": "68bfce5dd4e2d2855396325b",
@@ -294,36 +334,6 @@
       "publishedAt": "2026-09-11T08:00:00.000Z"
     },
     {
-      "slug": "23524bea429ec377db22b476",
-      "guid": "https://flaviocopes.com/jsonl/",
-      "title": "JSONL: a practical guide to JSON Lines",
-      "link": "https://flaviocopes.com/jsonl/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Learn how JSONL stores one JSON value per line, how to write, stream, and query it, and why I use it as Factory Log's event store.",
-      "publishedAt": "2026-09-11T05:00:00.000Z"
-    },
-    {
-      "slug": "72802d06f27d448cf94ff5a2",
-      "guid": "https://flaviocopes.com/ghostty/",
-      "title": "A deep dive into Ghostty",
-      "link": "https://flaviocopes.com/ghostty/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Ghostty from scratch: install it, learn the shortcuts, write the config, pick fonts and themes, use splits, build keybindings, set up shell integration and SSH.",
-      "publishedAt": "2026-09-10T20:00:00.000Z"
-    },
-    {
-      "slug": "b70f23bc07244221b45caa25",
-      "guid": "https://flaviocopes.com/ai-and-the-joy-of-programming/",
-      "title": "AI and the joy of programming",
-      "link": "https://flaviocopes.com/ai-and-the-joy-of-programming/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "AI made me more productive than I've ever been, but the way building software feels has changed. Some honest thoughts on where the joy went.",
-      "publishedAt": "2026-09-10T09:00:00.000Z"
-    },
-    {
       "slug": "9b637e41198e1e003cff682e",
       "guid": "https://blog.appsignal.com/2026/09/10/appsignal-at-elixirconf-2026.html",
       "title": "AppSignal at ElixirConf 2026",
@@ -332,36 +342,6 @@
       "sourceUrl": "https://blog.appsignal.com/feed.xml",
       "summary": "Today marks the start of ElixirConf 2026 in Chicago. We here at AppSignal couldn’t be more excited to see the sessions and see what’s new. Several of our team members are attending in person and virtually. If you’re at the event and you see our CEO, Brandon, say hi! We’d love to…",
       "publishedAt": "2026-09-10T00:00:00.000Z"
-    },
-    {
-      "slug": "e761312e4e066da2bb97f422",
-      "guid": "https://blog.appsignal.com/2026/09/08/top-17-ai-testing-tools.html",
-      "title": "Top 17 AI Testing Tools",
-      "link": "https://blog.appsignal.com/2026/09/08/top-17-ai-testing-tools.html",
-      "source": "AppSignal",
-      "sourceUrl": "https://blog.appsignal.com/feed.xml",
-      "summary": "Generating tests isn’t the hard part anymore. Ask an LLM to create Playwright tests, and it will produce hundreds of them in no time. The problem lies in deciding whether those tests are useful, maintaining them as your application changes, and knowing if you’ve even chosen the …",
-      "publishedAt": "2026-09-08T00:00:00.000Z"
-    },
-    {
-      "slug": "333cce9f0e866bd3f051532b",
-      "guid": "https://blog.appsignal.com/2026/09/08/appsignal-vs-the-tools-it-replaces-pagerduty-cronitor-rollbar-etc.html",
-      "title": "AppSignal vs the tools it replaces (PagerDuty, Cronitor, Rollbar etc.)",
-      "link": "https://blog.appsignal.com/2026/09/08/appsignal-vs-the-tools-it-replaces-pagerduty-cronitor-rollbar-etc.html",
-      "source": "AppSignal",
-      "sourceUrl": "https://blog.appsignal.com/feed.xml",
-      "summary": "There’s no scenario in which you should be required to run six monitoring tools at once. OK, I may have been a bit dramatic there, you might actually be at a scale where you need it. But for the rest of us, it’s certainly overkill. Using UptimeRobot for, “Is the site up?”, Paper…",
-      "publishedAt": "2026-09-08T00:00:00.000Z"
-    },
-    {
-      "slug": "22032e701dc752b6b8513d7a",
-      "guid": "https://javascriptweekly.com/issues/801",
-      "title": "When 8 chunks weigh more than 355",
-      "link": "https://javascriptweekly.com/issues/801",
-      "source": "JavaScript Weekly",
-      "sourceUrl": "https://javascriptweekly.com/rss/1b4m1h9j",
-      "summary": "#​801 — September 8, 2026 Read on the Web JavaScript Weekly How Turbopack Chunks Your JavaScript — Starting from the Network tab and working up, a look at chunking strategy and the tradeoffs bundlers make between fewer requests and less code (e.g. 8 chunks can weigh more than 35…",
-      "publishedAt": "2026-09-08T00:00:00.000Z"
     }
   ]
 }
