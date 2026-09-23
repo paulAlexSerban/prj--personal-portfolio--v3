@@ -1,12 +1,52 @@
 {
   "category": "javascript",
   "label": "JavaScript",
-  "fetchedAt": "2026-09-22T10:24:19.685Z",
+  "fetchedAt": "2026-09-23T10:19:31.502Z",
   "items": [
+    {
+      "slug": "cea9a5ef775f7412a1a6da92",
+      "guid": "https://flaviocopes.com/cloudflare-quick-tunnels/",
+      "title": "The complete guide to Cloudflare Quick Tunnels",
+      "link": "https://flaviocopes.com/cloudflare-quick-tunnels/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Put localhost on the internet with one cloudflared command. How quick tunnels work, what your app sees, webhooks, dev servers, local LLMs, scripts, limits and gotchas.",
+      "publishedAt": "2026-09-23T10:00:00.000Z"
+    },
+    {
+      "slug": "5f59021a1d5e52b336519e35",
+      "guid": "https://flaviocopes.com/cloudflare-tunnel/",
+      "title": "The complete guide to Cloudflare Tunnel",
+      "link": "https://flaviocopes.com/cloudflare-tunnel/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Run a site or app from a home machine on your own domain with no open ports: named tunnels, the dashboard and CLI paths, ingress rules, running as a service, Access login, SSH, limits.",
+      "publishedAt": "2026-09-23T10:00:00.000Z"
+    },
+    {
+      "slug": "de1bd7f024f31cf9868c1cb9",
+      "guid": "https://flaviocopes.com/hosting-free-tiers/",
+      "title": "Every hosting provider's free tier, side by side (checked September 2026)",
+      "link": "https://flaviocopes.com/hosting-free-tiers/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Hosting free tiers compared: Cloudflare, Vercel, Netlify, Render, Railway, Fly.io, Heroku, AWS, Google Cloud, Azure and VPS hosts, checked September 2026.",
+      "publishedAt": "2026-09-23T07:00:00.000Z"
+    },
+    {
+      "slug": "32f23d20492644c09534333d",
+      "guid": "https://flaviocopes.com/ai-benchmarks/",
+      "title": "How AI models are measured and compared",
+      "link": "https://flaviocopes.com/ai-benchmarks/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "How AI companies measure and compare models: benchmarks like CursorBench, SWE-bench and Terminal-Bench, Elo scores, cost per task, and a small eval you can run.",
+      "publishedAt": "2026-09-22T20:00:00.000Z"
+    },
     {
       "slug": "1dde286ba9b3bf2699c12b89",
       "guid": "https://flaviocopes.com/ssh-apps/",
-      "title": "How to build an SSH app like superlogical.jobs",
+      "title": "How to build a terminal app people can SSH into",
       "link": "https://flaviocopes.com/ssh-apps/",
       "source": "Flavio Copes",
       "sourceUrl": "https://flaviocopes.com/rss.xml",
@@ -22,6 +62,26 @@
       "sourceUrl": "https://flaviocopes.com/rss.xml",
       "summary": "How I run flaviocopes.com in 2026: Astro, Tailwind, Cloudflare Pages, and the small services around a folder of Markdown files.",
       "publishedAt": "2026-09-22T07:00:00.000Z"
+    },
+    {
+      "slug": "3c27f26be18b61dc3c528930",
+      "guid": "https://blog.appsignal.com/2026/09/22/distributed-tracing-for-ruby.html",
+      "title": "Distributed Tracing Is Now in Beta for Ruby, PHP, and Python",
+      "link": "https://blog.appsignal.com/2026/09/22/distributed-tracing-for-ruby.html",
+      "source": "AppSignal",
+      "sourceUrl": "https://blog.appsignal.com/feed.xml",
+      "summary": "A request comes in, enqueues a job, and returns. Twenty seconds later the job runs, and it’s slow. You have a trace of the request and a trace of the job, and nothing joining them. Time Detective has always helped you reconstruct what happened. Now we join it up for you, across …",
+      "publishedAt": "2026-09-22T00:00:00.000Z"
+    },
+    {
+      "slug": "61f2cc4cf0131f144f35cb50",
+      "guid": "https://javascriptweekly.com/issues/803",
+      "title": "JavaScript desktop apps in under 10MB",
+      "link": "https://javascriptweekly.com/issues/803",
+      "source": "JavaScript Weekly",
+      "sourceUrl": "https://javascriptweekly.com/rss/1b4m1h9j",
+      "summary": "#​803 — September 22, 2026 Read on the Web JavaScript Weekly tinyjs: Build JavaScript Desktop Apps in <10MB — I built an app with this and was impressed. You get a txiki.js-powered backend with full system access (including FFI!), native webview rendering, and tiny macOS, Linux,…",
+      "publishedAt": "2026-09-22T00:00:00.000Z"
     },
     {
       "slug": "1851b7776fce87be3e27a1d6",
@@ -292,46 +352,6 @@
       "sourceUrl": "https://flaviocopes.com/rss.xml",
       "summary": "AI is making software cheaper to create. That does not make software worthless, but it changes what people will pay for and where builders need to create value.",
       "publishedAt": "2026-09-13T05:00:00.000Z"
-    },
-    {
-      "slug": "c5d7b89d93cda3669f002770",
-      "guid": "https://flaviocopes.com/concise-coding-agents/",
-      "title": "How to make AI harnesses talk less",
-      "link": "https://flaviocopes.com/concise-coding-agents/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Claude Code, Codex, and Cursor write too much? Turn on concise output styles, hide reasoning summaries, and write short output rules that stick.",
-      "publishedAt": "2026-09-12T13:00:00.000Z"
-    },
-    {
-      "slug": "3d09e2d9acac5b6675cb4d58",
-      "guid": "https://flaviocopes.com/tldraw/",
-      "title": "A deep dive into tldraw",
-      "link": "https://flaviocopes.com/tldraw/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "A practical guide to tldraw: the infinite canvas, React SDK, AI integrations, local agent workflows, Flash animations, and software development use cases.",
-      "publishedAt": "2026-09-12T07:00:00.000Z"
-    },
-    {
-      "slug": "388d70d9baae8f95809e4706",
-      "guid": "https://flaviocopes.com/tsconfig-explained/",
-      "title": "Understanding tsconfig.json",
-      "link": "https://flaviocopes.com/tsconfig-explained/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Understand tsconfig.json options that matter: strict, target, lib, module resolution, noEmit, paths, include, and a modern starter configuration.",
-      "publishedAt": "2026-09-12T05:00:00.000Z"
-    },
-    {
-      "slug": "d1e50b9ac5ff6352fc6e5f69",
-      "guid": "https://flaviocopes.com/cursor-projects/",
-      "title": "How to use Cursor Projects",
-      "link": "https://flaviocopes.com/cursor-projects/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Cursor Projects gives you a coordinator agent that plans work, delegates it to subagents, keeps shared context, and watches your PRs. Here is how to use it.",
-      "publishedAt": "2026-09-11T08:00:00.000Z"
     },
     {
       "slug": "9b637e41198e1e003cff682e",

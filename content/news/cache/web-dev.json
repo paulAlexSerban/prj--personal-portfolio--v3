@@ -1,127 +1,297 @@
 {
   "category": "web-dev",
   "label": "Web Development",
-  "fetchedAt": "2026-09-22T10:24:19.685Z",
+  "fetchedAt": "2026-09-23T10:19:31.502Z",
   "items": [
     {
-      "slug": "3b63399afb770a270e4de2ec",
-      "guid": "https://dev.to/tommy_91/twitter-gif-downloader-why-cant-you-download-gifs-from-twitter-3i6p",
-      "title": "Twitter GIF Downloader: Why Can’t You Download GIFs from Twitter?",
-      "link": "https://dev.to/tommy_91/twitter-gif-downloader-why-cant-you-download-gifs-from-twitter-3i6p",
+      "slug": "bb84d01b9c6c8ade1507aeee",
+      "guid": "https://dev.to/gaurav_tyagi_4d2a33837e04/i-benchmarked-cas-vs-a-lock-and-caught-myself-drawing-the-wrong-conclusion-halfway-through-304a",
+      "title": "I Benchmarked CAS vs. a Lock — and Caught Myself Drawing the Wrong Conclusion Halfway Through",
+      "link": "https://dev.to/gaurav_tyagi_4d2a33837e04/i-benchmarked-cas-vs-a-lock-and-caught-myself-drawing-the-wrong-conclusion-halfway-through-304a",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "Last month, Nitter and XCancel received cease-and-desist letters from X. Despite the legal pressure, they have continued operating. As TechCrunch reported, the cease-and-desist action disrupted Nitter and XCancel, but Nitter says the project will continue. But what about downloa…",
-      "publishedAt": "2026-09-22T10:11:59.000Z"
+      "summary": "\"Lock-free beats locks\" is close to something of a folk wisdom in Java concurrency circles. Wanting a concrete answer, I implemented both a hand-rolled compare-and-swap (CAS) retry loop and a plain synchronized counter in a Java project — benchmarked the two against each other u…",
+      "publishedAt": "2026-09-23T10:18:25.000Z"
     },
     {
-      "slug": "6dbdf4bc0d9f5536f75500b5",
-      "guid": "https://dev.to/m1kulya/stop-bleeding-cash-on-ai-5-open-source-tools-replacing-my-200mo-saas-stack-2o4c",
-      "title": "Stop Bleeding Cash on AI: 5 Open-Source Tools Replacing My $200/mo SaaS Stack",
-      "link": "https://dev.to/m1kulya/stop-bleeding-cash-on-ai-5-open-source-tools-replacing-my-200mo-saas-stack-2o4c",
+      "slug": "cd97465d73caec8a0539375b",
+      "guid": "https://dev.to/rouche01/a-psychological-state-is-a-coefficient-vector-2jm0",
+      "title": "A Psychological State is a Coefficient Vector",
+      "link": "https://dev.to/rouche01/a-psychological-state-is-a-coefficient-vector-2jm0",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "💡 TL;DR: If you are paying for Cursor ($20), v0/Lovable ($20), Perplexity Pro ($20), and meeting note tools ($30), you are spending over $100 to $250 every month. In 2026, you can run a 100% private, self-hosted open-source AI stack on your own machine for $0/month. Between cod…",
-      "publishedAt": "2026-09-22T10:10:26.000Z"
+      "summary": "Hamming's two kinds of novelty are not two kinds of stuff. They are two things you can do with one set of building blocks: mix them differently, or add a new one. I got stuck on two words in Richard Hamming's The Art of Doing Science and Engineering: logical novelty and psycholo…",
+      "publishedAt": "2026-09-23T10:16:16.000Z"
     },
     {
-      "slug": "e20214aabf0b871dc252942c",
-      "guid": "https://dev.to/rosgluk/mnemosyne-for-hermes-agent-local-memory-quickstart-p0k",
-      "title": "Mnemosyne for Hermes Agent: Local Memory Quickstart",
-      "link": "https://dev.to/rosgluk/mnemosyne-for-hermes-agent-local-memory-quickstart-p0k",
+      "slug": "00079039200a8e4bdc447e87",
+      "guid": "https://dev.to/azank1/web-chat-is-not-a-coding-environment-2m77",
+      "title": "Web chat is not a coding environment",
+      "link": "https://dev.to/azank1/web-chat-is-not-a-coding-environment-2m77",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "Mnemosyne is a local-first memory provider for Hermes Agent, storing working memory, structured facts, temporal data, and episodic history in local SQLite — no hosted service, no mandatory network calls, and unusually granular write control. Its most useful property is not raw r…",
-      "publishedAt": "2026-09-22T10:07:07.000Z"
+      "summary": "Put two people on one repo. One writes code in a web chat: Claude.ai, ChatGPT, whichever tab is open. The other lives in the terminal and the editor. Same repo, same pull request, two completely different loops. The feature arrives looking finished. Clean functions, sensible nam…",
+      "publishedAt": "2026-09-23T10:14:50.000Z"
     },
     {
-      "slug": "df0397beb951cea898fee160",
-      "guid": "https://dev.to/pckrishnadas88/building-distributed-systems-in-elixir-part-9-backpressure-4o5i",
-      "title": "Building Distributed Systems in Elixir: Part 9 — Backpressure",
-      "link": "https://dev.to/pckrishnadas88/building-distributed-systems-in-elixir-part-9-backpressure-4o5i",
+      "slug": "6f1877e32aa6e4860296b3cc",
+      "guid": "https://dev.to/aureliopires186/search-google-jobs-in-real-time-with-go-and-serpapi-690",
+      "title": "Search Google Jobs in Real-Time with Go and SerpApi 🚀",
+      "link": "https://dev.to/aureliopires186/search-google-jobs-in-real-time-with-go-and-serpapi-690",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "In the previous part of this series, we built a Publish / Subscribe Broker from scratch. We saw how a central coordinator could fan out events across multiple topics to concurrent subscriber processes, completely decoupling publishers from subscribers: Publisher ---> {:publish, …",
-      "publishedAt": "2026-09-22T10:01:43.000Z"
+      "summary": "Hey devs! 👋 Tired of manual scraping to get Google Jobs listings? 🤔 I built a Go example that uses the SerpApi to fetch Google Jobs data in real-time! 👀 🔍 What this tutorial covers: How to set up SerpApi Searching jobs with Go Parsing results to JSON Deploying the API to the…",
+      "publishedAt": "2026-09-23T10:13:52.000Z"
     },
     {
-      "slug": "29f64154b07ea334b5e2c1f0",
-      "guid": "https://dev.to/dannydoes_2abdf9c/oracle-manipulation-risk-report-gemini-5bab",
-      "title": "Oracle Manipulation Risk Report: Gemini",
-      "link": "https://dev.to/dannydoes_2abdf9c/oracle-manipulation-risk-report-gemini-5bab",
+      "slug": "47f2276ed9514e8d8f467136",
+      "guid": "https://dev.to/chovy/every-player-button-on-our-sites-was-device-specific-and-none-of-them-was-the-url-2f2d",
+      "title": "Every player button on our sites was device specific, and none of them was the URL",
+      "link": "https://dev.to/chovy/every-player-button-on-our-sites-was-device-specific-and-none-of-them-was-the-url-2f2d",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "Oracle Manipulation Risk Report: Gemini Target Protocol: Gemini (TVL: $5711.8M) Protocol: Gemini (Ethereum & L2) TVL: $5.711 B (≈ $5.7 B) Date: 22 Sep 2026 Prepared by: [Your Company] – Senior DeFi Security Research & Auditing Team Gemini is a high‑value, permissioned lending/bo…",
-      "publishedAt": "2026-09-22T10:01:03.000Z"
+      "summary": "Every player button on our sites was device specific, and none of them was the URL TipoffWatch, GenreWatch and WatchNews all let you play a channel in the page. Beside that button there were three more: VLC, Infuse and a .m3u download. Today they got a fourth, and the fourth is …",
+      "publishedAt": "2026-09-23T10:08:42.000Z"
     },
     {
-      "slug": "0e0bb0f7a92695d134a6da90",
-      "guid": "https://dev.to/alifar/eu-cyberbullying-action-plan-puts-reporting-support-and-prevention-at-the-center-22a4",
-      "title": "EU Cyberbullying Action Plan Puts Reporting, Support and Prevention at the Center",
-      "link": "https://dev.to/alifar/eu-cyberbullying-action-plan-puts-reporting-support-and-prevention-at-the-center-22a4",
+      "slug": "eaa1828c305320197cd41ded",
+      "guid": "https://dev.to/yugenelee/the-markdown-file-changed-even-though-i-only-edited-one-word-1ca2",
+      "title": "The Markdown File Changed Even Though I Only Edited One Word",
+      "link": "https://dev.to/yugenelee/the-markdown-file-changed-even-though-i-only-edited-one-word-1ca2",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "The European Commission has launched an EU Action Plan Against Cyberbullying that focuses on preventing harm, improving support for young people and making incidents easier to report. Announced on 10 February 2026 for Safer Internet Day, the initiative brings together existing E…",
-      "publishedAt": "2026-09-22T10:00:30.000Z"
+      "summary": "I once opened a Markdown file, changed one word and saved it. The preview looked exactly as expected. Then I checked the Git diff and found changes all over the document. Paragraphs had been rewrapped. Blank lines had appeared between list items. A few characters had been escape…",
+      "publishedAt": "2026-09-23T10:03:16.000Z"
     },
     {
-      "slug": "3c6ab8fd0656c469fa430f46",
-      "guid": "https://dev.to/mdyer94/your-rag-pipeline-doesnt-need-a-vector-database-66m",
-      "title": "Your RAG Pipeline Doesn't Need a Vector Database",
-      "link": "https://dev.to/mdyer94/your-rag-pipeline-doesnt-need-a-vector-database-66m",
+      "slug": "d97ea87d4ce35041dca5e34f",
+      "guid": "https://dev.to/authbyexample1/tenant-membership-is-not-resource-permission-nco",
+      "title": "Tenant membership is not resource permission",
+      "link": "https://dev.to/authbyexample1/tenant-membership-is-not-resource-permission-nco",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "You're building a RAG system over internal HR docs, medical records, or a client's legal contracts. You reach for Pinecone or pgvector on a managed Postgres, wire up OpenAI embeddings, and ship. Six weeks later legal asks where the data lives, your per-query cost is $0.004 and c…",
-      "publishedAt": "2026-09-22T10:00:29.000Z"
+      "summary": "Joining a workspace or tenant often unlocks a long list of APIs. That membership proves the caller belongs in the org. It does not prove they may delete this project, export that dataset, or rotate someone else's key. A common bug: if (user.tenantId === resource.tenantId) allow.…",
+      "publishedAt": "2026-09-23T10:01:15.000Z"
     },
     {
-      "slug": "10a4b82ff8cac7daf26cecbf",
-      "guid": "https://dev.to/alexgeorgiev17/postgresql-19s-data-checksums-can-now-be-switched-on-without-stopping-the-server-fn",
-      "title": "PostgreSQL 19's data checksums can now be switched on without stopping the server",
-      "link": "https://dev.to/alexgeorgiev17/postgresql-19s-data-checksums-can-now-be-switched-on-without-stopping-the-server-fn",
+      "slug": "050e08d4d3a20fbfc3c995c6",
+      "guid": "https://dev.to/iurii_rogulia/how-a-typography-pipeline-actually-rewrites-text-order-spans-and-fixed-points-41ik",
+      "title": "How a Typography Pipeline Actually Rewrites Text: Order, Spans, and Fixed Points",
+      "link": "https://dev.to/iurii_rogulia/how-a-typography-pipeline-actually-rewrites-text-order-spans-and-fixed-points-41ik",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "I corrupted the same 16 bytes in the same PostgreSQL table twice. With data checksums on, a query that touched the damaged page threw an error naming the exact block. With them off, the same query returned a normal-looking result like nothing had happened. That gap is the entire…",
-      "publishedAt": "2026-09-22T10:00:00.000Z"
+      "summary": "Here’s a bug that only shows up if you go looking for it: take the string .--. in German locale conventions, run it through a typography pass once, and you get . – . – the bare hyphen pair correctly promoted to a spaced en dash. Run the same output through the same pass a second…",
+      "publishedAt": "2026-09-23T10:00:58.000Z"
     },
     {
-      "slug": "4dc264714bc48f10258d8924",
-      "guid": "https://dev.to/sara_mo/did-canceling-the-agent-stop-the-gpu-job-10bn",
-      "title": "Did canceling the agent stop the GPU job?",
-      "link": "https://dev.to/sara_mo/did-canceling-the-agent-stop-the-gpu-job-10bn",
+      "slug": "d541bffe46041f7fcae37a91",
+      "guid": "https://dev.to/gynsyng/how-to-build-better-product-information-pages-for-regulated-industries-5g4",
+      "title": "How to Build Better Product Information Pages for Regulated Industries",
+      "link": "https://dev.to/gynsyng/how-to-build-better-product-information-pages-for-regulated-industries-5g4",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "The agent stopped the training run. The GPU cluster did not. Agent Evaluation Case #003 An ML operations agent can submit training jobs to an external GPU scheduler and track their status. An operator asks it to start a fine-tuning run. The agent sends the job request. Before th…",
-      "publishedAt": "2026-09-22T09:48:40.000Z"
+      "summary": "How to Build Better Product Information Pages for Regulated Industries When people visit an e-commerce or business website, they usually want one thing: clear information without having to dig for it. That becomes even more important for businesses operating in regulated industr…",
+      "publishedAt": "2026-09-23T10:00:52.000Z"
     },
     {
-      "slug": "2d1c26673864a1ddcc1f3c94",
-      "guid": "https://dev.to/coderbuffer/how-to-build-a-fast-decision-layer-for-ai-agents-with-typesafe-jev-1ggj",
-      "title": "How to Build a Fast Decision Layer for AI Agents with TypeSafe Jev",
-      "link": "https://dev.to/coderbuffer/how-to-build-a-fast-decision-layer-for-ai-agents-with-typesafe-jev-1ggj",
+      "slug": "bde81fe1a37ecd4ffd3c8bef",
+      "guid": "https://dev.to/anakin_writers/price-matching-is-a-bad-default-model-the-pricing-decision-instead-11on",
+      "title": "Price matching is a bad default: model the pricing decision instead",
+      "link": "https://dev.to/anakin_writers/price-matching-is-a-bad-default-model-the-pricing-decision-instead-11on",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "Most AI agent architectures use the same large language model for every task: planning, writing, tool selection, relevance checks, risk scoring, and permission gates. That works for a prototype, but it creates an expensive and difficult-to-test control loop. A large part of an a…",
-      "publishedAt": "2026-09-22T09:46:45.000Z"
+      "summary": "A common retail pricing bug is not a syntax error. It is a pricing service that does exactly what you told it to do: scrape a competitor price, set your price to match it, and slowly erase your margin because the competitor price was out of stock, coupon-gated, bundled, or part …",
+      "publishedAt": "2026-09-23T10:00:01.000Z"
     },
     {
-      "slug": "456534fec4ebb055e4766f93",
-      "guid": "https://dev.to/todoforai/voiceloop-the-fastest-voice-agent-loop-in-the-browser-is-now-open-source-l36",
-      "title": "voiceloop: the fastest voice agent loop in the browser is now open source",
-      "link": "https://dev.to/todoforai/voiceloop-the-fastest-voice-agent-loop-in-the-browser-is-now-open-source-l36",
+      "slug": "69f3da316622b21c6baa41e7",
+      "guid": "https://dev.to/alexgeorgiev17/docker-engine-298s-umask-flag-fixes-permissions-docker-exec-used-to-reset-edj",
+      "title": "Docker Engine 29.8's --umask flag fixes permissions docker exec used to reset",
+      "link": "https://dev.to/alexgeorgiev17/docker-engine-298s-umask-flag-fixes-permissions-docker-exec-used-to-reset-edj",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "Everybody can now build the best voice agent into their own product. The #1 loop is open Demo, no keys: todoforai.github.io/voiceloop Library: github.com/todoforai/voiceloop — npm i @todoforai/voiceloop Bench: github.com/todoforai/voice-agent-bench Why we built it We wanted the …",
-      "publishedAt": "2026-09-22T09:46:15.000Z"
+      "summary": "I set a container's umask with the usual entrypoint trick, umask 027; exec myapp, and it worked exactly as documented: a file the main process created came out 640. Then I ran docker exec into the same container, touched a second file, and got 644. Same container, same intended …",
+      "publishedAt": "2026-09-23T10:00:00.000Z"
     },
     {
-      "slug": "fa55764bdf2dfd8650ec13cf",
-      "guid": "https://dev.to/ciphernutz/n8n-20-what-changed-and-should-you-upgrade-dpe",
-      "title": "n8n 2.0: What Changed and Should You Upgrade?",
-      "link": "https://dev.to/ciphernutz/n8n-20-what-changed-and-should-you-upgrade-dpe",
+      "slug": "096171b1ca75f69b914ad22c",
+      "guid": "https://dev.to/neuralbyte/why-did-a-brazil-result-not-tell-me-anything-reliable-about-latam-18ba",
+      "title": "Why did a Brazil result not tell me anything reliable about LATAM?",
+      "link": "https://dev.to/neuralbyte/why-did-a-brazil-result-not-tell-me-anything-reliable-about-latam-18ba",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "If you run n8n in production, upgrading from 1.x to 2.0 is bigger than a version bump. The n8n 2.0 changes several defaults around Code nodes, task runners, Python execution, file access, databases, OAuth, binary data, and workflow publishing. Some of these changes are also secu…",
-      "publishedAt": "2026-09-22T09:45:05.000Z"
+      "summary": "The failure came first I treated Brazil as a proxy for Latin America. That was a planning shortcut, not evidence: a Brazil route cannot prove another country’s language, payment, or delivery behavior. That is why I now begin a Brazil and LATAM proxies experiment with an acceptan…",
+      "publishedAt": "2026-09-23T09:59:17.000Z"
+    },
+    {
+      "slug": "120bd5983641f3675599741c",
+      "guid": "https://medium.com/p/e22b97196fe3",
+      "title": "Uninstalling Cursor, Extreme PR Makeovers, and 33 Percent Less Thread-Blocking JSON",
+      "link": "https://itnext.io/uninstalling-cursor-extreme-pr-makeovers-and-33-percent-less-thread-blocking-json-e22b97196fe3?source=rss----5b301f10ddcd---4",
+      "source": "itnext",
+      "sourceUrl": "https://itnext.io/feed",
+      "summary": "",
+      "publishedAt": "2026-09-22T23:43:51.000Z"
+    },
+    {
+      "slug": "fc398cdf887707214d4471de",
+      "guid": "https://blog.master.dev/?p=11123",
+      "title": "Brighter Than White",
+      "link": "https://blog.master.dev/brighter-than-white/",
+      "source": "Frontend Masters",
+      "sourceUrl": "https://frontendmasters.com/blog/feed/",
+      "summary": "If you’ve got an HDR display, and use Chrome 137+ or Safari 26+ (even on iOS), perhaps you’ve seen images sometimes with colors that are so bright they seem to dim the rest of the screen. I find it a bit distracting, but I can see how it could be a fun technological gimick somet…",
+      "publishedAt": "2026-09-22T21:43:13.000Z"
+    },
+    {
+      "slug": "fab3acf0522704861be3576d",
+      "guid": "https://www.sitepoint.com/optimize-gemini-3-8-flash-coding-agents-thinking-levels/",
+      "title": "Optimizing Gemini 3.8 Flash for Autonomous Coding Agents: Thinking Levels and Tool Fallbacks",
+      "link": "https://www.sitepoint.com/optimize-gemini-3-8-flash-coding-agents-thinking-levels/?utm_source=rss",
+      "source": "SitePoint",
+      "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
+      "summary": "Build a TypeScript harness that routes Gemini 3.8 Flash thinking levels by task complexity while enforcing Zod schema validation and tool-call retries. Optimizing Gemini 3.8 Flash for Autonomous Coding Agents: Thinking Levels and Tool Fallbacks on SitePoint.",
+      "publishedAt": "2026-09-22T19:29:37.000Z"
+    },
+    {
+      "slug": "d3f970ff461a48bd69e5a393",
+      "guid": "https://www.sitepoint.com/asgi-microservices-on-cloudflare-python-workers/",
+      "title": "Building ASGI Microservices with Cloudflare Python Workers in Production",
+      "link": "https://www.sitepoint.com/asgi-microservices-on-cloudflare-python-workers/?utm_source=rss",
+      "source": "SitePoint",
+      "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
+      "summary": "Deploy a Python ASGI microservice on Cloudflare Workers: Pyodide cold-start mitigation, async subrequest handling, and KV-backed state caching. Building ASGI Microservices with Cloudflare Python Workers in Production on SitePoint.",
+      "publishedAt": "2026-09-22T19:08:57.000Z"
+    },
+    {
+      "slug": "644d09ae7c9d731b15ff69f1",
+      "guid": "https://dzone.com/articles/3673063",
+      "title": "Your Terraform Monolith Isn't Too Big. It's Tightly Coupled.",
+      "link": "https://dzone.com/articles/terraform-state-coupling",
+      "source": "DZone",
+      "sourceUrl": "https://feeds.dzone.com/home",
+      "summary": "The first warning sign wasn't an outage. It was a boring pull request. We changed one App Service setting. It was the sort of change that should have resulted in a small plan and a quick review. Instead, Terraform refreshed networking, private endpoints, DNS, Key Vaults, storage…",
+      "publishedAt": "2026-09-22T19:00:00.000Z"
+    },
+    {
+      "slug": "e9be36f69fb515b2d3e72dd5",
+      "guid": "6ab2b35ddcae6600013fbd4d",
+      "title": "How to Summarize a Document That Is Longer Than the Context Window",
+      "link": "https://kodekloud.com/blog/summarize-document-longer-than-context-window/",
+      "source": "KodeKloud",
+      "sourceUrl": "https://kodekloud.com/blog/rss/",
+      "summary": "A model can only summarize what it can see, and a long document is often cut short before the model ever reads it. Here is how to notice that, and three ways to summarize the whole thing.",
+      "publishedAt": "2026-09-22T18:00:43.000Z"
+    },
+    {
+      "slug": "ca0f5de769825246021aed2e",
+      "guid": "https://dzone.com/articles/3678599",
+      "title": "The Hidden Production Risks of Third-Party SDKs",
+      "link": "https://dzone.com/articles/third-party-sdk-risks",
+      "source": "DZone",
+      "sourceUrl": "https://feeds.dzone.com/home",
+      "summary": "Most modern applications do not function completely independently. For example, analytics, payment processing, user authentication, customer support, testing new features (experimentation), monitoring the app's performance, advertising, etc., are typically provided as third-part…",
+      "publishedAt": "2026-09-22T18:00:00.000Z"
+    },
+    {
+      "slug": "f8fad04cd5db7e5d901f5050",
+      "guid": "https://dzone.com/articles/3667355",
+      "title": "Building a Secure MCP Server for File Processing: Auth, Rate Limiting, and Idempotency",
+      "link": "https://dzone.com/articles/secure-mcp-file-processing",
+      "source": "DZone",
+      "sourceUrl": "https://feeds.dzone.com/home",
+      "summary": "Most write-ups on building an MCP server focus on the protocol itself: defining tools, handling requests, wiring up a client. That part is genuinely straightforward. What gets skipped over far more often is what changes when the tool you are exposing operates on files rather tha…",
+      "publishedAt": "2026-09-22T17:00:00.000Z"
+    },
+    {
+      "slug": "36f499d51fab8e78584d9f02",
+      "guid": "https://dzone.com/articles/3667356",
+      "title": "Beyond Token Intelligence: Why AI Code Review Needs Cognitive Architectures",
+      "link": "https://dzone.com/articles/ai-cognitive-code-review",
+      "source": "DZone",
+      "sourceUrl": "https://feeds.dzone.com/home",
+      "summary": "A few months ago, I watched a senior engineer spend forty-five minutes reviewing a single pull request — a PR that an AI assistant had generated in under two minutes. The code looked clean. The tests passed. But she kept cross-referencing an incident postmortem from eight months…",
+      "publishedAt": "2026-09-22T16:00:00.000Z"
+    },
+    {
+      "slug": "e3bbe5455631f692bcb98269",
+      "guid": "https://www.digitalocean.com/blog/managed-agents-public-preview",
+      "title": "Introducing DigitalOcean Managed Agents: One AI-native stack to power your intelligence",
+      "link": "https://www.digitalocean.com/blog/managed-agents-public-preview",
+      "source": "Digital Ocean Labs",
+      "sourceUrl": "https://www.digitalocean.com/blog/rss",
+      "summary": "Following a successful private preview, we’re thrilled to open DigitalOcean Managed Agents to everyone. Teams can now deploy their preferred agent harness (like OpenCode, Codex CLI) or bring their own, connect agents to 16,000+ tools, and help agents do more work at scale withou…",
+      "publishedAt": "2026-09-22T15:01:34.157Z"
+    },
+    {
+      "slug": "ac827a44ef4387001bd4985b",
+      "guid": "https://dzone.com/articles/3666640",
+      "title": "Architecting for <1s Latency: Managing Eventual Consistency in Distributed Search Platforms",
+      "link": "https://dzone.com/articles/eventual-consistency-search",
+      "source": "DZone",
+      "sourceUrl": "https://feeds.dzone.com/home",
+      "summary": "At a logistics visibility company, the shipment state can change thousands of times per second due to the massive scale of operations. Such changes take place when, for instance, a carrier scans a package or a route changes. Within milliseconds, those events are ingested by Kafk…",
+      "publishedAt": "2026-09-22T15:00:01.000Z"
+    },
+    {
+      "slug": "41d9a3ca8d86c1c1d788b43a",
+      "guid": "https://www.sitepoint.com/optimize-github-actions-agent-prs-test-slicing/",
+      "title": "Optimizing GitHub Actions for Agent PRs: Speculative Test Slicing and AST Impact Analysis",
+      "link": "https://www.sitepoint.com/optimize-github-actions-agent-prs-test-slicing/?utm_source=rss",
+      "source": "SitePoint",
+      "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
+      "summary": "Fix CI saturation from high-frequency agent pull requests with AST change-impact analysis and speculative test slicing in GitHub Actions. Optimizing GitHub Actions for Agent PRs: Speculative Test Slicing and AST Impact Analysis on SitePoint.",
+      "publishedAt": "2026-09-22T14:53:49.000Z"
+    },
+    {
+      "slug": "533962362b2b9337923f8604",
+      "guid": "https://www.sitepoint.com/migrate-to-git-3-0-sha-256-and-reftables/",
+      "title": "Migrating Repositories to Git 3.0: Moving to SHA-256 and Reftables",
+      "link": "https://www.sitepoint.com/migrate-to-git-3-0-sha-256-and-reftables/?utm_source=rss",
+      "source": "SitePoint",
+      "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
+      "summary": "Prepare your repositories for Git 3.0: migrate from SHA-1 to SHA-256 object formats and switch ref storage to the scalable reftable backend. Migrating Repositories to Git 3.0: Moving to SHA-256 and Reftables on SitePoint.",
+      "publishedAt": "2026-09-22T14:52:36.000Z"
+    },
+    {
+      "slug": "3add2aa2afa39b2bf4906229",
+      "guid": "https://dzone.com/articles/3666948",
+      "title": "The Math Behind AI Testing: Why 1,000 Test Cases May Tell You Less Than 100",
+      "link": "https://dzone.com/articles/math-behind-ai-testing",
+      "source": "DZone",
+      "sourceUrl": "https://feeds.dzone.com/home",
+      "summary": "When a QA team is asked, \"How confident are we in this AI system?\" the instinctive answer is to write more test cases. If 100 test cases gave us some confidence, surely 1,000 will give us ten times more. This instinct is deeply wired into traditional software testing, where ever…",
+      "publishedAt": "2026-09-22T14:00:06.000Z"
+    },
+    {
+      "slug": "822b404b653ba076ae17b946",
+      "guid": "https://dzone.com/articles/3665545",
+      "title": "Using Graph RAG and Specialized Agents to Repair Playwright Tests",
+      "link": "https://dzone.com/articles/graph-rag-playwright-tests",
+      "source": "DZone",
+      "sourceUrl": "https://feeds.dzone.com/home",
+      "summary": "End-to-end tests are crucial components of modern CI/CD pipelines, helping to ensure that changes do not cause regressions before deployment. Playwright offers network inspection, automatic waiting, browser isolation, tracing and cross-browser execution. While useful for improvi…",
+      "publishedAt": "2026-09-22T13:00:06.000Z"
+    },
+    {
+      "slug": "a45801992639ab18807cada4",
+      "guid": "https://dzone.com/articles/3684420",
+      "title": "Valkey: Bringing Key-Value Databases to Enterprise Java",
+      "link": "https://dzone.com/articles/valkey-enterprise-java",
+      "source": "DZone",
+      "sourceUrl": "https://feeds.dzone.com/home",
+      "summary": "Enterprise applications commonly face multiple data challenges. Some data requires transactional integrity and relationships, while other data prioritizes fast, predictable access. Sessions, counters, rate limits, temporary state, often-accessed objects, and coordination data ma…",
+      "publishedAt": "2026-09-22T12:00:06.000Z"
+    },
+    {
+      "slug": "52d23684e7010d1e0a707cae",
+      "guid": "https://www.sitepoint.com/how-to-prevent-stale-api-responses-with-abortcontroller/",
+      "title": "How to Prevent Stale API Responses with AbortController",
+      "link": "https://www.sitepoint.com/how-to-prevent-stale-api-responses-with-abortcontroller/?utm_source=rss",
+      "source": "SitePoint",
+      "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
+      "summary": "null How to Prevent Stale API Responses with AbortController on SitePoint.",
+      "publishedAt": "2026-09-22T08:12:45.000Z"
     },
     {
       "slug": "7eebcf802a6ccbe21cf90923",
@@ -614,16 +784,6 @@
       "publishedAt": "2026-09-19T00:00:00.000Z"
     },
     {
-      "slug": "11a0fad410c6201436d3d5c5",
-      "guid": "https://medium.com/p/e9e3803cc124",
-      "title": "Mishandling concurrency is one of the most common root causes of software bugs",
-      "link": "https://itnext.io/mishandling-concurrency-is-one-of-the-most-common-root-causes-of-software-bugs-e9e3803cc124?source=rss----5b301f10ddcd---4",
-      "source": "itnext",
-      "sourceUrl": "https://itnext.io/feed",
-      "summary": "Of all the software bugs I’ve seen, mishandling concurrency is one of the most common root causes. Continue reading on ITNEXT »",
-      "publishedAt": "2026-09-18T22:45:17.000Z"
-    },
-    {
       "slug": "b3cebaaf54e8275077831a9a",
       "guid": "https://blog.master.dev/?p=11076",
       "title": "Custom Glow Rings Inside of Elements",
@@ -842,166 +1002,6 @@
       "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
       "summary": "AI-driven website monitoring learns what normal looks like and catches drift before users do, instead of waiting for static thresholds to break. Website monitoring in the AI era: What's changed, what's fixed, and what your team should still be watching on SitePoint.",
       "publishedAt": "2026-09-18T12:12:42.000Z"
-    },
-    {
-      "slug": "e197f42baf4e7783818f71d1",
-      "guid": "https://dzone.com/articles/3665375",
-      "title": "How to Test Web Accessibility Using Playwright and Axe-Core",
-      "link": "https://dzone.com/articles/accessibility-testing-playwright",
-      "source": "DZone",
-      "sourceUrl": "https://feeds.dzone.com/home",
-      "summary": "What Is Accessibility Testing? Imagine trying to use a website... With your eyes closed. Using only your keyboard, no mouse. With your hands busy, so you have to use voice commands. If you couldn't distinguish the color green from red. Accessibility testing (often called \"a11y\" …",
-      "publishedAt": "2026-09-18T12:00:01.000Z"
-    },
-    {
-      "slug": "507222ead7f5c9c82cd53bb1",
-      "guid": "https://www.sitepoint.com/from-support-ticket-to-github-issue-building-a-reliable-escalation-workflow/",
-      "title": "From support ticket to GitHub issue: Building a reliable escalation workflow",
-      "link": "https://www.sitepoint.com/from-support-ticket-to-github-issue-building-a-reliable-escalation-workflow/?utm_source=rss",
-      "source": "SitePoint",
-      "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
-      "summary": "null From support ticket to GitHub issue: Building a reliable escalation workflow on SitePoint.",
-      "publishedAt": "2026-09-18T09:55:40.000Z"
-    },
-    {
-      "slug": "a54241a7fc8f18e5a4d3cf5d",
-      "guid": "https://overreacted.io/how-i-vibed-a-proof-of-conways-conjecture/",
-      "title": "How I Vibed a Proof of Conway’s Conjecture",
-      "link": "https://overreacted.io/how-i-vibed-a-proof-of-conways-conjecture/",
-      "source": "overreacted.io by Dan Abramov",
-      "sourceUrl": "https://overreacted.io/rss.xml",
-      "summary": "You can just prove things, apparently.",
-      "publishedAt": "2026-09-18T00:00:00.000Z"
-    },
-    {
-      "slug": "724b4a24aaa8dbedfa91b2cb",
-      "guid": "6aac7747d406d7c207351312",
-      "title": "How to Migrate a Legacy Monolith Incrementally Without a Big-Bang Rewrite",
-      "link": "https://www.freecodecamp.org/news/migrate-legacy-monolith-incrementally/",
-      "source": "Free Code Camp - News",
-      "sourceUrl": "https://www.freecodecamp.org/news/rss",
-      "summary": "Large legacy migrations often fail long before the final cutover. The failure usually starts when the migration is framed as a single event. Move the application. Move the database. Move all the users",
-      "publishedAt": "2026-09-17T23:27:03.000Z"
-    },
-    {
-      "slug": "54222dd2e74dc4391ea0940f",
-      "guid": "https://blog.master.dev/?p=11075",
-      "title": "Better Centering with CSS text-box",
-      "link": "https://blog.master.dev/better-centering-with-css-text-box/",
-      "source": "Frontend Masters",
-      "sourceUrl": "https://frontendmasters.com/blog/feed/",
-      "summary": "Jake has a very nice, clear video about what text-box solves in CSS. It essentially makes even padding on an element (like a button) doable without magic numbers, and that will work across any font (sick). Temani made a tool to help pick the right values.",
-      "publishedAt": "2026-09-17T23:08:08.000Z"
-    },
-    {
-      "slug": "4eeef0028cddfe1c4ee5e627",
-      "guid": "https://www.digitalocean.com/blog/introducing-mysql-postgresql-advanced",
-      "title": "The Next Step for Mission-Critical Workloads: Managed Databases Advanced Edition",
-      "link": "https://www.digitalocean.com/blog/introducing-mysql-postgresql-advanced",
-      "source": "Digital Ocean Labs",
-      "sourceUrl": "https://www.digitalocean.com/blog/rss",
-      "summary": "As your business scales, your database shifts from a simple storage layer to the critical heart of your application architecture. For years, DigitalOcean has helped thousands of startups and growing businesses effortlessly launch and scale fully managed PostgreSQL, MySQL, Valkey…",
-      "publishedAt": "2026-09-17T22:30:18.086Z"
-    },
-    {
-      "slug": "ea86575f7ffb2dd215ca03bc",
-      "guid": "https://dzone.com/articles/3663587",
-      "title": "Common Pitfalls in RAG Applications: What to Avoid When Using Vector Search and Embeddings",
-      "link": "https://dzone.com/articles/common-pitfalls-rag-applications",
-      "source": "DZone",
-      "sourceUrl": "https://feeds.dzone.com/home",
-      "summary": "Here's the demo that always works: you point a notebook at a vector index, ask it a question, and it answers perfectly. Everyone claps. Three weeks later, the same system tells a customer that your refund window is 90 days when it's 30, cites a document that doesn't exist, and o…",
-      "publishedAt": "2026-09-17T19:00:00.000Z"
-    },
-    {
-      "slug": "cff2606780096e9e22ee3ee9",
-      "guid": "6aac1b5a4af2fb000147e49b",
-      "title": "Temperature, Top P, and Max Tokens Explained With Runnable Experiments",
-      "link": "https://kodekloud.com/blog/temperature-top-p-max-tokens-explained/",
-      "source": "KodeKloud",
-      "sourceUrl": "https://kodekloud.com/blog/rss/",
-      "summary": "Turning temperature up does not make a model more creative. It makes it less likely to pick the right word, which on a factual question means a wrong answer delivered with confidence.",
-      "publishedAt": "2026-09-17T18:00:46.000Z"
-    },
-    {
-      "slug": "0df86e465f47fd8020754c17",
-      "guid": "https://dzone.com/articles/3666440",
-      "title": "Federated MCP Control Plane: Policy-Aware Access to Multi-Backend Tool Servers",
-      "link": "https://dzone.com/articles/mcp-control-plane",
-      "source": "DZone",
-      "sourceUrl": "https://feeds.dzone.com/home",
-      "summary": "A federated gateway provides secure, policy-aware access to tool servers. The thing that made me stop and rethink our whole approach to agentic tooling was a text file.",
-      "publishedAt": "2026-09-17T18:00:00.000Z"
-    },
-    {
-      "slug": "2315e4eb57f81a6e8c8980bd",
-      "guid": "https://www.sitepoint.com/adaptive-server-monitoring-vs-static-thresholds/",
-      "title": "Server Monitoring in the age of AI: What static thresholds miss and how adaptive monitoring fixes it?",
-      "link": "https://www.sitepoint.com/adaptive-server-monitoring-vs-static-thresholds/?utm_source=rss",
-      "source": "SitePoint",
-      "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
-      "summary": "Why static CPU and memory thresholds cause alert fatigue, and how adaptive monitoring with machine learning baselines fixes false positives and missed outages. Server Monitoring in the age of AI: What static thresholds miss and how adaptive monitoring fixes it? on SitePoint.",
-      "publishedAt": "2026-09-17T17:18:56.000Z"
-    },
-    {
-      "slug": "df010dd980acaae2a0b9c5da",
-      "guid": "https://dzone.com/articles/3666473",
-      "title": "The New API Contract Is Probabilistic: Building Reliable Systems Around Unreliable Model Outputs",
-      "link": "https://dzone.com/articles/probabilistic-api-contracts",
-      "source": "DZone",
-      "sourceUrl": "https://feeds.dzone.com/home",
-      "summary": "For decades, API design rested on a reassuring assumption: given valid input and a stable dependency, software should return a predictable result. Large language models break that assumption without breaking the API. A request can receive HTTP 200, perfectly valid JSON, and a co…",
-      "publishedAt": "2026-09-17T17:00:00.000Z"
-    },
-    {
-      "slug": "928d973988b731b7b2eaf067",
-      "guid": "https://dzone.com/articles/3683529",
-      "title": "A Senior Engineer’s Guide to Foundry IQ, MCP, and the OpenAI Agents SDK",
-      "link": "https://dzone.com/articles/foundry-iq-openai-agents",
-      "source": "DZone",
-      "sourceUrl": "https://feeds.dzone.com/home",
-      "summary": "Most Foundry writeups assume you're all in on Microsoft's stack end to end: the Agent Framework for orchestration, the Foundry Agent Service for hosting, and the Responses API wrapped in Microsoft's own client. That's a reasonable default, but it's not the only shape this can ta…",
-      "publishedAt": "2026-09-17T16:00:00.000Z"
-    },
-    {
-      "slug": "37e8a1302829782d06b9fa5a",
-      "guid": "6aabf0c04af2fb000147dfd5",
-      "title": "Designing a Caching System and Where It Breaks",
-      "link": "https://kodekloud.com/blog/database-caching-ttl-invalidation-cache-stampede/",
-      "source": "KodeKloud",
-      "sourceUrl": "https://kodekloud.com/blog/rss/",
-      "summary": "Learn to design a database caching system with cache-aside, TTL, invalidation, single-flight and jitter to prevent cache stampedes.",
-      "publishedAt": "2026-09-17T15:25:02.000Z"
-    },
-    {
-      "slug": "7533d6f61c7beb83d7388b46",
-      "guid": "https://dzone.com/articles/3682443",
-      "title": "Understand the Sidecar Pattern by Deploying n8n to AWS Fargate",
-      "link": "https://dzone.com/articles/n8n-aws-fargate-sidecar",
-      "source": "DZone",
-      "sourceUrl": "https://feeds.dzone.com/home",
-      "summary": "A sidecar is a container that runs alongside another container as part of the same deployment unit. Just because two containers are in the same cluster or deployed around the same time doesn't make one a sidecar. There are two things that make a sidecar. First is that they share…",
-      "publishedAt": "2026-09-17T15:00:01.000Z"
-    },
-    {
-      "slug": "508eaa0464f19bfb495af44b",
-      "guid": "https://www.sitepoint.com/how-to-build-an-event-driven-lead-scoring-pipeline-with-node-js-and-postgresql/",
-      "title": "How to Build an Event-Driven Lead Scoring Pipeline with Node.js and PostgreSQL",
-      "link": "https://www.sitepoint.com/how-to-build-an-event-driven-lead-scoring-pipeline-with-node-js-and-postgresql/?utm_source=rss",
-      "source": "SitePoint",
-      "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
-      "summary": "null How to Build an Event-Driven Lead Scoring Pipeline with Node.js and PostgreSQL on SitePoint.",
-      "publishedAt": "2026-09-17T14:06:02.000Z"
-    },
-    {
-      "slug": "d3c0ebd528e03259bfe03d2e",
-      "guid": "https://dzone.com/articles/3682444",
-      "title": "Stop Overfeeding Your AI Agent's Context Window",
-      "link": "https://dzone.com/articles/agent-context-window",
-      "source": "DZone",
-      "sourceUrl": "https://feeds.dzone.com/home",
-      "summary": "Picture a checkout page throwing the dreaded 500 error at 2 a.m. Someone opens an AI agent and asks it to fix things. The instinct is to be generous. Paste in the runbooks. Drop in three dashboards. Attach a pile of customer complaints. Let the model sort it out. More context sh…",
-      "publishedAt": "2026-09-17T14:00:09.000Z"
     }
   ]
 }
