@@ -1,5 +1,12 @@
 # @prj--personal-portfolio--v3/frontend--portfolio-site
 
+## 0.4.2
+
+### Patch Changes
+
+- 8fd7026: remove cv from navigation
+- 2694123: adjust footer
+
 ## 0.4.1
 
 ### Patch Changes
