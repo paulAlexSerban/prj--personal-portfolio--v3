@@ -1,8 +1,38 @@
 {
   "category": "javascript",
   "label": "JavaScript",
-  "fetchedAt": "2026-09-24T10:33:44.194Z",
+  "fetchedAt": "2026-09-25T10:37:08.871Z",
   "items": [
+    {
+      "slug": "f96a29e60ef8b0a6b27d3fc7",
+      "guid": "https://flaviocopes.com/cli-tools-i-use/",
+      "title": "The CLI tools I use every day",
+      "link": "https://flaviocopes.com/cli-tools-i-use/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "The command line tools I use every day on my Mac: Ghostty, fish, zoxide, tmux, jq, SSH, Git, gh, Wrangler, gitleaks, coding agent CLIs, and the CLIs I built.",
+      "publishedAt": "2026-09-25T07:00:00.000Z"
+    },
+    {
+      "slug": "4c6f404656cf2f29ea2ae78a",
+      "guid": "https://flaviocopes.com/ai-coding-models/",
+      "title": "Which AI model is best for coding? A hands-on comparison",
+      "link": "https://flaviocopes.com/ai-coding-models/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Which AI model is best for coding? Claude Opus 5.5, Fable 5.1, GPT-6 Sol, Grok 4.7 and open models compared, plus a test you can run on your own code.",
+      "publishedAt": "2026-09-24T13:00:00.000Z"
+    },
+    {
+      "slug": "7fee29a0e05c74549ac3a092",
+      "guid": "https://flaviocopes.com/jev-api-key/",
+      "title": "How to get access to Jev and an API key",
+      "link": "https://flaviocopes.com/jev-api-key/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "How to get access to Jev and a TypeSafe API key: sign in to the console, create and store the key, test it with curl, fix 401 and 422 errors, or use Vercel.",
+      "publishedAt": "2026-09-24T12:00:00.000Z"
+    },
     {
       "slug": "2d6a078645fd4ceb9c64f76d",
       "guid": "https://flaviocopes.com/cloudflare-worker-previews/",
@@ -22,6 +52,16 @@
       "sourceUrl": "https://flaviocopes.com/rss.xml",
       "summary": "The Linux commands that mattered when my Ubuntu servers broke in 2026: df, du, journalctl, free, ss, ufw, fail2ban, apt, with real output and what I did next.",
       "publishedAt": "2026-09-24T07:00:00.000Z"
+    },
+    {
+      "slug": "0be3d59369e2485d4b18362c",
+      "guid": "https://blog.appsignal.com/2026/09/24/visualize-data-your-way-with-intelligence-dashboards-built-for-your-stack.html",
+      "title": "Visualize Data Your Way, with Intelligence Dashboards Built for Your Stack",
+      "link": "https://blog.appsignal.com/2026/09/24/visualize-data-your-way-with-intelligence-dashboards-built-for-your-stack.html",
+      "source": "AppSignal",
+      "sourceUrl": "https://blog.appsignal.com/feed.xml",
+      "summary": "When something goes wrong in production, you do not want to spend the first five minutes rearranging charts. You want the error rate, throughput, queue depth, memory, and view metrics that show when customers are having issues while using your app. What slows you down is not alw…",
+      "publishedAt": "2026-09-24T00:00:00.000Z"
     },
     {
       "slug": "c7687b67ea7fdf258701bb07",
@@ -314,16 +354,6 @@
       "publishedAt": "2026-09-15T07:45:00.000Z"
     },
     {
-      "slug": "4a1c9fd17c7e50d2b695a442",
-      "guid": "https://flaviocopes.com/server-process-killed/",
-      "title": "Debugging a process killed on my server with Codex",
-      "link": "https://flaviocopes.com/server-process-killed/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Claude Code kept dying a few seconds after starting on my Ubuntu server. I pointed Codex CLI at the server over SSH and it found the Linux OOM killer in the kernel logs. Here is the whole session.",
-      "publishedAt": "2026-09-15T07:00:00.000Z"
-    },
-    {
       "slug": "f2779a1c6c12d3e71f54a844",
       "guid": "https://javascriptweekly.com/issues/802",
       "title": "Functional programming jargon, mapped out",
@@ -334,16 +364,6 @@
       "publishedAt": "2026-09-15T00:00:00.000Z"
     },
     {
-      "slug": "d8221c93a1a9e8bb443249e1",
-      "guid": "https://flaviocopes.com/merchant-of-record/",
-      "title": "Merchant of Record or payment processor? How to choose how to get paid online",
-      "link": "https://flaviocopes.com/merchant-of-record/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "The first payment decision most guides skip: sell through a Merchant of Record like Creem or Paddle, or stay the merchant with Stripe? What each one handles, what it costs, and how to choose.",
-      "publishedAt": "2026-09-14T09:00:00.000Z"
-    },
-    {
       "slug": "5afbf2b809f5642e8236c40e",
       "guid": "https://philipwalton.com/articles/modern-web-types/",
       "title": "Modern Web Types",
@@ -352,16 +372,6 @@
       "sourceUrl": "https://feeds.feedburner.com/philipwalton",
       "summary": "",
       "publishedAt": "2026-09-14T07:22:45.000Z"
-    },
-    {
-      "slug": "3c81a62a0d4c7e065628f136",
-      "guid": "https://flaviocopes.com/where-to-host/",
-      "title": "Where to host your web app: how to choose",
-      "link": "https://flaviocopes.com/where-to-host/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Compare static hosts, serverless platforms, PaaS options, and VPS providers using current prices, limits, database needs, and operational tradeoffs.",
-      "publishedAt": "2026-09-14T06:00:00.000Z"
     }
   ]
 }

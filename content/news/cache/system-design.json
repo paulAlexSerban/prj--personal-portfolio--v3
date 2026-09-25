@@ -1,8 +1,18 @@
 {
   "category": "system-design",
   "label": "System Design",
-  "fetchedAt": "2026-09-24T10:33:44.194Z",
+  "fetchedAt": "2026-09-25T10:37:08.871Z",
   "items": [
+    {
+      "slug": "7761e61700db10e2d93189fd",
+      "guid": "6aab98704a58460001d006e2",
+      "title": "The Pulse: a new trend of CPU shortages",
+      "link": "https://blog.pragmaticengineer.com/the-pulse-a-new-trend-of-cpu-shortages/",
+      "source": "The Pragmatic Engineer",
+      "sourceUrl": "https://blog.pragmaticengineer.com/rss/",
+      "summary": "After a GPU shortage and memory shortage driven by AI companies, we’re now experiencing a CPU shortage, thanks to AI agents using a lot more CPU with tool usage.",
+      "publishedAt": "2026-09-24T16:45:01.000Z"
+    },
     {
       "slug": "f6b03fff8d57e1d0255a6886",
       "guid": "https://newsletter.systemdesign.one/p/claude-code-subagents-vs-agent-teams",
@@ -102,6 +112,896 @@
       "sourceUrl": "https://newsletter.systemdesign.one/feed",
       "summary": "#176: Part 1 - Claude Code 24/7",
       "publishedAt": "2026-09-10T13:47:18.000Z"
+    },
+    {
+      "slug": "411977b61ac53a5188b4262a",
+      "guid": "https://engineering.atspotify.com/?p=4ode0KMR0ZNP2v8r180XjX",
+      "title": "Why Spotify Is Not Using Bayesian A/B Testing",
+      "link": "https://engineering.atspotify.com/2026/9/why-spotify-is-not-using-bayesian-a-b-testing/",
+      "source": "Spotify Engineering Culture",
+      "sourceUrl": "https://engineering.atspotify.com/feed",
+      "summary": "Clearing the confusion about what Bayesian A/B testing is. The post Why Spotify Is Not Using Bayesian A/B Testing appeared first on Spotify Engineering.",
+      "publishedAt": "2026-09-08T13:18:44.000Z"
+    },
+    {
+      "slug": "b455af98629edf07e127d48c",
+      "guid": "https://newsletter.systemdesign.one/p/types-of-api-testing",
+      "title": "API testing was “hard” until I learned these 53 techniques",
+      "link": "https://newsletter.systemdesign.one/p/types-of-api-testing",
+      "source": "System Design Newsletter",
+      "sourceUrl": "https://newsletter.systemdesign.one/feed",
+      "summary": "#175: Part 2 - fuzz testing, penetration testing, injection attack testing, and 25 others.",
+      "publishedAt": "2026-09-07T16:59:35.000Z"
+    },
+    {
+      "slug": "3fd380a370792f994e1ac59c",
+      "guid": "6a9934b9534530000142389d",
+      "title": "The Pulse: Meta wanted to reduce teams by 60% because of AI",
+      "link": "https://blog.pragmaticengineer.com/the-pulse-meta-wanted-to-reduce-teams-by-60-because-of-ai/",
+      "source": "The Pragmatic Engineer",
+      "sourceUrl": "https://blog.pragmaticengineer.com/rss/",
+      "summary": "An in-depth report by Reuters details how Meta’s leadership decided to slash team sizes by 60%. Zuckerberg changed his mind, and now the company is stuck with low morale and culture turned mercenary.",
+      "publishedAt": "2026-09-03T17:01:49.000Z"
+    },
+    {
+      "slug": "5b1f346668d026fed65df7ce",
+      "guid": "https://engineering.atspotify.com/?p=4Q95CxFeg0bPD9rsoBjQuk",
+      "title": "Portal by Spotify cut my Claude Code token usage by 90%",
+      "link": "https://engineering.atspotify.com/2026/9/portal-by-spotify-cut-my-claude-code-token-usage-by-90/",
+      "source": "Spotify Engineering Culture",
+      "sourceUrl": "https://engineering.atspotify.com/feed",
+      "summary": "Most of what an AI coding agent does for me isn't thinking. It's I/O. The post Portal by Spotify cut my Claude Code token usage by 90% appeared first on Spotify Engineering.",
+      "publishedAt": "2026-09-03T16:06:40.000Z"
+    },
+    {
+      "slug": "18044b582c42fa6fa7df074e",
+      "guid": "https://newsletter.techworld-with-milan.com/p/what-is-the-future-of-software-engineering-d52",
+      "title": "What is the future of Software Engineering when nobody needs to write code?",
+      "link": "https://newsletter.techworld-with-milan.com/p/what-is-the-future-of-software-engineering-d52",
+      "source": "Tech World with Milan",
+      "sourceUrl": "https://newsletter.techworld-with-milan.com/feed",
+      "summary": "Since the beginning of writing software, it has been a hard thing to do.",
+      "publishedAt": "2026-09-03T15:00:51.000Z"
+    },
+    {
+      "slug": "f0e0fe5c15444a25c14800c7",
+      "guid": "https://newsletter.systemdesign.one/p/system-design-tradeoffs",
+      "title": "50 shades of system design",
+      "link": "https://newsletter.systemdesign.one/p/system-design-tradeoffs",
+      "source": "System Design Newsletter",
+      "sourceUrl": "https://newsletter.systemdesign.one/feed",
+      "summary": "#174: tradeoffs behind designing scalable, reliable systems",
+      "publishedAt": "2026-09-03T12:17:25.000Z"
+    },
+    {
+      "slug": "3ecf36904c0398ea36683b46",
+      "guid": "6a96f544dd3e7c0001ccc8b2",
+      "title": "How software engineering is changing: an essay challenge",
+      "link": "https://blog.pragmaticengineer.com/how-software-engineering-is-changing-an-essay-challenge/",
+      "source": "The Pragmatic Engineer",
+      "sourceUrl": "https://blog.pragmaticengineer.com/rss/",
+      "summary": "The pace of change in software engineering is only accelerating, especially since January of this year. This is all to do with the industry-wide adoption of LLMs, AI tooling, and AI infrastructure. At The Pragmatic Engineer, we always want to capture as much of what’s going on",
+      "publishedAt": "2026-09-01T16:06:50.000Z"
+    },
+    {
+      "slug": "548af22b1c9e8eac8151bb99",
+      "guid": "https://newsletter.systemdesign.one/p/api-testing-types",
+      "title": "I struggled with “API testing” until I learned these 53 techniques",
+      "link": "https://newsletter.systemdesign.one/p/api-testing-types",
+      "source": "System Design Newsletter",
+      "sourceUrl": "https://newsletter.systemdesign.one/feed",
+      "summary": "#173: Part 1 - smoke testing, functional testing, unit testing, and 22 others.",
+      "publishedAt": "2026-08-31T11:19:11.000Z"
+    },
+    {
+      "slug": "5d0354258936f750c3fa2938",
+      "guid": "https://newsletter.systemdesign.one/p/how-does-a-ci-cd-pipeline-work",
+      "title": "How CI/CD Works - A Deep Dive",
+      "link": "https://newsletter.systemdesign.one/p/how-does-a-ci-cd-pipeline-work",
+      "source": "System Design Newsletter",
+      "sourceUrl": "https://newsletter.systemdesign.one/feed",
+      "summary": "#172: Part 4 - DevOps Mastermind",
+      "publishedAt": "2026-08-28T14:40:22.000Z"
+    },
+    {
+      "slug": "2aa864fde8ef380637464649",
+      "guid": "6a900f61f1788f0001c466a3",
+      "title": "The Pulse: We need to talk about migrations with AI",
+      "link": "https://blog.pragmaticengineer.com/the-pulse-we-need-to-talk-about-migrations-with-ai/",
+      "source": "The Pragmatic Engineer",
+      "sourceUrl": "https://blog.pragmaticengineer.com/rss/",
+      "summary": "Asana migrated off testing framework Enzyme in two weeks: without AI, this work would surely have been kicked down the road. Airbnb and Uber share similar stories and AI seems excellent at migrations.",
+      "publishedAt": "2026-08-27T18:04:54.000Z"
+    },
+    {
+      "slug": "02bc1984fd72b3b283096670",
+      "guid": "6a900187f1788f0001c465cd",
+      "title": "Why you're not getting a response to your podcast pitch from me (or others)",
+      "link": "https://blog.pragmaticengineer.com/why-youre-not-getting-a-response-to-your-podcast-pitch-from-me-or-others/",
+      "source": "The Pragmatic Engineer",
+      "sourceUrl": "https://blog.pragmaticengineer.com/rss/",
+      "summary": "This email is a response to the 50+ podcast pitches that arrived in my inbox just last month, and keep arriving in growing numbers, from PR agencies and marketing teams at various companies. It's also a message to tech founders building stuff for developers: focus on building so…",
+      "publishedAt": "2026-08-27T09:59:13.000Z"
+    },
+    {
+      "slug": "4ba0a46416ed5ed4675725a0",
+      "guid": "https://newsletter.systemdesign.one/p/llm-fine-tuning-guide-with-lora-and-qlora",
+      "title": "Fine Tuning: A Deep Dive",
+      "link": "https://newsletter.systemdesign.one/p/llm-fine-tuning-guide-with-lora-and-qlora",
+      "source": "System Design Newsletter",
+      "sourceUrl": "https://newsletter.systemdesign.one/feed",
+      "summary": "#171: The Fine-Tuning Guide That Will Change How You Build With LLMs",
+      "publishedAt": "2026-08-24T16:23:10.000Z"
+    },
+    {
+      "slug": "50603ecc75664df4ce538c16",
+      "guid": "6a87427404189e00018c442c",
+      "title": "The Pulse: Meta’s self-inflicted resignation-wave",
+      "link": "https://blog.pragmaticengineer.com/the-pulse-metas-self-inflicted-resignation-wave/",
+      "source": "The Pragmatic Engineer",
+      "sourceUrl": "https://blog.pragmaticengineer.com/rss/",
+      "summary": "In what was predictable: Meta’s layoffs and forced reassignments pushed engineers not impacted by either to look for a new job. Meta is now offering large equity retainers, and it doesn’t seem working",
+      "publishedAt": "2026-08-20T18:08:45.000Z"
+    },
+    {
+      "slug": "d14e349687f2ffa85b706380",
+      "guid": "https://newsletter.systemdesign.one/p/durable-ai-agents",
+      "title": "How to Build AI Agents That Don’t Start Over When They Fail",
+      "link": "https://newsletter.systemdesign.one/p/durable-ai-agents",
+      "source": "System Design Newsletter",
+      "sourceUrl": "https://newsletter.systemdesign.one/feed",
+      "summary": "#170: The Infrastructure AI Agents Actually Need",
+      "publishedAt": "2026-08-20T17:26:04.000Z"
+    },
+    {
+      "slug": "b7af57a99f89dfbe6adf8953",
+      "guid": "https://newsletter.techworld-with-milan.com/p/20-lessons-from-20-years-in-tech",
+      "title": "20 Lessons From 20+ Years in Tech",
+      "link": "https://newsletter.techworld-with-milan.com/p/20-lessons-from-20-years-in-tech",
+      "source": "Tech World with Milan",
+      "sourceUrl": "https://newsletter.techworld-with-milan.com/feed",
+      "summary": "What losing everything twice taught me about building a great career",
+      "publishedAt": "2026-08-20T15:01:13.000Z"
+    },
+    {
+      "slug": "38f3ef3f861b3e639139500c",
+      "guid": "6a85ba5c1b8a5e00015742b1",
+      "title": "The Pulse: Grok’s CLI caught uploading all your local files to the cloud",
+      "link": "https://blog.pragmaticengineer.com/grolk-cli-uploaded-all-your-files-to-the-cloud/",
+      "source": "The Pragmatic Engineer",
+      "sourceUrl": "https://blog.pragmaticengineer.com/rss/",
+      "summary": "Devs discover that Grok CLI pushed all local files, .env files and git history have been pushed to a GCP bucket, unencrypted. SpaceX’s initial reaction? Blame the devs",
+      "publishedAt": "2026-08-19T14:21:33.000Z"
+    },
+    {
+      "slug": "5adf6896ed8f3fdd8f9c9916",
+      "guid": "https://newsletter.systemdesign.one/p/prompt-engineering-guide",
+      "title": "Prompt Engineering - A Deep Dive",
+      "link": "https://newsletter.systemdesign.one/p/prompt-engineering-guide",
+      "source": "System Design Newsletter",
+      "sourceUrl": "https://newsletter.systemdesign.one/feed",
+      "summary": "#169: From Tokens to Production-Ready AI Systems",
+      "publishedAt": "2026-08-14T16:39:25.000Z"
+    },
+    {
+      "slug": "9e2a5de4d92429e5e8dd87fc",
+      "guid": "https://engineering.atspotify.com/?p=ln7E2AsSaOEViz9VzHqlL",
+      "title": "When Can LLMs Replace Humans in A/B Tests?",
+      "link": "https://engineering.atspotify.com/2026/8/when-can-llms-replace-humans-in-a-b-tests/",
+      "source": "Spotify Engineering Culture",
+      "sourceUrl": "https://engineering.atspotify.com/feed",
+      "summary": "TL;DR: LLM predictions can stand in for human outcomes in A/B tests, but only by assumption, not by design.... The post When Can LLMs Replace Humans in A/B Tests? appeared first on Spotify Engineering.",
+      "publishedAt": "2026-08-13T18:57:22.000Z"
+    },
+    {
+      "slug": "fa558f568e1c9fbff5c2f624",
+      "guid": "https://newsletter.systemdesign.one/p/how-to-build-an-ai-research-agent-with-mcp",
+      "title": "How to Build an AI Research Agent",
+      "link": "https://newsletter.systemdesign.one/p/how-to-build-an-ai-research-agent-with-mcp",
+      "source": "System Design Newsletter",
+      "sourceUrl": "https://newsletter.systemdesign.one/feed",
+      "summary": "#168: Part 5 - Generative AI Masterclass",
+      "publishedAt": "2026-08-10T11:52:40.000Z"
+    },
+    {
+      "slug": "458b6c53ce113203265e81ab",
+      "guid": "https://newsletter.systemdesign.one/p/system-design-patterns",
+      "title": "10 System Design Solutions Explained in 15 Minutes",
+      "link": "https://newsletter.systemdesign.one/p/system-design-patterns",
+      "source": "System Design Newsletter",
+      "sourceUrl": "https://newsletter.systemdesign.one/feed",
+      "summary": "#167: A practical guide to common system design challenges",
+      "publishedAt": "2026-08-05T14:57:01.000Z"
+    },
+    {
+      "slug": "76756b146177ec4566e9a97e",
+      "guid": "6a72f95dd1f60900010e34a7",
+      "title": "The Pulse: Bending Spoons' Acquisition Strategy",
+      "link": "https://blog.pragmaticengineer.com/the-pulse-bending-spoons-acquisition-strategy/",
+      "source": "The Pragmatic Engineer",
+      "sourceUrl": "https://blog.pragmaticengineer.com/rss/",
+      "summary": "In only 5 years, Hopin went from zero to a $7.7B valuation, and back to zero again. Also: Bending Spoons’ startup acquisition model.",
+      "publishedAt": "2026-08-05T11:45:13.000Z"
+    },
+    {
+      "slug": "77cce87cd8e519d513d702f2",
+      "guid": "https://newsletter.systemdesign.one/p/fine-tuning-small-language-models",
+      "title": "Vertical Small LLMs: A Deep Dive",
+      "link": "https://newsletter.systemdesign.one/p/fine-tuning-small-language-models",
+      "source": "System Design Newsletter",
+      "sourceUrl": "https://newsletter.systemdesign.one/feed",
+      "summary": "#166: How a fine-tuned 3-billion-parameter model beats today’s frontier models at one job, and how to build one this weekend",
+      "publishedAt": "2026-08-03T10:27:31.000Z"
+    },
+    {
+      "slug": "d24fa988db068aa797b07e55",
+      "guid": "6a6b68cb5afb0c00015a3f23",
+      "title": "The Pulse: Quitting Spotify Podcasts over reliability",
+      "link": "https://blog.pragmaticengineer.com/the-pulse-quitting-spotify-podcasts-over-reliability/",
+      "source": "The Pragmatic Engineer",
+      "sourceUrl": "https://blog.pragmaticengineer.com/rss/",
+      "summary": "Spotify’s podcast platform has become chronically unreliable since the company’s leadership started boasting about AI adoption. Competitors haven’t had similar issues, so I offboarded from Spotify.",
+      "publishedAt": "2026-07-30T15:51:38.000Z"
+    },
+    {
+      "slug": "bf70da5313d5b1faddb92814",
+      "guid": "https://newsletter.techworld-with-milan.com/p/engineering-management-is-a-career",
+      "title": "Engineering management is a career change, not a promotion",
+      "link": "https://newsletter.techworld-with-milan.com/p/engineering-management-is-a-career",
+      "source": "Tech World with Milan",
+      "sourceUrl": "https://newsletter.techworld-with-milan.com/feed",
+      "summary": "Ryan Murphy on what actually gets engineers promoted, why delayed feedback is cruelty, and the manager who told him on day one that he was a resource",
+      "publishedAt": "2026-07-30T15:00:17.000Z"
+    },
+    {
+      "slug": "7effd48460a490588bf550dd",
+      "guid": "https://newsletter.systemdesign.one/p/api-performance",
+      "title": "What You Need to Master (And Avoid) to Build Fast, Reliable, and Scalable APIs",
+      "link": "https://newsletter.systemdesign.one/p/api-performance",
+      "source": "System Design Newsletter",
+      "sourceUrl": "https://newsletter.systemdesign.one/feed",
+      "summary": "#165: Nine Tips for High-Performance APIs",
+      "publishedAt": "2026-07-29T10:27:09.000Z"
+    },
+    {
+      "slug": "20224bfcb47eacfc6c5d84ed",
+      "guid": "https://engineering.atspotify.com/?p=2BHiaulFaaun4MVkEBakNn",
+      "title": "Indexing the Data Lake for Online Point Queries",
+      "link": "https://engineering.atspotify.com/2026/7/indexing-the-data-lake-for-online-point-queries/",
+      "source": "Spotify Engineering Culture",
+      "sourceUrl": "https://engineering.atspotify.com/feed",
+      "summary": "Companies like Spotify need vast quantities of data accessible at low latency for online services and,... The post Indexing the Data Lake for Online Point Queries appeared first on Spotify Engineering.",
+      "publishedAt": "2026-07-27T20:34:28.000Z"
+    },
+    {
+      "slug": "2bd8dc5cfd57d9f4f7c749c5",
+      "guid": "6a61e422435ae800016524b9",
+      "title": "The Pulse: New trend - concern about massive increase in code review load",
+      "link": "https://blog.pragmaticengineer.com/the-pulse-new-trend-concern-about-massive-increase-in-code-review-load/",
+      "source": "The Pragmatic Engineer",
+      "sourceUrl": "https://blog.pragmaticengineer.com/rss/",
+      "summary": "Top of mind for engineering leaders: what to do about the growing code review load, and how devs are starting to review code less thoroughly than before? Many questions, but few proven solutions.",
+      "publishedAt": "2026-07-23T16:55:29.000Z"
+    },
+    {
+      "slug": "1a4bf905220742be093e5fce",
+      "guid": "https://newsletter.systemdesign.one/p/microservices-design-patterns",
+      "title": "I struggled with \"microservices\" until I learned these 22 patterns",
+      "link": "https://newsletter.systemdesign.one/p/microservices-design-patterns",
+      "source": "System Design Newsletter",
+      "sourceUrl": "https://newsletter.systemdesign.one/feed",
+      "summary": "#164: A field guide to splitting systems, keeping data correct, and surviving failure in production",
+      "publishedAt": "2026-07-23T10:24:07.000Z"
+    },
+    {
+      "slug": "2fef6cf8c645806ca0fc5d88",
+      "guid": "https://newsletter.systemdesign.one/p/how-to-use-notebooklm",
+      "title": "What Happens When Your Coding Agent Actually Knows Your Architecture?",
+      "link": "https://newsletter.systemdesign.one/p/how-to-use-notebooklm",
+      "source": "System Design Newsletter",
+      "sourceUrl": "https://newsletter.systemdesign.one/feed",
+      "summary": "#163: How I turned NotebookLM into a grounded knowledge layer for PR reviews, design reviews, debugging, and onboarding",
+      "publishedAt": "2026-07-20T11:31:27.000Z"
+    },
+    {
+      "slug": "140b916cb4332dc630d85f32",
+      "guid": "https://newsletter.systemdesign.one/p/fine-tuning-ai-models",
+      "title": "How to Build a Domain Expert AI",
+      "link": "https://newsletter.systemdesign.one/p/fine-tuning-ai-models",
+      "source": "System Design Newsletter",
+      "sourceUrl": "https://newsletter.systemdesign.one/feed",
+      "summary": "#162: Part 4 - Generative AI Masterclass",
+      "publishedAt": "2026-07-17T11:00:54.000Z"
+    },
+    {
+      "slug": "6bc28d2f09805d136e6d5479",
+      "guid": "6a58cdde676a90000149edb3",
+      "title": "The Pulse: What can we learn from Bun’s rapid Rust rewrite with AI?",
+      "link": "https://blog.pragmaticengineer.com/the-pulse-what-can-we-learn-from-buns-rapid-rust-rewrite-with-ai/",
+      "source": "The Pragmatic Engineer",
+      "sourceUrl": "https://blog.pragmaticengineer.com/rss/",
+      "summary": "To a sceptic, spending $165K to migrate Bun from Zig to Rust sounds very expensive. But to a realist, shortening a 1-2 year migration down to 11 days opens amazing new opportunities for devs. However, a thoroughly-tested project is required to pull it off.",
+      "publishedAt": "2026-07-16T16:50:20.000Z"
+    },
+    {
+      "slug": "1c9970a9c3e576926873981f",
+      "guid": "https://newsletter.techworld-with-milan.com/p/what-i-learn-from-a-trillion-dollar",
+      "title": "5 lessons I learned from Trillion Dollar Coach",
+      "link": "https://newsletter.techworld-with-milan.com/p/what-i-learn-from-a-trillion-dollar",
+      "source": "Tech World with Milan",
+      "sourceUrl": "https://newsletter.techworld-with-milan.com/feed",
+      "summary": "No matter how successful you are, coaching can add value",
+      "publishedAt": "2026-07-16T15:01:13.000Z"
+    },
+    {
+      "slug": "c0c4ece0517498a649363fd2",
+      "guid": "https://newsletter.systemdesign.one/p/kubernetes-architecture",
+      "title": "Kubernetes - A Deep Dive",
+      "link": "https://newsletter.systemdesign.one/p/kubernetes-architecture",
+      "source": "System Design Newsletter",
+      "sourceUrl": "https://newsletter.systemdesign.one/feed",
+      "summary": "#161: Part 3 - DevOps Mastermind",
+      "publishedAt": "2026-07-13T11:05:40.000Z"
+    },
+    {
+      "slug": "9eed877eaeb3b18b231609ee",
+      "guid": "6a4fd7106171aa00016f1eab",
+      "title": "The Pulse: Interesting AI coding stats from Cursor",
+      "link": "https://blog.pragmaticengineer.com/the-pulse-interesting-ai-coding-stats-from-cursor/",
+      "source": "The Pragmatic Engineer",
+      "sourceUrl": "https://blog.pragmaticengineer.com/rss/",
+      "summary": "Power users generate 10x as many lines of code vs the median, most of the AI spend is coming from input tokens not output ones, and almost half of AI changes are accepted without manual review by devs (!!)",
+      "publishedAt": "2026-07-09T17:20:34.000Z"
+    },
+    {
+      "slug": "cda8a779c3a34aac9b9341b1",
+      "guid": "https://www.thesweekly.com/p/ai-and-the-death-of-activation-energy",
+      "title": "AI and the Death of Activation Energy",
+      "link": "https://www.thesweekly.com/p/ai-and-the-death-of-activation-energy",
+      "source": "Software Engineer Weekly",
+      "sourceUrl": "https://www.thesweekly.com/feed",
+      "summary": "AI has solved one thing in particular that most people don’t talk about. If you look past the hype cycles and the code-generation benchmarks, the true revolution of AI is actually the total collapse of friction.",
+      "publishedAt": "2026-07-04T13:30:55.000Z"
+    },
+    {
+      "slug": "c6a9c8a2510c28379f35f37b",
+      "guid": "6a46b160d2d7770001b1479c",
+      "title": "The Pulse: a new trend, smart model routing",
+      "link": "https://blog.pragmaticengineer.com/the-pulse-a-new-trend-smart-model-routing/",
+      "source": "The Pragmatic Engineer",
+      "sourceUrl": "https://blog.pragmaticengineer.com/rss/",
+      "summary": "Are there any ‘intelligent’ router solutions out there which select the right model for the right task? I looked into it, and there are a few options.",
+      "publishedAt": "2026-07-02T18:46:24.000Z"
+    },
+    {
+      "slug": "288287f49caa04bd29725c95",
+      "guid": "https://newsletter.techworld-with-milan.com/p/what-is-the-future-of-software-engineering",
+      "title": "What is the future of software engineering with Adam Bender, Principal Software Engineer at Google",
+      "link": "https://newsletter.techworld-with-milan.com/p/what-is-the-future-of-software-engineering",
+      "source": "Tech World with Milan",
+      "sourceUrl": "https://newsletter.techworld-with-milan.com/feed",
+      "summary": "Most of the AI coding debate is about speed.",
+      "publishedAt": "2026-07-02T15:01:06.000Z"
+    },
+    {
+      "slug": "15a8a526d3aa10ee26743903",
+      "guid": "https://www.thesweekly.com/p/my-product-almost-died",
+      "title": "My Product Almost Died.",
+      "link": "https://www.thesweekly.com/p/my-product-almost-died",
+      "source": "Software Engineer Weekly",
+      "sourceUrl": "https://www.thesweekly.com/feed",
+      "summary": "At the beginning of April, I hit a major milestone with my SaaS platform, Ferryman: a new MRR peak of $1,346. On social media, milestones like that look like a clean, linear rocket ship to the top. But behind the scenes, the reality of building a business is highly volatile, unp…",
+      "publishedAt": "2026-06-29T21:30:14.000Z"
+    },
+    {
+      "slug": "bcd63a8d5730a92fadcb883f",
+      "guid": "6a4069be08e0e1000161f830",
+      "title": "Pollen tried to remove my article about CEO Callum Negus-Fancey and CTO Bradley Wright, and Google is assisting with it",
+      "link": "https://blog.pragmaticengineer.com/pollen-tried-to-remove-my-article-about-callum-negus-fancey-and-google-is-assisting-to-it/",
+      "source": "The Pragmatic Engineer",
+      "sourceUrl": "https://blog.pragmaticengineer.com/rss/",
+      "summary": "In 2022, I wrote about the damning fall of events tech company Pollen. The short of it: Pollen seemed to have pulled off the improbable feat of building a business in the notoriously low margin industry of events, surviving Covid-19, and building a solid software engineering org…",
+      "publishedAt": "2026-06-28T00:40:25.000Z"
+    },
+    {
+      "slug": "913ec62d1457d788e11d4671",
+      "guid": "https://www.thesweekly.com/p/your-default-answer-should-be-no",
+      "title": "Your Default Answer Should Be \"No\"",
+      "link": "https://www.thesweekly.com/p/your-default-answer-should-be-no",
+      "source": "Software Engineer Weekly",
+      "sourceUrl": "https://www.thesweekly.com/feed",
+      "summary": "At some point, we all face the same invisible threat: a schedule that is no longer our own. We start with a blank canvas, but very quickly, the outside world begins to chip away at it. We become a magnet for an onslaught of coffee chats, social obligations, low-impact requests, …",
+      "publishedAt": "2026-06-21T19:31:01.000Z"
+    },
+    {
+      "slug": "6fd6a07529c61e655553efe8",
+      "guid": "https://newsletter.techworld-with-milan.com/p/the-trends-11-ai-agents-still-cant",
+      "title": "The Trends #11: AI agents still can't build software from scratch",
+      "link": "https://newsletter.techworld-with-milan.com/p/the-trends-11-ai-agents-still-cant",
+      "source": "Tech World with Milan",
+      "sourceUrl": "https://newsletter.techworld-with-milan.com/feed",
+      "summary": "The Trends filter tracks tech trends: what moved, why it matters, and what to watch next.",
+      "publishedAt": "2026-06-18T15:01:36.000Z"
+    },
+    {
+      "slug": "10914b338ae1ebc0b9e55a77",
+      "guid": "https://www.thesweekly.com/p/how-to-learn-in-the-age-of-ai",
+      "title": "How to Learn in the Age of AI",
+      "link": "https://www.thesweekly.com/p/how-to-learn-in-the-age-of-ai",
+      "source": "Software Engineer Weekly",
+      "sourceUrl": "https://www.thesweekly.com/feed",
+      "summary": "We’re currently living through the most radical shift in the history of software development. Code generation models have become so frictionless that you can scaffold entire features, debug complex stack traces, and deploy apps without ever truly understanding the underlying mec…",
+      "publishedAt": "2026-06-14T13:45:27.000Z"
+    },
+    {
+      "slug": "92126dd0fb3f73609deb0377",
+      "guid": "https://www.thesweekly.com/p/3-ways-to-easily-build-a-strong-technical",
+      "title": "3 Ways to Easily Build a Strong Technical Network",
+      "link": "https://www.thesweekly.com/p/3-ways-to-easily-build-a-strong-technical",
+      "source": "Software Engineer Weekly",
+      "sourceUrl": "https://www.thesweekly.com/feed",
+      "summary": "When I first started creating content and building in public, I was actively against the idea of meeting other tech creators. I completely avoided it because I assumed it would just involve endless internet drama, superficial clout-chasing, and be a massive waste of energy. But,…",
+      "publishedAt": "2026-06-05T13:45:55.000Z"
+    },
+    {
+      "slug": "1d14130619ab7704ce97a31d",
+      "guid": "https://newsletter.techworld-with-milan.com/p/best-software-engineering-books-2026",
+      "title": "The Software Engineering Books I keep recommending",
+      "link": "https://newsletter.techworld-with-milan.com/p/best-software-engineering-books-2026",
+      "source": "Tech World with Milan",
+      "sourceUrl": "https://newsletter.techworld-with-milan.com/feed",
+      "summary": "And what each one actually teaches you",
+      "publishedAt": "2026-06-04T15:00:52.000Z"
+    },
+    {
+      "slug": "28a51e09f1f788a2877c4f77",
+      "guid": "https://www.thesweekly.com/p/are-software-engineers-going-away",
+      "title": "Are Software Engineers Going Away?",
+      "link": "https://www.thesweekly.com/p/are-software-engineers-going-away",
+      "source": "Software Engineer Weekly",
+      "sourceUrl": "https://www.thesweekly.com/feed",
+      "summary": "Every day, my timeline is flooded with the same underlying panic: Is AI going to destroy the software engineering profession? If you look at the rapid advancement of LLMs and autonomous coding agents, it’s easy to see why people are anxious.",
+      "publishedAt": "2026-05-31T13:03:01.000Z"
+    },
+    {
+      "slug": "a31a7ac0772aaedc7ab951d0",
+      "guid": "https://www.thesweekly.com/p/min-max-employment",
+      "title": "Min-Max Employment",
+      "link": "https://www.thesweekly.com/p/min-max-employment",
+      "source": "Software Engineer Weekly",
+      "sourceUrl": "https://www.thesweekly.com/feed",
+      "summary": "This week, Meta laid off another 8,000 employees. These layoffs feel so dystopian nowadays especially since Meta employees ended up learning the exact day the massive cuts would happen. Imagine having to do your job the last few weeks knowing that thousands of people were going …",
+      "publishedAt": "2026-05-24T13:02:19.000Z"
+    },
+    {
+      "slug": "5db1353c5b6185a094b839d8",
+      "guid": "https://newsletter.techworld-with-milan.com/p/code-was-the-smallest-part-of-the",
+      "title": "Code was the smallest part of the job",
+      "link": "https://newsletter.techworld-with-milan.com/p/code-was-the-smallest-part-of-the",
+      "source": "Tech World with Milan",
+      "sourceUrl": "https://newsletter.techworld-with-milan.com/feed",
+      "summary": "After more than twenty years in the industry, I now understand things are not like I imagined, nor what some people talked about.",
+      "publishedAt": "2026-05-21T15:02:20.000Z"
+    },
+    {
+      "slug": "737714b2d2ff6f8cb5a1420a",
+      "guid": "https://www.thesweekly.com/p/how-to-get-ahead-in-life",
+      "title": "How to Actually Get What You Want in Life",
+      "link": "https://www.thesweekly.com/p/how-to-get-ahead-in-life",
+      "source": "Software Engineer Weekly",
+      "sourceUrl": "https://www.thesweekly.com/feed",
+      "summary": "Most people believe that to win at a high level, you have to be the smartest, most inherently gifted person in the room. They treat success like a lottery ticket you’re either born with or you aren’t. In reality, an immense amount of alpha is sitting right in the open for anyone…",
+      "publishedAt": "2026-05-17T13:30:58.000Z"
+    },
+    {
+      "slug": "581f91de00676ee3e0011c7e",
+      "guid": "tag:nezhar.com,2026-05-16:/blog/identifying-every-austrian-eurovision-2026-postcard-location",
+      "title": "Identifying Every Austrian Eurovision 2026 Postcard Location",
+      "link": "https://nezhar.com/blog/identifying-every-austrian-eurovision-2026-postcard-location",
+      "source": "nezhar",
+      "sourceUrl": "https://nezhar.com/feeds/all.rss.xml",
+      "summary": "A working list of the Austrian landmarks and landscapes used as Eurovision 2026 postcard backdrops.",
+      "publishedAt": "2026-05-15T22:00:00.000Z"
+    },
+    {
+      "slug": "135bdf5775fc4f1e6c9acdef",
+      "guid": "https://www.thesweekly.com/p/how-do-i-live-in-the-present",
+      "title": "How Do I Live in the Present?",
+      "link": "https://www.thesweekly.com/p/how-do-i-live-in-the-present",
+      "source": "Software Engineer Weekly",
+      "sourceUrl": "https://www.thesweekly.com/feed",
+      "summary": "I’ve spent the last few days in a small village in the south of France, thinking about a concept I’m historically bad at: living in the present. We’re all professional worriers. We obsess over the future, worrying if our long-term goals will be met, if our ventures will succeed,…",
+      "publishedAt": "2026-05-10T13:30:13.000Z"
+    },
+    {
+      "slug": "cab9b0ab7b37ed962055d3b8",
+      "guid": "https://newsletter.techworld-with-milan.com/p/how-corporate-politics-actually-work",
+      "title": "How corporate politics actually work",
+      "link": "https://newsletter.techworld-with-milan.com/p/how-corporate-politics-actually-work",
+      "source": "Tech World with Milan",
+      "sourceUrl": "https://newsletter.techworld-with-milan.com/feed",
+      "summary": "With Ethan Evans, a former Amazon Vice President.",
+      "publishedAt": "2026-05-07T15:03:00.000Z"
+    },
+    {
+      "slug": "1ba2d88bd2baf2952b18a298",
+      "guid": "https://www.thesweekly.com/p/365-days-ago-i-left-google-3-lessons",
+      "title": "365 Days Ago I Left Google: 3 Lessons I've Learned in Self-Employment",
+      "link": "https://www.thesweekly.com/p/365-days-ago-i-left-google-3-lessons",
+      "source": "Software Engineer Weekly",
+      "sourceUrl": "https://www.thesweekly.com/feed",
+      "summary": "One year ago today, I walked away from my Software Engineering role at Google. At the time, it felt like the riskiest move of my life. Now, looking back from the other side of 365 days of self-employment, I realize the real risk wasn’t leaving, ironically, it was staying.",
+      "publishedAt": "2026-05-01T17:02:09.000Z"
+    },
+    {
+      "slug": "e9bba0eddc766fbcca36aa33",
+      "guid": "https://www.thesweekly.com/p/leverage-is-everything",
+      "title": "Leverage is Everything",
+      "link": "https://www.thesweekly.com/p/leverage-is-everything",
+      "source": "Software Engineer Weekly",
+      "sourceUrl": "https://www.thesweekly.com/feed",
+      "summary": "Most people blindly subscribe to a linear relationship between input and output. They believe that if they work 40 hours a week, they will achieve 40 units of progress, but this is an incredibly dangerous mindset. We’re socially conditioned to value hard work over high-leverage …",
+      "publishedAt": "2026-04-24T13:31:55.000Z"
+    },
+    {
+      "slug": "d40b5f3362acec0ff2f75275",
+      "guid": "https://newsletter.techworld-with-milan.com/p/the-20-software-engineering-laws",
+      "title": "The 20 Software Engineering Laws",
+      "link": "https://newsletter.techworld-with-milan.com/p/the-20-software-engineering-laws",
+      "source": "Tech World with Milan",
+      "sourceUrl": "https://newsletter.techworld-with-milan.com/feed",
+      "summary": "A field guide to why software projects fail, systems rot, and teams slow down.",
+      "publishedAt": "2026-04-23T15:01:23.000Z"
+    },
+    {
+      "slug": "ee66811f1a3f99b0c4e0477f",
+      "guid": "https://www.thesweekly.com/p/a-deep-dive-into-my-remote-development",
+      "title": "A Deep Dive into My Remote Development Setup",
+      "link": "https://www.thesweekly.com/p/a-deep-dive-into-my-remote-development",
+      "source": "Software Engineer Weekly",
+      "sourceUrl": "https://www.thesweekly.com/feed",
+      "summary": "Last week, I talked about the philosophy of “Cattle, Not Pets”, the idea that your laptop should be disposable, not a precious asset. But why actually go through the trouble of moving your entire workflow to the cloud?",
+      "publishedAt": "2026-04-19T16:01:58.000Z"
+    },
+    {
+      "slug": "6e654ae176918223b19611bb",
+      "guid": "https://www.thesweekly.com/p/i-trapped-myself-in-arch-linux-for",
+      "title": "I Trapped Myself in Arch Linux for 365 Days. Here's Why I’m Never Leaving.",
+      "link": "https://www.thesweekly.com/p/i-trapped-myself-in-arch-linux-for",
+      "source": "Software Engineer Weekly",
+      "sourceUrl": "https://www.thesweekly.com/feed",
+      "summary": "Over a year ago, I bought an old Thinkpad with the sole intention of messing around. I wanted to upgrade the hardware, tinker with the internals, and see if I could daily-drive Arch Linux.",
+      "publishedAt": "2026-04-12T14:30:45.000Z"
+    },
+    {
+      "slug": "7a3217ab3f4d7d58b3d44f08",
+      "guid": "https://newsletter.techworld-with-milan.com/p/the-trends-10-amazon-now-requires",
+      "title": "The Trends #10: Amazon now requires senior approval for AI-assisted code from junior and mid-level engineers",
+      "link": "https://newsletter.techworld-with-milan.com/p/the-trends-10-amazon-now-requires",
+      "source": "Tech World with Milan",
+      "sourceUrl": "https://newsletter.techworld-with-milan.com/feed",
+      "summary": "The Trends filter tracks tech trends: what moved, why it matters, and what to watch next.",
+      "publishedAt": "2026-04-09T15:02:37.000Z"
+    },
+    {
+      "slug": "608360386476fea21b5bb20e",
+      "guid": "https://www.thesweekly.com/p/the-seniority-trap-why-you-might",
+      "title": "The Seniority Trap: Why You Might Have 1 Year of Experience, 10 Times",
+      "link": "https://www.thesweekly.com/p/the-seniority-trap-why-you-might",
+      "source": "Software Engineer Weekly",
+      "sourceUrl": "https://www.thesweekly.com/feed",
+      "summary": "We’ve all seen the “Senior Software Engineer” LinkedIn profiles with 10+ years of experience. But in the world of engineering, time is a deceptive metric. There is a massive, quiet difference between an engineer who has spent a decade solving increasingly complex, novel problems…",
+      "publishedAt": "2026-04-05T14:03:00.000Z"
+    },
+    {
+      "slug": "234c3b14666d2e63c4ede9af",
+      "guid": "https://www.thesweekly.com/p/3-things-im-unlearning-from-big-tech",
+      "title": "3 Things I'm Unlearning from Big Tech",
+      "link": "https://www.thesweekly.com/p/3-things-im-unlearning-from-big-tech",
+      "source": "Software Engineer Weekly",
+      "sourceUrl": "https://www.thesweekly.com/feed",
+      "summary": "For nearly a decade, my identity was defined by a single title: Software Engineer. It’s an identity I picked up early, starting in a Computer Science lecture hall and carrying it through to the offices of Google and Amazon. In the corporate world, this title is a comfortable box…",
+      "publishedAt": "2026-03-29T15:00:22.000Z"
+    },
+    {
+      "slug": "c9e59d62108e5707548f8ba9",
+      "guid": "https://newsletter.techworld-with-milan.com/p/agentic-code-workflows-with-nick",
+      "title": "Agentic code workflows with Nick Tune",
+      "link": "https://newsletter.techworld-with-milan.com/p/agentic-code-workflows-with-nick",
+      "source": "Tech World with Milan",
+      "sourceUrl": "https://newsletter.techworld-with-milan.com/feed",
+      "summary": "Most engineers who talk about AI productivity talk in abstractions.",
+      "publishedAt": "2026-03-26T16:01:37.000Z"
+    },
+    {
+      "slug": "4325d794f1c749bf8b338f31",
+      "guid": "https://www.thesweekly.com/p/how-to-build-a-1k-mrr-saas-without",
+      "title": "How to Build a $1k MRR SaaS Without Getting Lucky",
+      "link": "https://www.thesweekly.com/p/how-to-build-a-1k-mrr-saas-without",
+      "source": "Software Engineer Weekly",
+      "sourceUrl": "https://www.thesweekly.com/feed",
+      "summary": "This week, Ferryman officially crossed the $1,000 Monthly Recurring Revenue (MRR) milestone. It took 110 days of showing up every single day. No days off. No “waiting for inspiration.” Just 110 days of pushing code, sending DMs, and fixing bugs. If you’re currently building a pr…",
+      "publishedAt": "2026-03-20T13:31:07.000Z"
+    },
+    {
+      "slug": "91542e651287d155a4266a78",
+      "guid": "https://www.thesweekly.com/p/be-selective-about-opinions",
+      "title": "Be Selective About Opinions",
+      "link": "https://www.thesweekly.com/p/be-selective-about-opinions",
+      "source": "Software Engineer Weekly",
+      "sourceUrl": "https://www.thesweekly.com/feed",
+      "summary": "As you get older, you have to become aggressively selective about whose advice you let into your head. Early in our lives, we’re all standing on the same platform. We’re taking the same classes, applying for the same entry-level roles, and following the same “best practices.” Th…",
+      "publishedAt": "2026-03-15T14:31:15.000Z"
+    },
+    {
+      "slug": "acbe1d11b212b957799e7066",
+      "guid": "https://newsletter.techworld-with-milan.com/p/youre-not-paid-to-write-code",
+      "title": "You're Not Paid to Write Code",
+      "link": "https://newsletter.techworld-with-milan.com/p/youre-not-paid-to-write-code",
+      "source": "Tech World with Milan",
+      "sourceUrl": "https://newsletter.techworld-with-milan.com/feed",
+      "summary": "One thing I noticed in my engineering organizations is that when people get the problem to work on, the first step is to open the editor, create a new branch, and start coding.",
+      "publishedAt": "2026-03-12T16:00:58.000Z"
+    },
+    {
+      "slug": "20fa5b787a5d106aa09af490",
+      "guid": "https://www.thesweekly.com/p/3-hard-truths-i-learned-from-being",
+      "title": "3 Hard Truths I Learned From Being Laid Off",
+      "link": "https://www.thesweekly.com/p/3-hard-truths-i-learned-from-being",
+      "source": "Software Engineer Weekly",
+      "sourceUrl": "https://www.thesweekly.com/feed",
+      "summary": "Nearly eight years ago, on March 20th, I woke up, walked to a coffee shop near Washington Square Park with Carly, and prepared for another Tuesday as a junior engineer. I was usually the first person in the office. I took pride in that. But as I sat there, my phone buzzed with a…",
+      "publishedAt": "2026-03-06T14:31:08.000Z"
+    },
+    {
+      "slug": "9568bc1a2af42348d354700b",
+      "guid": "https://memilavi.com/?p=4789",
+      "title": "Introducing theVar – The Only Newsletter You Really Need",
+      "link": "https://memilavi.com/introducing-thevar-the-only-newsletter-you-really-need/",
+      "source": "Memi Levi",
+      "sourceUrl": "https://memilavi.com/feed/",
+      "summary": "Today is a very special day in my business, and I’m excited to finally share it with you 🙂 About six years ago, I launched the Software Architecture Newsletter. At the time, I felt there simply weren’t enough newsletters focused on software architecture, and I wanted a place to…",
+      "publishedAt": "2026-03-04T17:21:24.000Z"
+    },
+    {
+      "slug": "2dc4663a0e698b27066296b3",
+      "guid": "https://www.thesweekly.com/p/stability-is-a-trap",
+      "title": "Stability is a Trap",
+      "link": "https://www.thesweekly.com/p/stability-is-a-trap",
+      "source": "Software Engineer Weekly",
+      "sourceUrl": "https://www.thesweekly.com/feed",
+      "summary": "Most of us enter the industry with a simple plan: go to a Big Tech company, build a financial foundation, gain some “prestige,” and then leave to build our own thing. We tell ourselves that we are just waiting for the right level of security before we take the leap.",
+      "publishedAt": "2026-03-01T19:00:15.000Z"
+    },
+    {
+      "slug": "896e9192504f06e4b6ae374d",
+      "guid": "https://newsletter.techworld-with-milan.com/p/what-i-learned-at-swe-at-google-book",
+      "title": "What I learned from the book Software Engineering at Google",
+      "link": "https://newsletter.techworld-with-milan.com/p/what-i-learned-at-swe-at-google-book",
+      "source": "Tech World with Milan",
+      "sourceUrl": "https://newsletter.techworld-with-milan.com/feed",
+      "summary": "And what you can apply from today.",
+      "publishedAt": "2026-02-26T16:01:23.000Z"
+    },
+    {
+      "slug": "4057d3d99b4adc1239bbd291",
+      "guid": "https://newsletter.techworld-with-milan.com/p/learn-fundamentals-not-frameworks",
+      "title": "Learn fundamentals, not frameworks",
+      "link": "https://newsletter.techworld-with-milan.com/p/learn-fundamentals-not-frameworks",
+      "source": "Tech World with Milan",
+      "sourceUrl": "https://newsletter.techworld-with-milan.com/feed",
+      "summary": "Frameworks have a half-life of 3 years. The fundamentals behind them? Decades. Here's how to spend your learning time wisely.",
+      "publishedAt": "2026-02-12T16:02:12.000Z"
+    },
+    {
+      "slug": "830069a5b4f48c28509c708b",
+      "guid": "https://newsletter.techworld-with-milan.com/p/you-can-code-only-4-hours-per-day",
+      "title": "You can code only 4 hours per day. Here’s why.",
+      "link": "https://newsletter.techworld-with-milan.com/p/you-can-code-only-4-hours-per-day",
+      "source": "Tech World with Milan",
+      "sourceUrl": "https://newsletter.techworld-with-milan.com/feed",
+      "summary": "Most of us have felt it: after a few solid hours of coding, your brain starts shutting down.",
+      "publishedAt": "2026-01-29T16:02:51.000Z"
+    },
+    {
+      "slug": "7c6c204f46eaeaccb2eea621",
+      "guid": "tag:nezhar.com,2026-01-22:/blog/llm-sovereignty-framework",
+      "title": "Beyond Vendor Lock-In: A Framework for LLM Sovereignty",
+      "link": "https://nezhar.com/blog/llm-sovereignty-framework",
+      "source": "nezhar",
+      "sourceUrl": "https://nezhar.com/feeds/all.rss.xml",
+      "summary": "Navigate the LLM landscape: from browser apps to self-hosted infrastructure. Understand what you gain and lose at each level.",
+      "publishedAt": "2026-01-21T23:00:00.000Z"
+    },
+    {
+      "slug": "ea4a772e4e2d22bd34eeb44f",
+      "guid": "https://read.highgrowthengineer.com/p/power-of-storytelling-in-tech",
+      "title": "Use the power of storytelling in tech to get promoted faster",
+      "link": "https://read.highgrowthengineer.com/p/power-of-storytelling-in-tech",
+      "source": "High Growth Engineer",
+      "sourceUrl": "https://read.highgrowthengineer.com/feed",
+      "summary": "Communication techniques that build your executive presence",
+      "publishedAt": "2026-01-18T16:25:21.000Z"
+    },
+    {
+      "slug": "17f0d584cdfbded11067d342",
+      "guid": "https://newsletter.techworld-with-milan.com/p/software-development-waste",
+      "title": "Software Development Waste",
+      "link": "https://newsletter.techworld-with-milan.com/p/software-development-waste",
+      "source": "Tech World with Milan",
+      "sourceUrl": "https://newsletter.techworld-with-milan.com/feed",
+      "summary": "Many of us can look back at a completed software project and think, “If I’d known then what I know now, I’d have done much faster.” This familiar feeling reveals just how much waste creeps into the software development process.",
+      "publishedAt": "2026-01-15T16:01:54.000Z"
+    },
+    {
+      "slug": "a681941a2ad23a6e22fbc224",
+      "guid": "https://read.highgrowthengineer.com/p/traits-of-the-best-engineers",
+      "title": "What The Best Engineers Do—and What Actually Got Them Promoted, from an Amazon VP",
+      "link": "https://read.highgrowthengineer.com/p/traits-of-the-best-engineers",
+      "source": "High Growth Engineer",
+      "sourceUrl": "https://read.highgrowthengineer.com/feed",
+      "summary": "Guest post by Amazon VP, Ethan Evans",
+      "publishedAt": "2026-01-04T16:25:23.000Z"
+    },
+    {
+      "slug": "b16350484c2ec00b19a24274",
+      "guid": "https://memilavi.com/?p=3273",
+      "title": "AWS re:Invent Know Before You Go – Part 1",
+      "link": "https://memilavi.com/aws-reinvent-know-before-you-go-part-1/",
+      "source": "Memi Levi",
+      "sourceUrl": "https://memilavi.com/feed/",
+      "summary": "This year was my first year attending the AWS re:Invent conference in Las Vegas. I had been eyeing this conference for a few years, always wanting to go, but for various reasons, it never happened. However, I did attend the equivalent conferences of Google (Cloud Next) and Micro…",
+      "publishedAt": "2025-12-25T13:18:41.000Z"
+    },
+    {
+      "slug": "9af0304601171c32a18c3cb3",
+      "guid": "https://newsletter.techworld-with-milan.com/p/the-software-essays-that-changed",
+      "title": "10 software essays that changed how I think",
+      "link": "https://newsletter.techworld-with-milan.com/p/the-software-essays-that-changed",
+      "source": "Tech World with Milan",
+      "sourceUrl": "https://newsletter.techworld-with-milan.com/feed",
+      "summary": "Over the years, I’ve stumbled upon a handful of software essays that fundamentally altered my engineering approach.",
+      "publishedAt": "2025-12-18T16:02:04.000Z"
+    },
+    {
+      "slug": "5b36ed9adaed70562ff7a6b3",
+      "guid": "https://read.highgrowthengineer.com/p/how-to-build-your-first-chatgpt-app",
+      "title": "How to Build Your First ChatGPT App",
+      "link": "https://read.highgrowthengineer.com/p/how-to-build-your-first-chatgpt-app",
+      "source": "High Growth Engineer",
+      "sourceUrl": "https://read.highgrowthengineer.com/feed",
+      "summary": "Take advantage of 800 million weekly active users. Build an app that gets in front of millions of people.",
+      "publishedAt": "2025-12-14T16:20:12.000Z"
+    },
+    {
+      "slug": "6bac2c5418ac63edd5864624",
+      "guid": "https://read.highgrowthengineer.com/p/my-weekly-tech-industry-intake-routine",
+      "title": "My weekly tech industry intake routine as a Staff Engineer",
+      "link": "https://read.highgrowthengineer.com/p/my-weekly-tech-industry-intake-routine",
+      "source": "High Growth Engineer",
+      "sourceUrl": "https://read.highgrowthengineer.com/feed",
+      "summary": "How I stay up-to-date, find impactful opportunities, and grow from 25+ mentors",
+      "publishedAt": "2025-11-30T16:30:28.000Z"
+    },
+    {
+      "slug": "7b9b8f5d98f1fa1461eda880",
+      "guid": "https://read.highgrowthengineer.com/p/top-5-communication-framework",
+      "title": "Top 5 Communication Frameworks for Engineers You Must Remember",
+      "link": "https://read.highgrowthengineer.com/p/top-5-communication-framework",
+      "source": "High Growth Engineer",
+      "sourceUrl": "https://read.highgrowthengineer.com/feed",
+      "summary": "Be convincing, be strategic, be heard",
+      "publishedAt": "2025-11-16T16:25:43.000Z"
+    },
+    {
+      "slug": "899b917a24481ac8a6d67f80",
+      "guid": "https://read.highgrowthengineer.com/p/one-pager-delegation-framework",
+      "title": "Never forget how to delegate. This is the easiest framework for engineers.",
+      "link": "https://read.highgrowthengineer.com/p/one-pager-delegation-framework",
+      "source": "High Growth Engineer",
+      "sourceUrl": "https://read.highgrowthengineer.com/feed",
+      "summary": "How the most common type of document maps to delegation",
+      "publishedAt": "2025-11-02T16:25:43.000Z"
+    },
+    {
+      "slug": "8b19ef161fed933f480be304",
+      "guid": "https://read.highgrowthengineer.com/p/software-engineering-desk-setup-2025",
+      "title": "My 2025 Software Engineering Desk Setup",
+      "link": "https://read.highgrowthengineer.com/p/software-engineering-desk-setup-2025",
+      "source": "High Growth Engineer",
+      "sourceUrl": "https://read.highgrowthengineer.com/feed",
+      "summary": "🖥️",
+      "publishedAt": "2025-10-19T15:26:00.000Z"
+    },
+    {
+      "slug": "95e3409eb889dbe6bba87493",
+      "guid": "https://read.highgrowthengineer.com/p/a-one-pager-is-all-you-need",
+      "title": "A One-Pager Is All You Need",
+      "link": "https://read.highgrowthengineer.com/p/a-one-pager-is-all-you-need",
+      "source": "High Growth Engineer",
+      "sourceUrl": "https://read.highgrowthengineer.com/feed",
+      "summary": "The highly valuable tool for influence and moving solutions forward as an engineer",
+      "publishedAt": "2025-10-12T15:32:40.000Z"
+    },
+    {
+      "slug": "5787dffe35020a5be59e1f7f",
+      "guid": "https://read.highgrowthengineer.com/p/operating-principles-to-staff-part-2",
+      "title": "Operating Principles That Guided Me to Staff Engineer (Part 2: Expanding Influence)",
+      "link": "https://read.highgrowthengineer.com/p/operating-principles-to-staff-part-2",
+      "source": "High Growth Engineer",
+      "sourceUrl": "https://read.highgrowthengineer.com/feed",
+      "summary": "Deliver more results through influence, relationships, and stronger communication",
+      "publishedAt": "2025-09-21T15:25:22.000Z"
+    },
+    {
+      "slug": "1fcc5f48a4f724fd3cfe7f8b",
+      "guid": "tag:nezhar.com,2025-09-17:/blog/devopsdays-graz-2025",
+      "title": "DevOpsDays Graz 2025: First Edition in Austria",
+      "link": "https://nezhar.com/blog/devopsdays-graz-2025",
+      "source": "nezhar",
+      "sourceUrl": "https://nezhar.com/feeds/all.rss.xml",
+      "summary": "I attended the first DevOpsDays in Austria, held in Graz with 100+ attendees. Solid first edition with practical content and networking opportunities.",
+      "publishedAt": "2025-09-16T22:00:00.000Z"
+    },
+    {
+      "slug": "7e4a33d4b6a2c97c65d4a714",
+      "guid": "https://read.highgrowthengineer.com/p/operating-principles-to-staff-part-1",
+      "title": "Operating Principles That Guided Me to Staff Engineer (Part 1: Driving Impact)",
+      "link": "https://read.highgrowthengineer.com/p/operating-principles-to-staff-part-1",
+      "source": "High Growth Engineer",
+      "sourceUrl": "https://read.highgrowthengineer.com/feed",
+      "summary": "Make more impact, get more done, and grow faster",
+      "publishedAt": "2025-09-07T15:25:23.000Z"
+    },
+    {
+      "slug": "a68390f2fad60e7751fe611f",
+      "guid": "https://memilavi.com/?p=2455",
+      "title": "AWS From Zero to Hero – The Course!",
+      "link": "https://memilavi.com/aws-from-zero-to-hero-the-course/",
+      "source": "Memi Levi",
+      "sourceUrl": "https://memilavi.com/feed/",
+      "summary": "Learn AWS from a Certified Architect – and Build Real-World Cloud Systems AWS is the most widely used public cloud in the world — powering startups, enterprises, and governments alike. Cloud skills are no longer optional — they’re essential for developers, architects, and IT pro…",
+      "publishedAt": "2025-09-02T10:38:07.000Z"
+    },
+    {
+      "slug": "f1f65d582e96e6738ba9e05f",
+      "guid": "https://read.highgrowthengineer.com/p/5-tiny-phrases-every-engineer-should-use-with-ai",
+      "title": "5 Tiny Phrases Every Engineer Should Use With AI",
+      "link": "https://read.highgrowthengineer.com/p/5-tiny-phrases-every-engineer-should-use-with-ai",
+      "source": "High Growth Engineer",
+      "sourceUrl": "https://read.highgrowthengineer.com/feed",
+      "summary": "How to prevent \"AI Slop\"",
+      "publishedAt": "2025-08-24T15:25:21.000Z"
+    },
+    {
+      "slug": "afcaba167484dbd713d88cc3",
+      "guid": "https://read.highgrowthengineer.com/p/how-to-tell-when-ai-is-lying-to-you",
+      "title": "How to tell when AI is lying to you",
+      "link": "https://read.highgrowthengineer.com/p/how-to-tell-when-ai-is-lying-to-you",
+      "source": "High Growth Engineer",
+      "sourceUrl": "https://read.highgrowthengineer.com/feed",
+      "summary": "AI is only good if you can trust what it gives you. Here's how to tell",
+      "publishedAt": "2025-08-10T15:25:24.000Z"
+    },
+    {
+      "slug": "544760c3eafc01342e54e3e5",
+      "guid": "tag:nezhar.com,2025-08-08:/blog/gpt-5-model-price-comparison-via-pelicans-on-bicycle",
+      "title": "GPT-5 model price comparison via pelicans on a bicycle",
+      "link": "https://nezhar.com/blog/gpt-5-model-price-comparison-via-pelicans-on-bicycle",
+      "source": "nezhar",
+      "sourceUrl": "https://nezhar.com/feeds/all.rss.xml",
+      "summary": "Testing OpenAI's new GPT-5 models by generating SVG pelican illustrations and comparing performance, pricing, and quality across nano, mini, and full versions.",
+      "publishedAt": "2025-08-07T22:00:00.000Z"
+    },
+    {
+      "slug": "8e904337ac8326f52aaad9f4",
+      "guid": "tag:nezhar.com,2025-07-30:/blog/europython-2025-prague-learning-networking",
+      "title": "EuroPython 2025: A Week of Learning and Networking in Prague",
+      "link": "https://nezhar.com/blog/europython-2025-prague-learning-networking",
+      "source": "nezhar",
+      "sourceUrl": "https://nezhar.com/feeds/all.rss.xml",
+      "summary": "My experience at EuroPython 2025 in Prague - a full week including tutorials on Agentic RAG and data storytelling, insightful talks on Python development, open spaces, and sprint weekend contributions and discussions for Django and other projects.",
+      "publishedAt": "2025-07-29T22:00:00.000Z"
     }
   ]
 }
