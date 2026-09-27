@@ -1,117 +1,157 @@
 {
   "category": "web-dev",
   "label": "Web Development",
-  "fetchedAt": "2026-09-26T10:20:33.871Z",
+  "fetchedAt": "2026-09-27T10:53:14.094Z",
   "items": [
     {
-      "slug": "a9193f2aea82e8692ed2a45d",
-      "guid": "https://dev.to/nadeemakram035/a-5-minute-seo-checklist-for-your-homepage-2eeo",
-      "title": "A 5-minute SEO checklist for your homepage",
-      "link": "https://dev.to/nadeemakram035/a-5-minute-seo-checklist-for-your-homepage-2eeo",
+      "slug": "20ce1e5b20d2e6da8fe45b27",
+      "guid": "https://dev.to/globalsms/sending-sms-to-israel-number-formats-hebrew-encoding-and-sender-ids-1m5a",
+      "title": "Sending SMS to Israel: number formats, Hebrew encoding and sender IDs",
+      "link": "https://dev.to/globalsms/sending-sms-to-israel-number-formats-hebrew-encoding-and-sender-ids-1m5a",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "A 5-minute SEO checklist for your homepage Your homepage is usually the page with the most links pointing at it, so it is the one search engines and social networks look at first. You don't need an audit tool with a monthly fee to catch the most common problems. Five checks cove…",
-      "publishedAt": "2026-09-26T10:16:46.000Z"
+      "summary": "If your app sends SMS worldwide, Israel has a few quirks that silently break validation, inflate costs or annoy users. This is a short checklist. The full guide is linked at the end. Israeli mobile numbers have 10 digits locally and start with 05. For international systems, drop…",
+      "publishedAt": "2026-09-27T10:42:56.000Z"
     },
     {
-      "slug": "2df0114b2ad7cc0eb58f0e89",
-      "guid": "https://dev.to/techwithhari/sticky-routing-that-never-expires-isnt-sticky-its-permanent-1lgd",
-      "title": "Sticky Routing That Never Expires Isn't Sticky It's Permanent",
-      "link": "https://dev.to/techwithhari/sticky-routing-that-never-expires-isnt-sticky-its-permanent-1lgd",
+      "slug": "c51a69501b65d998abce03c4",
+      "guid": "https://dev.to/gtanyware/i-asked-my-ai-agent-for-a-private-llm-clientserver-it-built-one-out-of-mqtt-and-1000-lines-34gg",
+      "title": "I asked my AI agent for a private LLM client/server. It built one out of MQTT and 1,000 lines",
+      "link": "https://dev.to/gtanyware/i-asked-my-ai-agent-for-a-private-llm-clientserver-it-built-one-out-of-mqtt-and-1000-lines-34gg",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "Session affinity is a simple idea: route a client to the same backend node it used The failure mode isn't in the assignment logic. It's in what happens after the A routing layer assigns each client to a specific backend instance and persists This is correct, as far as it goes. T…",
-      "publishedAt": "2026-09-26T10:04:38.000Z"
+      "summary": "I have a PC in my home office with an Nvidia GPU and Ollama on it, and I wanted to ask it questions from my phone while I am out. Every guide I found said roughly the same thing: run something in Docker, put a reverse proxy in front of it, forward a port on the router or install…",
+      "publishedAt": "2026-09-27T10:41:23.000Z"
     },
     {
-      "slug": "fe6152cded34bd608cf5b8ff",
-      "guid": "https://dev.to/stack_architect/shopify-to-ga4-without-gtm-native-events-plus-a-server-side-measurement-protocol-fallback-2g25",
-      "title": "Shopify to GA4 without GTM: native events plus a server-side Measurement Protocol fallback",
-      "link": "https://dev.to/stack_architect/shopify-to-ga4-without-gtm-native-events-plus-a-server-side-measurement-protocol-fallback-2g25",
+      "slug": "cd8ed93a3a27b62e8c060637",
+      "guid": "https://dev.to/alaeddine_rihane_8dec187a/how-to-test-email-verification-flows-with-playwright-4b7b",
+      "title": "How to Test Email Verification Flows with Playwright",
+      "link": "https://dev.to/alaeddine_rihane_8dec187a/how-to-test-email-verification-flows-with-playwright-4b7b",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "If you run a Shopify store, the GA4 setup question usually gets answered with \"install Google Tag Manager.\" You don't need it. Shopify's Google & YouTube sales channel emits the whole GA4 ecommerce event set natively, and it takes about five minutes. The part nobody covers is wh…",
-      "publishedAt": "2026-09-26T10:02:43.000Z"
+      "summary": "Your Playwright Test Sent an Email. Now What? You've automated the signup form. await page.goto('/signup'); await page.getByLabel('Email').fill('test@example.com'); await page.getByRole('button', { name: 'Sign up' }).click(); Your application responds with: 📩 We sent you a veri…",
+      "publishedAt": "2026-09-27T10:40:49.000Z"
     },
     {
-      "slug": "46e1756123ea310ed44a4c5a",
-      "guid": "https://dev.to/henderson01/i-turned-my-ai-into-a-senior-python-educator-for-self-taught-devs-heres-the-open-skillmd-template-1d20",
-      "title": "I turned my AI into a Senior Python Educator for self-taught devs, Here’s the open SKILL.md template",
-      "link": "https://dev.to/henderson01/i-turned-my-ai-into-a-senior-python-educator-for-self-taught-devs-heres-the-open-skillmd-template-1d20",
+      "slug": "70e641cbb55b9d2f1ac3d980",
+      "guid": "https://dev.to/bilalmughal1/convolvger-050-archive-your-ai-conversations-locally-chatgpt-claude-gemini-and-now-grok-3o81",
+      "title": "Convolvger 0.5.0: archive your AI conversations locally — ChatGPT, Claude, Gemini, and now Grok",
+      "link": "https://dev.to/bilalmughal1/convolvger-050-archive-your-ai-conversations-locally-chatgpt-claude-gemini-and-now-grok-3o81",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "Boot camps cost £5,000+. College CS degrees cost even more. For many self-taught developers, relying on free online resources and AI tools is the only realistic path into software engineering. However, default AI models make terrible teachers. When you ask standard ChatGPT, Clau…",
-      "publishedAt": "2026-09-26T10:02:39.000Z"
+      "summary": "Every AI provider lets you share a conversation with a link. None of them lets you keep it. Share links rot, pages get redesigned, providers quietly change what a URL serves. Convolvger is a small CLI that takes a public share URL and archives the conversation into Markdown you …",
+      "publishedAt": "2026-09-27T10:40:35.000Z"
     },
     {
-      "slug": "763af5b15324aca225239163",
-      "guid": "https://dev.to/gideon_kiprono_bfdedde010/understanding-subqueries-and-ctes-120m",
-      "title": "Understanding Subqueries and CTE's",
-      "link": "https://dev.to/gideon_kiprono_bfdedde010/understanding-subqueries-and-ctes-120m",
+      "slug": "f0b2c8306cf31a6f5a3f1148",
+      "guid": "https://dev.to/am0muk_3e9691aa890035463c/the-first-bugs-my-reconciliation-tool-caught-were-its-own-4890",
+      "title": "The First Bugs My Reconciliation Tool Caught Were Its Own",
+      "link": "https://dev.to/am0muk_3e9691aa890035463c/the-first-bugs-my-reconciliation-tool-caught-were-its-own-4890",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "Introduction Imagine you are a data analyst working for a retail company. Your manager asks you to identify customers who spend more than the average customer, employees earning above their department's average salary, or products generating the highest revenue. You already know…",
-      "publishedAt": "2026-09-26T10:02:34.000Z"
+      "summary": "I wrote a small open-source tool, onchain-tieout, to answer one question: does the balance you reconstruct from a wallet's transaction history match the balance the chain actually reports, at the same block? That check exists because data pipelines fail silently. An explorer API…",
+      "publishedAt": "2026-09-27T10:35:32.000Z"
     },
     {
-      "slug": "0959c9660e06a693ada8c61d",
-      "guid": "https://dev.to/rudratosh/i-almost-built-a-startup-this-week-the-evidence-said-no-in-one-afternoon-2jd0",
-      "title": "I Almost Built a Startup This Week. The Evidence Said No — In One Afternoon.",
-      "link": "https://dev.to/rudratosh/i-almost-built-a-startup-this-week-the-evidence-said-no-in-one-afternoon-2jd0",
+      "slug": "7b134f0ec11568967a1c40b7",
+      "guid": "https://dev.to/chhavigupta783/building-vision-assistant-a-custom-desktop-ai-tool-built-with-electron-9f9",
+      "title": "**Building Vision Assistant: A Custom Desktop AI Tool Built with Electron**",
+      "link": "https://dev.to/chhavigupta783/building-vision-assistant-a-custom-desktop-ai-tool-built-with-electron-9f9",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "title: \"I Almost Built a Startup This Week. The Evidence Said No — In One Afternoon.\" I nearly threw the next six months of my nights and weekends at a startup idea I was genuinely excited about. Hot market. A funded competitor proving people cared. A technical angle they didn't…",
-      "publishedAt": "2026-09-26T10:01:32.000Z"
+      "summary": "This is a submission for the MLH x DEV Writing Challenge I built Vision Assistant v1.0.0, a custom desktop AI vision tool created from scratch using Electron. What it does: It brings instant, system-wide AI assistance directly to your desktop environment without the friction of …",
+      "publishedAt": "2026-09-27T10:35:25.000Z"
     },
     {
-      "slug": "5cc317d8350f72c12482f47e",
-      "guid": "https://dev.to/onaeiuspkz/one-key-for-every-pbx-the-issabel-framework-hardcoded-jwt-flaw-cve-2026-89026-3bii",
-      "title": "One Key for Every PBX: The Issabel Framework Hardcoded JWT Flaw (CVE-2026-89026)",
-      "link": "https://dev.to/onaeiuspkz/one-key-for-every-pbx-the-issabel-framework-hardcoded-jwt-flaw-cve-2026-89026-3bii",
+      "slug": "0b9080577ee382b3794d1a08",
+      "guid": "https://dev.to/ayanhacks/ssh-permission-denied-publickey-causes-and-fixes-536o",
+      "title": "SSH Permission Denied (publickey): causes and fixes",
+      "link": "https://dev.to/ayanhacks/ssh-permission-denied-publickey-causes-and-fixes-536o",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "One Key for Every PBX: The Issabel Framework Hardcoded JWT Flaw (CVE-2026-89026) Issabel Framework, an open-source unified communications platform built around Asterisk, shipped with a single HS256 signing key hardcoded in its pbxapi component. Because every deployment used the …",
-      "publishedAt": "2026-09-26T10:00:28.000Z"
+      "summary": "Originally published at sshdock.com Permission denied (publickey) means you successfully connected to the server over the network, but the server rejected your authentication. You are past the firewall. The SSH daemon is running. The problem is specifically that the server refus…",
+      "publishedAt": "2026-09-27T10:28:54.000Z"
     },
     {
-      "slug": "2a3073479b7eda0ce96c8449",
-      "guid": "https://dev.to/domoniqueluchin/building-a-multi-agent-valet-trash-command-center-supabase-edge-functions-vapi-and-postgresql-at-3k79",
-      "title": "Building a Multi-Agent Valet Trash Command Center: Supabase Edge Functions, VAPI, and PostgreSQL at Scale",
-      "link": "https://dev.to/domoniqueluchin/building-a-multi-agent-valet-trash-command-center-supabase-edge-functions-vapi-and-postgresql-at-3k79",
+      "slug": "464108ac64f292ffba7b699d",
+      "guid": "https://dev.to/vicarioy/nebula-agent-an-ai-that-surfaces-contradictions-in-structured-content-3760",
+      "title": "Nebula Agent: An AI That Surfaces Contradictions in Structured Content",
+      "link": "https://dev.to/vicarioy/nebula-agent-an-ai-that-surfaces-contradictions-in-structured-content-3760",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "OPENING PARAGRAPH: We built a production command center for Quiet Hours Valet that orchestrates 8 concurrent AI voice agents, 8 automation scenarios, and real-time customer management across a vertically integrated real estate and services empire—all on Supabase, VAPI, and self-…",
-      "publishedAt": "2026-09-26T10:00:08.000Z"
+      "summary": "This is a submission for the Sanity Challenge, Path One: Ship an Agent That Queries Real Content A Sanity-powered AI agent that answers questions about a fictional board game called Nebula and, crucially, surfaces contradictions between sources. The agent doesn't just search for…",
+      "publishedAt": "2026-09-27T10:27:07.000Z"
     },
     {
-      "slug": "81181a1b6cb73160925e4891",
-      "guid": "https://dev.to/lse-group-corporation/googles-grid-interactive-ai-data-centers-from-backup-to-grid-partner-3bmm",
-      "title": "Google’s Grid-Interactive AI Data Centers: From Backup to Grid Partner",
-      "link": "https://dev.to/lse-group-corporation/googles-grid-interactive-ai-data-centers-from-backup-to-grid-partner-3bmm",
+      "slug": "fdf021329275dc48b52a2f9b",
+      "guid": "https://dev.to/openmind_dev/one-revenuecat-module-two-platforms-and-the-purchase-that-unlocked-nothing-3dm9",
+      "title": "One RevenueCat module, two platforms — and the purchase that unlocked nothing",
+      "link": "https://dev.to/openmind_dev/one-revenuecat-module-two-platforms-and-the-purchase-that-unlocked-nothing-3dm9",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "Hook: When the Backup Becomes the Backbone On a sweltering July afternoon in a major technology corridor, an AI training cluster running thousands of accelerators simultaneously reaches its highest sustained load just as regional temperatures push air-conditioning demand across …",
-      "publishedAt": "2026-09-26T10:00:00.000Z"
+      "summary": "Disclosure: I'm the co-founder of OpenmindProjects, which builds Globie Earth — the app in this post — and we're entering it in RevenueCat Shipaton 2026. Every snippet below is code we ship; every bug is one we hit. One façade file, two SDKs that never meet inside the same bundl…",
+      "publishedAt": "2026-09-27T10:25:26.000Z"
     },
     {
-      "slug": "e243d1d7462fda782f897ba2",
-      "guid": "https://dev.to/robswierk/what-shipping-an-mcp-guide-taught-us-about-how-we-decide-what-to-build-4f8c",
-      "title": "What Shipping an MCP Guide Taught Us About How We Decide What to Build",
-      "link": "https://dev.to/robswierk/what-shipping-an-mcp-guide-taught-us-about-how-we-decide-what-to-build-4f8c",
+      "slug": "2545715a610f79f6e42d0291",
+      "guid": "https://dev.to/krish_verma_77e28d3fd63ca/ankita-v243-a-live-browser-beside-your-chat-3pge",
+      "title": "Ankita v2.4.3: a live browser beside your chat",
+      "link": "https://dev.to/krish_verma_77e28d3fd63ca/ankita-v243-a-live-browser-beside-your-chat-3pge",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "Between 4 September and 13 September 2026, we shipped 113 commits across 7 days. Those commits touched 497 files, added 25,778 lines, and removed 1,800. new-Orqestra took 100 of those commits. Life-Race-V2 took 10. NeuraGrowthHTML took 3. Two books reached their shelves inside t…",
-      "publishedAt": "2026-09-26T10:00:00.000Z"
+      "summary": "I've been building Ankita — an open-source desktop AI assistant — since I was 16. Version 2.4.3 is out today, and its headline feature is one I've wanted from the start: a real browser that lives next to your chat, which the assistant can actually drive. Ankita can already do a …",
+      "publishedAt": "2026-09-27T10:24:31.000Z"
     },
     {
-      "slug": "dcdfefadc239767a9c47306c",
-      "guid": "https://dev.to/alexgeorgiev17/systemds-mstack-tool-mounts-a-single-layer-directory-writable-by-default-48p",
-      "title": "systemd's mstack tool mounts a single-layer directory writable by default",
-      "link": "https://dev.to/alexgeorgiev17/systemds-mstack-tool-mounts-a-single-layer-directory-writable-by-default-48p",
+      "slug": "be0001ea1e64b67040518543",
+      "guid": "https://dev.to/textnivo-dev/how-to-build-a-word-and-character-counter-with-javascript-308n",
+      "title": "How to Build a Word and Character Counter with JavaScript",
+      "link": "https://dev.to/textnivo-dev/how-to-build-a-word-and-character-counter-with-javascript-308n",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "I built a two-file directory, mounted it with systemd's new mstack tool, wrote one line into it, and watched that line permanently overwrite a file I'd marked read-only. No error, no warning, exit code 0. mstack is one of the features systemd picked up this year: a way to descri…",
-      "publishedAt": "2026-09-26T10:00:00.000Z"
+      "summary": "How to Build a Word and Character Counter with JavaScript Word and character counters are useful in text editors, blogging platforms, social media applications, and content management systems. In this tutorial, we'll build a simple word and character counter using HTML, CSS, and…",
+      "publishedAt": "2026-09-27T10:21:22.000Z"
+    },
+    {
+      "slug": "35c5abba4ede10840d2a765f",
+      "guid": "https://dev.to/toolboxm_dc7e385f763e5d5/how-to-test-retry-logic-without-a-backend-bpe",
+      "title": "How to Test Retry Logic Without a Backend",
+      "link": "https://dev.to/toolboxm_dc7e385f763e5d5/how-to-test-retry-logic-without-a-backend-bpe",
+      "source": "DEV Community",
+      "sourceUrl": "https://dev.to/rss",
+      "summary": "Originally published on the ScenarioMock blog. You've written the retry logic. Exponential backoff, three attempts, then give up and show the user an error. It looks right. How do you know it works? Against a real staging backend, you'd have to break the thing on purpose. Agains…",
+      "publishedAt": "2026-09-27T10:20:28.000Z"
+    },
+    {
+      "slug": "f871e0b20e0612b5181a2579",
+      "guid": "https://medium.com/p/6bb05f790796",
+      "title": "What If the Fastest Database Call Never Left Your Process?",
+      "link": "https://itnext.io/what-if-the-fastest-database-call-never-left-your-process-6bb05f790796?source=rss----5b301f10ddcd---4",
+      "source": "itnext",
+      "sourceUrl": "https://itnext.io/feed",
+      "summary": "",
+      "publishedAt": "2026-09-27T09:11:09.000Z"
+    },
+    {
+      "slug": "dd952f502e50f2b3e92e6f13",
+      "guid": "6ab72a3d19c66a0001c00d8e",
+      "title": "What Is Pulumi and How Is It Different From Other IaC Tools",
+      "link": "https://kodekloud.com/blog/what-is-pulumi-and-how-it-differs-from-other-iac-tools/",
+      "source": "KodeKloud",
+      "sourceUrl": "https://kodekloud.com/blog/rss/",
+      "summary": "Pulumi lets you describe infrastructure in a language you already write, with loops, functions and tests. Here is what that actually changes, and the cases where a config language is still the better answer.",
+      "publishedAt": "2026-09-26T18:00:27.000Z"
+    },
+    {
+      "slug": "804c2eb6891b2c6e3692d307",
+      "guid": "https://medium.com/p/0df71698ca91",
+      "title": "Some architecture principles should be rules. Others should be guidelines.",
+      "link": "https://itnext.io/some-architecture-principles-should-be-rules-others-should-be-guidelines-0df71698ca91?source=rss----5b301f10ddcd---4",
+      "source": "itnext",
+      "sourceUrl": "https://itnext.io/feed",
+      "summary": "Not all architecture principles should be treated the same. Continue reading on ITNEXT »",
+      "publishedAt": "2026-09-26T17:12:56.000Z"
     },
     {
       "slug": "c3ba8471a59337adcadedc7d",
@@ -122,16 +162,6 @@
       "sourceUrl": "https://itnext.io/feed",
       "summary": "",
       "publishedAt": "2026-09-26T09:58:19.000Z"
-    },
-    {
-      "slug": "6f6a44cf7558cb7f6ccf319a",
-      "guid": "https://dev.to/rudratosh/10-years-in-everything-i-was-proud-of-as-a-junior-was-wrong-igo",
-      "title": "10 Years In, Everything I Was Proud Of As a Junior Was Wrong",
-      "link": "https://dev.to/rudratosh/10-years-in-everything-i-was-proud-of-as-a-junior-was-wrong-igo",
-      "source": "DEV Community",
-      "sourceUrl": "https://dev.to/rss",
-      "summary": "title: \"10 Years In, Everything I Was Proud Of As a Junior Was Wrong\" I was a really good junior engineer. At least, I thought so. I wrote clever code. I knew the fancy patterns. I could win an architecture argument. I'd stay up until 3 AM refactoring something into a thing of b…",
-      "publishedAt": "2026-09-26T09:48:57.000Z"
     },
     {
       "slug": "e81edd96fef926cb19adf573",
@@ -964,16 +994,6 @@
       "publishedAt": "2026-09-21T22:40:17.000Z"
     },
     {
-      "slug": "610dab70db12a6c95f5c5e64",
-      "guid": "https://medium.com/p/4e133656b548",
-      "title": "GitHub Copilot Modernization: How Agents Fix Legacy Apps at Scale",
-      "link": "https://itnext.io/github-copilot-modernization-architecture-deep-dive-4e133656b548?source=rss----5b301f10ddcd---4",
-      "source": "itnext",
-      "sourceUrl": "https://itnext.io/feed",
-      "summary": "An architecture breakdown of the Modernize CLI, Rulebooks, custom skills, and the Azure Copilot handoff, with the numbers behind each part. Continue reading on ITNEXT »",
-      "publishedAt": "2026-09-21T22:34:56.000Z"
-    },
-    {
       "slug": "070fad093abd06bdc845d061",
       "guid": "6ab19a268fed0cf1f0fe1645",
       "title": "How to Port a Jekyll Blog Theme to Python: Lessons From Actually Doing It",
@@ -982,26 +1002,6 @@
       "sourceUrl": "https://www.freecodecamp.org/news/rss",
       "summary": "I've been following a tufte-jekyll styled blog for a couple of years and that led me to discover Edward Tufte's book layout. Edward Tufte is renowned for his work on data visualization and information",
       "publishedAt": "2026-09-21T20:57:10.000Z"
-    },
-    {
-      "slug": "548892a368dd89520d29014c",
-      "guid": "6aacc3f84af2fb000147e99d",
-      "title": "How Kafka Works",
-      "link": "https://kodekloud.com/blog/how-kafka-works-topics-partitions-offsets/",
-      "source": "KodeKloud",
-      "sourceUrl": "https://kodekloud.com/blog/rss/",
-      "summary": "Learn how Kafka works and why every backend uses it: producers, consumers, topics, partitions and offsets explained with a checkout example.",
-      "publishedAt": "2026-09-21T16:14:32.000Z"
-    },
-    {
-      "slug": "31297ff9d54f37a04dbc5679",
-      "guid": "https://blog.master.dev/?p=11094",
-      "title": "Dark Mode Very Much Matters To Me",
-      "link": "https://blog.master.dev/dark-mode-very-much-matters-to-me/",
-      "source": "Frontend Masters",
-      "sourceUrl": "https://frontendmasters.com/blog/feed/",
-      "summary": "It's not just vibes, it's an accessibility thing.",
-      "publishedAt": "2026-09-21T15:35:54.000Z"
     }
   ]
 }
