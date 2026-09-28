@@ -1,18 +1,8 @@
 {
   "category": "programming",
   "label": "Programming",
-  "fetchedAt": "2026-09-27T10:53:14.094Z",
+  "fetchedAt": "2026-09-28T12:03:53.406Z",
   "items": [
-    {
-      "slug": "fea33138ca52d8cadf6cda30",
-      "guid": "6ab69ba5af2c9f00011a06a5",
-      "title": "If we do not stop to help each other, what do we become?",
-      "link": "https://blog.codinghorror.com/if-we-do-not-stop-to-help-each-other-what-do-we-become/",
-      "source": "Jeff Atwood",
-      "sourceUrl": "https://blog.codinghorror.com/rss/",
-      "summary": "Yesterday, I received this email as a response to You Can't Vibe Code Love. It's such a remarkable and powerful statement that I asked permission to share it here, in its entirety, with personal information redacted: Hey Jeff, Hope you and your family are doing well.",
-      "publishedAt": "2026-09-25T20:54:04.000Z"
-    },
     {
       "slug": "0740628ce102944e785247d4",
       "guid": "https://www.hillelwayne.com/post/predicate-logic/",
@@ -202,6 +192,16 @@
       "sourceUrl": "https://www.30secondsofcode.org/feed.xml",
       "summary": "Pair programming can be valuable for junior and senior developers alike, fostering collaboration and knowledge sharing.",
       "publishedAt": "2025-09-20T00:00:00.000Z"
+    },
+    {
+      "slug": "13e3b548c70aa7407703ac05",
+      "guid": "https://hynek.me/talks/python-superpower/",
+      "title": "Python’s True Superpower",
+      "link": "https://hynek.me/talks/python-superpower/",
+      "source": "Hynek Schlawack",
+      "sourceUrl": "https://hynek.me/index.xml",
+      "summary": "Python appears to be everywhere nowadays! How did it happen, that a language that almost died in the Python 2 to 3 process is now the lingua franca a default choice when people talk about programming? There must be some secret superpower and I think I found it!",
+      "publishedAt": "2025-09-19T00:00:00.000Z"
     },
     {
       "slug": "0d196b00d4e92f5a9bdf5d41",
@@ -494,6 +494,16 @@
       "publishedAt": "2025-05-19T00:00:00.000Z"
     },
     {
+      "slug": "9561714819c8be0544ac35a1",
+      "guid": "https://hynek.me/talks/design-pressure/",
+      "title": "Design Pressure",
+      "link": "https://hynek.me/talks/design-pressure/",
+      "source": "Hynek Schlawack",
+      "sourceUrl": "https://hynek.me/index.xml",
+      "summary": "Ever had this weird gut feeling that something is off in your code, but couldn’t put the finger on why? Are you starting your projects with the best intentions, following all best practices, and still feel like your architecture turns weird eventually?",
+      "publishedAt": "2025-05-16T00:00:00.000Z"
+    },
+    {
       "slug": "7eb0f76f0b3d0116721701c1",
       "guid": "https://www.30secondsofcode.org/css/s/inset",
       "title": "Using the inset CSS property",
@@ -704,6 +714,26 @@
       "publishedAt": "2024-09-11T00:00:00.000Z"
     },
     {
+      "slug": "71749659f370dfbcdce53300",
+      "guid": "https://hynek.me/articles/docker-virtualenv/",
+      "title": "Why I Still Use Python Virtual Environments in Docker",
+      "link": "https://hynek.me/articles/docker-virtualenv/",
+      "source": "Hynek Schlawack",
+      "sourceUrl": "https://hynek.me/index.xml",
+      "summary": "Whenever I publish something about my Python Docker workflows, I invariably get challenged about whether it makes sense to use virtual environments in Docker containers. As always, it’s a trade-off, and I err on the side of standards and predictability.",
+      "publishedAt": "2024-09-02T11:00:00.000Z"
+    },
+    {
+      "slug": "2d58b1aca95dfc29cddc6b78",
+      "guid": "https://hynek.me/articles/docker-uv/",
+      "title": "Production-ready Python Docker Containers with uv",
+      "link": "https://hynek.me/articles/docker-uv/",
+      "source": "Hynek Schlawack",
+      "sourceUrl": "https://hynek.me/index.xml",
+      "summary": "Starting with 0.3.0 , Astral’s uv brought many great features, including support for cross-platform lock files uv.lock . Together with subsequent fixes, it has become Python’s finest workflow tool for my (non-scientific) use cases. Here’s how I build production-ready containers,…",
+      "publishedAt": "2024-08-28T11:00:00.000Z"
+    },
+    {
       "slug": "c29df950b749d36516708482",
       "guid": "https://www.hillelwayne.com/post/toolbox-languages/",
       "title": "Toolbox languages",
@@ -874,6 +904,16 @@
       "publishedAt": "2024-04-06T11:39:01.000Z"
     },
     {
+      "slug": "47228de8f313d265427dfdd9",
+      "guid": "https://hynek.me/articles/python-virtualenv-redux/",
+      "title": "Python Project-Local Virtualenv Management Redux",
+      "link": "https://hynek.me/articles/python-virtualenv-redux/",
+      "source": "Hynek Schlawack",
+      "sourceUrl": "https://hynek.me/index.xml",
+      "summary": "One of my first TIL entries was about how you can imitate Node’s node_modules semantics in Python on UNIX-like operating systems. A lot has happened since then (to the better!) and it’s time for an update. direnv still rocks, though.",
+      "publishedAt": "2024-04-02T00:00:00.000Z"
+    },
+    {
       "slug": "2a3fa0e6b7bb907bde1559be",
       "guid": "https://www.hillelwayne.com/post/tale-of-daniel/",
       "title": "How old is the name 'Daniel'?",
@@ -962,46 +1002,6 @@
       "sourceUrl": "https://vadimkravcenko.com/feed/",
       "summary": "Question: Answer: The post Falsehoods Junior Developers believe about becoming Senior appeared first on Vadim Kravcenko.",
       "publishedAt": "2024-02-20T21:23:21.000Z"
-    },
-    {
-      "slug": "731d7101a8ac691cb26f078b",
-      "guid": "https://vadimkravcenko.com/?p=2403",
-      "title": "How do you know when to use which programming language?",
-      "link": "https://vadimkravcenko.com/qa/how-you-know-when-to-use-what-programming-language/",
-      "source": "Vadim Kravcenko",
-      "sourceUrl": "https://vadimkravcenko.com/feed/",
-      "summary": "Question: Hi, My name is Alex. I just graduated university, I'm confused, how do I choose a programming language for a job? Does it matter? Will I be assigned a programming language? Thanks for the help. Answer: The post How do you know when to use which programming language? ap…",
-      "publishedAt": "2024-02-11T18:32:45.000Z"
-    },
-    {
-      "slug": "36b0ff45f91271ad4591bd77",
-      "guid": "https://vadimkravcenko.com/?p=2400",
-      "title": "How to get programming experience when you can’t find a job?",
-      "link": "https://vadimkravcenko.com/qa/how-to-get-programming-experience-when-you-cant-find-a-job/",
-      "source": "Vadim Kravcenko",
-      "sourceUrl": "https://vadimkravcenko.com/feed/",
-      "summary": "Question: Hello Vadim, It's been almost a year since I graduated as a CS major and was high on enthusiasm, ready to dive into the tech industry. Yet, here I am, feeling like shit, like I've hit a wall, my initial excitement replaced with a growing sense of frustration and, if I'…",
-      "publishedAt": "2024-02-11T17:25:06.000Z"
-    },
-    {
-      "slug": "5865df6069d20b878065d945",
-      "guid": "https://vadimkravcenko.com/?p=2384",
-      "title": "Do some people just not have the talent for Software Engineering?",
-      "link": "https://vadimkravcenko.com/qa/some-people-just-not-have-the-talent-for-software-engineering/",
-      "source": "Vadim Kravcenko",
-      "sourceUrl": "https://vadimkravcenko.com/feed/",
-      "summary": "Question: Hi, I wanted to share my story and why I'm a bit confused. After graduating college, I landed jobs as a Software Engineer at two respected companies. No, they weren't FAANG, but they were places where I thought I could grow, contribute, and make a decent amount of mone…",
-      "publishedAt": "2024-02-09T22:55:49.000Z"
-    },
-    {
-      "slug": "bdd7516bbe76478cdb6071a4",
-      "guid": "https://vadimkravcenko.com/?p=2374",
-      "title": "How to learn coding without a degree?",
-      "link": "https://vadimkravcenko.com/qa/learn-coding-without-a-degree/",
-      "source": "Vadim Kravcenko",
-      "sourceUrl": "https://vadimkravcenko.com/feed/",
-      "summary": "Question: Hey Vadim, I'm kinda lost. My background is in sales, but to be honest, I find myself disconnected from it. Not having fun, not enjoying it, don't like people as much. Science/Math was never on my radar until recently, all my friends make so much money working in IT, a…",
-      "publishedAt": "2024-02-09T19:41:28.000Z"
     }
   ]
 }

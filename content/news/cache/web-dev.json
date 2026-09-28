@@ -1,127 +1,167 @@
 {
   "category": "web-dev",
   "label": "Web Development",
-  "fetchedAt": "2026-09-27T10:53:14.094Z",
+  "fetchedAt": "2026-09-28T12:03:53.406Z",
   "items": [
     {
-      "slug": "20ce1e5b20d2e6da8fe45b27",
-      "guid": "https://dev.to/globalsms/sending-sms-to-israel-number-formats-hebrew-encoding-and-sender-ids-1m5a",
-      "title": "Sending SMS to Israel: number formats, Hebrew encoding and sender IDs",
-      "link": "https://dev.to/globalsms/sending-sms-to-israel-number-formats-hebrew-encoding-and-sender-ids-1m5a",
+      "slug": "cd48c80499332229dac8e152",
+      "guid": "https://dev.to/greatness_10xxx7/5-essential-html-semantic-tags-every-beginner-developer-should-use-as-2o93",
+      "title": "5 Essential HTML Semantic Tags Every Beginner Developer Should Use as",
+      "link": "https://dev.to/greatness_10xxx7/5-essential-html-semantic-tags-every-beginner-developer-should-use-as-2o93",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "If your app sends SMS worldwide, Israel has a few quirks that silently break validation, inflate costs or annoy users. This is a short checklist. The full guide is linked at the end. Israeli mobile numbers have 10 digits locally and start with 05. For international systems, drop…",
-      "publishedAt": "2026-09-27T10:42:56.000Z"
+      "summary": "When learning HTML, it is very easy to fall into the habit of using generic elements for every single section of a webpage. While a works, relying on it for everything creates unstructured code that is difficult to read and bad for accessibility. My Tech Blog Learn web developme…",
+      "publishedAt": "2026-09-28T11:56:32.000Z"
     },
     {
-      "slug": "c51a69501b65d998abce03c4",
-      "guid": "https://dev.to/gtanyware/i-asked-my-ai-agent-for-a-private-llm-clientserver-it-built-one-out-of-mqtt-and-1000-lines-34gg",
-      "title": "I asked my AI agent for a private LLM client/server. It built one out of MQTT and 1,000 lines",
-      "link": "https://dev.to/gtanyware/i-asked-my-ai-agent-for-a-private-llm-clientserver-it-built-one-out-of-mqtt-and-1000-lines-34gg",
+      "slug": "9144d07eb83fb39ac9ef8827",
+      "guid": "https://dev.to/fenju_fu/skillhub-v0221-run-for-real-suite-bundles-device-flow-login-and-pi-44la",
+      "title": "SkillHub v0.2.21, Run for Real: Suite Bundles, Device Flow Login and Pi",
+      "link": "https://dev.to/fenju_fu/skillhub-v0221-run-for-real-suite-bundles-device-flow-login-and-pi-44la",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "I have a PC in my home office with an Nvidia GPU and Ollama on it, and I wanted to ask it questions from my phone while I am out. Every guide I found said roughly the same thing: run something in Docker, put a reverse proxy in front of it, forward a port on the router or install…",
-      "publishedAt": "2026-09-27T10:41:23.000Z"
+      "summary": "SkillHub v0.2.21 shipped on 2026-09-19. Instead of summarizing the release notes, we pulled the tag, started it locally with the official compose.release.yml, and recorded each headline update as it actually runs. Every screenshot below comes from that local run; the skills and …",
+      "publishedAt": "2026-09-28T11:54:06.000Z"
     },
     {
-      "slug": "cd8ed93a3a27b62e8c060637",
-      "guid": "https://dev.to/alaeddine_rihane_8dec187a/how-to-test-email-verification-flows-with-playwright-4b7b",
-      "title": "How to Test Email Verification Flows with Playwright",
-      "link": "https://dev.to/alaeddine_rihane_8dec187a/how-to-test-email-verification-flows-with-playwright-4b7b",
+      "slug": "16c93fce86e142ab47a05a53",
+      "guid": "https://dev.to/seppegadeyne/automating-seo-with-ai-a-self-improving-content-loop-2aka",
+      "title": "Automating SEO with AI: a self-improving content loop",
+      "link": "https://dev.to/seppegadeyne/automating-seo-with-ai-a-self-improving-content-loop-2aka",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "Your Playwright Test Sent an Email. Now What? You've automated the signup form. await page.goto('/signup'); await page.getByLabel('Email').fill('test@example.com'); await page.getByRole('button', { name: 'Sign up' }).click(); Your application responds with: 📩 We sent you a veri…",
-      "publishedAt": "2026-09-27T10:40:49.000Z"
+      "summary": "Everyone agrees you should \"let AI do your SEO.\" Few people explain what that looks like when you actually build it. This is the setup I run on my own site: an AI agent with read-only access to Google Search Console, a dedicated service account via gcloud, and one small, verifie…",
+      "publishedAt": "2026-09-28T11:52:53.000Z"
     },
     {
-      "slug": "70e641cbb55b9d2f1ac3d980",
-      "guid": "https://dev.to/bilalmughal1/convolvger-050-archive-your-ai-conversations-locally-chatgpt-claude-gemini-and-now-grok-3o81",
-      "title": "Convolvger 0.5.0: archive your AI conversations locally — ChatGPT, Claude, Gemini, and now Grok",
-      "link": "https://dev.to/bilalmughal1/convolvger-050-archive-your-ai-conversations-locally-chatgpt-claude-gemini-and-now-grok-3o81",
+      "slug": "478d6d904dc195b0eb0297b7",
+      "guid": "https://dev.to/nicky63/streamlining-incident-response-introducing-runbook-recall-133p",
+      "title": "Streamlining Incident Response: Introducing Runbook Recall",
+      "link": "https://dev.to/nicky63/streamlining-incident-response-introducing-runbook-recall-133p",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "Every AI provider lets you share a conversation with a link. None of them lets you keep it. Share links rot, pages get redesigned, providers quietly change what a URL serves. Convolvger is a small CLI that takes a public share URL and archives the conversation into Markdown you …",
-      "publishedAt": "2026-09-27T10:40:35.000Z"
+      "summary": "When a critical production system fails at 2 AM, every minute of downtime costs money, damages trust, and burns out engineering teams. Yet, during high-stress outages, site reliability engineers (SREs) and developers frequently find themselves stuck doing the same thing: hunting…",
+      "publishedAt": "2026-09-28T11:51:17.000Z"
     },
     {
-      "slug": "f0b2c8306cf31a6f5a3f1148",
-      "guid": "https://dev.to/am0muk_3e9691aa890035463c/the-first-bugs-my-reconciliation-tool-caught-were-its-own-4890",
-      "title": "The First Bugs My Reconciliation Tool Caught Were Its Own",
-      "link": "https://dev.to/am0muk_3e9691aa890035463c/the-first-bugs-my-reconciliation-tool-caught-were-its-own-4890",
+      "slug": "0c8473e7d4d083a874fab7a1",
+      "guid": "https://dev.to/uehara/the-real-reason-ai-ignores-existing-decisions-designing-an-adr-context-auto-injection-hook-34e2",
+      "title": "The Real Reason AI Ignores Existing Decisions — Designing an ADR Context Auto-Injection Hook",
+      "link": "https://dev.to/uehara/the-real-reason-ai-ignores-existing-decisions-designing-an-adr-context-auto-injection-hook-34e2",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "I wrote a small open-source tool, onchain-tieout, to answer one question: does the balance you reconstruct from a wallet's transaction history match the balance the chain actually reports, at the same block? That check exists because data pipelines fail silently. An explorer API…",
-      "publishedAt": "2026-09-27T10:35:32.000Z"
+      "summary": "TL;DR (about a 15-minute read) In May 2026, I was reworking a Claude Code plugin that delivers a shared way of working to several development projects. One of its targets was a mechanism for carrying past design decisions forward into the next session. It started with a choice o…",
+      "publishedAt": "2026-09-28T11:51:03.000Z"
     },
     {
-      "slug": "7b134f0ec11568967a1c40b7",
-      "guid": "https://dev.to/chhavigupta783/building-vision-assistant-a-custom-desktop-ai-tool-built-with-electron-9f9",
-      "title": "**Building Vision Assistant: A Custom Desktop AI Tool Built with Electron**",
-      "link": "https://dev.to/chhavigupta783/building-vision-assistant-a-custom-desktop-ai-tool-built-with-electron-9f9",
+      "slug": "e76a3e5ec72e7a2943c31946",
+      "guid": "https://dev.to/anjinradar/what-2916-ai-websites-told-us-about-august-2026-transcription-and-image-to-3d-are-taking-off-1cpl",
+      "title": "What 2,916 AI websites told us about August 2026: transcription and image-to-3D are taking off",
+      "link": "https://dev.to/anjinradar/what-2916-ai-websites-told-us-about-august-2026-transcription-and-image-to-3d-are-taking-off-1cpl",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "This is a submission for the MLH x DEV Writing Challenge I built Vision Assistant v1.0.0, a custom desktop AI vision tool created from scratch using Electron. What it does: It brings instant, system-wide AI assistance directly to your desktop environment without the friction of …",
-      "publishedAt": "2026-09-27T10:35:25.000Z"
+      "summary": "I track a few thousand AI websites every day for a side project, mostly to answer one question that keeps coming up when I decide what to build next: which AI products are actually gaining users right now, not just getting talked about? Here is what the August 2026 numbers say. …",
+      "publishedAt": "2026-09-28T11:49:24.000Z"
     },
     {
-      "slug": "0b9080577ee382b3794d1a08",
-      "guid": "https://dev.to/ayanhacks/ssh-permission-denied-publickey-causes-and-fixes-536o",
-      "title": "SSH Permission Denied (publickey): causes and fixes",
-      "link": "https://dev.to/ayanhacks/ssh-permission-denied-publickey-causes-and-fixes-536o",
+      "slug": "f333695ab92834e825307bc2",
+      "guid": "https://dev.to/axrisi/rm-rf-on-the-wrong-server-how-gitlab-lost-its-production-database-4hif",
+      "title": "rm -rf on the wrong server: how GitLab lost its production database",
+      "link": "https://dev.to/axrisi/rm-rf-on-the-wrong-server-how-gitlab-lost-its-production-database-4hif",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "Originally published at sshdock.com Permission denied (publickey) means you successfully connected to the server over the network, but the server rejected your authentication. You are past the firewall. The SSH daemon is running. The problem is specifically that the server refus…",
-      "publishedAt": "2026-09-27T10:28:54.000Z"
+      "summary": "On January 31, 2017, a GitLab engineer ran rm -rf on the PostgreSQL data directory of what he thought was the replica. It was the primary. About 300 GB of GitLab.com's production database was gone within a second or two, and when the team reached for backups, none of the five th…",
+      "publishedAt": "2026-09-28T11:46:44.000Z"
     },
     {
-      "slug": "464108ac64f292ffba7b699d",
-      "guid": "https://dev.to/vicarioy/nebula-agent-an-ai-that-surfaces-contradictions-in-structured-content-3760",
-      "title": "Nebula Agent: An AI That Surfaces Contradictions in Structured Content",
-      "link": "https://dev.to/vicarioy/nebula-agent-an-ai-that-surfaces-contradictions-in-structured-content-3760",
+      "slug": "4a392a080e0abf8536a39d41",
+      "guid": "https://dev.to/dhruvjoshi9/7-ai-health-insurance-workflow-failures-and-how-to-prevent-them-318",
+      "title": "7 AI Health Insurance Workflow Failures and How to Prevent Them",
+      "link": "https://dev.to/dhruvjoshi9/7-ai-health-insurance-workflow-failures-and-how-to-prevent-them-318",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "This is a submission for the Sanity Challenge, Path One: Ship an Agent That Queries Real Content A Sanity-powered AI agent that answers questions about a fictional board game called Nebula and, crucially, surfaces contradictions between sources. The agent doesn't just search for…",
-      "publishedAt": "2026-09-27T10:27:07.000Z"
+      "summary": "AI in health insurance is scaling faster than its evidence base and September 2026 reporting around Medicare’s WISeR pilot made the risk impossible to ignore. AI-assisted prior authorization can accelerate reviews, but speed also amplifies bad data, weak controls, stale policies…",
+      "publishedAt": "2026-09-28T11:45:56.000Z"
     },
     {
-      "slug": "fdf021329275dc48b52a2f9b",
-      "guid": "https://dev.to/openmind_dev/one-revenuecat-module-two-platforms-and-the-purchase-that-unlocked-nothing-3dm9",
-      "title": "One RevenueCat module, two platforms — and the purchase that unlocked nothing",
-      "link": "https://dev.to/openmind_dev/one-revenuecat-module-two-platforms-and-the-purchase-that-unlocked-nothing-3dm9",
+      "slug": "0731231033b01a3f283cf346",
+      "guid": "https://dev.to/vkimutai/architectural-bottlenecks-and-mitigation-strategies-in-production-grade-rag-systems-12j",
+      "title": "Architectural Bottlenecks and Mitigation Strategies in Production Grade RAG Systems",
+      "link": "https://dev.to/vkimutai/architectural-bottlenecks-and-mitigation-strategies-in-production-grade-rag-systems-12j",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "Disclosure: I'm the co-founder of OpenmindProjects, which builds Globie Earth — the app in this post — and we're entering it in RevenueCat Shipaton 2026. Every snippet below is code we ship; every bug is one we hit. One façade file, two SDKs that never meet inside the same bundl…",
-      "publishedAt": "2026-09-27T10:25:26.000Z"
+      "summary": "Building a production-ready Retrieval-Augmented Generation (RAG) architecture such as an enterprise internal knowledge assistant requires balancing data persistence, vector math, and asynchronous network loops. While the high-level concepts of document ingestion and language mod…",
+      "publishedAt": "2026-09-28T11:44:54.000Z"
     },
     {
-      "slug": "2545715a610f79f6e42d0291",
-      "guid": "https://dev.to/krish_verma_77e28d3fd63ca/ankita-v243-a-live-browser-beside-your-chat-3pge",
-      "title": "Ankita v2.4.3: a live browser beside your chat",
-      "link": "https://dev.to/krish_verma_77e28d3fd63ca/ankita-v243-a-live-browser-beside-your-chat-3pge",
+      "slug": "6f5e473928b1fa7e3760db65",
+      "guid": "https://dev.to/geekyants/from-prompting-to-process-what-changed-when-flutter-shipped-agent-skills-38p9",
+      "title": "From Prompting to Process: What Changed When Flutter Shipped Agent Skills",
+      "link": "https://dev.to/geekyants/from-prompting-to-process-what-changed-when-flutter-shipped-agent-skills-38p9",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "I've been building Ankita — an open-source desktop AI assistant — since I was 16. Version 2.4.3 is out today, and its headline feature is one I've wanted from the start: a real browser that lives next to your chat, which the assistant can actually drive. Ankita can already do a …",
-      "publishedAt": "2026-09-27T10:24:31.000Z"
+      "summary": "Google is starting to ship Flutter's engineering workflows as machine-readable guidance for AI agents. It may look like another AI feature, but it hints at a much bigger shift in how teams build with Flutter. The Consistency Problem Over the past few years, AI coding tools like …",
+      "publishedAt": "2026-09-28T11:44:01.000Z"
     },
     {
-      "slug": "be0001ea1e64b67040518543",
-      "guid": "https://dev.to/textnivo-dev/how-to-build-a-word-and-character-counter-with-javascript-308n",
-      "title": "How to Build a Word and Character Counter with JavaScript",
-      "link": "https://dev.to/textnivo-dev/how-to-build-a-word-and-character-counter-with-javascript-308n",
+      "slug": "f05f35c4f88a900d554731f6",
+      "guid": "https://dev.to/denladeside/rapid-prototyping-a-web-audio-saxophone-synth-with-gemini-and-midi-io5",
+      "title": "Rapid Prototyping a Web Audio Saxophone Synth with Gemini and MIDI",
+      "link": "https://dev.to/denladeside/rapid-prototyping-a-web-audio-saxophone-synth-with-gemini-and-midi-io5",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "How to Build a Word and Character Counter with JavaScript Word and character counters are useful in text editors, blogging platforms, social media applications, and content management systems. In this tutorial, we'll build a simple word and character counter using HTML, CSS, and…",
-      "publishedAt": "2026-09-27T10:21:22.000Z"
+      "summary": "Closing the Gap Between AI and Hardware When building software that connects directly to physical hardware, developers usually brace themselves for a long weekend of reading MIDI specification charts, managing asynchronous event loops, and endlessly tweaking DSP parameters in th…",
+      "publishedAt": "2026-09-28T11:44:00.000Z"
     },
     {
-      "slug": "35c5abba4ede10840d2a765f",
-      "guid": "https://dev.to/toolboxm_dc7e385f763e5d5/how-to-test-retry-logic-without-a-backend-bpe",
-      "title": "How to Test Retry Logic Without a Backend",
-      "link": "https://dev.to/toolboxm_dc7e385f763e5d5/how-to-test-retry-logic-without-a-backend-bpe",
+      "slug": "7b03b16919793efe97f1db08",
+      "guid": "https://dev.to/devlog/claude-cli-401-unauthorized-refresh-token-issue-4g0e",
+      "title": "Claude CLI 401 Unauthorized Refresh Token Issue",
+      "link": "https://dev.to/devlog/claude-cli-401-unauthorized-refresh-token-issue-4g0e",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "Originally published on the ScenarioMock blog. You've written the retry logic. Exponential backoff, three attempts, then give up and show the user an error. It looks right. How do you know it works? Against a real staging backend, you'd have to break the thing on purpose. Agains…",
-      "publishedAt": "2026-09-27T10:20:28.000Z"
+      "summary": "Symptom: claude commands fail with 401 Unauthorized and the message \"refresh token was already used. Please log out and sign in again.\" Cause: The refresh token expired after being consumed by another session or a background process. Refresh tokens are single-use credentials. Fi…",
+      "publishedAt": "2026-09-28T11:43:23.000Z"
+    },
+    {
+      "slug": "763bb1da366398e98688d528",
+      "guid": "6ab9489e19c66a0001c012e6",
+      "title": "Connection Refused, No Error, and How Kagent Finds It",
+      "link": "https://kodekloud.com/blog/kagent-finds-kubernetes-label-mismatch/",
+      "source": "KodeKloud",
+      "sourceUrl": "https://kodekloud.com/blog/rss/",
+      "summary": "Kagent is an open-source AI agent in your Kubernetes cluster. See how it finds a silent label mismatch that returns connection refused - with no error logged.",
+      "publishedAt": "2026-09-28T10:26:52.000Z"
+    },
+    {
+      "slug": "a6f14c5813dc0458475de607",
+      "guid": "https://www.digitalocean.com/blog/how-digitalocean-manages-credentials-for-autonomous-agents",
+      "title": "How DigitalOcean Manages Credentials for Autonomous Agents",
+      "link": "https://www.digitalocean.com/blog/how-digitalocean-manages-credentials-for-autonomous-agents",
+      "source": "Digital Ocean Labs",
+      "sourceUrl": "https://www.digitalocean.com/blog/rss",
+      "summary": "Built to align with NVIDIA’s Agent Safety Platform strategy for securing autonomous agents Consider an agent investigating a duplicate charge. It reads the customer’s email, checks their billing history, issues a refund, and updates a support ticket. Completing that workflow req…",
+      "publishedAt": "2026-09-28T08:53:19.225Z"
+    },
+    {
+      "slug": "9242c80528ec2669f3b284e3",
+      "guid": "https://medium.com/p/c4b86a6f3bc9",
+      "title": "How to get access to the DOM from a Service Worker?",
+      "link": "https://itnext.io/how-to-get-access-to-the-dom-from-a-service-worker-c4b86a6f3bc9?source=rss----5b301f10ddcd---4",
+      "source": "itnext",
+      "sourceUrl": "https://itnext.io/feed",
+      "summary": "",
+      "publishedAt": "2026-09-27T23:10:40.000Z"
+    },
+    {
+      "slug": "df6a98e228839ffeb0cd3399",
+      "guid": "https://www.sitepoint.com/technical-blogging-for-developers-how-to-build-an-audience-that-actually-compounds/",
+      "title": "Technical Blogging for Developers: How to Build an Audience That Actually Compounds",
+      "link": "https://www.sitepoint.com/technical-blogging-for-developers-how-to-build-an-audience-that-actually-compounds/?utm_source=rss",
+      "source": "SitePoint",
+      "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
+      "summary": "null Technical Blogging for Developers: How to Build an Audience That Actually Compounds on SitePoint.",
+      "publishedAt": "2026-09-27T19:20:33.000Z"
     },
     {
       "slug": "f871e0b20e0612b5181a2579",
@@ -132,6 +172,26 @@
       "sourceUrl": "https://itnext.io/feed",
       "summary": "",
       "publishedAt": "2026-09-27T09:11:09.000Z"
+    },
+    {
+      "slug": "b6d2b2b4a1009f783fabb6ef",
+      "guid": "6ab8cc5b58666cf6e3b71086",
+      "title": "How to Level Up Your Portfolio in the AI Era: From Technical Writer to Developer Educator",
+      "link": "https://www.freecodecamp.org/news/how-to-level-up-your-portfolio-in-the-ai-era-from-technical-writer-to-developer-educator/",
+      "source": "Free Code Camp - News",
+      "sourceUrl": "https://www.freecodecamp.org/news/rss",
+      "summary": "Until recently, building a technical writing portfolio could be as simple as creating a website, adding a list of articles, describing your writing experience, and linking to your social profiles. Tha",
+      "publishedAt": "2026-09-27T07:57:15.000Z"
+    },
+    {
+      "slug": "7a5e20a5ab71bd4b8c3fff62",
+      "guid": "https://www.sitepoint.com/from-solo-developer-to-global-app-ecosystem-the-story-behind-multitool-pro-and-beyond/",
+      "title": "From Solo Developer to Global App Ecosystem: The Story Behind MultiTOOL Pro and Beyond",
+      "link": "https://www.sitepoint.com/from-solo-developer-to-global-app-ecosystem-the-story-behind-multitool-pro-and-beyond/?utm_source=rss",
+      "source": "SitePoint",
+      "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
+      "summary": "null From Solo Developer to Global App Ecosystem: The Story Behind MultiTOOL Pro and Beyond on SitePoint.",
+      "publishedAt": "2026-09-26T23:20:48.000Z"
     },
     {
       "slug": "dd952f502e50f2b3e92e6f13",
@@ -942,66 +1002,6 @@
       "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
       "summary": "Deploy SafeLine, a self-hosted WAF, in about ten minutes - install, secure the console with MFA, add your first application, and verify it blocks real attack payloads. Get Your Website Protected in 10 Minutes with SafeLine WAF on SitePoint.",
       "publishedAt": "2026-09-22T06:42:13.000Z"
-    },
-    {
-      "slug": "b5c211e4c1c8bfcde689602c",
-      "guid": "https://www.sitepoint.com/juicebox-vs-seekout-comparison/",
-      "title": "Juicebox vs SeekOut: A tool your team runs, or a service that runs for you?",
-      "link": "https://www.sitepoint.com/juicebox-vs-seekout-comparison/?utm_source=rss",
-      "source": "SitePoint",
-      "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
-      "summary": "Juicebox vs SeekOut: is your AI sourcing platform software you operate, or a done-for-you service run by someone else's recruiters? Here's the real difference. Juicebox vs SeekOut: A tool your team runs, or a service that runs for you? on SitePoint.",
-      "publishedAt": "2026-09-22T05:21:42.000Z"
-    },
-    {
-      "slug": "8909507f61dfdda35f800c63",
-      "guid": "6aacc4064af2fb000147e9a9",
-      "title": "What Happens on Terraform Apply",
-      "link": "https://kodekloud.com/blog/what-happens-on-terraform-apply/",
-      "source": "KodeKloud",
-      "sourceUrl": "https://kodekloud.com/blog/rss/",
-      "summary": "Learn what happens when you run terraform apply: the state file, terraform plan, providers, state locking and drift, explained for interviews.",
-      "publishedAt": "2026-09-22T04:56:54.000Z"
-    },
-    {
-      "slug": "85f1a263221bbb4b425868b0",
-      "guid": "https://www.sitepoint.com/building-an-accessible-ecommerce-product-page-with-wcag-2-2/",
-      "title": "Building an Accessible Ecommerce Product Page with WCAG 2.2",
-      "link": "https://www.sitepoint.com/building-an-accessible-ecommerce-product-page-with-wcag-2-2/?utm_source=rss",
-      "source": "SitePoint",
-      "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
-      "summary": "null Building an Accessible Ecommerce Product Page with WCAG 2.2 on SitePoint.",
-      "publishedAt": "2026-09-22T01:39:49.000Z"
-    },
-    {
-      "slug": "738fe7e1627aac56790285c3",
-      "guid": "https://medium.com/p/bfba4e85cd4f",
-      "title": "CoIdea: Where Unfinished Ideas Go to Grow",
-      "link": "https://itnext.io/coidea-where-unfinished-ideas-go-to-grow-bfba4e85cd4f?source=rss----5b301f10ddcd---4",
-      "source": "itnext",
-      "sourceUrl": "https://itnext.io/feed",
-      "summary": "",
-      "publishedAt": "2026-09-21T22:43:03.000Z"
-    },
-    {
-      "slug": "00f50981ea465b7dc2b5cdc4",
-      "guid": "https://medium.com/p/14764e97e9f5",
-      "title": "How I Built a 100% Private, Local RAG System on macOS Using Docker and llama.cpp",
-      "link": "https://itnext.io/how-i-built-a-100-private-local-rag-system-on-macos-using-docker-and-llama-cpp-14764e97e9f5?source=rss----5b301f10ddcd---4",
-      "source": "itnext",
-      "sourceUrl": "https://itnext.io/feed",
-      "summary": "A step-by-step guide to orchestration with Qwen2.5, Nomic Embeddings, Open WebUI, and containerized GPU-free inference. Continue reading on ITNEXT »",
-      "publishedAt": "2026-09-21T22:40:17.000Z"
-    },
-    {
-      "slug": "070fad093abd06bdc845d061",
-      "guid": "6ab19a268fed0cf1f0fe1645",
-      "title": "How to Port a Jekyll Blog Theme to Python: Lessons From Actually Doing It",
-      "link": "https://www.freecodecamp.org/news/how-to-build-a-reading-focused-blog-with-python-markdown-and-github-pages-for-free/",
-      "source": "Free Code Camp - News",
-      "sourceUrl": "https://www.freecodecamp.org/news/rss",
-      "summary": "I've been following a tufte-jekyll styled blog for a couple of years and that led me to discover Edward Tufte's book layout. Edward Tufte is renowned for his work on data visualization and information",
-      "publishedAt": "2026-09-21T20:57:10.000Z"
     }
   ]
 }
