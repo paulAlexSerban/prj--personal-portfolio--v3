@@ -1,8 +1,68 @@
 {
   "category": "javascript",
   "label": "JavaScript",
-  "fetchedAt": "2026-09-29T11:38:36.885Z",
+  "fetchedAt": "2026-09-30T11:25:35.633Z",
   "items": [
+    {
+      "slug": "a1902aef90349d2004ce24ae",
+      "guid": "https://flaviocopes.com/jev-python/",
+      "title": "How to use Jev with Python",
+      "link": "https://flaviocopes.com/jev-python/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "How to use Jev with Python: install typesafe-sdk, ask Choice, Score and Noul questions, read the probabilities, and classify a whole CSV with asyncio.",
+      "publishedAt": "2026-09-30T10:00:00.000Z"
+    },
+    {
+      "slug": "fc8df883e69c78743aa2c668",
+      "guid": "https://flaviocopes.com/soundscape/",
+      "title": "I built Soundscape, a mixer for the Background Sounds on your Mac",
+      "link": "https://flaviocopes.com/soundscape/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Soundscape is my free, open source Mac app that plays the Background Sounds built into macOS together, each at its own volume, from a window or the menu bar.",
+      "publishedAt": "2026-09-30T09:00:00.000Z"
+    },
+    {
+      "slug": "4571a25b721402af9356bd61",
+      "guid": "https://flaviocopes.com/agents-unattended/",
+      "title": "Things I let coding agents do unattended, and things I never do",
+      "link": "https://flaviocopes.com/agents-unattended/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Which tasks I hand to a coding agent and walk away from, which ones I never let it do alone, and the guardrail I use for each: hooks, sandboxes, PRs, approvals.",
+      "publishedAt": "2026-09-30T07:00:00.000Z"
+    },
+    {
+      "slug": "1c7465ec7434ea7b8addb745",
+      "guid": "https://flaviocopes.com/openai-dots/",
+      "title": "A deep dive into OpenAI dots",
+      "link": "https://flaviocopes.com/openai-dots/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "OpenAI dots are always-on ChatGPT agents with their own cloud computer. How to set one up, give it work, connect apps and Codex, and control what it does.",
+      "publishedAt": "2026-09-30T06:30:00.000Z"
+    },
+    {
+      "slug": "156652fcb19bdcc9567434d2",
+      "guid": "https://flaviocopes.com/x-prevent-links/",
+      "title": "How to stop X from turning a domain into a link",
+      "link": "https://flaviocopes.com/x-prevent-links/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "To stop X from turning a domain into a link, put an invisible zero-width non-joiner (U+200C) after the dot. How to type it, and where it fails.",
+      "publishedAt": "2026-09-29T13:00:00.000Z"
+    },
+    {
+      "slug": "58253e6041d9c30553932bf3",
+      "guid": "https://flaviocopes.com/noterepo/",
+      "title": "I built NoteRepo, a quiet daily notes app for macOS",
+      "link": "https://flaviocopes.com/noterepo/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "NoteRepo is my free, open source daily notes app for macOS. It opens on today, keeps your notes in a local SQLite file, and has no accounts.",
+      "publishedAt": "2026-09-29T12:00:00.000Z"
+    },
     {
       "slug": "c91bcf9bf030992d329e020d",
       "guid": "https://flaviocopes.com/payment-provider-fees/",
@@ -12,6 +72,16 @@
       "sourceUrl": "https://flaviocopes.com/rss.xml",
       "summary": "Payment provider fees on one $10,000 month: Creem, Paddle, Polar, Lemon Squeezy, Dodo Payments, Gumroad and Stripe with Stripe Tax. The math and each catch.",
       "publishedAt": "2026-09-29T07:00:00.000Z"
+    },
+    {
+      "slug": "c9821fb6260d747706562252",
+      "guid": "https://javascriptweekly.com/issues/804",
+      "title": "A-ha's Take on Me, recreated in pure JavaScript",
+      "link": "https://javascriptweekly.com/issues/804",
+      "source": "JavaScript Weekly",
+      "sourceUrl": "https://javascriptweekly.com/rss/1b4m1h9j",
+      "summary": "#​804 — September 29, 2026 Read on the Web JavaScript Weekly How Anthropic Made Claude's Apps 3x Faster in Two Weeks — A grab bag of performance lessons from a sprint that cut p75 'time-to-typeable' from 3.1s to 0.55s. Em dashes (the irony!) pushed V8 onto a slower regex path, a…",
+      "publishedAt": "2026-09-29T00:00:00.000Z"
     },
     {
       "slug": "ecbd0fc6ff6419d8a442123b",
@@ -80,7 +150,7 @@
       "link": "https://flaviocopes.com/ai-coding-models/",
       "source": "Flavio Copes",
       "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Which AI model is best for coding? Claude Opus 5.5, Fable 5.1, GPT-6 Sol, Grok 4.7 and open models compared, plus a test you can run on your own code.",
+      "summary": "Which AI model is best for coding? Claude Opus 5.5, Fable 5.1, GPT-6.1 Sol, Grok 4.7 and open models compared, plus a test you can run on your own code.",
       "publishedAt": "2026-09-24T13:00:00.000Z"
     },
     {
@@ -292,66 +362,6 @@
       "sourceUrl": "https://flaviocopes.com/rss.xml",
       "summary": "Grok Bot and Cursor Projects both give an agent its own computer and jobs that run without you. Here is how I decide which one gets a task, with examples from my own work.",
       "publishedAt": "2026-09-19T07:00:00.000Z"
-    },
-    {
-      "slug": "5c5c5bf4f4445fe937b9e0b4",
-      "guid": "https://flaviocopes.com/sendy-slow-emails-ai/",
-      "title": "Solving an issue with sending emails on my server",
-      "link": "https://flaviocopes.com/sendy-slow-emails-ai/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "My newsletter took 8 hours to send and the open rate dropped from 24% to 16%. Codex found a Sendy send rate stuck at 20/sec and AWS SNS webhooks blocked by the Cloudflare proxy. Here is the full debugging session.",
-      "publishedAt": "2026-09-18T13:00:00.000Z"
-    },
-    {
-      "slug": "ddab28bac5515a0e0cec9159",
-      "guid": "https://flaviocopes.com/updating-plausible-with-ai/",
-      "title": "Updating self-hosted Plausible Analytics using AI",
-      "link": "https://flaviocopes.com/updating-plausible-with-ai/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "My self-hosted Plausible instance sat untouched for years on a $6 droplet. Codex upgraded Ubuntu, Docker, PostgreSQL 14 to 16, ClickHouse and Plausible v2 to v3 in ten minutes, then fixed the Nginx websocket config.",
-      "publishedAt": "2026-09-18T10:00:00.000Z"
-    },
-    {
-      "slug": "b0924a8ff37ce16e6a547215",
-      "guid": "https://flaviocopes.com/jev/",
-      "title": "A deep dive into Jev, TypeSafe's System One model",
-      "link": "https://flaviocopes.com/jev/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Learn how Jev turns text into typed choices, scores, and probabilities, with JavaScript examples, practical patterns, limits, and real use cases.",
-      "publishedAt": "2026-09-17T21:00:00.000Z"
-    },
-    {
-      "slug": "6efaf45f59b321d677b38088",
-      "guid": "https://flaviocopes.com/scraping-tool/",
-      "title": "How to build a scraping tool",
-      "link": "https://flaviocopes.com/scraping-tool/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Build a scraping tool with Node.js or Cloudflare Workers: fetch, Cheerio, caching, alerts, browser rendering, and what changes when Google fights back.",
-      "publishedAt": "2026-09-17T13:00:00.000Z"
-    },
-    {
-      "slug": "24cedc4cf2669553dea206fb",
-      "guid": "https://flaviocopes.com/desktop-ai-costs/",
-      "title": "How to safely add paid AI features to a desktop app",
-      "link": "https://flaviocopes.com/desktop-ai-costs/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Protect your AI API keys and margins with server-side authentication, per-user budgets, rate limits, and a global spending cap.",
-      "publishedAt": "2026-09-17T10:00:00.000Z"
-    },
-    {
-      "slug": "c3c702a07ff62eb2eb556cbd",
-      "guid": "https://flaviocopes.com/cap-business-model/",
-      "title": "How Cap makes money from open source software",
-      "link": "https://flaviocopes.com/cap-business-model/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Cap gives away the code of its screen recorder under AGPL and still charges for it. A look at the pricing, the license, and what an indie developer can copy.",
-      "publishedAt": "2026-09-17T07:00:00.000Z"
     }
   ]
 }

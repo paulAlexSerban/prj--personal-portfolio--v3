@@ -1,127 +1,367 @@
 {
   "category": "web-dev",
   "label": "Web Development",
-  "fetchedAt": "2026-09-29T11:38:36.885Z",
+  "fetchedAt": "2026-09-30T11:25:35.633Z",
   "items": [
     {
-      "slug": "ac50237f222526d317666dd5",
-      "guid": "https://dev.to/paganini2008/cronflower-turn-a-spring-boot-app-into-a-distributed-cron-cluster-5bep",
-      "title": "Cronflower: Turn a Spring Boot app into a distributed cron cluster",
-      "link": "https://dev.to/paganini2008/cronflower-turn-a-spring-boot-app-into-a-distributed-cron-cluster-5bep",
+      "slug": "6d45580dbe40b1f4c0729bf8",
+      "guid": "https://dev.to/fulfillnexa/one-stock-pool-four-sales-channels-a-reservation-ledger-instead-of-a-computed-available-3okg",
+      "title": "One stock pool, four sales channels: a reservation ledger instead of a computed available",
+      "link": "https://dev.to/fulfillnexa/one-stock-pool-four-sales-channels-a-reservation-ledger-instead-of-a-computed-available-3okg",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "Cronflower: Turn a Spring Boot app into a distributed cron cluster @Scheduled is fine until it isn't. It runs in one JVM, so the moment you scale to two instances the cronflower is that whole stack, open source: a distributed, stateful scheduler for Spring Boot task scheduling (…",
-      "publishedAt": "2026-09-29T11:32:26.000Z"
+      "summary": "Multichannel overselling is not a data problem. It is a concurrency problem that people keep trying to solve with better arithmetic. The usual implementation computes availability on read: const available = onHand - allocated - safetyBuffer; if (requested <= available) accept(or…",
+      "publishedAt": "2026-09-30T11:15:25.000Z"
     },
     {
-      "slug": "5d3e56ab2a5ef10a46ca6100",
-      "guid": "https://dev.to/yaoshen_luo_9d969ebd998fc/benchmarking-real-work-case-01-how-i-built-a-voice-agent-benchmark-from-real-customer-failures-12p",
-      "title": "Benchmarking Real Work - Case 01: How I Built a Voice Agent Benchmark from Real Customer Failures",
-      "link": "https://dev.to/yaoshen_luo_9d969ebd998fc/benchmarking-real-work-case-01-how-i-built-a-voice-agent-benchmark-from-real-customer-failures-12p",
+      "slug": "13e430d58f4dc04bf6dcee64",
+      "guid": "https://dev.to/fulfillnexa/a-shipping-exception-queue-that-ages-deduplicates-and-can-be-claimed-4egj",
+      "title": "A shipping exception queue that ages, deduplicates and can be claimed",
+      "link": "https://dev.to/fulfillnexa/a-shipping-exception-queue-that-ages-deduplicates-and-can-be-claimed-4egj",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "Customer complaints are not the problem definition; they are the signal. This post captures a real-world case of agent benchmarking: how I built v1 of our benchmark from real customer failure logs—without prior domain expertise in voiceprint recognition—and used it to drasticall…",
-      "publishedAt": "2026-09-29T11:31:45.000Z"
+      "summary": "Most ecommerce backends model shipments as a happy path with a status column. label_created → in_transit → delivered. When something goes wrong, the row gets stuck at whatever it was last stuck at, and nobody finds out until a customer asks. That is the actual operational failur…",
+      "publishedAt": "2026-09-30T11:14:52.000Z"
     },
     {
-      "slug": "89300e318f52bcf25ab9d9ad",
-      "guid": "https://dev.to/bob_kim_marley/i-ship-118-dev-tools-as-a-single-static-export-heres-the-setup-a2i",
-      "title": "I ship 118 dev tools as a single static export: here's the setup",
-      "link": "https://dev.to/bob_kim_marley/i-ship-118-dev-tools-as-a-single-static-export-heres-the-setup-a2i",
+      "slug": "c3613a70b40e6d4aa19fdd12",
+      "guid": "https://dev.to/auth0/introducing-identiflowsdev-a-visual-reference-for-identity-flows-g2a",
+      "title": "Introducing IdentiFlows.dev: A Visual Reference for Identity Flows",
+      "link": "https://dev.to/auth0/introducing-identiflowsdev-a-visual-reference-for-identity-flows-g2a",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "I run devpick.sh, a collection of 118 small developer tools (JSON formatter, cron explainer, subnet calculator, UTM builder, that kind of thing). The whole site is one Next.js app that builds to static HTML and deploys to Cloudflare Pages. No backend, no database, hosting costs …",
-      "publishedAt": "2026-09-29T11:31:10.000Z"
+      "summary": "Every developer who has played with OAuth 2.0 or OpenID Connect knows this moment: you need to double-check the exact sequence of a flow, and the diagram you remember seeing is scattered somewhere between a spec, a blog post, and a slide deck from a conference two years ago. The…",
+      "publishedAt": "2026-09-30T11:14:00.000Z"
     },
     {
-      "slug": "dccf06ed9e891003c73739e9",
-      "guid": "https://dev.to/paganini2008/cronflower-run-a-dag-workflow-across-your-cluster-59be",
-      "title": "Cronflower: Run a DAG workflow across your cluster",
-      "link": "https://dev.to/paganini2008/cronflower-run-a-dag-workflow-across-your-cluster-59be",
+      "slug": "cae6683d99e4b881ac3edd6c",
+      "guid": "https://dev.to/bellal_hossain_057bfd620a/a-practical-checklist-for-debugging-a-broken-api-request-with-free-browser-tools-2e2",
+      "title": "A Practical Checklist for Debugging a Broken API Request (With Free Browser Tools)",
+      "link": "https://dev.to/bellal_hossain_057bfd620a/a-practical-checklist-for-debugging-a-broken-api-request-with-free-browser-tools-2e2",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "Cronflower: Run a DAG workflow across your cluster, instead of chaining cron jobs Every team ends up here. One cron job at 02:00 charges the orders. Another at 02:15 ships them, set usually long enough for the first one to finish. There's no That's the wall plain cron hits: it s…",
-      "publishedAt": "2026-09-29T11:30:51.000Z"
+      "summary": "You send a request. You get a 401. Or a 400. Or an empty response and a vague error. Most API bugs come from a small set of causes: a malformed token, bad encoding, wrong headers, or a network problem. The trick is checking them in a sensible order instead of guessing. Here's th…",
+      "publishedAt": "2026-09-30T11:13:52.000Z"
     },
     {
-      "slug": "345a8ddceb6e6f0e92cea1b6",
-      "guid": "https://dev.to/omarbaruzzo/tko-drzi-kljuc-2lhb",
-      "title": "Tko drži ključ?",
-      "link": "https://dev.to/omarbaruzzo/tko-drzi-kljuc-2lhb",
+      "slug": "542fe372aa06319f84baaabe",
+      "guid": "https://dev.to/muhammad_umersaeed/i-built-an-open-source-j1939-can-bus-emulator-because-vector-tools-cost-too-much-2i1j",
+      "title": "I Built an Open-Source J1939 CAN Bus Emulator (Because Vector Tools Cost Too Much)",
+      "link": "https://dev.to/muhammad_umersaeed/i-built-an-open-source-j1939-can-bus-emulator-because-vector-tools-cost-too-much-2i1j",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "TL;DR: odvoji hot i admin key, admin ulogu stavi iza multisiga ili KMS-a, napiši proceduru rotacije, planiraj da ljudi odlaze. Smart contract koji je prošao audit daje preciznu vrstu sigurnosti: kod radi ono što kaže. Ne govori ništa o drugoj polovici sustava, a to je tko može p…",
-      "publishedAt": "2026-09-29T11:30:15.000Z"
+      "summary": "If you've ever tried to test J1939 diagnostics tooling, integrate a telematics app, or just learn how heavy-duty vehicle networks work, you've probably hit the same wall I did: the real tools are excellent, expensive, and closed. A Vector CANoe/CANalyzer license is a serious pur…",
+      "publishedAt": "2026-09-30T11:13:19.000Z"
     },
     {
-      "slug": "b99aea54e6165aa17edfefdd",
-      "guid": "https://dev.to/timmyrhymez/my-journey-into-software-engineering-learning-building-and-figuring-things-out-586d",
-      "title": "My Journey Into Software Engineering: Learning, Building and Figuring Things Out",
-      "link": "https://dev.to/timmyrhymez/my-journey-into-software-engineering-learning-building-and-figuring-things-out-586d",
+      "slug": "fcb6ec003cb3ff020629a176",
+      "guid": "https://dev.to/lilu1626/cnc-machining-time-explained-why-your-actual-cycle-time-is-longer-than-the-calculation-2nfn",
+      "title": "CNC Machining Time Explained: Why Your Actual Cycle Time Is Longer Than the Calculation",
+      "link": "https://dev.to/lilu1626/cnc-machining-time-explained-why-your-actual-cycle-time-is-longer-than-the-calculation-2nfn",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "I've recently started taking my journey into software engineering more seriously. I'm currently learning the fundamentals of web development and gradually moving deeper into backend and full-stack development. So far, I've been learning things like JavaScript, APIs, databases, N…",
-      "publishedAt": "2026-09-29T11:30:04.000Z"
+      "summary": "This article is part of my CNC & Manufacturing Engineering knowledge base — a growing collection of practical CNC machining guides, engineering tools, and programming resources. Suppose a milling tool needs to cut a path that is: 600 mm long at a feed rate of: 600 mm/min How lon…",
+      "publishedAt": "2026-09-30T11:13:07.000Z"
     },
     {
-      "slug": "283a62fb00e36c85fedbd0c5",
-      "guid": "https://dev.to/ranga_sai/context-has-a-cost-what-building-a-memory-aware-agent-taught-me-578j",
-      "title": "Context Has a Cost: What Building a Memory-Aware Agent Taught Me",
-      "link": "https://dev.to/ranga_sai/context-has-a-cost-what-building-a-memory-aware-agent-taught-me-578j",
+      "slug": "169b12639c33f9c91e89e382",
+      "guid": "https://dev.to/bellal_hossain_057bfd620a/working-with-time-zones-currencies-and-coordinates-in-javascript-6-gotchas-that-bite-2ph0",
+      "title": "Working with Time Zones, Currencies, and Coordinates in JavaScript: 6 Gotchas That Bite",
+      "link": "https://dev.to/bellal_hossain_057bfd620a/working-with-time-zones-currencies-and-coordinates-in-javascript-6-gotchas-that-bite-2ph0",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "The easiest way to make an LLM application look smart is to give the model more context. const commitments = await extractCommitments( return sortLedger(commitments); return llm.chat({ if (parsed.success) { const repaired = await repair(modelOutput); return schema.safeParse(repa…",
-      "publishedAt": "2026-09-29T11:29:16.000Z"
+      "summary": "If your app has users in more than one country, you'll eventually hit the same class of bugs: a meeting shows up an hour off, a price is wrong by a factor of 1000, or a \"distance\" is a few hundred kilometers out. These problems aren't hard, but they're easy to get subtly wrong. …",
+      "publishedAt": "2026-09-30T11:11:46.000Z"
     },
     {
-      "slug": "72cd74863aac109dd3015b59",
-      "guid": "https://dev.to/madhavi_g_ef96bc54ee18581/wakeride-travel-sleep-well-wake-you-1ioo",
-      "title": "WakeRide: Travel. Sleep. We'll Wake You. 🚍💤",
-      "link": "https://dev.to/madhavi_g_ef96bc54ee18581/wakeride-travel-sleep-well-wake-you-1ioo",
+      "slug": "5c8599741cd84d8ac7207c03",
+      "guid": "https://dev.to/hao_kang_82922526dfe5d934/gpt-61-sol-vs-gpt-6-sol-vs-astra-costs-and-migration-for-coding-agents-55nj",
+      "title": "GPT-6.1 Sol vs GPT-6 Sol vs Astra: Costs and Migration for Coding Agents",
+      "link": "https://dev.to/hao_kang_82922526dfe5d934/gpt-61-sol-vs-gpt-6-sol-vs-astra-costs-and-migration-for-coding-agents-55nj",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "Hi everyone! We recently worked on SafeTrack for a hackathon. It focuses on affordable autonomous navigation using smartphone sensors and real-time communication. Tech stack: Node.js, Express.js, Socket.IO, HTML, CSS, JavaScript, Canvas. We learned a lot about sensor-based navig…",
-      "publishedAt": "2026-09-29T11:27:55.000Z"
+      "summary": "Related integration page and current specifications: BeatAPI For GPT-6.1 Sol vs GPT-6 Sol vs Astra, start with compatibility and complete-task cost. For a Responses-based coding agent, evaluate GPT-6.1 Sol as the next default; retain GPT-6 Sol when an existing integration depend…",
+      "publishedAt": "2026-09-30T11:11:35.000Z"
     },
     {
-      "slug": "c167a8eec1efffd2555d0d54",
-      "guid": "https://dev.to/omarbaruzzo/chi-tiene-la-chiave-2f8m",
-      "title": "Chi tiene la chiave?",
-      "link": "https://dev.to/omarbaruzzo/chi-tiene-la-chiave-2f8m",
+      "slug": "7baae33732406f96a62e4557",
+      "guid": "https://dev.to/mikachu/im-not-asking-you-to-pretend-im-qualified-3bg5",
+      "title": "The Version of Me Who Looks Better on Paper Doesn't Exist",
+      "link": "https://dev.to/mikachu/im-not-asking-you-to-pretend-im-qualified-3bg5",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "TL;DR: separa chiave calda e di amministrazione, metti il ruolo admin dietro multisig o KMS, scrivi la procedura di rotazione, prevedi che le persone se ne vadano. Un contratto auditato dà una garanzia precisa: il codice fa quello che dice. Non dice nulla sull'altra metà del sis…",
-      "publishedAt": "2026-09-29T11:26:41.000Z"
+      "summary": "When I think about what it means to be unconventional, to learn to figure things out on your own, I see a version of myself staring right back at me. I did not graduate high school and later earned my GED. I did not graduate with a computer science degree, walk across a stage, l…",
+      "publishedAt": "2026-09-30T11:09:16.000Z"
     },
     {
-      "slug": "c2530f9abb99ff3221c8476c",
-      "guid": "https://dev.to/pavkode/developer-recreates-take-on-me-music-video-entirely-in-javascript-showcasing-technical-and-jdo",
-      "title": "Developer Recreates 'Take On Me' Music Video Entirely in JavaScript, Showcasing Technical and Creative Innovation",
-      "link": "https://dev.to/pavkode/developer-recreates-take-on-me-music-video-entirely-in-javascript-showcasing-technical-and-jdo",
+      "slug": "7aa4524f4cb6b70e7f9869b3",
+      "guid": "https://dev.to/nikita_khandare_28/why-your-react-app-shouldnt-just-show-a-blank-screen-when-the-api-fails-5h66",
+      "title": "Why Your React App Shouldn't Just Show a Blank Screen When the API Fails",
+      "link": "https://dev.to/nikita_khandare_28/why-your-react-app-shouldnt-just-show-a-blank-screen-when-the-api-fails-5h66",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "Introduction: The JavaScript Recreation of 'Take On Me' Imagine a music video so iconic, its pencil-sketch aesthetic and rotoscoped animation are instantly recognizable decades later. Now, picture that same video, frame by frame, rebuilt not from film or digital samples, but fro…",
-      "publishedAt": "2026-09-29T11:26:18.000Z"
+      "summary": "A lot of tutorials show you how to fetch data in React. Fewer show you what happens when that fetch fails. I found out the gap between those two things the hard way while building a task manager frontend during my internship at Valentius Kryptix. The problem My first version of …",
+      "publishedAt": "2026-09-30T11:09:05.000Z"
     },
     {
-      "slug": "9af1223216493e1a99e8a1f7",
-      "guid": "https://dev.to/simple_memo/a-null-return-hid-three-billed-runs-inside-an-automation-ledger-jmg",
-      "title": "A null return hid three billed runs inside an automation ledger",
-      "link": "https://dev.to/simple_memo/a-null-return-hid-three-billed-runs-inside-an-automation-ledger-jmg",
+      "slug": "a6f3915ad7fc8704e7dba52f",
+      "guid": "https://dev.to/thasnimfluxone/tdd-with-coding-agents-write-the-rules-then-check-they-held-29ak",
+      "title": "TDD With Coding Agents: Write the Rules, Then Check They Held",
+      "link": "https://dev.to/thasnimfluxone/tdd-with-coding-agents-write-the-rules-then-check-they-held-29ak",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "A cost-lookup function returned the same value, null, whether it had failed to read a log or had read the log successfully and found nothing billable in it. The caller could not tell those two situations apart, so it collapsed both into one conclusion: no cost occurred. Months l…",
-      "publishedAt": "2026-09-29T11:26:13.000Z"
+      "summary": "Test-driven development and coding agents fit together unusually well. A test The guidance on how to do it has matured quickly, and most of it is sound. But Most of those were preventable. A handful of rules, written once into the This post is both: the rules worth writing down,…",
+      "publishedAt": "2026-09-30T11:08:24.000Z"
     },
     {
-      "slug": "c177173debb5f6ac21d116f8",
-      "guid": "https://dev.to/alenoosh_baghoomian_24305/solid-principles-in-php-and-laravel-first-part-srp-or-single-responsibility-nj1",
-      "title": "SOLID Principles in PHP and Laravel: First Part (SRP or Single Responsibility Principle)",
-      "link": "https://dev.to/alenoosh_baghoomian_24305/solid-principles-in-php-and-laravel-first-part-srp-or-single-responsibility-nj1",
+      "slug": "259954e8e7ffc19d11b2ab1a",
+      "guid": "https://dev.to/janadapelahara/esp32-wireless-communication-odl",
+      "title": "ESP32: Wireless Communication",
+      "link": "https://dev.to/janadapelahara/esp32-wireless-communication-odl",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "SRP says a class should have one reason to change. That does not mean one method or one line. It means one job. If a database change, a new JSON format, and a new validation rule all force you to edit the same class, that class has too many responsibilities. The Problem Consider…",
-      "publishedAt": "2026-09-29T11:26:06.000Z"
+      "summary": "In this article, we're going to disscuss about build-in wireless technologies of ESP32. For the original ESP32, the main built-in wireless technologies are Wi-Fi and Bluetooth. Espressif specifies Wi-Fi 802.11 b/g/n and Bluetooth Classic (BR/EDR) plus BLE support for the origina…",
+      "publishedAt": "2026-09-30T11:08:12.000Z"
+    },
+    {
+      "slug": "1b906ad795853675ee0d06ac",
+      "guid": "6abb994dcca0ae00010473d5",
+      "title": "Build an Autonomous SecOps Agent for Kubernetes Log Anomaly Detection",
+      "link": "https://kodekloud.com/blog/build-ai-secops-agent-kubernetes/",
+      "source": "KodeKloud",
+      "sourceUrl": "https://kodekloud.com/blog/rss/",
+      "summary": "Build a Python agent that streams Kubernetes pod logs, flags attacks with regex, explains them with AI through KodeKey, and alerts via Gotify.",
+      "publishedAt": "2026-09-30T10:56:33.000Z"
+    },
+    {
+      "slug": "ce866e455945c3ce093368dd",
+      "guid": "https://medium.com/p/c53506e99211",
+      "title": "Java Concurrency Interview Refresher: From Basics to Virtual Threads",
+      "link": "https://itnext.io/java-concurrency-interview-refresher-from-basics-to-virtual-threads-c53506e99211?source=rss----5b301f10ddcd---4",
+      "source": "itnext",
+      "sourceUrl": "https://itnext.io/feed",
+      "summary": "A quick-start cheat sheet covering every key thread model in Java — what to use, when to use it, and how to answer concurrency questions… Continue reading on ITNEXT »",
+      "publishedAt": "2026-09-30T10:48:53.000Z"
+    },
+    {
+      "slug": "1e5985dd7b754b38b4e12999",
+      "guid": "https://medium.com/p/ba0405cad55e",
+      "title": "AI Agent Orchestration in .NET: From Prompts to Production Workflows",
+      "link": "https://itnext.io/ai-agent-orchestration-in-net-from-prompts-to-production-workflows-ba0405cad55e?source=rss----5b301f10ddcd---4",
+      "source": "itnext",
+      "sourceUrl": "https://itnext.io/feed",
+      "summary": "Design job queues, policy gates, durable execution, observability, and audit trails before AI agents touch real repositories. Continue reading on ITNEXT »",
+      "publishedAt": "2026-09-30T07:52:45.000Z"
+    },
+    {
+      "slug": "fec8bc69a77c9018fc577615",
+      "guid": "https://dzone.com/articles/3692535",
+      "title": "OpenAI ‘o’ Leak: What We Know About ChatGPT’s Always-On Assistant Before DevDay",
+      "link": "https://dzone.com/articles/news-openai-o-leak-september-2026",
+      "source": "DZone",
+      "sourceUrl": "https://feeds.dzone.com/home",
+      "summary": "References to an unannounced OpenAI assistant called “o” have surfaced in ChatGPT, suggesting the company is testing an always-on assistant that may have some form of email functionality. OpenAI has not announced the product, described its feature set, or confirmed a release dat…",
+      "publishedAt": "2026-09-29T21:31:17.000Z"
+    },
+    {
+      "slug": "280a4e0d75e50792e6ecbe2d",
+      "guid": "https://blog.master.dev/?p=11241",
+      "title": "Modern Web Types",
+      "link": "https://blog.master.dev/modern-web-types/",
+      "source": "Frontend Masters",
+      "sourceUrl": "https://frontendmasters.com/blog/feed/",
+      "summary": "The web platform evolves. When it does, other tech has to catch up, and not just LLMs. Another one is TypeScript types. Philip Walton explains: For example, here’s an error I got just the other day when trying to use element-scoped view transitions: “Property ‘startViewTransitio…",
+      "publishedAt": "2026-09-29T20:18:16.000Z"
+    },
+    {
+      "slug": "935914f592f1915f68eb5f1e",
+      "guid": "https://www.sitepoint.com/how-to-build-a-campaign-attribution-tracking-system/",
+      "title": "How to Build a Campaign Attribution Tracking System",
+      "link": "https://www.sitepoint.com/how-to-build-a-campaign-attribution-tracking-system/?utm_source=rss",
+      "source": "SitePoint",
+      "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
+      "summary": "null How to Build a Campaign Attribution Tracking System on SitePoint.",
+      "publishedAt": "2026-09-29T20:10:38.000Z"
+    },
+    {
+      "slug": "e6a7639018e1177f47361f52",
+      "guid": "https://dzone.com/articles/3686281",
+      "title": "Predict, Repeat, Improve: Deterministic Simulation Testing Explained",
+      "link": "https://dzone.com/articles/deterministic-simulation-testing",
+      "source": "DZone",
+      "sourceUrl": "https://feeds.dzone.com/home",
+      "summary": "It’s 2 AM. Your phone buzzes, the on-call alert flashes, and suddenly you are staring at a production outage that makes no sense. Following the logs, you get a hint: when you rerun the same scenario in staging, everything behaves perfectly. None of the quality gates/QA pipelines…",
+      "publishedAt": "2026-09-29T19:00:00.000Z"
+    },
+    {
+      "slug": "646568114bd0056996d2b102",
+      "guid": "https://medium.com/p/56e952eb50ad",
+      "title": "Crease-Proof Layouts, Brain Rot Without the Black Frames, and Un-Breaking a Non-Breaking Release",
+      "link": "https://itnext.io/crease-proof-layouts-brain-rot-without-the-black-frames-and-un-breaking-a-non-breaking-release-56e952eb50ad?source=rss----5b301f10ddcd---4",
+      "source": "itnext",
+      "sourceUrl": "https://itnext.io/feed",
+      "summary": "",
+      "publishedAt": "2026-09-29T18:55:49.000Z"
+    },
+    {
+      "slug": "0810702e0afd091801afe190",
+      "guid": "https://medium.com/p/57ed80a854be",
+      "title": "Microsoft Foundry’s New Agent Stack, Explained in 12 Diagrams",
+      "link": "https://itnext.io/microsoft-foundry-agent-stack-explained-12-diagrams-57ed80a854be?source=rss----5b301f10ddcd---4",
+      "source": "itnext",
+      "sourceUrl": "https://itnext.io/feed",
+      "summary": "Tool search that cuts input tokens by more than 97%, native voice agents, crash-resilient hosted agents, and a loop that turns production… Continue reading on ITNEXT »",
+      "publishedAt": "2026-09-29T18:53:32.000Z"
+    },
+    {
+      "slug": "61148c2d5cfe63c6fdc37708",
+      "guid": "https://www.sitepoint.com/how-to-build-an-openrtb-bid-request-handler-a-developer-s-guide-to-programmatic-advertising/",
+      "title": "How to Build an OpenRTB Bid Request Handler: A Developer's Guide to Programmatic Advertising",
+      "link": "https://www.sitepoint.com/how-to-build-an-openrtb-bid-request-handler-a-developer-s-guide-to-programmatic-advertising/?utm_source=rss",
+      "source": "SitePoint",
+      "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
+      "summary": "null How to Build an OpenRTB Bid Request Handler: A Developer's Guide to Programmatic Advertising on SitePoint.",
+      "publishedAt": "2026-09-29T18:52:33.000Z"
+    },
+    {
+      "slug": "88f1fa7f700c576bd8be9d0d",
+      "guid": "6abb4efc670623000153db03",
+      "title": "What Is Jev and How DevOps Teams Can Use TypeSafe's AI Model",
+      "link": "https://kodekloud.com/blog/what-is-jev-and-how-devops-teams-can-use-typesafes-ai-model/",
+      "source": "KodeKloud",
+      "sourceUrl": "https://kodekloud.com/blog/rss/",
+      "summary": "Jev does not chat or write code. It answers typed questions about your alerts, builds, and commands in milliseconds, and this guide shows how to put it to work in a real DevOps pipeline.",
+      "publishedAt": "2026-09-29T18:00:09.000Z"
+    },
+    {
+      "slug": "2b393ffedef1b892893497c1",
+      "guid": "https://dzone.com/articles/3686129",
+      "title": "Detection and Response Did Its Job. Now Someone Has to Actually Fix It.",
+      "link": "https://dzone.com/articles/detection-response-root-cause",
+      "source": "DZone",
+      "sourceUrl": "https://feeds.dzone.com/home",
+      "summary": "A host is isolated. A malicious process is killed. A compromised credential is revoked before an attacker can use it again. Detection and response worked exactly as intended, automatically, correctly, and fast. What follows is usually less tidy. The attacker may be gone, but the…",
+      "publishedAt": "2026-09-29T18:00:00.000Z"
+    },
+    {
+      "slug": "5695ec20c1afddfdb1273c17",
+      "guid": "https://dzone.com/articles/3686222",
+      "title": "A Deep Dive into the Microsoft Foundry Document Intelligence SDK: From PDF to Structured Data",
+      "link": "https://dzone.com/articles/microsoft-foundry-document-intelligence-sdk",
+      "source": "DZone",
+      "sourceUrl": "https://feeds.dzone.com/home",
+      "summary": "Most \"RAG over PDFs\" pipelines have a step nobody talks about much: something has to turn a scanned invoice, a multi-column contract, or a photographed receipt into text a model can actually reason over. On Microsoft's stack, that something is usually the Document Intelligence S…",
+      "publishedAt": "2026-09-29T17:00:01.000Z"
+    },
+    {
+      "slug": "438debad44caa57d13f6b54f",
+      "guid": "https://dzone.com/articles/3685717",
+      "title": "How to Test POST API Requests With Playwright TypeScript",
+      "link": "https://dzone.com/articles/test-post-api-playwright-typescript",
+      "source": "DZone",
+      "sourceUrl": "https://feeds.dzone.com/home",
+      "summary": "Testing POST API requests is an important skill for modern QA and automation engineers working with backend services and microservices. In this article, we’ll explore how to test POST API requests with Playwright and TypeScript, focusing on sending a request body using different…",
+      "publishedAt": "2026-09-29T16:00:00.000Z"
+    },
+    {
+      "slug": "7a7493b6e4423ef63868ac2f",
+      "guid": "https://dzone.com/articles/3684687",
+      "title": "Mistaking Code Production for Engineering Progress: AI Productivity Myths Part 1",
+      "link": "https://dzone.com/articles/ai-productivity-code-production-myths",
+      "source": "DZone",
+      "sourceUrl": "https://feeds.dzone.com/home",
+      "summary": "A few months ago, one of our teams celebrated a milestone in their quarterly review. AI adoption was up. The productivity dashboard showed that developers were generating, on average, 40% more code per sprint. The tech lead showed this as a major win. Three weeks later, I was on…",
+      "publishedAt": "2026-09-29T15:00:07.000Z"
+    },
+    {
+      "slug": "db27bec98bf12033ebd38658",
+      "guid": "https://github.blog/?p=99134",
+      "title": "Developer policy update: Transparency, state policy, and what’s ahead",
+      "link": "https://github.blog/news-insights/policy-news-and-insights/developer-policy-update-transparency-state-policy-and-whats-ahead/",
+      "source": "Github Blog",
+      "sourceUrl": "https://github.blog/feed/",
+      "summary": "Explore GitHub’s latest transparency data and learn more about policy updates affecting developers and open source. The post Developer policy update: Transparency, state policy, and what’s ahead appeared first on The GitHub Blog.",
+      "publishedAt": "2026-09-29T15:00:00.000Z"
+    },
+    {
+      "slug": "a3c6b4074cd5edd533ef17bc",
+      "guid": "6abbc7ebcca0ae0001047409",
+      "title": "Serving ML Models with KServe",
+      "link": "https://kodekloud.com/blog/kserve-serving-ml-models-on-kubernetes/",
+      "source": "KodeKloud",
+      "sourceUrl": "https://kodekloud.com/blog/rss/",
+      "summary": "KServe serves your ML model on Kubernetes from a few lines of YAM, scaling out under load, to zero when idle, and updating with zero downtime.",
+      "publishedAt": "2026-09-29T14:37:40.000Z"
+    },
+    {
+      "slug": "cf550b9e3d69fad1c34a5ed0",
+      "guid": "6abbcab8bf5e373dfc4ceff1",
+      "title": "Python Algorithmic Trading with SnapTrade, Massive, Alpaca",
+      "link": "https://www.freecodecamp.org/news/python-algorithmic-trading-with-snaptrade-massive-alpaca/",
+      "source": "Free Code Camp - News",
+      "sourceUrl": "https://www.freecodecamp.org/news/rss",
+      "summary": "We just published a comprehensive, hands-on video course on the freeCodeCamp.org YouTube channel that will teach you how to build an automated, end-to-end algorithmic trading system from scratch using",
+      "publishedAt": "2026-09-29T14:27:04.000Z"
+    },
+    {
+      "slug": "050be7e93e95effef7314960",
+      "guid": "https://www.sitepoint.com/building-a-local-voice-controlled-hardware-system-with-python-and-termux/",
+      "title": "Building a Local Voice-Controlled Hardware System with Python and Termux",
+      "link": "https://www.sitepoint.com/building-a-local-voice-controlled-hardware-system-with-python-and-termux/?utm_source=rss",
+      "source": "SitePoint",
+      "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
+      "summary": "null Building a Local Voice-Controlled Hardware System with Python and Termux on SitePoint.",
+      "publishedAt": "2026-09-29T14:04:46.000Z"
+    },
+    {
+      "slug": "4ad262bd2d4cdfb72d777b8d",
+      "guid": "https://dzone.com/articles/3684607",
+      "title": "Jakarta Batch in Practice: Reliable Chunk-Oriented Processing for Enterprise Workloads",
+      "link": "https://dzone.com/articles/jakarta-batch-enterprise-processing",
+      "source": "DZone",
+      "sourceUrl": "https://feeds.dzone.com/home",
+      "summary": "Batch processing remains vital because many business operations aren't suited to interactive requests. Tasks such as recalculating prices, reconciling transactions, migrating records, generating reports, processing invoices, reclassifying customers, or applying rules across mill…",
+      "publishedAt": "2026-09-29T14:00:00.000Z"
+    },
+    {
+      "slug": "748c4b4d6b4e6a43fbe63fec",
+      "guid": "6abbc1526882db86928eaf11",
+      "title": "How to Build a Reliable AI Assistant with the Claude API",
+      "link": "https://www.freecodecamp.org/news/how-to-build-a-reliable-ai-assistant-with-the-claude-api/",
+      "source": "Free Code Camp - News",
+      "sourceUrl": "https://www.freecodecamp.org/news/rss",
+      "summary": "Large language models can answer questions, summarise documents, write code, and interact with external systems. But building a reliable AI application requires more than sending a prompt and displayi",
+      "publishedAt": "2026-09-29T13:46:58.000Z"
+    },
+    {
+      "slug": "bb6d9d41211a92a77ae1e487",
+      "guid": "6abbbdbe89f93b150a3b95f4",
+      "title": "How to Use the Fullscreen API in JavaScript (and Keep the Screen Awake with the Wake Lock API)",
+      "link": "https://www.freecodecamp.org/news/fullscreen-api-javascript-wake-lock/",
+      "source": "Free Code Camp - News",
+      "sourceUrl": "https://www.freecodecamp.org/news/rss",
+      "summary": "Sooner or later, most front-end developers hit the same request: \"Can this take up the whole screen?\" A slide deck, a video player, kiosk dashboard, game, drawing canvas, or timer on a classroom proje",
+      "publishedAt": "2026-09-29T13:31:42.000Z"
+    },
+    {
+      "slug": "1bb8737aeb5eede6eca640b3",
+      "guid": "https://dzone.com/articles/3684667",
+      "title": "The Warning That Never Stops the Agent",
+      "link": "https://dzone.com/articles/warning-never-stops-agent",
+      "source": "DZone",
+      "sourceUrl": "https://feeds.dzone.com/home",
+      "summary": "I went looking for a flag that could cap the amount spent on a session on DeepAgents. The kind of hard spending cap that stops an agent loop before it burns through a budget. What exists instead is a warning, and the gap between \"warning\" and \"stopping\" turned out to be the more…",
+      "publishedAt": "2026-09-29T13:00:00.000Z"
+    },
+    {
+      "slug": "abc75a1f9b58478061745489",
+      "guid": "https://dzone.com/articles/3684600",
+      "title": "Jakarta Faces Flow Scope: Managing Multi-Step UX Without Session State",
+      "link": "https://dzone.com/articles/akarta-faces-flow-scope",
+      "source": "DZone",
+      "sourceUrl": "https://feeds.dzone.com/home",
+      "summary": "Multi-step flows are common in UX, including onboarding, checkout, account setup, approval processes, configuration wizards, and administrative tasks. These require users to move through multiple screens while continuing a consistent working state. The challenge is to keep this …",
+      "publishedAt": "2026-09-29T12:00:00.000Z"
     },
     {
       "slug": "531085c24266f74cd71bab24",
@@ -134,6 +374,46 @@
       "publishedAt": "2026-09-29T08:18:17.000Z"
     },
     {
+      "slug": "32eae219902f0ffb8f966ef0",
+      "guid": "6abb5c6f814bf2c63668f9fc",
+      "title": "How ORMs Still Let SQL Injection Through (and How to Close the Gaps)",
+      "link": "https://www.freecodecamp.org/news/how-orms-still-let-sql-injection-through-and-how-to-close-the-gaps/",
+      "source": "Free Code Camp - News",
+      "sourceUrl": "https://www.freecodecamp.org/news/rss",
+      "summary": "A lot of developers assume that once they're on an ORM, SQL injection stops being their problem. But it doesn't disappear. It just relocates. ORMs like Sequelize, Prisma, TypeORM, and Knex parameteriz",
+      "publishedAt": "2026-09-29T06:36:31.000Z"
+    },
+    {
+      "slug": "ba1a7f97c499d0d5fd6bf3ad",
+      "guid": "6abb5959f5b6d1ca628c8ee5",
+      "title": "How to Build an AI Résumé Screening Tool with Next.js, Supabase, and TypeSafe Jev",
+      "link": "https://www.freecodecamp.org/news/build-an-ai-resume-screening-tool-with-next-js-supabase-and-typesafe-jev/",
+      "source": "Free Code Camp - News",
+      "sourceUrl": "https://www.freecodecamp.org/news/rss",
+      "summary": "When we post an engineering job, we get 300 to 400 résumés in a week. Reading each one carefully takes about two minutes. That adds up to eleven hours of work for just one opening, before any intervie",
+      "publishedAt": "2026-09-29T06:23:21.000Z"
+    },
+    {
+      "slug": "7a49e58b1e6078daddc10da1",
+      "guid": "6abb5903c40275b1ceb5b613",
+      "title": "How to Govern AI-Generated Infrastructure with Policy as Code and OPA [Full Handbook]",
+      "link": "https://www.freecodecamp.org/news/how-to-govern-ai-generated-infrastructure-with-policy-as-code-and-opa-full-handbook/",
+      "source": "Free Code Camp - News",
+      "sourceUrl": "https://www.freecodecamp.org/news/rss",
+      "summary": "Modern models generate syntactically correct code nearly 100% of the time. Veracode's 2026 report puts it plainly: \"Syntax is effectively solved.\" That reads like a milestone, but it's the reason you",
+      "publishedAt": "2026-09-29T06:21:55.000Z"
+    },
+    {
+      "slug": "d0a125f27c6b3844e293d9a1",
+      "guid": "6abb57d97eb0e171af50644b",
+      "title": "Why Software Automation Needs a Layer Between Intent and Execution",
+      "link": "https://www.freecodecamp.org/news/software-automation-intent-execution-layer/",
+      "source": "Free Code Camp - News",
+      "sourceUrl": "https://www.freecodecamp.org/news/rss",
+      "summary": "Software automation is good at turning instructions into actions. A pipeline can deploy a release, Terraform can provision infrastructure, a runbook can restart a service, or an agent can inspect tele",
+      "publishedAt": "2026-09-29T06:16:57.000Z"
+    },
+    {
       "slug": "c5f609e1e03b7eee6d70f00c",
       "guid": "https://www.sitepoint.com/gemini-interactions-api-typescript-thinking-router/",
       "title": "Gemini Interactions API in TypeScript: Task-Aware Thinking Routing",
@@ -142,6 +422,16 @@
       "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
       "summary": "Build a task-aware thinking router on the Gemini Interactions API in TypeScript: classify coding tasks, set thinking levels, and track cost and latency. Gemini Interactions API in TypeScript: Task-Aware Thinking Routing on SitePoint.",
       "publishedAt": "2026-09-29T03:10:54.000Z"
+    },
+    {
+      "slug": "5a6b90bea9c79f43f8e8a5ab",
+      "guid": "https://swizec.com/blog/why-im-excited-about-jev-like-classifiers",
+      "title": "Why I'm excited about Jev-like classifiers",
+      "link": "https://swizec.com/blog/why-im-excited-about-jev-like-classifiers",
+      "source": "Swizec Teller",
+      "sourceUrl": "https://swizec.com/rss.xml",
+      "summary": "zero-shot classifiers fit a nice spot on the roadmap to production AI apps",
+      "publishedAt": "2026-09-29T00:00:00.000Z"
     },
     {
       "slug": "2419e59d876168c53a7ec0ca",
@@ -404,16 +694,6 @@
       "publishedAt": "2026-09-28T07:07:19.000Z"
     },
     {
-      "slug": "9242c80528ec2669f3b284e3",
-      "guid": "https://medium.com/p/c4b86a6f3bc9",
-      "title": "How to get access to the DOM from a Service Worker?",
-      "link": "https://itnext.io/how-to-get-access-to-the-dom-from-a-service-worker-c4b86a6f3bc9?source=rss----5b301f10ddcd---4",
-      "source": "itnext",
-      "sourceUrl": "https://itnext.io/feed",
-      "summary": "",
-      "publishedAt": "2026-09-27T23:10:40.000Z"
-    },
-    {
       "slug": "df6a98e228839ffeb0cd3399",
       "guid": "https://www.sitepoint.com/technical-blogging-for-developers-how-to-build-an-audience-that-actually-compounds/",
       "title": "Technical Blogging for Developers: How to Build an Audience That Actually Compounds",
@@ -422,16 +702,6 @@
       "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
       "summary": "null Technical Blogging for Developers: How to Build an Audience That Actually Compounds on SitePoint.",
       "publishedAt": "2026-09-27T19:20:33.000Z"
-    },
-    {
-      "slug": "f871e0b20e0612b5181a2579",
-      "guid": "https://medium.com/p/6bb05f790796",
-      "title": "What If the Fastest Database Call Never Left Your Process?",
-      "link": "https://itnext.io/what-if-the-fastest-database-call-never-left-your-process-6bb05f790796?source=rss----5b301f10ddcd---4",
-      "source": "itnext",
-      "sourceUrl": "https://itnext.io/feed",
-      "summary": "",
-      "publishedAt": "2026-09-27T09:11:09.000Z"
     },
     {
       "slug": "b6d2b2b4a1009f783fabb6ef",
@@ -472,26 +742,6 @@
       "sourceUrl": "https://kodekloud.com/blog/rss/",
       "summary": "Pulumi lets you describe infrastructure in a language you already write, with loops, functions and tests. Here is what that actually changes, and the cases where a config language is still the better answer.",
       "publishedAt": "2026-09-26T18:00:27.000Z"
-    },
-    {
-      "slug": "804c2eb6891b2c6e3692d307",
-      "guid": "https://medium.com/p/0df71698ca91",
-      "title": "Some architecture principles should be rules. Others should be guidelines.",
-      "link": "https://itnext.io/some-architecture-principles-should-be-rules-others-should-be-guidelines-0df71698ca91?source=rss----5b301f10ddcd---4",
-      "source": "itnext",
-      "sourceUrl": "https://itnext.io/feed",
-      "summary": "Not all architecture principles should be treated the same. Continue reading on ITNEXT »",
-      "publishedAt": "2026-09-26T17:12:56.000Z"
-    },
-    {
-      "slug": "c3ba8471a59337adcadedc7d",
-      "guid": "https://medium.com/p/938bd7e7be70",
-      "title": "How celld Turns Object Storage Into a Coordination Service",
-      "link": "https://itnext.io/how-celld-turns-object-storage-into-a-coordination-service-938bd7e7be70?source=rss----5b301f10ddcd---4",
-      "source": "itnext",
-      "sourceUrl": "https://itnext.io/feed",
-      "summary": "",
-      "publishedAt": "2026-09-26T09:58:19.000Z"
     },
     {
       "slug": "e81edd96fef926cb19adf573",
@@ -752,256 +1002,6 @@
       "sourceUrl": "https://feeds.dzone.com/home",
       "summary": "Production failures often contain enough evidence to explain what went wrong, but not enough structure to become an executable test. A trace may expose the failing request path, a log may contain the exception, and downstream spans may reveal the dependency response that trigger…",
       "publishedAt": "2026-09-24T18:00:00.000Z"
-    },
-    {
-      "slug": "9b4b01a2bf98f3fb8b72c2df",
-      "guid": "https://dzone.com/articles/3665318",
-      "title": "Track Brand Visibility Across AI Answer Engines with Python",
-      "link": "https://dzone.com/articles/python-brand-visibility-ai-answer-tracking",
-      "source": "DZone",
-      "sourceUrl": "https://feeds.dzone.com/home",
-      "summary": "For fifteen years, \"search visibility\" meant one thing: where a URL sat in a list of ten blue links. That model is quietly breaking. A growing share of users now get their answer from a synthesized paragraph — generated by ChatGPT, Perplexity, Gemini, or Google's AI Overviews — …",
-      "publishedAt": "2026-09-24T17:00:00.000Z"
-    },
-    {
-      "slug": "d783a7fcc2e0fdb8ac287da9",
-      "guid": "6ab54b145ca9fc6a257ae996",
-      "title": "How Executable Operational Specifications Can Make Software Automation Verifiable",
-      "link": "https://www.freecodecamp.org/news/executable-operational-specifications-software-automation/",
-      "source": "Free Code Camp - News",
-      "sourceUrl": "https://www.freecodecamp.org/news/rss",
-      "summary": "Modern software systems are increasingly automated. We automate deployments, infrastructure changes, scaling, incident response, and data pipelines. And now, with AI agents, we are starting to automat",
-      "publishedAt": "2026-09-24T16:08:52.000Z"
-    },
-    {
-      "slug": "439b82d4a16b718a1bf222b2",
-      "guid": "https://dzone.com/articles/3664019",
-      "title": "When Your Chatbot Can Talk Its Way Into the Scoring Engine",
-      "link": "https://dzone.com/articles/chatbot-influences-scoring-engine",
-      "source": "DZone",
-      "sourceUrl": "https://feeds.dzone.com/home",
-      "summary": "Picture a straightforward architecture. A candidate answers interview questions. A model extracts features from each answer and updates a running assessment. Between questions, the candidate can ask about the role, the team structure, the benefits, and what happens next. It make…",
-      "publishedAt": "2026-09-24T16:00:00.000Z"
-    },
-    {
-      "slug": "a8fa91211feea0af00510593",
-      "guid": "https://dzone.com/articles/3686408",
-      "title": "Cloud Complexity Is an Operating Model Problem: Why Infrastructure Maturity Alone Can’t Solve Scale, Reliability, and Team Friction",
-      "link": "https://dzone.com/articles/cloud-operating-model-complexity",
-      "source": "DZone",
-      "sourceUrl": "https://feeds.dzone.com/home",
-      "summary": "Editor’s Note: The following is an article written for and published in DZone’s 2026 Trend Report, Cloud-Native Foundations: Kubernetes, Platform Engineering, and Distributed Operations at Scale. After a few years of operating a shared Kubernetes environment, the shift in the ce…",
-      "publishedAt": "2026-09-24T15:30:02.000Z"
-    },
-    {
-      "slug": "60ed69c3aee2aa77b6c1d0a4",
-      "guid": "https://dzone.com/articles/3664554",
-      "title": "Integrating LLMs into iOS Applications With Swift Using ONNX Runtime",
-      "link": "https://dzone.com/articles/integrating-llms-with-swift",
-      "source": "DZone",
-      "sourceUrl": "https://feeds.dzone.com/home",
-      "summary": "Artificial Intelligence has become one of the most influential technologies in modern software development. From chatbots and recommendation systems to sentiment analysis and intelligent search, machine learning models are now expected features in many mobile applications. For s…",
-      "publishedAt": "2026-09-24T15:00:03.000Z"
-    },
-    {
-      "slug": "9bde666e6703bab5a9bacf9a",
-      "guid": "https://dzone.com/articles/3666566",
-      "title": "An Enterprise AI Governance Checklist for Software Teams",
-      "link": "https://dzone.com/articles/enterprise-ai-governance-checklist",
-      "source": "DZone",
-      "sourceUrl": "https://feeds.dzone.com/home",
-      "summary": "Most AI governance frameworks are written for executives, compliance officers, and risk committees. They produce policies. Policies produce documents. And documents sit in SharePoint while engineering teams ship AI features with zero governance infrastructure. That's not cynicis…",
-      "publishedAt": "2026-09-24T14:00:04.000Z"
-    },
-    {
-      "slug": "d7f88749ac6365a33754248d",
-      "guid": "https://www.sitepoint.com/how-to-build-and-deploy-a-production-ready-node-js-api-on-cloud-run/",
-      "title": "How to Build and Deploy a Production-Ready Node.js API on Cloud Run",
-      "link": "https://www.sitepoint.com/how-to-build-and-deploy-a-production-ready-node-js-api-on-cloud-run/?utm_source=rss",
-      "source": "SitePoint",
-      "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
-      "summary": "null How to Build and Deploy a Production-Ready Node.js API on Cloud Run on SitePoint.",
-      "publishedAt": "2026-09-24T13:53:34.000Z"
-    },
-    {
-      "slug": "fd726a4f7ae3abbad0fe5eea",
-      "guid": "https://blog.master.dev/?p=11158",
-      "title": "100 Devs",
-      "link": "https://blog.master.dev/100-devs/",
-      "source": "Frontend Masters",
-      "sourceUrl": "https://frontendmasters.com/blog/feed/",
-      "summary": "Kevin Powell is doing game-show-style (specifically Family Feud) shorts where, using data from a survey of 100 devs, he asks another dev what the most popular answers were. Here’s:",
-      "publishedAt": "2026-09-24T13:46:01.000Z"
-    },
-    {
-      "slug": "aeacb21c56d20f4cb71eff82",
-      "guid": "https://www.sitepoint.com/how-to-build-a-postgresql-to-llm-analytics-pipeline-with-node-js/",
-      "title": "How to Build a PostgreSQL-to-LLM Analytics Pipeline with Node.js",
-      "link": "https://www.sitepoint.com/how-to-build-a-postgresql-to-llm-analytics-pipeline-with-node-js/?utm_source=rss",
-      "source": "SitePoint",
-      "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
-      "summary": "null How to Build a PostgreSQL-to-LLM Analytics Pipeline with Node.js on SitePoint.",
-      "publishedAt": "2026-09-24T13:44:09.000Z"
-    },
-    {
-      "slug": "f6eb86268301df954692ea66",
-      "guid": "https://www.sitepoint.com/building-monetized-live-streaming-experiences-a-developer-s-guide-to-interactive-web-video/",
-      "title": "Building Monetized Live Streaming Experiences: A Developer’s Guide to Interactive Web Video",
-      "link": "https://www.sitepoint.com/building-monetized-live-streaming-experiences-a-developer-s-guide-to-interactive-web-video/?utm_source=rss",
-      "source": "SitePoint",
-      "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
-      "summary": "null Building Monetized Live Streaming Experiences: A Developer’s Guide to Interactive Web Video on SitePoint.",
-      "publishedAt": "2026-09-24T13:13:13.000Z"
-    },
-    {
-      "slug": "f9715a7ccab89d8d8f36907f",
-      "guid": "https://dzone.com/articles/3664502",
-      "title": "When Configuration Management Becomes an Operational Liability",
-      "link": "https://dzone.com/articles/configuration-management-operational-liability",
-      "source": "DZone",
-      "sourceUrl": "https://feeds.dzone.com/home",
-      "summary": "A green Ansible run can hide an operation with no clear owner. The tasks completed. Every target reported success. The requested change happened. Yet nobody can say with confidence which system now owns the resource state, watches the service, controls the credential, or decides…",
-      "publishedAt": "2026-09-24T13:00:05.000Z"
-    },
-    {
-      "slug": "bf0034cbd005412f5ca66020",
-      "guid": "https://dzone.com/articles/3665423",
-      "title": "RAG Is Not Enough: The Rise of Enterprise Knowledge Graphs for AI Systems",
-      "link": "https://dzone.com/articles/enterprise-knowledge-graphs-required",
-      "source": "DZone",
-      "sourceUrl": "https://feeds.dzone.com/home",
-      "summary": "Retrieval-augmented generation has become a standard pattern for grounding large language models in enterprise data. A typical implementation converts documents into embeddings, stores them in a vector database, retrieves the most similar chunks for a query, and adds those chunk…",
-      "publishedAt": "2026-09-24T12:00:00.000Z"
-    },
-    {
-      "slug": "0823079d41a4d523615004a0",
-      "guid": "6ab4b5ee363c810001e6b36d",
-      "title": "Designing a Background Job Processing System, And Where It Breaks",
-      "link": "https://kodekloud.com/blog/build-background-job-queue/",
-      "source": "KodeKloud",
-      "sourceUrl": "https://kodekloud.com/blog/rss/",
-      "summary": "Build a reliable background job queue using transactional outboxes, visibility timeouts, idempotent workers, retries, and dead letter queues.",
-      "publishedAt": "2026-09-24T09:55:39.000Z"
-    },
-    {
-      "slug": "26145b896a01a9806a32c8c6",
-      "guid": "https://dzone.com/articles/3688440",
-      "title": "Anthropic Builds Biology Lab to Test What Claude Can Do in the Real World",
-      "link": "https://dzone.com/articles/news-anthropic-claude-biology-lab",
-      "source": "DZone",
-      "sourceUrl": "https://feeds.dzone.com/home",
-      "summary": "Anthropic has spent years warning about the risks of increasingly capable AI. Now it is testing what those systems can do inside a real biology lab. The Claude maker has established a wet lab in the San Francisco Bay Area where it can conduct physical biological experiments, exp…",
-      "publishedAt": "2026-09-24T09:22:41.000Z"
-    },
-    {
-      "slug": "1c79af6e06db123b843ac3f6",
-      "guid": "https://dzone.com/articles/3688438",
-      "title": "SpaceXAI Launches Grok 4.7: Low Prices, Heavy Token Use",
-      "link": "https://dzone.com/articles/news-spacexai-grok-4-7",
-      "source": "DZone",
-      "sourceUrl": "https://feeds.dzone.com/home",
-      "summary": "Grok 4.7 promises stronger AI coding performance without a higher base price, but heavy token consumption could reduce those savings. SpaceXAI released Grok 4.7 on Sept. 21 as its latest model for coding and professional knowledge work. According to the company, it uses a larger…",
-      "publishedAt": "2026-09-24T09:14:30.000Z"
-    },
-    {
-      "slug": "56545191e5c21ee20965639e",
-      "guid": "6ab48545d92eea5d2a3fdd77",
-      "title": "TimescaleDB Course – PostgreSQL for Time-Series Data",
-      "link": "https://www.freecodecamp.org/news/timescaledb-course-postgresql-for-time-series-data/",
-      "source": "Free Code Camp - News",
-      "sourceUrl": "https://www.freecodecamp.org/news/rss",
-      "summary": "Managing massive, rapidly growing datasets efficiently is a critical skill for modern developers. Whether you are tracking API request logs, monitoring IoT fleet telemetry, or building dashboards for",
-      "publishedAt": "2026-09-24T02:04:53.000Z"
-    },
-    {
-      "slug": "06db165c0854def0e9e52909",
-      "guid": "6ab4839814d7392aab4c52af",
-      "title": "Unlock the Power of AI Agents with the New Claude Certified Developer Foundations Course",
-      "link": "https://www.freecodecamp.org/news/unlock-the-power-of-ai-agents-with-the-new-claude-certified-developer-foundations-course/",
-      "source": "Free Code Camp - News",
-      "sourceUrl": "https://www.freecodecamp.org/news/rss",
-      "summary": "Are you a software engineer looking to master building production-ready AI applications and agentic workflows? We've just published a brand new, comprehensive course on the freeCodeCamp.org YouTube ch",
-      "publishedAt": "2026-09-24T01:57:44.000Z"
-    },
-    {
-      "slug": "dabdda2204c1715558a979b5",
-      "guid": "6ab43e2cfffa4387fa43a9db",
-      "title": "How to Build a Dart Package Analytics Tool with the pub.dev API: Beyond the 30-Day Window",
-      "link": "https://www.freecodecamp.org/news/build-a-dart-package-analytics-tool-with-the-pub-dev-api/",
-      "source": "Free Code Camp - News",
-      "sourceUrl": "https://www.freecodecamp.org/news/rss",
-      "summary": "When I published my package on pub.dev, the first few days were exciting as the number of downloads climbed. 201 downloads in a few days! Then something strange happened. The number dropped: 120, then",
-      "publishedAt": "2026-09-23T21:01:32.000Z"
-    },
-    {
-      "slug": "5079a10657e50d4d7c1441ce",
-      "guid": "https://dzone.com/articles/3665006",
-      "title": "6 Techniques To Reduce LLM API Costs With the Python Library",
-      "link": "https://dzone.com/articles/reduce-llm-api-costs",
-      "source": "DZone",
-      "sourceUrl": "https://feeds.dzone.com/home",
-      "summary": "Before diving into solutions, it helps to understand the scale of the problem. Take a common production pattern: a customer support bot that processes 10,000 messages per day, each with a 2,000-token system prompt and a 200-token user message.",
-      "publishedAt": "2026-09-23T19:00:00.000Z"
-    },
-    {
-      "slug": "8018084d546a0e01b48405e9",
-      "guid": "https://github.blog/?p=99002",
-      "title": "Rendering huge pull requests in the GitHub Copilot app",
-      "link": "https://github.blog/engineering/user-experience/rendering-huge-pull-requests-in-the-github-copilot-app/",
-      "source": "Github Blog",
-      "sourceUrl": "https://github.blog/feed/",
-      "summary": "How we rebuilt the diff surface in the GitHub Copilot app to open a million-line pull request with hundreds of inline review comments. The post Rendering huge pull requests in the GitHub Copilot app appeared first on The GitHub Blog.",
-      "publishedAt": "2026-09-23T18:29:49.000Z"
-    },
-    {
-      "slug": "0605cde89f139a0bb2743d2b",
-      "guid": "https://www.sitepoint.com/embedded-graphs-nodejs-kuzu-sqlite-recursive-ctes/",
-      "title": "Embedded Graphs in Node.js: Comparing Kùzu and SQLite Recursive CTEs",
-      "link": "https://www.sitepoint.com/embedded-graphs-nodejs-kuzu-sqlite-recursive-ctes/?utm_source=rss",
-      "source": "SitePoint",
-      "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
-      "summary": "Compare lightweight embedded graph storage using Kùzu Cypher queries against SQLite recursive CTEs in Node.js applications. Embedded Graphs in Node.js: Comparing Kùzu and SQLite Recursive CTEs on SitePoint.",
-      "publishedAt": "2026-09-23T18:17:27.000Z"
-    },
-    {
-      "slug": "04fa4e1d6674387495648b13",
-      "guid": "https://www.sitepoint.com/build-deterministic-llm-eval-suites-vitest-zod/",
-      "title": "Build Deterministic LLM Eval Suites in CI with Vitest and Zod",
-      "link": "https://www.sitepoint.com/build-deterministic-llm-eval-suites-vitest-zod/?utm_source=rss",
-      "source": "SitePoint",
-      "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
-      "summary": "Build deterministic, zero-cost CI evaluation suites for LLM applications in TypeScript using Vitest, replay fixtures, and Zod schema contracts. Build Deterministic LLM Eval Suites in CI with Vitest and Zod on SitePoint.",
-      "publishedAt": "2026-09-23T18:16:40.000Z"
-    },
-    {
-      "slug": "415f59e735450ef9bc9c43c0",
-      "guid": "https://www.sitepoint.com/isolate-untrusted-code-rootless-docker-gvisor/",
-      "title": "Isolate Untrusted Code Execution with Rootless Docker and gVisor",
-      "link": "https://www.sitepoint.com/isolate-untrusted-code-rootless-docker-gvisor/?utm_source=rss",
-      "source": "SitePoint",
-      "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
-      "summary": "Harden your multi-tenant and AI code execution infrastructure by deploying rootless Docker paired with gVisor user-space kernel sandboxing. Isolate Untrusted Code Execution with Rootless Docker and gVisor on SitePoint.",
-      "publishedAt": "2026-09-23T18:15:43.000Z"
-    },
-    {
-      "slug": "9ded98014e25a72186e1b867",
-      "guid": "https://www.sitepoint.com/cost-aware-llm-router-nodejs-claude-opus-5-5-gpt-6-sol/",
-      "title": "Build a Cost-Aware LLM Router in Node.js with Claude Opus 5.5 and GPT-6 Sol",
-      "link": "https://www.sitepoint.com/cost-aware-llm-router-nodejs-claude-opus-5-5-gpt-6-sol/?utm_source=rss",
-      "source": "SitePoint",
-      "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
-      "summary": "Build a TypeScript LLM router in Node.js that balances Claude Opus 5.5 and GPT-6 Sol with token budgeting, latency circuit breakers, and tier fallbacks. Build a Cost-Aware LLM Router in Node.js with Claude Opus 5.5 and GPT-6 Sol on SitePoint.",
-      "publishedAt": "2026-09-23T18:14:25.000Z"
-    },
-    {
-      "slug": "a24c89f507cc317823c1b693",
-      "guid": "6ab3f977363c810001e6adef",
-      "title": "Hermes Agent for DevOps, the Open Source Agent That Lives on Your Server",
-      "link": "https://kodekloud.com/blog/hermes-agent-for-devops-self-hosted-ai-agent/",
-      "source": "KodeKloud",
-      "sourceUrl": "https://kodekloud.com/blog/rss/",
-      "summary": "An AI agent that runs on your server, remembers past actions, and executes scheduled jobs unattended can be incredibly useful. It can also introduce real risks. Here’s how to build one that delivers the benefits without giving up control.",
-      "publishedAt": "2026-09-23T18:00:27.000Z"
     }
   ]
 }
