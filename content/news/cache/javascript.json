@@ -1,8 +1,58 @@
 {
   "category": "javascript",
   "label": "JavaScript",
-  "fetchedAt": "2026-09-30T11:25:35.633Z",
+  "fetchedAt": "2026-10-01T11:52:56.481Z",
   "items": [
+    {
+      "slug": "9377f7c5f995e17a0dc7d27a",
+      "guid": "https://flaviocopes.com/herdr-shortcuts/",
+      "title": "Herdr keyboard shortcuts",
+      "link": "https://flaviocopes.com/herdr-shortcuts/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Herdr keyboard shortcuts cheat sheet: the ctrl+b prefix, splits, tabs, panes, renaming, copy mode, the session navigator, and how to change any key.",
+      "publishedAt": "2026-10-01T10:00:00.000Z"
+    },
+    {
+      "slug": "a5be93ca6b5ed4e35ae9b94b",
+      "guid": "https://flaviocopes.com/agents-api/",
+      "title": "The complete guide to the OpenAI Agents API",
+      "link": "https://flaviocopes.com/agents-api/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "The OpenAI Agents API runs the Codex agent harness for your app. A hands-on guide to sessions, events, tools, MCP, sandboxes, files, webhooks and costs.",
+      "publishedAt": "2026-10-01T09:00:00.000Z"
+    },
+    {
+      "slug": "8a0b12118321772ff7852e62",
+      "guid": "https://flaviocopes.com/gpt-6-1-sol/",
+      "title": "How to use GPT-6.1 Sol",
+      "link": "https://flaviocopes.com/gpt-6-1-sol/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "How to use GPT-6.1 Sol in Codex, ChatGPT Work and the OpenAI API, with pricing, reasoning effort, prompt caching and a Node.js code review script.",
+      "publishedAt": "2026-09-30T15:00:00.000Z"
+    },
+    {
+      "slug": "e098862ba34ba4d643263063",
+      "guid": "https://flaviocopes.com/skillscout/",
+      "title": "I built Skillscout, a Mac app for the skills your coding agents load",
+      "link": "https://flaviocopes.com/skillscout/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Skillscout is my free, open source Mac app that finds every agent skill on your Mac, shows which of 8 coding agents load each one, and counts how often you use them.",
+      "publishedAt": "2026-09-30T13:30:00.000Z"
+    },
+    {
+      "slug": "8b063b8dd97698d7fa65dbad",
+      "guid": "https://flaviocopes.com/unslop/",
+      "title": "How to use the unslop skill",
+      "link": "https://flaviocopes.com/unslop/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "The unslop skill removes AI writing tells from text. Learn where it comes from, why pstack includes it, and how to run it in Cursor, Claude Code and Codex.",
+      "publishedAt": "2026-09-30T13:00:00.000Z"
+    },
     {
       "slug": "a1902aef90349d2004ce24ae",
       "guid": "https://flaviocopes.com/jev-python/",
@@ -304,26 +354,6 @@
       "publishedAt": "2026-09-21T17:00:00.000Z"
     },
     {
-      "slug": "7d29ff34e2cb57861dc07b2b",
-      "guid": "https://flaviocopes.com/slop-grenades/",
-      "title": "Slop grenades",
-      "link": "https://flaviocopes.com/slop-grenades/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Slop grenades are AI-generated emails, messages, and pull requests sent without review. The output is fast, but someone else has to check it.",
-      "publishedAt": "2026-09-21T10:30:00.000Z"
-    },
-    {
-      "slug": "9ece8b4429245437412b10f2",
-      "guid": "https://flaviocopes.com/modern-css-features/",
-      "title": "12 CSS features you can use today with no build step",
-      "link": "https://flaviocopes.com/modern-css-features/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Modern CSS features that replace Sass, PostCSS plugins and JavaScript hacks: nesting, :has(), container queries, subgrid and more, checked in September 2026.",
-      "publishedAt": "2026-09-21T07:00:00.000Z"
-    },
-    {
       "slug": "3f960b1663cbf0430585c365",
       "guid": "https://blog.appsignal.com/2026/09/21/expert-context-built-with-gorails.html",
       "title": "AppSignal Intelligence Just Got More Rails Context",
@@ -332,36 +362,6 @@
       "sourceUrl": "https://blog.appsignal.com/feed.xml",
       "summary": "Today we’re taking our partnership with Chris Oliver (founder of Hatchbox and GoRails) one step further. With AppSignal, you can already store enriched telemetry about your applications, services, and infrastructure, along with your user context, in your AppSignal context store.…",
       "publishedAt": "2026-09-21T00:00:00.000Z"
-    },
-    {
-      "slug": "68bfce5dd4e2d2855396325b",
-      "guid": "https://flaviocopes.com/node-builtins/",
-      "title": "Node.js built-ins that replaced npm packages",
-      "link": "https://flaviocopes.com/node-builtins/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Twelve Node.js built-ins that replace axios, nodemon, dotenv, jest, chalk, glob and more, with their stability in Node 24 and one gotcha each.",
-      "publishedAt": "2026-09-20T07:00:00.000Z"
-    },
-    {
-      "slug": "58aa39764ac255951bf18486",
-      "guid": "https://flaviocopes.com/browser-apis-replacing-libraries/",
-      "title": "10 browser APIs that replaced a library I used to install",
-      "link": "https://flaviocopes.com/browser-apis-replacing-libraries/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Ten browser APIs that replace npm packages and jQuery plugins: dialog, popover, view transitions, structuredClone, groupBy, Temporal, with 2026 support notes.",
-      "publishedAt": "2026-09-19T10:00:00.000Z"
-    },
-    {
-      "slug": "dd2de472e58d97fb9c516383",
-      "guid": "https://flaviocopes.com/grok-bot-vs-cursor-projects/",
-      "title": "Grok Bot vs Cursor Projects: when to use which",
-      "link": "https://flaviocopes.com/grok-bot-vs-cursor-projects/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Grok Bot and Cursor Projects both give an agent its own computer and jobs that run without you. Here is how I decide which one gets a task, with examples from my own work.",
-      "publishedAt": "2026-09-19T07:00:00.000Z"
     }
   ]
 }
