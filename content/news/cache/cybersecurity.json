@@ -1,8 +1,158 @@
 {
   "category": "cybersecurity",
   "label": "Cybersecurity",
-  "fetchedAt": "2026-10-02T11:25:06.063Z",
+  "fetchedAt": "2026-10-03T10:41:45.997Z",
   "items": [
+    {
+      "slug": "c02e393ebeb7dc067d1344a5",
+      "guid": "https://grahamcluley.com/?p=17352119",
+      "title": "N0n ransomware: what you need to know",
+      "link": "https://www.fortra.com/blog/n0n-ransomware-what-you-need-know",
+      "source": "Graham Cluley",
+      "sourceUrl": "https://grahamcluley.com/feed/",
+      "summary": "N0n is a newly-emerged cyber extortion gang. The group was first spotted in the middle of September 2026, and within days it had published on its dark web leak site details of what it claimed to be around a dozen victims. Since then, the tally has continued to grow. Read more in…",
+      "publishedAt": "2026-10-03T08:29:54.000Z"
+    },
+    {
+      "slug": "81e05c6d99a7b40aa8de89e6",
+      "guid": "https://www.schneier.com/?p=72711",
+      "title": "Friday Squid Blogging: EU is Trying to Fight Unregulated Squid Fishing",
+      "link": "https://www.schneier.com/blog/archives/2026/10/friday-squid-blogging-eu-is-trying-to-fight-unregulated-squid-fishing.html",
+      "source": "Schneier on Security",
+      "sourceUrl": "https://www.schneier.com/feed/",
+      "summary": "The EU is recommending import controls to combat unregulated squid fishing in the Southwest Atlantic. I’m not optimistic. As usual, you can also use this squid post to talk about the security stories in the news that I haven’t covered. Blog moderation policy.",
+      "publishedAt": "2026-10-02T21:02:18.000Z"
+    },
+    {
+      "slug": "5a09c5ac00e985737ff0c466",
+      "guid": "https://www.darkreading.com/cybersecurity-operations/remotethreat-bets-security-teams-need-to-test-what-happens-after-defenses-fail",
+      "title": "RemoteThreat Bets Security Teams Need to Test What Happens After Defenses Fail",
+      "link": "https://www.darkreading.com/cybersecurity-operations/remotethreat-bets-security-teams-need-to-test-what-happens-after-defenses-fail",
+      "source": "Dark Reading",
+      "sourceUrl": "https://www.darkreading.com/rss.xml",
+      "summary": "The offensive cyber operations startup looks to evolve red teaming beyond traditional methods to simulate attackers' increasingly advanced capabilities.",
+      "publishedAt": "2026-10-02T20:18:37.000Z"
+    },
+    {
+      "slug": "5ef20bc51467188265c7518d",
+      "guid": "https://thehackernews.com/2026/10/gitlab-patches-critical-self-hosted-ai.html",
+      "title": "GitLab Patches Critical 9.9 AI Gateway Flaw Allowing Command Execution on Self-Hosted Servers",
+      "link": "https://thehackernews.com/2026/10/gitlab-patches-critical-self-hosted-ai.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "A critical flaw in GitLab's AI Gateway could let a logged-in user with Duo Agent Platform access run commands on the gateway under certain conditions, GitLab said in an advisory. The gateway is the service that connects a GitLab instance to AI models, and only organizations that…",
+      "publishedAt": "2026-10-02T17:33:31.000Z"
+    },
+    {
+      "slug": "2fb0abb39d71922812ae99c1",
+      "guid": "https://thehackernews.com/2026/10/antino-backdoor-uses-outlook-and.html",
+      "title": "Antino Backdoor Uses Outlook and OneDrive for C2 in China-Nexus Espionage Campaign",
+      "link": "https://thehackernews.com/2026/10/antino-backdoor-uses-outlook-and.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "Government and policy organizations across Asia have become the target of a new campaign orchestrated by a China-nexus threat actor. The activity, which has targeted government and policy organizations in Taiwan, India, the Philippines, Cambodia, Pakistan, Thailand, and Myanmar,…",
+      "publishedAt": "2026-10-02T17:33:16.000Z"
+    },
+    {
+      "slug": "5f13530361d7760b64b43979",
+      "guid": "https://thehackernews.com/2026/10/dell-csm-flaws-enable-unauthenticated.html",
+      "title": "Dell CSM Flaws Enable Unauthenticated Admin Access and Root on Kubernetes Nodes",
+      "link": "https://thehackernews.com/2026/10/dell-csm-flaws-enable-unauthenticated.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "Dell has released security updates to address multiple critical security flaws in Dell Container Storage Modules (CSM) that could be exploited by bad actors to take over susceptible systems. The vulnerabilities are listed below - CVE-2026-63688 (CVSS score: 10.0) - A missing aut…",
+      "publishedAt": "2026-10-02T17:02:12.000Z"
+    },
+    {
+      "slug": "c85075d09d16986b28ecb2ca",
+      "guid": "https://www.darkreading.com/cybersecurity-operations/kiteworks-citrix-incidents-challenges-zero-day-response",
+      "title": "Kiteworks & Citrix Incidents Show Challenges of Zero-Day Response",
+      "link": "https://www.darkreading.com/cybersecurity-operations/kiteworks-citrix-incidents-challenges-zero-day-response",
+      "source": "Dark Reading",
+      "sourceUrl": "https://www.darkreading.com/rss.xml",
+      "summary": "One company told customers to power down its data-protection platform during a nine-hour window, while the other remained mum on reported attacks prior to releasing a patch for its product.",
+      "publishedAt": "2026-10-02T16:56:30.000Z"
+    },
+    {
+      "slug": "f071bbafdb42525dbf71c36d",
+      "guid": "https://www.darkreading.com/cybersecurity-operations/swift-banking-govt-middleware-rce",
+      "title": "SWIFT Banking & Government Middleware Enables RCE",
+      "link": "https://www.darkreading.com/cybersecurity-operations/swift-banking-govt-middleware-rce",
+      "source": "Dark Reading",
+      "sourceUrl": "https://www.darkreading.com/rss.xml",
+      "summary": "Patch middleware vulnerabilities now to avoid hardware-based MFA exploits in ultra-sensitive environments.",
+      "publishedAt": "2026-10-02T16:27:54.000Z"
+    },
+    {
+      "slug": "04957202ca08e5ade518a91a",
+      "guid": "https://www.darkreading.com/cybersecurity-operations/is-your-organization-ready-for-2027-s-ai-accountability-era-",
+      "title": "Is Your Organization Ready for 2027's AI Accountability Era?",
+      "link": "https://www.darkreading.com/cybersecurity-operations/is-your-organization-ready-for-2027-s-ai-accountability-era-",
+      "source": "Dark Reading",
+      "sourceUrl": "https://www.darkreading.com/rss.xml",
+      "summary": "Organizations may face an artificial intelligence (AI) reckoning over the next year. Omdia and Gartner weigh in on how to tackle the governance, security, and value challenges ahead.",
+      "publishedAt": "2026-10-02T16:01:22.000Z"
+    },
+    {
+      "slug": "32720f17359d90fae7040dc5",
+      "guid": "https://www.darkreading.com/insider-threats/blame-rogue-ai-security-failures",
+      "title": "Is It Fair to Blame 'Rogue' AI for Security Failures?",
+      "link": "https://www.darkreading.com/insider-threats/blame-rogue-ai-security-failures",
+      "source": "Dark Reading",
+      "sourceUrl": "https://www.darkreading.com/rss.xml",
+      "summary": "\"Rogue AI\" terminology anthropomorphizes LLMs and shifts risk responsibility from vendors. Defenders should treat agents as untrusted, nondeterministic software systems, not sentient beings with malicious intent.",
+      "publishedAt": "2026-10-02T15:51:33.000Z"
+    },
+    {
+      "slug": "06cc5e2c788a02a3e61cae26",
+      "guid": "https://www.schneier.com/?p=72728",
+      "title": "Unidentified Flock Cameras in Florida",
+      "link": "https://www.schneier.com/blog/archives/2026/10/unidentified-flock-cameras-in-florida.html",
+      "source": "Schneier on Security",
+      "sourceUrl": "https://www.schneier.com/feed/",
+      "summary": "St. Lucie County in Florida discovered (alt link) a dozen Flock cameras whose ownership it can’t identify, and that the county government had not permitted. I am reminded of the decade-old story of StingRay cell phone surveillance devices in Washington, DC, whose operators were …",
+      "publishedAt": "2026-10-02T14:52:46.000Z"
+    },
+    {
+      "slug": "a0646754e8cc4003cd616942",
+      "guid": "https://www.darkreading.com/cybersecurity-operations/vulnerability-backlogs-ownership-problem",
+      "title": "Vulnerability Backlogs Are an Ownership Problem",
+      "link": "https://www.darkreading.com/cybersecurity-operations/vulnerability-backlogs-ownership-problem",
+      "source": "Dark Reading",
+      "sourceUrl": "https://www.darkreading.com/rss.xml",
+      "summary": "Organizations don't need better vulnerability scanners; they need to know who owns their assets and has the authority and capacity to actually fix them.",
+      "publishedAt": "2026-10-02T14:00:00.000Z"
+    },
+    {
+      "slug": "13d969ca40e804a2110dcc3c",
+      "guid": "https://www.darkreading.com/threat-intelligence/malicious-linux-implants-mimic-asian-mail-security",
+      "title": "Malicious Linux Implants Mimic Asian Mail Security Products",
+      "link": "https://www.darkreading.com/threat-intelligence/malicious-linux-implants-mimic-asian-mail-security",
+      "source": "Dark Reading",
+      "sourceUrl": "https://www.darkreading.com/rss.xml",
+      "summary": "A trio of newly discovered backdoors walk and quack like legitimate edge solutions, so it's hard to tell they're not.",
+      "publishedAt": "2026-10-02T13:00:00.000Z"
+    },
+    {
+      "slug": "e5ad3ab89f774c0db14c6bf5",
+      "guid": "https://thehackernews.com/2026/10/openai-parts-ways-with-three-safety.html",
+      "title": "OpenAI Parts Ways With Three Safety Researchers Over Sensitive Information Mishandling",
+      "link": "https://thehackernews.com/2026/10/openai-parts-ways-with-three-safety.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "OpenAI has parted ways with three members of its safety team after they leaked private information in violation of company policies, The Wall Street Journal reported. \"We have parted ways with three individuals for violating our policies on accessing and handling sensitive compa…",
+      "publishedAt": "2026-10-02T12:23:15.000Z"
+    },
+    {
+      "slug": "43a11e7cfe0b993f92b9b488",
+      "guid": "https://thehackernews.com/2026/10/why-cisos-struggle-to-answer-boards.html",
+      "title": "Why CISOs Struggle to Answer the Board's Three Hardest Questions, and How to Fix the Report",
+      "link": "https://thehackernews.com/2026/10/why-cisos-struggle-to-answer-boards.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "The quarterly board meeting is two weeks out. The security team is pulling exports from the identity provider, the cloud posture tool, the vulnerability scanner, the SIEM and the EDR console. Someone is building a spreadsheet to reconcile them. Someone else is turning that sprea…",
+      "publishedAt": "2026-10-02T11:30:00.000Z"
+    },
     {
       "slug": "0f244c8e360da78752bd729d",
       "guid": "https://www.schneier.com/?p=72726",
@@ -852,156 +1002,6 @@
       "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
       "summary": "Apple has released security updates to address a vulnerability in older versions of iOS, iPadOS, and macOS that it said may have been exploited in targeted attacks. The vulnerability, tracked as CVE-2026-86950, refers to an out-of-bounds write impacting the CoreGraphics componen…",
       "publishedAt": "2026-09-28T19:18:01.000Z"
-    },
-    {
-      "slug": "da1a40662d31a8cd78d9e700",
-      "guid": "https://www.darkreading.com/vulnerabilities-threats/ai-agents-are-privileged-users-who-is-auditing-their-access",
-      "title": "AI Agents Are Privileged Users; Who Is Auditing Their Access?",
-      "link": "https://www.darkreading.com/vulnerabilities-threats/ai-agents-are-privileged-users-who-is-auditing-their-access",
-      "source": "Dark Reading",
-      "sourceUrl": "https://www.darkreading.com/rss.xml",
-      "summary": "Enterprises regularly rigorously monitor human employees, while autonomous AI agents quietly operate with broad privileges that could turn them into the next generation of insider threats.",
-      "publishedAt": "2026-09-28T18:44:22.000Z"
-    },
-    {
-      "slug": "bef7f6a21fd6f32c4da3d0b4",
-      "guid": "https://thehackernews.com/2026/09/hackers-use-needymantis-to-maintain.html",
-      "title": "Hackers Use NeedyMantis to Maintain Long-Term Access in Breached Networks",
-      "link": "https://thehackernews.com/2026/09/hackers-use-needymantis-to-maintain.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "Hackers have used a malware family called NeedyMantis to maintain long-term access to networks they had already breached, Microsoft said in a technical analysis. The malware has been seen in a small number of targeted intrusions at telecommunications organizations, universities,…",
-      "publishedAt": "2026-09-28T18:35:42.000Z"
-    },
-    {
-      "slug": "a81aa716b36a1df5e7d6fff0",
-      "guid": "https://thehackernews.com/2026/09/iam-for-ai-agent.html",
-      "title": "IAM for AI agents: A Practical Enterprise Framework",
-      "link": "https://thehackernews.com/2026/09/iam-for-ai-agent.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "What is IAM for AI agents? AI agents authenticate, invoke tools, and act across enterprise systems with delegated authority. IAM for AI Agents is the identity-control architecture that governs those actors. This guide covers the limits of conventional provisioning, the component…",
-      "publishedAt": "2026-09-28T18:20:38.000Z"
-    },
-    {
-      "slug": "cb8a6ba8d9499fadbc1ae52e",
-      "guid": "https://thehackernews.com/2026/09/bitget-says-attacker-exploited-third.html",
-      "title": "Bitget Says Attacker Exploited Third-Party Security Product Flaw to Steal $388M",
-      "link": "https://thehackernews.com/2026/09/bitget-says-attacker-exploited-third.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "The attacker who stole about $388 million from the cryptocurrency exchange Bitget gained access through a vulnerability in a third-party security product the exchange used, Bitget said on Monday. The attacker exploited the flaw to obtain high-level internal credentials and then,…",
-      "publishedAt": "2026-09-28T17:42:18.000Z"
-    },
-    {
-      "slug": "4ca847aa2cb154c66ea1705f",
-      "guid": "https://thehackernews.com/2026/09/rathat-android-malware-console-uses.html",
-      "title": "RatHat Android Malware Console Uses Gemini to Identify Higher-Value Victims",
-      "link": "https://thehackernews.com/2026/09/rathat-android-malware-console-uses.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "RatHat's operators build and publish the Android banking trojan and control infected phones from a web console, according to security company Cleafy. Cleafy has traced nearly 100 deployments of that console since April 2026. It said this fits a malware-as-a-service model, in whi…",
-      "publishedAt": "2026-09-28T17:38:33.000Z"
-    },
-    {
-      "slug": "9ea947543a4710ac85683b75",
-      "guid": "https://www.darkreading.com/application-security/chrome-store-poper-blocker-spyware-downloaded-millions",
-      "title": "Chrome Store Hosts 'Poper Blocker' Spyware Downloaded by Millions",
-      "link": "https://www.darkreading.com/application-security/chrome-store-poper-blocker-spyware-downloaded-millions",
-      "source": "Dark Reading",
-      "sourceUrl": "https://www.darkreading.com/rss.xml",
-      "summary": "A purported ad-blocker exfiltrates reams of sensitive information and benefits from having Google's stamp of approval despite researcher warnings.",
-      "publishedAt": "2026-09-28T16:51:25.000Z"
-    },
-    {
-      "slug": "1820f6c11fcc5fa3a9260e4a",
-      "guid": "https://www.darkreading.com/cloud-security/jadepuffer-ai-actor-azure-tenant-destructive-cloud-attack",
-      "title": "JadePuffer AI Actor Compromises Azure Tenant in Destructive Cloud Attack",
-      "link": "https://www.darkreading.com/cloud-security/jadepuffer-ai-actor-azure-tenant-destructive-cloud-attack",
-      "source": "Dark Reading",
-      "sourceUrl": "https://www.darkreading.com/rss.xml",
-      "summary": "The \"agentic threat actor\" may have used exposed credentials to access resources and delete cloud-based storage, applications, and databases.",
-      "publishedAt": "2026-09-28T15:33:21.000Z"
-    },
-    {
-      "slug": "a2b7b133d57e2c7f7a7ce4c0",
-      "guid": "https://krebsonsecurity.com/?p=74341",
-      "title": "Dutch Police Arrest ‘Reformed’ Hacker in Shiny Hunters Investigation",
-      "link": "https://krebsonsecurity.com/2026/09/dutch-police-arrest-reformed-hacker-in-shiny-hunters-investigation/",
-      "source": "Krebson Security",
-      "sourceUrl": "https://krebsonsecurity.com/feed/",
-      "summary": "Authorities in the Netherlands have arrested a 23-year-old convicted cybercriminal on suspicion of aiding in data thefts and extortions by the prolific hacker group ShinyHunters. In the days immediately following the suspect's arrest, remaining ShinyHunters members dramatically …",
-      "publishedAt": "2026-09-28T15:08:57.000Z"
-    },
-    {
-      "slug": "92a47b18db9bbe47493e7e5a",
-      "guid": "https://thehackernews.com/2026/09/weekly-recap-387m-crypto-hack-citrix.html",
-      "title": "⚡ Weekly Recap: $387M Crypto Hack, Citrix Exploits, AI Agents Go Off-Script, and More Threats",
-      "link": "https://thehackernews.com/2026/09/weekly-recap-387m-crypto-hack-citrix.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "A domain used as harmless placeholder text showed up in roughly 1,700 repositories. Then somebody registered it and started serving malicious lures. That is the kind of week this was: forgotten assumptions turning into live attack surface. Elsewhere, weak service accounts, old b…",
-      "publishedAt": "2026-09-28T14:00:53.000Z"
-    },
-    {
-      "slug": "e51480e96d84d62474fdebdc",
-      "guid": "https://thehackernews.com/2026/09/webinar-how-to-govern-ai-agents-reduce.html",
-      "title": "Webinar: How to Govern AI Agents, Reduce Excessive Access, and Control Shadow AI",
-      "link": "https://thehackernews.com/2026/09/webinar-how-to-govern-ai-agents-reduce.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "AI agents are moving into production faster than security teams can govern them. They are connecting to apps, handling data, calling APIs, and acting across business systems—often without the same controls applied to human users. According to Okta’s Global CISO Insights 2026 rep…",
-      "publishedAt": "2026-09-28T11:58:00.000Z"
-    },
-    {
-      "slug": "a2739f1e6c8ad489cf510368",
-      "guid": "https://thehackernews.com/2026/09/carbonato-botnet-compromises-docker.html",
-      "title": "Carbonato Botnet Compromises Docker Hosts to Deploy Telegram-Controlled Hermes AI Agent",
-      "link": "https://thehackernews.com/2026/09/carbonato-botnet-compromises-docker.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "Cybersecurity researchers have disclosed details of a new botnet malware called Carbonato that's targeting exposed Docker daemons to deploy an open-source artificial intelligence (AI) agent framework called Hermes Agent. \"The implant installs the framework unchanged, then overwr…",
-      "publishedAt": "2026-09-28T11:46:00.000Z"
-    },
-    {
-      "slug": "494bde963a328d01dfceeddf",
-      "guid": "https://www.schneier.com/?p=72687",
-      "title": "New Attack Against RSA",
-      "link": "https://www.schneier.com/blog/archives/2026/09/new-attack-against-rsa.html",
-      "source": "Schneier on Security",
-      "sourceUrl": "https://www.schneier.com/feed/",
-      "summary": "ArsTechnica is reporting on a “new” attack against RSA, one that bypasses factoring. First, this attack isn’t new. The original research is from 2007. What is new is the implementation. Second, it is a forgery attack. It allows an attacker to forge digital signatures. It does no…",
-      "publishedAt": "2026-09-28T11:02:58.000Z"
-    },
-    {
-      "slug": "6170da86528027aa14fb1ced",
-      "guid": "https://thehackernews.com/2026/09/jadepuffer-linked-attackers-used.html",
-      "title": "JADEPUFFER-Linked Attackers Used Compromised Service Principals to Delete Azure Resources",
-      "link": "https://thehackernews.com/2026/09/jadepuffer-linked-attackers-used.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "The threat actor known as JADEPUFFER has been observed orchestrating destructive actions within a Microsoft Azure environment using compromised service principals. Microsoft, which is tracking the activity under the name Storm-3168, has called it an evolution of the threat actor…",
-      "publishedAt": "2026-09-28T09:08:21.000Z"
-    },
-    {
-      "slug": "fb7a44822d2ca5dc27aca14a",
-      "guid": "6aba10285bca15000193a183",
-      "title": "Weekly Update 523: Live From a Norwegian Fjord",
-      "link": "https://www.troyhunt.com/weekly-update-523/",
-      "source": "Troy Hunt",
-      "sourceUrl": "https://www.troyhunt.com/rss/",
-      "summary": "How's that view?! With NDC Oslo now done, it's a little bit of sightseeing before heading to Denmark for GOTO in Copenhagen for Scott's and my \"Cyber-broken\" talk. In the meantime, this week is mostly about the ShinyHunters trajectory targeting both",
-      "publishedAt": "2026-09-28T07:24:49.000Z"
-    },
-    {
-      "slug": "d10d67a734db59d52785ef77",
-      "guid": "https://thehackernews.com/2026/09/cisa-says-attackers-are-exploiting-two.html",
-      "title": "CISA Says Attackers Are Exploiting Two Critical Citrix NetScaler Flaws Globally",
-      "link": "https://thehackernews.com/2026/09/cisa-says-attackers-are-exploiting-two.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Sunday added two critical Citrix NetScaler ADC and Gateway flaws to its Known Exploited Vulnerabilities (KEV) catalog, following reports of active exploitation. The vulnerabilities are listed below - CVE-2026-88…",
-      "publishedAt": "2026-09-28T07:21:49.000Z"
     }
   ]
 }
