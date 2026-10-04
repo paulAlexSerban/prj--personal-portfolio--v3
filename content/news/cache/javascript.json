@@ -1,8 +1,78 @@
 {
   "category": "javascript",
   "label": "JavaScript",
-  "fetchedAt": "2026-10-03T10:41:45.997Z",
+  "fetchedAt": "2026-10-04T11:22:30.454Z",
   "items": [
+    {
+      "slug": "da3450a4d6553cb9040c1360",
+      "guid": "https://flaviocopes.com/stacked-prs-not-enabled/",
+      "title": "How to fix \"Stacked PRs are not enabled for this repository\"",
+      "link": "https://flaviocopes.com/stacked-prs-not-enabled/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Stacked PRs are not enabled for this repository is a gh stack warning with no setting to flip. Check your gh account and repo, or open regular PRs.",
+      "publishedAt": "2026-10-04T10:00:00.000Z"
+    },
+    {
+      "slug": "c513739f1931c100a33a1aae",
+      "guid": "https://flaviocopes.com/jev-confidence/",
+      "title": "How to use Jev confidence scores",
+      "link": "https://flaviocopes.com/jev-confidence/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "How to use Jev confidence scores to decide when code acts, asks for confirmation, or hands off to a person, with thresholds tuned on labeled data.",
+      "publishedAt": "2026-10-04T07:00:00.000Z"
+    },
+    {
+      "slug": "5d994957c4b08ab6806ccf24",
+      "guid": "https://flaviocopes.com/vm-monitor/",
+      "title": "I built VM Monitor, a Mac app that shows what your coding agents do in the test VM",
+      "link": "https://flaviocopes.com/vm-monitor/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "VM Monitor is my free, open source Mac app that shows what coding agents do in a macOS test VM: its screen live, which agents are using it and for what, and every command they ran.",
+      "publishedAt": "2026-10-03T20:10:00.000Z"
+    },
+    {
+      "slug": "ac7b95530b13092f36565466",
+      "guid": "https://flaviocopes.com/postdeck/",
+      "title": "I built Postdeck, slides from posts on X for my videos",
+      "link": "https://flaviocopes.com/postdeck/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Postdeck is my free, open source Mac app and Chrome extension that turn posts on X into slides. Click the slide icon under a post, reorder the slides, and play them in the app window while you record.",
+      "publishedAt": "2026-10-03T20:00:00.000Z"
+    },
+    {
+      "slug": "0614f04dfc125f6cfa1ca74a",
+      "guid": "https://flaviocopes.com/jev-classify-text/",
+      "title": "How to classify text with Jev",
+      "link": "https://flaviocopes.com/jev-classify-text/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "How to classify text with Jev: pick Noul, Choice or Score, write labels that work, label comments in bulk, and test accuracy before you trust it.",
+      "publishedAt": "2026-10-03T17:00:00.000Z"
+    },
+    {
+      "slug": "395af928c1abe3e9e33686eb",
+      "guid": "https://flaviocopes.com/poteto-mode/",
+      "title": "What is poteto-mode in pstack?",
+      "link": "https://flaviocopes.com/poteto-mode/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "poteto-mode is the pstack router skill for Cursor. Describe a result and it picks a playbook, calls the other skills, delegates to models and verifies the work.",
+      "publishedAt": "2026-10-03T15:00:00.000Z"
+    },
+    {
+      "slug": "913afe0d0004d5ceadb1f980",
+      "guid": "https://flaviocopes.com/chatgpt-plugins/",
+      "title": "How to create and publish a ChatGPT plugin",
+      "link": "https://flaviocopes.com/chatgpt-plugins/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Create a ChatGPT plugin from scratch: a booking MCP server, a skill and a plugin.json package, tested in developer mode and submitted to the directory.",
+      "publishedAt": "2026-10-03T13:00:00.000Z"
+    },
     {
       "slug": "d817c054f363affedeaa4876",
       "guid": "https://flaviocopes.com/herdr-alternatives/",
@@ -242,76 +312,6 @@
       "sourceUrl": "https://javascriptweekly.com/rss/1b4m1h9j",
       "summary": "#​804 — September 29, 2026 Read on the Web JavaScript Weekly How Anthropic Made Claude's Apps 3x Faster in Two Weeks — A grab bag of performance lessons from a sprint that cut p75 'time-to-typeable' from 3.1s to 0.55s. Em dashes (the irony!) pushed V8 onto a slower regex path, a…",
       "publishedAt": "2026-09-29T00:00:00.000Z"
-    },
-    {
-      "slug": "ecbd0fc6ff6419d8a442123b",
-      "guid": "https://flaviocopes.com/jev-nodejs/",
-      "title": "How to use Jev in Node.js",
-      "link": "https://flaviocopes.com/jev-nodejs/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "How to use Jev in Node.js with the official TypeSafe SDK: install it, ask Noul, Choice and Score questions, handle errors and retries, and build a full script.",
-      "publishedAt": "2026-09-28T10:00:00.000Z"
-    },
-    {
-      "slug": "798012a5acd52370a913b63f",
-      "guid": "https://flaviocopes.com/mcp-servers-i-use/",
-      "title": "The MCP servers connected to my editor, and the ones I actually use",
-      "link": "https://flaviocopes.com/mcp-servers-i-use/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "An honest inventory of the 22 MCP servers connected to my Cursor setup: the two I use every day, the ones that do one job, and the ones that just sit there.",
-      "publishedAt": "2026-09-28T07:00:00.000Z"
-    },
-    {
-      "slug": "27f8081d2c283c670662ec71",
-      "guid": "https://flaviocopes.com/database-hosting-options/",
-      "title": "Where to run Postgres or SQLite for a side project: 10 options and what each costs",
-      "link": "https://flaviocopes.com/database-hosting-options/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Supabase, Neon, Turso, Cloudflare D1, Railway, Fly.io, DigitalOcean, Prisma Postgres, PlanetScale and plain SQLite: free tiers, first paid step and catches.",
-      "publishedAt": "2026-09-27T07:00:00.000Z"
-    },
-    {
-      "slug": "bc41940a29f057baa5225c3a",
-      "guid": "https://flaviocopes.com/jev-pricing/",
-      "title": "How much does Jev cost?",
-      "link": "https://flaviocopes.com/jev-pricing/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Jev costs $0.042 per million input tokens and output is free. How billing works, how to estimate a workload, rate limits, Vercel pricing and LLM comparisons.",
-      "publishedAt": "2026-09-26T10:00:00.000Z"
-    },
-    {
-      "slug": "6f0ad6855b2615d9c823e283",
-      "guid": "https://flaviocopes.com/fundamentals-ai-era/",
-      "title": "The 10 fundamentals still worth learning when AI writes the code",
-      "link": "https://flaviocopes.com/fundamentals-ai-era/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Ten programming fundamentals that still matter when coding agents write the code: what each is, how an agent gets it wrong, and the free course that teaches it.",
-      "publishedAt": "2026-09-26T07:00:00.000Z"
-    },
-    {
-      "slug": "f96a29e60ef8b0a6b27d3fc7",
-      "guid": "https://flaviocopes.com/cli-tools-i-use/",
-      "title": "The CLI tools I use every day",
-      "link": "https://flaviocopes.com/cli-tools-i-use/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "The command line tools I use every day on my Mac: Ghostty, fish, zoxide, tmux, jq, SSH, Git, gh, Wrangler, gitleaks, coding agent CLIs, and the CLIs I built.",
-      "publishedAt": "2026-09-25T07:00:00.000Z"
-    },
-    {
-      "slug": "4c6f404656cf2f29ea2ae78a",
-      "guid": "https://flaviocopes.com/ai-coding-models/",
-      "title": "Which AI model is best for coding? A hands-on comparison",
-      "link": "https://flaviocopes.com/ai-coding-models/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Which AI model is best for coding? Claude Opus 5.5, Fable 5.1, GPT-6.1 Sol, Grok 4.7 and open models compared, plus a test you can run on your own code.",
-      "publishedAt": "2026-09-24T13:00:00.000Z"
     },
     {
       "slug": "0be3d59369e2485d4b18362c",
