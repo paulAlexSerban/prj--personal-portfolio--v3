@@ -1,8 +1,108 @@
 {
   "category": "javascript",
   "label": "JavaScript",
-  "fetchedAt": "2026-10-04T11:22:30.454Z",
+  "fetchedAt": "2026-10-05T12:44:50.427Z",
   "items": [
+    {
+      "slug": "38a85c0f9d052c557f8158a9",
+      "guid": "https://flaviocopes.com/cloudflare-cf/",
+      "title": "How to use cf, the new Cloudflare CLI",
+      "link": "https://flaviocopes.com/cloudflare-cf/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Learn cf, the new Cloudflare CLI: find commands with cf cli search, configure Workers in cloudflare.config.ts, deploy, and migrate from Wrangler.",
+      "publishedAt": "2026-10-05T12:00:00.000Z"
+    },
+    {
+      "slug": "ac9bbb2730d1f5c8fe9536f3",
+      "guid": "https://flaviocopes.com/hosting-picker/",
+      "title": "Hosting picker: find where to host your app",
+      "link": "https://flaviocopes.com/hosting-picker/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Answer four questions and get three hosts that fit your project, with a monthly price and the main catch. 21 providers, prices checked October 1, 2026.",
+      "publishedAt": "2026-10-05T10:10:00.000Z"
+    },
+    {
+      "slug": "50767f2a7423bcb046f00fe2",
+      "guid": "https://flaviocopes.com/payment-picker/",
+      "title": "Payment picker: find how to get paid for your app",
+      "link": "https://flaviocopes.com/payment-picker/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Find a payment provider for your product, compare fees on your own numbers, and see who handles tax and disputes. Merchant of Record and direct providers.",
+      "publishedAt": "2026-10-05T10:10:00.000Z"
+    },
+    {
+      "slug": "fbe18c6f6111803ea4b11fa9",
+      "guid": "https://flaviocopes.com/cron/",
+      "title": "A deep dive into cron",
+      "link": "https://flaviocopes.com/cron/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Learn cron on Linux and macOS: crontab syntax, schedules, the cron environment, logs, overlapping runs, time zones, launchd and systemd timers.",
+      "publishedAt": "2026-10-05T10:00:00.000Z"
+    },
+    {
+      "slug": "449f3a6016f37384ca94e093",
+      "guid": "https://flaviocopes.com/blueprint/",
+      "title": "I built Blueprint, a Mac app that shows how my apps are built",
+      "link": "https://flaviocopes.com/blueprint/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Blueprint is my free, open source Mac app that draws how your apps are built, their workflows and the data they store, from maps your coding agents write.",
+      "publishedAt": "2026-10-05T08:30:00.000Z"
+    },
+    {
+      "slug": "fae5b6b2e4ad84f72c01fc85",
+      "guid": "https://flaviocopes.com/mac-iphone-sync/",
+      "title": "How to sync a Mac app with its iPhone app",
+      "link": "https://flaviocopes.com/mac-iphone-sync/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "How to sync a Mac app and its iPhone companion: CloudKit, what the Apple Developer Program unlocks, iCloud for apps outside the App Store, and alternatives.",
+      "publishedAt": "2026-10-05T07:00:00.000Z"
+    },
+    {
+      "slug": "d20091f3a2b9a7e93ef9e658",
+      "guid": "https://flaviocopes.com/notion-presenter-view/",
+      "title": "I built Notion Presenter View, a Chrome extension that shows your next slide",
+      "link": "https://flaviocopes.com/notion-presenter-view/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Notion Presenter View is my free, open source Chrome extension that shows the next slide of a Notion presentation in a small floating window, on top of the fullscreen slides.",
+      "publishedAt": "2026-10-04T18:55:00.000Z"
+    },
+    {
+      "slug": "2ba19e4db6f885a7963e886d",
+      "guid": "https://flaviocopes.com/mac-app-updates/",
+      "title": "How my Mac apps update themselves from GitHub Releases",
+      "link": "https://flaviocopes.com/mac-app-updates/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Soundscape and CLI Tools check GitHub once a day, download the new release, verify it, and replace themselves. Here's how it works, in one Swift file with no dependencies.",
+      "publishedAt": "2026-10-04T17:00:00.000Z"
+    },
+    {
+      "slug": "920e7386450c4286fa7c7288",
+      "guid": "https://flaviocopes.com/mac-test-vm/",
+      "title": "How to let coding agents test Mac apps in a VM",
+      "link": "https://flaviocopes.com/mac-test-vm/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Run a headless macOS VM with Tart so coding agents can launch, screenshot and click through your Mac apps without taking over your screen.",
+      "publishedAt": "2026-10-04T15:00:00.000Z"
+    },
+    {
+      "slug": "e1d0591865bc953ab942ee3d",
+      "guid": "https://flaviocopes.com/apple-developer-free-vs-paid/",
+      "title": "Should you pay for the Apple Developer Program?",
+      "link": "https://flaviocopes.com/apple-developer-free-vs-paid/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Free Apple developer account vs the $99 Apple Developer Program: what each lets you do, what changes when you pay, and why it helps outside the App Store too.",
+      "publishedAt": "2026-10-04T13:00:00.000Z"
+    },
     {
       "slug": "da3450a4d6553cb9040c1360",
       "guid": "https://flaviocopes.com/stacked-prs-not-enabled/",
@@ -204,106 +304,6 @@
       "publishedAt": "2026-10-01T09:00:00.000Z"
     },
     {
-      "slug": "8a0b12118321772ff7852e62",
-      "guid": "https://flaviocopes.com/gpt-6-1-sol/",
-      "title": "How to use GPT-6.1 Sol",
-      "link": "https://flaviocopes.com/gpt-6-1-sol/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "How to use GPT-6.1 Sol in Codex, ChatGPT Work and the OpenAI API, with pricing, reasoning effort, prompt caching and a Node.js code review script.",
-      "publishedAt": "2026-09-30T15:00:00.000Z"
-    },
-    {
-      "slug": "e098862ba34ba4d643263063",
-      "guid": "https://flaviocopes.com/skillscout/",
-      "title": "I built Skillscout, a Mac app for the skills your coding agents load",
-      "link": "https://flaviocopes.com/skillscout/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Skillscout is my free, open source Mac app that finds every agent skill on your Mac, shows which of 8 coding agents load each one, and counts how often you use them.",
-      "publishedAt": "2026-09-30T13:30:00.000Z"
-    },
-    {
-      "slug": "8b063b8dd97698d7fa65dbad",
-      "guid": "https://flaviocopes.com/unslop/",
-      "title": "How to use the unslop skill",
-      "link": "https://flaviocopes.com/unslop/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "The unslop skill removes AI writing tells from text. Learn where it comes from, why pstack includes it, and how to run it in Cursor, Claude Code and Codex.",
-      "publishedAt": "2026-09-30T13:00:00.000Z"
-    },
-    {
-      "slug": "a1902aef90349d2004ce24ae",
-      "guid": "https://flaviocopes.com/jev-python/",
-      "title": "How to use Jev with Python",
-      "link": "https://flaviocopes.com/jev-python/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "How to use Jev with Python: install typesafe-sdk, ask Choice, Score and Noul questions, read the probabilities, and classify a whole CSV with asyncio.",
-      "publishedAt": "2026-09-30T10:00:00.000Z"
-    },
-    {
-      "slug": "fc8df883e69c78743aa2c668",
-      "guid": "https://flaviocopes.com/soundscape/",
-      "title": "I built Soundscape, a mixer for the Background Sounds on your Mac",
-      "link": "https://flaviocopes.com/soundscape/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Soundscape is my free, open source Mac app that plays the Background Sounds built into macOS together, each at its own volume, from a window or the menu bar.",
-      "publishedAt": "2026-09-30T09:00:00.000Z"
-    },
-    {
-      "slug": "4571a25b721402af9356bd61",
-      "guid": "https://flaviocopes.com/agents-unattended/",
-      "title": "Things I let coding agents do unattended, and things I never do",
-      "link": "https://flaviocopes.com/agents-unattended/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Which tasks I hand to a coding agent and walk away from, which ones I never let it do alone, and the guardrail I use for each: hooks, sandboxes, PRs, approvals.",
-      "publishedAt": "2026-09-30T07:00:00.000Z"
-    },
-    {
-      "slug": "1c7465ec7434ea7b8addb745",
-      "guid": "https://flaviocopes.com/openai-dots/",
-      "title": "A deep dive into OpenAI dots",
-      "link": "https://flaviocopes.com/openai-dots/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "OpenAI dots are always-on ChatGPT agents with their own cloud computer. How to set one up, give it work, connect apps and Codex, and control what it does.",
-      "publishedAt": "2026-09-30T06:30:00.000Z"
-    },
-    {
-      "slug": "156652fcb19bdcc9567434d2",
-      "guid": "https://flaviocopes.com/x-prevent-links/",
-      "title": "How to stop X from turning a domain into a link",
-      "link": "https://flaviocopes.com/x-prevent-links/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "To stop X from turning a domain into a link, put an invisible zero-width non-joiner (U+200C) after the dot. How to type it, and where it fails.",
-      "publishedAt": "2026-09-29T13:00:00.000Z"
-    },
-    {
-      "slug": "58253e6041d9c30553932bf3",
-      "guid": "https://flaviocopes.com/noterepo/",
-      "title": "I built NoteRepo, a quiet daily notes app for macOS",
-      "link": "https://flaviocopes.com/noterepo/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "NoteRepo is my free, open source daily notes app for macOS. It opens on today, keeps your notes in a local SQLite file, and has no accounts.",
-      "publishedAt": "2026-09-29T12:00:00.000Z"
-    },
-    {
-      "slug": "c91bcf9bf030992d329e020d",
-      "guid": "https://flaviocopes.com/payment-provider-fees/",
-      "title": "What $10,000 a month in sales costs you on each payment provider",
-      "link": "https://flaviocopes.com/payment-provider-fees/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Payment provider fees on one $10,000 month: Creem, Paddle, Polar, Lemon Squeezy, Dodo Payments, Gumroad and Stripe with Stripe Tax. The math and each catch.",
-      "publishedAt": "2026-09-29T07:00:00.000Z"
-    },
-    {
       "slug": "c9821fb6260d747706562252",
       "guid": "https://javascriptweekly.com/issues/804",
       "title": "A-ha's Take on Me, recreated in pure JavaScript",
@@ -352,16 +352,6 @@
       "sourceUrl": "https://javascriptweekly.com/rss/1b4m1h9j",
       "summary": "#​803 — September 22, 2026 Read on the Web JavaScript Weekly tinyjs: Build JavaScript Desktop Apps in <10MB — I built an app with this and was impressed. You get a txiki.js-powered backend with full system access (including FFI!), native webview rendering, and tiny macOS, Linux,…",
       "publishedAt": "2026-09-22T00:00:00.000Z"
-    },
-    {
-      "slug": "3f960b1663cbf0430585c365",
-      "guid": "https://blog.appsignal.com/2026/09/21/expert-context-built-with-gorails.html",
-      "title": "AppSignal Intelligence Just Got More Rails Context",
-      "link": "https://blog.appsignal.com/2026/09/21/expert-context-built-with-gorails.html",
-      "source": "AppSignal",
-      "sourceUrl": "https://blog.appsignal.com/feed.xml",
-      "summary": "Today we’re taking our partnership with Chris Oliver (founder of Hatchbox and GoRails) one step further. With AppSignal, you can already store enriched telemetry about your applications, services, and infrastructure, along with your user context, in your AppSignal context store.…",
-      "publishedAt": "2026-09-21T00:00:00.000Z"
     }
   ]
 }
