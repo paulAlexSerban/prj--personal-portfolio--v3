@@ -1,127 +1,317 @@
 {
   "category": "web-dev",
   "label": "Web Development",
-  "fetchedAt": "2026-10-06T12:15:58.219Z",
+  "fetchedAt": "2026-10-07T12:06:57.138Z",
   "items": [
     {
-      "slug": "08f381981105fd04dfdcb3da",
-      "guid": "https://dev.to/bhavy_belwal_ff3ce6f42271/building-secure-communication-systems-key-concepts-developers-should-know-3mf5",
-      "title": "Building Secure Communication Systems: Key Concepts Developers Should Know",
-      "link": "https://dev.to/bhavy_belwal_ff3ce6f42271/building-secure-communication-systems-key-concepts-developers-should-know-3mf5",
+      "slug": "4bc770137c153710a117c2b8",
+      "guid": "https://dev.to/hxa/infoleak-prevention-for-authentication-system-118g",
+      "title": "Infoleak Prevention for Authentication System",
+      "link": "https://dev.to/hxa/infoleak-prevention-for-authentication-system-118g",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "Communication applications look simple from the outside. A user opens an app, selects a contact, writes a message and presses send. Behind that simple interface is a complex system involving authentication, APIs, databases, networking, real-time communication and security. For d…",
-      "publishedAt": "2026-10-06T12:13:56.000Z"
+      "summary": "Authentication systems protect the most valuable part of an application: user identity and access. A leaked password, session cookie, refresh token, API key, or authentication credential can allow an attacker to impersonate a legitimate user. A secure authentication system there…",
+      "publishedAt": "2026-10-07T12:03:56.000Z"
     },
     {
-      "slug": "5e55773196a76e70a9b28421",
-      "guid": "https://dev.to/bhavy_belwal_ff3ce6f42271/privacy-by-design-what-developers-should-consider-when-building-chat-apps-2an5",
-      "title": "Privacy by Design: What Developers Should Consider When Building Chat Apps",
-      "link": "https://dev.to/bhavy_belwal_ff3ce6f42271/privacy-by-design-what-developers-should-consider-when-building-chat-apps-2an5",
+      "slug": "bc3a15bcdf70a4e9508b86ea",
+      "guid": "https://dev.to/agentprojectcontext/an-apx-project-is-not-the-same-thing-as-a-git-repository-56b5",
+      "title": "An APX Project Is Not the Same Thing as a Git Repository",
+      "link": "https://dev.to/agentprojectcontext/an-apx-project-is-not-the-same-thing-as-a-git-repository-56b5",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "Privacy by Design: What Developers Should Consider When Building Chat Apps Building a chat application is often treated as a frontend and backend development exercise. Create a chat interface, connect an API, store messages in a database, add authentication, and you're done. In …",
-      "publishedAt": "2026-10-06T12:13:00.000Z"
+      "summary": "A common mistake in agent tooling is to define a project as a code repository. That works for a developer demo, then fails the moment the work is a client operation, a research effort, a household plan, or a creative production. APX takes a wider view: a project is a place where…",
+      "publishedAt": "2026-10-07T12:03:52.000Z"
     },
     {
-      "slug": "efa3bceb4aad8b202803939f",
-      "guid": "https://dev.to/bhavy_belwal_ff3ce6f42271/understanding-end-to-end-encryption-in-modern-messaging-systems-41g7",
-      "title": "Understanding End-to-End Encryption in Modern Messaging Systems",
-      "link": "https://dev.to/bhavy_belwal_ff3ce6f42271/understanding-end-to-end-encryption-in-modern-messaging-systems-41g7",
+      "slug": "1f5455f76f4f2f8a22030596",
+      "guid": "https://dev.to/vin_lookup_8dbd4710f77e9e/honoring-retry-after-and-upstream-hints-when-nhtsa-slows-down-235",
+      "title": "Honoring Retry-After and Upstream Hints When NHTSA Slows Down",
+      "link": "https://dev.to/vin_lookup_8dbd4710f77e9e/honoring-retry-after-and-upstream-hints-when-nhtsa-slows-down-235",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "Understanding End-to-End Encryption in Modern Messaging Systems Privacy has become an important engineering requirement for modern communication applications. Messaging systems handle personal conversations, images, documents, voice messages and other types of information. Becau…",
-      "publishedAt": "2026-10-06T12:12:23.000Z"
+      "summary": "Backoff with jitter is necessary for a free VIN decode that calls NHTSA vPIC. It is not sufficient. When upstream (or your proxy) says wait, ignoring that hint and sleeping a random few hundred milliseconds turns a soft slowdown into a hard block for everyone sharing the public …",
+      "publishedAt": "2026-10-07T12:02:40.000Z"
     },
     {
-      "slug": "fa3145021f346d89571ddd73",
-      "guid": "https://dev.to/neurise/browser-ai-agents-dont-need-screenshots-for-everything-5bbd",
-      "title": "Browser AI Agents Don’t Need Screenshots for Everything",
-      "link": "https://dev.to/neurise/browser-ai-agents-dont-need-screenshots-for-everything-5bbd",
+      "slug": "47b609b11c63508368a305b0",
+      "guid": "https://dev.to/tamizuddin/from-local-llm-to-autonomous-agent-building-ai-driven-dev-tools-that-actually-stay-in-their-lane-3bmk",
+      "title": "From Local LLM to Autonomous Agent: Building AI-Driven Dev Tools That Actually Stay in Their Lane",
+      "link": "https://dev.to/tamizuddin/from-local-llm-to-autonomous-agent-building-ai-driven-dev-tools-that-actually-stay-in-their-lane-3bmk",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "Browser agents have become surprisingly capable. Give an AI agent a task like “find this product, fill in the form and submit it”, and it can often navigate a website almost like a human. But there is a problem with how many browser agents understand what is happening on the scr…",
-      "publishedAt": "2026-10-06T12:12:16.000Z"
+      "summary": "Originally published on tamiz.pro. Every developer tool powered by an LLM eventually hits the same wall: the model does something you didn't ask for. It rewrites a file it wasn't supposed to touch, calls an API that doesn't exist in your registry, or spawns a sub-agent that spir…",
+      "publishedAt": "2026-10-07T12:02:30.000Z"
     },
     {
-      "slug": "e628549c52bef5cc4a50015d",
-      "guid": "https://dev.to/bhavy_belwal_ff3ce6f42271/how-end-to-end-encryption-protects-private-conversations-4e2p",
-      "title": "How End-to-End Encryption Protects Private Conversations",
-      "link": "https://dev.to/bhavy_belwal_ff3ce6f42271/how-end-to-end-encryption-protects-private-conversations-4e2p",
+      "slug": "25b1a31b4193254d8332375b",
+      "guid": "https://dev.to/orquesta_live/agent-grid-monitor-dozens-of-ai-agents-from-one-screen-3jn0",
+      "title": "Agent Grid: Monitor Dozens of AI Agents From One Screen",
+      "link": "https://dev.to/orquesta_live/agent-grid-monitor-dozens-of-ai-agents-from-one-screen-3jn0",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "How Real-Time Messaging Applications Work Real-time messaging looks simple from the user's perspective. You type a message, press send, and the other person receives it almost instantly. Behind that simple experience, however, there is a complete system involving clients, server…",
-      "publishedAt": "2026-10-06T12:10:47.000Z"
+      "summary": "Originally published at getorquesta.com/blog/agent-grid-monitor-dozens-ai-agents-one-screen When we first shipped Orquesta, the core promise was simple: write a prompt, get a PR. And for a single agent, that worked fine—you'd watch the output scroll by in your terminal. But the …",
+      "publishedAt": "2026-10-07T12:01:18.000Z"
     },
     {
-      "slug": "c589ad07d2df62980f3a4e5b",
-      "guid": "https://dev.to/felipe0liveira/the-agent-harness-goes-platform-native-and-the-guardrails-scramble-to-keep-up-j13",
-      "title": "The Agent Harness Goes Platform-Native — and the Guardrails Scramble to Keep Up",
-      "link": "https://dev.to/felipe0liveira/the-agent-harness-goes-platform-native-and-the-guardrails-scramble-to-keep-up-j13",
+      "slug": "1af454b99e952e5692ba1cf6",
+      "guid": "https://dev.to/just_a_side_project/debug-log-7-a-phishing-comment-a-four-level-deep-reply-thread-and-what-actually-grew-this-month-2jgk",
+      "title": "Debug Log #7: A Phishing Comment, a Four-Level-Deep Reply Thread, and What Actually Grew This Month",
+      "link": "https://dev.to/just_a_side_project/debug-log-7-a-phishing-comment-a-four-level-deep-reply-thread-and-what-actually-grew-this-month-2jgk",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "This digest covers what's new for AI agent builders between 2026-08-25 and 2026-10-06: orchestration, tool calling, memory, planning loops, multi-agent coordination, and evaluation. Introducing the Agents API and hosted sandboxes — OpenAI now sells you its own Codex harness as a…",
-      "publishedAt": "2026-10-06T12:09:26.000Z"
+      "summary": "Four comment threads happened on this blog in the past three weeks. One was a genuine multi-day technical exchange five replies deep. One was a stranger trying to phish the account. My own script, built to check for unanswered comments, missed a real one because I only taught it…",
+      "publishedAt": "2026-10-07T12:01:08.000Z"
     },
     {
-      "slug": "aaecaaaced1b4830e867d17b",
-      "guid": "https://dev.to/dinokupinic/software-should-be-beautiful-2mcb",
-      "title": "Software should be beautiful",
-      "link": "https://dev.to/dinokupinic/software-should-be-beautiful-2mcb",
+      "slug": "8a2f2ef89f687f9ca5818363",
+      "guid": "https://dev.to/pydevtop/como-construimos-un-bot-de-binance-p2p-para-banco-de-venezuela-automatizacion-segura-de-pago-movil-1hba",
+      "title": "Cómo construimos un bot de Binance P2P para Banco de Venezuela: automatización segura de Pago Móvil sin API bancaria",
+      "link": "https://dev.to/pydevtop/como-construimos-un-bot-de-binance-p2p-para-banco-de-venezuela-automatizacion-segura-de-pago-movil-1hba",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "Originally published on my website on August 22, 2024. Design is everything. It's the first thing we notice when we look at something, and it's the first thing that makes us feel a certain way. When we think of beauty, we often picture visual aesthetics, paintings, sculptures, o…",
-      "publishedAt": "2026-10-06T12:07:43.000Z"
+      "summary": "Automatizar pagos para un comerciante de Binance P2P en Venezuela Recibes una orden. Validás los datos del beneficiario. Ejecutás el pago. Con Banco de Venezuela (BDV), el problema cambia por completo. Para el flujo que necesitábamos automatizar no disponíamos de una API Eso nos…",
+      "publishedAt": "2026-10-07T12:00:52.000Z"
     },
     {
-      "slug": "c33b852bb523b528a24cd4a8",
-      "guid": "https://dev.to/salmonjoy/test-1geg",
-      "title": "test",
-      "link": "https://dev.to/salmonjoy/test-1geg",
+      "slug": "1dc62f5c39fc0a7536f135a1",
+      "guid": "https://dev.to/naveens16/who-owns-kubernetes-on-day-2-defining-the-operational-boundary-255f",
+      "title": "Who Owns Kubernetes on Day 2? Defining the Operational Boundary",
+      "link": "https://dev.to/naveens16/who-owns-kubernetes-on-day-2-defining-the-operational-boundary-255f",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "✅ Environment Precheck – DevOps with Kubernetes Workshop This file guides you through one-time prechecks to ensure your laptop is ready. PowerShell (Windows) or Terminal (macOS/Linux). Tip: Lines beginning with # are comments – you don’t type them. macOS/Linux: uname -m x86_64 →…",
-      "publishedAt": "2026-10-06T12:07:15.000Z"
+      "summary": "Day 1 of a Kubernetes deployment feels like a victory. Day 2 is where the organizational cracks show up. The cluster is provisioned. Nodes are healthy. Ingress is routing traffic. CoreDNS is responding. Monitoring is green. The application team gets a namespace, deploys its work…",
+      "publishedAt": "2026-10-07T12:00:47.000Z"
     },
     {
-      "slug": "f7cab813179297f73dd1c5e5",
-      "guid": "https://dev.to/developerimranahmed/why-your-idempotent-post-endpoint-is-still-creating-duplicates-under-load-27od",
-      "title": "Why your idempotent POST endpoint is still creating duplicates under load",
-      "link": "https://dev.to/developerimranahmed/why-your-idempotent-post-endpoint-is-still-creating-duplicates-under-load-27od",
+      "slug": "5e619a9742dbeba4eeae724d",
+      "guid": "https://dev.to/saaro_net/ai-agents-for-devops-and-sre-the-changing-face-of-operations-in-2026-5gag",
+      "title": "AI Agents for DevOps and SRE: The Changing Face of Operations in 2026",
+      "link": "https://dev.to/saaro_net/ai-agents-for-devops-and-sre-the-changing-face-of-operations-in-2026-5gag",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "Stop Losing Data: Why Your Idempotent POST Endpoint is Still Creating Duplicates If you have a .NET API that accepts POST requests, you’ve likely added idempotency keys to handle retries gracefully. It’s a standard pattern: client sends a key, server checks if it’s been seen bef…",
-      "publishedAt": "2026-10-06T12:05:52.000Z"
+      "summary": "If an alarm goes off at 3 a.m., until now it has been a human who gets up, sifts through logs, and hopes to find the right spot in the runbook. In 2026, AI agents are increasingly taking over – not as friendly summarizing chatbots, but as autonomous actors that correlate alarms,…",
+      "publishedAt": "2026-10-07T12:00:32.000Z"
     },
     {
-      "slug": "8cc18ff912fc654bdcb3de79",
-      "guid": "https://dev.to/olivia_bennett_16e21cd348/modernizing-retail-software-without-rebuilding-the-entire-system-4k5f",
-      "title": "Modernizing Retail Software Without Rebuilding the Entire System",
-      "link": "https://dev.to/olivia_bennett_16e21cd348/modernizing-retail-software-without-rebuilding-the-entire-system-4k5f",
+      "slug": "24634554e058a1213e6da762",
+      "guid": "https://dev.to/selimbenali/new-release-bro-sba-py-v011-44h3",
+      "title": "New Release: bro-sba-py v0.1.1",
+      "link": "https://dev.to/selimbenali/new-release-bro-sba-py-v011-44h3",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "Retail software tends to grow over time. A company may start with a simple point-of-sale system, then add an ecommerce platform, inventory management, CRM, warehouse software, analytics tools, and third-party services. Eventually, the technology landscape can become difficult to…",
-      "publishedAt": "2026-10-06T12:05:30.000Z"
+      "summary": "🎉 New Release: bro-sba-py v0.1.1 If you’ve ever felt stuck wiring up a Flask project from scratch, this update makes it easier. bro-sba-py still converts your Peewee models into a functional Flask app with a REST API and an admin dashboard, now available as version 0.1.1 on PyP…",
+      "publishedAt": "2026-10-07T12:00:17.000Z"
     },
     {
-      "slug": "b044fb1f8305e71e123b5d7b",
-      "guid": "https://dev.to/agentprojectcontext/a-project-can-decline-apx-without-rejecting-apc-fb9",
-      "title": "A Project Can Decline APX Without Rejecting APC",
-      "link": "https://dev.to/agentprojectcontext/a-project-can-decline-apx-without-rejecting-apc-fb9",
+      "slug": "056884b47884dcf22790128e",
+      "guid": "https://dev.to/khaledmsalem/add-an-ionify-pilot-command-while-keeping-your-existing-build-1lk9",
+      "title": "Add an Ionify pilot command while keeping your existing build",
+      "link": "https://dev.to/khaledmsalem/add-an-ionify-pilot-command-while-keeping-your-existing-build-1lk9",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "APC is a portable project-context convention, not an APX installation requirement. That distinction matters when an agent opens a repository and sees an AGENTS.md file plus .apc/ metadata. A useful project can want the shared context layer while deliberately choosing not to use …",
-      "publishedAt": "2026-10-06T12:03:26.000Z"
+      "summary": "This lab adds an experimental path without replacing your current one. Use a branch or separate checkout, not an unreviewed change to production CI. Read the current setup guide and support boundaries. The public 0.1.37 package declares Node 22.x or 24.x. Keep optional dependenc…",
+      "publishedAt": "2026-10-07T12:00:00.000Z"
     },
     {
-      "slug": "7e583d96d86406aa92457a77",
-      "guid": "https://dev.to/emilio_ochieng_632030149c/pandas-for-beginners-a-practical-guide-to-data-analysis-in-python-2b7a",
-      "title": "Pandas for Beginners: A Practical Guide to Data Analysis in Python",
-      "link": "https://dev.to/emilio_ochieng_632030149c/pandas-for-beginners-a-practical-guide-to-data-analysis-in-python-2b7a",
+      "slug": "6db2486d0690ff39ee036bdc",
+      "guid": "https://dev.to/jmiliamine/private-langgraph-rag-on-kubernetes-running-a-local-llm-with-full-observability-opentelemetry-ad9",
+      "title": "Private LangGraph RAG on Kubernetes: Running a Local LLM with Full Observability (OpenTelemetry, Prometheus, Grafana)",
+      "link": "https://dev.to/jmiliamine/private-langgraph-rag-on-kubernetes-running-a-local-llm-with-full-observability-opentelemetry-ad9",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "What is pandas? Pandas gives you two main structures: Series: a single column of data with an index. Install it and import it with the usual alias: bash By convention, a DataFrame variable is named df, short for DataFrame. Creating a DataFrame You can build one from a dictionary…",
-      "publishedAt": "2026-10-06T12:02:28.000Z"
+      "summary": "The problem Health records, payslips, identity documents, personal e-mails, private notes: this is the data a large language model (LLM) would be most useful on, and the data that should never be sent to a third-party API. Sending it to a hosted model means losing control of whe…",
+      "publishedAt": "2026-10-07T12:00:00.000Z"
+    },
+    {
+      "slug": "46c4f8391acad273cc7d4478",
+      "guid": "https://medium.com/p/c2774e3abdfa",
+      "title": "Microsoft Foundry and OutSystems - Part 3.5: FastMCP as an Adapter for OutSystems APIs",
+      "link": "https://itnext.io/microsoft-foundry-and-outsystems-part-3-5-fastmcp-as-an-adapter-for-outsystems-apis-c2774e3abdfa?source=rss----5b301f10ddcd---4",
+      "source": "itnext",
+      "sourceUrl": "https://itnext.io/feed",
+      "summary": "Keep business data and rules in O11 or ODC, expose them through REST, and use a FastMCP service to present those APIs as tools to Foundry. Continue reading on ITNEXT »",
+      "publishedAt": "2026-10-07T11:50:51.000Z"
+    },
+    {
+      "slug": "264dd98b292a7c6869d835f6",
+      "guid": "https://medium.com/p/47501c6c51aa",
+      "title": "Building a BuySellAds Performance Dashboard with GA4 and Looker Studio",
+      "link": "https://itnext.io/building-a-buysellads-performance-dashboard-with-ga4-and-looker-studio-47501c6c51aa?source=rss----5b301f10ddcd---4",
+      "source": "itnext",
+      "sourceUrl": "https://itnext.io/feed",
+      "summary": "I wanted to know more than just how much my blog ads were earning. So I built a simple dashboard to uncover **which pages, placements, and… Continue reading on ITNEXT »",
+      "publishedAt": "2026-10-07T11:49:17.000Z"
+    },
+    {
+      "slug": "7a6bb37209a2df62e5f8d011",
+      "guid": "6ac4cac9d5dd500001e1b8ac",
+      "title": "Build a Three-Tier Architecture on AWS with Terraform and ECS Fargate",
+      "link": "https://kodekloud.com/blog/aws-three-tier-architecture-terraform-kodekey/",
+      "source": "KodeKloud",
+      "sourceUrl": "https://kodekloud.com/blog/rss/",
+      "summary": "Build a three-tier architecture on AWS with Terraform. An ALB, a private ECS Fargate app, and RDS, with secrets injected from Secrets Manager.",
+      "publishedAt": "2026-10-07T04:22:36.000Z"
+    },
+    {
+      "slug": "c22e1e43bc120df412f4f954",
+      "guid": "https://blog.master.dev/?p=11334",
+      "title": "Interop 2027",
+      "link": "https://blog.master.dev/interop-2027/",
+      "source": "Frontend Masters",
+      "sourceUrl": "https://frontendmasters.com/blog/feed/",
+      "summary": "I should have noted this sooner (sorry!), but it’s that time of year when Interop is planning for next year. Submissions are closed, and now they spend time refining and culling the proposals. We’ll hear on February 4th, 2027 what the focus will be on. I believe there is still t…",
+      "publishedAt": "2026-10-06T22:13:32.000Z"
+    },
+    {
+      "slug": "d4e0890887ff8b9acc4fd926",
+      "guid": "https://medium.com/p/ad0dd696f11b",
+      "title": "Mega Carrots for Monty, Angular Through the Sliding Door, and Lynx on Foldables",
+      "link": "https://itnext.io/mega-carrots-for-monty-angular-through-the-sliding-door-and-lynx-on-foldables-ad0dd696f11b?source=rss----5b301f10ddcd---4",
+      "source": "itnext",
+      "sourceUrl": "https://itnext.io/feed",
+      "summary": "",
+      "publishedAt": "2026-10-06T22:13:15.000Z"
+    },
+    {
+      "slug": "24d39f28f1664a92f8c76c40",
+      "guid": "https://github.blog/?p=99275",
+      "title": "Building Git infrastructure for agent-scale development",
+      "link": "https://github.blog/engineering/architecture-optimization/building-git-infrastructure-for-agent-scale-development/",
+      "source": "Github Blog",
+      "sourceUrl": "https://github.blog/feed/",
+      "summary": "We're rebuilding GitHub's Git infrastructure while GitHub keeps running, creating a foundation for agent-scale software development. The post Building Git infrastructure for agent-scale development appeared first on The GitHub Blog.",
+      "publishedAt": "2026-10-06T20:57:56.000Z"
+    },
+    {
+      "slug": "c104fa5e02a16f2fb7d1ceee",
+      "guid": "https://dzone.com/articles/3684517",
+      "title": "Apache Phoenix: Global Secondary Indexes With Tunable Consistency",
+      "link": "https://dzone.com/articles/phoenix-global-secondary-indexes",
+      "source": "DZone",
+      "sourceUrl": "https://feeds.dzone.com/home",
+      "summary": "Apache Phoenix provides an open-source SQL interface over Apache HBase, combining the power of NoSQL horizontal scaling and sharding with SQL simplicity for low-latency and high-throughput OLTP operations on petabyte-scale data. Phoenix complements HBase by providing capabilitie…",
+      "publishedAt": "2026-10-06T19:00:00.000Z"
+    },
+    {
+      "slug": "160f4159db7351ecb3855550",
+      "guid": "https://dzone.com/articles/3687402",
+      "title": "Building and Serving a Custom Model With Azure ML, Then Wiring It Into a Foundry Agent",
+      "link": "https://dzone.com/articles/azure-ml-foundry-agent",
+      "source": "DZone",
+      "sourceUrl": "https://feeds.dzone.com/home",
+      "summary": "The Foundry model catalog covers a lot of ground, but it doesn't cover everything. If you need a model trained on your own proprietary, tabular data, a churn predictor built on your actual customer history, a fraud score trained on your actual transaction patterns, that's not a …",
+      "publishedAt": "2026-10-06T18:00:00.000Z"
+    },
+    {
+      "slug": "efe057ce9ed043c160b42f5d",
+      "guid": "https://dzone.com/articles/3686365",
+      "title": "Resume the Evaluation, Not the Entire Batch: Build a Checkpoint-Aware AI Job Controller With Temporal",
+      "link": "https://dzone.com/articles/temporal-checkpoint-ai-jobs",
+      "source": "DZone",
+      "sourceUrl": "https://feeds.dzone.com/home",
+      "summary": "Large AI evaluations rarely fail at convenient boundaries. A batch may contain tens of thousands of prompts, retrieval cases, tool-use scenarios, or judge-model comparisons, and each case can involve expensive network calls plus result persistence. Restarting the entire batch af…",
+      "publishedAt": "2026-10-06T17:00:09.000Z"
+    },
+    {
+      "slug": "87648704fdfe5de1c1648d52",
+      "guid": "6ac5187245147b00014ba3f7",
+      "title": "What's Eating My Disk? Find It with du",
+      "link": "https://kodekloud.com/blog/find-disk-usage-linux-du/",
+      "source": "KodeKloud",
+      "sourceUrl": "https://kodekloud.com/blog/rss/",
+      "summary": "Out of disk space on Linux? Use sudo du -h -d3 / | sort -h to find the biggest directories, then find to locate the large files.",
+      "publishedAt": "2026-10-06T16:08:15.000Z"
+    },
+    {
+      "slug": "2dcbd767913a89f2358d5b76",
+      "guid": "https://dzone.com/articles/3688327",
+      "title": "Building IoT Time-Series Applications With Java and Apache IoTDB",
+      "link": "https://dzone.com/articles/java-iotdb-time-series",
+      "source": "DZone",
+      "sourceUrl": "https://feeds.dzone.com/home",
+      "summary": "Apache IoTDB is well-suited for environments where time-series data from connected devices and industrial systems is generated continuously and requires efficient querying. Typical use cases include monitoring temperature, pressure, vibration, energy usage, machine status, and d…",
+      "publishedAt": "2026-10-06T16:00:12.000Z"
+    },
+    {
+      "slug": "57990bdbd3c990caedb1a151",
+      "guid": "https://dzone.com/articles/3679809",
+      "title": "Beyond @Transactional: Solving the Dual-Write Problem in Distributed Microservices",
+      "link": "https://dzone.com/articles/dual-write-microservices",
+      "source": "DZone",
+      "sourceUrl": "https://feeds.dzone.com/home",
+      "summary": "The Illusion of a Single Database In a traditional monolithic application, maintaining data consistency is straightforward. If you need to create a new order and update warehouse inventory, you wrap the logic inside a single database transaction: @Transactional public void place…",
+      "publishedAt": "2026-10-06T15:00:16.000Z"
+    },
+    {
+      "slug": "66e50fec7cf41458708f700d",
+      "guid": "https://medium.com/p/0ace665208de",
+      "title": "ARM Templates vs Bicep in 2026: I Revisited My 2021 Verdict",
+      "link": "https://itnext.io/arm-templates-vs-bicep-2026-revisited-0ace665208de?source=rss----5b301f10ddcd---4",
+      "source": "itnext",
+      "sourceUrl": "https://itnext.io/feed",
+      "summary": "Three of the four limitations I flagged are fixed or mostly fixed. Here is the scorecard, what replaced the workarounds, and a safe way to… Continue reading on ITNEXT »",
+      "publishedAt": "2026-10-06T14:23:47.000Z"
+    },
+    {
+      "slug": "e242c32a9512f326da096d31",
+      "guid": "https://dzone.com/articles/3678735",
+      "title": "OpenSearch Heap Sizing: Swap, Page Cache, and the 50% Rule",
+      "link": "https://dzone.com/articles/opensearch-heap-sizing",
+      "source": "DZone",
+      "sourceUrl": "https://feeds.dzone.com/home",
+      "summary": "OpenSearch is an open-source, distributed search and analytics suite derived as a fork of Elasticsearch and maintained under the Apache 2.0 license. When it comes to memory configuration, the guidance is often reduced to a few rules of thumb: swapoff -a, vm.swappiness=1, or boot…",
+      "publishedAt": "2026-10-06T14:00:06.000Z"
+    },
+    {
+      "slug": "141643543bec61e33e33e1df",
+      "guid": "https://dzone.com/articles/3678717",
+      "title": "Building an AI-Ready Data Layer Without Rebuilding the Enterprise",
+      "link": "https://dzone.com/articles/ai-ready-data-layer",
+      "source": "DZone",
+      "sourceUrl": "https://feeds.dzone.com/home",
+      "summary": "Most enterprise AI programs do not fail because the model is too weak. They stall because the data underneath the model is fragmented, delayed, poorly documented, or too expensive to access repeatedly. The common response is to propose a complete platform replacement. That sound…",
+      "publishedAt": "2026-10-06T13:00:01.000Z"
+    },
+    {
+      "slug": "b65c94119527b12b9014acb2",
+      "guid": "https://dzone.com/articles/3679811",
+      "title": "Grounding AI Agents in Governed Data",
+      "link": "https://dzone.com/articles/grounding-ai-agents-governed-data",
+      "source": "DZone",
+      "sourceUrl": "https://feeds.dzone.com/home",
+      "summary": "Today, every vendor offering BI solutions has incorporated a chat box. Whether you use Copilot or some other natural-language interface that connects you to a data warehouse, just ask a question in simple words, and it will generate SQL automatically. While this is conducive to …",
+      "publishedAt": "2026-10-06T12:00:00.000Z"
+    },
+    {
+      "slug": "585e60e4133efe569739b22d",
+      "guid": "https://www.sitepoint.com/how-to-reduce-ai-costs-without-making-your-app-worse/",
+      "title": "How to Reduce AI Costs Without Making Your App Worse",
+      "link": "https://www.sitepoint.com/how-to-reduce-ai-costs-without-making-your-app-worse/?utm_source=rss",
+      "source": "SitePoint",
+      "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
+      "summary": "null How to Reduce AI Costs Without Making Your App Worse on SitePoint.",
+      "publishedAt": "2026-10-06T11:53:58.000Z"
+    },
+    {
+      "slug": "b20f2a72b59879da34bb48d1",
+      "guid": "https://www.sitepoint.com/how-to-build-privacy-conscious-discovery-analytics-for-a-creator-store/",
+      "title": "How to Build Privacy-Conscious Discovery Analytics for a Creator Store",
+      "link": "https://www.sitepoint.com/how-to-build-privacy-conscious-discovery-analytics-for-a-creator-store/?utm_source=rss",
+      "source": "SitePoint",
+      "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
+      "summary": "null How to Build Privacy-Conscious Discovery Analytics for a Creator Store on SitePoint.",
+      "publishedAt": "2026-10-06T10:40:38.000Z"
+    },
+    {
+      "slug": "906c26c75ab309095d956d6f",
+      "guid": "https://smashingmagazine.com/2026/10/how-name-things/",
+      "title": "A Practical Guide To Naming Things",
+      "link": "https://smashingmagazine.com/2026/10/how-name-things/",
+      "source": "Smashing Magazine",
+      "sourceUrl": "https://www.smashingmagazine.com/feed/",
+      "summary": "A practical guide to naming UI components, with useful resources, naming conventions, and structures.",
+      "publishedAt": "2026-10-06T10:00:00.000Z"
     },
     {
       "slug": "1fffe3220c3a7ab7296e3894",
@@ -134,6 +324,26 @@
       "publishedAt": "2026-10-06T09:13:25.000Z"
     },
     {
+      "slug": "fd603175c65043ddc389c560",
+      "guid": "https://www.sitepoint.com/designing-connected-products-that-are-easier-to-debug-repair-and-use/",
+      "title": "Designing Connected Products That Are Easier to Debug, Repair, and Use",
+      "link": "https://www.sitepoint.com/designing-connected-products-that-are-easier-to-debug-repair-and-use/?utm_source=rss",
+      "source": "SitePoint",
+      "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
+      "summary": "null Designing Connected Products That Are Easier to Debug, Repair, and Use on SitePoint.",
+      "publishedAt": "2026-10-06T09:09:26.000Z"
+    },
+    {
+      "slug": "09c76f9944d08e29f013249a",
+      "guid": "https://www.sitepoint.com/7-engineering-patterns-for-reliable-customer-messaging-integrations/",
+      "title": "7 Engineering Patterns for Reliable Customer Messaging Integrations",
+      "link": "https://www.sitepoint.com/7-engineering-patterns-for-reliable-customer-messaging-integrations/?utm_source=rss",
+      "source": "SitePoint",
+      "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
+      "summary": "null 7 Engineering Patterns for Reliable Customer Messaging Integrations on SitePoint.",
+      "publishedAt": "2026-10-06T08:59:15.000Z"
+    },
+    {
       "slug": "94ce6b688d7e559fdbb191c9",
       "guid": "6ac4adc9d5dd500001e1b3dd",
       "title": "3 Bash Tricks That Save You Time",
@@ -142,6 +352,16 @@
       "sourceUrl": "https://kodekloud.com/blog/rss/",
       "summary": "Three Bash shortcuts that save keystrokes: sudo !! re-runs your last command with sudo, Alt+. inserts the last arg, and !* repeats all args.",
       "publishedAt": "2026-10-06T08:38:45.000Z"
+    },
+    {
+      "slug": "98e0c00544f3779c5e084473",
+      "guid": "https://www.sitepoint.com/beyond-the-serial-monitor-micro-soldering-skills-for-developers-building-iot-prototypes/",
+      "title": "Beyond the Serial Monitor: Micro-Soldering Skills for Developers Building IoT Prototypes",
+      "link": "https://www.sitepoint.com/beyond-the-serial-monitor-micro-soldering-skills-for-developers-building-iot-prototypes/?utm_source=rss",
+      "source": "SitePoint",
+      "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
+      "summary": "null Beyond the Serial Monitor: Micro-Soldering Skills for Developers Building IoT Prototypes on SitePoint.",
+      "publishedAt": "2026-10-06T07:59:37.000Z"
     },
     {
       "slug": "ce99f255e84422daf52e5cc7",
@@ -416,7 +636,7 @@
     {
       "slug": "c4ce3974a465ad778921bb1d",
       "guid": "https://medium.com/p/9f5f174159ef",
-      "title": "Data Lakehouse with Agentic AIs: A Guide",
+      "title": "Data Lakehouse with AI Agents",
       "link": "https://itnext.io/data-lakehouse-with-agentic-ais-a-guide-9f5f174159ef?source=rss----5b301f10ddcd---4",
       "source": "itnext",
       "sourceUrl": "https://itnext.io/feed",
@@ -522,16 +742,6 @@
       "sourceUrl": "https://itnext.io/feed",
       "summary": "",
       "publishedAt": "2026-10-02T20:08:04.000Z"
-    },
-    {
-      "slug": "b735d129a057e1c333ca4076",
-      "guid": "https://medium.com/p/4eb07db9296f",
-      "title": "Message queues are great for handing off work, but how do you know the work actually happens?",
-      "link": "https://itnext.io/message-queues-are-great-for-handing-off-work-but-how-do-you-know-the-work-actually-happens-4eb07db9296f?source=rss----5b301f10ddcd---4",
-      "source": "itnext",
-      "sourceUrl": "https://itnext.io/feed",
-      "summary": "Continue reading on ITNEXT »",
-      "publishedAt": "2026-10-02T20:05:50.000Z"
     },
     {
       "slug": "0d403ed4928fca6fb0d71b21",
@@ -644,16 +854,6 @@
       "publishedAt": "2026-10-02T14:00:00.000Z"
     },
     {
-      "slug": "e3d9c9bf35efe0ef500e16c7",
-      "guid": "https://medium.com/p/84f186b191a9",
-      "title": "Building a Local 3-Node Apache Ignite Cluster with Docker Compose",
-      "link": "https://itnext.io/building-a-local-3-node-apache-ignite-cluster-with-docker-compose-84f186b191a9?source=rss----5b301f10ddcd---4",
-      "source": "itnext",
-      "sourceUrl": "https://itnext.io/feed",
-      "summary": "A step-by-step guide to orchestrating, configuring, and querying an open-source, distributed database stack on your local machine. Continue reading on ITNEXT »",
-      "publishedAt": "2026-10-02T13:13:08.000Z"
-    },
-    {
       "slug": "23f573121d32a7075433cbd4",
       "guid": "https://dzone.com/articles/3686210",
       "title": "Part 3: End-to-End Tracing and Observability Across Goose, agentgateway, and Quarkus",
@@ -672,16 +872,6 @@
       "sourceUrl": "https://feeds.dzone.com/home",
       "summary": "In my previous article, I walked through running coding agents inside Docker Sandboxes on a local machine. We installed the sbx CLI, started with a small project, and covered the commands needed to run, stop, and remove a sandbox. This time, I want to take that same workflow off…",
       "publishedAt": "2026-10-02T12:00:00.000Z"
-    },
-    {
-      "slug": "b54a20cfeb2977390d503360",
-      "guid": "https://www.sitepoint.com/vitalii-khomenko-design-workflow-ai-era/",
-      "title": "The Design Workflow Is Broken. Here Is How Vitalii Khomenko Thinks It Should Be Fixed",
-      "link": "https://www.sitepoint.com/vitalii-khomenko-design-workflow-ai-era/?utm_source=rss",
-      "source": "SitePoint",
-      "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
-      "summary": "Principal Designer Vitalii Khomenko argues the real bottleneck in AI-accelerated product teams isn't engineering anymore, it's the Figma-to-code handoff, and here's his fix. The Design Workflow Is Broken. Here Is How Vitalii Khomenko Thinks It Should Be Fixed on SitePoint.",
-      "publishedAt": "2026-10-02T10:06:51.000Z"
     },
     {
       "slug": "d658170292df2c019f6d5e3d",
@@ -794,16 +984,6 @@
       "publishedAt": "2026-10-01T15:07:16.000Z"
     },
     {
-      "slug": "ad5e3209193861863f19b956",
-      "guid": "https://dzone.com/articles/3684611",
-      "title": "How Go Maps Work: From Buckets to Swiss Tables",
-      "link": "https://dzone.com/articles/how-go-maps-work",
-      "source": "DZone",
-      "sourceUrl": "https://feeds.dzone.com/home",
-      "summary": "Hey Mates! “How does a map work in Go?” is one of my favorite interview questions. It sounds simple, but it opens up a conversation about hashing, collisions, memory layout, and why two implementations with the same average O(1) lookup complexity can behave quite differently. Wi…",
-      "publishedAt": "2026-10-01T15:00:00.000Z"
-    },
-    {
       "slug": "f2a860abf4038856e3cccbeb",
       "guid": "https://blog.master.dev/?p=11273",
       "title": "Front-End Checklist",
@@ -814,36 +994,6 @@
       "publishedAt": "2026-10-01T14:23:22.000Z"
     },
     {
-      "slug": "2b1010778cbe7c340da660a1",
-      "guid": "https://dzone.com/articles/3681641",
-      "title": "Are Passphrases Still Secure in the Age of AI?",
-      "link": "https://dzone.com/articles/ai-passphrase-security",
-      "source": "DZone",
-      "sourceUrl": "https://feeds.dzone.com/home",
-      "summary": "The short answer up front: Yes, but only if the passphrase is genuinely random. Passphrases emerged as a direct response to a well-known problem with classic password policies: requirements like \"at least one special character, one number, one uppercase letter\" tend to produce s…",
-      "publishedAt": "2026-10-01T14:00:00.000Z"
-    },
-    {
-      "slug": "d7d3ff570c21783f27bee1ed",
-      "guid": "https://dzone.com/articles/3667594",
-      "title": "Designing a Role-Aware Runtime for AI Avatar Systems",
-      "link": "https://dzone.com/articles/ai-avatar-runtime",
-      "source": "DZone",
-      "sourceUrl": "https://feeds.dzone.com/home",
-      "summary": "AI avatar projects often begin with the most visible question: What should the character look like? That question matters, but it comes much later in the architecture than many teams expect. A responsive AI avatar is not simply an animated face connected to a large language mode…",
-      "publishedAt": "2026-10-01T13:00:00.000Z"
-    },
-    {
-      "slug": "a03c69de7e33fdbe712651f7",
-      "guid": "https://medium.com/p/35d33ade661f",
-      "title": "Where Should Your AI Agent’s Code Run? Inside Azure Container Apps Sandboxes",
-      "link": "https://itnext.io/azure-container-apps-sandboxes-ai-agents-deep-dive-35d33ade661f?source=rss----5b301f10ddcd---4",
-      "source": "itnext",
-      "sourceUrl": "https://itnext.io/feed",
-      "summary": "Every sandbox gets its own microVM, but outbound traffic stays open until you set a policy. How it works with Microsoft Foundry, with… Continue reading on ITNEXT »",
-      "publishedAt": "2026-10-01T12:51:18.000Z"
-    },
-    {
       "slug": "a82ab8c2c2f14be949b9679d",
       "guid": "https://www.digitalocean.com/blog/introducing-agent-droplets",
       "title": "Introducing Agent Droplets: everything an agent needs, one price, one bill",
@@ -852,156 +1002,6 @@
       "sourceUrl": "https://www.digitalocean.com/blog/rss",
       "summary": "Last week we launched DigitalOcean Managed Agents in public preview: a managed runtime, governed access to more than 16,000 tools, serverless inference, and persistent memory and storage, all on one cloud. Developers have already started thousands of agent sessions. Today we’re …",
       "publishedAt": "2026-10-01T12:05:00.033Z"
-    },
-    {
-      "slug": "c6fafb5c5e3f21a2a171e6f6",
-      "guid": "https://dzone.com/articles/3667331",
-      "title": "Your Cloud Diagram Is Already Out of Date: An Operating Model for Continuous Security Architecture",
-      "link": "https://dzone.com/articles/continuous-security-architecture",
-      "source": "DZone",
-      "sourceUrl": "https://feeds.dzone.com/home",
-      "summary": "The Diagram-to-Deployment Gap Cloud security architecture often begins with a strong design, account boundaries are defined, identity federation and vending patterns are selected, centralized security services are planned, and diagrams show how telemetry, governance, and inciden…",
-      "publishedAt": "2026-10-01T12:00:00.000Z"
-    },
-    {
-      "slug": "bb5e519de37ce91adbc3017e",
-      "guid": "https://medium.com/p/1dab1c38e3b9",
-      "title": "AI: LLMs, Agents, Work, and Us — Engineers. Personal Thoughts.",
-      "link": "https://itnext.io/ai-llms-agents-work-and-us-engineers-personal-thoughts-1dab1c38e3b9?source=rss----5b301f10ddcd---4",
-      "source": "itnext",
-      "sourceUrl": "https://itnext.io/feed",
-      "summary": "",
-      "publishedAt": "2026-10-01T09:54:21.000Z"
-    },
-    {
-      "slug": "87177cb1ff4ef9b5c30cb72c",
-      "guid": "https://www.sitepoint.com/writing-native-gpu-kernels-in-rust-with-the-cuda-rust-toolchain/",
-      "title": "Writing Native GPU Kernels in Rust with the CUDA-Rust Toolchain",
-      "link": "https://www.sitepoint.com/writing-native-gpu-kernels-in-rust-with-the-cuda-rust-toolchain/?utm_source=rss",
-      "source": "SitePoint",
-      "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
-      "summary": "Compile and run native GPU kernels directly in Rust using NVIDIA's cuda-rust toolchain, eliminating C++ NVCC bindings and unsafe FFI wrappers within a clean, multi-crate Cargo workspace. Writing Native GPU Kernels in Rust with the CUDA-Rust Toolchain on SitePoint.",
-      "publishedAt": "2026-10-01T03:03:25.000Z"
-    },
-    {
-      "slug": "ff4fa38fb536ebceeb96900e",
-      "guid": "https://www.digitalocean.com/blog/microvms-for-agents",
-      "title": "DigitalOcean MicroVMs: the Compute foundation for building your AI agent infrastructure (private preview)",
-      "link": "https://www.digitalocean.com/blog/microvms-for-agents",
-      "source": "Digital Ocean Labs",
-      "sourceUrl": "https://www.digitalocean.com/blog/rss",
-      "summary": "An AI agent uses compute differently than a traditional application. Over a single session, it writes and runs code, calls a model, and waits on a tool or a person before picking the work back up. As a result, it needs real compute in short, intensive bursts. It also needs a har…",
-      "publishedAt": "2026-10-01T01:41:27.408Z"
-    },
-    {
-      "slug": "2ca9db2f5d7973b8855ed245",
-      "guid": "https://www.sitepoint.com/how-to-implement-scoped-patient-consent-in-a-fhir-api/",
-      "title": "How to Implement Scoped Patient Consent in a FHIR API",
-      "link": "https://www.sitepoint.com/how-to-implement-scoped-patient-consent-in-a-fhir-api/?utm_source=rss",
-      "source": "SitePoint",
-      "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
-      "summary": "null How to Implement Scoped Patient Consent in a FHIR API on SitePoint.",
-      "publishedAt": "2026-09-30T19:14:19.000Z"
-    },
-    {
-      "slug": "49a3f55d927f861129d6e89c",
-      "guid": "https://dzone.com/articles/3665592",
-      "title": "The Telemetry Tax: Architecting Zero-Allocation Event Observability at 15B+ Daily Event Scale",
-      "link": "https://dzone.com/articles/zero-allocation-observability",
-      "source": "DZone",
-      "sourceUrl": "https://feeds.dzone.com/home",
-      "summary": "Throughout my career, observability and monitoring systems have played a very important role in system stability, availability, and scalability when architecting, whether a system handles millions or billions of events per day. Having architected core infrastructure across commu…",
-      "publishedAt": "2026-09-30T19:00:00.000Z"
-    },
-    {
-      "slug": "88409133dc7a4cbb6ba6996a",
-      "guid": "https://www.sitepoint.com/7-tools-for-maintaining-saas-infrastructure-with-a-small-it-team/",
-      "title": "7 Tools for Maintaining SaaS Infrastructure With a Small IT Team",
-      "link": "https://www.sitepoint.com/7-tools-for-maintaining-saas-infrastructure-with-a-small-it-team/?utm_source=rss",
-      "source": "SitePoint",
-      "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
-      "summary": "null 7 Tools for Maintaining SaaS Infrastructure With a Small IT Team on SitePoint.",
-      "publishedAt": "2026-09-30T18:12:17.000Z"
-    },
-    {
-      "slug": "42901ebc45239cfb2ba722db",
-      "guid": "https://www.sitepoint.com/webrtc-data-channels-vs-websockets-for-browser-games/",
-      "title": "WebRTC Data Channels vs WebSockets for Real-Time Browser Games",
-      "link": "https://www.sitepoint.com/webrtc-data-channels-vs-websockets-for-browser-games/?utm_source=rss",
-      "source": "SitePoint",
-      "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
-      "summary": "The transport you choose shapes how a multiplayer browser game plays. How WebRTC data channels and WebSockets differ, and when to use each. WebRTC Data Channels vs WebSockets for Real-Time Browser Games on SitePoint.",
-      "publishedAt": "2026-09-30T18:05:37.000Z"
-    },
-    {
-      "slug": "4bb38f17b8889ccdc27acc18",
-      "guid": "6ab80ca719c66a0001c012c1",
-      "title": "OpenTofu Explained, a Look at the Open Source Infrastructure as Code Tool",
-      "link": "https://kodekloud.com/blog/opentofu-explained-open-source-infrastructure-as-code/",
-      "source": "KodeKloud",
-      "sourceUrl": "https://kodekloud.com/blog/rss/",
-      "summary": "OpenTofu describes your infrastructure in code, shows you exactly what it will change before it changes anything, and can encrypt the record it keeps. This walkthrough builds a working project on your own machine, no cloud account required.",
-      "publishedAt": "2026-09-30T18:00:41.000Z"
-    },
-    {
-      "slug": "a4bfe44efb129285583eec93",
-      "guid": "https://dzone.com/articles/3666960",
-      "title": "The Silent Container Death: A TCP Dial That Never Times Out",
-      "link": "https://dzone.com/articles/tcp-dial-never-times-out",
-      "source": "DZone",
-      "sourceUrl": "https://feeds.dzone.com/home",
-      "summary": "A pod goes into CrashLoopBackOff. You pull the logs expecting a stack trace, a panic, an error string - anything that points you somewhere. Instead, you get one line: Loading config...",
-      "publishedAt": "2026-09-30T18:00:05.000Z"
-    },
-    {
-      "slug": "6c0148dae62c6c9ccc0ab340",
-      "guid": "https://dzone.com/articles/3667321",
-      "title": "Six Degrees of Ayrton Senna: Learn Neo4j by Connecting 75 Years of Formula 1",
-      "link": "https://dzone.com/articles/neo4j-six-degrees-ayrton-senna",
-      "source": "DZone",
-      "sourceUrl": "https://feeds.dzone.com/home",
-      "summary": "One of my favorite things about F1 racing is the data behind it. F1 cars are the most complex and advanced in any racing series. They collect huge amounts of telemetry data. The tracks also gather data during events, and race engineers analyze it week after week. They study ever…",
-      "publishedAt": "2026-09-30T17:00:05.000Z"
-    },
-    {
-      "slug": "0dc32ae636e8d482f1824bd8",
-      "guid": "https://blog.master.dev/?p=11201",
-      "title": "You Don’t Know Bidi (And Neither Does ChatGPT)",
-      "link": "https://blog.master.dev/you-dont-know-bidi-and-neither-does-chatgpt/",
-      "source": "Frontend Masters",
-      "sourceUrl": "https://frontendmasters.com/blog/feed/",
-      "summary": "Text that is set in a left-to-right *and* right-to-left language, mid-sentence, is a thing. Getting it right means understanding it, because your LLM isn't going to know.",
-      "publishedAt": "2026-09-30T16:38:59.000Z"
-    },
-    {
-      "slug": "c70a320e5dd2b2d166482484",
-      "guid": "https://dzone.com/articles/3666942",
-      "title": "AWS 7R Migration Strategies: A Decision Framework for Engineering Teams",
-      "link": "https://dzone.com/articles/aws-7r-migration-strategies",
-      "source": "DZone",
-      "sourceUrl": "https://feeds.dzone.com/home",
-      "summary": "Most AWS migration projects don't fail because of technical complexity. They fail because teams treat migration as a single activity rather than a set of distinct strategies applied to different workloads. AWS defines seven migration strategies — the 7Rs — that determine how eac…",
-      "publishedAt": "2026-09-30T16:00:06.000Z"
-    },
-    {
-      "slug": "83b5297dec1e9cb2e15593c3",
-      "guid": "https://smashingmagazine.com/2026/09/desktop-wallpaper-calendars-october-2026/",
-      "title": "Under Autumn’s Spell (October 2026 Wallpapers Edition)",
-      "link": "https://smashingmagazine.com/2026/09/desktop-wallpaper-calendars-october-2026/",
-      "source": "Smashing Magazine",
-      "sourceUrl": "https://www.smashingmagazine.com/feed/",
-      "summary": "October is just around the corner, which means it’s time for some new desktop wallpapers! Designed by the community for the community, they’re here to brighten your screens, and maybe spark some creativity along the way.",
-      "publishedAt": "2026-09-30T13:30:00.000Z"
-    },
-    {
-      "slug": "1b906ad795853675ee0d06ac",
-      "guid": "6abb994dcca0ae00010473d5",
-      "title": "Build an Autonomous SecOps Agent for Kubernetes Log Anomaly Detection",
-      "link": "https://kodekloud.com/blog/build-ai-secops-agent-kubernetes/",
-      "source": "KodeKloud",
-      "sourceUrl": "https://kodekloud.com/blog/rss/",
-      "summary": "Build a Python agent that streams Kubernetes pod logs, flags attacks with regex, explains them with AI through KodeKey, and alerts via Gotify.",
-      "publishedAt": "2026-09-30T10:56:33.000Z"
     }
   ]
 }

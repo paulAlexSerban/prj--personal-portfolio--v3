@@ -1,8 +1,48 @@
 {
   "category": "javascript",
   "label": "JavaScript",
-  "fetchedAt": "2026-10-06T12:15:58.219Z",
+  "fetchedAt": "2026-10-07T12:06:57.138Z",
   "items": [
+    {
+      "slug": "a2dcdee62736e8257acbe9a1",
+      "guid": "https://flaviocopes.com/javascript-single-executable/",
+      "title": "How to compile JavaScript into a single executable",
+      "link": "https://flaviocopes.com/javascript-single-executable/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Turn a JavaScript program into one executable file, like Go and Rust do, with deno compile, bun build --compile and Node.js single executable apps.",
+      "publishedAt": "2026-10-07T10:00:00.000Z"
+    },
+    {
+      "slug": "9081b0d1bca5462e116dcb6c",
+      "guid": "https://flaviocopes.com/whatcable/",
+      "title": "Use WhatCable to figure out what your USB cable can do",
+      "link": "https://flaviocopes.com/whatcable/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "WhatCable is a free, open source Mac app that reads the chip inside a USB-C cable and tells you its real data speed, power rating and what limits it.",
+      "publishedAt": "2026-10-07T10:00:00.000Z"
+    },
+    {
+      "slug": "10cd7fdb6f5fdfc4932e963e",
+      "guid": "https://flaviocopes.com/macos-open-anyway/",
+      "title": "How to avoid the \"Open Anyway\" message when building macOS apps",
+      "link": "https://flaviocopes.com/macos-open-anyway/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "macOS blocks apps downloaded from the internet until people click Open Anyway. Sign your app with a Developer ID and notarize it, and it opens normally.",
+      "publishedAt": "2026-10-07T07:00:00.000Z"
+    },
+    {
+      "slug": "d03879cd05880bb3b5c65294",
+      "guid": "https://flaviocopes.com/agent-checkout/",
+      "title": "What happens when AI agents shop for us",
+      "link": "https://flaviocopes.com/agent-checkout/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Shopify wants Muse to check out with Shop Pay on every store. I want the agent to find the product. I still want a person to approve the exact charge.",
+      "publishedAt": "2026-10-06T13:00:00.000Z"
+    },
     {
       "slug": "98e2a905a4777b22e978a179",
       "guid": "https://flaviocopes.com/npkill/",
@@ -52,6 +92,16 @@
       "sourceUrl": "https://flaviocopes.com/rss.xml",
       "summary": "How to use Jev with the Vercel AI SDK: install the TypeSafe provider, call experimental_evaluate, read confidence, use AI Gateway, and compare Jev with an LLM.",
       "publishedAt": "2026-10-06T07:00:00.000Z"
+    },
+    {
+      "slug": "e4f759ce24f43995ad3e37ad",
+      "guid": "https://javascriptweekly.com/issues/805",
+      "title": "Why don't more developers 'use the platform'?",
+      "link": "https://javascriptweekly.com/issues/805",
+      "source": "JavaScript Weekly",
+      "sourceUrl": "https://javascriptweekly.com/rss/1b4m1h9j",
+      "summary": "#​805 — October 6, 2026 Read on the Web JavaScript Weekly Why Don't More Developers 'Use the Platform'? — A thoughtful look at why we often rebuild what browsers already offer, from someone usually on the platform's side. It kicked off an extensive Hacker News discussion, with m…",
+      "publishedAt": "2026-10-06T00:00:00.000Z"
     },
     {
       "slug": "30bf946a3b168e1c464c7435",
@@ -264,46 +314,6 @@
       "publishedAt": "2026-10-03T10:00:00.000Z"
     },
     {
-      "slug": "b7a0afc14fae941bba9e4d3e",
-      "guid": "https://flaviocopes.com/one-person-business-costs/",
-      "title": "What running a one-person software business costs per month",
-      "link": "https://flaviocopes.com/one-person-business-costs/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "What my one-person software business costs each month, line by line: hosting, email, analytics, payment fees, domains, software and AI tools.",
-      "publishedAt": "2026-10-03T07:00:00.000Z"
-    },
-    {
-      "slug": "bc4521735e611deb3048864f",
-      "guid": "https://flaviocopes.com/factorylog/",
-      "title": "I built Factory Log, a Mac app that shows what your coding agents did",
-      "link": "https://flaviocopes.com/factorylog/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Factory Log is my free, open source Mac app that turns the one-line reports your coding agents write into a timeline of your day and week, and shows where your time went, project by project.",
-      "publishedAt": "2026-10-02T15:00:00.000Z"
-    },
-    {
-      "slug": "3c8be9448d401ea6451ff3ec",
-      "guid": "https://flaviocopes.com/sign-in-with-chatgpt/",
-      "title": "How to use your ChatGPT subscription in other apps",
-      "link": "https://flaviocopes.com/sign-in-with-chatgpt/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Sign in with ChatGPT lets Plus and Pro users spend their plan in Devin, Warp, Notion, Pi and other apps. How to connect one, cap it, and build your own.",
-      "publishedAt": "2026-10-02T12:00:00.000Z"
-    },
-    {
-      "slug": "15f7a29b3cd8abe99ea33714",
-      "guid": "https://flaviocopes.com/codex-cli/",
-      "title": "How to use the Codex CLI",
-      "link": "https://flaviocopes.com/codex-cli/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "How to use the Codex CLI, OpenAI's coding agent for the terminal: install it, run tasks, set permissions, pick a model, review changes and use codex exec.",
-      "publishedAt": "2026-10-02T09:00:00.000Z"
-    },
-    {
       "slug": "c9821fb6260d747706562252",
       "guid": "https://javascriptweekly.com/issues/804",
       "title": "A-ha's Take on Me, recreated in pure JavaScript",
@@ -322,16 +332,6 @@
       "sourceUrl": "https://blog.appsignal.com/feed.xml",
       "summary": "When something goes wrong in production, you do not want to spend the first five minutes rearranging charts. You want the error rate, throughput, queue depth, memory, and view metrics that show when customers are having issues while using your app. What slows you down is not alw…",
       "publishedAt": "2026-09-24T00:00:00.000Z"
-    },
-    {
-      "slug": "747df602e40d2d3d75fe5642",
-      "guid": "https://blog.appsignal.com/2026/09/23/add-an-app-with-your-coding-agent.html",
-      "title": "Add an App With Your Coding Agent",
-      "link": "https://blog.appsignal.com/2026/09/23/add-an-app-with-your-coding-agent.html",
-      "source": "AppSignal",
-      "sourceUrl": "https://blog.appsignal.com/feed.xml",
-      "summary": "You can now ask your coding agent to set up AppSignal in your application. Give it a prompt, let it follow the installation instructions, and watch a checklist fill in as data starts arriving. Installing AppSignal was already straightforward, but it still meant checking your env…",
-      "publishedAt": "2026-09-23T00:00:00.000Z"
     }
   ]
 }
