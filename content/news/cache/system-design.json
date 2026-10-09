@@ -1,8 +1,28 @@
 {
   "category": "system-design",
   "label": "System Design",
-  "fetchedAt": "2026-10-08T12:17:45.573Z",
+  "fetchedAt": "2026-10-09T12:08:35.455Z",
   "items": [
+    {
+      "slug": "7e0bd0a7c22eeba305f3efa4",
+      "guid": "6ac768715c3b8b00012d84b0",
+      "title": "The Pulse: Firebase’s global outage & poor response",
+      "link": "https://blog.pragmaticengineer.com/the-pulse-firebases-global-outage-poor-response/",
+      "source": "The Pragmatic Engineer",
+      "sourceUrl": "https://blog.pragmaticengineer.com/rss/",
+      "summary": "The Firebase iOS SDK crashed after a backend change, crashing all apps which used Firebase analytics for 2-6 hours. Google didn’t update the status page, but did offer a postmortem 4 days later.",
+      "publishedAt": "2026-10-08T16:56:37.000Z"
+    },
+    {
+      "slug": "09511315f396de4af3d77cc6",
+      "guid": "https://engineering.atspotify.com/?p=3ak5D3CnpWDbDfHK66OFCF",
+      "title": "Introducing: Spotify Technology. Proven at Spotify, now yours.",
+      "link": "https://engineering.atspotify.com/2026/10/introducing-spotify-technology-proven-at-spotify-now-yours/",
+      "source": "Spotify Engineering Culture",
+      "sourceUrl": "https://engineering.atspotify.com/feed",
+      "summary": "Introducing Spotify Technology. The post Introducing: Spotify Technology. Proven at Spotify, now yours. appeared first on Spotify Engineering.",
+      "publishedAt": "2026-10-08T12:30:10.000Z"
+    },
     {
       "slug": "884293cd97f0449c3ad7e70e",
       "guid": "https://newsletter.systemdesign.one/p/claude-code-website-monitoring-routine",
@@ -122,16 +142,6 @@
       "sourceUrl": "https://newsletter.systemdesign.one/feed",
       "summary": "#181: How AI Agents Build Enterprise Software at Scale",
       "publishedAt": "2026-09-27T10:41:00.000Z"
-    },
-    {
-      "slug": "7761e61700db10e2d93189fd",
-      "guid": "6aab98704a58460001d006e2",
-      "title": "The Pulse: a new trend of CPU shortages",
-      "link": "https://blog.pragmaticengineer.com/the-pulse-a-new-trend-of-cpu-shortages/",
-      "source": "The Pragmatic Engineer",
-      "sourceUrl": "https://blog.pragmaticengineer.com/rss/",
-      "summary": "After a GPU shortage and memory shortage driven by AI companies, we’re now experiencing a CPU shortage, thanks to AI agents using a lot more CPU with tool usage.",
-      "publishedAt": "2026-09-24T16:45:01.000Z"
     }
   ]
 }
