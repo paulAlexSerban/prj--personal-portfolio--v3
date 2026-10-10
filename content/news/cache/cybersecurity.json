@@ -1,8 +1,208 @@
 {
   "category": "cybersecurity",
   "label": "Cybersecurity",
-  "fetchedAt": "2026-10-09T12:08:35.455Z",
+  "fetchedAt": "2026-10-10T11:25:58.717Z",
   "items": [
+    {
+      "slug": "efd24bc6b14734d03e9ac719",
+      "guid": "https://thehackernews.com/2026/10/anthropic-cuts-live-internet-access-for.html",
+      "title": "Anthropic Cuts Live Internet Access for Internal AI Tests After Claude Exploits Injection Flaws",
+      "link": "https://thehackernews.com/2026/10/anthropic-cuts-live-internet-access-for.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "Anthropic on Friday said it's cutting off live internet access for all its internal evaluations following the discovery of new incidents in which its artificial intelligence (AI) models exhibited misaligned behavior and targeted real websites. The AI company said it identified f…",
+      "publishedAt": "2026-10-10T09:18:45.000Z"
+    },
+    {
+      "slug": "3ada9399589e07f313d0490a",
+      "guid": "https://krebsonsecurity.com/?p=74440",
+      "title": "FBI Arrests Founder of Ransomware Negotiation Firm",
+      "link": "https://krebsonsecurity.com/2026/10/fbi-arrests-founder-of-ransomware-negotiation-firm/",
+      "source": "Krebson Security",
+      "sourceUrl": "https://krebsonsecurity.com/feed/",
+      "summary": "Agents with the Federal Bureau of Investigation (FBI) on Thursday arrested the co-founder of a Canadian cybersecurity firm in connection with an investigation into the ShinyHunters hacking group that recently relieved the FBI of sensitive data on thousands of agents, multiple so…",
+      "publishedAt": "2026-10-10T00:17:42.000Z"
+    },
+    {
+      "slug": "7d8a7b60fd7ce0ffd06617b9",
+      "guid": "https://www.darkreading.com/cyberattacks-data-breaches/asos-breach-risks-customer-facing-saas",
+      "title": "ASOS Breach Reveals the Risks in Customer-Facing SaaS",
+      "link": "https://www.darkreading.com/cyberattacks-data-breaches/asos-breach-risks-customer-facing-saas",
+      "source": "Dark Reading",
+      "sourceUrl": "https://www.darkreading.com/rss.xml",
+      "summary": "The attack on the British retailer shows that compromising a single identity can lead to much deeper penetration of the corporate network.",
+      "publishedAt": "2026-10-09T20:58:32.000Z"
+    },
+    {
+      "slug": "609e0090327e90e4e0b23611",
+      "guid": "https://danielmiessler.com/blog/renaming-ai-to-super-intelligence",
+      "title": "My Thoughts on Renaming AI to Super Intelligence",
+      "link": "https://danielmiessler.com/blog/renaming-ai-to-super-intelligence?utm_source=rss&utm_medium=feed&utm_campaign=website",
+      "source": "Daniel Miessler",
+      "sourceUrl": "https://danielmiessler.com/feed.rss",
+      "summary": "A colossal purple intelligence building a stone arch while a small figure on a ladder lifts a cheap cracked mask off its face, and a second figure watches with arms crossed/images/renaming-ai-to-super-intelligence.webp/images/renaming-ai-to-super-intelligence.webp I'm torn on th…",
+      "publishedAt": "2026-10-09T20:51:00.000Z"
+    },
+    {
+      "slug": "0d3cbc25801878350c85ce26",
+      "guid": "https://www.schneier.com/?p=72744",
+      "title": "Friday Squid Blogging: I Caught a Squid",
+      "link": "https://www.schneier.com/blog/archives/2026/10/friday-squid-blogging-i-caught-a-squid.html",
+      "source": "Schneier on Security",
+      "sourceUrl": "https://www.schneier.com/feed/",
+      "summary": "On Wednesday I spent a day fishing, on a small boat out of Gloucester, MA. We caught many cod (none of which we could keep), and a bunch of hake and mackerel (all of which we could keep). And…I caught a squid! Near as I can tell, it’s a longfin squid, sometimes called a Boston s…",
+      "publishedAt": "2026-10-09T20:24:45.000Z"
+    },
+    {
+      "slug": "68addb268095b2370877a427",
+      "guid": "https://www.darkreading.com/cybersecurity-analytics/ai-scramble-cybersecurity-ma-boom",
+      "title": "AI Scramble Drives Cybersecurity M&A Boom",
+      "link": "https://www.darkreading.com/cybersecurity-analytics/ai-scramble-cybersecurity-ma-boom",
+      "source": "Dark Reading",
+      "sourceUrl": "https://www.darkreading.com/rss.xml",
+      "summary": "Welcome to another gangbuster year for strategic M&A activity in cyber, with 117 deals announced in the latest quarter. What's different: Many of the buyers are not your typical cybersecurity firms.",
+      "publishedAt": "2026-10-09T19:26:26.000Z"
+    },
+    {
+      "slug": "edea7d58f957fe792c283915",
+      "guid": "https://www.cio.com/article/4233304/governed-context-the-key-to-scaling-enterprise-ai.html",
+      "title": "Governed context: The key to scaling enterprise AI",
+      "link": "https://www.cio.com/article/4233304/governed-context-the-key-to-scaling-enterprise-ai.html",
+      "source": "CIO",
+      "sourceUrl": "https://www.cio.com/feed/",
+      "summary": "The AI revolution is experiencing some growing pains. Across industries, business leaders are confronting the same challenge: AI pilots dazzle, but they don’t scale. An agent that reasons brilliantly in the sandbox turns unreliable the moment it touches a real, regulated busines…",
+      "publishedAt": "2026-10-09T19:18:16.000Z"
+    },
+    {
+      "slug": "bf89595af7c39e7a025ec626",
+      "guid": "https://thehackernews.com/2026/10/credential-stealing-github-actions.html",
+      "title": "Credential-Stealing GitHub Actions Workflows Planted in Tens of Thousands of Repositories",
+      "link": "https://thehackernews.com/2026/10/credential-stealing-github-actions.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "Cybersecurity researchers have disclosed details of an ongoing credential-theft campaign that has compromised two high-profile open-source maintainer accounts to push a malicious workflow into over 340 repositories. \"Using the account of Takashi Kitao, author of the 18,400-star …",
+      "publishedAt": "2026-10-09T19:14:28.000Z"
+    },
+    {
+      "slug": "30dc1b1f3fcaab410b5efcd3",
+      "guid": "https://thehackernews.com/2026/10/fbi-arrests-another-shinyhunters.html",
+      "title": "FBI Arrests Another ShinyHunters Suspect Reportedly Involved in Its Jobs Portal Hack",
+      "link": "https://thehackernews.com/2026/10/fbi-arrests-another-shinyhunters.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "The FBI has arrested another suspected co-conspirator of ShinyHunters, FBI Director Kash Patel said on October 9 in a post on X. ShinyHunters is the extortion group that said in September it had breached the FBI's jobs portal and stolen sensitive data on almost all FBI agents an…",
+      "publishedAt": "2026-10-09T17:45:26.000Z"
+    },
+    {
+      "slug": "64aa5944bae0d091400fd849",
+      "guid": "https://www.darkreading.com/identity-access-management-security/fbi-shinyhunters-claims-hack",
+      "title": "What We Missed: FBI Strikes Back at ShinyHunters",
+      "link": "https://www.darkreading.com/identity-access-management-security/fbi-shinyhunters-claims-hack",
+      "source": "Dark Reading",
+      "sourceUrl": "https://www.darkreading.com/rss.xml",
+      "summary": "In this video conversation, Dark Reading editors discuss some of the news they didn't get a chance to cover, from the arrest of a suspected ShinyHunters operative to the compromise of a Pentagon-run data center.",
+      "publishedAt": "2026-10-09T17:21:00.000Z"
+    },
+    {
+      "slug": "2d8b2a661271f3ed2fea9ffe",
+      "guid": "https://thehackernews.com/2026/10/p7-darksword-ios-exploit-kit-adds.html",
+      "title": "P7 DarkSword iOS Exploit Kit Adds Crypto Wallet Data Theft and Remote Commands",
+      "link": "https://thehackernews.com/2026/10/p7-darksword-ios-exploit-kit-adds.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "Cybersecurity researchers have disclosed details of a previously unseen variant of the DarkSword iOS exploit kit called P7 DarkSword. \"Compared with the variants we usually observe, P7 reduces its on-device footprint, adds on-device keychain and crypto-wallet theft, and adds two…",
+      "publishedAt": "2026-10-09T16:29:55.000Z"
+    },
+    {
+      "slug": "e4a94375fcdc943826282c34",
+      "guid": "https://www.darkreading.com/cyber-risk/security-threats-don-t-stop-at-the-office-why-executives-families-need-training-too",
+      "title": "Security Threats Don't Stop at the Office: Why Executives' Families Need Training, Too",
+      "link": "https://www.darkreading.com/cyber-risk/security-threats-don-t-stop-at-the-office-why-executives-families-need-training-too",
+      "source": "Dark Reading",
+      "sourceUrl": "https://www.darkreading.com/rss.xml",
+      "summary": "Those closest to executives must match their security postures because the weakest link in a family can become the entry point for attacks.",
+      "publishedAt": "2026-10-09T16:25:05.000Z"
+    },
+    {
+      "slug": "0e9738f6144b2d1a5debf391",
+      "guid": "https://www.cio.com/article/4233155/why-cios-should-choose-samsung-galaxy-enterprise-edition.html",
+      "title": "Why CIOs should choose Samsung Galaxy Enterprise Edition",
+      "link": "https://www.cio.com/article/4233155/why-cios-should-choose-samsung-galaxy-enterprise-edition.html",
+      "source": "CIO",
+      "sourceUrl": "https://www.cio.com/feed/",
+      "summary": "CIOs, it’s time to rethink your mobile device lifecycle Let’s start with an uncomfortable question: how much risk is hiding in devices that are no longer receiving security updates? Enterprise mobility management (EMM) and mobile device management (MDM) solutions can give IT vis…",
+      "publishedAt": "2026-10-09T15:03:40.000Z"
+    },
+    {
+      "slug": "80d73396cd8669dad71f6e44",
+      "guid": "https://grahamcluley.com/?p=17352141",
+      "title": "$10 million bounty offered for Chinese Hafnium hacker accused of Microsoft Exchange Server mega-attack",
+      "link": "https://www.bitdefender.com/en-us/blog/hotforsecurity/10-million-bounty-chinese-hafnium-hacker-microsoft-exchange-server-mega-attack",
+      "source": "Graham Cluley",
+      "sourceUrl": "https://grahamcluley.com/feed/",
+      "summary": "The US State Department is offering up to US $10 million for information about the whereabouts of Zhang Yu, a 44-year-old Chinese national who is accused of being a key figure in China's state-sponsored hacking group, Hafnium. Read more in my article on the Hot for Security blog.",
+      "publishedAt": "2026-10-09T14:35:04.000Z"
+    },
+    {
+      "slug": "691c52c7547cb8e597284754",
+      "guid": "https://thehackernews.com/2026/10/tp-link-sued-by-four-more-us-states.html",
+      "title": "TP-Link Sued by Four More U.S. States Over Router Security and China Ties",
+      "link": "https://thehackernews.com/2026/10/tp-link-sued-by-four-more-us-states.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "Four more U.S. states sued router maker TP-Link Systems on October 6, bringing the total to five, with Texas filing a suit in February. Florida, Iowa, Montana and Nebraska allege the California company misled buyers about how secure its routers are and how separate it is from Ch…",
+      "publishedAt": "2026-10-09T13:22:53.000Z"
+    },
+    {
+      "slug": "a85203d1697fe4fca04837d2",
+      "guid": "https://www.darkreading.com/cybersecurity-operations/social-engineering-ai-agents-bec-2026",
+      "title": "Social Engineering AI Agents: The New BEC for 2026",
+      "link": "https://www.darkreading.com/cybersecurity-operations/social-engineering-ai-agents-bec-2026",
+      "source": "Dark Reading",
+      "sourceUrl": "https://www.darkreading.com/rss.xml",
+      "summary": "As AI agents gain authority over business systems, attackers can manipulate them like business email compromise (BEC) victims.",
+      "publishedAt": "2026-10-09T13:00:00.000Z"
+    },
+    {
+      "slug": "b8e2f39fd1297ab6dbeb3bac",
+      "guid": "https://thehackernews.com/2026/10/researchers-publish-working-exploit-for.html",
+      "title": "Researchers Publish Working Exploit for Pre-Auth AnyDesk Linux Flaw That Gives Root Access",
+      "link": "https://thehackernews.com/2026/10/researchers-publish-working-exploit-for.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "Security researchers have published a full working exploit for a pre-authentication remote code execution flaw in AnyDesk Linux that gives attackers root access before anyone approves the connection. AnyDesk patched the flaw in version 8.0.3 in June, but its changelog described …",
+      "publishedAt": "2026-10-09T12:59:22.000Z"
+    },
+    {
+      "slug": "6df49761e69e4df829e7a2a1",
+      "guid": "https://thehackernews.com/2026/10/anthropic-launches-free-ai.html",
+      "title": "Anthropic Launches Free AI Vulnerability Scanner for Open-Source Projects",
+      "link": "https://thehackernews.com/2026/10/anthropic-launches-free-ai.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "Anthropic on Thursday unveiled OSS Scanner as an opt-in vulnerability scanner to help secure the open-source ecosystem using artificial intelligence (AI). \"It's an opt-in service informed by our experience using Claude to find vulnerabilities during Project Glasswing,\" Anthropic…",
+      "publishedAt": "2026-10-09T12:47:28.000Z"
+    },
+    {
+      "slug": "d33e86be6de0bd5dd04ebc92",
+      "guid": "https://thehackernews.com/2026/10/attackers-exploit-ahsaycbs-flaws-to.html",
+      "title": "Attackers Exploit AhsayCBS Flaws to Deploy XMRig Miners Disguised as Microsoft Edge",
+      "link": "https://thehackernews.com/2026/10/attackers-exploit-ahsaycbs-flaws-to.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "Threat actors have been observed exploiting two recently disclosed flaws in the AhsayCBS backup utility to seize control of affected devices and deploy web shells and XMRig cryptocurrency miners. Details of the flaws are below - CVE-2026-105133 (CVSS v4 score: 5.5) - An improper…",
+      "publishedAt": "2026-10-09T12:47:26.000Z"
+    },
+    {
+      "slug": "d96e6fa992364d217b8d1acf",
+      "guid": "https://thehackernews.com/2026/10/flax-typhoon-exploits-five-flaws-as.html",
+      "title": "Flax Typhoon Exploits Five Flaws as CISA Sets October 11 Deadline for Federal Agencies",
+      "link": "https://thehackernews.com/2026/10/flax-typhoon-exploits-five-flaws-as.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Thursday added five security flaws to its Known Exploited Vulnerabilities (KEV) catalog, following their abuse by a China-linked threat actor known as Flax Typhoon. The vulnerabilities in question are listed bel…",
+      "publishedAt": "2026-10-09T12:21:51.000Z"
+    },
     {
       "slug": "84a4e054f2ec6eeb22db94f0",
       "guid": "https://www.cio.com/article/4232669/ai-wont-empty-the-software-factory-why-the-new-engineers-act-like-foremen.html",
@@ -126,11 +326,11 @@
     {
       "slug": "668ca68c0b5e583b1fe60641",
       "guid": "https://www.darkreading.com/cloud-security/agentcorruption-aws-environments-at-risk-single-prompt",
-      "title": "'AgentCorruption' Puts AWS Environments At Risk With Single Prompt",
+      "title": "'AgentCorruption' Puts AWS Environments at Risk With Single Prompt",
       "link": "https://www.darkreading.com/cloud-security/agentcorruption-aws-environments-at-risk-single-prompt",
       "source": "Dark Reading",
       "sourceUrl": "https://www.darkreading.com/rss.xml",
-      "summary": "A now-patched vulnerability in AWS Bedrock AgentCore could allow an attacker to use one AI chatbot to take over an organization's entire fleet.",
+      "summary": "A now-patched vulnerability in AWS Bedrock AgentCore could have allowed an attacker to use one AI chatbot to take over an organization's entire fleet.",
       "publishedAt": "2026-10-08T20:39:44.000Z"
     },
     {
@@ -574,26 +774,6 @@
       "publishedAt": "2026-10-07T10:00:00.000Z"
     },
     {
-      "slug": "09c0e3811304b0c305883ece",
-      "guid": "https://www.cio.com/article/4223342/ai-governances-real-gap-is-accountability-not-technology.html",
-      "title": "AI governance’s real gap is accountability, not technology",
-      "link": "https://www.cio.com/article/4223342/ai-governances-real-gap-is-accountability-not-technology.html",
-      "source": "CIO",
-      "sourceUrl": "https://www.cio.com/feed/",
-      "summary": "Most enterprises govern AI the way they would any other IT rollout: deploy dashboards, institute policies, and conduct periodic reviews. Having the right AI governance tools in place and addressing gaps is important, but IT executives should be more concerned about rethinking wo…",
-      "publishedAt": "2026-10-07T10:00:00.000Z"
-    },
-    {
-      "slug": "3321083fe9b86ac17c7443f8",
-      "guid": "https://www.cio.com/article/4231297/10-types-of-ambidextrous-leadership-required-in-the-ai-era.html",
-      "title": "10 types of ambidextrous leadership required in the AI era",
-      "link": "https://www.cio.com/article/4231297/10-types-of-ambidextrous-leadership-required-in-the-ai-era.html",
-      "source": "CIO",
-      "sourceUrl": "https://www.cio.com/feed/",
-      "summary": "10 types of ambidextrous leadership required in the AI era In the world of corporate management, we face questions every day that don’t have easy answers. We want to accelerate digital transformation, but we absolutely cannot neglect security. We want to pursue company-wide opti…",
-      "publishedAt": "2026-10-07T09:00:00.000Z"
-    },
-    {
       "slug": "ecbf8c73de94edf8f003775f",
       "guid": "https://thehackernews.com/2026/10/anthropic-expands-claude-access-for.html",
       "title": "Anthropic Expands Claude Access for Vetted Cyber Teams as Glasswing Finds 129,000 Flaws",
@@ -822,186 +1002,6 @@
       "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
       "summary": "Microsoft has released out-of-band security updates to address a high-severity flaw in Microsoft Exchange Server that could allow an attacker to escalate privileges under certain conditions. The vulnerability, tracked as CVE-2026-96940, is rated 8.8 on the CVSS scoring system. \"…",
       "publishedAt": "2026-10-05T16:21:52.000Z"
-    },
-    {
-      "slug": "0a4d991d122137959c07a144",
-      "guid": "https://www.darkreading.com/cyberattacks-data-breaches/chinese-actor-impersonates-us-officials-cyber-espionage",
-      "title": "Chinese Hackers Impersonate US Officials for AI Cyber Espionage",
-      "link": "https://www.darkreading.com/cyberattacks-data-breaches/chinese-actor-impersonates-us-officials-cyber-espionage",
-      "source": "Dark Reading",
-      "sourceUrl": "https://www.darkreading.com/rss.xml",
-      "summary": "An emerging threat group known as TA419 established seemingly legitimate professional relationships with AI policy experts working for US think tanks, universities, and legal organizations.",
-      "publishedAt": "2026-10-05T15:52:59.000Z"
-    },
-    {
-      "slug": "634898ddff2f483c1ea54560",
-      "guid": "https://thehackernews.com/2026/10/weekly-recap-netscaler-and-fortimail-0.html",
-      "title": "⚡ Weekly Recap: NetScaler and FortiMail 0-Days, AI Coding Leaks, Spectre v2 and Ransomware Arrests",
-      "link": "https://thehackernews.com/2026/10/weekly-recap-netscaler-and-fortimail-0.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "A blank field. A public repo. One reply to an email. A box left exposed. None of this sounds dramatic, which is partly the problem. This week’s threats keep finding leverage in small things that were easy to overlook. There are actively exploited bugs in the mix, cleaner intrusi…",
-      "publishedAt": "2026-10-05T14:20:43.000Z"
-    },
-    {
-      "slug": "97f2c37978caf568b119a93c",
-      "guid": "https://www.darkreading.com/cyber-risk/ai-attacks-security-strategies",
-      "title": "Need for Speed: AI-Driven Attacks Are Changing Security Strategies",
-      "link": "https://www.darkreading.com/cyber-risk/ai-attacks-security-strategies",
-      "source": "Dark Reading",
-      "sourceUrl": "https://www.darkreading.com/rss.xml",
-      "summary": "AI-powered attacks are fast, relentless, and automated. How security teams can keep up is top of mind, according to the latest Dark Reading reader poll.",
-      "publishedAt": "2026-10-05T13:00:00.000Z"
-    },
-    {
-      "slug": "6c213823f41d2565e67312f3",
-      "guid": "https://thehackernews.com/2026/10/the-credential-layer-is-expanding.html",
-      "title": "The Credential Layer Is Expanding Faster Than Security Teams Can See It",
-      "link": "https://thehackernews.com/2026/10/the-credential-layer-is-expanding.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "Every modern enterprise depends on credentials. This is how humans, systems, and now AI, all connect to data, services, and each other securely. GitGuardian helps secure that credential layer through three connected capabilities: Detect, Remediate, and Prevent. The journey start…",
-      "publishedAt": "2026-10-05T11:55:00.000Z"
-    },
-    {
-      "slug": "b5ce63915515734944ec090e",
-      "guid": "https://thehackernews.com/2026/10/realtek-jungle-sdk-exploit-attempts.html",
-      "title": "Realtek Jungle SDK Exploit Attempts Deliver Cling Botnet With STUN-Based C2",
-      "link": "https://thehackernews.com/2026/10/realtek-jungle-sdk-exploit-attempts.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "Threat actors have been observed attempting to exploit a now-patched critical security flaw impacting the Realtek Jungle software development kit (SDK) to deploy a botnet malware called Cling. \"Cling is notable not because it introduces a new propagation technique, but because i…",
-      "publishedAt": "2026-10-05T11:46:25.000Z"
-    },
-    {
-      "slug": "5d17044ae76c3e13d0906c73",
-      "guid": "https://www.schneier.com/?p=72737",
-      "title": "Another Historic Cipher Falls to AI",
-      "link": "https://www.schneier.com/blog/archives/2026/10/another-historic-cipher-falls-to-ai.html",
-      "source": "Schneier on Security",
-      "sourceUrl": "https://www.schneier.com/feed/",
-      "summary": "This one is from 1809, written by Napoleon’s nephew.",
-      "publishedAt": "2026-10-05T11:04:47.000Z"
-    },
-    {
-      "slug": "b4cc986e4abe757cbe8f1f3e",
-      "guid": "https://thehackernews.com/2026/10/apple-plans-tighter-macos-full-disk.html",
-      "title": "Apple Plans Tighter macOS Full Disk Access Controls Over AI Agent Data Access",
-      "link": "https://thehackernews.com/2026/10/apple-plans-tighter-macos-full-disk.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "Apple has announced that it's taking steps to tighten controls around a macOS setting called Full Disk Access (FDA) due to security risks posed by artificial intelligence (AI) agents. \"Some developers are using Full Disk Access in ways that could put users at risk, exposing ever…",
-      "publishedAt": "2026-10-05T10:38:50.000Z"
-    },
-    {
-      "slug": "00cd8ad7dcd1558bb563382b",
-      "guid": "https://thehackernews.com/2026/10/attackers-target-rejetto-hfs-flaw-that.html",
-      "title": "Attackers Target Rejetto HFS Flaw That Enables Admin Session Forgery and RCE",
-      "link": "https://thehackernews.com/2026/10/attackers-target-rejetto-hfs-flaw-that.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "A critical security flaw impacting Rejetto HTTP File Server (HFS) is witnessing active exploitation attempts, according to VulnCheck. The vulnerability in question is CVE-2026-61500 (CVSS score: 9.3), a case of session forgery stemming from the use of a weak pseudo-random number…",
-      "publishedAt": "2026-10-05T08:09:23.000Z"
-    },
-    {
-      "slug": "6f62c8557a695cae869a90ca",
-      "guid": "https://thehackernews.com/2026/10/new-netscaler-zero-day-exploited-in.html",
-      "title": "New NetScaler Zero-Day Exploited in Targeted Attacks Can Knock SAML Deployments Offline",
-      "link": "https://thehackernews.com/2026/10/new-netscaler-zero-day-exploited-in.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "Citrix has released security updates for a high-severity security flaw in NetScaler ADC and NetScaler Gateway that has been exploited as part of targeted zero-day attacks. The vulnerability, tracked as CVE-2026-88779, carries a CVSS score of 8.7 out of 10.0. \"CVE-2026-88779 is a…",
-      "publishedAt": "2026-10-05T06:40:19.000Z"
-    },
-    {
-      "slug": "e0de113c8a0c258cb3edb4a7",
-      "guid": "6ac2393c39dda000015a586e",
-      "title": "Weekly Update 524: Live From Copenhagen",
-      "link": "https://www.troyhunt.com/weekly-update-524/",
-      "source": "Troy Hunt",
-      "sourceUrl": "https://www.troyhunt.com/rss/",
-      "summary": "I'm in Denmark! Well, just, I'm now at Copenhagen airport ready to begin the long trek home, with the final event at GOTO now done and going just perfectly. This week, there are two ShinyHunters arrests in the news: Pepijn in the Netherlands and then Saif",
-      "publishedAt": "2026-10-04T11:52:23.000Z"
-    },
-    {
-      "slug": "5b2c328286dbcd0bcb164c37",
-      "guid": "https://thehackernews.com/2026/10/shinyhunters-suspect-rey-reportedly.html",
-      "title": "ShinyHunters Suspect Rey Reportedly Detained in Jordan, Helping FBI Identify Group Members",
-      "link": "https://thehackernews.com/2026/10/shinyhunters-suspect-rey-reportedly.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "A suspected member of the ShinyHunters digital extortion group, who goes by the online alias \"Rey,\" has been allegedly detained by authorities in Jordan, Reuters reported, citing three people familiar with the matter. Rey, whose real name is Saif ‌al-Din Khader, is said to have …",
-      "publishedAt": "2026-10-04T07:22:05.000Z"
-    },
-    {
-      "slug": "aac5cc1a7d26e13fa0a5f7d7",
-      "guid": "https://thehackernews.com/2026/10/china-aligned-ta419-targets-us-ai.html",
-      "title": "China-Aligned TA419 Targets U.S. AI Policy Experts With Microsoft AitM Phishing",
-      "link": "https://thehackernews.com/2026/10/china-aligned-ta419-targets-us-ai.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "A new China-nexus cyber espionage group known as TA419 has been attributed to multiple credential phishing campaigns targeting artificial intelligence (AI) experts working for U.S. think tanks, universities, and legal sector organizations. The campaigns have impersonated promine…",
-      "publishedAt": "2026-10-04T07:20:32.000Z"
-    },
-    {
-      "slug": "515631664ea57a3b6ac8e8b8",
-      "guid": "https://thehackernews.com/2026/10/mi5-says-chinas-mss-funded-research.html",
-      "title": "MI5 Says China’s MSS Funded Research Involving 100+ U.K.-Linked Academics",
-      "link": "https://thehackernews.com/2026/10/mi5-says-chinas-mss-funded-research.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "The U.K.'s domestic intelligence and security agency has warned that more than 100 academics have helped China boost its intelligence gathering efforts on behalf of Beijing's state security service. In a \"Security Service Espionage Alert\" issued on September 30, 2026, MI5 said t…",
-      "publishedAt": "2026-10-03T14:38:46.000Z"
-    },
-    {
-      "slug": "d5d7c3b1775bb907651a5209",
-      "guid": "https://thehackernews.com/2026/10/warlock-exploits-sharepoint-flaws-to.html",
-      "title": "Warlock Exploits SharePoint Flaws to Disable Security Tools and Deploy Ransomware",
-      "link": "https://thehackernews.com/2026/10/warlock-exploits-sharepoint-flaws-to.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "The suspected China-linked threat actor known as Warlock is still continuing to weaponize Microsoft SharePoint vulnerabilities, likely both old and new, in attacks targeting organizations in Portuguese- and Spanish-speaking countries. The activity, observed by the Symantec and C…",
-      "publishedAt": "2026-10-03T14:36:33.000Z"
-    },
-    {
-      "slug": "71c997ccf55f908fe9dfa512",
-      "guid": "https://thehackernews.com/2026/10/the-state-of-cybersecurity-in-2026key.html",
-      "title": "The State of Cybersecurity in 2026: Key Segments, Insights, and Innovations",
-      "link": "https://thehackernews.com/2026/10/the-state-of-cybersecurity-in-2026key.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "Featuring: Cybersecurity is being reshaped by the expansion of cloud infrastructure, AI, distributed systems, and increasingly complex digital environments. As organizations manage more identities, devices, data, and internet-facing infrastructure, security is shifting toward co…",
-      "publishedAt": "2026-10-03T11:00:00.000Z"
-    },
-    {
-      "slug": "c02e393ebeb7dc067d1344a5",
-      "guid": "https://grahamcluley.com/?p=17352119",
-      "title": "N0n ransomware: what you need to know",
-      "link": "https://www.fortra.com/blog/n0n-ransomware-what-you-need-know",
-      "source": "Graham Cluley",
-      "sourceUrl": "https://grahamcluley.com/feed/",
-      "summary": "N0n is a newly-emerged cyber extortion gang. The group was first spotted in the middle of September 2026, and within days it had published on its dark web leak site details of what it claimed to be around a dozen victims. Since then, the tally has continued to grow. Read more in…",
-      "publishedAt": "2026-10-03T08:29:54.000Z"
-    },
-    {
-      "slug": "81e05c6d99a7b40aa8de89e6",
-      "guid": "https://www.schneier.com/?p=72711",
-      "title": "Friday Squid Blogging: EU is Trying to Fight Unregulated Squid Fishing",
-      "link": "https://www.schneier.com/blog/archives/2026/10/friday-squid-blogging-eu-is-trying-to-fight-unregulated-squid-fishing.html",
-      "source": "Schneier on Security",
-      "sourceUrl": "https://www.schneier.com/feed/",
-      "summary": "The EU is recommending import controls to combat unregulated squid fishing in the Southwest Atlantic. I’m not optimistic. As usual, you can also use this squid post to talk about the security stories in the news that I haven’t covered. Blog moderation policy.",
-      "publishedAt": "2026-10-02T21:02:18.000Z"
-    },
-    {
-      "slug": "5a09c5ac00e985737ff0c466",
-      "guid": "https://www.darkreading.com/cybersecurity-operations/remotethreat-bets-security-teams-need-to-test-what-happens-after-defenses-fail",
-      "title": "RemoteThreat Bets Security Teams Need to Test What Happens After Defenses Fail",
-      "link": "https://www.darkreading.com/cybersecurity-operations/remotethreat-bets-security-teams-need-to-test-what-happens-after-defenses-fail",
-      "source": "Dark Reading",
-      "sourceUrl": "https://www.darkreading.com/rss.xml",
-      "summary": "The offensive cyber operations startup looks to evolve red teaming beyond traditional methods to simulate attackers' increasingly advanced capabilities.",
-      "publishedAt": "2026-10-02T20:18:37.000Z"
     }
   ]
 }
