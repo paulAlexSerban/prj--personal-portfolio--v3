@@ -1,6 +1,13 @@
 import { copyFile, mkdir, readdir } from 'node:fs/promises';
 import path from 'node:path';
-import { MARKDOWN_COMPILER_VERSION, compileContent, detectContentFormat, extractRelativeImagePaths, questionAssetUrl, rewriteImagePaths } from '@prj--personal-portfolio--v3/shared--markdown';
+import {
+    MARKDOWN_COMPILER_VERSION,
+    compileContent,
+    detectContentFormat,
+    extractRelativeImagePaths,
+    questionAssetUrl,
+    rewriteImagePaths,
+} from '@prj--personal-portfolio--v3/shared--markdown';
 import type { CompileCache } from './cache.ts';
 import { questionCacheKey } from './cache.ts';
 import type { ContentFormat, ExportedQuestion, QuizData } from './contract.ts';

@@ -49,11 +49,7 @@ function isCacheFile(value: unknown, compilerVersion: string): value is CacheFil
 }
 
 /** sha256 of compiler version, field sources, and the image rewrite map. */
-export function questionCacheKey(
-    question: Pick<ExportedQuestion, 'stem' | 'explanation' | 'options'>,
-    rewrites: ReadonlyMap<string, string>,
-    compilerVersion: string
-): string {
+export function questionCacheKey(question: Pick<ExportedQuestion, 'stem' | 'explanation' | 'options'>, rewrites: ReadonlyMap<string, string>, compilerVersion: string): string {
     const hash = createHash('sha256');
     hash.update(compilerVersion);
     hash.update('\0');

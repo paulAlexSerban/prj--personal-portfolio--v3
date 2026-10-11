@@ -13,7 +13,9 @@ const DATABASE_PATH = path.resolve(process.env['DATABASE_PATH'] ?? '../../databa
 const QUIZ_DATA_OUT = path.resolve(process.env['QUIZ_DATA_OUT'] ?? '../../frontend/apps/quiz-web-app/public/data');
 const CONTENT_DIR = path.resolve(process.env['CONTENT_DIR'] ?? '../../content/live/content/publish');
 const ASSETS_OUT = path.join(QUIZ_DATA_OUT, 'assets', 'questions');
-const CACHE_PATH = path.resolve(process.env['QUIZ_EXPORT_CACHE'] ?? path.join(path.dirname(fileURLToPath(import.meta.url)), '../node_modules/.cache/quiz-export/compile-cache.json'));
+const CACHE_PATH = path.resolve(
+    process.env['QUIZ_EXPORT_CACHE'] ?? path.join(path.dirname(fileURLToPath(import.meta.url)), '../node_modules/.cache/quiz-export/compile-cache.json')
+);
 
 const isDryRun = process.argv.includes('--dry-run');
 const noCache = process.argv.includes('--no-cache') || process.env['QUIZ_EXPORT_NO_CACHE'] === '1';
@@ -29,7 +31,9 @@ const writeOrDryRun = async (data: QuizData): Promise<WriteResult | undefined> =
 
     if (isDryRun) {
         const totalQuestions = [...data.questionsByPost.values()].reduce((sum, qs) => sum + qs.length, 0);
-        console.log(`[quiz-export] would write ${data.posts.length} question files, ${data.questionsByTag.size} tag files, posts.json, tags.json, and _all.json (${totalQuestions} questions) to ${QUIZ_DATA_OUT}`);
+        console.log(
+            `[quiz-export] would write ${data.posts.length} question files, ${data.questionsByTag.size} tag files, posts.json, tags.json, and _all.json (${totalQuestions} questions) to ${QUIZ_DATA_OUT}`
+        );
         return undefined;
     }
 

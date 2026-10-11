@@ -60,25 +60,25 @@ from the cache and finishes in seconds.
 
 ### Environment overrides
 
-| Var                    | Default                                      | Purpose                                                         |
-| ---------------------- | -------------------------------------------- | --------------------------------------------------------------- |
-| `DATABASE_PATH`        | `database/output/content.db`                 | Source SQLite DB.                                               |
-| `QUIZ_DATA_OUT`        | `frontend/apps/quiz-web-app/public/data`     | Where JSON is written.                                          |
-| `CONTENT_DIR`          | `content/live/content/publish`               | Where to find question images to copy.                          |
-| `QUIZ_EXPORT_CACHE`    | `node_modules/.cache/quiz-export/…`          | Compiled-HTML cache file.                                       |
-| `QUIZ_EXPORT_NO_CACHE` | unset                                        | Set to `1` to skip the cache (same as `--no-cache`).            |
+| Var                    | Default                                  | Purpose                                              |
+| ---------------------- | ---------------------------------------- | ---------------------------------------------------- |
+| `DATABASE_PATH`        | `database/output/content.db`             | Source SQLite DB.                                    |
+| `QUIZ_DATA_OUT`        | `frontend/apps/quiz-web-app/public/data` | Where JSON is written.                               |
+| `CONTENT_DIR`          | `content/live/content/publish`           | Where to find question images to copy.               |
+| `QUIZ_EXPORT_CACHE`    | `node_modules/.cache/quiz-export/…`      | Compiled-HTML cache file.                            |
+| `QUIZ_EXPORT_NO_CACHE` | unset                                    | Set to `1` to skip the cache (same as `--no-cache`). |
 
 ## How it works (source map)
 
-| File              | Role                                                                                                                                                                      |
-| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `src/export.ts`   | `buildQuizData(db)` - pure query. Joins `questions` -> `posts`, attaches `question_options` (ordered) + tags, parses `payload`. Only `status = 'published'` rows.         |
+| File              | Role                                                                                                                                                                       |
+| ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `src/export.ts`   | `buildQuizData(db)` - pure query. Joins `questions` -> `posts`, attaches `question_options` (ordered) + tags, parses `payload`. Only `status = 'published'` rows.          |
 | `src/compile.ts`  | `compileQuizData(data, opts)` - compiles Markdown/MDX -> sanitized HTML (via `shared--markdown`) and copies/rewrites image assets. Question source files are indexed once. |
-| `src/cache.ts`    | Content-hash cache of compiled HTML. Keyed by compiler version, field source, and image rewrites.                                                                        |
-| `src/write.ts`    | `writeQuizJson(data, outDir)` - writes the JSON files above (minified unless `pretty`), then deletes stale files in `questions/` and `tags/`.                            |
-| `src/contract.ts` | The TypeScript types for every output shape - **the source of truth the app imports** (`./contract` subpath).                                                             |
-| `src/index.ts`    | CLI entry: task graph via `shared--task-manager` (Open DB -> Export -> Close ∥ Compile -> Write); reads env vars; handles `--dry-run`, `--no-cache`, `--pretty`.         |
-| `index.ts`        | Library exports for other packages.                                                                                                                                       |
+| `src/cache.ts`    | Content-hash cache of compiled HTML. Keyed by compiler version, field source, and image rewrites.                                                                          |
+| `src/write.ts`    | `writeQuizJson(data, outDir)` - writes the JSON files above (minified unless `pretty`), then deletes stale files in `questions/` and `tags/`.                              |
+| `src/contract.ts` | The TypeScript types for every output shape - **the source of truth the app imports** (`./contract` subpath).                                                              |
+| `src/index.ts`    | CLI entry: task graph via `shared--task-manager` (Open DB -> Export -> Close ∥ Compile -> Write); reads env vars; handles `--dry-run`, `--no-cache`, `--pretty`.           |
+| `index.ts`        | Library exports for other packages.                                                                                                                                        |
 
 `buildQuizData` only reads the database. `compileQuizData` compiles HTML and, when
 asset directories are set, copies images. `writeQuizJson` writes JSON and

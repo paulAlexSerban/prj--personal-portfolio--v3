@@ -94,7 +94,9 @@ export async function writeQuizJson(data: QuizData, outDir: string, opts: WriteO
     const allBundlePath = path.join(outDir, '_all.json');
     await writeFile(allBundlePath, serialize(allBundle, pretty), 'utf-8');
 
-    const removedOrphans = (await removeOrphans(questionsDir, new Set(questionEntries.map(([slug]) => `${slug}.json`)))) + (await removeOrphans(tagsDir, new Set(tagEntriesList.map(([slug]) => `${slug}.json`))));
+    const removedOrphans =
+        (await removeOrphans(questionsDir, new Set(questionEntries.map(([slug]) => `${slug}.json`)))) +
+        (await removeOrphans(tagsDir, new Set(tagEntriesList.map(([slug]) => `${slug}.json`))));
 
     return { postsIndexPath, questionFilePaths, tagsIndexPath, tagFilePaths, allBundlePath, removedOrphans };
 }
