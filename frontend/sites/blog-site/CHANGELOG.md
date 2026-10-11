@@ -1,5 +1,20 @@
 # @prj--personal-portfolio--v3/frontend--blog-site
 
+## 0.5.0
+
+### Minor Changes
+
+- 59d7d4d: algorithm improve
+
+### Patch Changes
+
+- Updated dependencies [59d7d4d]
+- Updated dependencies [f56bd04]
+    - @prj--personal-portfolio--v3/tools--quiz-export@1.3.0
+    - @prj--personal-portfolio--v3/shared--markdown@1.2.0
+    - @prj--personal-portfolio--v3/shared--ui@1.4.2
+    - @prj--personal-portfolio--v3/shared--navigation@1.2.6
+
 ## 0.4.2
 
 ### Patch Changes

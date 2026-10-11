@@ -1,5 +1,11 @@
 # @prj--personal-portfolio--v3/shared--navigation
 
+## 1.2.6
+
+### Patch Changes
+
+- @prj--personal-portfolio--v3/shared--ui@1.4.2
+
 ## 1.2.5
 
 ### Patch Changes

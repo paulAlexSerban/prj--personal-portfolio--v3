@@ -1,5 +1,13 @@
 # @prj--personal-portfolio--v3/tools--news-sync
 
+## 1.4.1
+
+### Patch Changes
+
+- Updated dependencies [59d7d4d]
+- Updated dependencies [f56bd04]
+    - @prj--personal-portfolio--v3/shared--markdown@1.2.0
+
 ## 1.4.0
 
 ### Minor Changes
