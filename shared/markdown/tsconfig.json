@@ -7,6 +7,6 @@
         "emitDeclarationOnly": true,
         "types": ["node"]
     },
-    "include": ["index.ts", "src/**/*.ts"],
+    "include": ["index.ts", "index.browser.ts", "src/**/*.ts"],
     "exclude": ["src/**/*.test.ts"]
 }

@@ -42,6 +42,16 @@ function companionItemSlug(compositeSlug: string, postSlug: string): string {
     return compositeSlug.startsWith(prefix) ? compositeSlug.slice(prefix.length) : compositeSlug;
 }
 
+/** Append to the list stored at `key`, creating it on first use. */
+function append<K, V>(groups: Map<K, V[]>, key: K, value: V): void {
+    const list = groups.get(key);
+    if (list) {
+        list.push(value);
+    } else {
+        groups.set(key, [value]);
+    }
+}
+
 // ── Main export builder ───────────────────────────────────────────────────────
 
 export async function buildQuizData(db: DrizzleDb): Promise<QuizData> {
@@ -79,14 +89,12 @@ export async function buildQuizData(db: DrizzleDb): Promise<QuizData> {
 
     const optionsByQuestion = new Map<string, ExportedOption[]>();
     for (const opt of allOptions) {
-        const list = optionsByQuestion.get(opt.question_slug) ?? [];
-        list.push({
+        append(optionsByQuestion, opt.question_slug, {
             key: opt.option_key,
             label: opt.label,
             isCorrect: Boolean(opt.is_correct),
             sortOrder: opt.sort_order,
         });
-        optionsByQuestion.set(opt.question_slug, list);
     }
 
     // ── 3. Fetch question tags ────────────────────────────────────────────────
@@ -99,9 +107,7 @@ export async function buildQuizData(db: DrizzleDb): Promise<QuizData> {
 
     const tagsByQuestion = new Map<string, string[]>();
     for (const qt of allQuestionTags) {
-        const list = tagsByQuestion.get(qt.question_slug) ?? [];
-        list.push(qt.tag_slug);
-        tagsByQuestion.set(qt.question_slug, list);
+        append(tagsByQuestion, qt.question_slug, qt.tag_slug);
     }
 
     // ── 4. Fetch post tags ────────────────────────────────────────────────────
@@ -114,9 +120,7 @@ export async function buildQuizData(db: DrizzleDb): Promise<QuizData> {
 
     const tagsByPost = new Map<string, string[]>();
     for (const pt of allPostTags) {
-        const list = tagsByPost.get(pt.content_slug) ?? [];
-        list.push(pt.tag_slug);
-        tagsByPost.set(pt.content_slug, list);
+        append(tagsByPost, pt.content_slug, pt.tag_slug);
     }
 
     // ── 4b. Fetch published cheat sheets / learning plans ─────────────────────
@@ -131,9 +135,7 @@ export async function buildQuizData(db: DrizzleDb): Promise<QuizData> {
 
     const cheatSheetsByPost = new Map<string, { slug: string; title: string }[]>();
     for (const cs of allCheatSheets) {
-        const list = cheatSheetsByPost.get(cs.post_slug) ?? [];
-        list.push({ slug: companionItemSlug(cs.slug, cs.post_slug), title: cs.title });
-        cheatSheetsByPost.set(cs.post_slug, list);
+        append(cheatSheetsByPost, cs.post_slug, { slug: companionItemSlug(cs.slug, cs.post_slug), title: cs.title });
     }
 
     const allLearningPlans = await db
@@ -147,9 +149,7 @@ export async function buildQuizData(db: DrizzleDb): Promise<QuizData> {
 
     const learningPlansByPost = new Map<string, { slug: string; title: string }[]>();
     for (const lp of allLearningPlans) {
-        const list = learningPlansByPost.get(lp.post_slug) ?? [];
-        list.push({ slug: companionItemSlug(lp.slug, lp.post_slug), title: lp.title });
-        learningPlansByPost.set(lp.post_slug, list);
+        append(learningPlansByPost, lp.post_slug, { slug: companionItemSlug(lp.slug, lp.post_slug), title: lp.title });
     }
 
     // ── 5. Assemble ExportedQuestion objects ──────────────────────────────────
@@ -176,9 +176,7 @@ export async function buildQuizData(db: DrizzleDb): Promise<QuizData> {
             tags: tagsByQuestion.get(row.slug) ?? [],
         };
 
-        const list = questionsByPost.get(row.post_slug) ?? [];
-        list.push(exportedQuestion);
-        questionsByPost.set(row.post_slug, list);
+        append(questionsByPost, row.post_slug, exportedQuestion);
 
         if (!postMeta.has(row.post_slug)) {
             postMeta.set(row.post_slug, {
@@ -213,9 +211,7 @@ export async function buildQuizData(db: DrizzleDb): Promise<QuizData> {
     for (const questionList of questionsByPost.values()) {
         for (const q of questionList) {
             for (const tagSlug of q.tags) {
-                const list = questionsByTag.get(tagSlug) ?? [];
-                list.push(q);
-                questionsByTag.set(tagSlug, list);
+                append(questionsByTag, tagSlug, q);
             }
         }
     }
