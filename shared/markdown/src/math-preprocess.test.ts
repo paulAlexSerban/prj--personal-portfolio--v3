@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { preprocessMath } from './math-preprocess.ts';
-import { compileMarkdown } from './markdown.ts';
+import { compileMarkdown } from '../index.ts';
 
 describe('preprocessMath', () => {
     it('normalizes single-line block math delimiters', () => {

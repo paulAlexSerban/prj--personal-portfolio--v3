@@ -44,33 +44,53 @@ pnpm --filter @prj--personal-portfolio--v3/tools--quiz-export start
 # report what it would write, but write nothing
 pnpm --filter @prj--personal-portfolio--v3/tools--quiz-export start:dry-run
 
+# recompile every question, ignoring the HTML cache
+pnpm --filter @prj--personal-portfolio--v3/tools--quiz-export start -- --no-cache
+
+# indent JSON (default is minified)
+pnpm --filter @prj--personal-portfolio--v3/tools--quiz-export start -- --pretty
+
 # tests
 pnpm --filter @prj--personal-portfolio--v3/tools--quiz-export test
 ```
 
 Run `start` whenever content changes (i.e. after an ingest) and before building
-the quiz app.
+the quiz app. A second run with the same question text reuses compiled HTML
+from the cache and finishes in seconds.
 
 ### Environment overrides
 
-| Var             | Default                                  | Purpose                                |
-| --------------- | ---------------------------------------- | -------------------------------------- |
-| `DATABASE_PATH` | `database/output/content.db`             | Source SQLite DB.                      |
-| `QUIZ_DATA_OUT` | `frontend/apps/quiz-web-app/public/data` | Where JSON is written.                 |
-| `CONTENT_DIR`   | `content/live/content/publish`           | Where to find question images to copy. |
+| Var                    | Default                                  | Purpose                                              |
+| ---------------------- | ---------------------------------------- | ---------------------------------------------------- |
+| `DATABASE_PATH`        | `database/output/content.db`             | Source SQLite DB.                                    |
+| `QUIZ_DATA_OUT`        | `frontend/apps/quiz-web-app/public/data` | Where JSON is written.                               |
+| `CONTENT_DIR`          | `content/live/content/publish`           | Where to find question images to copy.               |
+| `QUIZ_EXPORT_CACHE`    | `node_modules/.cache/quiz-export/…`      | Compiled-HTML cache file.                            |
+| `QUIZ_EXPORT_NO_CACHE` | unset                                    | Set to `1` to skip the cache (same as `--no-cache`). |
 
 ## How it works (source map)
 
-| File              | Role                                                                                                                                                              |
-| ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `src/export.ts`   | `buildQuizData(db)` - pure query. Joins `questions` -> `posts`, attaches `question_options` (ordered) + tags, parses `payload`. Only `status = 'published'` rows. |
-| `src/compile.ts`  | `compileQuizData(data, opts)` - compiles Markdown/MDX -> sanitized HTML (via `shared--quiz-markdown`) and copies/rewrites image assets.                           |
-| `src/write.ts`    | `writeQuizJson(data, outDir)` - writes all the JSON files above.                                                                                                  |
-| `src/contract.ts` | The TypeScript types for every output shape - **the source of truth the app imports** (`./contract` subpath).                                                     |
-| `src/index.ts`    | CLI entry: task graph via `shared--task-manager` (Open DB -> Export -> Close ∥ Compile -> Write); reads env vars, handles `--dry-run`.                            |
-| `index.ts`        | Library exports for other packages.                                                                                                                               |
+| File              | Role                                                                                                                                                                       |
+| ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `src/export.ts`   | `buildQuizData(db)` - pure query. Joins `questions` -> `posts`, attaches `question_options` (ordered) + tags, parses `payload`. Only `status = 'published'` rows.          |
+| `src/compile.ts`  | `compileQuizData(data, opts)` - compiles Markdown/MDX -> sanitized HTML (via `shared--markdown`) and copies/rewrites image assets. Question source files are indexed once. |
+| `src/cache.ts`    | Content-hash cache of compiled HTML. Keyed by compiler version, field source, and image rewrites.                                                                          |
+| `src/write.ts`    | `writeQuizJson(data, outDir)` - writes the JSON files above (minified unless `pretty`), then deletes stale files in `questions/` and `tags/`.                              |
+| `src/contract.ts` | The TypeScript types for every output shape - **the source of truth the app imports** (`./contract` subpath).                                                              |
+| `src/index.ts`    | CLI entry: task graph via `shared--task-manager` (Open DB -> Export -> Close ∥ Compile -> Write); reads env vars; handles `--dry-run`, `--no-cache`, `--pretty`.           |
+| `index.ts`        | Library exports for other packages.                                                                                                                                        |
 
-The library functions are pure and side-effect-free except `write.ts`; the CLI orchestrates DB access, compilation, and filesystem writes through named tasks.
+`buildQuizData` only reads the database. `compileQuizData` compiles HTML and, when
+asset directories are set, copies images. `writeQuizJson` writes JSON and
+deletes stale files. The CLI runs those steps as named tasks.
+
+JSON files are minified. The shapes are unchanged (`version: 2`); only
+whitespace differs from older pretty-printed output. Pass `--pretty` to indent.
+
+Compiled HTML is cached under `tools/quiz-export/node_modules/.cache/quiz-export/`.
+The cache key is a hash of the markdown compiler version, the question fields,
+and any rewritten image paths, so a question is recompiled only when its source
+changes. `--no-cache` (or `QUIZ_EXPORT_NO_CACHE=1`) ignores the file.
 
 ## Where it sits
 

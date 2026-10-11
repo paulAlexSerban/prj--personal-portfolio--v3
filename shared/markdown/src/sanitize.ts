@@ -1,10 +1,16 @@
-import DOMPurify from 'isomorphic-dompurify';
-import { ALLOWED_ATTR, ALLOWED_TAGS } from './allowlist.ts';
+type SanitizeFn = (html: string) => string;
 
-/** Sanitize HTML with the shared quiz allow-list. Works in Node (export) and browser (fallback). */
+let impl: SanitizeFn | undefined;
+
+/** Installed by the Node or browser package entry before any compile call. */
+export function setSanitizer(fn: SanitizeFn): void {
+    impl = fn;
+}
+
+/** Sanitize HTML with the shared quiz allow-list. */
 export function sanitizeHtml(html: string): string {
-    return DOMPurify.sanitize(html, {
-        ALLOWED_TAGS: [...ALLOWED_TAGS],
-        ALLOWED_ATTR: [...ALLOWED_ATTR],
-    });
+    if (!impl) {
+        throw new Error('sanitizeHtml was called before a markdown sanitizer was installed');
+    }
+    return impl(html);
 }
