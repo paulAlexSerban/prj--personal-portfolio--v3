@@ -1,8 +1,18 @@
 {
   "category": "javascript",
   "label": "JavaScript",
-  "fetchedAt": "2026-10-11T11:39:37.351Z",
+  "fetchedAt": "2026-10-12T13:36:21.680Z",
   "items": [
+    {
+      "slug": "eef6d3cbd37774818b831aef",
+      "guid": "https://flaviocopes.com/full-ubuntu-disk-codex/",
+      "title": "How I fixed a full Ubuntu server disk with Codex",
+      "link": "https://flaviocopes.com/full-ubuntu-disk-codex/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "My Sendy server stopped responding with the disk at 99%. The database was 528 MB, but MySQL binary logs had grown to 41 GB. Here is how Codex walked me through finding them, purging them safely, and setting an expiry so it never happens again.",
+      "publishedAt": "2026-10-12T10:00:00.000Z"
+    },
     {
       "slug": "46fac8452b425d7945b9bebb",
       "guid": "https://flaviocopes.com/apple-tv-app/",
@@ -302,16 +312,6 @@
       "sourceUrl": "https://flaviocopes.com/rss.xml",
       "summary": "Post Slide Deck is my free, open source Mac app and Chrome extension that turn posts on X into slides. Click the slide icon under a post, reorder the slides, and play them in the app window while you record.",
       "publishedAt": "2026-10-03T20:00:00.000Z"
-    },
-    {
-      "slug": "0614f04dfc125f6cfa1ca74a",
-      "guid": "https://flaviocopes.com/jev-classify-text/",
-      "title": "How to classify text with Jev",
-      "link": "https://flaviocopes.com/jev-classify-text/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "How to classify text with Jev: pick Noul, Choice or Score, write labels that work, label comments in bulk, and test accuracy before you trust it.",
-      "publishedAt": "2026-10-03T17:00:00.000Z"
     },
     {
       "slug": "c9821fb6260d747706562252",
