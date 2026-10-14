@@ -1,8 +1,28 @@
 {
   "category": "javascript",
   "label": "JavaScript",
-  "fetchedAt": "2026-10-13T12:59:47.032Z",
+  "fetchedAt": "2026-10-14T10:40:29.410Z",
   "items": [
+    {
+      "slug": "2c8e1a06996e2d2c9e1e2520",
+      "guid": "https://flaviocopes.com/open-weights/",
+      "title": "What “open weights” means for AI models",
+      "link": "https://flaviocopes.com/open-weights/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Learn what open weights means for AI models, how it differs from open source, and what Qwen3.8 and Kimi K3 show about the future of open AI.",
+      "publishedAt": "2026-10-14T10:00:00.000Z"
+    },
+    {
+      "slug": "f6500ff05ff516b53840a958",
+      "guid": "https://flaviocopes.com/cgi/",
+      "title": "How to handle web requests in C with CGI 1.1",
+      "link": "https://flaviocopes.com/cgi/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Learn CGI 1.1 by building a C web application: read requests, decode forms, return HTML and errors, and run the executable through Apache.",
+      "publishedAt": "2026-10-14T08:15:00.000Z"
+    },
     {
       "slug": "da9a58a9d2432768de13e387",
       "guid": "https://flaviocopes.com/langchain-langgraph/",
@@ -12,6 +32,16 @@
       "sourceUrl": "https://flaviocopes.com/rss.xml",
       "summary": "Learn LangChain and LangGraph with TypeScript: models, prompts, tools, agents, memory, streaming, RAG, graphs, persistence, and human approval.",
       "publishedAt": "2026-10-13T07:00:00.000Z"
+    },
+    {
+      "slug": "ec4425944808c746b792d190",
+      "guid": "https://javascriptweekly.com/issues/806",
+      "title": "Ryan Dahl: 'Why reimplement Node? It works.'",
+      "link": "https://javascriptweekly.com/issues/806",
+      "source": "JavaScript Weekly",
+      "sourceUrl": "https://javascriptweekly.com/rss/1b4m1h9j",
+      "summary": "#​806 — October 13, 2026 Read on the Web JavaScript Weekly Deno is Joining Cloudflare (But…) — Maybe David Bushell saw the writing on the wall, as the Deno team isn't joining Cloudflare to keep working on Deno, but to fold celld into workerd so Durable Objects can be self-hosted…",
+      "publishedAt": "2026-10-13T00:00:00.000Z"
     },
     {
       "slug": "eef6d3cbd37774818b831aef",
@@ -292,26 +322,6 @@
       "sourceUrl": "https://flaviocopes.com/rss.xml",
       "summary": "Stacked PRs are not enabled for this repository is a gh stack warning with no setting to flip. Check your gh account and repo, or open regular PRs.",
       "publishedAt": "2026-10-04T10:00:00.000Z"
-    },
-    {
-      "slug": "c513739f1931c100a33a1aae",
-      "guid": "https://flaviocopes.com/jev-confidence/",
-      "title": "How to use Jev confidence scores",
-      "link": "https://flaviocopes.com/jev-confidence/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "How to use Jev confidence scores to decide when code acts, asks for confirmation, or hands off to a person, with thresholds tuned on labeled data.",
-      "publishedAt": "2026-10-04T07:00:00.000Z"
-    },
-    {
-      "slug": "db8f7c147c26a5fd57511c88",
-      "guid": "https://flaviocopes.com/vm-peek/",
-      "title": "I built VM Peek, a Mac app that shows what your coding agents do in the test VM",
-      "link": "https://flaviocopes.com/vm-peek/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "VM Peek is my free, open source Mac app that shows what coding agents do in a macOS test VM: its screen live, which agents are using it and for what, and every command they ran.",
-      "publishedAt": "2026-10-03T20:10:00.000Z"
     }
   ]
 }
