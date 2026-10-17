@@ -1,8 +1,48 @@
 {
   "category": "javascript",
   "label": "JavaScript",
-  "fetchedAt": "2026-10-16T10:11:48.867Z",
+  "fetchedAt": "2026-10-17T09:45:24.567Z",
   "items": [
+    {
+      "slug": "a1061ab086ab7ce698b91aad",
+      "guid": "https://flaviocopes.com/selling-to-builders/",
+      "title": "Selling SaaS to developers: how to find paying customers",
+      "link": "https://flaviocopes.com/selling-to-builders/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Developers can build alternatives to your product. That doesn't make them bad customers. Look at urgency, budgets, and the work buying lets them avoid.",
+      "publishedAt": "2026-10-17T07:00:00.000Z"
+    },
+    {
+      "slug": "f0ad9244dab906eba27c0465",
+      "guid": "https://flaviocopes.com/pi-durable/",
+      "title": "How to build agents that survive crashes with Pi Durable",
+      "link": "https://flaviocopes.com/pi-durable/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Build a durable TypeScript agent with Pi Durable and SQLite. Test crash recovery, avoid duplicate requests, and understand which tools can safely run again.",
+      "publishedAt": "2026-10-16T14:30:00.000Z"
+    },
+    {
+      "slug": "6a0c23f15f44516effc8a413",
+      "guid": "https://flaviocopes.com/openseo/",
+      "title": "A deep dive into OpenSEO",
+      "link": "https://flaviocopes.com/openseo/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Explore OpenSEO's architecture: SEO data APIs, Cloudflare Workers, its audit crawler, MCP tools, AI agents, storage, and self-hosting trade-offs.",
+      "publishedAt": "2026-10-16T13:13:52.000Z"
+    },
+    {
+      "slug": "0e2d669b36ebd4fbeb40f0c0",
+      "guid": "https://flaviocopes.com/opencode-plugin/",
+      "title": "How to write an OpenCode plugin with the v2 API",
+      "link": "https://flaviocopes.com/opencode-plugin/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Build your first OpenCode v2 plugin in TypeScript, register a custom tool, validate its inputs, test the logic, and understand how v1 plugins change.",
+      "publishedAt": "2026-10-16T13:00:00.000Z"
+    },
     {
       "slug": "d1b0000f1c50b8d10f294839",
       "guid": "https://flaviocopes.com/build-or-buy/",
@@ -282,46 +322,6 @@
       "sourceUrl": "https://flaviocopes.com/rss.xml",
       "summary": "Answer four questions and get three hosts that fit your project, with a monthly price and the main catch. 21 providers, prices checked October 1, 2026.",
       "publishedAt": "2026-10-05T10:10:00.000Z"
-    },
-    {
-      "slug": "50767f2a7423bcb046f00fe2",
-      "guid": "https://flaviocopes.com/payment-picker/",
-      "title": "Payment picker: find how to get paid for your app",
-      "link": "https://flaviocopes.com/payment-picker/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Find a payment provider for your product, compare fees on your own numbers, and see who handles tax and disputes. Merchant of Record and direct providers.",
-      "publishedAt": "2026-10-05T10:10:00.000Z"
-    },
-    {
-      "slug": "fbe18c6f6111803ea4b11fa9",
-      "guid": "https://flaviocopes.com/cron/",
-      "title": "A deep dive into cron",
-      "link": "https://flaviocopes.com/cron/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Learn cron on Linux and macOS: crontab syntax, schedules, the cron environment, logs, overlapping runs, time zones, launchd and systemd timers.",
-      "publishedAt": "2026-10-05T10:00:00.000Z"
-    },
-    {
-      "slug": "565d4665f1b05edf6669d83a",
-      "guid": "https://flaviocopes.com/architecture-dissector/",
-      "title": "I built Architecture Dissector, a Mac app that shows how my apps are built",
-      "link": "https://flaviocopes.com/architecture-dissector/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Architecture Dissector is my free, open source Mac app that draws how your apps are built, their workflows and the data they store, from maps your coding agents write.",
-      "publishedAt": "2026-10-05T08:30:00.000Z"
-    },
-    {
-      "slug": "fae5b6b2e4ad84f72c01fc85",
-      "guid": "https://flaviocopes.com/mac-iphone-sync/",
-      "title": "How to sync a Mac app with its iPhone app",
-      "link": "https://flaviocopes.com/mac-iphone-sync/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "How to sync a Mac app and its iPhone companion: CloudKit, what the Apple Developer Program unlocks, iCloud for apps outside the App Store, and alternatives.",
-      "publishedAt": "2026-10-05T07:00:00.000Z"
     }
   ]
 }
