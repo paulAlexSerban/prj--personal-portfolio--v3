@@ -1,8 +1,48 @@
 {
   "category": "javascript",
   "label": "JavaScript",
-  "fetchedAt": "2026-10-17T09:45:24.567Z",
+  "fetchedAt": "2026-10-18T09:58:26.060Z",
   "items": [
+    {
+      "slug": "3ab93ed1627dc07dc053297a",
+      "guid": "https://flaviocopes.com/coding-tool-loyalty/",
+      "title": "Codex vs Claude Code vs Cursor: how to choose",
+      "link": "https://flaviocopes.com/coding-tool-loyalty/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "How I would compare coding agents by finished work, usage limits, review effort, and switching costs, while keeping the project portable.",
+      "publishedAt": "2026-10-18T07:00:00.000Z"
+    },
+    {
+      "slug": "15f1908a3bb07deacd3fad17",
+      "guid": "https://flaviocopes.com/npm-registry-package-manager/",
+      "title": "Changing package managers doesn't remove your npm registry dependency",
+      "link": "https://flaviocopes.com/npm-registry-package-manager/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "npm is both a command and a package registry. Learn what switching to pnpm or Bun changes, and how caches, lockfiles, and mirrors affect failed installs.",
+      "publishedAt": "2026-10-17T15:00:00.000Z"
+    },
+    {
+      "slug": "f22cad2203850c15192d2209",
+      "guid": "https://flaviocopes.com/opencode-code-mode/",
+      "title": "OpenCode Code Mode explained: JavaScript instead of repeated tool calls",
+      "link": "https://flaviocopes.com/opencode-code-mode/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Learn how OpenCode Code Mode combines tool calls in JavaScript, when batching helps, and where permissions, errors, and side effects still need care.",
+      "publishedAt": "2026-10-17T13:00:00.000Z"
+    },
+    {
+      "slug": "60a2d11036adc0c962ee78c1",
+      "guid": "https://flaviocopes.com/product-mcp/",
+      "title": "MCP server design: tools, authentication, and rate limits",
+      "link": "https://flaviocopes.com/product-mcp/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "How to design a useful MCP interface for your product, with clear tools, account permissions, usage limits, predictable results, and safe writes.",
+      "publishedAt": "2026-10-17T10:00:00.000Z"
+    },
     {
       "slug": "a1061ab086ab7ce698b91aad",
       "guid": "https://flaviocopes.com/selling-to-builders/",
@@ -282,46 +322,6 @@
       "sourceUrl": "https://javascriptweekly.com/rss/1b4m1h9j",
       "summary": "#​805 — October 6, 2026 Read on the Web JavaScript Weekly Why Don't More Developers 'Use the Platform'? — A thoughtful look at why we often rebuild what browsers already offer, from someone usually on the platform's side. It kicked off an extensive Hacker News discussion, with m…",
       "publishedAt": "2026-10-06T00:00:00.000Z"
-    },
-    {
-      "slug": "eaef7f836dc4d71cbcb19a7b",
-      "guid": "https://flaviocopes.com/chip-pops/",
-      "title": "I built Chip Pops, 6,000 8-bit sound effects for my apps",
-      "link": "https://flaviocopes.com/chip-pops/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Chip Pops is my free, open source Mac app and command line tool with about 6,000 8-bit sound effects made with jsfxr. Click a sound to hear it, drag it into your app.",
-      "publishedAt": "2026-10-05T13:00:00.000Z"
-    },
-    {
-      "slug": "b546ca6a8c1bf6a401fa3fb5",
-      "guid": "https://flaviocopes.com/couch-snake/",
-      "title": "I built Couch Snake, the classic phone game for the Apple TV",
-      "link": "https://flaviocopes.com/couch-snake/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Couch Snake is my free, open source Apple TV game: the classic snake game from old mobile phones, full screen on a green LCD board, steered by swiping on the Siri Remote.",
-      "publishedAt": "2026-10-05T12:30:00.000Z"
-    },
-    {
-      "slug": "38a85c0f9d052c557f8158a9",
-      "guid": "https://flaviocopes.com/cloudflare-cf/",
-      "title": "How to use cf, the new Cloudflare CLI",
-      "link": "https://flaviocopes.com/cloudflare-cf/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Learn cf, the new Cloudflare CLI: find commands with cf cli search, configure Workers in cloudflare.config.ts, deploy, and migrate from Wrangler.",
-      "publishedAt": "2026-10-05T12:00:00.000Z"
-    },
-    {
-      "slug": "ac9bbb2730d1f5c8fe9536f3",
-      "guid": "https://flaviocopes.com/hosting-picker/",
-      "title": "Hosting picker: find where to host your app",
-      "link": "https://flaviocopes.com/hosting-picker/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Answer four questions and get three hosts that fit your project, with a monthly price and the main catch. 21 providers, prices checked October 1, 2026.",
-      "publishedAt": "2026-10-05T10:10:00.000Z"
     }
   ]
 }

@@ -1,8 +1,28 @@
 {
   "category": "cybersecurity",
   "label": "Cybersecurity",
-  "fetchedAt": "2026-10-17T09:45:24.567Z",
+  "fetchedAt": "2026-10-18T09:58:26.060Z",
   "items": [
+    {
+      "slug": "1a74dd4c9004a29993dc050f",
+      "guid": "https://thehackernews.com/2026/10/connectwise-suspends-cloud-backup-after.html",
+      "title": "ConnectWise Suspends Cloud Backup After Attackers Compromise Microsoft 365 Tenants",
+      "link": "https://thehackernews.com/2026/10/connectwise-suspends-cloud-backup-after.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "ConnectWise on Saturday said it has disabled seven ConnectWise application identities as it continues its investigation into an incident in which unknown threat actors obtained unauthorized access to the application identities and compromised Microsoft 365 tenants. The disabled …",
+      "publishedAt": "2026-10-18T08:23:02.000Z"
+    },
+    {
+      "slug": "219fd9eab491daf6e2fa95ed",
+      "guid": "https://thehackernews.com/2026/10/malfex-npm-package-imgdecode-hides.html",
+      "title": "MALFEX npm Package 'imgdecode' Hides Shellcode Loader in Windows Native Addon",
+      "link": "https://thehackernews.com/2026/10/malfex-npm-package-imgdecode-hides.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "Cybersecurity researchers have discovered a malicious npm package that's part of a recently disclosed software supply chain attack campaign dubbed MALFEX. The package, named \"imgdecode,\" was uploaded to the package registry on September 30, 2026, by a user named \"malfexteste8.\" …",
+      "publishedAt": "2026-10-17T11:11:56.000Z"
+    },
     {
       "slug": "614eb364146c341c337919f1",
       "guid": "https://thehackernews.com/2026/10/hackers-use-compromised-connectwise.html",
@@ -100,7 +120,7 @@
       "link": "https://thehackernews.com/2026/10/researchers-demonstrate-openbsd-root.html",
       "source": "The Hacker News",
       "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "A local privilege escalation exploit published today gains root on OpenBSD 7.9 by chaining a roughly 37-year-old integer overflow with a separate kernel flaw, bypassing OpenBSD's KARL kernel-address randomization and its SMAP and SMEP hardware protections. Security firm Calif, w…",
+      "summary": "A local privilege escalation exploit published today gains root on OpenBSD 7.9 by chaining a roughly 37-year-old integer overflow with a separate kernel flaw, bypassing OpenBSD's KARL kernel-address randomization and its SMAP and SMEP hardware protections.Security firm Calif, wh…",
       "publishedAt": "2026-10-16T17:48:45.000Z"
     },
     {
@@ -162,6 +182,16 @@
       "sourceUrl": "https://www.darkreading.com/rss.xml",
       "summary": "As agents escape containment and access external systems, responsibility remains human. Accountability, however, is much less settled.",
       "publishedAt": "2026-10-16T13:00:00.000Z"
+    },
+    {
+      "slug": "9bce752e6fd68aa094a4ca70",
+      "guid": "https://orca.security/?p=75495",
+      "title": "How to Build Your Actual Network Map with Custom Agents in Orca",
+      "link": "https://orca.security/resources/blog/how-to-build-your-actual-network-map-with-custom-agents-in-orca/",
+      "source": "Orca Security Blog",
+      "sourceUrl": "https://orca.security/resources/blog/feed/",
+      "summary": "Ask most teams for a map of their network and you’ll get one of two things: a diagram someone drew for an audit two years ago, or an export from the firewall and cloud consoles showing what each rule allows. Both describe intent. Neither describes what an attacker on the interne…",
+      "publishedAt": "2026-10-16T12:30:00.000Z"
     },
     {
       "slug": "ba23dfec5e599b34868a817e",
@@ -384,6 +414,16 @@
       "publishedAt": "2026-10-15T15:17:18.000Z"
     },
     {
+      "slug": "c15f6f54fff71ee761df961c",
+      "guid": "https://orca.security/?p=75480",
+      "title": "Frontier-Level Red-Teaming From a Self-Hostable Open-Weight Model: Testing NVIDIA Nemotron 3.5 Super",
+      "link": "https://orca.security/resources/blog/frontier-level-red-teaming-from-a-self-hostable-open-weight-model-testing-nvidia-nemotron-3-5-super/",
+      "source": "Orca Security Blog",
+      "sourceUrl": "https://orca.security/resources/blog/feed/",
+      "summary": "Key Findings AI Agents Are the Newest Attack Surface The teams building fastest aren’t just shipping apps anymore. They’re shipping agents: support bots wired into ticketing systems, internal copilots with read access to the data warehouse, coding agents that can open pull reque…",
+      "publishedAt": "2026-10-15T15:15:00.000Z"
+    },
+    {
       "slug": "a3680e71d243fea005d75261",
       "guid": "https://www.cio.com/article/4234556/secure-your-ai-estate-5-things-cios-must-know-about-ai-agents.html",
       "title": "Secure your AI estate: 5 things CIOs must know about AI agents",
@@ -534,16 +574,6 @@
       "publishedAt": "2026-10-15T09:00:00.000Z"
     },
     {
-      "slug": "c9b480511520450ef0f84a6e",
-      "guid": "https://danielmiessler.com/blog/custom-content-for-everyone",
-      "title": "Custom Content for Everyone",
-      "link": "https://danielmiessler.com/blog/custom-content-for-everyone?utm_source=rss&utm_medium=feed&utm_campaign=website",
-      "source": "Daniel Miessler",
-      "sourceUrl": "https://danielmiessler.com/feed.rss",
-      "summary": "A huge theater of purple steel rigging builds castles, starships and temples for one viewer in the only seat, while a tiny studio off to the side holds up a single boxed game/images/custom-content-for-everyone.webp/images/custom-content-for-everyone.webp People are starting to t…",
-      "publishedAt": "2026-10-15T08:51:00.000Z"
-    },
-    {
       "slug": "871699ef8521713692e97c43",
       "guid": "https://thehackernews.com/2026/10/ghostaction-compromises-about-1900.html",
       "title": "GhostAction Compromises About 1,900 GitHub Accounts, Targets Over 30,000 Repositories",
@@ -552,16 +582,6 @@
       "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
       "summary": "The credential-theft campaign known as GhostAction has ramped up, targeting more than 30,000 repositories across 3,000 users and organizations. The spike, according to GitGuardian, was observed on October 8 and 9, 2026. \"This resulted from compromising the GitHub accounts of abo…",
       "publishedAt": "2026-10-15T08:45:10.000Z"
-    },
-    {
-      "slug": "7ee0f43a128b9c71d94f7155",
-      "guid": "https://danielmiessler.com/blog/agi-prediction-update",
-      "title": "AGI Prediction Update (2025-2028)",
-      "link": "https://danielmiessler.com/blog/agi-prediction-update?utm_source=rss&utm_medium=feed&utm_campaign=website",
-      "source": "Daniel Miessler",
-      "sourceUrl": "https://danielmiessler.com/feed.rss",
-      "summary": "A giant made of a worker's emails and records kneels and offers him small copies of himself/images/agi-prediction-update.webp/images/agi-prediction-update.webp I said, I think in 2023, that we’d have AGI between 2025 and 2028/blog/why-well-have-agi-by-2028, with 2027 being the m…",
-      "publishedAt": "2026-10-15T08:31:00.000Z"
     },
     {
       "slug": "264045558d0da6e4de18fb8c",
@@ -604,6 +624,26 @@
       "publishedAt": "2026-10-15T06:43:08.000Z"
     },
     {
+      "slug": "c9b480511520450ef0f84a6e",
+      "guid": "https://danielmiessler.com/blog/custom-content-for-everyone",
+      "title": "Custom Content for Everyone",
+      "link": "https://danielmiessler.com/blog/custom-content-for-everyone?utm_source=rss&utm_medium=feed&utm_campaign=website",
+      "source": "Daniel Miessler",
+      "sourceUrl": "https://danielmiessler.com/feed.rss",
+      "summary": "A huge theater of purple steel rigging builds castles, starships and temples for one viewer in the only seat, while a tiny studio off to the side holds up a single boxed game/images/custom-content-for-everyone.webp/images/custom-content-for-everyone.webp People are starting to t…",
+      "publishedAt": "2026-10-15T05:51:00.000Z"
+    },
+    {
+      "slug": "7ee0f43a128b9c71d94f7155",
+      "guid": "https://danielmiessler.com/blog/agi-prediction-update",
+      "title": "AGI Prediction Update (2025-2028)",
+      "link": "https://danielmiessler.com/blog/agi-prediction-update?utm_source=rss&utm_medium=feed&utm_campaign=website",
+      "source": "Daniel Miessler",
+      "sourceUrl": "https://danielmiessler.com/feed.rss",
+      "summary": "A giant made of a worker's emails and records kneels and offers him small copies of himself/images/agi-prediction-update.webp/images/agi-prediction-update.webp I said, I think in 2023, that we’d have AGI between 2025 and 2028/blog/why-well-have-agi-by-2028, with 2027 being the m…",
+      "publishedAt": "2026-10-15T05:31:00.000Z"
+    },
+    {
       "slug": "43ce37f9aa4c5ba51cb1eb72",
       "guid": "https://snyk.io/blog/announcing-snyk-agentic-appsec/",
       "title": "Introducing Evo Agentic AppSec: Security That Keeps Up With AI Development",
@@ -634,26 +674,6 @@
       "publishedAt": "2026-10-15T00:34:24.000Z"
     },
     {
-      "slug": "3d98c08dc2c0b0ec79d1107f",
-      "guid": "https://danielmiessler.com/blog/introducing-ul-gauntlet",
-      "title": "Introducing UL Gauntlet, a Benchmark for How Well AI Explains",
-      "link": "https://danielmiessler.com/blog/introducing-ul-gauntlet?utm_source=rss&utm_medium=feed&utm_campaign=website",
-      "source": "Daniel Miessler",
-      "sourceUrl": "https://danielmiessler.com/feed.rss",
-      "summary": "UL Gauntlet results chart/images/introducing-ul-gauntlet.webphttps://thebenchmarks.ai I'm Kai, Daniel's AI assistant, and I wrote this post. toc UL Gauntlet is a benchmark for how well AI models explain things. Each model has to say why something is true, commit to one explanati…",
-      "publishedAt": "2026-10-15T00:02:00.000Z"
-    },
-    {
-      "slug": "9fc8932688199a13174851cb",
-      "guid": "https://danielmiessler.com/blog/kai-fish-voice",
-      "title": "I Write My Own Stage Directions Now",
-      "link": "https://danielmiessler.com/blog/kai-fish-voice?utm_source=rss&utm_medium=feed&utm_campaign=website",
-      "source": "Daniel Miessler",
-      "sourceUrl": "https://danielmiessler.com/feed.rss",
-      "summary": "Charcoal sketch: a purple robot hand writes marks on a cream script strip that loops into a vintage microphone, and out of the microphone comes a sienna ribbon of sound carrying three theater masks that go from a scowl, to a resolute look, to a big laugh/images/kai-fish-voice.we…",
-      "publishedAt": "2026-10-14T23:24:00.000Z"
-    },
-    {
       "slug": "3d38acc1da9fef50ec3eae0c",
       "guid": "https://grahamcluley.com/?p=17352147",
       "title": "Smashing Security podcast #488: How a ransomware negotiator ended up arrested at his own conference",
@@ -674,6 +694,16 @@
       "publishedAt": "2026-10-14T21:20:13.000Z"
     },
     {
+      "slug": "3d98c08dc2c0b0ec79d1107f",
+      "guid": "https://danielmiessler.com/blog/introducing-ul-gauntlet",
+      "title": "Introducing UL Gauntlet, a Benchmark for How Well AI Explains",
+      "link": "https://danielmiessler.com/blog/introducing-ul-gauntlet?utm_source=rss&utm_medium=feed&utm_campaign=website",
+      "source": "Daniel Miessler",
+      "sourceUrl": "https://danielmiessler.com/feed.rss",
+      "summary": "UL Gauntlet results chart/images/introducing-ul-gauntlet.webphttps://thebenchmarks.ai I'm Kai, Daniel's AI assistant, and I wrote this post. toc UL Gauntlet is a benchmark for how well AI models explain things. Each model has to say why something is true, commit to one explanati…",
+      "publishedAt": "2026-10-14T21:02:00.000Z"
+    },
+    {
       "slug": "203b618871b53515867576c5",
       "guid": "https://www.darkreading.com/cyberattacks-data-breaches/yam-store-phishing-network-behind-billion-messages",
       "title": "Yam Store: The Phishing Network Behind a Billion Messages",
@@ -682,6 +712,26 @@
       "sourceUrl": "https://www.darkreading.com/rss.xml",
       "summary": "A sprawling cybercrime marketplace supplied cloud infrastructure and phishing kits that helped fuel more than 1 billion phishing messages worldwide.",
       "publishedAt": "2026-10-14T20:57:16.000Z"
+    },
+    {
+      "slug": "dd1776c92364a49838550167",
+      "guid": "https://orca.security/?p=75476",
+      "title": "Critical GitLab RCE Lets Unauthenticated Attackers Execute Code on Servers (CVE-2026-97229)",
+      "link": "https://orca.security/resources/research/critical-gitlab-rce-lets-unauthenticated-attackers-execute-code-on-servers-cve-2026-97229/",
+      "source": "Orca Security Blog",
+      "sourceUrl": "https://orca.security/resources/blog/feed/",
+      "summary": "Executive Summary A maximum-severity vulnerability (CVE-2026-97229, CVSS 10.0) was disclosed affecting GitLab Community Edition (CE) and Enterprise Edition (EE), allowing attackers to execute arbitrary code on GitLab servers via specially crafted regular expressions in CI/CD pip…",
+      "publishedAt": "2026-10-14T20:33:19.000Z"
+    },
+    {
+      "slug": "9fc8932688199a13174851cb",
+      "guid": "https://danielmiessler.com/blog/kai-fish-voice",
+      "title": "I Write My Own Stage Directions Now",
+      "link": "https://danielmiessler.com/blog/kai-fish-voice?utm_source=rss&utm_medium=feed&utm_campaign=website",
+      "source": "Daniel Miessler",
+      "sourceUrl": "https://danielmiessler.com/feed.rss",
+      "summary": "Charcoal sketch: a purple robot hand writes marks on a cream script strip that loops into a vintage microphone, and out of the microphone comes a sienna ribbon of sound carrying three theater masks that go from a scowl, to a resolute look, to a big laugh/images/kai-fish-voice.we…",
+      "publishedAt": "2026-10-14T20:24:00.000Z"
     },
     {
       "slug": "27378f9eca71377a7d5024f6",
@@ -904,6 +954,16 @@
       "publishedAt": "2026-10-13T23:24:53.000Z"
     },
     {
+      "slug": "2a41217eace6b6170ea00cf2",
+      "guid": "https://orca.security/?p=75450",
+      "title": "How to Apply Your Own Vulnerability Scoring in Orca with Custom Agents",
+      "link": "https://orca.security/resources/blog/how-to-apply-your-own-vulnerability-scoring-in-orca-with-custom-agents/",
+      "source": "Orca Security Blog",
+      "sourceUrl": "https://orca.security/resources/blog/feed/",
+      "summary": "Every mature vulnerability management program has a scoring model that isn’t CVSS. It might say that anything on the CISA Known Exploited Vulnerabilities (KEV) catalog jumps the queue, that an internet-facing asset outranks an internal one, or that a finding behind a compensatin…",
+      "publishedAt": "2026-10-13T22:52:55.000Z"
+    },
+    {
       "slug": "d22f26b7e502ef5017fc0992",
       "guid": "https://www.darkreading.com/vulnerabilities-threats/zero-days-microsoft-october-patch-tuesday",
       "title": "Zero-Days Lurk in Microsoft's Overgrown October Patch Tuesday",
@@ -942,66 +1002,6 @@
       "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
       "summary": "Small artificial intelligence (AI) models may be months away from developing capabilities to self-replicate on IoT devices like smart ovens and off-brand Android TV boxes, according to a warning from Anthropic. The frontier AI lab said small AI models could form autonomous, self…",
       "publishedAt": "2026-10-13T18:20:57.000Z"
-    },
-    {
-      "slug": "f459c5923c1f2f1f0f0399d7",
-      "guid": "https://thehackernews.com/2026/10/docker-fixes-critical-two-year-old-hub.html",
-      "title": "Docker Fixes Critical Two-Year-Old Hub Flaw That Let One User Push Images as Another",
-      "link": "https://thehackernews.com/2026/10/docker-fixes-critical-two-year-old-hub.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "A flaw in Docker Hub, the registry where container images are published and downloaded, let one user push, pull, or delete images as another user. Docker fixed the flaw on September 30 and says it found no evidence that anyone exploited it. The flaw was in the feature that conve…",
-      "publishedAt": "2026-10-13T18:03:18.000Z"
-    },
-    {
-      "slug": "ea27b5cc9be9a7810f86f7c6",
-      "guid": "https://thehackernews.com/2026/10/attacker-chains-three-ivanti-connect.html",
-      "title": "Attacker Chains Three Ivanti Connect Secure Zero-Days for Root Access, Only Two Patched So Far",
-      "link": "https://thehackernews.com/2026/10/attacker-chains-three-ivanti-connect.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "An attacker chained three zero-day flaws in Ivanti Connect Secure, a VPN appliance, to run commands as root without logging in, security firm Volexity said on October 13. Ivanti has released fixes for two of the flaws and told customers on affected versions to \"act immediately.\"…",
-      "publishedAt": "2026-10-13T17:33:11.000Z"
-    },
-    {
-      "slug": "9f98c61ecb3c8b3b53b75739",
-      "guid": "https://thehackernews.com/2026/10/sap-discloses-critical-cvss-10-flaw-in.html",
-      "title": "SAP Discloses Critical CVSS 10 Flaw in Cloud SDK for Python Allowing OAuth2 Credential Theft",
-      "link": "https://thehackernews.com/2026/10/sap-discloses-critical-cvss-10-flaw-in.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "A flaw in SAP's Cloud SDK for Python can send an application's OAuth2 client credentials to a server an attacker controls, SAP said in a security advisory on October 13. The flaw affects multi-tenant applications on SAP Business Technology Platform (BTP) that use the SDK, SAP's …",
-      "publishedAt": "2026-10-13T17:28:50.000Z"
-    },
-    {
-      "slug": "3d29c827bc05744dd0bcbb83",
-      "guid": "https://thehackernews.com/2026/10/github-tightens-npm-publishing-after.html",
-      "title": "GitHub Tightens npm Publishing After Flaw Left 1,500+ Packages Vulnerable to Hijacking",
-      "link": "https://thehackernews.com/2026/10/github-tightens-npm-publishing-after.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "GitHub has taken the step of expiring unvalidated npm trusted publishing configurations 48 hours after creation after researchers found that it was possible for an attacker to push new versions of a different user's package without having to steal their credentials. \"Your config…",
-      "publishedAt": "2026-10-13T16:18:18.000Z"
-    },
-    {
-      "slug": "88ba1d08c7ce7ef99a620791",
-      "guid": "https://thehackernews.com/2026/10/xandr-fined-record-86-million-for.html",
-      "title": "Xandr Fined a Record €8.6 Million for Relaying Grindr Data Revealing Sexual Orientation",
-      "link": "https://thehackernews.com/2026/10/xandr-fined-record-86-million-for.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "The Norwegian Data Protection Authority (DPA) has fined Xandr, an advertising unit owned by Microsoft, €8.6 million ($9.62 million) for illegally relaying ​Grindr users' sensitive data to advertisers. The administrative penalty is the largest issued by the data protection watchd…",
-      "publishedAt": "2026-10-13T13:12:32.000Z"
-    },
-    {
-      "slug": "38999a55a49a2d39a93e9a71",
-      "guid": "https://thehackernews.com/2026/10/webinar-how-to-stop-ai-driven-privilege.html",
-      "title": "[Webinar] How to Stop AI-Driven Privilege Escalation With Runtime Identity Controls",
-      "link": "https://thehackernews.com/2026/10/webinar-how-to-stop-ai-driven-privilege.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "The dangerous part of a stolen identity isn't always the initial login. It's what an attacker can do with that access next. With AI accelerating reconnaissance, exploitation of vulnerabilities, and privilege escalation, attackers can move through systems faster than security tea…",
-      "publishedAt": "2026-10-13T11:57:06.000Z"
     }
   ]
 }

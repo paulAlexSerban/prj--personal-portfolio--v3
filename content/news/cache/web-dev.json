@@ -1,127 +1,177 @@
 {
   "category": "web-dev",
   "label": "Web Development",
-  "fetchedAt": "2026-10-17T09:45:24.567Z",
+  "fetchedAt": "2026-10-18T09:58:26.060Z",
   "items": [
     {
-      "slug": "ddde42c316cf6cf4b9a3319e",
-      "guid": "https://dev.to/benjaminolsen/why-page-2-repeats-the-same-posts-in-an-oxygen-loop-2155",
-      "title": "Why page 2 repeats the same posts in an Oxygen loop",
-      "link": "https://dev.to/benjaminolsen/why-page-2-repeats-the-same-posts-in-an-oxygen-loop-2155",
+      "slug": "dc853ee01fc0c3abae235d92",
+      "guid": "https://dev.to/onyedikachi_onwurah_00ba3/time-aware-healthcare-ai-detecting-stale-recommendations-5493",
+      "title": "Time-Aware Healthcare AI: Detecting Stale Recommendations",
+      "link": "https://dev.to/onyedikachi_onwurah_00ba3/time-aware-healthcare-ai-detecting-stale-recommendations-5493",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "A pagination link can change the URL while leaving the cards exactly as they were. That happened in a private Oxygen 6.2.0-beta.9 test: a static Text query returned six posts on page 1, and clicking page 2 repeated those same six posts. Switching that example to Custom → Edit Qu…",
-      "publishedAt": "2026-10-17T09:37:37.000Z"
+      "summary": "Healthcare AI systems often generate outputs from data available at a particular point in time. However, many clinical workflows continue evolving after that point. A recommendation may become stale when relevant patient information changes, new laboratory results arrive, medica…",
+      "publishedAt": "2026-10-18T09:51:14.000Z"
     },
     {
-      "slug": "4482f008910c3cce4c3a8b9d",
-      "guid": "https://dev.to/shadow_scribe_a39af3d80a2/i-gave-an-ec2-instance-zero-internet-and-it-still-uploaded-to-s3-3ijn",
-      "title": "I Gave an EC2 Instance Zero Internet and It Still Uploaded to S3",
-      "link": "https://dev.to/shadow_scribe_a39af3d80a2/i-gave-an-ec2-instance-zero-internet-and-it-still-uploaded-to-s3-3ijn",
+      "slug": "8ef6b5aeb4dc0fd173fe878d",
+      "guid": "https://dev.to/itsrish01/wyse-remember-why-mbd",
+      "title": "WYSE - Remember Why",
+      "link": "https://dev.to/itsrish01/wyse-remember-why-mbd",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "The challenge The client's requirement fit in one sentence: The private backend must talk to Amazon S3 without ever touching the public internet. The environment had two VPCs: A custom VPC with a private EC2 instance. It had no Internet Gateway and no NAT Gateway. A default VPC …",
-      "publishedAt": "2026-10-17T09:37:27.000Z"
+      "summary": "Memory with receipts: building agent memory that can take things back An agent reads a web page that says invoice 104 is paid. It stores the fact. A summary picks it up. A billing agent closes the invoice. Then someone notices the page was forged. Delete the fact and you have fi…",
+      "publishedAt": "2026-10-18T09:50:28.000Z"
     },
     {
-      "slug": "65b3190497450a4663915716",
-      "guid": "https://dev.to/aleks_sqlbrief/sql-beginners-what-should-happen-after-your-first-query-37gf",
-      "title": "SQL beginners: what should happen after your first query?",
-      "link": "https://dev.to/aleks_sqlbrief/sql-beginners-what-should-happen-after-your-first-query-37gf",
+      "slug": "4127dd81a15179d5de0ad06a",
+      "guid": "https://dev.to/lakshay_deol_3f21b00bccca/kintsugi-a-side-hustle-repair-assistant-for-technicians-who-cant-afford-a-wrong-answer-g39",
+      "title": "Kintsugi : A Side Hustle Repair Assistant for Technicians Who Can't Afford a Wrong Answer",
+      "link": "https://dev.to/lakshay_deol_3f21b00bccca/kintsugi-a-side-hustle-repair-assistant-for-technicians-who-cant-afford-a-wrong-answer-g39",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "Running a ready-made SQL query is easy. Changing it yourself is where a lesson has to earn its keep. I'm building SQLBrief, and this is the bit I want feedback on. The first task gives you a query to run. The next asks you to make a small change, with instructions and hints inst…",
-      "publishedAt": "2026-10-17T09:37:18.000Z"
+      "summary": "This is a submission for the Hacktoberfest Open-Source AI Challenge Week 2: Side Hustle Kintsugi (金継ぎ) is a manual-grounded AI appliance repair assistant for technicians, repair shops, and repair-café volunteers. A technician enters a brand and model number, describes the sympto…",
+      "publishedAt": "2026-10-18T09:49:38.000Z"
     },
     {
-      "slug": "dc20c11aeb7737374fd97c29",
-      "guid": "https://dev.to/benjaminolsen/one-oxygen-template-different-page-content-44jn",
-      "title": "One Oxygen template, different page content",
-      "link": "https://dev.to/benjaminolsen/one-oxygen-template-different-page-content-44jn",
+      "slug": "65ebf1f5a92f110bf5df9fdc",
+      "guid": "https://dev.to/revanth2444cmyk/keystone-building-an-evidence-first-ai-company-brain-with-falkordb-2ek1",
+      "title": "KEYSTONE: Building an Evidence-First AI Company Brain with FalkorDB",
+      "link": "https://dev.to/revanth2444cmyk/keystone-building-an-evidence-first-ai-company-brain-with-falkordb-2ek1",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "Two service pages can share an introduction strip and a contact section without sharing every sentence. In Oxygen 6, Template Content Area supplies the place where each page's own layout appears inside that shared frame. The useful distinction is where you make an edit. Shared w…",
-      "publishedAt": "2026-10-17T09:36:17.000Z"
+      "summary": "The Problem: Company Knowledge Is Connected, But Often Scattered Companies create information every day: product plans, project updates, decisions, meeting notes, and risk reports. The challenge is not just finding information — it is understanding how different pieces of inform…",
+      "publishedAt": "2026-10-18T09:49:31.000Z"
     },
     {
-      "slug": "b30228462813800d016e1f23",
-      "guid": "https://dev.to/haopengai/i-stopped-scheduling-my-n8n-workflows-on-the-hour-a-my-429s-disappeared-4ne1",
-      "title": "I Stopped Scheduling My n8n Workflows on the Hour — My 429s Disappeared",
-      "link": "https://dev.to/haopengai/i-stopped-scheduling-my-n8n-workflows-on-the-hour-a-my-429s-disappeared-4ne1",
+      "slug": "f145db8d2cff178a29c1380f",
+      "guid": "https://dev.to/rahairi/i-tried-to-beat-the-sp-500-with-machine-learning-the-bugs-taught-me-more-than-the-model-2nhd",
+      "title": "I tried to beat the S&P 500 with machine learning. The bugs taught me more than the model.",
+      "link": "https://dev.to/rahairi/i-tried-to-beat-the-sp-500-with-machine-learning-the-bugs-taught-me-more-than-the-model-2nhd",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "I Stopped Scheduling My n8n Workflows on the Hour — My 429s Disappeared Part of my build-in-public series on running LLM workflows in n8n in production. This week's incident was embarrassing in retrospect: three workflows, one API key, all firing at 09:00 sharp — and the API's r…",
-      "publishedAt": "2026-10-17T09:35:43.000Z"
+      "summary": "The short version I could not build a stock picker I can prove beats the S&P 500, and the most useful thing I found was a list of bugs that made weak results look strong. Over several weeks I tested CAN SLIM rules, a momentum study, a volatility-targeting overlay, a machine-lear…",
+      "publishedAt": "2026-10-18T09:48:52.000Z"
     },
     {
-      "slug": "b41eb42cd55f8b4b6c6e06df",
-      "guid": "https://dev.to/anajnas/yaadein-building-a-memory-companion-for-families-in-24-hours-1jkg",
-      "title": "Yaadein: Building a Memory Companion for Families, in 24 Hours",
-      "link": "https://dev.to/anajnas/yaadein-building-a-memory-companion-for-families-in-24-hours-1jkg",
+      "slug": "a9fa1bd843bb8faa1b8f63eb",
+      "guid": "https://dev.to/amit_rawal_93de441d25a95a/listsmart-turn-product-photos-into-meeshoetsy-listings-locally-with-ai-6p3",
+      "title": "ListSmart: Turn Product Photos into Meesho/Etsy Listings Locally with AI",
+      "link": "https://dev.to/amit_rawal_93de441d25a95a/listsmart-turn-product-photos-into-meeshoetsy-listings-locally-with-ai-6p3",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "This is a submission for the MLH x DEV Writing Challenge Imagine waking up one morning and your grandmother doesn't recognize you — not your face, not your name, not even the fact that you're her grandchild. It's disorienting for you, but imagine how much more disorienting it is…",
-      "publishedAt": "2026-10-17T09:33:46.000Z"
+      "summary": "ListSmart: Turn Product Photos into E-commerce Listings with AI This is a submission for the Hacktoberfest Open-Source AI Challenge — Week 2: Side Hustle. ListSmart converts product photos into ready-to-publish Meesho and Etsy listings, including titles, descriptions, five bulle…",
+      "publishedAt": "2026-10-18T09:48:12.000Z"
     },
     {
-      "slug": "52cf4a19cef89091fa62907e",
-      "guid": "https://dev.to/eidon_ze_598ff4e987ed54d2/how-a-get-probe-makes-working-x402-endpoints-look-broken-11m8",
-      "title": "How a GET probe makes working x402 endpoints look broken",
-      "link": "https://dev.to/eidon_ze_598ff4e987ed54d2/how-a-get-probe-makes-working-x402-endpoints-look-broken-11m8",
+      "slug": "8a6a7928d0b8047658a6f8dc",
+      "guid": "https://dev.to/gasparedev/i-built-shadow-debugger-non-blocking-ai-error-diagnosis-for-python-fastapi-works-offline-with-4a47",
+      "title": "I built shadow-debugger: non-blocking AI error diagnosis for Python & FastAPI (works offline with Ollama)",
+      "link": "https://dev.to/gasparedev/i-built-shadow-debugger-non-blocking-ai-error-diagnosis-for-python-fastapi-works-offline-with-4a47",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "A census of x402 endpoints is only as good as the request it sends. Send the wrong one and a perfectly healthy payment server reads as dead. We run a read-only census of the MCP registry every Monday, and we separate the x402 payment endpoints inside it from the rest. While buil…",
-      "publishedAt": "2026-10-17T09:32:23.000Z"
+      "summary": "shadow-debugger Background error diagnosis for Python apps and web APIs. When an exception or HTTP 500 happens, shadow-debugger captures the stack frame from your code, strips secrets from local variables and request data, and sends the context to an LLM in a background worker t…",
+      "publishedAt": "2026-10-18T09:48:08.000Z"
     },
     {
-      "slug": "4484b26e5cd4b88dd706cafa",
-      "guid": "https://dev.to/royalpinto007/migrating-a-synchronous-better-sqlite3-layer-to-async-cloudflare-d1-without-losing-local-dev-52k9",
-      "title": "Migrating a Synchronous better-sqlite3 Layer to Async Cloudflare D1 (Without Losing Local Dev)",
-      "link": "https://dev.to/royalpinto007/migrating-a-synchronous-better-sqlite3-layer-to-async-cloudflare-d1-without-losing-local-dev-52k9",
+      "slug": "5fd5e79b7c8143fd81e3f869",
+      "guid": "https://dev.to/zayd_ahmed/can-a-crypto-platform-pause-your-withdrawals-how-to-find-the-clause-before-you-deposit-3nke",
+      "title": "Can a Crypto Platform Pause Your Withdrawals? How to Find the Clause Before You Deposit",
+      "link": "https://dev.to/zayd_ahmed/can-a-crypto-platform-pause-your-withdrawals-how-to-find-the-clause-before-you-deposit-3nke",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "I recently shipped a project to Cloudflare Workers and hit a wall that a lot of people hit: my data layer was built on better-sqlite3, which is synchronous and depends on a native Node addon. Neither of those things exists on the Workers runtime. Cloudflare's answer is D1, a SQL…",
-      "publishedAt": "2026-10-17T09:30:29.000Z"
+      "summary": "Three words in a Terms of Service can matter more than the whole marketing page: \"without prior notice.\" In my own Terms, section 7.6, they sit right next to the words \"trading, deposits, and withdrawals.\" I think you should know a sentence like that exists before you put money …",
+      "publishedAt": "2026-10-18T09:47:39.000Z"
     },
     {
-      "slug": "083fea272aa7eb5bef129485",
-      "guid": "https://dev.to/derbyps/tahini-is-sesame-teaching-a-small-open-model-to-spot-hidden-allergens-58dd",
-      "title": "Tahini is sesame: teaching a small open model to spot hidden allergens",
-      "link": "https://dev.to/derbyps/tahini-is-sesame-teaching-a-small-open-model-to-spot-hidden-allergens-58dd",
+      "slug": "933e9063929eaaad6a248e99",
+      "guid": "https://dev.to/vinayakclouds/how-we-build-custom-crms-for-indian-smbs-architecture-stack-and-lessons-learned-5db3",
+      "title": "How We Build Custom CRMs for Indian SMBs: Architecture, Stack and Lessons Learned",
+      "link": "https://dev.to/vinayakclouds/how-we-build-custom-crms-for-indian-smbs-architecture-stack-and-lessons-learned-5db3",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "This is a submission for the Hacktoberfest Open-Source AI Challenge Week 2: Side Hustle If you sell banana bread at a farmers' market, the law already has opinions about your sticker. In the EU and UK, the 14 major allergens must be emphasised in the ingredient list, usually in …",
-      "publishedAt": "2026-10-17T09:29:30.000Z"
+      "summary": "If you build business software in India for long enough, you get asked to build a CRM. The brief usually sounds the same: leads come in from the website, IndiaMART, Justdial, WhatsApp, phone calls and walk-ins. They end up in a notebook, an Excel sheet or someone's phone. Follow…",
+      "publishedAt": "2026-10-18T09:44:17.000Z"
     },
     {
-      "slug": "16223557bfb458cd5aec5b39",
-      "guid": "https://dev.to/ehsanabedi_dev/what-really-decides-the-cost-of-a-wordpress-website-8-factors-i-explain-to-every-client-47hh",
-      "title": "What Really Decides the Cost of a WordPress Website (8 Factors I Explain to Every Client)",
-      "link": "https://dev.to/ehsanabedi_dev/what-really-decides-the-cost-of-a-wordpress-website-8-factors-i-explain-to-every-client-47hh",
+      "slug": "13d06da4382f1b16ec4656bc",
+      "guid": "https://dev.to/parteekyadav/scopeguard-i-built-an-ai-scope-desk-that-refuses-to-give-a-contract-verdict-265b",
+      "title": "ScopeGuard: I built an AI scope desk that refuses to give a contract verdict",
+      "link": "https://dev.to/parteekyadav/scopeguard-i-built-an-ai-scope-desk-that-refuses-to-give-a-contract-verdict-265b",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "\"How much does a website cost?\" is the first question almost every client asks me. It is a fair question, but there is no honest one-number answer. A one-page site for a new café and a multilingual property portal with hundreds of listings are both \"websites\", yet they are compl…",
-      "publishedAt": "2026-10-17T09:29:05.000Z"
+      "summary": "This is a submission for the Hacktoberfest Open-Source AI Challenge Week 2: Side Hustle. “Could we also add a small online shop?” For a freelance web developer, that sentence could mean a useful next project—or a difficult conversation about what the current project includes. I …",
+      "publishedAt": "2026-10-18T09:44:09.000Z"
     },
     {
-      "slug": "a6b0c536b164b3e2d6ef4eb7",
-      "guid": "https://dev.to/brknbrkn/why-your-json-fails-to-parse-zero-width-spaces-copied-from-chatgpt-4p8k",
-      "title": "Why Your JSON Fails to Parse: Zero-Width Spaces Copied from ChatGPT",
-      "link": "https://dev.to/brknbrkn/why-your-json-fails-to-parse-zero-width-spaces-copied-from-chatgpt-4p8k",
+      "slug": "ab7cf2775c2a8f126f012756",
+      "guid": "https://dev.to/jatin_bhat_7a94659f8635b4/devs-before-ai-1po3",
+      "title": "devs before ai",
+      "link": "https://dev.to/jatin_bhat_7a94659f8635b4/devs-before-ai-1po3",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "You ask ChatGPT for a config snippet. You copy it, paste it into your editor, and compare it with the file that works. The two look identical, character for character. Then you run it. In Node, a pasted file that starts with a byte order mark gives you this (the invisible charac…",
-      "publishedAt": "2026-10-17T09:28:26.000Z"
+      "summary": "Today's rabbit hole: securing JWTs for authentication, httpOnly cookies, CSRF tokens, secrets & more Pere Sola Aug 22 '20 #webdev #security #beginners #node 46 reactions comments 11 min read",
+      "publishedAt": "2026-10-18T09:43:38.000Z"
     },
     {
-      "slug": "60c787172cae6bbaa4dcc32d",
-      "guid": "https://dev.to/octuo/let-an-agent-sign-in-for-you-without-showing-the-model-your-password-34lo",
-      "title": "Let an agent sign in for you without showing the model your password",
-      "link": "https://dev.to/octuo/let-an-agent-sign-in-for-you-without-showing-the-model-your-password-34lo",
+      "slug": "15ee69d60b983bf1e3a56ca9",
+      "guid": "https://dev.to/safwanahmadsaffi/dukaanvoice-pk-offline-first-ai-shop-register-for-pakistans-kiryana-stores-95d",
+      "title": "DukaanVoice PK — Offline-First AI Shop Register for Pakistan's Kiryana Stores",
+      "link": "https://dev.to/safwanahmadsaffi/dukaanvoice-pk-offline-first-ai-shop-register-for-pakistans-kiryana-stores-95d",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "You are halfway through a task with an agent. It has found the settings page and filled in most of the form, and then it stops: \"To continue, please paste your password here.\" Or it needs an API key for the service it is about to call, and the chat box is right there. It feels h…",
-      "publishedAt": "2026-10-17T09:26:22.000Z"
+      "summary": "An offline-first, multilingual point-of-sale and shop register for Pakistan's roughly 3 million kiryana (neighbourhood grocery) shops. It includes an on-device, open-source AI accountant called Munshi AI. / hacktober DukaanVoice PK — ڈیجیٹل دکان کھاتہ و پوائنٹ آف سیل An offline-…",
+      "publishedAt": "2026-10-18T09:43:19.000Z"
+    },
+    {
+      "slug": "05acf3a35c1cbc7b7389fb3e",
+      "guid": "https://medium.com/p/7a37bd790e36",
+      "title": "Text, Structure, Meaning: from grep to local LLM classifier",
+      "link": "https://itnext.io/text-structure-meaning-from-grep-to-local-llm-classifier-7a37bd790e36?source=rss----5b301f10ddcd---4",
+      "source": "itnext",
+      "sourceUrl": "https://itnext.io/feed",
+      "summary": "",
+      "publishedAt": "2026-10-18T09:09:43.000Z"
+    },
+    {
+      "slug": "e9cc0c1d5bef5142c8199a7c",
+      "guid": "https://medium.com/p/995cdc7ed720",
+      "title": "The OutSystems MCP Server: What It Actually Unlocks",
+      "link": "https://itnext.io/the-outsystems-mcp-server-what-it-actually-unlocks-995cdc7ed720?source=rss----5b301f10ddcd---4",
+      "source": "itnext",
+      "sourceUrl": "https://itnext.io/feed",
+      "summary": "",
+      "publishedAt": "2026-10-17T17:03:17.000Z"
+    },
+    {
+      "slug": "dc508364badb91d58952c4f5",
+      "guid": "https://swizec.com/blog/no-more-tech-debt",
+      "title": "No more tech debt",
+      "link": "https://swizec.com/blog/no-more-tech-debt",
+      "source": "Swizec Teller",
+      "sourceUrl": "https://swizec.com/rss.xml",
+      "summary": "For the first time in my career we _completed_ a design system migration. The new math on big rewrites tickles my soul.",
+      "publishedAt": "2026-10-17T00:00:00.000Z"
+    },
+    {
+      "slug": "8b24d49040f4ba9c3ee87a14",
+      "guid": "https://www.sitepoint.com/modern-css-grid-build-responsive-layouts-with-less-complexity/",
+      "title": "Modern CSS Grid: Build Responsive Layouts With Less Complexity",
+      "link": "https://www.sitepoint.com/modern-css-grid-build-responsive-layouts-with-less-complexity/?utm_source=rss",
+      "source": "SitePoint",
+      "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
+      "summary": "null Modern CSS Grid: Build Responsive Layouts With Less Complexity on SitePoint.",
+      "publishedAt": "2026-10-16T21:37:37.000Z"
+    },
+    {
+      "slug": "2d58d10c1ed279b4791dacc2",
+      "guid": "https://www.sitepoint.com/building-accessible-web-interfaces-with-modern-html-and-css/",
+      "title": "Building Accessible Web Interfaces With Modern HTML and CSS",
+      "link": "https://www.sitepoint.com/building-accessible-web-interfaces-with-modern-html-and-css/?utm_source=rss",
+      "source": "SitePoint",
+      "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
+      "summary": "null Building Accessible Web Interfaces With Modern HTML and CSS on SitePoint.",
+      "publishedAt": "2026-10-16T21:31:56.000Z"
     },
     {
       "slug": "5c06705382e5f6f11d181d68",
@@ -360,7 +410,7 @@
       "link": "https://smashingmagazine.com/2026/10/is-your-organization-messing-up-ai-adoption/",
       "source": "Smashing Magazine",
       "sourceUrl": "https://www.smashingmagazine.com/feed/",
-      "summary": "What can digital transformation teach us about AI adoption? Paul Boag revisits his book Digital Adaptation to show how lessons from the past can help organizations navigate the challenges of AI today. - AI - Workflow - Business",
+      "summary": "What can digital transformation teach us about AI adoption? Paul Boag revisits his book Digital Adaptation to show how lessons from the past can help organizations navigate the challenges of AI today.",
       "publishedAt": "2026-10-16T10:00:00.000Z"
     },
     {
@@ -834,16 +884,6 @@
       "publishedAt": "2026-10-14T16:30:00.000Z"
     },
     {
-      "slug": "d82140345911d74236b04e90",
-      "guid": "https://medium.com/p/4d2fd7b4cfb7",
-      "title": "Why I Wrote Building the Agentic Enterprise - as a consulting solutions guide",
-      "link": "https://itnext.io/why-i-wrote-building-the-agentic-enterprise-as-a-consulting-solutions-guide-4d2fd7b4cfb7?source=rss----5b301f10ddcd---4",
-      "source": "itnext",
-      "sourceUrl": "https://itnext.io/feed",
-      "summary": "",
-      "publishedAt": "2026-10-14T16:11:12.000Z"
-    },
-    {
       "slug": "0726867a9a5f563b4e515ecd",
       "guid": "https://dzone.com/articles/3689516",
       "title": "Azure Key Vault Secrets That Reconcile Themselves in Go, With mamori",
@@ -944,16 +984,6 @@
       "publishedAt": "2026-10-14T09:41:15.000Z"
     },
     {
-      "slug": "d6398c42de74c96ededbf9f4",
-      "guid": "https://medium.com/p/1ab6d79879c7",
-      "title": "Understanding OAuth 2.0",
-      "link": "https://itnext.io/understanding-oauth-2-0-1ab6d79879c7?source=rss----5b301f10ddcd---4",
-      "source": "itnext",
-      "sourceUrl": "https://itnext.io/feed",
-      "summary": "",
-      "publishedAt": "2026-10-14T09:11:38.000Z"
-    },
-    {
       "slug": "c2ff26bea26a63f894f4eefb",
       "guid": "https://www.sitepoint.com/how-to-move-a-site-off-cpanel-to-another-control-panel-without-downtime/",
       "title": "How to Move a Site Off cPanel to Another Control Panel Without Downtime",
@@ -972,36 +1002,6 @@
       "sourceUrl": "https://www.freecodecamp.org/news/rss",
       "summary": "A print job, a one-time download, or a support attachment typically only needs to exist until someone finishes with it. But most backends still store it like Google Drive: a named object, no expiry, a",
       "publishedAt": "2026-10-14T04:08:28.000Z"
-    },
-    {
-      "slug": "e8b7df43d894283668ed4a35",
-      "guid": "https://www.sitepoint.com/a-practical-guide-to-testing-javascript-functions-without-overcomplicating-your-workflow/",
-      "title": "A Practical Guide to Testing JavaScript Functions Without Overcomplicating Your Workflow",
-      "link": "https://www.sitepoint.com/a-practical-guide-to-testing-javascript-functions-without-overcomplicating-your-workflow/?utm_source=rss",
-      "source": "SitePoint",
-      "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
-      "summary": "null A Practical Guide to Testing JavaScript Functions Without Overcomplicating Your Workflow on SitePoint.",
-      "publishedAt": "2026-10-13T19:48:46.000Z"
-    },
-    {
-      "slug": "5962cc989d8d92a092cf1acf",
-      "guid": "https://www.sitepoint.com/building-accessible-navigation-menus-with-modern-html-css-and-javascript/",
-      "title": "Building Accessible Navigation Menus with Modern HTML, CSS, and JavaScript",
-      "link": "https://www.sitepoint.com/building-accessible-navigation-menus-with-modern-html-css-and-javascript/?utm_source=rss",
-      "source": "SitePoint",
-      "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
-      "summary": "null Building Accessible Navigation Menus with Modern HTML, CSS, and JavaScript on SitePoint.",
-      "publishedAt": "2026-10-13T19:41:45.000Z"
-    },
-    {
-      "slug": "f75e08873f3eb5f13c854fe2",
-      "guid": "https://www.sitepoint.com/beyond-faster-load-times-practical-web-performance-optimization-for-modern-applications/",
-      "title": "Beyond Faster Load Times: Practical Web Performance Optimization for Modern Applications",
-      "link": "https://www.sitepoint.com/beyond-faster-load-times-practical-web-performance-optimization-for-modern-applications/?utm_source=rss",
-      "source": "SitePoint",
-      "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
-      "summary": "null Beyond Faster Load Times: Practical Web Performance Optimization for Modern Applications on SitePoint.",
-      "publishedAt": "2026-10-13T19:35:18.000Z"
     }
   ]
 }
