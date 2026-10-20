@@ -1,8 +1,48 @@
 {
   "category": "javascript",
   "label": "JavaScript",
-  "fetchedAt": "2026-10-19T11:19:58.269Z",
+  "fetchedAt": "2026-10-20T10:28:52.241Z",
   "items": [
+    {
+      "slug": "4e1fb12a5197533afc00b723",
+      "guid": "https://flaviocopes.com/ai-migrations/",
+      "title": "AI-assisted code migration: how to switch frameworks safely",
+      "link": "https://flaviocopes.com/ai-migrations/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Coding agents can handle repetitive migrations, but switching costs also include design drift, production behavior, deployment, and future maintenance.",
+      "publishedAt": "2026-10-20T10:00:00.000Z"
+    },
+    {
+      "slug": "6c11fe2d61be801b25192f24",
+      "guid": "https://flaviocopes.com/good-software-and-agents/",
+      "title": "How AI agents make existing software more useful",
+      "link": "https://flaviocopes.com/good-software-and-agents/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Agents can help us combine existing tools and improve the details of our apps. That makes dependable behavior and clear interfaces worth paying attention to.",
+      "publishedAt": "2026-10-20T07:00:00.000Z"
+    },
+    {
+      "slug": "7334b82cae27f9b3fb31e715",
+      "guid": "https://flaviocopes.com/muse-wonder-cursor/",
+      "title": "How I would evaluate Muse Wonder in Cursor",
+      "link": "https://flaviocopes.com/muse-wonder-cursor/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Muse Wonder is available in Cursor. Here's how to compare its coding results, reasoning effort, and token costs against the model you already use.",
+      "publishedAt": "2026-10-19T15:00:00.000Z"
+    },
+    {
+      "slug": "0818ac36606610a12dbc44cf",
+      "guid": "https://flaviocopes.com/opencode-claude-codex/",
+      "title": "How to compare OpenCode, Claude Code, and Codex CLI",
+      "link": "https://flaviocopes.com/opencode-claude-codex/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Compare OpenCode, Claude Code, and Codex CLI with one reproducible bug fix, independent tests, setup checks, and an honest look at cost and intervention.",
+      "publishedAt": "2026-10-19T13:00:00.000Z"
+    },
     {
       "slug": "12146c11db2a9159c2df5ce6",
       "guid": "https://flaviocopes.com/fast-tests-for-agents/",
@@ -272,56 +312,6 @@
       "sourceUrl": "https://flaviocopes.com/rss.xml",
       "summary": "How to use Jev with Claude Code, Codex and Cursor: install TypeSafe's agent skill, give the agent the docs, and review the Jev code it writes.",
       "publishedAt": "2026-10-08T07:00:00.000Z"
-    },
-    {
-      "slug": "d4c9f82313d55b12554c6186",
-      "guid": "https://flaviocopes.com/livekit/",
-      "title": "The complete guide to LiveKit Agents",
-      "link": "https://flaviocopes.com/livekit/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Build a voice AI agent with LiveKit Agents in Node.js and TypeScript, then test it, simulate calls, deploy it to LiveKit Cloud and watch real sessions.",
-      "publishedAt": "2026-10-08T07:00:00.000Z"
-    },
-    {
-      "slug": "a2dcdee62736e8257acbe9a1",
-      "guid": "https://flaviocopes.com/javascript-single-executable/",
-      "title": "How to compile JavaScript into a single executable",
-      "link": "https://flaviocopes.com/javascript-single-executable/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Turn a JavaScript program into one executable file, like Go and Rust do, with deno compile, bun build --compile and Node.js single executable apps.",
-      "publishedAt": "2026-10-07T10:00:00.000Z"
-    },
-    {
-      "slug": "9081b0d1bca5462e116dcb6c",
-      "guid": "https://flaviocopes.com/whatcable/",
-      "title": "Use WhatCable to figure out what your USB cable can do",
-      "link": "https://flaviocopes.com/whatcable/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "WhatCable is a free, open source Mac app that reads the chip inside a USB-C cable and tells you its real data speed, power rating and what limits it.",
-      "publishedAt": "2026-10-07T10:00:00.000Z"
-    },
-    {
-      "slug": "10cd7fdb6f5fdfc4932e963e",
-      "guid": "https://flaviocopes.com/macos-open-anyway/",
-      "title": "How to avoid the \"Open Anyway\" message when building macOS apps",
-      "link": "https://flaviocopes.com/macos-open-anyway/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "macOS blocks apps downloaded from the internet until people click Open Anyway. Sign your app with a Developer ID and notarize it, and it opens normally.",
-      "publishedAt": "2026-10-07T07:00:00.000Z"
-    },
-    {
-      "slug": "e4f759ce24f43995ad3e37ad",
-      "guid": "https://javascriptweekly.com/issues/805",
-      "title": "Why don't more developers 'use the platform'?",
-      "link": "https://javascriptweekly.com/issues/805",
-      "source": "JavaScript Weekly",
-      "sourceUrl": "https://javascriptweekly.com/rss/1b4m1h9j",
-      "summary": "#​805 — October 6, 2026 Read on the Web JavaScript Weekly Why Don't More Developers 'Use the Platform'? — A thoughtful look at why we often rebuild what browsers already offer, from someone usually on the platform's side. It kicked off an extensive Hacker News discussion, with m…",
-      "publishedAt": "2026-10-06T00:00:00.000Z"
     }
   ]
 }
