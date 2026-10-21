@@ -1,8 +1,68 @@
 {
   "category": "javascript",
   "label": "JavaScript",
-  "fetchedAt": "2026-10-20T10:28:52.241Z",
+  "fetchedAt": "2026-10-21T10:39:31.796Z",
   "items": [
+    {
+      "slug": "770d1d50f23fe55c9151d711",
+      "guid": "https://flaviocopes.com/vite-convergence/",
+      "title": "Vite toolchain: Cloudflare, vinext, and shared web tooling",
+      "link": "https://flaviocopes.com/vite-convergence/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Vite is becoming shared infrastructure for frameworks, runtimes, and developer tools. What vinext, Cloudflare's new tooling, and DevTools show.",
+      "publishedAt": "2026-10-21T10:00:00.000Z"
+    },
+    {
+      "slug": "3090b5ed6999fc301f63b0ea",
+      "guid": "https://flaviocopes.com/spa-or-server-rendering/",
+      "title": "SPA vs server-side rendering: which should you choose?",
+      "link": "https://flaviocopes.com/spa-or-server-rendering/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Choose between a single-page app, server-rendered pages, and interactive islands by looking at navigation, shared state, loading, and maintenance.",
+      "publishedAt": "2026-10-21T07:00:00.000Z"
+    },
+    {
+      "slug": "f756ef917388123187ab4b9b",
+      "guid": "https://blog.appsignal.com/2026/10/21/appsignal-mcp-is-now-a-claude-connector.html",
+      "title": "AppSignal MCP Is Now a Claude Connector",
+      "link": "https://blog.appsignal.com/2026/10/21/appsignal-mcp-is-now-a-claude-connector.html",
+      "source": "AppSignal",
+      "sourceUrl": "https://blog.appsignal.com/feed.xml",
+      "summary": "AppSignal MCP went generally available last month. Until now, adding it to the Claude app meant pasting our endpoint URL into a custom connector form. Now you search for it like any other connector. Open Settings, go to Connectors, select the Discover tab, and search for AppSign…",
+      "publishedAt": "2026-10-21T00:00:00.000Z"
+    },
+    {
+      "slug": "b7e64f90d9d5c70814a8bdb7",
+      "guid": "https://flaviocopes.com/tsrs/",
+      "title": "A deep dive into tsrs",
+      "link": "https://flaviocopes.com/tsrs/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Understand tsrs, the Rust port of TypeScript. Try the compiler, compare benchmarks, explore its architecture, and build a browser-based type checker.",
+      "publishedAt": "2026-10-20T14:30:00.000Z"
+    },
+    {
+      "slug": "88bf58be94048bfbc6b929f6",
+      "guid": "https://flaviocopes.com/npm-update-global/",
+      "title": "How to update all global npm packages",
+      "link": "https://flaviocopes.com/npm-update-global/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Update all global npm packages with npm update -g, check outdated tools, update one package, and understand which Node installation you are changing.",
+      "publishedAt": "2026-10-20T13:00:00.000Z"
+    },
+    {
+      "slug": "afdfe62707d46639376c0a0b",
+      "guid": "https://flaviocopes.com/cloudflare-pages-vs-workers/",
+      "title": "Cloudflare Pages vs Workers: which should you choose?",
+      "link": "https://flaviocopes.com/cloudflare-pages-vs-workers/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Compare Cloudflare Pages and Workers for static sites and full-stack apps, with request diagrams, pricing examples, and advice on when to migrate.",
+      "publishedAt": "2026-10-20T12:45:00.000Z"
+    },
     {
       "slug": "4e1fb12a5197533afc00b723",
       "guid": "https://flaviocopes.com/ai-migrations/",
@@ -22,6 +82,16 @@
       "sourceUrl": "https://flaviocopes.com/rss.xml",
       "summary": "Agents can help us combine existing tools and improve the details of our apps. That makes dependable behavior and clear interfaces worth paying attention to.",
       "publishedAt": "2026-10-20T07:00:00.000Z"
+    },
+    {
+      "slug": "a75ed007481a527ecd8bfec9",
+      "guid": "https://javascriptweekly.com/issues/807",
+      "title": "The up to 8x faster Rust port of TypeScript",
+      "link": "https://javascriptweekly.com/issues/807",
+      "source": "JavaScript Weekly",
+      "sourceUrl": "https://javascriptweekly.com/rss/1b4m1h9j",
+      "summary": "#​807 — October 20, 2026 Read on the Web JavaScript Weekly tsrs: Cloudflare and VoidZero's Rust Port of TypeScript — A Rust port of the Go-based TypeScript 7 compiler, built with some input from the TypeScript team and heading into Oxc. Benchmarks claim up to 8x the speed of Typ…",
+      "publishedAt": "2026-10-20T00:00:00.000Z"
     },
     {
       "slug": "7334b82cae27f9b3fb31e715",
@@ -254,16 +324,6 @@
       "publishedAt": "2026-10-14T08:15:00.000Z"
     },
     {
-      "slug": "da9a58a9d2432768de13e387",
-      "guid": "https://flaviocopes.com/langchain-langgraph/",
-      "title": "A deep dive into LangChain and LangGraph",
-      "link": "https://flaviocopes.com/langchain-langgraph/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Learn LangChain and LangGraph with TypeScript: models, prompts, tools, agents, memory, streaming, RAG, graphs, persistence, and human approval.",
-      "publishedAt": "2026-10-13T07:00:00.000Z"
-    },
-    {
       "slug": "ec4425944808c746b792d190",
       "guid": "https://javascriptweekly.com/issues/806",
       "title": "Ryan Dahl: 'Why reimplement Node? It works.'",
@@ -272,46 +332,6 @@
       "sourceUrl": "https://javascriptweekly.com/rss/1b4m1h9j",
       "summary": "#​806 — October 13, 2026 Read on the Web JavaScript Weekly Deno is Joining Cloudflare (But…) — Maybe David Bushell saw the writing on the wall, as the Deno team isn't joining Cloudflare to keep working on Deno, but to fold celld into workerd so Durable Objects can be self-hosted…",
       "publishedAt": "2026-10-13T00:00:00.000Z"
-    },
-    {
-      "slug": "eef6d3cbd37774818b831aef",
-      "guid": "https://flaviocopes.com/full-ubuntu-disk-codex/",
-      "title": "How I fixed a full Ubuntu server disk with Codex",
-      "link": "https://flaviocopes.com/full-ubuntu-disk-codex/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "My Sendy server stopped responding with the disk at 99%. The database was 528 MB, but MySQL binary logs had grown to 41 GB. Here is how Codex walked me through finding them, purging them safely, and setting an expiry so it never happens again.",
-      "publishedAt": "2026-10-12T10:00:00.000Z"
-    },
-    {
-      "slug": "46fac8452b425d7945b9bebb",
-      "guid": "https://flaviocopes.com/apple-tv-app/",
-      "title": "How to create an Apple TV app",
-      "link": "https://flaviocopes.com/apple-tv-app/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Build a tvOS app with SwiftUI, share code with your Mac app, design it for the Siri Remote, make its layered icon, and install it on your own Apple TV.",
-      "publishedAt": "2026-10-10T07:00:00.000Z"
-    },
-    {
-      "slug": "1bb76529b4b32baf3186f541",
-      "guid": "https://flaviocopes.com/install-iphone-apps/",
-      "title": "How to install your own apps on your iPhone with Xcode",
-      "link": "https://flaviocopes.com/install-iphone-apps/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Put the apps you build on your iPhone without the App Store: turn on Developer Mode, install from Xcode, update over Wi-Fi from the terminal, and renew them.",
-      "publishedAt": "2026-10-09T10:00:00.000Z"
-    },
-    {
-      "slug": "500cfbb58daf4d36f2184cff",
-      "guid": "https://flaviocopes.com/jev-coding-agents/",
-      "title": "How to use Jev with Claude Code, Codex and Cursor",
-      "link": "https://flaviocopes.com/jev-coding-agents/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "How to use Jev with Claude Code, Codex and Cursor: install TypeSafe's agent skill, give the agent the docs, and review the Jev code it writes.",
-      "publishedAt": "2026-10-08T07:00:00.000Z"
     }
   ]
 }
