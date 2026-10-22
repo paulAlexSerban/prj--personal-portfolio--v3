@@ -1,8 +1,78 @@
 {
   "category": "javascript",
   "label": "JavaScript",
-  "fetchedAt": "2026-10-21T10:39:31.796Z",
+  "fetchedAt": "2026-10-22T10:42:41.767Z",
   "items": [
+    {
+      "slug": "6afa5dc01eb8785d89b5563d",
+      "guid": "https://flaviocopes.com/creator-tools-for-agents/",
+      "title": "AI video editing tools: what agents need to work safely",
+      "link": "https://flaviocopes.com/creator-tools-for-agents/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Recording and editing tools need inspectable state, useful commands, and recoverable changes if we want agents to help with real creative work.",
+      "publishedAt": "2026-10-22T10:00:00.000Z"
+    },
+    {
+      "slug": "a73efdeda26c6f44caf959e7",
+      "guid": "https://flaviocopes.com/claude-duet/",
+      "title": "A deep dive into Claude Duet",
+      "link": "https://flaviocopes.com/claude-duet/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Claude Duet is Anthropic's proactive cloud agent. Learn how it works, what it can access, and how it compares with Grok Bot and ChatGPT dots.",
+      "publishedAt": "2026-10-22T07:37:00.000Z"
+    },
+    {
+      "slug": "1b6223e035b754d3c2ab7705",
+      "guid": "https://flaviocopes.com/paid-traffic-validation/",
+      "title": "Paid traffic for SaaS validation: how to test product demand",
+      "link": "https://flaviocopes.com/paid-traffic-validation/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "How to use a small paid traffic experiment to learn who gets value from a product, measure useful actions, and decide what to change.",
+      "publishedAt": "2026-10-22T07:00:00.000Z"
+    },
+    {
+      "slug": "c3767fa83669851cb01e9931",
+      "guid": "https://flaviocopes.com/security-ai/",
+      "title": "Security in the age of AI",
+      "link": "https://flaviocopes.com/security-ai/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "AI agents are finding old vulnerabilities and making complex attacks easier. A short history of automated hacking, what comes next, and how to prepare.",
+      "publishedAt": "2026-10-21T16:54:00.000Z"
+    },
+    {
+      "slug": "5cbed3230dd544c4fb31fdc7",
+      "guid": "https://flaviocopes.com/agent-state-machines/",
+      "title": "Give your coding agent a state machine",
+      "link": "https://flaviocopes.com/agent-state-machines/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Build a small JavaScript state machine for a coding agent, with explicit transitions, a retry limit, a useful event log, and tests.",
+      "publishedAt": "2026-10-21T15:00:00.000Z"
+    },
+    {
+      "slug": "a8983d59013fe6f4050f08e8",
+      "guid": "https://flaviocopes.com/php-security-update/",
+      "title": "PSA: update PHP today",
+      "link": "https://flaviocopes.com/php-security-update/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "PHP security fixes are available. Update now, check the fixed versions, and use these temporary mitigations only while waiting for patched packages.",
+      "publishedAt": "2026-10-21T13:04:00.000Z"
+    },
+    {
+      "slug": "9afd0d257c83e5c6d372c9d6",
+      "guid": "https://flaviocopes.com/jev-structured-outputs/",
+      "title": "Jev vs structured outputs: when to use each",
+      "link": "https://flaviocopes.com/jev-structured-outputs/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Compare Jev, JSON mode, and schema-constrained LLM outputs. Learn when a typed answer is enough and when decision probabilities justify another model.",
+      "publishedAt": "2026-10-21T13:00:00.000Z"
+    },
     {
       "slug": "770d1d50f23fe55c9151d711",
       "guid": "https://flaviocopes.com/vite-convergence/",
@@ -252,76 +322,6 @@
       "sourceUrl": "https://flaviocopes.com/rss.xml",
       "summary": "Build your first OpenCode v2 plugin in TypeScript, register a custom tool, validate its inputs, test the logic, and understand how v1 plugins change.",
       "publishedAt": "2026-10-16T13:00:00.000Z"
-    },
-    {
-      "slug": "d1b0000f1c50b8d10f294839",
-      "guid": "https://flaviocopes.com/build-or-buy/",
-      "title": "Build vs buy software: when AI can replace a SaaS",
-      "link": "https://flaviocopes.com/build-or-buy/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "AI changes the build-versus-buy calculation, but a working prototype is only part of it. How to compare ownership, maintenance, risk, and recurring costs.",
-      "publishedAt": "2026-10-16T10:00:00.000Z"
-    },
-    {
-      "slug": "1bb96c02caf8129972590e59",
-      "guid": "https://flaviocopes.com/after-the-clone/",
-      "title": "How to compete with AI-generated SaaS clones",
-      "link": "https://flaviocopes.com/after-the-clone/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Cheap software clones change what a small SaaS business can charge for. A practical look at differentiation, maintenance, distribution, and earning trust.",
-      "publishedAt": "2026-10-16T07:00:00.000Z"
-    },
-    {
-      "slug": "d2bbb53b68078547c343f818",
-      "guid": "https://flaviocopes.com/muse-spark-open/",
-      "title": "Meta released Muse Spark Open: what you can run, and what it takes",
-      "link": "https://flaviocopes.com/muse-spark-open/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Meta released Muse Spark Open with downloadable weights, a million-token context, and support for coding agents. Here are the hardware and license limits.",
-      "publishedAt": "2026-10-15T19:45:00.000Z"
-    },
-    {
-      "slug": "481d32629d2b8e35b0b9cd7c",
-      "guid": "https://flaviocopes.com/void/",
-      "title": "The complete guide to Void: full-stack Vite apps with Hono and Cloudflare",
-      "link": "https://flaviocopes.com/void/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Build and deploy full-stack Vite apps with Void, Hono, React, and Cloudflare D1. Learn typed routes, forms, migrations, authentication, and team hosting.",
-      "publishedAt": "2026-10-15T19:35:00.000Z"
-    },
-    {
-      "slug": "e246550a4d2bbf5f5625521f",
-      "guid": "https://flaviocopes.com/opencode/",
-      "title": "How to use OpenCode",
-      "link": "https://flaviocopes.com/opencode/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Learn how to install OpenCode, connect a model, make your first code change, and configure project instructions and permissions in this hands-on tutorial.",
-      "publishedAt": "2026-10-15T10:30:00.000Z"
-    },
-    {
-      "slug": "2c8e1a06996e2d2c9e1e2520",
-      "guid": "https://flaviocopes.com/open-weights/",
-      "title": "What “open weights” means for AI models",
-      "link": "https://flaviocopes.com/open-weights/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Learn what open weights means for AI models, how it differs from open source, and what the Qwen3.8 and Kimi K3 downloads show about licenses and scale.",
-      "publishedAt": "2026-10-14T10:00:00.000Z"
-    },
-    {
-      "slug": "f6500ff05ff516b53840a958",
-      "guid": "https://flaviocopes.com/cgi/",
-      "title": "How to handle web requests in C with CGI 1.1",
-      "link": "https://flaviocopes.com/cgi/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Learn CGI 1.1 by building a C web application: read requests, decode forms, return HTML and errors, and run the executable through Apache.",
-      "publishedAt": "2026-10-14T08:15:00.000Z"
     },
     {
       "slug": "ec4425944808c746b792d190",
