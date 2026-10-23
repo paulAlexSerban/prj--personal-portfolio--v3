@@ -1,8 +1,58 @@
 {
   "category": "javascript",
   "label": "JavaScript",
-  "fetchedAt": "2026-10-22T10:42:41.767Z",
+  "fetchedAt": "2026-10-23T10:34:39.084Z",
   "items": [
+    {
+      "slug": "251aaa662c86a804f0ad6975",
+      "guid": "https://flaviocopes.com/openai-decisions-api/",
+      "title": "Triage support tickets in one request with OpenAI's Decisions API",
+      "link": "https://flaviocopes.com/openai-decisions-api/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "OpenAI's Decisions API returns a probability, a choice, or a score. Triage a support ticket with several questions in one request.",
+      "publishedAt": "2026-10-23T10:00:00.000Z"
+    },
+    {
+      "slug": "7c16e7429bba3ec7448fe609",
+      "guid": "https://flaviocopes.com/chrome-web-store-publish/",
+      "title": "How to publish a Chrome extension to the Chrome Web Store",
+      "link": "https://flaviocopes.com/chrome-web-store-publish/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Publish your Chrome extension with a clean ZIP, store listing, privacy disclosures, permission justifications, review instructions, and tested updates.",
+      "publishedAt": "2026-10-23T07:00:00.000Z"
+    },
+    {
+      "slug": "313c8830163f0bda7901f46c",
+      "guid": "https://flaviocopes.com/anthropic-sdk-upgrade/",
+      "title": "What to check before upgrading the Anthropic SDK",
+      "link": "https://flaviocopes.com/anthropic-sdk-upgrade/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Upgrading the Anthropic SDK changes the API version your app sends. Check sampling parameters, authentication, message history, and output before you ship.",
+      "publishedAt": "2026-10-23T06:50:00.000Z"
+    },
+    {
+      "slug": "b4c1de11776d846b6f3d5e87",
+      "guid": "https://flaviocopes.com/coding-agents-without-subscription/",
+      "title": "How to use a coding agent without another subscription",
+      "link": "https://flaviocopes.com/coding-agents-without-subscription/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Connect OpenCode to DeepSeek or Ollama, understand API billing and local hardware costs, and test whether the setup works for your projects.",
+      "publishedAt": "2026-10-22T15:00:00.000Z"
+    },
+    {
+      "slug": "0d7a47d92e73b95f5967b76e",
+      "guid": "https://flaviocopes.com/macos-dmg-installer/",
+      "title": "How to create a DMG installer for a Mac app",
+      "link": "https://flaviocopes.com/macos-dmg-installer/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Package your Mac app in a drag-to-Applications DMG, sign and notarize it, verify the download, and attach it to a GitHub release.",
+      "publishedAt": "2026-10-22T13:00:00.000Z"
+    },
     {
       "slug": "6afa5dc01eb8785d89b5563d",
       "guid": "https://flaviocopes.com/creator-tools-for-agents/",
@@ -112,6 +162,16 @@
       "sourceUrl": "https://flaviocopes.com/rss.xml",
       "summary": "Understand tsrs, the Rust port of TypeScript. Try the compiler, compare benchmarks, explore its architecture, and build a browser-based type checker.",
       "publishedAt": "2026-10-20T14:30:00.000Z"
+    },
+    {
+      "slug": "67f9ceba560d7193b84a4736",
+      "guid": "https://www.joshwcomeau.com/css/interop-2027/",
+      "title": "The Future of CSS ✨",
+      "link": "https://www.joshwcomeau.com/css/interop-2027/",
+      "source": "Josh W Comeau",
+      "sourceUrl": "https://www.joshwcomeau.com/rss.xml",
+      "summary": "Every year, browser vendors collaborate via the Interop project to synchronize their efforts on new HTML/CSS/JS features. This year, there’s a ton of super exciting features being considered! In this blog post, we’ll explore the CSS of the future, to get a glimpse of what we’ll …",
+      "publishedAt": "2026-10-20T13:15:00.000Z"
     },
     {
       "slug": "88bf58be94048bfbc6b929f6",
@@ -272,56 +332,6 @@
       "sourceUrl": "https://flaviocopes.com/rss.xml",
       "summary": "Learn how OpenCode Code Mode combines tool calls in JavaScript, when batching helps, and where permissions, errors, and side effects still need care.",
       "publishedAt": "2026-10-17T13:00:00.000Z"
-    },
-    {
-      "slug": "60a2d11036adc0c962ee78c1",
-      "guid": "https://flaviocopes.com/product-mcp/",
-      "title": "MCP server design: tools, authentication, and rate limits",
-      "link": "https://flaviocopes.com/product-mcp/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "How to design a useful MCP interface for your product, with clear tools, account permissions, usage limits, predictable results, and safe writes.",
-      "publishedAt": "2026-10-17T10:00:00.000Z"
-    },
-    {
-      "slug": "a1061ab086ab7ce698b91aad",
-      "guid": "https://flaviocopes.com/selling-to-builders/",
-      "title": "Selling SaaS to developers: how to find paying customers",
-      "link": "https://flaviocopes.com/selling-to-builders/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Developers can build alternatives to your product. That doesn't make them bad customers. Look at urgency, budgets, and the work buying lets them avoid.",
-      "publishedAt": "2026-10-17T07:00:00.000Z"
-    },
-    {
-      "slug": "f0ad9244dab906eba27c0465",
-      "guid": "https://flaviocopes.com/pi-durable/",
-      "title": "How to build agents that survive crashes with Pi Durable",
-      "link": "https://flaviocopes.com/pi-durable/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Build a durable TypeScript agent with Pi Durable and SQLite. Test crash recovery, avoid duplicate requests, and understand which tools can safely run again.",
-      "publishedAt": "2026-10-16T14:30:00.000Z"
-    },
-    {
-      "slug": "6a0c23f15f44516effc8a413",
-      "guid": "https://flaviocopes.com/openseo/",
-      "title": "A deep dive into OpenSEO",
-      "link": "https://flaviocopes.com/openseo/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Explore OpenSEO's architecture: SEO data APIs, Cloudflare Workers, its audit crawler, MCP tools, AI agents, storage, and self-hosting trade-offs.",
-      "publishedAt": "2026-10-16T13:13:52.000Z"
-    },
-    {
-      "slug": "0e2d669b36ebd4fbeb40f0c0",
-      "guid": "https://flaviocopes.com/opencode-plugin/",
-      "title": "How to write an OpenCode plugin with the v2 API",
-      "link": "https://flaviocopes.com/opencode-plugin/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Build your first OpenCode v2 plugin in TypeScript, register a custom tool, validate its inputs, test the logic, and understand how v1 plugins change.",
-      "publishedAt": "2026-10-16T13:00:00.000Z"
     },
     {
       "slug": "ec4425944808c746b792d190",
