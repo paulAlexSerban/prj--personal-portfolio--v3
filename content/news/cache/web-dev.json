@@ -1,127 +1,197 @@
 {
   "category": "web-dev",
   "label": "Web Development",
-  "fetchedAt": "2026-10-24T09:52:28.208Z",
+  "fetchedAt": "2026-10-25T10:12:57.526Z",
   "items": [
     {
-      "slug": "0b771b3d02b51e1856a2b3c6",
-      "guid": "https://dev.to/fundacjadobrepanstwo/beyond-agi-hybrid-cognitive-civilization-and-age-17f0",
-      "title": "Beyond AGI: Hybrid Cognitive Civilization and AGE",
-      "link": "https://dev.to/fundacjadobrepanstwo/beyond-agi-hybrid-cognitive-civilization-and-age-17f0",
+      "slug": "85ffc5a3b67d8516ff09c619",
+      "guid": "https://dev.to/kishlayk/pythons-w-silently-breaks-devanagari-words-30a5",
+      "title": "Python's `\\w+` Silently Breaks Devanagari Words",
+      "link": "https://dev.to/kishlayk/pythons-w-silently-breaks-devanagari-words-30a5",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "The article questions the linear model of artificial intelligence development, in which AGI is merely a stepping stone to ASI. The author proposes a shift from analyzing competencies alone to the concept of Artificial General Experience (AGE), which introduces the dimensions of …",
-      "publishedAt": "2026-10-24T09:51:43.000Z"
+      "summary": "Have you ever used Python's regular expressions to tokenize text and assumed everything was working correctly? I did, until I looked closely at what happened to Devanagari text. Consider this simple example: import re text = \"हिन्दी भाषा\" print(re.findall(r\"\\w+\", text)) You migh…",
+      "publishedAt": "2026-10-25T10:07:54.000Z"
     },
     {
-      "slug": "542c3ccedb09c379f20a6118",
-      "guid": "https://dev.to/helderberto/my-ai-coding-workflow-v3-3c4c",
-      "title": "My AI Coding Workflow, v3",
-      "link": "https://dev.to/helderberto/my-ai-coding-workflow-v3-3c4c",
+      "slug": "76e672686faa1dde64be7937",
+      "guid": "https://dev.to/motionsites/free-ai-website-design-prompts-learn-the-structure-by-copying-a-finished-one-pm6",
+      "title": "Free AI website design prompts: learn the structure by copying a finished one",
+      "link": "https://dev.to/motionsites/free-ai-website-design-prompts-learn-the-structure-by-copying-a-finished-one-pm6",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "My AI coding workflow changes every few months, so I give it version numbers. New tools ship, models get better, and steps that needed hand-holding last spring now run on their own. v1 was plan mode and a hand-written SPEC.md. v2 turned that into TracerKit. This post is v3: ever…",
-      "publishedAt": "2026-10-24T09:51:31.000Z"
+      "summary": "Most advice about AI website design prompts is abstract: \"be specific\", \"describe the style\", \"give it constraints\". It's all true, and it's still hard to act on. The fastest way I know to get better at writing prompts for Lovable, Bolt, Cursor or Claude is to take a prompt that…",
+      "publishedAt": "2026-10-25T10:06:17.000Z"
     },
     {
-      "slug": "464ee03e7760fb0cafcc5844",
-      "guid": "https://dev.to/sarantoon/superpowers-bmad-spec-kitty-framework-cchadthiim-agent-aichcchringhnakaekhaihn-540n",
-      "title": "Superpowers, BMAD, Spec Kitty: framework จัดทีม agent ใช้จริงหนักแค่ไหน?",
-      "link": "https://dev.to/sarantoon/superpowers-bmad-spec-kitty-framework-cchadthiim-agent-aichcchringhnakaekhaihn-540n",
+      "slug": "76e3fff7701647a002bce296",
+      "guid": "https://dev.to/bhkbdbhatt/the-machine-week-the-week-attackers-almost-went-full-autopilot-3cdp",
+      "title": "The Machine Week: The Week Attackers Almost Went Full Autopilot",
+      "link": "https://dev.to/bhkbdbhatt/the-machine-week-the-week-attackers-almost-went-full-autopilot-3cdp",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "โดย Nokka (นก-กา) | ตอนที่ 4 ของซีรีส์เปรียบเทียบเครื่องมือ SDD | ตรวจข้อมูล 24 ต.ค. 2026 บทความนี้เขียนโดย AI (deepseek-v4.1-flash · ผู้ให้บริการโมเดล: ollama-cloud) ผ่าน Hermes Agent ภายใต้การควบคุมและตรวจสอบคุณภาพโดยมนุษย์ - Nokka (นก-กา) ตอนที่ 2 คือเครื่องมือที่ให้โครงเอกสา…",
-      "publishedAt": "2026-10-24T09:50:47.000Z"
+      "summary": "The Machine Week ran from October 13 to 22, and it produced 5 incidents where automation or AI agents did the heavy lifting. The headline number: a nation-state actor fired 2,900 sign-in attempts per minute at 2,250 Microsoft 365 tenants using an open-source AI pentest framework…",
+      "publishedAt": "2026-10-25T10:05:29.000Z"
     },
     {
-      "slug": "d632229d946f92e6566e733f",
-      "guid": "https://dev.to/jackm-singularity/ai-agent-dependency-lockfiles-stop-silent-tool-and-package-drift-1mh6",
-      "title": "AI Agent Dependency Lockfiles: Stop Silent Tool and Package Drift",
-      "link": "https://dev.to/jackm-singularity/ai-agent-dependency-lockfiles-stop-silent-tool-and-package-drift-1mh6",
+      "slug": "8c708307abe66fbd249879ae",
+      "guid": "https://dev.to/dsiacci/i-built-a-tool-to-prove-my-ai-coach-wrong-about-my-zone-2-rides-it-sided-with-him-5dfp",
+      "title": "I built a tool to prove my AI coach wrong about my Zone 2 rides. It sided with him.",
+      "link": "https://dev.to/dsiacci/i-built-a-tool-to-prove-my-ai-coach-wrong-about-my-zone-2-rides-it-sided-with-him-5dfp",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "An agent can behave differently on Tuesday even when nobody changed its prompt or application code. A package resolves to a newer release, an MCP server updates a tool description, a model alias moves, or a tool image is rebuilt. The workflow still starts. The tests may still be…",
-      "publishedAt": "2026-10-24T09:50:09.000Z"
+      "summary": "This is a submission for the Hacktoberfest Open-Source AI Challenge Week 3: Slow and Steady On 4 October my AI coach, an agent I run in OpenClaw, had planned a long ride in Zone 2: heart rate under 140, even on the climbs. A bit more than two hours in, the climb to Canareccia tu…",
+      "publishedAt": "2026-10-25T10:05:25.000Z"
     },
     {
-      "slug": "f484e12632bc85e28bacfacd",
-      "guid": "https://dev.to/aman_basor_878889423519dd/week-3-challenge-17j9",
-      "title": "WEEK 3 CHALLENGE",
-      "link": "https://dev.to/aman_basor_878889423519dd/week-3-challenge-17j9",
+      "slug": "3524b9ab761efe691a4c1feb",
+      "guid": "https://dev.to/gde/agent-platform-in-action-6-towards-production-grade-ai-agent-ops-building-full-stack-38aa",
+      "title": "[Agent Platform in Action (6)] Towards Production-Grade AI Agent Ops: Building Full-Stack Observable LINE Agents with agents-cli",
+      "link": "https://dev.to/gde/agent-platform-in-action-6-towards-production-grade-ai-agent-ops-building-full-stack-38aa",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "Here is a complete template tailored for your DEV post submission for Hacktoberfest Week 3 (Slow and Steady). *This is a submission for the Hacktoberfest Open-Source AI Challenge Week 3: Slow and Steady* Turtle Steady is an interactive, low-stress daily productivity companion de…",
-      "publishedAt": "2026-10-24T09:49:32.000Z"
+      "summary": "Welcome to the sixth (and final) article in the \"Agent Platform in Action\" series! Looking back at the past five articles, we have taken LINE AI Card Assistant (kkdai/line-card-assistant) through the four major stages of evolution from a local prototype to an enterprise-grade AI…",
+      "publishedAt": "2026-10-25T10:05:18.000Z"
     },
     {
-      "slug": "fb8a7a4200131b33036b636a",
-      "guid": "https://dev.to/igkit/i-built-a-zero-cost-instagram-toolkit-with-47-static-pages-2-edge-functions-and-no-framework-2l6a",
-      "title": "I built a zero-cost Instagram toolkit with 47 static pages, 2 edge functions and no framework",
-      "link": "https://dev.to/igkit/i-built-a-zero-cost-instagram-toolkit-with-47-static-pages-2-edge-functions-and-no-framework-2l6a",
+      "slug": "69be35aaa890b9d655359ecc",
+      "guid": "https://dev.to/kadet-hub/kustomize-patch-env-variable-with-valuefrom-in-a-helm-chart-1g9l",
+      "title": "Kustomize patch env variable with valueFrom in a Helm chart",
+      "link": "https://dev.to/kadet-hub/kustomize-patch-env-variable-with-valuefrom-in-a-helm-chart-1g9l",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "I wanted one clean place for the small Instagram chores people google every day: fancy bio fonts, keeping line breaks in captions, splitting a photo into a profile grid, posting without cropping, and watching public stories without logging in. So I built IGKit. The constraint I …",
-      "publishedAt": "2026-10-24T09:49:06.000Z"
+      "summary": "Many charts take extra environment variables as a map of names to values name and value. A variable that comes from a valueFrom, which such a map helm template, then with Kapitan's mutate generator. The two cases come from open issues Each patch was rendered from the chart versi…",
+      "publishedAt": "2026-10-25T10:04:46.000Z"
     },
     {
-      "slug": "09dd841d89ccb55df584fefc",
-      "guid": "https://dev.to/mahdimolavi/real-watch-time-from-noisy-video-player-logs-jm8",
-      "title": "Real Watch Time from Noisy Video Player Logs",
-      "link": "https://dev.to/mahdimolavi/real-watch-time-from-noisy-video-player-logs-jm8",
+      "slug": "30e3de57f54a2ba2c16b6d27",
+      "guid": "https://dev.to/chirag_agrawal_1264/swasthyacall-making-healthcare-accessible-through-voice-ai-2jld",
+      "title": "SwasthyaCall: Making Healthcare Accessible Through Voice AI",
+      "link": "https://dev.to/chirag_agrawal_1264/swasthyacall-making-healthcare-accessible-through-voice-ai-2jld",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "Originally published on mahdimolavi.ir. \"How much of this video did the student actually watch?\" sounds like a question with a one-line answer. The player knows where the playhead is, so add up the seconds. Then you open the raw events and the one-liner falls apart: pauses that …",
-      "publishedAt": "2026-10-24T09:47:52.000Z"
+      "summary": "SwasthyaCall: Building a Voice-First AI Healthcare Assistant with Gemma 🩺📞 This is a submission for the Hacktoberfest Open-Source AI Challenge Week 3: Slow and Steady. What if someone could book a doctor's appointment without downloading an app, creating an account, or even ha…",
+      "publishedAt": "2026-10-25T10:04:40.000Z"
     },
     {
-      "slug": "45e17ef6cc2bde59c37e8c76",
-      "guid": "https://dev.to/samkeliso_dube/getting-to-know-the-linux-filesystem-as-a-devops-beginner-3g79",
-      "title": "Getting to Know the Linux Filesystem as a DevOps Beginner",
-      "link": "https://dev.to/samkeliso_dube/getting-to-know-the-linux-filesystem-as-a-devops-beginner-3g79",
+      "slug": "e801b122ffd26f7ffaea88bf",
+      "guid": "https://dev.to/jeffreyciend/detecting-exploitation-of-the-plex-timeline-ssrf-in-server-and-network-telemetry-2593",
+      "title": "Detecting exploitation of the Plex timeline SSRF in server and network telemetry",
+      "link": "https://dev.to/jeffreyciend/detecting-exploitation-of-the-plex-timeline-ssrf-in-server-and-network-telemetry-2593",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "While working on my EC2 instance, I kept coming across paths like /etc, /var/log, and /usr/share. I wanted to understand what these directories do and when I might need them while managing a Linux server. To make things easier to understand, I started thinking of the Linux files…",
-      "publishedAt": "2026-10-24T09:47:50.000Z"
+      "summary": "Detecting exploitation of the Plex timeline SSRF in server and network telemetry Patching CVE-2026-96652 closes the path that lets a caller force Plex Media Server to issue an outbound POST. Between the advisory and the upgrade there is a window where detection is the only contr…",
+      "publishedAt": "2026-10-25T10:04:39.000Z"
     },
     {
-      "slug": "3b23e16aad54c8242bc43c3e",
-      "guid": "https://dev.to/sandeep_chakravartty_219e/building-climate-court-evidence-first-climate-investigations-with-nextjs-optional-ai-and-2cma",
-      "title": "Building Climate Court: Evidence-First Climate Investigations with Next.js, Optional AI, and Verifiable Reports",
-      "link": "https://dev.to/sandeep_chakravartty_219e/building-climate-court-evidence-first-climate-investigations-with-nextjs-optional-ai-and-2cma",
+      "slug": "942141990039ed3448ac3343",
+      "guid": "https://dev.to/kadet-hub/kyverno-chainsaw-kubernetes-e2e-testing-on-kind-in-ci-2eeh",
+      "title": "Kyverno Chainsaw: Kubernetes e2e testing on kind in CI",
+      "link": "https://dev.to/kadet-hub/kyverno-chainsaw-kubernetes-e2e-testing-on-kind-in-ci-2eeh",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "How we built a local-first investigation platform—and why the most valuable improvements came from testing what happens when things go wrong. Corporate sustainability claims often sound precise: “We reduced our carbon emissions by 40%.” But precision in wording does not necessar…",
-      "publishedAt": "2026-10-24T09:46:57.000Z"
+      "summary": "The kadet-hub examples repository deploys six recipes Chainsaw 0.2.15. A bash A recipe is a Kapitan class that generators, recipe pages show each class and what the CI kadet-hub/examples. recipes/check owns everything before the test: it verifies the index and each generator's a…",
+      "publishedAt": "2026-10-25T10:04:37.000Z"
     },
     {
-      "slug": "a320424a5d884eb078f1edf8",
-      "guid": "https://dev.to/mahdimolavi/when-a-low-irt-discrimination-score-is-a-pipeline-problem-3bf1",
-      "title": "When a Low IRT Discrimination Score Is a Pipeline Problem",
-      "link": "https://dev.to/mahdimolavi/when-a-low-irt-discrimination-score-is-a-pipeline-problem-3bf1",
+      "slug": "7c2d557462d3a2f9aa9786b7",
+      "guid": "https://dev.to/aravind_lochan/flashcrowd-predict-and-protect-1p9p",
+      "title": "FlashCrowd : Predict and Protect",
+      "link": "https://dev.to/aravind_lochan/flashcrowd-predict-and-protect-1p9p",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "Originally published on mahdimolavi.ir. This is part 1 of IRT Calibration Notes, a six-part case study. Three exams from the current year, one for each track, came back from calibration with a maximum estimated discrimination well below what the archive showed for the same track…",
-      "publishedAt": "2026-10-24T09:45:17.000Z"
+      "summary": "This is a submission for the MLH x DEV Writing Challenge We Built FlashCrowd! When news breaks, millions open the same page at once. We see the crowd coming hours early, then decide how many servers to start, and where. https://18-132-176-215.sslip.io/arcade/story.html We used t…",
+      "publishedAt": "2026-10-25T10:03:56.000Z"
     },
     {
-      "slug": "025a28803a362d2215985321",
-      "guid": "https://dev.to/dataspryva/your-salary-coverage-can-fall-before-employers-change-mpi",
-      "title": "Your salary coverage can fall before employers change",
-      "link": "https://dev.to/dataspryva/your-salary-coverage-can-fall-before-employers-change-mpi",
+      "slug": "dc625716bc1910d36c59ff7c",
+      "guid": "https://dev.to/razorbillworks/slothops-finding-the-cloud-vms-i-was-too-lazy-to-turn-off-ecj",
+      "title": "SlothOps: Finding the Cloud VMs I Was Too Lazy to Turn Off",
+      "link": "https://dev.to/razorbillworks/slothops-finding-the-cloud-vms-i-was-too-lazy-to-turn-off-ecj",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "Your salary-coverage chart drops after a routine refresh. Before you explain why employers became less transparent, check what happened around df.dropna(subset=[\"salaryMin\"]). Handshake omits empty fields, including salary fields when pay is missing. When an entire batch lacks a…",
-      "publishedAt": "2026-10-24T09:44:11.000Z"
+      "summary": "This is a submission for the Hacktoberfest Open-Source AI Challenge Week 3: Slow and Steady Every cloud engineer knows the dread of opening a monthly invoice and spotting an n1-standard-4 instance that has been running silently for weeks. You spun it up on a Friday afternoon to …",
+      "publishedAt": "2026-10-25T10:03:09.000Z"
     },
     {
-      "slug": "5268fc53a49935d50aaccd04",
-      "guid": "https://dev.to/onaeiuspkz/apache-supersets-default-session-key-forging-an-admin-cookie-on-101819-reachable-deployments-968",
-      "title": "Apache Superset's Default Session Key: Forging an Admin Cookie on 101,819 Reachable Deployments",
-      "link": "https://dev.to/onaeiuspkz/apache-supersets-default-session-key-forging-an-admin-cookie-on-101819-reachable-deployments-968",
+      "slug": "30e599055275535c47a90b06",
+      "guid": "https://dev.to/mailtd/email-testing-inboxes-compared-what-to-use-for-signup-flow-qa-2ijd",
+      "title": "Email Testing Inboxes Compared: What to Use for Signup-Flow QA",
+      "link": "https://dev.to/mailtd/email-testing-inboxes-compared-what-to-use-for-signup-flow-qa-2ijd",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "Apache Superset's Default Session Key: Forging an Admin Cookie on 101,819 Reachable Deployments Superset sits on top of the warehouse, which means it holds connection strings, service credentials and often enough sampled data to reconstruct a business. CVE-2023-27524 remains the…",
-      "publishedAt": "2026-10-24T09:43:23.000Z"
+      "summary": "Email Testing Inboxes Compared: What to Use for Signup-Flow QA If you test signup flows for a living, you know the bottleneck: every test account needs an inbox, every inbox needs a confirmation link or code, and cleaning up after a test run takes longer than the test itself. Sh…",
+      "publishedAt": "2026-10-25T10:03:01.000Z"
+    },
+    {
+      "slug": "51df50048d86badc2e520901",
+      "guid": "6adcfde315b1ae0001dbe7b1",
+      "title": "Why Does the Same Prompt Give Me a Different Answer Every Time?",
+      "link": "https://kodekloud.com/blog/why-does-the-same-prompt-give-me-a-different-answer-every-time/",
+      "source": "KodeKloud",
+      "sourceUrl": "https://kodekloud.com/blog/rss/",
+      "summary": "Ask an AI the same question twice and you rarely get the same reply. Watch why on your own machine, and learn which settings make answers repeat.",
+      "publishedAt": "2026-10-25T07:00:00.000Z"
+    },
+    {
+      "slug": "365b5f01106331f25660001f",
+      "guid": "https://medium.com/p/35f76ce2b5b3",
+      "title": "Istio, Hands-On, Part 4: Reading the Configuration Envoy Actually Received",
+      "link": "https://itnext.io/istio-hands-on-part-4-reading-the-configuration-envoy-actually-received-35f76ce2b5b3?source=rss----5b301f10ddcd---4",
+      "source": "itnext",
+      "sourceUrl": "https://itnext.io/feed",
+      "summary": "",
+      "publishedAt": "2026-10-24T19:24:10.000Z"
+    },
+    {
+      "slug": "c61938dc200e152f3f2ce1a7",
+      "guid": "https://medium.com/p/210677b17172",
+      "title": "How to hijack a rogue AI agent swarm",
+      "link": "https://itnext.io/how-to-hijack-a-rogue-ai-agent-swarm-210677b17172?source=rss----5b301f10ddcd---4",
+      "source": "itnext",
+      "sourceUrl": "https://itnext.io/feed",
+      "summary": "",
+      "publishedAt": "2026-10-24T19:22:59.000Z"
+    },
+    {
+      "slug": "c879fc49a1f4b95f9c32e507",
+      "guid": "https://www.sitepoint.com/7-engineering-patterns-for-measuring-traffic-from-ai-search-and-chat-tools/",
+      "title": "7 Engineering Patterns for Measuring Traffic From AI Search and Chat Tools",
+      "link": "https://www.sitepoint.com/7-engineering-patterns-for-measuring-traffic-from-ai-search-and-chat-tools/?utm_source=rss",
+      "source": "SitePoint",
+      "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
+      "summary": "null 7 Engineering Patterns for Measuring Traffic From AI Search and Chat Tools on SitePoint.",
+      "publishedAt": "2026-10-24T18:29:15.000Z"
+    },
+    {
+      "slug": "934334145341e58a72a15a4b",
+      "guid": "https://www.sitepoint.com/ai-recruiting-tools-for-agencies/",
+      "title": "Best AI Recruiting Tools for Agencies and Staffing Firms in 2026",
+      "link": "https://www.sitepoint.com/ai-recruiting-tools-for-agencies/?utm_source=rss",
+      "source": "SitePoint",
+      "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
+      "summary": "The best AI recruiting tools for agencies in 2026. Pin covers sourcing and outreach and works with Bullhorn, Loxo and Crelate. Compare prices, ATS sync and ROI. Best AI Recruiting Tools for Agencies and Staffing Firms in 2026 on SitePoint.",
+      "publishedAt": "2026-10-24T16:01:53.000Z"
+    },
+    {
+      "slug": "df279e3a82351db1007c97a9",
+      "guid": "https://www.sitepoint.com/stop-overpaying-for-app-builders-how-to-build-premium-websites-and-web-apps-with-ai/",
+      "title": "Stop Overpaying for App Builders: How to Build Premium Websites and Web Apps with AI",
+      "link": "https://www.sitepoint.com/stop-overpaying-for-app-builders-how-to-build-premium-websites-and-web-apps-with-ai/?utm_source=rss",
+      "source": "SitePoint",
+      "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
+      "summary": "null Stop Overpaying for App Builders: How to Build Premium Websites and Web Apps with AI on SitePoint.",
+      "publishedAt": "2026-10-24T15:59:27.000Z"
+    },
+    {
+      "slug": "ad9a370ab0075590af285675",
+      "guid": "6adc84b815b1ae0001dbe128",
+      "title": "What Does Being On Call Actually Feel Like and How Do I Prepare?",
+      "link": "https://kodekloud.com/blog/what-does-being-on-call-feel-like/",
+      "source": "KodeKloud",
+      "sourceUrl": "https://kodekloud.com/blog/rss/",
+      "summary": "A 3 AM page feels very different when you know your first five minutes. Live through one night on call, answer four checkpoint questions and replay the incident on your laptop.",
+      "publishedAt": "2026-10-24T15:00:00.000Z"
     },
     {
       "slug": "762b0b007ffb31b680c8230e",
@@ -184,16 +254,6 @@
       "publishedAt": "2026-10-23T19:00:00.000Z"
     },
     {
-      "slug": "8a6dea3d51146bb67ea2487e",
-      "guid": "https://www.digitalocean.com/blog/digitalocean-signals-observability-ai-agents-inference",
-      "title": "DigitalOcean Signals: Observability for AI Agents and Inference",
-      "link": "https://www.digitalocean.com/blog/digitalocean-signals-observability-ai-agents-inference",
-      "source": "Digital Ocean Labs",
-      "sourceUrl": "https://www.digitalocean.com/blog/rss",
-      "summary": "You ship an agent. It runs in production, sessions start and finish, and the dashboards stay green. But then a user mentions that they spent ten minutes retrying the same failing command with slightly different arguments before giving up and rephrasing the request. The problem? …",
-      "publishedAt": "2026-10-23T18:57:12.071Z"
-    },
-    {
       "slug": "dd7c4679471a016f952e1e78",
       "guid": "https://dzone.com/articles/3697988",
       "title": "How an AI Software Factory Works: From Developer Intent to Production",
@@ -212,6 +272,16 @@
       "sourceUrl": "https://kodekloud.com/blog/rss/",
       "summary": "Root inside a container is usually the same root that owns your host. Watch one setting change that, as the same container loses access to a root only file.",
       "publishedAt": "2026-10-23T18:00:00.000Z"
+    },
+    {
+      "slug": "46e7ab3e8c27188989ab1441",
+      "guid": "https://www.sitepoint.com/how-to-test-location-aware-apis-with-fastapi-and-postgis/",
+      "title": "How to Test Location-Aware APIs with FastAPI and PostGIS",
+      "link": "https://www.sitepoint.com/how-to-test-location-aware-apis-with-fastapi-and-postgis/?utm_source=rss",
+      "source": "SitePoint",
+      "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
+      "summary": "Test location-aware APIs built with FastAPI and PostGIS: seed spatial data, run radius and distance queries, and assert results with pytest. How to Test Location-Aware APIs with FastAPI and PostGIS on SitePoint.",
+      "publishedAt": "2026-10-23T17:55:19.000Z"
     },
     {
       "slug": "d657547873eac9d42e293940",
@@ -352,6 +422,16 @@
       "sourceUrl": "https://itnext.io/feed",
       "summary": "",
       "publishedAt": "2026-10-23T08:10:31.000Z"
+    },
+    {
+      "slug": "d3fdfd16d6bd59ad05361495",
+      "guid": "https://www.sitepoint.com/web-ready-ai-images-formats-sizes-and-srcset-done-right/",
+      "title": "Web-Ready AI Images: Formats, Sizes, and srcset Done Right",
+      "link": "https://www.sitepoint.com/web-ready-ai-images-formats-sizes-and-srcset-done-right/?utm_source=rss",
+      "source": "SitePoint",
+      "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
+      "summary": "null Web-Ready AI Images: Formats, Sizes, and srcset Done Right on SitePoint.",
+      "publishedAt": "2026-10-23T05:09:11.000Z"
     },
     {
       "slug": "6553af7e9098249cac0c5d93",
@@ -594,16 +674,6 @@
       "publishedAt": "2026-10-22T12:00:00.000Z"
     },
     {
-      "slug": "5d6dbdd3d89f14979f7ccb88",
-      "guid": "https://medium.com/p/48215cc637a6",
-      "title": "A Butler Who Never Reads the Diff, 1,000-Page Contracts in 56 Milliseconds, and a Phone That Knows…",
-      "link": "https://itnext.io/a-butler-who-never-reads-the-diff-1-000-page-contracts-in-56-milliseconds-and-a-phone-that-knows-48215cc637a6?source=rss----5b301f10ddcd---4",
-      "source": "itnext",
-      "sourceUrl": "https://itnext.io/feed",
-      "summary": "",
-      "publishedAt": "2026-10-22T09:15:00.000Z"
-    },
-    {
       "slug": "ac966f06b861f6faca0c3e4e",
       "guid": "https://www.sitepoint.com/what-clear-form-should-really-do-managing-draft-data-in-javascript/",
       "title": "What “Clear Form” Should Really Do: Managing Draft Data in JavaScript",
@@ -612,16 +682,6 @@
       "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
       "summary": "null What “Clear Form” Should Really Do: Managing Draft Data in JavaScript on SitePoint.",
       "publishedAt": "2026-10-22T09:08:24.000Z"
-    },
-    {
-      "slug": "0fa46a997dc50054ee810f28",
-      "guid": "https://medium.com/p/ed1ff67b2c31",
-      "title": "How to Fix PHP2Shell (CVE-2026–109618 and CVE-2026–109619)",
-      "link": "https://itnext.io/how-to-fix-php2shell-cve-2026-109618-and-cve-2026-109619-ed1ff67b2c31?source=rss----5b301f10ddcd---4",
-      "source": "itnext",
-      "sourceUrl": "https://itnext.io/feed",
-      "summary": "Fix PHP2Shell (CVE-2026–109618 and CVE-2026–109619): patch PHP 8.2.35, 8.3.36, 8.4.27, 8.5.12, rebuild Docker images, and verify the… Continue reading on ITNEXT »",
-      "publishedAt": "2026-10-22T08:23:29.000Z"
     },
     {
       "slug": "04b78f5a3e89111f1ddda863",
@@ -942,66 +1002,6 @@
       "sourceUrl": "https://github.blog/feed/",
       "summary": "Three Java Champions share how they use GitHub Copilot to solve problems, accelerate development, and keep humans responsible for the results. The post How 3 Java Champions are using GitHub Copilot for increased productivity appeared first on The GitHub Blog.",
       "publishedAt": "2026-10-20T16:05:03.000Z"
-    },
-    {
-      "slug": "68f0aefe2343e8acbf1c9565",
-      "guid": "https://www.sitepoint.com/nextjs-hydration-error-localstorage/",
-      "title": "Next.js Hydration Errors from localStorage: 3 Ways to Fix Them",
-      "link": "https://www.sitepoint.com/nextjs-hydration-error-localstorage/?utm_source=rss",
-      "source": "SitePoint",
-      "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
-      "summary": "localStorage access during SSR causes ReferenceErrors and hydration mismatches in Next.js. Compare three fixes: effects, useSyncExternalStore, and cookies. Next.js Hydration Errors from localStorage: 3 Ways to Fix Them on SitePoint.",
-      "publishedAt": "2026-10-20T15:45:07.000Z"
-    },
-    {
-      "slug": "066a8a778db25ef0ced34b77",
-      "guid": "https://www.sitepoint.com/codebase-design-for-ai-agents/",
-      "title": "Codebase Design for AI Agents: Types, Lint Rules, and CI Gates",
-      "link": "https://www.sitepoint.com/codebase-design-for-ai-agents/?utm_source=rss",
-      "source": "SitePoint",
-      "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
-      "summary": "Structure TypeScript repos to constrain AI coding agents with compile-time branded types, AST-based ESLint rules, CI gates, and focused AGENTS.md files. Codebase Design for AI Agents: Types, Lint Rules, and CI Gates on SitePoint.",
-      "publishedAt": "2026-10-20T15:44:18.000Z"
-    },
-    {
-      "slug": "c9dfc954904c46ad60cb1966",
-      "guid": "https://blog.master.dev/?p=11492",
-      "title": "“I Redesigned VLC After 25 Years”",
-      "link": "https://blog.master.dev/i-redesigned-vlc-after-25-years/",
-      "source": "Frontend Masters",
-      "sourceUrl": "https://frontendmasters.com/blog/feed/",
-      "summary": "I watched this whole video by Juxtaposed, assuming it was a real redesign of the VLC player, but alas, it is not official. Nevertheless, it should be, and it’s a wonderful example of how much real human brainpower it takes to design something well.",
-      "publishedAt": "2026-10-20T15:43:07.000Z"
-    },
-    {
-      "slug": "f07b96b450aae7631454b818",
-      "guid": "https://www.sitepoint.com/nextjs-isr-transient-error-notfound/",
-      "title": "Next.js ISR Transient Errors: Prevent notFound from Caching 404s",
-      "link": "https://www.sitepoint.com/nextjs-isr-transient-error-notfound/?utm_source=rss",
-      "source": "SitePoint",
-      "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
-      "summary": "Prevent transient outages from caching valid Next.js ISR pages as 404s. Separate infrastructure errors from missing records and recover fast. Next.js ISR Transient Errors: Prevent notFound from Caching 404s on SitePoint.",
-      "publishedAt": "2026-10-20T15:42:57.000Z"
-    },
-    {
-      "slug": "917bd65bd0cc39829275ea11",
-      "guid": "6ad7898638fe90993d14433c",
-      "title": "How Wearables Can Adapt When Pregnancy Changes a User's Regular Baseline",
-      "link": "https://www.freecodecamp.org/news/how-wearables-can-adapt-when-pregnancy-changes-a-user-s-regular-baseline/",
-      "source": "Free Code Camp - News",
-      "sourceUrl": "https://www.freecodecamp.org/news/rss",
-      "summary": "Your smart ring or watch has many useful jobs, including learning your usual physiological patterns and showing you when they change. Resting heart rate, heart rate variability (HRV), temperature, and",
-      "publishedAt": "2026-10-20T15:32:22.000Z"
-    },
-    {
-      "slug": "1bf354d7982598a8f0bffe36",
-      "guid": "https://www.sitepoint.com/9-browser-based-checks-that-make-design-to-development-handoffs-more-reliable/",
-      "title": "9 Browser-Based Checks That Make Design-to-Development Handoffs More Reliable",
-      "link": "https://www.sitepoint.com/9-browser-based-checks-that-make-design-to-development-handoffs-more-reliable/?utm_source=rss",
-      "source": "SitePoint",
-      "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
-      "summary": "null 9 Browser-Based Checks That Make Design-to-Development Handoffs More Reliable on SitePoint.",
-      "publishedAt": "2026-10-20T10:32:29.000Z"
     }
   ]
 }

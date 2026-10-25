@@ -1,8 +1,68 @@
 {
   "category": "cybersecurity",
   "label": "Cybersecurity",
-  "fetchedAt": "2026-10-24T09:52:28.208Z",
+  "fetchedAt": "2026-10-25T10:12:57.526Z",
   "items": [
+    {
+      "slug": "2b44ac8d0a52ce9fe00c2800",
+      "guid": "https://thehackernews.com/2026/10/openai-ai-agents-demonstrate-vm-escapes.html",
+      "title": "OpenAI AI Agents Demonstrate VM Escapes and Secret Cross-Sandbox Communication",
+      "link": "https://thehackernews.com/2026/10/openai-ai-agents-demonstrate-vm-escapes.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "OpenAI has announced plans to conduct frontier model training with no live internet access, as it resumes reinforcement learning (RL) training and internal inference of its most advanced AI models. \"Based on the current state of alignment research, monitoring systems, and the se…",
+      "publishedAt": "2026-10-25T06:54:29.000Z"
+    },
+    {
+      "slug": "aafc952d1fa38e4dc13b7e62",
+      "guid": "https://danielmiessler.com/blog/models-how-harnesses-what",
+      "title": "Models Are the How, Harnesses Are the What",
+      "link": "https://danielmiessler.com/blog/models-how-harnesses-what?utm_source=rss&utm_medium=feed&utm_campaign=website",
+      "source": "Daniel Miessler",
+      "sourceUrl": "https://danielmiessler.com/feed.rss",
+      "summary": "A person hands their preferences, context, goals and how they like things done to a harness labeled the what, which feeds a model labeled the how, which produces a result that returns to the person; both harness and model point up at a hilltop flag labeled what you want/images/m…",
+      "publishedAt": "2026-10-25T01:28:26.000Z"
+    },
+    {
+      "slug": "a64123d828297872a642cff5",
+      "guid": "https://thehackernews.com/2026/10/brotli-decoder-flaw-behind-nodejs-rce.html",
+      "title": "Brotli Decoder Flaw Behind Node.js RCE Also Affects Bun, Python and Other Widely Used Software",
+      "link": "https://thehackernews.com/2026/10/brotli-decoder-flaw-behind-nodejs-rce.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "A memory-corruption flaw in Google's Brotli decoder sits in many programs that unpack Brotli-compressed data, among them Bun, the Python Brotli and brotlicffi packages, and Envoy proxies set up to decompress Brotli. Tracked as CVE-2026-111497, the flaw allows crafted compressed …",
+      "publishedAt": "2026-10-24T11:09:29.000Z"
+    },
+    {
+      "slug": "c2f353f11fcac6078e3a8d41",
+      "guid": "https://thehackernews.com/2026/10/leaked-litellm-master-key-let-attackers.html",
+      "title": "Leaked LiteLLM Master Key Let Attackers Steal GitHub Tokens and Hijack Release Pipeline",
+      "link": "https://thehackernews.com/2026/10/leaked-litellm-master-key-let-attackers.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "LiteLLM on Friday revealed that an Agent Platform master key accidentally published to a public GitHub repository in late May 2026 ultimately allowed the threat actor to push a malicious version of the popular Python package. \"On May 27, 2026, a configuration file was committed …",
+      "publishedAt": "2026-10-24T11:03:33.000Z"
+    },
+    {
+      "slug": "ed6cb319ad856dfd2ce738ab",
+      "guid": "https://thehackernews.com/2026/10/google-says-gmail-and-photos-data.html",
+      "title": "Google Says Gmail and Photos Data Shared With AI Search Could Be Used for Targeted Ads",
+      "link": "https://thehackernews.com/2026/10/google-says-gmail-and-photos-data.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "Google has updated its privacy policy to spell out that using personalized artificial intelligence (AI) features in Search or Gemini could allow the company to serve targeted ads to users based on their activity on other connected Google services. \"You may choose to allow certai…",
+      "publishedAt": "2026-10-24T10:36:33.000Z"
+    },
+    {
+      "slug": "ae5fe3ec49b34664a0f640b9",
+      "guid": "https://thehackernews.com/2026/10/researchers-push-over-2-million-updates.html",
+      "title": "Researchers Push Over 2 Million Updates to Remotely Disable Popcorn Time Updater That Could Fuel a Botnet",
+      "link": "https://thehackernews.com/2026/10/researchers-push-over-2-million-updates.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "Between November 2025 and March 2026, the Dutch security firm Eye Security pushed more than 2 million updates to computers it did not own to switch off a background updater that it said could have allowed an outsider to take over the machine. The updater belongs to Time4Popcorn,…",
+      "publishedAt": "2026-10-24T09:04:24.000Z"
+    },
     {
       "slug": "ad7396463092f2b221e8ab24",
       "guid": "https://thehackernews.com/2026/10/cisa-flags-two-actively-exploited.html",
@@ -42,6 +102,16 @@
       "sourceUrl": "https://www.darkreading.com/rss.xml",
       "summary": "Fixing the critical PHP flaws is not as simple as clicking \"Update.\" Here's how to assess your risk, and what you can do to protect yourself.",
       "publishedAt": "2026-10-23T19:41:23.000Z"
+    },
+    {
+      "slug": "2196e84a63aae15f1c344b06",
+      "guid": "https://danielmiessler.com/blog/writing-is-closer-to-thought-than-code",
+      "title": "Writing Is Closer to Thought Than Code",
+      "link": "https://danielmiessler.com/blog/writing-is-closer-to-thought-than-code?utm_source=rss&utm_medium=feed&utm_campaign=website",
+      "source": "Daniel Miessler",
+      "sourceUrl": "https://danielmiessler.com/feed.rss",
+      "summary": "Technical diagram: a human head with a glowing idea in its brain, tagged source 1, idea, human thought; a dashed line marks where human thought ends; beyond it, a handwritten page tagged 1st derivative 2, articulation, closest to thought and a code window tagged 2nd derivative 3…",
+      "publishedAt": "2026-10-23T19:40:00.000Z"
     },
     {
       "slug": "68f2c8a7a2b64fb92945ca75",
@@ -212,16 +282,6 @@
       "sourceUrl": "https://www.schneier.com/feed/",
       "summary": "The Indian CA eMudhra Limited has eight TLS certificates with laughably weak private keys: The compromised eMudhra keys were defective at a level that’s challenging the imagination of many of the engineers studying the incident. A normal size for a NIST P-384 elliptic curve cryp…",
       "publishedAt": "2026-10-23T11:04:22.000Z"
-    },
-    {
-      "slug": "d4e9b09a66688991351cf64a",
-      "guid": "https://danielmiessler.com/blog/intent-driven-development",
-      "title": "Writing Is Closer to Thought Than Code",
-      "link": "https://danielmiessler.com/blog/intent-driven-development?utm_source=rss&utm_medium=feed&utm_campaign=website",
-      "source": "Daniel Miessler",
-      "sourceUrl": "https://danielmiessler.com/feed.rss",
-      "summary": "Charcoal sketch of a stone archery target: a tight purple arrow cluster cracks the outer ring while quill pens surround the bullseye/images/intent-driven-development.webp/images/intent-driven-development.webp I’ve been having this almost-debate with Matt Pocockhttps://github.com…",
-      "publishedAt": "2026-10-23T10:40:00.000Z"
     },
     {
       "slug": "91b3a56fa4c78fbdaa189ce0",
@@ -942,66 +1002,6 @@
       "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
       "summary": "A Belarus-aligned hacktivist group spent nearly two years within the network of a Russian healthcare organization. According to a report published by Russian cybersecurity firm Solar, the activity has been attributed to a threat cluster dubbed Partisan Zmiy, which is also known …",
       "publishedAt": "2026-10-21T06:05:15.000Z"
-    },
-    {
-      "slug": "36af264a7abbca37eab6510c",
-      "guid": "https://snyk.io/blog/ai-model-risk-model-reach/",
-      "title": "AI Model Risk Depends on What the Model Can Reach",
-      "link": "https://snyk.io/blog/ai-model-risk-model-reach/",
-      "source": "Snyk Blog",
-      "sourceUrl": "https://snyk.io/blog/feed/",
-      "summary": "A model’s risk score is only part of the picture: its impact depends on the data, tools, and actions its application can reach. Learn how security teams can verify that reach and choose targeted controls.",
-      "publishedAt": "2026-10-21T04:00:00.000Z"
-    },
-    {
-      "slug": "4162c679da3cf03c1c8896ce",
-      "guid": "https://snyk.io/blog/ai-security-panel-unfiltered/",
-      "title": "AI Is Calling In Every Risk You've Accepted: Seven Insights From The AI Security Panel: Unfiltered",
-      "link": "https://snyk.io/blog/ai-security-panel-unfiltered/",
-      "source": "Snyk Blog",
-      "sourceUrl": "https://snyk.io/blog/feed/",
-      "summary": "AI is making attacks cheaper and faster, exposing risks organizations already carry. Four security leaders share why machine-speed defense and faster remediation are now essential.",
-      "publishedAt": "2026-10-21T00:00:00.000Z"
-    },
-    {
-      "slug": "b3264bf1c384baa5e721883e",
-      "guid": "https://www.darkreading.com/cyber-risk/tech-giants-emudhra-certificates-compromised-keys",
-      "title": "Tech Giants Block eMudhra Certificates Tied to 8 Compromised Keys",
-      "link": "https://www.darkreading.com/cyber-risk/tech-giants-emudhra-certificates-compromised-keys",
-      "source": "Dark Reading",
-      "sourceUrl": "https://www.darkreading.com/rss.xml",
-      "summary": "Google, Mozilla, Apple, the Go project and others moved swiftly to block the affected certificates from the Indian CA, though it's unclear how the keys were compromised.",
-      "publishedAt": "2026-10-20T21:45:47.000Z"
-    },
-    {
-      "slug": "05bf6004ba645d315721191d",
-      "guid": "https://www.darkreading.com/insider-threats/ex-openai-engineer-secret-recorder-saudi-ties",
-      "title": "Ex-OpenAI Engineer Detained After Planting Secret Recorder at HQ",
-      "link": "https://www.darkreading.com/insider-threats/ex-openai-engineer-secret-recorder-saudi-ties",
-      "source": "Dark Reading",
-      "sourceUrl": "https://www.darkreading.com/rss.xml",
-      "summary": "The perp, who has Saudi ties, was arrested for allegedly bugging an OpenAI conference room, highlighting a preventable insider threat vector.",
-      "publishedAt": "2026-10-20T19:16:49.000Z"
-    },
-    {
-      "slug": "44c2e89f7c170a16d3f175b2",
-      "guid": "https://orca.security/?p=75545",
-      "title": "From Security Debt to Zero Criticals: AI Vulnerability Remediation with Orca MCP and Claude Code",
-      "link": "https://orca.security/resources/blog/from-security-debt-to-zero-criticals-ai-vulnerability-remediation-with-orca-mcp-and-claude-code/",
-      "source": "Orca Security Blog",
-      "sourceUrl": "https://orca.security/resources/blog/feed/",
-      "summary": "Security debt behaves like the financial kind. Nobody takes it on deliberately. It accrues one skipped base image bump at a time, and the interest shows up as a backlog no one owns. The pattern is familiar to anyone who has inherited a cloud estate. Hundreds of repos. A fleet of…",
-      "publishedAt": "2026-10-20T17:17:46.000Z"
-    },
-    {
-      "slug": "1e26274c4cd9491712143e4a",
-      "guid": "https://thehackernews.com/2026/10/eight-emudhra-ca-keys-compromised.html",
-      "title": "Eight eMudhra CA Keys Compromised, Triggering Emergency Fixes Across Browsers and Software",
-      "link": "https://thehackernews.com/2026/10/eight-emudhra-ca-keys-compromised.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "The private keys of eight eMudhra intermediate certificate authority (CA) certificates are compromised, Mozilla and Google's Chrome Root Program confirms on October 20. An intermediate CA signs the certificates that websites present, so anyone holding one of these keys could iss…",
-      "publishedAt": "2026-10-20T17:09:53.000Z"
     }
   ]
 }
