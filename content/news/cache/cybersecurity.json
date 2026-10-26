@@ -1,8 +1,128 @@
 {
   "category": "cybersecurity",
   "label": "Cybersecurity",
-  "fetchedAt": "2026-10-25T10:12:57.526Z",
+  "fetchedAt": "2026-10-26T11:36:11.569Z",
   "items": [
+    {
+      "slug": "9f016c14aab2385dd8f11f32",
+      "guid": "https://www.schneier.com/?p=72840",
+      "title": "Bias in Qwen3-Coder Model",
+      "link": "https://www.schneier.com/blog/archives/2026/10/bias-in-qwen3-coder-model.html",
+      "source": "Schneier on Security",
+      "sourceUrl": "https://www.schneier.com/feed/",
+      "summary": "Interesting research: TL;DR: Chinese AI models now sit inside Western products, and some carry geopolitical triggers: tell the model who the code is for, and the security of what it writes changes. For the first time, we showed that this vulnerability lives in the model’s weight…",
+      "publishedAt": "2026-10-26T11:03:31.000Z"
+    },
+    {
+      "slug": "18317db8f276d76594b5c07d",
+      "guid": "https://www.cio.com/article/4236125/cios-rethink-roles-skills-training-and-talent-models-for-the-future.html",
+      "title": "CIOs rethink roles, skills, training, and talent models for the future",
+      "link": "https://www.cio.com/article/4236125/cios-rethink-roles-skills-training-and-talent-models-for-the-future.html",
+      "source": "CIO",
+      "sourceUrl": "https://www.cio.com/feed/",
+      "summary": "Longtime IT leader Matt Ausman envisions a future where developers may not have any backlog because AI will let them create new capabilities as quickly as they imagine them. “The backlog will vanish because you will have infinite capacity,” says Ausman, SVP and CIO of Zebra Tech…",
+      "publishedAt": "2026-10-26T10:01:00.000Z"
+    },
+    {
+      "slug": "485375ac40785d9cf793716f",
+      "guid": "https://www.cio.com/article/4239738/the-metric-that-makes-your-it-org-look-healthier-than-it-is.html",
+      "title": "The metric that makes your IT org look healthier than it is",
+      "link": "https://www.cio.com/article/4239738/the-metric-that-makes-your-it-org-look-healthier-than-it-is.html",
+      "source": "CIO",
+      "sourceUrl": "https://www.cio.com/feed/",
+      "summary": "An executive IT dashboard can stay green for a year while the risks it is supposed to surface keep growing. Availability above target every month. Service levels met. Patch compliance climbing quarter over quarter. Every number accurate, and every one trusted by the executive te…",
+      "publishedAt": "2026-10-26T10:00:00.000Z"
+    },
+    {
+      "slug": "e07c16b7a2eb13437f3cf273",
+      "guid": "https://www.cio.com/article/4239172/in-good-company-10-cios-every-cio-should-follow.html",
+      "title": "In good company: 10 CIOs every CIO should follow",
+      "link": "https://www.cio.com/article/4239172/in-good-company-10-cios-every-cio-should-follow.html",
+      "source": "CIO",
+      "sourceUrl": "https://www.cio.com/feed/",
+      "summary": "CIOs are dealing with a lot of change, from the rapid rise of AI and cloud modernization, to cybersecurity and workforce transformation. Many are sharing what they’re learning as they tackle these challenges, including what’s working, what isn’t, and how they’re implementing new…",
+      "publishedAt": "2026-10-26T10:00:00.000Z"
+    },
+    {
+      "slug": "20494af63ce3fb8e1268344e",
+      "guid": "https://thehackernews.com/2026/10/ucreator-android-spyware-can-steal.html",
+      "title": "uCreator Android Spyware Can Steal Telegram 2FA Passwords and Clone WeChat Accounts",
+      "link": "https://thehackernews.com/2026/10/ucreator-android-spyware-can-steal.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "A rentable Android spyware kit called uCreator takes over Telegram and WeChat accounts by hiding its code inside working copies of the two apps, researcher Ovi found. It only reaches people who install one of these tampered copies, spread outside the official app stores, or who …",
+      "publishedAt": "2026-10-26T09:54:02.000Z"
+    },
+    {
+      "slug": "958c9643d6398b07edd81f78",
+      "guid": "https://www.cio.com/article/4239726/your-senior-engineers-need-junior-questions-more-than-juniors-need-answers.html",
+      "title": "Your senior engineers need junior questions more than juniors need answers",
+      "link": "https://www.cio.com/article/4239726/your-senior-engineers-need-junior-questions-more-than-juniors-need-answers.html",
+      "source": "CIO",
+      "sourceUrl": "https://www.cio.com/feed/",
+      "summary": "When juniors take naive questions to an AI assistant instead of a colleague, dashboards record fewer interruptions and higher velocity. What they miss is the erosion of senior engineers’ architectural fluency, and the single point of failure that hardens until an outage forces s…",
+      "publishedAt": "2026-10-26T09:00:00.000Z"
+    },
+    {
+      "slug": "399172439712b08d5e85ae1e",
+      "guid": "https://thehackernews.com/2026/10/microsoft-365-token-replay-attacks.html",
+      "title": "Microsoft 365 Token-Replay Attacks Compromise 97 Accounts at 79 Organizations",
+      "link": "https://thehackernews.com/2026/10/microsoft-365-token-replay-attacks.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "Cybersecurity researchers have disclosed a Microsoft 365 campaign that has been observed leveraging an adversary-in-the-middle (AitM) relay to capture sign-in sessions and then replay the stolen tokens to break into email accounts at 79 organizations. Huntress, which observed th…",
+      "publishedAt": "2026-10-26T08:35:51.000Z"
+    },
+    {
+      "slug": "a26d3a2a0bb03d720cf8ca01",
+      "guid": "https://thehackernews.com/2026/10/gheist-uses-stolen-github-tokens-to.html",
+      "title": "Gheist Uses Stolen GitHub Tokens to Steal Private Repository Secrets via Actions Logs",
+      "link": "https://thehackernews.com/2026/10/gheist-uses-stolen-github-tokens-to.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "An automated campaign is using stolen GitHub tokens to plant workflows that print a repository's secrets into its GitHub Actions logs, which the attackers then download before deleting the runs. The attacks have succeeded in private repositories and GitHub Enterprise environment…",
+      "publishedAt": "2026-10-26T07:49:46.000Z"
+    },
+    {
+      "slug": "63f16ca1b1ad1c49473e2336",
+      "guid": "https://thehackernews.com/2026/10/malicious-file-in-downloads-folder.html",
+      "title": "Malicious File in Downloads Folder Tries to Trick AI Coding Agent Into Installing Malware",
+      "link": "https://thehackernews.com/2026/10/malicious-file-in-downloads-folder.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "A malicious instruction file sitting in a developer's Downloads folder tried to make their AI coding agent install a known-malicious npm package, security firm Forever Security said in a report published last week. The company caught the attempt on a real customer's machine and …",
+      "publishedAt": "2026-10-26T06:03:48.000Z"
+    },
+    {
+      "slug": "33f7736e74631c3e92659afb",
+      "guid": "https://thehackernews.com/2026/10/unpatched-tailscale-ssh-flaws-could-let.html",
+      "title": "Unpatched Tailscale SSH Flaws Could Let a Hacked Device Reach Root on Other Servers",
+      "link": "https://thehackernews.com/2026/10/unpatched-tailscale-ssh-flaws-could-let.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "A single hacked device on a Tailscale network can be used to gain root access to other servers it can reach, according to a security researcher who published the findings this week. The attack requires two things: Tailscale SSH set up to allow port forwarding, and an attacker wh…",
+      "publishedAt": "2026-10-25T17:44:09.000Z"
+    },
+    {
+      "slug": "da19872bd8ebd641fd639776",
+      "guid": "https://thehackernews.com/2026/10/php2shell-exploitation-hits-government.html",
+      "title": "PHP2Shell Exploitation Attempts Continue Amid Suspected N. Korea Global Scanning Activity",
+      "link": "https://thehackernews.com/2026/10/php2shell-exploitation-hits-government.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "In an update, Palo Alto Networks Unit 42 said it's retracting its earlier assessment that the post-compromise activity targeting the European government agency involved the exploitation of the PHP2Shell flaws. \"What researchers saw was an attack against a European government age…",
+      "publishedAt": "2026-10-25T17:19:46.000Z"
+    },
+    {
+      "slug": "f716bb36aff905e7830416c6",
+      "guid": "https://danielmiessler.com/blog/team-explanation",
+      "title": "I'm on Team Explanation",
+      "link": "https://danielmiessler.com/blog/team-explanation?utm_source=rss&utm_medium=feed&utm_campaign=website",
+      "source": "Daniel Miessler",
+      "sourceUrl": "https://danielmiessler.com/feed.rss",
+      "summary": "A charcoal cutaway barn: a turkey professor points at a chart of sunrise feeding times while, inside, a farmer sharpens an axe beside roasting pans./images/team-explanation.webp/images/team-explanation.webp There are two major ways of assessing the quality of our understanding o…",
+      "publishedAt": "2026-10-25T15:46:32.000Z"
+    },
     {
       "slug": "2b44ac8d0a52ce9fe00c2800",
       "guid": "https://thehackernews.com/2026/10/openai-ai-agents-demonstrate-vm-escapes.html",
@@ -30,7 +150,7 @@
       "link": "https://thehackernews.com/2026/10/brotli-decoder-flaw-behind-nodejs-rce.html",
       "source": "The Hacker News",
       "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "A memory-corruption flaw in Google's Brotli decoder sits in many programs that unpack Brotli-compressed data, among them Bun, the Python Brotli and brotlicffi packages, and Envoy proxies set up to decompress Brotli. Tracked as CVE-2026-111497, the flaw allows crafted compressed …",
+      "summary": "A memory-corruption flaw in Google's Brotli decoder sits in many programs that unpack Brotli-compressed data, among them Bun, Microsoft's .NET, the Python Brotli and brotlicffi packages, and Envoy proxies set up to decompress Brotli. Tracked as CVE-2026-111497, the flaw allows c…",
       "publishedAt": "2026-10-24T11:09:29.000Z"
     },
     {
@@ -164,23 +284,13 @@
       "publishedAt": "2026-10-23T17:26:59.000Z"
     },
     {
-      "slug": "ddbb49f955886258b1c47282",
-      "guid": "https://orca.security/?p=75590",
-      "title": "PHP2Shell: What This Week Tells Us About the Web We Built",
-      "link": "https://orca.security/resources/blog/php2shell-what-this-week-tells-us-about-the-web-we-built/",
-      "source": "Orca Security Blog",
-      "sourceUrl": "https://orca.security/resources/blog/feed/",
-      "summary": "The week the web’s plumbing failed On Wednesday afternoon, most of the world’s websites became exploitable at the same moment. The reason was PHP, the thirty-year-old language that still serves roughly seven out of ten sites you visit, including nearly every WordPress, Drupal, M…",
-      "publishedAt": "2026-10-23T17:14:32.000Z"
-    },
-    {
       "slug": "b7b376e2da453bcfe3930e91",
       "guid": "https://www.cio.com/article/4236024/techcrunchs-founder-summit-boston-25-discount.html",
       "title": "TechCrunch’s Founder Summit Boston: 25% discount",
       "link": "https://www.cio.com/article/4236024/techcrunchs-founder-summit-boston-25-discount.html",
       "source": "CIO",
       "sourceUrl": "https://www.cio.com/feed/",
-      "summary": "The next generation of founders aren’t pinned to one mindset, one technology, and for that matter, one coast. TechCrunch’s Founder Summit event in Boston’s SoWa Power Station on November 4 gives the East Coast its due and is focused on equipping the next generation of disruptive…",
+      "summary": "Meet founders and investors Save 25% on TechCrunch Founder Summit with CIO25 Get 25% off The next generation of founders aren’t pinned to one mindset, one technology, and for that matter, one coast. TechCrunch’s Founder Summit event in Boston’s SoWa Power Station on November 4 g…",
       "publishedAt": "2026-10-23T16:38:28.000Z"
     },
     {
@@ -222,16 +332,6 @@
       "sourceUrl": "https://www.darkreading.com/rss.xml",
       "summary": "Rising AI, social engineering, and cloud risks are pushing carriers beyond risk transfer and deeper into cybersecurity itself.",
       "publishedAt": "2026-10-23T13:30:00.000Z"
-    },
-    {
-      "slug": "5af47ba81b5aeeb7321578f8",
-      "guid": "https://grahamcluley.com/?p=17352201",
-      "title": "Hacker leaks 281 GB of data from Germany’s far-right AfD party",
-      "link": "https://www.bitdefender.com/en-us/blog/hotforsecurity/hacker-leaks-281-gb-data-germany-afd",
-      "source": "Graham Cluley",
-      "sourceUrl": "https://grahamcluley.com/feed/",
-      "summary": "The AfD has confirmed that hackers breached its hosting provider. A leak site now claims to offer 421,179 of the party’s internal emails, and shows AI-written summaries rather than the emails themselves. Read more in my article on the Hot for Security blog.",
-      "publishedAt": "2026-10-23T12:29:16.000Z"
     },
     {
       "slug": "3729c69a11df1153fcb43f1b",
@@ -594,26 +694,6 @@
       "publishedAt": "2026-10-22T10:00:00.000Z"
     },
     {
-      "slug": "63c09f6b1fe8dc64a880cf37",
-      "guid": "https://www.cio.com/article/4238563/building-the-agent-and-securing-it.html",
-      "title": "Building the agent and securing it",
-      "link": "https://www.cio.com/article/4238563/building-the-agent-and-securing-it.html",
-      "source": "CIO",
-      "sourceUrl": "https://www.cio.com/feed/",
-      "summary": "Earlier this year, I wrote about how vibe coding an AI governance platform forced me to rethink governance itself. Building agents took the problem much further. When I built the platform, I was the operator. I described what I wanted. The model generated code. I tested it. That…",
-      "publishedAt": "2026-10-22T10:00:00.000Z"
-    },
-    {
-      "slug": "6062088e94d85a68b4e642a9",
-      "guid": "https://www.cio.com/article/4238524/the-ai-boom-is-putting-construction-at-the-centre-of-the-digital-economy.html",
-      "title": "The AI boom is putting construction at the centre of the digital economy",
-      "link": "https://www.cio.com/article/4238524/the-ai-boom-is-putting-construction-at-the-centre-of-the-digital-economy.html",
-      "source": "CIO",
-      "sourceUrl": "https://www.cio.com/feed/",
-      "summary": "For the past two years, the conversation around AI has focused on which industries it will disrupt. But AI’s rapid growth is also creating a major infrastructure challenge. As investment pours into data centres and supporting infrastructure, the AI boom is becoming central to de…",
-      "publishedAt": "2026-10-22T09:00:00.000Z"
-    },
-    {
       "slug": "89c43e5d413adbb4e67f8d9a",
       "guid": "https://thehackernews.com/2026/10/litellm-suspects-github-token-leak-in.html",
       "title": "LiteLLM Suspects GitHub Token Leak in AI Gateway Logs Behind Malicious Package Release",
@@ -694,26 +774,6 @@
       "publishedAt": "2026-10-22T04:00:00.000Z"
     },
     {
-      "slug": "59c0e077a4a5384a0d67ef68",
-      "guid": "https://grahamcluley.com/?p=17352181",
-      "title": "Smashing Security podcast #489: How a brand new crypto wallet came with a spy inside",
-      "link": "https://grahamcluley.com/smashing-security-podcast-489/",
-      "source": "Graham Cluley",
-      "sourceUrl": "https://grahamcluley.com/feed/",
-      "summary": "Imagine buying a brand new hardware wallet for your cryptocurrency with the shrink-wrap still on... what could possibly be hiding inside? We break out a Geiger counter and a cat to find out. Meanwhile, malicious ads are targeting journalists with zero-click attacks. Plus, Origin…",
-      "publishedAt": "2026-10-21T23:12:20.000Z"
-    },
-    {
-      "slug": "f165f1ba47c7c671c39283d4",
-      "guid": "https://www.cio.com/article/4238658/5-characteristics-of-top-performing-soc-agents.html",
-      "title": "5 characteristics of top-performing SOC agents",
-      "link": "https://www.cio.com/article/4238658/5-characteristics-of-top-performing-soc-agents.html",
-      "source": "CIO",
-      "sourceUrl": "https://www.cio.com/feed/",
-      "summary": "CrowdStrike has seen customers use our no-code agent-building workspace, Charlotte AI AgentWorks, to build thousands of AI agents. We’ve been fascinated by how they are designed and which ones become top-performing agents invoked hundreds or thousands of times in daily operation…",
-      "publishedAt": "2026-10-21T22:38:14.000Z"
-    },
-    {
       "slug": "8a096cda3c56aa5154db4bcd",
       "guid": "https://www.darkreading.com/cloud-security/tidb-breach-flawed-cloud-security",
       "title": "TiDB Breach Exposes Flawed Cloud Security Assumptions",
@@ -722,16 +782,6 @@
       "sourceUrl": "https://www.darkreading.com/rss.xml",
       "summary": "Cloud providers may be storing sensitive customer data, without either party knowing it. But when a provider is breached, the unseen information comes to light.",
       "publishedAt": "2026-10-21T21:15:39.000Z"
-    },
-    {
-      "slug": "058d4c4b543fb9735be8f94e",
-      "guid": "https://www.cio.com/article/4238689/the-same-ai-project-emits-more-carbon-dioxide-in-texas-than-in-sweden.html",
-      "title": "The same AI question emits more carbon dioxide in Texas than in Sweden",
-      "link": "https://www.cio.com/article/4238689/the-same-ai-project-emits-more-carbon-dioxide-in-texas-than-in-sweden.html",
-      "source": "CIO",
-      "sourceUrl": "https://www.cio.com/feed/",
-      "summary": "The Swedish AI company Berget AI, together with researchers from the Stockholm Environment Institute (SEI) and the organizations WattTime and Klimatkollen, has developed a new method for calculating how much carbon dioxide different AI requests generate. The aim is to make the A…",
-      "publishedAt": "2026-10-21T20:42:49.000Z"
     },
     {
       "slug": "ecd4d111a25c2e2cb8448778",
@@ -834,16 +884,6 @@
       "publishedAt": "2026-10-21T15:26:07.000Z"
     },
     {
-      "slug": "92244245857d35f5a89c5722",
-      "guid": "https://orca.security/?p=75563",
-      "title": "Critical PHP “PHP2Shell” RCE Vulnerabilities Allow Unauthenticated Remote Code Execution (CVSS 9.2)",
-      "link": "https://orca.security/resources/blog/php2shell-php-rce-vulnerabilities/",
-      "source": "Orca Security Blog",
-      "sourceUrl": "https://orca.security/resources/blog/feed/",
-      "summary": "Executive Summary Two critical vulnerabilities (CVE-2026-109618 and CVE-2026-109619, CVSS v4.0 9.2) were disclosed affecting PHP, allowing attackers to execute arbitrary code remotely at the PHP runtime level, before application code runs. Due to the potential for full server co…",
-      "publishedAt": "2026-10-21T14:11:00.000Z"
-    },
-    {
       "slug": "02b6efa6343689ed583be05a",
       "guid": "https://thehackernews.com/2026/10/php-issues-emergency-patches-for-two.html",
       "title": "PHP Issues Emergency Patches for Two Critical PHP2Shell RCE Flaws as Exploit Attempts Emerge",
@@ -852,16 +892,6 @@
       "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
       "summary": "PHP has released emergency updates that fix two critical flaws in the language itself, letting an attacker without an account run code on a web server. The fixes are in PHP 8.5.12, 8.4.27, 8.3.36 and 8.2.35, and the PHP team says only updating fully protects a server. The flaws,…",
       "publishedAt": "2026-10-21T14:00:00.000Z"
-    },
-    {
-      "slug": "1a5dbfbf5ea59a6cef77d37f",
-      "guid": "https://orca.security/?p=75565",
-      "title": "Benchmark Your AI Security Maturity in Under a Minute",
-      "link": "https://orca.security/resources/blog/ai-security-maturity-benchmark/",
-      "source": "Orca Security Blog",
-      "sourceUrl": "https://orca.security/resources/blog/feed/",
-      "summary": "Five years ago, AI security was a forward-looking line item. Today it’s an operational reality, and the data shows most security programs haven’t caught up. In the 2026 State of AI Security report, the Orca Research Pod found that 51.5% of organizations are building custom AI ap…",
-      "publishedAt": "2026-10-21T13:54:49.000Z"
     },
     {
       "slug": "e2527452350fa74e2228678b",
@@ -972,36 +1002,6 @@
       "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
       "summary": "U.S. federal civilian agencies must remove DeepSeek products from their information technology systems, along with any third-party products or services \"developed using DeepSeek implementations,\" under a Department of Homeland Security order. They may also no longer buy informat…",
       "publishedAt": "2026-10-21T08:04:17.000Z"
-    },
-    {
-      "slug": "2f30cd1c0af42cce1757c587",
-      "guid": "https://thehackernews.com/2026/10/state-bank-of-india-confirms-data-leak.html",
-      "title": "State Bank of India Confirms Data Leak After 3,897 Customer Records Found on Dark Web",
-      "link": "https://thehackernews.com/2026/10/state-bank-of-india-confirms-data-leak.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "State Bank of India has identified 3,897 customer records containing personal information in a set of about 375,000 records available on the dark web, and it does not yet know where the data came from. The state-owned bank, India's largest, said in a stock-exchange filing dated …",
-      "publishedAt": "2026-10-21T07:44:22.000Z"
-    },
-    {
-      "slug": "37c3e5fa7177b2714e52b34f",
-      "guid": "https://thehackernews.com/2026/10/cisa-orders-federal-agencies-to-patch.html",
-      "title": "CISA Orders Federal Agencies to Patch Exploited Plex2Shell, Siemens, and SiteGuard Flaws",
-      "link": "https://thehackernews.com/2026/10/cisa-orders-federal-agencies-to-patch.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Tuesday added four vulnerabilities to its Known Exploited Vulnerabilities (KEV) catalog, including four vulnerabilities impacting Plex Media Server that's collectively called Plex2Shell. The vulnerabilities are …",
-      "publishedAt": "2026-10-21T07:26:49.000Z"
-    },
-    {
-      "slug": "8dbb0ccea4784e45668c15c0",
-      "guid": "https://thehackernews.com/2026/10/hackers-hid-vasilek-backdoor-in-vmware.html",
-      "title": "Hackers Hid Vasilek Backdoor in VMware Tools During 2-Year Russian Healthcare Intrusion",
-      "link": "https://thehackernews.com/2026/10/hackers-hid-vasilek-backdoor-in-vmware.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "A Belarus-aligned hacktivist group spent nearly two years within the network of a Russian healthcare organization. According to a report published by Russian cybersecurity firm Solar, the activity has been attributed to a threat cluster dubbed Partisan Zmiy, which is also known …",
-      "publishedAt": "2026-10-21T06:05:15.000Z"
     }
   ]
 }

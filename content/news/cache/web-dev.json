@@ -1,127 +1,187 @@
 {
   "category": "web-dev",
   "label": "Web Development",
-  "fetchedAt": "2026-10-25T10:12:57.526Z",
+  "fetchedAt": "2026-10-26T11:36:11.569Z",
   "items": [
     {
-      "slug": "85ffc5a3b67d8516ff09c619",
-      "guid": "https://dev.to/kishlayk/pythons-w-silently-breaks-devanagari-words-30a5",
-      "title": "Python's `\\w+` Silently Breaks Devanagari Words",
-      "link": "https://dev.to/kishlayk/pythons-w-silently-breaks-devanagari-words-30a5",
+      "slug": "2e81714177dc268750ed8fed",
+      "guid": "https://dev.to/devio_3007/token-budgets-are-not-task-budgets-a-free-tier-accounting-faq-4ckj",
+      "title": "Token Budgets Are Not Task Budgets: A Free-Tier Accounting FAQ",
+      "link": "https://dev.to/devio_3007/token-budgets-are-not-task-budgets-a-free-tier-accounting-faq-4ckj",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "Have you ever used Python's regular expressions to tokenize text and assumed everything was working correctly? I did, until I looked closely at what happened to Devanagari text. Consider this simple example: import re text = \"हिन्दी भाषा\" print(re.findall(r\"\\w+\", text)) You migh…",
-      "publishedAt": "2026-10-25T10:07:54.000Z"
+      "summary": "A developer opens a free coding console on a Monday, asks the agent to rename one config key across forty files, and finds the session closed before the last file is touched. Nothing crashed, no model refused, and the tool reported success each turn; the allowance had simply bee…",
+      "publishedAt": "2026-10-26T11:33:39.000Z"
     },
     {
-      "slug": "76e672686faa1dde64be7937",
-      "guid": "https://dev.to/motionsites/free-ai-website-design-prompts-learn-the-structure-by-copying-a-finished-one-pm6",
-      "title": "Free AI website design prompts: learn the structure by copying a finished one",
-      "link": "https://dev.to/motionsites/free-ai-website-design-prompts-learn-the-structure-by-copying-a-finished-one-pm6",
+      "slug": "0a19854cbc76c06e61c94e53",
+      "guid": "https://dev.to/gitpy_4124/three-passes-before-you-trust-an-agent-patch-1lkk",
+      "title": "Three Passes Before You Trust an Agent Patch",
+      "link": "https://dev.to/gitpy_4124/three-passes-before-you-trust-an-agent-patch-1lkk",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "Most advice about AI website design prompts is abstract: \"be specific\", \"describe the style\", \"give it constraints\". It's all true, and it's still hard to act on. The fastest way I know to get better at writing prompts for Lovable, Bolt, Cursor or Claude is to take a prompt that…",
-      "publishedAt": "2026-10-25T10:06:17.000Z"
+      "summary": "A patch arrives from an agent at 02:14. CI turns green in ninety seconds. By 02:40 refund totals are wrong in production. The agent did not cheat. It optimised to the only signal it could see: the example tests sitting in the repo. Example tests are a memory of past bugs, not a …",
+      "publishedAt": "2026-10-26T11:32:46.000Z"
     },
     {
-      "slug": "76e3fff7701647a002bce296",
-      "guid": "https://dev.to/bhkbdbhatt/the-machine-week-the-week-attackers-almost-went-full-autopilot-3cdp",
-      "title": "The Machine Week: The Week Attackers Almost Went Full Autopilot",
-      "link": "https://dev.to/bhkbdbhatt/the-machine-week-the-week-attackers-almost-went-full-autopilot-3cdp",
+      "slug": "959b2ded0764ed1d373a05e3",
+      "guid": "https://dev.to/datago_7777/ban-naked-numbers-a-token-gate-for-ai-drafted-docs-13n9",
+      "title": "Ban Naked Numbers: A Token Gate for AI-Drafted Docs",
+      "link": "https://dev.to/datago_7777/ban-naked-numbers-a-token-gate-for-ai-drafted-docs-13n9",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "The Machine Week ran from October 13 to 22, and it produced 5 incidents where automation or AI agents did the heavy lifting. The headline number: a nation-state actor fired 2,900 sign-in attempts per minute at 2,250 Microsoft 365 tenants using an open-source AI pentest framework…",
-      "publishedAt": "2026-10-25T10:05:29.000Z"
+      "summary": "A docs PR landed in March with one changed sentence: the queue client's retry backoff was now \"250 ms\". The code had moved to 800 ms two releases earlier. Reviewers read the sentence, found it grammatical, and approved it. Three weeks later a support thread quoted our own page b…",
+      "publishedAt": "2026-10-26T11:31:55.000Z"
     },
     {
-      "slug": "8c708307abe66fbd249879ae",
-      "guid": "https://dev.to/dsiacci/i-built-a-tool-to-prove-my-ai-coach-wrong-about-my-zone-2-rides-it-sided-with-him-5dfp",
-      "title": "I built a tool to prove my AI coach wrong about my Zone 2 rides. It sided with him.",
-      "link": "https://dev.to/dsiacci/i-built-a-tool-to-prove-my-ai-coach-wrong-about-my-zone-2-rides-it-sided-with-him-5dfp",
+      "slug": "bb070dfcbff5727f3e6e0d0b",
+      "guid": "https://dev.to/apprs_6334/the-diff-wasnt-the-model-fingerprint-the-environment-before-you-replay-a-trace-51gm",
+      "title": "The Diff Wasn't the Model: Fingerprint the Environment Before You Replay a Trace",
+      "link": "https://dev.to/apprs_6334/the-diff-wasnt-the-model-fingerprint-the-environment-before-you-replay-a-trace-51gm",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "This is a submission for the Hacktoberfest Open-Source AI Challenge Week 3: Slow and Steady On 4 October my AI coach, an agent I run in OpenClaw, had planned a long ride in Zone 2: heart rate under 140, even on the climbs. A bit more than two hours in, the climb to Canareccia tu…",
-      "publishedAt": "2026-10-25T10:05:25.000Z"
+      "summary": "A replay failed at tool call seven. The run diff was clear and useless. The model had not changed. Our search_docs schema had. We replayed a two-week-old trace on a Tuesday. Step seven sent {\"q\": \"retry policy\"}. The new schema wanted {\"query\": \"retry policy\"}. The tool rejected…",
+      "publishedAt": "2026-10-26T11:31:02.000Z"
     },
     {
-      "slug": "3524b9ab761efe691a4c1feb",
-      "guid": "https://dev.to/gde/agent-platform-in-action-6-towards-production-grade-ai-agent-ops-building-full-stack-38aa",
-      "title": "[Agent Platform in Action (6)] Towards Production-Grade AI Agent Ops: Building Full-Stack Observable LINE Agents with agents-cli",
-      "link": "https://dev.to/gde/agent-platform-in-action-6-towards-production-grade-ai-agent-ops-building-full-stack-38aa",
+      "slug": "e8a80d01197658a6c12f3799",
+      "guid": "https://dev.to/webx_2736/count-the-argument-shapes-your-fixtures-never-see-before-refactoring-a-messy-module-3617",
+      "title": "Count the Argument Shapes Your Fixtures Never See Before Refactoring a Messy Module",
+      "link": "https://dev.to/webx_2736/count-the-argument-shapes-your-fixtures-never-see-before-refactoring-a-messy-module-3617",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "Welcome to the sixth (and final) article in the \"Agent Platform in Action\" series! Looking back at the past five articles, we have taken LINE AI Card Assistant (kkdai/line-card-assistant) through the four major stages of evolution from a local prototype to an enterprise-grade AI…",
-      "publishedAt": "2026-10-25T10:05:18.000Z"
+      "summary": "A shipping-cost module has twelve tests, all passing, and a refactor that looks mechanical. Someone extracts the rate calculation into a helper, the suite stays green, and the change ships. Three days later a batch job that passes an empty line-item list starts returning None in…",
+      "publishedAt": "2026-10-26T11:30:11.000Z"
     },
     {
-      "slug": "69be35aaa890b9d655359ecc",
-      "guid": "https://dev.to/kadet-hub/kustomize-patch-env-variable-with-valuefrom-in-a-helm-chart-1g9l",
-      "title": "Kustomize patch env variable with valueFrom in a Helm chart",
-      "link": "https://dev.to/kadet-hub/kustomize-patch-env-variable-with-valuefrom-in-a-helm-chart-1g9l",
+      "slug": "6183ab59245658bef65887e8",
+      "guid": "https://dev.to/nishanthan-k/core-elements-of-large-language-models-llms-tokens-context-windows-temperature-and-sampling-2m45",
+      "title": "Core Elements of Large Language Models (LLMs): Tokens, Context Windows, Temperature, and Sampling",
+      "link": "https://dev.to/nishanthan-k/core-elements-of-large-language-models-llms-tokens-context-windows-temperature-and-sampling-2m45",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "Many charts take extra environment variables as a map of names to values name and value. A variable that comes from a valueFrom, which such a map helm template, then with Kapitan's mutate generator. The two cases come from open issues Each patch was rendered from the chart versi…",
-      "publishedAt": "2026-10-25T10:04:46.000Z"
+      "summary": "Large Language Models (LLMs) have become a fundamental part of modern AI applications, powering everything from conversational chatbots to code generation and intelligent assistants. While their capabilities may seem complex, understanding the core elements behind how they proce…",
+      "publishedAt": "2026-10-26T11:30:00.000Z"
     },
     {
-      "slug": "30e3de57f54a2ba2c16b6d27",
-      "guid": "https://dev.to/chirag_agrawal_1264/swasthyacall-making-healthcare-accessible-through-voice-ai-2jld",
-      "title": "SwasthyaCall: Making Healthcare Accessible Through Voice AI",
-      "link": "https://dev.to/chirag_agrawal_1264/swasthyacall-making-healthcare-accessible-through-voice-ai-2jld",
+      "slug": "9e0a4e27ee4a1fc047a8bd3d",
+      "guid": "https://dev.to/rhuturaj_takle/mcp-model-context-protocol-1g58",
+      "title": "MCP — Model Context Protocol",
+      "link": "https://dev.to/rhuturaj_takle/mcp-model-context-protocol-1g58",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "SwasthyaCall: Building a Voice-First AI Healthcare Assistant with Gemma 🩺📞 This is a submission for the Hacktoberfest Open-Source AI Challenge Week 3: Slow and Steady. What if someone could book a doctor's appointment without downloading an app, creating an account, or even ha…",
-      "publishedAt": "2026-10-25T10:04:40.000Z"
+      "summary": "MCP — Model Context Protocol A deep-dive walkthrough of connecting AI applications to tools and data through a standard protocol — covering MCP architecture, clients and servers, tools/resources/prompts, building an MCP server in C#, connecting an MCP client, tool discovery and …",
+      "publishedAt": "2026-10-26T11:30:00.000Z"
     },
     {
-      "slug": "e801b122ffd26f7ffaea88bf",
-      "guid": "https://dev.to/jeffreyciend/detecting-exploitation-of-the-plex-timeline-ssrf-in-server-and-network-telemetry-2593",
-      "title": "Detecting exploitation of the Plex timeline SSRF in server and network telemetry",
-      "link": "https://dev.to/jeffreyciend/detecting-exploitation-of-the-plex-timeline-ssrf-in-server-and-network-telemetry-2593",
+      "slug": "a70ec1a30df9455952d95eb6",
+      "guid": "https://dev.to/kadet-hub/helm-vs-kustomize-vs-kapitan-on-one-kubernetes-app-5dh7",
+      "title": "Helm vs Kustomize vs Kapitan on one Kubernetes app",
+      "link": "https://dev.to/kadet-hub/helm-vs-kustomize-vs-kapitan-on-one-kubernetes-app-5dh7",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "Detecting exploitation of the Plex timeline SSRF in server and network telemetry Patching CVE-2026-96652 closes the path that lets a caller force Plex Media Server to issue an outbound POST. Between the advisory and the upgrade there is a window where detection is the only contr…",
-      "publishedAt": "2026-10-25T10:04:39.000Z"
+      "summary": "Comparisons between Helm, Kustomize and Kapitan usually compare features. example renders ./check fails unless the Two services in namespace shop: web and api. Each has a Deployment, a dev prod web image tag 1.5.0-rc.1 1.4.2 web replicas, requests 1, 50m/64Mi 3, 250m/256Mi api i…",
+      "publishedAt": "2026-10-26T11:28:52.000Z"
     },
     {
-      "slug": "942141990039ed3448ac3343",
-      "guid": "https://dev.to/kadet-hub/kyverno-chainsaw-kubernetes-e2e-testing-on-kind-in-ci-2eeh",
-      "title": "Kyverno Chainsaw: Kubernetes e2e testing on kind in CI",
-      "link": "https://dev.to/kadet-hub/kyverno-chainsaw-kubernetes-e2e-testing-on-kind-in-ci-2eeh",
+      "slug": "e26af9d6cc9c649ad1c3fd93",
+      "guid": "https://dev.to/china_tian_2d06d05c0ed36e/nine-logos-in-one-picture-then-you-pick-a-cell-3ibj",
+      "title": "Nine logos in one picture, then you pick a cell",
+      "link": "https://dev.to/china_tian_2d06d05c0ed36e/nine-logos-in-one-picture-then-you-pick-a-cell-3ibj",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "The kadet-hub examples repository deploys six recipes Chainsaw 0.2.15. A bash A recipe is a Kapitan class that generators, recipe pages show each class and what the CI kadet-hub/examples. recipes/check owns everything before the test: it verifies the index and each generator's a…",
-      "publishedAt": "2026-10-25T10:04:37.000Z"
+      "summary": "Ask an image model for a logo and you usually get one picture. It looks finished. It also looks like the last ten logos the model drew for other people: a letter, a swoosh, a coffee cup if you mentioned coffee. I wanted the opposite. One reply, nine marks that do not share a tem…",
+      "publishedAt": "2026-10-26T11:28:49.000Z"
     },
     {
-      "slug": "7c2d557462d3a2f9aa9786b7",
-      "guid": "https://dev.to/aravind_lochan/flashcrowd-predict-and-protect-1p9p",
-      "title": "FlashCrowd : Predict and Protect",
-      "link": "https://dev.to/aravind_lochan/flashcrowd-predict-and-protect-1p9p",
+      "slug": "b16b68defa2e4673bb94001a",
+      "guid": "https://dev.to/kadet-hub/kube-prometheus-stack-default-grafana-dashboards-one-by-one-545g",
+      "title": "kube-prometheus-stack default Grafana dashboards, one by one",
+      "link": "https://dev.to/kadet-hub/kube-prometheus-stack-default-grafana-dashboards-one-by-one-545g",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "This is a submission for the MLH x DEV Writing Challenge We Built FlashCrowd! When news breaks, millions open the same page at once. We see the crowd coming hours early, then decide how many servers to start, and where. https://18-132-176-215.sslip.io/arcade/story.html We used t…",
-      "publishedAt": "2026-10-25T10:03:56.000Z"
+      "summary": "kube-prometheus-stack 92.11.0, the release of 20 October 2026, renders 29 grafana.defaultDashboardsEnabled turns all of them off at once, helm template, then with Kapitan's mutate generator. Each patch was rendered from the 92.11.0 chart with Helm 4.3.1, Kustomize Patch a Helm c…",
+      "publishedAt": "2026-10-26T11:28:42.000Z"
     },
     {
-      "slug": "dc625716bc1910d36c59ff7c",
-      "guid": "https://dev.to/razorbillworks/slothops-finding-the-cloud-vms-i-was-too-lazy-to-turn-off-ecj",
-      "title": "SlothOps: Finding the Cloud VMs I Was Too Lazy to Turn Off",
-      "link": "https://dev.to/razorbillworks/slothops-finding-the-cloud-vms-i-was-too-lazy-to-turn-off-ecj",
+      "slug": "56c807a09cc304305a1924c2",
+      "guid": "https://dev.to/kohiclickingtest/kohi-clicking-test-check-your-cps-for-minecraft-pvp-2a0j",
+      "title": "Kohi Clicking Test: Check Your CPS for Minecraft PvP",
+      "link": "https://dev.to/kohiclickingtest/kohi-clicking-test-check-your-cps-for-minecraft-pvp-2a0j",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "This is a submission for the Hacktoberfest Open-Source AI Challenge Week 3: Slow and Steady Every cloud engineer knows the dread of opening a monthly invoice and spotting an n1-standard-4 instance that has been running silently for weeks. You spun it up on a Friday afternoon to …",
-      "publishedAt": "2026-10-25T10:03:09.000Z"
+      "summary": "The Kohi Clicking Test helps you check how many times you can click your mouse in one second. This result is called clicks per second (CPS). For Minecraft PvP players, checking CPS can help them understand their clicking speed and how their mouse responds during fast gameplay. H…",
+      "publishedAt": "2026-10-26T11:28:36.000Z"
     },
     {
-      "slug": "30e599055275535c47a90b06",
-      "guid": "https://dev.to/mailtd/email-testing-inboxes-compared-what-to-use-for-signup-flow-qa-2ijd",
-      "title": "Email Testing Inboxes Compared: What to Use for Signup-Flow QA",
-      "link": "https://dev.to/mailtd/email-testing-inboxes-compared-what-to-use-for-signup-flow-qa-2ijd",
+      "slug": "392f784c7fc1b6b4cc44e305",
+      "guid": "https://dev.to/codepro_9661/routing-agent-jobs-on-p95-time-to-first-token-not-average-latency-4o90",
+      "title": "Routing Agent Jobs on p95 Time-to-First-Token, Not Average Latency",
+      "link": "https://dev.to/codepro_9661/routing-agent-jobs-on-p95-time-to-first-token-not-average-latency-4o90",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "Email Testing Inboxes Compared: What to Use for Signup-Flow QA If you test signup flows for a living, you know the bottleneck: every test account needs an inbox, every inbox needs a confirmation link or code, and cleaning up after a test run takes longer than the test itself. Sh…",
-      "publishedAt": "2026-10-25T10:03:01.000Z"
+      "summary": "A missed deadline the averages never showed A two-person team runs three agent jobs from one laptop: inbox triage that must land inside forty seconds, a log summariser that can take three minutes, and a nightly report with a nine-minute window. On most days all three finish earl…",
+      "publishedAt": "2026-10-26T11:28:14.000Z"
+    },
+    {
+      "slug": "c7a0b46aebc02d8b4f00f38a",
+      "guid": "https://www.digitalocean.com/blog/what-is-batch-inference",
+      "title": "Whats is Batch Inference? (2027)",
+      "link": "https://www.digitalocean.com/blog/what-is-batch-inference",
+      "source": "Digital Ocean Labs",
+      "sourceUrl": "https://www.digitalocean.com/blog/rss",
+      "summary": "Last week’s support tickets, a 50,000-item product catalog, and a backlog of contracts to summarize. What do these jobs have in common? None of them needs a response in two seconds. But if you run them through the same real-time endpoints as your live traffic, you pay live-traff…",
+      "publishedAt": "2026-10-26T10:43:07.418Z"
+    },
+    {
+      "slug": "d726a883ed2da4a512f319d1",
+      "guid": "https://medium.com/p/d5a852a06356",
+      "title": "How to Turn Coding Agent + Local LLM into an Investment Analysis Engine",
+      "link": "https://itnext.io/how-to-build-a-local-investment-analysis-pipeline-with-coding-agents-d5a852a06356?source=rss----5b301f10ddcd---4",
+      "source": "itnext",
+      "sourceUrl": "https://itnext.io/feed",
+      "summary": "A step-by-step guide to automating technical analysis and strategy backtesting using local LLM and OpenCode Continue reading on ITNEXT »",
+      "publishedAt": "2026-10-25T22:27:02.000Z"
+    },
+    {
+      "slug": "3ac753b38b435e65d88f0402",
+      "guid": "6ade2b5015b1ae0001dbf400",
+      "title": "Why Do Some Requests Fail During a Kubernetes Rolling Update?",
+      "link": "https://kodekloud.com/blog/requests-fail-kubernetes-rolling-update/",
+      "source": "KodeKloud",
+      "sourceUrl": "https://kodekloud.com/blog/rss/",
+      "summary": "A rolling update can leave a few failed requests behind, even when nothing is broken. Follow one request through a rolling update, then run four experiments that take the failure count to zero.",
+      "publishedAt": "2026-10-25T17:30:00.000Z"
+    },
+    {
+      "slug": "347a87bd54c5c48c53d6effb",
+      "guid": "6addf81315b1ae0001dbeeb9",
+      "title": "Building an AI Agent That Writes and Validates Kubernetes Manifests",
+      "link": "https://kodekloud.com/blog/ai-agent-writes-validates-kubernetes-manifests/",
+      "source": "KodeKloud",
+      "sourceUrl": "https://kodekloud.com/blog/rss/",
+      "summary": "Models write YAML that looks right and is often wrong. Build a small Go agent in four rounds that checks its own manifests against the cluster and your rules, fixes them and waits for your yes.",
+      "publishedAt": "2026-10-25T16:20:00.000Z"
+    },
+    {
+      "slug": "83b3fee96783c1eda99fd088",
+      "guid": "https://www.sitepoint.com/9-checks-before-shipping-a-product-email-a-workflow-for-developers-and-designers/",
+      "title": "9 Checks Before Shipping a Product Email: A Workflow for Developers and Designers",
+      "link": "https://www.sitepoint.com/9-checks-before-shipping-a-product-email-a-workflow-for-developers-and-designers/?utm_source=rss",
+      "source": "SitePoint",
+      "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
+      "summary": "null 9 Checks Before Shipping a Product Email: A Workflow for Developers and Designers on SitePoint.",
+      "publishedAt": "2026-10-25T15:49:11.000Z"
+    },
+    {
+      "slug": "c3b6732fb4623bcba3634e82",
+      "guid": "6addc54515b1ae0001dbee17",
+      "title": "Why Does My Container Work on My Laptop but Crash on the Server?",
+      "link": "https://kodekloud.com/blog/container-works-on-laptop-crashes-on-server/",
+      "source": "KodeKloud",
+      "sourceUrl": "https://kodekloud.com/blog/rss/",
+      "summary": "Your image runs perfectly on your laptop and dies on the server with exec format error. Follow one image from laptop to crash, then reproduce it and fix it yourself.",
+      "publishedAt": "2026-10-25T13:00:00.000Z"
     },
     {
       "slug": "51df50048d86badc2e520901",
@@ -344,6 +404,16 @@
       "publishedAt": "2026-10-23T14:00:00.000Z"
     },
     {
+      "slug": "59e737a335a604d3314a85b1",
+      "guid": "https://www.sitepoint.com/top-5-3d-animation-software-in-2026/",
+      "title": "Top 5 3D Animation Software in 2026",
+      "link": "https://www.sitepoint.com/top-5-3d-animation-software-in-2026/?utm_source=rss",
+      "source": "SitePoint",
+      "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
+      "summary": "null Top 5 3D Animation Software in 2026 on SitePoint.",
+      "publishedAt": "2026-10-23T13:50:44.000Z"
+    },
+    {
       "slug": "a9808dd3ae88cfd6f6f93938",
       "guid": "https://medium.com/p/7dde770d7e68",
       "title": "Karpenter’s Chicken-and-Egg Problem on EKS",
@@ -362,6 +432,26 @@
       "sourceUrl": "https://feeds.dzone.com/home",
       "summary": "What does it take to build and sustain an open-source project for more than a decade? For Shai Almog, creator of Codename One, it takes a willingness to challenge conventional approaches to software development and a continued commitment to the developers who rely on the work. I…",
       "publishedAt": "2026-10-23T13:30:00.000Z"
+    },
+    {
+      "slug": "d2dbcf1d4dc885d8224d7b63",
+      "guid": "https://www.sitepoint.com/beyond-the-password-reset-building-recovery-experiences-that-protect-online-shopping/",
+      "title": "Beyond the Password Reset: Building Recovery Experiences That Protect Online Shopping",
+      "link": "https://www.sitepoint.com/beyond-the-password-reset-building-recovery-experiences-that-protect-online-shopping/?utm_source=rss",
+      "source": "SitePoint",
+      "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
+      "summary": "null Beyond the Password Reset: Building Recovery Experiences That Protect Online Shopping on SitePoint.",
+      "publishedAt": "2026-10-23T13:10:47.000Z"
+    },
+    {
+      "slug": "d7eec1886d1a621ef5d3e638",
+      "guid": "https://www.sitepoint.com/8-checks-developers-should-add-before-importing-pdf-tables-into-an-application/",
+      "title": "8 Checks Developers Should Add Before Importing PDF Tables into an Application",
+      "link": "https://www.sitepoint.com/8-checks-developers-should-add-before-importing-pdf-tables-into-an-application/?utm_source=rss",
+      "source": "SitePoint",
+      "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
+      "summary": "null 8 Checks Developers Should Add Before Importing PDF Tables into an Application on SitePoint.",
+      "publishedAt": "2026-10-23T13:07:11.000Z"
     },
     {
       "slug": "b02e415c5f4a28873ac1c300",
@@ -654,16 +744,6 @@
       "publishedAt": "2026-10-22T12:33:39.000Z"
     },
     {
-      "slug": "dcf58383f829876d947d3fa6",
-      "guid": "https://medium.com/p/1c5dd22d2807",
-      "title": "Your AI Agent Stops Where the API Ends. Give It a Managed Browser Instead",
-      "link": "https://itnext.io/microsoft-foundry-browser-automation-how-it-works-1c5dd22d2807?source=rss----5b301f10ddcd---4",
-      "source": "itnext",
-      "sourceUrl": "https://itnext.io/feed",
-      "summary": "How the Browser Automation tool in Microsoft Foundry connects agents to isolated Playwright cloud browsers through MCP and toolboxes. Continue reading on ITNEXT »",
-      "publishedAt": "2026-10-22T12:31:42.000Z"
-    },
-    {
       "slug": "cff2d6a62e4341624a0b2509",
       "guid": "https://dzone.com/articles/3682513",
       "title": "Taming Parameter Sniffing in SQL Server 2022 With PSP Optimization",
@@ -682,6 +762,16 @@
       "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
       "summary": "null What “Clear Form” Should Really Do: Managing Draft Data in JavaScript on SitePoint.",
       "publishedAt": "2026-10-22T09:08:24.000Z"
+    },
+    {
+      "slug": "47890ad9f0c00a6ab397f044",
+      "guid": "https://www.luckymedia.dev/blog/astro-tip-stop-hardcoding-theme-logic-into-your-cms-components-use-data-attributes-instead",
+      "title": "Astro tip: Stop hardcoding theme logic into components - use Data Attributes",
+      "link": "https://www.luckymedia.dev/blog/astro-tip-stop-hardcoding-theme-logic-into-your-cms-components-use-data-attributes-instead",
+      "source": "Lucky Media",
+      "sourceUrl": "https://www.luckymedia.dev/rss.xml",
+      "summary": "For over a decade, Lucky Media has been a leading Software Development Agency in the US, based in Dallas, TX. We build custom software solutions for your business.",
+      "publishedAt": "2026-10-22T05:00:00.000Z"
     },
     {
       "slug": "04b78f5a3e89111f1ddda863",
@@ -912,96 +1002,6 @@
       "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
       "summary": "null Build a Reliable Analytics Pipeline Before Moving to a Data Warehouse on SitePoint.",
       "publishedAt": "2026-10-21T13:16:13.000Z"
-    },
-    {
-      "slug": "4e3c6184d6b011b4adbab9af",
-      "guid": "https://dzone.com/articles/3694396",
-      "title": "How to Keep AI Agents From Going Rogue Using Docker Sandbox",
-      "link": "https://dzone.com/articles/ai-agent-docker-sandbox",
-      "source": "DZone",
-      "sourceUrl": "https://feeds.dzone.com/home",
-      "summary": "An AI agent is an \"autonomous software program that uses artificial intelligence to make a plan, execute tools, and complete an action.\" Autonomy (through AI) plus tools is what makes an agent powerful, and these tools can range from a simple calculator to querying a sophisticat…",
-      "publishedAt": "2026-10-21T13:00:00.000Z"
-    },
-    {
-      "slug": "30b9b6e4fd26d5ecf851e2d8",
-      "guid": "https://www.sitepoint.com/how-i-built-a-crm-with-vibe-coding-instead-of-spending-1-000-on-app-builders/",
-      "title": "How I Built a CRM with Vibe Coding Instead of Spending $1,000+ on App Builders",
-      "link": "https://www.sitepoint.com/how-i-built-a-crm-with-vibe-coding-instead-of-spending-1-000-on-app-builders/?utm_source=rss",
-      "source": "SitePoint",
-      "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
-      "summary": "null How I Built a CRM with Vibe Coding Instead of Spending $1,000+ on App Builders on SitePoint.",
-      "publishedAt": "2026-10-21T12:33:15.000Z"
-    },
-    {
-      "slug": "6e2da3945a815c9349ee6e0f",
-      "guid": "6ad8a5349cd0ba9a078f2e8e",
-      "title": "Build a Hybrid Search Engine in PostgreSQL: BM25 + Vector Retrieval",
-      "link": "https://www.freecodecamp.org/news/build-a-hybrid-search-engine-in-postgresql-bm25-vector-retrieval/",
-      "source": "Free Code Camp - News",
-      "sourceUrl": "https://www.freecodecamp.org/news/rss",
-      "summary": "Most application search setups force a trade-off: settle for simple text filters, or manage a separate search cluster like Elasticsearch with complex synchronization pipelines. In a new video course o",
-      "publishedAt": "2026-10-21T11:42:44.000Z"
-    },
-    {
-      "slug": "3341f3f9dd2236fffc1188e1",
-      "guid": "https://www.sitepoint.com/vibe-coding-to-production-a-developer-s-checklist-for-building-reliable-web-apps/",
-      "title": "Vibe Coding to Production: A Developer’s Checklist for Building Reliable Web Apps",
-      "link": "https://www.sitepoint.com/vibe-coding-to-production-a-developer-s-checklist-for-building-reliable-web-apps/?utm_source=rss",
-      "source": "SitePoint",
-      "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
-      "summary": "null Vibe Coding to Production: A Developer’s Checklist for Building Reliable Web Apps on SitePoint.",
-      "publishedAt": "2026-10-21T05:24:24.000Z"
-    },
-    {
-      "slug": "e8f67854f13fbb5941c18faa",
-      "guid": "https://www.sitepoint.com/debugging-css-layout-issues-a-practical-guide-to-browser-devtools/",
-      "title": "Debugging CSS Layout Issues: A Practical Guide to Browser DevTools",
-      "link": "https://www.sitepoint.com/debugging-css-layout-issues-a-practical-guide-to-browser-devtools/?utm_source=rss",
-      "source": "SitePoint",
-      "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
-      "summary": "null Debugging CSS Layout Issues: A Practical Guide to Browser DevTools on SitePoint.",
-      "publishedAt": "2026-10-20T20:18:20.000Z"
-    },
-    {
-      "slug": "fa8bc785d8dab4a2b9e60438",
-      "guid": "https://www.sitepoint.com/progressive-enhancement-in-web-forms-building-reliable-experiences-with-html-css-and-javascript/",
-      "title": "Progressive Enhancement in Web Forms: Building Reliable Experiences with HTML, CSS, and JavaScript",
-      "link": "https://www.sitepoint.com/progressive-enhancement-in-web-forms-building-reliable-experiences-with-html-css-and-javascript/?utm_source=rss",
-      "source": "SitePoint",
-      "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
-      "summary": "null Progressive Enhancement in Web Forms: Building Reliable Experiences with HTML, CSS, and JavaScript on SitePoint.",
-      "publishedAt": "2026-10-20T20:14:36.000Z"
-    },
-    {
-      "slug": "d20a9ad117e7a689944888c2",
-      "guid": "https://www.sitepoint.com/build-a-startup-runway-calculator-in-javascript-and-stress-test-your-plan/",
-      "title": "Build a Startup Runway Calculator in JavaScript (and Stress-Test Your Plan)",
-      "link": "https://www.sitepoint.com/build-a-startup-runway-calculator-in-javascript-and-stress-test-your-plan/?utm_source=rss",
-      "source": "SitePoint",
-      "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
-      "summary": "null Build a Startup Runway Calculator in JavaScript (and Stress-Test Your Plan) on SitePoint.",
-      "publishedAt": "2026-10-20T19:05:26.000Z"
-    },
-    {
-      "slug": "b76c1fab931c46d528c0617c",
-      "guid": "6ad7987561e15ba931f3a014",
-      "title": "How Neural Networks Work: Why Straight Lines Aren't Enough",
-      "link": "https://www.freecodecamp.org/news/how-neural-networks-work-why-straight-lines-aren-t-enough/",
-      "source": "Free Code Camp - News",
-      "sourceUrl": "https://www.freecodecamp.org/news/rss",
-      "summary": "A straight line equation is a good place to start understanding how a neural network works. It's what we explored in my previous article, How Neural Networks Work – Explained Using the Straight Line E",
-      "publishedAt": "2026-10-20T16:36:05.000Z"
-    },
-    {
-      "slug": "d4c21442014f512687edb4c5",
-      "guid": "https://github.blog/?p=99538",
-      "title": "How 3 Java Champions are using GitHub Copilot for increased productivity",
-      "link": "https://github.blog/ai-and-ml/github-copilot/how-3-java-champions-are-using-github-copilot-for-increased-productivity/",
-      "source": "Github Blog",
-      "sourceUrl": "https://github.blog/feed/",
-      "summary": "Three Java Champions share how they use GitHub Copilot to solve problems, accelerate development, and keep humans responsible for the results. The post How 3 Java Champions are using GitHub Copilot for increased productivity appeared first on The GitHub Blog.",
-      "publishedAt": "2026-10-20T16:05:03.000Z"
     }
   ]
 }

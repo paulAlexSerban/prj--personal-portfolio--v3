@@ -1,8 +1,88 @@
 {
   "category": "javascript",
   "label": "JavaScript",
-  "fetchedAt": "2026-10-25T10:12:57.526Z",
+  "fetchedAt": "2026-10-26T11:36:11.569Z",
   "items": [
+    {
+      "slug": "aace4f2a967725684b9ec32f",
+      "guid": "https://flaviocopes.com/convex/",
+      "title": "The complete guide to Convex",
+      "link": "https://flaviocopes.com/convex/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Learn Convex by building a real-time app with TypeScript, queries, mutations, authentication, indexes, search, file storage, background jobs, and tests.",
+      "publishedAt": "2026-10-26T11:10:00.000Z"
+    },
+    {
+      "slug": "f92b1035872a89d1b8901831",
+      "guid": "https://flaviocopes.com/grok-build/",
+      "title": "How to use Grok Build",
+      "link": "https://flaviocopes.com/grok-build/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "A detailed Grok Build tutorial covering installation, prompts, plans, permissions, tests, Git, skills, MCP, subagents, sessions, and headless automation.",
+      "publishedAt": "2026-10-26T11:05:00.000Z"
+    },
+    {
+      "slug": "c94da9c6bf944ec41415df65",
+      "guid": "https://flaviocopes.com/pull-requests-agent-review/",
+      "title": "A pull request workflow for code written by agents",
+      "link": "https://flaviocopes.com/pull-requests-agent-review/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Combine agent review, human decisions, and CI checks on the code that will actually merge. Compare a GitHub pull request queue with a direct-to-main workflow.",
+      "publishedAt": "2026-10-26T11:00:00.000Z"
+    },
+    {
+      "slug": "d72b9090004da1f1e54cd597",
+      "guid": "https://flaviocopes.com/agent-prompt-caching/",
+      "title": "Prompt caching, compression, and compaction in coding agents",
+      "link": "https://flaviocopes.com/agent-prompt-caching/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Understand which agent optimizations reuse model work, which shrink network requests, and which shorten context, so you can investigate usage correctly.",
+      "publishedAt": "2026-10-26T08:00:00.000Z"
+    },
+    {
+      "slug": "18305397a89387402d4b5058",
+      "guid": "https://flaviocopes.com/push-to-main-and-trust/",
+      "title": "Pushing to main still needs a process",
+      "link": "https://flaviocopes.com/push-to-main-and-trust/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Direct pushes can keep development simple, but trust needs concrete checks. Look at access, traceability, tests, and recovery before copying a team's workflow.",
+      "publishedAt": "2026-10-25T16:00:00.000Z"
+    },
+    {
+      "slug": "76e2a4f267a092f5e218a728",
+      "guid": "https://flaviocopes.com/coding-without-the-editor/",
+      "title": "What changes when you stop opening the code editor?",
+      "link": "https://flaviocopes.com/coding-without-the-editor/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Coding agents can move work outside the editor. Understanding changes, reproducing bugs, and checking the application still need a place in the workflow.",
+      "publishedAt": "2026-10-25T14:00:00.000Z"
+    },
+    {
+      "slug": "61cef0c866925f29923fd107",
+      "guid": "https://flaviocopes.com/cloudflare-hyperdrive/",
+      "title": "Cloudflare Hyperdrive tutorial: use PostgreSQL with Workers",
+      "link": "https://flaviocopes.com/cloudflare-hyperdrive/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Learn Cloudflare Hyperdrive with PostgreSQL and Workers, configure pooling and caching, and see how it fits with D1, R2, Queues, Supabase, and Neon.",
+      "publishedAt": "2026-10-25T11:10:00.000Z"
+    },
+    {
+      "slug": "e1ff47379a50cc278820646d",
+      "guid": "https://flaviocopes.com/teaching-and-prompting/",
+      "title": "What teaching can tell us about prompting",
+      "link": "https://flaviocopes.com/teaching-and-prompting/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Clear examples and useful feedback help when teaching a concept or directing a coding agent. Explain the expected behavior and show where the result differs.",
+      "publishedAt": "2026-10-25T11:00:00.000Z"
+    },
     {
       "slug": "4d471087e1aa6381f0e4a900",
       "guid": "https://flaviocopes.com/too-many-agent-conversations/",
@@ -166,11 +246,11 @@
     {
       "slug": "c3767fa83669851cb01e9931",
       "guid": "https://flaviocopes.com/security-ai/",
-      "title": "Security in the age of AI",
+      "title": "How to protect your app from AI-powered attacks",
       "link": "https://flaviocopes.com/security-ai/",
       "source": "Flavio Copes",
       "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "AI agents are finding old vulnerabilities and making complex attacks easier. A short history of automated hacking, what comes next, and how to prepare.",
+      "summary": "Protect your app from AI-powered attacks with practical advice on patching, access controls, security log monitoring, backups, and incident response.",
       "publishedAt": "2026-10-21T16:54:00.000Z"
     },
     {
@@ -234,16 +314,6 @@
       "publishedAt": "2026-10-21T00:00:00.000Z"
     },
     {
-      "slug": "b7e64f90d9d5c70814a8bdb7",
-      "guid": "https://flaviocopes.com/tsrs/",
-      "title": "A deep dive into tsrs",
-      "link": "https://flaviocopes.com/tsrs/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Understand tsrs, the Rust port of TypeScript. Try the compiler, compare benchmarks, explore its architecture, and build a browser-based type checker.",
-      "publishedAt": "2026-10-20T14:30:00.000Z"
-    },
-    {
       "slug": "67f9ceba560d7193b84a4736",
       "guid": "https://www.joshwcomeau.com/css/interop-2027/",
       "title": "The Future of CSS ✨",
@@ -254,46 +324,6 @@
       "publishedAt": "2026-10-20T13:15:00.000Z"
     },
     {
-      "slug": "88bf58be94048bfbc6b929f6",
-      "guid": "https://flaviocopes.com/npm-update-global/",
-      "title": "How to update all global npm packages",
-      "link": "https://flaviocopes.com/npm-update-global/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Update all global npm packages with npm update -g, check outdated tools, update one package, and understand which Node installation you are changing.",
-      "publishedAt": "2026-10-20T13:00:00.000Z"
-    },
-    {
-      "slug": "afdfe62707d46639376c0a0b",
-      "guid": "https://flaviocopes.com/cloudflare-pages-vs-workers/",
-      "title": "Cloudflare Pages vs Workers: which should you choose?",
-      "link": "https://flaviocopes.com/cloudflare-pages-vs-workers/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Compare Cloudflare Pages and Workers for static sites and full-stack apps, with request diagrams, pricing examples, and advice on when to migrate.",
-      "publishedAt": "2026-10-20T12:45:00.000Z"
-    },
-    {
-      "slug": "4e1fb12a5197533afc00b723",
-      "guid": "https://flaviocopes.com/ai-migrations/",
-      "title": "AI-assisted code migration: how to switch frameworks safely",
-      "link": "https://flaviocopes.com/ai-migrations/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Coding agents can handle repetitive migrations, but switching costs also include design drift, production behavior, deployment, and future maintenance.",
-      "publishedAt": "2026-10-20T10:00:00.000Z"
-    },
-    {
-      "slug": "6c11fe2d61be801b25192f24",
-      "guid": "https://flaviocopes.com/good-software-and-agents/",
-      "title": "How AI agents make existing software more useful",
-      "link": "https://flaviocopes.com/good-software-and-agents/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Agents can help us combine existing tools and improve the details of our apps. That makes dependable behavior and clear interfaces worth paying attention to.",
-      "publishedAt": "2026-10-20T07:00:00.000Z"
-    },
-    {
       "slug": "a75ed007481a527ecd8bfec9",
       "guid": "https://javascriptweekly.com/issues/807",
       "title": "The up to 8x faster Rust port of TypeScript",
@@ -302,36 +332,6 @@
       "sourceUrl": "https://javascriptweekly.com/rss/1b4m1h9j",
       "summary": "#​807 — October 20, 2026 Read on the Web JavaScript Weekly tsrs: Cloudflare and VoidZero's Rust Port of TypeScript — A Rust port of the Go-based TypeScript 7 compiler, built with some input from the TypeScript team and heading into Oxc. Benchmarks claim up to 8x the speed of Typ…",
       "publishedAt": "2026-10-20T00:00:00.000Z"
-    },
-    {
-      "slug": "7334b82cae27f9b3fb31e715",
-      "guid": "https://flaviocopes.com/muse-wonder-cursor/",
-      "title": "How I would evaluate Muse Wonder in Cursor",
-      "link": "https://flaviocopes.com/muse-wonder-cursor/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Muse Wonder is available in Cursor. Here's how to compare its coding results, reasoning effort, and token costs against the model you already use.",
-      "publishedAt": "2026-10-19T15:00:00.000Z"
-    },
-    {
-      "slug": "0818ac36606610a12dbc44cf",
-      "guid": "https://flaviocopes.com/opencode-claude-codex/",
-      "title": "How to compare OpenCode, Claude Code, and Codex CLI",
-      "link": "https://flaviocopes.com/opencode-claude-codex/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Compare OpenCode, Claude Code, and Codex CLI with one reproducible bug fix, independent tests, setup checks, and an honest look at cost and intervention.",
-      "publishedAt": "2026-10-19T13:00:00.000Z"
-    },
-    {
-      "slug": "12146c11db2a9159c2df5ce6",
-      "guid": "https://flaviocopes.com/fast-tests-for-agents/",
-      "title": "How to speed up tests for AI coding agents",
-      "link": "https://flaviocopes.com/fast-tests-for-agents/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "How to shorten an agent's feedback loop with focused tests, realistic boundaries, useful failures, and broader checks before shipping.",
-      "publishedAt": "2026-10-19T10:00:00.000Z"
     },
     {
       "slug": "ec4425944808c746b792d190",
