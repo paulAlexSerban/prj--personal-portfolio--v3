@@ -1,8 +1,28 @@
 {
   "category": "javascript",
   "label": "JavaScript",
-  "fetchedAt": "2026-10-26T11:36:11.569Z",
+  "fetchedAt": "2026-10-27T11:06:59.674Z",
   "items": [
+    {
+      "slug": "d31e7b6ca95045e4133461eb",
+      "guid": "https://flaviocopes.com/agent-deploy-secrets/",
+      "title": "How to protect secrets when coding agents deploy your app",
+      "link": "https://flaviocopes.com/agent-deploy-secrets/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Learn how coding agents can expose secrets, compare ways to manage access, and add safeguards to builds, deployment pipelines, and production code.",
+      "publishedAt": "2026-10-27T08:00:00.000Z"
+    },
+    {
+      "slug": "26988397be639c694f9ab127",
+      "guid": "https://flaviocopes.com/claude-code-mcp-tasks-elicitations/",
+      "title": "How to use MCP Tasks and Elicitations in Claude Code",
+      "link": "https://flaviocopes.com/claude-code-mcp-tasks-elicitations/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Build a local MCP server with background tasks and confirmation forms in Claude Code. Learn how polling, cancellation, and reconnecting work.",
+      "publishedAt": "2026-10-26T14:00:00.000Z"
+    },
     {
       "slug": "aace4f2a967725684b9ec32f",
       "guid": "https://flaviocopes.com/convex/",
@@ -30,7 +50,7 @@
       "link": "https://flaviocopes.com/pull-requests-agent-review/",
       "source": "Flavio Copes",
       "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Combine agent review, human decisions, and CI checks on the code that will actually merge. Compare a GitHub pull request queue with a direct-to-main workflow.",
+      "summary": "Review agent-written code with a practical pull request workflow: focused tests, independent review, human approval, merge queues, and deployment checks.",
       "publishedAt": "2026-10-26T11:00:00.000Z"
     },
     {
@@ -40,7 +60,7 @@
       "link": "https://flaviocopes.com/agent-prompt-caching/",
       "source": "Flavio Copes",
       "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Understand which agent optimizations reuse model work, which shrink network requests, and which shorten context, so you can investigate usage correctly.",
+      "summary": "Learn how prompt caching, transport compression, and context compaction affect coding agent costs, speed, memory, and usage, with practical examples.",
       "publishedAt": "2026-10-26T08:00:00.000Z"
     },
     {
@@ -284,26 +304,6 @@
       "publishedAt": "2026-10-21T13:00:00.000Z"
     },
     {
-      "slug": "770d1d50f23fe55c9151d711",
-      "guid": "https://flaviocopes.com/vite-convergence/",
-      "title": "Vite toolchain: Cloudflare, vinext, and shared web tooling",
-      "link": "https://flaviocopes.com/vite-convergence/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Vite is becoming shared infrastructure for frameworks, runtimes, and developer tools. What vinext, Cloudflare's new tooling, and DevTools show.",
-      "publishedAt": "2026-10-21T10:00:00.000Z"
-    },
-    {
-      "slug": "3090b5ed6999fc301f63b0ea",
-      "guid": "https://flaviocopes.com/spa-or-server-rendering/",
-      "title": "SPA vs server-side rendering: which should you choose?",
-      "link": "https://flaviocopes.com/spa-or-server-rendering/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Choose between a single-page app, server-rendered pages, and interactive islands by looking at navigation, shared state, loading, and maintenance.",
-      "publishedAt": "2026-10-21T07:00:00.000Z"
-    },
-    {
       "slug": "f756ef917388123187ab4b9b",
       "guid": "https://blog.appsignal.com/2026/10/21/appsignal-mcp-is-now-a-claude-connector.html",
       "title": "AppSignal MCP Is Now a Claude Connector",
@@ -332,16 +332,6 @@
       "sourceUrl": "https://javascriptweekly.com/rss/1b4m1h9j",
       "summary": "#​807 — October 20, 2026 Read on the Web JavaScript Weekly tsrs: Cloudflare and VoidZero's Rust Port of TypeScript — A Rust port of the Go-based TypeScript 7 compiler, built with some input from the TypeScript team and heading into Oxc. Benchmarks claim up to 8x the speed of Typ…",
       "publishedAt": "2026-10-20T00:00:00.000Z"
-    },
-    {
-      "slug": "ec4425944808c746b792d190",
-      "guid": "https://javascriptweekly.com/issues/806",
-      "title": "Ryan Dahl: 'Why reimplement Node? It works.'",
-      "link": "https://javascriptweekly.com/issues/806",
-      "source": "JavaScript Weekly",
-      "sourceUrl": "https://javascriptweekly.com/rss/1b4m1h9j",
-      "summary": "#​806 — October 13, 2026 Read on the Web JavaScript Weekly Deno is Joining Cloudflare (But…) — Maybe David Bushell saw the writing on the wall, as the Deno team isn't joining Cloudflare to keep working on Deno, but to fold celld into workerd so Durable Objects can be self-hosted…",
-      "publishedAt": "2026-10-13T00:00:00.000Z"
     }
   ]
 }
