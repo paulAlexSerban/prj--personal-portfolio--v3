@@ -1,8 +1,48 @@
 {
   "category": "javascript",
   "label": "JavaScript",
-  "fetchedAt": "2026-10-28T11:42:16.647Z",
+  "fetchedAt": "2026-10-29T11:50:33.237Z",
   "items": [
+    {
+      "slug": "bf084c461151af95e08f6ad8",
+      "guid": "https://flaviocopes.com/tinyfish/",
+      "title": "How to use TinyFish",
+      "link": "https://flaviocopes.com/tinyfish/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Learn TinyFish with JavaScript: search the web, extract data, automate browser tasks, reuse logins, research topics, and monitor websites.",
+      "publishedAt": "2026-10-29T11:00:00.000Z"
+    },
+    {
+      "slug": "50c9bc7d262f01c9f78511a6",
+      "guid": "https://flaviocopes.com/macos-browser-ai-agents/",
+      "title": "The best macOS browsers for AI agents, and how to use them",
+      "link": "https://flaviocopes.com/macos-browser-ai-agents/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Choose a macOS browser for AI agents: compare Chrome, Safari, and Firefox, then set up browser control and test a complete local example.",
+      "publishedAt": "2026-10-29T08:00:00.000Z"
+    },
+    {
+      "slug": "49e3ea5e50dfd1cefe902cf3",
+      "guid": "https://flaviocopes.com/agent-trust-checks/",
+      "title": "Give coding agents checks they can learn from",
+      "link": "https://flaviocopes.com/agent-trust-checks/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Clear boundaries and enforceable checks make an agent's mistakes easier to find. Keep their limits visible, and inspect changes to the checks themselves.",
+      "publishedAt": "2026-10-28T16:00:00.000Z"
+    },
+    {
+      "slug": "1bb82996769433e7a37d94e1",
+      "guid": "https://flaviocopes.com/engineering-judgment-with-ai/",
+      "title": "Practicing engineering judgment with AI",
+      "link": "https://flaviocopes.com/engineering-judgment-with-ai/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Practice engineering judgment with AI through a worked export failure: gather evidence, compare designs, test risks, review changes, and learn from decisions.",
+      "publishedAt": "2026-10-28T14:00:00.000Z"
+    },
     {
       "slug": "0d5f581876e08f27271e7573",
       "guid": "https://flaviocopes.com/image-generation/",
@@ -26,11 +66,11 @@
     {
       "slug": "b229ae8ec58129c56dc58b0a",
       "guid": "https://flaviocopes.com/internet-business-lab/",
-      "title": "Internet Business Lab is open",
+      "title": "Internet Business Lab: October 2026 cohort",
       "link": "https://flaviocopes.com/internet-business-lab/",
       "source": "Flavio Copes",
       "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Join Internet Business Lab to work on finding customers, pricing, and selling your work. The cohort starts October 29, with 17 weekday lessons.",
+      "summary": "Enrollment for the October 2026 Internet Business Lab cohort is closed. The course runs October 29 through November 20, with 17 weekday lessons.",
       "publishedAt": "2026-10-28T08:40:00.000Z"
     },
     {
@@ -272,46 +312,6 @@
       "sourceUrl": "https://flaviocopes.com/rss.xml",
       "summary": "OpenAI's Decisions API returns a probability, a choice, or a score. Triage a support ticket with several questions in one request.",
       "publishedAt": "2026-10-23T10:00:00.000Z"
-    },
-    {
-      "slug": "7c16e7429bba3ec7448fe609",
-      "guid": "https://flaviocopes.com/chrome-web-store-publish/",
-      "title": "How to publish a Chrome extension to the Chrome Web Store",
-      "link": "https://flaviocopes.com/chrome-web-store-publish/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Publish your Chrome extension with a clean ZIP, store listing, privacy disclosures, permission justifications, review instructions, and tested updates.",
-      "publishedAt": "2026-10-23T07:00:00.000Z"
-    },
-    {
-      "slug": "313c8830163f0bda7901f46c",
-      "guid": "https://flaviocopes.com/anthropic-sdk-upgrade/",
-      "title": "What to check before upgrading the Anthropic SDK",
-      "link": "https://flaviocopes.com/anthropic-sdk-upgrade/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Upgrading the Anthropic SDK changes the API version your app sends. Check sampling parameters, authentication, message history, and output before you ship.",
-      "publishedAt": "2026-10-23T06:50:00.000Z"
-    },
-    {
-      "slug": "b4c1de11776d846b6f3d5e87",
-      "guid": "https://flaviocopes.com/coding-agents-without-subscription/",
-      "title": "How to use a coding agent without another subscription",
-      "link": "https://flaviocopes.com/coding-agents-without-subscription/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Connect OpenCode to DeepSeek or Ollama, understand API billing and local hardware costs, and test whether the setup works for your projects.",
-      "publishedAt": "2026-10-22T15:00:00.000Z"
-    },
-    {
-      "slug": "0d7a47d92e73b95f5967b76e",
-      "guid": "https://flaviocopes.com/macos-dmg-installer/",
-      "title": "How to create a DMG installer for a Mac app",
-      "link": "https://flaviocopes.com/macos-dmg-installer/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Package your Mac app in a drag-to-Applications DMG, sign and notarize it, verify the download, and attach it to a GitHub release.",
-      "publishedAt": "2026-10-22T13:00:00.000Z"
     },
     {
       "slug": "f756ef917388123187ab4b9b",

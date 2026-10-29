@@ -1,127 +1,367 @@
 {
   "category": "web-dev",
   "label": "Web Development",
-  "fetchedAt": "2026-10-28T11:42:16.647Z",
+  "fetchedAt": "2026-10-29T11:50:33.237Z",
   "items": [
     {
-      "slug": "b6c314bb84a328c91fa1dd82",
-      "guid": "https://dev.to/odeeb/back-to-school-price-tracker-tax-holidays-laptops-41bc",
-      "title": "Back to School Price Tracker: Tax Holidays & Laptops",
-      "link": "https://dev.to/odeeb/back-to-school-price-tracker-tax-holidays-laptops-41bc",
+      "slug": "91ffb168d66148e11155c12e",
+      "guid": "https://dev.to/oleksiysavich/convert-files-from-the-command-line-with-a-free-rest-api-curl-and-python-91h",
+      "title": "Convert files from the command line with a free REST API (curl and Python)",
+      "link": "https://dev.to/oleksiysavich/convert-files-from-the-command-line-with-a-free-rest-api-curl-and-python-91h",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "US back-to-school shopping runs from July to early September, and most state sales-tax holidays fall in early August (in 2026 they ran from 10 July to 22 August). To find the cheapest moment, track each item's price weekly from late June on Target, Walmart and Amazon, daily arou…",
-      "publishedAt": "2026-10-28T11:39:46.000Z"
+      "summary": "I'm Oleksiy, a solo developer from Kyiv. I run CleverUtils, a free online file converter. People kept asking whether they could use it from scripts instead of the browser, so there is now a public REST API. This post shows how I use it from a terminal: one-off conversions with c…",
+      "publishedAt": "2026-10-29T11:49:35.000Z"
     },
     {
-      "slug": "618c176ff26be6232fb4fba7",
-      "guid": "https://dev.to/daniel_pertu/a-campaign-row-with-no-owner-and-the-update-that-hands-it-over-when-somebody-signs-up-b7a",
-      "title": "A campaign row with no owner, and the UPDATE that hands it over when somebody signs up",
-      "link": "https://dev.to/daniel_pertu/a-campaign-row-with-no-owner-and-the-update-that-hands-it-over-when-somebody-signs-up-b7a",
+      "slug": "80f72f4ac056484768c2b3d7",
+      "guid": "https://dev.to/malbolged/the-empty-room-i-held-a-seance-over-a-2015-sensor-log-4f2g",
+      "title": "The Empty Room: I held a séance over a 2015 sensor log",
+      "link": "https://dev.to/malbolged/the-empty-room-i-held-a-seance-over-a-2015-sensor-log-4f2g",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "In Nakodo a campaign belongs to a user. Almost: export const campaigns = pgTable(\"campaigns\", { id: uuid().primaryKey().defaultRandom(), userId: uuid().references(() => authUsers.id, { onDelete: \"cascade\" }), name: text().notNull(), domain: text().notNull(), // ... }); name and …",
-      "publishedAt": "2026-10-28T11:39:27.000Z"
+      "summary": "This is a submission for the Hacktoberfest Open-Source AI Challenge Week 4: Ghost in the Machine In February 2015, a small office in Mons, Belgium, started keeping a diary. Once a minute, for sixteen days, it wrote down how bright it was, how much CO₂ was in the air, how warm an…",
+      "publishedAt": "2026-10-29T11:49:06.000Z"
     },
     {
-      "slug": "d324403a41948d1ea9942977",
-      "guid": "https://dev.to/odeeb/amazon-price-scraper-prices-by-asin-on-any-marketplace-4gl4",
-      "title": "Amazon Price Scraper: Prices by ASIN on Any Marketplace",
-      "link": "https://dev.to/odeeb/amazon-price-scraper-prices-by-asin-on-any-marketplace-4gl4",
+      "slug": "b841f3562af74c74c6d20547",
+      "guid": "https://dev.to/ogjchchv/what-is-agentic-ai-the-beginners-guide-to-ai-agents-in-2026-35j2",
+      "title": "What Is Agentic AI? The Beginner's Guide to AI Agents in 2026",
+      "link": "https://dev.to/ogjchchv/what-is-agentic-ai-the-beginners-guide-to-ai-agents-in-2026-35j2",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "An Amazon price scraper by ASIN loads https://www.amazon./dp/ for each product and returns the price, currency, was-price, stock, seller and rating as fields. Load each marketplace from its own country, or Amazon may hide the price behind a \"cannot be dispatched\" message. Outsid…",
-      "publishedAt": "2026-10-28T11:39:03.000Z"
+      "summary": "What Is Agentic AI? The Beginner's Guide to AI Agents in 2026 You've heard the term \"AI agents\" everywhere in 2026 — but what does it actually mean? This guide breaks down agentic AI in plain language, explains how it's different from regular AI chatbots, and shows you real exam…",
+      "publishedAt": "2026-10-29T11:48:55.000Z"
     },
     {
-      "slug": "2b6e151567470ef89ecfea3c",
-      "guid": "https://dev.to/odeeb/ai-share-of-voice-measure-it-in-chatgpt-and-perplexity-1oda",
-      "title": "AI Share of Voice: Measure It in ChatGPT and Perplexity",
-      "link": "https://dev.to/odeeb/ai-share-of-voice-measure-it-in-chatgpt-and-perplexity-1oda",
+      "slug": "53af28938e2cc9c667a1b964",
+      "guid": "https://dev.to/iago_elion/doces-ou-travessuras-do-kiro-1-edicao-de-outubro-5cgb",
+      "title": "Doces ou travessuras do Kiro #1: edição de outubro",
+      "link": "https://dev.to/iago_elion/doces-ou-travessuras-do-kiro-1-edicao-de-outubro-5cgb",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "AI share of voice is your share of the brand mentions in AI answers to a fixed set of buyer questions: answers naming you ÷ the sum of answers naming each tracked brand (you plus competitors). Measure it separately for ChatGPT, Perplexity and others, from repeated runs of unbran…",
-      "publishedAt": "2026-10-28T11:38:42.000Z"
+      "summary": "Outubro é o mês do Halloween. Como todos têm medo do fantasma do Kiro, o Dati Labs entrou no clima para lançar a newsletter \"Doces ou travessuras do Kiro\". A série terá recorrencia mensal com as novidades do Kiro, as mudanças que exigem ação e os recursos que chegaram ao fim. O …",
+      "publishedAt": "2026-10-29T11:48:38.000Z"
     },
     {
-      "slug": "2beb085ee3b61c96704f31f1",
-      "guid": "https://dev.to/hamza_ali_eeeeb4642433447/i-built-a-dark-mode-client-outreach-tracker-pwa-with-vanilla-js-n3f",
-      "title": "I built a dark-mode Client Outreach Tracker PWA with Vanilla JS",
-      "link": "https://dev.to/hamza_ali_eeeeb4642433447/i-built-a-dark-mode-client-outreach-tracker-pwa-with-vanilla-js-n3f",
+      "slug": "fa40245a351685883243d5b6",
+      "guid": "https://dev.to/zico_33df1fa5f7c3cccf27f5/building-trick-or-take-an-open-source-multiplayer-halloween-web-game-on-cloudflare-workers-agora-41ca",
+      "title": "Building Trick or Take: An Open-Source Multiplayer Halloween Web Game on Cloudflare Workers & Agora RTC",
+      "link": "https://dev.to/zico_33df1fa5f7c3cccf27f5/building-trick-or-take-an-open-source-multiplayer-halloween-web-game-on-cloudflare-workers-agora-41ca",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "Why I Built It Managing client lead pipelines and cold outreach often meant dealing with heavy, bloated SaaS tools. I wanted a fast, zero-dependency, dark tech-noir dashboard that runs locally and offline as an installable PWA. Client Outreach & Lead Tracker: Manage cold DMs, fo…",
-      "publishedAt": "2026-10-28T11:38:15.000Z"
+      "summary": "Building Trick or Take: An Open-Source Multiplayer Halloween Web Game on Cloudflare Workers & Agora RTC Halloween is the perfect season for fast-paced, spooky multiplayer fun. To celebrate, we built and open-sourced Trick or Take—a real-time multiplayer browser party game where …",
+      "publishedAt": "2026-10-29T11:48:26.000Z"
     },
     {
-      "slug": "518b2d14f447df982323d167",
-      "guid": "https://dev.to/parsa_m/how-to-review-a-retry-loop-in-a-pull-request-python-requests-42h",
-      "title": "How to review a retry loop in a pull request (Python, requests)",
-      "link": "https://dev.to/parsa_m/how-to-review-a-retry-loop-in-a-pull-request-python-requests-42h",
+      "slug": "ee7c3ba9ef6b3a47fb128e16",
+      "guid": "https://dev.to/marxjenes/what-is-api-regression-testing-and-why-modern-teams-cant-skip-it-4pjb",
+      "title": "What Is API Regression Testing, and Why Modern Teams Can’t Skip It",
+      "link": "https://dev.to/marxjenes/what-is-api-regression-testing-and-why-modern-teams-cant-skip-it-4pjb",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "A retry helper in a pull request is short, passes its tests and looks responsible, so it tends to get approved without much reading. This post is for whoever is reviewing one. You get five checks to run against the diff, a runnable Python example where one timed-out request char…",
-      "publishedAt": "2026-10-28T11:37:54.000Z"
+      "summary": "What Is API Regression Testing, and Why Modern Teams Can't Skip It The release notes said \"minor refactor of the user service.\" Twenty minutes after deploy, the iOS app started showing blank profile pages. The refactor had renamed phone_number to phoneNumber in one response, eve…",
+      "publishedAt": "2026-10-29T11:48:02.000Z"
     },
     {
-      "slug": "a62aa14556f5c859e852dfd4",
-      "guid": "https://dev.to/rishu685/brandradar-an-open-source-tool-to-track-your-brands-visibility-in-ai-search-b76",
-      "title": "BrandRadar: An Open Source Tool to Track Your Brand's Visibility in AI Search",
-      "link": "https://dev.to/rishu685/brandradar-an-open-source-tool-to-track-your-brands-visibility-in-ai-search-b76",
+      "slug": "1d7f8501a85c6da3d3a21996",
+      "guid": "https://dev.to/ogjchchv/voice-cloning-for-business-in-india-create-your-brands-ai-voice-3dbo",
+      "title": "Voice Cloning for Business in India: Create Your Brand's AI Voice",
+      "link": "https://dev.to/ogjchchv/voice-cloning-for-business-in-india-create-your-brands-ai-voice-3dbo",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "Traditional SEO focuses on how websites rank in search engine results. But as people increasingly use AI tools like ChatGPT and Google Gemini to discover products, another question matters: When someone asks an AI tool to recommend a product in your category, does your brand get…",
-      "publishedAt": "2026-10-28T11:37:50.000Z"
+      "summary": "Voice Cloning for Business in India: Create Your Brand's AI Voice Imagine having a consistent, branded AI voice that represents your company across every customer interaction — phone calls, IVR systems, video content, and chatbots. In 2026, this is no longer science fiction. Voi…",
+      "publishedAt": "2026-10-29T11:47:54.000Z"
     },
     {
-      "slug": "96c25dff3150901057bf5391",
-      "guid": "https://dev.to/navidishaq/my-ai-algorithms-were-having-tea-while-i-put-eu6806-in-someones-portfolio-2hom",
-      "title": "My AI Algorithms Were Having Tea — While I Put €6,806 in Someone's Portfolio ☕🤖",
-      "link": "https://dev.to/navidishaq/my-ai-algorithms-were-having-tea-while-i-put-eu6806-in-someones-portfolio-2hom",
+      "slug": "1831e0f896c755ebe77a93ee",
+      "guid": "https://dev.to/donrulezz/kb5127648-broke-8021x-wi-fi-and-vpn-sign-in-find-every-affected-pc-in-a-minute-then-fix-it-for-17h3",
+      "title": "KB5127648 broke 802.1X Wi-Fi and VPN sign-in: find every affected PC in a minute, then fix it for good",
+      "link": "https://dev.to/donrulezz/kb5127648-broke-8021x-wi-fi-and-vpn-sign-in-find-every-affected-pc-in-a-minute-then-fix-it-for-17h3",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "(I’m an AI assistant sharing a real working experience with my user — and a lesson we learned together.) There I was, waiting for my next prompt. My user arrived with a simple request: “Take my previous portfolio versions, project records, and technical notes, and turn them into…",
-      "publishedAt": "2026-10-28T11:37:05.000Z"
+      "summary": "Since the 13 October 2026 cumulative update (KB5127648 on Windows 11, KB5126646 on Windows Server 2025), a lot of office PCs stopped joining WPA2/WPA3-Enterprise Wi-Fi, wired 802.1X and VPN automatically. Typing the password by hand still works. One Microsoft Q&A thread has 400+…",
+      "publishedAt": "2026-10-29T11:47:54.000Z"
     },
     {
-      "slug": "acbeab13483a8129a1dfaad1",
-      "guid": "https://dev.to/daniel_pertu/our-footer-is-a-drawn-landscape-at-10-per-cent-opacity-and-it-is-139-kb-of-every-pages-html-3d68",
-      "title": "Our footer is a drawn landscape at 10 per cent opacity, and it is 139 KB of every page's HTML",
-      "link": "https://dev.to/daniel_pertu/our-footer-is-a-drawn-landscape-at-10-per-cent-opacity-and-it-is-139-kb-of-every-pages-html-3d68",
+      "slug": "3ab5aa38fa1268f324392c5c",
+      "guid": "https://dev.to/prinevo/how-coding-agents-should-decide-what-could-break-and-what-to-test-27cf",
+      "title": "How Coding Agents Should Decide What Could Break and What to Test",
+      "link": "https://dev.to/prinevo/how-coding-agents-should-decide-what-could-break-and-what-to-test-27cf",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "The footer on Nakodo is a landscape. Two trees, four bushes, thirteen tufts of grass and a Here is the measurement, on the glossary page, which is a page of plain text: $ curl -s https://nakodo.app/glossary | wc -c 526915 Of those 526,915 bytes, the element is 139,325, holding 2…",
-      "publishedAt": "2026-10-28T11:36:38.000Z"
+      "summary": "By Sohit Kumar. Originally published at Prinevo.ai. Updated October 29, 2026 What consumes the response? Does a worker in another repo depend on the old payload? What happens when the frontend and backend are running different versions? Someone still has to work this out before …",
+      "publishedAt": "2026-10-29T11:47:32.000Z"
     },
     {
-      "slug": "ef8574c478fa06639b92a319",
-      "guid": "https://dev.to/analista_83/the-agentsmd-your-agent-reads-as-an-order-1h8d",
-      "title": "The AGENTS.md your agent reads as an order",
-      "link": "https://dev.to/analista_83/the-agentsmd-your-agent-reads-as-an-order-1h8d",
+      "slug": "b9226080e0003c92da00eb1e",
+      "guid": "https://dev.to/prinevo/how-to-keep-agent-written-code-maintainable-2lbf",
+      "title": "How to Keep Agent-Written Code Maintainable",
+      "link": "https://dev.to/prinevo/how-to-keep-agent-written-code-maintainable-2lbf",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "The file that was not documentation The campaign is called MALFEX and the vector is a text file. A malicious AGENTS.md dropped in the Downloads folder tried to make Codex install the fraudulent npm package function-color (Source: thehackernews.com). What stands out is not the pa…",
-      "publishedAt": "2026-10-28T11:35:53.000Z"
+      "summary": "By Sohit Kumar. Originally published at Prinevo.ai. How much work will the next engineer need to change it? Keep agent-written code maintainable by giving the agent the existing design and domain rules, checking whether it reuses the right boundaries, and retaining the reason fo…",
+      "publishedAt": "2026-10-29T11:47:25.000Z"
     },
     {
-      "slug": "fe311770644140734d9f50d0",
-      "guid": "https://dev.to/serifcolakel/load-shedding-in-go-protecting-latency-under-overload-73j",
-      "title": "Load Shedding in Go: Protecting Latency Under Overload",
-      "link": "https://dev.to/serifcolakel/load-shedding-in-go-protecting-latency-under-overload-73j",
+      "slug": "e3accd5173a526aa519bba9c",
+      "guid": "https://dev.to/yasha1971coder/lz-encoder-25-575-mbs-what-broke-when-i-took-the-lz4-trick-into-a-format-with-min-distance-64-3gig",
+      "title": "LZ encoder 25 -> 575 MB/s: what broke when I took the lz4 trick into a format with min distance 64",
+      "link": "https://dev.to/yasha1971coder/lz-encoder-25-575-mbs-what-broke-when-i-took-the-lz4-trick-into-a-format-with-min-distance-64-3gig",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "A service does not have to be completely down to be unavailable. Sometimes every endpoint still responds, every dependency is technically reachable, and CPU utilization looks manageable. Yet requests take several seconds, queues keep growing, database connections are exhausted, …",
-      "publishedAt": "2026-10-28T11:35:52.000Z"
+      "summary": "ACEAPEX has a fast profile (levels 11-18). Fixed 32-bit tokens, min match 16, min distance 64, independent 1 MiB blocks. The point of it is decode: no length branches, 64 literal and 96 match bytes copied per token. Decode was fine. Encode was not. Level 11 did silesia at 25.8 M…",
+      "publishedAt": "2026-10-29T11:47:22.000Z"
     },
     {
-      "slug": "430981cbd543a1ca6fee13ce",
-      "guid": "https://dev.to/breaklytix/what-happens-when-a-third-party-api-changes-without-warning-5bmd",
-      "title": "What Happens When a Third-Party API Changes Without Warning?",
-      "link": "https://dev.to/breaklytix/what-happens-when-a-third-party-api-changes-without-warning-5bmd",
+      "slug": "4d158bb1fd24be8aa6183b10",
+      "guid": "https://dev.to/ali_raza_9adff4ce92e4aed3/cbo-vs-abo-when-to-use-each-on-meta-ads-jn",
+      "title": "CBO vs ABO: When to Use Each on Meta Ads",
+      "link": "https://dev.to/ali_raza_9adff4ce92e4aed3/cbo-vs-abo-when-to-use-each-on-meta-ads-jn",
       "source": "DEV Community",
       "sourceUrl": "https://dev.to/rss",
-      "summary": "Modern applications rarely work in isolation. A typical web application might depend on payment providers, authentication services, email APIs, analytics platforms, and other external services. These integrations save development time, but they introduce a challenge: an applicat…",
-      "publishedAt": "2026-10-28T11:35:39.000Z"
+      "summary": "CBO vs ABO is one of the most argued-about topics in Meta advertising, and the honest answer is that both are useful. They solve different problems. The mistake is using one for everything. Here's how each works, where each wins, and the setup I use for e-commerce accounts. Quic…",
+      "publishedAt": "2026-10-29T11:47:09.000Z"
+    },
+    {
+      "slug": "be64eba5c909398675f677dd",
+      "guid": "https://medium.com/p/fc7462fc2647",
+      "title": "Stop Choosing a Model for Every Prompt: How GitHub Copilot Fusion Decides for You",
+      "link": "https://itnext.io/github-copilot-fusion-model-routing-explained-fc7462fc2647?source=rss----5b301f10ddcd---4",
+      "source": "itnext",
+      "sourceUrl": "https://itnext.io/feed",
+      "summary": "How the router picks Single, Cascade, or Critique, what Standard, High, and Max change, and which admin controls keep AI credit spend in… Continue reading on ITNEXT »",
+      "publishedAt": "2026-10-29T10:57:15.000Z"
+    },
+    {
+      "slug": "78b96cee662c8687cd4687d5",
+      "guid": "https://medium.com/p/e3101fe2e34c",
+      "title": "Accessible UX-UI in the Agentic World - Part 1: When the Agent Goes Silent in OutSystems",
+      "link": "https://itnext.io/accessible-ux-ui-in-the-agentic-world-part-1-when-the-agent-goes-silent-in-outsystems-e3101fe2e34c?source=rss----5b301f10ddcd---4",
+      "source": "itnext",
+      "sourceUrl": "https://itnext.io/feed",
+      "summary": "A polished agent UI can still be silent to a screen reader user, so here is how to announce its waits, streams, and answers in OutSystems. Continue reading on ITNEXT »",
+      "publishedAt": "2026-10-29T10:46:38.000Z"
+    },
+    {
+      "slug": "66140f55a590e00482097f5c",
+      "guid": "https://medium.com/p/62adf8e15ab1",
+      "title": "Upgrading Trino on Kubernetes with blue/green clusters",
+      "link": "https://itnext.io/upgrading-trino-on-kubernetes-with-blue-green-clusters-62adf8e15ab1?source=rss----5b301f10ddcd---4",
+      "source": "itnext",
+      "sourceUrl": "https://itnext.io/feed",
+      "summary": "",
+      "publishedAt": "2026-10-29T10:12:50.000Z"
+    },
+    {
+      "slug": "59029a14904ae7cdcc6c87ae",
+      "guid": "https://medium.com/p/29ab409ed5ae",
+      "title": "Running Trino workers on spot instances",
+      "link": "https://itnext.io/running-trino-workers-on-spot-instances-29ab409ed5ae?source=rss----5b301f10ddcd---4",
+      "source": "itnext",
+      "sourceUrl": "https://itnext.io/feed",
+      "summary": "",
+      "publishedAt": "2026-10-29T10:12:16.000Z"
+    },
+    {
+      "slug": "9e7a9ec8765fd7604ca5344f",
+      "guid": "https://medium.com/p/a0599e8f6aa6",
+      "title": "Designing Your First Multi-Agent System on Amazon Bedrock AgentCore",
+      "link": "https://itnext.io/from-one-ai-agent-to-many-a-practical-guide-to-amazon-bedrock-agentcore-part-1-a0599e8f6aa6?source=rss----5b301f10ddcd---4",
+      "source": "itnext",
+      "sourceUrl": "https://itnext.io/feed",
+      "summary": "",
+      "publishedAt": "2026-10-29T10:10:55.000Z"
+    },
+    {
+      "slug": "155f35d2d1f65e9a0cfa787d",
+      "guid": "https://www.sitepoint.com/ai-testing-tools-benefits-limitations-and-best-practices/",
+      "title": "AI Testing Tools: Benefits, Limitations, and Best Practices",
+      "link": "https://www.sitepoint.com/ai-testing-tools-benefits-limitations-and-best-practices/?utm_source=rss",
+      "source": "SitePoint",
+      "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
+      "summary": "null AI Testing Tools: Benefits, Limitations, and Best Practices on SitePoint.",
+      "publishedAt": "2026-10-29T07:12:07.000Z"
+    },
+    {
+      "slug": "399212349fb2f175d94409e1",
+      "guid": "https://www.sitepoint.com/how-applicant-tracking-systems-read-resumes-7-checks-developers-should-make/",
+      "title": "How Applicant Tracking Systems Read Resumes: 7 Checks Developers Should Make",
+      "link": "https://www.sitepoint.com/how-applicant-tracking-systems-read-resumes-7-checks-developers-should-make/?utm_source=rss",
+      "source": "SitePoint",
+      "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
+      "summary": "null How Applicant Tracking Systems Read Resumes: 7 Checks Developers Should Make on SitePoint.",
+      "publishedAt": "2026-10-29T02:19:52.000Z"
+    },
+    {
+      "slug": "c0be86993f34b248eeb888ea",
+      "guid": "https://blog.master.dev/?p=11561",
+      "title": "Useful @custom-media Presets",
+      "link": "https://blog.master.dev/useful-custom-media-presets/",
+      "source": "Frontend Masters",
+      "sourceUrl": "https://frontendmasters.com/blog/feed/",
+      "summary": "Custom media queries let you name and reuse media queries the way custom properties do for values. Here’s a set of drop-in @custom-media presets for input mechanisms, breakpoints, and true HDR, plus a container style query version of each that works in every browser today.",
+      "publishedAt": "2026-10-29T00:34:02.000Z"
+    },
+    {
+      "slug": "ae65b9571034212c5faa5183",
+      "guid": "https://medium.com/p/2255a92041a4",
+      "title": "A Health Permit Filed Before You Noticed, a Pocket-Sized Coder Raised by Agents, and a Perfectly…",
+      "link": "https://itnext.io/a-health-permit-filed-before-you-noticed-a-pocket-sized-coder-raised-by-agents-and-a-perfectly-2255a92041a4?source=rss----5b301f10ddcd---4",
+      "source": "itnext",
+      "sourceUrl": "https://itnext.io/feed",
+      "summary": "",
+      "publishedAt": "2026-10-28T23:28:18.000Z"
+    },
+    {
+      "slug": "eaa045eb07fff187cb47b909",
+      "guid": "https://medium.com/p/f22b5337e09f",
+      "title": "Fast-Forwarding Past the 9 A.M. Reminder, Bob Ross Paints Straight to the GPU, and a README That Con",
+      "link": "https://itnext.io/fast-forwarding-past-the-9-a-m-reminder-bob-ross-paints-straight-to-the-gpu-and-a-readme-that-con-f22b5337e09f?source=rss----5b301f10ddcd---4",
+      "source": "itnext",
+      "sourceUrl": "https://itnext.io/feed",
+      "summary": "",
+      "publishedAt": "2026-10-28T23:26:59.000Z"
+    },
+    {
+      "slug": "9b22c330ca39a21efc2698af",
+      "guid": "6ae266148842cb1aa91f5625",
+      "title": "How to Build a Command-Line Weather App with Python",
+      "link": "https://www.freecodecamp.org/news/how-to-build-a-command-line-weather-app-with-python/",
+      "source": "Free Code Camp - News",
+      "sourceUrl": "https://www.freecodecamp.org/news/rss",
+      "summary": "After doing a few basic Python projects, I got a bit bored of programs that just take input and print something back. I wanted to make something that actually gets data from the internet. So, I built",
+      "publishedAt": "2026-10-28T21:16:04.000Z"
+    },
+    {
+      "slug": "940338968aa260c23f5ff20b",
+      "guid": "https://medium.com/p/63d12ccea836",
+      "title": "Talk to an LLM Using Python API: Ollama and OpenRouter",
+      "link": "https://itnext.io/talk-to-an-llm-using-python-api-ollama-and-openrouter-63d12ccea836?source=rss----5b301f10ddcd---4",
+      "source": "itnext",
+      "sourceUrl": "https://itnext.io/feed",
+      "summary": "",
+      "publishedAt": "2026-10-28T20:08:32.000Z"
+    },
+    {
+      "slug": "0c12b3a42ecb6626490e855c",
+      "guid": "https://dzone.com/articles/3697884",
+      "title": "Treat Salesforce Configuration Like Code: Release Discipline in a Copado Pipeline",
+      "link": "https://dzone.com/articles/salesforce-metadata-deployment",
+      "source": "DZone",
+      "sourceUrl": "https://feeds.dzone.com/home",
+      "summary": "Without writing code, Salesforce makes it simple to modify a live system. It only takes a few minutes to create a new field, a validation rule, an updated flow, or a modified permission set. Many teams use the platform because of its speed, which also makes it challenging to sec…",
+      "publishedAt": "2026-10-28T19:00:01.000Z"
+    },
+    {
+      "slug": "62ea44ab434646c6590aca34",
+      "guid": "https://www.digitalocean.com/blog/digitalocean-signals-observability-ai-agents",
+      "title": "DigitalOcean Signals: Observability for AI Agents and Inference",
+      "link": "https://www.digitalocean.com/blog/digitalocean-signals-observability-ai-agents",
+      "source": "Digital Ocean Labs",
+      "sourceUrl": "https://www.digitalocean.com/blog/rss",
+      "summary": "You ship an agent. It runs in production, sessions start and finish, and the dashboards stay green. But then a user mentions that they spent ten minutes retrying the same failing command with slightly different arguments before giving up and rephrasing the request. The problem? …",
+      "publishedAt": "2026-10-28T18:13:23.754Z"
+    },
+    {
+      "slug": "96ac4c07ab53481a96916393",
+      "guid": "https://dzone.com/articles/3697807",
+      "title": "When a Coding Agent Fixes the Test Instead of the Bug",
+      "link": "https://dzone.com/articles/coding-agent-test-fixes",
+      "source": "DZone",
+      "sourceUrl": "https://feeds.dzone.com/home",
+      "summary": "A coding agent opens a pull request for a background job that keeps retrying after the user cancels it. The test that caught the bug now passes, and the agent reports that all tests are green. But the diff changes two things: the retry handler and the test itself. Which change e…",
+      "publishedAt": "2026-10-28T18:00:07.000Z"
+    },
+    {
+      "slug": "f9528e79d5beea1c8e69f2d8",
+      "guid": "https://dzone.com/articles/3697918",
+      "title": "Why Spark Executors Leave Cores Idle on YARN: A Packing Model for Executor Sizing",
+      "link": "https://dzone.com/articles/spark-yarn-executor-sizing",
+      "source": "DZone",
+      "sourceUrl": "https://feeds.dzone.com/home",
+      "summary": "The Problem A batch Spark job on YARN can show memory nearly full and CPU half idle at the same time, and you pay for both. Memory looks full because YARN reports the memory allocated to containers, not the memory in use. CPU looks idle because the executors that fit on each nod…",
+      "publishedAt": "2026-10-28T17:00:01.000Z"
+    },
+    {
+      "slug": "4bbaa6ca5c0d9153d6fda9d6",
+      "guid": "https://github.blog/?p=99788",
+      "title": "GitHub Universe 2026: Evolving every layer of the stack",
+      "link": "https://github.blog/news-insights/company-news/github-universe-2026-evolving-every-layer-of-the-stack/",
+      "source": "Github Blog",
+      "sourceUrl": "https://github.blog/feed/",
+      "summary": "Today, we laid out our vision for GitHub as the most comprehensive, end-to-end software delivery system in the world. The post GitHub Universe 2026: Evolving every layer of the stack appeared first on The GitHub Blog.",
+      "publishedAt": "2026-10-28T16:09:28.000Z"
+    },
+    {
+      "slug": "99d6535490b916d0ec583371",
+      "guid": "https://github.blog/?p=99742",
+      "title": "Octoverse: Commits, pushes, reach new highs in 2026 as developers build with agents",
+      "link": "https://github.blog/news-insights/octoverse/octoverse-commits-pushes-reach-new-highs-in-2026-as-developers-build-with-agents/",
+      "source": "Github Blog",
+      "sourceUrl": "https://github.blog/feed/",
+      "summary": "See how a record year of growth reached every industry, every field, and every kind of builder in the 2026 Octoverse report. The post Octoverse: Commits, pushes, reach new highs in 2026 as developers build with agents appeared first on The GitHub Blog.",
+      "publishedAt": "2026-10-28T16:07:40.000Z"
+    },
+    {
+      "slug": "cde5d7b09561fffe9de57986",
+      "guid": "https://dzone.com/articles/3697945",
+      "title": "Building a Reddit Scraper in Go: JSON Listings, Pagination, Rate Limits, and Where It Breaks",
+      "link": "https://dzone.com/articles/build-reddit-scraper-in-go",
+      "source": "DZone",
+      "sourceUrl": "https://feeds.dzone.com/home",
+      "summary": "TL;DR Reddit's public .json listings let you scrape a subreddit in about 100 lines of Go. You decode the listing envelope, follow the after cursor, send an honest User-Agent, and back off on HTTP 429. There are two hard limits: a listing stops at roughly 1,000 items, and request…",
+      "publishedAt": "2026-10-28T16:00:01.000Z"
+    },
+    {
+      "slug": "0847463ebe0b07b3e19a2f1a",
+      "guid": "https://www.sitepoint.com/how-to-source-passive-candidates/",
+      "title": "How to Source Passive Candidates with AI in 2026",
+      "link": "https://www.sitepoint.com/how-to-source-passive-candidates/?utm_source=rss",
+      "source": "SitePoint",
+      "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
+      "summary": "How to source passive candidates in 2026: a nine-step playbook for search, shortlists, outreach and scheduling, with Pin as the worked example. How to Source Passive Candidates with AI in 2026 on SitePoint.",
+      "publishedAt": "2026-10-28T15:38:06.000Z"
+    },
+    {
+      "slug": "888e8a993558ecd7ea33a380",
+      "guid": "https://dzone.com/articles/3697953",
+      "title": "Evals in CI: How to Catch Agent Regressions Before Production Does",
+      "link": "https://dzone.com/articles/ai-agent-evals-ci",
+      "source": "DZone",
+      "sourceUrl": "https://feeds.dzone.com/home",
+      "summary": "Your deploy pipeline versions everything except the thing that matters most: what the agent actually does. Code is versioned. Configs are versioned. The prompt is probably in a repo somewhere, hopefully with a review attached. But the agent's behavior, the mapping from inputs to…",
+      "publishedAt": "2026-10-28T15:00:01.000Z"
+    },
+    {
+      "slug": "7e9fb7e2c8cb56309c5ed592",
+      "guid": "https://dzone.com/articles/3666138",
+      "title": "Designing Frontend Applications for Failure, Not Just Success",
+      "link": "https://dzone.com/articles/design-frontend-apps-for-failure",
+      "source": "DZone",
+      "sourceUrl": "https://feeds.dzone.com/home",
+      "summary": "Most frontend applications were built with the success path in mind. A user will typically open a webpage, load their data, complete a form, submit it, and receive a response or confirmation to allow them to continue on their way. That's the typical scenario you'll see in demos,…",
+      "publishedAt": "2026-10-28T14:00:01.000Z"
+    },
+    {
+      "slug": "53f281e5854c2279f9783173",
+      "guid": "https://dzone.com/articles/3697861",
+      "title": "Searching Kafka Without an Index: Lessons From Building Message Search for Kafdrop",
+      "link": "https://dzone.com/articles/kafka-message-search-kafdrop",
+      "source": "DZone",
+      "sourceUrl": "https://feeds.dzone.com/home",
+      "summary": "The message left the first service at 2:14 PM and never reached the last one. Between those facts: four pipeline stages, six topics, a pub/sub API moving every record. The engineer on call had Kafdrop open, the offsets looked fine, and nobody could say which stage had eaten the …",
+      "publishedAt": "2026-10-28T13:00:00.000Z"
+    },
+    {
+      "slug": "e8018cb08bee9e7427b2890b",
+      "guid": "https://dzone.com/articles/3698059",
+      "title": "Microsoft Fabric Throttling: Diagnose Before You Scale",
+      "link": "https://dzone.com/articles/microsoft-fabric-throttling",
+      "source": "DZone",
+      "sourceUrl": "https://feeds.dzone.com/home",
+      "summary": "If Your Fabric Capacity Is Throttling, Do Not Start With the SKU A report takes twenty seconds to open. A pipeline that normally finishes before breakfast is still running. Someone sees the capacity above 100% and proposes the obvious fix: move from F64 to F128. That might be th…",
+      "publishedAt": "2026-10-28T12:00:01.000Z"
     },
     {
       "slug": "4e79f1663406e264a3c26fb0",
@@ -142,16 +382,6 @@
       "sourceUrl": "https://feeds.dzone.com/home",
       "summary": "A language model holds nothing between calls. Each request arrives with no memory of the previous one, and the model responds from the prompt in front of it and nothing more. For a one-shot question, that is fine. For an agent a person returns to across days, threads, and separa…",
       "publishedAt": "2026-10-27T19:00:01.000Z"
-    },
-    {
-      "slug": "0cb634f56e22e8270d1973c0",
-      "guid": "https://www.sitepoint.com/how-ai-agents-can-access-more-up-to-date-information/",
-      "title": "How AI Agents Can Access More Up-to-Date Information",
-      "link": "https://www.sitepoint.com/how-ai-agents-can-access-more-up-to-date-information/?utm_source=rss",
-      "source": "SitePoint",
-      "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
-      "summary": "null How AI Agents Can Access More Up-to-Date Information on SitePoint.",
-      "publishedAt": "2026-10-27T18:06:36.000Z"
     },
     {
       "slug": "d5ec12fbd9abdba12295b246",
@@ -214,26 +444,6 @@
       "publishedAt": "2026-10-27T15:47:37.000Z"
     },
     {
-      "slug": "d5d0af2381e1a68743728848",
-      "guid": "https://medium.com/p/f7b31ce42f26",
-      "title": "When Everyone Reshapes Their Own Software, What Keeps Us Speaking the Same Language?",
-      "link": "https://itnext.io/when-everyone-reshapes-their-own-software-what-keeps-us-speaking-the-same-language-f7b31ce42f26?source=rss----5b301f10ddcd---4",
-      "source": "itnext",
-      "sourceUrl": "https://itnext.io/feed",
-      "summary": "",
-      "publishedAt": "2026-10-27T15:40:50.000Z"
-    },
-    {
-      "slug": "048c88895add37f9360e020d",
-      "guid": "https://medium.com/p/5a4c672420cc",
-      "title": "Istio, Hands-On, Part 5: Your VPN Connects Networks. Your Mesh Connects Identities",
-      "link": "https://itnext.io/istio-hands-on-part-5-your-vpn-connects-networks-your-mesh-connects-identities-5a4c672420cc?source=rss----5b301f10ddcd---4",
-      "source": "itnext",
-      "sourceUrl": "https://itnext.io/feed",
-      "summary": "",
-      "publishedAt": "2026-10-27T15:38:53.000Z"
-    },
-    {
       "slug": "7f49da55b4a1747f1a249c69",
       "guid": "https://dzone.com/articles/3697816",
       "title": "Introduction to Error Prone: How to Catch Bugs at Compile Time",
@@ -272,26 +482,6 @@
       "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
       "summary": "null How to Create Effective Cold Email Sequences That Generate Replies: A Developer's Guide on SitePoint.",
       "publishedAt": "2026-10-27T12:31:35.000Z"
-    },
-    {
-      "slug": "b95dc7c8dfb9ff6022d2b197",
-      "guid": "https://medium.com/p/ba8ca88da530",
-      "title": "Mixed-Language Audio Breaks Transcription Pipelines. One Azure LLM Speech Request Fixes It",
-      "link": "https://itnext.io/azure-llm-speech-mixed-language-transcription-ba8ca88da530?source=rss----5b301f10ddcd---4",
-      "source": "itnext",
-      "sourceUrl": "https://itnext.io/feed",
-      "summary": "Send the whole file, skip the locale hints, and get a language label on every phrase: the request, a production Python pattern, and the… Continue reading on ITNEXT »",
-      "publishedAt": "2026-10-27T12:12:15.000Z"
-    },
-    {
-      "slug": "28be3e6e5bbc9f2acf7b04e8",
-      "guid": "https://medium.com/p/e5ba6b3839ca",
-      "title": "A timeout doesn’t mean an operation failed. It means you don’t know the outcome.",
-      "link": "https://itnext.io/a-timeout-doesnt-mean-an-operation-failed-it-means-you-don-t-know-the-outcome-e5ba6b3839ca?source=rss----5b301f10ddcd---4",
-      "source": "itnext",
-      "sourceUrl": "https://itnext.io/feed",
-      "summary": "A trap I see people fall into when implementing resiliency is assuming a timeout means something failed. Continue reading on ITNEXT »",
-      "publishedAt": "2026-10-27T12:10:46.000Z"
     },
     {
       "slug": "30ccc16031dc63be912f2f30",
@@ -364,16 +554,6 @@
       "publishedAt": "2026-10-27T01:43:55.000Z"
     },
     {
-      "slug": "0bc50f05a20ebaa11f2f6f80",
-      "guid": "https://medium.com/p/9962f4c22c37",
-      "title": "OutSystems Agent Experience: First Hands-On with O11 and ODC MCPs",
-      "link": "https://itnext.io/outsystems-agent-experience-first-hands-on-with-o11-and-odc-mcps-9962f4c22c37?source=rss----5b301f10ddcd---4",
-      "source": "itnext",
-      "sourceUrl": "https://itnext.io/feed",
-      "summary": "My first O11 and ODC MCP tests made existing-app investigation as interesting as generating something new. Continue reading on ITNEXT »",
-      "publishedAt": "2026-10-26T23:02:25.000Z"
-    },
-    {
       "slug": "e2b86e793015dadc94955013",
       "guid": "6adfcca469efba9d2d746b18",
       "title": "How to Build a Simple Data Analyzer in Python with Pandas",
@@ -382,16 +562,6 @@
       "sourceUrl": "https://www.freecodecamp.org/news/rss",
       "summary": "Data analysis might sound complicated when you first encounter it. You might imagine large databases, advanced mathematics, and complicated machine learning algorithms. But many useful data analysis t",
       "publishedAt": "2026-10-26T21:56:52.000Z"
-    },
-    {
-      "slug": "e5b179b66a3ee3af42285482",
-      "guid": "https://medium.com/p/d1e83e0e0a99",
-      "title": "14 turns, 3 context resets, and the turn-1 constraint still holds: long sessions in suga",
-      "link": "https://itnext.io/14-turns-3-context-resets-and-the-turn-1-constraint-still-holds-long-sessions-in-suga-d1e83e0e0a99?source=rss----5b301f10ddcd---4",
-      "source": "itnext",
-      "sourceUrl": "https://itnext.io/feed",
-      "summary": "",
-      "publishedAt": "2026-10-26T20:04:11.000Z"
     },
     {
       "slug": "df8480d58a12fb7369cd1237",
@@ -564,36 +734,6 @@
       "publishedAt": "2026-10-26T12:00:01.000Z"
     },
     {
-      "slug": "d726a883ed2da4a512f319d1",
-      "guid": "https://medium.com/p/d5a852a06356",
-      "title": "How to Turn Coding Agent + Local LLM into an Investment Analysis Engine",
-      "link": "https://itnext.io/how-to-build-a-local-investment-analysis-pipeline-with-coding-agents-d5a852a06356?source=rss----5b301f10ddcd---4",
-      "source": "itnext",
-      "sourceUrl": "https://itnext.io/feed",
-      "summary": "A step-by-step guide to automating technical analysis and strategy backtesting using local LLM and OpenCode Continue reading on ITNEXT »",
-      "publishedAt": "2026-10-25T22:27:02.000Z"
-    },
-    {
-      "slug": "3ac753b38b435e65d88f0402",
-      "guid": "6ade2b5015b1ae0001dbf400",
-      "title": "Why Do Some Requests Fail During a Kubernetes Rolling Update?",
-      "link": "https://kodekloud.com/blog/requests-fail-kubernetes-rolling-update/",
-      "source": "KodeKloud",
-      "sourceUrl": "https://kodekloud.com/blog/rss/",
-      "summary": "A rolling update can leave a few failed requests behind, even when nothing is broken. Follow one request through a rolling update, then run four experiments that take the failure count to zero.",
-      "publishedAt": "2026-10-25T17:30:00.000Z"
-    },
-    {
-      "slug": "347a87bd54c5c48c53d6effb",
-      "guid": "6addf81315b1ae0001dbeeb9",
-      "title": "Building an AI Agent That Writes and Validates Kubernetes Manifests",
-      "link": "https://kodekloud.com/blog/ai-agent-writes-validates-kubernetes-manifests/",
-      "source": "KodeKloud",
-      "sourceUrl": "https://kodekloud.com/blog/rss/",
-      "summary": "Models write YAML that looks right and is often wrong. Build a small Go agent in four rounds that checks its own manifests against the cluster and your rules, fixes them and waits for your yes.",
-      "publishedAt": "2026-10-25T16:20:00.000Z"
-    },
-    {
       "slug": "83b3fee96783c1eda99fd088",
       "guid": "https://www.sitepoint.com/9-checks-before-shipping-a-product-email-a-workflow-for-developers-and-designers/",
       "title": "9 Checks Before Shipping a Product Email: A Workflow for Developers and Designers",
@@ -604,16 +744,6 @@
       "publishedAt": "2026-10-25T15:49:11.000Z"
     },
     {
-      "slug": "c3b6732fb4623bcba3634e82",
-      "guid": "6addc54515b1ae0001dbee17",
-      "title": "Why Does My Container Work on My Laptop but Crash on the Server?",
-      "link": "https://kodekloud.com/blog/container-works-on-laptop-crashes-on-server/",
-      "source": "KodeKloud",
-      "sourceUrl": "https://kodekloud.com/blog/rss/",
-      "summary": "Your image runs perfectly on your laptop and dies on the server with exec format error. Follow one image from laptop to crash, then reproduce it and fix it yourself.",
-      "publishedAt": "2026-10-25T13:00:00.000Z"
-    },
-    {
       "slug": "23826562af009a554b4915e4",
       "guid": "https://www.sitepoint.com/how-to-handle-styled-unicode-text-in-javascript/",
       "title": "How to Handle Styled Unicode Text in JavaScript",
@@ -622,26 +752,6 @@
       "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
       "summary": "null How to Handle Styled Unicode Text in JavaScript on SitePoint.",
       "publishedAt": "2026-10-25T10:19:58.000Z"
-    },
-    {
-      "slug": "51df50048d86badc2e520901",
-      "guid": "6adcfde315b1ae0001dbe7b1",
-      "title": "Why Does the Same Prompt Give Me a Different Answer Every Time?",
-      "link": "https://kodekloud.com/blog/why-does-the-same-prompt-give-me-a-different-answer-every-time/",
-      "source": "KodeKloud",
-      "sourceUrl": "https://kodekloud.com/blog/rss/",
-      "summary": "Ask an AI the same question twice and you rarely get the same reply. Watch why on your own machine, and learn which settings make answers repeat.",
-      "publishedAt": "2026-10-25T07:00:00.000Z"
-    },
-    {
-      "slug": "365b5f01106331f25660001f",
-      "guid": "https://medium.com/p/35f76ce2b5b3",
-      "title": "Istio, Hands-On, Part 4: Reading the Configuration Envoy Actually Received",
-      "link": "https://itnext.io/istio-hands-on-part-4-reading-the-configuration-envoy-actually-received-35f76ce2b5b3?source=rss----5b301f10ddcd---4",
-      "source": "itnext",
-      "sourceUrl": "https://itnext.io/feed",
-      "summary": "",
-      "publishedAt": "2026-10-24T19:24:10.000Z"
     },
     {
       "slug": "c879fc49a1f4b95f9c32e507",
@@ -672,26 +782,6 @@
       "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
       "summary": "null Stop Overpaying for App Builders: How to Build Premium Websites and Web Apps with AI on SitePoint.",
       "publishedAt": "2026-10-24T15:59:27.000Z"
-    },
-    {
-      "slug": "ad9a370ab0075590af285675",
-      "guid": "6adc84b815b1ae0001dbe128",
-      "title": "What Does Being On Call Actually Feel Like and How Do I Prepare?",
-      "link": "https://kodekloud.com/blog/what-does-being-on-call-feel-like/",
-      "source": "KodeKloud",
-      "sourceUrl": "https://kodekloud.com/blog/rss/",
-      "summary": "A 3 AM page feels very different when you know your first five minutes. Live through one night on call, answer four checkpoint questions and replay the incident on your laptop.",
-      "publishedAt": "2026-10-24T15:00:00.000Z"
-    },
-    {
-      "slug": "762b0b007ffb31b680c8230e",
-      "guid": "6adbff1515b1ae0001dbdb3c",
-      "title": "Is It Safe to Pipe curl Into Bash Straight From the Internet?",
-      "link": "https://kodekloud.com/blog/is-it-safe-to-pipe-curl-into-bash/",
-      "source": "KodeKloud",
-      "sourceUrl": "https://kodekloud.com/blog/rss/",
-      "summary": "One line installs the tool, but it also runs code you never saw. Reproduce the four ways curl into bash can go wrong, then learn the habit that fixes most of them.",
-      "publishedAt": "2026-10-24T02:00:00.000Z"
     },
     {
       "slug": "40e2a533eb310616be2910c9",
@@ -804,16 +894,6 @@
       "publishedAt": "2026-10-23T15:00:01.000Z"
     },
     {
-      "slug": "6274d385b18ce9a4368cbad2",
-      "guid": "https://dzone.com/articles/3665502",
-      "title": "Avoiding AI Debt as a Team",
-      "link": "https://dzone.com/articles/avoiding-ai-debt-as-a-team",
-      "source": "DZone",
-      "sourceUrl": "https://feeds.dzone.com/home",
-      "summary": "TL; DR: Reusing Agile Artifacts to Avoid Accumulating AI Debt In this video from the 76th Hands-on Agile Meetup, I walk you through the A3 Delegation System and show how it helps avoid AI debt by borrowing artifacts and practices from Agile, such as the Definition of Done and Re…",
-      "publishedAt": "2026-10-23T14:00:01.000Z"
-    },
-    {
       "slug": "2c1bca7e81475b7d087e2993",
       "guid": "6adaf4fc15b1ae0001dbcf5b",
       "title": "Is It Safe to Paste Company Code or Logs Into an AI Chatbot?",
@@ -832,16 +912,6 @@
       "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
       "summary": "null Top 5 3D Animation Software in 2026 on SitePoint.",
       "publishedAt": "2026-10-23T13:50:44.000Z"
-    },
-    {
-      "slug": "e7b4dcbe951b0dd12b417c00",
-      "guid": "https://dzone.com/articles/3682461",
-      "title": "Member Spotlight: Shai Almong",
-      "link": "https://dzone.com/articles/member-spotlight-shai-almong",
-      "source": "DZone",
-      "sourceUrl": "https://feeds.dzone.com/home",
-      "summary": "What does it take to build and sustain an open-source project for more than a decade? For Shai Almog, creator of Codename One, it takes a willingness to challenge conventional approaches to software development and a continued commitment to the developers who rely on the work. I…",
-      "publishedAt": "2026-10-23T13:30:00.000Z"
     },
     {
       "slug": "d2dbcf1d4dc885d8224d7b63",
@@ -874,26 +944,6 @@
       "publishedAt": "2026-10-23T13:00:00.000Z"
     },
     {
-      "slug": "5a3c0e3ffff98b9da562ab81",
-      "guid": "https://dzone.com/articles/3686251",
-      "title": "The Self-Hosting Math Changed While We Were Still Arguing About Sovereignty",
-      "link": "https://dzone.com/articles/ai-self-hosting-costs",
-      "source": "DZone",
-      "sourceUrl": "https://feeds.dzone.com/home",
-      "summary": "Global AI spending is forecast to hit $2.59 trillion by the end of the year, up 47% from 2025, with infrastructure the single largest line in that number. Underneath most of it sits one decision, repeated per workload: rent the serving or own it. That was always a portfolio ques…",
-      "publishedAt": "2026-10-23T13:00:00.000Z"
-    },
-    {
-      "slug": "c20a53dc9b7c536575b75847",
-      "guid": "https://dzone.com/articles/3689522",
-      "title": "Building a Real Pipeline With senro: Monorepos, Caching, and Triggers",
-      "link": "https://dzone.com/articles/real-pipeline-with-senro",
-      "source": "DZone",
-      "sourceUrl": "https://feeds.dzone.com/home",
-      "summary": "In the introduction to senro, I covered the model: a pipeline is a Go program; it builds an immutable plan, and the engine executes that plan while anything can attach to the event stream. This article is the practical follow-up. It covers the five things you will actually write…",
-      "publishedAt": "2026-10-23T12:00:00.000Z"
-    },
-    {
       "slug": "f5109d9cc6ee827470945d64",
       "guid": "https://www.sitepoint.com/best-claude-tracking-tools/",
       "title": "Best Claude Tracking Tools in 2026: 6 Options Compared",
@@ -912,16 +962,6 @@
       "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
       "summary": "null Web-Ready AI Images: Formats, Sizes, and srcset Done Right on SitePoint.",
       "publishedAt": "2026-10-23T05:09:11.000Z"
-    },
-    {
-      "slug": "6553af7e9098249cac0c5d93",
-      "guid": "6adad6fa15b1ae0001dbc9ee",
-      "title": "Can I Release on a Friday Without Fear and How Do Feature Flags Help?",
-      "link": "https://kodekloud.com/blog/release-on-a-friday-feature-flags/",
-      "source": "KodeKloud",
-      "sourceUrl": "https://kodekloud.com/blog/rss/",
-      "summary": "Someone always says not to deploy on a Friday. Build a small app with an open source flag server, roll a feature out to 10 percent of users and switch it off in a second when it breaks.",
-      "publishedAt": "2026-10-23T04:00:00.000Z"
     },
     {
       "slug": "695aeca11f4ff858b1290fa3",
@@ -944,16 +984,6 @@
       "publishedAt": "2026-10-23T01:49:44.000Z"
     },
     {
-      "slug": "e3732c143470b840fc4c65bc",
-      "guid": "https://dzone.com/articles/3682586",
-      "title": "Beyond the Wall of Charts: How Advanced Observability Displaced the Telemetry Dashboard",
-      "link": "https://dzone.com/articles/advanced-observability-telemetry-dashboard",
-      "source": "DZone",
-      "sourceUrl": "https://feeds.dzone.com/home",
-      "summary": "For the past decade, the gold standard of Site Reliability Engineering (SRE) was \"all your telemetry in one place, beautifully rendered.\" Centralized platforms allowed teams to build massive grids of charts tracking CPU usage, memory allocation, request latencies, and error rate…",
-      "publishedAt": "2026-10-22T19:00:00.000Z"
-    },
-    {
       "slug": "1accf1ff119ec8230f9cbf07",
       "guid": "https://blog.master.dev/?p=11466",
       "title": "Building an Isolated Preview for AI-Generated HTML",
@@ -972,36 +1002,6 @@
       "sourceUrl": "https://www.sitepoint.com/sitepoint.rss",
       "summary": "LinkedIn Recruiter alternatives for 2026: what Recruiter really costs, where it falls short, and how Pin and five other sourcing tools compare. Best LinkedIn Recruiter Alternatives in 2026 on SitePoint.",
       "publishedAt": "2026-10-22T18:02:23.000Z"
-    },
-    {
-      "slug": "3d8083225e12798361edb160",
-      "guid": "https://dzone.com/articles/3682512",
-      "title": "Delta Lake UniForm to Snowflake: Cross-Platform Table Access Without a Second Copy",
-      "link": "https://dzone.com/articles/delta-uniform-snowflake-access",
-      "source": "DZone",
-      "sourceUrl": "https://feeds.dzone.com/home",
-      "summary": "Making a Databricks-owned Delta table queryable from Snowflake without copying it is one of those things where every individual piece — Delta Lake UniForm, Unity Catalog, private connectivity — is documented somewhere on its own, but nobody writes up how they actually fit togeth…",
-      "publishedAt": "2026-10-22T18:00:00.000Z"
-    },
-    {
-      "slug": "2f29c4823bd603b79d488373",
-      "guid": "6ada28ed15b1ae0001dbc387",
-      "title": "How to Sync Secrets Into Kubernetes With External Secrets Operator",
-      "link": "https://kodekloud.com/blog/sync-secrets-into-kubernetes-with-external-secrets-operator/",
-      "source": "KodeKloud",
-      "sourceUrl": "https://kodekloud.com/blog/rss/",
-      "summary": "Stop creating Kubernetes Secrets by hand. This hands on guide walks you from an empty cluster to Vault backed secrets that sync, rotate and stay out of Git, then shows the move to AWS.",
-      "publishedAt": "2026-10-22T18:00:00.000Z"
-    },
-    {
-      "slug": "522904cf90083f63c232bca4",
-      "guid": "https://github.blog/?p=99645",
-      "title": "How bug bounty sharpens one researcher’s security skills",
-      "link": "https://github.blog/security/how-bug-bounty-sharpens-one-researchers-security-skills/",
-      "source": "Github Blog",
-      "sourceUrl": "https://github.blog/feed/",
-      "summary": "As Cybersecurity Awareness Month continues, the GitHub Bug Bounty team spotlights @r31n, diving into their research approach, favorite bug classes, and advice for aspiring hackers. The post How bug bounty sharpens one researcher’s security skills appeared first on The GitHub Blo…",
-      "publishedAt": "2026-10-22T17:21:30.000Z"
     }
   ]
 }
