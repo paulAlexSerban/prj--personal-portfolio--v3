@@ -1,8 +1,78 @@
 {
   "category": "javascript",
   "label": "JavaScript",
-  "fetchedAt": "2026-10-29T11:50:33.237Z",
+  "fetchedAt": "2026-10-30T11:43:07.146Z",
   "items": [
+    {
+      "slug": "840768c1d0608aa65c3f8c05",
+      "guid": "https://flaviocopes.com/workers-site-audit-crawler/",
+      "title": "Build a tiny site-audit crawler with Workers and Queues",
+      "link": "https://flaviocopes.com/workers-site-audit-crawler/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Build a bounded Cloudflare crawler with Workers, Queues, and D1 to find broken pages, missing titles, and redirect chains in a local test site.",
+      "publishedAt": "2026-10-30T11:00:00.000Z"
+    },
+    {
+      "slug": "ce4efd4eaed9ff06dec32055",
+      "guid": "https://flaviocopes.com/voice-to-text/",
+      "title": "The best voice to text apps for a Mac",
+      "link": "https://flaviocopes.com/voice-to-text/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Handy is the free open source dictation app I use. Compare the other Mac voice to text apps and speech APIs, then dictate a prompt.",
+      "publishedAt": "2026-10-30T10:00:00.000Z"
+    },
+    {
+      "slug": "fc12088b4513b22728f1e968",
+      "guid": "https://flaviocopes.com/durable-agent-approval/",
+      "title": "Build an agent approval flow that survives a restart",
+      "link": "https://flaviocopes.com/durable-agent-approval/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Build a local approval queue with exact message previews, expiring decisions, rejection, and crash recovery. Test it safely with a fake email provider.",
+      "publishedAt": "2026-10-30T08:00:00.000Z"
+    },
+    {
+      "slug": "a43cb414951735b3f732edc2",
+      "guid": "https://flaviocopes.com/altman-cheeky-pint/",
+      "title": "Lessons for builders from Sam Altman's Cheeky Pint interview",
+      "link": "https://flaviocopes.com/altman-cheeky-pint/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Eight practical lessons from Sam Altman and John Collison on code scans, agent teams, budgets, and prices customers can predict.",
+      "publishedAt": "2026-10-30T07:00:00.000Z"
+    },
+    {
+      "slug": "6f5a346861e8848882323a07",
+      "guid": "https://flaviocopes.com/stripe-pay/",
+      "title": "When one product pays another",
+      "link": "https://flaviocopes.com/stripe-pay/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Stripe Pay sends money between businesses by a profile handle. An agent can prepare the transfer. A person still approves the exact amount.",
+      "publishedAt": "2026-10-29T18:00:00.000Z"
+    },
+    {
+      "slug": "437566cb0ff749680c500518",
+      "guid": "https://flaviocopes.com/durable-agent-platforms/",
+      "title": "Pi Durable, Cloudflare Workflows, or Vercel Workflow?",
+      "link": "https://flaviocopes.com/durable-agent-platforms/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Compare agent crash recovery with durable workflow platforms. Follow one research task through storage, retries, approvals, and the work you still own.",
+      "publishedAt": "2026-10-29T16:00:00.000Z"
+    },
+    {
+      "slug": "2be5943b993ce818568f124f",
+      "guid": "https://flaviocopes.com/cloudflare-access-custom-pages/",
+      "title": "How to customize Cloudflare Access pages",
+      "link": "https://flaviocopes.com/cloudflare-access-custom-pages/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Customize Cloudflare Access login, denial, and CLI pages with HTML and Liquid, and tell a blocked visitor what to do next.",
+      "publishedAt": "2026-10-29T14:00:00.000Z"
+    },
     {
       "slug": "bf084c461151af95e08f6ad8",
       "guid": "https://flaviocopes.com/tinyfish/",
@@ -242,76 +312,6 @@
       "sourceUrl": "https://flaviocopes.com/rss.xml",
       "summary": "A software maker's taste shows up in defaults, empty states, and ordinary interactions. Give your app character through decisions that help people use it.",
       "publishedAt": "2026-10-24T15:00:00.000Z"
-    },
-    {
-      "slug": "549c6a01019c44b03679bfa5",
-      "guid": "https://flaviocopes.com/overnight-agent-work/",
-      "title": "What would make an overnight agent useful?",
-      "link": "https://flaviocopes.com/overnight-agent-work/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "An overnight coding agent needs a question worth answering. Start with the decision its result will help you make, and keep the morning review manageable.",
-      "publishedAt": "2026-10-24T13:00:00.000Z"
-    },
-    {
-      "slug": "c0033b88df0c2b6a93b67ef7",
-      "guid": "https://flaviocopes.com/ai-product-availability/",
-      "title": "I care more about the AI product I can use",
-      "link": "https://flaviocopes.com/ai-product-availability/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "An impressive AI roadmap means little when the product you need is unavailable. A practical way to separate future promises from today's useful software.",
-      "publishedAt": "2026-10-24T10:00:00.000Z"
-    },
-    {
-      "slug": "2f7779406bbd72445c7d8f3a",
-      "guid": "https://flaviocopes.com/cursor-computer-use/",
-      "title": "How to use Cursor Computer Use",
-      "link": "https://flaviocopes.com/cursor-computer-use/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Use Cursor Computer Use to test desktop apps and iOS Simulator flows, reproduce UI bugs, and verify fixes with clear prompts and expected results.",
-      "publishedAt": "2026-10-24T08:15:00.000Z"
-    },
-    {
-      "slug": "b77be9f9618824ca9a5e6fe3",
-      "guid": "https://flaviocopes.com/lm-studio-bionic/",
-      "title": "The complete guide to LM Studio Bionic",
-      "link": "https://flaviocopes.com/lm-studio-bionic/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Learn LM Studio Bionic: choose local or cloud models, fix a JavaScript bug step by step, work with documents, and review what the agent changes.",
-      "publishedAt": "2026-10-24T07:00:00.000Z"
-    },
-    {
-      "slug": "536fc9fff56f69d950b00115",
-      "guid": "https://flaviocopes.com/secure-vps/",
-      "title": "How to secure a VPS with Tailscale and Cloudflare Tunnel",
-      "link": "https://flaviocopes.com/secure-vps/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Secure a VPS with private SSH over Tailscale and public web traffic through Cloudflare Tunnel. A complete guide to setup, firewalls, testing, and recovery.",
-      "publishedAt": "2026-10-23T19:00:00.000Z"
-    },
-    {
-      "slug": "d5012465fa69cd9374045734",
-      "guid": "https://flaviocopes.com/app-store-review-native-apps/",
-      "title": "What to check before submitting a native app to App Review",
-      "link": "https://flaviocopes.com/app-store-review-native-apps/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Prepare an Apple app for review, choose useful native interactions, adopt Liquid Glass, and understand how direct Mac distribution differs.",
-      "publishedAt": "2026-10-23T15:00:00.000Z"
-    },
-    {
-      "slug": "251aaa662c86a804f0ad6975",
-      "guid": "https://flaviocopes.com/openai-decisions-api/",
-      "title": "Triage support tickets in one request with OpenAI's Decisions API",
-      "link": "https://flaviocopes.com/openai-decisions-api/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "OpenAI's Decisions API returns a probability, a choice, or a score. Triage a support ticket with several questions in one request.",
-      "publishedAt": "2026-10-23T10:00:00.000Z"
     },
     {
       "slug": "f756ef917388123187ab4b9b",

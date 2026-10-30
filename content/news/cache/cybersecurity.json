@@ -1,8 +1,268 @@
 {
   "category": "cybersecurity",
   "label": "Cybersecurity",
-  "fetchedAt": "2026-10-29T11:50:33.237Z",
+  "fetchedAt": "2026-10-30T11:43:07.146Z",
   "items": [
+    {
+      "slug": "cd084ca776b2e786a19d3e1d",
+      "guid": "https://grahamcluley.com/?p=17352248",
+      "title": "Hackers leak personnel data of 41,000+ Homeland Security staff, including ICE and border agents",
+      "link": "https://www.bitdefender.com/en-us/blog/hotforsecurity/hackers-leak-41-000-dhs-staff-data",
+      "source": "Graham Cluley",
+      "sourceUrl": "https://grahamcluley.com/feed/",
+      "summary": "The US Department of Homeland Security has had the details of more than 41,000 staff, including ICE and CBP agents, published online. Not ideal for an organisation with \"Security\" in its name. Read more in my article on the Hot for Security blog.",
+      "publishedAt": "2026-10-30T10:33:50.000Z"
+    },
+    {
+      "slug": "e6ee60c0df60a934b1649e12",
+      "guid": "https://www.cio.com/article/4242239/how-cios-can-overcome-the-ai-trust-gap.html",
+      "title": "How CIOs can overcome the AI trust gap",
+      "link": "https://www.cio.com/article/4242239/how-cios-can-overcome-the-ai-trust-gap.html",
+      "source": "CIO",
+      "sourceUrl": "https://www.cio.com/feed/",
+      "summary": "If you’re like most CIOs, your CEO’s viewpoint of and strategic outlook for AI has likely shifted several times over the past two-plus short years, perhaps even in contradictory ways. Initial doubts or disregard may have given way to full-out FOMO. Demands for copilots everywher…",
+      "publishedAt": "2026-10-30T10:01:00.000Z"
+    },
+    {
+      "slug": "f184fd2015525c33e9508719",
+      "guid": "https://www.cio.com/article/4242019/state-of-it-jobs-ai-boosts-salaries-but-also-burnout-and-the-gender-gap.html",
+      "title": "State of IT jobs: AI boosts salaries but also burnout and the gender gap",
+      "link": "https://www.cio.com/article/4242019/state-of-it-jobs-ai-boosts-salaries-but-also-burnout-and-the-gender-gap.html",
+      "source": "CIO",
+      "sourceUrl": "https://www.cio.com/feed/",
+      "summary": "Following the IT and tech hiring boom during the Covid-19 pandemic, companies made space for AI initiatives that resulted in increased layoffs. But new data reveals that some IT hiring trends are starting to turn around. Pay in the most AI-exposed occupations grew around 46% sin…",
+      "publishedAt": "2026-10-30T10:00:00.000Z"
+    },
+    {
+      "slug": "2baee14531af4f79a8740034",
+      "guid": "https://www.cio.com/article/4242196/the-next-digital-twin-isnt-of-a-machine-its-of-your-business.html",
+      "title": "The next digital twin isn’t of a machine, it’s of your business",
+      "link": "https://www.cio.com/article/4242196/the-next-digital-twin-isnt-of-a-machine-its-of-your-business.html",
+      "source": "CIO",
+      "sourceUrl": "https://www.cio.com/feed/",
+      "summary": "The digital twin concept earned its credibility in engineering. Its origins trace to a 2002 University of Michigan presentation in which Michael Grieves described a “Mirrored Spaces Model”: a virtual system holding the information about a physical one, linked to it throughout it…",
+      "publishedAt": "2026-10-30T09:00:00.000Z"
+    },
+    {
+      "slug": "4b53227f9f3bab6085748e01",
+      "guid": "https://thehackernews.com/2026/10/official-claude-code-vs-code-extension.html",
+      "title": "Official Claude Code VS Code Extension Compromised to Install Persistent SSH Backdoor",
+      "link": "https://thehackernews.com/2026/10/official-claude-code-vs-code-extension.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "Cybersecurity researchers have disclosed that the official Anthropic Claude Code extension was compromised on the Open VSX registry to install a persistent SSH backdoor on infected hosts. The issue has since been traced to the compromise of the Cursor Marketplace, prompting the …",
+      "publishedAt": "2026-10-30T08:55:47.000Z"
+    },
+    {
+      "slug": "aef9dd93ed9856c2922508e8",
+      "guid": "https://www.darkreading.com/physical-security/russia-cyber-war-belarus-steps-forward",
+      "title": "As Russia's Cyberwar Evolves, Belarus Steps Forward",
+      "link": "https://www.darkreading.com/physical-security/russia-cyber-war-belarus-steps-forward",
+      "source": "Dark Reading",
+      "sourceUrl": "https://www.darkreading.com/rss.xml",
+      "summary": "The \"FrostyNeighbor\" advanced persistent threat (APT) launched a destructive attack in Ukraine and is raising concerns about deeper alignment with Russian cyber objectives.",
+      "publishedAt": "2026-10-30T08:00:00.000Z"
+    },
+    {
+      "slug": "bc4258f9677bca1e1ae92494",
+      "guid": "https://thehackernews.com/2026/10/hackers-actively-exploit-highly.html",
+      "title": "Hackers Actively Exploit Highly Critical Drupal Commerce Core Authorization Bypass Flaw",
+      "link": "https://thehackernews.com/2026/10/hackers-actively-exploit-highly.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "Drupal has warned that threat actors are exploiting a \"highly critical\" security flaw in its Commerce Core component. The vulnerability, tracked as CVE-2026-118539 (CVSS score: N/A), is a case of missing authorization affecting Commerce Core versions from 0.0.0 to 2.41 and from …",
+      "publishedAt": "2026-10-30T07:45:30.000Z"
+    },
+    {
+      "slug": "8927f234f52baad7df3c11d2",
+      "guid": "https://thehackernews.com/2026/10/cisa-adds-actively-exploited-gitlab-rce.html",
+      "title": "CISA Adds Actively Exploited GitLab RCE and Cisco Firewall DoS Flaws to KEV",
+      "link": "https://thehackernews.com/2026/10/cisa-adds-actively-exploited-gitlab-rce.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Thursday added two security flaws impacting Cisco and GitLab software to its Known Exploited Vulnerabilities (KEV), citing evidence of active exploitation. The vulnerabilities are listed below - CVE-2026-97229 (…",
+      "publishedAt": "2026-10-30T07:27:05.000Z"
+    },
+    {
+      "slug": "d563e9e1aaec1f91d767e2b0",
+      "guid": "https://thehackernews.com/2026/10/binance-suffers-security-breach.html",
+      "title": "Binance Suffers Security Breach Affecting $6.3 Billion in Assets, Nearly $3 Billion Frozen",
+      "link": "https://thehackernews.com/2026/10/binance-suffers-security-breach.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "Cryptocurrency giant Binance said on Thursday that a \"security incident\" on its platform has impacted about $6.3 billion worth of assets. The world's biggest cryptocurrency exchange said nearly $3 billion of those assets have been frozen on-chain so far. Tether and Circle said t…",
+      "publishedAt": "2026-10-30T04:14:59.000Z"
+    },
+    {
+      "slug": "a0623670701f0f10bfe53a82",
+      "guid": "https://www.cio.com/article/4242545/scaling-agentic-ai-with-confidence.html",
+      "title": "Scaling agentic AI with confidence",
+      "link": "https://www.cio.com/article/4242545/scaling-agentic-ai-with-confidence.html",
+      "source": "CIO",
+      "sourceUrl": "https://www.cio.com/feed/",
+      "summary": "Your AI agents are making decisions faster than your teams can review them. Governance requires the same speed. In order to accomplish their given tasks, agents gain access to new applications and business data around the clock. But every autonomous decision raises a question yo…",
+      "publishedAt": "2026-10-30T02:41:32.000Z"
+    },
+    {
+      "slug": "bc0dec8e53482e3b3092d891",
+      "guid": "https://www.cio.com/article/4242542/the-ai-trust-deficit-why-explainability-not-more-automation-is-the-cios-next-priority.html",
+      "title": "The AI trust deficit: Why explainability, not more automation, is the CIO’s next priority",
+      "link": "https://www.cio.com/article/4242542/the-ai-trust-deficit-why-explainability-not-more-automation-is-the-cios-next-priority.html",
+      "source": "CIO",
+      "sourceUrl": "https://www.cio.com/feed/",
+      "summary": "An AI trust deficit occurs when an organization deploys autonomous AI agents faster than it can prove those agents are acting within policy. It’s the gap between what AI agents are doing and what CIOs can clearly explain to a board, auditor, or regulator. Closing that gap requir…",
+      "publishedAt": "2026-10-30T02:29:57.000Z"
+    },
+    {
+      "slug": "512f3d6346ace0d354c22edd",
+      "guid": "https://www.darkreading.com/cyberattacks-data-breaches/anthropic-phishing-emails-bypass-security-tools",
+      "title": "Anthropic-Themed Phishing Emails Bypass Top Security Tools",
+      "link": "https://www.darkreading.com/cyberattacks-data-breaches/anthropic-phishing-emails-bypass-security-tools",
+      "source": "Dark Reading",
+      "sourceUrl": "https://www.darkreading.com/rss.xml",
+      "summary": "Obvious phishing emails with numerous red flags are somehow getting past some of the industry-leading secure email gateway (SEG) products.",
+      "publishedAt": "2026-10-29T21:21:56.000Z"
+    },
+    {
+      "slug": "1a817c851d8f8c7c86a9c1c4",
+      "guid": "https://www.darkreading.com/cyber-risk/rethinking-cybersecurity-awareness-ai-era",
+      "title": "Rethinking Cybersecurity Awareness in the AI Era",
+      "link": "https://www.darkreading.com/cyber-risk/rethinking-cybersecurity-awareness-ai-era",
+      "source": "Dark Reading",
+      "sourceUrl": "https://www.darkreading.com/rss.xml",
+      "summary": "This installment of the Reporters' Notebook video series discusses some of the trends and topics from Cybersecurity Awareness Month, from using AI for better training to educating next-generation workforces on modern risks and emerging threats.",
+      "publishedAt": "2026-10-29T20:15:37.000Z"
+    },
+    {
+      "slug": "7f056f665bfe428e129ca46d",
+      "guid": "https://thehackernews.com/2026/10/threatsday-critical-firewall-flaws.html",
+      "title": "ThreatsDay: Critical Firewall Flaws, Banking Trojans Rented, Weaponized PDF, Token Theft + 26 More Stories",
+      "link": "https://thehackernews.com/2026/10/threatsday-critical-firewall-flaws.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "Some attacks take real skill. Others just need someone to leave a door open. This week has both. Exposed passwords, old bugs still getting exploited, and trusted software doing things it shouldn't. There's a strange mix of clever tricks and careless mistakes. Hackers are borrowi…",
+      "publishedAt": "2026-10-29T19:11:58.000Z"
+    },
+    {
+      "slug": "ca1dabf227d202b07945a356",
+      "guid": "https://www.cio.com/article/4242383/governing-the-agent-workforce-new-data-on-the-next-frontier-of-ai-risk.html",
+      "title": "Governing the agent workforce: New data on the next frontier of AI risk",
+      "link": "https://www.cio.com/article/4242383/governing-the-agent-workforce-new-data-on-the-next-frontier-of-ai-risk.html",
+      "source": "CIO",
+      "sourceUrl": "https://www.cio.com/feed/",
+      "summary": "In the fast-paced world of agentic AI, building agents and defending ROI is yesterday’s news. Today, the more pressing challenge is managing and governing the exploding workforce of agents to mitigate growing enterprise risk. The problem intensifies as AI agents move from adviso…",
+      "publishedAt": "2026-10-29T18:26:16.000Z"
+    },
+    {
+      "slug": "17e237259c8253a740129d86",
+      "guid": "https://www.darkreading.com/application-security/claude-model-exploits-major-browsers-oses",
+      "title": "Claude Model Builds Exploits Across Major Browsers & OSes",
+      "link": "https://www.darkreading.com/application-security/claude-model-exploits-major-browsers-oses",
+      "source": "Dark Reading",
+      "sourceUrl": "https://www.darkreading.com/rss.xml",
+      "summary": "An unreleased version of the AI model has found and chained multiple vulnerabilities in Chrome, Safari, Android, Windows, and Linux, Anthropic says.",
+      "publishedAt": "2026-10-29T18:15:59.000Z"
+    },
+    {
+      "slug": "4427f37c9028373223d7c229",
+      "guid": "https://grahamcluley.com/?p=17352242",
+      "title": "BYOD cyberattack diverts ambulances and cancels classes at University of New Mexico health center",
+      "link": "https://www.fortra.com/blog/byod-cyberattack-diverts-ambulances-and-cancels-classes-university-new-mexico-health-center",
+      "source": "Graham Cluley",
+      "sourceUrl": "https://grahamcluley.com/feed/",
+      "summary": "Ambulances were diverted, surgeries cancelled, and medical students sent home from classes after a ransomware group attacked the University of New Mexico's Health Sciences Center (HSC) this week. Read more in my article on the Fortra blog.",
+      "publishedAt": "2026-10-29T17:01:24.000Z"
+    },
+    {
+      "slug": "d1e115d560f47e73c06a205a",
+      "guid": "https://danielmiessler.com/blog/general-hill-climbing",
+      "title": "General Hill-Climbing: The One Main Loop in AI",
+      "link": "https://danielmiessler.com/blog/general-hill-climbing?utm_source=rss&utm_medium=feed&utm_campaign=website",
+      "source": "Daniel Miessler",
+      "sourceUrl": "https://danielmiessler.com/feed.rss",
+      "summary": "General Hill-Climbing diagram: five numbered stations climb a hill to the Ideal State flag, from TELOS through articulating the ideal state, evals, doing the work, and iterating, with a dashed loop back to refine the ideal state and evals/images/general-hill-climbing-diagram.web…",
+      "publishedAt": "2026-10-29T16:30:00.000Z"
+    },
+    {
+      "slug": "1be6a1df25ca72b4139ae0bb",
+      "guid": "https://thehackernews.com/2026/10/linux-kernel-tcp-flaw-with-98-cvss.html",
+      "title": "Linux Kernel TCP Flaw With 9.8 CVSS Score Affects Ubuntu, Red Hat and Other Distributions",
+      "link": "https://thehackernews.com/2026/10/linux-kernel-tcp-flaw-with-98-cvss.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "A flaw in the Linux kernel's TCP code, tracked as CVE-2026-98432, affects Ubuntu, Red Hat Enterprise Linux (RHEL), and other Linux distributions. The kernel's own CVE team rates it 9.8 out of 10 on the CVSS scale. Anthropic said on October 27 that its AI model wrote an exploit t…",
+      "publishedAt": "2026-10-29T15:57:05.000Z"
+    },
+    {
+      "slug": "2533c82e0085eba77e06fddb",
+      "guid": "https://www.darkreading.com/cyber-risk/threat-modeling-4-simple-questions",
+      "title": "Threat Modeling With 4 Simple Questions on a White Board",
+      "link": "https://www.darkreading.com/cyber-risk/threat-modeling-4-simple-questions",
+      "source": "Dark Reading",
+      "sourceUrl": "https://www.darkreading.com/rss.xml",
+      "summary": "A four-question exercise that CISOs can use to create a threat model that promises results, without a big spend.",
+      "publishedAt": "2026-10-29T15:44:04.000Z"
+    },
+    {
+      "slug": "d9e7c9ddc0eb7fb8a152a482",
+      "guid": "https://thehackernews.com/2026/10/fake-chatgpt-and-claude-apps-abuse.html",
+      "title": "Fake ChatGPT and Claude Apps Abuse Signed Executables to Deploy Crypto Miners",
+      "link": "https://thehackernews.com/2026/10/fake-chatgpt-and-claude-apps-abuse.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "Threat actors are delivering malicious loaders and cryptocurrency miners under the guise of artificial intelligence (AI) desktop applications for Anthropic Claude and OpenAI ChatGPT as part of a campaign dubbed Yoba. The activity involves creating fake GitHub projects that claim…",
+      "publishedAt": "2026-10-29T15:20:29.000Z"
+    },
+    {
+      "slug": "17b1ed18b9db9df1dd4b4d47",
+      "guid": "https://thehackernews.com/2026/10/googles-gemini-4-carbon-leads.html",
+      "title": "Google's Gemini 4 Carbon Leads Benchmarks for Finding, Exploiting, and Patching Vulnerabilities",
+      "link": "https://thehackernews.com/2026/10/googles-gemini-4-carbon-leads.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "Google on Wednesday took the wraps off Gemini 4 Carbon, its latest frontier model with state-of-the-art cybersecurity and long-horizon capabilities. \"It shows significant gains across coding and agentic tasks as well as across key capabilities critical for cybersecurity defense,…",
+      "publishedAt": "2026-10-29T13:42:40.000Z"
+    },
+    {
+      "slug": "89ba8a41a1ee0be07879dd6b",
+      "guid": "https://thehackernews.com/2026/08/learn-how-to-build-security-operations.html",
+      "title": "Webinar: How to Build AI Threat Readiness Into Your Security Operations",
+      "link": "https://thehackernews.com/2026/08/learn-how-to-build-security-operations.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "Security teams have spent years trying to detect threats faster. AI is changing the harder part: how much time defenders have left to act. Advanced AI models can now help attackers discover vulnerabilities, generate exploit code, and move through weaknesses faster than tradition…",
+      "publishedAt": "2026-10-29T11:39:41.000Z"
+    },
+    {
+      "slug": "b35772fb4a04069806c0762a",
+      "guid": "https://thehackernews.com/2026/10/telegram-android-flaw-lets-attackers.html",
+      "title": "Telegram Android Flaw Lets Attackers Run Code When Users Answer Voice Calls",
+      "link": "https://thehackernews.com/2026/10/telegram-android-flaw-lets-attackers.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "A flaw in Telegram for Android could be chained with two other bugs to take full control of a victim's phone through a voice call, once the victim answered, according to security startup NebuSec. The attacker needed only an ordinary Telegram account. Telegram fixed the flaw in v…",
+      "publishedAt": "2026-10-29T11:39:18.000Z"
+    },
+    {
+      "slug": "ff04f1caf15467beeb1ba229",
+      "guid": "https://thehackernews.com/2026/10/the-rise-of-threat-operator-how-ai-will.html",
+      "title": "The Rise of the Threat Operator: How AI Will Redefine Security Operations and Careers",
+      "link": "https://thehackernews.com/2026/10/the-rise-of-threat-operator-how-ai-will.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "AI is beginning to take over much of the work that has traditionally defined the security analyst's job. Investigating alerts, collecting evidence, correlating activity across tools, and executing response actions are becoming tasks that AI systems can perform on their own. As t…",
+      "publishedAt": "2026-10-29T11:33:41.000Z"
+    },
+    {
+      "slug": "026f7c77fb5eab48a643baaa",
+      "guid": "https://thehackernews.com/2026/10/26400-valid-cloud-and-ai-credentials.html",
+      "title": "26,400 Valid Cloud and AI Credentials Found Exposed in Public Gitee Repositories",
+      "link": "https://thehackernews.com/2026/10/26400-valid-cloud-and-ai-credentials.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "26,400 credentials that developers left in public code on Gitee, a Chinese code-hosting service, still worked when a researcher tested them. Anyone who copied one from that code could have used it. Independent researcher Ben Zimmermann found them by scanning 7.25 million public …",
+      "publishedAt": "2026-10-29T11:33:15.000Z"
+    },
     {
       "slug": "7d482c1bcf9fa313acb9e633",
       "guid": "https://thehackernews.com/2026/10/cisco-patches-actively-exploited-asa.html",
@@ -110,7 +370,7 @@
       "link": "https://www.darkreading.com/cybersecurity-analytics/cyber-vulnerabilities-besiege-italy",
       "source": "Dark Reading",
       "sourceUrl": "https://www.darkreading.com/rss.xml",
-      "summary": "Researchers can't quite explain why cyber threats look so different in Italy compared to everywhere else.",
+      "summary": "Researchers can't quite explain why cyber threats look so different in Italy compared with everywhere else.",
       "publishedAt": "2026-10-29T08:00:00.000Z"
     },
     {
@@ -166,7 +426,7 @@
     {
       "slug": "0756d72ac636d5aa5a111b83",
       "guid": "https://www.darkreading.com/application-security/ghostaction-hacking-wave-fizzles-attackers-github",
-      "title": "GhostAction Hacking Wave Fizzles, But Attackers Lurk on in GitHub",
+      "title": "GhostAction Hacking Wave Fizzles, but Attackers Lurk on in GitHub",
       "link": "https://www.darkreading.com/application-security/ghostaction-hacking-wave-fizzles-attackers-github",
       "source": "Dark Reading",
       "sourceUrl": "https://www.darkreading.com/rss.xml",
@@ -252,6 +512,16 @@
       "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
       "summary": "Cybersecurity researchers have disclosed details of what appears to be an artificial intelligence (AI)-assisted attack orchestrated by a suspected China-nexus threat actor that has leveraged the PHP2Shell vulnerabilities to breach exposed systems. The activity, which was observe…",
       "publishedAt": "2026-10-28T16:02:45.000Z"
+    },
+    {
+      "slug": "2ca4d3349eb89ec7982002df",
+      "guid": "https://www.darkreading.com/cybersecurity-operations/ai-root-hospital-corridors-raised-security-stakes",
+      "title": "AI Takes Root in Hospital Corridors, Raises Security Stakes",
+      "link": "https://www.darkreading.com/cybersecurity-operations/ai-root-hospital-corridors-raised-security-stakes",
+      "source": "Dark Reading",
+      "sourceUrl": "https://www.darkreading.com/rss.xml",
+      "summary": "Artificial intelligence (AI) is everywhere in healthcare, from doctors’ intake forms to cancer screenings. But in some cases, life-and-death uses are outpacing cybersecurity.",
+      "publishedAt": "2026-10-28T15:29:06.000Z"
     },
     {
       "slug": "a7ba7d8bf7c9a9be77669486",
@@ -624,26 +894,6 @@
       "publishedAt": "2026-10-27T11:01:26.000Z"
     },
     {
-      "slug": "2c5b2386aa4f804f89898e44",
-      "guid": "https://www.cio.com/article/4240969/oracle-pushes-ai-deeper-into-enterprise-workflows-with-fusion-companion-2.html",
-      "title": "Oracle pushes AI deeper into enterprise workflows with Fusion Companion",
-      "link": "https://www.cio.com/article/4240969/oracle-pushes-ai-deeper-into-enterprise-workflows-with-fusion-companion-2.html",
-      "source": "CIO",
-      "sourceUrl": "https://www.cio.com/feed/",
-      "summary": "Oracle is adding a new orchestration layer to its Fusion Cloud Applications suite to help enterprises automate business workflows, coordinate AI agents, and execute tasks across applications with less manual intervention. The new layer, named Fusion Companion, will allow enterpr…",
-      "publishedAt": "2026-10-27T10:56:55.000Z"
-    },
-    {
-      "slug": "14e766808f50ce9c6cf24245",
-      "guid": "https://www.cio.com/article/4238108/citizen-ai-can-help-it-leaders-spark-business-solutions-if-done-right.html",
-      "title": "‘Citizen AI’ can help IT leaders spark business solutions — if done right",
-      "link": "https://www.cio.com/article/4238108/citizen-ai-can-help-it-leaders-spark-business-solutions-if-done-right.html",
-      "source": "CIO",
-      "sourceUrl": "https://www.cio.com/feed/",
-      "summary": "AI fluency has long mattered to Sambit Dutta. When he joined global chemical manufacturer Hexion this year as SVP of AI transformation, his strategy included bringing “AI to the masses, where the people can not only just consume AI, but also become what we call builders.” Dutta …",
-      "publishedAt": "2026-10-27T10:01:00.000Z"
-    },
-    {
       "slug": "eae2a3c7c621fbaa9377337e",
       "guid": "https://thehackernews.com/2026/10/australia-gets-into-amadey-malware.html",
       "title": "Australia Gets Into Amadey Malware Backend, Cuts Off Access to 180,000 Infected Computers",
@@ -654,26 +904,6 @@
       "publishedAt": "2026-10-27T09:33:06.000Z"
     },
     {
-      "slug": "3d4290874883a177d741b88b",
-      "guid": "https://www.cio.com/article/4239386/the-ai-notetaker-risk-is-now-an-everywhere-problem-2.html",
-      "title": "The AI notetaker risk is now an everywhere problem",
-      "link": "https://www.cio.com/article/4239386/the-ai-notetaker-risk-is-now-an-everywhere-problem-2.html",
-      "source": "CIO",
-      "sourceUrl": "https://www.cio.com/feed/",
-      "summary": "The businesspeople adopting AI notetakers are not being reckless. They are responding to a real business need. Our teams are in meetings all day with companies we support, and the idea that we could read a clean summary of every one of them at the end of the day makes us better …",
-      "publishedAt": "2026-10-27T09:30:00.000Z"
-    },
-    {
-      "slug": "31e86e90c0ab8f15867ca022",
-      "guid": "https://www.cio.com/article/4240495/black-october-this-weeks-cybersecurity-crises-mean-infrastructure-inventory-just-became-a-board-level-priority.html",
-      "title": "Black October: This week’s cybersecurity crises mean infrastructure inventory just became a board-level priority",
-      "link": "https://www.cio.com/article/4240495/black-october-this-weeks-cybersecurity-crises-mean-infrastructure-inventory-just-became-a-board-level-priority.html",
-      "source": "CIO",
-      "sourceUrl": "https://www.cio.com/feed/",
-      "summary": "“Are we exposed?” CIOs and CTOs heard that question all last week. On Tuesday, PHP shipped emergency fixes for two pre-authentication remote code execution flaws that date back to 2004. By Wednesday, Palo Alto Networks said every supported version of PAN-OS and Panorama was vuln…",
-      "publishedAt": "2026-10-27T09:00:00.000Z"
-    },
-    {
       "slug": "c6fd9c70afae34ae696947e1",
       "guid": "https://thehackernews.com/2026/10/openai-compaction-flaw-let-researchers.html",
       "title": "OpenAI Compaction Flaw Let Researchers Bypass Hidden Reasoning Protections",
@@ -682,16 +912,6 @@
       "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
       "summary": "OpenAI's compaction feature, which shrinks a long conversation to save space, could be turned into a way to copy a model's hidden reasoning out in plain text, security firm Xint has shown. OpenAI's reasoning models work through a problem before answering, and the service normall…",
       "publishedAt": "2026-10-27T08:22:43.000Z"
-    },
-    {
-      "slug": "7b4b83957593cdc3cad192bf",
-      "guid": "https://www.cio.com/article/4240684/sap-wants-joule-to-run-business-workflows-not-just-answer-questions.html",
-      "title": "SAP wants Joule to run business workflows, not just answer questions",
-      "link": "https://www.cio.com/article/4240684/sap-wants-joule-to-run-business-workflows-not-just-answer-questions.html",
-      "source": "CIO",
-      "sourceUrl": "https://www.cio.com/feed/",
-      "summary": "SAP says it is ushering in a new era of agentic AI, one where agents don’t just learn a business, but help run it. This week at its TechEd conference, the company is announcing new tools in its SAP Business AI Platform that will extend AI agents’ capabilities, give them richer, …",
-      "publishedAt": "2026-10-27T08:05:00.000Z"
     },
     {
       "slug": "15e93dc8da23be7c084aadf5",
@@ -726,22 +946,12 @@
     {
       "slug": "12bf2922831c2253549db264",
       "guid": "https://www.darkreading.com/cybersecurity-analytics/benchmarking-security-of-ai-models-poses-challenges",
-      "title": "So Many AI Security Benchmarks, But None Tell the Whole Story",
+      "title": "So Many AI Security Benchmarks, but None Tell the Whole Story",
       "link": "https://www.darkreading.com/cybersecurity-analytics/benchmarking-security-of-ai-models-poses-challenges",
       "source": "Dark Reading",
       "sourceUrl": "https://www.darkreading.com/rss.xml",
       "summary": "Measuring AI model security gets complex, fast, thanks to a growing patchwork of benchmarks targeting different variables in the equation. But none replace testing against your own code and workflows.",
       "publishedAt": "2026-10-27T00:26:50.000Z"
-    },
-    {
-      "slug": "2e1e4f33755386b7f82374a4",
-      "guid": "https://www.cio.com/article/4240588/5-manufacturers-reprice-on-october-1.html",
-      "title": "5 manufacturers reprice on October 1",
-      "link": "https://www.cio.com/article/4240588/5-manufacturers-reprice-on-october-1.html",
-      "source": "CIO",
-      "sourceUrl": "https://www.cio.com/feed/",
-      "summary": "In this issue Every price action reported in September, with effective dates and what landed as announced The October calendar: five manufacturers on October 1, two more on October 5 The effective dates and order cutoffs already published through November Supply signals worth pl…",
-      "publishedAt": "2026-10-26T23:06:55.000Z"
     },
     {
       "slug": "711b61639b30a123e5f693b1",
@@ -792,216 +1002,6 @@
       "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
       "summary": "PHP has rebuilt its official Windows packages for PHP 8.2 through 8.5 to fix CVE-2026-111497, a flaw in the Brotli compression library that the packages include. The flaw can let an attacker corrupt memory and potentially run code. PHP says the flaw can be reached through the cU…",
       "publishedAt": "2026-10-26T17:45:57.000Z"
-    },
-    {
-      "slug": "1ceca95bdafcb9c6653fae7b",
-      "guid": "https://orca.security/?p=75600",
-      "title": "PHP2Shell: From the attacker’s perspective",
-      "link": "https://orca.security/resources/blog/php2shell-from-the-attackers-perspective/",
-      "source": "Orca Security Blog",
-      "sourceUrl": "https://orca.security/resources/blog/feed/",
-      "summary": "Executive Summary: What are CVE-2026-109618 and CVE-2026-109619? Why PHP vulnerabilities put most of the web at risk When you open a web page, something has to build that page before it reaches you. For roughly seven out of ten websites, the software doing that job is PHP. It si…",
-      "publishedAt": "2026-10-26T17:21:56.000Z"
-    },
-    {
-      "slug": "4b8826d6a66e074543d42962",
-      "guid": "https://thehackernews.com/2026/10/attackers-use-microsoft-teams-it.html",
-      "title": "Attackers Use Microsoft Teams IT Support Scams to Deploy Malware and Ransomware",
-      "link": "https://thehackernews.com/2026/10/attackers-use-microsoft-teams-it.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "Cybersecurity researchers are calling attention to what they say is a \"recurring social engineering pattern\" across hundreds of cases in which threat actors use Microsoft Teams' external chat creation feature to conduct impersonation scams or to deliver malware. \"A consistent pa…",
-      "publishedAt": "2026-10-26T15:52:40.000Z"
-    },
-    {
-      "slug": "e0df996ac6f273db772adcd0",
-      "guid": "https://thehackernews.com/2026/10/weekly-recap-this2shell-that2shell.html",
-      "title": "⚡ Weekly Recap: This2Shell, That2Shell, Everything's an RCE? Rogue AI, Supply Chain Chaos and More",
-      "link": "https://thehackernews.com/2026/10/weekly-recap-this2shell-that2shell.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "This2Shell, That2Shell, Everything2Shell. That's pretty much how the last week went. Critical bugs that let attackers run code remotely are showing up everywhere. Hackers are scanning for targets, some flaws are already being used in attacks, and security teams have more urgent …",
-      "publishedAt": "2026-10-26T14:06:13.000Z"
-    },
-    {
-      "slug": "9d30cfebb9127e1a8e28c990",
-      "guid": "https://www.darkreading.com/cyberattacks-data-breaches/10-software-security-practices-built-250-years",
-      "title": "10 Software Security Practices Built for the Next 250 Years",
-      "link": "https://www.darkreading.com/cyberattacks-data-breaches/10-software-security-practices-built-250-years",
-      "source": "Dark Reading",
-      "sourceUrl": "https://www.darkreading.com/rss.xml",
-      "summary": "This Cybersecurity Awareness Month's theme, \"Securing the Next 250,\" asks us to look beyond vulnerabilities and consider what will make our digital systems resilient for generations.",
-      "publishedAt": "2026-10-26T14:00:00.000Z"
-    },
-    {
-      "slug": "f67f5ee9f8e39aaf86854c69",
-      "guid": "https://thehackernews.com/2026/10/two-critical-wasmtime-flaws-could-let.html",
-      "title": "Two Critical Wasmtime Flaws Could Let Malicious WebAssembly Modules Escape Sandboxes",
-      "link": "https://thehackernews.com/2026/10/two-critical-wasmtime-flaws-could-let.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "Two critical flaws in Wasmtime, a WebAssembly runtime that can be built into other software, could allow a malicious WebAssembly module to escape the sandbox intended to contain it, the project's maintainers say. An attacker would first need a vulnerable Wasmtime build to compil…",
-      "publishedAt": "2026-10-26T11:52:41.000Z"
-    },
-    {
-      "slug": "ce0386ac22975ba196691f18",
-      "guid": "https://thehackernews.com/2026/10/between-alerts-what-attackers-do-in.html",
-      "title": "Between alerts: What Attackers Do in the Spaces Ordinary Detection Misses",
-      "link": "https://thehackernews.com/2026/10/between-alerts-what-attackers-do-in.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "Every SOC struggles with a pile of alerts. Very few of those alerts explain how an attack started or how it progressed. Network data, like that from a network detection and response (NDR) platform, connects individual alerts into one timeline, and it feeds the defensive systems …",
-      "publishedAt": "2026-10-26T11:23:56.000Z"
-    },
-    {
-      "slug": "9f016c14aab2385dd8f11f32",
-      "guid": "https://www.schneier.com/?p=72840",
-      "title": "Bias in Qwen3-Coder Model",
-      "link": "https://www.schneier.com/blog/archives/2026/10/bias-in-qwen3-coder-model.html",
-      "source": "Schneier on Security",
-      "sourceUrl": "https://www.schneier.com/feed/",
-      "summary": "Interesting research: TL;DR: Chinese AI models now sit inside Western products, and some carry geopolitical triggers: tell the model who the code is for, and the security of what it writes changes. For the first time, we showed that this vulnerability lives in the model’s weight…",
-      "publishedAt": "2026-10-26T11:03:31.000Z"
-    },
-    {
-      "slug": "20494af63ce3fb8e1268344e",
-      "guid": "https://thehackernews.com/2026/10/ucreator-android-spyware-can-steal.html",
-      "title": "uCreator Android Spyware Can Steal Telegram 2FA Passwords and Clone WeChat Accounts",
-      "link": "https://thehackernews.com/2026/10/ucreator-android-spyware-can-steal.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "A rentable Android spyware kit called uCreator takes over Telegram and WeChat accounts by hiding its code inside working copies of the two apps, researcher Ovi found. It only reaches people who install one of these tampered copies, spread outside the official app stores, or who …",
-      "publishedAt": "2026-10-26T09:54:02.000Z"
-    },
-    {
-      "slug": "399172439712b08d5e85ae1e",
-      "guid": "https://thehackernews.com/2026/10/microsoft-365-token-replay-attacks.html",
-      "title": "Microsoft 365 Token-Replay Attacks Compromise 97 Accounts at 79 Organizations",
-      "link": "https://thehackernews.com/2026/10/microsoft-365-token-replay-attacks.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "Cybersecurity researchers have disclosed a Microsoft 365 campaign that has been observed leveraging an adversary-in-the-middle (AitM) relay to capture sign-in sessions and then replay the stolen tokens to break into email accounts at 79 organizations. Huntress, which observed th…",
-      "publishedAt": "2026-10-26T08:35:51.000Z"
-    },
-    {
-      "slug": "a26d3a2a0bb03d720cf8ca01",
-      "guid": "https://thehackernews.com/2026/10/gheist-uses-stolen-github-tokens-to.html",
-      "title": "Gheist Uses Stolen GitHub Tokens to Steal Private Repository Secrets via Actions Logs",
-      "link": "https://thehackernews.com/2026/10/gheist-uses-stolen-github-tokens-to.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "An automated campaign is using stolen GitHub tokens to plant workflows that print a repository's secrets into its GitHub Actions logs, which the attackers then download before deleting the runs. The attacks have succeeded in private repositories and GitHub Enterprise environment…",
-      "publishedAt": "2026-10-26T07:49:46.000Z"
-    },
-    {
-      "slug": "63f16ca1b1ad1c49473e2336",
-      "guid": "https://thehackernews.com/2026/10/malicious-file-in-downloads-folder.html",
-      "title": "Malicious File in Downloads Folder Tries to Trick AI Coding Agent Into Installing Malware",
-      "link": "https://thehackernews.com/2026/10/malicious-file-in-downloads-folder.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "A malicious instruction file sitting in a developer's Downloads folder tried to make their AI coding agent install a known-malicious npm package, security firm Forever Security said in a report published last week. The company caught the attempt on a real customer's machine and …",
-      "publishedAt": "2026-10-26T06:03:48.000Z"
-    },
-    {
-      "slug": "bb9067fec44ebd57e765c517",
-      "guid": "https://snyk.io/blog/php-patches-critical-unauthenticated-rces/",
-      "title": "PHP Patches Two Critical Unauthenticated RCEs (CVE-2026-109618, CVE-2026-109619): [Updated for CVE-2026-115560]",
-      "link": "https://snyk.io/blog/php-patches-critical-unauthenticated-rces/",
-      "source": "Snyk Blog",
-      "sourceUrl": "https://snyk.io/blog/feed/",
-      "summary": "Two critical flaws in PHP’s request lifecycle can enable unauthenticated remote code execution. Upgrade to a fixed release or install a vendor backport for older versions.",
-      "publishedAt": "2026-10-26T04:00:00.000Z"
-    },
-    {
-      "slug": "33f7736e74631c3e92659afb",
-      "guid": "https://thehackernews.com/2026/10/unpatched-tailscale-ssh-flaws-could-let.html",
-      "title": "Unpatched Tailscale SSH Flaws Could Let a Hacked Device Reach Root on Other Servers",
-      "link": "https://thehackernews.com/2026/10/unpatched-tailscale-ssh-flaws-could-let.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "A single hacked device on a Tailscale network can be used to gain root access to other servers it can reach, according to a security researcher who published the findings this week. The attack requires two things: Tailscale SSH set up to allow port forwarding, and an attacker wh…",
-      "publishedAt": "2026-10-25T17:44:09.000Z"
-    },
-    {
-      "slug": "da19872bd8ebd641fd639776",
-      "guid": "https://thehackernews.com/2026/10/php2shell-exploitation-hits-government.html",
-      "title": "PHP2Shell Exploitation Attempts Continue Amid Suspected N. Korea Global Scanning Activity",
-      "link": "https://thehackernews.com/2026/10/php2shell-exploitation-hits-government.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "In an update, Palo Alto Networks Unit 42 said it's retracting its earlier assessment that the post-compromise activity targeting the European government agency involved the exploitation of the PHP2Shell flaws. \"What researchers saw was an attack against a European government age…",
-      "publishedAt": "2026-10-25T17:19:46.000Z"
-    },
-    {
-      "slug": "f716bb36aff905e7830416c6",
-      "guid": "https://danielmiessler.com/blog/team-explanation",
-      "title": "I'm on Team Explanation",
-      "link": "https://danielmiessler.com/blog/team-explanation?utm_source=rss&utm_medium=feed&utm_campaign=website",
-      "source": "Daniel Miessler",
-      "sourceUrl": "https://danielmiessler.com/feed.rss",
-      "summary": "A charcoal cutaway barn: a turkey professor points at a chart of sunrise feeding times while, inside, a farmer sharpens an axe beside roasting pans./images/team-explanation.webp/images/team-explanation.webp There are two major ways of assessing the quality of our understanding o…",
-      "publishedAt": "2026-10-25T15:46:32.000Z"
-    },
-    {
-      "slug": "2b44ac8d0a52ce9fe00c2800",
-      "guid": "https://thehackernews.com/2026/10/openai-ai-agents-demonstrate-vm-escapes.html",
-      "title": "OpenAI AI Agents Demonstrate VM Escapes and Secret Cross-Sandbox Communication",
-      "link": "https://thehackernews.com/2026/10/openai-ai-agents-demonstrate-vm-escapes.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "OpenAI has announced plans to conduct frontier model training with no live internet access, as it resumes reinforcement learning (RL) training and internal inference of its most advanced AI models. \"Based on the current state of alignment research, monitoring systems, and the se…",
-      "publishedAt": "2026-10-25T06:54:29.000Z"
-    },
-    {
-      "slug": "aafc952d1fa38e4dc13b7e62",
-      "guid": "https://danielmiessler.com/blog/models-how-harnesses-what",
-      "title": "Models Are the How, Harnesses Are the What",
-      "link": "https://danielmiessler.com/blog/models-how-harnesses-what?utm_source=rss&utm_medium=feed&utm_campaign=website",
-      "source": "Daniel Miessler",
-      "sourceUrl": "https://danielmiessler.com/feed.rss",
-      "summary": "A person hands their preferences, context, goals and how they like things done to a harness labeled the what, which feeds a model labeled the how, which produces a result that returns to the person; both harness and model point up at a hilltop flag labeled what you want/images/m…",
-      "publishedAt": "2026-10-25T01:28:26.000Z"
-    },
-    {
-      "slug": "a64123d828297872a642cff5",
-      "guid": "https://thehackernews.com/2026/10/brotli-decoder-flaw-behind-nodejs-rce.html",
-      "title": "Brotli Decoder Flaw Behind Node.js RCE Also Affects Bun, Python and Other Widely Used Software",
-      "link": "https://thehackernews.com/2026/10/brotli-decoder-flaw-behind-nodejs-rce.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "A memory-corruption flaw in Google's Brotli decoder sits in many programs that unpack Brotli-compressed data, among them Bun, Microsoft's .NET, the Python Brotli and brotlicffi packages, and Envoy proxies set up to decompress Brotli. Tracked as CVE-2026-111497, the flaw allows c…",
-      "publishedAt": "2026-10-24T11:09:29.000Z"
-    },
-    {
-      "slug": "c2f353f11fcac6078e3a8d41",
-      "guid": "https://thehackernews.com/2026/10/leaked-litellm-master-key-let-attackers.html",
-      "title": "Leaked LiteLLM Master Key Let Attackers Steal GitHub Tokens and Hijack Release Pipeline",
-      "link": "https://thehackernews.com/2026/10/leaked-litellm-master-key-let-attackers.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "LiteLLM on Friday revealed that an Agent Platform master key accidentally published to a public GitHub repository in late May 2026 ultimately allowed the threat actor to push a malicious version of the popular Python package. \"On May 27, 2026, a configuration file was committed …",
-      "publishedAt": "2026-10-24T11:03:33.000Z"
-    },
-    {
-      "slug": "ed6cb319ad856dfd2ce738ab",
-      "guid": "https://thehackernews.com/2026/10/google-says-gmail-and-photos-data.html",
-      "title": "Google Says Gmail and Photos Data Shared With AI Search Could Be Used for Targeted Ads",
-      "link": "https://thehackernews.com/2026/10/google-says-gmail-and-photos-data.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "Google has updated its privacy policy to spell out that using personalized artificial intelligence (AI) features in Search or Gemini could allow the company to serve targeted ads to users based on their activity on other connected Google services. \"You may choose to allow certai…",
-      "publishedAt": "2026-10-24T10:36:33.000Z"
-    },
-    {
-      "slug": "ae5fe3ec49b34664a0f640b9",
-      "guid": "https://thehackernews.com/2026/10/researchers-push-over-2-million-updates.html",
-      "title": "Researchers Push Over 2 Million Updates to Remotely Disable Popcorn Time Updater That Could Fuel a Botnet",
-      "link": "https://thehackernews.com/2026/10/researchers-push-over-2-million-updates.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "Between November 2025 and March 2026, the Dutch security firm Eye Security pushed more than 2 million updates to computers it did not own to switch off a background updater that it said could have allowed an outsider to take over the machine. The updater belongs to Time4Popcorn,…",
-      "publishedAt": "2026-10-24T09:04:24.000Z"
     }
   ]
 }
