@@ -1,8 +1,188 @@
 {
   "category": "cybersecurity",
   "label": "Cybersecurity",
-  "fetchedAt": "2026-10-30T11:43:07.146Z",
+  "fetchedAt": "2026-10-31T11:16:44.567Z",
   "items": [
+    {
+      "slug": "c305d693e177d5ef64daf367",
+      "guid": "https://thehackernews.com/2026/10/attackers-chain-three-ivanti-connect.html",
+      "title": "Attackers Chain Three Ivanti Connect Secure Flaws to Gain Unauthenticated Root Access",
+      "link": "https://thehackernews.com/2026/10/attackers-chain-three-ivanti-connect.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Friday added two security flaws impacting Ivanti Connect Secure (ICS) to its Known Exploited Vulnerabilities (KEV) catalog, following active exploitation in the wild. The vulnerabilities are listed below - CVE-2…",
+      "publishedAt": "2026-10-31T08:27:43.000Z"
+    },
+    {
+      "slug": "09f142bd2640f27254d9a6b2",
+      "guid": "https://thehackernews.com/2026/10/a-shared-chatgpt-link-could-run.html",
+      "title": "A Shared ChatGPT Link Could Run Attacker Code in Your Session and Read Private Chats",
+      "link": "https://thehackernews.com/2026/10/a-shared-chatgpt-link-could-run.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "A malicious ChatGPT share link could run an attacker's code in the logged-in session of anyone who opened it, allowing them to read their private conversations, researchers at the security firm Parameter showed. The researchers reported the flaw through OpenAI's bug bounty progr…",
+      "publishedAt": "2026-10-31T05:33:41.000Z"
+    },
+    {
+      "slug": "293569318dde9da7ae44a07f",
+      "guid": "https://thehackernews.com/2026/10/cloudflare-reports-182-million-network.html",
+      "title": "Cloudflare Reports 18.2 Million Network-Layer DDoS Attacks in Q3, Up 38%",
+      "link": "https://thehackernews.com/2026/10/cloudflare-reports-182-million-network.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "Threat actors are launching about 8,226 network-layer distributed denial-of-service (DDoS) attacks per hour, Cloudflare revealed Thursday. The web infrastructure and security company said it autonomously mitigated 18.2 million network-layer (L3) DDoS attacks and 14.4 trillion HT…",
+      "publishedAt": "2026-10-31T04:56:12.000Z"
+    },
+    {
+      "slug": "16f349e79b464f09fb98e05f",
+      "guid": "https://www.schneier.com/?p=72713",
+      "title": "Friday Squid Blogging: Bigfin Squid Off California Coast",
+      "link": "https://www.schneier.com/blog/archives/2026/10/friday-squid-blogging-bigfin-squid-off-california-coast.html",
+      "source": "Schneier on Security",
+      "sourceUrl": "https://www.schneier.com/feed/",
+      "summary": "Neat video: The sighting, announced September 2, marks the first time anyone has spotted a live bigfin squid, which belongs to the Magnapinna genus, in the northeastern Pacific Ocean. As usual, you can also use this squid post to talk about the security stories in the news that …",
+      "publishedAt": "2026-10-30T21:04:36.000Z"
+    },
+    {
+      "slug": "945365cb3f18e63b26ba83af",
+      "guid": "https://www.darkreading.com/cyberattacks-data-breaches/devs-trojanized-claude-code-extension-cursor",
+      "title": "Devs Hit by Trojanized Claude Code Extension for Cursor",
+      "link": "https://www.darkreading.com/cyberattacks-data-breaches/devs-trojanized-claude-code-extension-cursor",
+      "source": "Dark Reading",
+      "sourceUrl": "https://www.darkreading.com/rss.xml",
+      "summary": "Two serious security issues hit Cursor on the same day, highlighting the risks for AI-powered integrated development environments (IDEs).",
+      "publishedAt": "2026-10-30T20:05:58.000Z"
+    },
+    {
+      "slug": "dc99cff795166c0d60b521b4",
+      "guid": "https://danielmiessler.com/blog/energy-changes-the-frames",
+      "title": "It's the Energy Changing the Frames",
+      "link": "https://danielmiessler.com/blog/energy-changes-the-frames?utm_source=rss&utm_medium=feed&utm_campaign=website",
+      "source": "Daniel Miessler",
+      "sourceUrl": "https://danielmiessler.com/feed.rss",
+      "summary": "A slumped figure sits beside a dim ember in the deep purple shadow of a stone tower, while the same figure climbs its lit face holding a lantern high/images/energy-changes-the-frames.webp/images/energy-changes-the-frames.webp I think so much of winning at life comes down to some…",
+      "publishedAt": "2026-10-30T20:00:00.000Z"
+    },
+    {
+      "slug": "bc0379ec40f4d04134ed48b1",
+      "guid": "https://www.darkreading.com/cybersecurity-operations/behind-the-scenes-how-operation-blackout-went-down",
+      "title": "Behind the Scenes of How Operation Blackout Went Down",
+      "link": "https://www.darkreading.com/cybersecurity-operations/behind-the-scenes-how-operation-blackout-went-down",
+      "source": "Dark Reading",
+      "sourceUrl": "https://www.darkreading.com/rss.xml",
+      "summary": "A recent law enforcement operation to dismantle harmful scam centers was a big success. A threat intelligence expert walks us through what happened and why he wants more of the same.",
+      "publishedAt": "2026-10-30T19:46:08.000Z"
+    },
+    {
+      "slug": "1c16e1f4c514a6c7c934a256",
+      "guid": "https://www.cio.com/article/4242872/why-cios-must-prepare-for-hybrid-quantum-computing.html",
+      "title": "Why CIOs must prepare for hybrid quantum computing",
+      "link": "https://www.cio.com/article/4242872/why-cios-must-prepare-for-hybrid-quantum-computing.html",
+      "source": "CIO",
+      "sourceUrl": "https://www.cio.com/feed/",
+      "summary": "For IT leaders mapping out the next five to ten years of computational strategy, the true business value of quantum will not be unlocked by independent quantum processors operating in a vacuum. Instead, the future lies in the seamless orchestration of hybrid cyberinfrastructure—…",
+      "publishedAt": "2026-10-30T17:38:58.000Z"
+    },
+    {
+      "slug": "18d88fb0efe8191ea107bcf6",
+      "guid": "https://www.cio.com/article/4242869/the-new-geopolitics-of-it-why-sovereign-ai-is-the-next-boardroom-mandate.html",
+      "title": "The new geopolitics of IT: Why sovereign AI is the next boardroom mandate",
+      "link": "https://www.cio.com/article/4242869/the-new-geopolitics-of-it-why-sovereign-ai-is-the-next-boardroom-mandate.html",
+      "source": "CIO",
+      "sourceUrl": "https://www.cio.com/feed/",
+      "summary": "Artificial intelligence has transitioned into a major instrument of corporate strategy and national competitiveness. Driven by a post-pandemic push for digital independence, escalating national security concerns, and multi-billion-dollar government subsidies globally, organizati…",
+      "publishedAt": "2026-10-30T17:34:32.000Z"
+    },
+    {
+      "slug": "4fa40013294f33ebe2ef52d5",
+      "guid": "https://thehackernews.com/2026/10/chinese-hackers-use-ai-powered-artex-to.html",
+      "title": "Chinese Hackers Use AI-Powered ARTEX to Target Over 200 Organizations Worldwide",
+      "link": "https://thehackernews.com/2026/10/chinese-hackers-use-ai-powered-artex-to.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "Chinese state-sponsored threat actors have been observed using a Go-based artificial intelligence (AI)-powered penetration testing framework called ARTEX in attacks aimed at high-value targets simultaneously. The activity has been attributed by CrowdStrike to a China-based \"targ…",
+      "publishedAt": "2026-10-30T16:58:44.000Z"
+    },
+    {
+      "slug": "795fc5d9ed3a1c022cf79b74",
+      "guid": "https://www.darkreading.com/cybersecurity-analytics/cyber-vulnerabilities-besiege-italy-italian",
+      "title": "L’Italia è afflitta da vulnerabilità informatiche, senza una causa chiara",
+      "link": "https://www.darkreading.com/cybersecurity-analytics/cyber-vulnerabilities-besiege-italy-italian",
+      "source": "Dark Reading",
+      "sourceUrl": "https://www.darkreading.com/rss.xml",
+      "summary": "I ricercatori non riescono a spiegare del tutto perché le minacce informatiche in Italia siano così diverse rispetto a quelle di qualsiasi altro Paese.",
+      "publishedAt": "2026-10-30T15:39:54.000Z"
+    },
+    {
+      "slug": "254ca10d7070a71171aaf0cc",
+      "guid": "https://www.schneier.com/?p=72874",
+      "title": "Bloatware in Aftermarket Auto Parts",
+      "link": "https://www.schneier.com/blog/archives/2026/10/bloatware-in-aftermarket-auto-parts.html",
+      "source": "Schneier on Security",
+      "sourceUrl": "https://www.schneier.com/feed/",
+      "summary": "This story is interesting: One Civic owner purchased a cheap aftermarket head unit off Amazon, and decided to have Claude work its magic on it, like it would a smart TV. What was reportedly discovered isn’t surprising, but is worth knowing about. Among the pre-installed bloatwar…",
+      "publishedAt": "2026-10-30T15:20:02.000Z"
+    },
+    {
+      "slug": "33f30c5083f66cd6f44c09a0",
+      "guid": "https://thehackernews.com/2026/10/teamviewer-flaw-lets-remote-computers.html",
+      "title": "TeamViewer Flaw Lets Remote Computers Attack Users Who Connect to Control Them",
+      "link": "https://thehackernews.com/2026/10/teamviewer-flaw-lets-remote-computers.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "TeamViewer has fixed a flaw that lets the machine being controlled in a remote session attack the computer that connected to control it. In a TeamViewer session, the computer that connects and takes control is the viewer, and the machine it controls is the host. A malicious or c…",
+      "publishedAt": "2026-10-30T15:17:28.000Z"
+    },
+    {
+      "slug": "8f532485626bda0efee99415",
+      "guid": "https://www.darkreading.com/application-security/undead-software-projects-raise-security-risks",
+      "title": "Undead Software Projects Continue to Raise Security Risks",
+      "link": "https://www.darkreading.com/application-security/undead-software-projects-raise-security-risks",
+      "source": "Dark Reading",
+      "sourceUrl": "https://www.darkreading.com/rss.xml",
+      "summary": "A security firm patched a decade-old app to prevent the takeover of millions of machines, highlighting that abandoned domains remain a boon to attackers.",
+      "publishedAt": "2026-10-30T14:10:37.000Z"
+    },
+    {
+      "slug": "8fc971e55b17c65a2d3492eb",
+      "guid": "https://thehackernews.com/2026/10/wordpress-rce-flaw-draws-nearly-63000.html",
+      "title": "WordPress RCE Flaw Draws Nearly 63,000 Attack Attempts in Just 24 Hours",
+      "link": "https://thehackernews.com/2026/10/wordpress-rce-flaw-draws-nearly-63000.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "Threat actors have been observed attempting to exploit a high-severity security flaw in WordPress Core shortly after patches were released. The vulnerability, which does not have a CVE identifier, relates to a case of remote code execution impacting WordPress Core versions 4.7 t…",
+      "publishedAt": "2026-10-30T14:08:14.000Z"
+    },
+    {
+      "slug": "c67ce218705117aa60e3f945",
+      "guid": "https://thehackernews.com/2026/10/trezor-warns-of-suspected-hardware.html",
+      "title": "Trezor Warns of Suspected Hardware Implant in One of Its Wallets Sold by CryptoBilis",
+      "link": "https://thehackernews.com/2026/10/trezor-warns-of-suspected-hardware.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "A Trezor Safe 5 hardware wallet bought from the reseller CryptoBilis has an extra circuit board that sends out the recovery phrase over a mobile network, a customer has reported. Trezor has not yet examined the device. It is telling everyone who bought a Trezor from CryptoBilis …",
+      "publishedAt": "2026-10-30T12:21:56.000Z"
+    },
+    {
+      "slug": "67deeb1099f33e56545666ed",
+      "guid": "https://thehackernews.com/2026/10/why-urgent-security-fixes-arent-fixed.html",
+      "title": "Why Urgent Security Fixes Aren't Fixed. Observe, Prove, Act, Confirm Gets Them Moving",
+      "link": "https://thehackernews.com/2026/10/why-urgent-security-fixes-arent-fixed.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "The alert is critical. The fix is known. And the ticket sits in a queue for days. Security teams understand the risk, but the people who keep applications available need proof that the change won’t break anything. Their concerns are practical. An IPS protection could block legit…",
+      "publishedAt": "2026-10-30T11:58:53.000Z"
+    },
+    {
+      "slug": "e93de4dec38c1d3f4537ba87",
+      "guid": "https://thehackernews.com/2026/10/syrian-hacker-behind-fake-tweet-that.html",
+      "title": "Syrian Hacker Behind Fake Tweet That Triggered $136 Billion Market Drop Gets 42 Months in Prison",
+      "link": "https://thehackernews.com/2026/10/syrian-hacker-behind-fake-tweet-that.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "Ahmad Umar Agha, a Syrian Electronic Army hacker known online as \"Th3Pr0,\" has been sentenced by a U.S. federal court to 42 months in prison for his role in a hacking conspiracy that targeted Western news outlets. The conspiracy was organized and led by members of former Syrian …",
+      "publishedAt": "2026-10-30T10:40:45.000Z"
+    },
     {
       "slug": "cd084ca776b2e786a19d3e1d",
       "guid": "https://grahamcluley.com/?p=17352248",
@@ -46,11 +226,11 @@
     {
       "slug": "4b53227f9f3bab6085748e01",
       "guid": "https://thehackernews.com/2026/10/official-claude-code-vs-code-extension.html",
-      "title": "Official Claude Code VS Code Extension Compromised to Install Persistent SSH Backdoor",
+      "title": "Official Claude Code Extension on Cursor Marketplace Trojanized with Persistent SSH Backdoor",
       "link": "https://thehackernews.com/2026/10/official-claude-code-vs-code-extension.html",
       "source": "The Hacker News",
       "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "Cybersecurity researchers have disclosed that the official Anthropic Claude Code extension was compromised on the Open VSX registry to install a persistent SSH backdoor on infected hosts. The issue has since been traced to the compromise of the Cursor Marketplace, prompting the …",
+      "summary": "Cybersecurity researchers have disclosed that a trojanized version of Anthropic's official Claude Code extension was distributed through the Cursor Marketplace as a legitimate update, attempting to install a persistent SSH backdoor on affected systems. The malicious update, vers…",
       "publishedAt": "2026-10-30T08:55:47.000Z"
     },
     {
@@ -134,6 +314,16 @@
       "publishedAt": "2026-10-29T20:15:37.000Z"
     },
     {
+      "slug": "feb28c4a34b37e5e14b6e6f5",
+      "guid": "https://www.darkreading.com/cybersecurity-operations/why-ctf-more-important-than-ever",
+      "title": "Why CTF Competitions May Be More Important Than Ever",
+      "link": "https://www.darkreading.com/cybersecurity-operations/why-ctf-more-important-than-ever",
+      "source": "Dark Reading",
+      "sourceUrl": "https://www.darkreading.com/rss.xml",
+      "summary": "As artificial intelligence squeezes early-career learning opportunities, capture-the-flag contests could be one way to help pick up the slack.",
+      "publishedAt": "2026-10-29T19:56:44.000Z"
+    },
+    {
       "slug": "7f056f665bfe428e129ca46d",
       "guid": "https://thehackernews.com/2026/10/threatsday-critical-firewall-flaws.html",
       "title": "ThreatsDay: Critical Firewall Flaws, Banking Trojans Rented, Weaponized PDF, Token Theft + 26 More Stories",
@@ -180,7 +370,7 @@
       "link": "https://danielmiessler.com/blog/general-hill-climbing?utm_source=rss&utm_medium=feed&utm_campaign=website",
       "source": "Daniel Miessler",
       "sourceUrl": "https://danielmiessler.com/feed.rss",
-      "summary": "General Hill-Climbing diagram: five numbered stations climb a hill to the Ideal State flag, from TELOS through articulating the ideal state, evals, doing the work, and iterating, with a dashed loop back to refine the ideal state and evals/images/general-hill-climbing-diagram.web…",
+      "summary": "A charcoal sketch of a figure climbing a steep slope toward a glowing Ideal State at the summit, past verification points along the path/images/general-hill-climbing-header.webp/images/general-hill-climbing-header.webp 💡There is basically One Main Loop in AI, and it applies to …",
       "publishedAt": "2026-10-29T16:30:00.000Z"
     },
     {
@@ -320,7 +510,7 @@
       "link": "https://www.cio.com/article/4236024/techcrunchs-founder-summit-boston-50-discount.html",
       "source": "CIO",
       "sourceUrl": "https://www.cio.com/feed/",
-      "summary": "Last chance to book Meet founders and investors Save 50% on TechCrunch Founder Summit with CIO50 Get 25% off The next generation of founders aren’t pinned to one mindset, one technology, and for that matter, one coast. TechCrunch’s Founder Summit event in Boston’s SoWa Power Sta…",
+      "summary": "Last chance to book Meet founders and investors Save 50% on TechCrunch Founder Summit with CIO50 Get 50% off The next generation of founders aren’t pinned to one mindset, one technology, and for that matter, one coast. TechCrunch’s Founder Summit event in Boston’s SoWa Power Sta…",
       "publishedAt": "2026-10-29T09:26:37.000Z"
     },
     {
@@ -412,16 +602,6 @@
       "sourceUrl": "https://grahamcluley.com/feed/",
       "summary": "Dutch spies, Russian hackers and Jared Kushner’s iPhone. It sounds like the ingredients for a thriller, but according to claims in a new book the US President's son-in-law may have been hacked twice. Is any of it true, and what does it tell us about the phones in our pockets? Me…",
       "publishedAt": "2026-10-29T00:16:56.000Z"
-    },
-    {
-      "slug": "51f2a9227d6b4dad31d67d3c",
-      "guid": "https://orca.security/?p=75653",
-      "title": "CVE-2026-101767: Critical Oracle EBS SQL Injection Actively Probed in the Wild",
-      "link": "https://orca.security/resources/research/cve-2026-101767-critical-oracle-ebs-sql-injection-actively-probed-in-the-wild/",
-      "source": "Orca Security Blog",
-      "sourceUrl": "https://orca.security/resources/blog/feed/",
-      "summary": "What is CVE-2026-101767? A critical vulnerability (CVE-2026-101767, CVSS 9.8) was disclosed affecting Oracle E-Business Suite’s Application Object Library, allowing attackers to achieve full remote code execution and system takeover via an unauthenticated SQL injection in the Th…",
-      "publishedAt": "2026-10-28T20:57:18.000Z"
     },
     {
       "slug": "0756d72ac636d5aa5a111b83",
@@ -520,7 +700,7 @@
       "link": "https://www.darkreading.com/cybersecurity-operations/ai-root-hospital-corridors-raised-security-stakes",
       "source": "Dark Reading",
       "sourceUrl": "https://www.darkreading.com/rss.xml",
-      "summary": "Artificial intelligence (AI) is everywhere in healthcare, from doctors’ intake forms to cancer screenings. But in some cases, life-and-death uses are outpacing cybersecurity.",
+      "summary": "Artificial intelligence is everywhere in healthcare, from doctors' intake forms to cancer screenings. But in some cases, life-and-death uses are outpacing cybersecurity.",
       "publishedAt": "2026-10-28T15:29:06.000Z"
     },
     {
@@ -624,16 +804,6 @@
       "publishedAt": "2026-10-28T10:00:00.000Z"
     },
     {
-      "slug": "26670a9caaf6d4cb866f748a",
-      "guid": "https://www.cio.com/article/4241123/your-ai-agents-have-audit-logs-can-you-reconstruct-their-decisions.html",
-      "title": "Your AI agents have audit logs. Can you reconstruct their decisions?",
-      "link": "https://www.cio.com/article/4241123/your-ai-agents-have-audit-logs-can-you-reconstruct-their-decisions.html",
-      "source": "CIO",
-      "sourceUrl": "https://www.cio.com/feed/",
-      "summary": "The moment arrives after the damage. An agent has cancelled a supplier contract, approved a refund it should have declined or moved a customer record somewhere it should never have gone. Someone senior asks a simple question. Why did it do that? The engineering team opens the lo…",
-      "publishedAt": "2026-10-28T09:00:00.000Z"
-    },
-    {
       "slug": "dd9aab4f2b42a45e9cb61d1c",
       "guid": "https://thehackernews.com/2026/10/anthropics-unreleased-ai-model-chains.html",
       "title": "Anthropic's Unreleased AI Model Chains Flaws Into Working Chrome, Safari, Windows and Linux Exploits",
@@ -724,16 +894,6 @@
       "publishedAt": "2026-10-28T00:00:00.000Z"
     },
     {
-      "slug": "63fa85c856435e657feb22fb",
-      "guid": "https://www.cio.com/article/4241396/the-right-device-for-every-role-in-the-ai-and-hybrid-era.html",
-      "title": "The right device for every role in the AI and hybrid era",
-      "link": "https://www.cio.com/article/4241396/the-right-device-for-every-role-in-the-ai-and-hybrid-era.html",
-      "source": "CIO",
-      "sourceUrl": "https://www.cio.com/feed/",
-      "summary": "AI and hybrid work have written new rules for matching a device to a role. Equipping the workforce by persona was once a straightforward exercise: the org chart supplied the groups, a stereotype supplied the requirements, and the model held because most people worked roughly the…",
-      "publishedAt": "2026-10-27T22:07:58.000Z"
-    },
-    {
       "slug": "cbf7bab928a0c447f4c62370",
       "guid": "https://www.darkreading.com/cyber-risk/3-frameworks-cisos-ai-liability",
       "title": "3 Frameworks to Protect CISOs & Orgs Against AI Liability",
@@ -794,36 +954,6 @@
       "publishedAt": "2026-10-27T16:47:20.000Z"
     },
     {
-      "slug": "337243ba813e3c0df81cd706",
-      "guid": "https://orca.security/?p=75542",
-      "title": "Securing Vercel at Scale: From One Team to Every Team",
-      "link": "https://orca.security/resources/blog/securing-vercel-at-scale-from-one-team-to-every-team/",
-      "source": "Orca Security Blog",
-      "sourceUrl": "https://orca.security/resources/blog/feed/",
-      "summary": "On Thursday, a customer marketing manager vibe codes a community portal where customers can sign in, post questions, and search past answers. By Friday it’s live on Vercel, with a custom domain, an OPENAI_API_KEY for the AI search saved as a plain config variable, and a database…",
-      "publishedAt": "2026-10-27T16:46:00.000Z"
-    },
-    {
-      "slug": "ab37350ee5533dc44017d525",
-      "guid": "https://orca.security/?p=75633",
-      "title": "Calling All Builders: Meet Orca Security at AWS re:Invent 2026",
-      "link": "https://orca.security/resources/blog/calling-all-builders-meet-orca-security-at-aws-reinvent-2026/",
-      "source": "Orca Security Blog",
-      "sourceUrl": "https://orca.security/resources/blog/feed/",
-      "summary": "Software isn’t just built by developers anymore. Business teams, citizen developers, and AI agents are all shipping apps now, on top of more code, more models, and more cloud than ever. AWS re:Invent is where the people doing that building get together, and we can’t think of a b…",
-      "publishedAt": "2026-10-27T15:59:22.000Z"
-    },
-    {
-      "slug": "202140eb69f2a89043e6ac38",
-      "guid": "https://orca.security/?p=75621",
-      "title": "Node.js Brotli Decoder Out-of-Bounds Write Threatens Remote Code Execution Across All Supported Versions",
-      "link": "https://orca.security/resources/research/cve-2026-111497-nodejs-brotli-rce/",
-      "source": "Orca Security Blog",
-      "sourceUrl": "https://orca.security/resources/blog/feed/",
-      "summary": "Executive Summary: A high-severity vulnerability (CVE-2026-111497) was disclosed affecting Node.js across all supported release lines (22.x, 24.x, 26.x), allowing attackers to achieve remote code execution via malformed Brotli-compressed data processed by node:zlib or fetch(). D…",
-      "publishedAt": "2026-10-27T14:54:29.000Z"
-    },
-    {
       "slug": "dc1f78b83e65b690208f66db",
       "guid": "https://thehackernews.com/2026/10/goahead-tls-flaws-allow-revoked-client.html",
       "title": "GoAhead TLS Flaws Allow Revoked Client Certificates and Enable Session Decryption",
@@ -872,136 +1002,6 @@
       "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
       "summary": "Fake login pages are nothing new, but generative AI is making them easier to build and more convincing. Attackers can recreate familiar login screens, impersonate trusted brands and tailor phishing attempts to specific employees or organizations. Some fake login pages go beyond …",
       "publishedAt": "2026-10-27T11:32:46.000Z"
-    },
-    {
-      "slug": "b434e7ad4a7b0ac31514c152",
-      "guid": "https://thehackernews.com/2026/10/lazarus-abuses-south-korean-security.html",
-      "title": "Lazarus Abuses South Korean Security Software to Deploy Malware Using Post-Quantum Encryption",
-      "link": "https://thehackernews.com/2026/10/lazarus-abuses-south-korean-security.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "The North Korea-linked Lazarus Group has been attributed to a cyber espionage campaign dubbed Operation FlashHole targeting at least three organizations in South Korea spanning the construction, software, and wire-communication equipment manufacturing sectors. According to Russi…",
-      "publishedAt": "2026-10-27T11:32:31.000Z"
-    },
-    {
-      "slug": "5a097c66a4225b683c0483d0",
-      "guid": "https://www.schneier.com/?p=72849",
-      "title": "Hiding Capabilities in AI Models",
-      "link": "https://www.schneier.com/blog/archives/2026/10/hiding-capabilities-in-ai-models.html",
-      "source": "Schneier on Security",
-      "sourceUrl": "https://www.schneier.com/feed/",
-      "summary": "Interesting research: “AI Models Can Provably Hide Arbitrary Capabilities” Abstract: Capability evaluations aim to surface dangerous model behaviors before deployment, but their reliability depends on the assumption that hidden capabilities can be elicited. We show this assumpti…",
-      "publishedAt": "2026-10-27T11:01:26.000Z"
-    },
-    {
-      "slug": "eae2a3c7c621fbaa9377337e",
-      "guid": "https://thehackernews.com/2026/10/australia-gets-into-amadey-malware.html",
-      "title": "Australia Gets Into Amadey Malware Backend, Cuts Off Access to 180,000 Infected Computers",
-      "link": "https://thehackernews.com/2026/10/australia-gets-into-amadey-malware.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "A criminal using the Amadey malware can no longer access or steal data from 180,000 infected computers around the world, including some in Australia, the Australian Signals Directorate (ASD) says. The agency's operators gained access to the criminal's operation's backend and cut…",
-      "publishedAt": "2026-10-27T09:33:06.000Z"
-    },
-    {
-      "slug": "c6fd9c70afae34ae696947e1",
-      "guid": "https://thehackernews.com/2026/10/openai-compaction-flaw-let-researchers.html",
-      "title": "OpenAI Compaction Flaw Let Researchers Bypass Hidden Reasoning Protections",
-      "link": "https://thehackernews.com/2026/10/openai-compaction-flaw-let-researchers.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "OpenAI's compaction feature, which shrinks a long conversation to save space, could be turned into a way to copy a model's hidden reasoning out in plain text, security firm Xint has shown. OpenAI's reasoning models work through a problem before answering, and the service normall…",
-      "publishedAt": "2026-10-27T08:22:43.000Z"
-    },
-    {
-      "slug": "15e93dc8da23be7c084aadf5",
-      "guid": "6ae056972f3dcd0001de4ff5",
-      "title": "Weekly Update 527: Cybergeddon News v. Reality",
-      "link": "https://www.troyhunt.com/weekly-update-527/",
-      "source": "Troy Hunt",
-      "sourceUrl": "https://www.troyhunt.com/rss/",
-      "summary": "As the news from last week has settled down, it would seem this headline was pretty spot on. The foretold apocalypse didn't eventuate, and there were no internet-destroying outages. In fact, it took days before I could find a single story of PHP2Shell being reliably attributed b…",
-      "publishedAt": "2026-10-27T07:59:09.000Z"
-    },
-    {
-      "slug": "a2da896f1147a8f00903ae04",
-      "guid": "https://thehackernews.com/2026/10/attackers-hijack-dahua-ip-cameras-in.html",
-      "title": "Attackers Hijack Dahua IP Cameras in Ukraine Using P2P Access and Auth Weaknesses",
-      "link": "https://thehackernews.com/2026/10/attackers-hijack-dahua-ip-cameras-in.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "The Computer Emergency Response Team of Ukraine (CERT-UA) has issued an alert warning of unauthorized remote access to video surveillance systems manufactured by Dahua. \"Cases of compromising IP cameras and DVRs with access to the video stream, changing the device configuration …",
-      "publishedAt": "2026-10-27T06:34:47.000Z"
-    },
-    {
-      "slug": "dc98d41511a17d2ea06d0223",
-      "guid": "https://thehackernews.com/2026/10/cisa-confirms-active-exploitation-of.html",
-      "title": "CISA Confirms Active Exploitation of Two PHP2Shell Flaws Enabling Remote Code Execution",
-      "link": "https://thehackernews.com/2026/10/cisa-confirms-active-exploitation-of.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Monday confirmed active exploitation of the recently patched PHP2Shell flaws by adding them to its Known Exploited Vulnerabilities (KEV) catalog. The PHP vulnerabilities, both rated 9.2 on the CVSS scoring syste…",
-      "publishedAt": "2026-10-27T04:37:59.000Z"
-    },
-    {
-      "slug": "12bf2922831c2253549db264",
-      "guid": "https://www.darkreading.com/cybersecurity-analytics/benchmarking-security-of-ai-models-poses-challenges",
-      "title": "So Many AI Security Benchmarks, but None Tell the Whole Story",
-      "link": "https://www.darkreading.com/cybersecurity-analytics/benchmarking-security-of-ai-models-poses-challenges",
-      "source": "Dark Reading",
-      "sourceUrl": "https://www.darkreading.com/rss.xml",
-      "summary": "Measuring AI model security gets complex, fast, thanks to a growing patchwork of benchmarks targeting different variables in the equation. But none replace testing against your own code and workflows.",
-      "publishedAt": "2026-10-27T00:26:50.000Z"
-    },
-    {
-      "slug": "711b61639b30a123e5f693b1",
-      "guid": "https://www.darkreading.com/cybersecurity-careers/risks-rewards-ai-redefining-ciso-role",
-      "title": "Risks & Rewards: How AI Is Redefining the CISO's Role",
-      "link": "https://www.darkreading.com/cybersecurity-careers/risks-rewards-ai-redefining-ciso-role",
-      "source": "Dark Reading",
-      "sourceUrl": "https://www.darkreading.com/rss.xml",
-      "summary": "Nvidia security executive Mark Weatherford says CISOs must help business leaders weigh AI's pros and cons, and ensure those deploying it own the risks.",
-      "publishedAt": "2026-10-26T21:44:33.000Z"
-    },
-    {
-      "slug": "631b0902569c74ab3b6343eb",
-      "guid": "https://www.darkreading.com/application-security/in-the-wild-attack-ai-agents-trust-markdown",
-      "title": "In-the-Wild Attack Abuses AI Agents' Trust in Markdown",
-      "link": "https://www.darkreading.com/application-security/in-the-wild-attack-ai-agents-trust-markdown",
-      "source": "Dark Reading",
-      "sourceUrl": "https://www.darkreading.com/rss.xml",
-      "summary": "A new AI agent prompt injection technique exploits how coding assistants consume local instruction files, blurring the line between text documents and executable actions.",
-      "publishedAt": "2026-10-26T20:59:26.000Z"
-    },
-    {
-      "slug": "4764a547323cc60e09a947be",
-      "guid": "https://thehackernews.com/2026/10/hackers-infect-953-online-stores-with.html",
-      "title": "Hackers Infect 953 Online Stores With Scanner-Evading JavaScript, Mostly on Magento",
-      "link": "https://thehackernews.com/2026/10/hackers-infect-953-online-stores-with.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "An unknown threat actor has infected 953 online stores, most of them running Magento, as part of a long-running campaign active since July 2025. According to Dutch e-commerce security company Sansec, the activity is designed to add a small piece of code to the store's pages that…",
-      "publishedAt": "2026-10-26T18:12:22.000Z"
-    },
-    {
-      "slug": "9954d1a67aa0fdd06efceed6",
-      "guid": "https://www.darkreading.com/cyberattacks-data-breaches/gheist-stolen-github-tokens-cloud-secrets",
-      "title": "'Gheist' Weaponizes GitHub Tokens to Steal Cloud Secrets",
-      "link": "https://www.darkreading.com/cyberattacks-data-breaches/gheist-stolen-github-tokens-cloud-secrets",
-      "source": "Dark Reading",
-      "sourceUrl": "https://www.darkreading.com/rss.xml",
-      "summary": "An ongoing supply chain attack is harvesting credentials and sensitive data from thousands of developer repositories.",
-      "publishedAt": "2026-10-26T18:01:40.000Z"
-    },
-    {
-      "slug": "c85198bbddef2ec11ea9bd7e",
-      "guid": "https://thehackernews.com/2026/10/php-issues-second-windows-security.html",
-      "title": "PHP Issues Second Windows Security Update in Five Days to Fix Brotli Code Execution Flaw",
-      "link": "https://thehackernews.com/2026/10/php-issues-second-windows-security.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "PHP has rebuilt its official Windows packages for PHP 8.2 through 8.5 to fix CVE-2026-111497, a flaw in the Brotli compression library that the packages include. The flaw can let an attacker corrupt memory and potentially run code. PHP says the flaw can be reached through the cU…",
-      "publishedAt": "2026-10-26T17:45:57.000Z"
     }
   ]
 }
