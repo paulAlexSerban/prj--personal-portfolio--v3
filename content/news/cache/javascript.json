@@ -1,8 +1,78 @@
 {
   "category": "javascript",
   "label": "JavaScript",
-  "fetchedAt": "2026-10-31T11:16:44.567Z",
+  "fetchedAt": "2026-11-01T12:06:13.041Z",
   "items": [
+    {
+      "slug": "220b5d7e1738fa32d4fcaf23",
+      "guid": "https://flaviocopes.com/agent-vendor-key-breach/",
+      "title": "What to do when an AI tool exposes your provider keys",
+      "link": "https://flaviocopes.com/agent-vendor-key-breach/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Respond to exposed AI provider keys: revoke the credentials at their source, inspect usage, replace shared access, and distinguish alerts from hard limits.",
+      "publishedAt": "2026-11-01T11:00:00.000Z"
+    },
+    {
+      "slug": "bce19648ecd8cdde9e7a2233",
+      "guid": "https://flaviocopes.com/publish-opencode-plugin/",
+      "title": "How to package and publish an OpenCode plugin",
+      "link": "https://flaviocopes.com/publish-opencode-plugin/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Package an OpenCode v2 plugin for npm, inspect the tarball, test it in a clean consumer project, and prepare a public release with clear compatibility.",
+      "publishedAt": "2026-11-01T08:00:00.000Z"
+    },
+    {
+      "slug": "da8304a65aa1d011443b157e",
+      "guid": "https://flaviocopes.com/run-llm-locally/",
+      "title": "How to run an LLM locally on macOS, Linux, and Windows",
+      "link": "https://flaviocopes.com/run-llm-locally/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Explore the ways to run LLMs locally on macOS, Linux, and Windows: desktop apps, terminal tools, browser models, libraries, and self-hosted servers.",
+      "publishedAt": "2026-10-31T17:30:00.000Z"
+    },
+    {
+      "slug": "235f368e430f1bc2ac17f32c",
+      "guid": "https://flaviocopes.com/proton-ai-manifesto/",
+      "title": "Proton's AI manifesto and what it means to lead coding agents",
+      "link": "https://flaviocopes.com/proton-ai-manifesto/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Proton's CTO told engineers their job is to help the LLM write code. Where his manifesto is right, where the pushback is fair, and what leading agents involves.",
+      "publishedAt": "2026-10-31T17:00:00.000Z"
+    },
+    {
+      "slug": "ecc1140b887f3bf69e0e6cc5",
+      "guid": "https://flaviocopes.com/cloudflare-full-stack-frameworks/",
+      "title": "Void, vinext, or React Router for a Cloudflare app?",
+      "link": "https://flaviocopes.com/cloudflare-full-stack-frameworks/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Choose a Cloudflare full-stack setup by following a request, a database change, and a deployment through Void, vinext, and React Router.",
+      "publishedAt": "2026-10-31T16:00:00.000Z"
+    },
+    {
+      "slug": "2e59ab109b2789f7476c2de2",
+      "guid": "https://flaviocopes.com/muse-spark-open-hosted/",
+      "title": "Try Muse Spark Open in OpenCode through Ollama Cloud",
+      "link": "https://flaviocopes.com/muse-spark-open-hosted/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Launch Muse Spark Open in OpenCode through Ollama Cloud, try a bounded JavaScript fix, and check model access, tool use, context, and billing.",
+      "publishedAt": "2026-10-31T14:00:00.000Z"
+    },
+    {
+      "slug": "f9746f8c95c7fdcdf9f902ed",
+      "guid": "https://flaviocopes.com/parallel-saas-replacement/",
+      "title": "Test your SaaS replacement before cancelling the original",
+      "link": "https://flaviocopes.com/parallel-saas-replacement/",
+      "source": "Flavio Copes",
+      "sourceUrl": "https://flaviocopes.com/rss.xml",
+      "summary": "Run a homemade SaaS replacement beside the original with read-only inputs, compare real outputs, and rehearse recovery before switching over.",
+      "publishedAt": "2026-10-31T11:00:00.000Z"
+    },
     {
       "slug": "28193a2c3779e393c25f9d50",
       "guid": "https://flaviocopes.com/saas-data-export/",
@@ -242,76 +312,6 @@
       "sourceUrl": "https://flaviocopes.com/rss.xml",
       "summary": "Build a local MCP server with background tasks and confirmation forms in Claude Code. Learn how polling, cancellation, and reconnecting work.",
       "publishedAt": "2026-10-26T14:00:00.000Z"
-    },
-    {
-      "slug": "aace4f2a967725684b9ec32f",
-      "guid": "https://flaviocopes.com/convex/",
-      "title": "The complete guide to Convex",
-      "link": "https://flaviocopes.com/convex/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Learn Convex by building a real-time app with TypeScript, queries, mutations, authentication, indexes, search, file storage, background jobs, and tests.",
-      "publishedAt": "2026-10-26T11:10:00.000Z"
-    },
-    {
-      "slug": "f92b1035872a89d1b8901831",
-      "guid": "https://flaviocopes.com/grok-build/",
-      "title": "How to use Grok Build",
-      "link": "https://flaviocopes.com/grok-build/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "A detailed Grok Build tutorial covering installation, prompts, plans, permissions, tests, Git, skills, MCP, subagents, sessions, and headless automation.",
-      "publishedAt": "2026-10-26T11:05:00.000Z"
-    },
-    {
-      "slug": "c94da9c6bf944ec41415df65",
-      "guid": "https://flaviocopes.com/pull-requests-agent-review/",
-      "title": "A pull request workflow for code written by agents",
-      "link": "https://flaviocopes.com/pull-requests-agent-review/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Review agent-written code with a practical pull request workflow: focused tests, independent review, human approval, merge queues, and deployment checks.",
-      "publishedAt": "2026-10-26T11:00:00.000Z"
-    },
-    {
-      "slug": "d72b9090004da1f1e54cd597",
-      "guid": "https://flaviocopes.com/agent-prompt-caching/",
-      "title": "Prompt caching, compression, and compaction in coding agents",
-      "link": "https://flaviocopes.com/agent-prompt-caching/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Learn how prompt caching, transport compression, and context compaction affect coding agent costs, speed, memory, and usage, with practical examples.",
-      "publishedAt": "2026-10-26T08:00:00.000Z"
-    },
-    {
-      "slug": "18305397a89387402d4b5058",
-      "guid": "https://flaviocopes.com/push-to-main-and-trust/",
-      "title": "Pushing to main still needs a process",
-      "link": "https://flaviocopes.com/push-to-main-and-trust/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Direct pushes can keep development simple, but trust needs concrete checks. Look at access, traceability, tests, and recovery before copying a team's workflow.",
-      "publishedAt": "2026-10-25T16:00:00.000Z"
-    },
-    {
-      "slug": "76e2a4f267a092f5e218a728",
-      "guid": "https://flaviocopes.com/coding-without-the-editor/",
-      "title": "What changes when you stop opening the code editor?",
-      "link": "https://flaviocopes.com/coding-without-the-editor/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Coding agents can move work outside the editor. Understanding changes, reproducing bugs, and checking the application still need a place in the workflow.",
-      "publishedAt": "2026-10-25T14:00:00.000Z"
-    },
-    {
-      "slug": "61cef0c866925f29923fd107",
-      "guid": "https://flaviocopes.com/cloudflare-hyperdrive/",
-      "title": "Cloudflare Hyperdrive tutorial: use PostgreSQL with Workers",
-      "link": "https://flaviocopes.com/cloudflare-hyperdrive/",
-      "source": "Flavio Copes",
-      "sourceUrl": "https://flaviocopes.com/rss.xml",
-      "summary": "Learn Cloudflare Hyperdrive with PostgreSQL and Workers, configure pooling and caching, and see how it fits with D1, R2, Queues, Supabase, and Neon.",
-      "publishedAt": "2026-10-25T11:10:00.000Z"
     },
     {
       "slug": "f756ef917388123187ab4b9b",

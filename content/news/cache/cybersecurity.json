@@ -1,8 +1,68 @@
 {
   "category": "cybersecurity",
   "label": "Cybersecurity",
-  "fetchedAt": "2026-10-31T11:16:44.567Z",
+  "fetchedAt": "2026-11-01T12:06:13.041Z",
   "items": [
+    {
+      "slug": "47c9e2c2f127bea1bcf0c5f4",
+      "guid": "https://thehackernews.com/2026/11/critical-lxd-and-microcloud-flaw-cvss.html",
+      "title": "CVSS 10.0 LXD, MicroCloud Flaw Lets Attackers Impersonate Trusted Clients Without a Private Key",
+      "link": "https://thehackernews.com/2026/11/critical-lxd-and-microcloud-flaw-cvss.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "A critical flaw in Canonical's LXD and MicroCloud let an attacker log in as a trusted client without holding that client's private key. To do it, the attacker had to reach their HTTPS API over the network and have the trusted client's public certificate. Once in, the attacker wo…",
+      "publishedAt": "2026-11-01T08:51:31.000Z"
+    },
+    {
+      "slug": "1a90e52f977ffb07526c4dff",
+      "guid": "6ae6e8121b0ccd000173a711",
+      "title": "Weekly Update 528: Reading AI-generated Code & the Economics of Solar",
+      "link": "https://www.troyhunt.com/weekly-update-528/",
+      "source": "Troy Hunt",
+      "sourceUrl": "https://www.troyhunt.com/rss/",
+      "summary": "By pure timing coincidence, the Proton CEO's AI @ Proton, Engineering Manifesto made headlines around the same time as this week's video. The guy's management style and choice of language have really rubbed a lot of people up the wrong way, and deservedly so, IMHO.",
+      "publishedAt": "2026-11-01T07:35:23.000Z"
+    },
+    {
+      "slug": "3c8da2a0b6d392cf59620f6e",
+      "guid": "https://thehackernews.com/2026/11/hackers-steal-about-27-million-from.html",
+      "title": "Hackers Steal About $2.7 Million From Polymarket Traders via Hijacked DebugBear Script",
+      "link": "https://thehackernews.com/2026/11/hackers-steal-about-27-million-from.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "Malicious code on the website of prediction market Polymarket sold some signed-in traders' positions and moved their funds to the hackers on October 29. The code had replaced a page-speed script that the site loaded from an outside company. Polymarket says it is refunding about …",
+      "publishedAt": "2026-11-01T07:25:40.000Z"
+    },
+    {
+      "slug": "e1dc1203c72851bbedcb84b0",
+      "guid": "https://thehackernews.com/2026/11/fbi-links-north-koreas-tradertraitor-to.html",
+      "title": "FBI Links North Korea's TraderTraitor to Record $6.43 Billion Binance Crypto Heist",
+      "link": "https://thehackernews.com/2026/11/fbi-links-north-koreas-tradertraitor-to.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "The U.S. Federal Bureau of Investigation (FBI) has officially attributed the theft of more than $6 billion in virtual assets to TraderTraitor, a North Korea-aligned elite hacking group also tracked as Jade Sleet, Pressure Chollima, PUKCHONG, Slow Pisces, and UNC4899. The FBI, al…",
+      "publishedAt": "2026-11-01T07:03:00.000Z"
+    },
+    {
+      "slug": "4432f1dbea0caa5b7f06abe6",
+      "guid": "https://thehackernews.com/2026/11/netamloader-malware-targets-government.html",
+      "title": "NetamLoader Malware Targets Government Windows 10 Systems in Asia via .NET Injection",
+      "link": "https://thehackernews.com/2026/11/netamloader-malware-targets-government.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "Cybersecurity researchers have disclosed details of what has been described as a \"highly sophisticated infection chain\" targeting government organizations in Asia. The activity, detailed by Kaspersky this week, targeted a custom Windows 10 build used exclusively by government en…",
+      "publishedAt": "2026-11-01T07:02:58.000Z"
+    },
+    {
+      "slug": "b84dfe472134279a715b0b44",
+      "guid": "https://thehackernews.com/2026/10/chainalysis-confirms-intrusion-into.html",
+      "title": "Chainalysis Confirms Intrusion Into Internal Tools and Exposure of Customer Identity Data",
+      "link": "https://thehackernews.com/2026/10/chainalysis-confirms-intrusion-into.html",
+      "source": "The Hacker News",
+      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "summary": "American blockchain analysis firm Chainalysis said it was the target of a cybersecurity incident in which an external actor accessed non-sensitive customer data. However, the company noted that the breach did not result in unauthorized access to its investigation content, authen…",
+      "publishedAt": "2026-10-31T12:01:56.000Z"
+    },
     {
       "slug": "c305d693e177d5ef64daf367",
       "guid": "https://thehackernews.com/2026/10/attackers-chain-three-ivanti-connect.html",
@@ -54,10 +114,10 @@
       "publishedAt": "2026-10-30T20:05:58.000Z"
     },
     {
-      "slug": "dc99cff795166c0d60b521b4",
-      "guid": "https://danielmiessler.com/blog/energy-changes-the-frames",
-      "title": "It's the Energy Changing the Frames",
-      "link": "https://danielmiessler.com/blog/energy-changes-the-frames?utm_source=rss&utm_medium=feed&utm_campaign=website",
+      "slug": "a153c6f509a20c1278c84e7c",
+      "guid": "https://danielmiessler.com/blog/your-energy-changes-how-you-see-the-world",
+      "title": "Your Energy Changes How You See the World",
+      "link": "https://danielmiessler.com/blog/your-energy-changes-how-you-see-the-world?utm_source=rss&utm_medium=feed&utm_campaign=website",
       "source": "Daniel Miessler",
       "sourceUrl": "https://danielmiessler.com/feed.rss",
       "summary": "A slumped figure sits beside a dim ember in the deep purple shadow of a stone tower, while the same figure climbs its lit face holding a lantern high/images/energy-changes-the-frames.webp/images/energy-changes-the-frames.webp I think so much of winning at life comes down to some…",
@@ -604,6 +664,16 @@
       "publishedAt": "2026-10-29T00:16:56.000Z"
     },
     {
+      "slug": "51f2a9227d6b4dad31d67d3c",
+      "guid": "https://orca.security/?p=75653",
+      "title": "CVE-2026-101767: Critical Oracle EBS SQL Injection Actively Probed in the Wild",
+      "link": "https://orca.security/resources/research/cve-2026-101767-critical-oracle-ebs-sql-injection-actively-probed-in-the-wild/",
+      "source": "Orca Security Blog",
+      "sourceUrl": "https://orca.security/resources/blog/feed/",
+      "summary": "What is CVE-2026-101767? A critical vulnerability (CVE-2026-101767, CVSS 9.8) was disclosed affecting Oracle E-Business Suite’s Application Object Library, allowing attackers to achieve full remote code execution and system takeover via an unauthenticated SQL injection in the Th…",
+      "publishedAt": "2026-10-28T20:57:18.000Z"
+    },
+    {
       "slug": "0756d72ac636d5aa5a111b83",
       "guid": "https://www.darkreading.com/application-security/ghostaction-hacking-wave-fizzles-attackers-github",
       "title": "GhostAction Hacking Wave Fizzles, but Attackers Lurk on in GitHub",
@@ -932,76 +1002,6 @@
       "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
       "summary": "Cybersecurity researchers have disclosed details of three cyber attacks targeting organizations in Japan in which artificial intelligence (AI) was a key element, either in the driving seat or to assist a human operator. TrendAI, which analyzed three exposed server environments u…",
       "publishedAt": "2026-10-27T18:26:46.000Z"
-    },
-    {
-      "slug": "74bf1086544500535fb7c466",
-      "guid": "https://www.darkreading.com/cybersecurity-operations/ai-kill-off-cybersecurity-pros-skills",
-      "title": "Beware the Slasher: AI Could Kill Off Cybersecurity Pros' Skills",
-      "link": "https://www.darkreading.com/cybersecurity-operations/ai-kill-off-cybersecurity-pros-skills",
-      "source": "Dark Reading",
-      "sourceUrl": "https://www.darkreading.com/rss.xml",
-      "summary": "Nathan Hamiel outlines potential SecOps horror in the AI midst, as core technical capabilities go the way of reading an atlas or remembering phone numbers.",
-      "publishedAt": "2026-10-27T17:43:07.000Z"
-    },
-    {
-      "slug": "18c383ff847a81724821f142",
-      "guid": "https://www.darkreading.com/endpoint-security/aokigahara-stealer-developer-keyrings-ai-assistants",
-      "title": "'Aokigahara' Stealer Targets 'Developer Keyrings' & AI Assistants",
-      "link": "https://www.darkreading.com/endpoint-security/aokigahara-stealer-developer-keyrings-ai-assistants",
-      "source": "Dark Reading",
-      "sourceUrl": "https://www.darkreading.com/rss.xml",
-      "summary": "The malware's focus on AI tools expands the traditional infostealer playbook to expose a forest of AI sessions, sensitive business data, and developer infrastructure from a single compromised endpoint.",
-      "publishedAt": "2026-10-27T16:47:20.000Z"
-    },
-    {
-      "slug": "dc1f78b83e65b690208f66db",
-      "guid": "https://thehackernews.com/2026/10/goahead-tls-flaws-allow-revoked-client.html",
-      "title": "GoAhead TLS Flaws Allow Revoked Client Certificates and Enable Session Decryption",
-      "link": "https://thehackernews.com/2026/10/goahead-tls-flaws-allow-revoked-client.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "The GoAhead embedded web server loaded a certificate revocation list into its default TLS backend but never turned revocation checking on, so a revoked client certificate could still pass login on affected setups. The flaw is in builds that use the OpenSSL backend with mutual-TL…",
-      "publishedAt": "2026-10-27T13:59:48.000Z"
-    },
-    {
-      "slug": "6e33a6040a7d5deb5895de4a",
-      "guid": "https://thehackernews.com/2026/10/apple-backports-fix-for-exploited.html",
-      "title": "Apple Backports Fix for Exploited CoreGraphics Flaw to Older iPhones and iPads",
-      "link": "https://thehackernews.com/2026/10/apple-backports-fix-for-exploited.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "Apple on Monday backported fixes for a high-severity security flaw that was exploited in real-world cyber attacks to older devices. The vulnerability, tracked as CVE-2026-86950 (CVSS score: 8.8), is an out-of-bounds write affecting CoreGraphics that could result in arbitrary cod…",
-      "publishedAt": "2026-10-27T13:59:09.000Z"
-    },
-    {
-      "slug": "b7d7e51c85e3c557c1699527",
-      "guid": "https://thehackernews.com/2026/10/microsoft-authenticator-flaw-let.html",
-      "title": "Microsoft Authenticator Flaw Let Permissionless Android Apps Steal Work Account Tokens",
-      "link": "https://thehackernews.com/2026/10/microsoft-authenticator-flaw-let.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "Microsoft has fixed a flaw in its Authenticator app for Android that let a malicious app with no permissions pose as a trusted Microsoft app, such as Teams, and collect sign-in tokens for a victim's work account. Microsoft tracks the flaw as CVE-2026-80097 and fixed it in Authen…",
-      "publishedAt": "2026-10-27T12:09:50.000Z"
-    },
-    {
-      "slug": "c4255691bc04847be987b7b9",
-      "guid": "https://thehackernews.com/2026/10/keystone-to-destroy-18835-hardware.html",
-      "title": "Keystone to Destroy 18,835 Hardware Wallets After Hackers Steal Device Verification Key",
-      "link": "https://thehackernews.com/2026/10/keystone-to-destroy-18835-hardware.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "An attacker who gained access to Keystone's website obtained the key that its hardware wallets use to prove they are genuine, the company said in a statement on October 26. Someone with that key could build counterfeit devices that pass the online check owners use to verify a Ke…",
-      "publishedAt": "2026-10-27T11:46:00.000Z"
-    },
-    {
-      "slug": "ee7d5cd794be00773ca8cb1c",
-      "guid": "https://thehackernews.com/2026/10/ai-generated-fake-login-pages-are.html",
-      "title": "AI-Generated Fake Login Pages Are Making Account Takeovers Easier",
-      "link": "https://thehackernews.com/2026/10/ai-generated-fake-login-pages-are.html",
-      "source": "The Hacker News",
-      "sourceUrl": "https://feeds.feedburner.com/TheHackersNews",
-      "summary": "Fake login pages are nothing new, but generative AI is making them easier to build and more convincing. Attackers can recreate familiar login screens, impersonate trusted brands and tailor phishing attempts to specific employees or organizations. Some fake login pages go beyond …",
-      "publishedAt": "2026-10-27T11:32:46.000Z"
     }
   ]
 }
