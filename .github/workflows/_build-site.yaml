@@ -356,6 +356,24 @@ jobs:
                   role-to-assume: ${{ vars.AWS_DEPLOY_ROLE_ARN }}
                   aws-region: ${{ vars.AWS_REGION }}
 
+            # Set AWS_ACCOUNT_ID on the GitHub Environment (the platform repo's
+            # sync-github-env-vars.bash does this for production and news-data).
+            # Absent on stage and test, so those deploys keep working.
+            - name: Confirm AWS account
+              env:
+                  EXPECTED_ACCOUNT_ID: ${{ vars.AWS_ACCOUNT_ID }}
+              run: |
+                  if [ -z "$EXPECTED_ACCOUNT_ID" ]; then
+                    echo "AWS_ACCOUNT_ID is not set on this GitHub Environment. Skipping the account check."
+                    exit 0
+                  fi
+                  actual="$(aws sts get-caller-identity --query Account --output text)"
+                  if [ "$actual" != "$EXPECTED_ACCOUNT_ID" ]; then
+                    echo "Refusing to deploy: assumed account ${actual}, expected ${EXPECTED_ACCOUNT_ID}."
+                    exit 1
+                  fi
+                  echo "Deploying to AWS account ${actual}."
+
             - name: Sync to S3
               run: aws s3 sync _site/ "s3://${{ vars.PORTFOLIO_S3_BUCKET_NAME }}" --delete
 
@@ -386,6 +404,24 @@ jobs:
               with:
                   role-to-assume: ${{ vars.AWS_DEPLOY_ROLE_ARN }}
                   aws-region: ${{ vars.AWS_REGION }}
+
+            # Set AWS_ACCOUNT_ID on the GitHub Environment (the platform repo's
+            # sync-github-env-vars.bash does this for production and news-data).
+            # Absent on stage and test, so those deploys keep working.
+            - name: Confirm AWS account
+              env:
+                  EXPECTED_ACCOUNT_ID: ${{ vars.AWS_ACCOUNT_ID }}
+              run: |
+                  if [ -z "$EXPECTED_ACCOUNT_ID" ]; then
+                    echo "AWS_ACCOUNT_ID is not set on this GitHub Environment. Skipping the account check."
+                    exit 0
+                  fi
+                  actual="$(aws sts get-caller-identity --query Account --output text)"
+                  if [ "$actual" != "$EXPECTED_ACCOUNT_ID" ]; then
+                    echo "Refusing to deploy: assumed account ${actual}, expected ${EXPECTED_ACCOUNT_ID}."
+                    exit 1
+                  fi
+                  echo "Deploying to AWS account ${actual}."
 
             - name: Sync to S3
               run: aws s3 sync _site/ "s3://${{ vars.BLOG_S3_BUCKET_NAME }}" --delete
@@ -418,6 +454,24 @@ jobs:
                   role-to-assume: ${{ vars.AWS_DEPLOY_ROLE_ARN }}
                   aws-region: ${{ vars.AWS_REGION }}
 
+            # Set AWS_ACCOUNT_ID on the GitHub Environment (the platform repo's
+            # sync-github-env-vars.bash does this for production and news-data).
+            # Absent on stage and test, so those deploys keep working.
+            - name: Confirm AWS account
+              env:
+                  EXPECTED_ACCOUNT_ID: ${{ vars.AWS_ACCOUNT_ID }}
+              run: |
+                  if [ -z "$EXPECTED_ACCOUNT_ID" ]; then
+                    echo "AWS_ACCOUNT_ID is not set on this GitHub Environment. Skipping the account check."
+                    exit 0
+                  fi
+                  actual="$(aws sts get-caller-identity --query Account --output text)"
+                  if [ "$actual" != "$EXPECTED_ACCOUNT_ID" ]; then
+                    echo "Refusing to deploy: assumed account ${actual}, expected ${EXPECTED_ACCOUNT_ID}."
+                    exit 1
+                  fi
+                  echo "Deploying to AWS account ${actual}."
+
             - name: Sync to S3
               run: aws s3 sync _site/ "s3://${{ vars.QUIZ_S3_BUCKET_NAME }}" --delete
 
@@ -448,6 +502,24 @@ jobs:
               with:
                   role-to-assume: ${{ vars.AWS_DEPLOY_ROLE_ARN }}
                   aws-region: ${{ vars.AWS_REGION }}
+
+            # Set AWS_ACCOUNT_ID on the GitHub Environment (the platform repo's
+            # sync-github-env-vars.bash does this for production and news-data).
+            # Absent on stage and test, so those deploys keep working.
+            - name: Confirm AWS account
+              env:
+                  EXPECTED_ACCOUNT_ID: ${{ vars.AWS_ACCOUNT_ID }}
+              run: |
+                  if [ -z "$EXPECTED_ACCOUNT_ID" ]; then
+                    echo "AWS_ACCOUNT_ID is not set on this GitHub Environment. Skipping the account check."
+                    exit 0
+                  fi
+                  actual="$(aws sts get-caller-identity --query Account --output text)"
+                  if [ "$actual" != "$EXPECTED_ACCOUNT_ID" ]; then
+                    echo "Refusing to deploy: assumed account ${actual}, expected ${EXPECTED_ACCOUNT_ID}."
+                    exit 1
+                  fi
+                  echo "Deploying to AWS account ${actual}."
 
             - name: Sync to S3
               run: aws s3 sync _site/ "s3://${{ vars.NEWS_S3_BUCKET_NAME }}" --delete

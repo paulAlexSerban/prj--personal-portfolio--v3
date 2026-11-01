@@ -60,9 +60,15 @@ Flashcard quizes (Anki style spaced repetition) are surfaced as a blog widget, a
 
 ## CI/CD & Deployment
 
+Production hosting is provisioned from [`prj--portfolio-platform`](https://github.com/paulAlexSerban/prj--portfolio-platform), not from `infrastructure/aws` in this repo. That stack creates the S3 buckets, CloudFront distributions, and the OIDC roles in the new AWS account, then `make sync-github-env-vars` writes `AWS_DEPLOY_ROLE_ARN`, `AWS_ACCOUNT_ID`, `AWS_REGION`, and the bucket and distribution ids onto the `production` and `news-data` GitHub Environments. The workflows here do not change for the account move. Each S3 deploy checks `aws sts get-caller-identity` against `AWS_ACCOUNT_ID` and stops when they differ. Stage and test leave `AWS_ACCOUNT_ID` unset, so that check is skipped there.
+
+`infrastructure/aws` still describes the old account. It is kept until that account is destroyed. See `infrastructure/aws/README.md`.
+
 ### Workflows
 
 - `.github/workflows/deploy-dev.yaml` - DEV deploy to GitHub Pages. Ingests content, builds all three apps under sub-paths, merges outputs, and publishes via GitHub Pages.
+- `.github/workflows/deploy-prod.yaml` - production deploy to the new account (S3 + CloudFront), after the `production-approval` environment.
+- `.github/workflows/news-sync.yaml` - daily RSS fetch into the `news-data` environment.
 
 ### Environments
 
@@ -71,7 +77,8 @@ Flashcard quizes (Anki style spaced repetition) are surfaced as a blog widget, a
     - `/blog/` - blog-site (Astro) - https://paulalexserban.github.io/prj--personal-portfolio--v3/blog/ (link to sub-path)
     - `/quiz/` - quiz-web-app (Vite + React SPA) - https://paulalexserban.github.io/prj--personal-portfolio--v3/quiz/ (link to sub-path)
     - `/` redirects to `/home/`.
-- **TEST** / **PROD** - not yet implemented (planned separately).
+- **TEST** and **STAGE** - S3 + CloudFront in the old AWS account, via `deploy-test.yaml` and `deploy-stage.yaml`. Terraform for them is still under `infrastructure/aws/envs`.
+- **PROD** - S3 + CloudFront in the new AWS account: `paulserban.eu`, `blog.paulserban.eu`, `quiz.paulserban.eu`, `news-feed.paulserban.eu`, and `news-data.paulserban.eu`. Terraform lives in `prj--portfolio-platform`. Deploys run through `deploy-prod.yaml` and `news-sync.yaml`.
 
 ### Required repository settings (one-time, manual)
 

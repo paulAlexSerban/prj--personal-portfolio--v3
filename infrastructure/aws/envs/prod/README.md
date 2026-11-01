@@ -1,5 +1,9 @@
 # Production environment - Route 53 -> CloudFront -> S3 (per-app)
 
+> **Deprecated for new applies.** Production in the new AWS account is provisioned from `prj--portfolio-platform`, stack `layers/05-workloads/terraform/static-sites`. This directory remains only so the old account can be destroyed after cutover. Do not apply it against the new account: the state here is local, the bucket names collide with the ones already taken, and the OIDC provider lookup expects the old account. The cutover order is `_docs/02--plans/portfolio-cutover.md` in the platform repo.
+
+
+
 Provisions **four** independent static-hosting stacks under the `paulserban.eu`
 zone, plus a shared **assets CDN** for content-pipeline media, plus a **news JSON
 CDN** for the RSS cache, plus GitHub Actions OIDC roles (site deploy + news-sync).

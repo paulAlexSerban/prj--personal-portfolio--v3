@@ -73,6 +73,24 @@ jobs:
                   role-to-assume: ${{ vars.AWS_DEPLOY_ROLE_ARN }}
                   aws-region: ${{ vars.AWS_REGION }}
 
+            # Set by prj--portfolio-platform scripts/tools/sync-github-env-vars.bash.
+            # Skipped until that variable exists, so the current news-data
+            # environment keeps deploying. Once set, a mismatched account stops the job.
+            - name: Confirm AWS account
+              env:
+                  EXPECTED_ACCOUNT_ID: ${{ vars.AWS_ACCOUNT_ID }}
+              run: |
+                  if [ -z "$EXPECTED_ACCOUNT_ID" ]; then
+                    echo "AWS_ACCOUNT_ID is not set on this GitHub Environment. Skipping the account check."
+                    exit 0
+                  fi
+                  actual="$(aws sts get-caller-identity --query Account --output text)"
+                  if [ "$actual" != "$EXPECTED_ACCOUNT_ID" ]; then
+                    echo "Refusing to deploy: assumed account ${actual}, expected ${EXPECTED_ACCOUNT_ID}."
+                    exit 1
+                  fi
+                  echo "Deploying to AWS account ${actual}."
+
             - name: Sync JSON to S3
               run: |
                   aws s3 sync content/news/cache/ "s3://${{ vars.NEWS_DATA_S3_BUCKET_NAME }}/" \
