@@ -214,7 +214,7 @@ External reference: [FSRS algorithm wiki](https://github.com/open-spaced-repetit
 **Retrievability R(t):** Predicted recall probability at `t` days after last review:
 
 ```
-R(t) = (1 + FACTOR · t / S) ^ DECAY
+R(t) = (1 + FACTOR - t / S) ^ DECAY
 
 DECAY = -0.5
 FACTOR = 19/81
@@ -223,7 +223,7 @@ FACTOR = 19/81
 **Interval from stability:** Days until R drops to `requestedRetention`:
 
 ```
-interval = (S / FACTOR) · (requestedRetention^(1/DECAY) - 1)
+interval = (S / FACTOR) - (requestedRetention^(1/DECAY) - 1)
 ```
 
 At the default **90% retention**, interval ≈ stability (rounded). Example: S = 15.47 -> interval ≈ **15 days**.
@@ -306,13 +306,13 @@ On each review, FSRS:
 
 ```
 inc = exp(w[8])
-    · (11 - difficulty)
-    · stability^(-w[9])
-    · (exp(w[10] · (1 - retrievability)) - 1)
-    · hardPenalty    // w[15] if Hard, else 1
-    · easyBonus      // w[16] if Easy, else 1
+    - (11 - difficulty)
+    - stability^(-w[9])
+    - (exp(w[10] - (1 - retrievability)) - 1)
+    - hardPenalty    // w[15] if Hard, else 1
+    - easyBonus      // w[16] if Easy, else 1
 
-newStability = stability · (1 + inc)
+newStability = stability - (1 + inc)
 ```
 
 **What influences Easy intervals on review cards:**
@@ -386,7 +386,7 @@ Triggered when the user changes `settings.scheduler` in Settings (with confirmat
 For review cards without FSRS state:
 
 - `fsrsStability` ← `interval` (identity mapping)
-- `fsrsDifficulty` ← linear remap from `easeFactor`: `D = (3.5 - EF) · 10/2.2 + 1`, clamped [1, 10]
+- `fsrsDifficulty` ← linear remap from `easeFactor`: `D = (3.5 - EF) - 10/2.2 + 1`, clamped [1, 10]
 - `fsrsLastReview` ← inferred from `dueDate - interval`
 
 Idempotent - cards already carrying FSRS state are unchanged.

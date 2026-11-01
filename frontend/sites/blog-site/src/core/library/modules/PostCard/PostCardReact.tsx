@@ -20,7 +20,7 @@ interface PostCardReactProps {
  */
 export const PostCardReact = ({ post }: PostCardReactProps) => {
     const href = postDetailPath(post.type, post.slug);
-    const meta = [typeLabel[post.type], post.date].filter(Boolean).join(' · ');
+    const meta = [typeLabel[post.type], post.date].filter(Boolean).join(' - ');
     const tags = post.tags.slice(0, 5);
 
     return (

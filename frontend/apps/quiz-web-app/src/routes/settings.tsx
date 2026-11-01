@@ -44,6 +44,8 @@ function SettingsView() {
     const snapshot: Partial<QuizState> = {
       cardStates: state.cardStates,
       addedPosts: state.addedPosts,
+      categories: state.categories,
+      postCategories: state.postCategories,
       ignored: state.ignored,
       suspended: state.suspended,
       postConfigs: state.postConfigs,
@@ -489,7 +491,7 @@ function SettingsView() {
           >
             SM-2 reference
           </a>
-          {" · "}
+          {" - "}
           <a
             className="underline"
             href="https://github.com/open-spaced-repetition/fsrs4anki/wiki/The-Algorithm"

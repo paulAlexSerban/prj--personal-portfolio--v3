@@ -67,7 +67,7 @@ const { default: Content } = await evaluate(companion.body, {
 });
 
 const kindLabel = companionKind === 'cheat_sheet' ? 'Cheat sheet' : 'Learning plan';
-const kicker = `${kindLabel} · ${CONTENT_TYPE_LABEL[contentType]}`;
+const kicker = `${kindLabel} - ${CONTENT_TYPE_LABEL[contentType]}`;
 const parentHref = postDetailPath(contentType, slug);
 const canonicalPath =
     companionKind === 'cheat_sheet'

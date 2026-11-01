@@ -15,7 +15,7 @@
 
 ## Headline
 
-Senior AI & Full-Stack Engineer · Agentic AI Control Planes · High-Throughput Platform Engineering · Distributed Systems
+Senior AI & Full-Stack Engineer - Agentic AI Control Planes - High-Throughput Platform Engineering - Distributed Systems
 
 ---
 
@@ -48,7 +48,7 @@ Blockchain - Exp.     | Sui, Move, Rust (smart contracts), dApp architecture, cu
 
 <!-- tags: ai-engineering, full-stack, platform, aws, bedrock, python, mern, k8s, docker, terraform, microservices, micro-frontends, observability, ci-cd, leadership, agile, monorepo --> <!-- level: senior | type: full-time | start: 2024-04 -->
 
-**Bucharest, Romania · April 2024 - Present** _Python · AWS Bedrock · AgentCore · Pytest · Node.js · React · Next.js · TypeScript · MongoDB · K8s · Docker · Terraform · Buildkite · GitHub Actions · Datadog · Grafana · Loki · Prometheus · ClickHouse_
+**Bucharest, Romania - April 2024 - Present** _Python - AWS Bedrock - AgentCore - Pytest - Node.js - React - Next.js - TypeScript - MongoDB - K8s - Docker - Terraform - Buildkite - GitHub Actions - Datadog - Grafana - Loki - Prometheus - ClickHouse_
 
 Part of the FanDuel Group (under Flutter Entertainment), engineering within Betfair Romania's division. Scope spans Agentic AI platform engineering, internal tooling, game provider integrations, and cross-functional technical leadership across three online casino slots platforms.
 
@@ -139,7 +139,7 @@ Part of the FanDuel Group (under Flutter Entertainment), engineering within Betf
 
 <!-- tags: frontend, typescript, react, aem, adobe-experience-manager, webpack, vite, scss, accessibility, i18n, enterprise, agile, client-facing --> <!-- level: mid-to-senior | type: full-time | start: 2019-11 | end: 2024-04 -->
 
-**Bucharest, Romania · November 2019 - April 2024** _Adobe Experience Manager (AEM) · TypeScript · JavaScript · React.js · Webpack · Vite · SCSS · ITCSS · BEM · Storybook · Jest · Chromatic_
+**Bucharest, Romania - November 2019 - April 2024** _Adobe Experience Manager (AEM) - TypeScript - JavaScript - React.js - Webpack - Vite - SCSS - ITCSS - BEM - Storybook - Jest - Chromatic_
 
 Built and maintained enterprise-grade front-end solutions for financial, automotive, and healthcare clients on Adobe Experience Manager. Led design and development across multiple concurrent client projects in an Agile environment.
 
@@ -177,7 +177,7 @@ Built and maintained enterprise-grade front-end solutions for financial, automot
 
 <!-- tags: freelance, wordpress, aws, devops, mern, python, automation, ai-engineering, gdpr, marketing-tech, n8n --> <!-- level: senior | type: freelance | start: 2020 -->
 
-**Romania + Western European clients · 2020 - Present**
+**Romania + Western European clients - 2020 - Present**
 
 Full-service freelance practice serving Romanian local businesses and Western European clients across WordPress, MERN, Python, AWS, DevOps, and AI engineering. Positioned as the GDPR-compliant alternative for EU clients: replaced cloud automation platforms (Make/Zapier) with self-hosted n8n to eliminate data sovereignty risk.
 
@@ -213,19 +213,19 @@ Full-service freelance practice serving Romanian local businesses and Western Eu
 
 <!-- tags: hackathons, leadership, blockchain, ai-engineering, python, next-js, node, move, sui -->
 
-### 1st Place - Comets of Web3 (48h Hackathon) · November 2025
+### 1st Place - Comets of Web3 (48h Hackathon) - November 2025
 
-**Invoice Financing dApp on Sui Blockchain** _Next.js · Move · Rust · Sui Blockchain · Smart Contracts_
+**Invoice Financing dApp on Sui Blockchain** _Next.js - Move - Rust - Sui Blockchain - Smart Contracts_
 
 Outpaced 50+ international teams by architecting and shipping a production-viable decentralised invoice financing application end-to-end in 48 hours. Led a team of 4 engineers through full-stack delivery: Next.js web app hosted on Vercel + Move/Rust smart contracts on the Sui blockchain hosted on Sui Foundation's testnet.
 
-[Try it out](https://chain-invoice.vercel.app/) · [Code](https://github.com/paulAlexSerban/on-chain-invoice-financing-n-settlement)
+[Try it out](https://chain-invoice.vercel.app/) - [Code](https://github.com/paulAlexSerban/on-chain-invoice-financing-n-settlement)
 
 <!-- tags: blockchain, sui, smart-contracts, move, rust, next-js, leadership, dapp, defi -->
 
-### Jury Prize - Betfair AI Hackathon (24h Hackathon) · December 2025
+### Jury Prize - Betfair AI Hackathon (24h Hackathon) - December 2025
 
-**AI-Powered PR Test Coverage Analyser** _Python · AI Workflows · GitHub API · Jira API · LLMs_
+**AI-Powered PR Test Coverage Analyser** _Python - AI Workflows - GitHub API - Jira API - LLMs_
 
 Led a 3-person team to design, architect, and ship an AI infrastructure tool in 24 hours that analyses PR diffs across repositories, cross-references impacted services against Jira-defined e2e test cases, and surfaces intelligent coverage gap recommendations using LLM workflows. Selected for Jury Prize from the full company-wide cohort.
 
@@ -233,13 +233,13 @@ While development in progress, we were able to find several P1 and P2 issues in 
 
 <!-- tags: ai-engineering, python, llm, github-api, jira-api, agentic-ai, testing, devops, leadership -->
 
-### 2nd Place - Sui Foundation Bootcamp (8h Hackathon) · November 2025
+### 2nd Place - Sui Foundation Bootcamp (8h Hackathon) - November 2025
 
-**Project Management App on Blockchain** _Next.js · Node.js · PostgreSQL · Move · Sui Blockchain · Blockchain Indexer_
+**Project Management App on Blockchain** _Next.js - Node.js - PostgreSQL - Move - Sui Blockchain - Blockchain Indexer_
 
 Led a team of 4 to deliver a blockchain-native project management application - including a custom Node.js/PostgreSQL indexer service - in an 8-hour sprint.
 
-[Try it out](https://moveit-move.vercel.app/) · [Code](https://github.com/paulAlexSerban/moveit.move)
+[Try it out](https://moveit-move.vercel.app/) - [Code](https://github.com/paulAlexSerban/moveit.move)
 
 <!-- tags: blockchain, sui, smart-contracts, move, node, postgres, next-js, leadership, indexer -->
 

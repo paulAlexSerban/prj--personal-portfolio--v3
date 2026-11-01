@@ -16,6 +16,7 @@ import {
 } from "@prj--personal-portfolio--v3/shared--ui/post-filters";
 import { loadPostsIndex } from "@/data/loadQuizData";
 import { useStudySetActions } from "@/hooks/useStudySetActions";
+import { CategoryChips, CategoryPicker } from "@/containers/CategoryPicker";
 import {
   GRID_PAGE_SIZE,
   renderStampNext,
@@ -91,7 +92,7 @@ function HomeView() {
     <PageLayout>
       <section className="flex flex-wrap items-end justify-between gap-4 mb-6">
         <div>
-          <p className="smallcaps text-sm text-[var(--slate)]">Front Page · The Catalogue</p>
+          <p className="smallcaps text-sm text-[var(--slate)]">Front Page - The Catalogue</p>
           <h2 className="text-4xl font-bold" style={{ fontFamily: "var(--font-display)" }}>
             Browse Posts
           </h2>
@@ -162,7 +163,7 @@ function HomeView() {
               return (
                 <article key={post.slug} className="border-t-[3px] border-[var(--ink-black)] pt-4">
                   <p className="smallcaps text-[10px] text-[var(--slate)] mb-1">
-                    {post.type} · {post.questionCount} questions
+                    {post.type} - {post.questionCount} questions
                   </p>
                   {isAdded ? (
                     <Link
@@ -192,10 +193,11 @@ function HomeView() {
                   )}
                   {post.tags.length > 0 && (
                     <p className="mt-2 text-xs smallcaps text-[var(--slate)]">
-                      {post.tags.slice(0, 4).join(" · ")}
+                      {post.tags.slice(0, 4).join(" - ")}
                       {post.tags.length > 4 ? " …" : ""}
                     </p>
                   )}
+                  {isAdded && <CategoryChips postSlug={post.slug} />}
                   <div className="rule-thin my-4" />
                   <div className="flex gap-2">
                     {isAdded ? (
@@ -208,6 +210,7 @@ function HomeView() {
                         >
                           Open Set
                         </Link>
+                        <CategoryPicker postSlug={post.slug} isAdded />
                         <button
                           type="button"
                           disabled={isLoading}
@@ -243,6 +246,12 @@ function HomeView() {
                         >
                           {isLoading ? "Loading…" : "Add to Study Set"}
                         </button>
+                        <CategoryPicker
+                          postSlug={post.slug}
+                          isAdded={false}
+                          loading={isLoading}
+                          onEnsureAdded={(categoryId) => addToStudySet(post.slug, { categoryId })}
+                        />
                         {blogHref && (
                           <a
                             href={blogHref}

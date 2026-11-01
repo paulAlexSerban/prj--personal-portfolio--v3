@@ -14,7 +14,7 @@ export function FooterSiteLinks({ activeSite, tabs }: Props) {
             Other projects:{' '}
             {otherSites.map((tab, index) => (
                 <span key={tab.id}>
-                    {index > 0 && ' · '}
+                    {index > 0 && ' - '}
                     <a href={tab.href} className="text-slate-ink no-underline hover:underline" {...externalLinkAttrs(tab.href)}>
                         {tab.label}
                     </a>

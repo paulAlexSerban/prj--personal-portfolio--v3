@@ -28,7 +28,7 @@ isProject: false
 
 CHANGE_REQUEST: implement pagination on the listing ("hub") pages - ensure search continues
 to work in the same manner.
-WORK_TYPES: expand (blog island + shared math) · refactor (quiz adopts shared math).
+WORK_TYPES: expand (blog island + shared math) - refactor (quiz adopts shared math).
 MODE: ask - resolved via 4 answered questions (see Trade-off Decisions).
 
 ## Context Ledger
@@ -102,7 +102,7 @@ MODE: ask - resolved via 4 answered questions (see Trade-off Decisions).
 #### G1.O1 - Add `paginate` + `totalPages` + `clampPage` to shared/ui  [expand]
 - Intent: pure, tested pagination math both apps can import; additive (no existing shared code touched).
 
-##### G1.O1.P1 - New `pagination.ts` + export path + tests  · Depends-on: none · Rollback: revert PR
+##### G1.O1.P1 - New `pagination.ts` + export path + tests  - Depends-on: none - Rollback: revert PR
 
 - **G1.O1.P1.S1 - Create `shared/ui/src/lib/pagination.ts`** [expand]
   - Intent: define `paginate<T>`, `totalPages`, `clampPage` (copy the exact quiz impl + add clamp).
@@ -145,7 +145,7 @@ MODE: ask - resolved via 4 answered questions (see Trade-off Decisions).
 - Intent: replace the quiz's local `paginate`/`totalPages` with the shared copies; zero behavior change.
 - Depends-on: G1.O1.P1.S3 (shared net green before local copies removed).
 
-##### G1.O2.P1 - Swap import + remove local copies + relocate tests · Rollback: revert PR
+##### G1.O2.P1 - Swap import + remove local copies + relocate tests - Rollback: revert PR
 
 - **G1.O2.P1.S1 - Point quiz at shared pagination; delete local copies & relocated tests** [refactor]
   - Intent: behavior-neutral relocation; `browse.tsx` keeps identical pagination behavior via the shared fns.
@@ -160,14 +160,14 @@ MODE: ask - resolved via 4 answered questions (see Trade-off Decisions).
     - TDD: full quiz suite (`pnpm -F frontend--quiz-web-app test`) stays green - behavior-neutrality proof; the
       relocated assertions live in `pagination.test.ts`.
     - BDD: N/A - internal.
-    - Manual: quiz `/browse` loads; Prev/Next + "Page X of Y · N total" identical to before.
+    - Manual: quiz `/browse` loads; Prev/Next + "Page X of Y - N total" identical to before.
     - Deliverable: `pnpm typecheck` + `pnpm test` exit 0 in quiz; shared `pagination.test.ts` green. Done-when: all green, browse pagination unchanged.
 
 #### G1.O3 - Blog island pagination (12/page) with ?page= URL sync  [expand]
 - Intent: paginate the filtered+sorted rows; sync page to `?page=`; reset to page 1 on search/sort; clamp.
 - Safety-net: unprotected island -> gate = `astro build` + `astro check` + manual; new clamp logic is the tested shared `clampPage`.
 
-##### G1.O3.P1 - Add pagination to PostListIsland · Depends-on: G1.O1.P1.S2 · Rollback: revert PR
+##### G1.O3.P1 - Add pagination to PostListIsland - Depends-on: G1.O1.P1.S2 - Rollback: revert PR
 
 - **G1.O3.P1.S1 - Extend `PostListIsland.tsx` with paging + URL + controls** [expand]
   - Intent: slice rows to 12/page, render Prev/Next + indicator, sync `?page=`, reset to page 1 when search/sort change.
@@ -193,12 +193,12 @@ MODE: ask - resolved via 4 answered questions (see Trade-off Decisions).
       ```
     - `useEffect(() => { const p = readPageFromUrl(); if (p > 1) setPage(p); }, []);` (sync from URL after mount).
     - `const goToPage = (p: number) => { setPage(p); writePageToUrl(p); };`
-    - Search `onChange`: `setSearch(e.target.value); goToPage(1);`  · each sort button `onClick`: `setSortBy(s); goToPage(1);`
+    - Search `onChange`: `setSearch(e.target.value); goToPage(1);`  - each sort button `onClick`: `setSortBy(s); goToPage(1);`
     - After `rows` memo: `const pages = totalPages(rows.length, PAGE_SIZE);` `const current = clampPage(page, pages);`
       `const pageItems = paginate(rows, current, PAGE_SIZE);`
     - Render `pageItems` (not `rows`) in the grid.
     - Below the grid, when `rows.length > 0 && pages > 1`, render a control: Prev (`disabled={current<=1}` -> `goToPage(current-1)`),
-      `Page {current} of {pages} · {rows.length} total` (`kicker`/smallcaps), Next (`disabled={current>=pages}` -> `goToPage(current+1)`),
+      `Page {current} of {pages} - {rows.length} total` (`kicker`/smallcaps), Next (`disabled={current>=pages}` -> `goToPage(current+1)`),
       styled with `stamp stamp-ghost` to match the blog buttons.
     - Empty state (`rows.length === 0`) unchanged; no controls shown.
   - Gates:

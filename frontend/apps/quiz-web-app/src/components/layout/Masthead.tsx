@@ -36,7 +36,7 @@ const siteTabs = buildSiteTabs({
 export function Masthead() {
   const [open, setOpen] = useState(false);
   const now = new Date();
-  const dateline = `Vol. ${__APP_VERSION__} · No. ${dayOfYear(now)}/${isoWeek(now)}`;
+  const dateline = `Vol. ${__APP_VERSION__} - No. ${dayOfYear(now)}/${isoWeek(now)}`;
   return (
     <header className="grain border-b-[3px] border-ink bg-aged">
       <div className="root-box">
@@ -59,7 +59,7 @@ export function Masthead() {
         <div className="rule-double mt-3" />
         <div className="mt-2 flex flex-nowrap items-center justify-between gap-2">
           <p className="kicker text-[11px]">
-            {dateline} · {formatDateline()}
+            {dateline} - {formatDateline()}
           </p>
           <div className="flex items-center gap-3 md:gap-5">
             <nav

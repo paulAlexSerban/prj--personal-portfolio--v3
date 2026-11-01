@@ -1,5 +1,34 @@
 # @prj--personal-portfolio--v3/frontend--portfolio-site
 
+## 0.4.3
+
+### Patch Changes
+
+- 59d7d4d: algorithm improve
+- Updated dependencies [59d7d4d]
+- Updated dependencies [f56bd04]
+    - @prj--personal-portfolio--v3/shared--markdown@1.2.0
+    - @prj--personal-portfolio--v3/shared--ui@1.4.2
+    - @prj--personal-portfolio--v3/shared--navigation@1.2.6
+
+## 0.4.2
+
+### Patch Changes
+
+- 8fd7026: remove cv from navigation
+- 2694123: adjust footer
+
+## 0.4.1
+
+### Patch Changes
+
+- 78c6103: styel chanegs
+- Updated dependencies [9a7b811]
+- Updated dependencies [78c6103]
+- Updated dependencies [8689620]
+    - @prj--personal-portfolio--v3/shared--ui@1.4.1
+    - @prj--personal-portfolio--v3/shared--navigation@1.2.5
+
 ## 0.4.0
 
 ### Minor Changes

@@ -52,4 +52,15 @@ describe("route resolution", () => {
     await tagsRouter.load();
     expect(tagsRouter.state.matches.map((m) => m.routeId)).toContain("/tags/");
   });
+
+  it("resolves /sets/categories/$categoryId/study to the category study route", async () => {
+    const router = createRouter({
+      routeTree,
+      history: createMemoryHistory({ initialEntries: ["/sets/categories/favorites/study"] }),
+    });
+    await router.load();
+    const ids = router.state.matches.map((m) => m.routeId);
+    expect(ids).toContain("/sets/categories/$categoryId/study");
+    expect(ids).not.toContain("/sets/$postSlug/study");
+  });
 });

@@ -28,7 +28,7 @@ export function NewsCard({ item, showCategory = true }: Props) {
                     </a>
                 )}
                 <p className="kicker mb-0 text-[10px]">
-                    {item.source} · {dateLabel}
+                    {item.source} - {dateLabel}
                 </p>
             </div>
             <h2 className="font-display text-2xl font-bold leading-tight">

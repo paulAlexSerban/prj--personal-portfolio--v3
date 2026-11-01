@@ -82,7 +82,7 @@ export function QuizFlashcardWidget({ slug, questions, totalQuestionCount, quizA
                     </p>
                     <div className="mb-4 flex items-center justify-between text-xs" style={{ fontFamily: 'var(--font-mono)' }}>
                         <span className="smallcaps">
-                            Flashcard preview · {index + 1} / {questions.length}
+                            Flashcard preview - {index + 1} / {questions.length}
                         </span>
                         <span className="smallcaps border border-rule px-2 py-0.5 text-[10px]">{current.typeLabel}</span>
                     </div>

@@ -9,6 +9,9 @@ import { remarkMathPlaceholder } from './math.ts';
 import { remarkCloze } from './remark-cloze.ts';
 import { sanitizeHtml } from './sanitize.ts';
 
+/** Bump when the same source can compile to different HTML. Quiz-export cache keys include this. */
+export const MARKDOWN_COMPILER_VERSION = '1';
+
 export interface CompileMarkdownOptions {
     inline?: boolean;
     reveal?: boolean;
@@ -20,9 +23,7 @@ function stripBlockWrapper(html: string): string {
     return match ? match[1] : trimmed;
 }
 
-function createProcessor(opts: CompileMarkdownOptions = {}) {
-    const { reveal = true } = opts;
-
+function createProcessor(reveal: boolean) {
     return (
         unified()
             .use(remarkParse)
@@ -33,15 +34,25 @@ function createProcessor(opts: CompileMarkdownOptions = {}) {
             .use(remarkCloze as Parameters<ReturnType<typeof unified>['use']>[0], { reveal })
             .use(remarkRehype, { allowDangerousHtml: true })
             .use(rehypeStringify, { allowDangerousHtml: true })
+            .freeze()
     );
+}
+
+const processors = new Map<boolean, ReturnType<typeof createProcessor>>();
+
+function processorFor(reveal: boolean) {
+    const existing = processors.get(reveal);
+    if (existing) return existing;
+    const created = createProcessor(reveal);
+    processors.set(reveal, created);
+    return created;
 }
 
 /** Compile markdown (post-MDX-preprocess) to sanitized HTML. */
 export function compileMarkdown(src: string, opts: CompileMarkdownOptions = {}): string {
-    const { inline = false } = opts;
-    const processor = createProcessor(opts);
+    const { inline = false, reveal = true } = opts;
     const normalized = preprocessMath(src ?? '');
-    let html = String(processor.processSync(normalized));
+    let html = String(processorFor(reveal).processSync(normalized));
 
     if (inline) {
         html = stripBlockWrapper(html);

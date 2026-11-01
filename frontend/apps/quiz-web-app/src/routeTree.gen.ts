@@ -21,7 +21,9 @@ import { Route as SetsPostSlugRouteImport } from './routes/sets.$postSlug'
 import { Route as TagsTagIndexRouteImport } from './routes/tags.$tag.index'
 import { Route as SetsPostSlugIndexRouteImport } from './routes/sets.$postSlug.index'
 import { Route as TagsTagStudyRouteImport } from './routes/tags.$tag.study'
+import { Route as SetsCategoriesCategoryIdRouteImport } from './routes/sets.categories.$categoryId'
 import { Route as SetsPostSlugStudyRouteImport } from './routes/sets.$postSlug.study'
+import { Route as SetsCategoriesCategoryIdStudyRouteImport } from './routes/sets.categories.$categoryId.study'
 
 const StudyRoute = StudyRouteImport.update({
   id: '/study',
@@ -83,11 +85,23 @@ const TagsTagStudyRoute = TagsTagStudyRouteImport.update({
   path: '/study',
   getParentRoute: () => TagsTagRoute,
 } as any)
+const SetsCategoriesCategoryIdRoute =
+  SetsCategoriesCategoryIdRouteImport.update({
+    id: '/sets/categories/$categoryId',
+    path: '/sets/categories/$categoryId',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const SetsPostSlugStudyRoute = SetsPostSlugStudyRouteImport.update({
   id: '/study',
   path: '/study',
   getParentRoute: () => SetsPostSlugRoute,
 } as any)
+const SetsCategoriesCategoryIdStudyRoute =
+  SetsCategoriesCategoryIdStudyRouteImport.update({
+    id: '/study',
+    path: '/study',
+    getParentRoute: () => SetsCategoriesCategoryIdRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -100,9 +114,11 @@ export interface FileRoutesByFullPath {
   '/sets/': typeof SetsIndexRoute
   '/tags/': typeof TagsIndexRoute
   '/sets/$postSlug/study': typeof SetsPostSlugStudyRoute
+  '/sets/categories/$categoryId': typeof SetsCategoriesCategoryIdRouteWithChildren
   '/tags/$tag/study': typeof TagsTagStudyRoute
   '/sets/$postSlug/': typeof SetsPostSlugIndexRoute
   '/tags/$tag/': typeof TagsTagIndexRoute
+  '/sets/categories/$categoryId/study': typeof SetsCategoriesCategoryIdStudyRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -113,9 +129,11 @@ export interface FileRoutesByTo {
   '/sets': typeof SetsIndexRoute
   '/tags': typeof TagsIndexRoute
   '/sets/$postSlug/study': typeof SetsPostSlugStudyRoute
+  '/sets/categories/$categoryId': typeof SetsCategoriesCategoryIdRouteWithChildren
   '/tags/$tag/study': typeof TagsTagStudyRoute
   '/sets/$postSlug': typeof SetsPostSlugIndexRoute
   '/tags/$tag': typeof TagsTagIndexRoute
+  '/sets/categories/$categoryId/study': typeof SetsCategoriesCategoryIdStudyRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -129,9 +147,11 @@ export interface FileRoutesById {
   '/sets/': typeof SetsIndexRoute
   '/tags/': typeof TagsIndexRoute
   '/sets/$postSlug/study': typeof SetsPostSlugStudyRoute
+  '/sets/categories/$categoryId': typeof SetsCategoriesCategoryIdRouteWithChildren
   '/tags/$tag/study': typeof TagsTagStudyRoute
   '/sets/$postSlug/': typeof SetsPostSlugIndexRoute
   '/tags/$tag/': typeof TagsTagIndexRoute
+  '/sets/categories/$categoryId/study': typeof SetsCategoriesCategoryIdStudyRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -146,9 +166,11 @@ export interface FileRouteTypes {
     | '/sets/'
     | '/tags/'
     | '/sets/$postSlug/study'
+    | '/sets/categories/$categoryId'
     | '/tags/$tag/study'
     | '/sets/$postSlug/'
     | '/tags/$tag/'
+    | '/sets/categories/$categoryId/study'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -159,9 +181,11 @@ export interface FileRouteTypes {
     | '/sets'
     | '/tags'
     | '/sets/$postSlug/study'
+    | '/sets/categories/$categoryId'
     | '/tags/$tag/study'
     | '/sets/$postSlug'
     | '/tags/$tag'
+    | '/sets/categories/$categoryId/study'
   id:
     | '__root__'
     | '/'
@@ -174,9 +198,11 @@ export interface FileRouteTypes {
     | '/sets/'
     | '/tags/'
     | '/sets/$postSlug/study'
+    | '/sets/categories/$categoryId'
     | '/tags/$tag/study'
     | '/sets/$postSlug/'
     | '/tags/$tag/'
+    | '/sets/categories/$categoryId/study'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -189,6 +215,7 @@ export interface RootRouteChildren {
   TagsTagRoute: typeof TagsTagRouteWithChildren
   SetsIndexRoute: typeof SetsIndexRoute
   TagsIndexRoute: typeof TagsIndexRoute
+  SetsCategoriesCategoryIdRoute: typeof SetsCategoriesCategoryIdRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
@@ -277,12 +304,26 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TagsTagStudyRouteImport
       parentRoute: typeof TagsTagRoute
     }
+    '/sets/categories/$categoryId': {
+      id: '/sets/categories/$categoryId'
+      path: '/sets/categories/$categoryId'
+      fullPath: '/sets/categories/$categoryId'
+      preLoaderRoute: typeof SetsCategoriesCategoryIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/sets/$postSlug/study': {
       id: '/sets/$postSlug/study'
       path: '/study'
       fullPath: '/sets/$postSlug/study'
       preLoaderRoute: typeof SetsPostSlugStudyRouteImport
       parentRoute: typeof SetsPostSlugRoute
+    }
+    '/sets/categories/$categoryId/study': {
+      id: '/sets/categories/$categoryId/study'
+      path: '/study'
+      fullPath: '/sets/categories/$categoryId/study'
+      preLoaderRoute: typeof SetsCategoriesCategoryIdStudyRouteImport
+      parentRoute: typeof SetsCategoriesCategoryIdRoute
     }
   }
 }
@@ -314,6 +355,20 @@ const TagsTagRouteChildren: TagsTagRouteChildren = {
 const TagsTagRouteWithChildren =
   TagsTagRoute._addFileChildren(TagsTagRouteChildren)
 
+interface SetsCategoriesCategoryIdRouteChildren {
+  SetsCategoriesCategoryIdStudyRoute: typeof SetsCategoriesCategoryIdStudyRoute
+}
+
+const SetsCategoriesCategoryIdRouteChildren: SetsCategoriesCategoryIdRouteChildren =
+  {
+    SetsCategoriesCategoryIdStudyRoute: SetsCategoriesCategoryIdStudyRoute,
+  }
+
+const SetsCategoriesCategoryIdRouteWithChildren =
+  SetsCategoriesCategoryIdRoute._addFileChildren(
+    SetsCategoriesCategoryIdRouteChildren,
+  )
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   BrowseRoute: BrowseRoute,
@@ -324,6 +379,7 @@ const rootRouteChildren: RootRouteChildren = {
   TagsTagRoute: TagsTagRouteWithChildren,
   SetsIndexRoute: SetsIndexRoute,
   TagsIndexRoute: TagsIndexRoute,
+  SetsCategoriesCategoryIdRoute: SetsCategoriesCategoryIdRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

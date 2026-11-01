@@ -119,6 +119,64 @@ export interface DailyCounts {
   reviews: number;
 }
 
+/** User-defined folder that groups whole study sets (posts). */
+export interface Category {
+  id: string;
+  name: string;
+  createdAt: string;
+  /** True only for the seeded Favorites category - not renameable or deletable. */
+  isDefault?: boolean;
+}
+
+export const FAVORITES_CATEGORY_ID = "favorites";
+
+export const MAX_CATEGORY_NAME_LENGTH = 40;
+
+export function defaultCategories(now = Date.now()): Category[] {
+  return [
+    {
+      id: FAVORITES_CATEGORY_ID,
+      name: "Favorites",
+      isDefault: true,
+      createdAt: new Date(now).toISOString(),
+    },
+  ];
+}
+
+/** Stable id from a display name; collision-safe against `existingIds`. */
+export function uniqueCategoryId(name: string, existingIds: Iterable<string>): string {
+  const ids = new Set(existingIds);
+  const base =
+    name
+      .trim()
+      .toLowerCase()
+      .normalize("NFKD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-+|-+$/g, "") || "category";
+  if (!ids.has(base)) return base;
+  let n = 2;
+  while (ids.has(`${base}-${n}`)) n += 1;
+  return `${base}-${n}`;
+}
+
+/** Ensure Favorites exists without clobbering custom categories. */
+export function ensureDefaultCategories(
+  categories: Category[] | undefined,
+  now = Date.now(),
+): Category[] {
+  const list = categories?.length ? [...categories] : [];
+  const hasFavorites = list.some((c) => c.id === FAVORITES_CATEGORY_ID || c.isDefault);
+  if (!hasFavorites) {
+    return [...defaultCategories(now), ...list];
+  }
+  return list.map((c) =>
+    c.id === FAVORITES_CATEGORY_ID || c.isDefault
+      ? { ...c, id: FAVORITES_CATEGORY_ID, name: "Favorites", isDefault: true }
+      : c,
+  );
+}
+
 export interface PostStats {
   total: number;
   newCount: number;

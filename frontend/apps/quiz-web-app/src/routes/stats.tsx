@@ -348,7 +348,7 @@ function StatsView() {
                 className="text-[10px] text-[var(--slate)]"
                 style={{ fontFamily: "var(--font-mono)" }}
               >
-                strong {retrievabilityBands.green} · fading {retrievabilityBands.amber} · at-risk{" "}
+                strong {retrievabilityBands.green} - fading {retrievabilityBands.amber} - at-risk{" "}
                 {retrievabilityBands.red}
               </p>
             </>
@@ -464,7 +464,7 @@ function StatsView() {
                   className="text-[10px] text-[var(--slate)] mt-0.5"
                   style={{ fontFamily: "var(--font-mono)" }}
                 >
-                  new {n} · learn {l} · review {r} · total {dCards.length}
+                  new {n} - learn {l} - review {r} - total {dCards.length}
                 </p>
               </div>
             );
@@ -525,7 +525,7 @@ function StatsView() {
           {retention.toFixed(1)}%
         </p>
         <p className="smallcaps text-sm text-[var(--slate)]">
-          (Good + Easy) ÷ total · {windowLogs.length} reviews
+          (Good + Easy) ÷ total - {windowLogs.length} reviews
         </p>
       </Section>
 

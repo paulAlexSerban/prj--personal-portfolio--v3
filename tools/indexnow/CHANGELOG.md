@@ -1,5 +1,11 @@
 # @prj--personal-portfolio--v3/tools--indexnow
 
+## 1.2.1
+
+### Patch Changes
+
+- 78c6103: styel chanegs
+
 ## 1.2.0
 
 ### Minor Changes

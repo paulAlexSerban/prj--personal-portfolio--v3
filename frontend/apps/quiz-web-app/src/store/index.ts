@@ -3,6 +3,7 @@ import { createJSONStorage, persist, type StateStorage } from "zustand/middlewar
 import type {
   AppSettings,
   CardState,
+  Category,
   DailyCounts,
   PostConfigOverride,
   Rating,
@@ -10,7 +11,17 @@ import type {
   StudyConfig,
   StudySession,
 } from "./types";
-import { DEFAULT_CONFIG, DEFAULT_SETTINGS, createCardState, resetCardState } from "./types";
+import {
+  DEFAULT_CONFIG,
+  DEFAULT_SETTINGS,
+  FAVORITES_CATEGORY_ID,
+  MAX_CATEGORY_NAME_LENGTH,
+  createCardState,
+  defaultCategories,
+  ensureDefaultCategories,
+  resetCardState,
+  uniqueCategoryId,
+} from "./types";
 import {
   migratePersistedState,
   PERSIST_BACKUP_KEY_SUFFIX,
@@ -72,6 +83,10 @@ export interface QuizState {
   cardStates: Record<string, CardState>;
   /** Post slugs the user has added to their study set. */
   addedPosts: string[];
+  /** User-defined folders of study sets. Always includes the default Favorites category. */
+  categories: Category[];
+  /** postSlug -> category ids the set belongs to (many-to-many). */
+  postCategories: Record<string, string[]>;
   /** Question slugs the user has chosen to ignore (excluded from all sessions). */
   ignored: Record<string, true>;
   /** Question slugs temporarily suspended (excluded from queues until unsuspended). */
@@ -95,6 +110,14 @@ export interface QuizActions {
   addPost: (postSlug: string, questionSlugs: string[]) => void;
   /** Remove a post from the study set but keep all card progress (WEB-05). */
   removePost: (postSlug: string) => void;
+  /** Create a custom category. Returns the new id, or "" if the name is invalid/duplicate. */
+  createCategory: (name: string) => string;
+  /** Rename a custom category. No-op for Favorites or invalid names. */
+  renameCategory: (id: string, name: string) => void;
+  /** Delete a custom category and drop its memberships. No-op for Favorites. */
+  deleteCategory: (id: string) => void;
+  addPostToCategory: (postSlug: string, categoryId: string) => void;
+  removePostFromCategory: (postSlug: string, categoryId: string) => void;
   /** Apply an SM-2 rating to a question by slug (WEB-06). */
   reviewCard: (questionSlug: string, rating: Rating, timeTakenMs: number) => void;
   /** Revert the most recent reviewCard (restore card + daily, drop its log). */
@@ -128,6 +151,8 @@ export type QuizStore = QuizState & QuizActions;
 export const initialState: QuizState = {
   cardStates: {},
   addedPosts: [],
+  categories: defaultCategories(),
+  postCategories: {},
   ignored: {},
   suspended: {},
   postConfigs: {},
@@ -162,10 +187,86 @@ export const useStore = create<QuizStore>()(
         }),
 
       removePost: (postSlug) =>
-        set((s) => ({
+        set((s) => {
           // Keep cardStates intact so progress survives re-adding (WEB-05).
-          addedPosts: s.addedPosts.filter((p) => p !== postSlug),
-        })),
+          // Category membership is organizational - drop it so a later re-add starts uncategorized.
+          const postCategories = { ...s.postCategories };
+          delete postCategories[postSlug];
+          return {
+            addedPosts: s.addedPosts.filter((p) => p !== postSlug),
+            postCategories,
+          };
+        }),
+
+      createCategory: (name) => {
+        const trimmed = name.trim().slice(0, MAX_CATEGORY_NAME_LENGTH);
+        if (!trimmed) return "";
+        const s = get();
+        const taken = s.categories.some((c) => c.name.toLowerCase() === trimmed.toLowerCase());
+        if (taken) return "";
+        const id = uniqueCategoryId(
+          trimmed,
+          s.categories.map((c) => c.id),
+        );
+        const category: Category = {
+          id,
+          name: trimmed,
+          createdAt: new Date().toISOString(),
+        };
+        set({ categories: [...s.categories, category] });
+        return id;
+      },
+
+      renameCategory: (id, name) =>
+        set((s) => {
+          const cat = s.categories.find((c) => c.id === id);
+          if (!cat || cat.isDefault || cat.id === FAVORITES_CATEGORY_ID) return {};
+          const trimmed = name.trim().slice(0, MAX_CATEGORY_NAME_LENGTH);
+          if (!trimmed) return {};
+          const taken = s.categories.some(
+            (c) => c.id !== id && c.name.toLowerCase() === trimmed.toLowerCase(),
+          );
+          if (taken) return {};
+          return {
+            categories: s.categories.map((c) => (c.id === id ? { ...c, name: trimmed } : c)),
+          };
+        }),
+
+      deleteCategory: (id) =>
+        set((s) => {
+          const cat = s.categories.find((c) => c.id === id);
+          if (!cat || cat.isDefault || cat.id === FAVORITES_CATEGORY_ID) return {};
+          const postCategories: Record<string, string[]> = {};
+          for (const [slug, ids] of Object.entries(s.postCategories)) {
+            const next = ids.filter((cid) => cid !== id);
+            if (next.length > 0) postCategories[slug] = next;
+          }
+          return {
+            categories: s.categories.filter((c) => c.id !== id),
+            postCategories,
+          };
+        }),
+
+      addPostToCategory: (postSlug, categoryId) =>
+        set((s) => {
+          if (!s.categories.some((c) => c.id === categoryId)) return {};
+          const current = s.postCategories[postSlug] ?? [];
+          if (current.includes(categoryId)) return {};
+          return {
+            postCategories: { ...s.postCategories, [postSlug]: [...current, categoryId] },
+          };
+        }),
+
+      removePostFromCategory: (postSlug, categoryId) =>
+        set((s) => {
+          const current = s.postCategories[postSlug];
+          if (!current?.includes(categoryId)) return {};
+          const next = current.filter((id) => id !== categoryId);
+          const postCategories = { ...s.postCategories };
+          if (next.length === 0) delete postCategories[postSlug];
+          else postCategories[postSlug] = next;
+          return { postCategories };
+        }),
 
       reviewCard: (questionSlug, rating, timeTakenMs) => {
         const s = get();
@@ -391,6 +492,10 @@ export const useStore = create<QuizStore>()(
         set((s) => ({
           cardStates: snapshot.cardStates ?? s.cardStates,
           addedPosts: snapshot.addedPosts ?? s.addedPosts,
+          categories: snapshot.categories
+            ? ensureDefaultCategories(snapshot.categories)
+            : s.categories,
+          postCategories: snapshot.postCategories ?? s.postCategories,
           ignored: snapshot.ignored ?? s.ignored,
           suspended: snapshot.suspended ?? s.suspended,
           postConfigs: snapshot.postConfigs ?? s.postConfigs,
@@ -406,7 +511,7 @@ export const useStore = create<QuizStore>()(
     {
       name: STORAGE_KEY,
       storage,
-      version: 1,
+      version: 2,
       migrate: (persistedState) => runPersistMigration(persistedState as MigratablePersistedState),
       // `lastReview` is a transient undo buffer - never persist it.
       partialize: ({ lastReview: _lastReview, ...rest }) => rest,

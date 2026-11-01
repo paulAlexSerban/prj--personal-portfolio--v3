@@ -56,7 +56,7 @@ Dry-run prints a redacted payload and URL count; it does not write files or call
 
 | Variable            | Role                                                                                                                                                                                                                                                                                                |
 | ------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `INDEX_NOW_API_KEY` | 8–128 chars (`A-Z`, `a-z`, `0-9`, `-`). Same key on each host; each host must serve `{key}.txt`. Generate once with `python3 -c 'import secrets; print(secrets.token_hex(16))'` and store as the GitHub Actions `production` environment secret `INDEX_NOW_API_KEY`. Do not commit the `.txt` file. |
+| `INDEX_NOW_API_KEY` | 8-128 chars (`A-Z`, `a-z`, `0-9`, `-`). Same key on each host; each host must serve `{key}.txt`. Generate once with `python3 -c 'import secrets; print(secrets.token_hex(16))'` and store as the GitHub Actions `production` environment secret `INDEX_NOW_API_KEY`. Do not commit the `.txt` file. |
 
 CI: production-only, after S3 deploy of portfolio / blog / news-feed. Not stage,
 test, Pages, or the quiz SPA.

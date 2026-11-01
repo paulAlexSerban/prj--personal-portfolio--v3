@@ -1,5 +1,21 @@
 # @prj--personal-portfolio--v3/shared--navigation
 
+## 1.2.6
+
+### Patch Changes
+
+- @prj--personal-portfolio--v3/shared--ui@1.4.2
+
+## 1.2.5
+
+### Patch Changes
+
+- 78c6103: styel chanegs
+- Updated dependencies [9a7b811]
+- Updated dependencies [78c6103]
+- Updated dependencies [8689620]
+    - @prj--personal-portfolio--v3/shared--ui@1.4.1
+
 ## 1.2.4
 
 ### Patch Changes

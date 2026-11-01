@@ -74,16 +74,16 @@ Source of findings: `_docs/architectural-knowledge-management/architectural-deci
 - Gates: TDD N/A (no test infra, visual change); BDD N/A; Manual: review vs spike 04 at 375/800/1100px, light+dark; Deliverable: `astro build` exit 0 + typecheck clean.
 
 #### G1.O1 - Fix PostCard (F1+F2+F3)  [improve]
-##### G1.O1.P1 - PostCard batch · Depends-on: none · Rollback: revert PR
+##### G1.O1.P1 - PostCard batch - Depends-on: none - Rollback: revert PR
 - **S1 - Restore tag treatment** `TagList.astro:19`: replace `inline-block px-2 py-[0.15rem] text-[0.8rem] text-ink no-underline hover:bg-highlight rounded-md` -> `inline-block border border-rule bg-highlight px-2 py-[0.15rem] text-[0.8rem] text-ink no-underline hover:border-ink`. Done-when: tags visibly bordered without hover; links resolve.
 - **S2 - Card bottom edge + CTA** `PostCard.astro:33,40`: `<article class="card-ruled">` -> `<article class="card-ruled border-b border-rule pb-4">`; after `<TagList>` add `<a href={href} class="kicker mt-3 inline-block text-[10px] hover:underline">Read -></a>` (reuse existing `href` from line 29). Done-when: visible bottom rule + working Read link on all 5 contexts.
 
 #### G1.O2 - Fix SiteHeader (F4+F5)  [improve]
-##### G1.O2.P1 - SiteHeader batch · Depends-on: none · Rollback: revert PR
+##### G1.O2.P1 - SiteHeader batch - Depends-on: none - Rollback: revert PR
 - **S1 - Move toggle to nav row; bump deck** `SiteHeader.astro`: remove toggle button from dateline row (leaving "Writing Edition" alone); add the toggle as last child of the nav row `<div>` after `<nav>`, change its `text-[10px]`->`text-[11px]`; change deck `class="deck mt-1 text-center"` -> `class="deck mt-2 text-center text-sm"`. Toggle script (`getElementById('theme-toggle')`) unaffected. Done-when: toggle visible @11px in nav row, toggles + persists; tagline readable; no-FOUC intact.
 
 #### G1.O3 - Fix grid width (F6)  [improve]
-##### G1.O3.P1 - Grid batch · Depends-on: none · Rollback: revert PR
+##### G1.O3.P1 - Grid batch - Depends-on: none - Rollback: revert PR
 - **S1 - `minmax(25rem,1fr)` -> `minmax(18rem,1fr)`** in `index.astro:53`, `post/index.astro:18`, `snippet/index.astro:18`, `booknote/index.astro:18`, `tags/[tag].astro:52`. Done-when: 3 cols ≥1100px, 2 at ~800px, 1 at <600px.
 
 ## Dependency Graph

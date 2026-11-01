@@ -224,7 +224,7 @@ Setup Environment ─┬─► Write Key File          (--write-key)
 | Wait for Key Location | `waitForKey.ts` | Retry GET until 200; dry-run skips fetch.        |
 | Submit IndexNow       | `submit.ts`     | POST to `api.indexnow.org`; dry-run skips POST.  |
 
-`--write-key` in the production Astro **build** job; `--submit` **after** S3 deploy. Env: `INDEX_NOW_API_KEY` (8–128 `A-Za-z0-9-`). Skip quiz SPA, stage, test, and Pages.
+`--write-key` in the production Astro **build** job; `--submit` **after** S3 deploy. Env: `INDEX_NOW_API_KEY` (8-128 `A-Za-z0-9-`). Skip quiz SPA, stage, test, and Pages.
 
 ```bash
 pnpm --filter @prj--personal-portfolio--v3/tools--indexnow start -- --write-key --dist /abs/path/to/dist
